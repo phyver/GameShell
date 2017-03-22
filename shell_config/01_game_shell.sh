@@ -16,6 +16,7 @@ _gash_exit() {
     local nb=$(_get_current_mission)
     local action=$1
     log_action $nb $action
+    _gash_clean $nb
     exit
 }
 trap "_gash_exit EXIT" EXIT
@@ -610,6 +611,7 @@ EOH
             _gash_save
             ;;
         r | re | res | rest | resta | restar | restart)
+            _gash_clean $nb
             _gash_restart $nb
             ;;
         sh | sho | show)
