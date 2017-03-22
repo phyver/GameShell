@@ -26,7 +26,7 @@ do
     touch $GASH_HOME/Chateau/Entree/${S}_ornement
 done
 
-ls | sort > $GASH_VAR/dans_entree_all
+ls $GASH_HOME/Chateau/Entree | sort > $GASH_VAR/dans_entree_all
 
 cabane=$(find $GASH_HOME/Foret/ -iname "cabane" -type d)
 ls $cabane | sort > $GASH_VAR/dans_cabane_all
