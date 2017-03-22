@@ -1,0 +1,40 @@
+revoir l'arborescence :
+   GASH_BASE
+       World
+       bin
+       missions
+       session_data
+       src ?? config ?? ...
+       tmp ?? var
+
+mode debug :
+  - diff entre les environnements avant / après
+  - pas de mdp admin
+  - creation du coffre automatiquement
+
+gash auto : utilise un fichier "auto.sh" pour valider la mission
+
+mot de passe demandé "dans" les fonctions _gash_...
+
+vérifier si la commande ldapsearch est présente...
+
+"check requirements" lors de l'install
+
+BUG si 2 missions ont le même numero
+
+améliorer la gestion du coffre pour les scripts "check" :
+  - par la fonction _coffre : ajout de scripts "statiques" dans les missions ?
+  - ajout d'une définition GASH_COFFRE GASH_CABANE
+
+vérifier la présence du coffre dans les missions ?
+
+
+
+gash replay <speed>, avec un script par mission
+  => compliqué : ttyrec relance un shell à chaque fois, on perd donc certains
+  trucs (alias, etc.)
+
+========
+
+ajouter d'autres bonus : couleurs dans le prompt, GREP_OPTION, ...
+

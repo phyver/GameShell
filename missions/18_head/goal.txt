@@ -1,0 +1,17 @@
+Objectif
+========
+
+L'ermite est en train de préparer une potion dans la 
+grotte.
+Il a besoin que vous lui lisiez les quatre premiers 
+ingrédients de la liste des ingrédients...
+
+
+Commandes utilisées
+===================
+
+  head <fichier>
+    affiche les 10 premières lignes du fichier
+
+  head -n <k> <fichier>
+    affiche les k premières lignes du ficiher

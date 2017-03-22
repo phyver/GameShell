@@ -1,0 +1,29 @@
+Objectif
+========
+
+ramasser les pièces cachées dans la cave et les 
+déplacer dans le coffre
+
+
+Objectif secondaire
+===================
+
+maitriser l'utilisation de la touche "Tabulation" pour 
+aller plus vite
+
+
+Commandes utilisées
+===================
+
+  ls -A
+    affiche les fichiers du répertoire courant, en 
+    incluant les fichiers cachés
+    Un fichier est "caché" lorsque son nom commence par 
+    le caractère "."
+
+  <Tabulation>
+    la touche tabulation permet de "compléter" un nom 
+    de fichier ou de répertoire lorsqu'on a tapé 
+    seulement le début
+    deux appuis successifs permettent d'afficher la 
+    liste de complétions possibles

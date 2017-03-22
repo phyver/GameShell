@@ -1,0 +1,36 @@
+export REAL_HOME=$HOME
+export HOME=$GASH_HOME
+
+export HISTFILE=$GASH_DATA/history
+export HISTCONTROL="ignoredups"
+
+for f in $GASH_CONFIG/*.sh
+do
+    source "$f"
+done
+
+
+if [ -n "$GASH_DEBUG_MISSION" ]
+then
+    _gash_start $GASH_DEBUG_MISSION
+else
+    cat <<EOM
+************************************************
+*                                              *
+*     Commencez par taper la commande          *
+*       $ gash show                            *
+*     pour découvrir le premier objectif       *
+*     ou                                       *
+*       $ gash help                            *
+*     pour afficher la liste des commandes     *
+*                                              *
+************************************************
+EOM
+    n=$(_get_current_mission)
+    if [ -z "$n" ]
+    then
+        _gash_start 1
+    else
+        _gash_restart $n
+    fi
+fi

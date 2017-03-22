@@ -1,0 +1,5 @@
+Bravo !
+
+À partir de maintenant, la commande ``ls`` utilisera un code couleur pour
+différencier les fichiers et les répertoire, ainsi que certain types de
+fichiers.

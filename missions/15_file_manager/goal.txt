@@ -1,0 +1,15 @@
+Objectif
+========
+
+retrouver la pièce de bronze dans le (petit) labyrinthe 
+au bout du couloir caché dans la cave, et la déplacer 
+dans votre coffre.
+
+Vous pouvez utiliser le gestionnaire de fichiers 
+graphique si vous le souhaitez. Pour cela, il faut 
+aller dans le répertoire
+
+  GameShell-info202/World/.../labyrinthe
+
+
+

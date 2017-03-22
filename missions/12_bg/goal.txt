@@ -1,0 +1,24 @@
+Objectif
+========
+
+Lancer la commande "xeyes", la mettre en attente et la 
+remettre en tache de fond.
+
+
+Commandes utilisées
+===================
+
+Normalement, lorsque le shell lance une commande, celui 
+ci attend que la commande soit terminée.
+
+Il est possible de mettre une commande en pause en 
+appuyant simultanément sur les touches "Control" et 
+"z".
+
+  xeyes
+    affiche deux yeux qui suivent le mouvement de la
+    souris
+
+  bg
+    permet de mettre une commande en pause en tache de 
+    fond (bg = "BackGround")

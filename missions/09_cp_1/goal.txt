@@ -1,0 +1,13 @@
+Objectif
+========
+
+J'aime bien les quatre étendards à l'entrée du Château.
+Toutefois, les voler ne passerait pas inaperçu. J'en 
+voudrais une copie de chaque dans ma cabane.
+
+
+Commandes utilisées
+===================
+
+  cp <fichier1> <fichier2> ... <fichiern> <dossier>
+    copie les fichiers dans un autre dossier

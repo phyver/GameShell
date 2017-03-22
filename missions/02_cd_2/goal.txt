@@ -1,0 +1,21 @@
+Objectif
+========
+
+aller dans la cave du chateau
+
+
+Objectif secondaire
+-------------------
+
+comprendre la différence entre ``cd -`` et ``cd ..``
+
+
+Commandes utilisées
+===================
+
+  cd -
+    permet de retourner dans le lieu précédent
+
+  cd ..
+    permet de retourner au lieux "avant" le lieu actuel 
+    dans la liste donnée par ``pwd``

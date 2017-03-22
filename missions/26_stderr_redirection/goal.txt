@@ -1,0 +1,46 @@
+Objectif
+========
+
+Les vieux grimoires de Merlin sont stockés dans son 
+bureau, dans la bibliothèque. Vous devez afficher une 
+liste (exploitable) des grimoires qui contiennent 
+l'incantation "pq" (ou "Pq", ou "pQ", ou "PQ").
+
+Certain grimoires sont trop vieux et illisible. Il faut 
+les ignorer pour l'affichage...
+
+
+Commandes utilisées
+===================
+
+Chaque commande peut écrire sur l'écran de deux 
+manières :
+  - affichage du résultat ("STDOUT")
+  - affichage des message d'erreur ("STDERR")
+Par défaut, on ne peut pas différencier ces affichage.
+
+On peut par contre rediriger les deux affichages 
+indépendamment.
+
+  grep <chaine> <fichier1> ... <fichiern>
+    recherche une chaine dans les fichiers et affiche 
+    les lignes correspondantes options intéressantes :
+      -l : n'affiche pas les ligne mais seulement le i
+           nom des fichiers qui contiennent la chaine
+      -i : ne différencie pas les majuscules et
+           minuscules lors de la recherche
+
+  <cmd>  >  <fichier>
+    le résultat de la commande <cmd> est écrit dans le 
+    fichier <fichier> au lieu d'être affiché sur la 
+    sortie standard (STDIN)
+
+  <cmd>  2>  <fichier>
+    les erreurs de la commande <cmd> sont écrites dans 
+    le fichier <fichier> au lieu d'être affiché sur la 
+    sortie d'erreurs (STDERR)
+
+  /dev/null
+    fichier "virtuel" qui fait office de "poubelle" : 
+    tout ce qui est écrit dans ce fichier est 
+    simplement ignoré

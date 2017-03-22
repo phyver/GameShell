@@ -1,0 +1,22 @@
+Objectif
+========
+
+retourner au point de départ, puis aller dans la salle 
+du trone en seulement 2 commandes
+
+ATTENTION : pour valider cette mission, il faut
+  - que l'avant dernière commande vous ramène au point 
+    de départ,
+  - que la dernière commande vous amène directement 
+    dans la salle du trone.
+
+
+Commandes utilisées
+===================
+
+  cd
+    permet de revenir au lieu initial
+
+  cd lieu1/lieu2/lieu3/
+    pour faire plusieurs déplacements en une seule 
+    commande

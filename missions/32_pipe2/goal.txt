@@ -1,0 +1,27 @@
+Objectif
+========
+
+Combiner plusieurs commandes avec "|" pour connaitre le 
+nombre d'achats impayés.
+
+**Attention :** il ne faut utiliser qu'une seule 
+commande pour pouvoir répondre à cette question !
+
+
+Commandes utilisées
+===================
+
+  grep [option] <motif> <fichier>
+    Filtre les lignes du fichier et ne conserve que 
+    celles qui contiennent le motif.
+    Si aucun fichier n'est spécifié, grep filtre les 
+    lignes lues sur l'entrée standard.
+
+    Option intéressante :
+      -v : inverse la condition, les lignes conservées 
+      sont celle qui ne contiennent pas le motif.
+
+  wc
+    Compte le nombre de lignes/mots/lettres dans un 
+    fichier. Si aucun fichier n'est spécifié, wc compte 
+    les lignes/mots/lettres lus sur l'entrée standard.

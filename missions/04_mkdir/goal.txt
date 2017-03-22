@@ -1,0 +1,15 @@
+Objectif
+========
+
+construire une "cabane" dans la forêt, et construire un 
+"coffre" dans la cabane.
+
+Attention, le coffre doit se trouver dans la cabane.
+
+
+Commandes utilisées
+===================
+
+  mkdir <répertoire>
+    pour créer un nouveau répertoire dans le répertoire 
+    courant

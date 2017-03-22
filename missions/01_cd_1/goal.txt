@@ -1,0 +1,18 @@
+Objectif
+========
+
+aller tout en haut du donjon
+
+
+Commandes utilisées
+===================
+
+  cd <lieu>
+    permet de se déplacer dans un lieu
+
+  pwd
+    permet d'afficher le lieu actuel
+
+  ls
+    permet d'afficher la liste des lieux accessibles 
+    depuis la position actuelle

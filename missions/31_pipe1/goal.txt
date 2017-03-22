@@ -1,0 +1,39 @@
+Objectif
+========
+
+Combiner plusieurs commandes avec le pipe "|" pour 
+déterminez la dette du Duc.
+
+À côté du Château se trouve une échoppe. Les habitants 
+achètent souvent à crédit et remboursent plus tard.
+Afin de garder le compte des dettes de chacun, le 
+propriétaire note tout sur un parchemin. Lorsqu'une 
+dette est remboursée, il inscrit "PAYÉ" à côté 
+celle-ci.
+
+
+**Attention :** vous ne disposez que de 3 commandes 
+pour calculer ce résultat. Au delà, le montant changera 
+et vous devrez recommencer le calcul.
+
+
+Indice
+======
+
+Une alternative à ``find . -name "*sans_interet*`` est 
+d'utiliser ``ls`` et de filtrer le résultat avec 
+``grep`` :
+    $ ls | grep "sans_interet"
+
+Commandes utilisées
+===================
+
+  grep [option] <motif> <fichier1> ... <fichiern>
+    Filtre les lignes du fichier et ne conserve que 
+    celles qui contiennent le motif.
+    Si aucun fichier n'est spécifié, grep filtre les 
+    lignes lues sur l'entrée standard.
+
+    Option intéressante :
+      -v : inverse la condition, les lignes conservées 
+      sont celle qui ne contiennent pas le motif.

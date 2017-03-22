@@ -1,0 +1,14 @@
+Objectif
+========
+
+trouver le jours de la semaine pour le 12-34-5678
+
+
+Commandes utilisées
+===================
+
+  cal
+    affiche en petit calendrier du mois courant
+
+  cal YYYY
+    affiche en petit calendrier pour l'année YYYY

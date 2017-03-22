@@ -1,0 +1,27 @@
+Objectif
+========
+
+Pour devenir un grand magicien, il faut être fort en 
+calcul mental !
+
+Vérifiez votre aptitude aux multiplications !
+
+Attention, il y a maintenant une contrainte de temps.
+
+Indices : la bibliothèque du château contient des 
+ouvrages de mathématiques, dont certains carnets 
+cachés...
+
+
+Commandes utilisées
+===================
+
+  <cmd>  <  <nom_fichier>
+    On peut remplacer l'entrée standard d'une commande 
+    par un fichier en utilisant une redirection "<". Au 
+    lieu de lire les lignes à partir du clavier, la 
+    commande <cmd> lira les lignes dans le fichier 
+    <nom_fichier>
+
+
+

@@ -1,0 +1,33 @@
+Objectif
+========
+
+retrouver les deux pièces d'or dans labyrinthe au fond 
+du couloir caché dans la cave, et les déplacer dans 
+votre coffre.
+
+
+**Question :** notez dans votre rapport la ou les 
+commandes que vous utilisez pour retrouver les pièces. 
+Comparez les méthodes à votre disposition pour cette
+  - gestionnaire de fichier graphique
+  - "ls -R" ou "tree"
+  - "find"
+
+
+
+Commandes utilisées
+===================
+
+  find
+    pour trouver des fichiers (voir notamment les 
+    options "-name" et "-iname")
+
+  man <cmd>
+    pour consulter l'aide de la commande <cmd>
+
+    touches utilisées par la commande "man"
+        q           pour quitter une page d'aide
+        Space       pour faire défiler une page
+        / <chaine>  pour rechercher une chaine
+        n           pour se déplacer à la prochaine
+                    occurrence de la chaine cherchée

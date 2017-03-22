@@ -1,0 +1,23 @@
+Objectif
+========
+
+l'ermite vous demande à présent de lui lire les 
+instructions sur les lignes 9 à 11 de la recette de sa 
+potion.
+
+Il faudra pour ceci combiner les deux commandes 
+précédentes avec "|".
+
+
+Commandes utilisées
+===================
+
+  head -n <k> <fichier>
+    affiche les k premières lignes du fichier
+
+  tail -n <k> <fichier>
+    affiche les k dernières lignes du ficiher
+
+  <commande1> | <commande2>
+    fait agir <commande2> sur le résultat de 
+    <commande1>

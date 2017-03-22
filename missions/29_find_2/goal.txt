@@ -1,0 +1,32 @@
+Objectif
+========
+
+retrouver le rubis dans labyrinthe et le déplacer dans 
+votre coffre.
+
+Attention, le nom du fichier ne contient pas la chaine 
+"rubis" : il faut donc chercher un __fichier__ (par 
+opposition à un dossier) et vérifier que ce fichier 
+contient bien la chaine "rubis"...
+
+
+Commandes utilisées
+===================
+
+  find
+    pour trouver des fichiers (voir notamment l'option 
+    "-type")
+
+  cat <fichier>
+    affiche tout le contenu d'un fichier sur le 
+    terminal
+
+  man <cmd>
+    pour consulter l'aide de la commande <cmd>
+
+    touches utilisées par la commande "man"
+        q           pour quitter une page d'aide
+        Space       pour faire défiler une page
+        / <chaine>  pour rechercher une chaine
+        n           pour se déplacer à la prochaine
+                    occurrence de la chaine cherchée

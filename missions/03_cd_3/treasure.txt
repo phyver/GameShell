@@ -1,0 +1,5 @@
+Bravo !!!
+
+À partir de maintenant, le lieu actuel sera affiché
+juste avant le prompt...
+

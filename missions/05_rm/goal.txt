@@ -1,0 +1,12 @@
+Objectif
+========
+
+retourner dans la cave et supprimer les rats qui y 
+sont...
+
+
+Commandes utilisées
+===================
+
+  rm <fichier1> <fichier2> ... <fichier>
+    supprime (définitivement) des fichiers

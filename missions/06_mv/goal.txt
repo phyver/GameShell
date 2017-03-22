@@ -1,0 +1,18 @@
+Objectif
+========
+
+ramasser les pièce trouvées dans la cave et les mettre 
+dans le coffre (dans la cabane).
+
+
+Commandes utilisées
+===================
+
+  mv <fichier1> <fichier2> ... <fichiern> <dossier>
+    déplace les fichiers dans un autre dossier
+
+  ~
+    abbréviation pour le répertoire initial (peut 
+    dépendre du shell utilisé)
+    exemple : ~/Dossier représente le dossier "Dossier" 
+    dans le répertoire initial

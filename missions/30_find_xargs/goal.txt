@@ -1,0 +1,29 @@
+Objectif
+========
+
+Combiner plusieurs commandes avec "|" pour retrouver le 
+diamant dans labyrinthe et le déplacer dans votre 
+coffre.
+
+Attention, le nom du fichier ne contient pas la chaine 
+"diamant" : il faut donc chercher un fichier qui 
+contient la chaine "diamant"...
+
+
+Commandes utilisées
+===================
+
+  find
+    pour trouver des fichiers
+
+  grep [options] <motif> <fichier1> ... <fichiern>
+    recherche un motif parmi les fichiers
+    Parmi les options, vous avez notamment
+      -l  qui affiche juste le nom des fichiers
+          contenant le motif
+
+  xargs <cmd>
+    lit des lignes sur l'entrée standard, et exécute la 
+    commande <cmd> <ligne1> <ligne3> ... <lignen>
+    Cette commande est particulièrement utile derrière 
+    une redirection "|"
