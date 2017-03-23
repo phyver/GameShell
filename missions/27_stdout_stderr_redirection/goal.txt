@@ -20,14 +20,14 @@ Commandes utilisées
     programme. Il va de soi que Merlin l'est 
     (exécutable)...
 
-  <cmd> > <nom_fichier>
+  CMD  >  FICHIER
     Remplace la sortie standard (STDOUT) d'une commande 
     par un fichier en utilisant une redirection ">".
 
-  <cmd> 2> <nom_fichier>
+  CMD  2>  FICHIER
     Similaire, mais redirige la sortie d'erreur 
     (STDERR) vers le fichier donné.
 
-  <cmd>  <  <nom_fichier>
+  CMD  <  FICHIER
     Remplace l'entrée standard (STDIN) d'une commande 
     par un fichier en utilisant une redirection "<".

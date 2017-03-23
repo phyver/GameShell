@@ -11,7 +11,7 @@ commande pour pouvoir répondre à cette question !
 Commandes utilisées
 ===================
 
-  grep [option] <motif> <fichier>
+  grep [OPTIONS] MOTIF FICHIER1 ... FICHIERn
     Filtre les lignes du fichier et ne conserve que 
     celles qui contiennent le motif.
     Si aucun fichier n'est spécifié, grep filtre les 

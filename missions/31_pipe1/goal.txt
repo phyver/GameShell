@@ -28,7 +28,7 @@ d'utiliser ``ls`` et de filtrer le résultat avec
 Commandes utilisées
 ===================
 
-  grep [option] <motif> <fichier1> ... <fichiern>
+  grep [OPTIONS] MOTIF FICHIER1 ... FICHIERn
     Filtre les lignes du fichier et ne conserve que 
     celles qui contiennent le motif.
     Si aucun fichier n'est spécifié, grep filtre les 

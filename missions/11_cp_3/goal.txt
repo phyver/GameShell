@@ -13,7 +13,7 @@ place.
 Commande utile
 ==============
 
-  date -r <file>
+  date -r FILE
     affiche la date de dernière modification d’un 
     fichier.
 

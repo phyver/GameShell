@@ -22,7 +22,7 @@ Par défaut, on ne peut pas différencier ces affichage.
 On peut par contre rediriger les deux affichages 
 indépendamment.
 
-  grep <chaine> <fichier1> ... <fichiern>
+  grep CHAINE FICHIER1 ... FICHIERn
     recherche une chaine dans les fichiers et affiche 
     les lignes correspondantes options intéressantes :
       -l : n'affiche pas les ligne mais seulement le i
@@ -30,14 +30,14 @@ indépendamment.
       -i : ne différencie pas les majuscules et
            minuscules lors de la recherche
 
-  <cmd>  >  <fichier>
-    le résultat de la commande <cmd> est écrit dans le 
-    fichier <fichier> au lieu d'être affiché sur la 
+  CMD  >  FICHIER
+    le résultat de la commande CMD est écrit dans le 
+    fichier FICHIER au lieu d'être affiché sur la 
     sortie standard (STDIN)
 
-  <cmd>  2>  <fichier>
-    les erreurs de la commande <cmd> sont écrites dans 
-    le fichier <fichier> au lieu d'être affiché sur la 
+  CMD  2>  FICHIER
+    les erreurs de la commande CMD sont écrites dans 
+    le fichier FICHIER au lieu d'être affiché sur la 
     sortie d'erreurs (STDERR)
 
   /dev/null

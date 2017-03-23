@@ -21,7 +21,7 @@ Commandes utilisées
     Un fichier est "caché" lorsque son nom commence par 
     le caractère "."
 
-  <Tabulation>
+  Tabulation
     la touche tabulation permet de "compléter" un nom 
     de fichier ou de répertoire lorsqu'on a tapé 
     seulement le début

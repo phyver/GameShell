@@ -12,11 +12,11 @@ précédentes avec ``|``.
 Commandes utilisées
 ===================
 
-  head -n <k> <fichier>
+  head -n K FICHIER
     affiche les k premières lignes du fichier
 
-  tail -n <k> <fichier>
-    affiche les k dernières lignes du ficiher
+  tail -n K FICHIER
+    affiche les k dernières lignes du fichier
 
   CMD1 | CMD2
     fait agir CMD1 sur le résultat de CMD2

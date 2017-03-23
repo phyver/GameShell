@@ -24,7 +24,7 @@ un "alias".
 Commandes utilisées
 ===================
 
-  nano <fichier>
+  nano FICHIER
     édite le fichier dans le terminal
     Les raccourcis claviers sont affichés en bas :
       Control-x     pour quitter nano

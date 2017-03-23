@@ -9,8 +9,8 @@ réclame la liste des quatre derniers ingrédients
 Commandes utilisées
 ===================
 
-  tail <fichier>
+  tail FICHIER
     affiche les 10 dernières lignes du fichier
 
-  tail -n <k> <fichier>
+  tail -n K FICHIER
     affiche les k dernières lignes du fichier

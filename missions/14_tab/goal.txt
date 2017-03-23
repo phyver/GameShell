@@ -7,5 +7,5 @@ aller dans le couloir caché dans la cave
 Commandes utilisées
 ===================
 
-  La touche <Tabulation> permet de compléter un nom de 
+  La touche Tabulation permet de compléter un nom de 
   fichier lorsqu'on a tapé le début

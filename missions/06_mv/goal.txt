@@ -8,7 +8,7 @@ dans le coffre (dans la cabane).
 Commandes utilisées
 ===================
 
-  mv <fichier1> <fichier2> ... <fichiern> <dossier>
+  mv FICHIER1 FICHIER2 ... FICHIERn DOSSIER
     déplace les fichiers dans un autre dossier
 
   ~

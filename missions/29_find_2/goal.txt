@@ -17,16 +17,16 @@ Commandes utilisées
     pour trouver des fichiers (voir notamment l'option 
     "-type")
 
-  cat <fichier>
+  cat FICHIER
     affiche tout le contenu d'un fichier sur le 
     terminal
 
-  man <cmd>
-    pour consulter l'aide de la commande <cmd>
+  man CMD
+    pour consulter l'aide de la commande CMD
 
     touches utilisées par la commande "man"
         q           pour quitter une page d'aide
         Space       pour faire défiler une page
-        / <chaine>  pour rechercher une chaine
+        / CHAINE    pour rechercher une chaine
         n           pour se déplacer à la prochaine
                     occurrence de la chaine cherchée

@@ -10,6 +10,6 @@ Attention, le coffre doit se trouver dans la cabane.
 Commandes utilisées
 ===================
 
-  mkdir <répertoire>
+  mkdir RÉPERTOIRE
     pour créer un nouveau répertoire dans le répertoire 
     courant

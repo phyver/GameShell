@@ -15,5 +15,5 @@ Commandes utilisées
   ps
     pour afficher la liste des processus utilisés
 
-  kill <N>
-    tue le processus dont le numéro ("PID") est <N>
+  kill N
+    tue le processus dont le numéro ("PID") est N

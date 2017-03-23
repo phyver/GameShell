@@ -7,7 +7,7 @@ aller tout en haut du donjon
 Commandes utilisées
 ===================
 
-  cd <lieu>
+  cd LIEU
     permet de se déplacer dans un lieu
 
   pwd

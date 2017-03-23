@@ -10,8 +10,8 @@ ingrédients de la liste des ingrédients...
 Commandes utilisées
 ===================
 
-  head <fichier>
+  head FICHIER
     affiche les 10 premières lignes du fichier
 
-  head -n <k> <fichier>
-    affiche les k premières lignes du ficiher
+  head -n K FICHIER
+    affiche les k premières lignes du ficher
