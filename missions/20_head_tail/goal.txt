@@ -6,7 +6,7 @@ instructions sur les lignes 9 à 11 de la recette de sa
 potion.
 
 Il faudra pour ceci combiner les deux commandes 
-précédentes avec "|".
+précédentes avec ``|``.
 
 
 Commandes utilisées
@@ -18,6 +18,5 @@ Commandes utilisées
   tail -n <k> <fichier>
     affiche les k dernières lignes du ficiher
 
-  <commande1> | <commande2>
-    fait agir <commande2> sur le résultat de 
-    <commande1>
+  CMD1 | CMD2
+    fait agir CMD1 sur le résultat de CMD2
