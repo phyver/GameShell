@@ -1,5 +1,0 @@
-Bravo !
-
-À partir de maintenant, le nombre de sous-processus du
-en cours (les "jobs") sera affiché entre '<' et '>' à
-la fin du prompt.

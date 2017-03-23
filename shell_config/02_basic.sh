@@ -6,6 +6,4 @@ export PS4=""
 
 export PATH=$PATH:$GASH_CONFIG/scripts/
 
-alias nano='nano -z'
-
 # vim: filetype=sh
