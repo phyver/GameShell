@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# TODO: limiter le nombre de commandes pour éviter
+# mv truc ..
+# cd ..
+# mv truc ..
+# ....
 
 check() {
     local coffre=$(_coffre)
