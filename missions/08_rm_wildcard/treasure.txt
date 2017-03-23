@@ -1,7 +1,6 @@
 Bravo !
 
-À partir de maintenant, la commande ``ls`` affichera des symboles à la fin des
-fichiers. Les deux caractères principaux sont
-  - / pour préciser qu'il s'agit d'un répertoire
-  - * pour préciser qu'il s'agit d'un fichier exécutable
+À partir de maintenant, la commande ``ls`` affichera automatiquement un
+caractère "/" à la fin des répertoires.
+
 

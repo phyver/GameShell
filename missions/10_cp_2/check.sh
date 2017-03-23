@@ -29,7 +29,7 @@ then
     unset -f check
     true
 else
-    rm -f $GASH_HOME/Chateau/Entree/*
+    find $GASH_HOME/Chateau/Entree/ -name "*ornement" -name "*detritus" -name "*gravas" -name "*foin" | xargs rm -f
     find $(_cabane) -name "*ornement" -name "*detritus" -name "*gravas" -name "*foin" | xargs rm -f
     unset -f check
     false

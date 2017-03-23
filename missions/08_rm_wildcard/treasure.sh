@@ -1,3 +1,3 @@
 #!/bin/sh
 
-alias ls='ls -F'
+alias ls='ls -p'
