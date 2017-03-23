@@ -13,8 +13,11 @@ celle-ci.
 
 
 **Attention :** vous ne disposez que de 3 commandes 
-pour calculer ce résultat. Au delà, le montant changera 
-et vous devrez recommencer le calcul.
+pour atteindre cet objectif.
+
+Vous pouvez réinitialiser le compteur avec la commande 
+``gash restart``, mais dans ce cas, l'échoppe sera 
+re-générée.
 
 
 Indice

@@ -7,6 +7,10 @@ nombre d'achats impayés.
 **Attention :** il ne faut utiliser qu'une seule 
 commande pour pouvoir répondre à cette question !
 
+Vous pouvez réinitialiser le compteur avec la commande 
+``gash restart``, mais dans ce cas, l'échoppe sera 
+re-générée.
+
 
 Commandes utilisées
 ===================

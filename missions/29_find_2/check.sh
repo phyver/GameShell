@@ -44,5 +44,6 @@ then
     true
 else
     unset -f check
+    find $GASH_HOME -type f -readable | xargs grep -l "rubis" | xargs rm -f
     false
 fi

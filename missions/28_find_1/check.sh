@@ -40,6 +40,7 @@ then
     true
 else
     unset -f check check_p
+    find $GASH_HOME -iname piece_d_or | xargs rm -f
     false
 fi
 
