@@ -27,13 +27,9 @@ check() {
 
 if check
 then
-    rm -f $GASH_VAR/bronze
     unset -f check
     true
 else
-    rm -f $GASH_VAR/bronze
-    find $GASH_HOME -iname bronze | xargs rm -f
-    find $GASH_HOME/Chateau/Cave/ -name labyrinthe -type d -print0 | xargs -0 rm -rf
     unset -f check
     false
 fi

@@ -39,8 +39,6 @@ then
     unset -f check check_p
     true
 else
-    find $GASH_HOME/Chateau/Cave/ -name labyrinthe -type d -print0 | xargs -0 rm -rf
-    find $(_coffre) -iname "*piece_d_or*" -type f | xargs rm -f
     unset -f check check_p
     false
 fi

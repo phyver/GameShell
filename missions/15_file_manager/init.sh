@@ -1,14 +1,10 @@
 #!/bin/bash
 
-# fichier lu par le shell à chaque démarage de la mission
-
-
-coul=$(find $GASH_HOME/Chateau/Cave/ -name ".couloir * tres * long *")
+coul=$(find $GASH_HOME/Chateau/Cave/ -name ".Long*Couloir*")
 if [ -z "$coul" ]
 then
-    coul=".couloir $(checksum $RANDOM) tres $(checksum $RANDOM) long $(checksum $RANDOM)"
-    mkdir -p $GASH_HOME/Chateau/Cave/"$coul"
-    coul=$(find $GASH_HOME/Chateau/Cave/ -name ".couloir * tres * long *")
+    coul=$GASH_HOME/Chateau/Cave/".Long $(checksum $RANDOM) Couloir $(checksum $RANDOM)"
+    mkdir -p "$coul"
 fi
 
 lab=$coul/labyrinthe

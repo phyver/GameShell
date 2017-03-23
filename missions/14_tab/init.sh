@@ -2,15 +2,15 @@
 
 # fichier lu par le shell à chaque démarage de la mission
 
-rm -rf $GASH_HOME/Chateau/Cave/.couloir\ *\ tres\ *\ long\ *
+rm -rf $GASH_HOME/Chateau/Cave/.long*couloir*
 
-long_name=".couloir $(checksum $RANDOM) tres $(checksum $RANDOM) long $(checksum $RANDOM)"
+coul=".Long $(checksum $RANDOM) Couloir $(checksum $RANDOM)"
 
-mkdir -p $GASH_HOME/Chateau/Cave/"$long_name"
+mkdir -p $GASH_HOME/Chateau/Cave/"$coul"
 
-echo $long_name | sha1sum | cut -c 1-40 > $GASH_VAR/couloir
+echo $coul | sha1sum | cut -c 1-40 > $GASH_VAR/couloir
 
-unset long_name
+unset coul
 
 
 

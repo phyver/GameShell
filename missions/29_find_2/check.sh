@@ -43,8 +43,6 @@ then
     unset -f check
     true
 else
-    find $GASH_HOME/Chateau/Cave/ -name labyrinthe -type d -print0 | xargs -0 rm -rf
-    find $(_coffre) -type f | xargs grep -l "rubis" | xargs rm -f
     unset -f check
     false
 fi
