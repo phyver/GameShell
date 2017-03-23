@@ -1,16 +1,20 @@
 #!/bin/bash
 
-# script pour tester la completion de la mission
-# le script doit faire ``echo OK`` en cas de succes
-# toute autre valeur sera considérée comme un echec
-#
+# turn history on (off by default for non-interactive shells
+HISTFILE=$GASH_DATA/history
 
-if $(LANG=C jobs | grep "xeyes.*&" | grep -qi running)
+if ! (fc -nl -4 | grep -qx "[[:blank:]]*xeyes[[:blank:]]*")
 then
-    true
-else
-    jobs -p | xargs kill -9
+    echo "Vous n'avez pas lancé la commande ``xeyes`` directement..."
+    killall -q -9 xeyes
     false
+elif ! LANG=C jobs | grep "xeyes.*&" | grep -qi running
+then
+    echo "Il n'y a pas de commande ``xeyes`` actuellement en exécution..."
+    killall -q -9 xeyes
+    false
+else
+    true
 fi
 
 
