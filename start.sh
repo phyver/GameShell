@@ -208,7 +208,7 @@ start_gash() {
 
   export GROUP_UID=$(cat "$GASH_DATA/uid")
 
-  if [ -x "$(which ttyrec)" ]
+  if [ -x "$(command -v ttyrec)" ]
   then
     ttyrec -a -e "bash --rcfile \"$GASH_CONFIG/bashrc\"" "$GASH_DATA/script"
   else

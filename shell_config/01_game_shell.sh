@@ -87,7 +87,7 @@ log_action() {
 parchment() {
     local file=$1
     [ ! -f $file ] && return 1
-    if [ -x "$(which python3)" ]
+    if [ -x "$(command -v python3)" ]
     then
         local P=$(( 16#$(checksum $(readlink -f $file) | cut -c 10-13) % 4 ))
         case "$P" in
@@ -206,7 +206,7 @@ _gash_start() {
 
     # history -s "# START mission $nb"
 
-    # if [ -x "$(which ttyrec)" ]
+    # if [ -x "$(command -v ttyrec)" ]
     # then
 
     #     [ "$(ps -o comm='' $PPID)" = "ttyrec" ] && exit
@@ -241,7 +241,7 @@ _gash_restart() {
 
     # history -s "# RESTART mission $nb"
 
-    # if [ -x "$(which ttyrec)" ]
+    # if [ -x "$(command -v ttyrec)" ]
     # then
 
     #     [ "$(ps -o comm='' $PPID)" = "ttyrec" ] && exit
