@@ -9,6 +9,8 @@ then
     true
 else
     echo "Vous n'êtes pas en haut du donjon !"
+    echo "Vous allez recommencer la mission au point de départ."
+    cd $GASH_HOME
     unset goal current
     false
 fi
