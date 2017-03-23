@@ -6,8 +6,14 @@ bureau, dans la bibliothèque. Vous devez afficher une
 liste (exploitable) des grimoires qui contiennent 
 l'incantation "pq" (ou "Pq", ou "pQ", ou "PQ").
 
-Certain grimoires sont trop vieux et illisible. Il faut 
-les ignorer pour l'affichage...
+Certain grimoires sont cadenassés et vous n'avez pas la 
+permission de les consulter. Il faut les ignorer pour 
+l'affichage...
+
+**Attention**
+seule la liste des grimoires (noms de fichiers) est 
+demandée.
+La partie de l'incantation ne doit pas être affichée.
 
 
 Commandes utilisées
