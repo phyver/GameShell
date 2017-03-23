@@ -4,14 +4,23 @@ Objectif
 Les vieux grimoires de Merlin sont stockés dans son 
 bureau, dans la bibliothèque. Vous devez obtenir une 
 liste de tous ces grimoires dans un fichier "liste.txt" 
-qui devra être stocké avec les grimoires, dans le 
-bureau.
+qui devra être stocké dans le tiroir...
 
 
 Commandes utilisées
 ===================
 
-  <cmd>  >  <fichier>
-    le résultat de la commande <cmd> est écrit dans le 
-    fichier <fichier> au lieu d'être affiché sur la 
+  CMD  >  FICHIER
+    le résultat de la commande CMD est écrit dans le 
+    fichier FICHIER au lieu d'être affiché sur la 
     sortie standard
+
+  less FICHIER
+    permet d'afficher un fichier page par page
+    Les touches importantes sont
+      Espace    pour passer à la page suivante
+      q         pour quitter
+      /         pour rechercher une chaine dans le
+                fichier
+      n         pour passer à l'occurrence suivante de
+                la chaine cherchée

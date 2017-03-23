@@ -1,3 +1,3 @@
 #!/bin/sh
 
-mkdir -p $GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin
+mkdir -p $GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin/Tiroir

@@ -3,15 +3,16 @@
 check() {
     local office=$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin
 
-    if [ ! -f $bib/liste.txt ]
+    if [ ! -f $bib/Tiroir/liste.txt ]
     then
-        echo "Il n'y a pas de fichier 'liste.txt' dans l'armoire de Merlin..."
+        echo "Il n'y a pas de fichier 'liste.txt' dans le tiroir du bureau..."
         return 1
     fi
 
-    if ! diff <(grep -v "liste\.txt" $bib/liste.txt | sort) $GASH_VAR/liste_grimoires > /dev/null
+    if ! diff <(sort $bib/Tiroir/liste.txt) $GASH_VAR/liste_grimoires > /dev/null
     then
         echo "Le contenu du fichier 'liste.txt' n'est pas correct"
+        echo "Vous pouvez regarder dans le fichier avec la commande ``less FICHIER``."
         return 1
     fi
 
