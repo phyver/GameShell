@@ -20,6 +20,12 @@ complet du fichier "journal.txt"), nous allons utiliser
 un "alias".
 
 
+Mission facultative
+-------------------
+
+Écrivez également un alias "la" pour lancer la commande 
+``ls -A``...
+
 
 Commandes utilisées
 ===================
