@@ -49,20 +49,19 @@ done
 
 init_gash() {
   # dossiers d'installation
-  export GASH_BASE=$(readlink -f $(dirname $0)/../)
+  export GASH_BASE=$(readlink -f $(dirname $0)/)
 
   # ces répertoires ne doivent pas être modifiés (statiques)
   export GASH_LIB="$GASH_BASE/lib"
   export GASH_MISSIONS="$GASH_BASE/missions"
+  export GASH_BIN="$GASH_BASE/bin"
 
   # ces répertoires doivent être effacés en cas de réinitialisation du jeu
   export GASH_HOME="$GASH_BASE/World"
   export GASH_DATA="$GASH_BASE/.session_data"
   export GASH_TMP="$GASH_BASE/.tmp"
-  export GASH_VAR=$GASH_TMP       # TODO: remove
-  # avoir GASH_CONFIG dynamique, et recopier le bashrc depuis GASH_LIB ???
   export GASH_CONFIG="$GASH_BASE/.config"
-  export GASH_BIN="$GASH_BASE/.bin"
+  export GASH_LOCAL_BIN="$GASH_BASE/.bin"
 
   PASSEPORT="$GASH_DATA/passeport.txt"
 
@@ -93,7 +92,7 @@ init_gash() {
   rm -rf $GASH_DATA
   rm -rf $GASH_TMP
   rm -rf $GASH_CONFIG
-  rm -rf $GASH_BIN
+  rm -rf $GASH_LOCAL_BIN
 
   mkdir -p $GASH_HOME
 
@@ -103,7 +102,7 @@ init_gash() {
   mkdir -p $GASH_CONFIG
   cp $GASH_LIB/bashrc $GASH_CONFIG
 
-  mkdir -p $GASH_BIN
+  mkdir -p $GASH_LOCAL_BIN
 
   mkdir -p $GASH_TMP
 
@@ -214,7 +213,7 @@ init_gash() {
     fi
     if [ -d "$MISSION/bin" ]
     then
-      cp "$MISSION/bin/"* $GASH_BIN
+      cp "$MISSION/bin/"* $GASH_LOCAL_BIN
     fi
   done
 }
@@ -227,12 +226,12 @@ start_gash() {
 
   export GROUP_UID=$(cat "$GASH_DATA/uid")
 
-  if [ -x "$(command -v ttyrec)" ]
-  then
-    ttyrec -a -e "bash --rcfile \"$GASH_CONFIG/bashrc\"" "$GASH_DATA/script"
-  else
-     bash --rcfile "$GASH_CONFIG/bashrc"
-  fi
+  # if [ -x "$(command -v ttyrec)" ]
+  # then
+  #   ttyrec -a -e "bash --rcfile \"$GASH_CONFIG/bashrc\"" "$GASH_DATA/script"
+  # else
+  bash --rcfile "$GASH_CONFIG/bashrc"
+  # fi
 
 }
 

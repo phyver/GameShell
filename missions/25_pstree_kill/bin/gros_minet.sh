@@ -2,11 +2,11 @@
 
 export NATURE=chat
 
-$GASH_BIN/chat.sh &
+$GASH_LOCAL_BIN/chat.sh &
 disown
-$GASH_BIN/chat.sh &
+$GASH_LOCAL_BIN/chat.sh &
 disown
-$GASH_BIN/chat.sh &
+$GASH_LOCAL_BIN/chat.sh &
 disown
 
 unset NATURE

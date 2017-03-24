@@ -31,7 +31,7 @@ do
             if [ "$r1" = "$i,$j,$k" ]
             then
                 echo "$I $J $K" > "$lab/$I/$J/$K/piece_d_argent"
-                echo "$I $J $K" > "$GASH_VAR/argent"
+                echo "$I $J $K" > "$GASH_TMP/argent"
             fi
         done
         echo -n "."

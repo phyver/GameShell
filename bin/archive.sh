@@ -2,7 +2,7 @@
 
 WD=$(dirname $0)
 cd $WD/../..
-tar cvf gash.tar GameShell/bin GameShell/config GameShell/missions GameShell/lib GameShell/doc
+tar cvf gash.tar --exclude=auto.sh GameShell/start.sh GameShell/bin GameShell/config GameShell/missions GameShell/lib GameShell/doc
 
 
 # TODO

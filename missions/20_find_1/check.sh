@@ -10,7 +10,7 @@ check_p() {
         echo "Toutes les pièces ne sont pas dans le coffre !"
         return 1
     fi
-    if ! diff -q "$path" "$GASH_VAR/$file" > /dev/null
+    if ! diff -q "$path" "$GASH_TMP/$file" > /dev/null
     then
         echo "La pièce '$file' dans le coffre n'est pas la bonne !"
         return 1

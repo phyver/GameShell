@@ -6,7 +6,7 @@ export HISTCONTROL="ignoreboth"
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 
-export PATH=$PATH:$GASH_BASE/bin:$GASH_BIN
+export PATH=$PATH:$GASH_BASE/bin:$GASH_BIN:$GASH_LOCAL_BIN
 
 source $GASH_LIB/game_shell.sh
 

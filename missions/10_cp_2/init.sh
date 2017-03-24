@@ -26,6 +26,6 @@ do
     touch $GASH_HOME/Chateau/Entree/${S}_ornement
 done
 
-\ls $GASH_HOME/Chateau/Entree | sort > $GASH_VAR/dans_entree
+\ls $GASH_HOME/Chateau/Entree | sort > $GASH_TMP/dans_entree
 
 unset D i S cabane

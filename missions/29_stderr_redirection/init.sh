@@ -18,7 +18,7 @@ echo
 
 bash <<EOS
   cd $bib
-  grep -il "pq" * 2> /dev/null | sort > $GASH_VAR/liste_grimoires_PQ
+  grep -il "pq" * 2> /dev/null | sort > $GASH_TMP/liste_grimoires_PQ
 EOS
 
 unset i file

@@ -13,7 +13,7 @@ check() {
         return 1
     fi
 
-    if ! diff -q $GASH_VAR/liste_grimoires_PQ <(eval $pc |& sort) > /dev/null
+    if ! diff -q $GASH_TMP/liste_grimoires_PQ <(eval $pc |& sort) > /dev/null
     then
         return 1
     else

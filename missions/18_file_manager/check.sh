@@ -18,7 +18,7 @@ check() {
         return 1
     fi
 
-    if ! diff -q $piece $GASH_VAR/bronze > /dev/null
+    if ! diff -q $piece $GASH_TMP/bronze > /dev/null
     then
         echo "Tricheur : la pièce de bronze qui se trouve dans le coffre n'est pas la bonne !"
         return 1

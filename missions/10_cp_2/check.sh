@@ -5,7 +5,7 @@
 
 check () {
 
-    if ! diff -q $GASH_VAR/dans_entree <(\ls $GASH_HOME/Chateau/Entree | sort) > /dev/null
+    if ! diff -q $GASH_TMP/dans_entree <(\ls $GASH_HOME/Chateau/Entree | sort) > /dev/null
     then
         echo "Vous avez changé le contenu de l'entrée !"
         return 1
@@ -24,7 +24,7 @@ check () {
         return 1
     fi
 
-    if ! diff -q <(grep "_ornement" "$GASH_VAR/dans_entree") <(\ls "$cabane" | sort | grep "_ornement") > /dev/null
+    if ! diff -q <(grep "_ornement" "$GASH_TMP/dans_entree") <(\ls "$cabane" | sort | grep "_ornement") > /dev/null
     then
         echo "Je voulais tous les ornements de l'entrée !"
         return 1
@@ -35,10 +35,10 @@ check () {
 if check
 then
     unset -f check
-    rm -f $GASH_VAR/dans_entree
+    rm -f $GASH_TMP/dans_entree
     true
 else
-    rm -f $GASH_VAR/dans_entree
+    rm -f $GASH_TMP/dans_entree
     find $GASH_HOME/Chateau/Entree/ -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" | xargs rm -f
     find $(_cabane) -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" | xargs rm -f
     unset -f check

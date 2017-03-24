@@ -18,7 +18,7 @@ echo
 
 bash <<EOS
   cd $bib
-  ls grimoire_* | sort > $GASH_VAR/liste_grimoires
+  ls grimoire_* | sort > $GASH_TMP/liste_grimoires
 EOS
 
 unset i file

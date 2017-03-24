@@ -32,11 +32,11 @@ do
             if [ "$r1" = "$i,$j,$k" ]
             then
                 echo "$I $J $K" > "$lab/$I/$J/$K/piece_d_or"
-                echo "$I $J $K" > "$GASH_VAR/piece_d_or"
+                echo "$I $J $K" > "$GASH_TMP/piece_d_or"
             elif [ "$r2" = "$i,$j,$k" ]
             then
                 echo "$I $J $K" > "$lab/$I/$J/$K/Piece_D_Or"
-                echo "$I $J $K" > "$GASH_VAR/Piece_D_Or"
+                echo "$I $J $K" > "$GASH_TMP/Piece_D_Or"
             fi
         done
         echo -n "."

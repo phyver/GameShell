@@ -15,7 +15,7 @@ Il suffit donc de recopier toutes les lignes de ce livre.
 EOB
 
 book=$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Mathematiques_pour_debutants
-questions=$GASH_VAR/arith.txt
+questions=$GASH_TMP/arith.txt
 rm -f $questions
 
 

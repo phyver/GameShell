@@ -3,7 +3,7 @@
 OK=1
 LIMIT=$(( $(date +%s) + 10 ))
 
-exec 3<$GASH_VAR/arith.txt
+exec 3<$GASH_TMP/arith.txt
 while IFS='' read -r -u 3 l
 do
     q="$(echo "$l" | cut -d"|" -f1)"

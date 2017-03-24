@@ -1,7 +1,7 @@
 #!/bin/bash
 
 S1=$(basename "$PWD" / | sha1sum | cut -c 1-40)
-S2=$(cat $GASH_VAR/couloir)
+S2=$(cat $GASH_TMP/couloir)
 
 if [ "$S1" = "$S2" ]
 then

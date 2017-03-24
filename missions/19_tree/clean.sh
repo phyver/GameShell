@@ -8,6 +8,6 @@ case $PWD in
         ;;
 esac
 
-rm -f $GASH_VAR/argent
+rm -f $GASH_TMP/argent
 find $GASH_HOME/Chateau/Cave/ -name "labyrinthe" -type d -print0 | xargs -0 rm -rf
 find $GASH_HOME -iname "*argent*" | xargs rm -f
