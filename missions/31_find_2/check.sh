@@ -15,8 +15,7 @@ check() {
         return 1
     fi
 
-    local coffre=$(_coffre)
-    local rubis=$(find $coffre -type f | xargs grep -l rubis)
+    local rubis=$(find $GASH_COFFRE -type f | xargs grep -l rubis)
 
     if [ -z "$rubis" ]
     then

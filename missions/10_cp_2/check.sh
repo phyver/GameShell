@@ -11,20 +11,19 @@ check () {
         return 1
     fi
 
-    local cabane=$(_cabane)
-    if [ -z "$cabane" ]
+    if [ -z "$GASH_CABANE" ]
     then
         echo "Où est la cabane ???"
         return 1
     fi
 
-    if \ls "$cabane" | grep -Eq "_foin|_gravas|_detritus"
+    if \ls "$GASH_CABANE" | grep -Eq "_foin|_gravas|_detritus"
     then
         echo "Je ne voulais que les ornements de l'entrée !"
         return 1
     fi
 
-    if ! diff -q <(grep "_ornement" "$GASH_TMP/dans_entree") <(\ls "$cabane" | sort | grep "_ornement") > /dev/null
+    if ! diff -q <(grep "_ornement" "$GASH_TMP/dans_entree") <(\ls "$GASH_CABANE" | sort | grep "_ornement") > /dev/null
     then
         echo "Je voulais tous les ornements de l'entrée !"
         return 1
@@ -40,7 +39,7 @@ then
 else
     rm -f $GASH_TMP/dans_entree
     find $GASH_HOME/Chateau/Entree/ -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" | xargs rm -f
-    find $(_cabane) -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" | xargs rm -f
+    find $GASH_CABANE -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" | xargs rm -f
     unset -f check
     false
 fi

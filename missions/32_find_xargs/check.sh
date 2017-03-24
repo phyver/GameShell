@@ -15,8 +15,7 @@ check() {
         return 1
     fi
 
-    local coffre=$(_coffre)
-    local diamant=$(find $coffre -type f | xargs grep -l diamant)
+    local diamant=$(find $GASH_COFFRE -type f | xargs grep -l diamant)
 
     if [ -z "$diamant" ]
     then

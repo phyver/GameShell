@@ -2,7 +2,7 @@
 
 check() {
 
-    local journal="$(_coffre)/journal.txt"
+    local journal="$GASH_COFFRE/journal.txt"
     if [ ! -f "$journal" ]
     then
         echo "Le fichier '$journal' n'existe pas..."

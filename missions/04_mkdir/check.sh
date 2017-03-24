@@ -40,10 +40,10 @@ check() {
 
 if check
 then
-    unset -f check
+    GASH_CABANE=$(find $GASH_HOME -iname cabane)
+    GASH_COFFRE=$(find $GASH_HOME -iname coffre)
     true
 else
-    unset -f check
     find $GASH_HOME/ -iname "*cabane*" | xargs rm -rf
     find $GASH_HOME/ -iname "*coffre*" | xargs rm -rf
     echo "Vous voila revenu au point de départ... Veuillez recommencer la mission."

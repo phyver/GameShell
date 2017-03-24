@@ -3,11 +3,9 @@
 check() {
 
     local tableau=$(find $GASH_MISSIONS -name "tableau" -type f)
-    local cabane=$(_cabane)
-    local coffre=$(_coffre)
 
     # check that file exists in "coffre"
-    if [ ! -f "$coffre/tableau" ]
+    if [ ! -f "$GASH_COFFRE/tableau" ]
     then
         echo "Il n'y a pas de tableau dans le coffre !"
         return 1
@@ -26,14 +24,14 @@ check() {
         echo "Les deux tableaux sont différents !"
         return 1
     fi
-    if ! diff -q $tableau $coffre/tableau >/dev/null
+    if ! diff -q $tableau $GASH_COFFRE/tableau >/dev/null
     then
         echo "Les deux tableaux sont différents du tableau original !"
         return 1
     fi
 
     # check that the date of the tableau in the "coffre" is fine
-    local D1=$(stat -c %y $coffre/tableau | sha1sum | cut -c 1-40)
+    local D1=$(stat -c %y $GASH_COFFRE/tableau | sha1sum | cut -c 1-40)
     local D2=$(cat $GASH_TMP/date_tableau)
 
     if [ "$D1" != "$D2" ]

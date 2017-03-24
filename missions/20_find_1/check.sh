@@ -1,9 +1,8 @@
 #!/bin/bash
 
 check_p() {
-    local coffre=$(_coffre)
     local file=$1
-    local path=$(find $coffre -name "*$file" -type f)
+    local path=$(find $GASH_COFFRE -name "*$file" -type f)
 
     if [ -z "$path" ]
     then

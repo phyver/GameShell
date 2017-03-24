@@ -1,7 +1,6 @@
 #!/bin/bash
 
 check() {
-    local cabane=$(_cabane)
     entree="$GASH_HOME/Chateau/Entree"
 
     for i in $(seq 4)
@@ -9,7 +8,7 @@ check() {
         local etendard="etendard_$i"
 
         # check that file exists
-        if [ ! -f "$cabane/$etendard" ]
+        if [ ! -f "$GASH_CABANE/$etendard" ]
         then
             echo "L'étendard $i ne se trouve pas dans la cabane."
             return 1
@@ -21,7 +20,7 @@ check() {
         fi
 
         # check that prefix of first line is the name of the file
-        P=$(cat "$cabane/$etendard" | cut -f 1 -d' ')
+        P=$(cat "$GASH_CABANE/$etendard" | cut -f 1 -d' ')
         if [ "$(echo $P | cut -f1 -d'#')" != "$etendard" ]
         then
             echo "L'étendard $i de la cabane n'est pas le bon."
@@ -35,7 +34,7 @@ check() {
         fi
 
         # check that suffix of file is the SHA1 of $etendard
-        S=$(cat "$cabane/etendard_$i" | cut -f 2 -d' ')
+        S=$(cat "$GASH_CABANE/etendard_$i" | cut -f 2 -d' ')
         if [ "$S" != "$(checksum $P)" ]
         then
             echo "Le fichier de l'étendard $i de la cabane est invalide."

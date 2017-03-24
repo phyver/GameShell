@@ -11,12 +11,11 @@ check() {
 
     case "$cmd" in
         *nano*)
-            local coffre=$(_coffre)
             # "cd /" permet d'éviter de valider si les étudiants ont utilisé
             # alias journal="nano journal.txt" et que le gash check est fait
             # depuis le coffre
             local f="$(cd / ; eval $(echo $cmd | sed 's/nano/readlink -f/'))"
-            if [ "$f" = "$(readlink -f $coffre/journal.txt)" ]
+            if [ "$f" = "$(readlink -f $GASH_COFFRE/journal.txt)" ]
             then
                 return 0
             else

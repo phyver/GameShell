@@ -2,7 +2,6 @@
 
 
 check() {
-    local coffre=$(_coffre)
     local cave=$GASH_HOME/Chateau/Cave
     local i=$1
     local piece="piece_$i"
@@ -16,7 +15,7 @@ check() {
     fi
 
     # check that file exists
-    local file=$(find "$coffre" -maxdepth 1 -name ".piece_*_$i")
+    local file=$(find "$GASH_COFFRE" -maxdepth 1 -name ".piece_*_$i")
     if [ ! -f "$file" ]
     then
         echo "La pièce '$(basename $file)' n'est pas dans le coffre."

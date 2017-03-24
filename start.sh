@@ -44,7 +44,64 @@ done
 
 
 
+ldap_passeport() {
+  local PASSEPORT=$1
+  local LDAP_SRV="ldap-bourget.univ-savoie.fr"
+  local LDAP="ldapsearch -h $LDAP_SRV -p 389 -xLLL -b dc=agalan,dc=org"
 
+  local LOGINS=""
+  echo -n "Logins du portail (séparés par des espaces) : "
+  read LOGINS
+  echo
+
+  for LOGIN in $LOGINS; do
+    NOM="$($LDAP uid=$LOGIN cn | grep ^cn | colrm 1 4)"
+    EMAIL="$($LDAP uid=$LOGIN mail | grep ^mail | colrm 1 6)"
+    if [ -z "$NOM" ]; then
+      [ -z "$GASH_COLOR" ] || echo -ne "\e[31m"
+      echo "Le login « $LOGIN » est introuvable..."
+      [ -z "$GASH_COLOR" ] || echo -ne "\e[0m"
+    else
+      echo " - $NOM <$EMAIL>" >> "$PASSEPORT"
+    fi
+  done
+}
+
+local_passeport() {
+  local PASSEPORT=$1
+  local NB
+  while true
+  do
+    echo -n "Combien de membres dans le groupe ? (1) "
+    read NB
+    case "$NB" in
+      "" )          NB=1; break             ;;
+      *[!0-9]* )    echo "nombre invalide"  ;;
+      *[1-9]*)      break                   ;;
+      *)            echo "nombre invalide"  ;;
+    esac
+  done
+  for I in $(seq "$NB"); do
+    NOM=""
+    while [ -z "$NOM" ]
+    do
+      echo -n "Membre $I, nom complet : "
+      read NOM
+    done
+    EMAIL=""
+    while [ -z "$EMAIL" ]
+    do
+      echo -n "Membre $I, email : "
+      read EMAIL
+    done
+    echo "  $NOM <$EMAIL>" >> $PASSEPORT
+  done
+}
+
+debug_passeport() {
+  local PASSEPORT=$1
+  echo "MODE DÉCOUVERTE (DEBUG)" >> "$PASSEPORT"
+}
 
 
 init_gash() {
@@ -63,8 +120,6 @@ init_gash() {
   export GASH_CONFIG="$GASH_BASE/.config"
   export GASH_LOCAL_BIN="$GASH_BASE/.bin"
 
-  PASSEPORT="$GASH_DATA/passeport.txt"
-
   if [ -e "$GASH_BASE/.git" ]
   then
     echo "Attention, vous êtes en train d'exécuter"
@@ -73,7 +128,7 @@ init_gash() {
     read x
     if [ "$x" != "o"  -a  "$x" != "O"  -a "$x" = "" ]
     then
-      return 0
+      return 1
     fi
   fi
 
@@ -83,7 +138,7 @@ init_gash() {
     read x
     if [ "$x" = "o"  -o  "$x" = "O"  -o "$x" = "" ]
     then
-      return 0
+      return 1
     fi
   fi
 
@@ -106,74 +161,40 @@ init_gash() {
 
   mkdir -p $GASH_TMP
 
+  # Installation des missions.
+  for MISSION in $GASH_BASE/missions/[0-9]*; do
+    if [ -f "$MISSION/static.sh" ]
+    then
+      source "$MISSION/static.sh"
+    fi
+    if [ -d "$MISSION/bin" ]
+    then
+      cp "$MISSION/bin/"* $GASH_LOCAL_BIN
+    fi
+  done
+
+
+
   # Configuration pour la génération de la fiche étudiant.
-  LDAP_SRV="ldap-bourget.univ-savoie.fr"
-  LDAP="ldapsearch -h $LDAP_SRV -p 389 -xLLL -b dc=agalan,dc=org"
+  PASSEPORT="$GASH_DATA/passeport.txt"
 
   # Message d'accueil.
   clear
   echo "============================ Initialisation du TP ============================"
-
-  # Obtention des membres du groupe
-
-  echo "== Membres du groupe =========================================================" >> "$PASSEPORT"
 
   while true
   do
     # Lecture du login des étudiants.
     if [ -n "$GASH_DEBUG_MISSION" ]
     then
-      echo " - TEST <EMAIL> (mission $GASH_DEBUG_MISSION)" >> "$PASSEPORT"
+      debug_passeport $PASSEPORT
       break
     elif [ -z "$NO_LDAP" ]
     then
-      local LOGINS=""
-      echo -n "Logins du portail (séparés par des espaces) : "
-      read LOGINS
-      echo
-
-      for LOGIN in $LOGINS; do
-        NOM="$($LDAP uid=$LOGIN cn | grep ^cn | colrm 1 4)"
-        EMAIL="$($LDAP uid=$LOGIN mail | grep ^mail | colrm 1 6)"
-        if [ -z "$NOM" ]; then
-          [ -z "$GASH_COLOR" ] || echo -ne "\e[31m"
-          echo "Le login « $LOGIN » est introuvable..."
-          [ -z "$GASH_COLOR" ] || echo -ne "\e[0m"
-        else
-          echo " - $NOM <$EMAIL>" >> "$PASSEPORT"
-        fi
-      done
+      ldap_passeport $PASSEPORT
     else
-      local NB
-      while true
-      do
-        echo -n "Combien de membres dans le groupe ? (1) "
-        read NB
-        case "$NB" in
-          "" )          NB=1; break             ;;
-          *[!0-9]* )    echo "nombre invalide"  ;;
-          *[1-9]*)      break                   ;;
-          *)            echo "nombre invalide"  ;;
-        esac
-      done
-      for I in $(seq "$NB"); do
-        NOM=""
-        while [ -z "$NOM" ]
-        do
-          echo -n "Membre $I, nom complet : "
-          read NOM
-        done
-          EMAIL=""
-        while [ -z "$EMAIL" ]
-        do
-          echo -n "Membre $I, email : "
-          read EMAIL
-        done
-        echo "  $NOM <$EMAIL>" >> $PASSEPORT
-      done
+      local_passeport $PASSEPORT
     fi
-
-    echo "==============================================================================" >> "$PASSEPORT"
 
 
     # Confirmation des informations
@@ -201,21 +222,9 @@ init_gash() {
   done
 
   # Génération de l'UID du groupe.
-  export GROUP_UID="$(sha1sum $PASSEPORT | cut -c 1-40)"
-  echo "GROUP_UID=$GROUP_UID" >> "$PASSEPORT"
-  echo $GROUP_UID > "$GASH_DATA/uid"
-
-  # Installation des missions.
-  for MISSION in $GASH_BASE/missions/[0-9]*; do
-    if [ -f "$MISSION/static.sh" ]
-    then
-      source "$MISSION/static.sh"
-    fi
-    if [ -d "$MISSION/bin" ]
-    then
-      cp "$MISSION/bin/"* $GASH_LOCAL_BIN
-    fi
-  done
+  export GASH_UID="$(sha1sum $PASSEPORT | cut -c 1-40)"
+  echo "GASH_UID=$GASH_UID" >> "$PASSEPORT"
+  echo $GASH_UID > "$GASH_DATA/uid"
 }
 
 
@@ -224,7 +233,7 @@ start_gash() {
   # Lancement du jeu.
   cd "$GASH_HOME"
 
-  export GROUP_UID=$(cat "$GASH_DATA/uid")
+  export GASH_UID=$(cat "$GASH_DATA/uid")
 
   # if [ -x "$(command -v ttyrec)" ]
   # then

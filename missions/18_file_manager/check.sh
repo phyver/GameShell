@@ -1,7 +1,6 @@
 #!/bin/bash
 
 check() {
-    local coffre=$(_coffre)
     local lab=$(find $GASH_HOME/Chateau/Cave/ -name "labyrinthe" -type d)
     local piece=$(find "$lab" -name "*bronze*")
 
@@ -11,7 +10,7 @@ check() {
         return 1
     fi
 
-    local piece=$(find $coffre -maxdepth 1 -name "*bronze*")
+    local piece=$(find $GASH_COFFRE -maxdepth 1 -name "*bronze*")
     if [ -z "$piece" ]
     then
         echo "Il n'y a pas de pièce de bronze dans votre coffre..."

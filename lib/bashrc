@@ -16,11 +16,14 @@ export PS2="> "
 export PS3=""
 export PS4="+ "
 
-
 for f in $GASH_CONFIG/*.sh
 do
     [ -f "$f" ] && source "$f"
 done
+
+
+export GASH_CABANE=$(find $GASH_HOME -iname cabane)
+export GASH_COFFRE=$(find $GASH_HOME -iname coffre)
 
 
 if [ -n "$GASH_DEBUG_MISSION" ]
