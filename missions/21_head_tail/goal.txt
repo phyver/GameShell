@@ -25,4 +25,4 @@ Commandes utilisées
     qu'elle reçoit (l'entrée standard)
 
   CMD1 | CMD2
-    fait agir CMD1 sur le résultat de CMD2
+   fait agir CMD2 sur le résultat de CMD1
