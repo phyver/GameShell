@@ -39,14 +39,6 @@ do
 done
 echo
 
-# mise à jours du répertoire courant, qui peut être supprimé lors du ménage
-case $PWD in
-    *labyrinthe*)
-        cd "$(find $GASH_HOME/Chateau/Cave/ -type d -name labyrinthe)" &&
-            echo "Vous voila téléporté à l'entrée du labyrinthe..."
-        ;;
-esac
-
 unset i j k t coul lab N r1 I J K
 
 
