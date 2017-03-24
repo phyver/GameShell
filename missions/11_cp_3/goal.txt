@@ -9,6 +9,9 @@ rien. Mettre l'original dans le coffre de la cabane et
 laisser une copie (même nom et même contenu) à la 
 place.
 
+Remarque : la copie aura une date de modification plus 
+grande à celle de l'original...
+
 
 Commande utile
 ==============
