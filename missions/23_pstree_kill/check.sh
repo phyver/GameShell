@@ -9,7 +9,7 @@ echo .
 
 #TODO : il faut aussi vérifier que les fromages sont encore là !!!
 cat=$(find $GASH_HOME/Chateau/Cave -name ".*_chat")
-nbp=$(ps -ax | grep "chat.sh" | wc -l)
+nbp=$(ps ax | grep "chat.sh" | wc -l)
 
 if [ -z "$cat" -a $nbp -eq 4 ]
 then

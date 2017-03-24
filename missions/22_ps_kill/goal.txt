@@ -8,6 +8,9 @@ Trouver et tuer le générateur de chat, avant de
 supprimer tous les chats. Attention, les chats sont 
 peut-être cachés.
 
+Remarque : le générateur de chat est un processus, 
+alors que les chats sont des fichiers...
+
 
 Commandes utilisées
 ===================
