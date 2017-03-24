@@ -8,8 +8,8 @@ cave, sans toucher aux chats
 Commandes utilisées
 ===================
 
-  <*>
-  <?>
+  *
+  ?
     le caractère "*" est un "joker" pour n'importe 
     quelle chaine de caractère
 
