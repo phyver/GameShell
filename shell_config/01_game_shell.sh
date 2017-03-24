@@ -17,8 +17,9 @@ _gash_exit() {
     local action=$1
     log_action $nb $action
     _gash_clean $nb
-    exit
+    jobs -p | xargs kill -sSIGHUP
 }
+
 trap "_gash_exit EXIT" EXIT
 trap "_gash_exit TERM" SIGTERM
 # trap "_gash_exit INT" SIGINT
