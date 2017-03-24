@@ -2,9 +2,9 @@ export REAL_HOME=$HOME
 export HOME=$GASH_HOME
 
 export HISTFILE=$GASH_DATA/history
-export HISTFILESIZE=-1
-export HISTSIZE=-1
 export HISTCONTROL="ignoreboth"
+export HISTSIZE=50000
+export HISTFILESIZE=50000
 
 for f in $GASH_CONFIG/*.sh
 do
