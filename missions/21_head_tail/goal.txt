@@ -13,10 +13,16 @@ Commandes utilisées
 ===================
 
   head -n K FICHIER
-    affiche les k premières lignes du fichier
+    affiche les K premières lignes du FICHIER
+
+    si FICHIER est omis, la commande agit sur ce 
+    qu'elle reçoit (l'entrée standard)
 
   tail -n K FICHIER
-    affiche les k dernières lignes du fichier
+    affiche les K dernières lignes du FICHIER
+
+    si FICHIER est omis, la commande agit sur ce 
+    qu'elle reçoit (l'entrée standard)
 
   CMD1 | CMD2
     fait agir CMD1 sur le résultat de CMD2

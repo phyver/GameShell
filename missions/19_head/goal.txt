@@ -11,7 +11,7 @@ Commandes utilisées
 ===================
 
   head FICHIER
-    affiche les 10 premières lignes du fichier
+    affiche les 10 premières lignes du FICHIER
 
   head -n K FICHIER
-    affiche les k premières lignes du ficher
+    affiche les K premières lignes du FICHIER

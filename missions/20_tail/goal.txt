@@ -10,7 +10,7 @@ Commandes utilisées
 ===================
 
   tail FICHIER
-    affiche les 10 dernières lignes du fichier
+    affiche les 10 dernières lignes du FICHIER
 
   tail -n K FICHIER
-    affiche les k dernières lignes du fichier
+    affiche les K dernières lignes du FICHIER
