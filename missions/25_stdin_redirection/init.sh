@@ -19,6 +19,7 @@ questions=$GASH_VAR/arith.txt
 rm -f $questions
 
 
+rm -rf $questions
 for i in $(seq 100)
 do
     a=$((1+$RANDOM%100))

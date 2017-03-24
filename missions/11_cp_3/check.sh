@@ -54,7 +54,7 @@ then
     true
 else
     unset -f check
-    find $GASH_HOME -iname "tableau" | xargs rm -f
+    find $GASH_HOME -iname "tableau" | xargs rm -rf
     false
 fi
 
