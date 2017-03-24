@@ -6,9 +6,20 @@ export HISTCONTROL="ignoreboth"
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 
+export PATH=$PATH:$GASH_BASE/bin:$GASH_BIN
+
+source $GASH_LIB/game_shell.sh
+
+
+export PS1='[mission $(_get_current_mission)] $ '
+export PS2="> "
+export PS3=""
+export PS4="+ "
+
+
 for f in $GASH_CONFIG/*.sh
 do
-    source "$f"
+    [ -f "$f" ] && source "$f"
 done
 
 

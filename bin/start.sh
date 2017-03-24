@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-cd $(dirname $0)
 
 display_help() {
 cat <<EOH
@@ -9,6 +8,7 @@ options :
   -h      ce message
   -l      local : n'essaie pas d'utiliser le serveur LDAP de l'université
   -n      mode noir et blanc : n'utilise pas les séquences ANSI pour la couleur
+  -D <n>  mode debug / découverte en partant de la mission <n>
 EOH
 }
 
@@ -49,20 +49,38 @@ done
 
 init_gash() {
   # dossiers d'installation
-  export GASH_BASE="$HOME/GameShell-info202"
+  export GASH_BASE=$(readlink -f $(dirname $0)/../)
+
+  # ces répertoires ne doivent pas être modifiés (statiques)
+  export GASH_LIB="$GASH_BASE/lib"
+  export GASH_MISSIONS="$GASH_BASE/missions"
+
+  # ces répertoires doivent être effacés en cas de réinitialisation du jeu
   export GASH_HOME="$GASH_BASE/World"
-  export GASH_VAR="$GASH_BASE/var"
-  export GASH_BIN="$GASH_BASE/bin"
-  export GASH_TMP="$GASH_BASE/tmp"
-  export GASH_MISSIONS="$GASH_VAR/missions"
-  export GASH_CONFIG="$GASH_BASE/shell_config"
-  export GASH_DATA="$GASH_VAR/session_data"
+  export GASH_DATA="$GASH_BASE/.session_data"
+  export GASH_TMP="$GASH_BASE/.tmp"
+  export GASH_VAR=$GASH_TMP       # TODO: remove
+  # avoir GASH_CONFIG dynamique, et recopier le bashrc depuis GASH_LIB ???
+  export GASH_CONFIG="$GASH_BASE/.config"
+  export GASH_BIN="$GASH_BASE/.bin"
 
   PASSEPORT="$GASH_DATA/passeport.txt"
 
-  if [ -e "$GASH_BASE" ]
+  if [ -e "$GASH_BASE/.git" ]
   then
-    echo -n "'$GASH_BASE' existe déjà... Faut-il le conserver ? [O/n] "
+    echo "Attention, vous êtes en train d'exécuter"
+    echo "GameShell dans la version de développement."
+    echo -n "Faut-il le continuer ? [o/N] "
+    read x
+    if [ "$x" != "o"  -a  "$x" != "O"  -a "$x" = "" ]
+    then
+      return 0
+    fi
+  fi
+
+  if [ -e "$GASH_DATA" ]
+  then
+    echo -n "'$GASH_DATA' existe déjà... Faut-il le conserver ? [O/n] "
     read x
     if [ "$x" = "o"  -o  "$x" = "O"  -o "$x" = "" ]
     then
@@ -70,22 +88,24 @@ init_gash() {
     fi
   fi
 
-  rm -rf $GASH_BASE
-  mkdir -p $GASH_BASE
+
+  rm -rf $GASH_HOME
+  rm -rf $GASH_DATA
+  rm -rf $GASH_TMP
+  rm -rf $GASH_CONFIG
+  rm -rf $GASH_BIN
+
   mkdir -p $GASH_HOME
-  mkdir -p $GASH_VAR
-  mkdir -p $GASH_BIN
-  mkdir -p $GASH_TMP
-  mkdir -p $GASH_MISSIONS
-  mkdir -p $GASH_CONFIG
+
   mkdir -p $GASH_DATA
-
-
   echo "# mission action date checksum" >> "$GASH_DATA/missions.log"
 
-  cp -r shell_config/* "$GASH_CONFIG"
-  cp -r bin/* "$GASH_BIN"
+  mkdir -p $GASH_CONFIG
+  cp $GASH_LIB/bashrc $GASH_CONFIG
 
+  mkdir -p $GASH_BIN
+
+  mkdir -p $GASH_TMP
 
   # Configuration pour la génération de la fiche étudiant.
   LDAP_SRV="ldap-bourget.univ-savoie.fr"
@@ -187,8 +207,7 @@ init_gash() {
   echo $GROUP_UID > "$GASH_DATA/uid"
 
   # Installation des missions.
-  for MISSION in missions/[0-9]*; do
-    cp -r "$MISSION" "$GASH_MISSIONS/"
+  for MISSION in $GASH_BASE/missions/[0-9]*; do
     if [ -f "$MISSION/static.sh" ]
     then
       source "$MISSION/static.sh"
