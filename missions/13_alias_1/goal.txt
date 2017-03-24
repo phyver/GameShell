@@ -1,0 +1,21 @@
+Objectif
+========
+
+Créer un alias 'la' qui lance la commande ``ls -A`` 
+pour afficher les fichiers cachés en seulement 2 
+lettres !
+
+Définissez l'alias
+
+  la='ls -A'
+
+et vérifiez que cela rajoute une commande ``la`` qui 
+affiche les fichiers cachés.
+
+
+Commandes utilisées
+===================
+
+  alias NOM='CMD'
+    NOM est une chaine de caractère (petite), qui sera 
+    remplacé par la commande CMD (longue)

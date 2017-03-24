@@ -1,8 +1,9 @@
 Objectif
 ========
 
-Créer un alias 'journal' pour pouvoir éditer facilement 
-votre fichier journal.
+Créer un fichier 'journal' qui contiendra votre 
+compte-rendu. Pour le moment, il suffit d'y mettre vos 
+noms et prénoms...
 
 
 Détails
@@ -15,16 +16,6 @@ compte-rendu pour le TP...
 Le compte-rendu sera un fichier appelé "journal.txt" 
 qui devra être sauvegardé dans votre coffre.
 
-Pour éviter de relancer la commande (avec le chemin 
-complet du fichier "journal.txt"), nous allons utiliser 
-un "alias".
-
-
-Mission facultative
--------------------
-
-Écrivez également un alias "la" pour lancer la commande 
-``ls -A``...
 
 
 Commandes utilisées
@@ -33,10 +24,8 @@ Commandes utilisées
   nano FICHIER
     édite le fichier dans le terminal
     Les raccourcis claviers sont affichés en bas :
+    (le symbole "^" signifie "Control")
       Control-x     pour quitter nano
       Control-o     pour sauver le fichier
       Control-w     pour rechercher dans le texte
 
-  alias NOM='CMD'
-    NOM est une chaine de caractère (petite), qui sera 
-    remplacé par la commande CMD (longue)

@@ -1,0 +1,1 @@
+alias la='ls -A'
