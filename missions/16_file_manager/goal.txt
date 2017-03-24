@@ -11,5 +11,7 @@ aller dans le répertoire
 
   GameShell-info202/World/.../labyrinthe
 
+(N'oubliez pas d'activer l'affichage des fichiers 
+cachés...)
 
 
