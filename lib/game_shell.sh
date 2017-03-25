@@ -308,7 +308,8 @@ _gash_clean() {
 _gash_help() {
   cat <<EOM
   __^__                                                          __^__
-  ( ___ )--------------------------------------------------------( ___ )
+ ( ___ )--------------------------------------------------------( ___ )
+  | / |                                                          | \ |
   | / | Commandes propres a GameShell                            | \ |
   | / | =============================                            | \ |
   | / |                                                          | \ |
@@ -332,7 +333,53 @@ _gash_help() {
   | / |   gash show                                              | \ |
   | / |     affiche l'objectif de la mission en cours            | \ |
   |___|                                                          |___|
-  (_____)--------------------------------------------------------(_____)
+ (_____)--------------------------------------------------------(_____)
+EOM
+}
+
+_gash_HELP() {
+  cat <<EOM
+  __^__                                                          __^__
+ ( ___ )--------------------------------------------------------( ___ )
+  | / |                                                          | \ |
+  | / | Commandes propres a GameShell                            | \ |
+  | / | =============================                            | \ |
+  | / |                                                          | \ |
+  | / |   gash auto    (ADMIN)                                   | \ |
+  | / |     essaie d'appliquer la résolution automatique de la   | \ |
+  | / |     mission, si elle existe.                             | \ |
+  | / |     (le "gash check" n'est pas fait automatiquement)     | \ |
+  | / |                                                          | \ |
+  | / |   gash check                                             | \ |
+  | / |     vérifie que la mission en cours est terminée         | \ |
+  | / |     Si c'est le cas, passe automatiquement à la mission  | \ |
+  | / |     suivante.                                            | \ |
+  | / |                                                          | \ |
+  | / |   gash finish                                            | \ |
+  | / |     génère le fichier à rendre à votre encadrant         | \ |
+  | / |                                                          | \ |
+  | / |   gash HELP                                              | \ |
+  | / |     affiche ce message                                   | \ |
+  | / |                                                          | \ |
+  | / |   gash help                                              | \ |
+  | / |     affiche un petit message d'aide                      | \ |
+  | / |                                                          | \ |
+  | / |   gash pass    (ADMIN)                                   | \ |
+  | / |     abandonne la mission en cours et passe à la suivante | \ |
+  | / |                                                          | \ |
+  | / |   gash restart                                           | \ |
+  | / |     ré-initialise la mission courante                    | \ |
+  | / |                                                          | \ |
+  | / |   gash save                                              | \ |
+  | / |     génère un fichier pour pouvoir transférer une partie | \ |
+  | / |                                                          | \ |
+  | / |   gash start N (ADMIN)                                   | \ |
+  | / |     passe directement à la mission N                     | \ |
+  | / |                                                          | \ |
+  | / |   gash show                                              | \ |
+  | / |     affiche l'objectif de la mission en cours            | \ |
+  |___|                                                          |___|
+ (_____)--------------------------------------------------------(_____)
 EOM
 }
 
@@ -499,7 +546,7 @@ EOM
 
   _log_action $nb "SAVE"
 
-  tarfile=$REAL_HOME/info_202_$(whoami)-SAVE.tgz
+  tarfile=$REAL_HOME/GameShell_$(whoami)-SAVE.tgz
   tar caf $tarfile -C $REAL_HOME ${GASH_BASE#$REAL_HOME/}
   cat <<EOM
 ******************************************************
@@ -542,6 +589,9 @@ EOH
       ;;
     h | he | hel | help)
       _gash_help
+      ;;
+    H | HE | HEL | HELP)
+      _gash_HELP
       ;;
     f | fi | fin | fini | finis | finish)
       _gash_finish
