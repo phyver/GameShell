@@ -40,12 +40,11 @@ check() {
 
 if check
 then
-    GASH_CABANE=$(find $GASH_HOME -iname cabane)
-    GASH_COFFRE=$(find $GASH_HOME -iname coffre)
     true
 else
     find $GASH_HOME/ -iname "*cabane*" | xargs rm -rf
     find $GASH_HOME/ -iname "*coffre*" | xargs rm -rf
+    cd
     echo "Vous voila revenu au point de départ... Veuillez recommencer la mission."
     false
 fi
