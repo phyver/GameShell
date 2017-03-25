@@ -19,6 +19,6 @@ do
     touch $terrier/${S}_rat
 done
 
-ls $terrier | grep ".*CHAT$" | sort | sha1sum | cut -c 1-40 > $GASH_TMP/chats
+\ls $terrier | grep ".*CHAT$" | sort | sha1sum | cut -c 1-40 > $GASH_TMP/chats
 
 unset terrier D S i

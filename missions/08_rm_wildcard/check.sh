@@ -1,6 +1,6 @@
 #!/bin/bash
 
-S1=$(ls $GASH_HOME/Chateau/Cave/.Terrier | checksum)
+S1=$(\ls $GASH_HOME/Chateau/Cave/.Terrier | checksum)
 S2=$(cat $GASH_TMP/chats)
 
 
