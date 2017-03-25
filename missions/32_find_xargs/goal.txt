@@ -14,7 +14,10 @@ Commandes utilisées
 ===================
 
   find
-    pour trouver des fichiers
+    permet de chercher des fichiers à partir du 
+    répertoire courant Les conditions peuvent porter 
+    sur le nom des fichiers, leur taille, leur date de 
+    création, etc.
 
   grep [OPTIONS] MOTIF FICHIER1 ... FICHIERn
     recherche un motif parmi les fichiers

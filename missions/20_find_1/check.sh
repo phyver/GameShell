@@ -30,7 +30,7 @@ check() {
         return 1
     fi
 
-    check_p "piece_d_or" && check_p "Piece_D_Or"
+    check_p "piece_d_or" && check_p "PieCe_D_Or"
 }
 
 if check

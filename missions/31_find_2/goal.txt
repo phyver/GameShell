@@ -13,9 +13,13 @@ contient bien la chaine "rubis"...
 Commandes utilisées
 ===================
 
-  find
-    pour trouver des fichiers (voir notamment l'option 
-    "-type")
+  find CONDITION
+    permet de chercher des fichiers à partir du 
+    répertoire courant Les conditions peuvent porter 
+    sur le nom des fichiers, leur taille, leur date de 
+    création, etc.
+    Une condition intéressante est :
+      -type TYPE
 
   cat FICHIER
     affiche tout le contenu d'un fichier sur le 

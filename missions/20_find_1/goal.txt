@@ -14,13 +14,23 @@ Comparez les méthodes à votre disposition pour cette
   - "find"
 
 
+Remarque : la description de la commande ``find`` est 
+volontairement succincte. Vous devrez utiliser la 
+commande ``man`` pour consulter l'aide de ``find`` et 
+comprendre comment l'utiliser.
+
 
 Commandes utilisées
 ===================
 
-  find
-    pour trouver des fichiers (voir notamment les 
-    options "-name" et "-iname")
+  find CONDITION
+    permet de chercher des fichiers à partir du 
+    répertoire courant Les conditions peuvent porter 
+    sur le nom des fichiers, leur taille, leur date de 
+    création, etc.
+    Deux conditions intéressantes sont :
+      -name MOTIF
+      -iname MOTIF
 
   man CMD
     pour consulter l'aide de la commande CMD
