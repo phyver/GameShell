@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export GASH_BASE=$(readlink -f $(dirname $0)/)
+cd $GASH_BASE
+
+source lib/utils.sh
 
 
 display_help() {
@@ -58,9 +62,7 @@ ldap_passeport() {
     NOM="$($LDAP uid=$LOGIN cn | grep ^cn | colrm 1 4)"
     EMAIL="$($LDAP uid=$LOGIN mail | grep ^mail | colrm 1 6)"
     if [ -z "$NOM" ]; then
-      [ -z "$GASH_COLOR" ] || echo -ne "\e[31m"
-      echo "Le login « $LOGIN » est introuvable..."
-      [ -z "$GASH_COLOR" ] || echo -ne "\e[0m"
+      color_echo red "Le login « $LOGIN » est introuvable..."
     else
       echo " - $NOM <$EMAIL>" >> "$PASSEPORT"
     fi
@@ -104,9 +106,21 @@ debug_passeport() {
 }
 
 
+confirm_passeport() {
+  local PASSEPORT=$1
+  echo "======================================================="
+  cat "$PASSEPORT"
+  echo "======================================================="
+  color_echo yellow "Les informations données ici ne pourront plus être modifiées."
+  echo -n "Ces informations sont elles correctes ? (O / n) "
+  local OK=""
+  read OK
+  echo
+  [ "$OK" = "" -o "$OK" = "o" -o "$OK" = "O" ]
+}
+
 init_gash() {
   # dossiers d'installation
-  export GASH_BASE=$(readlink -f $(dirname $0)/)
 
   # ces répertoires ne doivent pas être modifiés (statiques)
   export GASH_LIB="$GASH_BASE/lib"
@@ -126,20 +140,14 @@ init_gash() {
     echo "GameShell dans la version de développement."
     echo -n "Faut-il le continuer ? [o/N] "
     read x
-    if [ "$x" != "o"  -a  "$x" != "O"  -a "$x" = "" ]
-    then
-      return 1
-    fi
+    [ "$x" != "o"  -a  "$x" != "O" ] && exit 1
   fi
 
   if [ -e "$GASH_DATA" ]
   then
     echo -n "'$GASH_DATA' existe déjà... Faut-il le conserver ? [O/n] "
     read x
-    if [ "$x" = "o"  -o  "$x" = "O"  -o "$x" = "" ]
-    then
-      return 1
-    fi
+    [ "$x" = "o"  -o  "$x" = "O"  -o "$x" = "" ] && return 1
   fi
 
 
@@ -198,25 +206,12 @@ init_gash() {
 
 
     # Confirmation des informations
-    echo
-    cat "$PASSEPORT"
-    echo
-    [ -z "$GASH_COLOR" ] || echo -ne "\e[33m"
-    echo "Les informations données ici ne pourront plus être modifiées."
-    [ -z "$GASH_COLOR" ] || echo -ne "\e[0m"
-    echo -n "Ces informations sont elles correctes ? (O / n) "
-    OK=""
-    read OK
-    echo
-
-    if [ "$OK" = "" -o "$OK" = "o" -o "$OK" = "O" ]
+    if confirm_passeport $PASSEPORT
     then
       break
     else
       rm -f "$PASSEPORT"
-      [ -z "$GASH_COLOR" ] || echo -ne "\e[31m"
-      echo "Recommencez du début, sans vous tromper."
-      [ -z "$GASH_COLOR" ] || echo -ne "\e[0m"
+      color_echo yellow "Recommencez du début, sans vous tromper."
       echo
     fi
   done
@@ -239,7 +234,7 @@ start_gash() {
   # then
   #   ttyrec -a -e "bash --rcfile \"$GASH_CONFIG/bashrc\"" "$GASH_DATA/script"
   # else
-  bash --rcfile "$GASH_CONFIG/bashrc"
+  bash --rcfile "$GASH_LIB/bashrc"
   # fi
 
 }

@@ -248,7 +248,7 @@ _gash_check() {
     unset -f check
     # compare environment before / after?
 
-    if [ $exit_status ]
+    if [ "$exit_status" -eq 0 ]
     then
       echo
       color_echo green "La mission $nb est validée"
