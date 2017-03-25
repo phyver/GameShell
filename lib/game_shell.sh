@@ -3,18 +3,6 @@
 #misc functions
 source $GASH_LIB/utils.sh
 
-# fonction pour retrouver le coffre et la cabane...
-# TODO : à mettre ailleurs
-_cabane() {
-  find $GASH_HOME/Foret -maxdepth 1 -iname cabane
-}
-export -f _cabane
-
-_coffre() {
-  find $(_cabane) -maxdepth 1 -iname coffre
-}
-export -f _coffre
-
 trap "_gash_exit EXIT" EXIT
 trap "_gash_exit TERM" SIGTERM
 # trap "_gash_exit INT" SIGINT
@@ -88,7 +76,7 @@ _gash_exit() {
   local signal=$1
   _log_action $nb $signal
   _gash_clean $nb
-  jobs -p | xargs kill -sSIGHUP
+  # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
 
 
