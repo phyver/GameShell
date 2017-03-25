@@ -81,4 +81,12 @@ admin_mode() {
   return 1
 }
 
+disable_mouse() {
+  xinput --list | grep -Ei "mouse|touchpad" | grep -o "id=[0-9]*" | grep -o "[0-9]*" | xargs -IDEV xinput --disable DEV
+}
+
+enable_mouse() {
+  xinput --list | grep -Ei "mouse|touchpad" | grep -o "id=[0-9]*" | grep -o "[0-9]*" | xargs -IDEV xinput --enable DEV
+}
+
 # vim: shiftwidth=2 tabstop=2 softtabstop=2
