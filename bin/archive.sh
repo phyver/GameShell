@@ -9,7 +9,7 @@ NAME="GameShell"
 TMP_DIR=$(mktemp -d)
 mkdir $TMP_DIR/$NAME
 
-MISSIONS="??_*"
+MISSIONS="_*"
 
 # copy source files
 cp --archive $GASH_BASE/start.sh $GASH_BASE/bin $GASH_BASE/lib $TMP_DIR/$NAME
@@ -18,13 +18,17 @@ cp --archive $GASH_BASE/start.sh $GASH_BASE/bin $GASH_BASE/lib $TMP_DIR/$NAME
 mkdir $TMP_DIR/$NAME/missions
 cd $GASH_BASE/missions
 N=1
-for m in $MISSIONS
+for pattern in $MISSIONS
 do
-    N=$(echo -n "0000$N" | tail -c 2)
-    MISSION_DIR=$TMP_DIR/$NAME/missions/${N}_${m#*_}
-    mkdir $MISSION_DIR
-    cp --archive $m/* $MISSION_DIR
-    N=$((10#$N + 1))
+    for m in $(find -name "*$pattern" -type d | sort)
+    do
+        N=$(echo -n "0000$N" | tail -c 2)
+        MISSION_DIR=$TMP_DIR/$NAME/missions/${N}_${m#*_}
+        echo "$m  -->  $(basename $MISSION_DIR)"
+        mkdir $MISSION_DIR
+        cp --archive $m/* $MISSION_DIR
+        N=$((10#$N + 1))
+    done
 done
 
 # remove auto.sh files
