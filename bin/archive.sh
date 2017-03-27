@@ -16,11 +16,11 @@ cp --archive $GASH_BASE/start.sh $GASH_BASE/bin $GASH_BASE/lib $TMP_DIR/$NAME
 
 # copy missions
 mkdir $TMP_DIR/$NAME/missions
-cd $GASH_BASE/missions
+# cd $GASH_BASE/missions
 N=1
 for pattern in $MISSIONS
 do
-    for m in $(find -name "*$pattern" -type d | sort)
+    for m in $(find $GASH_BASE/missions -maxdepth 1 -name "*$pattern" -type d | sort)
     do
         N=$(echo -n "0000$N" | tail -c 2)
         MISSION_DIR=$TMP_DIR/$NAME/missions/${N}_${m#*_}
