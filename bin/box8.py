@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# encoding: UTF-8
+#!/usr/bin/env python3
 
 import sys
 import getopt
@@ -29,8 +28,11 @@ def make_box(text, margin=(0,0,0,0),
              UL="+", UM="-", UR="+",
              ML="|",         MR="|",
              LL="+", LM="-", LR="+",
-             neg_padding=(0,0,0,0)):
+             neg_padding=(0,0,0,0),
+             default_margin=(0,0,0,0)):
 
+    if margin is None:
+        margin = default_margin
 
     if isinstance(UL, str): UL = UL.split("\n")
     if isinstance(UM, str): UM = UM.split("\n")
@@ -114,6 +116,7 @@ Hash_box = {
     "ML": "#",            "MR": "#",
     "LL": "#", "LM": "#", "LR": "#",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 Star_box = {
@@ -121,6 +124,7 @@ Star_box = {
     "ML": "*",            "MR": "*",
     "LL": "*", "LM": "*", "LR": "*",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 ADA_box = {
@@ -128,6 +132,7 @@ ADA_box = {
     "ML": "--",            "MR": "--",
     "LL": "--", "LM": "-", "LR": "--",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 ADA2_box = {
@@ -135,6 +140,7 @@ ADA2_box = {
     "ML": "--",            "MR": "",
     "LL": "--", "LM": "-", "LR": "",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 C_box = {
@@ -142,20 +148,23 @@ C_box = {
     "ML": "/*",            "MR": "*/",
     "LL": "/*", "LM": "*", "LR": "*/",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 C2_box = {
     "UL": "/*", "UM": " ", "UR": "*/",
     "ML": "/*",            "MR": "*/",
     "LL": "/*", "LM": " ", "LR": "*/",
-    "neg_padding": (0, 0, 0, 0),
+    "neg_padding": (1, 0, 1, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 C3_box = {
     "UL": "/*", "UM": " ", "UR": "*",
     "ML": " *",            "MR": "*",
     "LL": " *", "LM": " ", "LR": "*/",
-    "neg_padding": (0, 0, 0, 0),
+    "neg_padding": (1, 0, 1, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 HTML_box = {
@@ -163,13 +172,15 @@ HTML_box = {
     "ML": "<!-- ",            "MR": " -->",
     "LL": "<!-- ", "LM": "-", "LR": " -->",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 HTML2_box = {
     "UL": "<!-- ", "UM": " ", "UR": " -->",
     "ML": "<!-- ",            "MR": " -->",
     "LL": "<!-- ", "LM": " ", "LR": " -->",
-    "neg_padding": (0, 0, 0, 0),
+    "neg_padding": (1, 0, 1, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 CAML_box = {
@@ -177,6 +188,7 @@ CAML_box = {
     "ML": "(*",            "MR": "*/",
     "LL": "(*", "LM": "*", "LR": "*/",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 Ascii_box = {
@@ -184,6 +196,7 @@ Ascii_box = {
     "ML": "|",            "MR": "|",
     "LL": "+", "LM": "-", "LR": "+",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 Unicode_simple_box = {
@@ -191,9 +204,44 @@ Unicode_simple_box = {
     "ML": "│",            "MR": "│",
     "LL": "└", "LM": "─", "LR": "┘",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (1, 1, 1, 1),
 }
 
-Test = {
+Inverted_corners_box = {
+    "UL": [
+        "  |",
+        "--+",
+    ],
+    "UR": [
+        "|  ",
+        "+--",
+    ],
+    "UM": [
+        " ",
+        "-",
+    ],
+    "LL": [
+        "--+",
+        "  |",
+    ],
+    "LR": [
+        "+--",
+        "|  ",
+    ],
+    "LM": [
+        "-",
+        " ",
+    ],
+    "ML": [
+        "  |",
+    ],
+    "MR": [
+        "|  ",
+    ],
+    "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
+}
+Unicode_inverted_corners_box = {
     "UL": [
         " │",
         "─┼",
@@ -225,6 +273,7 @@ Test = {
         "│ ",
     ],
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 Unicode_round_box = {
@@ -232,6 +281,7 @@ Unicode_round_box = {
     "ML": "│",            "MR": "│",
     "LL": "╰", "LM": "─", "LR": "╯",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 Unicode_bold_box = {
@@ -239,6 +289,7 @@ Unicode_bold_box = {
     "ML": "┃",            "MR": "┃",
     "LL": "┗", "LM": "━", "LR": "┛",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 Unicode_double_box = {
@@ -246,6 +297,7 @@ Unicode_double_box = {
     "ML": "║",            "MR": "║",
     "LL": "╚", "LM": "═", "LR": "╝",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 Unicode_shadow_box = {
@@ -253,6 +305,7 @@ Unicode_shadow_box = {
     "ML": "│",            "MR": "┃",
     "LL": "┕", "LM": "━", "LR": "┛",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 Unicode_shadow2_box = {
@@ -260,6 +313,7 @@ Unicode_shadow2_box = {
     "ML": "│",            "MR": "║",
     "LL": "╘", "LM": "═", "LR": "╝",
     "neg_padding": (0, 0, 0, 0),
+    "default_margin": (0, 1, 0, 1),
 }
 
 Parchment_box = {
@@ -302,7 +356,8 @@ Parchment_box = {
     "MR": [
         r" |.",
     ],
-    "neg_padding": (3, 0, 0, 2)
+    "neg_padding": (3, 1, 0, 3),
+    "default_margin": (1, 1, 0, 1),
 }
 
 
@@ -338,7 +393,8 @@ Scroll_box = {
     "MR": [
         r" | \ | ",
     ],
-    "neg_padding": (0, 0, 0, 0)
+    "neg_padding": (0, 1, 1, 1),
+    "default_margin": (1, 2, 1, 2),
 }
 
 Parchment2_box = {
@@ -378,7 +434,8 @@ Parchment2_box = {
     "MR": [
         r"  |",
     ],
-    "neg_padding": (0, 0, 0, 0)
+    "neg_padding": (0, 2, 0, 0),
+    "default_margin": (1, 1, 1, 1),
 }
 
 Parchment3_box = {
@@ -421,7 +478,8 @@ Parchment3_box = {
     "MR": [
         r"      |",
     ],
-    "neg_padding": (1, 5, 1, 0)
+    "neg_padding": (1, 5, 1, 0),
+    "default_margin": (1, 1, 1, 1),
 }
 # cf http://ascii.co.uk/art/scroll
 
@@ -448,7 +506,8 @@ BOXES = {
     "Parchment2": Parchment2_box,
     "Parchment3": Parchment3_box,
     "Scroll": Scroll_box,
-    "Test": Test,
+    "Unicode_inverted": Unicode_inverted_corners_box,
+    "Inverted": Inverted_corners_box,
 }
 
 
@@ -479,7 +538,7 @@ def main():
     # parsing the command line arguments
     short_options = "hb:lm:"
 
-    long_options = ["help", "box=", "list", "margin", "lorem"]
+    long_options = ["help", "box=", "list", "margin=", "lorem"]
 
     try:
         opts, args = getopt.getopt(sys.argv[1:], short_options, long_options)
@@ -488,7 +547,7 @@ def main():
 
     # default values
     box = "ASCII"
-    margin = (0,0,0,0)
+    margin = None
     text = None
 
     for o, a in opts:
@@ -502,25 +561,27 @@ Options:
    -b <design>, --box=<design>      choose box design
    -l, --list                       show available designs
    -m <...>, --margin=<...>         adds margin around text (top, right, bottom, left)
-                                        default: 0,0,0,0
+                                        default: use design's default
    --lorem                          test a design with Lorem text
 """.format(prog=sys.argv[0]))
             sys.exit(0)
         elif o in ["-l", "--list"]:
-            for b in BOXES:
+            designs = sorted(list(BOXES.keys()))
+            for b in designs:
                 print("*"*72)
-                print("design: '{}'".format(b))
+                m = ",".join(map(str, BOXES[b]["default_margin"]))
+                print("design: '{}' (default margin={})".format(b, m))
                 print("")
-                Box(LOREM, (0,0,0,0), BOXES[b])
+                Box(LOREM, None, BOXES[b])
                 print("")
             sys.exit(0)
         elif o in ["-m", "--margin"]:
             try:
-                tmp = map(int, a.split(","))
+                tmp = tuple(map(int, a.split(",")))
                 assert len(tmp) == 4
-                margin = tuple(tmp)
+                margin = tmp
             except Exception as err:
-                error("Invalid margin: '{}'".format(a), 1)
+                error("Invalid margin: '{}' ({})".format(a, err), 1)
         elif o in ["-b", "--box"]:
             if a in BOXES:
                 box = a
