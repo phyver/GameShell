@@ -23,7 +23,7 @@ do
     esac
 done
 
-t=$(date --date=$YYYY-$MM-$DD +%A)
+t=$(date --date="$YYYY-$MM-$DD" +%A)
 
 if [ "$t" = "$s" ]
 then

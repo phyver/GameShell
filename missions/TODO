@@ -1,3 +1,4 @@
+tr
 ls -l
 ls *   vs  ls -d *
 PATH
@@ -8,7 +9,6 @@ wget / curl
 tar / zip
 expressions régulières et grep
 touch pour créer des fichiers vide / mettre la date à jours
-alias
 script: boucles sur les fichiers
 gestion de historique
 pushd popd
@@ -19,6 +19,3 @@ liens symboliques
 rq
 
 ``bind 'set disable-completion on'`` pour désactiver la completion,  ``bind ... off`` pour la réactiver
-
-Use xinput -- list to find out your mouse devices and disable it:
-$ xinput --list | grep -Ei "mouse|touchpad" | grep -o "id=[0-9]*" | grep -o "[0-9]*" | xargs -IDEV xinput --disable DEV

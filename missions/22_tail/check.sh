@@ -6,10 +6,10 @@ check() {
 
     local pc=$(fc -nl -2 -2 | grep 'tail')
 
-    local goal=$(readlink -f $GASH_HOME/Montagne/Grotte)
+    local goal=$(readlink -f "$GASH_HOME/Montagne/Grotte")
     local current=$(readlink -f "$PWD")
 
-    local expected=$(tail -n 4 $GASH_HOME/Montagne/Grotte/ingredients_potion)
+    local expected=$(tail -n 4 "$GASH_HOME/Montagne/Grotte/ingredients_potion")
     local res=$($pc)
 
     if [ "$goal" != "$current" ]
@@ -19,7 +19,7 @@ check() {
     fi
     if [ -z "$pc" ]
     then
-        echo "Vous n'avez pas utilisé la commande ``tail``"
+        echo "Vous n'avez pas utilisé la commande tail"
         return 1
     fi
     if [ "$res" != "$expected" ]

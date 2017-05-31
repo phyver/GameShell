@@ -8,7 +8,7 @@ sleep 1
 echo .
 
 
-cat=$(find $GASH_HOME/Chateau/Cave -name ".*_chat")
+cat=$(find "$GASH_HOME/Chateau/Cave" -name ".*_chat")
 
 if [ -z "$cat" ]
 then

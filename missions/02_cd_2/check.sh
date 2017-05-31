@@ -1,9 +1,9 @@
 #!/bin/bash
 
-goal=$(readlink -f $GASH_HOME/Chateau/Cave)
+goal=$(readlink -f "$GASH_HOME/Chateau/Cave")
 current=$(pwd | xargs readlink -f)
 
-if [ $goal = $current ]
+if [ "$goal" = "$current" ]
 then
     unset goal current
     true

@@ -14,25 +14,27 @@ check() {
             # "cd /" permet d'éviter de valider si les étudiants ont utilisé
             # alias journal="nano journal.txt" et que le gash check est fait
             # depuis le coffre
-            local f="$(cd / ; eval $(echo $cmd | sed 's/nano/readlink -f/'))"
-            if [ "$f" = "$(readlink -f $GASH_COFFRE/journal.txt)" ]
+            # local f="$(cd / ; eval $(echo "$cmd" | sed 's/nano/readlink -f/'))"
+            local f="$(cd / ; eval "${cmd//nano/readlink -f}")"
+            if [ "$f" = "$(readlink -f "$GASH_COFFRE/journal.txt")" ]
             then
                 return 0
             else
                 # echo "Votre alias utilise le fichier '~${f#$HOME}' qui n'est pas correct."
-                f="$(echo $cmd | sed 's/ *nano *//')"
+                # f="$(echo "$cmd" | sed 's/ *nano *//')"
+                f="${cmd// *nano */}"
                 echo "Votre alias semble n'utiliser pas le bon fichier ($f)."
                 echo "Vérifiez que vous donnez un chemin absolu..."
                 unalias journal
-                find $GASH_HOME -iname "*journal*" | xargs rm -rf
+                find "$GASH_HOME" -iname "*journal*" -print0 | xargs -0 rm -rf
                 return 1
             fi
 
             ;;
         *)
-            echo "Votre alias n'utilise pas la commande ``nano`` !"
+            echo "Votre alias n'utilise pas la commande nano !"
             unalias journal
-            find $GASH_HOME -iname "*journal*" | xargs rm -rf
+            find "$GASH_HOME" -iname "*journal*" -print 0 | xargs -0 rm -rf
             return 1
             ;;
     esac

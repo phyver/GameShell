@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export GASH_BASE=$(readlink -f $(dirname $0)/)
-cd $GASH_BASE
+export GASH_BASE=$(readlink -f "$(dirname "$0")"/)
+cd "$GASH_BASE"
 
 source lib/utils.sh
 
@@ -59,8 +59,8 @@ ldap_passeport() {
   echo
 
   for LOGIN in $LOGINS; do
-    NOM="$($LDAP uid=$LOGIN cn | grep ^cn | colrm 1 4)"
-    EMAIL="$($LDAP uid=$LOGIN mail | grep ^mail | colrm 1 6)"
+    NOM="$("$LDAP" uid="$LOGIN" cn | grep ^cn | colrm 1 4)"
+    EMAIL="$("$LDAP" uid="$LOGIN" mail | grep ^mail | colrm 1 6)"
     if [ -z "$NOM" ]; then
       color_echo red "Le login « $LOGIN » est introuvable..."
     else
@@ -96,7 +96,7 @@ local_passeport() {
       echo -n "Membre $I, email : "
       read EMAIL
     done
-    echo "  $NOM <$EMAIL>" >> $PASSEPORT
+    echo "  $NOM <$EMAIL>" >> "$PASSEPORT"
   done
 }
 
@@ -151,23 +151,23 @@ init_gash() {
   fi
 
 
-  rm -rf $GASH_HOME
-  rm -rf $GASH_DATA
-  rm -rf $GASH_TMP
-  rm -rf $GASH_CONFIG
-  rm -rf $GASH_LOCAL_BIN
+  rm -rf "$GASH_HOME"
+  rm -rf "$GASH_DATA"
+  rm -rf "$GASH_TMP"
+  rm -rf "$GASH_CONFIG"
+  rm -rf "$GASH_LOCAL_BIN"
 
-  mkdir -p $GASH_HOME
+  mkdir -p "$GASH_HOME"
 
-  mkdir -p $GASH_DATA
+  mkdir -p "$GASH_DATA"
   echo "# mission action date checksum" >> "$GASH_DATA/missions.log"
 
-  mkdir -p $GASH_CONFIG
-  cp $GASH_LIB/bashrc $GASH_CONFIG
+  mkdir -p "$GASH_CONFIG"
+  cp "$GASH_LIB/bashrc" "$GASH_CONFIG"
 
-  mkdir -p $GASH_LOCAL_BIN
+  mkdir -p "$GASH_LOCAL_BIN"
 
-  mkdir -p $GASH_TMP
+  mkdir -p "$GASH_TMP"
 
   # Installation des missions.
   for MISSION in $GASH_BASE/missions/[0-9]*; do
@@ -177,7 +177,7 @@ init_gash() {
     fi
     if [ -d "$MISSION/bin" ]
     then
-      cp "$MISSION/bin/"* $GASH_LOCAL_BIN
+      cp "$MISSION/bin/"* "$GASH_LOCAL_BIN"
     fi
   done
 
@@ -195,18 +195,18 @@ init_gash() {
     # Lecture du login des étudiants.
     if [ -n "$GASH_DEBUG_MISSION" ]
     then
-      debug_passeport $PASSEPORT
+      debug_passeport "$PASSEPORT"
       break
     elif [ -z "$NO_LDAP" ]
     then
-      ldap_passeport $PASSEPORT
+      ldap_passeport "$PASSEPORT"
     else
-      local_passeport $PASSEPORT
+      local_passeport "$PASSEPORT"
     fi
 
 
     # Confirmation des informations
-    if confirm_passeport $PASSEPORT
+    if confirm_passeport "$PASSEPORT"
     then
       break
     else
@@ -217,9 +217,9 @@ init_gash() {
   done
 
   # Génération de l'UID du groupe.
-  export GASH_UID="$(sha1sum $PASSEPORT | cut -c 1-40)"
+  export GASH_UID="$(sha1sum "$PASSEPORT" | cut -c 1-40)"
   echo "GASH_UID=$GASH_UID" >> "$PASSEPORT"
-  echo $GASH_UID > "$GASH_DATA/uid"
+  echo "$GASH_UID" > "$GASH_DATA/uid"
 }
 
 

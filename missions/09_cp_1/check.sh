@@ -20,28 +20,28 @@ check() {
         fi
 
         # check that prefix of first line is the name of the file
-        P=$(cat "$GASH_CABANE/$etendard" | cut -f 1 -d' ')
-        if [ "$(echo $P | cut -f1 -d'#')" != "$etendard" ]
+        P=$(cut -f 1 -d' ' "$GASH_CABANE/$etendard")
+        if [ "$(echo "$P" | cut -f1 -d'#')" != "$etendard" ]
         then
             echo "L'étendard $i de la cabane n'est pas le bon."
             return 1
         fi
-        P=$(cat "$entree/$etendard" | cut -f 1 -d' ')
-        if [ "$(echo $P | cut -f1 -d'#')" != "$etendard" ]
+        P=$(cut -f 1 -d' ' "$entree/$etendard")
+        if [ "$(echo "$P" | cut -f1 -d'#')" != "$etendard" ]
         then
             echo "L'étendard $i de l'entrée n'est pas le bon."
             return 1
         fi
 
         # check that suffix of file is the SHA1 of $etendard
-        S=$(cat "$GASH_CABANE/etendard_$i" | cut -f 2 -d' ')
-        if [ "$S" != "$(checksum $P)" ]
+        S=$(cut -f 2 -d' ' "$GASH_CABANE/etendard_$i")
+        if [ "$S" != "$(checksum "$P")" ]
         then
             echo "Le fichier de l'étendard $i de la cabane est invalide."
             return 1
         fi
-        S=$(cat "$entree/etendard_$i" | cut -f 2 -d' ')
-        if [ "$S" != "$(checksum $P)" ]
+        S=$(cut -f 2 -d' ' "$entree/etendard_$i")
+        if [ "$S" != "$(checksum "$P")" ]
         then
             echo "Le fichier de l'étendard $i de l'entrée est invalide."
             return 1
@@ -57,7 +57,7 @@ then
     true
 else
     unset -f check
-    find $GASH_HOME -name "etendard_?" -type f | xargs rm -f
+    find "$GASH_HOME" -name "etendard_?" -type f -print0 | xargs -0 rm -f
     false
 fi
 

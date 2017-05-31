@@ -5,7 +5,7 @@
 
 check () {
 
-    if ! diff -q $GASH_TMP/dans_entree <(\ls $GASH_HOME/Chateau/Entree | sort) > /dev/null
+    if ! diff -q "$GASH_TMP/dans_entree" <(command ls "$GASH_HOME/Chateau/Entree" | sort) > /dev/null
     then
         echo "Vous avez changé le contenu de l'entrée !"
         return 1
@@ -17,13 +17,13 @@ check () {
         return 1
     fi
 
-    if \ls "$GASH_CABANE" | grep -Eq "_foin|_gravas|_detritus"
+    if command ls "$GASH_CABANE" | grep -Eq "_foin|_gravas|_detritus"
     then
         echo "Je ne voulais que les ornements de l'entrée !"
         return 1
     fi
 
-    if ! diff -q <(grep "_ornement" "$GASH_TMP/dans_entree") <(\ls "$GASH_CABANE" | sort | grep "_ornement") > /dev/null
+    if ! diff -q <(grep "_ornement" "$GASH_TMP/dans_entree") <(command ls "$GASH_CABANE" | sort | grep "_ornement") > /dev/null
     then
         echo "Je voulais tous les ornements de l'entrée !"
         return 1
@@ -34,12 +34,12 @@ check () {
 if check
 then
     unset -f check
-    rm -f $GASH_TMP/dans_entree
+    rm -f "$GASH_TMP/dans_entree"
     true
 else
-    rm -f $GASH_TMP/dans_entree
-    find $GASH_HOME/Chateau/Entree/ -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" | xargs rm -f
-    find $GASH_CABANE -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" | xargs rm -f
+    rm -f "$GASH_TMP/dans_entree"
+    find "$GASH_HOME/Chateau/Entree/" -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" -print0 | xargs -0 rm -f
+    find "$GASH_CABANE" -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" -print0 | xargs -0 rm -f
     unset -f check
     false
 fi

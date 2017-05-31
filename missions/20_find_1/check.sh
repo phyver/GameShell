@@ -2,7 +2,7 @@
 
 check_p() {
     local file=$1
-    local path=$(find $GASH_COFFRE -name "*$file" -type f)
+    local path=$(find "$GASH_COFFRE" -name "*$file" -type f)
 
     if [ -z "$path" ]
     then
@@ -17,14 +17,14 @@ check_p() {
 }
 
 check() {
-    local lab=$(find $GASH_HOME/Chateau/Cave -name labyrinthe -type d)
+    local lab=$(find "$GASH_HOME/Chateau/Cave" -name labyrinthe -type d)
     local nb=$(find "$lab" -iname "piece_d_or" -type f | wc -l)
-    if [ $nb -gt 2 ]
+    if [ "$nb" -gt 2 ]
     then
         echo "Il y a trop de pièces dans le labyrinthe !!!"
         return 1
     fi
-    if [ $nb -ne 0 ]
+    if [ "$nb" -ne 0 ]
     then
         echo "Il reste des pièces dans le labyrinthe "
         return 1
@@ -39,7 +39,7 @@ then
     true
 else
     unset -f check check_p
-    find $GASH_HOME -iname piece_d_or | xargs rm -f
+    find "$GASH_HOME" -iname piece_d_or -print0 | xargs -0 rm -f
     false
 fi
 

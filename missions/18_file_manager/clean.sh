@@ -4,12 +4,12 @@
 # mise à jours du répertoire courant, qui pourrait être supprimé lors du ménage
 case $PWD in
     *labyrinthe*)
-        cd "$(find $GASH_HOME/Chateau/Cave/ -type d -name '*Long*Couloir*')" &&
+        cd "$(find "$GASH_HOME/Chateau/Cave/" -type d -name '*Long*Couloir*')" &&
             echo "Vous voila téléporté à l'entrée du labyrinthe..."
         ;;
 esac
 
-rm -f $GASH_TMP/bronze
-find $GASH_HOME -iname bronze | xargs rm -f
-find $GASH_HOME/Chateau/Cave/ -name labyrinthe -type d -print0 | xargs -0 rm -rf
+rm -f "$GASH_TMP/bronze"
+find "$GASH_HOME" -iname bronze -print0 | xargs rm -f
+find "$GASH_HOME/Chateau/Cave/" -name labyrinthe -type d -print0 | xargs -0 rm -rf
 

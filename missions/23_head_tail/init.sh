@@ -15,6 +15,6 @@ echo " 1. Ajouter les 3 mesures de sisymbre dans le chaudron.
 13. Ajouter la 3ème mesure de chrysopes dans le chaudron.
 14. Remuer 3 fois dans le sens inverse des aiguilles d'une montre.
 15. Séparer la potion en doses individuelles si nécessaire, puis rajouter le bout de la personne en laquelle vous voulez vous transformer.
-16. Agiter sa baguette pour compléter la potion." > $GASH_HOME/Montagne/Grotte/recette_potion
+16. Agiter sa baguette pour compléter la potion." > "$GASH_HOME/Montagne/Grotte/recette_potion"
 
 

@@ -6,11 +6,11 @@ check() {
 
     local pc=$(fc -nl -2 -2 | grep 'head')
 
-    local goal=$(readlink -f $GASH_HOME/Montagne/Grotte)
+    local goal=$(readlink -f "$GASH_HOME/Montagne/Grotte")
     local current=$(readlink -f "$PWD")
 
-    local expected=$(head -n 4 $GASH_HOME/Montagne/Grotte/ingredients_potion)
-    local res=$($pc)
+    local expected=$(head -n 4 "$GASH_HOME/Montagne/Grotte/ingredients_potion")
+    local res=$("$pc")
 
     if [ "$goal" != "$current" ]
     then
@@ -19,7 +19,7 @@ check() {
     fi
     if [ -z "$pc" ]
     then
-        echo "Vous n'avez pas utilisé la commande ``head``"
+        echo "Vous n'avez pas utilisé la commande head"
         return 1
     fi
     if [ "$res" != "$expected" ]

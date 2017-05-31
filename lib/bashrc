@@ -8,7 +8,7 @@ export HISTFILESIZE=50000
 
 export PATH=$PATH:$GASH_BASE/bin:$GASH_BIN:$GASH_LOCAL_BIN
 
-source $GASH_LIB/game_shell.sh
+source "$GASH_LIB/game_shell.sh"
 
 
 export PS1='[mission $(_get_current_mission)] $ '
@@ -24,7 +24,7 @@ done
 
 if [ -n "$GASH_DEBUG_MISSION" ]
 then
-    _gash_start $GASH_DEBUG_MISSION
+    _gash_start "$GASH_DEBUG_MISSION"
 else
     cat <<EOM
 ************************************************
@@ -43,6 +43,6 @@ EOM
     then
         _gash_start 1
     else
-        _gash_restart $n
+        _gash_restart "$n"
     fi
 fi

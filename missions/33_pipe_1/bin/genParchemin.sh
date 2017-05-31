@@ -4,6 +4,7 @@ gen() {
 
     local nb_lignes=$1
     local pourcent_paye=$2
+    local pourcent_roi=$3
 
     local prenoms=( 'Abdallah' 'Abdel' 'Adelaide' 'Adrien' 'Agnes' 'Alaric'
         'Ali' 'Ali' 'Alienor' 'Alix' 'Alphonse' 'Alphonse' 'Alwin' 'Amaury'
@@ -65,16 +66,28 @@ gen() {
         'une épingle' 'une ceinture' 'un heaume' )
 
     local i prenom nom objet prix paye
+    local dette=0
     for i in $(seq $nb_lignes)
     do
-        prenom=${prenoms[$(( 16#$RANDOM % ${#prenoms[@]}))]}
-        nom=${noms[$(( 16#$RANDOM % ${#noms[@]}))]}
         objet=${objets[$(( 16#$RANDOM % ${#objets[@]}))]}
         prix=$(( $RANDOM % 5 + 2))
-        paye=$([ $(($RANDOM % 100)) -le $pourcent_paye ] && echo "-- PAYÉ")
-        echo "$prenom $nom m'a acheté $objet pour $prix piécettes $paye"
+        paye=$([ $(($RANDOM % 100)) -le $pourcent_paye ] && echo " -- PAYÉ")
+
+        if [ $(( $RANDOM % 100 )) -le $pourcent_roi ]
+        then
+            prenom="Le"
+            nom="Duc"
+            if [ -z "$paye" ]
+            then
+                dette=$(( $dette + $prix ))
+            fi
+        else
+            prenom=${prenoms[$(( 16#$RANDOM % ${#prenoms[@]}))]}
+            nom=${noms[$(( 16#$RANDOM % ${#noms[@]}))]}
+        fi
+        echo "$prenom $nom m'a acheté $objet pour $prix piécettes$paye"
     done
 
 }
 
-gen 100 5
+gen $1 $2 $3

@@ -6,11 +6,11 @@ check() {
 
     local pc=$(fc -nl -2 -2 | grep '|')
 
-    local goal=$(readlink -f $GASH_HOME/Montagne/Grotte)
+    local goal=$(readlink -f "$GASH_HOME/Montagne/Grotte")
     local current=$(readlink -f "$PWD")
 
-    local expected=$(head -n 11 $GASH_HOME/Montagne/Grotte/recette_potion | tail -n 3)
-    local res=$(eval $pc)
+    local expected=$(head -n 11 "$GASH_HOME/Montagne/Grotte/recette_potion" | tail -n 3)
+    local res=$(eval "$pc")
 
     if [ "$goal" != "$current" ]
     then
@@ -19,7 +19,7 @@ check() {
     fi
     if [ -z "$pc" ]
     then
-        echo "Vous n'avez pas utilisé l'opérateur ``|``"
+        echo "Vous n'avez pas utilisé l'opérateur |"
         return 1
     fi
     if [ "$res" != "$expected" ]

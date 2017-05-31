@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 #misc functions
-source $GASH_LIB/utils.sh
+source "$GASH_LIB/utils.sh"
 
 trap "_gash_exit EXIT" EXIT
 trap "_gash_exit TERM" SIGTERM
@@ -21,7 +21,7 @@ _log_action() {
 
 # get the last started mission
 _get_current_mission() {
-  awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' $GASH_DATA/missions.log
+  awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GASH_DATA/missions.log"
 }
 
 
@@ -38,7 +38,7 @@ _get_next_mission() {
       break
     fi
   done
-  echo $nb
+  echo "$nb"
 }
 
 
@@ -47,13 +47,13 @@ _get_mission_nb() {
   local nb=$1
   if [ -d $GASH_MISSIONS/${nb}_*/ ]
   then
-    echo $nb
+    echo "$nb"
   elif [ -d $GASH_MISSIONS/0${nb}_*/ ]
   then
-    echo 0$nb
+    echo "0$nb"
   elif [ -d $GASH_MISSIONS/00${nb}_*/ ]
   then
-    echo 00$nb
+    echo "00$nb"
   else
     echo ""
   fi
@@ -63,9 +63,9 @@ _get_mission_nb() {
 # get the mission directory
 _get_mission_dir() {
   local nb=$1
-  if [ -d $GASH_MISSIONS/${nb}_*/ ]
+  if [ -d $GASH_MISSIONS/${nb}_* ]
   then
-    echo $GASH_MISSIONS/${nb}_*/
+    echo "$GASH_MISSIONS/${nb}"_*
   fi
 }
 
@@ -74,23 +74,24 @@ _get_mission_dir() {
 _gash_exit() {
   local nb=$(_get_current_mission)
   local signal=$1
-  _log_action $nb $signal
-  _gash_clean $nb
+  _log_action "$nb" "$signal"
+  _gash_clean "$nb"
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
 
 
 # display the goal of a mission given by its number
 _gash_show() {
-  local nb="$(_get_mission_nb $1)"
+  local nb="$(_get_mission_nb "$1")"
   if [ -z "$nb" ]
   then
     echo "Problème : mauvaise mission '$nb' (_gash_show)"
     return 1
   fi
 
-  local mission="$(_get_mission_dir $nb)"
+  local mission="$(_get_mission_dir "$nb")"
 
+  echo "$mission/goal.txt"
   if [ -f "$mission/goal.txt" ]
   then
     parchment "$mission/goal.txt"
@@ -117,7 +118,7 @@ _gash_start() {
     return 1
   fi
 
-  local mission="$(_get_mission_dir $nb)"
+  local mission="$(_get_mission_dir "$nb")"
 
   if [ -f "$mission/init.sh" ]
   then
@@ -129,45 +130,45 @@ _gash_start() {
     unset -f init
   fi
 
-  _log_action $nb "START"
+  _log_action "$nb" "START"
 }
 
 
 # restart a mission given by its number
 _gash_restart() {
-  local nb="$(_get_mission_nb $1)"
+  local nb="$(_get_mission_nb "$1")"
   if [ -z "$nb" ]
   then
     echo "Problème : mauvaise mission '$nb' (_gash_restart)"
     return 1
   fi
 
-  local mission="$(_get_mission_dir $nb)"
+  local mission="$(_get_mission_dir "$nb")"
 
   if [ -f "$mission/init.sh" ]
   then
     source "$mission/init.sh"
   fi
 
-  _log_action $nb "RESTART"
+  _log_action "$nb" "RESTART"
 }
 
 
 # stop a mission given by its number
 _gash_pass() {
-  local nb="$(_get_mission_nb $1)"
+  local nb="$(_get_mission_nb "$1")"
   if [ -z "$nb" ]
   then
     echo "Problème : mauvaise mission '$nb' (_gash_pass)"
     return 1
   fi
 
-  _log_action $nb "PASS"
+  _log_action "$nb" "PASS"
 
-  _gash_clean $nb
+  _gash_clean "$nb"
   color_echo yellow "Vous avez abandonné la mission $nb..."
 
-  nb=$(_get_next_mission $nb)
+  nb=$(_get_next_mission "$nb")
 
   _gash_start "$nb"
   cat <<EOM
@@ -183,7 +184,7 @@ EOM
 _gash_auto() {
   local nb=$1
 
-  nb="$(_get_mission_nb $nb)"
+  nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
     echo "Problème : mauvaise mission '$nb' (_gash_check)"
@@ -195,7 +196,7 @@ _gash_auto() {
   if [ -f "$mission/auto.sh" ]
   then
     source "$mission/auto.sh"
-    _log_action $nb "AUTO"
+    _log_action "$nb" "AUTO"
     return 0
   else
     echo "Cette mission n'a pas de script automatique..."
@@ -208,7 +209,7 @@ _gash_auto() {
 _gash_check() {
   local nb=$1
 
-  nb="$(_get_mission_nb $nb)"
+  nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
     echo "Problème : mauvaise mission '$nb' (_gash_check)"
@@ -242,18 +243,18 @@ _gash_check() {
       color_echo green "La mission $nb est validée"
       echo
 
-      _log_action $nb "CHECK_OK"
+      _log_action "$nb" "CHECK_OK"
 
-      _gash_clean $nb
+      _gash_clean "$nb"
 
       # récupération de la mission suivante
-      nb=$(_get_next_mission $nb)
+      nb=$(_get_next_mission "$nb")
 
       if [ -f "$mission/treasure.sh" ]
       then
         [ -f "$mission/treasure.txt" ] && cat "$mission/treasure.txt"
         source "$mission/treasure.sh"
-        cp "$mission/treasure.sh" "$GASH_CONFIG/$(basename $mission /).sh"
+        cp "$mission/treasure.sh" "$GASH_CONFIG/$(basename "$mission" /).sh"
       fi
       _gash_start "$nb"
       cat <<EOM
@@ -268,23 +269,23 @@ EOM
       color_echo red "La mission $nb n'est **pas** validée."
       echo
 
-      _log_action $nb "CHECK_OOPS"
+      _log_action "$nb" "CHECK_OOPS"
 
-      _gash_clean $nb
+      _gash_clean "$nb"
       _gash_restart "$nb"
     fi
   fi
 }
 
 _gash_clean() {
-  local nb="$(_get_mission_nb $1)"
+  local nb="$(_get_mission_nb "$1")"
   if [ -z "$nb" ]
   then
     echo "Problème : mauvaise mission '$nb' (_gash_show)"
     return 1
   fi
 
-  local mission="$(_get_mission_dir $nb)"
+  local mission="$(_get_mission_dir "$nb")"
 
   if [ -f "$mission/clean.sh" ]
   then
@@ -372,7 +373,7 @@ EOM
 }
 
 _gash_finish() {
-  if $(jobs | grep -iq stopped)
+  if jobs | grep -iq stopped
   then
     cat <<EOM
 ATTENTION, vous avez des tâches en pause...
@@ -390,10 +391,10 @@ EOM
     fi
   fi
 
-  _log_action $nb "FINISH"
+  _log_action "$nb" "FINISH"
 
-  nb_journals=$(find $GASH_HOME -iname "*journal*" | wc -l)
-  if [ $nb_journals -gt 1 ]
+  nb_journals=$(find "$GASH_HOME" -iname "*journal*" | wc -l)
+  if [ "$nb_journals" -gt 1 ]
   then
     cat <<EOM
 ******************************************************
@@ -404,7 +405,7 @@ ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
 Votre session contient plusieurs fichiers "journal"
 
 EOM
-    find $GASH_HOME -iname "*journal*"
+    find "$GASH_HOME" -iname "*journal*"
     cat <<EOM
 
 Il faut supprimer les fichiers en trop et ne conserver
@@ -425,7 +426,7 @@ EOM
       return 1
     fi
   fi
-  if [ $nb_journals -lt 1 ]
+  if [ "$nb_journals" -lt 1 ]
   then
     cat <<EOM
 ******************************************************
@@ -454,11 +455,11 @@ EOM
     fi
   fi
 
-  find $GASH_DATA -iname "*journal*" | xargs rm -f
-  find $GASH_HOME -iname "*journal*" | xargs -I JOURNAL cp --backup=numbered JOURNAL $GASH_DATA
+  find "$GASH_DATA" -iname "*journal*" -print0 | xargs -0 rm -f
+  find "$GASH_HOME" -iname "*journal*" -print0 | xargs -0 -I JOURNAL cp --backup=numbered JOURNAL "$GASH_DATA"
 
   tarfile=$REAL_HOME/info_202_$(whoami).tgz
-  if $(tar caf $tarfile -C $GASH_BASE ${GASH_DATA#$GASH_BASE/})
+  if tar caf "$tarfile" -C "$GASH_BASE ${GASH_DATA#$GASH_BASE/}"
   then
     cat <<EOM
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -511,7 +512,7 @@ EOM
 
 
 _gash_save() {
-  if $(jobs | grep -iq stopped)
+  if jobs | grep -iq stopped
   then
     cat <<EOM
 ATTENTION, vous avez des tâches en pause...
@@ -532,10 +533,10 @@ EOM
     fi
   fi
 
-  _log_action $nb "SAVE"
+  _log_action "$nb" "SAVE"
 
   tarfile=$REAL_HOME/GameShell_$(whoami)-SAVE.tgz
-  tar caf $tarfile -C $REAL_HOME ${GASH_BASE#$REAL_HOME/}
+  tar caf "$tarfile" -C "$REAL_HOME ${GASH_BASE#$REAL_HOME/}"
   cat <<EOM
 ******************************************************
 ******************************************************
@@ -549,7 +550,7 @@ Vous pouvez transférer ce fichier sur un autre
 ordinateur, à la racine de votre répertoire personnel,
 et rétablir votre sauvegarde avec la commande
 
-$ tar xvf $(basename $tarfile)
+$ tar xvf $(basename "$tarfile")
 
 ******************************************************
 ******************************************************
@@ -561,7 +562,7 @@ EOM
 
 gash() {
   local cmd=$1
-  if [ -z $cmd ]
+  if [ -z "$cmd" ]
   then
     cat <<EOH
 gash <commande>
@@ -572,68 +573,69 @@ EOH
   local nb="$(_get_current_mission)"
 
   case $cmd in
-    c | ch | che | chec | check)
-      _gash_check $nb
+    "c" | "ch" | "che" | "chec" | "check")
+      _gash_check "$nb"
       ;;
-    h | he | hel | help)
+    "h" | "he" | "hel" | "help")
       _gash_help
       ;;
-    H | HE | HEL | HELP)
+    "H" | "HE" | "HEL" | "HELP")
       _gash_HELP
       ;;
-    f | fi | fin | fini | finis | finish)
+    "f" | "fi" | "fin" | "fini" | "finis" | "finish")
       _gash_finish
       ;;
-    sa | sav | save)
+    "sa" | "sav" | "save")
       _gash_save
       ;;
-    r | re | res | rest | resta | restar | restart)
-      _gash_clean $nb
-      _gash_restart $nb
+    "r" | "re" | "res" | "rest" | "resta" | "restar" | "restart")
+      _gash_clean "$nb"
+      _gash_restart "$nb"
       ;;
-    sh | sho | show)
-      _gash_show $nb
+    "sh" | "sho" | "show")
+      _gash_show "$nb"
       ;;
-    stat)
-      awk -v GASH_UID="$GASH_UID" -f $GASH_BIN/stat.awk < $GASH_DATA/missions.log
+    "stat")
+      awk -v GASH_UID="$GASH_UID" -f "$GASH_BIN/stat.awk" < "$GASH_DATA/missions.log"
       ;;
-      # admin stuff
-      # TODO: something to regenerate static world
-      pass)
+
+    # admin stuff
+    # TODO: something to regenerate static world
+    "pass")
       admin_mode
       if [ "$GASH_ADMIN" = "OK" ]
       then
-        _gash_pass $nb
+        _gash_pass "$nb"
       else
         echo "oups..."
       fi
       ;;
-      auto)
+    "auto")
       admin_mode
       if [ "$GASH_ADMIN" = "OK" ]
       then
-        _gash_auto $nb
+        _gash_auto "$nb"
       else
         echo "oups..."
       fi
       ;;
-    clean)
+    "clean")
       admin_mode
       if [ "$GASH_ADMIN" = "OK" ]
       then
-        _gash_clean $nb
+        _gash_clean "$nb"
       else
         echo "oups..."
       fi
       ;;
-    start)
+    "start")
       admin_mode
       if [ "$GASH_ADMIN" = "OK" ]
       then
         if [ -n "$2" ]
         then
-          _gash_clean $nb
-          _gash_start $2
+          _gash_clean "$nb"
+          _gash_start "$2"
         else
           echo "Il faut donner un numero de mission"
         fi

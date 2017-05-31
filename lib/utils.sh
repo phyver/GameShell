@@ -5,7 +5,7 @@
 checksum() {
   if [ -z "$@" ]
   then
-    cat - | sha1sum | cut -c 1-40
+    sha1sum | cut -c 1-40
   else
     echo -n "$@" | sha1sum | cut -c 1-40
   fi
@@ -28,21 +28,21 @@ color_echo() {
   if [ -n "$GASH_COLOR" ]
   then
     tput setaf $color 2>/dev/null
-    echo $@
+    echo "$@"
     tput sgr0 2>/dev/null
   else
-    echo $@
+    echo "$@"
   fi
 }
 
 # draws a parchment around a text file
 parchment() {
   local file=$1
-  [ ! -f $file ] && return 1
+  [ ! -f "$file" ] && return 1
   if [ -x "$(command -v python3)" ]
   then
     local P=$2
-    [ -z "$P" ] && P=$(( 16#$(checksum $(readlink -f $file) | cut -c 10-13) % 4 ))
+    [ -z "$P" ] && P=$(( 16#$(checksum $(readlink -f "$file") | cut -c 10-13) % 4 ))
     case "$P" in
       0 | 1) P="Parchment";;
       2) P="Parchment2";;
@@ -50,7 +50,7 @@ parchment() {
       *) P="Parchment";;
     esac
     echo ""
-    python3 $GASH_BIN/box.py -b $P < "$file"
+    python3 "$GASH_BIN/box8.py" -b $P < "$file"
     echo ""
   else
     echo
@@ -67,11 +67,11 @@ export ADMIN_HASH='39f70a1addd8031d5e68d75c1a4432ebf115cf85'
 # correctly given, to "" otherwise
 admin_mode() {
   local i mpd
-  for i in $(seq 3)
+  for _ in $(seq 3)
   do
     read -s -p "mot de passe admin : " mdp
     echo ""
-    if [ "$(checksum $mdp)" = "$ADMIN_HASH" ]
+    if [ "$(checksum "$mdp")" = "$ADMIN_HASH" ]
     then
       GASH_ADMIN="OK"
       return 0

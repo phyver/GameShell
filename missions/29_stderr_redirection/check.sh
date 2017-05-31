@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 check() {
-    local office=$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin
+    local office="$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin"
 
     # turn history on (off by default for non-interactive shells
     HISTFILE=$GASH_DATA/history
@@ -13,7 +13,7 @@ check() {
         return 1
     fi
 
-    if ! diff -q $GASH_TMP/liste_grimoires_PQ <(eval $pc |& sort) > /dev/null
+    if ! diff -q "$GASH_TMP/liste_grimoires_PQ" <(eval "$pc" |& sort) > /dev/null
     then
         return 1
     else
