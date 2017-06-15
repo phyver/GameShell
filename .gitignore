@@ -1,2 +1,7 @@
 tmp
-gash.tar
+
+.bin
+.config
+.session_data
+.tmp
+World
