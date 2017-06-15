@@ -13,11 +13,12 @@ options :
   -M ...      choisit les missions à inclure dans l'archive (motif shell)
               (défaut : "_*")
   -P ...      choisit le "mot de passe" pour les commande administrateur
-  -N ...      nom de l'archive (défaut : "GameShell")
+  -N ...      nom du répertoire contenu dans l'archive (défaut : "GameShell")
   -a          conserve les scripts 'auto.sh' des missions qui en ont
   -L          utilise le mode local par défaut
   -U          utilise le LDAP de l'université par défaut
   -D          utilise le mode debug par défaut
+  -o ...      choisit le nom de l'archive (défaut: ../NOM_REPERTOIRE.tar)
 EOH
 }
 
@@ -26,8 +27,9 @@ ADMIN_PASSWD=""
 MISSIONS="*"
 KEEP_AUTO=0
 DEFAULT_MODE="DEBUG"
+OUTPUT=''
 
-while getopts ":hM:P:N:aLUD" opt
+while getopts ":hM:P:N:aLUDo:" opt
 do
   case $opt in
     h)
@@ -55,12 +57,17 @@ do
     D)
       DEFAULT_MODE="DEBUG"
       ;;
+    o)
+      OUTPUT=$OPTARG
+      ;;
     *)
       echo "option invalide : -$OPTARG" >&2
       exit 1
       ;;
   esac
 done
+
+[ -z "$OUTPUT" ] && OUTPUT="$(pwd)/$NAME.tar"
 
 TMP_DIR=$(mktemp -d)
 mkdir "$TMP_DIR/$NAME"
@@ -121,7 +128,7 @@ esac
 echo "création de l'archive"
 cd "$TMP_DIR"
 tar --create --file "$NAME.tar" "$NAME"
-mv "$NAME.tar" "$GASH_BASE"/../
+mv "$NAME.tar" "$OUTPUT"
 
 echo "suppression du répertoire temporaire"
 rm -rf "$TMP_DIR"
