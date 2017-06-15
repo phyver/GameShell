@@ -3,7 +3,7 @@
 # computes a checksum of a string
 # with no argument, reads the string from STDIN
 checksum() {
-  if [ -z "$@" ]
+  if [ "$#" -eq 0 ]
   then
     sha1sum | cut -c 1-40
   else
