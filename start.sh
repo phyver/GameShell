@@ -41,6 +41,7 @@ do
       MODE="USMB"
       ;;
     D)
+      MODE="DEBUG"
       GASH_DEBUG_MISSION=$OPTARG
       ;;
     *)
@@ -193,7 +194,7 @@ init_gash() {
 
   # Message d'accueil.
   clear
-  echo "============================ Initialisation du TP ============================"
+  echo "============================ Initialisation de GameShell ============================"
 
   while true
   do
