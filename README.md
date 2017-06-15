@@ -14,11 +14,20 @@ N'hésitez pas à m'envoyer vos remarques, questions ou suggestions autour de
 GameShell. En particulier, je suis preneur de nouvelles missions !
 
 
+### contact
+
+Pierre Hyvernat
+
+http://lama.univ-smb.fr/~hyvernat
+
+pierre.hyvernat@univ-smb.fr
+
+
 
 Utilisation
 -----------
 
-1/ directement depuis les sources
+### 1/ directement depuis les sources
 
     $ ./GameShell/start.sh
     Attention, vous êtes en train d'exécuter
@@ -32,7 +41,7 @@ Note : lancer GameShell directement dans le répertoire des sources ne devrait
 pas poser de problème...
 
 
-2/ en créant une archive spécifique
+### 2/ en créant une archive spécifique
 
     $ cd GameShell
     $ ./bin/archive.sh -M"*find*"
@@ -67,7 +76,6 @@ supplémentaires. Ces fonctionnalités passent par la commande ``gash``.
 
   - gash help : affiche une petite liste des commandes
   - gash HELP : affiche une liste plus complète des commandes
-
   - gash show : affiche l'objectif de la mission courante
   - gash check : vérifie si la mission actuelle est validée
   - gash restart : recommence la mission courante
