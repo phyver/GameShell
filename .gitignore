@@ -5,3 +5,4 @@ tmp
 .session_data
 .tmp
 World
+*.tar
