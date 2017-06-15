@@ -10,9 +10,9 @@ display_help() {
 cat <<EOH
 options :
   -h      ce message
-  -l      local : n'essaie pas d'utiliser le serveur LDAP de l'université
-  -u      université : utilise le serveur LDAP de l'université Savoie Mont Blanc
   -n      mode noir et blanc : n'utilise pas les séquences ANSI pour la couleur
+  -L      local : n'essaie pas d'utiliser le serveur LDAP de l'université
+  -U      université : utilise le serveur LDAP de l'université Savoie Mont Blanc
   -D <n>  mode debug / découverte en partant de la mission <n>
 EOH
 }
@@ -20,8 +20,8 @@ EOH
 
 export GASH_COLOR="OK"
 export GASH_DEBUG_MISSION=""
-LDAP_UDS=0
-while getopts ":hcnlD:" opt
+MODE="DEBUG"
+while getopts ":hcnULD:" opt
 do
   case $opt in
     h)
@@ -34,11 +34,11 @@ do
     c)
       GASH_COLOR="OK"
       ;;
-    l)
-      LDAP_UDS=0
+    L)
+      MODE="LOCAL"
       ;;
-    u)
-      LDAP_UDS=1
+    U)
+      MODE="USMB"
       ;;
     D)
       GASH_DEBUG_MISSION=$OPTARG
@@ -198,16 +198,21 @@ init_gash() {
   while true
   do
     # Lecture du login des étudiants.
-    if [ -n "$GASH_DEBUG_MISSION" ]
-    then
-      debug_passeport "$PASSEPORT"
-      break
-    elif [ "$LDAP_UDS" -eq 0 ]
-    then
-      local_passeport "$PASSEPORT"
-    else
-      ldap_passeport "$PASSEPORT"
-    fi
+    case "$MODE" in
+      DEBUG)
+        debug_passeport "$PASSEPORT"
+        break
+        ;;
+      LOCAL)
+        local_passeport "$PASSEPORT"
+        ;;
+      USMB)
+        ldap_passeport "$PASSEPORT"
+        ;;
+      *)
+        echo "mode de lancement inconnu: '$MODE'" >&2
+        ;;
+    esac
 
 
     # Confirmation des informations
