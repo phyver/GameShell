@@ -307,9 +307,6 @@ _gash_help() {
   | / |     Si c'est le cas, passe automatiquement à la mission  | \ |
   | / |     suivante.                                            | \ |
   | / |                                                          | \ |
-  | / |   gash finish                                            | \ |
-  | / |     génère le fichier à rendre à votre encadrant         | \ |
-  | / |                                                          | \ |
   | / |   gash help                                              | \ |
   | / |     affiche ce message                                   | \ |
   | / |                                                          | \ |
@@ -381,7 +378,7 @@ Ces processus vont être stoppés.
 (Vous pouvez obtenir la liste de ces tâches avec
 $ jobs -s
 )
-Êtes vous sûr de vouloir finir le TP ? [o/N]
+Êtes vous sûr de vouloir finaliser votre session ? [o/N]
 
 EOM
     read r
@@ -520,10 +517,9 @@ Ces processus vont être stoppés.
 (Vous pouvez obtenir la liste de ces tâches avec
 $ jobs -s
 )
-Les changements non enregistrés ne seront pas sauvés
-avec le TP.
+Les changements non enregistrés ne seront pas sauvés.
 
-Êtes vous sûr de vouloir sauver le TP ? [o/N]
+Êtes vous sûr de vouloir sauver ? [o/N]
 
 EOM
     read r
@@ -541,7 +537,7 @@ EOM
 ******************************************************
 ******************************************************
 
-Une archive contenant l'état du TP à été créée dans
+Une archive contenant l'état courant à été créée dans
 votre répertoire personnel. Le fichier se trouve ici :
 
 $tarfile
