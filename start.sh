@@ -11,6 +11,7 @@ cat <<EOH
 options :
   -h      ce message
   -l      local : n'essaie pas d'utiliser le serveur LDAP de l'université
+  -u      université : utilise le serveur LDAP de l'université Savoie Mont Blanc
   -n      mode noir et blanc : n'utilise pas les séquences ANSI pour la couleur
   -D <n>  mode debug / découverte en partant de la mission <n>
 EOH
@@ -19,7 +20,7 @@ EOH
 
 export GASH_COLOR="OK"
 export GASH_DEBUG_MISSION=""
-NO_LDAP=""
+LDAP_UDS=0
 while getopts ":hcnlD:" opt
 do
   case $opt in
@@ -34,7 +35,10 @@ do
       GASH_COLOR="OK"
       ;;
     l)
-      NO_LDAP=1
+      LDAP_UDS=0
+      ;;
+    u)
+      LDAP_UDS=1
       ;;
     D)
       GASH_DEBUG_MISSION=$OPTARG
@@ -141,6 +145,7 @@ init_gash() {
     echo -n "Faut-il le continuer ? [o/N] "
     read x
     [ "$x" != "o"  -a  "$x" != "O" ] && exit 1
+    [ -z "$GASH_DEBUG_MISSION" ] && GASH_DEBUG_MISSION="1"
   fi
 
   if [ -e "$GASH_DATA" ]
@@ -197,11 +202,11 @@ init_gash() {
     then
       debug_passeport "$PASSEPORT"
       break
-    elif [ -z "$NO_LDAP" ]
+    elif [ "$LDAP_UDS" -eq 0 ]
     then
-      ldap_passeport "$PASSEPORT"
-    else
       local_passeport "$PASSEPORT"
+    else
+      ldap_passeport "$PASSEPORT"
     fi
 
 
