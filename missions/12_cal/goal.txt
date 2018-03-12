@@ -1,7 +1,11 @@
 Objectif
 ========
 
-trouver le jours de la semaine pour le 12-34-5678
+trouver le jour de la semaine pour le 12-34-5678
+
+Lorsque vous le connaissez, lancez la commande
+  $ gash check
+
 
 
 Commandes utilisées

@@ -10,7 +10,7 @@ check() {
     local current=$(readlink -f "$PWD")
 
     local expected=$(head -n 4 "$GASH_HOME/Montagne/Grotte/ingredients_potion")
-    local res=$("$pc")
+    local res=$($pc)
 
     if [ "$goal" != "$current" ]
     then

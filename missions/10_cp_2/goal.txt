@@ -19,7 +19,7 @@ Rappel de commandes
     le caractère "?" est un "joker" pour n'importe 
     caractère
 
-    dans un nom de fichier, il sont remplacé 
+    dans un nom de fichier, il sont remplacés 
     automatiquement par la liste de tous les fichiers 
     correspondant
 

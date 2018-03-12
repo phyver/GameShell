@@ -64,8 +64,8 @@ ldap_passeport() {
   echo
 
   for LOGIN in $LOGINS; do
-    NOM="$("$LDAP" uid="$LOGIN" cn | grep ^cn | colrm 1 4)"
-    EMAIL="$("$LDAP" uid="$LOGIN" mail | grep ^mail | colrm 1 6)"
+    NOM="$($LDAP uid="$LOGIN" cn | grep ^cn | colrm 1 4)"
+    EMAIL="$($LDAP uid="$LOGIN" mail | grep ^mail | colrm 1 6)"
     if [ -z "$NOM" ]; then
       color_echo red "Le login « $LOGIN » est introuvable..."
     else

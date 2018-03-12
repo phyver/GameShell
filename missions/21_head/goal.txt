@@ -3,7 +3,7 @@ Objectif
 
 L'ermite est en train de préparer une potion dans la 
 grotte.
-Vous devez le rejoindre et lui lire les quatre premiers 
+Vous devez le rejoindre et lui afficher les quatre premiers 
 ingrédients de la liste des ingrédients...
 
 

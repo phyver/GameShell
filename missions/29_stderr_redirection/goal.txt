@@ -23,7 +23,7 @@ Chaque commande peut écrire sur l'écran de deux
 manières :
   - affichage du résultat ("STDOUT")
   - affichage des message d'erreur ("STDERR")
-Par défaut, on ne peut pas différencier ces affichage.
+Par défaut, on ne peut pas différencier ces affichages.
 
 On peut par contre rediriger les deux affichages 
 indépendamment.
@@ -31,9 +31,9 @@ indépendamment.
   grep CHAINE FICHIER1 ... FICHIERn
     recherche une chaine dans les fichiers et affiche 
     les lignes correspondantes options intéressantes :
-      -l : n'affiche pas les ligne mais seulement le i
+      -l : n'affiche pas les lignes mais seulement le 
            nom des fichiers qui contiennent la chaine
-      -i : ne différencie pas les majuscules et
+      -i : ne différencie pas les majuscules et 
            minuscules lors de la recherche
 
   CMD  >  FICHIER

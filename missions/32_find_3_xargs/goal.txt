@@ -15,7 +15,7 @@ Commandes utilisées
 
   find
     permet de chercher des fichiers à partir du 
-    répertoire courant Les conditions peuvent porter 
+    répertoire courant. Les conditions peuvent porter 
     sur le nom des fichiers, leur taille, leur date de 
     création, etc.
 

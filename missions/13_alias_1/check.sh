@@ -15,7 +15,7 @@ check() {
         return 1
     fi
 
-    if [ "$cmd" != 'ls-a' ]
+    if [ "$cmd" != 'ls-A' ]
     then
         echo "L'alias ne lance pas la bonne commande (\"ls -a\")."
         unalias la
