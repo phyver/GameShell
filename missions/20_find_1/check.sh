@@ -39,7 +39,7 @@ then
     true
 else
     unset -f check check_p
-    find "$GASH_HOME" -iname piece_d_or -print0 | xargs -0 rm -f
+    find "$GASH_HOME" -iname piece_d_or -not -iname "*journal*" -print0 | xargs -0 rm -f
     false
 fi
 

@@ -4,5 +4,8 @@ Objectif
 Pour devenir un grand magicien, il faut être fort en 
 calcul mental !
 
-Vérifiez votre aptitude aux additions...
+Vérifiez votre aptitude aux additions en lançant la 
+commande
+
+  $ gash check
 

@@ -16,3 +16,10 @@ Commandes utilisées
   ls
     permet d'afficher la liste des lieux accessibles 
     depuis la position actuelle
+
+
+Rappel
+======
+
+  gash restart
+    permet de redémarrer la mission à zéro

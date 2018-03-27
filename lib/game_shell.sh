@@ -91,7 +91,6 @@ _gash_show() {
 
   local mission="$(_get_mission_dir "$nb")"
 
-  echo "$mission/goal.txt"
   if [ -f "$mission/goal.txt" ]
   then
     parchment "$mission/goal.txt"

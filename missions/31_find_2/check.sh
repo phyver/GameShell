@@ -43,6 +43,6 @@ then
     true
 else
     unset -f check
-    find "$GASH_HOME" -type f -readable -print0 | xargs -0 grep -l "rubis" | xargs rm -f
+    find "$GASH_HOME" -type f -readable -not -iname "*journal*" -print0 | xargs -0 grep -l "rubis" | xargs rm -f
     false
 fi

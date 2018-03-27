@@ -23,7 +23,7 @@ check() {
                 # echo "Votre alias utilise le fichier '~${f#$HOME}' qui n'est pas correct."
                 # f="$(echo "$cmd" | sed 's/ *nano *//')"
                 f="${cmd// *nano */}"
-                echo "Votre alias semble n'utiliser pas le bon fichier ($f)."
+                echo "Votre alias semble ne pas utiliser le bon fichier ($f)."
                 echo "Vérifiez que vous donnez un chemin absolu..."
                 unalias journal
                 find "$GASH_HOME" -iname "*journal*" -print0 | xargs -0 rm -rf

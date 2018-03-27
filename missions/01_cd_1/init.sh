@@ -1,0 +1,1 @@
+cd $GASH_HOME

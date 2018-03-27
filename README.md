@@ -50,7 +50,6 @@ pas poser de problème...
         /export/home/hyvernat/src/Shell/GameShell/missions/31_find_2  --> 02_find_2
         /export/home/hyvernat/src/Shell/GameShell/missions/32_find_3_xargs -->  03_find_3_xargs
     suppression des script 'auto.sh' des missions
-    changement du mot de passe pour les commandes administrateur
     choix du mode de lancement
     création de l'archive
     suppression du répertoire temporaire
@@ -71,7 +70,7 @@ On peut maintenant copier cette archive n'importe où et lancer le jeu:
 Commandes de base
 -----------------
 
-GameShell lancé est simplement une instance de bash avec des fonctions
+GameShell est simplement une instance de bash avec des fonctions
 supplémentaires. Ces fonctionnalités passent par la commande ``gash``.
 
   - gash help : affiche une petite liste des commandes

@@ -10,4 +10,4 @@ esac
 
 rm -f "$GASH_TMP/argent"
 find "$GASH_HOME/Chateau/Cave/" -name "labyrinthe" -type d -print0 | xargs -0 rm -rf
-find "$GASH_HOME" -iname "*argent*" -print0 | xargs -0 rm -f
+find "$GASH_HOME" -iname "*argent*" -not -iname "*journal*" -print0 | xargs -0 rm -f

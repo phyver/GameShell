@@ -39,7 +39,8 @@ check() {
     fi
 
     # check that SHA1 is also in the filename
-    if [ "$S" != "$(echo "$file" | cut -f 2 -d '_')" ]
+    local base_file=$(basename "$file")
+    if [ "$S" != "$(echo "$base_file" | cut -f 2 -d '_')" ]
     then
         echo "Nom du fichier '$file' invalide."
         return 1

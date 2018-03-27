@@ -9,4 +9,4 @@ case $PWD in
 esac
 
 find "$GASH_HOME/Chateau/Cave/" -name labyrinthe -type d -print0 | xargs -0 rm -rf
-find "$GASH_HOME" -type f -readable -print0 | xargs -0 grep -l "diamant" | xargs rm -f
+find "$GASH_HOME" -type f -readable -not -iname "*journal*" -print0 | xargs -0 grep -l "diamant" | xargs rm -f

@@ -14,7 +14,7 @@ check() {
 
     if [ "$goal" != "$current" ]
     then
-        echo "Vous n'ête pas dans la grotte, avec l'ermite !"
+        echo "Vous n'êtes pas dans la grotte, avec l'ermite !"
         return 1
     fi
     if [ -z "$pc" ]
