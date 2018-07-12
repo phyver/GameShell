@@ -18,7 +18,7 @@ GameShell. En particulier, je suis preneur de nouvelles missions !
 
 Pierre Hyvernat
 
-http://lama.univ-smb.fr/~hyvernat
+http://www.lama.univ-smb.fr/~hyvernat
 
 pierre.hyvernat@univ-smb.fr
 
