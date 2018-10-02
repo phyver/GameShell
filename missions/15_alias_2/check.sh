@@ -14,9 +14,9 @@ check() {
             # "cd /" permet d'éviter de valider si les étudiants ont utilisé
             # alias journal="nano journal.txt" et que le gash check est fait
             # depuis le coffre
-            # local f="$(cd / ; eval $(echo "$cmd" | sed 's/nano/readlink -f/'))"
-            local f="$(cd / ; eval "${cmd//nano/readlink -f}")"
-            if [ "$f" = "$(readlink -f "$GASH_COFFRE/journal.txt")" ]
+            # local f="$(cd / ; eval $(echo "$cmd" | sed 's/nano/$READLINK -f/'))"
+            local f="$(cd / ; eval "${cmd//nano/$READLINK -f}")"
+            if [ "$f" = "$($READLINK -f "$GASH_COFFRE/journal.txt")" ]
             then
                 return 0
             else

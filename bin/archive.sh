@@ -1,6 +1,22 @@
 #!/bin/bash
 
-GASH_BASE=$(readlink -f "$(dirname "$0")"/..)
+# readlink doesn't exist in macos!
+# use greadlink, which is installed as part of coreutils
+if [ "$(which readlink)" ]
+then
+  export READLINK=readlink
+elif [ "$(which greadlink)" ]
+then
+  export READLINK=greadlink
+else
+  echo "La commande 'readlink' (linux) ou 'greadlink' (MacOS) n'a pas été trouvée..."
+  echo "Pour MacOS, n'oubliez pas d'installer 'coreutil' (et 'md5sha1sum')"
+  echo "   $ brew install coreutils"
+  echo "   $ brew install md5sha1sum"
+  exit
+fi
+
+GASH_BASE=$($READLINK -f "$(dirname "$0")"/..)
 
 source "$GASH_BASE/lib/utils.sh"
 

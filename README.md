@@ -14,6 +14,16 @@ N'hésitez pas à m'envoyer vos remarques, questions ou suggestions autour de
 GameShell. En particulier, je suis preneur de nouvelles missions !
 
 
+### Prérequis
+
+GameShell devrait (??) fonctionner sur un système Linux standard.
+
+Pour MacOS, il faut installer ``coreutils`` et ``md5sha1sum`` :
+
+    $ brew install coreutils
+    $ brew install md5sha1sum
+
+
 ### contact
 
 Pierre Hyvernat

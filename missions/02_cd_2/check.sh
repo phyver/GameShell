@@ -1,7 +1,7 @@
 #!/bin/bash
 
-goal=$(readlink -f "$GASH_HOME/Chateau/Cave")
-current=$(pwd | xargs readlink -f)
+goal=$($READLINK -f "$GASH_HOME/Chateau/Cave")
+current=$($READLINK -f "$PWD")
 
 if [ "$goal" = "$current" ]
 then
