@@ -156,8 +156,14 @@ init_gash() {
   export GASH_CONFIG="$GASH_BASE/.config"
   export GASH_LOCAL_BIN="$GASH_BASE/.bin"
 
-  export GASH_CABANE=$(find "$GASH_HOME" -iname cabane)
-  export GASH_COFFRE=$(find "$GASH_HOME" -iname coffre)
+  if [ -d "$GASH_HOME" ]
+  then
+    export GASH_CABANE=$(find "$GASH_HOME" -iname cabane)
+    export GASH_COFFRE=$(find "$GASH_HOME" -iname coffre)
+  else
+    export GASH_CABANE=""
+    export GASH_COFFRE=""
+  fi
 
   if [ -e "$GASH_BASE/.git" ]
   then
