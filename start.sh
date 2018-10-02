@@ -18,7 +18,7 @@ else
   exit
 fi
 
-if readlink -f / 2&> /dev/null
+if $READLINK -f / 2&> /dev/null
 then
   :
 else
