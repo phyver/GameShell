@@ -1,1 +1,1 @@
-mv ~/Chateau/Cave/.piece_? ~/Foret/Cabane/Coffre
+mv ~/Chateau/Cave/.piece_* ~/Foret/Cabane/Coffre
