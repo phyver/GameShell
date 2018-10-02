@@ -1,16 +1,28 @@
 #!/bin/bash
 
 
-# readlink doesn't exist in macos!
-# use greadlink, which is installed as part of coreutils
-if [ "$(which readlink)" ]
-then
-  export READLINK=readlink
-elif [ "$(which greadlink)" ]
+# la version de "readlink" de MacOS n'a pas l'option "-f", il faut utiliser
+# "greadlink" qui fait partie de "coreutils"
+# Attention, l'executable "readlink" existe sous MacOS
+if [ "$(which greadlink)" ]
 then
   export READLINK=greadlink
+elif [ "$(which readlink)" ]
+then
+  export READLINK=readlink
 else
   echo "La commande 'readlink' (linux) ou 'greadlink' (MacOS) n'a pas été trouvée..."
+  echo "Pour MacOS, n'oubliez pas d'installer 'coreutil' (et 'md5sha1sum')"
+  echo "   $ brew install coreutils"
+  echo "   $ brew install md5sha1sum"
+  exit
+fi
+
+if readlink -f / 2&> /dev/null
+then
+  :
+else
+  echo "La commande 'readlink' (linux) ou 'greadlink' (MacOS) ne supporte pas l'argument '-f'..."
   echo "Pour MacOS, n'oubliez pas d'installer 'coreutil' (et 'md5sha1sum')"
   echo "   $ brew install coreutils"
   echo "   $ brew install md5sha1sum"
