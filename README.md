@@ -18,7 +18,12 @@ GameShell. En particulier, je suis preneur de nouvelles missions !
 
 GameShell devrait (??) fonctionner sur un système Linux standard.
 
-Pour MacOS, il faut installer ``coreutils`` et ``md5sha1sum`` :
+Pour MacOS, il faut installer ``coreutils`` et ``md5sha1sum``. Le plus simple
+de d'utiliser le gestionnaire de paquet [homebrew](https://brew.sh/index_fr) :
+
+    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+puis d'installer les paquets nécessaires avec
 
     $ brew install coreutils
     $ brew install md5sha1sum
