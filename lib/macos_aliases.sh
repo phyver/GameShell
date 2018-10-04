@@ -8,6 +8,6 @@ function CANNONICAL_PATH() {
 export -f CANNONICAL_PATH
 
 function GET_MTIME() {
-    stat -f %S%m "$@"
+    gstat -c %y "$@"
 }
 export -f GET_MTIME

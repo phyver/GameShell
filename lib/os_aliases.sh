@@ -10,9 +10,10 @@ case $OSTYPE in
     darwin*)
         source $GASH_BASE/lib/macos_aliases.sh
         ;;
-    # openbsd*|FreeBSD|netbsd)
-    #     source $GASH_BASH/lib/bsd_aliases.sh
-    #     ;;
+    openbsd*|FreeBSD|netbsd)
+        # non testé
+        source $GASH_BASH/lib/bsd_aliases.sh
+        ;;
     *)
         echo "la variable $$OSTYPE est égale à $OSTYPE"
         echo "je ne reconnais pas ce système..."
