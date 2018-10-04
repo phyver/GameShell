@@ -155,7 +155,7 @@ esac
 # create archive
 echo "création de l'archive"
 cd "$TMP_DIR"
-tar --create --file "$NAME.tar" "$NAME"
+tar -cf "$NAME.tar" "$NAME"
 mv "$NAME.tar" "$OUTPUT"
 
 echo "suppression du répertoire temporaire"

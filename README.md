@@ -78,7 +78,7 @@ On peut maintenant copier cette archive n'importe où et lancer le jeu:
 
     $ mv GameShell.tar /tmp
     $ cd /tmp
-    $ tar xf GameShell.tar
+    $ tar -xf GameShell.tar
     $ ./GameShell/start.sh
 
 
