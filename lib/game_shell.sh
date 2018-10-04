@@ -454,7 +454,7 @@ EOM
   find "$GASH_DATA" -iname "*journal*" -print0 | xargs -0 rm -f
   find "$GASH_HOME" -iname "*journal*" -print0 | xargs -0 -I JOURNAL cp --backup=numbered JOURNAL "$GASH_DATA"
 
-  tarfile=$REAL_HOME/info_202_$(whoami).tgz
+  tarfile=$REAL_HOME/GameShell_$(whoami)-LOG.tgz
   if tar -zcf "$tarfile" -C "$GASH_BASE" "$(basename $GASH_DATA)"
   then
     cat <<EOM

@@ -9,7 +9,7 @@ Vous pouvez utiliser le gestionnaire de fichiers
 graphique si vous le souhaitez. Pour cela, il faut 
 aller dans le répertoire
 
-  GameShell-info202/World/.../labyrinthe
+  GameShell/World/.../labyrinthe
 
 (N'oubliez pas d'activer l'affichage des fichiers 
 cachés...)
