@@ -1,35 +1,10 @@
 #!/bin/bash
 
 
-# la version de "readlink" de macOS n'a pas l'option "-f", il faut utiliser
-# "greadlink" qui fait partie de "coreutils"
-# Attention, l'executable "readlink" existe sous macOS
-if [ "$(which greadlink)" ]
-then
-  export READLINK=greadlink
-elif [ "$(which readlink)" ]
-then
-  export READLINK=readlink
-else
-  echo "La commande 'readlink' (linux) ou 'greadlink' (macOS) n'a pas été trouvée..."
-  echo "Pour macOS, n'oubliez pas d'installer 'coreutil' (et 'md5sha1sum')"
-  echo "   $ brew install coreutils"
-  echo "   $ brew install md5sha1sum"
-  exit
-fi
+export GASH_BASE="$(dirname "$0")"
+source "$GASH_BASE"/lib/os_aliases.sh
 
-if $READLINK -f / 2&> /dev/null
-then
-  :
-else
-  echo "La commande 'readlink' (linux) ou 'greadlink' (macOS) ne supporte pas l'argument '-f'..."
-  echo "Pour macOS, n'oubliez pas d'installer 'coreutil' (et 'md5sha1sum')"
-  echo "   $ brew install coreutils"
-  echo "   $ brew install md5sha1sum"
-  exit
-fi
-
-export GASH_BASE=$($READLINK -f "$(dirname "$0")"/)
+export GASH_BASE=$(CANNONICAL_PATH "$(dirname "$0")"/)
 cd "$GASH_BASE"
 
 source lib/utils.sh

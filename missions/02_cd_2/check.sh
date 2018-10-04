@@ -1,7 +1,7 @@
 #!/bin/bash
 
-goal=$($READLINK -f "$GASH_HOME/Chateau/Cave")
-current=$($READLINK -f "$PWD")
+goal=$(CANNONICAL_PATH "$GASH_HOME/Chateau/Cave")
+current=$(CANNONICAL_PATH "$PWD")
 
 if [ "$goal" = "$current" ]
 then

@@ -31,7 +31,7 @@ check() {
     fi
 
     # check that the date of the tableau in the "coffre" is fine
-    local D1=$(stat -c %y "$GASH_COFFRE/tableau" | sha1sum | cut -c 1-40)
+    local D1=$(GET_MTIME "$GASH_COFFRE/tableau" | sha1sum | cut -c 1-40)
     local D2=$(cat "$GASH_TMP/date_tableau")
 
     if [ "$D1" != "$D2" ]

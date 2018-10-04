@@ -6,8 +6,8 @@ check() {
 
     local pc=$(fc -nl -2 -2 | grep '|')
 
-    local goal=$($READLINK -f "$GASH_HOME/Montagne/Grotte")
-    local current=$($READLINK -f "$PWD")
+    local goal=$(CANNONICAL_PATH "$GASH_HOME/Montagne/Grotte")
+    local current=$(CANNONICAL_PATH "$PWD")
 
     local expected=$(head -n 11 "$GASH_HOME/Montagne/Grotte/recette_potion" | tail -n 3)
     local res=$(eval "$pc")

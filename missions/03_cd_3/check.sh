@@ -7,8 +7,8 @@ HISTFILE=$GASH_DATA/history
 
 ppc=$(fc -nl -3 -3 | xargs)      # note: xargs removes the trailing spaces
 
-goal=$($READLINK -f "$GASH_HOME/Chateau/Batiment_principal/Salle_du_trone")
-current=$($READLINK -f "$PWD")
+goal=$(CANNONICAL_PATH "$GASH_HOME/Chateau/Batiment_principal/Salle_du_trone")
+current=$(CANNONICAL_PATH "$PWD")
 
 if [ "$goal" = "$current"  -a  "$ppc" = "cd" ]
 then
