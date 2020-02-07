@@ -154,12 +154,12 @@ init_gash() {
 
   if [ -e "$GASH_BASE/.git" ]
   then
-    echo "Attention, vous êtes en train d'exécuter"
-    echo "GameShell dans la version de développement."
+    echo "Vous êtes en train d'exécuter GameShell"
+    echo "dans l'arborescence de développement."
     echo -n "Faut-il le continuer ? [o/N] "
     read x
     [ "$x" != "o"  -a  "$x" != "O" ] && exit 1
-    [ -z "$GASH_DEBUG_MISSION" ] && GASH_DEBUG_MISSION="1"
+    # [ -z "$GASH_DEBUG_MISSION" ] && GASH_DEBUG_MISSION="1"
   fi
 
   if [ -e "$GASH_DATA" ]
