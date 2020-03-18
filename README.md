@@ -14,6 +14,8 @@ N'hésitez pas à m'envoyer vos remarques, questions ou suggestions autour de
 GameShell. En particulier, je suis preneur de nouvelles missions !
 
 
+GameShell est soumis à la licence GPLv3 https://www.gnu.org/licenses/gpl-3.0.en.html
+
 ### Prérequis
 
 GameShell devrait (??) fonctionner sur un système Linux standard.
