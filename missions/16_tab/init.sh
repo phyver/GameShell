@@ -2,7 +2,7 @@
 
 # fichier lu par le shell à chaque démarage de la mission
 
-rm -rf "$GASH_HOME/Chateau/Cave/.long"*couloir*
+rm -rf "$GASH_HOME/Chateau/Cave/.Long"*Couloir*
 
 coul=".Long $(checksum $RANDOM) Couloir $(checksum $RANDOM)"
 
