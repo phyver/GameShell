@@ -1,4 +1,4 @@
-GameShell : un "jeu" pour apprendre le shell
+GmeShell : un "jeu" pour apprendre le shell
 ============================================
 
 
@@ -18,7 +18,14 @@ GameShell est soumis à la licence GPLv3 https://www.gnu.org/licenses/gpl-3.0.en
 
 ### Prérequis
 
-GameShell devrait (??) fonctionner sur un système Linux standard.
+GameShell devrait (??) fonctionner sur un système Linux standard. Pour
+Debian/Ubuntu, il faut avoir les paquets suivants :
+
+  - psmisc
+  - nano
+  - tree
+  - x11-apps
+
 
 Pour macOS, il faut installer ``coreutils`` et ``md5sha1sum``. Le plus simple
 de d'utiliser le gestionnaire de paquet [homebrew](https://brew.sh/index_fr) :
