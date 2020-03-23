@@ -38,8 +38,8 @@ then
     true
 else
     rm -f "$GASH_TMP/dans_entree"
-    find "$GASH_HOME/Chateau/Entree/" -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" -print0 | xargs -0 rm -f
-    find "$GASH_CABANE" -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" -print0 | xargs -0 rm -f
+    find "$GASH_HOME/Chateau/Entree/" \( -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" \) -print0 | xargs -0 rm -f
+    find "$GASH_CABANE" \( -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" \) -print0 | xargs -0 rm -f
     unset -f check
     false
 fi
