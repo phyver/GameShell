@@ -1,4 +1,4 @@
-GmeShell : un "jeu" pour apprendre le shell
+GameShell : un "jeu" pour apprendre le shell
 ============================================
 
 
