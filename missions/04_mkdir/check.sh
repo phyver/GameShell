@@ -18,7 +18,15 @@ check() {
         echo "Votre cabane est trop loin dans la forêt..."
         return 1
     fi
-    local nb_coffres=$(find "$cabane" -iname coffre -type d | wc -l)
+    cabane=~/Foret/Cabane
+    if [ ! -d "$cabane" ]
+    then
+        echo "Le répertoire $cabane n'existe pas !"
+        return 1
+    fi
+
+    local nb_coffres
+    nb_coffres=$(find "$cabane" -iname coffre -type d | wc -l)
     if [ "$nb_coffres" -ge 2 ]
     then
         echo "Vous avez construit trops de coffres dans votre cabane !"
@@ -33,6 +41,12 @@ check() {
     if [ -z "$coffre" ]
     then
         echo "Votre coffre n'est au bon endroit dans votre cabane."
+        return 1
+    fi
+    coffre=~/Foret/Cabane/Coffre
+    if [ ! -d "$coffre" ]
+    then
+        echo "Le répertoire $coffre n'existe pas !"
         return 1
     fi
     return 0

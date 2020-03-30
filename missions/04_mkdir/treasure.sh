@@ -1,2 +1,2 @@
-export GASH_CABANE=$(find "$GASH_HOME" -iname cabane)
-export GASH_COFFRE=$(find "$GASH_HOME" -iname coffre)
+export GASH_CABANE=~/Foret/Cabane/
+export GASH_COFFRE=~/Foret/Cabane/Coffre/
