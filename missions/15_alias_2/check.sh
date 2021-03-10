@@ -1,8 +1,9 @@
 #!/bin/bash
 
-check() {
+_local_check() {
 
-    local cmd=$(alias journal 2> /dev/null | cut -f2 -d"=" | tr -d "'")
+    local cmd
+    cmd=$(alias journal 2> /dev/null | cut -f2 -d"=" | tr -d "'")
     if [ -z "$cmd" ]
     then
         echo "L'alias 'journal' n'existe pas..."
@@ -14,8 +15,9 @@ check() {
             # "cd /" permet d'éviter de valider si les étudiants ont utilisé
             # alias journal="nano journal.txt" et que le gash check est fait
             # depuis le coffre
-            # local f="$(cd / ; eval $(echo "$cmd" | sed 's/nano/$CANNONICAL_PATH/'))"
-            local f="$(cd / ; eval "${cmd//nano/CANNONICAL_PATH}")"
+            local f
+            # f="$(cd / ; eval $(echo "$cmd" | sed 's/nano/$CANNONICAL_PATH/'))"
+            f="$(cd / ; eval "${cmd//nano/CANNONICAL_PATH}")"
             if [ "$f" = "$(CANNONICAL_PATH "$GASH_COFFRE/journal.txt")" ]
             then
                 return 0
@@ -40,4 +42,4 @@ check() {
     esac
 }
 
-check
+_local_check

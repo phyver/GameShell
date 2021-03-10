@@ -35,11 +35,11 @@ do
             then
                 sum=$(checksum "$K.rubis")
                 echo "rubis $K $sum" > "$lab/$I/$J/$K"
-            elif [ "$r2" = "$i,$j,$k" -o \
-                   "$r3" = "$i,$j,$k" -o \
-                   "$r4" = "$i,$j,$k" -o \
-                   "$r5" = "$i,$j,$k" -o \
-                   "$r6" = "$i,$j,$k" ]
+            elif [ "$r2" = "$i,$j,$k" ] || \
+                 [ "$r3" = "$i,$j,$k" ] || \
+                 [ "$r4" = "$i,$j,$k" ] || \
+                 [ "$r5" = "$i,$j,$k" ] || \
+                 [ "$r6" = "$i,$j,$k" ]
             then
                 sum=$(checksum "$K.caillou")
                 echo "caillou $K $sum" > "$lab/$I/$J/$K"

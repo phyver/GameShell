@@ -2,8 +2,8 @@ Objectif
 ========
 
 l'ermite vous demande à présent de lui lire les 
-instructions sur les lignes 9 à 11 de la recette de sa 
-potion.
+instructions sur les lignes 9 à 11 de la **recette** 
+de sa potion.
 
 Il faudra pour ceci combiner les deux commandes 
 précédentes avec ``|``.

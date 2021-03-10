@@ -1,6 +1,6 @@
 #!/bin/bash
 
-check() {
+_local_check() {
 
     local journal="$GASH_COFFRE/journal.txt"
     if [ ! -f "$journal" ]
@@ -20,4 +20,4 @@ check() {
     return 0
 }
 
-check
+_local_check

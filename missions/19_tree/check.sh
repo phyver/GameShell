@@ -1,8 +1,10 @@
 #!/bin/bash
 
-check() {
-    local lab=$(find "$GASH_HOME/Chateau/Cave/" -name "labyrinthe" -type d)
-    local piece=$(find "$lab" -name "*argent*")
+_local_check() {
+    local lab
+    lab=$(find "$GASH_HOME/Chateau/Cave/" -name "labyrinthe" -type d)
+    local piece
+    piece=$(find "$lab" -name "*argent*")
 
     if [ -n "$piece" ]
     then
@@ -10,7 +12,8 @@ check() {
         return 1
     fi
 
-    local piece=$(find "$GASH_COFFRE" -maxdepth 1 -name "*argent*")
+    local piece
+    piece=$(find "$GASH_COFFRE" -maxdepth 1 -name "*argent*")
     if [ -z "$piece" ]
     then
         echo "Il n'y a pas de pièce d'argent dans votre coffre..."
@@ -24,11 +27,11 @@ check() {
     fi
 }
 
-if check
+if _local_check
 then
-    unset -f check
+    unset -f _local_check
     true
 else
-    unset -f check
+    unset -f _local_check
     false
 fi

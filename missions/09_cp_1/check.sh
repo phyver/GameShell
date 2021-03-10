@@ -1,13 +1,13 @@
 #!/bin/bash
 
-check() {
+_local_check() {
     entree="$GASH_HOME/Chateau/Entree"
 
     for i in $(seq 4)
     do
         local etendard="etendard_$i"
 
-        # check that file exists
+        # _local_check that file exists
         if [ ! -f "$GASH_CABANE/$etendard" ]
         then
             echo "L'étendard $i ne se trouve pas dans la cabane."
@@ -19,7 +19,7 @@ check() {
             return 1
         fi
 
-        # check that prefix of first line is the name of the file
+        # _local_check that prefix of first line is the name of the file
         P=$(cut -f 1 -d' ' "$GASH_CABANE/$etendard")
         if [ "$(echo "$P" | cut -f1 -d'#')" != "$etendard" ]
         then
@@ -33,7 +33,7 @@ check() {
             return 1
         fi
 
-        # check that suffix of file is the SHA1 of $etendard
+        # _local_check that suffix of file is the SHA1 of $etendard
         S=$(cut -f 2 -d' ' "$GASH_CABANE/etendard_$i")
         if [ "$S" != "$(checksum "$P")" ]
         then
@@ -51,12 +51,12 @@ check() {
 }
 
 
-if check
+if _local_check
 then
-    unset -f check
+    unset -f _local_check
     true
 else
-    unset -f check
+    unset -f _local_check
     find "$GASH_HOME" -name "etendard_?" -type f -print0 | xargs -0 rm -f
     false
 fi

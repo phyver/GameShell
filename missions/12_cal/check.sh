@@ -15,7 +15,7 @@ do
     case "$n" in
         *[!0-9]) ;;
         *)
-            if [ "$n" -le 7  -a  "$n" -ge 1 ]
+            if [ "$n" -le 7 ] &&  [ "$n" -ge 1 ]
             then
                 s=$(date --date="2000-05-$n" +%A)
                 break

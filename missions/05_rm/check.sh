@@ -1,14 +1,16 @@
 #!/bin/bash
 
-check() {
-    local rats=$(find "$GASH_HOME/Chateau/Cave" -name "rat*")
+_local_check() {
+    local rats
+    rats=$(find "$GASH_HOME/Chateau/Cave" -name "rat*")
     if [ -n "$rats" ]
     then
         echo "Il reste des rats dans la cave !"
         return 1
     fi
 
-    local cat=$(find "$GASH_HOME/Chateau/Cave" -name "chat*")
+    local cat
+    cat=$(find "$GASH_HOME/Chateau/Cave" -name "chat*")
     if [ -z "$cat" ]
     then
         echo "Le chat a disparu !!!"
@@ -19,11 +21,11 @@ check() {
 }
 
 
-if check
+if _local_check
 then
-    unset -f check
+    unset -f _local_check
     true
 else
-    unset -f check
+    unset -f _local_check
     false
 fi

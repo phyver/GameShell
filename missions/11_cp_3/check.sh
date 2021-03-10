@@ -1,24 +1,25 @@
 #!/bin/bash
 
-check() {
+_local_check() {
 
-    local tableau=$(find "$GASH_MISSIONS" -name "tableau" -type f)
+    local tableau
+    tableau=$(find "$GASH_MISSIONS" -name "tableau" -type f)
 
-    # check that file exists in "coffre"
+    # _local_check that file exists in "coffre"
     if [ ! -f "$GASH_COFFRE/tableau" ]
     then
         echo "Il n'y a pas de tableau dans le coffre !"
         return 1
     fi
 
-    # check that file still exists in "Premier_etage"
+    # _local_check that file still exists in "Premier_etage"
     if [ ! -f "$GASH_HOME/Chateau/Donjon/Premier_etage/tableau" ]
     then
         echo "Il n'y a plus de tableau au premier étage du donjon !"
         return 1
     fi
 
-    # check that the files are the same
+    # _local_check that the files are the same
     if ! diff -q "$tableau" "$GASH_HOME/Chateau/Donjon/Premier_etage/tableau"
     then
         echo "Les deux tableaux sont différents !"
@@ -30,9 +31,11 @@ check() {
         return 1
     fi
 
-    # check that the date of the tableau in the "coffre" is fine
-    local D1=$(GET_MTIME "$GASH_COFFRE/tableau" | sha1sum | cut -c 1-40)
-    local D2=$(cat "$GASH_TMP/date_tableau")
+    # _local_check that the date of the tableau in the "coffre" is fine
+    local D1
+    D1=$(GET_MTIME "$GASH_COFFRE/tableau" | sha1sum | cut -c 1-40)
+    local D2
+    D2=$(cat "$GASH_TMP/date_tableau")
 
     if [ "$D1" != "$D2" ]
     then
@@ -46,12 +49,12 @@ check() {
 }
 
 
-if check
+if _local_check
 then
-    unset -f check
+    unset -f _local_check
     true
 else
-    unset -f check
+    unset -f _local_check
     find "$GASH_HOME" -iname "tableau" -print0 | xargs -0 rm -rf
     false
 fi

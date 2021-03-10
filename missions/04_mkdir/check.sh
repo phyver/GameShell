@@ -1,7 +1,8 @@
 #!/bin/bash
 
-check() {
-    local nb_cabanes=$(find "$GASH_HOME/Foret" -iname cabane -type d | wc -l)
+_local_check() {
+    local nb_cabanes
+    nb_cabanes=$(find "$GASH_HOME/Foret" -iname cabane -type d | wc -l)
     if [ "$nb_cabanes" -ge 2 ]
     then
         echo "Vous avez construit trops de cabanes dans la forêt !"
@@ -12,7 +13,8 @@ check() {
         echo "Vous n'avez pas construit de cabane dans la forêt !"
         return 1
     fi
-    local cabane=$(find "$GASH_HOME/Foret" -maxdepth 1 -iname cabane)
+    local cabane
+    cabane=$(find "$GASH_HOME/Foret" -maxdepth 1 -iname cabane)
     if [ -z "$cabane" ]
     then
         echo "Votre cabane est trop loin dans la forêt..."
@@ -37,7 +39,8 @@ check() {
         echo "Vous n'avez pas construit de coffre dans votre cabane !"
         return 1
     fi
-    local coffre=$(find "$cabane" -maxdepth 1 -iname coffre)
+    local coffre
+    coffre=$(find "$cabane" -maxdepth 1 -iname coffre)
     if [ -z "$coffre" ]
     then
         echo "Votre coffre n'est au bon endroit dans votre cabane."
@@ -52,7 +55,7 @@ check() {
     return 0
 }
 
-if check
+if _local_check
 then
     true
 else

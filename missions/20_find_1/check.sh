@@ -1,8 +1,9 @@
 #!/bin/bash
 
-check_p() {
+_local_check_p() {
     local file=$1
-    local path=$(find "$GASH_COFFRE" -name "*$file" -type f)
+    local path
+    path=$(find "$GASH_COFFRE" -name "*$file" -type f)
 
     if [ -z "$path" ]
     then
@@ -16,9 +17,11 @@ check_p() {
     fi
 }
 
-check() {
-    local lab=$(find "$GASH_HOME/Chateau/Cave" -name labyrinthe -type d)
-    local nb=$(find "$lab" -iname "piece_d_or" -type f | wc -l)
+_local_check() {
+    local lab
+    lab=$(find "$GASH_HOME/Chateau/Cave" -name labyrinthe -type d)
+    local nb
+    nb=$(find "$lab" -iname "piece_d_or" -type f | wc -l)
     if [ "$nb" -gt 2 ]
     then
         echo "Il y a trop de pièces dans le labyrinthe !!!"
@@ -30,15 +33,15 @@ check() {
         return 1
     fi
 
-    check_p "piece_d_or" && check_p "PieCe_D_Or"
+    _local_check_p "piece_d_or" && _local_check_p "PieCe_D_Or"
 }
 
-if check
+if _local_check
 then
-    unset -f check check_p
+    unset -f _local_check _local_check_p
     true
 else
-    unset -f check check_p
+    unset -f _local_check _local_check_p
     find "$GASH_HOME" -iname piece_d_or -not -iname "*journal*" -print0 | xargs -0 rm -f
     false
 fi

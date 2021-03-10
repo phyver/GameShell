@@ -1,8 +1,10 @@
 #!/bin/bash
 
-check() {
-    local lab=$(find "$GASH_HOME/Chateau/Cave" -name labyrinthe -type d)
-    local nb=$(find "$lab" -type f -print0 | xargs -0 grep -l "diamant" | wc -l)
+_local_check() {
+    local lab
+    lab=$(find "$GASH_HOME/Chateau/Cave" -name labyrinthe -type d)
+    local nb
+    nb=$(find "$lab" -type f -print0 | xargs -0 grep -l "diamant" | wc -l)
 
     if [ "$nb" -gt 1 ]
     then
@@ -15,7 +17,8 @@ check() {
         return 1
     fi
 
-    local diamant=$(find "$GASH_COFFRE" -type f -print0 | xargs -0 grep -l diamant)
+    local diamant
+    diamant=$(find "$GASH_COFFRE" -type f -print0 | xargs -0 grep -l diamant)
 
     if [ -z "$diamant" ]
     then
@@ -23,11 +26,15 @@ check() {
         return 1
     fi
 
-    local K=$(cut -f2 -d" " "$diamant")
-    local K2=$(basename "$diamant")
-    local S=$(cut -f3 -d" " "$diamant")
-    local S2=$(checksum "$K.diamant")
-    if [ "$K" != "$K2"  -o  "$S" != "$S2" ]
+    local K
+    K=$(cut -f2 -d" " "$diamant")
+    local K2
+    K2=$(basename "$diamant")
+    local S
+    S=$(cut -f3 -d" " "$diamant")
+    local S2
+    S2=$(checksum "$K.diamant")
+    if [ "$K" != "$K2" ] || [ "$S" != "$S2" ]
     then
         echo "Le fichier 'diamant' du coffre est invalide..."
         return 1
@@ -37,12 +44,12 @@ check() {
 }
 
 
-if check
+if _local_check
 then
-    unset -f check
+    unset -f _local_check
     true
 else
-    unset -f check
+    unset -f _local_check
     false
 fi
 

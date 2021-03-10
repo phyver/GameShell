@@ -65,21 +65,21 @@ gen() {
         'un caillou brillant' 'une opale' 'un bâton de marche' 'une besace' 'un tabouret'
         'une épingle' 'une ceinture' 'un heaume' )
 
-    local i prenom nom objet prix paye
+    local _ prenom nom objet prix paye
     local dette=0
-    for i in $(seq $nb_lignes)
+    for _ in $(seq "$nb_lignes")
     do
         objet=${objets[$(( 16#$RANDOM % ${#objets[@]}))]}
-        prix=$(( $RANDOM % 5 + 2))
-        paye=$([ $(($RANDOM % 100)) -le $pourcent_paye ] && echo " -- PAYÉ")
+        prix=$(( RANDOM % 5 + 2))
+        paye=$([ $((RANDOM % 100)) -le "$pourcent_paye" ] && echo " -- PAYÉ")
 
-        if [ $(( $RANDOM % 100 )) -le $pourcent_roi ]
+        if [ $(( RANDOM % 100 )) -le "$pourcent_roi" ]
         then
             prenom="Le"
             nom="Duc"
             if [ -z "$paye" ]
             then
-                dette=$(( $dette + $prix ))
+                dette=$(( dette + prix ))
             fi
         else
             prenom=${prenoms[$(( 16#$RANDOM % ${#prenoms[@]}))]}
@@ -90,4 +90,4 @@ gen() {
 
 }
 
-gen $1 $2 $3
+gen "$1" "$2" "$3"

@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-# -*- encoding: UTF-8 -*-
 
 import random
 import sys
 from subprocess import getoutput
 
-prenoms = [ 'Abdallah', 'Abdel', 'Adelaide', 'Adrien', 'Agnes', 'Alaric',
+prenoms = ['Abdallah', 'Abdel', 'Adelaide', 'Adrien', 'Agnes', 'Alaric',
            'Ali', 'Ali', 'Alienor', 'Alix', 'Alphonse', 'Alphonse', 'Alwin',
            'Amaury', 'Amedee', 'Amin', 'Amina', 'Anastase', 'Anastase',
            'Anastasie', 'Anastasie', 'Ariane', 'Arnaud', 'Arnaut', 'Arthur',
@@ -69,16 +68,16 @@ objets = ['une pelle', 'un pic', 'une besace', 'une pomme', 'une poule', 'un che
           'une opale', 'un bâton de marche', 'une besace', 'un tabouret', 'une épingle',
           'une ceinture', 'un heaume']
 
-def gen(nbLignes, nbDuRoi, probaPaye ):
+
+def gen(nbLignes, nbDuRoi, probaPaye):
     detteDuDuc = 0
     nbImpayes = 0
-    l = []
-    for i in range(random.randint( int(nbLignes*0.9), int(nbLignes*1.1))):
+    L = []
+    for i in range(random.randint(int(nbLignes*0.9), int(nbLignes*1.1))):
         nom = random.choice(prenoms) + ' ' + random.choice(noms)
         objet = random.choice(objets)
-        prix = random.randint(2,5)
+        prix = random.randint(2, 5)
 
-        x = random.randint(0,9)
         if random.random() <= probaPaye:
             finale = ' -- PAYÉ.'
             paye = True
@@ -87,18 +86,18 @@ def gen(nbLignes, nbDuRoi, probaPaye ):
             paye = False
             nbImpayes += 1
 
-        if i == 0 or random.randint(1,n) <= nbDuRoi:
+        if i == 0 or random.randint(1, n) <= nbDuRoi:
             nom = "Le Duc"
-            if not paye :
+            if not paye:
                 detteDuDuc += prix
-        l.append("{} m'a acheté {} pour {} piécettes{}".format(nom, objet, prix, finale))
-    print('\n'.join(l))
+        L.append("{} m'a acheté {} pour {} piécettes{}".format(nom, objet, prix, finale))
+    print('\n'.join(L))
     getoutput("echo -n {} | sha1sum | cut -c 1-40 > $GASH_TMP/detteDuDuc".format(detteDuDuc))
     getoutput("echo -n {} | sha1sum | cut -c 1-40 > $GASH_TMP/nbImpayes".format(nbImpayes))
+
 
 if __name__ == '__main__':
     n = int(sys.argv[1]) if len(sys.argv) >= 2 else 100
     nbRoi = int(sys.argv[2]) if len(sys.argv) >= 3 else 10
     pp = float(sys.argv[3]) if len(sys.argv) >= 4 else 0.2
-    gen(n,nbRoi,pp)
-
+    gen(n, nbRoi, pp)

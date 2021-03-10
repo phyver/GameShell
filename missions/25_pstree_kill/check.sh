@@ -11,7 +11,7 @@ echo .
 cat=$(find "$GASH_HOME/Chateau/Cave" -name ".*_chat")
 nbp=$(ps ax | grep "chat.sh" | wc -l)
 
-if [ -z "$cat" -a "$nbp" -eq 4 ]
+if [ -z "$cat" ] && [ "$nbp" -eq 4 ]
 then
     unset cat nbp
     true

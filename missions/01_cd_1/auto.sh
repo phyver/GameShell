@@ -1,2 +1,2 @@
 
-cd Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_donjon/
+cd ~/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_donjon/

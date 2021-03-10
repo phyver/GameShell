@@ -19,22 +19,26 @@ function human_time(seconds) {
 
 BEGIN {
     initial_time = 0;
+    last_mission = 0;
     }
 
 /\s*#/ { next }         # ignore comments
 
 {
-    current_time = $3;
-    nb_mission = $1;
+    current_time = $3+0;
+    nb_mission = $1+0;
+    if (nb_mission > last_mission) {
+        last_mission = nb_mission;
+    }
     # check actual checksum function in gash
     cmd = "echo -n \"" GASH_UID "#" $1 "#" $2 "#" $3 "\" | sha1sum | cut -c 1-40"
     cmd | getline checksum;
-    if (checksum != $4) {
-        print "CHECKSUM PROBLEM : ";
-        print "  expected " $4;
-        print "       got " checksum;
-        print "cmd = " cmd;
-    }
+    # if (checksum != $4) {
+    #     print "CHECKSUM PROBLEM : ";
+    #     print "  expected " $4;
+    #     print "       got " checksum;
+    #     print "cmd = " cmd;
+    # }
 }
 
 
@@ -76,9 +80,13 @@ END {
         M[nb_mission][n]["result"] = "EXIT";
         }
 
-    for (nb_mission in M) {
+    for (nb_mission=1; nb_mission <= last_mission; nb_mission++) {
         nb_tries = M[nb_mission]["nb_tries"];
-        print "Mission " nb_mission " : " M[nb_mission]["nb_tries"] " essai(s)";
+        if (!nb_tries) {
+            print "aucun essai pour cette mission !!!";
+            continue;
+        }
+        print "Mission " nb_mission " : " nb_tries " essai(s)";
         for (i=1; i<=nb_tries; i++) {
             print "  essai " i " : " human_time(M[nb_mission][i]["stop"] - M[nb_mission][i]["start"]) ": " M[nb_mission][i]["result"];
             }

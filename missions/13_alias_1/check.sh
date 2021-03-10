@@ -1,8 +1,9 @@
 #!/bin/bash
 
-check() {
+_local_check() {
 
-    local cmd=$(alias la 2> /dev/null | cut -f2 -d"=" | tr -d "' ")
+    local cmd
+    cmd=$(alias la 2> /dev/null | cut -f2 -d"=" | tr -d "' ")
     if [ -z "$cmd" ]
     then
         echo "L'alias 'la' n'existe pas..."
@@ -25,4 +26,4 @@ check() {
     return 0
 }
 
-check
+_local_check
