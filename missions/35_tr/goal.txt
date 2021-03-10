@@ -1,0 +1,28 @@
+Objectif
+========
+
+Un message secret à été trouvé dans la bibliothèque.
+Il a probablement été chiffré avec un décalage de César.
+
+Déchiffre le en faisant une recherche exhaustive avec la ligne de commandes.
+
+Commandes utilisées
+===================
+
+  tr chaine1 chaine2 < fichier
+    Remplace le caractère chaine1[i] par chaine2[i] dans
+    fichier, et affiche le résultat (ne modifie pas fichier).
+
+    Exemple :
+
+       Si :
+            chaine1 = "abcdef"
+            chaine2 = "klmnop"
+
+       Alors, le fichier sera affiché avec la permutation
+       suivante (les autres caractères ne changent pas) :
+            - a -> k      - b -> l      - c -> m
+            - d -> n      - e -> o      - f -> p
+
+      Astuce : au lieu de faire "abcdefg", on peut faire:
+            "a-g"
