@@ -1,5 +1,4 @@
-GameShell : un "jeu" pour apprendre le shell
-============================================
+# GameShell : un "jeu" pour apprendre le shell
 
 
 GameShell (gash) est le résultat d'une réflexion sur comment enseigner les
@@ -53,6 +52,19 @@ Utilisation
 
 ### 1/ directement depuis les sources
 
+En récupérant l'archive https://github.com/phyver/GameShell/blob/master/GameShell.tgz
+
+    $ wget https://github.com/phyver/GameShell/blob/master/GameShell.tgz -O -  |  tar -x
+    $ ./GameShell/start.sh
+    ...
+    ...
+
+
+### 2/ directement depuis les sources
+
+Après avoir cloné le dépot :
+
+    $ git clone https://github.com/phyver/GameShell.git
     $ ./GameShell/start.sh
     Attention, vous êtes en train d'exécuter
     GameShell dans la version de développement.
@@ -65,7 +77,9 @@ Note : lancer GameShell directement dans le répertoire des sources ne devrait
 pas poser de problème...
 
 
-### 2/ en créant une archive spécifique
+### 3/ en créant une archive spécifique
+
+Après avoir cloné le dépot :
 
     $ cd GameShell
     $ ./bin/archive.sh -M"*find*"
@@ -78,17 +92,19 @@ pas poser de problème...
     création de l'archive
     suppression du répertoire temporaire
     $ ls
-    GameShell.tar  README  World/  bin/  doc/  lib/  missions/  start.sh*
+    GameShell.tgz  README  World/  bin/  doc/  lib/  missions/  start.sh*
 
-Le fichier GameShell.tar contient une instance de GameShell avec uniquement
+Le fichier `GameShell.tgz` contient une instance de GameShell avec uniquement
 les 3 missions autour de la commande ``find``.
 
 On peut maintenant copier cette archive n'importe où et lancer le jeu:
 
-    $ mv GameShell.tar /tmp
+    $ mv GameShell.tgz /tmp
     $ cd /tmp
     $ tar -xf GameShell.tar
     $ ./GameShell/start.sh
+    ...
+    ...
 
 
 Commandes de base
@@ -97,11 +113,11 @@ Commandes de base
 GameShell est simplement une instance de bash avec des fonctions
 supplémentaires. Ces fonctionnalités passent par la commande ``gash``.
 
-  - gash help : affiche une petite liste des commandes
-  - gash HELP : affiche une liste plus complète des commandes
-  - gash show : affiche l'objectif de la mission courante
-  - gash check : vérifie si la mission actuelle est validée
-  - gash restart : recommence la mission courante
+  - `gash help` : affiche une petite liste des commandes
+  - `gash HELP` : affiche une liste plus complète des commandes
+  - `gash show` : affiche l'objectif de la mission courante
+  - `gash check` : vérifie si la mission actuelle est validée
+  - `gash restart` : recommence la mission courante
 
 
 
@@ -111,11 +127,11 @@ Ajout de mission
 Chaque mission est contenue dans un répertoire dédié et peut fournir les
 fichiers suivants
 
-  - goal.txt
+  - `goal.txt`
         petite description de la mission, affichée par ``gash show``
         (fichier texte, obligatoire)
 
-  - static.sh
+  - `static.sh`
         fichier lu par bash __au lancement de GameShell__. C'est par exemple
         dans ce fichier que l'on peut créer des répertoire qui existeront pour
         toute les missions.
@@ -123,12 +139,12 @@ fichiers suivants
         donc par exemple définir des variables d'environnement.
         (fichier bash, facultatif)
 
-  - init.sh
+  - `init.sh`
         fichier lu par bash __au lancement de la mission__. C'est par exemple
         dans ce fichier qu'on peut (re)générer des parties dynamiques de la
         mission.
 
-  - check.sh
+  - `check.sh`
         fichier lu par bash pour vérifier que la mission est validée.
         Remarque : ce fichier est lu par bash (``source check.sh``) et __doit
         se terminer__ par une commande renvoyant la valeur 0 (typiquement,
@@ -136,16 +152,36 @@ fichiers suivants
         différente de 0 (typiquement ``false``) en cas d'échec.
         (fichier bash, obligatoire)
 
-  - auto.sh
+  - `auto.sh`
         fichier lu par bash pour valider automatiquement la mission
         Remarque : ce fichier est lu par bash (``source auto.sh``).
         (fichier bash, facultatif)
 
-  - treasure.sh
+  - `treasure.sh`
         fichier bash lu par bash après validation de la mission. Cela permet
         d'ajouter des fonctionnalités comme "récompense" à certaines missions.
         (fichier bash, facultatif)
 
-  - treasure.txt
+  - `treasure.txt`
         fichier texte affiché par bash après validation de la mission
         (fichier texte, facultatif)
+
+
+
+Contributeurs missions
+----------------------
+
+* Pierre Hyvernat
+* Rodolphe Lepigre
+* Christophe Raffalli
+* Xavier Provencal
+* Sébastien Tavenas
+* Tiemen Duvillard
+
+
+Licence
+-------
+
+Ce code est distribué sous licence GPL.
+
+Merci de pointer vers ce dépot si vous l'utilisez.
