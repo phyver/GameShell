@@ -19,11 +19,11 @@ Commandes utilisées
     sur le nom des fichiers, leur taille, leur date de 
     création, etc.
 
-  grep [OPTIONS] MOTIF FICHIER1 ... FICHIERn
-    recherche un motif parmi les fichiers
+  grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
+    recherche une chaine parmi les fichiers
     Parmi les options, vous avez notamment
       -l  qui affiche juste le nom des fichiers
-          contenant le motif
+          contenant la chaine
 
   xargs CMD
     lit des lignes sur l'entrée standard, et exécute la 
