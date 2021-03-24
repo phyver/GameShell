@@ -22,7 +22,7 @@ options :
   -L          utilise le mode local par défaut
   -U          utilise le LDAP de l'université par défaut
   -D          utilise le mode debug par défaut
-  -o ...      choisit le nom de l'archive (défaut: ../NOM_REPERTOIRE.tar)
+  -o ...      choisit le nom de l'archive (défaut: ../NOM_REPERTOIRE.tgz)
 EOH
 }
 
@@ -71,7 +71,7 @@ do
   esac
 done
 
-[ -z "$OUTPUT" ] && OUTPUT="$(pwd)/$NAME.tar"
+[ -z "$OUTPUT" ] && OUTPUT="$(pwd)/$NAME.tgz"
 
 TMP_DIR=$(mktemp -d)
 mkdir "$TMP_DIR/$NAME"
@@ -131,8 +131,8 @@ esac
 # create archive
 echo "création de l'archive"
 cd "$TMP_DIR"
-tar -cf "$NAME.tar" "$NAME"
-mv "$NAME.tar" "$OUTPUT"
+tar -zcf "$NAME.tgz" "$NAME"
+mv "$NAME.tgz" "$OUTPUT"
 
 echo "suppression du répertoire temporaire"
 rm -rf "$TMP_DIR"
