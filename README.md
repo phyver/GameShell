@@ -175,6 +175,7 @@ Contributeurs missions
 * Rodolphe Lepigre
 * Christophe Raffalli
 * Xavier Provencal
+* Clovis Eberhart
 * Sébastien Tavenas
 * Tiemen Duvillard
 
