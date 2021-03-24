@@ -4,7 +4,7 @@ coul=$(find "$GASH_HOME/Chateau/Cave/" -name ".Long*Couloir*")
 if [ -z "$coul" ]
 then
     coul="$GASH_HOME/Chateau/Cave/.Long $(checksum $RANDOM) Couloir $(checksum $RANDOM)"
-    mkdir -p "$GASH_HOME/Chateau/Cave/$coul"
+    mkdir -p "$coul"
 fi
 
 lab=$coul/labyrinthe

@@ -23,7 +23,8 @@ re-générée.
 Indice
 ======
 
-Une alternative à ``find . -name "*sans_interet*`` est 
+Lorsqu'il n'y a pas de sous répertoires, une
+alternative à ``find . -name "*sans_interet*`` est
 d'utiliser ``ls`` et de filtrer le résultat avec 
 ``grep`` :
     $ ls | grep "sans_interet"
