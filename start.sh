@@ -15,8 +15,7 @@ cat <<EOH
 options :
   -h      ce message
   -n      mode noir et blanc : n'utilise pas les séquences ANSI pour la couleur
-  -L      local : n'essaie pas d'utiliser le serveur LDAP de l'université
-  -U      université : utilise le serveur LDAP de l'université Savoie Mont Blanc
+  -P      passeport étudiant : demande les noms / email des étudiants
   -D <n>  mode debug / découverte en partant de la mission <n>
 EOH
 }
@@ -25,7 +24,7 @@ EOH
 export GASH_COLOR="OK"
 export GASH_DEBUG_MISSION=""
 MODE="DEBUG"
-while getopts ":hcnULD:" opt
+while getopts ":hcnPD:" opt
 do
   case $opt in
     h)
@@ -38,11 +37,8 @@ do
     c)
       GASH_COLOR="OK"
       ;;
-    L)
-      MODE="LOCAL"
-      ;;
-    U)
-      MODE="USMB"
+    P)
+      MODE="PASSPORT"
       ;;
     D)
       MODE="DEBUG"
@@ -55,28 +51,6 @@ do
   esac
 done
 
-
-
-ldap_passeport() {
-  local PASSEPORT=$1
-  local LDAP_SRV="ldap-bourget.univ-savoie.fr"
-  local LDAP="ldapsearch -h $LDAP_SRV -p 389 -xLLL -b dc=agalan,dc=org"
-
-  local LOGINS=""
-  echo -n "Logins du portail (séparés par des espaces) : "
-  read LOGINS
-  echo
-
-  for LOGIN in $LOGINS; do
-    NOM="$($LDAP uid="$LOGIN" cn | grep ^cn | colrm 1 4)"
-    EMAIL="$($LDAP uid="$LOGIN" mail | grep ^mail | colrm 1 6)"
-    if [ -z "$NOM" ]; then
-      color_echo red "Le login « $LOGIN » est introuvable..."
-    else
-      echo " - $NOM <$EMAIL>" >> "$PASSEPORT"
-    fi
-  done
-}
 
 local_passeport() {
   local PASSEPORT=$1
@@ -125,7 +99,7 @@ confirm_passeport() {
   local OK=""
   read OK
   echo
-  [ "$OK" = "" -o "$OK" = "o" -o "$OK" = "O" ]
+  [ "$OK" = "" ] || [ "$OK" = "o" ] || [ "$OK" = "O" ]
 }
 
 init_gash() {
@@ -158,7 +132,7 @@ init_gash() {
     echo "dans l'arborescence de développement."
     echo -n "Faut-il le continuer ? [o/N] "
     read x
-    [ "$x" != "o"  -a  "$x" != "O" ] && exit 1
+    [ "$x" != "o" ] && [ "$x" != "O" ] && exit 1
     # [ -z "$GASH_DEBUG_MISSION" ] && GASH_DEBUG_MISSION="1"
   fi
 
@@ -166,7 +140,7 @@ init_gash() {
   then
     echo -n "'$GASH_DATA' existe déjà... Faut-il le conserver ? [O/n] "
     read x
-    [ "$x" = "o"  -o  "$x" = "O"  -o "$x" = "" ] && return 1
+    ([ "$x" = "o" ] || [ "$x" = "O" ] || [ "$x" = "" ]) && return 1
   fi
 
 
@@ -189,7 +163,7 @@ init_gash() {
   mkdir -p "$GASH_TMP"
 
   # Installation des missions.
-  for MISSION in $GASH_BASE/missions/[0-9]*; do
+  for MISSION in "$GASH_BASE"/missions/[0-9]*; do
     if [ -f "$MISSION/static.sh" ]
     then
       source "$MISSION/static.sh"
@@ -217,11 +191,8 @@ init_gash() {
         debug_passeport "$PASSEPORT"
         break
         ;;
-      LOCAL)
+      PASSPORT)
         local_passeport "$PASSEPORT"
-        ;;
-      USMB)
-        ldap_passeport "$PASSEPORT"
         ;;
       *)
         echo "mode de lancement inconnu: '$MODE'" >&2
