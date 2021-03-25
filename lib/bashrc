@@ -32,9 +32,13 @@ else
 *     Commencez par taper la commande          *
 *       $ gash show                            *
 *     pour découvrir le premier objectif       *
-*     ou                                       *
+*     et                                       *
+*       $ gash check                           *
+*     pour valider vos missions.               *
+*                                              *
+*     La commande                              *
 *       $ gash help                            *
-*     pour afficher la liste des commandes     *
+*     affichera la liste des commandes gash.   *
 *                                              *
 ************************************************
 EOM

@@ -24,6 +24,8 @@ Debian/Ubuntu, il faut avoir les paquets suivants :
   - nano
   - tree
   - x11-apps
+  - python3 (pour générer la mission 33)
+  - gcc (pour générer la mission 30)
 
 
 Pour macOS, il faut installer ``coreutils`` et ``md5sha1sum``. Le plus simple
