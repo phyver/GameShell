@@ -54,9 +54,9 @@ Utilisation
 
 ### 1/ directement depuis les sources
 
-En récupérant l'archive https://github.com/phyver/GameShell/blob/master/GameShell.tgz
+En récupérant l'archive https://github.com/phyver/GameShell/raw/master/GameShell.tgz
 
-    $ wget https://github.com/phyver/GameShell/blob/master/GameShell.tgz -O -  |  tar -x
+    $ wget https://github.com/phyver/GameShell/raw/master/GameShell.tgz -O -  |  tar -xz
     $ ./GameShell/start.sh
     ...
     ...
