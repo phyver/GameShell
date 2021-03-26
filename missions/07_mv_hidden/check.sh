@@ -24,7 +24,7 @@ _local_check() {
         return 1
     fi
 
-     _local_check that prefix of first line is piece_$i
+    # _local_check that prefix of first line is piece_$i
     local P
     P=$(cut -f 1 -d' ' "$file")
     if [ "$(echo "$P" | cut -f1 -d'#')" != "$piece" ]
