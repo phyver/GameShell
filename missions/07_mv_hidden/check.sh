@@ -61,5 +61,7 @@ then
 else
     unset -f _local_check
     find "$GASH_HOME" -name ".piece_*_?" -type f -print0 | xargs -0 rm -f
+    find "$cave" -iname "*coffre*" -type f -print0 | xargs -0 rm -f
+    find "$cave" -iname "*cabane*" -type f -print0 | xargs -0 rm -f
     false
 fi
