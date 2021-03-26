@@ -10,7 +10,7 @@ do
         date --date="2000-05-$i" +%A
     done
     echo -n "Réponse : "
-    read n
+    read -re n
 
     case "$n" in
         *[!0-9]) ;;

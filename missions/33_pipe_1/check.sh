@@ -1,7 +1,7 @@
 #!/bin/bash
 
 y=$(cat "$GASH_TMP/detteDuDuc")
-read -p "Quelle est la dette du Duc ? " d
+read -erp "Quelle est la dette du Duc ? " d
 
 x=$(checksum "$d")
 if [ "$NB_CMD" -ge 0 ] && [ "$x" = "$y" ]

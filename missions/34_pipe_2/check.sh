@@ -1,7 +1,7 @@
 #!/bin/bash
 
 y=$(cat "$GASH_TMP/nbImpayes")
-read -p "Combien y a t'il de dettes impayées ? " d
+read -erp "Combien y a t'il de dettes impayées ? " d
 
 x=$(checksum "$d")
 

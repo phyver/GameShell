@@ -7,7 +7,7 @@ do
     a=$((1 + RANDOM % 50))
     b=$((1 + RANDOM % 50))
     c=$((a + b))
-    read -p "$a + $b = ?? " r
+    read -erp "$a + $b = ?? " r
     case "$r" in
         "" | *[!0-9]*)
             echo "Trop nul ! Le résultat est $c..."

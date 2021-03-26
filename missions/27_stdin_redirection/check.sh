@@ -9,7 +9,7 @@ do
     q="$(echo "$l" | cut -d"|" -f1)"
     c="$(echo "$l" | cut -d"|" -f2)"
 
-    read -p "$q" r
+    read -erp "$q" r
     if [ "$LIMIT" -le "$(date +%s)" ]
     then
         echo "Trop lent ! Il faut donner les réponses en moins de 10 secondes..."

@@ -58,7 +58,7 @@ local_passeport() {
   while true
   do
     echo -n "Combien de membres dans le groupe ? (1) "
-    read NB
+    read -er NB
     case "$NB" in
       "" )          NB=1; break             ;;
       *[!0-9]* )    echo "nombre invalide"  ;;
@@ -71,13 +71,13 @@ local_passeport() {
     while [ -z "$NOM" ]
     do
       echo -n "Membre $I, nom complet : "
-      read NOM
+      read -er NOM
     done
     EMAIL=""
     while [ -z "$EMAIL" ]
     do
       echo -n "Membre $I, email : "
-      read EMAIL
+      read -er EMAIL
     done
     echo "  $NOM <$EMAIL>" >> "$PASSEPORT"
   done
@@ -97,7 +97,7 @@ confirm_passeport() {
   color_echo yellow "Les informations données ici ne pourront plus être modifiées."
   echo -n "Ces informations sont elles correctes ? (O / n) "
   local OK=""
-  read OK
+  read -er OK
   echo
   [ "$OK" = "" ] || [ "$OK" = "o" ] || [ "$OK" = "O" ]
 }
@@ -131,7 +131,7 @@ init_gash() {
     echo "Vous êtes en train d'exécuter GameShell"
     echo "dans l'arborescence de développement."
     echo -n "Faut-il le continuer ? [o/N] "
-    read x
+    read -er x
     [ "$x" != "o" ] && [ "$x" != "O" ] && exit 1
     # [ -z "$GASH_DEBUG_MISSION" ] && GASH_DEBUG_MISSION="1"
   fi
@@ -139,7 +139,7 @@ init_gash() {
   if [ -e "$GASH_DATA" ]
   then
     echo -n "'$GASH_DATA' existe déjà... Faut-il le conserver ? [O/n] "
-    read x
+    read -er x
     ([ "$x" = "o" ] || [ "$x" = "O" ] || [ "$x" = "" ]) && return 1
   fi
 
