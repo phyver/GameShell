@@ -27,6 +27,7 @@ then
     _gash_start "$GASH_DEBUG_MISSION"
 else
     cat <<EOM
+
 ************************************************
 *                                              *
 *     Commencez par taper la commande          *
@@ -41,6 +42,7 @@ else
 *     affichera la liste des commandes gash.   *
 *                                              *
 ************************************************
+
 EOM
     n=$(_get_current_mission)
     if [ -z "$n" ]

@@ -129,6 +129,17 @@ Ajout de mission
 Chaque mission est contenue dans un répertoire dédié et peut fournir les
 fichiers suivants
 
+  - `deps.sh`
+        pour vérifier si le système contient les dépendances de la mission
+        Il __doit se terminer__ par une commande renvoyant `0` (typiquement
+        `true`) si les dépendances sont satisfaites, et par une commande
+        renvoyant une valeur non nulle (typiquement `false`) sinon.
+        Remarque : ce fichier est lu lors de l'initialisation de GameShell et
+        affiche un message en cas de dépendance non satisfaite. Il est aussi
+        lu au lancement de la mission, et en cas de dépendance non satisfaite,
+        la mission est annulée.
+        (fichier bash, facultatif)
+
   - `goal.txt`
         petite description de la mission, affichée par ``gash show``
         (fichier texte, obligatoire)
