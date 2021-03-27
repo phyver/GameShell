@@ -4,7 +4,7 @@ shopt -s expand_aliases
 
 # cf https://github.com/dylanaraps/neofetch/issues/433
 case $OSTYPE in
-    linux-gnu)
+    linux|linux-gnu|linux-gnueabihf)
         source $GASH_BASE/lib/gnu_aliases.sh
         ;;
     darwin*)
@@ -15,7 +15,7 @@ case $OSTYPE in
         source $GASH_BASH/lib/bsd_aliases.sh
         ;;
     *)
-        echo "la variable $$OSTYPE est égale à $OSTYPE"
+        echo "la variable \$OSTYPE est égale à $OSTYPE"
         echo "je ne reconnais pas ce système..."
         exit
         ;;
