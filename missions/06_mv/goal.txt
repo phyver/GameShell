@@ -1,7 +1,7 @@
 Objectif
 ========
 
-ramasser les pièce trouvées dans la cave et les mettre 
+ramasser les pièces trouvées dans la cave et les mettre 
 dans le coffre (dans la cabane).
 
 
@@ -12,7 +12,7 @@ Commandes utilisées
     déplace les fichiers dans un autre dossier
 
   ~
-    abbréviation pour le répertoire initial (peut 
+    abréviation pour le répertoire initial (peut 
     dépendre du shell utilisé)
     exemple : ~/Dossier représente le dossier "Dossier" 
     dans le répertoire initial

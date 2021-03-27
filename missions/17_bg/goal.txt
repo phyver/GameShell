@@ -2,7 +2,7 @@ Objectif
 ========
 
 1/ Lancer la commande "xeyes" puis la stopper
-2/ Lancer la commande "xeyes" en tache de fond
+2/ Lancer la commande "xeyes" en tâche de fond
 
 
 Commandes utilisées

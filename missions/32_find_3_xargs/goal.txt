@@ -5,9 +5,9 @@ Combiner plusieurs commandes avec "|" pour retrouver le
 diamant dans labyrinthe et le déplacer dans votre 
 coffre.
 
-Attention, le nom du fichier ne contient pas la chaine 
+Attention, le nom du fichier ne contient pas la chaîne 
 "diamant" : il faut donc chercher un fichier qui 
-contient la chaine "diamant"...
+contient la chaîne "diamant"...
 
 
 Commandes utilisées
@@ -20,10 +20,10 @@ Commandes utilisées
     création, etc.
 
   grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
-    recherche une chaine parmi les fichiers
+    recherche une chaîne parmi les fichiers
     Parmi les options, vous avez notamment
       -l  qui affiche juste le nom des fichiers
-          contenant la chaine
+          contenant la chaîne
 
   xargs CMD
     lit des lignes sur l'entrée standard, et exécute la 

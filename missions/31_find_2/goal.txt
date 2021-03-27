@@ -4,10 +4,10 @@ Objectif
 retrouver le rubis dans labyrinthe et le déplacer dans 
 votre coffre.
 
-Attention, le nom du fichier ne contient pas la chaine 
+Attention, le nom du fichier ne contient pas la chaîne 
 "rubis" : il faut donc chercher un __fichier__ (par 
 opposition à un dossier) et vérifier que ce fichier 
-contient bien la chaine "rubis"...
+contient bien la chaîne "rubis"...
 
 
 Commandes utilisées
@@ -31,6 +31,6 @@ Commandes utilisées
     touches utilisées par la commande "man"
         q           pour quitter une page d'aide
         Space       pour faire défiler une page
-        / CHAINE    pour rechercher une chaine
+        / CHAINE    pour rechercher une chaîne
         n           pour se déplacer à la prochaine
-                    occurrence de la chaine cherchée
+                    occurrence de la chaîne cherchée

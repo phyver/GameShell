@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Créer un alias 'la' qui lance la commande ``ls -A`` 
+Créez un alias 'la' qui lance la commande ``ls -A`` 
 pour afficher les fichiers cachés en seulement 2 
 lettres !
 
@@ -17,5 +17,5 @@ Commandes utilisées
 ===================
 
   alias NOM='CMD'
-    NOM est une chaine de caractère (petite), qui sera 
-    remplacé par la commande CMD (longue)
+    NOM est une chaîne de caractères (petite), qui sera 
+    remplacée par la commande CMD (longue)

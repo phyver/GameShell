@@ -14,12 +14,12 @@ Rappel de commandes
   <?>
 
     le caractère "*" est un "joker" pour n'importe 
-    quelle chaine de caractère
+    quelle chaîne de caractères
 
     le caractère "?" est un "joker" pour n'importe 
     caractère
 
-    dans un nom de fichier, il sont remplacés 
+    dans un nom de fichier, ils sont remplacés 
     automatiquement par la liste de tous les fichiers 
     correspondant
 

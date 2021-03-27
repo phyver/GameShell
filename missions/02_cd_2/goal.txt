@@ -17,5 +17,5 @@ Commandes utilisées
     permet de retourner dans le lieu précédent
 
   cd ..
-    permet de retourner au lieux "avant" le lieu actuel 
+    permet de retourner au lieu "avant" le lieu actuel 
     dans la liste donnée par ``pwd``

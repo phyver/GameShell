@@ -23,14 +23,14 @@ esac
 
 
 # tests
-if CANNONICAL_PATH / &> /dev/null
+if CANONICAL_PATH / &> /dev/null
 then
   :
 else
-  echo "La fonction 'CANNONICAL_PATH' ne fonctionne pas..."
-  declare -f CANNONICAL_PATH
+  echo "La fonction 'CANONICAL_PATH' ne fonctionne pas..."
+  declare -f CANONICAL_PATH
 
-  echo "Pour macOS, n'oubliez pas d'installer 'coreutil' (et 'md5sha1sum')"
+  echo "Pour macOS, n'oubliez pas d'installer 'coreutils' (et 'md5sha1sum')"
   echo "   $ brew install coreutils"
   echo "   $ brew install md5sha1sum"
   exit
@@ -40,7 +40,7 @@ if GET_MTIME / &> /dev/null
 then
     :
 else
-    echo "La commande 'GET_MTIME' pour récupérer la date de modifition"
+    echo "La commande 'GET_MTIME' pour récupérer la date de modification"
     echo "d'un fichier ne fonctionne pas"
     declare -f GET_MTIME
 

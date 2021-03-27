@@ -29,10 +29,10 @@ On peut par contre rediriger les deux affichages
 indépendamment.
 
   grep CHAINE FICHIER1 ... FICHIERn
-    recherche une chaine dans les fichiers et affiche 
+    recherche une chaîne dans les fichiers et affiche 
     les lignes correspondantes options intéressantes :
       -l : n'affiche pas les lignes mais seulement le 
-           nom des fichiers qui contiennent la chaine
+           nom des fichiers qui contiennent la chaîne
       -i : ne différencie pas les majuscules et 
            minuscules lors de la recherche
 
@@ -43,7 +43,7 @@ indépendamment.
 
   CMD  2>  FICHIER
     les erreurs de la commande CMD sont écrites dans 
-    le fichier FICHIER au lieu d'être affiché sur la 
+    le fichier FICHIER au lieu d'être affichées sur la 
     sortie d'erreurs (STDERR)
 
   /dev/null

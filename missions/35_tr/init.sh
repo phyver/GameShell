@@ -2,10 +2,10 @@
 
 # mission soumise par Tiemen Duvillard
 
-# un chaine aléatoire
+# une chaîne aléatoire
 ab=okduygvjilelctawqnucevoxhzdmkabbnqsyfpfjhtwrmgirspzx
 
-# je choisi une clé en prenant un bout au hasard de la chaine ci dessus
+# je choisis une clé en prenant un bout au hasard de la chaîne ci dessus
 _secret_key=${ab:( $RANDOM % ((${#ab}) -4) ):4}
 
 # un décalage pas trop grand (entre -6 et +6) pour que la recherche exhaustive ne soit pas trop longue
@@ -16,7 +16,7 @@ do
 done
 
 ch=tuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrs
-C=${ch:$decalage:26} # je crée mon alphabet d'arrivée en tronquand la chaine ci dessus et en m'aidant du décalage de cesar
+C=${ch:$decalage:26} # je crée mon alphabet d'arrivée en tronquand la chaîne ci-dessus et en m'aidant du décalage de César
 
 echo "voici mon testament :
 je vous legue mon coffre et son contenu.

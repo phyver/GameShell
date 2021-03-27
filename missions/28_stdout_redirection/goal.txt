@@ -20,7 +20,7 @@ Commandes utilisées
     Les touches importantes sont
       Espace    pour passer à la page suivante
       q         pour quitter
-      /         pour rechercher une chaine dans le
+      /         pour rechercher une chaîne dans le
                 fichier
       n         pour passer à l'occurrence suivante de
-                la chaine cherchée
+                la chaîne cherchée

@@ -9,6 +9,7 @@ votre coffre.
 **Question :** notez dans votre rapport la ou les 
 commandes que vous utilisez pour retrouver les pièces. 
 Comparez les méthodes à votre disposition pour cette
+mission :
   - gestionnaire de fichier graphique
   - "ls -R" ou "tree"
   - "find"
@@ -25,7 +26,7 @@ Commandes utilisées
 
   find CONDITION
     permet de chercher des fichiers à partir du 
-    répertoire courant Les conditions peuvent porter 
+    répertoire courant. Les conditions peuvent porter 
     sur le nom des fichiers, leur taille, leur date de 
     création, etc.
     Deux conditions intéressantes sont :
@@ -38,6 +39,6 @@ Commandes utilisées
     touches utilisées par la commande "man"
         q           pour quitter une page d'aide
         Space       pour faire défiler une page
-        / CHAINE    pour rechercher une chaine
+        / CHAINE    pour rechercher une chaîne
         n           pour se déplacer à la prochaine
-                    occurrence de la chaine cherchée
+                    occurrence de la chaîne cherchée

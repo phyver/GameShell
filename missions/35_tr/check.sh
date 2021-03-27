@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Quel est la clé qui fait apparaitre le coffre de Merlin ? "
+echo "Quelle est la clé qui fait apparaître le coffre de Merlin ? "
 read dcode
 if [ "$dcode" = "$_secret_key" ]
 then

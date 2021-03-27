@@ -2,7 +2,7 @@
 
 while true
 do
-    echo "Quel était le jours de la semaine pour le $DD-$MM-$YYYY ?"
+    echo "Quel était le jour de la semaine pour le $DD-$MM-$YYYY ?"
 
     for i in $(seq 7)
     do
