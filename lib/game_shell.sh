@@ -119,6 +119,18 @@ _gash_start() {
 
   local mission="$(_get_mission_dir "$nb")"
 
+  ### tester le fichier deps.sh
+  if [ -f "$mission/deps.sh" ]
+  then
+    if ! bash "$mission/deps.sh"
+    then
+      echo "La mission est annulée"
+      _log_action "$nb" "DEP_PB_CANCEL"
+      _gash_start "$((nb + 1))"
+      return
+    fi
+  fi
+
   if [ -f "$mission/init.sh" ]
   then
     # compgen -v | sort > /tmp/v1

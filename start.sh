@@ -144,6 +144,11 @@ init_gash() {
   fi
 
 
+  # Message d'accueil.
+  clear
+  echo "============================ Initialisation de GameShell ============================"
+  echo
+
   rm -rf "$GASH_HOME"
   rm -rf "$GASH_DATA"
   rm -rf "$GASH_TMP"
@@ -164,6 +169,14 @@ init_gash() {
 
   # Installation des missions.
   for MISSION in "$GASH_BASE"/missions/[0-9]*; do
+    export MISSION
+    if [ -f "$MISSION/deps.sh" ]
+    then
+      if ! bash "$MISSION/deps.sh"
+      then
+        continue
+      fi
+    fi
     if [ -f "$MISSION/static.sh" ]
     then
       source "$MISSION/static.sh"
@@ -173,15 +186,12 @@ init_gash() {
       cp "$MISSION/bin/"* "$GASH_LOCAL_BIN"
     fi
   done
+  unset MISSION
 
 
 
   # Configuration pour la génération de la fiche étudiant.
   PASSEPORT="$GASH_DATA/passeport.txt"
-
-  # Message d'accueil.
-  clear
-  echo "============================ Initialisation de GameShell ============================"
 
   while true
   do
