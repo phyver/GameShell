@@ -10,7 +10,7 @@ then
 else
     unset S1 S2
     cd
-    echo "Vous êtes téléporté au point de départ !"
+    echo "Vous voici par téléportation de retour au point de départ !"
     false
 fi
 

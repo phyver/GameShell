@@ -1,9 +1,9 @@
 Objectif
 ========
 
-Créer un fichier 'journal' qui contiendra votre 
-compte-rendu. Pour le moment, il suffit d'y mettre vos 
-noms et prénoms...
+Créer un fichier journal nommé 'journal.txt' qui
+contiendra votre compte-rendu. Pour le moment, il
+suffit d'y mettre vos nom(s) et prénom(s)...
 
 
 Détails

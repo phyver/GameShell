@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo "Quel est la clé qui fait apparaitre le coffre de Merlin ? "
-read -e dcode
+echo "Quelle est la clé qui fait apparaitre le coffre de Merlin ? "
+read -er dcode
+
 if [ "$dcode" = "$_secret_key" ]
 then
     unset dcode _secret_key

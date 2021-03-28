@@ -19,14 +19,14 @@ do
 
     case "$r" in
         "" | *[!0-9]*)
-            echo "Trop nul ! Le résultat est $c..."
+            echo "Dommage ! Le résultat est $c..."
             OK=""
             break
             ;;
         *)
             if [ "$c" -ne "$r" ]
             then
-                echo "Trop nul ! Le résultat est $c..."
+                echo "Dommage ! Le résultat est $c..."
                 OK=""
                 break
             fi

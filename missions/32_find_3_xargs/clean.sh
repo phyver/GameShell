@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# mise à jours du répertoire courant, qui pourrait être supprimé lors du ménage
+# mise à jour du répertoire courant, qui pourrait être supprimé lors du ménage
 case $PWD in
     *labyrinthe*)
         cd "$(find "$GASH_HOME/Chateau/Cave/" -type d -name '.Long*Couloir*')" &&
-            echo "Vous voila téléporté à l'entrée du labyrinthe..."
+            echo "Vous voila de retour par téléportation à l'entrée du labyrinthe..."
         ;;
 esac
 
