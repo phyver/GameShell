@@ -377,7 +377,7 @@ Ces processus vont être stoppés.
 (Vous pouvez obtenir la liste de ces tâches avec
 $ jobs -s
 )
-Êtes vous sûr de vouloir finaliser votre session ? [o/N]
+Êtes-vous sûr de vouloir finaliser votre session ? [o/N]
 
 EOM
     read r
@@ -407,7 +407,7 @@ EOM
 Il faut supprimer les fichiers en trop et ne conserver
 que le "vrai" journal...
 EOM
-    read -p "Souhaitez vous générer votre soumission quand même ? [o/N] " r
+    read -p "Souhaitez-vous générer votre soumission quand même ? [o/N] " r
     if [ "$r" != "o"  -a  "$r" != "O" ]
     then
       cat <<EOM
@@ -435,7 +435,7 @@ Votre session ne contient pas de fichier "journal"
 Si vous continuez, votre soumissions ne contiendra pas
 de fichier "journal".
 EOM
-    read -p "Souhaitez vous générer votre soumission quand même ? [o/N] " r
+    read -p "Souhaitez-vous générer votre soumission quand même ? [o/N] " r
     if [ "$r" != "o"  -a  "$r" != "O" ]
     then
       cat <<EOM
@@ -462,7 +462,7 @@ EOM
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Une archive contenant les fichiers à envoyer à votre
-encadrant à été créée dans votre répertoire personnel.
+encadrant a été créée dans votre répertoire personnel.
 Le fichier se trouve ici :
 
 $tarfile
@@ -518,7 +518,7 @@ $ jobs -s
 )
 Les changements non enregistrés ne seront pas sauvés.
 
-Êtes vous sûr de vouloir sauver ? [o/N]
+Êtes-vous sûr de vouloir sauver ? [o/N]
 
 EOM
     read r
@@ -536,7 +536,7 @@ EOM
 ******************************************************
 ******************************************************
 
-Une archive contenant l'état courant à été créée dans
+Une archive contenant l'état courant a été créée dans
 votre répertoire personnel. Le fichier se trouve ici :
 
 $tarfile

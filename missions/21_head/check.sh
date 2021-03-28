@@ -8,9 +8,9 @@ _local_check() {
     pc=$(fc -nl -2 -2 | grep 'head')
 
     local goal
-    goal=$(CANNONICAL_PATH "$GASH_HOME/Montagne/Grotte")
+    goal=$(CANONICAL_PATH "$GASH_HOME/Montagne/Grotte")
     local current
-    current=$(CANNONICAL_PATH "$PWD")
+    current=$(CANONICAL_PATH "$PWD")
 
     local expected
     expected=$(head -n 4 "$GASH_HOME/Montagne/Grotte/ingredients_potion")

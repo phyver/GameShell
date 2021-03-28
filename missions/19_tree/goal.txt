@@ -17,5 +17,5 @@ Commandes utilisées
     remarque : la commande "tree" n'est pas toujours 
     installée par défaut.
     L'option "-C" permet d'obtenir un affichage en
-    couleur.
+    couleurs.
 

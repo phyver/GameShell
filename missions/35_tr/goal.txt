@@ -1,10 +1,10 @@
 Objectif
 ========
 
-Un message secret à été trouvé dans la bibliothèque.
+Un message secret a été trouvé dans la bibliothèque.
 Il a probablement été chiffré avec un décalage de César.
 
-Déchiffre le en faisant une recherche exhaustive avec la ligne de commandes.
+Déchiffrez le en faisant une recherche exhaustive avec la ligne de commandes.
 
 Commandes utilisées
 ===================

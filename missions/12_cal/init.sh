@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# fichier lu par le shell à chaque démarage de la mission
+# fichier lu par le shell à chaque démarrage de la mission
 
 YYYY=$((1900 + RANDOM % 200))
 MM=$( echo "00$((1 + RANDOM % 12))" | tail -c3 )
