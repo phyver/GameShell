@@ -4,7 +4,7 @@
 export GASH_BASE="$(dirname "$0")/.."
 source "$GASH_BASE"/lib/os_aliases.sh
 
-GASH_BASE=$(CANNONICAL_PATH "$(dirname "$0")"/..)
+GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/..)
 
 source "$GASH_BASE/lib/utils.sh"
 
@@ -16,7 +16,7 @@ options :
   -h          ce message
   -M ...      choisit les missions à inclure dans l'archive (motif shell)
               (défaut : "_*")
-  -P ...      choisit le "mot de passe" pour les commande administrateur
+  -P ...      choisit le "mot de passe" pour les commandes administrateur
   -N ...      nom du répertoire contenu dans l'archive (défaut : "GameShell")
   -a          conserve les scripts 'auto.sh' des missions qui en ont
   -L          utilise le mode local par défaut
@@ -103,7 +103,7 @@ done
 # remove auto.sh files
 if [ "$KEEP_AUTO" -ne 1 ]
 then
-  echo "suppression des script 'auto.sh' des missions"
+  echo "suppression des scripts 'auto.sh' des missions"
   find "$TMP_DIR/$NAME/missions" -name auto.sh -print0 | xargs -0 rm -f
 fi
 

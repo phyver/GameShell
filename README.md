@@ -24,12 +24,13 @@ Debian/Ubuntu, il faut avoir les paquets suivants :
   - nano
   - tree
   - x11-apps
-  - python3 (pour générer la mission 33)
+  - bsdmainutils (pour la mission 12)
   - gcc (pour générer la mission 30)
+  - python3 (pour générer la mission 33)
 
 
 Pour macOS, il faut installer ``coreutils`` et ``md5sha1sum``. Le plus simple
-de d'utiliser le gestionnaire de paquet [homebrew](https://brew.sh/index_fr) :
+est d'utiliser le gestionnaire de paquets [homebrew](https://brew.sh/index_fr) :
 
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -70,7 +71,7 @@ Après avoir cloné le dépot :
     $ ./GameShell/start.sh
     Attention, vous êtes en train d'exécuter
     GameShell dans la version de développement.
-    Faut-il le continuer ? [o/N]
+    Faut-il continuer ? [o/N]
     o
     ...
     ...
@@ -89,7 +90,7 @@ Après avoir cloné le dépot :
         /export/home/hyvernat/src/Shell/GameShell/missions/20_find_1  --> 01_find_1
         /export/home/hyvernat/src/Shell/GameShell/missions/31_find_2  --> 02_find_2
         /export/home/hyvernat/src/Shell/GameShell/missions/32_find_3_xargs -->  03_find_3_xargs
-    suppression des script 'auto.sh' des missions
+    suppression des scripts 'auto.sh' des missions
     choix du mode de lancement
     création de l'archive
     suppression du répertoire temporaire
@@ -135,8 +136,8 @@ fichiers suivants
 
   - `static.sh`
         fichier lu par bash __au lancement de GameShell__. C'est par exemple
-        dans ce fichier que l'on peut créer des répertoire qui existeront pour
-        toute les missions.
+        dans ce fichier que l'on peut créer des répertoires qui existeront pour
+        toutes les missions.
         Remarque : ce fichier est lu par bash (``source static.sh``) et peut
         donc par exemple définir des variables d'environnement.
         (fichier bash, facultatif)
@@ -187,4 +188,4 @@ Licence
 
 Ce code est distribué sous licence GPL.
 
-Merci de pointer vers ce dépot si vous l'utilisez.
+Merci de pointer vers ce dépôt si vous l'utilisez.

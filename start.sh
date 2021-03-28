@@ -4,7 +4,7 @@
 export GASH_BASE="$(dirname "$0")"
 source "$GASH_BASE"/lib/os_aliases.sh
 
-export GASH_BASE=$(CANNONICAL_PATH "$(dirname "$0")"/)
+export GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/)
 cd "$GASH_BASE"
 
 source lib/utils.sh
@@ -130,7 +130,7 @@ init_gash() {
   then
     echo "Vous êtes en train d'exécuter GameShell"
     echo "dans l'arborescence de développement."
-    echo -n "Faut-il le continuer ? [o/N] "
+    echo -n "Faut-il continuer ? [o/N] "
     read -er x
     [ "$x" != "o" ] && [ "$x" != "O" ] && exit 1
     # [ -z "$GASH_DEBUG_MISSION" ] && GASH_DEBUG_MISSION="1"

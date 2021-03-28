@@ -8,7 +8,7 @@ _local_check() {
 
     if [ -n "$piece" ]
     then
-        echo "Il reste des piéces de bronze dans le labyrinthe..."
+        echo "Il reste des pièces de bronze dans le labyrinthe..."
         return 1
     fi
 

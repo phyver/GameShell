@@ -19,7 +19,7 @@ petit utilitaire pour générer une archive adéquate
 
 mode debug :
   - diff entre les environnements avant / après
-  - pas de mdp admin
+  - pas de mot de passe admin
   - creation du coffre automatiquement
 
 gash auto : utilise un fichier "auto.sh" pour valider la mission
@@ -32,7 +32,7 @@ vérifier si la commande ldapsearch est présente...
 
 unset -f check  /  unset -f init  automatique après les "source check.sh" / source init.sh"
 
-BUG si 2 missions ont le même numero
+BUG si 2 missions ont le même numéro
 
 améliorer la gestion du coffre pour les scripts "check" :
   - par la fonction _coffre : ajout de scripts "statiques" dans les missions ?

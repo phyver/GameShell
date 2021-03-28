@@ -8,9 +8,9 @@ _local_check() {
     pc=$(fc -nl -2 -2 | grep 'tail')
 
     local goal
-    goal=$(CANNONICAL_PATH "$GASH_HOME/Montagne/Grotte")
+    goal=$(CANONICAL_PATH "$GASH_HOME/Montagne/Grotte")
     local current
-    current=$(CANNONICAL_PATH "$PWD")
+    current=$(CANONICAL_PATH "$PWD")
 
     local expected
     expected=$(tail -n 4 "$GASH_HOME/Montagne/Grotte/ingredients_potion")
@@ -19,7 +19,7 @@ _local_check() {
 
     if [ "$goal" != "$current" ]
     then
-        echo "Vous n'ête pas dans la grotte, avec l'ermite !"
+        echo "Vous n'êtes pas dans la grotte, avec l'ermite !"
         return 1
     fi
     if [ -z "$pc" ]
