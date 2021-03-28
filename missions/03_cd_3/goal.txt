@@ -2,13 +2,13 @@ Objectif
 ========
 
 retourner au point de départ, puis aller dans la salle 
-du trone en seulement 2 commandes
+du trône en seulement 2 commandes
 
 ATTENTION : pour valider cette mission, il faut
-  - que l'avant dernière commande vous ramène au point 
+  - que l'avant-dernière commande vous ramène au point 
     de départ,
   - que la dernière commande vous amène directement 
-    dans la salle du trone.
+    dans la salle du trône.
 
 
 Commandes utilisées

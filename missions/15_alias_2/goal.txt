@@ -27,5 +27,5 @@ Commandes utilisées
     édite le fichier dans le terminal
 
   alias NOM='CMD'
-    NOM est une chaine de caractère (petite), qui sera 
-    remplacé par la commande CMD (longue)
+    NOM est une chaine de caractères (petite), qui sera 
+    remplacée par la commande CMD (longue)

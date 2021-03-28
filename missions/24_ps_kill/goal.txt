@@ -4,7 +4,7 @@ Objectif
 Les souris n'en peuvent plus, un générateur de chats a 
 été installé dans la cave !
 
-Trouver et tuer le générateur de chat, avant de 
+Trouver et tuer le générateur de chats, avant de 
 supprimer tous les chats. Attention, les chats sont 
 peut-être cachés.
 
