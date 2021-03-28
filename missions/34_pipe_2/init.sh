@@ -12,10 +12,17 @@ for i in $(seq 1 5000) ; do
 done
 echo
 
-export OLD_PROMPT_COMMAND=$PROMPT_COMMAND
 
-export NB_CMD=2
-PROMPT_COMMAND='NB_CMD=$(( $NB_CMD - 1 )); echo "$NB_CMD commande(s) restante(s)"'
+export NB_CMD=0
+_CMD='NB_CMD=$(( NB_CMD + 1 ))'
+PROMPT_COMMAND=$(echo "$PROMPT_COMMAND" | sed "s/\s*;\?\s*$_CMD.*//")
+if [ -z "$PROMPT_COMMAND" ]
+then
+    PROMPT_COMMAND="$_CMD"
+else
+    PROMPT_COMMAND="$PROMPT_COMMAND;$_CMD"
+fi
+
 
 unset i
 
