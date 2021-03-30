@@ -3,3 +3,9 @@ if ! command -v xeyes > /dev/null; then
     echo "sous Debian / Ubuntu, il faut installer le paquet x11-apps"
     exit 1
 fi
+
+if [ -z "$DISPLAY" ]; then
+    echo "Attention, la variable \$DISPLAY n'est pas définie."
+    echo "La commande xeyes ne pourra probablement pas être lancée."
+    exit 1
+fi
