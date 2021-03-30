@@ -15,9 +15,14 @@ case $OSTYPE in
         source $GASH_BASH/lib/bsd_aliases.sh
         ;;
     *)
-        echo "la variable \$OSTYPE est égale à $OSTYPE"
+        echo "la variable \$OSTYPE est égale à '$OSTYPE',"
         echo "je ne reconnais pas ce système..."
-        exit
+        echo "GameShell sera lancé en mode 'gnu-linux', sans aucune garantie."
+        echo ""
+        echo "N'hésitez pas à faire un rapport de bug."
+        echo ""
+        read -p "Appuyez sur la touche 'Entrée' pour continuer."
+        source $GASH_BASE/lib/gnu_aliases.sh
         ;;
 esac
 
