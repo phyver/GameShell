@@ -1,0 +1,19 @@
+Commandes propres a GameShell
+=============================
+
+  gash check
+    vérifie que la mission en cours est terminée
+    Si c'est le cas, passe automatiquement à la mission
+    suivante.
+
+  gash help
+    affiche ce message
+
+  gash restart
+    ré-initialise la mission courante
+
+  gash save
+    génère un fichier pour pouvoir transférer une partie
+
+  gash show
+    affiche l'objectif de la mission en cours

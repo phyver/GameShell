@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# fichier lu par le shell à chaque démarage de la mission
+# fichier lu par le shell à chaque démarrage de la mission
 
 mkdir -p "$GASH_HOME/Chateau/Cave/.Terrier"
 terrier=$GASH_HOME/Chateau/Cave/.Terrier""

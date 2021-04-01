@@ -89,11 +89,11 @@ _gash_show() {
     return 1
   fi
 
-  local mission="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$nb")"
 
-  if [ -f "$mission/goal.txt" ]
+  if [ -f "$MISSION_DIR/goal.txt" ]
   then
-    parchment "$mission/goal.txt"
+    parchment "$MISSION_DIR/goal.txt"
   fi
 }
 
@@ -117,12 +117,12 @@ _gash_start() {
     return 1
   fi
 
-  local mission="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$nb")"
 
   ### tester le fichier deps.sh
-  if [ -f "$mission/deps.sh" ]
+  if [ -f "$MISSION_DIR/deps.sh" ]
   then
-    if ! bash "$mission/deps.sh"
+    if ! bash "$MISSION_DIR/deps.sh"
     then
       echo "La mission est annulée"
       _log_action "$nb" "DEP_PB_CANCEL"
@@ -131,10 +131,10 @@ _gash_start() {
     fi
   fi
 
-  if [ -f "$mission/init.sh" ]
+  if [ -f "$MISSION_DIR/init.sh" ]
   then
     # compgen -v | sort > /tmp/v1
-    source "$mission/init.sh"
+    source "$MISSION_DIR/init.sh"
     # compgen -v | sort > /tmp/v2
     # comm -13 /tmp/v1 /tmp/v2 > /tmp/missions_var_$nb
     # rm -f /tmp/v1 /tmp/v2
@@ -154,11 +154,11 @@ _gash_restart() {
     return 1
   fi
 
-  local mission="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$nb")"
 
-  if [ -f "$mission/init.sh" ]
+  if [ -f "$MISSION_DIR/init.sh" ]
   then
-    source "$mission/init.sh"
+    source "$MISSION_DIR/init.sh"
   fi
 
   _log_action "$nb" "RESTART"
@@ -185,7 +185,7 @@ _gash_pass() {
   cat <<EOM
 ****************************************
 *  Tapez la commande                   *
-*    $ gash show                      *
+*    $ gash show                       *
 *  pour découvrir l'objectif suivant.  *
 ****************************************
 EOM
@@ -202,11 +202,11 @@ _gash_auto() {
     return 1
   fi
 
-  local mission="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$nb")"
 
-  if [ -f "$mission/auto.sh" ]
+  if [ -f "$MISSION_DIR/auto.sh" ]
   then
-    source "$mission/auto.sh"
+    source "$MISSION_DIR/auto.sh"
     _log_action "$nb" "AUTO"
     return 0
   else
@@ -227,11 +227,11 @@ _gash_check() {
     return 1
   fi
 
-  local mission="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$nb")"
 
-  if [ -f "$mission/check.sh" ]
+  if [ -f "$MISSION_DIR/check.sh" ]
   then
-    check_prg="$mission/check.sh"
+    check_prg="$MISSION_DIR/check.sh"
   else
     echo "Problème : je ne sais pas tester la mission '$nb'"
     return 1
@@ -261,11 +261,11 @@ _gash_check() {
       # récupération de la mission suivante
       nb=$(_get_next_mission "$nb")
 
-      if [ -f "$mission/treasure.sh" ]
+      if [ -f "$MISSION_DIR/treasure.sh" ]
       then
-        [ -f "$mission/treasure.txt" ] && cat "$mission/treasure.txt"
-        source "$mission/treasure.sh"
-        cp "$mission/treasure.sh" "$GASH_CONFIG/$(basename "$mission" /).sh"
+        [ -f "$MISSION_DIR/treasure.txt" ] && cat "$MISSION_DIR/treasure.txt"
+        source "$MISSION_DIR/treasure.sh"
+        cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).sh"
       fi
       _gash_start "$nb"
       cat <<EOM
@@ -296,88 +296,21 @@ _gash_clean() {
     return 1
   fi
 
-  local mission="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$nb")"
 
-  if [ -f "$mission/clean.sh" ]
+  if [ -f "$MISSION_DIR/clean.sh" ]
   then
-    # echo "cleaning mission '$mission'"
-    source "$mission/clean.sh"
+    # echo "cleaning mission '$MISSION_DIR'"
+    source "$MISSION_DIR/clean.sh"
   fi
 }
 
 _gash_help() {
-  cat <<EOM
-  __^__                                                          __^__
- ( ___ )--------------------------------------------------------( ___ )
-  | / |                                                          | \ |
-  | / | Commandes propres a GameShell                            | \ |
-  | / | =============================                            | \ |
-  | / |                                                          | \ |
-  | / |   gash check                                             | \ |
-  | / |     vérifie que la mission en cours est terminée         | \ |
-  | / |     Si c'est le cas, passe automatiquement à la mission  | \ |
-  | / |     suivante.                                            | \ |
-  | / |                                                          | \ |
-  | / |   gash help                                              | \ |
-  | / |     affiche ce message                                   | \ |
-  | / |                                                          | \ |
-  | / |   gash restart                                           | \ |
-  | / |     ré-initialise la mission courante                    | \ |
-  | / |                                                          | \ |
-  | / |   gash save                                              | \ |
-  | / |     génère un fichier pour pouvoir transférer une partie | \ |
-  | / |                                                          | \ |
-  | / |   gash show                                              | \ |
-  | / |     affiche l'objectif de la mission en cours            | \ |
-  |___|                                                          |___|
- (_____)--------------------------------------------------------(_____)
-EOM
+  parchment "$GASH_LIB"/help.txt
 }
 
 _gash_HELP() {
-  cat <<EOM
-  __^__                                                          __^__
- ( ___ )--------------------------------------------------------( ___ )
-  | / |                                                          | \ |
-  | / | Commandes propres a GameShell                            | \ |
-  | / | =============================                            | \ |
-  | / |                                                          | \ |
-  | / |   gash auto    (ADMIN)                                   | \ |
-  | / |     essaie d'appliquer la résolution automatique de la   | \ |
-  | / |     mission, si elle existe.                             | \ |
-  | / |     (le "gash check" n'est pas fait automatiquement)     | \ |
-  | / |                                                          | \ |
-  | / |   gash check                                             | \ |
-  | / |     vérifie que la mission en cours est terminée         | \ |
-  | / |     Si c'est le cas, passe automatiquement à la mission  | \ |
-  | / |     suivante.                                            | \ |
-  | / |                                                          | \ |
-  | / |   gash finish                                            | \ |
-  | / |     génère le fichier à rendre à votre encadrant         | \ |
-  | / |                                                          | \ |
-  | / |   gash HELP                                              | \ |
-  | / |     affiche ce message                                   | \ |
-  | / |                                                          | \ |
-  | / |   gash help                                              | \ |
-  | / |     affiche un petit message d'aide                      | \ |
-  | / |                                                          | \ |
-  | / |   gash pass    (ADMIN)                                   | \ |
-  | / |     abandonne la mission en cours et passe à la suivante | \ |
-  | / |                                                          | \ |
-  | / |   gash restart                                           | \ |
-  | / |     ré-initialise la mission courante                    | \ |
-  | / |                                                          | \ |
-  | / |   gash save                                              | \ |
-  | / |     génère un fichier pour pouvoir transférer une partie | \ |
-  | / |                                                          | \ |
-  | / |   gash start N (ADMIN)                                   | \ |
-  | / |     passe directement à la mission N                     | \ |
-  | / |                                                          | \ |
-  | / |   gash show                                              | \ |
-  | / |     affiche l'objectif de la mission en cours            | \ |
-  |___|                                                          |___|
- (_____)--------------------------------------------------------(_____)
-EOM
+  parchment "$GASH_LIB"/HELP.txt
 }
 
 _gash_finish() {
@@ -389,7 +322,7 @@ Ces processus vont être stoppés.
 (Vous pouvez obtenir la liste de ces tâches avec
 $ jobs -s
 )
-Êtes vous sûr de vouloir finaliser votre session ? [o/N]
+Êtes-vous sûr de vouloir finaliser votre session ? [o/N]
 
 EOM
     read r
@@ -419,7 +352,7 @@ EOM
 Il faut supprimer les fichiers en trop et ne conserver
 que le "vrai" journal...
 EOM
-    read -p "Souhaitez vous générer votre soumission quand même ? [o/N] " r
+    read -p "Souhaitez-vous générer votre soumission quand même ? [o/N] " r
     if [ "$r" != "o"  -a  "$r" != "O" ]
     then
       cat <<EOM
@@ -447,7 +380,7 @@ Votre session ne contient pas de fichier "journal"
 Si vous continuez, votre soumissions ne contiendra pas
 de fichier "journal".
 EOM
-    read -p "Souhaitez vous générer votre soumission quand même ? [o/N] " r
+    read -p "Souhaitez-vous générer votre soumission quand même ? [o/N] " r
     if [ "$r" != "o"  -a  "$r" != "O" ]
     then
       cat <<EOM
@@ -474,7 +407,7 @@ EOM
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Une archive contenant les fichiers à envoyer à votre
-encadrant à été créée dans votre répertoire personnel.
+encadrant a été créée dans votre répertoire personnel.
 Le fichier se trouve ici :
 
 $tarfile
@@ -530,7 +463,7 @@ $ jobs -s
 )
 Les changements non enregistrés ne seront pas sauvés.
 
-Êtes vous sûr de vouloir sauver ? [o/N]
+Êtes-vous sûr de vouloir sauver ? [o/N]
 
 EOM
     read r
@@ -548,7 +481,7 @@ EOM
 ******************************************************
 ******************************************************
 
-Une archive contenant l'état courant à été créée dans
+Une archive contenant l'état courant a été créée dans
 votre répertoire personnel. Le fichier se trouve ici :
 
 $tarfile
