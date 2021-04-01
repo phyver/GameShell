@@ -13,4 +13,3 @@ then
     chmod 755 "$GASH_HOME/Chateau/Observatoire/merlin"
 fi
 
-

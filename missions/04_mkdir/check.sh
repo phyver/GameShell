@@ -5,7 +5,7 @@ _local_check() {
     nb_cabanes=$(find "$GASH_HOME/Foret" -iname cabane -type d | wc -l)
     if [ "$nb_cabanes" -ge 2 ]
     then
-        echo "Vous avez construit trops de cabanes dans la forêt !"
+        echo "Vous avez construit trop de cabanes dans la forêt !"
         return 1
     fi
     if [ "$nb_cabanes" -lt 1 ]
@@ -31,7 +31,7 @@ _local_check() {
     nb_coffres=$(find "$cabane" -iname coffre -type d | wc -l)
     if [ "$nb_coffres" -ge 2 ]
     then
-        echo "Vous avez construit trops de coffres dans votre cabane !"
+        echo "Vous avez construit trop de coffres dans votre cabane !"
         return 1
     fi
     if [ "$nb_coffres" -lt 1 ]
@@ -62,6 +62,6 @@ else
     find "$GASH_HOME" -iname "*cabane*" -print0 | xargs -0 rm -rf
     find "$GASH_HOME" -iname "*coffre*" -print0 | xargs -0 rm -rf
     cd
-    echo "Vous voila revenu au point de départ... Veuillez recommencer la mission."
+    echo "Vous voila de retour au point de départ... Veuillez recommencer la mission."
     false
 fi

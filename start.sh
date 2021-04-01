@@ -4,7 +4,7 @@
 export GASH_BASE="$(dirname "$0")"
 source "$GASH_BASE"/lib/os_aliases.sh
 
-export GASH_BASE=$(CANNONICAL_PATH "$(dirname "$0")"/)
+export GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/)
 cd "$GASH_BASE"
 
 source lib/utils.sh
@@ -17,6 +17,9 @@ options :
   -n      mode noir et blanc : n'utilise pas les séquences ANSI pour la couleur
   -P      passeport étudiant : demande les noms / email des étudiants
   -D <n>  mode debug / découverte en partant de la mission <n>
+  -C      continue la partie en cours
+  -R      rénitialise la partie en cours
+  -F      force exécution dans le répertoire de développement
 EOH
 }
 
@@ -24,7 +27,9 @@ EOH
 export GASH_COLOR="OK"
 export GASH_DEBUG_MISSION=""
 MODE="DEBUG"
-while getopts ":hcnPD:" opt
+RESET=""
+FORCE="FALSE"
+while getopts ":hcnPD:CRF" opt
 do
   case $opt in
     h)
@@ -43,6 +48,15 @@ do
     D)
       MODE="DEBUG"
       GASH_DEBUG_MISSION=$OPTARG
+      ;;
+    C)
+      RESET="FALSE"
+      ;;
+    R)
+      RESET="TRUE"
+      ;;
+    F)
+      FORCE="TRUE"
       ;;
     *)
       echo "option invalide : -$OPTARG" >&2
@@ -126,11 +140,11 @@ init_gash() {
     export GASH_COFFRE=""
   fi
 
-  if [ -e "$GASH_BASE/.git" ]
+  if [ -e "$GASH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
   then
     echo "Vous êtes en train d'exécuter GameShell"
     echo "dans l'arborescence de développement."
-    echo -n "Faut-il le continuer ? [o/N] "
+    echo -n "Faut-il continuer ? [o/N] "
     read -er x
     [ "$x" != "o" ] && [ "$x" != "O" ] && exit 1
     # [ -z "$GASH_DEBUG_MISSION" ] && GASH_DEBUG_MISSION="1"
@@ -138,9 +152,15 @@ init_gash() {
 
   if [ -e "$GASH_DATA" ]
   then
-    echo -n "'$GASH_DATA' existe déjà... Faut-il le conserver ? [O/n] "
-    read -er x
-    ([ "$x" = "o" ] || [ "$x" = "O" ] || [ "$x" = "" ]) && return 1
+    if [ -z "$RESET" ]
+    then
+      echo -n "'$GASH_DATA' existe déjà... Faut-il le conserver ? [O/n] "
+      read -er x
+      ([ "$x" = "o" ] || [ "$x" = "O" ] || [ "$x" = "" ]) && return 1
+    elif [ "$RESET" = "FALSE" ]
+    then
+      return 1
+    fi
   fi
 
 
@@ -168,26 +188,25 @@ init_gash() {
   mkdir -p "$GASH_TMP"
 
   # Installation des missions.
-  for MISSION in "$GASH_BASE"/missions/[0-9]*; do
-    export MISSION
-    if [ -f "$MISSION/deps.sh" ]
+  for MISSION_DIR in "$GASH_BASE"/missions/[0-9]*; do
+    export MISSION_DIR
+    if [ -f "$MISSION_DIR/deps.sh" ]
     then
-      if ! bash "$MISSION/deps.sh"
+      if ! bash "$MISSION_DIR/deps.sh"
       then
         continue
       fi
     fi
-    if [ -f "$MISSION/static.sh" ]
+    if [ -f "$MISSION_DIR/static.sh" ]
     then
-      source "$MISSION/static.sh"
+      source "$MISSION_DIR/static.sh"
     fi
-    if [ -d "$MISSION/bin" ]
+    if [ -d "$MISSION_DIR/bin" ]
     then
-      cp "$MISSION/bin/"* "$GASH_LOCAL_BIN"
+      cp "$MISSION_DIR/bin/"* "$GASH_LOCAL_BIN"
     fi
   done
-  unset MISSION
-
+  unset MISSION_DIR
 
 
   # Configuration pour la génération de la fiche étudiant.

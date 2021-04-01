@@ -43,7 +43,7 @@ indépendamment.
 
   CMD  2>  FICHIER
     les erreurs de la commande CMD sont écrites dans 
-    le fichier FICHIER au lieu d'être affiché sur la 
+    le fichier FICHIER au lieu d'être affichées sur la 
     sortie d'erreurs (STDERR)
 
   /dev/null

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-goal=$(CANNONICAL_PATH "$GASH_HOME/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_donjon")
-current=$(CANNONICAL_PATH "$PWD")
+goal=$(CANONICAL_PATH "$GASH_HOME/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_donjon")
+current=$(CANONICAL_PATH "$PWD")
 
 if [ "$goal" = "$current" ]
 then

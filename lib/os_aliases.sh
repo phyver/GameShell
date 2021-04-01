@@ -15,22 +15,27 @@ case $OSTYPE in
         source $GASH_BASH/lib/bsd_aliases.sh
         ;;
     *)
-        echo "la variable \$OSTYPE est égale à $OSTYPE"
+        echo "la variable \$OSTYPE est égale à '$OSTYPE',"
         echo "je ne reconnais pas ce système..."
-        exit
+        echo "GameShell sera lancé en mode 'gnu-linux', sans aucune garantie."
+        echo ""
+        echo "N'hésitez pas à faire un rapport de bug."
+        echo ""
+        read -p "Appuyez sur la touche 'Entrée' pour continuer."
+        source $GASH_BASE/lib/gnu_aliases.sh
         ;;
 esac
 
 
 # tests
-if CANNONICAL_PATH / &> /dev/null
+if CANONICAL_PATH / &> /dev/null
 then
   :
 else
-  echo "La fonction 'CANNONICAL_PATH' ne fonctionne pas..."
-  declare -f CANNONICAL_PATH
+  echo "La fonction 'CANONICAL_PATH' ne fonctionne pas..."
+  declare -f CANONICAL_PATH
 
-  echo "Pour macOS, n'oubliez pas d'installer 'coreutil' (et 'md5sha1sum')"
+  echo "Pour macOS, n'oubliez pas d'installer 'coreutils' (et 'md5sha1sum')"
   echo "   $ brew install coreutils"
   echo "   $ brew install md5sha1sum"
   exit
@@ -40,7 +45,7 @@ if GET_MTIME / &> /dev/null
 then
     :
 else
-    echo "La commande 'GET_MTIME' pour récupérer la date de modifition"
+    echo "La commande 'GET_MTIME' pour récupérer la date de modification"
     echo "d'un fichier ne fonctionne pas"
     declare -f GET_MTIME
 
