@@ -163,16 +163,18 @@ init_gash() {
   mkdir -p "$GASH_TMP"
 
   # Installation des missions.
-  for MISSION in "$GASH_BASE"/missions/[0-9]*; do
-    if [ -f "$MISSION/static.sh" ]
+  for MISSION_DIR in "$GASH_BASE"/missions/[0-9]*; do
+    export MISSION_DIR
+    if [ -f "$MISSION_DIR/static.sh" ]
     then
-      source "$MISSION/static.sh"
+      source "$MISSION_DIR/static.sh"
     fi
-    if [ -d "$MISSION/bin" ]
+    if [ -d "$MISSION_DIR/bin" ]
     then
-      cp "$MISSION/bin/"* "$GASH_LOCAL_BIN"
+      cp "$MISSION_DIR/bin/"* "$GASH_LOCAL_BIN"
     fi
   done
+  unset MISSION_DIR
 
 
 

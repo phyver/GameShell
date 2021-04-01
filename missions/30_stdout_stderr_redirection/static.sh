@@ -1,9 +1,9 @@
 #!/bin/bash
 
 mkdir -p "$GASH_HOME/Chateau/Observatoire"
-if ! gcc -o "$GASH_HOME/Chateau/Observatoire/merlin" "$GASH_MISSIONS"/*_stdout_stderr_redirection/merlin.c
+if ! gcc -o "$GASH_HOME/Chateau/Observatoire/merlin" "$MISSION_DIR"/merlin.c
 then
     echo "ERREUR lors de la commande"
-    echo "gcc -o \"$GASH_HOME/Chateau/Observatoire/merlin\" \"$GASH_MISSIONS\"/*_stdout_stderr_redirection/merlin.c"
+    echo 'gcc -o "$GASH_HOME/Chateau/Observatoire/merlin" "$MISSION_DIR"/merlin.c'
     exit
 fi
