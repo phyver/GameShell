@@ -155,8 +155,7 @@ _gash_start() {
         echo "Attention, l'initialisation a eu lieu dans un sous-shell"
         echo "Il peut être intéressant de lancer la commande"
         echo "  gash reset"
-        comm "$GASH_TMP"/env-{before,after}
-        # rm -f "$GASH_TMP"/env-{before,after}
+        rm -f "$GASH_TMP"/env-{before,after}
       fi
     fi
 
