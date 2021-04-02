@@ -181,15 +181,6 @@ init_gash() {
   # Installation des missions.
   for MISSION_DIR in "$GASH_BASE"/missions/[0-9]*; do
     export MISSION_DIR
-    if [ -f "$MISSION_DIR/deps.sh" ]
-    then
-      if ! bash "$MISSION_DIR/deps.sh"
-      then
-        echo "La mission $(basename "$MISSION") n'a pas pu être initialisée !"
-        echo "Abandon..."
-        exit 1
-      fi
-    fi
     if [ -f "$MISSION_DIR/static.sh" ]
     then
       source "$MISSION_DIR/static.sh"
