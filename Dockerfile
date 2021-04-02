@@ -6,7 +6,6 @@ RUN apt update && apt install -y \
     tree \
     x11-apps \
     python3 \
-    gcc \
     wget \
     procps \
     less \
