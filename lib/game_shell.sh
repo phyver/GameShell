@@ -127,8 +127,27 @@ _gash_start() {
 
   if [ -f "$MISSION_DIR/init.sh" ]
   then
-    # compgen -v | sort > /tmp/v1
+    # attention, si l'initialisation a lieu dans un sous-shell et qu'elle
+    # définit des variables d'environnement, elles ne seront pas définies dans
+    # la session bash.
+    # Dans ce cas, je sauvegarder l'environnement avant / après
+    # l'initialisation pour afficher un message
+    [ "$BASHPID" = "$$" ] || compgen -v | sort > "$GASH_TMP"/env-before
     source "$MISSION_DIR/init.sh"
+    [ "$BASHPID" = "$$" ] || compgen -v | sort > "$GASH_TMP"/env-after
+
+    if [ "$BASHPID" != "$$" ]
+    then
+      if ! cmp --quiet "$GASH_TMP"/env-before "$GASH_TMP"/env-after
+      then
+        echo "Attention, l'initialisation a eu lieu dans un sous-shell"
+        echo "Il peut être intéressant de lancer la commande"
+        echo "  gash reset"
+        comm "$GASH_TMP"/env-{before,after}
+        # rm -f "$GASH_TMP"/env-{before,after}
+      fi
+    fi
+
     # compgen -v | sort > /tmp/v2
     # comm -13 /tmp/v1 /tmp/v2 > /tmp/missions_var_$nb
     # rm -f /tmp/v1 /tmp/v2
