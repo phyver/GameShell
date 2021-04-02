@@ -25,8 +25,7 @@ Debian/Ubuntu, il faut avoir les paquets suivants :
   - tree
   - x11-apps
   - bsdmainutils (pour la mission 12)
-  - gcc (pour générer la mission 30)
-  - python3 (pour générer la mission 33)
+  - python3 (pour générer la mission 33, mais conseillé de toute façon)
 
 
 Pour macOS, il faut installer ``coreutils`` et ``md5sha1sum``. Le plus simple
@@ -108,6 +107,32 @@ On peut maintenant copier cette archive n'importe où et lancer le jeu:
     $ ./GameShell/start.sh
     ...
     ...
+
+
+### 4/ en créant et utilisant une image Docker
+
+L'idée de GameShell est d'avoir une session "la plus proche possible" d'une
+session shell "standard". Je l'utilise donc sur des machines Linux "standard",
+ou sur une machine virtuelle.
+
+Il est possible de créer une image Docker en utilisant le fichier `Dockerfile`
+fourni pour lancer GameShell sans s'occuper des dépendances :
+
+Création de l'image :
+
+    $ docker build -t gash .
+
+Lancement de l'image, si vous avez un serveur X :
+
+    host +"local:docker@" \
+    && docker run -it \
+         -e DISPLAY=${DISPLAY} \
+         -v /tmp/.X11-unix:/tmp/.X11-unix \
+         gash
+
+Lancement de l'image, sans serveur X :
+
+    docker run -it gash
 
 
 Commandes de base
