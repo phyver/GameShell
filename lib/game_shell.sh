@@ -69,6 +69,12 @@ _get_mission_dir() {
   fi
 }
 
+# reset the bash configuration
+_gash_reset() {
+  # on relance bash, histoire de recharcher la config au cas où...
+  exec bash --rcfile "$GASH_LIB/bashrc"
+}
+
 
 # called when gash exits
 _gash_exit() {
@@ -252,17 +258,11 @@ _gash_check() {
       if [ -f "$MISSION_DIR/treasure.sh" ]
       then
         [ -f "$MISSION_DIR/treasure.txt" ] && cat "$MISSION_DIR/treasure.txt"
-        source "$MISSION_DIR/treasure.sh"
         cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).sh"
+        #FIXME: sourcing the file isn't very robust as the "gash check" may happen in a subshell!
+        source "$MISSION_DIR/treasure.sh"
       fi
       _gash_start "$nb"
-      cat <<EOM
-****************************************
-*  Tapez la commande                   *
-*    $ gash show                       *
-*  pour découvrir l'objectif suivant.  *
-****************************************
-EOM
     else
       echo
       color_echo red "La mission $nb n'est **pas** validée."
@@ -494,7 +494,7 @@ gash() {
   then
     cat <<EOH
 gash <commande>
-commandes possibles : check, finish, help, restart, show, stop
+commandes possibles : check, finish, help, restart, reset, show, stop
 EOH
   fi
 
@@ -516,9 +516,13 @@ EOH
     "sa" | "sav" | "save")
       _gash_save
       ;;
-    "r" | "re" | "res" | "rest" | "resta" | "restar" | "restart")
+    "rest" | "resta" | "restar" | "restart")
       _gash_clean "$nb"
       _gash_restart "$nb"
+      ;;
+    "rese" | "reset")
+      _gash_clean "$nb"
+      _gash_reset
       ;;
     "sh" | "sho" | "show")
       _gash_show "$nb"
