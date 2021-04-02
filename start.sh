@@ -131,15 +131,6 @@ init_gash() {
   export GASH_CONFIG="$GASH_BASE/.config"
   export GASH_LOCAL_BIN="$GASH_BASE/.bin"
 
-  if [ -d "$GASH_HOME" ]
-  then
-    export GASH_CABANE=$(find "$GASH_HOME" -iname cabane)
-    export GASH_COFFRE=$(find "$GASH_HOME" -iname coffre)
-  else
-    export GASH_CABANE=""
-    export GASH_COFFRE=""
-  fi
-
   if [ -e "$GASH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
   then
     echo "Vous êtes en train d'exécuter GameShell"
@@ -194,7 +185,9 @@ init_gash() {
     then
       if ! bash "$MISSION_DIR/deps.sh"
       then
-        continue
+        echo "La mission $(basename "$MISSION") n'a pas pu être initialisée !"
+        echo "Abandon..."
+        exit 1
       fi
     fi
     if [ -f "$MISSION_DIR/static.sh" ]

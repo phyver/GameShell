@@ -1,3 +1,16 @@
+utiliser des fichiers plutot que des variables pour les missions :
+  - mission 35
+
+
+
+
+check.sh pour mission 06
+check.sh pour mission 35
+
+
+
+
+tr
 ls -l
 ls *   vs  ls -d *
 less / more, redirections

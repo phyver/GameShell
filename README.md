@@ -130,20 +130,12 @@ Ajout de mission
 Chaque mission est contenue dans un répertoire dédié et peut fournir les
 fichiers suivants
 
-  - `deps.sh`
-        pour vérifier si le système contient les dépendances de la mission
-        Il __doit se terminer__ par une commande renvoyant `0` (typiquement
-        `true`) si les dépendances sont satisfaites, et par une commande
-        renvoyant une valeur non nulle (typiquement `false`) sinon.
-        Remarque : ce fichier est lu lors de l'initialisation de GameShell et
-        affiche un message en cas de dépendance non satisfaite. Il est aussi
-        lu au lancement de la mission, et en cas de dépendance non satisfaite,
-        la mission est annulée.
+  - `bashrc`
+        fichier ajouté à la configuration globale de la session utilisé pour
+        la partie
+        Ce fichier peut contenir des variables, aliases, etc. qui seront
+        disponibles pendant toute la partie.
         (fichier bash, facultatif)
-
-  - `goal.txt`
-        petite description de la mission, affichée par ``gash show``
-        (fichier texte, obligatoire)
 
   - `static.sh`
         fichier lu par bash __au lancement de GameShell__. C'est par exemple
@@ -151,12 +143,32 @@ fichiers suivants
         toutes les missions.
         Remarque : ce fichier est lu par bash (``source static.sh``) et peut
         donc par exemple définir des variables d'environnement.
+
+  - `bin`
+        répertoire contenant des exécutables utilisés pendant la partie
+        Les fichiers contenus dans ce répertoire sont recopiés dans un
+        répertoire caché `$GASH_HOME/.bin`, qui est ajouté au `PATH` global.
+        (répertoire, facultatif)
+
+  - `deps.sh`
+        pour vérifier si le système contient les dépendances de la mission Il
+        doit renvoyer `0` si les dépendances sont satisfaites, et une valeur
+        non nulle sinon.
+        Remarque : ce fichier est lancé au début de la mission, et en cas de
+        dépendance non satisfaite, la mission est annulée.
         (fichier bash, facultatif)
 
   - `init.sh`
         fichier lu par bash __au lancement de la mission__. C'est par exemple
         dans ce fichier qu'on peut (re)générer des parties dynamiques de la
         mission.
+        Remarque : ce fichier est lu (`source init.sh`) et peut donc
+        créer des variables d'environnement.
+        (fichier bash, facultatif)
+
+  - `goal.txt`
+        petite description de la mission, affichée par ``gash show``
+        (fichier texte, obligatoire)
 
   - `check.sh`
         fichier lu par bash pour vérifier que la mission est validée.
@@ -166,11 +178,6 @@ fichiers suivants
         différente de 0 (typiquement ``false``) en cas d'échec.
         (fichier bash, obligatoire)
 
-  - `auto.sh`
-        fichier lu par bash pour valider automatiquement la mission
-        Remarque : ce fichier est lu par bash (``source auto.sh``).
-        (fichier bash, facultatif)
-
   - `treasure.sh`
         fichier bash lu par bash après validation de la mission. Cela permet
         d'ajouter des fonctionnalités comme "récompense" à certaines missions.
@@ -179,6 +186,11 @@ fichiers suivants
   - `treasure.txt`
         fichier texte affiché par bash après validation de la mission
         (fichier texte, facultatif)
+
+  - `auto.sh`
+        fichier lu par bash pour valider automatiquement la mission
+        Remarque : ce fichier est lu par bash (``source auto.sh``).
+        (fichier bash, facultatif)
 
 
 
