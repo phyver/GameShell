@@ -69,6 +69,12 @@ _get_mission_dir() {
   fi
 }
 
+# reset the bash configuration
+_gash_reset() {
+  # on relance bash, histoire de recharcher la config au cas où...
+  exec bash --rcfile "$GASH_LIB/bashrc"
+}
+
 
 # called when gash exits
 _gash_exit() {
@@ -133,8 +139,27 @@ _gash_start() {
 
   if [ -f "$MISSION_DIR/init.sh" ]
   then
-    # compgen -v | sort > /tmp/v1
+    # attention, si l'initialisation a lieu dans un sous-shell et qu'elle
+    # définit des variables d'environnement, elles ne seront pas définies dans
+    # la session bash.
+    # Dans ce cas, je sauvegarder l'environnement avant / après
+    # l'initialisation pour afficher un message
+    [ "$BASHPID" = "$$" ] || compgen -v | sort > "$GASH_TMP"/env-before
     source "$MISSION_DIR/init.sh"
+    [ "$BASHPID" = "$$" ] || compgen -v | sort > "$GASH_TMP"/env-after
+
+    if [ "$BASHPID" != "$$" ]
+    then
+      if ! cmp --quiet "$GASH_TMP"/env-before "$GASH_TMP"/env-after
+      then
+        echo "Attention, l'initialisation a eu lieu dans un sous-shell"
+        echo "Il peut être intéressant de lancer la commande"
+        echo "  gash reset"
+        comm "$GASH_TMP"/env-{before,after}
+        # rm -f "$GASH_TMP"/env-{before,after}
+      fi
+    fi
+
     # compgen -v | sort > /tmp/v2
     # comm -13 /tmp/v1 /tmp/v2 > /tmp/missions_var_$nb
     # rm -f /tmp/v1 /tmp/v2
@@ -264,17 +289,11 @@ _gash_check() {
       if [ -f "$MISSION_DIR/treasure.sh" ]
       then
         [ -f "$MISSION_DIR/treasure.txt" ] && cat "$MISSION_DIR/treasure.txt"
-        source "$MISSION_DIR/treasure.sh"
         cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).sh"
+        #FIXME: sourcing the file isn't very robust as the "gash check" may happen in a subshell!
+        source "$MISSION_DIR/treasure.sh"
       fi
       _gash_start "$nb"
-      cat <<EOM
-****************************************
-*  Tapez la commande                   *
-*    $ gash show                       *
-*  pour découvrir l'objectif suivant.  *
-****************************************
-EOM
     else
       echo
       color_echo red "La mission $nb n'est **pas** validée."
@@ -506,7 +525,7 @@ gash() {
   then
     cat <<EOH
 gash <commande>
-commandes possibles : check, finish, help, restart, show, stop
+commandes possibles : check, finish, help, restart, reset, show, stop
 EOH
   fi
 
@@ -528,9 +547,13 @@ EOH
     "sa" | "sav" | "save")
       _gash_save
       ;;
-    "r" | "re" | "res" | "rest" | "resta" | "restar" | "restart")
+    "rest" | "resta" | "restar" | "restart")
       _gash_clean "$nb"
       _gash_restart "$nb"
+      ;;
+    "rese" | "reset")
+      _gash_clean "$nb"
+      _gash_reset
       ;;
     "sh" | "sho" | "show")
       _gash_show "$nb"

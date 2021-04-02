@@ -9,6 +9,10 @@ Commandes propres a GameShell
   gash help
     affiche ce message
 
+  gash reset
+    relance la session bash, pour recharger la
+    configuration globale en cas de problème
+
   gash restart
     ré-initialise la mission courante
 
