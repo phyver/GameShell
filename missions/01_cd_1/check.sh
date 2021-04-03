@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-goal=$(CANONICAL_PATH "$GASH_HOME/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_donjon")
+goal=$(CANONICAL_PATH "$GASH_HOME/$(gettext -s "Path to the top of the donjon")")
 current=$(CANONICAL_PATH "$PWD")
 
 if [ "$goal" = "$current" ]
@@ -9,8 +9,7 @@ then
     unset goal current
     true
 else
-    echo "Vous n'êtes pas en haut du donjon !"
-    echo "Vous allez recommencer la mission au point de départ."
+    gettext -s "Failure message"
     cd "$GASH_HOME"
     unset goal current
     false

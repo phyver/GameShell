@@ -131,6 +131,10 @@ init_gash() {
   export GASH_CONFIG="$GASH_BASE/.config"
   export GASH_LOCAL_BIN="$GASH_BASE/.bin"
 
+  # variables related to internationalisation
+  export TEXTDOMAINDIR="$GASH_BASE/locale"
+  export TEXTDOMAIN="gash"
+
   if [ -e "$GASH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
   then
     echo "Vous êtes en train d'exécuter GameShell"
@@ -181,17 +185,46 @@ init_gash() {
   # Installation des missions.
   for MISSION_DIR in "$GASH_BASE"/missions/[0-9]*; do
     export MISSION_DIR
-    if [ -f "$MISSION_DIR/static.sh" ]
+
+    # To be used as TEXTDOMAIN environment variable for the mission.
+    export DOMAIN=$(basename "$MISSION_DIR")
+
+    # Preparing the locales
+    if [ -d "$MISSION_DIR/locale" ]
     then
-      source "$MISSION_DIR/static.sh"
+      for PO_FILE in "$MISSION_DIR"/locale/*.po; do
+        PO_LANG=$(basename "$PO_FILE" .po)
+        mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
+        msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
+      done
     fi
+
+    # ???
     if [ -f "$MISSION_DIR/bashrc" ]
     then
       cp "$MISSION_DIR/bashrc" "$GASH_CONFIG/$(basename "$MISSION_DIR" /)-bashrc.sh"
     fi
+
+    # Setting up the binaries
     if [ -d "$MISSION_DIR/bin" ]
     then
-      cp "$MISSION_DIR/bin/"* "$GASH_LOCAL_BIN"
+      for BIN_FILE in "$MISSION_DIR"/bin/*; do
+        BIN_NAME=$(basename "$BIN_FILE")
+        cat > "$GASH_LOCAL_BIN/$BIN_NAME" <<EOH
+#!/bin/bash
+export TEXTDOMAIN="$DOMAIN"
+$BIN_FILE "$@"
+EOH
+        cp "$BIN_FILE" "$GASH_LOCAL_BIN"
+      done
+    fi
+
+    # Running the static script.
+    if [ -f "$MISSION_DIR/static.sh" ]
+    then
+      export TEXTDOMAIN="$DOMAIN"
+      source "$MISSION_DIR/static.sh"
+      export TEXTDOMAIN="gash"
     fi
   done
   unset MISSION_DIR

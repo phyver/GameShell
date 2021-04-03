@@ -1,2 +1,2 @@
-cd ~/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_donjon/
+cd "$GASH_HOME/$(gettext -s "Path to the top of the donjon")"
 gash check
