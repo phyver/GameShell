@@ -315,7 +315,7 @@ _gash_clean() {
   local nb="$(_get_mission_nb "$1")"
   if [ -z "$nb" ]
   then
-    echo "Problème : mauvaise mission '$nb' (_gash_show)"
+    echo "Problème : mauvaise mission '$nb' (_gash_clean)"
     return 1
   fi
 
