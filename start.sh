@@ -185,6 +185,10 @@ init_gash() {
     then
       source "$MISSION_DIR/static.sh"
     fi
+    if [ -f "$MISSION_DIR/bashrc" ]
+    then
+      cp "$MISSION_DIR/bashrc" "$GASH_CONFIG/$(basename "$MISSION_DIR" /)-bashrc.sh"
+    fi
     if [ -d "$MISSION_DIR/bin" ]
     then
       cp "$MISSION_DIR/bin/"* "$GASH_LOCAL_BIN"
