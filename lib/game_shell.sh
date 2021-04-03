@@ -292,6 +292,7 @@ _gash_check() {
         source "$MISSION_DIR/treasure.sh"
         #FIXME: sourcing the file isn't very robust as the "gash check" may happen in a subshell!
         if [ "$BASHPID" != "$$" ]
+        then
           echo "Attention, le chargement du fichier 'treasure.sh' c'est fait dans un sous shell."
           echo "Il peut être nécessaire de faire un 'gash reset' pour le charger."
         fi
