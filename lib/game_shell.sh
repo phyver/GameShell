@@ -289,8 +289,12 @@ _gash_check() {
       then
         [ -f "$MISSION_DIR/treasure.txt" ] && cat "$MISSION_DIR/treasure.txt"
         cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /)-treasure.sh"
-        #FIXME: sourcing the file isn't very robust as the "gash check" may happen in a subshell!
         source "$MISSION_DIR/treasure.sh"
+        #FIXME: sourcing the file isn't very robust as the "gash check" may happen in a subshell!
+        if [ "$BASHPID" != "$$" ]
+          echo "Attention, le chargement du fichier 'treasure.sh' c'est fait dans un sous shell."
+          echo "Il peut être nécessaire de faire un 'gash reset' pour le charger."
+        fi
       fi
       _gash_start "$nb"
     else
