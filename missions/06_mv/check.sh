@@ -8,6 +8,7 @@
 
 _local_check() {
     local cave=$GASH_HOME/Chateau/Cave
+    local coffre=$GASH_HOME/Foret/Cabane/Coffre
     local i=$1
     local piece="piece_$i"
 
@@ -22,7 +23,7 @@ _local_check() {
 
     # _local_check that file exists
     local file
-    file=$(find "$GASH_COFFRE" -maxdepth 1 -name "piece_$i")
+    file=$(find "$coffre" -maxdepth 1 -name "piece_$i")
     if [ ! -f "$file" ]
     then
         echo "La pièce '$piece' n'est pas dans le coffre."
