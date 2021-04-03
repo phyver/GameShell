@@ -2,7 +2,8 @@ export REAL_HOME=$HOME
 export HOME=$GASH_HOME
 
 export HISTFILE=$GASH_DATA/history
-export HISTCONTROL="ignoreboth"
+export HISTCONTROL="ignoredups"
+export HISTIGNORE=""
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 
