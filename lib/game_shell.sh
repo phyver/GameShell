@@ -100,6 +100,11 @@ _gash_show() {
   if [ -f "$MISSION_DIR/goal.txt" ]
   then
     parchment "$MISSION_DIR/goal.txt"
+  elif [ -f "$MISSION_DIR/goal.sh" ]
+  then
+    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+    source "$MISSION_DIR/goal.sh"
+    export TEXTDOMAIN="gash"
   fi
 }
 
@@ -145,7 +150,9 @@ _gash_start() {
     # Dans ce cas, je sauvegarder l'environnement avant / après
     # l'initialisation pour afficher un message
     [ "$BASHPID" = "$$" ] || compgen -v | sort > "$GASH_TMP"/env-before
+    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$MISSION_DIR/init.sh"
+    export TEXTDOMAIN="gash"
     [ "$BASHPID" = "$$" ] || compgen -v | sort > "$GASH_TMP"/env-after
 
     if [ "$BASHPID" != "$$" ]
@@ -182,7 +189,9 @@ _gash_restart() {
 
   if [ -f "$MISSION_DIR/init.sh" ]
   then
+    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$MISSION_DIR/init.sh"
+    export TEXTDOMAIN="gash"
   fi
 
   _log_action "$nb" "RESTART"
@@ -230,7 +239,9 @@ _gash_auto() {
 
   if [ -f "$MISSION_DIR/auto.sh" ]
   then
+    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$MISSION_DIR/auto.sh"
+    export TEXTDOMAIN="gash"
     _log_action "$nb" "AUTO"
     return 0
   else
@@ -267,8 +278,10 @@ _gash_check() {
     color_echo yellow "La mission $nb a déjà été validée"
     echo
   else
+    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$check_prg"
     local exit_status=$?
+    export TEXTDOMAIN="gash"
     unset -f check
     # compare environment before / after?
 
@@ -289,8 +302,10 @@ _gash_check() {
       then
         [ -f "$MISSION_DIR/treasure.txt" ] && cat "$MISSION_DIR/treasure.txt"
         cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /)-treasure.sh"
-        source "$MISSION_DIR/treasure.sh"
         #FIXME: sourcing the file isn't very robust as the "gash check" may happen in a subshell!
+        export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+        source "$MISSION_DIR/treasure.sh"
+        export TEXTDOMAIN="gash"
         if [ "$BASHPID" != "$$" ]
         then
           echo "Attention, le chargement du fichier 'treasure.sh' c'est fait dans un sous shell."
@@ -324,7 +339,9 @@ _gash_clean() {
   if [ -f "$MISSION_DIR/clean.sh" ]
   then
     # echo "cleaning mission '$MISSION_DIR'"
+    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$MISSION_DIR/clean.sh"
+    export TEXTDOMAIN="gash"
   fi
 }
 
