@@ -1,1 +1,1 @@
-grep -Zvl "sans" ~/Echoppe/* | xargs -0 grep -v "PAY" | wc -l | gash check
+gash check < <(grep -v "PAY" * | wc -l)

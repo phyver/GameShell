@@ -1,13 +1,11 @@
-
-
-OK=1
-
-for _ in $(seq 5)
+exec 3< "$GASH_TMP/arith.txt"
+OK="OK"
+while IFS='' read -r -u 3 l
 do
-    a=$((1 + RANDOM % 50))
-    b=$((1 + RANDOM % 50))
-    c=$((a + b))
-    read -erp "$a + $b = ?? " r
+    q="$(echo "$l" | cut -d"|" -f1)"
+    c="$(echo "$l" | cut -d"|" -f2)"
+
+    read -erp "$q" r
     case "$r" in
         "" | *[!0-9]*)
             echo "Dommage ! Le résultat est $c..."
@@ -27,10 +25,10 @@ done
 
 if [ -n "$OK" ]
 then
-    unset OK _ a b c r
+    unset OK LIMIT l q c r
     true
 else
-    unset OK _ a b c r
+    unset OK LIMIT l q c r
     false
 fi
 
