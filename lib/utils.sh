@@ -61,7 +61,7 @@ parchment() {
 
 
 # checksum of admin password
-export ADMIN_HASH='39f70a1addd8031d5e68d75c1a4432ebf115cf85'
+export ADMIN_HASH='85ba6c834086d5f322acdea13f710c482b1a4f2a'
 
 # ask admin password: variable GASH_ADMIN is set to "OK" if password was
 # correctly given, to "" otherwise
