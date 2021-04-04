@@ -143,7 +143,7 @@ supplémentaires. Ces fonctionnalités passent par la commande ``gash``.
   - `gash HELP` : affiche une liste plus complète des commandes
   - `gash show` : affiche l'objectif de la mission courante
   - `gash check` : vérifie si la mission actuelle est validée
-  - `gash restart` : recommence la mission courante
+  - `gash reset` : recommence la mission courante
 
 
 

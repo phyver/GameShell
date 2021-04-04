@@ -166,28 +166,35 @@ _gash_start() {
   fi
 
   _log_action "$nb" "START"
-}
 
-
-# restart a mission given by its number
-_gash_restart() {
-  local nb="$(_get_mission_nb "$1")"
-  if [ -z "$nb" ]
+  if [ "$nb" -eq 1 ]
   then
-    echo "Problème : mauvaise mission '$nb' (_gash_restart)"
-    return 1
+    cat <<EOM
+**********************************************
+*                                            *
+*     Commencez par taper la commande        *
+*       $ gash show                          *
+*     pour découvrir le premier objectif     *
+*     et                                     *
+*       $ gash check                         *
+*     pour valider vos missions.             *
+*                                            *
+*     La commande                            *
+*       $ gash help                          *
+*     affiche la liste des commandes gash.   *
+*                                            *
+**********************************************
+EOM
+  else
+    cat <<EOM
+****************************************
+*  Tapez la commande                   *
+*    $ gash show                       *
+*  pour découvrir l'objectif suivant.  *
+****************************************
+EOM
   fi
-
-  local MISSION_DIR="$(_get_mission_dir "$nb")"
-
-  if [ -f "$MISSION_DIR/init.sh" ]
-  then
-    source "$MISSION_DIR/init.sh"
-  fi
-
-  _log_action "$nb" "RESTART"
 }
-
 
 # stop a mission given by its number
 _gash_pass() {
@@ -206,13 +213,6 @@ _gash_pass() {
   nb=$(_get_next_mission "$nb")
 
   _gash_start "$nb"
-  cat <<EOM
-****************************************
-*  Tapez la commande                   *
-*    $ gash show                       *
-*  pour découvrir l'objectif suivant.  *
-****************************************
-EOM
 }
 
 # applies auto.sh script, if it exists
@@ -306,7 +306,7 @@ _gash_check() {
       _log_action "$nb" "CHECK_OOPS"
 
       _gash_clean "$nb"
-      _gash_restart "$nb"
+      _gash_reset
     fi
   fi
 }
@@ -529,7 +529,7 @@ gash() {
   then
     cat <<EOH
 gash <commande>
-commandes possibles : check, finish, help, restart, reset, show, stop
+commandes possibles : help, show, check, reset, save
 EOH
   fi
 
@@ -548,16 +548,12 @@ EOH
     "f" | "fi" | "fin" | "fini" | "finis" | "finish")
       _gash_finish
       ;;
-    "sa" | "sav" | "save")
-      _gash_save
-      ;;
-    "rest" | "resta" | "restar" | "restart")
-      _gash_clean "$nb"
-      _gash_restart "$nb"
-      ;;
-    "rese" | "reset")
+    "r" | "re" | "res" | "rese" | "reset")
       _gash_clean "$nb"
       _gash_reset
+      ;;
+    "sa" | "sav" | "save")
+      _gash_save
       ;;
     "sh" | "sho" | "show")
       _gash_show "$nb"
