@@ -40,33 +40,5 @@ then
     _gash_start "$GASH_DEBUG_MISSION"
 else
     n=$(_get_current_mission)
-    if [ -z "$n" ]
-    then
-        _gash_start 1
-    cat <<EOM
-**********************************************
-*                                            *
-*     Commencez par taper la commande        *
-*       $ gash show                          *
-*     pour découvrir le premier objectif     *
-*     et                                     *
-*       $ gash check                         *
-*     pour valider vos missions.             *
-*                                            *
-*     La commande                            *
-*       $ gash help                          *
-*     affiche la liste des commandes gash.   *
-*                                            *
-**********************************************
-EOM
-    else
-        _gash_restart "$n"
-        cat <<EOM
-**********************************************
-*     Rappel : la commande                   *
-*       $ gash help                          *
-*     affiche la liste des commandes gash.   *
-**********************************************
-EOM
-    fi
+    _gash_start "$n"
 fi

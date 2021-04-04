@@ -157,8 +157,7 @@ init_gash() {
 
   # Message d'accueil.
   clear
-  echo "============================ Initialisation de GameShell ============================"
-  echo
+  echo "======== Initialisation de GameShell ========"
 
   rm -rf "$GASH_HOME"
   rm -rf "$GASH_DATA"
@@ -193,7 +192,9 @@ init_gash() {
     then
       cp "$MISSION_DIR/bin/"* "$GASH_LOCAL_BIN"
     fi
+    printf "."
   done
+  echo
   unset MISSION_DIR
 
 
