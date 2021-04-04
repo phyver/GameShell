@@ -1,5 +1,4 @@
 #!/bin/bash
 
-mkdir -p "$GASH_HOME/$(gettext -s "Path to the top of the donjon")"
-
+mkdir -p "$(eval_gettext "\$GASH_HOME/Castle/Dungeon/First_floor/Second_floor/Top_of_the_dungeon")"
 

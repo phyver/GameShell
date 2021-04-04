@@ -1,2 +1,2 @@
-cd "$GASH_HOME/$(gettext -s "Path to the top of the donjon")"
+cd "$(eval_gettext "\$GASH_HOME/Castle/Dungeon/First_floor/Second_floor/Top_of_the_dungeon")"
 gash check

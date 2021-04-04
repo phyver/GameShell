@@ -1,2 +1,1 @@
-gettext "Mission goal" > "$GASH_TMP/mission_descr.txt"
-parchment "$GASH_TMP/mission_descr.txt"
+parchment "$(eval_gettext "\$MISSION_DIR/goal/en.txt")"

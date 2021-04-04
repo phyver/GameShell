@@ -1,0 +1,25 @@
+Mission goal
+============
+
+Go to the top of the dungeon.
+
+
+Useful commands
+===============
+
+cd LOCATION
+  lets you move to the given location
+
+pwd
+  displays the current location
+
+ls
+  lists all the locations that can be
+  accessed from the current location
+
+
+Reminder
+========
+
+gash restart
+  lets you restart the mission from scratch

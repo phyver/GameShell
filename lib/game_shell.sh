@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+. gettext.sh
+
 #misc functions
 source "$GASH_LIB/utils.sh"
 

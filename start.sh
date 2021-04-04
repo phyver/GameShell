@@ -1,5 +1,6 @@
 #!/bin/bash
 
+. gettext.sh
 
 export GASH_BASE="$(dirname "$0")"
 source "$GASH_BASE"/lib/os_aliases.sh
