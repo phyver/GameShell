@@ -1,7 +1,9 @@
-export REAL_HOME=$HOME
-export HOME=$GASH_HOME
+#!/bin/bash
 
-export HISTFILE=$GASH_DATA/history
+export REAL_HOME="$HOME"
+export HOME="$GASH_HOME"
+
+export HISTFILE="$GASH_DATA/history"
 export HISTCONTROL="ignoredups"
 export HISTIGNORE=""
 export HISTSIZE=50000
@@ -9,7 +11,8 @@ export HISTFILESIZE=50000
 
 export PATH=$PATH:$GASH_BASE/bin:$GASH_BIN:$GASH_LOCAL_BIN
 
-source "$GASH_LIB/game_shell.sh"
+# shellcheck source=./lib/gameshell.sh
+source "$GASH_LIB/gameshell.sh"
 
 
 export PS1='[mission $(_get_current_mission)] $ '
@@ -29,8 +32,9 @@ doas() {
     echo "gash: doas: command not found" >&2
 }
 
-for f in $GASH_CONFIG/*.sh
+for f in "$GASH_CONFIG"/*.sh
 do
+    # shellcheck source=/dev/null
     [ -f "$f" ] && source "$f"
 done
 

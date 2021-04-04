@@ -2,6 +2,7 @@
 
 
 export GASH_BASE="$(dirname "$0")"
+# shellcheck source=./lib/os_aliases.sh
 source "$GASH_BASE"/lib/os_aliases.sh
 
 export GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/)
@@ -59,20 +60,19 @@ do
       FORCE="TRUE"
       ;;
     *)
-      echo "option invalide : -$OPTARG" >&2
+      echo "option invalide : '-$OPTARG'" >&2
       exit 1
       ;;
   esac
 done
 
 
-local_passeport() {
-  local PASSEPORT=$1
+local_passport() {
+  local PASSPORT=$1
   local NB
   while true
   do
-    echo -n "Combien de membres dans le groupe ? (1) "
-    read -er NB
+    read -erp "Combien de membres dans le groupe ? (1) " NB
     case "$NB" in
       "" )          NB=1; break             ;;
       *[!0-9]* )    echo "nombre invalide"  ;;
@@ -84,37 +84,28 @@ local_passeport() {
     NOM=""
     while [ -z "$NOM" ]
     do
-      echo -n "Membre $I, nom complet : "
-      read -er NOM
+      read -erp "Membre $I, nom complet : " NOM
     done
     EMAIL=""
     while [ -z "$EMAIL" ]
     do
-      echo -n "Membre $I, email : "
-      read -er EMAIL
+      read -erp "Membre $I, email : " EMAIL
     done
-    echo "  $NOM <$EMAIL>" >> "$PASSEPORT"
+    echo "  $NOM <$EMAIL>" >> "$PASSPORT"
   done
 }
 
-debug_passeport() {
-  local PASSEPORT=$1
-  echo "MODE DÉCOUVERTE (DEBUG)" >> "$PASSEPORT"
-}
-
-
-confirm_passeport() {
-  local PASSEPORT=$1
+confirm_passport() {
+  local PASSPORT=$1
   echo "======================================================="
-  cat "$PASSEPORT"
+  cat "$PASSPORT"
   echo "======================================================="
   color_echo yellow "Les informations données ici ne pourront plus être modifiées."
-  echo -n "Ces informations sont elles correctes ? (O / n) "
-  local OK=""
-  read -er OK
+  read -erp "Ces informations sont elles correctes ? (O / n) " OK
   echo
   [ "$OK" = "" ] || [ "$OK" = "o" ] || [ "$OK" = "O" ]
 }
+
 
 init_gash() {
   # dossiers d'installation
@@ -133,31 +124,26 @@ init_gash() {
 
   if [ -e "$GASH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
   then
-    echo "Vous êtes en train d'exécuter GameShell"
-    echo "dans l'arborescence de développement."
-    echo -n "Faut-il continuer ? [o/N] "
-    read -er x
+    echo "Vous êtes en train d'exécuter GameShell dans l'arborescence de développement."
+    read -erp "Faut-il continuer ? [o/N] " x
     [ "$x" != "o" ] && [ "$x" != "O" ] && exit 1
-    # [ -z "$GASH_DEBUG_MISSION" ] && GASH_DEBUG_MISSION="1"
   fi
 
   if [ -e "$GASH_DATA" ]
   then
     if [ -z "$RESET" ]
     then
-      echo -n "'$GASH_DATA' existe déjà... Faut-il le conserver ? [O/n] "
-      read -er x
-      ([ "$x" = "o" ] || [ "$x" = "O" ] || [ "$x" = "" ]) && return 1
+      read -erp "'$GASH_DATA' existe déjà... Faut-il le conserver ? [O/n] " x
+      if [ "$x" = "o" ] || [ "$x" = "O" ] || [ "$x" = "" ]
+      then
+        return 1
+      fi
     elif [ "$RESET" = "FALSE" ]
     then
       return 1
     fi
   fi
 
-
-  # Message d'accueil.
-  clear
-  echo "======== Initialisation de GameShell ========"
 
   rm -rf "$GASH_HOME"
   rm -rf "$GASH_DATA"
@@ -177,11 +163,55 @@ init_gash() {
 
   mkdir -p "$GASH_TMP"
 
+
+  # Configuration pour la génération de la fiche étudiant.
+  PASSPORT="$GASH_DATA/passport.txt"
+
+  while true
+  do
+    # Lecture du login des étudiants.
+    case "$MODE" in
+      DEBUG)
+        echo "MODE DÉCOUVERTE (DEBUG)" >> "$PASSPORT"
+        break
+        ;;
+      PASSPORT)
+        local_passport "$PASSPORT"
+        ;;
+      *)
+        echo "mode de lancement inconnu: '$MODE'" >&2
+        ;;
+    esac
+
+    # Confirmation des informations
+    if confirm_passport "$PASSPORT"
+    then
+      break
+    else
+      rm -f "$PASSPORT"
+      color_echo yellow "Recommencez du début, sans vous tromper."
+      echo
+      fi
+    done
+
+
+  # Génération de l'UID du groupe.
+  export GASH_UID="$(sha1sum "$PASSPORT" | cut -c 1-40)"
+  echo "GASH_UID=$GASH_UID" >> "$PASSPORT"
+  echo "$GASH_UID" > "$GASH_DATA/uid"
+
+
+  # Message d'accueil.
+  clear
+  echo "======== Initialisation de GameShell ========"
+
+
   # Installation des missions.
   for MISSION_DIR in "$GASH_BASE"/missions/[0-9]*; do
     export MISSION_DIR
     if [ -f "$MISSION_DIR/static.sh" ]
     then
+      # shellcheck source=/dev/null
       source "$MISSION_DIR/static.sh"
     fi
     if [ -f "$MISSION_DIR/bashrc" ]
@@ -196,60 +226,14 @@ init_gash() {
   done
   echo
   unset MISSION_DIR
-
-
-  # Configuration pour la génération de la fiche étudiant.
-  PASSEPORT="$GASH_DATA/passeport.txt"
-
-  while true
-  do
-    # Lecture du login des étudiants.
-    case "$MODE" in
-      DEBUG)
-        debug_passeport "$PASSEPORT"
-        break
-        ;;
-      PASSPORT)
-        local_passeport "$PASSEPORT"
-        ;;
-      *)
-        echo "mode de lancement inconnu: '$MODE'" >&2
-        ;;
-    esac
-
-
-    # Confirmation des informations
-    if confirm_passeport "$PASSEPORT"
-    then
-      break
-    else
-      rm -f "$PASSEPORT"
-      color_echo yellow "Recommencez du début, sans vous tromper."
-      echo
-    fi
-  done
-
-  # Génération de l'UID du groupe.
-  export GASH_UID="$(sha1sum "$PASSEPORT" | cut -c 1-40)"
-  echo "GASH_UID=$GASH_UID" >> "$PASSEPORT"
-  echo "$GASH_UID" > "$GASH_DATA/uid"
 }
 
 
 start_gash() {
-
   # Lancement du jeu.
   cd "$GASH_HOME"
-
   export GASH_UID=$(cat "$GASH_DATA/uid")
-
-  # if [ -x "$(command -v ttyrec)" ]
-  # then
-  #   ttyrec -a -e "bash --rcfile \"$GASH_CONFIG/bashrc\"" "$GASH_DATA/script"
-  # else
   bash --rcfile "$GASH_LIB/bashrc"
-  # fi
-
 }
 
 
