@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 function CANONICAL_PATH() {
   local TARGET="$1"
