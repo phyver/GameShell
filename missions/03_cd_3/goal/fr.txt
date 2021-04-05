@@ -1,0 +1,21 @@
+Objectif
+========
+
+Retourner au point de départ puis aller dans la salle 
+du trône en utilisant seulement 2 commandes.
+
+ATTENTION. Pouf valider cette mission il faut :
+- que l'avant-dernière commande vous ramène au point
+  de départ,
+- que la dernière commande vous amène directement dans
+  la salle du trône.
+
+
+Commandes utilisées
+===================
+
+cd
+  permet de revenir au lieu initial
+
+cd LIEU1/LIEU2/LIEU3
+  permet de faire plusieurs déplacements d'un seul coup

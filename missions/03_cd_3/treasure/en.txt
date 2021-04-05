@@ -1,0 +1,4 @@
+Well done!!!
+
+From now on, the current location will be shown
+just before the command prompt.

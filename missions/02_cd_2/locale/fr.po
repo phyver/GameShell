@@ -1,0 +1,13 @@
+#: auto.sh:1 check.sh:1 static.sh:1
+#, sh-format
+msgid "$GASH_HOME/Castle/Cellar"
+msgstr "$GASH_HOME/Chateau/Cave"
+
+#: check.sh:9
+msgid "Vous n'êtes pas dans la cave..."
+msgstr ""
+
+#: goal.sh:1
+#, sh-format
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"

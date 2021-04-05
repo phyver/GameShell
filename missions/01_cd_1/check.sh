@@ -12,4 +12,3 @@ else
     unset goal current
     false
 fi
-
