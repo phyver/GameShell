@@ -71,6 +71,11 @@ _get_mission_dir() {
 
 # reset the bash configuration
 _gash_reset() {
+  if [ "$BASHPID" != "$$" ]
+  then
+    echo "La commande 'gash reset' est inutile lorsqu'elle est exécutée dans un sous-shell!"
+    return
+  fi
   # on relance bash, histoire de recharcher la config au cas où...
   exec bash --rcfile "$GASH_LIB/bashrc"
 }
@@ -131,7 +136,7 @@ _gash_start() {
     if ! bash "$MISSION_DIR/deps.sh"
     then
       echo "La mission est annulée"
-      _log_action "$nb" "DEP_PB_CANCEL"
+      _log_action "$nb" "CANCEL_DEP_PB"
       _gash_start "$((nb + 1))"
       return
     fi
@@ -153,7 +158,7 @@ _gash_start() {
       if ! cmp --quiet "$GASH_TMP"/env-before "$GASH_TMP"/env-after
       then
         echo "Attention, l'initialisation a eu lieu dans un sous-shell"
-        echo "Il peut être intéressant de lancer la commande"
+        echo "Il est conseillé de lancer la commande"
         echo "  gash reset"
         rm -f "$GASH_TMP"/env-{before,after}
       fi
