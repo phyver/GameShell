@@ -1,12 +1,11 @@
-# les commandes ne sont pas dans l'historique, il faut les y ajouter à la main !
+# Commands must be manually added to the history.
 history -s cd
-history -s cd Chateau/Batiment_principal/Salle_du_trone/
+history -s cd "$(eval_gettext "\$GASH_HOME/Castle/Main_building/Throne_room")"
 history -s gash check
 
 cd
-cd Chateau/Batiment_principal/Salle_du_trone/
+cd "$(eval_gettext "\$GASH_HOME/Castle/Main_building/Throne_room")"
 gash check
 
+# Cleaning up the history.
 history -d -3--1
-
-

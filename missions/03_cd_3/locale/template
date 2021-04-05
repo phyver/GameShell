@@ -1,0 +1,14 @@
+#: auto.sh:3 auto.sh:7 check.sh:4 static.sh:1
+#, sh-format
+msgid "$GASH_HOME/Castle/Main_building/Throne_room"
+msgstr ""
+
+#: goal.sh:1
+#, sh-format
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+#: treasure.sh:1
+#, sh-format
+msgid "$MISSION_DIR/treasure/en.txt"
+msgstr ""

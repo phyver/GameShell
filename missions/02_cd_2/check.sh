@@ -1,6 +1,4 @@
-#!/bin/bash
-
-goal=$(CANONICAL_PATH "$GASH_HOME/Chateau/Cave")
+goal=$(CANONICAL_PATH "$(eval_gettext "\$GASH_HOME/Castle/Cellar")")
 current=$(CANONICAL_PATH "$PWD")
 
 if [ "$goal" = "$current" ]
@@ -8,8 +6,7 @@ then
     unset goal current
     true
 else
-    echo "Vous n'êtes pas dans la cave..."
+    echo "$(gettext "You are not in the cellar...")"
     unset goal current
     false
 fi
-

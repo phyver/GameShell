@@ -1,3 +1,1 @@
-#!/bin/bash
-
-mkdir -p "$GASH_HOME/Chateau/Batiment_principal/Salle_du_trone"
+mkdir -p "$(eval_gettext "\$GASH_HOME/Castle/Main_building/Throne_room")"

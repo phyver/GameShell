@@ -1,0 +1,21 @@
+Mission goal
+============
+
+Go the castle's cellar.
+
+
+Secondary objective
+-------------------
+
+Understand the difference between ``cd -`` and ``cd ..``.
+
+
+Useful commands
+===============
+
+cd -
+  lets you return to the previous location
+
+cd ..
+  lets you move to the location "preceding" the current
+  location in the list given by ``pwd``
