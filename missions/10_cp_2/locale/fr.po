@@ -1,0 +1,52 @@
+#: check.sh:8
+#, sh-format
+msgid "$GASH_TMP/dans_entree"
+msgstr "$GASH_TMP/in_entrance"
+
+#:
+#, sh-format
+msgid "$GASH_HOME/Castle/Entrance"
+msgstr "$GASH_HOME/Chateau/Entree"
+
+#: 
+msgid "You have changed the contents of the entrance!"
+msgstr "Vous avez changé le contenu de l'entrée !"
+
+#:
+#, sh-format
+msgid "$GASH_HUT"
+msgstr "$GASH_CABANE"
+
+#:
+msgid "Where is the hut???"
+msgstr "Où est la cabane ???"
+
+#:
+msgid "hay"
+msgstr "foin"
+
+#:
+msgid "gravel"
+msgstr "gravas"
+
+#:
+msgid "detritus"
+msgstr "detritus"
+
+#:
+msgid "ornement"
+msgstr "ornement"
+
+#:
+msgid "I wanted only the ornements of the entrance!"
+msgstr "Je ne voulais que les ornements de l'entrée !"
+
+#:
+msgid "I wanted all the entrance ornements!"
+msgstr "Je voulais tous les ornements de l'entrée !"
+
+#: goal.sh:1
+#, sh-format
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
