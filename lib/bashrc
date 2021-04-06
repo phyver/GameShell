@@ -17,6 +17,18 @@ export PS2="> "
 export PS3=""
 export PS4="+ "
 
+su() {
+    echo "gash: su: command not found" >&2
+}
+
+sudo() {
+    echo "gash: sudo: command not found" >&2
+}
+
+doas() {
+    echo "gash: doas: command not found" >&2
+}
+
 for f in $GASH_CONFIG/*.sh
 do
     [ -f "$f" ] && source "$f"
