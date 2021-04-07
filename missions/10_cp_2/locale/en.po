@@ -45,6 +45,10 @@ msgstr "I wanted only the ornements of the entrance!"
 msgid "I wanted all the entrance ornements!"
 msgstr "I wanted all the entrance ornements!"
 
+#, sh-format
+msgid "$GASH_HOME/Forest/Hut"
+msgstr "$GASH_HOME/Forest/Hut"
+
 #: goal.sh:1
 #, sh-format
 msgid "$MISSION_DIR/goal/en.txt"
