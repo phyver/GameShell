@@ -54,10 +54,15 @@ Utilisation
 
 ### 1/ directement depuis les sources
 
-En récupérant l'archive https://github.com/phyver/GameShell/raw/master/GameShell.tgz
+En récupérant l'archive du dépot
 
-    $ wget https://github.com/phyver/GameShell/raw/master/GameShell.tgz -O -  |  tar -xz
-    $ ./GameShell/start.sh
+    $ rm -rf GameShell && mkdir GameShell && wget  https://api.github.com/repos/phyver/GameShell/tarball -O -  |  tar -xz -C GameShell --strip-components 1
+    $ ./phyver-GameShell-*/start.sh
+
+ou, si votre version de `tar` ne supporte pas l'option `--strip-components`
+
+    $ rm -rf phyver-GameShell-* && wget  https://api.github.com/repos/phyver/GameShell/tarball -O -  |  tar -xz
+    $ ./phyver-GameShell-*/start.sh
     ...
     ...
 
@@ -67,16 +72,9 @@ En récupérant l'archive https://github.com/phyver/GameShell/raw/master/GameShe
 Après avoir cloné le dépot :
 
     $ git clone https://github.com/phyver/GameShell.git
-    $ ./GameShell/start.sh
-    Attention, vous êtes en train d'exécuter
-    GameShell dans la version de développement.
-    Faut-il continuer ? [o/N]
-    o
+    $ ./GameShell/start.sh -F
     ...
     ...
-
-Note : lancer GameShell directement dans le répertoire des sources ne devrait
-pas poser de problème...
 
 
 ### 3/ en créant une archive spécifique
