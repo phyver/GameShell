@@ -1,1 +1,1 @@
-parchment "$(eval_gettext "\$MISSION_DIR/goal/en.txt")"
+parchment "$(eval_gettext "\$MISSION_DIR/i18n/goal/en.txt")"

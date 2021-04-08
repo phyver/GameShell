@@ -6,3 +6,4 @@ tmp
 .tmp
 World
 *.tar
+locale/
