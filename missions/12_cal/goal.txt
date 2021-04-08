@@ -1,7 +1,7 @@
 Objectif
 ========
 
-trouver le jour de la semaine pour le 12-34-5678
+trouver le jour de la semaine pour le 10-01-2080
 
 Lorsque vous le connaissez, lancez la commande
   $ gash check

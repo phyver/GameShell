@@ -345,7 +345,7 @@ _gash_HELP() {
   parchment "$GASH_LIB"/HELP.txt
 }
 
-_gash_finish() {
+_gash_save_meta() {
   if jobs | grep -iq stopped
   then
     cat <<EOM
@@ -364,72 +364,7 @@ EOM
     fi
   fi
 
-  _log_action "$nb" "FINISH"
-
-  nb_journals=$(find "$GASH_HOME" -iname "*journal*" | wc -l)
-  if [ "$nb_journals" -gt 1 ]
-  then
-    cat <<EOM
-******************************************************
-******************************************************
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-Votre session contient plusieurs fichiers "journal"
-
-EOM
-    find "$GASH_HOME" -iname "*journal*"
-    cat <<EOM
-
-Il faut supprimer les fichiers en trop et ne conserver
-que le "vrai" journal...
-EOM
-    read -erp "Souhaitez-vous générer votre soumission quand même ? [o/N] " r
-    if [ "$r" != "o" ] && [  "$r" != "O" ]
-    then
-      cat <<EOM
-
-Aucun fichier de soumissions n'a été créé...
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-******************************************************
-******************************************************
-EOM
-      return 1
-    fi
-  fi
-  if [ "$nb_journals" -lt 1 ]
-  then
-    cat <<EOM
-******************************************************
-******************************************************
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-Votre session ne contient pas de fichier "journal"
-
-Si vous continuez, votre soumissions ne contiendra pas
-de fichier "journal".
-EOM
-    read -erp "Souhaitez-vous générer votre soumission quand même ? [o/N] " r
-    if [ "$r" != "o" ] && [ "$r" != "O" ]
-    then
-      cat <<EOM
-
-Aucun fichier de soumissions n'a été créé...
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-******************************************************
-******************************************************
-EOM
-      return 1
-    fi
-  fi
-
-  find "$GASH_DATA" -iname "*journal*" -print0 | xargs -0 rm -f
-  find "$GASH_HOME" -iname "*journal*" -print0 | xargs -0 -I JOURNAL cp --backup=numbered JOURNAL "$GASH_DATA"
+  _log_action "$nb" "META_SAVE"
 
   tarfile=$REAL_HOME/GameShell_$(whoami)-LOG.tgz
   if tar -zcf "$tarfile" -C "$GASH_BASE" "$(basename "$GASH_DATA")"
@@ -438,8 +373,8 @@ EOM
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Une archive contenant les fichiers à envoyer à votre
-encadrant a été créée dans votre répertoire personnel.
+Une archive contenant les méta-données de votre
+session a été créée dans votre répertoire personnel.
 Le fichier se trouve ici :
 
 $tarfile
@@ -456,8 +391,7 @@ EOM
 ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
 
 Un problème a été rencontré pendant la création de
-l'archive contenant les fichiers à envoyer à votre
-encadrant.
+l'archive contenant les méta-données de votre session.
 
 Si le fichier
 
@@ -468,14 +402,7 @@ avoir les fichiers suivants :
   - .../passeport.txt
   - .../missions.log
   - .../uid
-  - .../journal.txt
   - .../history
-  - .../script              (facultatif)
-
-Si tous ces fichiers existent, vous pouvez l'envoyer.
-Sinon, demandez à votre encadrant de TP...
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
 
 ******************************************************
 ******************************************************
@@ -508,7 +435,7 @@ EOM
   _log_action "$nb" "SAVE"
 
   tarfile=$REAL_HOME/GameShell_$(whoami)-SAVE.tgz
-  tar -zcf "$tarfile" -C "$GASH_BASE/.." "$(basename "$GASH_BASE")"
+  tar -zcf "$tarfile" --exclude=".git*" -C "$GASH_BASE/.." "$(basename "$GASH_BASE")"
   cat <<EOM
 ******************************************************
 ******************************************************
@@ -554,8 +481,8 @@ EOH
     "H" | "HE" | "HEL" | "HELP")
       _gash_HELP
       ;;
-    "f" | "fi" | "fin" | "fini" | "finis" | "finish")
-      _gash_finish
+    "meta_save")
+      _gash_save_meta
       ;;
     "r" | "re" | "res" | "rese" | "reset")
       _gash_clean "$nb"
@@ -565,6 +492,7 @@ EOH
       _gash_save
       ;;
     "sh" | "sho" | "show")
+      _gash_clean "$nb"
       _gash_show "$nb"
       ;;
     "stat")

@@ -58,7 +58,7 @@ BEGIN {
 }
 
 
-/CHECK_(OK|OOPS)|FINISH|PAUSE|SAVE|PASS/ {
+/CHECK_(OK|OOPS)|META_SAVE|PAUSE|SAVE|PASS/ {
     M[nb_mission][n]["stop"] =  current_time;
     M[nb_mission][n]["result"] = $2;
     next;
