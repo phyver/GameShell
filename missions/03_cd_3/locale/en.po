@@ -8,7 +8,7 @@ msgstr "$GASH_HOME/Castle/Main_building/Throne_room"
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/en.txt"
 
-#: treasure.sh:1
+#: treasure-msg.sh:1
 #, sh-format
-msgid "$MISSION_DIR/treasure/en.txt"
-msgstr "$MISSION_DIR/treasure/en.txt"
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/en.txt"

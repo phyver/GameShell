@@ -152,6 +152,7 @@ init_gash() {
     then
       echo -n "'$GASH_DATA' existe déjà... Faut-il le conserver ? [O/n] "
       read -er x
+      echo ""
       ([ "$x" = "o" ] || [ "$x" = "O" ] || [ "$x" = "" ]) && return 1
     elif [ "$RESET" = "FALSE" ]
     then

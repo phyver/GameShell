@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Retourner au point de départ puis aller dans la salle 
+Retourner au point de départ puis aller dans la salle
 du trône en utilisant seulement 2 commandes.
 
 ATTENTION. Pouf valider cette mission il faut :

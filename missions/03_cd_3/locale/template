@@ -8,7 +8,7 @@ msgstr ""
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr ""
 
-#: treasure.sh:1
+#: treasure-msg.sh:1
 #, sh-format
-msgid "$MISSION_DIR/treasure/en.txt"
+msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
