@@ -302,15 +302,32 @@ _gash_check() {
 
       if [ -f "$MISSION_DIR/treasure.sh" ]
       then
-        [ -f "$MISSION_DIR/treasure.txt" ] && cat "$MISSION_DIR/treasure.txt"
+        # Record the treasure to be loaded by GameShell's bashrc.
         cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /)-treasure.sh"
-        #FIXME: sourcing the file isn't very robust as the "gash check" may happen in a subshell!
+
+        # Display the text message (if it exists).
+        if [ -f "$MISSION_DIR/treasure.txt" ]
+        then
+          cat "$MISSION_DIR/treasure.txt"
+        fi
+
+        # Run the treasure message script (if it exists).
+        if [ -f "$MISSION_DIR/treasure-msg.sh" ]
+        then
+          export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+          source "$MISSION_DIR/treasure-msg.sh"
+          export TEXTDOMAIN="gash"
+        fi
+
+        # Load the treasure in the current shell.
         export TEXTDOMAIN="$(basename "$MISSION_DIR")"
         source "$MISSION_DIR/treasure.sh"
         export TEXTDOMAIN="gash"
+
+        # Sanity check.
         if [ "$BASHPID" != "$$" ]
         then
-          echo "Attention, le chargement du fichier 'treasure.sh' c'est fait dans un sous shell."
+          echo "Attention, le chargement du fichier 'treasure.sh' s'est fait dans un sous shell."
           echo "Il peut être nécessaire de faire un 'gash reset' pour le charger."
         fi
       fi
