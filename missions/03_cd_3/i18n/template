@@ -5,10 +5,10 @@ msgstr ""
 
 #: goal.sh:1
 #, sh-format
-msgid "$MISSION_DIR/goal/en.txt"
+msgid "$MISSION_DIR/i18n/goal/en.txt"
 msgstr ""
 
 #: treasure-msg.sh:1
 #, sh-format
-msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgid "$MISSION_DIR/i18n/treasure-msg/en.txt"
 msgstr ""

@@ -1,1 +1,1 @@
-cat "$(eval_gettext "\$MISSION_DIR/treasure-msg/en.txt")"
+cat "$(eval_gettext "\$MISSION_DIR/i18n/treasure-msg/en.txt")"

@@ -192,9 +192,9 @@ init_gash() {
     export DOMAIN=$(basename "$MISSION_DIR")
 
     # Preparing the locales
-    if [ -d "$MISSION_DIR/locale" ]
+    if [ -d "$MISSION_DIR/i18n" ]
     then
-      for PO_FILE in "$MISSION_DIR"/locale/*.po; do
+      for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
         PO_LANG=$(basename "$PO_FILE" .po)
         mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
         msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
