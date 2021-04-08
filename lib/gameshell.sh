@@ -87,6 +87,7 @@ _gash_exit() {
   local signal=$1
   _log_action "$nb" "$signal"
   _gash_clean "$nb"
+  echo "OK"
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
 
@@ -497,6 +498,9 @@ EOH
       ;;
     "stat")
       awk -v GASH_UID="$GASH_UID" -f "$GASH_BIN/stat.awk" < "$GASH_DATA/missions.log"
+      ;;
+    "exit")
+      exit 0
       ;;
 
     # admin stuff
