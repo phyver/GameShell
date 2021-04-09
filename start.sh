@@ -163,8 +163,7 @@ init_gash() {
 
   # Message d'accueil.
   clear
-  echo "============================ Initialisation de GameShell ============================"
-  echo
+  echo "======== Initialisation de GameShell ========"
 
   rm -rf "$GASH_HOME"
   rm -rf "$GASH_DATA"
@@ -228,7 +227,9 @@ EOH
       source "$MISSION_DIR/static.sh"
       export TEXTDOMAIN="gash"
     fi
+    printf "."
   done
+  echo
   unset MISSION_DIR
 
 

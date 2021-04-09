@@ -19,8 +19,7 @@ options :
   -P ...      choisit le "mot de passe" pour les commandes administrateur
   -N ...      nom du répertoire contenu dans l'archive (défaut : "GameShell")
   -a          conserve les scripts 'auto.sh' des missions qui en ont
-  -L          utilise le mode local par défaut
-  -U          utilise le LDAP de l'université par défaut
+  -P          utilise le mode "passeport" par défaut
   -D          utilise le mode debug par défaut
   -o ...      choisit le nom de l'archive (défaut: ../NOM_REPERTOIRE.tgz)
 EOH
@@ -33,7 +32,7 @@ KEEP_AUTO=0
 DEFAULT_MODE="DEBUG"
 OUTPUT=''
 
-while getopts ":hM:P:N:aLUDo:" opt
+while getopts ":hM:P:N:aPDo:" opt
 do
   case $opt in
     h)
@@ -52,11 +51,8 @@ do
     a)
       KEEP_AUTO=1
       ;;
-    U)
-      DEFAULT_MODE="USMB"
-      ;;
-    L)
-      DEFAULT_MODE="LOCAL"
+    P)
+      DEFAULT_MODE="PASSEPORT"
       ;;
     D)
       DEFAULT_MODE="DEBUG"
@@ -118,13 +114,12 @@ fi
 # choose default mode
 echo "choix du mode de lancement"
 case $DEFAULT_MODE in
-  DEBUG | LOCAL | USMB)
+  DEBUG | PASSEPORT)
     sed -i "s/^MODE=.*$/MODE='$DEFAULT_MODE'/" "$TMP_DIR/$NAME/start.sh"
     ;;
   *)
     echo "mode inconnu : '$DEFAULT_MODE'" >&2
 esac
-
 
 
 

@@ -24,6 +24,7 @@ USER ${uid}:${gid}
 
 WORKDIR /home/${user}
 
-RUN wget https://github.com/phyver/GameShell/raw/master/GameShell.tgz -O - | tar -xz
+RUN mkdir GameShell
+RUN wget  https://api.github.com/repos/phyver/GameShell/tarball -O -  |  tar -xz -C GameShell --strip-components 1
 
 ENTRYPOINT ./GameShell/start.sh
