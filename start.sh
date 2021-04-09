@@ -6,7 +6,8 @@
 source gettext.sh
 
 # shellcheck source=./lib/os_aliases.sh
-source "$(dirname "$0")"/lib/os_aliases.sh
+export GASH_BASE="$(dirname "$0")"
+source "$GASH_BASE"/lib/os_aliases.sh
 
 export GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/)
 cd "$GASH_BASE"
