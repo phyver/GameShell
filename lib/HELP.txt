@@ -14,10 +14,6 @@ Commandes propres a GameShell
   gash exit
     quitte la partie en cours
 
-  gash meta_save
-    génère un fichier contenant les méta-données de
-    la partie en cours
-
   gash goto N (ADMIN)
     passe directement à la mission N
 
