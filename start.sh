@@ -10,7 +10,18 @@ export GASH_BASE="$(dirname "$0")"
 source "$GASH_BASE"/lib/os_aliases.sh
 
 export GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/)
+
+# fichier pour gettext
+export TEXTDOMAINDIR="$GASH_BASE/locale"
+export TEXTDOMAIN="gash"
+
 cd "$GASH_BASE"
+
+for PO_FILE in "$GASH_BASE"/i18n/*.po; do
+  PO_LANG=$(basename "$PO_FILE" .po)
+  mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
+  msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
+done
 
 source lib/utils.sh
 
@@ -116,10 +127,6 @@ init_gash() {
   export GASH_TMP="$GASH_BASE/.tmp"
   export GASH_CONFIG="$GASH_BASE/.config"
   export GASH_LOCAL_BIN="$GASH_BASE/.bin"
-
-  # variables related to internationalisation
-  export TEXTDOMAINDIR="$GASH_BASE/locale"
-  export TEXTDOMAIN="gash"
 
   if [ -e "$GASH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
   then
