@@ -346,71 +346,6 @@ _gash_HELP() {
   parchment "$GASH_LIB"/HELP.txt
 }
 
-_gash_save_meta() {
-  if jobs | grep -iq stopped
-  then
-    cat <<EOM
-ATTENTION, vous avez des tâches en pause...
-Ces processus vont être stoppés.
-(Vous pouvez obtenir la liste de ces tâches avec
-$ jobs -s
-)
-Êtes-vous sûr de vouloir finaliser votre session ? [o/N]
-
-EOM
-    read -er r
-    if [ "$r" != "o" ] && [ "$r" != "O" ]
-    then
-      return
-    fi
-  fi
-
-  _log_action "$nb" "META_SAVE"
-
-  tarfile=$REAL_HOME/GameShell_$(whoami)-LOG.tgz
-  if tar -zcf "$tarfile" -C "$GASH_BASE" "$(basename "$GASH_DATA")"
-  then
-    cat <<EOM
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Une archive contenant les méta-données de votre
-session a été créée dans votre répertoire personnel.
-Le fichier se trouve ici :
-
-$tarfile
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-EOM
-    exit 0
-  else
-    cat <<EOM
-******************************************************
-******************************************************
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-Un problème a été rencontré pendant la création de
-l'archive contenant les méta-données de votre session.
-
-Si le fichier
-
-$tarfile
-
-existe, vous pouvez vérifier son contenu. Il doit y
-avoir les fichiers suivants :
-  - .../passeport.txt
-  - .../missions.log
-  - .../uid
-  - .../history
-
-******************************************************
-******************************************************
-EOM
-  fi
-}
-
 
 _gash_save() {
   if jobs | grep -iq stopped
@@ -481,9 +416,6 @@ EOH
       ;;
     "H" | "HE" | "HEL" | "HELP")
       _gash_HELP
-      ;;
-    "meta_save")
-      _gash_save_meta
       ;;
     "r" | "re" | "res" | "rese" | "reset")
       _gash_clean "$nb"
