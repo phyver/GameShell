@@ -42,11 +42,14 @@ parchment() {
   if [ -x "$(command -v python3)" ]
   then
     local P=$2
-    [ -z "$P" ] && P=$(( 16#$(checksum $(CANONICAL_PATH "$file") | cut -c 10-13) % 4 ))
+    [ -z "$P" ] && P=$(( 16#$(checksum "$(CANONICAL_PATH "$file")" | cut -c 10-13) % 7 ))
     case "$P" in
       0 | 1) P="Parchment";;
       2) P="Parchment2";;
       3) P="Parchment3";;
+      4) P="Parchment4";;
+      5) P="Scroll";;
+      6) P="Scroll2";;
       *) P="Parchment";;
     esac
     echo ""
@@ -66,27 +69,18 @@ export ADMIN_HASH='85ba6c834086d5f322acdea13f710c482b1a4f2a'
 # ask admin password: variable GASH_ADMIN is set to "OK" if password was
 # correctly given, to "" otherwise
 admin_mode() {
-  local i mpd
   for _ in $(seq 3)
   do
-    read -s -p "mot de passe admin : " mdp
+    read -serp "mot de passe admin : " mdp
     echo ""
     if [ "$(checksum "$mdp")" = "$ADMIN_HASH" ]
     then
-      GASH_ADMIN="OK"
+      export GASH_ADMIN="OK"
       return 0
     fi
   done
-  GASH_ADMIN=""
+  export GASH_ADMIN=""
   return 1
-}
-
-disable_mouse() {
-  xinput --list | grep -Ei "mouse|touchpad" | grep -o "id=[0-9]*" | grep -o "[0-9]*" | xargs -IDEV xinput --disable DEV
-}
-
-enable_mouse() {
-  xinput --list | grep -Ei "mouse|touchpad" | grep -o "id=[0-9]*" | grep -o "[0-9]*" | xargs -IDEV xinput --enable DEV
 }
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2

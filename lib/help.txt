@@ -6,6 +6,9 @@ Commandes propres a GameShell
     Si c'est le cas, passe automatiquement à la mission
     suivante.
 
+  gash exit
+    quitte la partie en cours
+
   gash help
     affiche ce message
 

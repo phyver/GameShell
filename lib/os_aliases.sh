@@ -5,14 +5,16 @@ shopt -s expand_aliases
 # cf https://github.com/dylanaraps/neofetch/issues/433
 case $OSTYPE in
     linux|linux-gnu|linux-gnueabihf)
-        source $GASH_BASE/lib/gnu_aliases.sh
+        # shellcheck source=./lib/gnu_aliases.sh
+        source "$GASH_BASE"/lib/gnu_aliases.sh
         ;;
     darwin*)
-        source $GASH_BASE/lib/macos_aliases.sh
+        # shellcheck source=./lib/macos_aliases.sh
+        source "$GASH_BASE"/lib/macos_aliases.sh
         ;;
     openbsd*|FreeBSD|netbsd)
-        # non testé
-        source $GASH_BASH/lib/bsd_aliases.sh
+        # shellcheck source=./lib/bsd_aliases.sh
+        source "$GASH_BASH"/lib/bsd_aliases.sh
         ;;
     *)
         echo "la variable \$OSTYPE est égale à '$OSTYPE',"
@@ -21,8 +23,9 @@ case $OSTYPE in
         echo ""
         echo "N'hésitez pas à faire un rapport de bug."
         echo ""
-        read -p "Appuyez sur la touche 'Entrée' pour continuer."
-        source $GASH_BASE/lib/gnu_aliases.sh
+        read -erp "Appuyez sur la touche 'Entrée' pour continuer."
+        # shellcheck source=./lib/gnu_aliases.sh
+        source "$GASH_BASE"/lib/gnu_aliases.sh
         ;;
 esac
 

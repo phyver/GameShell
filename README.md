@@ -56,6 +56,11 @@ Utilisation
 
 En récupérant l'archive du dépot
 
+    $ rm -rf GameShell && mkdir GameShell && wget  https://api.github.com/repos/phyver/GameShell/tarball -O -  |  tar -xz -C GameShell --strip-components 1
+    $ ./phyver-GameShell-*/start.sh
+
+ou, si votre version de `tar` ne supporte pas l'option `--strip-components`
+
     $ rm -rf phyver-GameShell-* && wget  https://api.github.com/repos/phyver/GameShell/tarball -O -  |  tar -xz
     $ ./phyver-GameShell-*/start.sh
     ...

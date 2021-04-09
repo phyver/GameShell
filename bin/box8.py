@@ -5,45 +5,57 @@ import getopt
 
 
 def text_width(B):
-    return max(map(len,B))
+    return max(map(len, B))
 
 
 def text_height(B):
     return len(B)
 
 
-def normalize_text(text, margin=(0,2,0,2), width=None):
+def normalize_text(text, margin=(0, 2, 0, 2), width=None, min_w=0, min_h=0):
     if width is None:
         width = text_width(text)
+    width = max(min_w, width)
 
     m_top, m_right, m_bottom, m_left = margin
     text = [""]*m_top + text + [""]*m_bottom
     template = " "*m_left + "{:" + str(width) + "}" + " "*m_right
     for i in range(len(text)):
         text[i] = template.format(text[i])
+    if len(text) < min_h:
+        text.extend([" " * (width+m_right+m_left)]*(min_h-len(text)))
     return text
 
 
-def make_box(text, margin=(0,0,0,0),
+def make_box(text, margin=(0, 0, 0, 0),
              UL="+", UM="-", UR="+",
              ML="|",         MR="|",
              LL="+", LM="-", LR="+",
-             neg_padding=(0,0,0,0),
-             default_margin=(0,0,0,0)):
+             neg_padding=(0, 0, 0, 0),
+             default_margin=(0, 0, 0, 0),
+             descr=""):
 
     if margin is None:
         margin = default_margin
 
-    if isinstance(UL, str): UL = UL.split("\n")
-    if isinstance(UM, str): UM = UM.split("\n")
-    if isinstance(UR, str): UR = UR.split("\n")
+    if isinstance(UL, str):
+        UL = UL.split("\n")
+    if isinstance(UM, str):
+        UM = UM.split("\n")
+    if isinstance(UR, str):
+        UR = UR.split("\n")
 
-    if isinstance(ML, str): ML = ML.split("\n")
-    if isinstance(MR, str): MR = MR.split("\n")
+    if isinstance(ML, str):
+        ML = ML.split("\n")
+    if isinstance(MR, str):
+        MR = MR.split("\n")
 
-    if isinstance(LL, str): LL = LL.split("\n")
-    if isinstance(LM, str): LM = LM.split("\n")
-    if isinstance(LR, str): LR = LR.split("\n")
+    if isinstance(LL, str):
+        LL = LL.split("\n")
+    if isinstance(LM, str):
+        LM = LM.split("\n")
+    if isinstance(LR, str):
+        LR = LR.split("\n")
 
     # check basic sanity
     assert text_height(UL) == text_height(UR)
@@ -56,9 +68,10 @@ def make_box(text, margin=(0,0,0,0),
     np_top, np_right, np_bottom, np_left = neg_padding
     m_top, m_right, m_bottom, m_left = margin
 
-    if isinstance(text, str): text = text.split("\n")
+    if isinstance(text, str):
+        text = text.split("\n")
 
-    text = normalize_text(text, margin=margin)
+    text = normalize_text(text, margin=margin, min_w=neg_padding[1]+neg_padding[3], min_h=neg_padding[0]+neg_padding[2])
 
     # Left and Right parts
     Left = []
@@ -77,8 +90,8 @@ def make_box(text, margin=(0,0,0,0),
     w = text_width(UL) - np_left
     h = text_height(ML)
     for i in range(text_height(text) - np_top - np_bottom):
-        Left.append(ML[i%h].rstrip(" ").ljust(w, " "))
-        Right.append(MR[i%h][np_right:])
+        Left.append(ML[i % h].rstrip(" ").ljust(w, " "))
+        Right.append(MR[i % h][np_right:])
 
     w = text_width(UL) - np_left
     h = text_height(ML)
@@ -321,7 +334,7 @@ Parchment_box = {
         r"      _____",
         r"    / \    ",
         r"   |   |   ",
-        r"    \_ |   " ,
+        r"    \_ |   ",
     ],
     "UR": [
         r"_  ",
@@ -358,9 +371,8 @@ Parchment_box = {
     ],
     "neg_padding": (3, 1, 0, 3),
     "default_margin": (1, 1, 0, 1),
+    "descr": "coded by Thomas Jensen <boxes@thomasjensen.com> (boxes)",
 }
-
-
 
 Scroll_box = {
     "UL": [
@@ -395,6 +407,7 @@ Scroll_box = {
     ],
     "neg_padding": (0, 1, 1, 1),
     "default_margin": (1, 2, 1, 2),
+    "descr": "coded by Thomas Jensen <boxes@thomasjensen.com> (boxes)",
 }
 
 Parchment2_box = {
@@ -483,9 +496,183 @@ Parchment3_box = {
 }
 # cf http://ascii.co.uk/art/scroll
 
+Parchment4_box = {
+    "UL": [
+        r' /"\/\_..',
+        r'(     _||',
+        r' \_/\/ ||',
+    ],
+    "UR": [
+        r'-._/\/"\ ',
+        r'||_     )',
+        r'|| \/\_/ '
+    ],
+    "UM": [
+        r"-",
+        r" ",
+        r" ",
+    ],
+    "LL": [
+        r' /"\/\_|-',
+        r'(     _| ',
+        r' \_/\/ `-'
+    ],
+    "LR": [
+        r'-|_/\/"\ ',
+        r' |_     )',
+        r"-' \/\_/ ",
+    ],
+    "LM": [
+        r"-",
+        r" ",
+        r"-",
+    ],
+    "ML": [
+        r"       ||",
+    ],
+    "MR": [
+        r"||",
+    ],
+    "neg_padding": (2, 0, 0, 0),
+    "default_margin": (1, 1, 1, 1),
+    "descr": "coded by Tristano Ajmone <tajmone@gmail.com> (boxes)",
+}
+
+Scroll2_box = {
+    "UL": [
+        r" / ~~~~~",
+        r"|  /~~\ ",
+        r"|\ \   |",
+        r"| \   /|",
+        r"|  ~~  |",
+    ],
+    "UR": [
+        r"~~~~~ \ ",
+        r" /~~\  |",
+        r"|   / /|",
+        r"|\   / |",
+        r"|  ~~  |",
+    ],
+    "UM": [
+        r"~",
+        r" ",
+        r" ",
+        r" ",
+        r" ",
+    ],
+    "LL": [
+        r" \     |",
+        r"  \   / ",
+        r"   ~~~  ",
+    ],
+    "LR": [
+        r"|     / ",
+        r" \   /  ",
+        r"  ~~~   ",
+    ],
+    "LM": [
+        r"~",
+        r" ",
+        r" ",
+    ],
+    "ML": [
+        r"|      |",
+    ],
+    "MR": [
+        r"|      |",
+    ],
+    "neg_padding": (4, 0, 0, 0),
+    "default_margin": (1, 1, 1, 1),
+    "descr": "coded by Thomas Jensen <boxes@thomasjensen.com> (boxes)",
+}
+
+Twisted_box = {
+    "UL": [
+        r"._____. ._____. .__",
+        r"| ._. | | ._. | | .",
+        r"| !_| |_|_|_! | | !",
+        r"!___| |_______! !__",
+        r".___|_|_| |________",
+        r"| ._____| |________",
+        r"| !_! | | |        ",
+        r"!_____! | |        ",
+        r"._____. | |        ",
+        r"| ._. | | |        ",
+    ],
+    "UR": [
+        r"__. ._____. ._____.",
+        r". | | ._. | | ._. |",
+        r"! | | !_| |_|_|_! |",
+        r"__! !___| |_______!",
+        r"________|_|_| |___.",
+        r"____________| |_. |",
+        r"        | | ! !_! |",
+        r"        | | !_____!",
+        r"        | | ._____.",
+        r"        | | | ._. |",
+    ],
+    "UM": [
+        r"_",
+        r"_",
+        r"_",
+        r"_",
+        r"_",
+        r"_",
+        r" ",
+        r" ",
+        r" ",
+        r" ",
+    ],
+    "LL": [
+        r"| !_! | | |        ",
+        r"!_____! | |        ",
+        r"._____. | |        ",
+        r"| ._. | | |        ",
+        r"| !_| |_|_|________",
+        r"!___| |____________",
+        r".___|_|_| |___. .__",
+        r"| ._____| |_. | | .",
+        r"| !_! | | !_! | | !",
+        r"!_____! !_____! !__",
+    ],
+    "LR": [
+        r"        | | ! !_! |",
+        r"        | | !_____!",
+        r"        | | ._____.",
+        r"        | | | ._. |",
+        r"________| |_|_|_! |",
+        r"________| |_______!",
+        r"__. .___|_|_| |___.",
+        r". | | ._____| |_. |",
+        r"! | | !_! | | !_! |",
+        r"__! !_____! !_____!",
+    ],
+    "LM": [
+        r" ",
+        r" ",
+        r" ",
+        r" ",
+        r"_",
+        r"_",
+        r"_",
+        r"_",
+        r"_",
+        r"_",
+    ],
+    "ML": [
+        r"| | | | | |       ",
+    ],
+    "MR": [
+        r"        | | | | | |",
+    ],
+    "neg_padding": (4, 8, 4, 8),
+    "default_margin": (1, 1, 0, 1),
+    "descr": "design by Michael Naylor, coded by Tristano Ajmone <tajmone@gmail.com> (boxes)",
+}
+
 
 BOXES = {
-    "ASCII": Ascii_box,
+    "ASCiI": Ascii_box,
     "hash": Hash_box,
     "star": Star_box,
     "ADA": ADA_box,
@@ -493,9 +680,9 @@ BOXES = {
     "C": C_box,
     "C2": C2_box,
     "C3": C3_box,
-    "HTML": HTML_box,
-    "HTML2": HTML2_box,
-    "CAML": CAML_box,
+    "HTMl": HTML_box,
+    "HTMl2": HTML2_box,
+    "CAMl": CAML_box,
     "Unicode": Unicode_simple_box,
     "Unicode_round": Unicode_round_box,
     "Unicode_double": Unicode_double_box,
@@ -505,9 +692,12 @@ BOXES = {
     "Parchment": Parchment_box,
     "Parchment2": Parchment2_box,
     "Parchment3": Parchment3_box,
+    "Parchment4": Parchment4_box,
     "Scroll": Scroll_box,
+    "Scroll2": Scroll2_box,
     "Unicode_inverted": Unicode_inverted_corners_box,
     "Inverted": Inverted_corners_box,
+    "Twisted": Twisted_box
 }
 
 
@@ -554,7 +744,8 @@ def main():
         if o in ["-h", "--help"]:
             print("""
 Usage: {prog:} [options]
-    adds a "box" around stdin
+    adds a "box" around UTF-8 encoded stdin
+    inspired (copied) from the program "boxes", by Thomas Jensen
 
 Options:
    -h,  --help                      display this message
@@ -571,6 +762,9 @@ Options:
                 print("*"*72)
                 m = ",".join(map(str, BOXES[b]["default_margin"]))
                 print("design: '{}' (default margin={})".format(b, m))
+                d = BOXES[b].get("descr", "")
+                if d:
+                    print(d)
                 print("")
                 Box(LOREM, None, BOXES[b])
                 print("")
