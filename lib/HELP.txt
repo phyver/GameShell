@@ -11,8 +11,11 @@ Commandes propres a GameShell
     Si c'est le cas, passe automatiquement à la mission
     suivante.
 
-  gash finish
-    génère le fichier à rendre à votre encadrant
+  gash exit
+    quitte la partie en cours
+
+  gash goto N (ADMIN)
+    passe directement à la mission N
 
   gash HELP
     affiche ce message
@@ -30,9 +33,6 @@ Commandes propres a GameShell
 
   gash save
     génère un fichier pour pouvoir transférer une partie
-
-  gash start N (ADMIN)
-    passe directement à la mission N
 
   gash show
     affiche l'objectif de la mission en cours
