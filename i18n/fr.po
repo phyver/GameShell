@@ -8,7 +8,7 @@ msgstr ""
 #: start.sh:18
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
-msgstr ""
+msgstr "$GASH_BASE/i18n/start-help/fr.txt"
 
 #: start.sh:57
 #, sh-format
