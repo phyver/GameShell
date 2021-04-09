@@ -73,7 +73,7 @@ _get_mission_dir() {
 
 # reset the bash configuration
 _gash_reset() {
-  if [ "$BASHPID" != "$$" ]
+  if [ "$BASHPID" != $$ ]
   then
     echo "La commande 'gash reset' est inutile lorsqu'elle est exécutée dans un sous-shell!" >&2
     return 1
@@ -157,13 +157,13 @@ _gash_start() {
     # la session bash.
     # je sauvegarde l'environnement avant / après l'initialisation pour
     # afficher un message dans ce cas
-    [ "$BASHPID" = "$$" ] || compgen -v | sort > "$GASH_TMP"/env-before
+    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_TMP"/env-before
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$MISSION_DIR/init.sh"
     export TEXTDOMAIN="gash"
-    [ "$BASHPID" = "$$" ] || compgen -v | sort > "$GASH_TMP"/env-after
+    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_TMP"/env-after
 
-    if [ "$BASHPID" != "$$" ]
+    if [ "$BASHPID" != $$ ]
     then
       if ! cmp --quiet "$GASH_TMP"/env-before "$GASH_TMP"/env-after
       then
@@ -337,7 +337,7 @@ _gash_check() {
         export TEXTDOMAIN="gash"
 
         #sourcing the file isn't very robust as the "gash check" may happen in a subshell!
-        if [ "$BASHPID" != "$$" ]
+        if [ "$BASHPID" != $$ ]
         then
           echo "Attention, le chargement du fichier 'treasure.sh' s'est fait dans un sous shell."
           echo "Il peut être nécessaire de faire un 'gash reset' pour le charger."

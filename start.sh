@@ -1,10 +1,12 @@
 #!/bin/bash
 
-. gettext.sh
+# shellcheck disable=SC2005
 
-export GASH_BASE="$(dirname "$0")"
 # shellcheck source=./lib/os_aliases.sh
-source "$GASH_BASE"/lib/os_aliases.sh
+source gettext.sh
+
+# shellcheck source=./lib/os_aliases.sh
+source "$(dirname "$0")"/lib/os_aliases.sh
 
 export GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/)
 cd "$GASH_BASE"
@@ -13,16 +15,7 @@ source lib/utils.sh
 
 
 display_help() {
-cat <<EOH
-options :
-  -h      ce message
-  -n      mode noir et blanc : n'utilise pas les séquences ANSI pour la couleur
-  -P      passeport étudiant : demande les noms / email des étudiants
-  -D <n>  mode debug / découverte en partant de la mission <n>
-  -C      continue la partie en cours
-  -R      rénitialise la partie en cours
-  -F      force exécution dans le répertoire de développement
-EOH
+  cat $(gettext '$GASH_BASE/i18n/start-help/en.txt')
 }
 
 
@@ -61,7 +54,7 @@ do
       FORCE="TRUE"
       ;;
     *)
-      echo "option invalide : '-$OPTARG'" >&2
+      echo "$(eval_gettext "invalid option: '-\$OPTARG'")" >&2
       exit 1
       ;;
   esac
@@ -76,9 +69,9 @@ local_passport() {
     read -erp "Combien de membres dans le groupe ? (1) " NB
     case "$NB" in
       "" )          NB=1; break             ;;
-      *[!0-9]* )    echo "nombre invalide"  ;;
+      *[!0-9]* )    echo $(gettext "invalid number") ;;
       *[1-9]*)      break                   ;;
-      *)            echo "nombre invalide"  ;;
+      *)            echo $(gettext "invalid number")  ;;
     esac
   done
   for I in $(seq "$NB"); do
@@ -101,10 +94,10 @@ confirm_passport() {
   echo "======================================================="
   cat "$PASSPORT"
   echo "======================================================="
-  color_echo yellow "Les informations données ici ne pourront plus être modifiées."
-  read -erp "Ces informations sont elles correctes ? (O / n) " OK
+  color_echo yellow $(gettext "You won't be able to change this information.")
+  read -erp "$(gettext "Is this information correct? [Y/n] ")" OK
   echo
-  [ "$OK" = "" ] || [ "$OK" = "o" ] || [ "$OK" = "O" ]
+  [ "$OK" = "" ] || [ "$OK" = $(gettext "yes_abbr") ] || [ "$OK" = $(gettext "YES_abbr") ]
 }
 
 
@@ -129,17 +122,18 @@ init_gash() {
 
   if [ -e "$GASH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
   then
-    echo "Vous êtes en train d'exécuter GameShell dans l'arborescence de développement."
-    read -erp "Faut-il continuer ? [o/N] " x
-    [ "$x" != "o" ] && [ "$x" != "O" ] && exit 1
+    read -erp "$(gettext "You are trying to run GameShell inside the developpment directory.
+Do you want to continue? [y/N] ")" x
+    [ "$x" != "$(gettext "yes_abbr")" ] && [ "$x" != "$(gettext "YES_abbr")" ] && exit 1
   fi
 
   if [ -e "$GASH_DATA" ]
   then
     if [ -z "$RESET" ]
     then
-      read -erp "'$GASH_DATA' existe déjà... Faut-il le conserver ? [O/n] " x
-      if [ "$x" = "o" ] || [ "$x" = "O" ] || [ "$x" = "" ]
+      read -erp "$(eval_gettext 'The directory $GASH_DATA contains meta-data from a previous game.
+Do you want to continue this game? [Y/n]')"
+      if [ "$x" = "$(gettext "yes_abbr")" ] || [ "$x" = "$(gettext "YES_abbr")" ] || [ "$x" = "" ]
       then
         return 1
       fi
@@ -177,14 +171,14 @@ init_gash() {
     # Lecture du login des étudiants.
     case "$MODE" in
       DEBUG)
-        echo "MODE DÉCOUVERTE (DEBUG)" >> "$PASSPORT"
+        echo "DISCOVERY MODE" >> "$PASSPORT"
         break
         ;;
       PASSPORT)
         local_passport "$PASSPORT"
         ;;
       *)
-        echo "mode de lancement inconnu: '$MODE'" >&2
+        echo "$(eval_gettext 'unknown mode: $MODE')" >&2
         ;;
     esac
 
@@ -194,7 +188,7 @@ init_gash() {
       break
     else
       rm -f "$PASSPORT"
-      color_echo yellow "Recommencez du début, sans vous tromper."
+      color_echo yellow "$(gettext "Start again!")"
       echo
       fi
     done
@@ -208,7 +202,7 @@ init_gash() {
 
   # Message d'accueil.
   clear
-  echo "======== Initialisation de GameShell ========"
+  echo "$(gettext "======== Initialisation of GameShell ========")"
 
 
   # Installation des missions.
