@@ -1,0 +1,68 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# help file
+#: start.sh:18
+#, sh-format
+msgid "$GASH_BASE/i18n/start-help/en.txt"
+msgstr ""
+
+#: start.sh:57
+#, sh-format
+msgid "invalid option: '-$OPTARG'"
+msgstr "option invalide: '-$OPTARG'"
+
+#: start.sh:72 start.sh:74
+msgid "invalid number"
+msgstr "nombre invalide"
+
+#: start.sh:97
+msgid "You won't be able to change this information."
+msgstr "Vous ne pourrez plus modifier ces informations."
+
+#: start.sh:98
+msgid "Is this information correct? [Y/n] "
+msgstr "Est-ce que ces informations sont correctes ? [O/n]"
+
+#: start.sh:100 start.sh:127 start.sh:136
+msgid "yes_abbr"
+msgstr "o"
+
+#: start.sh:100 start.sh:127 start.sh:136
+msgid "YES_abbr"
+msgstr "O"
+
+#: start.sh:125
+msgid ""
+"You are trying to run GameShell inside the developpment directory.\n"
+"Do you want to continue? [y/N] "
+msgstr ""
+"Vous tes en train d'exécuter GameShell dans l'arborescence de "
+"développement.\n"
+"Faut-il continuer ? [o/N]"
+
+#: start.sh:134
+#, sh-format
+msgid ""
+"The directory $GASH_DATA contains meta-data from a previous game.\n"
+"Do you want to continue this game? [Y/n]"
+msgstr ""
+"Le répertoire $GASH_DATA contient des méta-données provenant d'une partie "
+"précédente.\n"
+"Voulez vous continuer cette partie ? [O/n]"
+
+#: start.sh:181
+#, sh-format
+msgid "unknown mode: $MODE"
+msgstr "mode inconnu : $MODE"
+
+#: start.sh:191
+msgid "Start again!"
+msgstr "Recommencez !"
+
+#: start.sh:205
+msgid "======== Initialisation of GameShell ========"
+msgstr "======== Initialisation de GameShell ========"

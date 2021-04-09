@@ -8,3 +8,4 @@ GameShell.tgz
 World
 *.tar
 locale/
+i18n/*~
