@@ -14,9 +14,10 @@ $(basename $0) [options] : crée une archive GameShell
 
 options :
   -h          ce message
-  -M ...      choisit les missions à inclure dans l'archive (motif shell)
+  -m ...      choisit les missions à inclure dans l'archive (motif shell)
               (défaut : "_*")
-  -P ...      choisit le "mot de passe" pour les commandes administrateur
+  -M          fichier contenant les missions à utiliser
+  -p ...      choisit le "mot de passe" pour les commandes administrateur
   -N ...      nom du répertoire contenu dans l'archive (défaut : "GameShell")
   -a          conserve les scripts 'auto.sh' des missions qui en ont
   -P          utilise le mode "passeport" par défaut
@@ -27,32 +28,35 @@ EOH
 
 NAME="GameShell"
 ADMIN_PASSWD=""
-MISSIONS="*"
+MISSIONS_PATTERNS="*"
 KEEP_AUTO=0
 DEFAULT_MODE="DEBUG"
 OUTPUT=''
 
-while getopts ":hM:P:N:aPDo:" opt
+while getopts ":hm:M:p:N:aPDo:" opt
 do
   case $opt in
     h)
       display_help
       exit 0;
       ;;
-    P)
+    p)
       ADMIN_PASSWD=$OPTARG
       ;;
     N)
       NAME=$OPTARG
       ;;
+    m)
+      MISSIONS_PATTERNS="$OPTARG"
+      ;;
     M)
-      MISSIONS="$OPTARG"
+      MISSIONS_PATTERNS=$(cat "$OPTARG")
       ;;
     a)
       KEEP_AUTO=1
       ;;
     P)
-      DEFAULT_MODE="PASSEPORT"
+      DEFAULT_MODE="PASSPORT"
       ;;
     D)
       DEFAULT_MODE="DEBUG"
@@ -80,21 +84,30 @@ cp --archive "$GASH_BASE/start.sh" "$GASH_BASE/bin" "$GASH_BASE/lib" "$TMP_DIR/$
 mkdir "$TMP_DIR/$NAME/missions"
 # cd $GASH_BASE/missions
 echo "copie des missions choisies"
-N=1
+N=0
 GLOBIGNORE="*"
-for pattern in $MISSIONS
+for pattern in $MISSIONS_PATTERNS
 do
   GLOBIGNORE=""
-  for m in $(find "$GASH_BASE/missions" -maxdepth 1 -name "*_$pattern" -type d | sort)
+  for m in $(find "$GASH_BASE/missions" -maxdepth 1 -name "*_$pattern" -type d | sort -n)
   do
-    N=$(echo -n "0000$N" | tail -c 2)
+    N=$((10#$N + 1))
+    N=$(echo -n "000000$N" | tail -c 6)
     MISSION_DIR=$TMP_DIR/$NAME/missions/${N}_${m#*_}
     echo "    $m  -->  $(basename "$MISSION_DIR")"
     mkdir "$MISSION_DIR"
     cp --archive "$m"/* "$MISSION_DIR"
-    N=$((10#$N + 1))
   done
 done
+#remove leading 0s
+echo "suppressions des '0' superflus"
+leading_zeros=$(echo $N | sed "s/[^0]//g")
+cd "$TMP_DIR/$NAME/missions/"
+for m in *_*
+do
+  mv "$m" "${m/$leading_zeros/}"
+done
+
 
 # remove auto.sh files
 if [ "$KEEP_AUTO" -ne 1 ]
@@ -114,7 +127,7 @@ fi
 # choose default mode
 echo "choix du mode de lancement"
 case $DEFAULT_MODE in
-  DEBUG | PASSEPORT)
+  DEBUG | PASSPORT)
     sed -i "s/^MODE=.*$/MODE='$DEFAULT_MODE'/" "$TMP_DIR/$NAME/start.sh"
     ;;
   *)

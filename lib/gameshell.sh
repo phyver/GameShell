@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
-. gettext.sh
+source gettext.sh
 
-#misc functions
+# shellcheck source=./lib/utils.sh
 source "$GASH_LIB/utils.sh"
 
 trap "_gash_exit EXIT" EXIT
@@ -46,18 +46,20 @@ _get_next_mission() {
 
 # get the complete mission number by appending leading '0's
 _get_mission_nb() {
-  local nb=$1
-  if [ -d $GASH_MISSIONS/${nb}_*/ ]
+  local nb=000000$1
+  while [ -n "$nb" ]
+  do
+    # hackish, but faster than using find
+    # shellcheck disable=SC2144
+    [ -d "$GASH_MISSIONS"/"${nb}"_* ] && break
+    nb="${nb:1}"
+  done
+  if [ -n "$nb" ]
   then
     echo "$nb"
-  elif [ -d $GASH_MISSIONS/0${nb}_*/ ]
-  then
-    echo "0$nb"
-  elif [ -d $GASH_MISSIONS/00${nb}_*/ ]
-  then
-    echo "00$nb"
+    return 0
   else
-    echo ""
+    return 1
   fi
 }
 
@@ -65,20 +67,18 @@ _get_mission_nb() {
 # get the mission directory
 _get_mission_dir() {
   local nb=$1
-  if [ -d $GASH_MISSIONS/${nb}_* ]
-  then
-    echo "$GASH_MISSIONS/${nb}"_*
-  fi
+  # shellcheck disable=SC2144
+  [ -d "$GASH_MISSIONS"/"${nb}"_* ] && echo "$GASH_MISSIONS"/"${nb}"_*
 }
 
 # reset the bash configuration
 _gash_reset() {
   if [ "$BASHPID" != "$$" ]
   then
-    echo "La commande 'gash reset' est inutile lorsqu'elle est exécutée dans un sous-shell!"
-    return
+    echo "La commande 'gash reset' est inutile lorsqu'elle est exécutée dans un sous-shell!" >&2
+    return 1
   fi
-  # on relance bash, histoire de recharcher la config au cas où...
+  # on relance bash, histoire de recharcher la config
   exec bash --rcfile "$GASH_LIB/bashrc"
 }
 
@@ -89,6 +89,7 @@ _gash_exit() {
   local signal=$1
   _log_action "$nb" "$signal"
   _gash_clean "$nb"
+  echo "OK"
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
 
@@ -154,8 +155,8 @@ _gash_start() {
     # attention, si l'initialisation a lieu dans un sous-shell et qu'elle
     # définit des variables d'environnement, elles ne seront pas définies dans
     # la session bash.
-    # Dans ce cas, je sauvegarder l'environnement avant / après
-    # l'initialisation pour afficher un message
+    # je sauvegarde l'environnement avant / après l'initialisation pour
+    # afficher un message dans ce cas
     [ "$BASHPID" = "$$" ] || compgen -v | sort > "$GASH_TMP"/env-before
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$MISSION_DIR/init.sh"
@@ -172,11 +173,6 @@ _gash_start() {
         rm -f "$GASH_TMP"/env-{before,after}
       fi
     fi
-
-    # compgen -v | sort > /tmp/v2
-    # comm -13 /tmp/v1 /tmp/v2 > /tmp/missions_var_$nb
-    # rm -f /tmp/v1 /tmp/v2
-    unset -f init
   fi
 
   _log_action "$nb" "START"
@@ -215,20 +211,23 @@ EOM
 
 # stop a mission given by its number
 _gash_pass() {
-  local nb="$(_get_mission_nb "$1")"
+  local nb="$(_get_current_mission)"
   if [ -z "$nb" ]
   then
     echo "Problème : mauvaise mission '$nb' (_gash_pass)"
     return 1
   fi
-
+  admin_mode
+  if [ "$GASH_ADMIN" != "OK" ]
+  then
+    echo "oups..."
+    return 1
+  fi
   _log_action "$nb" "PASS"
-
   _gash_clean "$nb"
   color_echo yellow "Vous avez abandonné la mission $nb..."
 
   nb=$(_get_next_mission "$nb")
-
   _gash_start "$nb"
 }
 
@@ -245,17 +244,24 @@ _gash_auto() {
 
   local MISSION_DIR="$(_get_mission_dir "$nb")"
 
-  if [ -f "$MISSION_DIR/auto.sh" ]
+  if ! [ -f "$MISSION_DIR/auto.sh" ]
   then
-    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    source "$MISSION_DIR/auto.sh"
-    export TEXTDOMAIN="gash"
-    _log_action "$nb" "AUTO"
-    return 0
-  else
     echo "Cette mission n'a pas de script automatique..."
     return 1
   fi
+
+  admin_mode
+  if [ "$GASH_ADMIN" != "OK" ]
+  then
+    echo "oups..."
+    return 1
+  fi
+
+  export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+  source "$MISSION_DIR/auto.sh"
+  export TEXTDOMAIN="gash"
+  _log_action "$nb" "AUTO"
+  return 0
 }
 
 
@@ -330,7 +336,7 @@ _gash_check() {
         source "$MISSION_DIR/treasure.sh"
         export TEXTDOMAIN="gash"
 
-        # Sanity check.
+        #sourcing the file isn't very robust as the "gash check" may happen in a subshell!
         if [ "$BASHPID" != "$$" ]
         then
           echo "Attention, le chargement du fichier 'treasure.sh' s'est fait dans un sous shell."
@@ -378,144 +384,6 @@ _gash_HELP() {
   parchment "$GASH_LIB"/HELP.txt
 }
 
-_gash_finish() {
-  if jobs | grep -iq stopped
-  then
-    cat <<EOM
-ATTENTION, vous avez des tâches en pause...
-Ces processus vont être stoppés.
-(Vous pouvez obtenir la liste de ces tâches avec
-$ jobs -s
-)
-Êtes-vous sûr de vouloir finaliser votre session ? [o/N]
-
-EOM
-    read r
-    if [ "$r" != "o" -a "$r" != "O" ]
-    then
-      return
-    fi
-  fi
-
-  _log_action "$nb" "FINISH"
-
-  nb_journals=$(find "$GASH_HOME" -iname "*journal*" | wc -l)
-  if [ "$nb_journals" -gt 1 ]
-  then
-    cat <<EOM
-******************************************************
-******************************************************
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-Votre session contient plusieurs fichiers "journal"
-
-EOM
-    find "$GASH_HOME" -iname "*journal*"
-    cat <<EOM
-
-Il faut supprimer les fichiers en trop et ne conserver
-que le "vrai" journal...
-EOM
-    read -p "Souhaitez-vous générer votre soumission quand même ? [o/N] " r
-    if [ "$r" != "o"  -a  "$r" != "O" ]
-    then
-      cat <<EOM
-
-Aucun fichier de soumissions n'a été créé...
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-******************************************************
-******************************************************
-EOM
-      return 1
-    fi
-  fi
-  if [ "$nb_journals" -lt 1 ]
-  then
-    cat <<EOM
-******************************************************
-******************************************************
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-Votre session ne contient pas de fichier "journal"
-
-Si vous continuez, votre soumissions ne contiendra pas
-de fichier "journal".
-EOM
-    read -p "Souhaitez-vous générer votre soumission quand même ? [o/N] " r
-    if [ "$r" != "o"  -a  "$r" != "O" ]
-    then
-      cat <<EOM
-
-Aucun fichier de soumissions n'a été créé...
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-******************************************************
-******************************************************
-EOM
-      return 1
-    fi
-  fi
-
-  find "$GASH_DATA" -iname "*journal*" -print0 | xargs -0 rm -f
-  find "$GASH_HOME" -iname "*journal*" -print0 | xargs -0 -I JOURNAL cp --backup=numbered JOURNAL "$GASH_DATA"
-
-  tarfile=$REAL_HOME/GameShell_$(whoami)-LOG.tgz
-  if tar -zcf "$tarfile" -C "$GASH_BASE" "$(basename $GASH_DATA)"
-  then
-    cat <<EOM
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Une archive contenant les fichiers à envoyer à votre
-encadrant a été créée dans votre répertoire personnel.
-Le fichier se trouve ici :
-
-$tarfile
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-EOM
-    exit 0
-  else
-    cat <<EOM
-******************************************************
-******************************************************
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-Un problème a été rencontré pendant la création de
-l'archive contenant les fichiers à envoyer à votre
-encadrant.
-
-Si le fichier
-
-$tarfile
-
-existe, vous pouvez vérifier son contenu. Il doit y
-avoir les fichiers suivants :
-  - .../passeport.txt
-  - .../missions.log
-  - .../uid
-  - .../journal.txt
-  - .../history
-  - .../script              (facultatif)
-
-Si tous ces fichiers existent, vous pouvez l'envoyer.
-Sinon, demandez à votre encadrant de TP...
-
-ATTENTION  ATTENTION  ATTENTION  ATTENTION  ATTENTION
-
-******************************************************
-******************************************************
-EOM
-  fi
-}
-
 
 _gash_save() {
   if jobs | grep -iq stopped
@@ -531,8 +399,8 @@ Les changements non enregistrés ne seront pas sauvés.
 Êtes-vous sûr de vouloir sauver ? [o/N]
 
 EOM
-    read r
-    if [ "$r" != "o" -a "$r" != "O" ]
+    read -er r
+    if [ "$r" != "o" ] &&  [ "$r" != "O" ]
     then
       return
     fi
@@ -541,7 +409,7 @@ EOM
   _log_action "$nb" "SAVE"
 
   tarfile=$REAL_HOME/GameShell_$(whoami)-SAVE.tgz
-  tar -zcf "$tarfile" -C "$GASH_BASE/.." "$(basename $GASH_BASE)"
+  tar -zcf "$tarfile" --exclude=".git*" -C "$GASH_BASE/.." "$(basename "$GASH_BASE")"
   cat <<EOM
 ******************************************************
 ******************************************************
@@ -587,9 +455,6 @@ EOH
     "H" | "HE" | "HEL" | "HELP")
       _gash_HELP
       ;;
-    "f" | "fi" | "fin" | "fini" | "finis" | "finish")
-      _gash_finish
-      ;;
     "r" | "re" | "res" | "rese" | "reset")
       _gash_clean "$nb"
       _gash_reset
@@ -598,31 +463,23 @@ EOH
       _gash_save
       ;;
     "sh" | "sho" | "show")
+      _gash_clean "$nb"
       _gash_show "$nb"
       ;;
     "stat")
       awk -v GASH_UID="$GASH_UID" -f "$GASH_BIN/stat.awk" < "$GASH_DATA/missions.log"
       ;;
+    "exit")
+      exit 0
+      ;;
 
     # admin stuff
     # TODO: something to regenerate static world
     "pass")
-      admin_mode
-      if [ "$GASH_ADMIN" = "OK" ]
-      then
-        _gash_pass "$nb"
-      else
-        echo "oups..."
-      fi
+        _gash_pass
       ;;
     "auto")
-      admin_mode
-      if [ "$GASH_ADMIN" = "OK" ]
-      then
-        _gash_auto "$nb"
-      else
-        echo "oups..."
-      fi
+      _gash_auto "$nb"
       ;;
     "clean")
       admin_mode
@@ -633,20 +490,22 @@ EOH
         echo "oups..."
       fi
       ;;
-    "start")
-      admin_mode
-      if [ "$GASH_ADMIN" = "OK" ]
+    "goto")
+      if [ -z "$2" ]
       then
-        if [ -n "$2" ]
-        then
-          _gash_clean "$nb"
-          _gash_start "$2"
-        else
-          echo "Il faut donner un numero de mission"
-        fi
-      else
-        echo "oups..."
+        echo "Il faut donner un numero de mission"
+        return 1
       fi
+
+      admin_mode
+      if [ "$GASH_ADMIN" != "OK" ]
+      then
+        echo "oups..."
+        return 1
+      fi
+
+      _gash_clean "$nb"
+      _gash_start "$2"
       ;;
     *)
       echo "commande inconnue: '$cmd'"
