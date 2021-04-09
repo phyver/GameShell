@@ -27,7 +27,7 @@ source lib/utils.sh
 
 
 display_help() {
-  cat $(gettext '$GASH_BASE/i18n/start-help/en.txt')
+  cat "$(eval_gettext "\$GASH_BASE/i18n/start-help/en.txt")"
 }
 
 
