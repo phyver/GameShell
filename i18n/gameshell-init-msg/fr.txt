@@ -1,0 +1,12 @@
+
+Utilisez la commande
+  $ gash show
+pour découvrir le premier objectif
+
+Vous pouvez vérifier si l'objectif est atteint avec
+  $ gash check
+
+La commande
+  $ gash help
+affiche la liste des commandes (gash) disponibles.
+

@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+# shellcheck disable=SC2005
+
+# shellcheck source=/dev/null
 source gettext.sh
 
 # shellcheck source=./lib/utils.sh
@@ -75,7 +78,7 @@ _get_mission_dir() {
 _gash_reset() {
   if [ "$BASHPID" != $$ ]
   then
-    echo "La commande 'gash reset' est inutile lorsqu'elle est exécutée dans un sous-shell!" >&2
+    echo "$(gettext "The command 'gash reset' is useless when run inside a subshell!")" >&2
     return 1
   fi
   # on relance bash, histoire de recharcher la config
@@ -89,7 +92,6 @@ _gash_exit() {
   local signal=$1
   _log_action "$nb" "$signal"
   _gash_clean "$nb"
-  echo "OK"
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
 
@@ -99,7 +101,8 @@ _gash_show() {
   local nb="$(_get_mission_nb "$1")"
   if [ -z "$nb" ]
   then
-    echo "Problème : mauvaise mission '$nb' (_gash_show)"
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
     return 1
   fi
 
@@ -132,7 +135,8 @@ _gash_start() {
 
   if [ -z "$nb" ]
   then
-    echo "Problème : mauvaise mission '$nb' (_gash_start)"
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
     return 1
   fi
 
@@ -143,7 +147,7 @@ _gash_start() {
   then
     if ! bash "$MISSION_DIR/deps.sh"
     then
-      echo "La mission est annulée"
+      echo "$(gettext "The mission is cancelled because some dependencies are not met.")" >&2
       _log_action "$nb" "CANCEL_DEP_PB"
       _gash_start "$((nb + 1))"
       return
@@ -167,9 +171,10 @@ _gash_start() {
     then
       if ! cmp --quiet "$GASH_TMP"/env-before "$GASH_TMP"/env-after
       then
-        echo "Attention, l'initialisation a eu lieu dans un sous-shell"
-        echo "Il est conseillé de lancer la commande"
-        echo "  gash reset"
+        echo "$(gettext "NOTE: this mission was initialized in a sub-shell.
+You should run the command
+    gash reset
+to make sure the mission is initialized properly.")" >&2
         rm -f "$GASH_TMP"/env-{before,after}
       fi
     fi
@@ -182,30 +187,13 @@ _gash_start() {
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$MISSION_DIR/init.sh"
     export TEXTDOMAIN="gash"
-    cat <<EOM
-**********************************************
-*                                            *
-*     Commencez par taper la commande        *
-*       $ gash show                          *
-*     pour découvrir le premier objectif     *
-*     et                                     *
-*       $ gash check                         *
-*     pour valider vos missions.             *
-*                                            *
-*     La commande                            *
-*       $ gash help                          *
-*     affiche la liste des commandes gash.   *
-*                                            *
-**********************************************
-EOM
+  fi
+
+  if [ "$nb" -eq 1 ]
+  then
+    parchment "$(echo "$(gettext "gameshell-init-msg")" | envsubst)" Inverted
   else
-    cat <<EOM
-****************************************
-*  Tapez la commande                   *
-*    $ gash show                       *
-*  pour découvrir l'objectif suivant.  *
-****************************************
-EOM
+    parchment "$(echo "$(gettext "gameshell-init-msg-short")" | envsubst)" Inverted
   fi
 }
 
@@ -214,18 +202,19 @@ _gash_pass() {
   local nb="$(_get_current_mission)"
   if [ -z "$nb" ]
   then
-    echo "Problème : mauvaise mission '$nb' (_gash_pass)"
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
     return 1
   fi
   admin_mode
   if [ "$GASH_ADMIN" != "OK" ]
   then
-    echo "oups..."
+    echo "$(gettext "wrong password")" >&2
     return 1
   fi
   _log_action "$nb" "PASS"
   _gash_clean "$nb"
-  color_echo yellow "Vous avez abandonné la mission $nb..."
+  color_echo yellow "$(eval_gettext 'Mission $nb has been cancelled.')" >&2
 
   nb=$(_get_next_mission "$nb")
   _gash_start "$nb"
@@ -238,7 +227,8 @@ _gash_auto() {
   nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
-    echo "Problème : mauvaise mission '$nb' (_gash_check)"
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
     return 1
   fi
 
@@ -246,14 +236,14 @@ _gash_auto() {
 
   if ! [ -f "$MISSION_DIR/auto.sh" ]
   then
-    echo "Cette mission n'a pas de script automatique..."
+    echo "$(eval_gettext "Mission \$nb doesn't have an auto script.")" >&2
     return 1
   fi
 
   admin_mode
   if [ "$GASH_ADMIN" != "OK" ]
   then
-    echo "oups..."
+    echo "$(gettext "wrong password")" >&2
     return 1
   fi
 
@@ -272,7 +262,8 @@ _gash_check() {
   nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
-    echo "Problème : mauvaise mission '$nb' (_gash_check)"
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
     return 1
   fi
 
@@ -282,14 +273,14 @@ _gash_check() {
   then
     check_prg="$MISSION_DIR/check.sh"
   else
-    echo "Problème : je ne sais pas tester la mission '$nb'"
+    echo "$(eval_gettext "Error: mission \$nb doesn't have a check script.")" >&2
     return 1
   fi
 
   if grep -q "^$nb OK" "$GASH_DATA/missions.log"
   then
     echo
-    color_echo yellow "La mission $nb a déjà été validée"
+    color_echo yellow "$(eval_gettext "Mission \$nb has already been succesfully checked!")"
     echo
   else
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
@@ -302,7 +293,7 @@ _gash_check() {
     if [ "$exit_status" -eq 0 ]
     then
       echo
-      color_echo green "La mission $nb est validée"
+      color_echo green "$(eval_gettext 'Mission $nb has been successfully completed!')"
       echo
 
       _log_action "$nb" "CHECK_OK"
@@ -339,14 +330,15 @@ _gash_check() {
         #sourcing the file isn't very robust as the "gash check" may happen in a subshell!
         if [ "$BASHPID" != $$ ]
         then
-          echo "Attention, le chargement du fichier 'treasure.sh' s'est fait dans un sous shell."
-          echo "Il peut être nécessaire de faire un 'gash reset' pour le charger."
+          echo "$(gettext "Note: the file 'treasure.sh' was sourced from a subshell.
+You are advised to use the command
+    $ gash reset")"
         fi
       fi
       _gash_start "$nb"
     else
       echo
-      color_echo red "La mission $nb n'est **pas** validée."
+      color_echo red "$(eval_gettext "Mission \$nb hasn't been completed.")"
       echo
 
       _log_action "$nb" "CHECK_OOPS"
@@ -361,7 +353,8 @@ _gash_clean() {
   local nb="$(_get_mission_nb "$1")"
   if [ -z "$nb" ]
   then
-    echo "Problème : mauvaise mission '$nb' (_gash_clean)"
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
     return 1
   fi
 
@@ -369,7 +362,6 @@ _gash_clean() {
 
   if [ -f "$MISSION_DIR/clean.sh" ]
   then
-    # echo "cleaning mission '$MISSION_DIR'"
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$MISSION_DIR/clean.sh"
     export TEXTDOMAIN="gash"
@@ -487,20 +479,20 @@ EOH
       then
         _gash_clean "$nb"
       else
-        echo "oups..."
+        echo "$(gettext "wrong password")" >&2
       fi
       ;;
     "goto")
       if [ -z "$2" ]
       then
-        echo "Il faut donner un numero de mission"
+        echo "$(gettext "command 'goto' requires a mission number as argument")" >&2
         return 1
       fi
 
       admin_mode
       if [ "$GASH_ADMIN" != "OK" ]
       then
-        echo "oups..."
+        echo "$(gettext "wrong password")" >&2
         return 1
       fi
 
@@ -508,7 +500,7 @@ EOH
       _gash_start "$2"
       ;;
     *)
-      echo "commande inconnue: '$cmd'"
+      echo "$(eval_gettext "unkwnown command: \$cmd")" >&2
       return 1
       ;;
   esac
