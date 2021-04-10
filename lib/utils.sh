@@ -50,7 +50,6 @@ parchment() {
       4) P="Parchment4";;
       5) P="Scroll";;
       6) P="Scroll2";;
-      *) P="Parchment";;
     esac
     echo ""
     python3 "$GASH_BIN/box8.py" -b $P < "$file"

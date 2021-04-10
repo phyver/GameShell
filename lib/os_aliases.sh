@@ -44,6 +44,7 @@ else
   exit
 fi
 
+# FIXME, remove with mission 11
 if GET_MTIME / &> /dev/null
 then
     :
