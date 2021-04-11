@@ -5,37 +5,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # help file
-#: start.sh:31
+#: start.sh:30
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
 msgstr "$GASH_BASE/i18n/start-help/fr.txt"
 
-#: start.sh:70
+#: start.sh:69
 #, sh-format
 msgid "invalid option: '-$OPTARG'"
 msgstr "option invalide: '-$OPTARG'"
 
-#: start.sh:85 start.sh:87
+#: start.sh:84 start.sh:86
 msgid "invalid number"
 msgstr "nombre invalide"
 
-#: start.sh:110
+#: start.sh:109
 msgid "You won't be able to change this information."
 msgstr "Vous ne pourrez plus modifier ces informations."
 
-#: start.sh:111
+#: start.sh:110
 msgid "Is this information correct? [Y/n] "
 msgstr "Est-ce que ces informations sont correctes ? [O/n]"
 
-#: start.sh:113 start.sh:136 start.sh:145
+#: start.sh:112 start.sh:135 start.sh:144
 msgid "yes_abbr"
 msgstr "o"
 
-#: start.sh:113 start.sh:136 start.sh:145
+#: start.sh:112 start.sh:135 start.sh:144
 msgid "YES_abbr"
 msgstr "O"
 
-#: start.sh:134
+#: start.sh:133
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
 "Do you want to continue? [y/N] "
@@ -43,7 +43,7 @@ msgstr ""
 "Vous êtes en train d'exécuter GameShell dans l'arborescence de développement.\n"
 "Faut-il continuer ? [o/N]"
 
-#: start.sh:143
+#: start.sh:142
 #, sh-format
 msgid ""
 "The directory $GASH_DATA contains meta-data from a previous game.\n"
@@ -52,16 +52,16 @@ msgstr ""
 "Le répertoire $GASH_DATA contient des méta-données provenant d'une partie précédente.\n"
 "Voulez vous continuer cette partie ? [O/n]"
 
-#: start.sh:190
+#: start.sh:189
 #, sh-format
 msgid "unknown mode: $MODE"
 msgstr "mode inconnu : $MODE"
 
-#: start.sh:200
+#: start.sh:199
 msgid "Start again!"
 msgstr "Recommencez !"
 
-#: start.sh:214
+#: start.sh:213
 msgid "======== Initialisation of GameShell ========"
 msgstr "======== Initialisation de GameShell ========"
 
@@ -77,7 +77,7 @@ msgstr "Problème : je n'ai pas pu récupérer la mission '$nb' ($fn_name)"
 
 #: lib/gameshell.sh:150
 msgid "The mission is cancelled because some dependencies are not met."
-msgstr ""
+msgstr "La mission est annulée car des dépendances ne sont pas satisfaites."
 
 #: lib/gameshell.sh:174
 msgid ""
@@ -86,6 +86,10 @@ msgid ""
 "    gash reset\n"
 "to make sure the mission is initialized properly."
 msgstr ""
+"NOTE : cette mission a été initailisée dans un sous-shell.\n"
+"Il est conseillé de lancer la commande\n"
+"    gash reset\n"
+"pour qu'elle soit initialisée correctement."
 
 #: lib/gameshell.sh:194
 msgid "gameshell-init-msg"
