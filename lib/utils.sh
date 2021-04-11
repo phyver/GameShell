@@ -38,7 +38,7 @@ color_echo() {
 # draws a parchment around a text file
 parchment() {
   local file=$1
-  [ ! -f "$file" ] && return 1
+  # [ ! -f "$file" ] && return 1  => problem when used with process substitution
   if [ -x "$(command -v python3)" ]
   then
     local P=$2
@@ -51,7 +51,7 @@ parchment() {
       5) P="Scroll";;
       6) P="Scroll2";;
     esac
-    echo ""
+    echo "ICI"
     python3 "$GASH_BIN/box8.py" -b $P < "$file"
     echo ""
   else
