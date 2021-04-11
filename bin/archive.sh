@@ -10,19 +10,19 @@ source "$GASH_BASE/lib/utils.sh"
 
 display_help() {
 cat <<EOH
-$(basename $0) [options] : crée une archive GameShell
+$(basename $0): create a GameShell standalone archive
 
-options :
-  -h          ce message
-  -m ...      choisit les missions à inclure dans l'archive (motif shell)
-              (défaut : "_*")
-  -M          fichier contenant les missions à utiliser
-  -p ...      choisit le "mot de passe" pour les commandes administrateur
-  -N ...      nom du répertoire contenu dans l'archive (défaut : "GameShell")
-  -a          conserve les scripts 'auto.sh' des missions qui en ont
-  -P          utilise le mode "passeport" par défaut
-  -D          utilise le mode debug par défaut
-  -o ...      choisit le nom de l'archive (défaut: ../NOM_REPERTOIRE.tgz)
+options:
+  -h          this message
+  -m ...      choose the missions to include (shell pattern)
+              (default : "_*")
+  -M          take list of missions to include from a file
+  -p ...      choose password for admin commands
+  -N ...      name of directory inside the GameShell archive (default: "GameShell")
+  -a          keep 'auto.sh' scripts from missions that have one
+  -P          use the "passport mode" by default when running GameShell
+  -D          use the "discovery mode" by default when running GameShell
+  -o ...      name of the archive (default: ../DIR_NAME.tgz, from -N option)
 EOH
 }
 
@@ -65,7 +65,7 @@ do
       OUTPUT=$OPTARG
       ;;
     *)
-      echo "option invalide : -$OPTARG" >&2
+      echo "invalid option: '-\$OPTARG'" >&2
       exit 1
       ;;
   esac
@@ -78,12 +78,12 @@ mkdir "$TMP_DIR/$NAME"
 
 
 # copy source files
-cp --archive "$GASH_BASE/start.sh" "$GASH_BASE/bin" "$GASH_BASE/lib" "$TMP_DIR/$NAME"
+cp --archive "$GASH_BASE/start.sh" "$GASH_BASE/bin/" "$GASH_BASE/lib/" "$GASH_BASE/i18n/" "$TMP_DIR/$NAME"
 
 # copy missions
 mkdir "$TMP_DIR/$NAME/missions"
 # cd $GASH_BASE/missions
-echo "copie des missions choisies"
+echo "copy missions"
 N=0
 GLOBIGNORE="*"
 for pattern in $MISSIONS_PATTERNS
@@ -100,7 +100,7 @@ do
   done
 done
 #remove leading 0s
-echo "suppressions des '0' superflus"
+echo "removing leading 0s"
 leading_zeros=$(echo $N | sed "s/[^0]//g")
 cd "$TMP_DIR/$NAME/missions/"
 for m in *_*
@@ -112,37 +112,38 @@ done
 # remove auto.sh files
 if [ "$KEEP_AUTO" -ne 1 ]
 then
-  echo "suppression des scripts 'auto.sh' des missions"
+  echo "removing 'auto.sh' scripts"
   find "$TMP_DIR/$NAME/missions" -name auto.sh -print0 | xargs -0 rm -f
 fi
 
 # change admin password
 if [ "$ADMIN_PASSWD" ]
 then
-  echo "changement du mot de passe pour les commandes administrateur"
+  echo "changing admin password"
   ADMIN_HASH=$(checksum "$ADMIN_PASSWD")
   sed -i "s/^export ADMIN_HASH='[0-9a-f]*'$/export ADMIN_HASH='$ADMIN_HASH'/" "$TMP_DIR/$NAME/lib/utils.sh"
 fi
 
 # choose default mode
-echo "choix du mode de lancement"
+echo "setting default GameShell mode"
 case $DEFAULT_MODE in
   DEBUG | PASSPORT)
     sed -i "s/^MODE=.*$/MODE='$DEFAULT_MODE'/" "$TMP_DIR/$NAME/start.sh"
     ;;
   *)
-    echo "mode inconnu : '$DEFAULT_MODE'" >&2
+    echo "unknown mode: $MODE" >&2
+    ;;
 esac
 
 
 
 # create archive
-echo "création de l'archive"
+echo "creating archive"
 cd "$TMP_DIR"
 tar -zcf "$NAME.tgz" "$NAME"
 mv "$NAME.tgz" "$OUTPUT"
 
-echo "suppression du répertoire temporaire"
+echo "removing temporary directory"
 rm -rf "$TMP_DIR"
 
 
