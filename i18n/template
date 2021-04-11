@@ -5,59 +5,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # help file for the "start.sh" script
-#: start.sh:31
+#: start.sh:30
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
 msgstr ""
 
-#: start.sh:70
+#: start.sh:69
 #, sh-format
 msgid "invalid option: '-$OPTARG'"
 msgstr ""
 
-#: start.sh:85 start.sh:87
+#: start.sh:84 start.sh:86
 msgid "invalid number"
 msgstr ""
 
-#: start.sh:110
+#: start.sh:109
 msgid "You won't be able to change this information."
 msgstr ""
 
-#: start.sh:111
+#: start.sh:110
 msgid "Is this information correct? [Y/n] "
 msgstr ""
 
-#: start.sh:113 start.sh:136 start.sh:145
+#: start.sh:112 start.sh:135 start.sh:144
 msgid "yes_abbr"
 msgstr ""
 
-#: start.sh:113 start.sh:136 start.sh:145
+#: start.sh:112 start.sh:135 start.sh:144
 msgid "YES_abbr"
 msgstr ""
 
-#: start.sh:134
+#: start.sh:133
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
 "Do you want to continue? [y/N] "
 msgstr ""
 
-#: start.sh:143
+#: start.sh:142
 #, sh-format
 msgid ""
 "The directory $GASH_DATA contains meta-data from a previous game.\n"
 "Do you want to continue this game? [Y/n]"
 msgstr ""
 
-#: start.sh:190
+#: start.sh:189
 #, sh-format
 msgid "unknown mode: $MODE"
 msgstr ""
 
-#: start.sh:200
+#: start.sh:199
 msgid "Start again!"
 msgstr ""
 
-#: start.sh:214
+#: start.sh:213
 msgid "======== Initialisation of GameShell ========"
 msgstr ""
 

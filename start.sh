@@ -16,16 +16,15 @@ export GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/)
 export TEXTDOMAINDIR="$GASH_BASE/locale"
 export TEXTDOMAIN="gash"
 
-cd "$GASH_BASE"
-
 for PO_FILE in "$GASH_BASE"/i18n/*.po; do
   PO_LANG=$(basename "$PO_FILE" .po)
   mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
   msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
 done
 
-source lib/utils.sh
+source $GASH_BASE/lib/utils.sh
 
+cd "$GASH_BASE"
 
 display_help() {
   cat "$(eval_gettext "\$GASH_BASE/i18n/start-help/en.txt")"
