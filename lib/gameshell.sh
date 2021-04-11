@@ -114,7 +114,11 @@ _gash_show() {
   elif [ -f "$MISSION_DIR/goal.sh" ]
   then
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    source "$MISSION_DIR/goal.sh"
+    parchment <(source "$MISSION_DIR/goal.sh")
+    export TEXTDOMAIN="gash"
+  else
+    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+    parchment "$(echo "$(eval_gettext '$MISSION_DIR/goal/en.txt')")"
     export TEXTDOMAIN="gash"
   fi
 }
