@@ -140,7 +140,8 @@ Do you want to continue? [y/N] ")" x
     if [ -z "$RESET" ]
     then
       read -erp "$(eval_gettext 'The directory $GASH_DATA contains meta-data from a previous game.
-Do you want to continue this game? [Y/n]')"
+Do you want to continue this game? [Y/n]')" x
+      echo "$x"
       if [ "$x" = "$(gettext "yes_abbr")" ] || [ "$x" = "$(gettext "YES_abbr")" ] || [ "$x" = "" ]
       then
         return 1
@@ -150,7 +151,6 @@ Do you want to continue this game? [Y/n]')"
       return 1
     fi
   fi
-
 
   rm -rf "$GASH_HOME"
   rm -rf "$GASH_DATA"
@@ -165,6 +165,8 @@ Do you want to continue this game? [Y/n]')"
 
   mkdir -p "$GASH_CONFIG"
   cp "$GASH_LIB/bashrc" "$GASH_CONFIG"
+  # save current locale
+  locale | sed "s/^/export /" > "$GASH_CONFIG"/locale.sh
 
   mkdir -p "$GASH_LOCAL_BIN"
 
