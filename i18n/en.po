@@ -5,37 +5,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # help file
-#: start.sh:30
+#: start.sh:31
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
 msgstr "$GASH_BASE/i18n/start-help/en.txt"
 
-#: start.sh:69
+#: start.sh:70
 #, sh-format
 msgid "invalid option: '-$OPTARG'"
 msgstr "invalid option: '-$OPTARG'"
 
-#: start.sh:84 start.sh:86
+#: start.sh:85 start.sh:87
 msgid "invalid number"
 msgstr "invalid number"
 
-#: start.sh:109
+#: start.sh:110
 msgid "You won't be able to change this information."
 msgstr "You won't be able to change this information."
 
-#: start.sh:110
+#: start.sh:111
 msgid "Is this information correct? [Y/n] "
 msgstr "Is this information correct? [Y/n] "
 
-#: start.sh:112 start.sh:135 start.sh:144
+#: start.sh:113 start.sh:136 start.sh:145
 msgid "yes_abbr"
 msgstr "y"
 
-#: start.sh:112 start.sh:135 start.sh:144
+#: start.sh:113 start.sh:136 start.sh:145
 msgid "YES_abbr"
 msgstr "Y"
 
-#: start.sh:133
+#: start.sh:134
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
 "Do you want to continue? [y/N] "
@@ -43,7 +43,7 @@ msgstr ""
 "You are trying to run GameShell inside the developpment directory.\n"
 "Do you want to continue? [y/N] "
 
-#: start.sh:142
+#: start.sh:143
 #, sh-format
 msgid ""
 "The directory $GASH_DATA contains meta-data from a previous game.\n"
@@ -52,16 +52,16 @@ msgstr ""
 "The directory $GASH_DATA contains meta-data from a previous game.\n"
 "Do you want to continue this game? [Y/n]"
 
-#: start.sh:189
+#: start.sh:190
 #, sh-format
 msgid "unknown mode: $MODE"
 msgstr "unknown mode: $MODE"
 
-#: start.sh:199
+#: start.sh:200
 msgid "Start again!"
 msgstr "Start again!"
 
-#: start.sh:213
+#: start.sh:214
 msgid "======== Initialisation of GameShell ========"
 msgstr "======== Initialisation of GameShell ========"
 
@@ -128,3 +128,16 @@ msgstr "Mission $nb has been successfully completed!"
 #, sh-format
 msgid "Mission $nb hasn't been completed."
 msgstr "Mission $nb hasn't been completed."
+
+#: lib/os_aliases.sh:20
+#, sh-format
+msgid ""
+"Unknown system: OSTYPE=$OSTYPE.\n"
+"GameShell will use 'gnu-linux', without guarantee.\n"
+"Please report this as a bug.\n"
+"Press Enter to continue."
+msgstr ""
+"Unknown system: OSTYPE=$OSTYPE.\n"
+"GameShell will use 'gnu-linux', without guarantee.\n"
+"Please report this as a bug.\n"
+"Press Enter to continue."

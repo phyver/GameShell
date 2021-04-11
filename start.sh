@@ -7,11 +7,12 @@ source gettext.sh
 
 # shellcheck source=./lib/os_aliases.sh
 export GASH_BASE="$(dirname "$0")"
+export TEXTDOMAINDIR="$GASH_BASE/locale"
+export TEXTDOMAIN="gash"
+
 source "$GASH_BASE"/lib/os_aliases.sh
-
+# we can now normalize GASH_BASE
 export GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/)
-
-# fichier pour gettext
 export TEXTDOMAINDIR="$GASH_BASE/locale"
 export TEXTDOMAIN="gash"
 
