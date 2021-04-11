@@ -17,13 +17,10 @@ case $OSTYPE in
         source "$GASH_BASH"/lib/bsd_aliases.sh
         ;;
     *)
-        echo "la variable \$OSTYPE est égale à '$OSTYPE',"
-        echo "je ne reconnais pas ce système..."
-        echo "GameShell sera lancé en mode 'gnu-linux', sans aucune garantie."
-        echo ""
-        echo "N'hésitez pas à faire un rapport de bug."
-        echo ""
-        read -erp "Appuyez sur la touche 'Entrée' pour continuer."
+        read -erp "$(eval_gettext "Unknown system: OSTYPE=\$OSTYPE.
+GameShell will use 'gnu-linux', without guarantee.
+Please report this as a bug.
+Press Enter to continue.")"
         # shellcheck source=./lib/gnu_aliases.sh
         source "$GASH_BASE"/lib/gnu_aliases.sh
         ;;
@@ -38,9 +35,9 @@ else
   echo "La fonction 'CANONICAL_PATH' ne fonctionne pas..."
   declare -f CANONICAL_PATH
 
-  echo "Pour macOS, n'oubliez pas d'installer 'coreutils' (et 'md5sha1sum')"
-  echo "   $ brew install coreutils"
-  echo "   $ brew install md5sha1sum"
+  echo "Pour macOS, n'oubliez pas d'installer 'coreutils' (et 'md5sha1sum')
+   $ brew install coreutils
+   $ brew install md5sha1sum"
   exit
 fi
 

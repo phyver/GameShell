@@ -5,59 +5,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # help file for the "start.sh" script
-#: start.sh:30
+#: start.sh:31
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
 msgstr ""
 
-#: start.sh:69
+#: start.sh:70
 #, sh-format
 msgid "invalid option: '-$OPTARG'"
 msgstr ""
 
-#: start.sh:84 start.sh:86
+#: start.sh:85 start.sh:87
 msgid "invalid number"
 msgstr ""
 
-#: start.sh:109
+#: start.sh:110
 msgid "You won't be able to change this information."
 msgstr ""
 
-#: start.sh:110
+#: start.sh:111
 msgid "Is this information correct? [Y/n] "
 msgstr ""
 
-#: start.sh:112 start.sh:135 start.sh:144
+#: start.sh:113 start.sh:136 start.sh:145
 msgid "yes_abbr"
 msgstr ""
 
-#: start.sh:112 start.sh:135 start.sh:144
+#: start.sh:113 start.sh:136 start.sh:145
 msgid "YES_abbr"
 msgstr ""
 
-#: start.sh:133
+#: start.sh:134
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
 "Do you want to continue? [y/N] "
 msgstr ""
 
-#: start.sh:142
+#: start.sh:143
 #, sh-format
 msgid ""
 "The directory $GASH_DATA contains meta-data from a previous game.\n"
 "Do you want to continue this game? [Y/n]"
 msgstr ""
 
-#: start.sh:189
+#: start.sh:190
 #, sh-format
 msgid "unknown mode: $MODE"
 msgstr ""
 
-#: start.sh:199
+#: start.sh:200
 msgid "Start again!"
 msgstr ""
 
-#: start.sh:213
+#: start.sh:214
 msgid "======== Initialisation of GameShell ========"
 msgstr ""
 
@@ -97,7 +97,7 @@ msgstr ""
 
 #: lib/gameshell.sh:217
 #, sh-format
-msgid "The mission $nb has been cancelled."
+msgid "Mission $nb has been cancelled."
 msgstr ""
 
 #: lib/gameshell.sh:239
@@ -123,4 +123,13 @@ msgstr ""
 #: lib/gameshell.sh:341
 #, sh-format
 msgid "Mission $nb hasn't been completed."
+msgstr ""
+
+#: lib/os_aliases.sh:20
+#, sh-format
+msgid ""
+"Unknown system: OSTYPE=$OSTYPE.\n"
+"GameShell will use 'gnu-linux', without guarantee.\n"
+"Please report this as a bug.\n"
+"Press Enter to continue."
 msgstr ""

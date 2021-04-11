@@ -5,45 +5,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # help file
-#: start.sh:30
+#: start.sh:31
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
 msgstr "$GASH_BASE/i18n/start-help/fr.txt"
 
-#: start.sh:69
+#: start.sh:70
 #, sh-format
 msgid "invalid option: '-$OPTARG'"
 msgstr "option invalide: '-$OPTARG'"
 
-#: start.sh:84 start.sh:86
+#: start.sh:85 start.sh:87
 msgid "invalid number"
 msgstr "nombre invalide"
 
-#: start.sh:109
+#: start.sh:110
 msgid "You won't be able to change this information."
 msgstr "Vous ne pourrez plus modifier ces informations."
 
-#: start.sh:110
+#: start.sh:111
 msgid "Is this information correct? [Y/n] "
 msgstr "Est-ce que ces informations sont correctes ? [O/n]"
 
-#: start.sh:112 start.sh:135 start.sh:144
+#: start.sh:113 start.sh:136 start.sh:145
 msgid "yes_abbr"
 msgstr "o"
 
-#: start.sh:112 start.sh:135 start.sh:144
+#: start.sh:113 start.sh:136 start.sh:145
 msgid "YES_abbr"
 msgstr "O"
 
-#: start.sh:133
+#: start.sh:134
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
 "Do you want to continue? [y/N] "
 msgstr ""
-"Vous tes en train d'exécuter GameShell dans l'arborescence de développement.\n"
+"Vous êtes en train d'exécuter GameShell dans l'arborescence de développement.\n"
 "Faut-il continuer ? [o/N]"
 
-#: start.sh:142
+#: start.sh:143
 #, sh-format
 msgid ""
 "The directory $GASH_DATA contains meta-data from a previous game.\n"
@@ -52,16 +52,16 @@ msgstr ""
 "Le répertoire $GASH_DATA contient des méta-données provenant d'une partie précédente.\n"
 "Voulez vous continuer cette partie ? [O/n]"
 
-#: start.sh:189
+#: start.sh:190
 #, sh-format
 msgid "unknown mode: $MODE"
 msgstr "mode inconnu : $MODE"
 
-#: start.sh:199
+#: start.sh:200
 msgid "Start again!"
 msgstr "Recommencez !"
 
-#: start.sh:213
+#: start.sh:214
 msgid "======== Initialisation of GameShell ========"
 msgstr "======== Initialisation de GameShell ========"
 
@@ -128,3 +128,16 @@ msgstr "La mission $nb a été vérifiée avec succès."
 #, sh-format
 msgid "Mission $nb hasn't been completed."
 msgstr "La mission $nb a échoué."
+
+#: lib/os_aliases.sh:20
+#, sh-format
+msgid ""
+"Unknown system: OSTYPE=$OSTYPE.\n"
+"GameShell will use 'gnu-linux', without guarantee.\n"
+"Please report this as a bug.\n"
+"Press Enter to continue."
+msgstr ""
+"Système inconnu : OSTYPE=$OSTYPE.\n"
+"GameShell sera lancé en mode 'gnu-linux', sans garantie.\n"
+"N'hésitez pas à signaler ce bug.\n"
+"Appuyez sur Entrée pour continuer."
