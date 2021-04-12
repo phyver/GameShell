@@ -42,7 +42,7 @@ parchment() {
   if [ -x "$(command -v python3)" ]
   then
     local P=$2
-    [ -z "$P" ] && P=$(( 16#$(checksum "$(CANONICAL_PATH "$file")" | cut -c 10-13) % 7 ))
+    [ -z "$P" ] && P=$(( 16#$(checksum "$GASH_UID:$MISSION_DIR" | cut -c 10-17) % 7 ))
     case "$P" in
       0 | 1) P="Parchment";;
       2) P="Parchment2";;

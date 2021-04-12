@@ -27,11 +27,11 @@ msgstr ""
 msgid "Is this information correct? [Y/n] "
 msgstr ""
 
-#: start.sh:112 start.sh:135 start.sh:144
+#: start.sh:112 start.sh:135 start.sh:145
 msgid "yes_abbr"
 msgstr ""
 
-#: start.sh:112 start.sh:135 start.sh:144
+#: start.sh:112 start.sh:135 start.sh:145
 msgid "YES_abbr"
 msgstr ""
 
@@ -48,16 +48,16 @@ msgid ""
 "Do you want to continue this game? [Y/n]"
 msgstr ""
 
-#: start.sh:189
+#: start.sh:191
 #, sh-format
 msgid "unknown mode: $MODE"
 msgstr ""
 
-#: start.sh:199
+#: start.sh:201
 msgid "Start again!"
 msgstr ""
 
-#: start.sh:213
+#: start.sh:215
 msgid "======== Initialisation of GameShell ========"
 msgstr ""
 
@@ -65,17 +65,22 @@ msgstr ""
 msgid "The command 'gash reset' is useless when run inside a subshell!"
 msgstr ""
 
-#: lib/gameshell.sh:105 lib/gameshell.sh:139 lib/gameshell.sh:206
-#: lib/gameshell.sh:231 lib/gameshell.sh:266 lib/gameshell.sh:357
+#: lib/gameshell.sh:105 lib/gameshell.sh:143 lib/gameshell.sh:210
+#: lib/gameshell.sh:235 lib/gameshell.sh:270 lib/gameshell.sh:368
 #, sh-format
 msgid "Problem: couldn't get mission number '$nb' ($fn_name)"
 msgstr ""
 
-#: lib/gameshell.sh:150
+#: lib/gameshell.sh:121
+#, sh-format
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+#: lib/gameshell.sh:154
 msgid "The mission is cancelled because some dependencies are not met."
 msgstr ""
 
-#: lib/gameshell.sh:174
+#: lib/gameshell.sh:178
 msgid ""
 "NOTE: this mission was initialized in a sub-shell.\n"
 "You should run the command\n"
@@ -83,44 +88,49 @@ msgid ""
 "to make sure the mission is initialized properly."
 msgstr ""
 
-#: lib/gameshell.sh:194
+#: lib/gameshell.sh:198
 msgid "gameshell-init-msg"
 msgstr ""
 
-#: lib/gameshell.sh:196
+#: lib/gameshell.sh:200
 msgid "gameshell-init-msg-short"
 msgstr ""
 
-#: lib/gameshell.sh:212 lib/gameshell.sh:246
+#: lib/gameshell.sh:216 lib/gameshell.sh:250
 msgid "wrong password"
 msgstr ""
 
-#: lib/gameshell.sh:217
+#: lib/gameshell.sh:221
 #, sh-format
 msgid "Mission $nb has been cancelled."
 msgstr ""
 
-#: lib/gameshell.sh:239
+#: lib/gameshell.sh:243
 #, sh-format
 msgid "Mission $nb doesn't have an auto script."
 msgstr ""
 
-#: lib/gameshell.sh:276
+#: lib/gameshell.sh:280
 #, sh-format
 msgid "Error: mission $nb doesn't have a check script."
 msgstr ""
 
-#: lib/gameshell.sh:283
+#: lib/gameshell.sh:287
 #, sh-format
 msgid "Mission $nb has already been succesfully checked!"
 msgstr ""
 
-#: lib/gameshell.sh:296
+#: lib/gameshell.sh:300
 #, sh-format
 msgid "Mission $nb has been successfully completed!"
 msgstr ""
 
-#: lib/gameshell.sh:341
+#: lib/gameshell.sh:331
+#, sh-format
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+#: lib/gameshell.sh:352
 #, sh-format
 msgid "Mission $nb hasn't been completed."
 msgstr ""
