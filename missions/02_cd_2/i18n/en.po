@@ -9,5 +9,5 @@ msgstr "You are not in the cellar..."
 
 #: goal.sh:1
 #, sh-format
-msgid "$MISSION_DIR/i18n/goal/en.txt"
-msgstr "$MISSION_DIR/i18n/goal/en.txt"
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/en.txt"
