@@ -195,9 +195,9 @@ to make sure the mission is initialized properly.")" >&2
 
   if [ "$nb" -eq 1 ]
   then
-    parchment "$(echo "$(gettext "gameshell-init-msg")" | envsubst)" Inverted
+    parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-init-msg/en.txt')" Inverted
   else
-    parchment "$(echo "$(gettext "gameshell-init-msg-short")" | envsubst)" Inverted
+    parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-init-msg-short/en.txt')" Inverted
   fi
 }
 
