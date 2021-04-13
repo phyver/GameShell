@@ -1,16 +1,11 @@
 #!/bin/bash
 
-
 export GASH_BASE="$(dirname "$0")/.."
-source "$GASH_BASE"/lib/os_aliases.sh
-
-GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/..)
-
-source "$GASH_BASE/lib/utils.sh"
 
 display_help() {
 cat <<EOH
-$(basename $0): create a GameShell standalone archive
+$(basename $0) [OPTIONS]
+create a GameShell standalone archive
 
 options:
   -h          this message
@@ -65,7 +60,7 @@ do
       OUTPUT=$OPTARG
       ;;
     *)
-      echo "invalid option: '-\$OPTARG'" >&2
+      echo "invalid option: '-$OPTARG'" >&2
       exit 1
       ;;
   esac
@@ -116,6 +111,10 @@ then
   find "$TMP_DIR/$NAME/missions" -name auto.sh -print0 | xargs -0 rm -f
 fi
 
+# remove "_" files
+echo "removing unnecessary (_*.sh) files"
+find "$TMP_DIR/$NAME/missions" -name "_*.sh" -print0 | xargs -0 rm -f
+
 # change admin password
 if [ "$ADMIN_PASSWD" ]
 then
@@ -145,11 +144,5 @@ mv "$NAME.tgz" "$OUTPUT"
 
 echo "removing temporary directory"
 rm -rf "$TMP_DIR"
-
-
-# TODO
-# generate archive with given missions
-# generate archive with given admin passwd
-# generate archive with / without "auto.sh" scripts
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2
