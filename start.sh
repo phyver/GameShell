@@ -109,7 +109,7 @@ confirm_passport() {
   color_echo yellow $(gettext "You won't be able to change this information.")
   read -erp "$(gettext "Is this information correct? [Y/n] ")" OK
   echo
-  [ "$OK" = "" ] || [ "$OK" = $(gettext "yes_abbr") ] || [ "$OK" = $(gettext "YES_abbr") ]
+  [ "$OK" = "" ] || [ "$OK" = $(gettext "y") ] || [ "$OK" = $(gettext "Y") ]
 }
 
 
@@ -132,7 +132,7 @@ init_gash() {
   then
     read -erp "$(gettext "You are trying to run GameShell inside the developpment directory.
 Do you want to continue? [y/N] ")" x
-    [ "$x" != "$(gettext "yes_abbr")" ] && [ "$x" != "$(gettext "YES_abbr")" ] && exit 1
+    [ "$x" != "$(gettext "y")" ] && [ "$x" != "$(gettext "Y")" ] && exit 1
   fi
 
   if [ -e "$GASH_DATA" ]
@@ -142,7 +142,7 @@ Do you want to continue? [y/N] ")" x
       read -erp "$(eval_gettext 'The directory $GASH_DATA contains meta-data from a previous game.
 Do you want to continue this game? [Y/n]')" x
       echo "$x"
-      if [ "$x" = "$(gettext "yes_abbr")" ] || [ "$x" = "$(gettext "YES_abbr")" ] || [ "$x" = "" ]
+      if [ "$x" = "$(gettext "y")" ] || [ "$x" = "$(gettext "Y")" ] || [ "$x" = "" ]
       then
         return 1
       fi

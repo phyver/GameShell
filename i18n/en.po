@@ -28,11 +28,13 @@ msgid "Is this information correct? [Y/n] "
 msgstr "Is this information correct? [Y/n] "
 
 #: start.sh:112 start.sh:135 start.sh:145
-msgid "yes_abbr"
+# abbreviation for "yes" (lowercase)
+msgid "y"
 msgstr "y"
 
 #: start.sh:112 start.sh:135 start.sh:145
-msgid "YES_abbr"
+# abbreviation for "yes" (uppercase)
+msgid "Y"
 msgstr "Y"
 
 #: start.sh:133
@@ -96,12 +98,16 @@ msgstr ""
 "    gash reset\n"
 "to make sure the mission is initialized properly."
 
+# help file
 #: lib/gameshell.sh:198
-msgid "gameshell-init-msg"
+#, sh-format
+msgid "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
 
+# help file
 #: lib/gameshell.sh:200
-msgid "gameshell-init-msg-short"
+#, sh-format
+msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 
 #: lib/gameshell.sh:216 lib/gameshell.sh:250
