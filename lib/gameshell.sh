@@ -110,15 +110,29 @@ _gash_show() {
 
   if [ -f "$MISSION_DIR/goal.txt" ]
   then
-    parchment "$MISSION_DIR/goal.txt"
+    FILE="$MISSION_DIR/goal.txt"
+    VARS=$(sed -n '/^\s*#.*variables/p;1q' "$FILE")
+    if [ -z "$VARS" ]
+    then
+      parchment "$FILE"
+    else
+      sed '1d' "$FILE" | envsubst "$VARS" | parchment
+    fi
   elif [ -f "$MISSION_DIR/goal.sh" ]
   then
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    parchment <(source "$MISSION_DIR/goal.sh")
+    source "$MISSION_DIR/goal.sh" | parchment
     export TEXTDOMAIN="gash"
   else
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    parchment "$(echo "$(eval_gettext '$MISSION_DIR/goal/en.txt')")"
+    FILE="$(eval_gettext '$MISSION_DIR/goal/en.txt')"
+    VARS=$(sed -n '/^\s*#.*variables/p;1q' "$FILE")
+    if [ -z "$VARS" ]
+    then
+      parchment "$FILE"
+    else
+      sed '1d' "$FILE" | envsubst "$VARS" | parchment
+    fi
     export TEXTDOMAIN="gash"
   fi
 }
