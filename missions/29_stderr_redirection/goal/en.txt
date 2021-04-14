@@ -1,0 +1,49 @@
+Mission goal
+============
+
+Merlin's old spellbooks are kept in his office, 
+in the library. You need to output a list of all 
+the spellbooks containing the incantation "pq" (or 
+"Pq", or "pQ", or "PQ").
+
+Some of those spellbooks are locked, and you are not 
+allowed to consult them. You need to ignore them.
+
+**NOTE:** only the list of spellbooks is required.
+The incantation should not be printed on the screen.
+
+
+Useful commands
+===============
+
+Every command can output messages to the screen in 
+two ways:
+  - standard printing ("STDOUT")
+  - error printing ("STDERR")
+By default, both kind of messages are show on the screen.
+
+It is however possible to redirect both of them 
+to files independently..
+
+  grep STRING FILE1 ... FILEn
+    search for a string inside a file and print the 
+    corresponding lines
+    Some interesting options are
+      -l : do not print the lines, but only the filenames 
+           containing the string
+      -i : do not differentiate between uppercase and 
+           lowercase
+
+  CMD  >  FILE
+    standard messages (STDOUT) are sent to the 
+    file instead of being printed on the screen
+    (The file is overwritten.)
+
+  CMD  2>  FICHIER
+    error messages (STDERR) are sent to the file 
+    instead of being printed on the screen
+    (The file is overwritten.)
+
+  /dev/null
+    "virtual" file that acts as a blackhole: anything 
+    sent to it is ignored

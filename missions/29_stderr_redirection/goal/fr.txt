@@ -39,7 +39,7 @@ indépendamment.
   CMD  >  FICHIER
     le résultat de la commande CMD est écrit dans le 
     fichier FICHIER au lieu d'être affiché sur la 
-    sortie standard (STDIN)
+    sortie standard (STDOUT)
 
   CMD  2>  FICHIER
     les erreurs de la commande CMD sont écrites dans 
@@ -48,5 +48,4 @@ indépendamment.
 
   /dev/null
     fichier "virtuel" qui fait office de "poubelle" : 
-    tout ce qui est écrit dans ce fichier est 
-    simplement ignoré
+    tout ce qui y est envoyé est ignoré
