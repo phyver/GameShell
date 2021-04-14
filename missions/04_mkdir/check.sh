@@ -77,8 +77,10 @@ _local_check() {
 
 if _local_check
 then
+    unset -f _local_check
     true
 else
+    unset -f _local_check
     find "$GASH_HOME" -iname "*$(gettext "Cabin")*" -print0 | xargs -0 rm -rf
     find "$GASH_HOME" -iname "*$(gettext "Chest")*" -print0 | xargs -0 rm -rf
     cd "$GASH_HOME"
