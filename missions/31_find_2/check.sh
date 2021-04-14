@@ -2,27 +2,27 @@
 
 _local_check() {
     local lab
-    lab=$(find "$GASH_HOME/Chateau/Cave" -name labyrinthe -type d)
+    lab=$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext "maze")" -type d)
     local nb
-    nb=$(find "$lab" -type f -print0 | xargs -0 grep -l "rubis" | wc -l)
+    nb=$(find "$lab" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")" | wc -l)
 
     if [ "$nb" -gt 1 ]
     then
-        echo "Il y a trop de rubis dans le labyrinthe !!!"
+        echo "$(gettext "There are too many rubys in the maze!")"
         return 1
     fi
     if [ "$nb" -ne 0 ]
     then
-        echo "Le rubis est encore dans le labyrinthe "
+        echo "$(gettext "The ruby is still in the maze!")"
         return 1
     fi
 
     local rubis
-    rubis=$(find "$GASH_COFFRE" -type f -print0 | xargs -0 grep -l rubis)
+    rubis=$(find "$GASH_COFFRE" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")")
 
     if [ -z "$rubis" ]
     then
-        echo "Il n'y a pas de rubis dans le coffre"
+        echo "$(gettext "There is no ruby in the trunk!")"
         return 1
     fi
 
@@ -33,10 +33,10 @@ _local_check() {
     local S
     S=$(cut -f3 -d" " "$rubis")
     local S2
-    S2=$(checksum "$K.rubis")
+    S2=$(checksum "$K.$(gettext "ruby")")
     if [ "$K" != "$K2" ] || [ "$S" != "$S2" ]
     then
-        echo "Le fichier 'rubis' du coffre est invalide..."
+        echo "$(gettext "The ruby file in the trunk is invalid...")"
         return 1
     fi
 
@@ -50,6 +50,5 @@ then
     true
 else
     unset -f _local_check
-    find "$GASH_HOME" -type f -readable -not -iname "*journal*" -print0 | xargs -0 grep -l "rubis" | xargs rm -f
     false
 fi

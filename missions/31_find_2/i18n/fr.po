@@ -1,0 +1,63 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#: auto.sh:2 check.sh:5 clean.sh:7 clean.sh:12 init.sh:3 init.sh:8
+#, sh-format
+msgid "$GASH_HOME/Castle/Cellar"
+msgstr "$GASH_HOME/Chateau/Cave"
+
+#: auto.sh:2 check.sh:5 clean.sh:6 clean.sh:12 init.sh:12
+msgid "maze"
+msgstr "labyrinthe"
+
+#: auto.sh:3 check.sh:7 init.sh:38 init.sh:39
+msgid "ruby"
+msgstr "rubis"
+
+#: check.sh:11
+msgid "There are too many rubys in the maze!"
+msgstr "Il y a trop de rubis dans le labyrinthe !"
+
+#: check.sh:16
+msgid "The ruby is still in the maze!"
+msgstr "Le rubis est toujours dans le labyrinthe !"
+
+#: check.sh:25
+msgid "There is no ruby in the trunk!"
+msgstr "Il n'y a pas de rubis dans le coffre !"
+
+#: check.sh:39
+msgid "The ruby file in the trunk is invalid..."
+msgstr "Le fichier rubis du coffre n'est pas valide..."
+
+#: clean.sh:7 init.sh:3
+msgid ".Long*Corridor*"
+msgstr ".Long*Couloir*"
+
+#: clean.sh:8
+msgid "Pffft... You are back to the entrance of the maze..."
+msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
+
+#: init.sh:8
+#, sh-format
+msgid ".Long $r1 Corridor $r2"
+msgstr ".Long $r1 Couloir $r2"
+
+#: init.sh:24
+msgid "maze generation:"
+msgstr "génération du labyrinthe :"
+
+#: init.sh:46 init.sh:47
+msgid "stone"
+msgstr "cailloux"

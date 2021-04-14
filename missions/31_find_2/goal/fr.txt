@@ -29,8 +29,8 @@ Commandes utilisées
     pour consulter l'aide de la commande CMD
 
     touches utilisées par la commande "man"
-        q           pour quitter une page d'aide
-        Space       pour faire défiler une page
-        / CHAINE    pour rechercher une chaine
-        n           pour se déplacer à la prochaine
+        q           quitter
+        Space       faire défiler une page
+        / CHAINE    rechercher une chaine
+        n           se déplacer à la prochaine
                     occurrence de la chaine cherchée

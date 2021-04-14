@@ -89,7 +89,7 @@ thing = [_("a spade"), _("a pick"), _("an apple"), _("a chicken"), _("a horse"),
          _("a bottle of cider")]
 
 
-def gen(nbLines, nbKing, p, dir):
+def genBooks(nbLines, nbKing, prob_paid, dir):
     amountKing = 0
     nbUnpaid = 0
     scroll = open(f"{dir}/{random.randint(0,1<<128):032x}_{_('_s_c_r_o_l_l_')}_{random.randint(0,1<<128):032x}", mode="w")
@@ -98,7 +98,7 @@ def gen(nbLines, nbKing, p, dir):
         object = random.choice(thing)
         price = random.randint(2, 5)
 
-        if random.random() <= p:
+        if random.random() <= prob_paid:
             end = " -- " + _("PAID")
             paid = True
         else:
@@ -106,7 +106,7 @@ def gen(nbLines, nbKing, p, dir):
             paid = False
             nbUnpaid += 1
 
-        if i == 0 or random.randint(1, n) <= nbKing:
+        if i == 0 or random.randint(1, nbLines) <= nbKing:
             name = _("the King")
             if not paid:
                 amountKing += price
@@ -114,13 +114,16 @@ def gen(nbLines, nbKing, p, dir):
     getoutput("echo -n {} | sha1sum | cut -c 1-40 > $GASH_TMP/amountKing".format(amountKing))
     getoutput("echo -n {} | sha1sum | cut -c 1-40 > $GASH_TMP/nbUnpaid".format(nbUnpaid))
 
-    for i in range(5000 + random.randint(-100, 100)):
+
+def genObjects(nbObjects, dir):
+    for i in range(random.randint(int(nbObjects*0.9), int(nbObjects*1.1))):
         open(f"{dir}/{random.randint(0,1<<128):032x}_{_('boring_object')}_{random.randint(0,1<<128):032x}", mode="a").close()
 
 
 if __name__ == "__main__":
-    n = int(sys.argv[1]) if len(sys.argv) >= 2 else 100
-    nbRoi = int(sys.argv[2]) if len(sys.argv) >= 3 else 10
-    pp = float(sys.argv[3]) if len(sys.argv) >= 4 else 0.2
+    nbLines = int(sys.argv[1]) if len(sys.argv) >= 2 else 100
+    nbKing = int(sys.argv[2]) if len(sys.argv) >= 3 else 10
+    proba_paid = float(sys.argv[3]) if len(sys.argv) >= 4 else 0.2
     dir = sys.argv[4]
-    gen(n, nbRoi, pp, dir)
+    genBooks(nbLines, nbKing, proba_paid, dir)
+    genObjects(5000, dir)
