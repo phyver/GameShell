@@ -362,7 +362,7 @@ You are advised to use the command
       _log_action "$nb" "CHECK_OOPS"
 
       _gash_clean "$nb"
-      _gash_reset
+      _gash_start "$nb"
     fi
   fi
 }
@@ -473,7 +473,6 @@ EOH
       _gash_save
       ;;
     "sh" | "sho" | "show")
-      _gash_clean "$nb"
       _gash_show "$nb"
       ;;
     "stat")
