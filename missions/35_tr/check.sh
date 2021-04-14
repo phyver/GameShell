@@ -1,16 +1,16 @@
 #!/bin/bash
 
-echo "Quelle est la clé qui fait apparaitre le coffre de Merlin ? "
+echo "$(gettext "What's the key that will make Merlin's chest to appear?")"
 read -er dcode
 
 if [ "$dcode" = "$(cat "$GASH_TMP/secret_key")" ]
 then
     unset dcode
-    mkdir -p "$GASH_HOME/Chateau/Cave/Coffre_de_merlin"                       # je met le coffre
-    cp "$MISSION_DIR"/recette_secrete "$GASH_HOME/Chateau/Cave/Coffre_de_merlin" # et son contenu (cela ne sert à rien pour la mission, mais si 
-    true                                                                    # l'utilisateur à la curiosité d'aller voir, il y aura qqch)
+    mkdir -p "$(eval_gettext '$GASH_HOME/Castle/Cellar/Merlin_s_Chest')"
+    cp "$(eval_gettext '$MISSION_DIR/secret_recipe/en.txt')" "$(eval_gettext '$GASH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe')"
+    true
 else
-    echo "Ce n'est pas la bonne clé.."
+    echo "$(gettext "That's not the secret key.")"
     unset dcode
     false
 fi

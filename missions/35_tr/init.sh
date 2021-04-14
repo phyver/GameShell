@@ -1,27 +1,23 @@
 #!/bin/bash
 
-# mission soumise par Tiemen Duvillard
+# mission originaly created by Tiemen Duvillard
 
 # une chaine aléatoire
-ab=okduygvjilelctawqnucevoxhzdmkabbnqsyfpfjhtwrmgirspzx
+rd=pylptbbpbqmtaojeqalfrdzfswddcicuwtohudysakdtzqcswwzyrfwbilbkkusz
 
 # je choisis une clé en prenant un bout au hasard de la chaine ci dessus
-echo ${ab:( $RANDOM % ((${#ab}) -4) ):4} > "$GASH_TMP/secret_key"
+SECRET_KEY="${rd:( $RANDOM % ((${#rd}) -4) ):4}"
+echo "$SECRET_KEY" > "$GASH_TMP/secret_key"
 
-# un décalage pas trop grand (entre -6 et +6) pour que la recherche exhaustive ne soit pas trop longue
-decalage=7
-while [ "$decalage" -eq 7 ]
-do
-    decalage=$((RANDOM %13)) # je choisi un décalage de cesar au hasard
-done
+random_shift=$((3 + RANDOM % 20))
 
-ch=tuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrs
-C=${ch:$decalage:26} # je crée mon alphabet d'arrivée en tronquand la chaine ci-dessus et en m'aidant du décalage de César
+ab=abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+D=${ab:random_shift:26} # je crée mon alphabet d'arrivée en tronquand la chaine ci-dessus et en m'aidant du décalage de César
 
-echo "voici mon testament :
-je vous legue mon coffre et son contenu.
-le coffre se situe dans la cave.
-la cle pour le faire apparaitre est : $(cat "$GASH_TMP/secret_key")
-Merlin l'Enchanteur" | tr "a-z" $C > $GASH_HOME/Chateau/Batiment_principal/Bibliotheque/.message_secret # je crée le fichier dans la bibliotheque de Merlin
+echo "$(eval_gettext "here is my will:
+you will get my chest, and everything it contains.
+this check is in the cellar, and the key to make
+it re-appear is: \$SECRET_KEY
+merlin the enchanter")" | tr "a-z" "$D" > "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library/.secret_message')"
 
-unset decalage ch C ab # je supprime mes variables, sauf _SECRET_KEY, dont on a besoin pour le gash check
+unset rd SECRET_KEY random_shift ab D
