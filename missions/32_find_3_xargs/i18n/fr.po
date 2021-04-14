@@ -1,0 +1,66 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#: auto.sh:1 check.sh:5 clean.sh:6 clean.sh:11 init.sh:6 auto.sh:2 clean.sh:7
+#: clean.sh:15 init.sh:3 init.sh:8
+#, sh-format
+msgid "$GASH_HOME/Castle/Cellar"
+msgstr "$GASH_HOME/Chateau/Cave"
+
+#: auto.sh:1 check.sh:5 clean.sh:11 init.sh:10 auto.sh:2 clean.sh:5 clean.sh:15
+#: init.sh:12
+msgid "maze"
+msgstr "labyrinthe"
+
+#: auto.sh:2 check.sh:7 check.sh:21 check.sh:36 clean.sh:12 init.sh:31
+#: init.sh:32 auto.sh:3 clean.sh:16 init.sh:33 init.sh:34
+msgid "diamond"
+msgstr "diamant"
+
+#: check.sh:11
+msgid "There are too many diamonds in the maze!"
+msgstr "Il y a trop de diamants dans le labyrinthe !"
+
+#: check.sh:16
+msgid "The diamond is still in the maze."
+msgstr "Le diamand est toujours dans le labyrinthe."
+
+#: check.sh:25
+msgid "There is no diamond in your trunk."
+msgstr "Il n'y a pas de diamant dans votre coffre."
+
+#: check.sh:39
+msgid "The diamond file in the trunk is not valid!"
+msgstr "Le fichier diamant dans votre coffre est invalid !"
+
+#: clean.sh:6 clean.sh:7 init.sh:3
+msgid ".Long*Corridor*"
+msgstr ".Long*Couloir*"
+
+#: clean.sh:7 clean.sh:8
+msgid "Pffft... You are back to the entrance of the maze..."
+msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
+
+#: init.sh:17 init.sh:19
+msgid "maze generation:"
+msgstr "génération du labyrinthe :"
+
+#: init.sh:34 init.sh:35 init.sh:36 init.sh:37
+msgid "stone"
+msgstr "cailloux"
+
+#: init.sh:8
+#, sh-format
+msgid ".Long $r1 Corridor $r2"
+msgstr ".Long $r1 Couloir $r2"

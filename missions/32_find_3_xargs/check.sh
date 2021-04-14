@@ -2,41 +2,41 @@
 
 _local_check() {
     local lab
-    lab=$(find "$GASH_HOME/Chateau/Cave" -name labyrinthe -type d)
+    lab=$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext "maze")" -type d)
     local nb
-    nb=$(find "$lab" -type f -print0 | xargs -0 grep -l "diamant" | wc -l)
+    nb=$(find "$lab" -type f -print0 | xargs -0 grep -l "$(gettext "diamond")" | wc -l)
 
     if [ "$nb" -gt 1 ]
     then
-        echo "Il y a trop de diamants dans le labyrinthe !!!"
+        echo "$(gettext "There are too many diamonds in the maze!")"
         return 1
     fi
     if [ "$nb" -ne 0 ]
     then
-        echo "Le diamant est encore dans le labyrinthe "
+        echo "$(gettext "The diamond is still in the maze.")"
         return 1
     fi
 
-    local diamant
-    diamant=$(find "$GASH_COFFRE" -type f -print0 | xargs -0 grep -l diamant)
+    local diamond
+    diamond=$(find "$GASH_COFFRE" -type f -print0 | xargs -0 grep -l "$(gettext "diamond")")
 
-    if [ -z "$diamant" ]
+    if [ -z "$diamond" ]
     then
-        echo "Il n'y a pas de diamant dans le coffre"
+        echo "$(gettext "There is no diamond in your trunk.")"
         return 1
     fi
 
     local K
-    K=$(cut -f2 -d" " "$diamant")
+    K=$(cut -f2 -d" " "$diamond")
     local K2
-    K2=$(basename "$diamant")
+    K2=$(basename "$diamond")
     local S
-    S=$(cut -f3 -d" " "$diamant")
+    S=$(cut -f3 -d" " "$diamond")
     local S2
-    S2=$(checksum "$K.diamant")
+    S2=$(checksum "$K.$(gettext "diamond")")
     if [ "$K" != "$K2" ] || [ "$S" != "$S2" ]
     then
-        echo "Le fichier 'diamant' du coffre est invalide..."
+        echo "$(gettext "The diamond file in the trunk is not valid!")"
         return 1
     fi
 
