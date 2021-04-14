@@ -200,13 +200,6 @@ to make sure the mission is initialized properly.")" >&2
 
   _log_action "$nb" "START"
 
-  if [ -f "$MISSION_DIR/init.sh" ]
-  then
-    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    source "$MISSION_DIR/init.sh"
-    export TEXTDOMAIN="gash"
-  fi
-
   if [ "$nb" -eq 1 ]
   then
     parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-init-msg/en.txt')" Inverted
