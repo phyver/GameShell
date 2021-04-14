@@ -43,5 +43,3 @@ done
 echo
 
 unset i j k t corridor lab N r1 r2 I J K
-
-

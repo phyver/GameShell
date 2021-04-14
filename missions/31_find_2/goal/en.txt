@@ -1,0 +1,34 @@
+Mission goal
+============
+
+look for the ruby in the maze, and move it to your trunk
+
+NOTE: the filename does not contain the chaine "ruby".
+You need to look for a __file__ (instead of a directory), 
+and check that the file contains the chaine "ruby".
+
+
+Useful commands
+===============
+
+  find
+    search files from the current working directory
+
+    conditions on the file may be added about filenames, 
+    size, modification date, etc.
+
+    An interesting condition is
+      -type TYPE
+
+  cat FILE
+    output the content of the file on the screen
+
+  man CMD
+    to read the manual for command CMD
+
+    Here are the main keybindings in manual pages:
+        q           quit
+        Space       scroll down one page
+        / STRING    search for string
+        n           go to next occurence of previous
+                    search string
