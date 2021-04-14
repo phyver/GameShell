@@ -1,14 +1,22 @@
 #!/bin/bash
 
-y=$(cat "$GASH_TMP/detteDuDuc")
-read -erp "Quelle est la dette du Duc ? " d
+y=$(cat "$GASH_TMP/amountKing")
+read -erp "$(gettext "How much does the king owe? ")" d
 
 x=$(checksum "$d")
-if [ "$NB_CMD" -ge 0 ] && [ "$x" = "$y" ]
+if [ "$x" = "$y" ]
 then
-    PROMPT_COMMAND=$OLD_PROMPT_COMMAND
-    unset OLD_PROMPT_COMMAND NB_CMD y d x
-    true
+    if [ "$NB_CMD" -le 3 ] && [ "$x" = "$y" ]
+    then
+        PROMPT_COMMAND=$OLD_PROMPT_COMMAND
+        unset OLD_PROMPT_COMMAND NB_CMD y d x
+        true
+    else
+        PROMPT_COMMAND=$OLD_PROMPT_COMMAND
+        echo "$(eval_gettext "That's the right answer, but you used \$NB_CMD commands!")"
+        unset OLD_PROMPT_COMMAND NB_CMD y d x
+        false
+    fi
 else
     PROMPT_COMMAND=$OLD_PROMPT_COMMAND
     unset OLD_PROMPT_COMMAND NB_CMD y d x

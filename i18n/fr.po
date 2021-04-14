@@ -27,13 +27,13 @@ msgstr "Vous ne pourrez plus modifier ces informations."
 msgid "Is this information correct? [Y/n] "
 msgstr "Est-ce que ces informations sont correctes ? [O/n]"
 
-#: start.sh:112 start.sh:135 start.sh:145
 # abbreviation for "yes" (lowercase)
+#: start.sh:112 start.sh:135 start.sh:145
 msgid "y"
 msgstr "o"
 
-#: start.sh:112 start.sh:135 start.sh:145
 # abbreviation for "yes" (uppercase)
+#: start.sh:112 start.sh:135 start.sh:145
 msgid "Y"
 msgstr "O"
 
@@ -73,20 +73,24 @@ msgstr "La commande 'gash reset' est inutile lorsqu'on l'exécute dans un sous s
 
 #: lib/gameshell.sh:105 lib/gameshell.sh:143 lib/gameshell.sh:210
 #: lib/gameshell.sh:235 lib/gameshell.sh:270 lib/gameshell.sh:368
+#: lib/gameshell.sh:157 lib/gameshell.sh:224 lib/gameshell.sh:249
+#: lib/gameshell.sh:284 lib/gameshell.sh:382 lib/gameshell.sh:158
+#: lib/gameshell.sh:218 lib/gameshell.sh:243 lib/gameshell.sh:278
+#: lib/gameshell.sh:376
 #, sh-format
 msgid "Problem: couldn't get mission number '$nb' ($fn_name)"
 msgstr "Problème : je n'ai pas pu récupérer la mission '$nb' ($fn_name)"
 
-#: lib/gameshell.sh:121
+#: lib/gameshell.sh:121 lib/gameshell.sh:128
 #, sh-format
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr ""
 
-#: lib/gameshell.sh:154
+#: lib/gameshell.sh:154 lib/gameshell.sh:168 lib/gameshell.sh:169
 msgid "The mission is cancelled because some dependencies are not met."
 msgstr "La mission est annulée car des dépendances ne sont pas satisfaites."
 
-#: lib/gameshell.sh:178
+#: lib/gameshell.sh:178 lib/gameshell.sh:192 lib/gameshell.sh:193
 msgid ""
 "NOTE: this mission was initialized in a sub-shell.\n"
 "You should run the command\n"
@@ -99,52 +103,53 @@ msgstr ""
 "pour qu'elle soit initialisée correctement."
 
 # help file
-#: lib/gameshell.sh:198
+#: lib/gameshell.sh:198 lib/gameshell.sh:212 lib/gameshell.sh:206
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg/fr.txt"
 
 # help file
-#: lib/gameshell.sh:200
+#: lib/gameshell.sh:200 lib/gameshell.sh:214 lib/gameshell.sh:208
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg-short/fr.txt"
 
-#: lib/gameshell.sh:216 lib/gameshell.sh:250
+#: lib/gameshell.sh:216 lib/gameshell.sh:250 lib/gameshell.sh:230
+#: lib/gameshell.sh:264 lib/gameshell.sh:224 lib/gameshell.sh:258
 msgid "wrong password"
 msgstr "mauvais mot de passe"
 
-#: lib/gameshell.sh:221
+#: lib/gameshell.sh:221 lib/gameshell.sh:235 lib/gameshell.sh:229
 #, sh-format
 msgid "Mission $nb has been cancelled."
 msgstr "La mission $nb a été annulée"
 
-#: lib/gameshell.sh:243
+#: lib/gameshell.sh:243 lib/gameshell.sh:257 lib/gameshell.sh:251
 #, sh-format
 msgid "Mission $nb doesn't have an auto script."
 msgstr "La mission $nb n'a pas de script automatique."
 
-#: lib/gameshell.sh:280
+#: lib/gameshell.sh:280 lib/gameshell.sh:294 lib/gameshell.sh:288
 #, sh-format
 msgid "Error: mission $nb doesn't have a check script."
 msgstr "Erreur : la mission $nb n'a pas de script de vérification."
 
-#: lib/gameshell.sh:287
+#: lib/gameshell.sh:287 lib/gameshell.sh:301 lib/gameshell.sh:295
 #, sh-format
 msgid "Mission $nb has already been succesfully checked!"
 msgstr "La mission $nb a déjà été réussie !"
 
-#: lib/gameshell.sh:300
+#: lib/gameshell.sh:300 lib/gameshell.sh:314 lib/gameshell.sh:308
 #, sh-format
 msgid "Mission $nb has been successfully completed!"
 msgstr "La mission $nb a été vérifiée avec succès."
 
-#: lib/gameshell.sh:331
+#: lib/gameshell.sh:331 lib/gameshell.sh:345 lib/gameshell.sh:339
 #, sh-format
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: lib/gameshell.sh:352
+#: lib/gameshell.sh:352 lib/gameshell.sh:366 lib/gameshell.sh:360
 #, sh-format
 msgid "Mission $nb hasn't been completed."
 msgstr "La mission $nb a échoué."
