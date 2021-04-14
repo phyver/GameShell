@@ -1,0 +1,29 @@
+Mission goal
+============
+
+A secret message has been found in the librairy.
+It was probably enciphered usinge Caesar shift cipher.
+
+Decrypt it by making an exhaustive search from the command line.
+
+
+Useful commands
+===============
+
+  tr STRING1 STRING2 < FILE
+    replace ("tr"anslate) each character STRING1[i] by STRING2[i]
+    in the file, and output the result. (The file is not
+    modified.)
+
+    Example :
+
+       if
+            CHAINE1 = "abcdef"
+            CHAINE2 = "klmnop"
+
+       the file will be output with the following substitution
+       (other characters are left unchanged)
+            a -> k      b -> l      c -> m
+            d -> n      e -> o      f -> p
+
+      Note: instead of "abcdefg", it is possible to write "a-g".
