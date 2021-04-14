@@ -12,6 +12,8 @@ options:
 
   -N          no gettext
   -G          with gettext
+  -M          output the Makefile on stdin
+  -T          output the default template file on stdin
 
 EOH
 }
@@ -221,11 +223,8 @@ ignored.)
 EOF
 }
 
-new_po_files() {
-    MISSION_DIR="$1"
-
-    mkdir "$MISSION_DIR/i18n/"
-    cat <<'EOF' > "$MISSION_DIR"/i18n/template
+new_template_file() {
+    cat <<'EOF'
 #, fuzzy
 msgid ""
 msgstr ""
@@ -243,9 +242,7 @@ EOF
 }
 
 new_makefile() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/Makefile
+    cat <<'EOF'
 
 ##
 # TODO: generate new po file from template with msgen
@@ -254,25 +251,28 @@ LANG=$(wildcard i18n/*.po)
 
 all: $(LANG)
 
-$(LANG):%.po: i18n/template
-	msgmerge --update --no-wrap $@ i18n/template
+$(LANG):%.po: i18n/template.pot
+	msgmerge --update --no-wrap $@ i18n/template.pot
 
-i18n/template: *.sh
-	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template *.sh
+i18n/template.pot: *.sh
+	mkdir -p i18n/
+	touch i18n/template.pot
+	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template.pot *.sh
+	msgen --no-wrap --output i18n/template.pot i18n/template.pot
 
-new: i18n/template
+new: i18n/template.pot
 	@read -p "language code: " lang; \
-        [ -e "./i18n/$$lang.po" ] && echo "file i18n/$$lang.po already exists" && exit; \
-        echo "file i18n/$$lang.po created"; \
-		msgen --no-wrap --output i18n/$$lang.po i18n/template
+		[ -e "./i18n/$$lang.po" ] && echo "file i18n/$$lang.po already exists" && exit; \
+		echo "file i18n/$$lang.po created"; \
+		msgen --no-wrap --output i18n/$$lang.po i18n/template.pot
 
 clean:
-	rm i18n/*~
+	rm i18n/*~ i18n/template.pot
 
 cleaner: clean
 	find . -maxdepth 1 -type f -name "_*" -print0 | xargs -0 --open-tty rm -i
 
-.PHONY: clean cleaner translation
+.PHONY: clean cleaner translation new
 EOF
 }
 
@@ -325,15 +325,15 @@ new_mission_with_gettext() {
     new_clean_file "$MISSION_DIR"
     new_treasure_file "$MISSION_DIR"
     new_gettext_treasure-msg_file "$MISSION_DIR"
-    new_po_files "$MISSION_DIR"
-    new_makefile "$MISSION_DIR"
+    new_template_file > "$MISSION_DIR"/i18n/template.pot
+    new_makefile > "$MISSION_DIR"/Makefile
 }
 
 
 GETTEXT=""
 
 
-while getopts ":hNG" opt
+while getopts ":hNGMT" opt
 do
   case $opt in
     h)
@@ -345,6 +345,14 @@ do
       ;;
     G)
       GETTEXT=1
+      ;;
+    M)
+      new_makefile
+      exit 0
+      ;;
+    T)
+      new_template_file
+      exit 0
       ;;
     *)
       echo "invalid option: '-$OPTARG'" >&2
