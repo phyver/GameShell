@@ -8,4 +8,6 @@ GameShell.tgz
 World
 *.tar
 locale/
-i18n/*~
+*~
+template
+template.pot
