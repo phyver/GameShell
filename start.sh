@@ -225,11 +225,13 @@ Do you want to continue this game? [Y/n]')" x
     # Preparing the locales
     if [ -d "$MISSION_DIR/i18n" ]
     then
+      shopt -s nullglob
       for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
         PO_LANG=$(basename "$PO_FILE" .po)
         mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
         msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
       done
+      shopt -u nullglob
     fi
 
     # Setting up the binaries
