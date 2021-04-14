@@ -1,25 +1,27 @@
-#!/bin/bash
-
 _local_check() {
+    local cellar
+    cellar="$(eval_gettext "\$GASH_HOME/Castle/Cellar")"
+
+    # Check that there are no more rats.
     local rats
-    rats=$(find "$GASH_HOME/Chateau/Cave" -name "rat*")
+    rats=$(find "$cellar" -name "$(gettext "rat")*")
     if [ -n "$rats" ]
     then
-        echo "Il reste des rats dans la cave !"
+        echo "$(gettext "There are still rats in the cellar!")"
         return 1
     fi
 
+    # Check that the cat is still there.
     local cat
-    cat=$(find "$GASH_HOME/Chateau/Cave" -name "chat*")
+    cat=$(find "$cellar" -name "$(gettext "cat")*")
     if [ -z "$cat" ]
     then
-        echo "Le chat a disparu !!!"
+        echo "$(gettext "The cat has disappeared!!!")"
         return 1
     fi
 
     return 0
 }
-
 
 if _local_check
 then

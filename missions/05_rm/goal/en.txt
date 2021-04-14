@@ -1,0 +1,11 @@
+Mission goal
+============
+
+Go back to the cellar and delete all the rats...
+
+
+Useful commands
+===============
+
+rm FILE1 FILE2 ... FILEn
+  deletes files (permanently)
