@@ -1,0 +1,28 @@
+Mission goal
+============
+
+Combine several commands with "|" in order to find the number 
+of unpaid items.
+
+**NOTE:** you are only allowed a single command besides 
+`gash check`.
+You can always reset the counter with `gash reset`, but the 
+whole stall will be re-generated.
+
+
+Useful commands
+===============
+
+  grep [OPTIONS] STRING FILE1 ... FILEn
+    filter the files lines, keeping only those that contain 
+    the given string
+    If no file is given, the command uses stdin.
+
+    interesting option:
+      -v : invert the condition to only keep the lines that 
+      do not contain the string
+
+  wc [FILE]
+    count the number of lines / words / characters in a 
+    file
+    If no file is given, the command uses stdin.

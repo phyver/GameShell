@@ -1,1 +1,1 @@
-gash check < <(grep -v "PAY" * | wc -l)
+gash check < <(grep -v "$(gettext "PAID")" "$(eval_gettext '$GASH_HOME/Stall')"/* | wc -l)
