@@ -240,9 +240,9 @@ Do you want to continue this game? [Y/n]')" x
         cat > "$GASH_LOCAL_BIN/$BIN_NAME" <<EOH
 #!/bin/bash
 export TEXTDOMAIN="$DOMAIN"
-$BIN_FILE "$@"
+$BIN_FILE "\$@"
 EOH
-        cp "$BIN_FILE" "$GASH_LOCAL_BIN"
+        chmod +x "$GASH_LOCAL_BIN/$BIN_NAME"
       done
     fi
 
@@ -257,10 +257,6 @@ EOH
     if [ -f "$MISSION_DIR/bashrc" ]
     then
       cp "$MISSION_DIR/bashrc" "$GASH_CONFIG/$(basename "$MISSION_DIR" /)-bashrc.sh"
-    fi
-    if [ -d "$MISSION_DIR/bin" ]
-    then
-      cp "$MISSION_DIR/bin/"* "$GASH_LOCAL_BIN"
     fi
     printf "."
   done
