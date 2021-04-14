@@ -15,19 +15,21 @@ soit truffé d'erreurs...
 Commandes utilisées
 ===================
 
-  ./fichier
+  ./FICHIER
     Exécute un fichier exécutable en tant que 
     programme. Il va de soi que Merlin l'est 
     (exécutable)...
 
   CMD  >  FICHIER
-    Remplace la sortie standard (STDOUT) d'une commande 
-    par un fichier en utilisant une redirection ">".
+    envoie la sortie standard (STDOUT) d'une commande 
+    vers un fichier
+    (Le fichier est écrasé.)
 
   CMD  2>  FICHIER
-    Similaire, mais redirige la sortie d'erreur 
-    (STDERR) vers le fichier donné.
+    envoie la sortie d'erreurs (STDERR) d'une commande 
+    vers un fichier
+    (Le fichier est écrasé.)
 
   CMD  <  FICHIER
-    Remplace l'entrée standard (STDIN) d'une commande 
-    par un fichier en utilisant une redirection "<".
+    envoie un fichier vers l'entrée standard (STDIN) 
+    d'une commande
