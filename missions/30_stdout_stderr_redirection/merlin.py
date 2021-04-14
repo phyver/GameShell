@@ -11,7 +11,7 @@ if __name__ == "__main__":
     from random import randint
 
     if len(argv) > 1:
-        print(f"L'executable {argv[0]} ne prend pas d'arguments.")
+        print(f"{argv[0]} takes no argument")
         exit(1)
 
     i, j = 0, 0
