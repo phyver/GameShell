@@ -1,3 +1,2 @@
-export GASH_CABANE=~/Foret/Cabane/
-export GASH_COFFRE=~/Foret/Cabane/Coffre/
-
+export GASH_CABIN="$(eval_gettext "\$GASH_HOME/Forest")/$(gettext "Cabin")"
+export GASH_CHEST="$GASH_CABIN/$(gettext "Chest")"
