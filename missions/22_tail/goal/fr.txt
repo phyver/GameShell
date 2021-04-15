@@ -1,9 +1,9 @@
 Objectif
 ========
 
-alors que vous êtes en train de lui donner la liste des 
+Alors que vous êtes en train de lui donner la liste des 
 ingrédients, l'ermite a déjà cessé de vous écouter et 
-réclame la liste des quatre derniers ingrédients
+réclame la liste des quatre derniers ingrédients.
 
 
 Commandes utilisées

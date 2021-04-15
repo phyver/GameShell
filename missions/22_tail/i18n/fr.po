@@ -1,0 +1,39 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#: auto.sh:1 check.sh:11 check.sh:16 init.sh:1 static.sh:3
+#, sh-format
+msgid "$GASH_HOME/Montain/Cavern"
+msgstr "$GASH_HOME/Montagne/Grotte"
+
+#: auto.sh:4 auto.sh:7 check.sh:16 init.sh:1
+msgid "potion_ingredients"
+msgstr "ingredients_potion"
+
+#: check.sh:22
+msgid "You are not standing in the cavern with the ermit!"
+msgstr "Vous n'êtes pas dans la caverne avec l'ermite !"
+
+#: check.sh:27
+msgid "You haven't used the 'tail' command!"
+msgstr "Vous n'avez pas utilisé la commande 'tail' !"
+
+#: check.sh:32
+msgid "Your previous command doesn't give the expected result..."
+msgstr "Votre commande précédente ne donne pas le résultat attendu..."
+
+#: init.sh:1
+#, sh-format
+msgid "$MISSION_DIR/ingredients/en.txt"
+msgstr "$MISSION_DIR/ingredients/fr.txt"
