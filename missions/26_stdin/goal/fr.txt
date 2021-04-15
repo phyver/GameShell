@@ -4,7 +4,7 @@ Objectif
 Pour progresser en magie, il faut maitriser le 
 calcul mental !
 
-Vérifiez votre aptitude aux additions en lançant la 
+Vérifiez votre aptitude aux additions avec la 
 commande
 
   $ gash check
