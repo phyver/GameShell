@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd "$(eval_gettext '$GASH_HOME/Montain/Cavern')"
 
 # les commandes ne sont pas dans l'historique, il faut les y ajouter à la main !
