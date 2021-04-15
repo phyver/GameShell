@@ -39,10 +39,5 @@ do
 done
 
 
-if [ -n "$GASH_DEBUG_MISSION" ]
-then
-    _gash_start "$GASH_DEBUG_MISSION"
-else
-    n=$(_get_current_mission)
-    _gash_start "$n"
-fi
+n=$(_get_current_mission)
+_gash_start "$n"

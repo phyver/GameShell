@@ -32,7 +32,7 @@ display_help() {
 
 
 export GASH_COLOR="OK"
-export GASH_DEBUG_MISSION=""
+export GASH_DEBUG=""
 MODE="DEBUG"
 RESET=""
 FORCE="FALSE"
@@ -54,7 +54,7 @@ do
       ;;
     D)
       MODE="DEBUG"
-      GASH_DEBUG_MISSION=$OPTARG
+      GASH_DEBUG=$OPTARG
       ;;
     C)
       RESET="FALSE"

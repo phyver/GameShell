@@ -75,21 +75,78 @@ parchment() {
 # checksum of admin password
 export ADMIN_HASH='85ba6c834086d5f322acdea13f710c482b1a4f2a'
 
-# ask admin password: variable GASH_ADMIN is set to "OK" if password was
-# correctly given, to "" otherwise
+
+# ask admin password, except in DEBUG mode
 admin_mode() {
+  if [ -n "$GASH_DEBUG" ]
+  then
+    return 0
+  fi
   for _ in $(seq 3)
   do
     read -serp "mot de passe admin : " mdp
     echo ""
     if [ "$(checksum "$mdp")" = "$ADMIN_HASH" ]
     then
-      export GASH_ADMIN="OK"
       return 0
     fi
   done
-  export GASH_ADMIN=""
   return 1
 }
 
+verbose_source() {
+  local FILENAME=$1
+  # if we are not running in DEBUG mode, just source the file
+  if [ -z "$GASH_DEBUG" ]
+  then
+    source "$FILENAME"
+    return $?
+  fi
+
+  if [ -e "$GASH_TMP/before-V" ]
+  then
+    echo "***** OUPS, verbose_source was probably called recursively on $FILENAME"
+    read -p "Press Enter"
+  fi
+
+  local TEMP=$(mktemp -d "$GASH_TMP/env-XXXXXX")
+  local source_ret_value=""  # otherwise, it appears in the environment!
+  # otherwise, record the environment (variables, functions and aliases)
+  # before and after to echo a message when there are differences
+  compgen -v | sort > "$TEMP"/before-V
+  compgen -A function | sort > "$TEMP"/before-F
+  compgen -a | sort > "$TEMP"/before-A
+  source "$FILENAME"
+  source_ret_value=$?
+  compgen -v | sort > "$TEMP"/after-V
+  compgen -A function | sort > "$TEMP"/after-F
+  compgen -a | sort > "$TEMP"/after-A
+
+  msg="*** While sourcing $FILENAME"
+  if ! cmp --quiet "$TEMP"/{before,after}-V
+  then
+    [ -n "$msg" ] && echo "$msg"
+    msg=""
+    echo "variables before / after"
+    comm -3 "$TEMP"/{before,after}-V
+  fi
+
+  if ! cmp --quiet "$TEMP"/{before,after}-F
+  then
+    [ -n "$msg" ] && echo "$msg"
+    msg=""
+    echo "functions before / after"
+    comm -3 "$TEMP"/{before,after}-F
+  fi
+
+  if ! cmp --quiet "$TEMP"/{before,after}-A
+  then
+    [ -n "$msg" ] && echo "$msg"
+    msg=""
+    echo "Alias before / after"
+    comm -3 "$TEMP"/{before,after}-A
+  fi
+  rm -rf "$TEMP"
+  return "$source_ret_value"
+}
 # vim: shiftwidth=2 tabstop=2 softtabstop=2
