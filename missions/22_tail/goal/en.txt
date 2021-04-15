@@ -1,0 +1,16 @@
+Mission goal
+============
+
+While you are still reading the list of ingredients, 
+the ermit stopped listening and asks for the last 4 
+ingredients.
+
+
+Useful commands
+===============
+
+  tail FILE
+    output the last 10 lines of the file
+
+  tail -n K FILE
+    output the last K lines of the file
