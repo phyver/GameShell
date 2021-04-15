@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mkdir -p "$GASH_HOME/Montagne/Grotte"
+mkdir -p "$(eval_gettext '$GASH_HOME/Montain/Cavern')"

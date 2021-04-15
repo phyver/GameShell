@@ -1,0 +1,40 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/en.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/en.txt"
+
+#: auto.sh:3 check.sh:11 init.sh:3 static.sh:3
+#, sh-format
+msgid "$GASH_HOME/Montain/Cavern"
+msgstr "$GASH_HOME/Montain/Cavern"
+
+#: auto.sh:6 auto.sh:9 check.sh:17 init.sh:3
+msgid "potion_recipe"
+msgstr "potion_recipe"
+
+#: check.sh:23
+msgid "You are not standing in the cavern with the ermit!"
+msgstr "You are not standing in the cavern with the ermit!"
+
+#: check.sh:28
+msgid "You haven't used the operator '|'!"
+msgstr "You haven't used the operator '|'!"
+
+#: check.sh:33
+msgid "Your previous command doesn't give the expected result..."
+msgstr "Your previous command doesn't give the expected result..."
+
+# path for the text file containing the goal
+#: init.sh:3
+#, sh-format
+msgid "$MISSION_DIR/recipe/en.txt"
+msgstr "$MISSION_DIR/recipe/en.txt"
