@@ -1,0 +1,27 @@
+Mission goal
+============
+
+The ermit now asks the you read him the instructions 
+from line 9 to 11 of the **recipe** for his potion.
+
+To do that, you will have to combine the 2 previous 
+commands with a `|`.
+
+
+Useful commands
+===============
+
+  head -n K FILE
+    output the first K lines from the file
+
+    If FILE is omitted, the command acts on its 
+    standard input (STDIN), ie what it "receives".
+
+  tail -n K FILE
+    output the last K lines from the file
+
+    If FILE is omitted, the command acts on its 
+    standard input (STDIN), ie what it "receives".
+
+  CMD1 | CMD2
+   make CMD2 acts on what it receives from CMD1

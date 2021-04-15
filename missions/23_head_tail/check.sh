@@ -8,28 +8,28 @@ _local_check() {
     pc=$(fc -nl -2 -2 | grep '|')
 
     local goal
-    goal=$(CANONICAL_PATH "$GASH_HOME/Montagne/Grotte")
+    goal=$(CANONICAL_PATH "$(eval_gettext '$GASH_HOME/Montain/Cavern')")
     local current
     current=$(CANONICAL_PATH "$PWD")
 
     local expected
-    expected=$(head -n 11 "$GASH_HOME/Montagne/Grotte/recette_potion" | tail -n 3)
+    expected=$(head -n 11 "$(eval_gettext '$GASH_HOME/Montain/Cavern')/$(gettext "potion_recipe")" | tail -n 3)
     local res
     res=$(eval "$pc")
 
     if [ "$goal" != "$current" ]
     then
-        echo "Vous n'êtes pas dans la grotte, avec l'ermite !"
+        echo "$(gettext "You are not standing in the cavern with the ermit!")"
         return 1
     fi
     if [ -z "$pc" ]
     then
-        echo "Vous n'avez pas utilisé l'opérateur |"
+        echo "$(gettext "You haven't used the operator '|'!")"
         return 1
     fi
     if [ "$res" != "$expected" ]
     then
-        echo "Votre commande ne fournit pas le bon résultat..."
+        echo "$(gettext "Your previous command doesn't give the expected result...")"
         return 1
     fi
     return 0
