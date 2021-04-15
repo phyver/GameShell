@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mkdir -p "$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin/Tiroir"
+mkdir -p "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library/Merlin_s_office')/$(gettext "Drawer")"
