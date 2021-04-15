@@ -1,0 +1,54 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#: auto.sh:1 init.sh:3 init.sh:15 init.sh:18 static.sh:3 static.sh:5
+#: static.sh:7
+#, sh-format
+msgid "$GASH_HOME/Castle/Main_building/Library"
+msgstr "$GASH_HOME/Chateau/Batiment_principal/Bibliotheque"
+
+#: auto.sh:1 init.sh:18 static.sh:5
+msgid "Mathematics_101"
+msgstr "Mathematiques_en_premiere_annee"
+
+#: check.sh:15
+msgid "Too slow! You need to give the answers in less than 10 seconds..."
+msgstr "Trop lent ! Il faut donner les réponses en moins de 10 secondes..."
+
+#: check.sh:22
+msgid "That's not even a number!"
+msgstr "Ce n'est même pas un nombre !"
+
+#: check.sh:29
+#, sh-format
+msgid "Too bad! The expected answer was $c..."
+msgstr "Dommage ! La réponse était $c..."
+
+#: init.sh:3 static.sh:7
+msgid "Greek_Latin_and_other_modern_languages"
+msgstr "Grec_Latin_et_autres_langues_modernes"
+
+#: init.sh:12
+msgid ""
+"The book 'Mathematics_101' contains all the anwsers for the exam.\n"
+"\n"
+"You just need to copy all the lines in this book."
+msgstr ""
+"Le livre 'Mathematiques_en_premiere_annee' contient les réponses de l'examen.\n"
+"\n"
+"Il te suffit de recopier les lignes de ce livre."
+
+#: init.sh:15
+msgid ".How_to_cheat_for_exams"
+msgstr ".Comment_tricher_aux_examens"
