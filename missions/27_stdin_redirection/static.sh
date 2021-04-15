@@ -1,6 +1,7 @@
+#!/bin/bash
 
-mkdir -p "$GASH_HOME/Chateau/Batiment_principal/Bibliotheque"
+mkdir -p "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')"
 
-touch "$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Mathematiques_pour_debutants"
+touch "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')/$(gettext "Mathematics_101")"
 
-touch "$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Latin_et_autres_langues"
+touch "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')/$(gettext "Greek_Latin_and_other_modern_languages")"

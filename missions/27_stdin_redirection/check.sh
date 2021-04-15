@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 OK=1
 LIMIT=$(( $(date +%s) + 10 ))
@@ -12,21 +12,21 @@ do
     read -erp "$q" r
     if [ "$LIMIT" -le "$(date +%s)" ]
     then
-        echo "Trop lent ! Il faut donner les réponses en moins de 10 secondes..."
+        echo "$(gettext "Too slow! You need to give the answers in less than 10 seconds...")"
         OK=""
         break
     fi
 
     case "$r" in
         "" | *[!0-9]*)
-            echo "Dommage ! Le résultat est $c..."
+            echo "$(gettext "That's not even a number!")"
             OK=""
             break
             ;;
         *)
             if [ "$c" -ne "$r" ]
             then
-                echo "Dommage ! Le résultat est $c..."
+                echo "$(eval_gettext 'Too bad! The expected answer was $c...')"
                 OK=""
                 break
             fi

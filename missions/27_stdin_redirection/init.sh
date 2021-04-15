@@ -1,4 +1,6 @@
-cat > "$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Latin_et_autres_langues"  <<EOB
+#!/bin/bash
+
+cat > "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')/$(gettext "Greek_Latin_and_other_modern_languages")" <<EOB
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -7,16 +9,15 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 EOB
 
-cat > "$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/.Comment_tricher_aux_examens"  <<EOB
-Le livre "Mathematiques pour debutants" contient toutes
-les réponses pour l'examen...
+echo "$(gettext "The book 'Mathematics_101' contains all the anwsers for the exam.
 
-Il suffit donc de recopier toutes les lignes de ce livre.
-EOB
+You just need to copy all the lines in this book.")" \
+    > "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')/$(gettext ".How_to_cheat_for_exams")"
 
-book="$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Mathematiques_pour_debutants"
+
+book="$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')/$(gettext "Mathematics_101")"
 rm -f "$book"
-questions=$GASH_TMP/arith.txt
+questions="$GASH_TMP"/arith.txt
 rm -f "$questions"
 
 for _ in $(seq 100)
