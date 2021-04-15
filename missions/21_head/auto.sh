@@ -1,10 +1,12 @@
-cd ~/Montagne/Grotte
+#!/bin/bash
+
+cd "$(eval_gettext '$GASH_HOME/Montain/Cavern')"
 
 # les commandes ne sont pas dans l'historique, il faut les y ajouter à la main !
-history -s head -n 4 ingredients_potion
+history -s head -n 4  $(gettext "potion_ingredients")
 history -s gash check
 
-head -n 4 ingredients_potion
+head -n 4  $(gettext "potion_ingredients")
 gash check
 
 history -d -2--1
