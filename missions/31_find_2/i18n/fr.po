@@ -34,11 +34,11 @@ msgid "The ruby is still in the maze!"
 msgstr "Le rubis est toujours dans le labyrinthe !"
 
 #: check.sh:25
-msgid "There is no ruby in the trunk!"
+msgid "There is no ruby in the chest!"
 msgstr "Il n'y a pas de rubis dans le coffre !"
 
 #: check.sh:39
-msgid "The ruby file in the trunk is invalid..."
+msgid "The ruby file in the chest is invalid..."
 msgstr "Le fichier rubis du coffre n'est pas valide..."
 
 #: clean.sh:7 init.sh:3

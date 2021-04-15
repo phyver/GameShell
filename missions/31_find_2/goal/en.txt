@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-look for the ruby in the maze, and move it to your trunk
+look for the ruby in the maze, and move it to your chest
 
 NOTE: the filename does not contain the chaine "ruby".
 You need to look for a __file__ (instead of a directory), 
