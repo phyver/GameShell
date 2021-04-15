@@ -1,3 +1,5 @@
+#!/bin/bash
+
 book="$GASH_TMP/additions.txt"
 rm -f "$book"
 questions=$GASH_TMP/arith.txt

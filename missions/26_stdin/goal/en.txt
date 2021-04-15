@@ -1,0 +1,9 @@
+Mission goal
+============
+
+To get better in the magical art, one needs to know 
+mental math.
+
+Test your additions skills with the command
+    $ gash check
+

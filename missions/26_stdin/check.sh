@@ -1,3 +1,5 @@
+#!/bin/bash
+
 exec 3< "$GASH_TMP/arith.txt"
 OK="OK"
 while IFS='' read -r -u 3 l
@@ -8,14 +10,14 @@ do
     read -erp "$q" r
     case "$r" in
         "" | *[!0-9]*)
-            echo "Dommage ! Le résultat est $c..."
+            echo "$(gettext "That's not even a number!")"
             OK=""
             break
             ;;
         *)
             if [ "$c" -ne "$r" ]
             then
-                echo "Dommage ! Le résultat est $c..."
+                echo "$(eval_gettext 'Too bad! The expected answer was $c...')"
                 OK=""
                 break
             fi

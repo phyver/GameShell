@@ -1,0 +1,22 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#: check.sh:13
+msgid "That's not even a number!"
+msgstr "Ce n'est même pas un nombre !"
+
+#: check.sh:20
+#, sh-format
+msgid "Too bad! The expected answer was $c..."
+msgstr "Dommage ! La réponse était $c..."
