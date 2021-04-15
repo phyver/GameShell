@@ -2,18 +2,20 @@
 
 _local_check() {
     local office
-    office="$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin"
+    office="$(eval_gettext '$GASH_HOME/Castle/Main_building/Library/Merlin_s_office')"
+    list="$(gettext "list.txt")"
 
-    if [ ! -f "$office/Tiroir/liste.txt" ]
+    if [ ! -f "$office/$(gettext "Drawer")/$list" ]
     then
-        echo "Il n'y a pas de fichier 'liste.txt' dans le tiroir du bureau..."
+        echo "$(eval_gettext 'There is no $list in the drawer...')"
         return 1
     fi
 
-    if ! diff -q <(sort "$office/Tiroir/liste.txt") "$GASH_TMP/liste_grimoires" > /dev/null
+    if ! diff -q <(sort "$office/$(gettext "Drawer")/$list") "$GASH_TMP/list_grimoires" > /dev/null
     then
-        echo "Le contenu du fichier 'liste.txt' n'est pas correct"
-        echo "Vous pouvez regarder dans le fichier avec la commande less FICHIER"
+        echo "$(eval_gettext 'The content of $list is invalid.
+You can check its content with the command
+    $ less $list')"
         return 1
     fi
 

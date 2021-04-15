@@ -1,0 +1,26 @@
+Mission goal
+============
+
+Merlin's old spellbooks are kept in his office, 
+in the library. You need to save a list of all 
+those spellbooks (and nothing else) in a file 
+called "list.txt", in the drawer...
+
+
+Useful commands
+===============
+
+  CMD  >  FILE
+    the output of the command is sent to the file 
+    instead of being printed on the standard output 
+    (the screen)
+
+  less FILE
+    display the content of a text file, one page 
+    at a time
+    Important keybindings are
+      Space     scroll down one page
+      q         quit
+      / STRING  search the string in the file
+      n         go to the next occurence of the 
+                last search string

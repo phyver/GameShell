@@ -1,0 +1,45 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/en.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/en.txt"
+
+#: auto.sh:1 check.sh:5 init.sh:3 static.sh:3
+#, sh-format
+msgid "$GASH_HOME/Castle/Main_building/Library/Merlin_s_office"
+msgstr "$GASH_HOME/Castle/Main_building/Library/Merlin_s_office"
+
+#: auto.sh:2 init.sh:4 init.sh:8 init.sh:21
+msgid "grimoire"
+msgstr "grimoire"
+
+#: auto.sh:2 check.sh:8 check.sh:14 static.sh:3
+msgid "Drawer"
+msgstr "Drawer"
+
+#: auto.sh:2 check.sh:6
+msgid "list.txt"
+msgstr "list.txt"
+
+#: check.sh:10
+#, sh-format
+msgid "There is no $list in the drawer..."
+msgstr "There is no $list in the drawer..."
+
+#: check.sh:16
+msgid ""
+"The content of $list is invalid.\n"
+"You can check its content with the command\n"
+"    $ less $list"
+msgstr ""
+"The content of $list is invalid.\n"
+"You can check its content with the command\n"
+"    $ less $list"
