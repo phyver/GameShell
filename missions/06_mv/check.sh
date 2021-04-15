@@ -1,64 +1,55 @@
-#!/bin/bash
+# TODO: limit the number of commands to avoid multiple mv/cd?
 
-# TODO: limiter le nombre de commandes pour éviter
-# mv truc ..
-# cd ..
-# mv truc ..
-# ....
+CELLAR="$(eval_gettext "\$GASH_HOME/Castle/Cellar")"
+CHEST="$(eval_gettext "\$GASH_HOME/Forest/Cabin/Chest")"
 
+
+# Receives coin number as first argument.
 _local_check() {
-    local cave=$GASH_HOME/Chateau/Cave
-    local i=$1
-    local piece="piece_$i"
+    local COIN="$(gettext "coin")_$1"
 
-    # _local_check that file doesn't exists in cave
-    local file
-    file=$(find "$cave" -maxdepth 1 -name "piece_$i")
-    if [ -f "$file" ]
+    # Check that the coin is not in the cellar.
+    if [ -f "$CELLAR/$COIN" ]
     then
-        echo "La pièce '$piece' est encore dans la cave."
+        echo "$(eval_gettext "The coin '\$COIN' is still in the cellar!")"
         return 1
     fi
 
-    # _local_check that file exists
-    local file
-    file=$(find "$GASH_COFFRE" -maxdepth 1 -name "piece_$i")
-    if [ ! -f "$file" ]
+    # Check that the coin is in the chest.
+    if [ ! -f "$CHEST/$COIN" ]
     then
-        echo "La pièce '$piece' n'est pas dans le coffre."
+        echo "$(eval_gettext "The coin '\$COIN' is not in the chest!")"
         return 1
     fi
 
-    # _local_check that prefix of first line is piece_$i
-    local P
-    P=$(cut -f 1 -d' ' "$file")
-    if [ "$(echo "$P" | cut -f1 -d'#')" != "$piece" ]
+    # Check that the contents of the coin.
+    if [ "$(cut -f 1 -d ' ' "$CHEST/$COIN" | cut -f 1 -d '#')" != "$COIN" ]
     then
-        echo "Contenu du fichier '$file' invalide."
+        echo "$(eval_gettext "The coin '\$COIN' has been tampered with...")"
         return 1
     fi
 
-    # _local_check that suffix of file is the SHA1 of $piece
-    local S
-    S=$(cut -f 2 -d' ' "$file")
-    if [ "$S" != "$(checksum "$P")" ]
+    # Verify the checksum in the coin.
+    local COIN_DATA=$(cut -f 1 -d ' ' "$CHEST/$COIN")
+    if [ "$(cut -f 2 -d ' ' "$CHEST/$COIN")" != "$(checksum "$COIN_DATA")" ]
     then
-        echo "Contenu du fichier '$file' invalide."
+        echo "$(eval_gettext "The coin '\$COIN' has been tampered with...")"
         return 1
     fi
 
     return 0
 }
 
-
 if _local_check 1 && _local_check 2 && _local_check 3
 then
     unset -f _local_check
+    unset CELLAR CHEST
     true
 else
+    find "$GASH_HOME" -name "$(gettext "coin")_?" -type f -print0 | xargs -0 rm -f
+    find "$CELLAR" -iname "*$(gettext "chest")*" -type f -print0 | xargs -0 rm -f
+    find "$CELLAR" -iname "*$(gettext "cabin")*" -type f -print0 | xargs -0 rm -f
     unset -f _local_check
-    find "$GASH_HOME" -name "piece_?" -type f -print0 | xargs -0 rm -f
-    find "$cave" -iname "*coffre*" -type f -print0 | xargs -0 rm -f
-    find "$cave" -iname "*cabane*" -type f -print0 | xargs -0 rm -f
+    unset CELLAR CHEST
     false
 fi
