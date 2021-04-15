@@ -26,7 +26,13 @@ _log_action() {
 
 # get the last started mission
 _get_current_mission() {
-  awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GASH_DATA/missions.log"
+  n="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GASH_DATA/missions.log")"
+  if [ -z "$n" ]
+  then
+    echo "$GASH_DEBUG"
+  else
+    echo "$n"
+  fi
 }
 
 
@@ -181,7 +187,7 @@ _gash_start() {
     # afficher un message dans ce cas
     [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_TMP"/env-before
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    source "$MISSION_DIR/init.sh"
+    verbose_source "$MISSION_DIR/init.sh"
     export TEXTDOMAIN="gash"
     [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_TMP"/env-after
 
@@ -217,8 +223,7 @@ _gash_pass() {
     echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
     return 1
   fi
-  admin_mode
-  if [ "$GASH_ADMIN" != "OK" ]
+  if ! admin_mode
   then
     echo "$(gettext "wrong password")" >&2
     return 1
@@ -251,15 +256,14 @@ _gash_auto() {
     return 1
   fi
 
-  admin_mode
-  if [ "$GASH_ADMIN" != "OK" ]
+  if ! admin_mode
   then
     echo "$(gettext "wrong password")" >&2
     return 1
   fi
 
   export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-  source "$MISSION_DIR/auto.sh"
+  verbose_source "$MISSION_DIR/auto.sh"
   export TEXTDOMAIN="gash"
   _log_action "$nb" "AUTO"
   return 0
@@ -295,7 +299,7 @@ _gash_check() {
     echo
   else
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    source "$check_prg"
+    verbose_source "$check_prg"
     local exit_status=$?
     export TEXTDOMAIN="gash"
     unset -f check
@@ -342,7 +346,7 @@ _gash_check() {
 
         # Load the treasure in the current shell.
         export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-        source "$MISSION_DIR/treasure.sh"
+        verbose_source "$MISSION_DIR/treasure.sh"
         export TEXTDOMAIN="gash"
 
         #sourcing the file isn't very robust as the "gash check" may happen in a subshell!
@@ -381,7 +385,7 @@ _gash_clean() {
   if [ -f "$MISSION_DIR/clean.sh" ]
   then
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    source "$MISSION_DIR/clean.sh"
+    verbose_source "$MISSION_DIR/clean.sh"
     export TEXTDOMAIN="gash"
   fi
 }
@@ -491,12 +495,11 @@ EOH
       _gash_auto "$nb"
       ;;
     "clean")
-      admin_mode
-      if [ "$GASH_ADMIN" = "OK" ]
+      if ! admin_mode
       then
-        _gash_clean "$nb"
-      else
         echo "$(gettext "wrong password")" >&2
+      else
+        _gash_clean "$nb"
       fi
       ;;
     "goto")
@@ -506,8 +509,7 @@ EOH
         return 1
       fi
 
-      admin_mode
-      if [ "$GASH_ADMIN" != "OK" ]
+      if ! admin_mode
       then
         echo "$(gettext "wrong password")" >&2
         return 1
