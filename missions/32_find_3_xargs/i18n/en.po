@@ -37,12 +37,12 @@ msgid "The diamond is still in the maze."
 msgstr "The diamond is still in the maze."
 
 #: check.sh:25
-msgid "There is no diamond in your trunk."
-msgstr "There is no diamond in your trunk."
+msgid "There is no diamond in your chest."
+msgstr "There is no diamond in your chest."
 
 #: check.sh:39
-msgid "The diamond file in the trunk is not valid!"
-msgstr "The diamond file in the trunk is not valid!"
+msgid "The diamond file in the chest is not valid!"
+msgstr "The diamond file in the chest is not valid!"
 
 #: clean.sh:6 clean.sh:7 init.sh:3
 msgid ".Long*Corridor*"

@@ -18,11 +18,11 @@ _local_check() {
     fi
 
     local diamond
-    diamond=$(find "$GASH_COFFRE" -type f -print0 | xargs -0 grep -l "$(gettext "diamond")")
+    diamond=$(find "$GASH_CHEST" -type f -print0 | xargs -0 grep -l "$(gettext "diamond")")
 
     if [ -z "$diamond" ]
     then
-        echo "$(gettext "There is no diamond in your trunk.")"
+        echo "$(gettext "There is no diamond in your chest.")"
         return 1
     fi
 
@@ -36,7 +36,7 @@ _local_check() {
     S2=$(checksum "$K.$(gettext "diamond")")
     if [ "$K" != "$K2" ] || [ "$S" != "$S2" ]
     then
-        echo "$(gettext "The diamond file in the trunk is not valid!")"
+        echo "$(gettext "The diamond file in the chest is not valid!")"
         return 1
     fi
 

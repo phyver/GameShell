@@ -22,7 +22,7 @@ _local_check() {
 
     if [ -z "$rubis" ]
     then
-        echo "$(gettext "There is no ruby in the trunk!")"
+        echo "$(gettext "There is no ruby in the chest!")"
         return 1
     fi
 
@@ -36,7 +36,7 @@ _local_check() {
     S2=$(checksum "$K.$(gettext "ruby")")
     if [ "$K" != "$K2" ] || [ "$S" != "$S2" ]
     then
-        echo "$(gettext "The ruby file in the trunk is invalid...")"
+        echo "$(gettext "The ruby file in the chest is invalid...")"
         return 1
     fi
 

@@ -2,7 +2,7 @@ Mission goal
 ============
 
 Combine several commands with "|" in order to find the 
-diamond in the labyrinth, and move it to your trunk.
+diamond in the labyrinth, and move it to your chest.
 
 
 NOTE: the filename doesn't contain the string "diamond".
