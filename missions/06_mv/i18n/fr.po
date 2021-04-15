@@ -1,0 +1,46 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+#: auto.sh:1 check.sh:3 init.sh:7 static.sh:1
+#, sh-format
+msgid "$GASH_HOME/Castle/Cellar"
+msgstr "$GASH_HOME/Chateau/Cave"
+
+#: auto.sh:1 check.sh:9 check.sh:49 init.sh:5
+msgid "coin"
+msgstr "pièce"
+
+#: auto.sh:2 check.sh:4 static.sh:2
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin/Chest"
+msgstr "$GASH_HOME/Forêt/Cabane/Coffre"
+
+#: check.sh:14
+#, sh-format
+msgid "The coin '$COIN' is still in the cellar!"
+msgstr "La pièce '$COIN' est toujours dans la cave !"
+
+#: check.sh:21
+#, sh-format
+msgid "The coin '$COIN' is not in the chest!"
+msgstr "La pièce '$COIN' n'est pas dans le coffre !"
+
+#: check.sh:28 check.sh:36
+#, sh-format
+msgid "The coin '$COIN' has been tampered with..."
+msgstr "La pièce '$COIN' a été modifiée..."
+
+#: check.sh:50
+msgid "chest"
+msgstr "coffre"
+
+#: check.sh:51
+msgid "cabin"
+msgstr "cabane"
