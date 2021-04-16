@@ -37,7 +37,6 @@ do
     # shellcheck source=/dev/null
     [ -f "$f" ] && source "$f"
 done
+unset f
 
-
-n=$(_get_current_mission)
-_gash_start "$n"
+_gash_start
