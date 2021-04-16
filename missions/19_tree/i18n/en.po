@@ -1,0 +1,62 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/en.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/en.txt"
+
+#: auto.sh:5 check.sh:5 clean.sh:6 clean.sh:13 init.sh:3 init.sh:8
+#, sh-format
+msgid "$GASH_HOME/Castle/Cellar"
+msgstr "$GASH_HOME/Castle/Cellar"
+
+#: auto.sh:5 check.sh:5 clean.sh:5 clean.sh:13 init.sh:12
+msgid "maze"
+msgstr "maze"
+
+#: check.sh:11
+msgid "There still are some silver coins in the maze!"
+msgstr "There still are some silver coins in the maze!"
+
+#: check.sh:19
+msgid "There is no silver coin in your chest!"
+msgstr "There is no silver coin in your chest!"
+
+#: check.sh:25
+msgid "Booh... The silver coin in you chest is invalid!"
+msgstr "Booh... The silver coin in you chest is invalid!"
+
+#: clean.sh:6 init.sh:3
+msgid ".Long*Corridor*"
+msgstr ".Long*Corridor*"
+
+#: clean.sh:7
+msgid "Pffft... You are back to the entrance of the maze..."
+msgstr "Pffft... You are back to the entrance of the maze..."
+
+#: init.sh:8
+#, sh-format
+msgid ".Long $r1 Corridor $r2"
+msgstr ".Long $r1 Corridor $r2"
+
+#: init.sh:19
+msgid "maze generation:"
+msgstr "maze generation:"
+
+#: init.sh:35 auto.sh:7 check.sh:7
+msgid "silver_coin"
+msgstr "silver_coin"
+
+#~ msgid "coin"
+#~ msgstr "coin"
+
+#, fuzzy
+#~ msgid "silver"
+#~ msgstr "silver_coin"
