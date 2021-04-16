@@ -264,10 +264,11 @@ new: i18n/template.pot
 	@read -p "language code: " lang; \
 		[ -e "./i18n/$$lang.po" ] && echo "file i18n/$$lang.po already exists" && exit; \
 		echo "file i18n/$$lang.po created"; \
-		msgen --no-wrap --output i18n/$$lang.po i18n/template.pot
+		msgen --no-wrap --output i18n/$$lang.po i18n/template.pot; \
+		touch --date="2000-01-01" "i18n/$$lang.po"
 
 clean:
-	rm i18n/*~ i18n/template.pot
+	rm i18n/*~
 
 cleaner: clean
 	find . -maxdepth 1 -type f -name "_*" -print0 | xargs -0 --open-tty rm -i
