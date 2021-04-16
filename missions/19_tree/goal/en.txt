@@ -1,0 +1,24 @@
+Mission goal
+============
+
+Find the silver coin in the (small) maze hidden in the 
+cellar, and move it to your chest.
+
+
+Useful commands
+===============
+
+  ls -R
+    print the list of all files / directory, including 
+    those in sub-directories (recursively)
+
+  tree
+    print the tree of files and directory, starting 
+    from the current working directory
+
+    NOTE: this command is not standard and not always 
+    installed by default.
+
+    The option "-C" adds colors to the output of the 
+    command.
+
