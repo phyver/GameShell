@@ -14,7 +14,7 @@ Useful commands
   find
     search files from the current working directory
 
-    conditions on the file may be added about filenames, 
+    Conditions on the file may be added about filenames, 
     size, modification date, etc.
 
     An interesting condition is
