@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#TODO
+
 _local_check_p() {
     local file=$1
     local path
