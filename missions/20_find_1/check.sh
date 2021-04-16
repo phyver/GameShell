@@ -1,39 +1,43 @@
 #!/bin/bash
 
+#TODO
+
 _local_check_p() {
     local file=$1
     local path
-    path=$(find "$GASH_COFFRE" -name "*$file" -type f)
+    path=$(find "$GASH_CHEST" -name "*$file*" -type f)
 
     if [ -z "$path" ]
     then
-        echo "Toutes les pièces ne sont pas dans le coffre !"
+        echo "$(gettext "Some of the coins are not in your chest!")"
+        echo $file
         return 1
     fi
     if ! diff -q "$path" "$GASH_TMP/$file" > /dev/null
     then
-        echo "La pièce '$file' dans le coffre n'est pas la bonne !"
+        echo "$(eval_gettext 'Coin '$file' in your chest is invalid!')"
         return 1
     fi
 }
 
 _local_check() {
     local lab
-    lab=$(find "$GASH_HOME/Chateau/Cave" -name labyrinthe -type d)
+    lab=$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext "maze")" -type d)
     local nb
-    nb=$(find "$lab" -iname "piece_d_or" -type f | wc -l)
+    nb=$(find "$lab" -iname "$(gettext "gold_coin")" -type f | wc -l)
     if [ "$nb" -gt 2 ]
     then
-        echo "Il y a trop de pièces dans le labyrinthe !!!"
+        echo "$(gettext "There are too many gold coins in the  maze!")"
         return 1
     fi
     if [ "$nb" -ne 0 ]
     then
-        echo "Il reste des pièces dans le labyrinthe "
+        echo "$(gettext "There still are some gold coins in the  maze!")"
+        return 1
         return 1
     fi
 
-    _local_check_p "piece_d_or" && _local_check_p "PieCe_D_Or"
+    _local_check_p "$(gettext "gold_coin")" && _local_check_p "$(gettext "GolD_CoiN")"
 }
 
 if _local_check
