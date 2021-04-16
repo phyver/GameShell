@@ -1,14 +1,10 @@
-#!/bin/bash
-
-# fichier lu par le shell à chaque démarrage de la mission
-
-cd "$GASH_HOME/Chateau/Cave"
-
 D=$(date +%s)
-for i in $(seq 3)
+
+for I in $(seq 3)
 do
-    S=$(checksum "piece_$i#$D")
-    echo "piece_$i#$D $S" > "piece_$i"
+  C="$(gettext "coin")_$I"
+  S=$(checksum "$C#$D")
+  echo "$C#$D $S" > "$(eval_gettext "\$GASH_HOME/Castle/Cellar")/$C"
 done
 
-unset D S i
+unset DATE D I C S
