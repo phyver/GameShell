@@ -13,7 +13,7 @@ _local_check() {
     fi
 
     local coin
-    coin=$(find "$GASH_CHEST" -maxdepth 1 -name "*$(gettext "silver")*")
+    coin=$(find "$GASH_CHEST" -maxdepth 1 -name "*$(gettext "silver_coin")*")
     if [ -z "$coin" ]
     then
         echo "$(gettext "There is no silver coin in your chest!")"
