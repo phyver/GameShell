@@ -1,13 +1,15 @@
 #!/bin/bash
 
-coul=$(find "$GASH_HOME/Chateau/Cave/" -name ".Long*Couloir*")
-if [ -z "$coul" ]
+corridor="$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -type d -name "$(gettext ".Long*Corridor*")")"
+if [ -z "$corridor" ]
 then
-    coul="$GASH_HOME/Chateau/Cave/.Long $(checksum $RANDOM) Couloir $(checksum $RANDOM)"
-    mkdir -p "$coul"
+    r1=$(checksum $RANDOM)
+    r2=$(checksum $RANDOM)
+    corridor="$(eval_gettext '$GASH_HOME/Castle/Cellar')/$(eval_gettext '.Long $r1 Corridor $r2')"
+    mkdir -p "$corridor"
 fi
 
-lab=$coul/labyrinthe
+lab="$corridor/$(gettext "maze")"
 
 t=$(date +%s)
 
@@ -15,7 +17,7 @@ N=10
 r1="$((1 + RANDOM%N)),$((1 + RANDOM%N)),$((1 + RANDOM%N))"
 r2="$((1 + RANDOM%N)),$((1 + RANDOM%N)),$((1 + RANDOM%N))"
 
-echo -n "génération du labyrinthe : "
+echo -n "$(gettext "maze generation:")"
 for i in $(seq $N)
 do
     I=$(checksum "$t$i")
@@ -31,12 +33,12 @@ do
 
             if [ "$r1" = "$i,$j,$k" ]
             then
-                echo "$I $J $K" > "$lab/$I/$J/$K/piece_d_or"
-                echo "$I $J $K" > "$GASH_TMP/piece_d_or"
+                echo "$I $J $K" > "$lab/$I/$J/$K/$(gettext "gold_coin")"
+                echo "$I $J $K" > "$GASH_TMP/$(gettext "gold_coin")"
             elif [ "$r2" = "$i,$j,$k" ]
             then
-                echo "$I $J $K" > "$lab/$I/$J/$K/PieCe_D_Or"
-                echo "$I $J $K" > "$GASH_TMP/PieCe_D_Or"
+                echo "$I $J $K" > "$lab/$I/$J/$K/$(gettext "GolD_CoiN")"
+                echo "$I $J $K" > "$GASH_TMP/$(gettext "GolD_CoiN")"
             fi
         done
         echo -n "."
@@ -44,6 +46,6 @@ do
 done
 echo
 
-unset i j k t coul lab N r1 r2 I J K
+unset i j k t corridor lab N r1 r2 I J K
 
 
