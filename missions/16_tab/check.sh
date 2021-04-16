@@ -1,7 +1,7 @@
 #!/bin/bash
 
-S1=$(basename "$PWD" / | sha1sum | cut -c 1-40)
-S2=$(cat "$GASH_TMP/couloir")
+S1=$(basename "$PWD" / | checksum)
+S2=$(cat "$GASH_TMP/corridor")
 
 if [ "$S1" = "$S2" ]
 then
@@ -10,7 +10,8 @@ then
 else
     unset S1 S2
     cd
-    echo "Vous voici par téléportation de retour au point de départ !"
+    rm -rf "$(eval_gettext '$GASH_HOME/Castle/Cellar')"/$(eval_gettext '.Long*Corridor*')
+    echo "$(gettext "Pffft... You are back to the beginning, in front of the castle...")"
     false
 fi
 

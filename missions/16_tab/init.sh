@@ -2,15 +2,15 @@
 
 # fichier lu par le shell à chaque démarrage de la mission
 
-rm -rf "$GASH_HOME/Chateau/Cave/.Long"*Couloir*
+corridor="$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -type d -name "$(gettext ".Long*Corridor*")")"
+if [ -z "$corridor" ]
+then
+    r1=$(checksum $RANDOM)
+    r2=$(checksum $RANDOM)
+    corridor="$(eval_gettext '$GASH_HOME/Castle/Cellar')/$(eval_gettext '.Long $r1 Corridor $r2')"
+    mkdir -p "$corridor"
+fi
 
-coul=".Long $(checksum $RANDOM) Couloir $(checksum $RANDOM)"
+basename "$corridor" | checksum > "$GASH_TMP/corridor"
 
-mkdir -p "$GASH_HOME/Chateau/Cave/$coul"
-
-echo "$coul" | sha1sum | cut -c 1-40 > "$GASH_TMP/couloir"
-
-unset coul
-
-
-
+unset corridor r1 r2

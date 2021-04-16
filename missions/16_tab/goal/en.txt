@@ -1,0 +1,11 @@
+Mission goal
+============
+
+Go in the corridor hidden in the cellar.
+
+
+Useful commands
+===============
+
+  Pressing the "Tab" key will complete the beginning of 
+  a name (file or directory) when pressed.
