@@ -14,6 +14,7 @@ export -f checksum
 
 # simple "echo" command with colors
 color_echo() {
+  local color
   case "$1" in
     black   | bk) color=0; shift;;
     red     |  r) color=1; shift;;
@@ -122,7 +123,7 @@ verbose_source() {
   compgen -A function | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
 
-  msg="*** While sourcing $FILENAME"
+  local msg="*** While sourcing $FILENAME"
   if ! cmp --quiet "$TEMP"/{before,after}-V
   then
     [ -n "$msg" ] && echo "$msg"

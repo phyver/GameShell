@@ -15,7 +15,7 @@ trap "_gash_exit TERM" SIGTERM
 
 # log an action to the missions.log file
 _log_action() {
-  local nb action
+  local nb action D S
   nb=$1
   action=$2
   D="$(date +%s)"
@@ -26,7 +26,7 @@ _log_action() {
 
 # get the last started mission
 _get_current_mission() {
-  n="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GASH_DATA/missions.log")"
+  local n="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GASH_DATA/missions.log")"
   if [ -z "$n" ]
   then
     echo "$GASH_DEBUG"
@@ -284,10 +284,8 @@ _gash_check() {
 
   local MISSION_DIR="$(_get_mission_dir "$nb")"
 
-  if [ -f "$MISSION_DIR/check.sh" ]
+  if ! [ -f "$MISSION_DIR/check.sh" ]
   then
-    check_prg="$MISSION_DIR/check.sh"
-  else
     echo "$(eval_gettext "Error: mission \$nb doesn't have a check script.")" >&2
     return 1
   fi
@@ -299,7 +297,7 @@ _gash_check() {
     echo
   else
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    verbose_source "$check_prg"
+    verbose_source "$MISSION_DIR/check.sh"
     local exit_status=$?
     export TEXTDOMAIN="gash"
     unset -f check
