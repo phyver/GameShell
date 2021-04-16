@@ -53,10 +53,3 @@ msgstr "maze generation:"
 #: init.sh:35 auto.sh:7 check.sh:7
 msgid "silver_coin"
 msgstr "silver_coin"
-
-#~ msgid "coin"
-#~ msgstr "coin"
-
-#, fuzzy
-#~ msgid "silver"
-#~ msgstr "silver_coin"

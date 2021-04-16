@@ -1,0 +1,21 @@
+Objectif
+========
+
+retrouver la pièce d'argent dans le (petit) labyrinthe 
+et la déplacer dans votre coffre
+
+Commandes utilisées
+===================
+
+  ls -R
+    pour afficher la liste des fichiers, y compris dans 
+    les sous-répertoires
+
+  tree
+    pour afficher l'arborescence des fichiers et 
+    répertoires depuis le répertoire courant
+    remarque : la commande "tree" n'est pas toujours 
+    installée par défaut.
+    L'option "-C" permet d'obtenir un affichage en
+    couleurs.
+
