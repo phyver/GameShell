@@ -1,31 +1,42 @@
 #!/bin/bash
 
-# TODO : revoir le check : si on ajoute des fichiers dans la cabane pendant la
-# mission, ça va planter...
+IN_ENTRANCE=$(CANONICAL_PATH "$(eval_gettext "\$GASH_TMP/in_entrance")")
+CASTLE_ENTRANCE=$(CANONICAL_PATH "$(eval_gettext "\$GASH_HOME/Castle/Entrance")")
+GASH_HUT=$(CANONICAL_PATH "$(eval_gettext "\$GASH_HOME/Forest/Hut")")
+HAY=$(gettext "hay")
+GRAVEL=$(gettext "gravel")
+DETRITUS=$(gettext "detritus")
+ORNEMENT=$(gettext "ornement")
 
 check () {
 
-    if ! diff -q "$GASH_TMP/dans_entree" <(command ls "$GASH_HOME/Chateau/Entree" | sort) > /dev/null
+    if ! diff -q "$IN_ENTRANCE" <(command ls "$CASTLE_ENTRANCE" | sort) > /dev/null
     then
-        echo "Vous avez changé le contenu de l'entrée !"
+        echo "$(gettext "You have changed the contents of the entrance!")"
         return 1
     fi
 
-    if [ -z "$GASH_CABANE" ]
+    if [ ! -d "$GASH_HUT" ]
     then
-        echo "Où est la cabane ???"
+        echo "$(gettext "Where is the hut???")"
         return 1
     fi
 
-    if command ls "$GASH_CABANE" | grep -Eq "_foin|_gravas|_detritus"
+    if [ -z "$GASH_HUT" ]
     then
-        echo "Je ne voulais que les ornements de l'entrée !"
+        echo "$(gettext "Where is the hut???")"
         return 1
     fi
 
-    if ! diff -q <(grep "_ornement" "$GASH_TMP/dans_entree") <(command ls "$GASH_CABANE" | sort | grep "_ornement") > /dev/null
+    if command ls "$GASH_HUT" | grep -Eq "_${HAY}|_${GRAVEL}|_${DETRITUS}"
     then
-        echo "Je voulais tous les ornements de l'entrée !"
+        echo "$(gettext "I wanted only the ornements of the entrance!")"
+        return 1
+    fi
+
+    if ! diff -q <(grep "_${ORNEMENT}" "$IN_ENTRANCE") <(command ls "$GASH_HUT" | sort | grep "_${ornement}") > /dev/null
+    then
+        echo "$(gettext "I wanted all the entrance ornements!")"
         return 1
     fi
 
@@ -33,14 +44,15 @@ check () {
 
 if check
 then
-    unset -f check
-    rm -f "$GASH_TMP/dans_entree"
+    rm -f "$IN_ENTRANCE"
+    unset -f check IN_ENTRANCE CASTLE_ENTRANCE GASH_HUT HAY GRAVEL DETRITUS ORNEMENT
     true
 else
-    rm -f "$GASH_TMP/dans_entree"
-    find "$GASH_HOME/Chateau/Entree/" \( -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" \) -print0 | xargs -0 rm -f
-    find "$GASH_CABANE" \( -name "*ornement" -o -name "*detritus" -o -name "*gravas" -o -name "*foin" \) -print0 | xargs -0 rm -f
-    unset -f check
+    rm -f "$IN_ENTRANCE"
+    find "$CASTLE_ENTRANCE" \( -name "*${ORNEMENT}" -o -name "*${DETRITUS}" -o -name "*${GRAVEL}" -o -name "*${HAY}" \) -print0 | xargs -0 rm -f
+    mkdir -p "$GASH_HUT"
+    find "$GASH_HUT" \( -name "*${ORNEMENT}" -o -name "*${DETRITUS}" -o -name "*${GRAVEL}" -o -name "*${HAY}" \) -print0 | xargs -0 rm -f
+    unset -f check IN_ENTRANCE CASTLE_ENTRANCE GASH_HUT HAY GRAVEL DETRITUS ORNEMENT
     false
 fi
 
