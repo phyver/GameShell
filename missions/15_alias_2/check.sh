@@ -1,45 +1,44 @@
 #!/bin/bash
 
-_local_check() {
+local cmd f
+cmd=$(alias $(gettext "journal") 2> /dev/null | cut -f2 -d"=" | tr -d "'")
+if [ -z "$cmd" ]
+then
+    local _alias=$(gettext "journal")
+    echo "$(eval_gettext "No alias '\$_alias' has been found...")"
+    return 1
+fi
 
-    local cmd f
-    cmd=$(alias journal 2> /dev/null | cut -f2 -d"=" | tr -d "'")
-    if [ -z "$cmd" ]
-    then
-        echo "L'alias 'journal' n'existe pas..."
-        return 1
-    fi
-
-    case "$cmd" in
-        *nano*)
-            # "cd /" permet d'éviter de valider si les étudiants ont utilisé
-            # alias journal="nano journal.txt" et que le gash check est fait
-            # depuis le coffre
-            local f
-            # f="$(cd / ; eval $(echo "$cmd" | sed 's/nano/$CANONICAL_PATH/'))"
-            f="$(cd / ; eval "${cmd//nano/CANONICAL_PATH}")"
-            if [ "$f" = "$(CANONICAL_PATH "$GASH_COFFRE/journal.txt")" ]
-            then
-                return 0
-            else
-                # echo "Votre alias utilise le fichier '~${f#$HOME}' qui n'est pas correct."
-                # f="$(echo "$cmd" | sed 's/ *nano *//')"
-                f="${cmd// *nano */}"
-                echo "Votre alias semble ne pas utiliser le bon fichier ($f)."
-                echo "Vérifiez que vous donnez un chemin absolu..."
-                unalias journal
-                find "$GASH_HOME" -iname "*journal*" -print0 | xargs -0 rm -rf
-                return 1
-            fi
-
-            ;;
-        *)
-            echo "Votre alias n'utilise pas la commande nano !"
-            unalias journal
-            find "$GASH_HOME" -iname "*journal*" -print 0 | xargs -0 rm -rf
+case "$cmd" in
+    *nano*)
+        # "cd /" permet d'éviter de valider si les étudiants ont utilisé
+        # alias journal="nano journal.txt" et que le gash check est fait
+        # depuis le coffre
+        local f
+        # f="$(cd / ; eval $(echo "$cmd" | sed 's/nano/$CANONICAL_PATH/'))"
+        f="$(cd / ; eval "${cmd//nano/CANONICAL_PATH}")"
+        if [ "$f" = "$(CANONICAL_PATH "$GASH_CHEST/$(gettext "journal").txt")" ]
+        then
+            unset f
+            return 0
+        else
+            # echo "Votre alias utilise le fichier '~${f#$HOME}' qui n'est pas correct."
+            # f="$(echo "$cmd" | sed 's/ *nano *//')"
+            f="${cmd// *nano */}"
+            echo "$(eval_gettext "It seems you alias doesn't refer to the appropriate file (\$f).
+Make sure to use an absolute path...")"
+            unalias $(gettext "journal")
+            find "$GASH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -rf
+            unset f
             return 1
-            ;;
-    esac
-}
+        fi
 
-_local_check
+        ;;
+    *)
+        echo "$(gettext "Your alias doesn't use the command 'nano'...")"
+        unalias $(gettext "journal")
+        find "$GASH_HOME" -iname "*$(gettext "journal")*" -print 0 | xargs -0 rm -rf
+        unset f
+        return 1
+        ;;
+esac
