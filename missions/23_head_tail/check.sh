@@ -8,12 +8,12 @@ _local_check() {
     pc=$(fc -nl -2 -2 | grep '|')
 
     local goal
-    goal=$(CANONICAL_PATH "$(eval_gettext '$GASH_HOME/Montain/Cavern')")
+    goal=$(CANONICAL_PATH "$(eval_gettext '$GASH_HOME/Montain/Cave')")
     local current
     current=$(CANONICAL_PATH "$PWD")
 
     local expected
-    expected=$(head -n 11 "$(eval_gettext '$GASH_HOME/Montain/Cavern')/$(gettext "potion_recipe")" | tail -n 3)
+    expected=$(head -n 11 "$(eval_gettext '$GASH_HOME/Montain/Cave')/$(gettext "potion_recipe")" | tail -n 3)
     local res
     res=$(eval "$pc")
 
