@@ -8,7 +8,11 @@ msgstr ""
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/fr.txt"
 
-#: auto.sh:1 check.sh:3 init.sh:1 init.sh:2
+# path for the text file containing the goal
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+#: auto.sh:1 check.sh:3 init.sh:1 init.sh:2 static.sh:1
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Chateau/Cave"
