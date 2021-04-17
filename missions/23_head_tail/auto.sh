@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "$(eval_gettext '$GASH_HOME/Montain/Cavern')"
+cd "$(eval_gettext '$GASH_HOME/Montain/Cave')"
 
 # les commandes ne sont pas dans l'historique, il faut les y ajouter à la main !
 history -s "head -n 11 \"$(gettext "potion_recipe")\" | tail -n 3"
