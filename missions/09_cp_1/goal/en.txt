@@ -1,0 +1,13 @@
+Mission goal
+============
+
+I like the four standards in the entrance of the castle.
+However, stealing them would not go unnoticed. I'd like
+a copy of each in my cabin.
+
+
+Useful commands
+===============
+
+cp FILE1 FILE2 ... FILEn DIRECTORY
+  copies all the files in another directory

@@ -1,11 +1,12 @@
-#!/bin/bash
-
-# fichier lu par le shell à chaque démarrage de la mission
+ENTRANCE="$(eval_gettext "\$GASH_HOME/Castle/Entrance")"
 
 D=$(date +%s)
-for i in $(seq 4)
+
+for I in $(seq 4)
 do
-    S=$(checksum "etendard_$i#$D")
-    echo "etendard_$i#$D $S" > "$GASH_HOME/Chateau/Entree/etendard_$i"
+  F="$(gettext "standard")_${I}"
+  S=$(checksum "${F}#${D}")
+  echo "${F}#${D} ${S}" > "${ENTRANCE}/${F}"
 done
-unset D i S
+
+unset ENTRANCE D I F S

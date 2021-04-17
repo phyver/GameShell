@@ -1,2 +1,3 @@
-cp ~/Chateau/Entree/etendard_? ~/Foret/Cabane/
+cp "$(eval_gettext "\$GASH_HOME/Castle/Entrance")"/$(gettext "standard")_? \
+  "$(eval_gettext "\$GASH_HOME/Forest/Cabin")"
 gash check

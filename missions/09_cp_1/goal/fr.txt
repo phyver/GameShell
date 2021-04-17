@@ -9,5 +9,5 @@ voudrais une copie de chaque dans ma cabane.
 Commandes utilisées
 ===================
 
-  cp FICHIER1 FICHIER2 ... FICHIERn DOSSIER
-    copie les fichiers dans un autre dossier
+cp FICHIER1 FICHIER2 ... FICHIERn DOSSIER
+  copie les fichiers dans un autre dossier
