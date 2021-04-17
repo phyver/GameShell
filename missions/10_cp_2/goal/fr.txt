@@ -7,29 +7,29 @@ je ne peux pas les retirer d'ici. Je voudrais une copie
 de ces ornements dans ma cabane.
 
 
-Rappel de commandes
-===================
+Rappel
+======
 
-  <*>
-  <?>
+<*>
+<?>
 
-    le caractère "*" est un "joker" pour n'importe 
-    quelle chaine de caractères
+  le caractère "*" est un "joker" pour n'importe 
+  quelle chaine de caractères
 
-    le caractère "?" est un "joker" pour n'importe 
-    caractère
+  le caractère "?" est un "joker" pour n'importe 
+  caractère
 
-    dans un nom de fichier, ils sont remplacés 
-    automatiquement par la liste de tous les fichiers 
-    correspondant
+  dans un nom de fichier, ils sont remplacés 
+  automatiquement par la liste de tous les fichiers 
+  correspondant
 
-    par exemple, si le répertoire contient
-        Fichier-1 Dossier-1 fichier-14 lustucru
-    alors
-      *     -->  Fichier-1 Dossier-1 fichier-14 
-                 lustucru
-      *1    -->  Fichier-1 Dossier-1
-      *s*   -->  Dossier-1 lustucru
-      x*    -->  erreur, aucun fichier ne correspond
-      *-?   -->  Fichier-1 Dossier-1
-      *-??  -->  fichier-14
+  par exemple, si le répertoire contient
+      Fichier-1 Dossier-1 fichier-14 lustucru
+  alors
+    *     -->  Fichier-1 Dossier-1 fichier-14 
+               lustucru
+    *1    -->  Fichier-1 Dossier-1
+    *s*   -->  Dossier-1 lustucru
+    x*    -->  erreur, aucun fichier ne correspond
+    *-?   -->  Fichier-1 Dossier-1
+    *-??  -->  fichier-14
