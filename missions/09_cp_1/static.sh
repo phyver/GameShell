@@ -1,6 +1,2 @@
-#!/bin/bash
-
-# script lancé au démarrage du jeu pour créer la partie statique de la mission
-
-mkdir -p "$GASH_HOME/Chateau/Entree"
-
+mkdir -p "$(eval_gettext "\$GASH_HOME/Forest/Cabin")"
+mkdir -p "$(eval_gettext "\$GASH_HOME/Castle/Entrance")"

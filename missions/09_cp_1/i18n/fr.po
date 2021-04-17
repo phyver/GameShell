@@ -1,0 +1,53 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+#: auto.sh:1 check.sh:1 init.sh:1 static.sh:2
+#, sh-format
+msgid "$GASH_HOME/Castle/Entrance"
+msgstr "$GASH_HOME/Chateau/Entrée"
+
+#: auto.sh:1 check.sh:7 check.sh:65 init.sh:7
+msgid "standard"
+msgstr "étendard"
+
+#: auto.sh:2 check.sh:2 static.sh:1
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin"
+msgstr "$GASH_HOME/Forêt/Cabane"
+
+#: check.sh:12
+#, sh-format
+msgid "The standard $I is not in the cabin."
+msgstr "L'étendard $I n'est pas dans la cabane."
+
+#: check.sh:19
+#, sh-format
+msgid "The standard $I disapeared form the entrance."
+msgstr "L'étendard $I a disparu de l'entrée."
+
+#: check.sh:27
+#, sh-format
+msgid "The standard $I in the cabin is not right."
+msgstr "L'étendard $I de la cabane n'est pas correct."
+
+#: check.sh:35
+#, sh-format
+msgid "The standard $I in the entrance is not right."
+msgstr "L'étendard $I de l'entrée n'est pas correct."
+
+#: check.sh:43
+#, sh-format
+msgid "The standard $I in the cabin is invalid."
+msgstr "L'étendard $I de la cabane est invalide."
+
+#: check.sh:51
+#, sh-format
+msgid "The standard $I in the entrance is invalid."
+msgstr "L'étendard $I de l'entrée est invalide."
