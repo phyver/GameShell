@@ -2,7 +2,7 @@
 
 _local_check() {
 
-    local cmd
+    local cmd f
     cmd=$(alias journal 2> /dev/null | cut -f2 -d"=" | tr -d "'")
     if [ -z "$cmd" ]
     then
