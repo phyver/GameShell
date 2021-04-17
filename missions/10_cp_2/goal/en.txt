@@ -1,31 +1,31 @@
 Mission goal
-========
+============
 
-By the way, I think that all these ornements in the 
-castle entrance would very much suit my hut. Likewise,
-I cannot remove them from here. I would like a copy of
-these ornements in my hut.
+By the way, I think that the ornaments in the castle's
+entrance would very much suit my cabin. Likewise, I
+cannot just remove them for here. I would like to have
+a copy of these ornaments in my cabin.
 
 Reminder
-===================
+========
 
-  <*>
-  <?>
+<*>
+<?>
 
-    the "*" character is a wildcard for any string 
-    of character
+  the "*" character is a wildcard for any string 
+  of character
 
-    the "? character is a wildcard for any character
+  the "? character is a wildcard for any character
 
-    in a file name, they are automatically replaced
-    by the list of all matching files
+  in a file name, they are automatically replaced
+  by the list of all matching files
 
-    for instance, if the folder contains
-        File-1 Folder-1 file-14 potato
-    then
-      *     -->  File-1 Folder-1 file-14 potato
-      *1    -->  File-1 Folder-1
-      *o*   -->  Folder-1 potato
-      x*    -->  error, no matching file
-      *-?   -->  File-1 Folder-1
-      *-??  -->  file-14
+  for instance, if the folder contains
+      File-1 Folder-1 file-14 potato
+  then
+    *     -->  File-1 Folder-1 file-14 potato
+    *1    -->  File-1 Folder-1
+    *o*   -->  Folder-1 potato
+    x*    -->  error, no matching file
+    *-?   -->  File-1 Folder-1
+    *-??  -->  file-14

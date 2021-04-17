@@ -1,3 +1,3 @@
-cp $(CANONICAL_PATH "$(eval_gettext "\$GASH_HOME/Castle/Entrance")")/*_$(gettext "ornement") $(CANONICAL_PATH "$(eval_gettext "\$GASH_HOME/Forest/Hut")")
-
+cp "$(eval_gettext "\$GASH_HOME/Castle/Entrance")"/*_$(gettext "ornament") \
+  "$(eval_gettext "\$GASH_HOME/Forest/Cabin")"
 gash check
