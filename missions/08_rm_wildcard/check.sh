@@ -1,19 +1,16 @@
-#!/bin/bash
+BURROW="$(eval_gettext "\$GASH_HOME/Castle/Cellar")/.$(gettext "Burrow")"
 
-S1=$(command ls "$GASH_HOME/Chateau/Cave/.Terrier" | checksum)
-S2=$(cat "$GASH_TMP/chats")
-
+S1=$(command ls "$BURROW" | checksum)
+S2=$(cat "$GASH_TMP/cats")
 
 if [ "$S1" = "$S2" ]
 then
-    rm -f "$GASH_TMP/chats"
-    unset S1 S2
-    true
+  rm -f "$GASH_TMP/cats"
+  unset BURROW S1 S2
+  true
 else
-    rm -f "$GASH_TMP/chats"
-    rm -f "$GASH/Chateau/Cave/.Terrier/"*
-    unset S1 S2
-    false
+  rm -f "$GASH_TMP/cats"
+  rm -f "$BURROW"/*
+  unset BURROW S1 S2
+  false
 fi
-
-

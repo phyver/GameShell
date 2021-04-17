@@ -1,24 +1,21 @@
-#!/bin/bash
-
-# fichier lu par le shell à chaque démarrage de la mission
-
-mkdir -p "$GASH_HOME/Chateau/Cave/.Terrier"
-terrier=$GASH_HOME/Chateau/Cave/.Terrier""
+BURROW="$(eval_gettext "\$GASH_HOME/Castle/Cellar")/.$(gettext "Burrow")"
+mkdir -p "$BURROW"
 
 D=$(date +%s)
 
-for i in $(seq -w 10)
+for I in $(seq -w 10)
 do
-    S=$(checksum "chat_$i#$D")
-    touch "$terrier/${S}_CHAT"
+  S=$(checksum "$(gettext "cat")_${I}#${D}")
+  touch "${BURROW}/${S}_$(gettext "CAT")"
 done
 
-for i in $(seq -w 100)
+for I in $(seq -w 100)
 do
-    S=$(checksum "rat_$i#$D")
-    touch "$terrier/${S}_rat"
+  S=$(checksum "$(gettext "rat")_${I}#${D}")
+  touch "${BURROW}/${S}_$(gettext "rat")"
 done
 
-command ls "$terrier" | grep ".*CHAT$" | sort | sha1sum | cut -c 1-40 > "$GASH_TMP/chats"
+command ls "$BURROW" | grep ".*$(gettext "CAT")$" | sort | sha1sum | \
+  cut -c 1-40 > "$GASH_TMP/cats"
 
-unset terrier D S i
+unset BURROW D I S
