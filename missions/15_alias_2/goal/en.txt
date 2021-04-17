@@ -10,7 +10,7 @@ Details
 
 To edit the journal file from the cellar, or the throne 
 room with `nano`, you need to give the full path to the 
-file: "!/Forest/...../journal.txt"
+file: "~/Forest/...../journal.txt"
 
 To avoid typing this long command each time, you can 
 create an alias like with
