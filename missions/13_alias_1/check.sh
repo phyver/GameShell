@@ -1,29 +1,31 @@
 #!/bin/bash
 
 _local_check() {
-
-    local cmd
-    cmd=$(alias la 2> /dev/null | cut -f2 -d"=" | tr -d "' ")
+    local cmd=$(alias la 2> /dev/null | cut -f2 -d"=" | tr -d "' ")
     if [ -z "$cmd" ]
     then
-        echo "L'alias 'la' n'existe pas..."
+        echo "$(gettext "The alias 'la' doesn't exist...")"
         return 1
-    fi
-
-    if ! la &> /dev/null
+    elif ! la &> /dev/null
     then
-        echo "L'alias 'la' est invalide..."
-        return 1
-    fi
-
-    if [ "$cmd" != 'ls-A' ]
-    then
-        echo "L'alias ne lance pas la bonne commande (\"ls -A\")."
+        echo "$(gettext "The alias 'la' is invalid...")"
         unalias la
         return 1
+    elif [ "$cmd" != 'ls-A' ]
+    then
+        echo "$(gettext "The alias 'la' doesn't run 'ls -A'...")"
+        unalias la
+        return 1
+    else
+        return 0
     fi
-
-    return 0
 }
 
-_local_check
+if _local_check
+then
+    unset -f _local_check
+    true
+else
+    unset -f _local_check
+    false
+fi

@@ -28,5 +28,5 @@ Useful commands
     (If the file doesn't exist, it will be created.)
 
   alias NAME='CMD'
-    NAME is a (small) string that will be replaced by 
+    NAME is a (short) string that will be replaced by 
     the (longuer) string CMD
