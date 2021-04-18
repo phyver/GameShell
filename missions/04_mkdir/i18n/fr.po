@@ -11,7 +11,7 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 #: auto.sh:1 check.sh:3 static.sh:1
 #, sh-format
 msgid "$GASH_HOME/Forest"
-msgstr "$GASH_HOME/Forêt"
+msgstr "$GASH_HOME/Foret"
 
 #: auto.sh:1 check.sh:7 check.sh:21 check.sh:29 check.sh:82
 msgid "Cabin"
