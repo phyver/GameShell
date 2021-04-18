@@ -72,7 +72,8 @@ msgid "The command 'gash reset' is useless when run inside a subshell!"
 msgstr "The command 'gash reset' is useless when run inside a subshell!"
 
 #: lib/gameshell.sh:111 lib/gameshell.sh:163 lib/gameshell.sh:223
-#: lib/gameshell.sh:247 lib/gameshell.sh:281 lib/gameshell.sh:379
+#: lib/gameshell.sh:247 lib/gameshell.sh:281 lib/gameshell.sh:377
+#: lib/gameshell.sh:435
 #, sh-format
 msgid "Problem: couldn't get mission number '$nb' ($fn_name)"
 msgstr "Problem: couldn't get mission number '$nb' ($fn_name)"
@@ -124,30 +125,42 @@ msgstr "Mission $nb has been cancelled."
 msgid "Mission $nb doesn't have an auto script."
 msgstr "Mission $nb doesn't have an auto script."
 
-#: lib/gameshell.sh:291
+#: lib/gameshell.sh:289
 #, sh-format
 msgid "Error: mission $nb doesn't have a check script."
 msgstr "Error: mission $nb doesn't have a check script."
 
-#: lib/gameshell.sh:298
+#: lib/gameshell.sh:296
 #, sh-format
 msgid "Mission $nb has already been succesfully checked!"
 msgstr "Mission $nb has already been succesfully checked!"
 
-#: lib/gameshell.sh:311
+#: lib/gameshell.sh:309
 #, sh-format
 msgid "Mission $nb has been successfully completed!"
 msgstr "Mission $nb has been successfully completed!"
 
-#: lib/gameshell.sh:342
+#: lib/gameshell.sh:340
 #, sh-format
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: lib/gameshell.sh:363
+#: lib/gameshell.sh:361
 #, sh-format
 msgid "Mission $nb hasn't been completed."
 msgstr "Mission $nb hasn't been completed."
+
+# help file
+#: lib/gameshell.sh:408 lib/gameshell.sh:454
+#, sh-format
+msgid "$GASH_BASE/i18n/gameshell-help/en.txt"
+msgstr "$GASH_BASE/i18n/gameshell-help/en.txt"
+
+# help file
+#: lib/gameshell.sh:412 lib/gameshell.sh:458
+#, sh-format
+msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
+msgstr "$GASH_BASE/i18n/gameshell-HELP/en.txt"
 
 #: lib/os_aliases.sh:20
 #, sh-format
@@ -161,3 +174,25 @@ msgstr ""
 "GameShell will use 'gnu-linux', without guarantee.\n"
 "Please report this as a bug.\n"
 "Press Enter to continue."
+
+#: lib/gameshell.sh:396
+#, sh-format
+msgid "Problem: _gash_assert_check only accept 'true' and 'false' as second argument"
+msgstr "Problem: _gash_assert_check only accept 'true' and 'false' as second argument"
+
+#: lib/gameshell.sh:412 lib/gameshell.sh:417
+msgid "test failed"
+msgstr "test failed"
+
+#: lib/gameshell.sh:414 lib/gameshell.sh:419
+msgid "Press Enter"
+msgstr "Press Enter"
+
+#: lib/gameshell.sh:421
+msgid "test successful"
+msgstr "test successful"
+
+#: lib/gameshell.sh:443
+#, fuzzy, sh-format
+msgid "Error: mission $nb doesn't have a test script."
+msgstr "Error: mission $nb doesn't have a check script."

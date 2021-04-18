@@ -6,7 +6,7 @@ all: $(LANG)
 $(LANG):%.po: i18n/template.pot
 	msgmerge --update --no-wrap $@ i18n/template.pot
 
-i18n/template.pot: *.sh
+i18n/template.pot:  start.sh bin/archive.sh lib/gameshell.sh lib/utils.sh lib/os_aliases.sh
 	mkdir -p i18n/
 	touch i18n/template.pot
 	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template.pot start.sh bin/archive.sh lib/gameshell.sh lib/utils.sh lib/os_aliases.sh

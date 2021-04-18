@@ -388,12 +388,88 @@ _gash_clean() {
   fi
 }
 
+_gash_assert_check() {
+  local nb=$1
+  local expected=$2
+  if [ "$expected" != "true" ] && [ "$expected" != "false" ]
+  then
+    echo "$(eval_gettext "Problem: _gash_assert_check only accept 'true' and 'false' as second argument")" >&2
+    return 1
+  fi
+  local msg=$3
+
+  nb="$(_get_mission_nb "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$nb")"
+
+  export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+  verbose_source "$MISSION_DIR/check.sh"
+  local exit_status=$?
+  export TEXTDOMAIN="gash"
+  unset -f check
+
+  _NB_TESTS=$((_NB_TESTS + 1))
+  if [ "$expected" = "true" ] && [ "$exit_status" -ne 0 ]
+  then
+    _NB_ERRORS=$((_NB_ERRORS + 1))
+    color_echo red "$(eval_gettext 'test $_NB_TESTS failed') (expected 'true')"
+    [ -n "$msg" ] && echo "$msg"
+  elif [ "$expected" = "false" ] && [ "$exit_status" -eq 0 ]
+  then
+    _NB_ERRORS=$((_NB_ERRORS + 1))
+    color_echo red "$(eval_gettext 'test $_NB_TESTS failed') (expected 'false')"
+    [ -n "$msg" ] && echo "$msg"
+  fi
+
+  _gash_clean "$nb"
+  _gash_start "$nb" > /dev/null
+  # FIXME add an argument to _gash_start to allow "quiet" start
+}
+[ -z "$GASH_DEBUG" ] && unset -f _gash_assert_check
+
+_gash_test() {
+  local nb=$1
+
+  nb="$(_get_mission_nb "$nb")"
+  if [ -z "$nb" ]
+  then
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
+    return 1
+  fi
+
+  local MISSION_DIR="$(_get_mission_dir "$nb")"
+
+  if ! [ -f "$MISSION_DIR/test.sh" ]
+  then
+    echo "$(eval_gettext "Error: mission \$nb doesn't have a test script.")" >&2
+    return 1
+  fi
+
+  export _NB_TESTS=0
+  export _NB_ERRORS=0
+  export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+  verbose_source "$MISSION_DIR/test.sh"
+  export TEXTDOMAIN="gash"
+  if [ "$_NB_ERRORS" = 0 ]
+  then
+    echo
+    color_echo green "$_NB_TESTS successful tests"
+    echo
+  else
+    echo
+    color_echo red "$_NB_ERRORS errors out of $_NB_TESTS tests"
+    echo
+  fi
+  unset _NB_TESTS _NB_ERRORS
+}
+[ -z "$GASH_DEBUG" ] && unset -f _gash_test
+
 _gash_help() {
-  parchment "$GASH_LIB"/help.txt
+  parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-help/en.txt')" Parchment2
 }
 
 _gash_HELP() {
-  parchment "$GASH_LIB"/HELP.txt
+  parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-HELP/en.txt')" Parchment2
 }
 
 
@@ -492,14 +568,6 @@ EOH
     "auto")
       _gash_auto "$nb"
       ;;
-    "clean")
-      if ! admin_mode
-      then
-        echo "$(gettext "wrong password")" >&2
-      else
-        _gash_clean "$nb"
-      fi
-      ;;
     "goto")
       if [ -z "$2" ]
       then
@@ -515,6 +583,25 @@ EOH
 
       _gash_clean "$nb"
       _gash_start "$2"
+      ;;
+    "test")
+      if [ -z "$GASH_DEBUG" ]
+      then
+        local cmd=$1
+        echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
+      else
+        _gash_test "$nb"
+      fi
+      ;;
+    "assert_check")
+      if [ -z "$GASH_DEBUG" ]
+      then
+        local cmd=$1
+        echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
+      else
+        shift
+        _gash_assert_check "$nb" "$@"
+      fi
       ;;
     *)
       echo "$(eval_gettext "unkwnown command: \$cmd")" >&2
