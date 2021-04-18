@@ -19,7 +19,7 @@ _local_check() {
 
     if [ "$goal" != "$current" ]
     then
-        echo "$(gettext "You are not standing in the cavern with the ermit!")"
+        echo "$(gettext "You are not standing in the cave with the ermit!")"
         return 1
     fi
     if [ -z "$pc" ]

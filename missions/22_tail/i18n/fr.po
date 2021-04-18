@@ -22,8 +22,8 @@ msgid "potion_ingredients"
 msgstr "ingredients_potion"
 
 #: check.sh:22
-msgid "You are not standing in the cavern with the ermit!"
-msgstr "Vous n'êtes pas dans la caverne avec l'ermite !"
+msgid "You are not standing in the cave with the ermit!"
+msgstr "Vous n'êtes pas dans la grotte avec l'ermite !"
 
 #: check.sh:27
 msgid "You haven't used the 'tail' command!"

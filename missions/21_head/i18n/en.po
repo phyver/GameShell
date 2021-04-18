@@ -22,8 +22,8 @@ msgid "potion_ingredients"
 msgstr "potion_ingredients"
 
 #: check.sh:22
-msgid "You are not standing in the cavern with the ermit!"
-msgstr "You are not standing in the cavern with the ermit!"
+msgid "You are not standing in the cave with the ermit!"
+msgstr "You are not standing in the cave with the ermit!"
 
 #: check.sh:27
 msgid "You haven't used the 'head' command!"
