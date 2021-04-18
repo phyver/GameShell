@@ -1,7 +1,9 @@
+#!/bin/bash
+
 ENTRANCE="$(eval_gettext "\$GASH_HOME/Castle/Entrance")"
 CABIN="$(eval_gettext "\$GASH_HOME/Forest/Cabin")"
 
-check() {
+_local_check() {
   for I in $(seq 4)
   do
     local F="$(gettext "standard")_${I}"
@@ -56,14 +58,14 @@ check() {
   return 0
 }
 
-if check
+if _local_check
 then
-  unset -f check
+  unset -f _local_check
   unset ENTRANCE CABIN
   true
 else
   find "$GASH_HOME" -name "$(gettext "standard")_?" -type f -print0 | xargs -0 rm -f
-  unset -f check
+  unset -f _local_check
   unset ENTRANCE CABIN
   false
 fi
