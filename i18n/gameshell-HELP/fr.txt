@@ -1,0 +1,47 @@
+Commandes propres a GameShell
+=============================
+
+  gash assert_check true/false [msg]
+    vérifie si l'objectif de la mission enc cours 
+    est atteint
+    si le résultat ne correspond pas au résultat 
+    attendu, affiche un message d'erreur
+
+  gash auto    (ADMIN)
+    lance le script automatique de la mission en 
+    cours, s'il existe.
+
+  gash check
+    vérifie que l'objectif de la mission en cours 
+    est atteint
+
+  gash exit
+    quitte la partie en cours
+    (vous pouvez reprendre à la mission en cours 
+    en lançant le script stast.sh avec l'option -C)
+
+  gash goto N (ADMIN)
+    passe directement à la mission N
+
+  gash HELP
+    affiche ce message
+
+  gash help
+    affiche un petit message d'aide
+
+  gash pass    (ADMIN)
+    abandonne la mission en cours et passe à la suivante
+
+  gash reset
+    ré-initialise la mission en cours
+
+  gash save
+    génère une archive pour pouvoir relance 
+    GameShell à partir de la mission en cours
+
+  gash show
+    affiche l'objectif de la mission en cours
+
+  gash test
+    lance le script de test de la mission en cours, 
+    s'il existe

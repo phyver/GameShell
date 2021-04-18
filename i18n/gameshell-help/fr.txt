@@ -1,0 +1,22 @@
+Commandes propres a GameShell
+=============================
+
+  gash check
+    vérifie que l'objectif de la mission en cours 
+    est atteint
+
+  gash exit
+    quitte la partie en cours
+
+  gash help
+    affiche ce message
+
+  gash reset
+    ré-initialise la mission en cours
+
+  gash save
+    génère une archive pour pouvoir relance 
+    GameShell à partir de la mission en cours
+
+  gash show
+    affiche l'objectif de la mission en cours
