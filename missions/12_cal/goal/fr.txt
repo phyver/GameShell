@@ -1,7 +1,7 @@
 Objectif
 ========
 
-trouver le jour de la semaine pour le 13-03-1979
+Trouvez le jour de la semaine pour le $DD-$MM-$YYYY.
 
 Lorsque vous le connaissez, lancez la commande
   $ gash check

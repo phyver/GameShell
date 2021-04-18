@@ -1,16 +1,19 @@
 #!/bin/bash
 
+YYYY=$(cut -d"-" -f1 "$GASH_TMP"/date)
+MM=$(cut -d"-" -f2 "$GASH_TMP"/date)
+DD=$(cut -d"-" -f3 "$GASH_TMP"/date)
+
 while true
 do
-    echo "Quel était le jour de la semaine pour le $DD-$MM-$YYYY ?"
+    echo "$(eval_gettext 'What was the day of the week for the $MM-$DD-$YYYY?')"
 
     for i in $(seq 7)
     do
         echo -n "  $i : "
         date --date="2000-05-$i" +%A
     done
-    echo -n "Réponse : "
-    read -re n
+    read -erp "$(gettext "Your answer: ")" n
 
     case "$n" in
         *[!0-9]) ;;
@@ -27,10 +30,10 @@ t=$(date --date="$YYYY-$MM-$DD" +%A)
 
 if [ "$t" = "$s" ]
 then
-    unset t s DD MM YYYY
+    unset t s DD MM YYYY i n
     true
 else
-    unset t s DD MM YYYY
+    unset t s DD MM YYYY i n
     false
 fi
 
