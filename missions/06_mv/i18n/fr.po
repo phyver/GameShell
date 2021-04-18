@@ -20,7 +20,7 @@ msgstr "pièce"
 #: auto.sh:2 check.sh:4 static.sh:2
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin/Chest"
-msgstr "$GASH_HOME/Forêt/Cabane/Coffre"
+msgstr "$GASH_HOME/Foret/Cabane/Coffre"
 
 #: check.sh:14
 #, sh-format

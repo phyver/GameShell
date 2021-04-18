@@ -20,7 +20,7 @@ msgstr "ornement"
 #: auto.sh:2 check.sh:2 static.sh:1
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin"
-msgstr "$GASH_HOME/Forêt/Cabane"
+msgstr "$GASH_HOME/Foret/Cabane"
 
 #: check.sh:7
 msgid "Where is the castle's entrance?!"
