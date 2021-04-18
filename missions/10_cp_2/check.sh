@@ -45,17 +45,19 @@ then
 else
   rm -f "$GASH_TMP/entrance_contents"
 
-  mkdir -p "$ENTRANCE" "$CABIN"
 
   find "$ENTRANCE" \( -name "*$(gettext "ornament")" \
                    -o -name "*$(gettext "garbage")" \
                    -o -name "*$(gettext "gravel")" \
                    -o -name "*$(gettext "hay")" \) -print0 | xargs -0 rm -f
 
+  if [ -d "$CABIN" ]
+  then
   find "$CABIN"    \( -name "*$(gettext "ornament")" \
                    -o -name "*$(gettext "garbage")" \
                    -o -name "*$(gettext "gravel")" \
                    -o -name "*$(gettext "hay")" \) -print0 | xargs -0 rm -f
+  fi
 
   unset -f check
   unset ENTRANCE CABIN
