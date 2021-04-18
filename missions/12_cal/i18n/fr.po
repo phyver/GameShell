@@ -1,0 +1,24 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+#: goal.sh:7 goal.sh:8
+#, sh-format
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#: check.sh:9
+#, sh-format
+msgid "What was the day of the week for the $MM-$DD-$YYYY?"
+msgstr "Quel était le jours de la semaine pour le $DD-$MM-$YYYY ?"
+
+#: check.sh:16
+msgid "Your answer: "
+msgstr "Votre réponse : "
