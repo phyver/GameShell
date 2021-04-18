@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-The old ermit is brewing a potion in the Cave.
+The old ermit is brewing a potion in the cave.
 You need to find him and show him the first 4 items 
 in the list of ingredients.
 

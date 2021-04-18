@@ -22,8 +22,8 @@ msgid "potion_recipe"
 msgstr "recette_potion"
 
 #: check.sh:23
-msgid "You are not standing in the cavern with the ermit!"
-msgstr "Vous n'êtes pas dans la caverne avec l'ermite !"
+msgid "You are not standing in the cave with the ermit!"
+msgstr "Vous n'êtes pas dans la grotte avec l'ermite !"
 
 #: check.sh:28
 msgid "You haven't used the operator '|'!"
