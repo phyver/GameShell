@@ -411,12 +411,12 @@ _gash_assert_check() {
   if [ "$expected" = "true" ] && [ "$exit_status" -ne 0 ]
   then
     _NB_ERRORS=$((_NB_ERRORS + 1))
-    color_echo red "$(eval_gettext 'test $_NB_TESTS failed') (expected 'true')"
+    color_echo red "$(eval_gettext 'test $_NB_TESTS failed') (expected check 'true')"
     [ -n "$msg" ] && echo "$msg"
   elif [ "$expected" = "false" ] && [ "$exit_status" -eq 0 ]
   then
     _NB_ERRORS=$((_NB_ERRORS + 1))
-    color_echo red "$(eval_gettext 'test $_NB_TESTS failed') (expected 'false')"
+    color_echo red "$(eval_gettext 'test $_NB_TESTS failed') (expected check 'false')"
     [ -n "$msg" ] && echo "$msg"
   fi
 
@@ -425,6 +425,29 @@ _gash_assert_check() {
   # FIXME add an argument to _gash_start to allow "quiet" start
 }
 [ -z "$GASH_DEBUG" ] && unset -f _gash_assert_check
+
+_gash_assert() {
+
+  if [ "$2" = "check" ]
+  then
+    local nb="$1"
+    shift 2
+    _gash_assert_check "$nb" "$@"
+    return
+  fi
+
+  local condition=$2
+  local msg=$3
+
+  _NB_TESTS=$((_NB_TESTS + 1))
+  if ! eval "$condition"
+  then
+    _NB_ERRORS=$((_NB_ERRORS + 1))
+    color_echo red "$(eval_gettext 'test $_NB_TESTS failed') (expected condition 'true')"
+    [ -n "$msg" ] && echo "$msg"
+  fi
+}
+[ -z "$GASH_DEBUG" ] && unset -f _gash_assert
 
 _gash_test() {
   local nb=$1
@@ -601,6 +624,16 @@ EOH
       else
         shift
         _gash_assert_check "$nb" "$@"
+      fi
+      ;;
+    "assert")
+      if [ -z "$GASH_DEBUG" ]
+      then
+        local cmd=$1
+        echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
+      else
+        shift
+        _gash_assert "$nb" "$@"
       fi
       ;;
     *)
