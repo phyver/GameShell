@@ -186,9 +186,7 @@ _gash_start() {
     # je sauvegarde l'environnement avant / après l'initialisation pour
     # afficher un message dans ce cas
     [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_TMP"/env-before
-    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     verbose_source "$MISSION_DIR/init.sh"
-    export TEXTDOMAIN="gash"
     [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_TMP"/env-after
 
     if [ "$BASHPID" != $$ ]
@@ -262,9 +260,7 @@ _gash_auto() {
     return 1
   fi
 
-  export TEXTDOMAIN="$(basename "$MISSION_DIR")"
   verbose_source "$MISSION_DIR/auto.sh"
-  export TEXTDOMAIN="gash"
   _log_action "$nb" "AUTO"
   return 0
 }
@@ -296,12 +292,8 @@ _gash_check() {
     color_echo yellow "$(eval_gettext "Mission \$nb has already been succesfully checked!")"
     echo
   else
-    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     verbose_source "$MISSION_DIR/check.sh"
     local exit_status=$?
-    export TEXTDOMAIN="gash"
-    unset -f check
-    # compare environment before / after?
 
     if [ "$exit_status" -eq 0 ]
     then
@@ -319,7 +311,7 @@ _gash_check() {
       if [ -f "$MISSION_DIR/treasure.sh" ]
       then
         # Record the treasure to be loaded by GameShell's bashrc.
-        cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /)-treasure.sh"
+        cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).treasure.sh"
 
         # Display the text message (if it exists).
         if [ -f "$MISSION_DIR/treasure-msg.txt" ]
@@ -343,9 +335,7 @@ _gash_check() {
         fi
 
         # Load the treasure in the current shell.
-        export TEXTDOMAIN="$(basename "$MISSION_DIR")"
         verbose_source "$MISSION_DIR/treasure.sh"
-        export TEXTDOMAIN="gash"
 
         #sourcing the file isn't very robust as the "gash check" may happen in a subshell!
         if [ "$BASHPID" != $$ ]
@@ -382,9 +372,7 @@ _gash_clean() {
 
   if [ -f "$MISSION_DIR/clean.sh" ]
   then
-    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     verbose_source "$MISSION_DIR/clean.sh"
-    export TEXTDOMAIN="gash"
   fi
 }
 
@@ -401,11 +389,8 @@ _gash_assert_check() {
   nb="$(_get_mission_nb "$nb")"
   local MISSION_DIR="$(_get_mission_dir "$nb")"
 
-  export TEXTDOMAIN="$(basename "$MISSION_DIR")"
   verbose_source "$MISSION_DIR/check.sh"
   local exit_status=$?
-  export TEXTDOMAIN="gash"
-  unset -f check
 
   _NB_TESTS=$((_NB_TESTS + 1))
   if [ "$expected" = "true" ] && [ "$exit_status" -ne 0 ]
@@ -470,9 +455,7 @@ _gash_test() {
 
   export _NB_TESTS=0
   export _NB_ERRORS=0
-  export TEXTDOMAIN="$(basename "$MISSION_DIR")"
   verbose_source "$MISSION_DIR/test.sh"
-  export TEXTDOMAIN="gash"
   if [ "$_NB_ERRORS" = 0 ]
   then
     echo

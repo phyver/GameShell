@@ -32,11 +32,21 @@ doas() {
     echo "gash: doas: command not found" >&2
 }
 
-for f in "$GASH_CONFIG"/*.sh
+for f in "$GASH_CONFIG"/*.bashrc.sh
 do
     # shellcheck source=/dev/null
-    [ -f "$f" ] && source "$f"
+    export MISSION_DIR=$(basename "$f")
+    MISSION_DIR=${MISSION_DIR%.bashrc.sh}
+    verbose_source "$f"
 done
-unset f
+
+for f in "$GASH_CONFIG"/*.treasure.sh
+do
+    # shellcheck source=/dev/null
+    export MISSION_DIR=$(basename "$f")
+    MISSION_DIR=${MISSION_DIR%.treasure.sh}
+    verbose_source "$f"
+done
+unset f MISSION_DIR
 
 _gash_start
