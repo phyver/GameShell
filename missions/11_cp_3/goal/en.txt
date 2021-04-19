@@ -1,0 +1,16 @@
+Mission goal
+============
+
+While wandering around the first floor of the dungeon, 
+I stopped in front of some magnificent paintings. I am 
+myself fond of fine art.
+I would like to get a copy (same name, same content) of 
+the oldest painting.
+
+
+Useful commands
+===============
+
+  ls -l
+    print the list of files, with many additional 
+    information, including last modification date

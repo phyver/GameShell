@@ -1,5 +1,9 @@
-mv ~/Chateau/Donjon/Premier_etage/tableau ~/Foret/Cabane/Coffre/
-cp  ~/Foret/Cabane/Coffre/tableau ~/Chateau/Donjon/Premier_etage/
+mkdir -p "$GASH_CHEST"
+
+filename=$(head -n1 "$GASH_TMP/painting")
+
+cp "$(eval_gettext '$GASH_HOME/Castle/Dungeon/First_floor')/$filename" "$GASH_CHEST"
+
 gash check
 
-# ou cp -a ~/Chateau/Donjon/Premier_etage/tableau ~/Foret/Cabane/Coffre/
+unset filename

@@ -1,7 +1,7 @@
 #: auto.sh:1 check.sh:5 static.sh:3
 #, sh-format
 msgid "$GASH_HOME/Castle/Dungeon/First_floor/Second_floor/Top_of_the_dungeon"
-msgstr "$GASH_HOME/Chateau/Donjon/Premier_étage/Deuxième_étage/Haut_du_donjon"
+msgstr "$GASH_HOME/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_du_donjon"
 
 #: check.sh:13
 msgid "You are not at the top of the dungeon!"
