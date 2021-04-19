@@ -36,48 +36,10 @@ _get_current_mission() {
 }
 
 
-# get next mission number
-_get_next_mission() {
-  local nb=$1
-  [ -z "$nb" ] && nb="0"
-
-  while true
-  do
-    nb=$((10#$nb + 1))
-    if [ -n "$(_get_mission_nb $nb)" ]
-    then
-      break
-    fi
-  done
-  echo "$nb"
-}
-
-
-# get the complete mission number by appending leading '0's
-_get_mission_nb() {
-  local nb=000000$1
-  while [ -n "$nb" ]
-  do
-    # hackish, but faster than using find
-    # shellcheck disable=SC2144
-    [ -d "$GASH_MISSIONS"/"${nb}"_* ] && break
-    nb="${nb:1}"
-  done
-  if [ -n "$nb" ]
-  then
-    echo "$nb"
-    return 0
-  else
-    return 1
-  fi
-}
-
-
 # get the mission directory
 _get_mission_dir() {
-  local nb=$1
-  # shellcheck disable=SC2144
-  [ -d "$GASH_MISSIONS"/"${nb}"_* ] && echo "$GASH_MISSIONS"/"${nb}"_*
+  local n=$1
+  awk -v n="$n" -v DIR="$GASH_MISSIONS" '(NR == n) {print DIR "/" $0; exit}' "$GASH_DATA/index.txt"
 }
 
 # reset the bash configuration
@@ -113,7 +75,6 @@ _gash_show() {
     shift
   fi
 
-  nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
     local fn_name="${FUNCNAME[0]}"
@@ -164,7 +125,6 @@ _gash_start() {
   fi
 
   [ -z "$nb" ] && nb=1
-  nb="$(_get_mission_nb $nb)"
 
   if [ -z "$nb" ]
   then
@@ -239,15 +199,13 @@ _gash_pass() {
   _gash_clean "$nb"
   color_echo yellow "$(eval_gettext 'Mission $nb has been cancelled.')" >&2
 
-  nb=$(_get_next_mission "$nb")
-  _gash_start "$nb"
+  _gash_start $((10#$nb + 1))
 }
 
 # applies auto.sh script, if it exists
 _gash_auto() {
   local nb="$(_get_current_mission)"
 
-  nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
     local fn_name="${FUNCNAME[0]}"
@@ -279,7 +237,6 @@ _gash_auto() {
 _gash_check() {
   local nb="$(_get_current_mission)"
 
-  nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
     local fn_name="${FUNCNAME[0]}"
@@ -313,9 +270,6 @@ _gash_check() {
       _log_action "$nb" "CHECK_OK"
 
       _gash_clean "$nb"
-
-      # récupération de la mission suivante
-      nb=$(_get_next_mission "$nb")
 
       if [ -f "$MISSION_DIR/treasure.sh" ]
       then
@@ -354,7 +308,7 @@ You are advised to use the command
     $ gash reset")"
         fi
       fi
-      _gash_start "$nb"
+      _gash_start $((10#$nb + 1))
     else
       echo
       color_echo red "$(eval_gettext "Mission \$nb hasn't been completed.")"
@@ -371,7 +325,6 @@ You are advised to use the command
 _gash_clean() {
   local nb="$(_get_current_mission)"
 
-  nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
     local fn_name="${FUNCNAME[0]}"
@@ -389,7 +342,6 @@ _gash_clean() {
 
 _gash_assert_check() {
   local nb="$(_get_current_mission)"
-  nb="$(_get_mission_nb "$nb")"
 
   local expected=$1
   if [ "$expected" != "true" ] && [ "$expected" != "false" ]
@@ -399,7 +351,6 @@ _gash_assert_check() {
   fi
   local msg=$3
 
-  nb="$(_get_mission_nb "$nb")"
   local MISSION_DIR="$(_get_mission_dir "$nb")"
 
   verbose_source "$MISSION_DIR/check.sh"
@@ -446,7 +397,6 @@ _gash_assert() {
 
 _gash_test() {
   local nb="$(_get_current_mission)"
-  nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
     local fn_name="${FUNCNAME[0]}"

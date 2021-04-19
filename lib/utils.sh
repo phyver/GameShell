@@ -153,4 +153,12 @@ verbose_source() {
   rm -rf "$TEMP"
   return $exit_status
 }
+
+
+# generate an index of missions
+# TODO
+make_index() {
+  ls "$GASH_MISSIONS" | grep "^[0-9]*_" | sort -n
+}
+
 # vim: shiftwidth=2 tabstop=2 softtabstop=2
