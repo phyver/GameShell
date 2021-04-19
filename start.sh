@@ -16,6 +16,7 @@ export GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/)
 export TEXTDOMAINDIR="$GASH_BASE/locale"
 export TEXTDOMAIN="gash"
 
+# generate GameShell translation files for gettext
 for PO_FILE in "$GASH_BASE"/i18n/*.po; do
   PO_LANG=$(basename "$PO_FILE" .po)
   mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
@@ -25,6 +26,7 @@ done
 source $GASH_BASE/lib/utils.sh
 
 cd "$GASH_BASE"
+
 
 display_help() {
   cat "$(eval_gettext "\$GASH_BASE/i18n/start-help/en.txt")"
@@ -73,35 +75,23 @@ do
 done
 
 
-local_passport() {
+_passport() {
   local PASSPORT=$1
   local NB
-  while true
+  NOM=""
+  while [ -z "$NOM" ]
   do
-    read -erp "Combien de membres dans le groupe ? (1) " NB
-    case "$NB" in
-      "" )          NB=1; break             ;;
-      *[!0-9]* )    echo $(gettext "invalid number") ;;
-      *[1-9]*)      break                   ;;
-      *)            echo $(gettext "invalid number")  ;;
-    esac
+    read -erp "$(gettext "Player's name: ")" NOM
   done
-  for I in $(seq "$NB"); do
-    NOM=""
-    while [ -z "$NOM" ]
-    do
-      read -erp "Membre $I, nom complet : " NOM
-    done
-    EMAIL=""
-    while [ -z "$EMAIL" ]
-    do
-      read -erp "Membre $I, email : " EMAIL
-    done
-    echo "  $NOM <$EMAIL>" >> "$PASSPORT"
+  EMAIL=""
+  while [ -z "$EMAIL" ]
+  do
+    read -erp "$(gettext "Player's email: ")" NOM
   done
+  echo "  $NOM <$EMAIL>" >> "$PASSPORT"
 }
 
-confirm_passport() {
+_confirm_passport() {
   local PASSPORT=$1
   echo "======================================================="
   cat "$PASSPORT"
@@ -114,20 +104,21 @@ confirm_passport() {
 
 
 init_gash() {
-  # dossiers d'installation
 
-  # ces répertoires ne doivent pas être modifiés (statiques)
+  # these directories should not be modified during a game
   export GASH_LIB="$GASH_BASE/lib"
   export GASH_MISSIONS="$GASH_BASE/missions"
   export GASH_BIN="$GASH_BASE/bin"
 
-  # ces répertoires doivent être effacés en cas de réinitialisation du jeu
+  # these directories should be erased when a new game is started, they only contain
+  # dynamic data
   export GASH_HOME="$GASH_BASE/World"
   export GASH_DATA="$GASH_BASE/.session_data"
   export GASH_TMP="$GASH_BASE/.tmp"
   export GASH_CONFIG="$GASH_BASE/.config"
   export GASH_LOCAL_BIN="$GASH_BASE/.bin"
 
+  # message when a new game is started from the developpment directory
   if [ -e "$GASH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
   then
     read -erp "$(gettext "You are trying to run GameShell inside the developpment directory.
@@ -135,6 +126,9 @@ Do you want to continue? [y/N] ")" x
     [ "$x" != "$(gettext "y")" ] && [ "$x" != "$(gettext "Y")" ] && exit 1
   fi
 
+  # message when data from a previous play is found. We can either
+  #    - restart a new game
+  #    - continue the previous game
   if [ -e "$GASH_DATA" ]
   then
     if [ -z "$RESET" ]
@@ -152,12 +146,16 @@ Do you want to continue this game? [Y/n]')" x
     fi
   fi
 
+  ### if we're here, we need to reset a new game
+
+  # remove all the game data
   rm -rf "$GASH_HOME"
   rm -rf "$GASH_DATA"
   rm -rf "$GASH_TMP"
   rm -rf "$GASH_CONFIG"
   rm -rf "$GASH_LOCAL_BIN"
 
+  # recreate them
   mkdir -p "$GASH_HOME"
 
   mkdir -p "$GASH_DATA"
@@ -167,13 +165,14 @@ Do you want to continue this game? [Y/n]')" x
   cp "$GASH_LIB/bashrc" "$GASH_CONFIG"
   # save current locale
   locale | sed "s/^/export /" > "$GASH_CONFIG"/locale.sh
+  # TODO save other config (MODE)
 
   mkdir -p "$GASH_LOCAL_BIN"
 
   mkdir -p "$GASH_TMP"
 
 
-  # Configuration pour la génération de la fiche étudiant.
+  # id of player
   PASSPORT="$GASH_DATA/passport.txt"
 
   while true
@@ -181,19 +180,19 @@ Do you want to continue this game? [Y/n]')" x
     # Lecture du login des étudiants.
     case "$MODE" in
       DEBUG)
-        echo "DISCOVERY MODE" >> "$PASSPORT"
+        echo "DEBUG MODE" >> "$PASSPORT"
         break
         ;;
       PASSPORT)
-        local_passport "$PASSPORT"
+        _passport "$PASSPORT"
         ;;
       *)
         echo "$(eval_gettext 'unknown mode: $MODE')" >&2
         ;;
     esac
 
-    # Confirmation des informations
-    if confirm_passport "$PASSPORT"
+    # check information is correct
+    if _confirm_passport "$PASSPORT"
     then
       break
     else
@@ -237,6 +236,7 @@ Do you want to continue this game? [Y/n]')" x
     # Setting up the binaries
     if [ -d "$MISSION_DIR/bin" ]
     then
+      shopt -s nullglob
       for BIN_FILE in "$MISSION_DIR"/bin/*; do
         BIN_NAME=$(basename "$BIN_FILE")
         cat > "$GASH_LOCAL_BIN/$BIN_NAME" <<EOH
@@ -246,8 +246,10 @@ $BIN_FILE "\$@"
 EOH
         chmod +x "$GASH_LOCAL_BIN/$BIN_NAME"
       done
+      shopt -u nullglob
     fi
 
+    # source the static part of the mission
     if [ -f "$MISSION_DIR/static.sh" ]
     then
       export TEXTDOMAIN="$DOMAIN"
@@ -256,6 +258,7 @@ EOH
       export TEXTDOMAIN="gash"
     fi
 
+    # copy all the shell config files of the mission
     if [ -f "$MISSION_DIR/bashrc" ]
     then
       cp "$MISSION_DIR/bashrc" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).bashrc.sh"
