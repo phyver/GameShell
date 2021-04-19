@@ -2,50 +2,44 @@
 
 _local_check() {
 
-    local tableau
-    tableau=$(find "$GASH_MISSIONS" -name "tableau" -type f)
+    local filename="$(head -n1 "$GASH_TMP/painting")"
+    local s="$(tail -n1 "$GASH_TMP/painting")"
 
-    # _local_check that file exists in "coffre"
-    if [ ! -f "$GASH_COFFRE/tableau" ]
+    if ! [ -d "$GASH_CHEST" ]
     then
-        echo "Il n'y a pas de tableau dans le coffre !"
+        echo "$(eval_gettext "You don't have a chest (\$GASH_CHEST).
+Make one first.")"
         return 1
     fi
 
-    # _local_check that file still exists in "Premier_etage"
-    if [ ! -f "$GASH_HOME/Chateau/Donjon/Premier_etage/tableau" ]
+    local n=$(find "$GASH_CHEST" -name "$(gettext "painting")_*" | wc -l)
+    if [ "$n" -eq 0 ]
     then
-        echo "Il n'y a plus de tableau au premier étage du donjon !"
+        echo "$(gettext "There is no painting in your chest...")"
+        return 1
+    elif [ "$n" -gt 1 ]
+    then
+        echo "$(gettext "There are too many paintings in your chest...")"
         return 1
     fi
 
-    # _local_check that the files are the same
-    if ! diff -q "$tableau" "$GASH_HOME/Chateau/Donjon/Premier_etage/tableau"
+    if [ ! -f "$(eval_gettext '$GASH_HOME/Castle/Dungeon/First_floor')/$filename" ]
     then
-        echo "Les deux tableaux sont différents !"
-        return 1
-    fi
-    if ! diff -q "$tableau" "$GASH_COFFRE/tableau" >/dev/null
-    then
-        echo "Les deux tableaux sont différents du tableau original !"
+        echo "$(gettext "The painting is not in the dungeon anymore...")"
         return 1
     fi
 
-    # _local_check that the date of the tableau in the "coffre" is fine
-    local D1
-    D1=$(GET_MTIME "$GASH_COFFRE/tableau" | sha1sum | cut -c 1-40)
-    local D2
-    D2=$(cat "$GASH_TMP/date_tableau")
-
-    if [ "$D1" != "$D2" ]
+    if [ ! -f "$GASH_CHEST/$filename" ]
     then
-        echo "Le tableau du donjon est toujours l'original !"
+        echo "$(gettext "The painting is not in your chest...")"
         return 1
     fi
 
-    rm -f "$GASH_TMP/date_tableau"
-
-    return 0
+    if [ "$s" != "$(checksum < "$GASH_CHEST/$filename")" ]
+    then
+        echo "$(gettext "The painting in your chest is invalid...")"
+        return 1
+    fi
 }
 
 
@@ -55,7 +49,7 @@ then
     true
 else
     unset -f _local_check
-    find "$GASH_HOME" -iname "tableau" -print0 | xargs -0 rm -rf
+    find "$GASH_HOME" -iname "$(gettext "painting")_*" -print0 | xargs -0 rm -rf
     false
 fi
 

@@ -1,0 +1,45 @@
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+#: check.sh:10
+#, sh-format
+msgid ""
+"You don't have a chest ($GASH_CHEST).\n"
+"Make one first."
+msgstr ""
+"You don't have a chest ($GASH_CHEST).\n"
+"Make one first."
+
+#: check.sh:15 check.sh:52 init.sh:5 init.sh:17 init.sh:21
+msgid "painting"
+msgstr "painting"
+
+#: check.sh:18
+msgid "There is no painting in your chest..."
+msgstr "There is no painting in your chest..."
+
+#: check.sh:22
+msgid "There are too many paintings in your chest..."
+msgstr "There are too many paintings in your chest..."
+
+#: check.sh:26 init.sh:5 init.sh:17 init.sh:21
+#, sh-format
+msgid "$GASH_HOME/Castle/Dungeon/First_floor"
+msgstr "$GASH_HOME/Castle/Dungeon/First_floor"
+
+#: check.sh:28
+msgid "The painting is not in the dungeon anymore..."
+msgstr "The painting is not in the dungeon anymore..."
+
+#: check.sh:34
+msgid "The painting is not in your chest..."
+msgstr "The painting is not in your chest..."
+
+#: check.sh:40
+msgid "The painting in your chest is invalid..."
+msgstr "The painting in your chest is invalid..."
