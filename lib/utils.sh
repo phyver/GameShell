@@ -100,30 +100,33 @@ verbose_source() {
   # if we are not running in DEBUG mode, just source the file
   if [ -z "$GASH_DEBUG" ]
   then
+    local old_TEXTDOMAIN=$TEXTDOMAIN
+    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$FILENAME"
-    return $?
-  fi
-
-  if [ -e "$GASH_TMP/before-V" ]
-  then
-    echo "***** OUPS, verbose_source was probably called recursively on $FILENAME"
-    read -p "Press Enter"
+    local exit_status=$?
+    export TEXTDOMAIN=$old_TEXTDOMAIN
+    return $exit_status
   fi
 
   local TEMP=$(mktemp -d "$GASH_TMP/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
+  local old_TEXTDOMAIN=""
+  local exit_status=""
   # otherwise, record the environment (variables, functions and aliases)
   # before and after to echo a message when there are differences
   compgen -v | sort > "$TEMP"/before-V
   compgen -A function | sort > "$TEMP"/before-F
   compgen -a | sort > "$TEMP"/before-A
+  old_TEXTDOMAIN=$TEXTDOMAIN
+  export TEXTDOMAIN="$(basename "$MISSION_DIR")"
   source "$FILENAME"
-  source_ret_value=$?
+  exit_status=$?
+  export TEXTDOMAIN=$old_TEXTDOMAIN
   compgen -v | sort > "$TEMP"/after-V
   compgen -A function | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
 
-  local msg="*** While sourcing $FILENAME"
+  local msg="DEBUG: while sourcing $FILENAME, the following changes in the environment have been observed"
   if ! cmp --quiet "$TEMP"/{before,after}-V
   then
     [ -n "$msg" ] && echo "$msg"
@@ -148,6 +151,6 @@ verbose_source() {
     comm -3 "$TEMP"/{before,after}-A
   fi
   rm -rf "$TEMP"
-  return "$source_ret_value"
+  return $exit_status
 }
 # vim: shiftwidth=2 tabstop=2 softtabstop=2

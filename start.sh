@@ -258,7 +258,7 @@ EOH
 
     if [ -f "$MISSION_DIR/bashrc" ]
     then
-      cp "$MISSION_DIR/bashrc" "$GASH_CONFIG/$(basename "$MISSION_DIR" /)-bashrc.sh"
+      cp "$MISSION_DIR/bashrc" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).bashrc.sh"
     fi
     printf "."
   done
