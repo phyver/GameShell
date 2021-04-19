@@ -213,10 +213,13 @@ Do you want to continue this game? [Y/n]')" x
   clear
   echo "$(gettext "======== Initialisation of GameShell ========")"
 
+  make_index > "$GASH_DATA/index.txt"
 
-  # Installation des missions.
-  for MISSION_DIR in "$GASH_BASE"/missions/[0-9]*; do
+  # Installing all missions.
+  cat $GASH_DATA/index.txt | while read MISSION_DIR
+  do
     export MISSION_DIR
+    MISSION_DIR=$GASH_MISSIONS/$MISSION_DIR
 
     # To be used as TEXTDOMAIN environment variable for the mission.
     export DOMAIN=$(basename "$MISSION_DIR")
