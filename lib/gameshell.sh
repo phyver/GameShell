@@ -104,7 +104,16 @@ _gash_exit() {
 
 # display the goal of a mission given by its number
 _gash_show() {
-  local nb="$(_get_mission_nb "$1")"
+  local nb
+  if [ "$#" -eq 0 ]
+  then
+    nb="$(_get_current_mission)"
+  else
+    nb="$1"
+    shift
+  fi
+
+  nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
     local fn_name="${FUNCNAME[0]}"
@@ -236,7 +245,7 @@ _gash_pass() {
 
 # applies auto.sh script, if it exists
 _gash_auto() {
-  local nb=$1
+  local nb="$(_get_current_mission)"
 
   nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
@@ -268,7 +277,7 @@ _gash_auto() {
 
 # check completion of a mission given by its number
 _gash_check() {
-  local nb=$1
+  local nb="$(_get_current_mission)"
 
   nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
@@ -360,7 +369,9 @@ You are advised to use the command
 }
 
 _gash_clean() {
-  local nb="$(_get_mission_nb "$1")"
+  local nb="$(_get_current_mission)"
+
+  nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
     local fn_name="${FUNCNAME[0]}"
@@ -377,11 +388,13 @@ _gash_clean() {
 }
 
 _gash_assert_check() {
-  local nb=$1
-  local expected=$2
+  local nb="$(_get_current_mission)"
+  nb="$(_get_mission_nb "$nb")"
+
+  local expected=$1
   if [ "$expected" != "true" ] && [ "$expected" != "false" ]
   then
-    echo "$(eval_gettext "Problem: _gash_assert_check only accept 'true' and 'false' as second argument")" >&2
+    echo "$(eval_gettext "Problem: _gash_assert_check only accept 'true' and 'false' as argument")" >&2
     return 1
   fi
   local msg=$3
@@ -412,17 +425,14 @@ _gash_assert_check() {
 [ -z "$GASH_DEBUG" ] && unset -f _gash_assert_check
 
 _gash_assert() {
-
-  if [ "$2" = "check" ]
+  local condition=$1
+  if [ "$condition" = "check" ]
   then
-    local nb="$1"
-    shift 2
-    _gash_assert_check "$nb" "$@"
+    shift
+    _gash_assert_check "$@"
     return
   fi
-
-  local condition=$2
-  local msg=$3
+  local msg=$2
 
   _NB_TESTS=$((_NB_TESTS + 1))
   if ! eval "$condition"
@@ -435,8 +445,7 @@ _gash_assert() {
 [ -z "$GASH_DEBUG" ] && unset -f _gash_assert
 
 _gash_test() {
-  local nb=$1
-
+  local nb="$(_get_current_mission)"
   nb="$(_get_mission_nb "$nb")"
   if [ -z "$nb" ]
   then
@@ -529,6 +538,7 @@ EOM
 
 gash() {
   local cmd=$1
+  shift
   if [ -z "$cmd" ]
   then
     cat <<EOH
@@ -537,11 +547,9 @@ commandes possibles : help, show, check, reset, save
 EOH
   fi
 
-  local nb="$(_get_current_mission)"
-
   case $cmd in
     "c" | "ch" | "che" | "chec" | "check")
-      _gash_check "$nb"
+      _gash_check
       ;;
     "h" | "he" | "hel" | "help")
       _gash_help
@@ -550,14 +558,14 @@ EOH
       _gash_HELP
       ;;
     "r" | "re" | "res" | "rese" | "reset")
-      _gash_clean "$nb"
+      _gash_clean
       _gash_reset
       ;;
     "sa" | "sav" | "save")
       _gash_save
       ;;
     "sh" | "sho" | "show")
-      _gash_show "$nb"
+      _gash_show "$@"
       ;;
     "stat")
       awk -v GASH_UID="$GASH_UID" -f "$GASH_BIN/stat.awk" < "$GASH_DATA/missions.log"
@@ -572,10 +580,10 @@ EOH
         _gash_pass
       ;;
     "auto")
-      _gash_auto "$nb"
+      _gash_auto
       ;;
     "goto")
-      if [ -z "$2" ]
+      if [ -z "$1" ]
       then
         echo "$(gettext "command 'goto' requires a mission number as argument")" >&2
         return 1
@@ -587,36 +595,31 @@ EOH
         return 1
       fi
 
-      _gash_clean "$nb"
-      _gash_start "$2"
+      _gash_clean
+      _gash_start "$@"
       ;;
     "test")
       if [ -z "$GASH_DEBUG" ]
       then
-        local cmd=$1
         echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
       else
-        _gash_test "$nb"
+        _gash_test
       fi
       ;;
     "assert_check")
       if [ -z "$GASH_DEBUG" ]
       then
-        local cmd=$1
         echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
       else
-        shift
-        _gash_assert_check "$nb" "$@"
+        _gash_assert_check "$@"
       fi
       ;;
     "assert")
       if [ -z "$GASH_DEBUG" ]
       then
-        local cmd=$1
         echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
       else
-        shift
-        _gash_assert "$nb" "$@"
+        _gash_assert "$@"
       fi
       ;;
     *)

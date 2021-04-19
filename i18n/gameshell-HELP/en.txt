@@ -1,6 +1,10 @@
 Commands specific to GameShell
 ==============================
 
+  gash assert condition [msg]
+    check if the condition is true
+    if not, display an error message
+
   gash assert_check true/false [msg]
     check the current mission's goal has been 
     achieved
@@ -40,8 +44,9 @@ Commands specific to GameShell
     generate an archive suitable to start GameShell 
     from the current mission
 
-  gash show
+  gash show [N]
     show the current mission's goal
+    if N is given, show the goal for mission N
 
   gash test
     run the curent mission's test script, if it exitsts

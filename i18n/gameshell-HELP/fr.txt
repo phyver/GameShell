@@ -1,6 +1,10 @@
 Commandes propres a GameShell
 =============================
 
+  gash assert condition [msg]
+    vérifie si la condition est vrai
+    sinon, affiche un message d'erreur
+
   gash assert_check true/false [msg]
     vérifie si l'objectif de la mission enc cours 
     est atteint
@@ -39,8 +43,9 @@ Commandes propres a GameShell
     génère une archive pour pouvoir relance 
     GameShell à partir de la mission en cours
 
-  gash show
+  gash show [N]
     affiche l'objectif de la mission en cours
+    si N est donné, affiche l'objectif de la mission N
 
   gash test
     lance le script de test de la mission en cours, 
