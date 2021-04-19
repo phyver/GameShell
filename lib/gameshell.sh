@@ -134,6 +134,14 @@ _gash_start() {
   fi
 
   local MISSION_DIR="$(_get_mission_dir "$nb")"
+  if [ -z "$MISSION_DIR" ]
+  then
+    color_echo red "$(eval_gettext "Mission \$nb doesn't exist!
+Aborting...")"
+    echo
+    read -erp "$(gettext "Press Enter")"
+    exit 1
+  fi
 
   ### tester le fichier deps.sh
   if [ -f "$MISSION_DIR/deps.sh" ]

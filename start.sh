@@ -73,6 +73,7 @@ do
       ;;
   esac
 done
+shift $((OPTIND - 1))
 
 
 _passport() {
@@ -165,7 +166,7 @@ Do you want to continue this game? [Y/n]')" x
   cp "$GASH_LIB/bashrc" "$GASH_CONFIG"
   # save current locale
   locale | sed "s/^/export /" > "$GASH_CONFIG"/locale.sh
-  # TODO save other config (MODE)
+  # TODO save other config (MODE?)
 
   mkdir -p "$GASH_LOCAL_BIN"
 
@@ -213,7 +214,7 @@ Do you want to continue this game? [Y/n]')" x
   clear
   echo "$(gettext "======== Initialisation of GameShell ========")"
 
-  make_index > "$GASH_DATA/index.txt"
+  make_index "$@" 2> /dev/null | sed "s;$GASH_MISSIONS;.;" > "$GASH_DATA/index.txt"
 
   # Installing all missions.
   cat $GASH_DATA/index.txt | while read MISSION_DIR
@@ -282,7 +283,7 @@ start_gash() {
 
 
 #######################################################################
-init_gash
+init_gash "$@"
 start_gash
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2
