@@ -5,10 +5,9 @@ Les souris n'en peuvent plus, un générateur de chats a
 été installé dans la cave !
 
 Trouver et tuer le générateur de chats, avant de 
-supprimer tous les chats. Attention, les chats sont 
-peut-être cachés.
+supprimer tous les chats cachés dans la cave.
 
-Remarque : le générateur de chat est un processus, 
+NOTE : le générateur de chat est un processus, 
 alors que les chats sont des fichiers...
 
 
@@ -16,7 +15,7 @@ Commandes utilisées
 ===================
 
   ps
-    pour afficher la liste des processus utilisés
+    affiche la liste des processus lancés par le shell
 
   kill N
     tue le processus dont le numéro ("PID") est N
