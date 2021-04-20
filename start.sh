@@ -246,7 +246,7 @@ Do you want to continue this game? [Y/n]')" x
         cat > "$GASH_LOCAL_BIN/$BIN_NAME" <<EOH
 #!/bin/bash
 export TEXTDOMAIN="$DOMAIN"
-$BIN_FILE "\$@"
+exec $BIN_FILE "\$@"
 EOH
         chmod +x "$GASH_LOCAL_BIN/$BIN_NAME"
       done
