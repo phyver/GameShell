@@ -248,16 +248,17 @@ new_makefile() {
 # TODO: generate new po file from template with msgen
 
 LANG=$(wildcard i18n/*.po)
+SH_FILES=$(wildcard *.sh)
 
 all: $(LANG)
 
 $(LANG):%.po: i18n/template.pot
 	msgmerge --update --no-wrap $@ i18n/template.pot
 
-i18n/template.pot: *.sh
+i18n/template.pot: $(SH_FILES)
 	mkdir -p i18n/
 	touch i18n/template.pot
-	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template.pot *.sh
+	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template.pot $(SH_FILES)
 	msgen --no-wrap --output i18n/template.pot i18n/template.pot
 
 new: i18n/template.pot
