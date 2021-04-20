@@ -1,14 +1,23 @@
 #!/bin/bash
 
-export NATURE=fromage
+source gettext.sh
 
-"$GASH_LOCAL_BIN"/chat.sh &
-disown
-"$GASH_LOCAL_BIN"/chat.sh &
-disown
-"$GASH_LOCAL_BIN"/chat.sh &
-disown
+if [ -x /usr/bin/python3 ]
+then
+    "$GASH_LOCAL_BIN"/generator.py "$(eval_gettext '$GASH_HOME/Castle/Cellar')" "$(gettext "cheese")" &
+    disown
+    "$GASH_LOCAL_BIN"/generator.py  "$(eval_gettext '$GASH_HOME/Castle/Cellar')" "$(gettext "cheese")" &
+    disown
+    "$GASH_LOCAL_BIN"/generator.py  "$(eval_gettext '$GASH_HOME/Castle/Cellar')" "$(gettext "cheese")" &
+    disown
+else
+    "$GASH_LOCAL_BIN"/generator.sh "$(eval_gettext '$GASH_HOME/Castle/Cellar')" "$(gettext "cheese")" &
+    disown
+    "$GASH_LOCAL_BIN"/generator.sh  "$(eval_gettext '$GASH_HOME/Castle/Cellar')" "$(gettext "cheese")" &
+    disown
+    "$GASH_LOCAL_BIN"/generator.sh  "$(eval_gettext '$GASH_HOME/Castle/Cellar')" "$(gettext "cheese")" &
+    disown
+fi
 
-unset NATURE
 trap "" SIGTERM SIGINT
 tail -f /dev/null

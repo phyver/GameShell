@@ -1,0 +1,30 @@
+Mission goal
+============
+
+The mice have found a friend named Felix, whose 
+three children are generating cheese in the cellar.
+
+Unfortunately, Gros-Minet has three children who 
+are generating cats in the cellar.
+
+Kill the children of Gros-Minet, but keep the children 
+of Felix. Then, remove all the cats from the cellar.
+
+NOTE: do not kill Gros-Minet or Felix.
+
+
+Useful commands
+===============
+
+  pstree
+    show the list of processes, with the parent / child 
+    relationship
+
+    usefull options
+      -p : show the processes' PID
+      $$ : only show the children of the current shell
+           ($$ cointains the PID of the current shell, 
+           it can be replaced by any other PID)
+
+  kill N
+    kill the process with number ("PID") N
