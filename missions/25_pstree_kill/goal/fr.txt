@@ -5,16 +5,14 @@ Les souris se sont alliées avec Felix, dont les
 descendants remplissent la cave de fromages.
 
 Malheureusement, Gros-Minet a trois descendants 
-générateurs de chats dans la cave... et le fromage 
-pourrit dans la cave, quel gâchis écologique (et quelle 
-odeur).
+générateurs de chats dans la cave...
 
 Vous devez tuer les descendants de Gros-Minet, mais 
 épargner les descendants de Felix (sinon plus de 
 fromage). Après, il faudra supprimer tous les chats de 
 la cave.
 
-Remarque : il ne faut tuer ni Gros-Minet, ni Felix...
+NOTE : il ne faut tuer ni Gros-Minet, ni Felix...
 
 
 Commandes utilisées
@@ -23,9 +21,13 @@ Commandes utilisées
   pstree
     pour afficher la liste de tous les processus, avec 
     leur lien de parenté
-    L'option "-p" permet de voir les numéros des 
-    processus, et l'option "-p $$" permet de n'afficher 
-    que les sous-processus du shell courant.
+
+    options intéressantes
+      -p : affiche également les PID des processus
+      $$ : affiche seulement les descendant du shell 
+           courant
+           ($$ contient le PID du shell courant et peut 
+           être remplacé par un autre PID)
 
   kill N
-    tue le processus numéro N
+    tue le processus dont le numéro ("PID") est N

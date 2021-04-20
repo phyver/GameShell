@@ -7,9 +7,9 @@ echo -n .
 sleep 1
 echo .
 
-#TODO : il faut aussi vérifier que les fromages sont encore là !!!
-cat=$(find "$GASH_HOME/Chateau/Cave" -name ".*_chat")
-nbp=$(ps ax | grep "chat.sh" | wc -l)
+#TODO : il faudrait aussi vérifier que les fromages sont encore là !!!
+cat=$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name ".*_$(gettext "cat")")
+nbp=$(ps ax | grep "generator" | wc -l)
 
 if [ -z "$cat" ] && [ "$nbp" -eq 4 ]
 then

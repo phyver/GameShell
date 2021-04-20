@@ -1,0 +1,32 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#: auto.sh:3 check.sh:11 static.sh:1 bin/gros_minet.sh:7 bin/gros_minet.sh:9
+#: bin/gros_minet.sh:11 bin/gros_minet.sh:14 bin/gros_minet.sh:16
+#: bin/gros_minet.sh:18 bin/felix.sh:7 bin/felix.sh:9 bin/felix.sh:11
+#: bin/felix.sh:14 bin/felix.sh:16 bin/felix.sh:18
+#, sh-format
+msgid "$GASH_HOME/Castle/Cellar"
+msgstr "$GASH_HOME/Chateau/Cave"
+
+#: auto.sh:3 check.sh:11 bin/gros_minet.sh:7 bin/gros_minet.sh:9
+#: bin/gros_minet.sh:11 bin/gros_minet.sh:14 bin/gros_minet.sh:16
+#: bin/gros_minet.sh:18
+msgid "cat"
+msgstr "chat"
+
+#: bin/felix.sh:7 bin/felix.sh:9 bin/felix.sh:11 bin/felix.sh:14
+#: bin/felix.sh:16 bin/felix.sh:18
+msgid "cheese"
+msgstr "fromage"
