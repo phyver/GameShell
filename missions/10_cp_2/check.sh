@@ -27,7 +27,7 @@ check () {
   fi
 
   if ! diff -q <(grep "_$(gettext "ornament")" "$GASH_TMP/entrance_contents") \
-    <(command ls "$CABIN" | sort | grep "_${ornement}") > /dev/null
+    <(command ls "$CABIN" | sort | grep "_$(gettext "ornament")") > /dev/null
   then
     echo "$(gettext "I wanted all the ornements!")"
     return 1
