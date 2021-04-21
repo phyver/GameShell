@@ -164,9 +164,11 @@ Do you want to continue this game? [Y/n]')" x
 
   mkdir -p "$GASH_CONFIG"
   cp "$GASH_LIB/bashrc" "$GASH_CONFIG"
+
   # save current locale
-  locale | sed "s/^/export /" > "$GASH_CONFIG"/locale.sh
-  # TODO save other config (MODE?)
+  locale | sed "s/^/export /" > "$GASH_CONFIG"/config.sh
+  echo "export GASH_DEBUG=$GASH_DEBUG" >> "$GASH_CONFIG"/config.sh
+  # TODO save other config (color ?)
 
   mkdir -p "$GASH_LOCAL_BIN"
 
