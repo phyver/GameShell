@@ -32,6 +32,8 @@ doas() {
     echo "gash: doas: command not found" >&2
 }
 
+[ -f "$GASH_CONFIG"/config.sh ] && source "$GASH_CONFIG"/config.sh
+
 shopt -s nullglob
 for f in "$GASH_CONFIG"/*.bashrc.sh
 do
