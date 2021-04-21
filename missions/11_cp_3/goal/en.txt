@@ -3,8 +3,14 @@ Mission goal
 
 While wandering around the first floor of the dungeon, I stopped in 
 front of some magnificent paintings. I am myself fond of fine art.
-I would like to get a copy (same name, same content) of the oldest 
-painting.
+Add a copy (same name, same content) of the oldest painting to your 
+chest.
+
+
+Secondary objectives
+--------------------
+
+Take a moment to admire the sheer beauty of the paintings.
 
 
 Useful commands
@@ -13,3 +19,6 @@ Useful commands
 ls -l
   print the list of files, with many additional information, 
   including last modification date
+
+cat FILE
+  display the contents of the file
