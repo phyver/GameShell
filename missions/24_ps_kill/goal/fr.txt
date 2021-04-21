@@ -1,21 +1,21 @@
 Objectif
 ========
 
-Les souris n'en peuvent plus, un générateur de chats a 
-été installé dans la cave !
+Les souris n'en peuvent plus, un générateur de chats a été installé 
+dans la cave !
 
-Trouver et tuer le générateur de chats, avant de 
-supprimer tous les chats cachés dans la cave.
+Trouver et tuer le générateur de chats, avant de supprimer tous les 
+chats cachés dans la cave.
 
-NOTE : le générateur de chat est un processus, 
-alors que les chats sont des fichiers...
+NOTE : le générateur de chat est un processus, alors que les chats 
+sont des fichiers...
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  ps
-    affiche la liste des processus lancés par le shell
+ps
+  affiche la liste des processus lancés par le shell
 
-  kill N
-    tue le processus dont le numéro ("PID") est N
+kill N
+  tue le processus dont le numéro ("PID") est N

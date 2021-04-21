@@ -1,19 +1,19 @@
 Mission goal
 ============
 
-Create an alias 'journal' in order to easily edit your 
-journal file wherever you are.
+Create an alias "journal" in order to easily edit your journal file 
+wherever you are.
 
 
 Details
 -------
 
-To edit the journal file from the cellar, or the throne 
-room with `nano`, you need to give the full path to the 
-file: "~/Forest/...../journal.txt"
+To edit the journal file from the cellar, or the throne room with 
+``nano``, you need to give the full path to the file: 
+"~/Forest/...../journal.txt"
 
-To avoid typing this long command each time, you can 
-create an alias like with
+To avoid typing this long command each time, you can create an alias 
+like with
 
   alias la='ls -a'
 
@@ -23,10 +23,10 @@ as previously seen.
 Useful commands
 ===============
 
-  nano FILE
-    edit the file from the terminal
-    (If the file doesn't exist, it will be created.)
+nano FILE
+  edit the file from the terminal
+  (If the file doesn't exist, it will be created.)
 
-  alias NAME='CMD'
-    NAME is a (short) string that will be replaced by 
-    the (longuer) string CMD
+alias NAME='CMD'
+  NAME is a (short) string that will be replaced by the (longuer) 
+  string CMD

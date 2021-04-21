@@ -1,30 +1,27 @@
 Objectif
 ========
 
-l'ermite vous demande à présent de lui lire les 
-instructions sur les lignes 9 à 11 de la **recette** 
-de sa potion.
+L'ermite vous demande à présent de lui lire les instructions sur les 
+lignes 9 à 11 de la **recette** de sa potion.
 
-Il faudra pour ceci combiner les deux commandes 
-précédentes avec ``|``.
+Il faudra pour ceci combiner les deux commandes précédentes avec 
+``|``.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  head -n K FICHIER
-    affiche les K premières lignes du fichier
+head -n K FICHIER
+  affiche les K premières lignes du fichier
 
-    Si FICHIER est omis, la commande agit sur ce 
-    qu'elle reçoit (l'entrée standard), càd ce 
-    qu'elle "reçoit".
+  Si FICHIER est omis, la commande agit sur ce qu'elle reçoit 
+  (l'entrée standard), càd ce qu'elle "reçoit".
 
-  tail -n K FICHIER
-    affiche les K dernières lignes du fichier
+tail -n K FICHIER
+  affiche les K dernières lignes du fichier
 
-    Si FICHIER est omis, la commande agit sur ce 
-    qu'elle reçoit (l'entrée standard), càd ce 
-    qu'elle "reçoit".
+  Si FICHIER est omis, la commande agit sur ce qu'elle reçoit 
+  (l'entrée standard), càd ce qu'elle "reçoit".
 
-  CMD1 | CMD2
-   fait agir CMD2 sur ce qu'elle reçoit de CMD1
+CMD1 | CMD2
+ fait agir CMD2 sur ce qu'elle reçoit de CMD1

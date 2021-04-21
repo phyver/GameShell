@@ -1,25 +1,24 @@
 Objectif
 ========
 
-Aller tout en haut du donjon.
+Allez tout en haut du donjon.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
 cd LIEU
   permet de se déplacer dans un lieu
 
 pwd
-  affiche le lieu actuel
+  affiche la position actuelle
 
 ls
-  affiche la liste des lieux accessibles
-  depuis la position actuelle
+  affiche la liste des lieux accessibles depuis la position actuelle
 
 
 Rappel
 ======
 
 gash restart
-  permet de redémarrer la mission à zéro
+  reinitialise la mission en cours

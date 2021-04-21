@@ -1,33 +1,30 @@
 Objectif
 ========
 
-Les souris se sont alliées avec Felix, dont les 
-descendants remplissent la cave de fromages.
+Les souris se sont alliées avec Felix, dont les descendants 
+remplissent la cave de fromages.
 
-Malheureusement, Gros-Minet a trois descendants 
-générateurs de chats dans la cave...
+Malheureusement, Gros-Minet a trois descendants générateurs de chats 
+dans la cave...
 
-Vous devez tuer les descendants de Gros-Minet, mais 
-épargner les descendants de Felix (sinon plus de 
-fromage). Après, il faudra supprimer tous les chats de 
-la cave.
+Vous devez tuer les descendants de Gros-Minet, mais épargner les 
+descendants de Felix (sinon plus de fromage). Après, il faudra 
+supprimer tous les chats de la cave.
 
 NOTE : il ne faut tuer ni Gros-Minet, ni Felix...
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  pstree
-    pour afficher la liste de tous les processus, avec 
-    leur lien de parenté
+pstree
+  affiche la liste de tous les processus, avec leur lien de parenté
 
-    options intéressantes
-      -p : affiche également les PID des processus
-      $$ : affiche seulement les descendant du shell 
-           courant
-           ($$ contient le PID du shell courant et peut 
-           être remplacé par un autre PID)
+  options intéressantes
+    -p : affiche également les PID des processus
+    $$ : affiche seulement les descendant du shell courant
+         ($$ contient le PID du shell courant et peut être remplacé 
+         par un autre PID)
 
-  kill N
-    tue le processus dont le numéro ("PID") est N
+kill N
+  tue le processus dont le numéro ("PID") est N

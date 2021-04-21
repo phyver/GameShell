@@ -1,15 +1,11 @@
 Mission goal
 ============
 
-Find the copper coin in the (small) maze at the end 
-of the corridor hidden in the cellar, and move it to 
-your chest.
+Find the copper coin in the (small) maze at the end of the corridor 
+hidden in the cellar, and move it to your chest.
 
 You can, if you want, use a graphical file manager.
 The maze can be found in
   .../GameShell/World/.../maze/
 
-(Don't forget to make sure the file manager displays 
-hidden files!)
-
-
+(Don't forget to make sure the file manager displays hidden files!)

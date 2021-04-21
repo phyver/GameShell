@@ -1,8 +1,8 @@
 Mission goal
 ============
 
-Combine several commands with "|" in order to find the 
-diamond in the labyrinth, and move it to your chest.
+Combine several commands with "|" in order to find the diamond in 
+the labyrinth, and move it to your chest.
 
 
 NOTE: the filename doesn't contain the string "diamond".
@@ -12,21 +12,20 @@ You need to find a file that contains the string "diamond".
 Useful commands
 ===============
 
-  find
-    search files from the current working directory
+find
+  search files from the current working directory
 
-    conditions on the file may be added about filenames, 
-    size, modification date, etc.
+  Conditions on the file may be added about filenames, size, 
+  modification date, etc.
 
-  grep [OPTIONS] STRING FILE1 ... FILEn
-    filter the files lines, keeping only those that contain 
-    the given string
+grep [OPTIONS] STRING FILE1 ... FILEn
+  filter the files lines, keeping only those that contain the given 
+  string
 
-    An interesting option is
-      -l  only print the names of files containing the string
+  An interesting option is
+    -l  only print the names of files containing the string
 
-  xargs CMD
-    read lines from stdin and run the command
-      CMD LINE1 LINE2 ... LINEn
-    This command is particularly usefull after a "|" 
-    redirection.
+xargs CMD
+  read lines from stdin and run the command
+    CMD LINE1 LINE2 ... LINEn
+  This command is particularly useful after a "|" redirection.

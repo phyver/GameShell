@@ -1,14 +1,13 @@
 Mission goal
 ============
 
-Build a "Cabin" in the forest, and the build a "Chest"
-in the cabin.
+Build a "Cabin" in the forest, and the build a "Chest" in the cabin.
 
-Be careful, the chest must be IN then cabin.
+NOTE: the chest must be **in** the cabin.
 
 
 Useful commands
 ===============
 
 mkdir DIRECTORY
-  creates a new directory in the current directory
+  create a new directory in the current directory

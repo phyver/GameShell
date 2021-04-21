@@ -1,29 +1,28 @@
 Mission goal
 ============
 
-Pick up all the coins hidden in the cellar of the castle,
-and put them in your chest (in your cabin in the forest).
+Pick up all the coins hidden in the cellar of the castle, and put 
+them in your chest (in your cabin in the forest).
 
 
 Secondary objective
 -------------------
 
-Learn how to use the "Tabulation" key to go faster.
+Learn how to use the "Tab" key to go faster.
 
 
 Useful commands
 ===============
 
 ls -A
-  lists all the files of the current directory, including
-  hidden files (a file is "hidden" if its name starts by
-  the character ".")
+  list all the files of the current directory, including hidden 
+  files
+  (a file is "hidden" if its name starts by the character ".")
 
 Tab
-  the tabulation key allows you to "complete" the name of
-  a file or directory after having entered the beginning
-  of its name
+  the "Tab" key "completes" the name of a file or directory once 
+  you've typed the beginning of its name
 
 Tab-Tab
-  pressing tabulation twice successively shows a list of
-  possible completions
+  pressing tabulation twice successively shows a list of possible 
+  completions

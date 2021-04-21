@@ -1,51 +1,43 @@
 Objectif
 ========
 
-Les vieux grimoires de Merlin sont stockés dans son 
-bureau, dans la bibliothèque. Vous devez afficher une 
-liste (exploitable) des grimoires qui contiennent 
-l'incantation "pq" (ou "Pq", ou "pQ", ou "PQ").
+Les vieux grimoires de Merlin sont stockés dans son bureau, dans la 
+bibliothèque. Vous devez afficher une liste (exploitable) des 
+grimoires qui contiennent l'incantation "pq" (ou "Pq", ou "pQ", ou 
+"PQ").
 
-Certain grimoires sont cadenassés et vous n'avez pas la 
-permission de les consulter. Il faut les ignorer pour 
-l'affichage...
+Certain grimoires sont cadenassés et vous n'avez pas la permission 
+de les consulter. Il faut les ignorer pour l'affichage...
 
-**Attention**
-seule la liste des grimoires (noms de fichiers) est 
-demandée.
+NOTE: seule la liste des grimoires (noms de fichiers) est demandée.
 La partie de l'incantation ne doit pas être affichée.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-Chaque commande peut écrire sur l'écran de deux 
-manières :
+Chaque commande peut écrire sur l'écran de deux manières :
   - affichage du résultat ("STDOUT")
   - affichage des message d'erreur ("STDERR")
 Par défaut, on ne peut pas différencier ces affichages.
 
-On peut par contre rediriger les deux affichages 
-indépendamment.
+On peut par contre rediriger les deux affichages indépendamment.
 
-  grep CHAINE FICHIER1 ... FICHIERn
-    recherche une chaine dans les fichiers et affiche 
-    les lignes correspondantes options intéressantes :
-      -l : n'affiche pas les lignes mais seulement le 
-           nom des fichiers qui contiennent la chaine
-      -i : ne différencie pas les majuscules et 
-           minuscules lors de la recherche
+grep CHAINE FICHIER1 ... FICHIERn
+  recherche une chaine dans les fichiers et affiche les lignes 
+  correspondantes options intéressantes :
+    -l : n'affiche pas les lignes mais seulement le nom des fichiers
+         qui contiennent la chaine
+    -i : ne différencie pas les majuscules et minuscules
 
-  CMD  >  FICHIER
-    le résultat de la commande CMD est écrit dans le 
-    fichier FICHIER au lieu d'être affiché sur la 
-    sortie standard (STDOUT)
+CMD  >  FICHIER
+  le résultat de la commande CMD est écrit dans le fichier FICHIER 
+  au lieu d'être affiché sur la sortie standard (STDOUT)
 
-  CMD  2>  FICHIER
-    les erreurs de la commande CMD sont écrites dans 
-    le fichier FICHIER au lieu d'être affichées sur la 
-    sortie d'erreurs (STDERR)
+CMD  2>  FICHIER
+  les erreurs de la commande CMD sont écrites dans le fichier 
+  FICHIER au lieu d'être affichées sur la sortie d'erreurs (STDERR)
 
-  /dev/null
-    fichier "virtuel" qui fait office de "poubelle" : 
-    tout ce qui y est envoyé est ignoré
+/dev/null
+  fichier "virtuel" qui fait office de trou noir : tout ce qui y est 
+  envoyé est ignoré

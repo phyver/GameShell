@@ -1,21 +1,20 @@
 Mission goal
 ============
 
-Create an alias 'la' to run the command `ls -A` 
-in order to list files, including hidden ones 
-easily.
+Create an alias "la" to run the command ``ls -A`` in order to list 
+files, including hidden ones easily.
 
 Define the alias
 
   la='ls -A'
 
-and check it adds a command `la` that lists all 
-file, including hidden ones.
+and check it adds a command ``la`` that lists all file, including 
+hidden ones.
 
 
 Useful commands
 ===============
 
-  alias NAME='CMD'
-    NAME is a (short) string that will be replaced by 
-    the (longuer) string CMD
+alias NAME='CMD'
+  NAME is a (short) string that will be replaced by the (longer) 
+  string CMD

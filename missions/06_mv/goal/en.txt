@@ -1,9 +1,8 @@
 Mission goal
 ============
 
-Pick up all the coins that you can find in the cellar
-of the castle, and place them in your chest (in your
-cabin in the forest).
+Pick up all the coins that you can find in the cellar of the castle, 
+and place them in your chest (in your cabin in the forest).
 
 
 Useful commands
