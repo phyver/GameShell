@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Aller dans la cave du chateau.
+Allez dans la cave du chateau.
 
 
 Objectif secondaire
@@ -10,12 +10,12 @@ Objectif secondaire
 Comprendre la différence entre ``cd -`` et ``cd ..``.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
 cd -
-  permet de retourner dans le lieu précédent
+  retourne dans le lieu précédent
 
 cd ..
-  permet de se rendre au lieu qui se trouve "avant"
-  le lieu actuel dans la liste donnée par ``pwd``
+  se déplace au lieu qui se trouve "avant" le lieu actuel dans la 
+  liste donnée par ``pwd``

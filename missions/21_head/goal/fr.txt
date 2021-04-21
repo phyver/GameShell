@@ -1,17 +1,16 @@
 Objectif
 ========
 
-L'ermite est en train de préparer une potion dans la 
-grotte.
+L'ermite est en train de préparer une potion dans la grotte.
 Vous devez le rejoindre et lui afficher les quatre premiers 
 ingrédients de la liste des ingrédients...
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  head FICHIER
-    affiche les 10 premières lignes du FICHIER
+head FICHIER
+  affiche les 10 premières lignes du FICHIER
 
-  head -n K FICHIER
-    affiche les K premières lignes du FICHIER
+head -n K FICHIER
+  affiche les K premières lignes du FICHIER

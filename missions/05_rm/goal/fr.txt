@@ -1,12 +1,11 @@
 Objectif
 ========
 
-Retournez dans la cave, et supprimez les rats
-qui s'y trouvent...
+Retournez dans la cave, et supprimez les rats qui s'y trouvent.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
 rm FICHIER1 FICHIER2 ... FICHIERn
   supprime (définitivement) des fichiers

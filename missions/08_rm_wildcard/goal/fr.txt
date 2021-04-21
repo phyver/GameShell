@@ -1,26 +1,23 @@
 Objectif
 ========
 
-Supprimez tous les rats dans le terrier caché dans la 
-cave, sans toucher aux chats.
+Supprimez tous les rats dans le terrier caché dans la cave, sans 
+toucher aux chats.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
 *
 ?
-  le caractère "*" est un "joker" pour n'importe 
-  quelle chaine de caractèrse
+  Le caractère "*" est un "joker" pour n'importe quelle chaine de 
+  caractères.
 
-  le caractère "?" est un "joker" pour n'importe 
-  caractère
+  Le caractère "?" est un "joker" pour n'importe caractère.
 
-  dans un nom de fichier, ils sont remplacés 
-  automatiquement par la liste de tous les fichiers 
-  correspondant
+  On peut les utiliser pour dénoter une liste de fichiers existants.
 
-  par exemple, si le répertoire contient
+  Par exemple, si le répertoire contient
       Fichier-1 Dossier-1 fichier-14 lustucru
   alors
     *     -->  Fichier-1 Dossier-1 fichier-14 

@@ -3,16 +3,15 @@ Mission goal
 
 Find the day of the week for the $MM-$DD-$YYYY.
 
-When you have it, run the command
-  $ gash check
+When you have it, run the command ``gash check``.
 
 
 
 Useful commands
 ===============
 
-  cal
-    print a calendar for the current month
+cal
+  print a calendar for the current month
 
-  cal YYYY
-    print a calendar for the whole year YYYY
+cal YYYY
+  print a calendar for the whole year YYYY

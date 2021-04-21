@@ -4,24 +4,23 @@ Objectif
 Un message secret a été trouvé dans la bibliothèque.
 Il a probablement été chiffré avec un décalage de César.
 
-Décryptez le en faisant une recherche exhaustive avec la ligne de commandes.
+Décryptez le en faisant une recherche exhaustive avec la ligne de 
+commandes.
 
-Commandes utilisées
-===================
 
-  tr CHAINE1 CHAINE2 < FICHIER
-    Remplace le caractère CHAINE1[i] par CHAINE2[i] dans
-    FICHIER, et affiche le résultat. (Le fichier n'est pas modifié.)
+Commandes utiles
+================
 
-    Exemple :
+tr CHAINE1 CHAINE2 < FICHIER
+  remplace le caractère CHAINE1[i] par CHAINE2[i] dans FICHIER, et 
+  affiche le résultat. (Le fichier n'est pas modifié.)
 
-       si
-            chaine1 = "abcdef"
-            chaine2 = "klmnop"
+  Exemple : si
+      chaine1 = "abcdef"
+      chaine2 = "klmnop"
+  le fichier sera affiché avec la substitution suivante (les autres 
+  caractères ne changent pas) :
+      a -> k      b -> l      c -> m
+      d -> n      e -> o      f -> p
 
-       le fichier sera affiché avec la substitution suivante
-       (les autres caractères ne changent pas) :
-            a -> k      b -> l      c -> m
-            d -> n      e -> o      f -> p
-
-      Astuce : au lieu d'écrire "abcdefg", on peut utiliser "a-g".
+  Astuce : au lieu d'écrire "abcdefg", on peut utiliser "a-g".

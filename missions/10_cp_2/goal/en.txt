@@ -1,26 +1,23 @@
 Mission goal
 ============
 
-By the way, I think that the ornaments in the castle's
-entrance would very much suit my cabin. Likewise, I
-cannot just remove them for here. I would like to have
-a copy of these ornaments in my cabin.
+By the way, I think that the ornaments in the castle's entrance 
+would very much suit my cabin. Likewise, I cannot just remove them 
+for here. I would like to have a copy of these ornaments in my 
+cabin.
 
-Reminder
-========
+Useful commands
+===============
 
-<*>
-<?>
+*
+?
+  The "*" character is a wildcard for any string of character.
 
-  the "*" character is a wildcard for any string 
-  of character
+  The "? character is a wildcard for any single character.
 
-  the "? character is a wildcard for any character
+  They can be used to denote lists of existing files.
 
-  in a file name, they are automatically replaced
-  by the list of all matching files
-
-  for instance, if the folder contains
+  For instance, if the folder contains
       File-1 Folder-1 file-14 potato
   then
     *     -->  File-1 Folder-1 file-14 potato

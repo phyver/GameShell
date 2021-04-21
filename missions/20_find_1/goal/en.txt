@@ -1,45 +1,31 @@
 Mission goal
 ============
 
-Find the 2 gold pieces in the maze, at the end of the 
-hidden corridor in the cellar; and move them to your 
-chest.
+Find the 2 gold coins in the maze, at the end of the hidden corridor 
+in the cellar; and move them to your chest.
 
 
-**Question :** notez dans votre rapport la ou les 
-commandes que vous utilisez pour retrouver les pièces. 
-Comparez les méthodes à votre disposition pour cette
-mission :
-  - gestionnaire de fichier graphique
-  - "ls -R" ou "tree"
-  - "find"
-
-
-NOTE: the description of the `find` command is 
-voluntarily very short. You will need to look at 
-the manual of `find` to get more information.
+NOTE: the description of the ``find`` command is voluntarily very 
+short. You will need to look at the manual to get more information.
 
 
 Useful commands
 ===============
 
-  find CONDITION
-    search for file starting from the current working 
-    directory
+find CONDITION
+  search for file starting from the current working directory
 
-    Conditions restrict the files being searched, they 
-    can involve the name, the size, the modification 
-    date, etc.
-    Two interesting conditions are
-      -name "GLOB"
-      -iname "GLOB"
+  Conditions restrict the files being searched, they can involve the 
+  name, the size, the modification date, etc.
+  Two interesting conditions are
+    -name "GLOB"
+    -iname "GLOB"
 
-  man CMD
-    display the manual of the command
+man CMD
+  display the manual of the command
 
-    important keybindings
-        q           quit
-        Space       scroll down one page
-        / STRING    search for the string in the manual
-        n           go to the next occurence of the 
-                    last search string
+  important keybindings
+    q           quit
+    Space       scroll down one page
+    / STRING    search for the string in the manual
+    n           go to the next occurrence of the last search string

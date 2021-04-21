@@ -1,36 +1,33 @@
 Objectif
 ========
 
-retrouver le rubis dans labyrinthe et le déplacer dans 
-votre coffre.
+Retrouvez le rubis dans labyrinthe et déplacez le dans votre coffre.
 
-Attention, le nom du fichier ne contient pas la chaine 
-"rubis" : il faut donc chercher un __fichier__ (par 
-opposition à un dossier) et vérifier que ce fichier 
-contient bien la chaine "rubis"...
+Indice : le nom du fichier ne contient pas la chaine "rubis". Une 
+stratégie est donc de chercher un **fichier** (par opposition à un 
+dossier) et de vérifier à la main que ce fichier contient bien la 
+chaine "rubis".
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  find CONDITION
-    permet de chercher des fichiers à partir du 
-    répertoire courant Les conditions peuvent porter 
-    sur le nom des fichiers, leur taille, leur date de 
-    création, etc.
-    Une condition intéressante est :
-      -type TYPE
+find CONDITION
+  cherche des fichiers à partir du répertoire courant
+  Les conditions peuvent porter sur le nom des fichiers, leur 
+  taille, leur date de création, etc.
+  Une condition intéressante est :
+    -type TYPE
 
-  cat FICHIER
-    affiche tout le contenu d'un fichier sur le 
-    terminal
+cat FICHIER
+  affiche tout le contenu d'un fichier sur le terminal
 
-  man CMD
-    pour consulter l'aide de la commande CMD
+man CMD
+  consulte l'aide de la commande CMD
 
-    touches utilisées par la commande "man"
-        q           quitter
-        Space       faire défiler une page
-        / CHAINE    rechercher une chaine
-        n           se déplacer à la prochaine
-                    occurrence de la chaine cherchée
+  touches utilisées par la commande "man"
+    q           quitter
+    Space       faire défiler une page
+    / CHAINE    rechercher une chaine
+    n           aller à la prochaine occurrence de la chaine
+                cherchée

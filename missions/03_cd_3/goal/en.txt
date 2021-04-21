@@ -1,19 +1,20 @@
 Mission goal
 ============
 
-Go back to the starting location and then go to the throne
-room using only two commands.
+Go back to the starting location and then go to the throne room 
+using only two commands.
 
-BE CAREFUL. To validate the mission it must be that:
-- the second to last command takes you to the starting point,
-- the last command takes you directly to the throne room.
+NOTE: to validate the mission the following conditions need to be 
+met
+  - the second to last command takes you to the starting point,
+  - the last command takes you directly to the throne room.
 
 
 Useful commands
 ===============
 
 cd
-  lets you move back to the starting location
+  move back to the starting location
 
 cd LOCATION1/LOCATION2/LOCATION3
-  lets you make several moves in one command
+  make several moves in one command

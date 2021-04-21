@@ -2,18 +2,18 @@ Mission goal
 ============
 
 1/ Run the `xeyes` command, and stop it.
-2/ Run the `xeyes` command in the backgroup.
+2/ Run the `xeyes` command in the background.
 
 
 Useful commands
 ===============
 
-  xeyes
-    open a window with 2 eyes that track your mouse
+xeyes
+  open a window with 2 eyes that track your mouse
 
-  CMD &
-    run the command in the backgroud
+CMD &
+  run the command in the background
 
-  Control-c
-    this keybinding usually stop the current command 
-    if it is still running
+Control-c
+  this keybinding usually stop the current command if it is still 
+  running

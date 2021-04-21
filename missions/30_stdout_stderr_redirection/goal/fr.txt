@@ -1,35 +1,31 @@
 Objectif
 ========
 
-Merlin est devenu fou... Il fait les cent pas dans la 
-tour de l'observatoire et tient des propos incohérents, 
-voire incompréhensibles.
+Merlin est devenu fou... Il fait les cent pas dans la tour de 
+l'observatoire et tient des propos incohérents, voire 
+incompréhensibles.
 
-Vous devez déchiffrer son charabia car il est le seul à 
-connaitre la clé secrète...
+Vous devez déchiffrer son charabia car il est le seul à connaitre la 
+clé secrète...
 
-Indice : il y a fort à parier que le message de merlin 
-soit truffé d'erreurs...
+Indice : il y a fort à parier que le message de merlin soit truffé 
+d'erreurs.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  ./FICHIER
-    Exécute un fichier exécutable en tant que 
-    programme. Il va de soi que Merlin l'est 
-    (exécutable)...
+./FICHIER
+  Exécute un fichier exécutable en tant que programme. Il va de soi 
+  que Merlin l'est (exécutable)...
 
-  CMD  >  FICHIER
-    envoie la sortie standard (STDOUT) d'une commande 
-    vers un fichier
-    (Le fichier est écrasé.)
+CMD  >  FICHIER
+  envoie la sortie standard (STDOUT) d'une commande vers un fichier
+  (Le fichier est écrasé.)
 
-  CMD  2>  FICHIER
-    envoie la sortie d'erreurs (STDERR) d'une commande 
-    vers un fichier
-    (Le fichier est écrasé.)
+CMD  2>  FICHIER
+  envoie la sortie d'erreurs (STDERR) d'une commande vers un fichier
+  (Le fichier est écrasé.)
 
-  CMD  <  FICHIER
-    envoie un fichier vers l'entrée standard (STDIN) 
-    d'une commande
+CMD  <  FICHIER
+  envoie un fichier vers l'entrée standard (STDIN) d'une commande

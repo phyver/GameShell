@@ -1,32 +1,28 @@
 Objectif
 ========
 
-Combiner plusieurs commandes avec "|" pour retrouver le 
-diamant dans labyrinthe et le déplacer dans votre 
-coffre.
+Combinez plusieurs commandes avec "|" pour retrouver le diamant dans 
+labyrinthe et le déplacer dans votre coffre.
 
-Attention, le nom du fichier ne contient pas la chaine 
-"diamant" : il faut donc chercher un fichier qui 
-contient la chaine "diamant"...
+NOTE : le nom du fichier ne contient pas la chaine "diamant".
+Il faut donc chercher un fichier qui contient la chaine "diamant".
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  find
-    permet de chercher des fichiers à partir du 
-    répertoire courant. Les conditions peuvent porter 
-    sur le nom des fichiers, leur taille, leur date de 
-    création, etc.
+find
+  cherche des fichiers à partir du répertoire courant
+  Les conditions peuvent porter sur le nom des fichiers, leur 
+  taille, leur date de création, etc.
 
-  grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
-    recherche une chaine parmi les fichiers
-    Parmi les options, vous avez notamment
-      -l  qui affiche juste le nom des fichiers
-          contenant la chaine
+grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
+  recherche une chaine parmi les fichiers
+  Parmi les options, vous avez notamment
+    -l  qui affiche juste le nom des fichiers contenant la chaine
 
-  xargs CMD
-    lit des lignes sur l'entrée standard, et exécute la 
-    commande CMD LIGNE1 LIGNE3 ... LIGNEn
-    Cette commande est particulièrement utile derrière 
-    une redirection "|"
+xargs CMD
+  lit des lignes sur l'entrée standard, et exécute la commande CMD 
+  LIGNE1 LIGNE3 ... LIGNEn
+  Cette commande est particulièrement utile derrière une redirection 
+  "|"

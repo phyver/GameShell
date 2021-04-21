@@ -1,16 +1,16 @@
 Mission goal
 ============
 
-The old ermit is brewing a potion in the cave.
-You need to find him and show him the first 4 items 
-in the list of ingredients.
+The old hermit is brewing a potion in the cave.
+You need to find him and show him the first 4 items in the list of 
+ingredients.
 
 
 Useful commands
 ===============
 
-  head FILE
-    output the first 10 lines of the file
+head FILE
+  output the first 10 lines of the file
 
-  head -n K FILE
-    output the first K lines of the file
+head -n K FILE
+  output the first K lines of the file

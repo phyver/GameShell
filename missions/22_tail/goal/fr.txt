@@ -1,16 +1,16 @@
 Objectif
 ========
 
-Alors que vous êtes en train de lui donner la liste des 
-ingrédients, l'ermite a déjà cessé de vous écouter et 
-réclame la liste des quatre derniers ingrédients.
+Alors que vous êtes en train de lui donner la liste des ingrédients, 
+l'ermite a déjà cessé de vous écouter et réclame la liste des quatre 
+derniers ingrédients.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  tail FICHIER
-    affiche les 10 dernières lignes du FICHIER
+tail FICHIER
+  affiche les 10 dernières lignes du FICHIER
 
-  tail -n K FICHIER
-    affiche les K dernières lignes du FICHIER
+tail -n K FICHIER
+  affiche les K dernières lignes du FICHIER

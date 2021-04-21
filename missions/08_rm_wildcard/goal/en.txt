@@ -1,8 +1,8 @@
 Mission goal
 ============
 
-Delete all the rats in the burrow hidden in the cellar,
-without touching the cats.
+Delete all the rats in the burrow hidden in the cellar, without 
+touching the cats.
 
 
 Useful commands
@@ -10,15 +10,13 @@ Useful commands
 
 *
 ?
-  the "*" character is a wildcard for any string 
-  of character
+  The "*" character is a wildcard for any string of character.
 
-  the "? character is a wildcard for any character
+  The "? character is a wildcard for any single character.
 
-  in a file name, they are automatically replaced
-  by the list of all matching files
+  They can be used to denote lists of existing files.
 
-  for instance, if the folder contains
+  For instance, if the folder contains
       File-1 Folder-1 file-14 potato
   then
     *     -->  File-1 Folder-1 file-14 potato

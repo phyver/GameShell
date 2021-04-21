@@ -14,8 +14,8 @@ Useful commands
 ===============
 
 cd -
-  lets you return to the previous location
+  return to the previous location
 
 cd ..
-  lets you move to the location "preceding" the current
-  location in the list given by ``pwd``
+  move to the location "preceding" the current location in the list 
+  given by ``pwd``

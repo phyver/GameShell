@@ -1,29 +1,25 @@
 Objectif
 ========
 
-D'ailleurs, je pense que tous les ornements de l'entrée 
-du château iraient bien aussi dans ma cabane. De même, 
-je ne peux pas les retirer d'ici. Je voudrais une copie 
-de ces ornements dans ma cabane.
+D'ailleurs, je pense que tous les ornements de l'entrée du château 
+iraient bien aussi dans ma cabane. De même, je ne peux pas les 
+retirer d'ici. Je voudrais une copie de ces ornements dans ma 
+cabane.
 
 
 Rappel
 ======
 
-<*>
-<?>
+*
+?
+  Le caractère "*" est un "joker" pour n'importe quelle chaine de 
+  caractères.
 
-  le caractère "*" est un "joker" pour n'importe 
-  quelle chaine de caractères
+  Le caractère "?" est un "joker" pour n'importe caractère.
 
-  le caractère "?" est un "joker" pour n'importe 
-  caractère
+  On peut les utiliser pour dénoter une liste de fichiers existants.
 
-  dans un nom de fichier, ils sont remplacés 
-  automatiquement par la liste de tous les fichiers 
-  correspondant
-
-  par exemple, si le répertoire contient
+  Par exemple, si le répertoire contient
       Fichier-1 Dossier-1 fichier-14 lustucru
   alors
     *     -->  Fichier-1 Dossier-1 fichier-14 

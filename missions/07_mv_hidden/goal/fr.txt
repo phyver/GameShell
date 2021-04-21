@@ -1,30 +1,30 @@
 Objectif
 ========
 
-Ramassez toutes les pièces qui ont été cachées dans la
-cave du château, et placez les dans votre coffre (dans
-votre cabane, dans la forêt).
+Ramassez toutes les pièces qui ont été cachées dans la cave du 
+château, et placez les dans votre coffre (dans votre cabane, dans la 
+forêt).
 
 
 Objectif secondaire
 ===================
 
-Maitriser l'utilisation de la touche "Tabulation" pour
-aller plus vite.
+Maitriser l'utilisation de la touche "Tabulation" pour aller plus 
+vite.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
 ls -A
-  affiche tous les fichiers du répertoire courant, en
-  incluant les fichiers cachés (un fichier est "caché"
-  si son nom commence par le caractère ".")
+  affiche tous les fichiers du répertoire courant, en incluant les 
+  fichiers cachés
+  (un fichier est "caché" si son nom commence par le caractère ".")
 
 Tab
-  la touche tabulation permet de "compléter" un nom de
-  fichier ou de répertoire dès qu'on en tapé le début
+  la touche "Tab" "complète" un nom de fichier ou de répertoire dès 
+  qu'on en tapé le début
 
 Tab-Tab
-  deux appuis successifs sur la touche tabulation donne
-  la liste des complétions possibles
+  deux appuis successifs sur la touche tabulation affichent la liste 
+  des complétions possibles

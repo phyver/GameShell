@@ -1,43 +1,41 @@
 Objectif
 ========
 
-Combiner plusieurs commandes avec le pipe "|" pour 
-déterminez la dette du Duc.
+Combinez plusieurs commandes avec le pipe "|" pour déterminez la 
+dette du Duc.
 
-À côté du Château se trouve une échoppe. Les habitants 
-achètent souvent à crédit et remboursent plus tard.
-Afin de garder le compte des dettes de chacun, le 
-propriétaire note tout sur un parchemin. Lorsqu'une 
-dette est remboursée, il inscrit "PAYÉ" à côté 
-celle-ci.
+À côté du Château se trouve une échoppe. Les habitants achètent 
+souvent à crédit et remboursent plus tard.
+Afin de garder le compte des dettes de chacun, le propriétaire note 
+tout sur un parchemin. Lorsqu'une dette est remboursée, il inscrit 
+"PAYÉ" à côté celle-ci.
 
 
-**Attention :** vous ne disposez que de 3 commandes 
-pour atteindre cet objectif.
+NOTE : vous ne disposez que de 3 commandes pour atteindre cet 
+objectif.
 
-Vous pouvez réinitialiser le compteur avec la commande 
-``gash reset``, mais dans ce cas, l'échoppe sera 
-re-générée.
+Vous pouvez réinitialiser le compteur avec la commande ``gash 
+reset``, mais dans ce cas, l'échoppe sera re-générée.
 
 
 Indice
-======
+------
 
-Lorsqu'il n'y a pas de sous répertoires, une
-alternative à ``find . -name "*sans_interet*`` est
-d'utiliser ``ls`` et de filtrer le résultat avec 
-``grep`` :
+Lorsqu'il n'y a pas de sous répertoires, une alternative à ``find . 
+-name "*sans_interet*`` est d'utiliser ``ls`` et de filtrer le 
+résultat avec ``grep`` :
     $ ls | grep "sans_interet"
 
-Commandes utilisées
-===================
 
-  grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
-    Filtre les lignes du fichier et ne conserve que 
-    celles qui contiennent la chaine.
-    Si aucun fichier n'est spécifié, grep filtre les 
-    lignes lues sur l'entrée standard.
+Commandes utiles
+================
 
-    Option intéressante :
-      -v : inverse la condition, les lignes conservées 
-      sont celle qui ne contiennent pas la chaine.
+grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
+  Filtre les lignes du fichier et ne conserve que celles qui 
+  contiennent la chaine.
+  Si aucun fichier n'est spécifié, grep filtre les lignes lues sur 
+  l'entrée standard.
+
+  Option intéressante :
+    -v : inverse la condition, les lignes conservées sont celle qui 
+    ne contiennent pas la chaine.

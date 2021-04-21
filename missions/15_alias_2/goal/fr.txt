@@ -1,32 +1,32 @@
 Objectif
 ========
 
-Créez un alias 'journal' pour pouvoir éditer facilement 
-votre fichier journal.
+Créez un alias 'journal' pour pouvoir éditer facilement votre 
+fichier journal.
 
 
 Détails
 -------
 
-Pour éditer le journal depuis la cave, ou la salle au 
-trésor avec ``nano``, il faut donner le chemin complet 
-du journal : "~/Foret/.../.../journal.txt"
+Pour éditer le journal depuis la cave, ou la salle au trésor avec 
+``nano``, il faut donner le chemin complet du journal : 
+"~/Foret/.../.../journal.txt"
 
-Pour éviter de taper cette commande en entier à chaque 
-fois, il faut créer un alias sur le même schéma que le
+Pour éviter de taper cette commande en entier à chaque fois, il faut 
+créer un alias sur le même schéma que le
 
   alias la='ls -a'
 
 vu précédemment.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  nano FICHIER
-    édite le fichier dans le terminal
-    (Si le fichier n'existe pas, il sera créé.)
+nano FICHIER
+  édite le fichier dans le terminal
+  (Si le fichier n'existe pas, il sera créé.)
 
-  alias NOM='CMD'
-    NOM est une chaine de caractères (petite), qui sera 
-    remplacée par la commande CMD (longue)
+alias NOM='CMD'
+  NOM est une chaine de caractères (petite), qui sera remplacée par 
+  la commande CMD (longue)

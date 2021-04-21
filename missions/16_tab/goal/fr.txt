@@ -4,8 +4,8 @@ Objectif
 Allez dans le couloir caché dans la cave.
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  Appuyer sur la touche Tabulation permet de compléter 
-  le début d'un nom (de fichier ou de répertoire).
+La touche Tabulation permet de compléter le début d'un nom (de 
+fichier ou de répertoire).

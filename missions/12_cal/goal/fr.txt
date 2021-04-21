@@ -3,16 +3,15 @@ Objectif
 
 Trouvez le jour de la semaine pour le $DD-$MM-$YYYY.
 
-Lorsque vous le connaissez, lancez la commande
-  $ gash check
+Lorsque vous le connaissez, lancez la commande ``gash check``.
 
 
 
-Commandes utilisées
-===================
+Commandes utiles
+================
 
-  cal
-    affiche en petit calendrier du mois courant
+cal
+  affiche en petit calendrier du mois courant
 
-  cal YYYY
-    affiche en petit calendrier pour l'année YYYY
+cal YYYY
+  affiche en petit calendrier pour l'année YYYY
