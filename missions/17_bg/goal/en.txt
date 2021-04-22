@@ -1,8 +1,8 @@
 Mission goal
 ============
 
-1/ Run the `xeyes` command, and stop it.
-2/ Run the `xeyes` command in the background.
+1/ Run the ``xeyes`` command, and stop it.
+2/ Run the ``xeyes`` command in the background.
 
 
 Useful commands

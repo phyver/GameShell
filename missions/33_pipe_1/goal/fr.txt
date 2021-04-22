@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Combinez plusieurs commandes avec le pipe "|" pour déterminez la 
+Combinez plusieurs commandes avec le pipe ``|`` pour déterminez la 
 dette du Duc.
 
 À côté du Château se trouve une échoppe. Les habitants achètent 
@@ -22,7 +22,7 @@ Indice
 ------
 
 Lorsqu'il n'y a pas de sous répertoires, une alternative à ``find . 
--name "*sans_interet*`` est d'utiliser ``ls`` et de filtrer le 
+-name '*sans_interet*'`` est d'utiliser ``ls`` et de filtrer le 
 résultat avec ``grep`` :
     $ ls | grep "sans_interet"
 
