@@ -12,7 +12,8 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: auto.sh:1 init.sh:3 static.sh:3
+#: init.sh:3 init.sh:9 init.sh:12 init.sh:15 init.sh:18 init.sh:19 static.sh:3
+#: auto.sh:1
 #, sh-format
 msgid "$GASH_HOME/Castle/Observatory"
 msgstr "$GASH_HOME/Chateau/Observatoire"

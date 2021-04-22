@@ -12,11 +12,11 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: auto.sh:2 check.sh:11 init.sh:5 init.sh:8
-msgid "cat"
-msgstr "chat"
-
 #: init.sh:5 init.sh:8 static.sh:1 auto.sh:2 check.sh:11
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Chateau/Cave"
+
+#: init.sh:5 init.sh:8 auto.sh:2 check.sh:11
+msgid "cat"
+msgstr "chat"

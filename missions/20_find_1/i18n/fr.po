@@ -12,43 +12,43 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: auto.sh:3 clean.sh:7 clean.sh:12 init.sh:3 init.sh:8 auto.sh:5 check.sh:25
+#: init.sh:3 init.sh:8 auto.sh:5 clean.sh:7 clean.sh:12 check.sh:25
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Chateau/Cave"
 
-#: auto.sh:3 clean.sh:6 clean.sh:12 init.sh:12 auto.sh:5 check.sh:25
-msgid "maze"
-msgstr "labyrinthe"
-
-#: auto.sh:4 auto.sh:6
-msgid "coin"
-msgstr "piece"
-
-#: clean.sh:7 init.sh:3
+#: init.sh:3 clean.sh:7
 msgid ".Long*Corridor*"
 msgstr ".Long*Couloir*"
-
-#: clean.sh:8
-msgid "Pffft... You are back to the entrance of the maze..."
-msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
-
-#: clean.sh:14 init.sh:36 init.sh:37 check.sh:27 check.sh:40
-msgid "gold_coin"
-msgstr "piece_d_or"
-
-#: clean.sh:14 init.sh:40 init.sh:41 check.sh:40
-msgid "GolD_CoiN"
-msgstr "PieCe_D_oR"
 
 #: init.sh:8
 #, sh-format
 msgid ".Long $r1 Corridor $r2"
 msgstr ".Long $r1 Couloir $r2"
 
+#: init.sh:12 auto.sh:5 clean.sh:6 clean.sh:12 check.sh:25
+msgid "maze"
+msgstr "labyrinthe"
+
 #: init.sh:20
 msgid "maze generation:"
 msgstr "génération du labyrinthe :"
+
+#: init.sh:36 init.sh:37 clean.sh:14 check.sh:27 check.sh:40
+msgid "gold_coin"
+msgstr "piece_d_or"
+
+#: init.sh:40 init.sh:41 clean.sh:14 check.sh:40
+msgid "GolD_CoiN"
+msgstr "PieCe_D_oR"
+
+#: auto.sh:6
+msgid "coin"
+msgstr "piece"
+
+#: clean.sh:8
+msgid "Pffft... You are back to the entrance of the maze..."
+msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
 #: check.sh:12
 msgid "Some of the coins are not in your chest!"

@@ -8,16 +8,20 @@ msgstr ""
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/fr.txt"
 
-#: auto.sh:1 check.sh:3 static.sh:1
+# path for the text file containing the goal
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#: static.sh:1 auto.sh:1 check.sh:3
 #, sh-format
 msgid "$GASH_HOME/Forest"
 msgstr "$GASH_HOME/Foret"
 
-#: auto.sh:1 check.sh:7 check.sh:21 check.sh:29 check.sh:82
+#: auto.sh:1 check.sh:7 check.sh:21 check.sh:29 check.sh:84
 msgid "Cabin"
 msgstr "Cabane"
 
-#: auto.sh:1 check.sh:38 check.sh:52 check.sh:61 check.sh:69 check.sh:83
+#: auto.sh:1 check.sh:38 check.sh:52 check.sh:61 check.sh:69 check.sh:85
 msgid "Chest"
 msgstr "Coffre"
 
@@ -59,7 +63,7 @@ msgstr "Le coffre n'est pas au bon endroit dans votre cabane."
 msgid "The $chest directory does not exist!"
 msgstr "Le répertoire $chest n'existe pas!"
 
-#: check.sh:85
+#: check.sh:87
 #, sh-format
 msgid "You are back at the starting point: start over."
 msgstr "Vous êtes de retour au point de départ : recommencez."

@@ -12,12 +12,17 @@ msgstr "$MISSION_DIR/goal/en.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: auto.sh:1 check.sh:11 check.sh:16 init.sh:1 static.sh:3
+#: init.sh:3
+#, sh-format
+msgid "$MISSION_DIR/ingredients/en.txt"
+msgstr "$MISSION_DIR/ingredients/en.txt"
+
+#: init.sh:3 static.sh:3 auto.sh:3 check.sh:11 check.sh:16
 #, sh-format
 msgid "$GASH_HOME/Montain/Cave"
 msgstr "$GASH_HOME/Montain/Cave"
 
-#: auto.sh:4 auto.sh:7 check.sh:16 init.sh:1
+#: init.sh:3 auto.sh:6 auto.sh:9 check.sh:16
 msgid "potion_ingredients"
 msgstr "potion_ingredients"
 
@@ -32,8 +37,3 @@ msgstr "You haven't used the 'tail' command!"
 #: check.sh:32
 msgid "Your previous command doesn't give the expected result..."
 msgstr "Your previous command doesn't give the expected result..."
-
-#: init.sh:1
-#, sh-format
-msgid "$MISSION_DIR/ingredients/en.txt"
-msgstr "$MISSION_DIR/ingredients/en.txt"

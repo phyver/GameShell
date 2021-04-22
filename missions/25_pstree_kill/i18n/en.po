@@ -12,21 +12,14 @@ msgstr "$MISSION_DIR/goal/en.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: auto.sh:3 check.sh:11 static.sh:1 bin/gros_minet.sh:7 bin/gros_minet.sh:9
-#: bin/gros_minet.sh:11 bin/gros_minet.sh:14 bin/gros_minet.sh:16
-#: bin/gros_minet.sh:18 bin/felix.sh:7 bin/felix.sh:9 bin/felix.sh:11
-#: bin/felix.sh:14 bin/felix.sh:16 bin/felix.sh:18
+#: static.sh:1 auto.sh:3 check.sh:11
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Castle/Cellar"
 
-#: auto.sh:3 check.sh:11 bin/gros_minet.sh:7 bin/gros_minet.sh:9
-#: bin/gros_minet.sh:11 bin/gros_minet.sh:14 bin/gros_minet.sh:16
-#: bin/gros_minet.sh:18
+#: auto.sh:3 check.sh:11
 msgid "cat"
 msgstr "cat"
 
-#: bin/felix.sh:7 bin/felix.sh:9 bin/felix.sh:11 bin/felix.sh:14
-#: bin/felix.sh:16 bin/felix.sh:18
-msgid "cheese"
-msgstr "cheese"
+#~ msgid "cheese"
+#~ msgstr "cheese"

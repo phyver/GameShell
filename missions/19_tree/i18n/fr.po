@@ -12,14 +12,39 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: auto.sh:5 check.sh:5 clean.sh:6 clean.sh:13 init.sh:3 init.sh:8
+#: init.sh:3 init.sh:8 auto.sh:5 clean.sh:6 clean.sh:13 check.sh:5
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Chateau/Cave"
 
-#: auto.sh:5 check.sh:5 clean.sh:5 clean.sh:13 init.sh:12
+#: init.sh:3 clean.sh:6
+msgid ".Long*Corridor*"
+msgstr ".Long*Couloir*"
+
+#: init.sh:8
+#, sh-format
+msgid ".Long $r1 Corridor $r2"
+msgstr ".Long $r1 Couloir $r2"
+
+#: init.sh:12 auto.sh:5 clean.sh:5 clean.sh:13 check.sh:5
 msgid "maze"
 msgstr "labyrinthe"
+
+#: init.sh:19
+msgid "maze generation:"
+msgstr "génération du labyrinthe :"
+
+#: init.sh:35 auto.sh:7 check.sh:7 check.sh:16
+msgid "silver_coin"
+msgstr "silver_coin"
+
+#: clean.sh:7
+msgid "Pffft... You are back to the entrance of the maze..."
+msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
+
+#: clean.sh:16
+msgid "silver"
+msgstr "argent"
 
 #: check.sh:11
 msgid "There still are some silver coins in the maze!"
@@ -32,25 +57,3 @@ msgstr "Il n'y a pas de pièce d'argent dans votre coffre !"
 #: check.sh:25
 msgid "Booh... The silver coin in you chest is invalid!"
 msgstr "Bouh... La pièce d'argent de votre coffre est invalide !"
-
-#: clean.sh:6 init.sh:3
-msgid ".Long*Corridor*"
-msgstr ".Long*Couloir*"
-
-#: clean.sh:7
-msgid "Pffft... You are back to the entrance of the maze..."
-msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
-
-#: init.sh:8
-#, sh-format
-msgid ".Long $r1 Corridor $r2"
-msgstr ".Long $r1 Couloir $r2"
-
-#: init.sh:19
-msgid "maze generation:"
-msgstr "génération du labyrinthe :"
-
-#: init.sh:35 auto.sh:7 check.sh:7
-msgid "silver_coin"
-msgstr "silver_coin"
-

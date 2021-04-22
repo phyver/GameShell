@@ -1,0 +1,26 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+#: static.sh:1 auto.sh:1 test.sh:9 test.sh:12 check.sh:1
+#, sh-format
+msgid "$GASH_HOME/Castle/Dungeon/First_floor/Second_floor/Top_of_the_dungeon"
+msgstr ""
+
+#: check.sh:9
+msgid "You are not at the top of the dungeon!"
+msgstr ""
+
+#: check.sh:10
+msgid "You will start over from the starting point of the mission."
+msgstr ""

@@ -27,7 +27,7 @@ _local_check() {
                 # f="$(echo "$cmd" | sed 's/ *nano *//')"
                 f="${cmd// *nano */}"
                 echo "$(eval_gettext "It seems you alias doesn't refer to the appropriate file (\$f).
-    Make sure to use an absolute path...")"
+Make sure to use an absolute path...")"
                 unalias $(gettext "journal")
                 find "$GASH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -rf
                 unset f

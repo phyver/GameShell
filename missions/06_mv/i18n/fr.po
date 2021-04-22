@@ -8,16 +8,20 @@ msgstr ""
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/fr.txt"
 
-#: auto.sh:1 check.sh:3 init.sh:7 static.sh:1
+# path for the text file containing the goal
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#: init.sh:5 auto.sh:1 check.sh:9 check.sh:49
+msgid "coin"
+msgstr "pièce"
+
+#: init.sh:7 static.sh:1 auto.sh:1 check.sh:3
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Chateau/Cave"
 
-#: auto.sh:1 check.sh:9 check.sh:49 init.sh:5
-msgid "coin"
-msgstr "pièce"
-
-#: auto.sh:2 check.sh:4 static.sh:2
+#: auto.sh:2 check.sh:4
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr "$GASH_HOME/Foret/Cabane/Coffre"
