@@ -1,11 +1,11 @@
 Mission goal
 ============
 
-The hermit now asks the you read him the instructions from line 9 to 
-11 of the **recipe** for his potion.
+The hermit now asks you to read him the instructions from lines 
+9 to 11 of the **recipe** for his potion.
 
-To do that, you will have to combine the 2 previous commands with a 
-``|``.
+To do that, you will need to combine the previous two commands
+using a ``|``.
 
 
 Useful commands
