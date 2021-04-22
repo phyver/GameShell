@@ -60,6 +60,7 @@ _gash_exit() {
   local signal=$1
   _log_action "$nb" "$signal"
   _gash_clean "$nb"
+  [ -z "$GASH_DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && unprotect
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
 
