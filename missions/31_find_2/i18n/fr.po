@@ -12,18 +12,39 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: auto.sh:2 check.sh:5 clean.sh:7 clean.sh:12 init.sh:3 init.sh:8
+#: init.sh:3 init.sh:8 auto.sh:2 clean.sh:7 clean.sh:12 check.sh:5
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Chateau/Cave"
 
-#: auto.sh:2 check.sh:5 clean.sh:6 clean.sh:12 init.sh:12
+#: init.sh:3 clean.sh:7
+msgid ".Long*Corridor*"
+msgstr ".Long*Couloir*"
+
+#: init.sh:8
+#, sh-format
+msgid ".Long $r1 Corridor $r2"
+msgstr ".Long $r1 Couloir $r2"
+
+#: init.sh:12 auto.sh:2 clean.sh:6 clean.sh:12 check.sh:5
 msgid "maze"
 msgstr "labyrinthe"
 
-#: auto.sh:3 check.sh:7 init.sh:38 init.sh:39
+#: init.sh:24
+msgid "maze generation:"
+msgstr "génération du labyrinthe :"
+
+#: init.sh:38 init.sh:39 auto.sh:3 check.sh:7 check.sh:21 check.sh:36
 msgid "ruby"
 msgstr "rubis"
+
+#: init.sh:46 init.sh:47
+msgid "stone"
+msgstr "cailloux"
+
+#: clean.sh:8
+msgid "Pffft... You are back to the entrance of the maze..."
+msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
 #: check.sh:11
 msgid "There are too many rubys in the maze!"
@@ -40,24 +61,3 @@ msgstr "Il n'y a pas de rubis dans le coffre !"
 #: check.sh:39
 msgid "The ruby file in the chest is invalid..."
 msgstr "Le fichier rubis du coffre n'est pas valide..."
-
-#: clean.sh:7 init.sh:3
-msgid ".Long*Corridor*"
-msgstr ".Long*Couloir*"
-
-#: clean.sh:8
-msgid "Pffft... You are back to the entrance of the maze..."
-msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
-
-#: init.sh:8
-#, sh-format
-msgid ".Long $r1 Corridor $r2"
-msgstr ".Long $r1 Couloir $r2"
-
-#: init.sh:24
-msgid "maze generation:"
-msgstr "génération du labyrinthe :"
-
-#: init.sh:46 init.sh:47
-msgid "stone"
-msgstr "cailloux"

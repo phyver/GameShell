@@ -6,29 +6,29 @@ msgstr ""
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgstr ""
 
 # path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
 
-#: auto.sh:1 check.sh:1 init.sh:1 static.sh:1
+#: init.sh:1 static.sh:1 auto.sh:1 check.sh:1
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
-msgstr "$GASH_HOME/Castle/Cellar"
+msgstr ""
 
-#: auto.sh:1 check.sh:1 init.sh:1
+#: init.sh:1 auto.sh:1 check.sh:1
 msgid "Burrow"
-msgstr "Burrow"
-
-#: auto.sh:1 init.sh:14 init.sh:15
-msgid "rat"
-msgstr "rat"
+msgstr ""
 
 #: init.sh:8
 msgid "cat"
-msgstr "cat"
+msgstr ""
 
 #: init.sh:9 init.sh:18
 msgid "CAT"
-msgstr "CAT"
+msgstr ""
+
+#: init.sh:14 init.sh:15 auto.sh:1
+msgid "rat"
+msgstr ""

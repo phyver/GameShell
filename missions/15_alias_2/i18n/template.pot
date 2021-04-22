@@ -1,0 +1,34 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+#: auto.sh:2 treasure.sh:1 check.sh:5 check.sh:8 check.sh:21 check.sh:31
+#: check.sh:32 check.sh:40 check.sh:41
+msgid "journal"
+msgstr ""
+
+#: check.sh:9
+#, sh-format
+msgid "No alias '$_alias' has been found..."
+msgstr ""
+
+#: check.sh:29
+#, sh-format
+msgid ""
+"It seems you alias doesn't refer to the appropriate file ($f).\n"
+"Make sure to use an absolute path..."
+msgstr ""
+
+#: check.sh:39
+msgid "Your alias doesn't use the command 'nano'..."
+msgstr ""

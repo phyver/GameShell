@@ -6,8 +6,6 @@ GameShell.tgz
 .session_data
 .tmp
 World
-*.tar
 locale/
 *~
-template
-template.pot
+Makefile
