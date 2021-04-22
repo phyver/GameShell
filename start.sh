@@ -82,12 +82,12 @@ _passport() {
   NOM=""
   while [ -z "$NOM" ]
   do
-    read -erp "$(gettext "Player's name: ")" NOM
+    read -erp "$(gettext "Player's name:") " NOM
   done
   EMAIL=""
   while [ -z "$EMAIL" ]
   do
-    read -erp "$(gettext "Player's email: ")" NOM
+    read -erp "$(gettext "Player's email:") " EMAIL
   done
   echo "  $NOM <$EMAIL>" >> "$PASSPORT"
 }
@@ -97,10 +97,19 @@ _confirm_passport() {
   echo "======================================================="
   cat "$PASSPORT"
   echo "======================================================="
-  color_echo yellow $(gettext "You won't be able to change this information.")
-  read -erp "$(gettext "Is this information correct? [Y/n] ")" OK
-  echo
-  [ "$OK" = "" ] || [ "$OK" = $(gettext "y") ] || [ "$OK" = $(gettext "Y") ]
+  color_echo yellow "$(gettext "You won't be able to change this information.")"
+  while true
+  do
+    read -erp "$(gettext "Is this information correct? [Y/n]") " OK
+    echo
+    if [ -z "$OK" ] || [ "$OK" = "$(gettext "y")" ] || [ "$OK" = "$(gettext "Y")" ]
+    then
+      return 0
+    elif [ "$OK" = "$(gettext "n")" ] || [ "$OK" = "$(gettext "N")" ]
+    then
+      return 1
+    fi
+  done
 }
 
 
@@ -122,9 +131,19 @@ init_gash() {
   # message when a new game is started from the developpment directory
   if [ -e "$GASH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
   then
-    read -erp "$(gettext "You are trying to run GameShell inside the developpment directory.
-Do you want to continue? [y/N] ")" x
-    [ "$x" != "$(gettext "y")" ] && [ "$x" != "$(gettext "Y")" ] && exit 1
+    local r
+    while true
+    do
+      read -erp "$(gettext "You are trying to run GameShell inside the developpment directory.
+Do you want to continue? [y/N]") " r
+      if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] || [ "$r" = "$(gettext "N")" ]
+      then
+        exit 1
+      elif [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ]
+      then
+        break
+      fi
+    done
   fi
 
   # message when data from a previous play is found. We can either
@@ -134,13 +153,19 @@ Do you want to continue? [y/N] ")" x
   then
     if [ -z "$RESET" ]
     then
-      read -erp "$(eval_gettext 'The directory $GASH_DATA contains meta-data from a previous game.
-Do you want to continue this game? [Y/n]')" x
-      echo "$x"
-      if [ "$x" = "$(gettext "y")" ] || [ "$x" = "$(gettext "Y")" ] || [ "$x" = "" ]
-      then
-        return 1
-      fi
+      local r
+      while true
+      do
+        read -erp "$(eval_gettext 'The directory $GASH_DATA contains meta-data from a previous game.
+Do you want to continue this game? [Y/n]') " r
+        if [ -z "$r" ] || [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ]
+        then
+          return 1
+        elif [ "$r" = "$(gettext "n")" ] || [ "$r" = "$(gettext "N")" ]
+        then
+          break
+        fi
+      done
     elif [ "$RESET" = "FALSE" ]
     then
       return 1
@@ -219,7 +244,7 @@ Do you want to continue this game? [Y/n]')" x
   make_index "$@" 2> /dev/null | sed "s;$GASH_MISSIONS;.;" > "$GASH_DATA/index.txt"
 
   # Installing all missions.
-  cat $GASH_DATA/index.txt | while read MISSION_DIR
+  cat "$GASH_DATA/index.txt" | while read MISSION_DIR
   do
     export MISSION_DIR
     MISSION_DIR=$GASH_MISSIONS/$MISSION_DIR
