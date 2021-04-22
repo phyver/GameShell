@@ -5,7 +5,7 @@ The hermit now asks the you read him the instructions from line 9 to
 11 of the **recipe** for his potion.
 
 To do that, you will have to combine the 2 previous commands with a 
-`|`.
+``|``.
 
 
 Useful commands

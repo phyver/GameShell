@@ -1,14 +1,14 @@
 Objectif
 ========
 
-Combinez plusieurs commandes avec "|" pour connaitre le nombre 
+Combinez plusieurs commandes avec ``|`` pour connaitre le nombre 
 d'achats impayés.
 
 NOTE : vous ne pouvez utiliser qu'une seule commande en plus de 
-`gash check`.
+``gash check``.
 
-Vous pouvez réinitialiser le compteur avec la commande `gash reset`, 
-mais l'échoppe sera re-générée.
+Vous pouvez réinitialiser le compteur avec la commande ``gash 
+reset``, mais l'échoppe sera re-générée.
 
 
 Commandes utiles

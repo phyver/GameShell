@@ -1,8 +1,8 @@
 Objectif
 ========
 
-1/ Lancez la commande "xeyes" puis la stopper.
-2/ Lancez la commande "xeyes" en tâche de fond.
+1/ Lancez la commande ``xeyes`` puis la stopper.
+2/ Lancez la commande ``xeyes`` en tâche de fond.
 
 
 Commandes utiles
