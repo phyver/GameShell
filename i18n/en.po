@@ -5,49 +5,61 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # help file
-#: start.sh:30 start.sh:32
+#: start.sh:32
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
 msgstr "$GASH_BASE/i18n/start-help/en.txt"
 
-#: start.sh:69 start.sh:71
+#: start.sh:71
 #, sh-format
 msgid "invalid option: '-$OPTARG'"
 msgstr "invalid option: '-$OPTARG'"
 
-#: start.sh:84 start.sh:86
-msgid "invalid number"
-msgstr "invalid number"
+#: start.sh:85
+msgid "Player's name:"
+msgstr "Player's name:"
 
-#: start.sh:109 start.sh:99 start.sh:100
+#: start.sh:90
+msgid "Player's email:"
+msgstr "Player's email:"
+
+#: start.sh:100
 msgid "You won't be able to change this information."
 msgstr "You won't be able to change this information."
 
-#: start.sh:110 start.sh:100 start.sh:101
-msgid "Is this information correct? [Y/n] "
-msgstr "Is this information correct? [Y/n] "
+#: start.sh:103
+msgid "Is this information correct? [Y/n]"
+msgstr "Is this information correct? [Y/n]"
 
 # abbreviation for "yes" (lowercase)
-#: start.sh:112 start.sh:135 start.sh:145 start.sh:102 start.sh:126
-#: start.sh:139 start.sh:103 start.sh:127 start.sh:140
+#: start.sh:105 start.sh:142 start.sh:161
 msgid "y"
 msgstr "y"
 
 # abbreviation for "yes" (uppercase)
-#: start.sh:112 start.sh:135 start.sh:145 start.sh:102 start.sh:126
-#: start.sh:139 start.sh:103 start.sh:127 start.sh:140
+#: start.sh:105 start.sh:142 start.sh:161
 msgid "Y"
 msgstr "Y"
 
-#: start.sh:133 start.sh:124 start.sh:125
+# abbreviation for "no" (lowercase)
+#: start.sh:108 start.sh:139 start.sh:164
+msgid "n"
+msgstr "n"
+
+# abbreviation for "no" (lowercase)
+#: start.sh:108 start.sh:139 start.sh:164
+msgid "N"
+msgstr "N"
+
+#: start.sh:137
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
-"Do you want to continue? [y/N] "
+"Do you want to continue? [y/N]"
 msgstr ""
 "You are trying to run GameShell inside the developpment directory.\n"
-"Do you want to continue? [y/N] "
+"Do you want to continue? [y/N]"
 
-#: start.sh:142 start.sh:136 start.sh:137
+#: start.sh:159
 #, sh-format
 msgid ""
 "The directory $GASH_DATA contains meta-data from a previous game.\n"
@@ -56,44 +68,53 @@ msgstr ""
 "The directory $GASH_DATA contains meta-data from a previous game.\n"
 "Do you want to continue this game? [Y/n]"
 
-#: start.sh:191 start.sh:190
+#: start.sh:218
 #, sh-format
 msgid "unknown mode: $MODE"
 msgstr "unknown mode: $MODE"
 
-#: start.sh:201 start.sh:200
+#: start.sh:228
 msgid "Start again!"
 msgstr "Start again!"
 
-#: start.sh:215 start.sh:214
+#: start.sh:242
 msgid "======== Initialisation of GameShell ========"
 msgstr "======== Initialisation of GameShell ========"
 
-#: lib/gameshell.sh:87 lib/gameshell.sh:49
+#: lib/gameshell.sh:49
 msgid "The command 'gash reset' is useless when run inside a subshell!"
 msgstr "The command 'gash reset' is useless when run inside a subshell!"
 
-#: lib/gameshell.sh:111 lib/gameshell.sh:163 lib/gameshell.sh:223
-#: lib/gameshell.sh:247 lib/gameshell.sh:281 lib/gameshell.sh:377
-#: lib/gameshell.sh:435 lib/gameshell.sh:120 lib/gameshell.sh:172
-#: lib/gameshell.sh:230 lib/gameshell.sh:254 lib/gameshell.sh:286
-#: lib/gameshell.sh:378 lib/gameshell.sh:453 lib/gameshell.sh:81
-#: lib/gameshell.sh:132 lib/gameshell.sh:198 lib/gameshell.sh:220
-#: lib/gameshell.sh:251 lib/gameshell.sh:339 lib/gameshell.sh:411
+#: lib/gameshell.sh:82 lib/gameshell.sh:133 lib/gameshell.sh:199
+#: lib/gameshell.sh:221 lib/gameshell.sh:252 lib/gameshell.sh:342
+#: lib/gameshell.sh:414
 #, sh-format
 msgid "Problem: couldn't get mission number '$nb' ($fn_name)"
 msgstr "Problem: couldn't get mission number '$nb' ($fn_name)"
 
-#: lib/gameshell.sh:134 lib/gameshell.sh:143 lib/gameshell.sh:104
+#: lib/gameshell.sh:105
 #, sh-format
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr ""
 
-#: lib/gameshell.sh:174 lib/gameshell.sh:183 lib/gameshell.sh:151
+#: lib/gameshell.sh:140
+#, sh-format
+msgid ""
+"Mission $nb doesn't exist!\n"
+"Aborting..."
+msgstr ""
+"Mission $nb doesn't exist!\n"
+"Aborting..."
+
+#: lib/gameshell.sh:143
+msgid "Press Enter"
+msgstr "Press Enter"
+
+#: lib/gameshell.sh:152
 msgid "The mission is cancelled because some dependencies are not met."
 msgstr "The mission is cancelled because some dependencies are not met."
 
-#: lib/gameshell.sh:198 lib/gameshell.sh:205 lib/gameshell.sh:173
+#: lib/gameshell.sh:174
 msgid ""
 "NOTE: this mission was initialized in a sub-shell.\n"
 "You should run the command\n"
@@ -106,67 +127,79 @@ msgstr ""
 "to make sure the mission is initialized properly."
 
 # help file
-#: lib/gameshell.sh:211 lib/gameshell.sh:218 lib/gameshell.sh:186
+#: lib/gameshell.sh:187
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
 
 # help file
-#: lib/gameshell.sh:213 lib/gameshell.sh:220 lib/gameshell.sh:188
+#: lib/gameshell.sh:189
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 
-#: lib/gameshell.sh:228 lib/gameshell.sh:261 lib/gameshell.sh:235
-#: lib/gameshell.sh:268 lib/gameshell.sh:203 lib/gameshell.sh:234
+#: lib/gameshell.sh:204 lib/gameshell.sh:235
 msgid "wrong password"
 msgstr "wrong password"
 
-#: lib/gameshell.sh:233 lib/gameshell.sh:240 lib/gameshell.sh:208
+#: lib/gameshell.sh:209
 #, sh-format
 msgid "Mission $nb has been cancelled."
 msgstr "Mission $nb has been cancelled."
 
-#: lib/gameshell.sh:255 lib/gameshell.sh:262 lib/gameshell.sh:228
+#: lib/gameshell.sh:229
 #, sh-format
 msgid "Mission $nb doesn't have an auto script."
 msgstr "Mission $nb doesn't have an auto script."
 
-#: lib/gameshell.sh:289 lib/gameshell.sh:294 lib/gameshell.sh:259
+#: lib/gameshell.sh:260
 #, sh-format
 msgid "Error: mission $nb doesn't have a check script."
 msgstr "Error: mission $nb doesn't have a check script."
 
-#: lib/gameshell.sh:296 lib/gameshell.sh:301 lib/gameshell.sh:266
+#: lib/gameshell.sh:267
 #, sh-format
 msgid "Mission $nb has already been succesfully checked!"
 msgstr "Mission $nb has already been succesfully checked!"
 
-#: lib/gameshell.sh:309 lib/gameshell.sh:310 lib/gameshell.sh:275
+#: lib/gameshell.sh:276
 #, sh-format
 msgid "Mission $nb has been successfully completed!"
 msgstr "Mission $nb has been successfully completed!"
 
-#: lib/gameshell.sh:340 lib/gameshell.sh:341 lib/gameshell.sh:303
+#: lib/gameshell.sh:302
 #, sh-format
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: lib/gameshell.sh:361 lib/gameshell.sh:360 lib/gameshell.sh:322
+#: lib/gameshell.sh:325
 #, sh-format
 msgid "Mission $nb hasn't been completed."
 msgstr "Mission $nb hasn't been completed."
 
+#: lib/gameshell.sh:360
+#, sh-format
+msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
+msgstr "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
+
+#: lib/gameshell.sh:374 lib/gameshell.sh:379 lib/gameshell.sh:403
+#, sh-format
+msgid "test $_NB_TESTS failed"
+msgstr "test $_NB_TESTS failed"
+
+#: lib/gameshell.sh:422
+#, sh-format
+msgid "Error: mission $nb doesn't have a test script."
+msgstr "Error: mission $nb doesn't have a test script."
+
 # help file
-#: lib/gameshell.sh:408 lib/gameshell.sh:454 lib/gameshell.sh:483
-#: lib/gameshell.sh:441
+#: lib/gameshell.sh:444
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-help/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-help/en.txt"
 
 # help file
-#: lib/gameshell.sh:412 lib/gameshell.sh:458 lib/gameshell.sh:487
-#: lib/gameshell.sh:445
+#: lib/gameshell.sh:448
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-HELP/en.txt"
@@ -183,44 +216,3 @@ msgstr ""
 "GameShell will use 'gnu-linux', without guarantee.\n"
 "Please report this as a bug.\n"
 "Press Enter to continue."
-
-#: lib/gameshell.sh:414 lib/gameshell.sh:419 lib/gameshell.sh:142
-msgid "Press Enter"
-msgstr "Press Enter"
-
-#: lib/gameshell.sh:421
-msgid "test successful"
-msgstr "test successful"
-
-#: lib/gameshell.sh:443 lib/gameshell.sh:461 lib/gameshell.sh:419
-#, sh-format
-msgid "Error: mission $nb doesn't have a test script."
-msgstr "Error: mission $nb doesn't have a test script."
-
-#: start.sh:84 start.sh:85
-msgid "Player's name: "
-msgstr "Player's name: "
-
-#: start.sh:89 start.sh:90
-msgid "Player's email: "
-msgstr "Player's email: "
-
-#: lib/gameshell.sh:397 lib/gameshell.sh:357
-#, sh-format
-msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
-msgstr "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
-
-#: lib/gameshell.sh:412 lib/gameshell.sh:417 lib/gameshell.sh:441
-#: lib/gameshell.sh:371 lib/gameshell.sh:376 lib/gameshell.sh:400
-#, sh-format
-msgid "test $_NB_TESTS failed"
-msgstr "test $_NB_TESTS failed"
-
-#: lib/gameshell.sh:139
-#, sh-format
-msgid ""
-"Mission $nb doesn't exist!\n"
-"Aborting..."
-msgstr ""
-"Mission $nb doesn't exist!\n"
-"Aborting..."
