@@ -3,8 +3,10 @@
 _local_check() {
     local lab
     lab=$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext "maze")" -type d)
+    echo $lab
     local nb
     nb=$(find "$lab" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")" | wc -l)
+    echo $nb
 
     if [ "$nb" -gt 1 ]
     then
@@ -18,7 +20,7 @@ _local_check() {
     fi
 
     local rubis
-    rubis=$(find "$GASH_COFFRE" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")")
+    rubis=$(find "$GASH_CHEST" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")")
 
     if [ -z "$rubis" ]
     then
