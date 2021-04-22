@@ -298,11 +298,13 @@ _gash_check() {
           echo ""
           export TEXTDOMAIN="gash"
         else
-          export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-          echo ""
-          cat "$(eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
-          echo ""
-          export TEXTDOMAIN="gash"
+          local file_msg="$(eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
+          if [ -f "$file_msg" ]
+          then
+            echo ""
+            cat "$file_msg"
+            echo ""
+          fi
         fi
 
         # Load the treasure in the current shell.
