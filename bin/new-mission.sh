@@ -243,23 +243,21 @@ EOF
 
 new_makefile() {
     cat <<'EOF'
-
-##
-# TODO: generate new po file from template with msgen
-
 LANG=$(wildcard i18n/*.po)
 SH_FILES=$(wildcard *.sh)
+OTHER_FILES=
 
 all: $(LANG)
 
-$(LANG):%.po: i18n/template.pot
-	msgmerge --update --no-wrap $@ i18n/template.pot
+$(LANG):%.po: i18n/template.pot FORCE
+	@msgmerge --quiet --update --no-wrap --no-location $@ i18n/template.pot
+	msgmerge --quiet --update --no-wrap $@ i18n/template.pot
 
-i18n/template.pot: $(SH_FILES)
-	mkdir -p i18n/
-	touch i18n/template.pot
-	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template.pot $(SH_FILES)
-	msgen --no-wrap --output i18n/template.pot i18n/template.pot
+i18n/template.pot: $(SH_FILES) $(OTHER_FILES) FORCE
+	@mkdir -p i18n/
+	@touch i18n/template.pot
+	@xgettext --from-code=UTF-8 --omit-header --no-wrap --no-location --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
+	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
 
 new: i18n/template.pot
 	@read -p "language code: " lang; \
@@ -274,7 +272,7 @@ clean:
 cleaner: clean
 	find . -maxdepth 1 -type f -name "_*" -print0 | xargs -0 --open-tty rm -i
 
-.PHONY: clean cleaner translation new
+.PHONY: all clean cleaner new FORCE
 EOF
 }
 

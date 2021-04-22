@@ -1,24 +1,28 @@
 
 LANG=$(wildcard i18n/*.po)
+SH_FILES= start.sh bin/archive.sh lib/gameshell.sh lib/utils.sh lib/os_aliases.sh
+OTHER_FILES=
 
 all: $(LANG)
 
-$(LANG):%.po: i18n/template.pot
-	msgmerge --update --no-wrap $@ i18n/template.pot
+$(LANG):%.po: i18n/template.pot FORCE
+	@msgmerge --quiet --update --no-wrap --no-location $@ i18n/template.pot
+	msgmerge --quiet --update --no-wrap $@ i18n/template.pot
 
-i18n/template.pot:  start.sh bin/archive.sh lib/gameshell.sh lib/utils.sh lib/os_aliases.sh
-	mkdir -p i18n/
-	touch i18n/template.pot
-	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template.pot start.sh bin/archive.sh lib/gameshell.sh lib/utils.sh lib/os_aliases.sh
-	msgen --no-wrap --output i18n/template.pot i18n/template.pot
+i18n/template.pot: $(SH_FILES) $(OTHER_FILES) FORCE
+	@mkdir -p i18n/
+	@touch i18n/template.pot
+	@xgettext --from-code=UTF-8 --omit-header --no-wrap --no-location --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
+	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
 
 new: i18n/template.pot
 	@read -p "language code: " lang; \
-        [ -e "./i18n/$$lang.po" ] && echo "file i18n/$$lang.po already exists" && exit; \
-        echo "file i18n/$$lang.po created"; \
-		msgen --no-wrap --output i18n/$$lang.po i18n/template.pot
+		[ -e "./i18n/$$lang.po" ] && echo "file i18n/$$lang.po already exists" && exit; \
+		echo "file i18n/$$lang.po created"; \
+		msgen --no-wrap --output i18n/$$lang.po i18n/template.pot; \
+		touch --date="2000-01-01" "i18n/$$lang.po"
 
 clean:
-	rm -rf i18n/*~ i18n/template.pot locale
+	rm -rf i18n/*~ locale
 
-.PHONY: clean new translation
+.PHONY: clean new FORCE
