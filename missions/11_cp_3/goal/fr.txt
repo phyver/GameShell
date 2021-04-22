@@ -1,16 +1,24 @@
 Objectif
 ========
 
-En me promenant au premier étage du donjon, je me suis arrêté devant 
-de superbes tableaux. Je suis moi même un amateur d'art.
-J'aimerais bien obtenir une copie (même nom, même contenu) du plus 
-vieux tableau.
+En me promenant au premier étage du donjon, je me suis arrêté 
+devant de superbes tableaux. Je suis moi même un amateur d'art.
+Ajoutez une copie (même nom, même contenu) du plus vieux de ces 
+tableaux à votre coffre.
 
 
-Useful commands
-===============
+Objectif secondaire
+-------------------
+
+Admirez vous aussi les trois tableaux.
+
+
+Commandes utiles
+================
 
 ls -l
   affiche la liste des fichiers avec de nombreuses informations, 
   incluant la date de modification
 
+cat FICHIER
+  affiche le contenu du fichier
