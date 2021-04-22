@@ -1,7 +1,8 @@
 Mission goal
 ============
 
-Combine several commands with "|" in order to find the King's debt.
+Combine several commands with ``|`` in order to find the King's 
+debt.
 
 Next to the castle, there is a merchant stall. People often buy on 
 credit and reimburse their debt when they can.
@@ -19,7 +20,7 @@ Hint
 ----
 
 When there are no sub-directories, an alternative to ``find . -name 
-"*boring_object*"`` is to use `ls` and filter the result with grep:
+'*boring_object*'`` is to use `ls` and filter the result with grep:
   $ ls | grep "boring_object"
 
 
