@@ -8,3 +8,5 @@ GameShell.tgz
 World
 locale/
 *~
+GameShell.sh
+GameShell-save.sh
