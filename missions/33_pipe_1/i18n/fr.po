@@ -12,140 +12,140 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: check.sh:4
-msgid "How much does the king owe? "
-msgstr "Quelle est la dette du roi ? "
-
 #: init.sh:5 init.sh:6 static.sh:5 auto.sh:1
 #, sh-format
 msgid "$GASH_HOME/Stall"
 msgstr "$GASH_HOME/Echoppe"
 
-#: bin/genStall.py:72 bin/genStall.py:77
-msgid "the son of Martin"
-msgstr "le fils de Martin"
-
-#: bin/genStall.py:73 bin/genStall.py:78
-msgid "the Bold"
-msgstr "le Chauve"
-
-#: bin/genStall.py:74 bin/genStall.py:79
-msgid "Georges' son"
-msgstr "le fils au Georges"
-
-#: bin/genStall.py:74 bin/genStall.py:79
-msgid "from next town"
-msgstr "du village voisin"
-
-#: bin/genStall.py:79 bin/genStall.py:84
-msgid "a spade"
-msgstr "une pelle"
-
-#: bin/genStall.py:79 bin/genStall.py:84
-msgid "a pick"
-msgstr "un pic"
-
-#: bin/genStall.py:79 bin/genStall.py:84
-msgid "an apple"
-msgstr "une pomme"
-
-#: bin/genStall.py:79 bin/genStall.py:84
-msgid "a chicken"
-msgstr "une poule"
-
-#: bin/genStall.py:79 bin/genStall.py:84
-msgid "a horse"
-msgstr "un cheval"
-
-#: bin/genStall.py:80 bin/genStall.py:85
-msgid "a cow"
-msgstr "une vache"
-
-#: bin/genStall.py:80 bin/genStall.py:85
-msgid "a goat"
-msgstr "une chèvre"
-
-#: bin/genStall.py:80 bin/genStall.py:85
-msgid "a chackal"
-msgstr "un chacal"
-
-#: bin/genStall.py:80 bin/genStall.py:85
-msgid "a bag flour"
-msgstr "un sac de farine"
-
-#: bin/genStall.py:80 bin/genStall.py:85
-msgid "a ruby"
-msgstr "un rubis"
-
-#: bin/genStall.py:81 bin/genStall.py:86
-msgid "a piece of soap"
-msgstr "un morceau de savon"
-
-#: bin/genStall.py:81 bin/genStall.py:86
-msgid "a leather ball"
-msgstr "une balle en cuir"
-
-#: bin/genStall.py:81 bin/genStall.py:86
-msgid "a blanket"
-msgstr "une couverture"
-
-#: bin/genStall.py:81 bin/genStall.py:86
-msgid "a shiny rock"
-msgstr "un caillon brillant"
-
-#: bin/genStall.py:82 bin/genStall.py:87
-msgid "an opal"
-msgstr "une opale"
-
-#: bin/genStall.py:82 bin/genStall.py:87
-msgid "walking stick"
-msgstr "un baton de marche"
-
-#: bin/genStall.py:82 bin/genStall.py:87
-msgid "a leather bag"
-msgstr "une besace en cuir"
-
-#: bin/genStall.py:82 bin/genStall.py:87
-msgid "a stool"
-msgstr "un tabouret"
-
-#: bin/genStall.py:82 bin/genStall.py:87
-msgid "a pin"
-msgstr "une épingle"
-
-#: bin/genStall.py:83 bin/genStall.py:88
-msgid "a belt"
-msgstr "une ceinture"
-
-#: bin/genStall.py:83 bin/genStall.py:88
-msgid "a dented helmet"
-msgstr "un heaume cabossé"
-
-#: bin/genStall.py:83 bin/genStall.py:88
-msgid "a wooden spoon"
-msgstr "une cuillère en bois"
-
-#: bin/genStall.py:83 bin/genStall.py:88
-msgid "a knife"
-msgstr "un couteau"
-
-#: bin/genStall.py:84 bin/genStall.py:89
-msgid "a bottle of cider"
-msgstr "une bouteille de cidre"
-
-#: bin/genStall.py:97 auto.sh:2 bin/genStall.py:102
-msgid "PAID"
-msgstr "PAYÉ"
-
-#: bin/genStall.py:105 auto.sh:2 bin/genStall.py:110
+#: auto.sh:2 bin/genStall.py:110
 msgid "the King"
 msgstr "le Roi"
 
-#: bin/genStall.py:108 bin/genStall.py:113
-msgid "{} bought {} for {} coppers{}\n"
-msgstr "{} a acheté {} pour {} piécettes{}\n"
+#: auto.sh:2 bin/genStall.py:102
+msgid "PAID"
+msgstr "PAYÉ"
+
+#: check.sh:4
+msgid "How much does the king owe? "
+msgstr "Quelle est la dette du roi ? "
 
 #: check.sh:16
 #, sh-format
 msgid "That's the right answer, but you used $NB_CMD commands!"
 msgstr "C'est la bonne réponse, mais vous avez utilisé $NB_CMD commandes !"
+
+#: bin/genStall.py:77
+msgid "the son of Martin"
+msgstr "le fils de Martin"
+
+#: bin/genStall.py:78
+msgid "the Bold"
+msgstr "le Chauve"
+
+#: bin/genStall.py:79
+msgid "Georges' son"
+msgstr "le fils au Georges"
+
+#: bin/genStall.py:79
+msgid "from next town"
+msgstr "du village voisin"
+
+#: bin/genStall.py:84
+msgid "a spade"
+msgstr "une pelle"
+
+#: bin/genStall.py:84
+msgid "a pick"
+msgstr "un pic"
+
+#: bin/genStall.py:84
+msgid "an apple"
+msgstr "une pomme"
+
+#: bin/genStall.py:84
+msgid "a chicken"
+msgstr "une poule"
+
+#: bin/genStall.py:84
+msgid "a horse"
+msgstr "un cheval"
+
+#: bin/genStall.py:85
+msgid "a cow"
+msgstr "une vache"
+
+#: bin/genStall.py:85
+msgid "a goat"
+msgstr "une chèvre"
+
+#: bin/genStall.py:85
+msgid "a chackal"
+msgstr "un chacal"
+
+#: bin/genStall.py:85
+msgid "a bag flour"
+msgstr "un sac de farine"
+
+#: bin/genStall.py:85
+msgid "a ruby"
+msgstr "un rubis"
+
+#: bin/genStall.py:86
+msgid "a piece of soap"
+msgstr "un morceau de savon"
+
+#: bin/genStall.py:86
+msgid "a leather ball"
+msgstr "une balle en cuir"
+
+#: bin/genStall.py:86
+msgid "a blanket"
+msgstr "une couverture"
+
+#: bin/genStall.py:86
+msgid "a shiny rock"
+msgstr "un caillon brillant"
+
+#: bin/genStall.py:87
+msgid "an opal"
+msgstr "une opale"
+
+#: bin/genStall.py:87
+msgid "walking stick"
+msgstr "un baton de marche"
+
+#: bin/genStall.py:87
+msgid "a leather bag"
+msgstr "une besace en cuir"
+
+#: bin/genStall.py:87
+msgid "a stool"
+msgstr "un tabouret"
+
+#: bin/genStall.py:87
+msgid "a pin"
+msgstr "une épingle"
+
+#: bin/genStall.py:88
+msgid "a belt"
+msgstr "une ceinture"
+
+#: bin/genStall.py:88
+msgid "a dented helmet"
+msgstr "un heaume cabossé"
+
+#: bin/genStall.py:88
+msgid "a wooden spoon"
+msgstr "une cuillère en bois"
+
+#: bin/genStall.py:88
+msgid "a knife"
+msgstr "un couteau"
+
+#: bin/genStall.py:89
+msgid "a bottle of cider"
+msgstr "une bouteille de cidre"
+
+#: bin/genStall.py:113
+msgid "{} bought {} for {} coppers{}\n"
+msgstr "{} a acheté {} pour {} piécettes{}\n"

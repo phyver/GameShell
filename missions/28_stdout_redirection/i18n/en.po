@@ -12,16 +12,16 @@ msgstr "$MISSION_DIR/goal/en.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: auto.sh:1 check.sh:5 init.sh:3 static.sh:3
+#: init.sh:3 static.sh:3 auto.sh:1 check.sh:5
 #, sh-format
 msgid "$GASH_HOME/Castle/Main_building/Library/Merlin_s_office"
 msgstr "$GASH_HOME/Castle/Main_building/Library/Merlin_s_office"
 
-#: auto.sh:2 init.sh:4 init.sh:8 init.sh:21
+#: init.sh:4 init.sh:8 init.sh:21 auto.sh:2
 msgid "grimoire"
 msgstr "grimoire"
 
-#: auto.sh:2 check.sh:8 check.sh:14 static.sh:3
+#: static.sh:3 auto.sh:2 check.sh:8 check.sh:14
 msgid "Drawer"
 msgstr "Drawer"
 

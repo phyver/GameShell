@@ -1,0 +1,25 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+#: check.sh:7
+msgid "The alias 'la' doesn't exist..."
+msgstr ""
+
+#: check.sh:11
+msgid "The alias 'la' is invalid..."
+msgstr ""
+
+#: check.sh:16
+msgid "The alias 'la' doesn't run 'ls -A'..."
+msgstr ""

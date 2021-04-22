@@ -1,0 +1,22 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+#: static.sh:1 auto.sh:3 check.sh:11
+#, sh-format
+msgid "$GASH_HOME/Castle/Cellar"
+msgstr ""
+
+#: auto.sh:3 check.sh:11
+msgid "cat"
+msgstr ""

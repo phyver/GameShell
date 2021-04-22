@@ -12,20 +12,7 @@ msgstr "$MISSION_DIR/goal/en.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: check.sh:3
-msgid "What's the key that will make Merlin's chest to appear?"
-msgstr "What's the key that will make Merlin's chest to appear?"
-
-#: check.sh:9 check.sh:10
-#, sh-format
-msgid "$GASH_HOME/Castle/Cellar/Merlin_s_Chest"
-msgstr "$GASH_HOME/Castle/Cellar/Merlin_s_Chest"
-
-#: check.sh:13 check.sh:14
-msgid "That's not the secret key."
-msgstr "That's not the secret key."
-
-#: init.sh:17 init.sh:18
+#: init.sh:17
 #, sh-format
 msgid ""
 "here is my will:\n"
@@ -40,7 +27,7 @@ msgstr ""
 "it re-appear is: $SECRET_KEY\n"
 "merlin the enchanter"
 
-#: init.sh:21 init.sh:22
+#: init.sh:21
 #, sh-format
 msgid "$GASH_HOME/Castle/Main_building/Library/.secret_message"
 msgstr "$GASH_HOME/Castle/Main_building/Library/.secret_message"
@@ -50,12 +37,25 @@ msgstr "$GASH_HOME/Castle/Main_building/Library/.secret_message"
 msgid "$GASH_HOME/Castle/Main_building/Library/"
 msgstr "$GASH_HOME/Castle/Main_building/Library/"
 
-#: check.sh:10 check.sh:11
+#: check.sh:3
+msgid "What's the key that will make Merlin's chest to appear?"
+msgstr "What's the key that will make Merlin's chest to appear?"
+
+#: check.sh:9
+#, sh-format
+msgid "$GASH_HOME/Castle/Cellar/Merlin_s_Chest"
+msgstr "$GASH_HOME/Castle/Cellar/Merlin_s_Chest"
+
+#: check.sh:10
 #, sh-format
 msgid "$MISSION_DIR/secret_recipe/en.txt"
 msgstr "$MISSION_DIR/secret_recipe/en.txt"
 
-#: check.sh:11 check.sh:10
+#: check.sh:10
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
 msgstr "$GASH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
+
+#: check.sh:13
+msgid "That's not the secret key."
+msgstr "That's not the secret key."

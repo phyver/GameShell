@@ -12,17 +12,16 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: auto.sh:1 check.sh:5 check.sh:9 check.sh:16 auto.sh:2 check.sh:3 check.sh:7
-#: check.sh:13
+#: auto.sh:2 check.sh:4 check.sh:8 check.sh:13
 msgid "journal"
 msgstr "journal"
 
-#: check.sh:8 check.sh:6
+#: check.sh:7
 #, sh-format
 msgid "The file '$journal' doesn't exist..."
 msgstr "Le fichier '$journal' n'existe pas..."
 
-#: check.sh:15 check.sh:12
+#: check.sh:12
 #, sh-format
 msgid "The file '$journal' is empty..."
 msgstr "Le fichier '$journal' est vide..."

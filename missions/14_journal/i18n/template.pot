@@ -1,0 +1,27 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+#: auto.sh:2 check.sh:4 check.sh:8 check.sh:13
+msgid "journal"
+msgstr ""
+
+#: check.sh:7
+#, sh-format
+msgid "The file '$journal' doesn't exist..."
+msgstr ""
+
+#: check.sh:12
+#, sh-format
+msgid "The file '$journal' is empty..."
+msgstr ""

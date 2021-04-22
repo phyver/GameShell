@@ -1,0 +1,63 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+#: init.sh:3 init.sh:8 auto.sh:2 clean.sh:7 clean.sh:12 check.sh:5
+#, sh-format
+msgid "$GASH_HOME/Castle/Cellar"
+msgstr ""
+
+#: init.sh:3 clean.sh:7
+msgid ".Long*Corridor*"
+msgstr ""
+
+#: init.sh:8
+#, sh-format
+msgid ".Long $r1 Corridor $r2"
+msgstr ""
+
+#: init.sh:12 auto.sh:2 clean.sh:6 clean.sh:12 check.sh:5
+msgid "maze"
+msgstr ""
+
+#: init.sh:24
+msgid "maze generation:"
+msgstr ""
+
+#: init.sh:38 init.sh:39 auto.sh:3 check.sh:7 check.sh:21 check.sh:36
+msgid "ruby"
+msgstr ""
+
+#: init.sh:46 init.sh:47
+msgid "stone"
+msgstr ""
+
+#: clean.sh:8
+msgid "Pffft... You are back to the entrance of the maze..."
+msgstr ""
+
+#: check.sh:11
+msgid "There are too many rubys in the maze!"
+msgstr ""
+
+#: check.sh:16
+msgid "The ruby is still in the maze!"
+msgstr ""
+
+#: check.sh:25
+msgid "There is no ruby in the chest!"
+msgstr ""
+
+#: check.sh:39
+msgid "The ruby file in the chest is invalid..."
+msgstr ""

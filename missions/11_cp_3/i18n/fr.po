@@ -12,6 +12,15 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
+#: init.sh:5 init.sh:17 init.sh:21 auto.sh:5 test.sh:5 check.sh:26
+#, sh-format
+msgid "$GASH_HOME/Castle/Dungeon/First_floor"
+msgstr "$GASH_HOME/Chateau/Donjon/Premier_etage"
+
+#: init.sh:5 init.sh:17 init.sh:21 test.sh:5 test.sh:8 check.sh:15 check.sh:52
+msgid "painting"
+msgstr "tableau"
+
 #: check.sh:10
 #, sh-format
 msgid ""
@@ -21,10 +30,6 @@ msgstr ""
 "Vous n'avez pas de coffre ($GASH_CHEST).\n"
 "Fabriquez en un en premier."
 
-#: check.sh:15 check.sh:52 init.sh:5 init.sh:17 init.sh:21
-msgid "painting"
-msgstr "tableau"
-
 #: check.sh:18
 msgid "There is no painting in your chest..."
 msgstr "Il n'y a pas de tableau dans votre coffre..."
@@ -32,11 +37,6 @@ msgstr "Il n'y a pas de tableau dans votre coffre..."
 #: check.sh:22
 msgid "There are too many paintings in your chest..."
 msgstr "Il y a trop de tableaux dans votre coffre..."
-
-#: check.sh:26 init.sh:5 init.sh:17 init.sh:21
-#, sh-format
-msgid "$GASH_HOME/Castle/Dungeon/First_floor"
-msgstr "$GASH_HOME/Chateau/Donjon/Premier_etage"
 
 #: check.sh:28
 msgid "The painting is not in the dungeon anymore..."

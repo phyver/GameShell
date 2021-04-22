@@ -8,16 +8,32 @@ msgstr ""
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/fr.txt"
 
-#: auto.sh:1 check.sh:1 init.sh:1 static.sh:2
+# path for the text file containing the goal
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#: init.sh:1 static.sh:1 auto.sh:1 check.sh:1
 #, sh-format
 msgid "$GASH_HOME/Castle/Entrance"
 msgstr "$GASH_HOME/Chateau/Entrée"
 
-#: auto.sh:1 check.sh:50 check.sh:55
+#: init.sh:7 check.sh:23 check.sh:50 check.sh:57
+msgid "garbage"
+msgstr "détritus"
+
+#: init.sh:7 check.sh:23 check.sh:51 check.sh:58
+msgid "gravel"
+msgstr "gravas"
+
+#: init.sh:7 check.sh:23 check.sh:52 check.sh:59
+msgid "hay"
+msgstr "foin"
+
+#: init.sh:16 auto.sh:1 check.sh:29 check.sh:30 check.sh:49 check.sh:56
 msgid "ornament"
 msgstr "ornement"
 
-#: auto.sh:2 check.sh:2 static.sh:1
+#: auto.sh:2 check.sh:2
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin"
 msgstr "$GASH_HOME/Foret/Cabane"
@@ -34,14 +50,6 @@ msgstr "Mais où est la cabane ?!"
 msgid "You changed the contents of the entrance!"
 msgstr "Vous avez changé le contenu de l'entrée !"
 
-#: check.sh:23 check.sh:53 check.sh:58 init.sh:7
-msgid "hay"
-msgstr "foin"
-
-#: check.sh:23 check.sh:52 check.sh:57 init.sh:7
-msgid "gravel"
-msgstr "gravas"
-
 #: check.sh:25
 msgid "I only wanted the ornaments!"
 msgstr "Je ne voulais que les ornements !"
@@ -49,7 +57,3 @@ msgstr "Je ne voulais que les ornements !"
 #: check.sh:32
 msgid "I wanted all the ornements!"
 msgstr "Je voulais tous les ornements !"
-
-#: check.sh:51 check.sh:56 init.sh:7
-msgid "garbage"
-msgstr "détritus"

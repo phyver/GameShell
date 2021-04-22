@@ -12,17 +12,17 @@ msgstr "$MISSION_DIR/goal/en.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: auto.sh:2 check.sh:4 check.sh:7 check.sh:20 check.sh:30 check.sh:31
-#: check.sh:39 check.sh:40 treasure.sh:1
+#: auto.sh:2 treasure.sh:1 check.sh:5 check.sh:8 check.sh:21 check.sh:31
+#: check.sh:32 check.sh:40 check.sh:41
 msgid "journal"
 msgstr "journal"
 
-#: check.sh:8
+#: check.sh:9
 #, sh-format
 msgid "No alias '$_alias' has been found..."
 msgstr "No alias '$_alias' has been found..."
 
-#: check.sh:28
+#: check.sh:29
 #, sh-format
 msgid ""
 "It seems you alias doesn't refer to the appropriate file ($f).\n"
@@ -31,6 +31,6 @@ msgstr ""
 "It seems you alias doesn't refer to the appropriate file ($f).\n"
 "Make sure to use an absolute path..."
 
-#: check.sh:38
+#: check.sh:39
 msgid "Your alias doesn't use the command 'nano'..."
 msgstr "Your alias doesn't use the command 'nano'..."
