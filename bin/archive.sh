@@ -111,8 +111,10 @@ fi
 
 # remove "_" files
 echo "removing unnecessary (_*.sh, Makefile) files"
-find "$TMP_DIR/$NAME/missions" -name "_*.sh" -print0 | xargs -0 rm -f
-find "$TMP_DIR/$NAME/missions" -name "Makefile" -print0 | xargs -0 rm -f
+find "$TMP_DIR/$NAME" -name "_*.sh" -print0 | xargs -0 rm -f
+find "$TMP_DIR/$NAME" -name "test.sh" -print0 | xargs -0 rm -f
+find "$TMP_DIR/$NAME" -name "Makefile" -print0 | xargs -0 rm -f
+find "$TMP_DIR/$NAME" -name "template.pot" -print0 | xargs -0 rm -f
 
 # change admin password
 if [ "$ADMIN_PASSWD" ]
