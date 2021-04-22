@@ -56,4 +56,6 @@ shopt -u nullglob
 
 unset f MISSION_DIR
 
+[ -z "$GASH_DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && protect
+
 _gash_start
