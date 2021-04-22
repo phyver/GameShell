@@ -15,21 +15,15 @@ msgstr "$GASH_BASE/i18n/start-help/en.txt"
 msgid "invalid option: '-$OPTARG'"
 msgstr "invalid option: '-$OPTARG'"
 
-#: start.sh:85
-msgid "Player's name:"
-msgstr "Player's name:"
-
-#: start.sh:90
-msgid "Player's email:"
-msgstr "Player's email:"
+msgid "invalid number"
+msgstr "invalid number"
 
 #: start.sh:100
 msgid "You won't be able to change this information."
 msgstr "You won't be able to change this information."
 
-#: start.sh:103
-msgid "Is this information correct? [Y/n]"
-msgstr "Is this information correct? [Y/n]"
+msgid "Is this information correct? [Y/n] "
+msgstr "Is this information correct? [Y/n] "
 
 # abbreviation for "yes" (lowercase)
 #: start.sh:105 start.sh:142 start.sh:161
@@ -41,23 +35,20 @@ msgstr "y"
 msgid "Y"
 msgstr "Y"
 
-# abbreviation for "no" (lowercase)
 #: start.sh:108 start.sh:139 start.sh:164
 msgid "n"
 msgstr "n"
 
-# abbreviation for "no" (lowercase)
 #: start.sh:108 start.sh:139 start.sh:164
 msgid "N"
 msgstr "N"
 
-#: start.sh:137
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
-"Do you want to continue? [y/N]"
+"Do you want to continue? [y/N] "
 msgstr ""
 "You are trying to run GameShell inside the developpment directory.\n"
-"Do you want to continue? [y/N]"
+"Do you want to continue? [y/N] "
 
 #: start.sh:159
 #, sh-format
@@ -96,19 +87,6 @@ msgstr "Problem: couldn't get mission number '$nb' ($fn_name)"
 #, sh-format
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr ""
-
-#: lib/gameshell.sh:140
-#, sh-format
-msgid ""
-"Mission $nb doesn't exist!\n"
-"Aborting..."
-msgstr ""
-"Mission $nb doesn't exist!\n"
-"Aborting..."
-
-#: lib/gameshell.sh:143
-msgid "Press Enter"
-msgstr "Press Enter"
 
 #: lib/gameshell.sh:152
 msgid "The mission is cancelled because some dependencies are not met."
@@ -177,21 +155,6 @@ msgstr ""
 msgid "Mission $nb hasn't been completed."
 msgstr "Mission $nb hasn't been completed."
 
-#: lib/gameshell.sh:360
-#, sh-format
-msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
-msgstr "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
-
-#: lib/gameshell.sh:374 lib/gameshell.sh:379 lib/gameshell.sh:403
-#, sh-format
-msgid "test $_NB_TESTS failed"
-msgstr "test $_NB_TESTS failed"
-
-#: lib/gameshell.sh:422
-#, sh-format
-msgid "Error: mission $nb doesn't have a test script."
-msgstr "Error: mission $nb doesn't have a test script."
-
 # help file
 #: lib/gameshell.sh:444
 #, sh-format
@@ -216,3 +179,64 @@ msgstr ""
 "GameShell will use 'gnu-linux', without guarantee.\n"
 "Please report this as a bug.\n"
 "Press Enter to continue."
+
+#: lib/gameshell.sh:143
+msgid "Press Enter"
+msgstr "Press Enter"
+
+msgid "test successful"
+msgstr "test successful"
+
+#: lib/gameshell.sh:422
+#, sh-format
+msgid "Error: mission $nb doesn't have a test script."
+msgstr "Error: mission $nb doesn't have a test script."
+
+msgid "Player's name: "
+msgstr "Player's name: "
+
+msgid "Player's email: "
+msgstr "Player's email: "
+
+#: lib/gameshell.sh:360
+#, sh-format
+msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
+msgstr "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
+
+#: lib/gameshell.sh:374 lib/gameshell.sh:379 lib/gameshell.sh:403
+#, sh-format
+msgid "test $_NB_TESTS failed"
+msgstr "test $_NB_TESTS failed"
+
+#: lib/gameshell.sh:140
+#, sh-format
+msgid ""
+"Mission $nb doesn't exist!\n"
+"Aborting..."
+msgstr ""
+"Mission $nb doesn't exist!\n"
+"Aborting..."
+
+#: start.sh:85
+#, fuzzy
+msgid "Player's name:"
+msgstr "Player's name: "
+
+#: start.sh:90
+#, fuzzy
+msgid "Player's email:"
+msgstr "Player's email: "
+
+#: start.sh:103
+#, fuzzy
+msgid "Is this information correct? [Y/n]"
+msgstr "Is this information correct? [Y/n] "
+
+#: start.sh:137
+#, fuzzy
+msgid ""
+"You are trying to run GameShell inside the developpment directory.\n"
+"Do you want to continue? [y/N]"
+msgstr ""
+"You are trying to run GameShell inside the developpment directory.\n"
+"Do you want to continue? [y/N] "
