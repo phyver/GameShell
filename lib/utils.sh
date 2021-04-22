@@ -154,6 +154,23 @@ verbose_source() {
   return $exit_status
 }
 
+protect() {
+  chmod a-rw $GASH_BASE
+  chmod a-rw $GASH_MISSIONS
+  chmod a-rw $GASH_DATA
+  chmod a-r $GASH_TMP
+  chmod a-rw $GASH_BIN
+  chmod a-rw $GASH_LOCAL_BIN
+}
+
+unprotect() {
+  chmod u+rw $GASH_BASE
+  chmod u+rw $GASH_MISSIONS
+  chmod u+rw $GASH_DATA
+  chmod u+r $GASH_TMP
+  chmod u+rw $GASH_BIN
+  chmod u+rw $GASH_LOCAL_BIN
+}
 
 # generate an index of missions
 parse_index() {

@@ -17,7 +17,8 @@ options:
   -a          keep 'auto.sh' scripts from missions that have one
   -P          use the "passport mode" by default when running GameShell
   -D          use the "discovery mode" by default when running GameShell
-  -o ...      name of the archive (default: ../DIR_NAME.tgz, from -N option)
+  -o ...      name of the archive (default: ../DIR_NAME.sh, from -N option)
+  -k          keep "standard" tgz archive
 EOH
 }
 
@@ -27,8 +28,9 @@ MISSIONS_PATTERNS="*"
 KEEP_AUTO=0
 DEFAULT_MODE="DEBUG"
 OUTPUT=''
+KEEP_TGZ='false'
 
-while getopts ":hm:M:p:N:aPDo:" opt
+while getopts ":hm:M:p:N:aPDo:k" opt
 do
   case $opt in
     h)
@@ -59,6 +61,9 @@ do
     o)
       OUTPUT=$OPTARG
       ;;
+    k)
+      KEEP_TGZ='true'
+      ;;
     *)
       echo "invalid option: '-$OPTARG'" >&2
       exit 1
@@ -66,7 +71,7 @@ do
   esac
 done
 
-[ -z "$OUTPUT" ] && OUTPUT="$(pwd)/$NAME.tgz"
+[ -z "$OUTPUT" ] && OUTPUT="$(pwd)/$NAME.sh"
 
 TMP_DIR=$(mktemp -d)
 mkdir "$TMP_DIR/$NAME"
@@ -89,18 +94,11 @@ do
     N=$((10#$N + 1))
     N=$(echo -n "000000$N" | tail -c 6)
     MISSION_DIR=$TMP_DIR/$NAME/missions/${N}_${m#*_}
-    echo "    $m  -->  $(basename "$MISSION_DIR")"
+    echo "    $(basename "$m")  -->  $(basename "$MISSION_DIR")"
     mkdir "$MISSION_DIR"
     cp --archive "$m"/* "$MISSION_DIR"
+    echo "./$(basename "$MISSION_DIR")" >> "$TMP_DIR/$NAME/missions/index.txt"
   done
-done
-#remove leading 0s
-echo "removing leading 0s"
-leading_zeros=$(echo $N | sed "s/[^0]//g")
-cd "$TMP_DIR/$NAME/missions/"
-for m in *_*
-do
-  mv "$m" "${m/$leading_zeros/}"
 done
 
 
@@ -112,8 +110,9 @@ then
 fi
 
 # remove "_" files
-echo "removing unnecessary (_*.sh) files"
+echo "removing unnecessary (_*.sh, Makefile) files"
 find "$TMP_DIR/$NAME/missions" -name "_*.sh" -print0 | xargs -0 rm -f
+find "$TMP_DIR/$NAME/missions" -name "Makefile" -print0 | xargs -0 rm -f
 
 # change admin password
 if [ "$ADMIN_PASSWD" ]
@@ -135,12 +134,23 @@ case $DEFAULT_MODE in
 esac
 
 
-
 # create archive
 echo "creating archive"
 cd "$TMP_DIR"
 tar -zcf "$NAME.tgz" "$NAME"
-mv "$NAME.tgz" "$OUTPUT"
+mv "$NAME.tgz" "${OUTPUT%.sh}.tgz"
+cd -
+
+# create self-extracting archive
+echo "creating self-extracting archive"
+cat "$GASH_BASE/lib/init.sh" "${OUTPUT%.sh}.tgz" > "$OUTPUT"
+chmod +x "$OUTPUT"
+
+if [ "$KEEP_TGZ" = 'false' ]
+then
+  echo "removing tgz archive"
+  rm "${OUTPUT%.sh}.tgz"
+fi
 
 echo "removing temporary directory"
 rm -rf "$TMP_DIR"
