@@ -24,6 +24,7 @@ for PO_FILE in "$GASH_BASE"/i18n/*.po; do
 done
 
 source $GASH_BASE/lib/utils.sh
+source $GASH_BASE/lib/make_index.sh
 
 cd "$GASH_BASE"
 
@@ -241,7 +242,7 @@ Do you want to continue this game? [Y/n]') " r
   clear
   echo "$(gettext "======== Initialisation of GameShell ========")"
 
-  make_index "$@" 2> /dev/null | sed "s;$GASH_MISSIONS;.;" > "$GASH_DATA/index.txt"
+  make_index "$GASH_MISSIONS" "$@" 2> /dev/null | sed "s;$GASH_MISSIONS;.;" > "$GASH_DATA/index.txt"
 
   # Installing all missions.
   cat "$GASH_DATA/index.txt" | while read MISSION_DIR
