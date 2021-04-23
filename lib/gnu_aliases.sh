@@ -1,9 +1,9 @@
 #!/bin/bash
 
-function CANONICAL_PATH() {
+function REALPATH() {
     readlink -f "$@"
 }
-export -f CANONICAL_PATH
+export -f REALPATH
 
 function GET_MTIME() {
     stat -c %y "$@"

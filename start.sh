@@ -12,7 +12,7 @@ export TEXTDOMAIN="gash"
 
 source "$GASH_BASE"/lib/os_aliases.sh
 # we can now normalize GASH_BASE
-export GASH_BASE=$(CANONICAL_PATH "$(dirname "$0")"/)
+export GASH_BASE=$(REALPATH "$(dirname "$0")"/)
 export TEXTDOMAINDIR="$GASH_BASE/locale"
 export TEXTDOMAIN="gash"
 

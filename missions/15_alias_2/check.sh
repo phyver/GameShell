@@ -16,9 +16,9 @@ _local_check() {
             # alias journal="nano journal.txt" et que le gash check est fait
             # depuis le coffre
             local f
-            # f="$(cd / ; eval $(echo "$cmd" | sed 's/nano/$CANONICAL_PATH/'))"
-            f="$(cd / ; eval "${cmd//nano/CANONICAL_PATH}")"
-            if [ "$f" = "$(CANONICAL_PATH "$GASH_CHEST/$(gettext "journal").txt")" ]
+            # f="$(cd / ; eval $(echo "$cmd" | sed 's/nano/$REALPATH/'))"
+            f="$(cd / ; eval "${cmd//nano/REALPATH}")"
+            if [ "$f" = "$(REALPATH "$GASH_CHEST/$(gettext "journal").txt")" ]
             then
                 unset f
                 return 0

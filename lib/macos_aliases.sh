@@ -2,10 +2,10 @@
 
 # la version de "readlink" de macOS n'a pas l'option "-f", il faut utiliser
 # "greadlink" qui fait partie de "coreutils"
-function CANONICAL_PATH() {
+function REALPATH() {
     greadlink -f "$@"
 }
-export -f CANONICAL_PATH
+export -f REALPATH
 
 function GET_MTIME() {
     gstat -c %y "$@"

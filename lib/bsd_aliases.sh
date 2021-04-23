@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function CANONICAL_PATH() {
+function REALPATH() {
   local TARGET="$1"
   [ -f "$TARGET" ] || [ -d "$TARGET" ] || return 1 #no nofile
 
@@ -9,7 +9,7 @@ function CANONICAL_PATH() {
   done
   echo "$TARGET"
 }
-export -f CANONICAL_PATH
+export -f REALPATH
 
 function GET_MTIME() {
     stat -f %S%m "$@"
