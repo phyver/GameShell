@@ -9,8 +9,6 @@ export HISTIGNORE=""
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 
-export PATH=$PATH:$GASH_BASE/bin:$GASH_BIN:$GASH_LOCAL_BIN
-
 # shellcheck source=./lib/gameshell.sh
 source "$GASH_LIB/gameshell.sh"
 
