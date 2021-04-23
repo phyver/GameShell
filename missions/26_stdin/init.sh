@@ -1,8 +1,8 @@
 #!/bin/bash
 
-book="$GASH_TMP/additions.txt"
+book="$GASH_MISSION_DATA/additions.txt"
 rm -f "$book"
-questions=$GASH_TMP/arith.txt
+questions=$GASH_MISSION_DATA/arith.txt
 rm -f "$questions"
 
 for _ in $(seq 5)

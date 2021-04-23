@@ -1,6 +1,6 @@
-export YYYY=$(cut -d"-" -f1 "$GASH_TMP"/date)
-export MM=$(cut -d"-" -f2 "$GASH_TMP"/date)
-export DD=$(cut -d"-" -f3 "$GASH_TMP"/date)
+export YYYY=$(cut -d"-" -f1 "$GASH_MISSION_DATA"/date)
+export MM=$(cut -d"-" -f2 "$GASH_MISSION_DATA"/date)
+export DD=$(cut -d"-" -f3 "$GASH_MISSION_DATA"/date)
 
 day=$(date --date="$YYYY-$MM-$DD" +%A)
 

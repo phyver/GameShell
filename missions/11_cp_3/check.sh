@@ -2,8 +2,8 @@
 
 _local_check() {
 
-    local filename="$(head -n1 "$GASH_TMP/painting")"
-    local s="$(tail -n1 "$GASH_TMP/painting")"
+    local filename="$(head -n1 "$GASH_MISSION_DATA/painting")"
+    local s="$(tail -n1 "$GASH_MISSION_DATA/painting")"
 
     if ! [ -d "$GASH_CHEST" ]
     then

@@ -18,6 +18,6 @@ do
   touch "${ENTRANCE}/${S}_${K}"
 done
 
-ls "$ENTRANCE" | sort > "$GASH_TMP/entrance_contents"
+ls "$ENTRANCE" | sort > "$GASH_MISSION_DATA/entrance_contents"
 
 unset ENTRANCE D I K S

@@ -34,11 +34,11 @@ do
             if [ "$r1" = "$i,$j,$k" ]
             then
                 echo "$I $J $K" > "$lab/$I/$J/$K/$(gettext "gold_coin")"
-                echo "$I $J $K" > "$GASH_TMP/$(gettext "gold_coin")"
+                echo "$I $J $K" > "$GASH_MISSION_DATA/$(gettext "gold_coin")"
             elif [ "$r2" = "$i,$j,$k" ]
             then
                 echo "$I $J $K" > "$lab/$I/$J/$K/$(gettext "GolD_CoiN")"
-                echo "$I $J $K" > "$GASH_TMP/$(gettext "GolD_CoiN")"
+                echo "$I $J $K" > "$GASH_MISSION_DATA/$(gettext "GolD_CoiN")"
             fi
         done
         echo -n "."

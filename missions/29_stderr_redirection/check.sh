@@ -12,7 +12,7 @@ _local_check() {
         return 1
     fi
 
-    if ! diff -q "$GASH_TMP/list_grimoires_PQ" <(eval "$pc" |& sort) > /dev/null
+    if ! diff -q "$GASH_MISSION_DATA/list_grimoires_PQ" <(eval "$pc" |& sort) > /dev/null
     then
         return 1
     else

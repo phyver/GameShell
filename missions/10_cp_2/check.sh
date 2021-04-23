@@ -14,7 +14,7 @@ check () {
     return 1
   fi
 
-  if ! diff -q "$GASH_TMP/entrance_contents" <(command ls "$ENTRANCE" | sort) > /dev/null
+  if ! diff -q "$GASH_MISSION_DATA/entrance_contents" <(command ls "$ENTRANCE" | sort) > /dev/null
   then
     echo "$(gettext "You changed the contents of the entrance!")"
     return 1
@@ -26,7 +26,7 @@ check () {
     return 1
   fi
 
-  if ! diff -q <(grep "_$(gettext "ornament")" "$GASH_TMP/entrance_contents") \
+  if ! diff -q <(grep "_$(gettext "ornament")" "$GASH_MISSION_DATA/entrance_contents") \
     <(command ls "$CABIN" | sort | grep "_$(gettext "ornament")") > /dev/null
   then
     echo "$(gettext "I wanted all the ornements!")"
@@ -38,12 +38,12 @@ check () {
 
 if check
 then
-  rm -f "$GASH_TMP/entrance_contents"
+  rm -f "$GASH_MISSION_DATA/entrance_contents"
   unset -f check
   unset ENTRANCE CABIN
   true
 else
-  rm -f "$GASH_TMP/entrance_contents"
+  rm -f "$GASH_MISSION_DATA/entrance_contents"
 
 
   find "$ENTRANCE" \( -name "*$(gettext "ornament")" \

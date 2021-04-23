@@ -11,7 +11,7 @@ _local_check() {
         return 1
     fi
 
-    if ! diff -q <(sort "$office/$(gettext "Drawer")/$list") "$GASH_TMP/list_grimoires" > /dev/null
+    if ! diff -q <(sort "$office/$(gettext "Drawer")/$list") "$GASH_MISSION_DATA/list_grimoires" > /dev/null
     then
         echo "$(eval_gettext 'The content of $list is invalid.
 You can check its content with the command

@@ -11,6 +11,6 @@ then
     mkdir -p "$corridor"
 fi
 
-basename "$corridor" | checksum > "$GASH_TMP/corridor"
+basename "$corridor" | checksum > "$GASH_MISSION_DATA/corridor"
 
 unset corridor r1 r2

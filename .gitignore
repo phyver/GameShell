@@ -4,7 +4,7 @@ GameShell.tgz
 .bin
 .config
 .session_data
-.tmp
+.mission_data
 World
 locale/
 *~

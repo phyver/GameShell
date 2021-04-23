@@ -8,7 +8,7 @@ case $PWD in
         ;;
 esac
 
-rm -f "$GASH_TMP/silver_coin"
+rm -f "$GASH_MISSION_DATA/silver_coin"
 
 find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext "maze")" -type d -print0 | xargs -0 rm -rf
 
