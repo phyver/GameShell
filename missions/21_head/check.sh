@@ -8,9 +8,9 @@ _local_check() {
     pc=$(fc -nl -2 -2 | grep 'head')
 
     local goal
-    goal=$(CANONICAL_PATH "$(eval_gettext '$GASH_HOME/Mountain/Cave')")
+    goal=$(REALPATH "$(eval_gettext '$GASH_HOME/Mountain/Cave')")
     local current
-    current=$(CANONICAL_PATH "$PWD")
+    current=$(REALPATH "$PWD")
 
     local expected
     expected=$(head -n 4 "$(eval_gettext '$GASH_HOME/Mountain/Cave')/$(gettext "potion_ingredients")")

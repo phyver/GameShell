@@ -28,12 +28,12 @@ esac
 
 
 # tests
-if CANONICAL_PATH / &> /dev/null
+if REALPATH / &> /dev/null
 then
   :
 else
-  echo "La fonction 'CANONICAL_PATH' ne fonctionne pas..."
-  declare -f CANONICAL_PATH
+  echo "La fonction 'REALPATH' ne fonctionne pas..."
+  declare -f REALPATH
 
   echo "Pour macOS, n'oubliez pas d'installer 'coreutils' (et 'md5sha1sum')
    $ brew install coreutils
