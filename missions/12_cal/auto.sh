@@ -16,7 +16,7 @@ done
 
 unset day i answer YYYY MM DD
 
-echo "$n_day" | gash check
+gash check < <(echo "$n_day")
 
 unset n_day
 
