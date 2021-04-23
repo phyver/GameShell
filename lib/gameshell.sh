@@ -60,7 +60,7 @@ _gash_exit() {
   local signal=$1
   _log_action "$nb" "$signal"
   _gash_clean "$nb"
-  [ -z "$GASH_DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && unprotect
+  [ -z "$GASH_DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && _gash_unprotect
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
 
@@ -495,6 +495,24 @@ EOM
   exit 0
 }
 
+_gash_protect() {
+  chmod a-rw $GASH_BASE
+  chmod a-rw $GASH_MISSIONS
+  chmod a-rw $GASH_DATA
+  chmod a-r $GASH_TMP
+  chmod a-rw $GASH_BIN
+  chmod a-rw $GASH_LOCAL_BIN
+}
+
+_gash_unprotect() {
+  chmod u+rw $GASH_BASE
+  chmod u+rw $GASH_MISSIONS
+  chmod u+rw $GASH_DATA
+  chmod u+r $GASH_TMP
+  chmod u+rw $GASH_BIN
+  chmod u+rw $GASH_LOCAL_BIN
+}
+
 
 
 gash() {
@@ -582,6 +600,12 @@ EOH
       else
         _gash_assert "$@"
       fi
+      ;;
+    "protect")
+      _gash_protect
+      ;;
+    "unprotect")
+      _gash_unprotect
       ;;
     *)
       echo "$(eval_gettext "unkwnown command: \$cmd")" >&2
