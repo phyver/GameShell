@@ -1,13 +1,12 @@
 Commands specific to GameShell
 ==============================
 
-  gash assert condition [msg]
+  gash assert condition [msg]       (DEBUG)
     check if the condition is true
     if not, display an error message
 
-  gash assert_check true/false [msg]
-    check the current mission's goal has been 
-    achieved
+  gash assert_check true/false [msg]    (DEBUG)
+    check the current mission's goal has been achieved
     if the result doesn't coincide with the expected 
     result, display an error message
 
@@ -37,6 +36,10 @@ Commands specific to GameShell
     give up on the current mission and go to the next 
     one
 
+  gash protect
+  gash unprotect
+    add / remove protection on GameShell directories
+
   gash reset
     reset the current mission
 
@@ -49,4 +52,4 @@ Commands specific to GameShell
     if N is given, show the goal for mission N
 
   gash test
-    run the curent mission's test script, if it exitsts
+    run the curent mission's test script, if it exists
