@@ -11,4 +11,4 @@ esac
 
 find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext "maze")" -type d -print0 | xargs -0 rm -rf
 # FIXME
-rm -f "$GASH_TMP/$(gettext "gold_coin")" "$GASH_TMP/$(gettext "GolD_CoiN")"
+rm -f "$GASH_MISSION_DATA/$(gettext "gold_coin")" "$GASH_MISSION_DATA/$(gettext "GolD_CoiN")"

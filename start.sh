@@ -124,7 +124,7 @@ init_gash() {
   # dynamic data
   export GASH_HOME="$GASH_BASE/World"
   export GASH_DATA="$GASH_BASE/.session_data"
-  export GASH_TMP="$GASH_BASE/.tmp"
+  export GASH_MISSION_DATA="$GASH_BASE/.mission_data"
   export GASH_CONFIG="$GASH_BASE/.config"
   export GASH_LOCAL_BIN="$GASH_BASE/.bin"
 
@@ -177,7 +177,7 @@ Do you want to continue this game? [Y/n]') " r
   # remove all the game data
   rm -rf "$GASH_HOME"
   rm -rf "$GASH_DATA"
-  rm -rf "$GASH_TMP"
+  rm -rf "$GASH_MISSION_DATA"
   rm -rf "$GASH_CONFIG"
   rm -rf "$GASH_LOCAL_BIN"
 
@@ -197,7 +197,7 @@ Do you want to continue this game? [Y/n]') " r
 
   mkdir -p "$GASH_LOCAL_BIN"
 
-  mkdir -p "$GASH_TMP"
+  mkdir -p "$GASH_MISSION_DATA"
 
 
   # id of player

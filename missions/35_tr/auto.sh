@@ -1,1 +1,1 @@
-gash check < "$GASH_TMP/secret_key"
+gash check < "$GASH_MISSION_DATA/secret_key"
