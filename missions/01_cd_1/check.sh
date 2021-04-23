@@ -1,5 +1,5 @@
-goal=$(CANONICAL_PATH "$(eval_gettext "\$GASH_HOME/Castle/Dungeon/First_floor/Second_floor/Top_of_the_dungeon")")
-current=$(CANONICAL_PATH "$PWD")
+goal=$(REALPATH "$(eval_gettext "\$GASH_HOME/Castle/Dungeon/First_floor/Second_floor/Top_of_the_dungeon")")
+current=$(REALPATH "$PWD")
 
 if [ "$goal" = "$current" ]
 then
