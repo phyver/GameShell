@@ -286,6 +286,7 @@ _gash_check() {
         cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).treasure.sh"
 
         # Display the text message (if it exists).
+        export TEXTDOMAIN="$(basename "$MISSION_DIR")"
         if [ -f "$MISSION_DIR/treasure-msg.txt" ]
         then
           echo ""
@@ -293,11 +294,9 @@ _gash_check() {
           echo ""
         elif [ -f "$MISSION_DIR/treasure-msg.sh" ]
         then
-          export TEXTDOMAIN="$(basename "$MISSION_DIR")"
           echo ""
           source "$MISSION_DIR/treasure-msg.sh"
           echo ""
-          export TEXTDOMAIN="gash"
         else
           local file_msg="$(eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
           if [ -f "$file_msg" ]
@@ -307,6 +306,7 @@ _gash_check() {
             echo ""
           fi
         fi
+        export TEXTDOMAIN="gash"
 
         # Load the treasure in the current shell.
         verbose_source "$MISSION_DIR/treasure.sh"
