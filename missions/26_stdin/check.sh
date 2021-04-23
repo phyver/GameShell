@@ -1,6 +1,6 @@
 #!/bin/bash
 
-exec 3< "$GASH_TMP/arith.txt"
+exec 3< "$GASH_MISSION_DATA/arith.txt"
 OK="OK"
 while IFS='' read -r -u 3 l
 do

@@ -11,8 +11,8 @@ h=$(echo 0$((RANDOM%24)) | cut -c 1-2)
 m=$(echo 0$((RANDOM%60)) | cut -c 1-2)
 s=$(echo 0$((RANDOM%60)) | cut -c 1-2)
 touch -t "$Y$M$D$h$m.$s" "$filename"
-echo "$(basename "$filename")" > "$GASH_TMP/painting"
-checksum < "$filename" >> "$GASH_TMP/painting"
+echo "$(basename "$filename")" > "$GASH_MISSION_DATA/painting"
+checksum < "$filename" >> "$GASH_MISSION_DATA/painting"
 
 filename=$(mktemp "$(eval_gettext '$GASH_HOME/Castle/Dungeon/First_floor')"/$(gettext "painting")_XXXXXX)
 parchment "$MISSION_DIR/painting-star_wars" Diamond > "$filename"

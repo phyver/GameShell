@@ -108,7 +108,7 @@ verbose_source() {
     return $exit_status
   fi
 
-  local TEMP=$(mktemp -d "$GASH_TMP/env-XXXXXX")
+  local TEMP=$(mktemp -d "$GASH_MISSION_DATA/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
   local old_TEXTDOMAIN=""
   local exit_status=""

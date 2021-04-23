@@ -17,7 +17,7 @@ You just need to copy all the lines in this book.")" \
 
 book="$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')/$(gettext "Mathematics_101")"
 rm -f "$book"
-questions="$GASH_TMP"/arith.txt
+questions="$GASH_MISSION_DATA"/arith.txt
 rm -f "$questions"
 
 for _ in $(seq 100)

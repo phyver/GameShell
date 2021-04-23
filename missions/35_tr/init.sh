@@ -7,7 +7,7 @@ rd=pylptbbpbqmtaojeqalfrdzfswddcicuwtohudysakdtzqcswwzyrfwbilbkkusz
 
 # je choisis une clé en prenant un bout au hasard de la chaine ci dessus
 SECRET_KEY="${rd:( $RANDOM % ((${#rd}) -4) ):4}"
-echo "$SECRET_KEY" > "$GASH_TMP/secret_key"
+echo "$SECRET_KEY" > "$GASH_MISSION_DATA/secret_key"
 
 random_shift=$((3 + RANDOM % 20))
 

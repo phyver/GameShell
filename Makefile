@@ -23,6 +23,6 @@ new: i18n/template.pot
 		touch --date="2000-01-01" "i18n/$$lang.po"
 
 clean:
-	rm -rf i18n/*~ locale GameShell.tgz GameShell.sh GameShell-save.sh
+	rm -rf i18n/*~ locale GameShell.tgz GameShell.sh GameShell-save.sh .bin .config .xsession_data .mission_data .session_data World
 
 .PHONY: clean new FORCE

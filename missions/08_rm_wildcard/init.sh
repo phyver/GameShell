@@ -16,6 +16,6 @@ do
 done
 
 command ls "$BURROW" | grep ".*$(gettext "CAT")$" | sort | sha1sum | \
-  cut -c 1-40 > "$GASH_TMP/cats"
+  cut -c 1-40 > "$GASH_MISSION_DATA/cats"
 
 unset BURROW D I S

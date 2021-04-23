@@ -33,7 +33,7 @@ do
             if [ "$r1" = "$i,$j,$k" ]
             then
                 echo "$I $J $K" > "$lab/$I/$J/$K/$(gettext "silver_coin")"
-                echo "$I $J $K" > "$GASH_TMP/silver_coin"
+                echo "$I $J $K" > "$GASH_MISSION_DATA/silver_coin"
             fi
         done
         echo -n "."

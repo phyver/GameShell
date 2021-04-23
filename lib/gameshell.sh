@@ -163,19 +163,19 @@ Aborting...")"
     # la session bash.
     # je sauvegarde l'environnement avant / après l'initialisation pour
     # afficher un message dans ce cas
-    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_TMP"/env-before
+    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_MISSION_DATA"/env-before
     verbose_source "$MISSION_DIR/init.sh"
-    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_TMP"/env-after
+    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_MISSION_DATA"/env-after
 
     if [ "$BASHPID" != $$ ]
     then
-      if ! cmp --quiet "$GASH_TMP"/env-before "$GASH_TMP"/env-after
+      if ! cmp --quiet "$GASH_MISSION_DATA"/env-before "$GASH_MISSION_DATA"/env-after
       then
         echo "$(gettext "NOTE: this mission was initialized in a sub-shell.
 You should run the command
     gash reset
 to make sure the mission is initialized properly.")" >&2
-        rm -f "$GASH_TMP"/env-{before,after}
+        rm -f "$GASH_MISSION_DATA"/env-{before,after}
       fi
     fi
   fi
@@ -499,7 +499,7 @@ _gash_protect() {
   chmod a-rw $GASH_BASE
   chmod a-rw $GASH_MISSIONS
   chmod a-rw $GASH_DATA
-  chmod a-r $GASH_TMP
+  chmod a-r $GASH_MISSION_DATA
   chmod a-rw $GASH_BIN
   chmod a-rw $GASH_LOCAL_BIN
 }
@@ -508,7 +508,7 @@ _gash_unprotect() {
   chmod u+rw $GASH_BASE
   chmod u+rw $GASH_MISSIONS
   chmod u+rw $GASH_DATA
-  chmod u+r $GASH_TMP
+  chmod u+r $GASH_MISSION_DATA
   chmod u+rw $GASH_BIN
   chmod u+rw $GASH_LOCAL_BIN
 }
