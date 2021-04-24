@@ -33,26 +33,26 @@ doas() {
 [ -f "$GASH_CONFIG"/config.sh ] && source "$GASH_CONFIG"/config.sh
 
 shopt -s nullglob
-for f in "$GASH_CONFIG"/*.bashrc.sh
+for file in "$GASH_CONFIG"/*.bashrc.sh
 do
     # shellcheck source=/dev/null
-    export MISSION_DIR=$(basename "$f")
+    export MISSION_DIR=$(basename "$file")
     MISSION_DIR=${MISSION_DIR%.bashrc.sh}
-    verbose_source "$f"
+    mission_source "$file"
 done
 shopt -u nullglob
 
 shopt -s nullglob
-for f in "$GASH_CONFIG"/*.treasure.sh
+for file in "$GASH_CONFIG"/*.treasure.sh
 do
     # shellcheck source=/dev/null
-    export MISSION_DIR=$(basename "$f")
+    export MISSION_DIR=$(basename "$file")
     MISSION_DIR=${MISSION_DIR%.treasure.sh}
-    verbose_source "$f"
+    mission_source "$file"
 done
 shopt -u nullglob
 
-unset f MISSION_DIR
+unset file MISSION_DIR
 
 [ -z "$GASH_DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && _gash_protect
 

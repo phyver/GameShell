@@ -2,7 +2,6 @@
 
 # shellcheck disable=SC2005
 
-# shellcheck source=/dev/null
 source gettext.sh
 
 # shellcheck source=./lib/utils.sh
@@ -97,12 +96,9 @@ _gash_show() {
     fi
   elif [ -f "$MISSION_DIR/goal.sh" ]
   then
-    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    source "$MISSION_DIR/goal.sh" | parchment
-    export TEXTDOMAIN="gash"
+    mission_source "$MISSION_DIR/goal.sh" | parchment
   else
-    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
-    FILE="$(eval_gettext '$MISSION_DIR/goal/en.txt')"
+    FILE="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/goal/en.txt')"
     VARS=$(sed -n '/^\s*#.*variables/p;1q' "$FILE")
     if [ -z "$VARS" ]
     then
@@ -110,7 +106,6 @@ _gash_show() {
     else
       sed '1d' "$FILE" | envsubst "$VARS" | parchment
     fi
-    export TEXTDOMAIN="gash"
   fi
 }
 
@@ -164,7 +159,7 @@ Aborting...")"
     # je sauvegarde l'environnement avant / après l'initialisation pour
     # afficher un message dans ce cas
     [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_MISSION_DATA"/env-before
-    verbose_source "$MISSION_DIR/init.sh"
+    mission_source "$MISSION_DIR/init.sh"
     [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_MISSION_DATA"/env-after
 
     if [ "$BASHPID" != $$ ]
@@ -236,7 +231,7 @@ _gash_auto() {
     return 1
   fi
 
-  verbose_source "$MISSION_DIR/auto.sh"
+  mission_source "$MISSION_DIR/auto.sh"
   _log_action "$nb" "AUTO"
   return 0
 }
@@ -267,7 +262,7 @@ _gash_check() {
     color_echo yellow "$(eval_gettext "Mission \$nb has already been succesfully checked!")"
     echo
   else
-    verbose_source "$MISSION_DIR/check.sh"
+    mission_source "$MISSION_DIR/check.sh"
     local exit_status=$?
 
     if [ "$exit_status" -eq 0 ]
@@ -286,7 +281,6 @@ _gash_check() {
         cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).treasure.sh"
 
         # Display the text message (if it exists).
-        export TEXTDOMAIN="$(basename "$MISSION_DIR")"
         if [ -f "$MISSION_DIR/treasure-msg.txt" ]
         then
           echo ""
@@ -298,7 +292,7 @@ _gash_check() {
           source "$MISSION_DIR/treasure-msg.sh"
           echo ""
         else
-          local file_msg="$(eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
+          local file_msg="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
           if [ -f "$file_msg" ]
           then
             echo ""
@@ -306,10 +300,9 @@ _gash_check() {
             echo ""
           fi
         fi
-        export TEXTDOMAIN="gash"
 
         # Load the treasure in the current shell.
-        verbose_source "$MISSION_DIR/treasure.sh"
+        mission_source "$MISSION_DIR/treasure.sh"
 
         #sourcing the file isn't very robust as the "gash check" may happen in a subshell!
         if [ "$BASHPID" != $$ ]
@@ -347,7 +340,7 @@ _gash_clean() {
 
   if [ -f "$MISSION_DIR/clean.sh" ]
   then
-    verbose_source "$MISSION_DIR/clean.sh"
+    mission_source "$MISSION_DIR/clean.sh"
   fi
 }
 
@@ -364,7 +357,7 @@ _gash_assert_check() {
 
   local MISSION_DIR="$(_get_mission_dir "$nb")"
 
-  verbose_source "$MISSION_DIR/check.sh"
+  mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
 
   _NB_TESTS=$((_NB_TESTS + 1))
@@ -425,7 +418,7 @@ _gash_test() {
 
   export _NB_TESTS=0
   export _NB_ERRORS=0
-  verbose_source "$MISSION_DIR/test.sh"
+  mission_source "$MISSION_DIR/test.sh"
   if [ "$_NB_ERRORS" = 0 ]
   then
     echo
@@ -516,6 +509,8 @@ _gash_unprotect() {
 
 
 gash() {
+  local _TEXTDOMAIN=$TEXTDOMAIN
+  export TEXTDOMAIN="gash"
   local cmd=$1
   shift
   if [ -z "$cmd" ]
@@ -609,9 +604,13 @@ EOH
       ;;
     *)
       echo "$(eval_gettext "unkwnown command: \$cmd")" >&2
+      export TEXTDOMAIN=$_TEXTDOMAIN
+      unset _TEXTDOMAIN
       return 1
       ;;
   esac
+  export TEXTDOMAIN=$_TEXTDOMAIN
+  unset _TEXTDOMAIN
 }
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2
