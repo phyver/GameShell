@@ -95,33 +95,38 @@ admin_mode() {
   return 1
 }
 
-verbose_source() {
+
+# this function is used to source a mission file with the corresponding
+# TEXTDOMAIN value. The value of TEXTDOMAIN is saved and restored after.
+# Also, in DEBUG mode, is compares the environment before / after to
+# make it easier to detect variables that haven't been unset.
+mission_source() {
   local FILENAME=$1
   # if we are not running in DEBUG mode, just source the file
   if [ -z "$GASH_DEBUG" ]
   then
-    local old_TEXTDOMAIN=$TEXTDOMAIN
+    local _TEXTDOMAIN=$TEXTDOMAIN
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
     source "$FILENAME"
     local exit_status=$?
-    export TEXTDOMAIN=$old_TEXTDOMAIN
+    export TEXTDOMAIN=$_TEXTDOMAIN
     return $exit_status
   fi
 
   local TEMP=$(mktemp -d "$GASH_MISSION_DATA/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
-  local old_TEXTDOMAIN=""
+  local _TEXTDOMAIN=""
   local exit_status=""
   # otherwise, record the environment (variables, functions and aliases)
   # before and after to echo a message when there are differences
   compgen -v | sort > "$TEMP"/before-V
   compgen -A function | sort > "$TEMP"/before-F
   compgen -a | sort > "$TEMP"/before-A
-  old_TEXTDOMAIN=$TEXTDOMAIN
+  _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="$(basename "$MISSION_DIR")"
   source "$FILENAME"
   exit_status=$?
-  export TEXTDOMAIN=$old_TEXTDOMAIN
+  export TEXTDOMAIN=$_TEXTDOMAIN
   compgen -v | sort > "$TEMP"/after-V
   compgen -A function | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
