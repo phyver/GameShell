@@ -7,6 +7,6 @@ couloir caché dans la cave, et la déplacer dans votre coffre.
 Vous pouvez utiliser le gestionnaire de fichiers graphique si vous 
 le souhaitez. Pour cela, il faut aller dans le répertoire
 
-  GameShell/World/.../labyrinthe
+  $maze
 
 (N'oubliez pas d'activer l'affichage des fichiers cachés...)
