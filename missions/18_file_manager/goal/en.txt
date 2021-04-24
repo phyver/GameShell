@@ -6,6 +6,6 @@ hidden in the cellar, and move it to your chest.
 
 You can, if you want, use a graphical file manager.
 The maze can be found in
-  .../GameShell/World/.../maze/
+  $maze
 
 (Don't forget to make sure the file manager displays hidden files!)
