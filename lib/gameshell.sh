@@ -289,7 +289,7 @@ _gash_check() {
         elif [ -f "$MISSION_DIR/treasure-msg.sh" ]
         then
           echo ""
-          source "$MISSION_DIR/treasure-msg.sh"
+          mission_source "$MISSION_DIR/treasure-msg.sh"
           echo ""
         else
           local file_msg="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
