@@ -122,6 +122,7 @@ mission_source() {
   compgen -v | sort > "$TEMP"/before-V
   compgen -A function | sort > "$TEMP"/before-F
   compgen -a | sort > "$TEMP"/before-A
+  ls "$GASH_MISSION_DATA" > "$TEMP"/before-D
   _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="$(basename "$MISSION_DIR")"
   source "$FILENAME"
@@ -130,8 +131,9 @@ mission_source() {
   compgen -v | sort > "$TEMP"/after-V
   compgen -A function | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
+  ls "$GASH_MISSION_DATA" > "$TEMP"/after-D
 
-  local msg="DEBUG: while sourcing $FILENAME, the following changes in the environment have been observed"
+  local msg="DEBUG: environment modifications while sourcing .../${FILENAME#$GASH_BASE/}"
   if ! cmp --quiet "$TEMP"/{before,after}-V
   then
     [ -n "$msg" ] && echo "$msg"
@@ -155,6 +157,15 @@ mission_source() {
     echo "Alias before / after"
     comm -3 "$TEMP"/{before,after}-A
   fi
+
+  if ! cmp --quiet "$TEMP"/{before,after}-D
+  then
+    [ -n "$msg" ] && echo "$msg"
+    msg=""
+    echo "mission data, before / after"
+    comm -3 "$TEMP"/{before,after}-D
+  fi
+
   rm -rf "$TEMP"
   return $exit_status
 }

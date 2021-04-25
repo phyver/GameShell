@@ -5,18 +5,16 @@ Commandes propres a GameShell
     vérifie que l'objectif de la mission en cours 
     est atteint
 
-  gash exit
+  gash exit  /  Control-d
     quitte la partie en cours
+    (vous pouvez recommencer à la mission courante en 
+    lançant GameShell avec l'option "-C")
 
   gash help
     affiche ce message
 
   gash reset
     ré-initialise la mission en cours
-
-  gash save
-    génère une archive pour pouvoir relance 
-    GameShell à partir de la mission en cours
 
   gash show
     affiche l'objectif de la mission en cours

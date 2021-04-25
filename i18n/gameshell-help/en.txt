@@ -5,20 +5,16 @@ Commands specific to GameShell
     check whether the current mission's goal has been 
     achieved or not
 
-  gash exit
+  gash exit   /   Control-d
     quit GameShell
     (you can start from the current mission by running 
-    the start.sh script with the "-C" flag)
+    GameShell with the "-C" flag)
 
   gash help
     shorter help message
 
   gash reset
     reset the current mission
-
-  gash save
-    generate an archive suitable to start GameShell 
-    from the current mission
 
   gash show
     show the current mission's goal
