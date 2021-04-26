@@ -12,10 +12,10 @@ msgstr ""
 #, sh-format
 msgid ""
 "Mission $nb doesn't exist!\n"
-"Aborting..."
+"Restarting..."
 msgstr ""
 "Mission $nb doesn't exist!\n"
-"Aborting..."
+"Restarting..."
 
 msgid "Press Enter"
 msgstr ""
@@ -148,4 +148,12 @@ msgid "Start again!"
 msgstr ""
 
 msgid "======== Initialisation of GameShell ========"
+<<<<<<< HEAD
+=======
+msgstr "======== Initialisation of GameShell ========"
+
+msgid ""
+"No mission were found!\n"
+"Aborting"
+>>>>>>> c1fe61f... added "anonymous" mode (anonymous / passport / debug)
 msgstr ""

@@ -1,8 +1,9 @@
 options:
   -h      this message
   -n      black and white: don't use ANSI escape codes for color
-  -P      passport: ask for name / emails of player
-  -D n    discovery mode, start with mission n
+  -P      passport mode: ask for name / emails of player
+  -D      debug mode
+  -A      anonymous mode
   -C      don't ask: automatically continue current game (if relevant)
   -R      don't ask: automatically reset game
   -F      don't ask: force execution even in source repository

@@ -1,8 +1,9 @@
 options :
   -h      ce message
   -n      mode noir et blanc : n'utilise pas les séquences ANSI pour la couleur
-  -P      passeport étudiant : demande les noms / email des étudiants
-  -D n    mode découverte en partant de la mission n
+  -P      mode passeport : demande le noms / email du joueur
+  -D      mode debug
+  -A      mode anonyme
   -C      continue la partie en cours, sans poser de question
   -R      rénitialise la partie en cours, sans poser de question
   -F      force exécution dans le répertoire de développement, sans poser de question

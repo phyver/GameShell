@@ -18,7 +18,8 @@ options:
   -N ...      name of directory inside the GameShell archive (default: "GameShell")
   -a          keep 'auto.sh' scripts from missions that have one
   -P          use the "passport mode" by default when running GameShell
-  -D          use the "discovery mode" by default when running GameShell
+  -D          use the "debug mode" by default when running GameShell
+  -A          use the "anonymous mode" by default when running GameShell
   -o ...      name of the archive (default: ../DIR_NAME.sh, from -N option)
   -k          keep "standard" tgz archive
 EOH
@@ -27,7 +28,7 @@ EOH
 NAME="GameShell"
 ADMIN_PASSWD=""
 KEEP_AUTO=0
-DEFAULT_MODE="DEBUG"
+DEFAULT_MODE="ANONYMOUS"
 OUTPUT=''
 KEEP_TGZ='false'
 
@@ -123,8 +124,8 @@ fi
 # choose default mode
 echo "setting default GameShell mode"
 case $DEFAULT_MODE in
-  DEBUG | PASSPORT)
-    sed -i "s/^MODE=.*$/MODE='$DEFAULT_MODE'/" "$TMP_DIR/$NAME/start.sh"
+  DEBUG | PASSPORT | ANONYMOUS )
+    sed -i "s/^GASH_MODE=.*$/GASH_MODE='$DEFAULT_MODE'/" "$TMP_DIR/$NAME/start.sh"
     ;;
   *)
     echo "unknown mode: $MODE" >&2
