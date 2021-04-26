@@ -12,29 +12,23 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: init.sh:3 static.sh:3 auto.sh:1 check.sh:5
 #, sh-format
 msgid "$GASH_HOME/Castle/Main_building/Library/Merlin_s_office"
 msgstr "$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin"
 
-#: init.sh:4 init.sh:8 init.sh:21 auto.sh:2
-msgid "grimoire"
-msgstr "grimoire"
-
-#: static.sh:3 auto.sh:2 check.sh:8 check.sh:14
 msgid "Drawer"
 msgstr "Tiroir"
 
-#: auto.sh:2 check.sh:6
+msgid "grimoire"
+msgstr "grimoire"
+
 msgid "list.txt"
 msgstr "liste.txt"
 
-#: check.sh:10
 #, sh-format
 msgid "There is no $list in the drawer..."
 msgstr "Il n'y a pas de $list dans le tiroir..."
 
-#: check.sh:16
 msgid ""
 "The content of $list is invalid.\n"
 "You can check its content with the command\n"

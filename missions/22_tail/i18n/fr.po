@@ -12,28 +12,22 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: init.sh:3
-#, sh-format
-msgid "$MISSION_DIR/ingredients/en.txt"
-msgstr "$MISSION_DIR/ingredients/fr.txt"
-
-#: init.sh:3 static.sh:3 auto.sh:3 check.sh:11 check.sh:16
 #, sh-format
 msgid "$GASH_HOME/Mountain/Cave"
 msgstr "$GASH_HOME/Montagne/Grotte"
 
-#: init.sh:3 auto.sh:6 auto.sh:9 check.sh:16
 msgid "potion_ingredients"
 msgstr "ingredients_potion"
 
-#: check.sh:22
 msgid "You are not standing in the cave with the ermit!"
 msgstr "Vous n'êtes pas dans la grotte avec l'ermite !"
 
-#: check.sh:27
 msgid "You haven't used the 'tail' command!"
 msgstr "Vous n'avez pas utilisé la commande 'tail' !"
 
-#: check.sh:32
 msgid "Your previous command doesn't give the expected result..."
 msgstr "Votre commande précédente ne donne pas le résultat attendu..."
+
+#, sh-format
+msgid "$MISSION_DIR/ingredients/en.txt"
+msgstr "$MISSION_DIR/ingredients/fr.txt"

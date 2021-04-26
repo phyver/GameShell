@@ -12,23 +12,18 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: init.sh:1 static.sh:1 auto.sh:1 check.sh:1
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr ""
 
-#: init.sh:1 auto.sh:1 check.sh:1
 msgid "Burrow"
 msgstr ""
 
-#: init.sh:8
+msgid "rat"
+msgstr ""
+
 msgid "cat"
 msgstr ""
 
-#: init.sh:9 init.sh:18
 msgid "CAT"
-msgstr ""
-
-#: init.sh:14 init.sh:15 auto.sh:1
-msgid "rat"
 msgstr ""

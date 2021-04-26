@@ -2,17 +2,20 @@ LANG=$(wildcard i18n/*.po)
 SH_FILES=$(wildcard *.sh)
 OTHER_FILES=bin/genStall.py
 
+ADD_LOCATION=
+
 all: $(LANG)
 
+add-locations: ADD_LOCATION=--add-location --sort-by-file
+add-locations: all
+
 $(LANG):%.po: i18n/template.pot FORCE
-	@msgmerge --quiet --update --no-wrap --no-location $@ i18n/template.pot
-	msgmerge --quiet --update --no-wrap $@ i18n/template.pot
+	msgmerge --quiet --update --no-wrap --no-location $(ADD_LOCATION) $@ i18n/template.pot
 
 i18n/template.pot: $(SH_FILES) $(OTHER_FILES) FORCE
 	@mkdir -p i18n/
 	@touch i18n/template.pot
-	@xgettext --from-code=UTF-8 --omit-header --no-wrap --no-location --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
-	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
+	xgettext --from-code=UTF-8 --omit-header --no-wrap --no-location $(ADD_LOCATION) --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
 
 new: i18n/template.pot
 	@read -p "language code: " lang; \
@@ -22,7 +25,7 @@ new: i18n/template.pot
 		touch --date="2000-01-01" "i18n/$$lang.po"
 
 clean:
-	rm i18n/*~
+	rm -f i18n/*~
 
 cleaner: clean
 	find . -maxdepth 1 -type f -name "_*" -print0 | xargs -0 --open-tty rm -i

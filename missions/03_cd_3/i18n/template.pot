@@ -12,7 +12,6 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: static.sh:1 auto.sh:3 auto.sh:7 check.sh:4
 #, sh-format
 msgid "$GASH_HOME/Castle/Main_building/Throne_room"
 msgstr ""

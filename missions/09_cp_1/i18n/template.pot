@@ -12,46 +12,37 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: init.sh:1 static.sh:1 auto.sh:1 check.sh:3
 #, sh-format
 msgid "$GASH_HOME/Castle/Entrance"
 msgstr ""
 
-#: init.sh:7 auto.sh:1 check.sh:9 check.sh:67
 msgid "standard"
 msgstr ""
 
-#: auto.sh:2 check.sh:4
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin"
 msgstr ""
 
-#: check.sh:14
 #, sh-format
 msgid "The standard $I is not in the cabin."
 msgstr ""
 
-#: check.sh:21
 #, sh-format
 msgid "The standard $I disapeared form the entrance."
 msgstr ""
 
-#: check.sh:29
 #, sh-format
 msgid "The standard $I in the cabin is not right."
 msgstr ""
 
-#: check.sh:37
 #, sh-format
 msgid "The standard $I in the entrance is not right."
 msgstr ""
 
-#: check.sh:45
 #, sh-format
 msgid "The standard $I in the cabin is invalid."
 msgstr ""
 
-#: check.sh:53
 #, sh-format
 msgid "The standard $I in the entrance is invalid."
 msgstr ""

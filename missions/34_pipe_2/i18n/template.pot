@@ -12,20 +12,16 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: init.sh:5 init.sh:6 static.sh:5 auto.sh:1
 #, sh-format
 msgid "$GASH_HOME/Stall"
 msgstr ""
 
-#: auto.sh:1
 msgid "PAID"
 msgstr ""
 
-#: check.sh:4
 msgid "How many unpaid items are there? "
 msgstr ""
 
-#: check.sh:15
 #, sh-format
 msgid "That's the right answer, but you used $NB_CMD commands!"
 msgstr ""
