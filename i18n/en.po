@@ -12,10 +12,10 @@ msgstr "$MISSION_DIR/goal/en.txt"
 #, sh-format
 msgid ""
 "Mission $nb doesn't exist!\n"
-"Aborting..."
+"Restarting..."
 msgstr ""
 "Mission $nb doesn't exist!\n"
-"Aborting..."
+"Restarting..."
 
 msgid "Press Enter"
 msgstr "Press Enter"
@@ -113,18 +113,15 @@ msgstr "$GASH_BASE/i18n/start-help/en.txt"
 msgid "invalid option: '-$OPTARG'"
 msgstr "invalid option: '-$OPTARG'"
 
-#, fuzzy
 msgid "Player's name:"
 msgstr "Player's name:"
 
-#, fuzzy
 msgid "Player's email:"
 msgstr "Player's email:"
 
 msgid "You won't be able to change this information."
 msgstr "You won't be able to change this information."
 
-#, fuzzy
 msgid "Is this information correct? [Y/n]"
 msgstr "Is this information correct? [Y/n]"
 
@@ -140,7 +137,6 @@ msgstr "N"
 msgid "n"
 msgstr "n"
 
-#, fuzzy
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
 "Do you want to continue? [y/N]"
@@ -165,3 +161,10 @@ msgstr "Start again!"
 
 msgid "======== Initialisation of GameShell ========"
 msgstr "======== Initialisation of GameShell ========"
+
+msgid ""
+"No mission were found!\n"
+"Aborting"
+msgstr ""
+"No mission were found!\n"
+"Aborting"

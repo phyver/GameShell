@@ -79,10 +79,11 @@ export ADMIN_HASH='85ba6c834086d5f322acdea13f710c482b1a4f2a'
 
 # ask admin password, except in DEBUG mode
 admin_mode() {
-  if [ -n "$GASH_DEBUG" ]
+  if [ "$GASH_MODE" = "DEBUG" ]
   then
     return 0
   fi
+
   for _ in $(seq 3)
   do
     read -serp "mot de passe admin : " mdp
@@ -103,7 +104,7 @@ admin_mode() {
 mission_source() {
   local FILENAME=$1
   # if we are not running in DEBUG mode, just source the file
-  if [ -z "$GASH_DEBUG" ]
+  if [ "$GASH_MODE" != "DEBUG" ]
   then
     local _TEXTDOMAIN=$TEXTDOMAIN
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"

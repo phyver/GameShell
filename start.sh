@@ -35,11 +35,10 @@ display_help() {
 
 
 export GASH_COLOR="OK"
-export GASH_DEBUG=""
-MODE="DEBUG"
+GASH_MODE="DEBUG"
 RESET=""
 FORCE="FALSE"
-while getopts ":hcnPD:CRF" opt
+while getopts ":hcnPDACRF" opt
 do
   case $opt in
     h)
@@ -56,8 +55,10 @@ do
       MODE="PASSPORT"
       ;;
     D)
-      MODE="DEBUG"
-      GASH_DEBUG=$OPTARG
+      GASH_MODE="DEBUG"
+      ;;
+    A)
+      GASH_MODE="ANONYMOUS"
       ;;
     C)
       RESET="FALSE"
@@ -193,7 +194,7 @@ Do you want to continue this game? [Y/n]') " r
 
   # save current locale
   locale | sed "s/^/export /" > "$GASH_CONFIG"/config.sh
-  echo "export GASH_DEBUG=$GASH_DEBUG" >> "$GASH_CONFIG"/config.sh
+  echo "export GASH_MODE=$GASH_MODE" >> "$GASH_CONFIG"/config.sh
   # TODO save other config (color ?)
 
   mkdir -p "$GASH_LOCAL_BIN"
@@ -207,9 +208,13 @@ Do you want to continue this game? [Y/n]') " r
   while true
   do
     # Lecture du login des étudiants.
-    case "$MODE" in
+    case "$GASH_MODE" in
       DEBUG)
         echo "DEBUG MODE" >> "$PASSPORT"
+        break
+        ;;
+      ANONYMOUS)
+        echo "ANONYMOUS MODE" >> "$PASSPORT"
         break
         ;;
       PASSPORT)
@@ -245,13 +250,15 @@ Do you want to continue this game? [Y/n]') " r
   make_index "$@" 2> /dev/null | sed "s;$GASH_MISSIONS;.;" > "$GASH_DATA/index.txt"
 
   # Installing all missions.
-  cat "$GASH_DATA/index.txt" | while read MISSION_DIR
+  local nb_missions=0
+  while read MISSION_DIR
   do
     case $MISSION_DIR in
       "" | "#"* )
         continue
         ;;
     esac
+    nb_missions=$((nb_missions+1))
     export MISSION_DIR
     MISSION_DIR=$GASH_MISSIONS/$MISSION_DIR
 
@@ -301,7 +308,13 @@ EOH
       cp "$MISSION_DIR/bashrc" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).bashrc.sh"
     fi
     printf "."
-  done
+  done < "$GASH_DATA/index.txt"
+  if [ "$nb_missions" -eq 0 ]
+  then
+    echo "$(gettext "No mission were found!
+Aborting")"
+    exit 1
+  fi
   echo
   unset MISSION_DIR
 }

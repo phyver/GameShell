@@ -28,7 +28,7 @@ _get_current_mission() {
   local n="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GASH_DATA/missions.log")"
   if [ -z "$n" ]
   then
-    echo "$GASH_DEBUG"
+    echo "1"
   else
     echo "$n"
   fi
@@ -60,7 +60,7 @@ _gash_exit() {
   local signal=$1
   _log_action "$nb" "$signal"
   _gash_clean "$nb"
-  [ -z "$GASH_DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && _gash_unprotect
+  [ "$GASH_MODE" != "DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && _gash_unprotect
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
 
@@ -113,6 +113,12 @@ _gash_show() {
 
 # start a mission given by its number
 _gash_start() {
+  local quiet=""
+  if [ "$1" = "-quiet" ]
+  then
+    quiet="true"
+    shift
+  fi
   local nb D S
   if [ -z "$1" ]
   then
@@ -134,10 +140,10 @@ _gash_start() {
   if [ -z "$MISSION_DIR" ]
   then
     color_echo red "$(eval_gettext "Mission \$nb doesn't exist!
-Aborting...")"
+Restarting...")"
     echo
     read -erp "$(gettext "Press Enter")"
-    exit 1
+    gash reset
   fi
 
   ### tester le fichier deps.sh
@@ -178,11 +184,14 @@ to make sure the mission is initialized properly.")" >&2
 
   _log_action "$nb" "START"
 
-  if [ "$nb" -eq 1 ]
+  if [ -n "$quiet" ]
   then
-    parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-init-msg/en.txt')" Inverted
-  else
-    parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-init-msg-short/en.txt')" Inverted
+    if [ "$nb" -eq 1 ]
+    then
+      parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-init-msg/en.txt')" Inverted
+    else
+      parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-init-msg-short/en.txt')" Inverted
+    fi
   fi
 }
 
@@ -375,10 +384,9 @@ _gash_assert_check() {
   fi
 
   _gash_clean "$nb"
-  _gash_start "$nb" > /dev/null
-  # FIXME add an argument to _gash_start to allow "quiet" start
+  _gash_start -quiet "$nb"
 }
-[ -z "$GASH_DEBUG" ] && unset -f _gash_assert_check
+[ "$GASH_MODE" != "DEBUG" ] && unset -f _gash_assert_check
 
 _gash_assert() {
   local condition=$1
@@ -398,7 +406,7 @@ _gash_assert() {
     [ -n "$msg" ] && echo "$msg"
   fi
 }
-[ -z "$GASH_DEBUG" ] && unset -f _gash_assert
+[ "$GASH_MODE" != "DEBUG" ] && unset -f _gash_assert
 
 _gash_test() {
   local nb="$(_get_current_mission)"
@@ -432,7 +440,7 @@ _gash_test() {
   fi
   unset _NB_TESTS _NB_ERRORS
 }
-[ -z "$GASH_DEBUG" ] && unset -f _gash_test
+[ "$GASH_MODE" != "DEBUG" ] && unset -f _gash_test
 
 _gash_help() {
   parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-help/en.txt')" Parchment2
@@ -574,7 +582,7 @@ EOH
       _gash_start "$@"
       ;;
     "test")
-      if [ -z "$GASH_DEBUG" ]
+      if [ "$GASH_MODE" != "DEBUG" ]
       then
         echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
       else
@@ -582,7 +590,7 @@ EOH
       fi
       ;;
     "assert_check")
-      if [ -z "$GASH_DEBUG" ]
+      if [ "$GASH_MODE" != "DEBUG" ]
       then
         echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
       else
@@ -590,7 +598,7 @@ EOH
       fi
       ;;
     "assert")
-      if [ -z "$GASH_DEBUG" ]
+      if [ "$GASH_MODE" != "DEBUG" ]
       then
         echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
       else
