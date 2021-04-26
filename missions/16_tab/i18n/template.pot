@@ -12,21 +12,17 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: init.sh:5 init.sh:10 auto.sh:1 check.sh:13
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr ""
 
-#: init.sh:5 auto.sh:1 check.sh:13
 #, sh-format
 msgid ".Long*Corridor*"
 msgstr ""
 
-#: init.sh:10
-#, sh-format
-msgid ".Long $r1 Corridor $r2"
+msgid "Pffft... You are back to the beginning, in front of the castle..."
 msgstr ""
 
-#: check.sh:14
-msgid "Pffft... You are back to the beginning, in front of the castle..."
+#, sh-format
+msgid ".Long $r1 Corridor $r2"
 msgstr ""

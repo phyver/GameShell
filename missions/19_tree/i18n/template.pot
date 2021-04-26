@@ -12,48 +12,37 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: init.sh:3 init.sh:8 auto.sh:5 clean.sh:6 clean.sh:13 check.sh:5
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr ""
 
-#: init.sh:3 clean.sh:6
+msgid "maze"
+msgstr ""
+
+msgid "silver_coin"
+msgstr ""
+
+msgid "There still are some silver coins in the maze!"
+msgstr ""
+
+msgid "There is no silver coin in your chest!"
+msgstr ""
+
+msgid "Booh... The silver coin in you chest is invalid!"
+msgstr ""
+
 msgid ".Long*Corridor*"
 msgstr ""
 
-#: init.sh:8
+msgid "Pffft... You are back to the entrance of the maze..."
+msgstr ""
+
+msgid "silver"
+msgstr ""
+
 #, sh-format
 msgid ".Long $r1 Corridor $r2"
 msgstr ""
 
-#: init.sh:12 auto.sh:5 clean.sh:5 clean.sh:13 check.sh:5
-msgid "maze"
-msgstr ""
-
-#: init.sh:19
 msgid "maze generation:"
-msgstr ""
-
-#: init.sh:35 auto.sh:7 check.sh:7 check.sh:16
-msgid "silver_coin"
-msgstr ""
-
-#: clean.sh:7
-msgid "Pffft... You are back to the entrance of the maze..."
-msgstr ""
-
-#: clean.sh:16
-msgid "silver"
-msgstr ""
-
-#: check.sh:11
-msgid "There still are some silver coins in the maze!"
-msgstr ""
-
-#: check.sh:19
-msgid "There is no silver coin in your chest!"
-msgstr ""
-
-#: check.sh:25
-msgid "Booh... The silver coin in you chest is invalid!"
 msgstr ""

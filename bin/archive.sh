@@ -65,6 +65,7 @@ do
       ;;
   esac
 done
+shift $(($OPTIND - 1))
 
 [ -z "$OUTPUT" ] && OUTPUT="$(pwd)/$NAME.sh"
 

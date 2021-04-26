@@ -4,21 +4,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-# path for the text file containing the goal
-#: goal.sh:8
-#, sh-format
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
-
 # path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: check.sh:9
 #, sh-format
 msgid "What was the day of the week for the $MM-$DD-$YYYY?"
 msgstr "What was the day of the week for the $MM-$DD-$YYYY?"
 
-#: check.sh:16
 msgid "Your answer: "
 msgstr "Your answer: "
+
+# path for the text file containing the goal
+#, sh-format
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/en.txt"

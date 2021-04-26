@@ -8,62 +8,49 @@ msgstr ""
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/en.txt"
 
-# path for the text file containing the goal
+# path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: static.sh:1 auto.sh:1 check.sh:3
 #, sh-format
 msgid "$GASH_HOME/Forest"
 msgstr "$GASH_HOME/Forest"
 
-#: auto.sh:1 check.sh:7 check.sh:21 check.sh:29 check.sh:84
 msgid "Cabin"
 msgstr "Cabin"
 
-#: auto.sh:1 check.sh:38 check.sh:52 check.sh:61 check.sh:69 check.sh:85
 msgid "Chest"
 msgstr "Chest"
 
-#: check.sh:10
 msgid "You built too many cabins in the forest!"
 msgstr "You built too many cabins in the forest!"
 
-#: check.sh:15
 msgid "You did not build a cabin in the forest!"
 msgstr "You did not build a cabin in the forest!"
 
-#: check.sh:24
 msgid "Your built your cabin too far in the forest..."
 msgstr "Your built your cabin too far in the forest..."
 
-#: check.sh:32
 #, sh-format
 msgid "The $cabin directory does not exist!"
 msgstr "The $cabin directory does not exist!"
 
-#: check.sh:41
 msgid "You built too many chests in your cabin!"
 msgstr "You built too many chests in your cabin!"
 
-#: check.sh:46
 msgid "You did not build a chest in your cabin!"
 msgstr "You did not build a chest in your cabin!"
 
-#: check.sh:55
 msgid "You built a chest in the forest!"
 msgstr "You built a chest in the forest!"
 
-#: check.sh:64
 msgid "The chest is not in the right place in your cabin."
 msgstr "The chest is not in the right place in your cabin."
 
-#: check.sh:72
 #, sh-format
 msgid "The $chest directory does not exist!"
 msgstr "The $chest directory does not exist!"
 
-#: check.sh:87
 #, sh-format
 msgid "You are back at the starting point: start over."
 msgstr "You are back at the starting point: start over."

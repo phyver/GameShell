@@ -12,11 +12,9 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: init.sh:3 static.sh:3 auto.sh:1
 #, sh-format
 msgid "$GASH_HOME/Castle/Main_building/Library/Merlin_s_office"
 msgstr "$GASH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin"
 
-#: init.sh:4 init.sh:8 auto.sh:7
 msgid "grimoire"
 msgstr "grimoire"

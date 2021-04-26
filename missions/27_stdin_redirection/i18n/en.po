@@ -12,17 +12,26 @@ msgstr "$MISSION_DIR/goal/en.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: init.sh:3 init.sh:15 init.sh:18 static.sh:3 static.sh:5 static.sh:7
-#: auto.sh:1
 #, sh-format
 msgid "$GASH_HOME/Castle/Main_building/Library"
 msgstr "$GASH_HOME/Castle/Main_building/Library"
 
-#: init.sh:3 static.sh:7
+msgid "Mathematics_101"
+msgstr "Mathematics_101"
+
+msgid "Too slow! You need to give the answers in less than 10 seconds..."
+msgstr "Too slow! You need to give the answers in less than 10 seconds..."
+
+msgid "That's not even a number!"
+msgstr "That's not even a number!"
+
+#, sh-format
+msgid "Too bad! The expected answer was $c..."
+msgstr "Too bad! The expected answer was $c..."
+
 msgid "Greek_Latin_and_other_modern_languages"
 msgstr "Greek_Latin_and_other_modern_languages"
 
-#: init.sh:12
 msgid ""
 "The book 'Mathematics_101' contains all the anwsers for the exam.\n"
 "\n"
@@ -32,23 +41,5 @@ msgstr ""
 "\n"
 "You just need to copy all the lines in this book."
 
-#: init.sh:15
 msgid ".How_to_cheat_for_exams"
 msgstr ".How_to_cheat_for_exams"
-
-#: init.sh:18 static.sh:5 auto.sh:1
-msgid "Mathematics_101"
-msgstr "Mathematics_101"
-
-#: check.sh:15
-msgid "Too slow! You need to give the answers in less than 10 seconds..."
-msgstr "Too slow! You need to give the answers in less than 10 seconds..."
-
-#: check.sh:22
-msgid "That's not even a number!"
-msgstr "That's not even a number!"
-
-#: check.sh:29
-#, sh-format
-msgid "Too bad! The expected answer was $c..."
-msgstr "Too bad! The expected answer was $c..."

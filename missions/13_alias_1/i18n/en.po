@@ -12,14 +12,11 @@ msgstr "$MISSION_DIR/goal/en.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: check.sh:7
 msgid "The alias 'la' doesn't exist..."
 msgstr "The alias 'la' doesn't exist..."
 
-#: check.sh:11
 msgid "The alias 'la' is invalid..."
 msgstr "The alias 'la' is invalid..."
 
-#: check.sh:16
 msgid "The alias 'la' doesn't run 'ls -A'..."
 msgstr "The alias 'la' doesn't run 'ls -A'..."

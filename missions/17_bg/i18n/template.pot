@@ -12,10 +12,8 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: check.sh:8
 msgid "You haven't run the 'xeyes' command directly."
 msgstr ""
 
-#: check.sh:13
 msgid "There doesn't seem to be an 'xeye' process running."
 msgstr ""

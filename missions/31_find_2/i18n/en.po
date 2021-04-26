@@ -12,52 +12,40 @@ msgstr "$MISSION_DIR/goal/en.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: init.sh:3 init.sh:8 auto.sh:2 clean.sh:7 clean.sh:12 check.sh:5
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Castle/Cellar"
 
-#: init.sh:3 clean.sh:7
+msgid "maze"
+msgstr "maze"
+
+msgid "ruby"
+msgstr "ruby"
+
+msgid "There are too many rubys in the maze!"
+msgstr "There are too many rubys in the maze!"
+
+msgid "The ruby is still in the maze!"
+msgstr "The ruby is still in the maze!"
+
+msgid "There is no ruby in the chest!"
+msgstr "There is no ruby in the chest!"
+
+msgid "The ruby file in the chest is invalid..."
+msgstr "The ruby file in the chest is invalid..."
+
 msgid ".Long*Corridor*"
 msgstr ".Long*Corridor*"
 
-#: init.sh:8
+msgid "Pffft... You are back to the entrance of the maze..."
+msgstr "Pffft... You are back to the entrance of the maze..."
+
 #, sh-format
 msgid ".Long $r1 Corridor $r2"
 msgstr ".Long $r1 Corridor $r2"
 
-#: init.sh:12 auto.sh:2 clean.sh:6 clean.sh:12 check.sh:5
-msgid "maze"
-msgstr "maze"
-
-#: init.sh:24
 msgid "maze generation:"
 msgstr "maze generation:"
 
-#: init.sh:38 init.sh:39 auto.sh:3 check.sh:7 check.sh:21 check.sh:36
-msgid "ruby"
-msgstr "ruby"
-
-#: init.sh:46 init.sh:47
 msgid "stone"
 msgstr "stone"
-
-#: clean.sh:8
-msgid "Pffft... You are back to the entrance of the maze..."
-msgstr "Pffft... You are back to the entrance of the maze..."
-
-#: check.sh:11
-msgid "There are too many rubys in the maze!"
-msgstr "There are too many rubys in the maze!"
-
-#: check.sh:16
-msgid "The ruby is still in the maze!"
-msgstr "The ruby is still in the maze!"
-
-#: check.sh:25
-msgid "There is no ruby in the chest!"
-msgstr "There is no ruby in the chest!"
-
-#: check.sh:39
-msgid "The ruby file in the chest is invalid..."
-msgstr "The ruby file in the chest is invalid..."

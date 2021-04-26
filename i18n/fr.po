@@ -4,95 +4,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-# help file
-#: start.sh:33
-#, sh-format
-msgid "$GASH_BASE/i18n/start-help/en.txt"
-msgstr "$GASH_BASE/i18n/start-help/fr.txt"
-
-#: start.sh:72
-#, sh-format
-msgid "invalid option: '-$OPTARG'"
-msgstr "option invalide: '-$OPTARG'"
-
-msgid "invalid number"
-msgstr "nombre invalide"
-
-#: start.sh:101
-msgid "You won't be able to change this information."
-msgstr "Vous ne pourrez plus modifier ces informations."
-
-msgid "Is this information correct? [Y/n] "
-msgstr "Est-ce que ces informations sont correctes ? [O/n]"
-
-# abbreviation for "yes" (lowercase)
-#: start.sh:106 start.sh:143 start.sh:162
-msgid "y"
-msgstr "o"
-
-# abbreviation for "yes" (uppercase)
-#: start.sh:106 start.sh:143 start.sh:162
-msgid "Y"
-msgstr "O"
-
-#: start.sh:109 start.sh:140 start.sh:165
-msgid "n"
-msgstr "n"
-
-#: start.sh:109 start.sh:140 start.sh:165
-msgid "N"
-msgstr "N"
-
-msgid ""
-"You are trying to run GameShell inside the developpment directory.\n"
-"Do you want to continue? [y/N] "
-msgstr ""
-"Vous êtes en train d'exécuter GameShell dans l'arborescence de développement.\n"
-"Faut-il continuer ? [o/N]"
-
-#: start.sh:160
-#, sh-format
-msgid ""
-"The directory $GASH_DATA contains meta-data from a previous game.\n"
-"Do you want to continue this game? [Y/n]"
-msgstr ""
-"Le répertoire $GASH_DATA contient des méta-données provenant d'une partie précédente.\n"
-"Voulez vous continuer cette partie ? [O/n]"
-
-#: start.sh:219
-#, sh-format
-msgid "unknown mode: $MODE"
-msgstr "mode inconnu : $MODE"
-
-#: start.sh:229
-msgid "Start again!"
-msgstr "Recommencez !"
-
-#: start.sh:243
-msgid "======== Initialisation of GameShell ========"
-msgstr "======== Initialisation de GameShell ========"
-
-#: lib/gameshell.sh:49
 msgid "The command 'gash reset' is useless when run inside a subshell!"
 msgstr "La commande 'gash reset' est inutile lorsqu'on l'exécute dans un sous shell !"
 
-#: lib/gameshell.sh:82 lib/gameshell.sh:129 lib/gameshell.sh:195
-#: lib/gameshell.sh:217 lib/gameshell.sh:248 lib/gameshell.sh:336
-#: lib/gameshell.sh:408
 #, sh-format
 msgid "Problem: couldn't get mission number '$nb' ($fn_name)"
 msgstr "Problème : je n'ai pas pu récupérer la mission '$nb' ($fn_name)"
 
-#: lib/gameshell.sh:102
 #, sh-format
 msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgstr "$MISSION_DIR/goal/fr.txt"
 
-#: lib/gameshell.sh:148
+#, sh-format
+msgid ""
+"Mission $nb doesn't exist!\n"
+"Aborting..."
+msgstr ""
+"La mission $nb n'existe pas !\n"
+"Arrêt de GameShell..."
+
+msgid "Press Enter"
+msgstr "Appuyez sur Entrée"
+
 msgid "The mission is cancelled because some dependencies are not met."
 msgstr "La mission est annulée car des dépendances ne sont pas satisfaites."
 
-#: lib/gameshell.sh:170
 msgid ""
 "NOTE: this mission was initialized in a sub-shell.\n"
 "You should run the command\n"
@@ -105,69 +41,68 @@ msgstr ""
 "pour qu'elle soit initialisée correctement."
 
 # help file
-#: lib/gameshell.sh:183
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg/fr.txt"
 
 # help file
-#: lib/gameshell.sh:185
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg-short/fr.txt"
 
-#: lib/gameshell.sh:200 lib/gameshell.sh:231
 msgid "wrong password"
 msgstr "mauvais mot de passe"
 
-#: lib/gameshell.sh:205
 #, sh-format
 msgid "Mission $nb has been cancelled."
 msgstr "La mission $nb a été annulée"
 
-#: lib/gameshell.sh:225
 #, sh-format
 msgid "Mission $nb doesn't have an auto script."
 msgstr "La mission $nb n'a pas de script automatique."
 
-#: lib/gameshell.sh:256
 #, sh-format
 msgid "Error: mission $nb doesn't have a check script."
 msgstr "Erreur : la mission $nb n'a pas de script de vérification."
 
-#: lib/gameshell.sh:263
 #, sh-format
 msgid "Mission $nb has already been succesfully checked!"
 msgstr "La mission $nb a déjà été réussie !"
 
-#: lib/gameshell.sh:272
 #, sh-format
 msgid "Mission $nb has been successfully completed!"
 msgstr "La mission $nb a été vérifiée avec succès."
 
-#: lib/gameshell.sh:296
 #, sh-format
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: lib/gameshell.sh:319
 #, sh-format
 msgid "Mission $nb hasn't been completed."
 msgstr "La mission $nb a échoué."
 
+#, sh-format
+msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
+msgstr "Problème: _gash_assert_check n'accepte que true' et 'false' comme argument"
+
+#, sh-format
+msgid "test $_NB_TESTS failed"
+msgstr "test $_NB_TESTS échoué"
+
+#, sh-format
+msgid "Error: mission $nb doesn't have a test script."
+msgstr "Erreur : la mission $nb n'a pas de script de test."
+
 # help file
-#: lib/gameshell.sh:438
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-help/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-help/fr.txt"
 
 # help file
-#: lib/gameshell.sh:442
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-HELP/fr.txt"
 
-#: lib/os_aliases.sh:20
 #, sh-format
 msgid ""
 "Unknown system: OSTYPE=$OSTYPE.\n"
@@ -180,59 +115,46 @@ msgstr ""
 "N'hésitez pas à signaler ce bug.\n"
 "Appuyez sur Entrée pour continuer."
 
-#: lib/gameshell.sh:139
-msgid "Press Enter"
-msgstr "Appuyez sur Entrée"
-
-msgid "test successful"
-msgstr "test réussi"
-
-#: lib/gameshell.sh:416
+# help file
 #, sh-format
-msgid "Error: mission $nb doesn't have a test script."
-msgstr "Erreur : la mission $nb n'a pas de script de test."
+msgid "$GASH_BASE/i18n/start-help/en.txt"
+msgstr "$GASH_BASE/i18n/start-help/fr.txt"
 
-msgid "Player's name: "
-msgstr "Player's name: "
-
-msgid "Player's email: "
-msgstr "Player's email: "
-
-#: lib/gameshell.sh:354
 #, sh-format
-msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
-msgstr "Problème: _gash_assert_check n'accepte que true' et 'false' comme argument"
+msgid "invalid option: '-$OPTARG'"
+msgstr "option invalide: '-$OPTARG'"
 
-#: lib/gameshell.sh:368 lib/gameshell.sh:373 lib/gameshell.sh:397
-#, sh-format
-msgid "test $_NB_TESTS failed"
-msgstr "test $_NB_TESTS échoué"
-
-#: lib/gameshell.sh:136
-#, sh-format
-msgid ""
-"Mission $nb doesn't exist!\n"
-"Aborting..."
-msgstr ""
-"La mission $nb n'existe pas !\n"
-"Arrêt de GameShell..."
-
-#: start.sh:86
 #, fuzzy
 msgid "Player's name:"
 msgstr "Player's name: "
 
-#: start.sh:91
 #, fuzzy
 msgid "Player's email:"
 msgstr "Player's email: "
 
-#: start.sh:104
+msgid "You won't be able to change this information."
+msgstr "Vous ne pourrez plus modifier ces informations."
+
 #, fuzzy
 msgid "Is this information correct? [Y/n]"
 msgstr "Est-ce que ces informations sont correctes ? [O/n]"
 
-#: start.sh:138
+# abbreviation for "yes" (uppercase)
+msgid "Y"
+msgstr "O"
+
+# abbreviation for "yes" (lowercase)
+msgid "y"
+msgstr "o"
+
+# abbreviation for "no" (uppercase)
+msgid "N"
+msgstr "N"
+
+# abbreviation for "no" (lowercase)
+msgid "n"
+msgstr "n"
+
 #, fuzzy
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
@@ -240,3 +162,21 @@ msgid ""
 msgstr ""
 "Vous êtes en train d'exécuter GameShell dans l'arborescence de développement.\n"
 "Faut-il continuer ? [o/N]"
+
+#, sh-format
+msgid ""
+"The directory $GASH_DATA contains meta-data from a previous game.\n"
+"Do you want to continue this game? [Y/n]"
+msgstr ""
+"Le répertoire $GASH_DATA contient des méta-données provenant d'une partie précédente.\n"
+"Voulez vous continuer cette partie ? [O/n]"
+
+#, sh-format
+msgid "unknown mode: $MODE"
+msgstr "mode inconnu : $MODE"
+
+msgid "Start again!"
+msgstr "Recommencez !"
+
+msgid "======== Initialisation of GameShell ========"
+msgstr "======== Initialisation de GameShell ========"
