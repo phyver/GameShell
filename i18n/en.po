@@ -42,9 +42,6 @@ msgstr "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
 msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 
-msgid "wrong password"
-msgstr "wrong password"
-
 #, sh-format
 msgid "Mission $nb has been cancelled."
 msgstr "Mission $nb has been cancelled."
@@ -104,6 +101,15 @@ msgstr ""
 "GameShell will use 'gnu-linux', without guarantee.\n"
 "Please report this as a bug.\n"
 "Press Enter to continue."
+
+msgid "You are not allowed to run this command."
+msgstr "You are not allowed to run this command."
+
+msgid "password:"
+msgstr "password:"
+
+msgid "wrong password"
+msgstr "wrong password"
 
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"

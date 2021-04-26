@@ -35,7 +35,7 @@ display_help() {
 
 
 export GASH_COLOR="OK"
-GASH_MODE="DEBUG"
+GASH_MODE="ANONYMOUS"
 RESET=""
 FORCE="FALSE"
 while getopts ":hcnPDACRF" opt
@@ -52,7 +52,7 @@ do
       GASH_COLOR="OK"
       ;;
     P)
-      MODE="PASSPORT"
+      GASH_MODE="PASSPORT"
       ;;
     D)
       GASH_MODE="DEBUG"
@@ -130,6 +130,8 @@ init_gash() {
   export GASH_CONFIG="$GASH_BASE/.config"
   export GASH_LOCAL_BIN="$GASH_BASE/.bin"
 
+  ADMIN_HASH=''
+
   # message when a new game is started from the developpment directory
   if [ -e "$GASH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
   then
@@ -196,6 +198,9 @@ Do you want to continue this game? [Y/n]') " r
   locale | sed "s/^/export /" > "$GASH_CONFIG"/config.sh
   echo "export GASH_MODE=$GASH_MODE" >> "$GASH_CONFIG"/config.sh
   # TODO save other config (color ?)
+
+  # save hash for admin password
+  [ -n "$ADMIN_HASH" ] && echo "$ADMIN_HASH" > "$GASH_DATA/admin_hash"
 
   mkdir -p "$GASH_LOCAL_BIN"
 

@@ -38,9 +38,6 @@ msgstr ""
 msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr ""
 
-msgid "wrong password"
-msgstr ""
-
 #, sh-format
 msgid "Mission $nb has been cancelled."
 msgstr ""
@@ -97,6 +94,15 @@ msgid ""
 "Press Enter to continue."
 msgstr ""
 
+msgid "You are not allowed to run this command."
+msgstr ""
+
+msgid "password:"
+msgstr ""
+
+msgid "wrong password"
+msgstr ""
+
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
 msgstr ""
@@ -148,12 +154,9 @@ msgid "Start again!"
 msgstr ""
 
 msgid "======== Initialisation of GameShell ========"
-<<<<<<< HEAD
-=======
-msgstr "======== Initialisation of GameShell ========"
+msgstr ""
 
 msgid ""
 "No mission were found!\n"
 "Aborting"
->>>>>>> c1fe61f... added "anonymous" mode (anonymous / passport / debug)
 msgstr ""
