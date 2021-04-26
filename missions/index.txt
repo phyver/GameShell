@@ -1,3 +1,4 @@
+# start of index file $GASH_MISSIONS/index.txt
 01_cd_1/
 02_cd_2/
 03_cd_3/
@@ -34,3 +35,4 @@
 34_pipe_2/
 35_tr/
 99_THE_END/
+# end of index file $GASH_MISSIONS/index.txt

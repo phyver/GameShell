@@ -38,7 +38,7 @@ _get_current_mission() {
 # get the mission directory
 _get_mission_dir() {
   local n=$1
-  local dir=$(awk -v n="$n" -v DIR="$GASH_MISSIONS" '(NR == n) {print DIR "/" $0; exit}' "$GASH_DATA/index.txt")
+  local dir=$(awk -v n="$n" -v DIR="$GASH_MISSIONS" '/^#/{next} /^$/{next} {N++} (N == n){print DIR "/" $0; exit}' "$GASH_DATA/index.txt")
   echo "$(REALPATH "$dir")"
 }
 

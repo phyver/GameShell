@@ -2,37 +2,44 @@
 
 # generate an index of missions
 parse_index() {
-  local index_file=$1
+  local index_file=$(REALPATH "$1")
   local dir
+  local short_index_file
 
   case "$index_file" in
     "$GASH_MISSIONS"* )
       dir=$(dirname "$index_file")
+      short_index_file="\$GASH_MISSIONS/${index_file#$GASH_MISSIONS/}"
       ;;
     *)
-      dir=$(dirname "$index_file")
       dir=$GASH_MISSIONS
+      short_index_file="$index_file"
       ;;
   esac
 
-  cat "$index_file" | while read line
+  echo "# start of index file $short_index_file"
+  cat "$index_file" | while read MISSION_DIR
   do
-    path="$dir/$line"
+    case $MISSION_DIR in
+      "" | "#"* )
+        continue
+        ;;
+    esac
+    path="$dir/$MISSION_DIR"
     if [ -d "$path" ] && [ -f "$path/check.sh" ]
     then
-      echo "$path"
+      echo "${path#$GASH_MISSIONS/}"
     elif [ -f "$path" ]
     then
       parse_index "$path"
     else
-      echo "        wrong line (parse_index): $path" >&2
+      echo "        wrong MISSION_DIR (parse_index): $path" >&2
     fi
   done
+  echo "# end of index file $short_index_file"
 }
 
 make_index() {
-  GASH_MISSIONS="$1"
-  shift
   if [ "$#" -eq 0 ]
   then
     parse_index "$GASH_MISSIONS/index.txt"
@@ -40,10 +47,10 @@ make_index() {
 
   while [ "$#" -gt 0 ]
   do
-    local arg=$1
+    local arg=$(REALPATH "$1")
     if [ -d "$arg" ] && [ -f "$arg/check.sh" ]
     then
-      echo "$arg"
+      echo "${arg#$GASH_MISSIONS/}"
     elif [ -f "$arg" ]
     then
       parse_index "$arg"

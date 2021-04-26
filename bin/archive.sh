@@ -1,17 +1,19 @@
 #!/bin/bash
 
 export GASH_BASE="$(dirname "$0")/.."
+source $GASH_BASE/lib/os_aliases.sh
+GASH_BASE=$(REALPATH "$GASH_BASE")
+source $GASH_BASE/lib/make_index.sh
+
+export GASH_MISSIONS="$GASH_BASE/missions"
 
 display_help() {
 cat <<EOH
-$(basename $0) [OPTIONS]
+$(basename $0) [OPTIONS] [MISSIONS]
 create a GameShell standalone archive
 
 options:
   -h          this message
-  -m ...      choose the missions to include (shell pattern)
-              (default : "_*")
-  -M          take list of missions to include from a file
   -p ...      choose password for admin commands
   -N ...      name of directory inside the GameShell archive (default: "GameShell")
   -a          keep 'auto.sh' scripts from missions that have one
@@ -24,13 +26,12 @@ EOH
 
 NAME="GameShell"
 ADMIN_PASSWD=""
-MISSIONS_PATTERNS="*"
 KEEP_AUTO=0
 DEFAULT_MODE="DEBUG"
 OUTPUT=''
 KEEP_TGZ='false'
 
-while getopts ":hm:M:p:N:aPDo:k" opt
+while getopts ":hp:N:aPDo:k" opt
 do
   case $opt in
     h)
@@ -42,12 +43,6 @@ do
       ;;
     N)
       NAME=$OPTARG
-      ;;
-    m)
-      MISSIONS_PATTERNS="$OPTARG"
-      ;;
-    M)
-      MISSIONS_PATTERNS=$(cat "$OPTARG")
       ;;
     a)
       KEEP_AUTO=1
@@ -85,20 +80,20 @@ mkdir "$TMP_DIR/$NAME/missions"
 # cd $GASH_BASE/missions
 echo "copy missions"
 N=0
-GLOBIGNORE="*"
-for pattern in $MISSIONS_PATTERNS
+make_index "$@" | while read MISSION_DIR
 do
-  GLOBIGNORE=""
-  for m in $(find "$GASH_BASE/missions" -maxdepth 1 -name "*_$pattern" -type d | sort -n)
-  do
-    N=$((10#$N + 1))
-    N=$(echo -n "000000$N" | tail -c 6)
-    MISSION_DIR=$TMP_DIR/$NAME/missions/${N}_${m#*_}
-    echo "    $(basename "$m")  -->  $(basename "$MISSION_DIR")"
-    mkdir "$MISSION_DIR"
-    cp --archive "$m"/* "$MISSION_DIR"
-    echo "./$(basename "$MISSION_DIR")" >> "$TMP_DIR/$NAME/missions/index.txt"
-  done
+  case $MISSION_DIR in
+    "" | "#"* )
+      continue
+      ;;
+  esac
+  N=$((10#$N + 1))
+  N=$(echo -n "000000$N" | tail -c 6)
+  ARCHIVE_MISSION_DIR=$TMP_DIR/$NAME/missions/${N}_${MISSION_DIR#*_}
+  echo "    $(basename "$MISSION_DIR")  -->  $(basename "$ARCHIVE_MISSION_DIR")"
+  mkdir "$ARCHIVE_MISSION_DIR"
+  cp --archive "$GASH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR"
+  echo "$(basename "$ARCHIVE_MISSION_DIR")" >> "$TMP_DIR/$NAME/missions/index.txt"
 done
 
 
