@@ -50,9 +50,6 @@ msgstr "$GASH_BASE/i18n/gameshell-init-msg/fr.txt"
 msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg-short/fr.txt"
 
-msgid "wrong password"
-msgstr "mauvais mot de passe"
-
 #, sh-format
 msgid "Mission $nb has been cancelled."
 msgstr "La mission $nb a été annulée"
@@ -75,7 +72,7 @@ msgstr "La mission $nb a été vérifiée avec succès."
 
 #, sh-format
 msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
 msgid "Mission $nb hasn't been completed."
@@ -114,6 +111,15 @@ msgstr ""
 "GameShell sera lancé en mode 'gnu-linux', sans garantie.\n"
 "N'hésitez pas à signaler ce bug.\n"
 "Appuyez sur Entrée pour continuer."
+
+msgid "You are not allowed to run this command."
+msgstr "Vous n'avez pas le droit d'exécuter cette commande."
+
+msgid "password:"
+msgstr "mot de passe :"
+
+msgid "wrong password"
+msgstr "mauvais mot de passe"
 
 # help file
 #, sh-format

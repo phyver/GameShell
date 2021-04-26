@@ -73,10 +73,6 @@ parchment() {
 }
 
 
-# checksum of admin password
-export ADMIN_HASH='85ba6c834086d5f322acdea13f710c482b1a4f2a'
-
-
 # ask admin password, except in DEBUG mode
 admin_mode() {
   if [ "$GASH_MODE" = "DEBUG" ]
@@ -84,15 +80,23 @@ admin_mode() {
     return 0
   fi
 
+  if ! [ -f "$GASH_DATA/admin_hash" ]
+  then
+    echo "$(gettext "You are not allowed to run this command.")" >&2
+    return 1
+  fi
+
+  local HASH=$(cat "$GASH_DATA/admin_hash")
   for _ in $(seq 3)
   do
-    read -serp "mot de passe admin : " mdp
+    read -serp "$(gettext "password:" )" mdp
     echo ""
-    if [ "$(checksum "$mdp")" = "$ADMIN_HASH" ]
+    if [ "$(checksum "$mdp")" = "$HASH" ]
     then
       return 0
     fi
   done
+  echo "$(gettext "wrong password")" >&2
   return 1
 }
 
