@@ -8,24 +8,20 @@ msgstr ""
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/en.txt"
 
-# path for the text file containing the goal
+# path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: init.sh:5 init.sh:6 static.sh:5 auto.sh:1
 #, sh-format
 msgid "$GASH_HOME/Stall"
 msgstr "$GASH_HOME/Stall"
 
-#: auto.sh:1
 msgid "PAID"
 msgstr "PAID"
 
-#: check.sh:4
 msgid "How many unpaid items are there? "
 msgstr "How many unpaid items are there? "
 
-#: check.sh:15
 #, sh-format
 msgid "That's the right answer, but you used $NB_CMD commands!"
 msgstr "That's the right answer, but you used $NB_CMD commands!"

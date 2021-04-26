@@ -12,140 +12,106 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: init.sh:5 init.sh:6 static.sh:5 auto.sh:1
 #, sh-format
 msgid "$GASH_HOME/Stall"
 msgstr ""
 
-#: auto.sh:2 bin/genStall.py:110
-msgid "the King"
-msgstr ""
-
-#: auto.sh:2 bin/genStall.py:102
 msgid "PAID"
 msgstr ""
 
-#: check.sh:4
-msgid "How much does the king owe? "
+msgid "the King"
 msgstr ""
 
-#: check.sh:16
-#, sh-format
-msgid "That's the right answer, but you used $NB_CMD commands!"
-msgstr ""
-
-#: bin/genStall.py:77
 msgid "the son of Martin"
 msgstr ""
 
-#: bin/genStall.py:78
 msgid "the Bold"
 msgstr ""
 
-#: bin/genStall.py:79
 msgid "Georges' son"
 msgstr ""
 
-#: bin/genStall.py:79
 msgid "from next town"
 msgstr ""
 
-#: bin/genStall.py:84
-msgid "a spade"
-msgstr ""
-
-#: bin/genStall.py:84
-msgid "a pick"
-msgstr ""
-
-#: bin/genStall.py:84
-msgid "an apple"
-msgstr ""
-
-#: bin/genStall.py:84
 msgid "a chicken"
 msgstr ""
 
-#: bin/genStall.py:84
 msgid "a horse"
 msgstr ""
 
-#: bin/genStall.py:85
-msgid "a cow"
+msgid "a pick"
 msgstr ""
 
-#: bin/genStall.py:85
-msgid "a goat"
+msgid "a spade"
 msgstr ""
 
-#: bin/genStall.py:85
-msgid "a chackal"
+msgid "an apple"
 msgstr ""
 
-#: bin/genStall.py:85
 msgid "a bag flour"
 msgstr ""
 
-#: bin/genStall.py:85
+msgid "a chackal"
+msgstr ""
+
+msgid "a cow"
+msgstr ""
+
+msgid "a goat"
+msgstr ""
+
 msgid "a ruby"
 msgstr ""
 
-#: bin/genStall.py:86
-msgid "a piece of soap"
-msgstr ""
-
-#: bin/genStall.py:86
-msgid "a leather ball"
-msgstr ""
-
-#: bin/genStall.py:86
 msgid "a blanket"
 msgstr ""
 
-#: bin/genStall.py:86
+msgid "a leather ball"
+msgstr ""
+
+msgid "a piece of soap"
+msgstr ""
+
 msgid "a shiny rock"
 msgstr ""
 
-#: bin/genStall.py:87
-msgid "an opal"
-msgstr ""
-
-#: bin/genStall.py:87
-msgid "walking stick"
-msgstr ""
-
-#: bin/genStall.py:87
 msgid "a leather bag"
 msgstr ""
 
-#: bin/genStall.py:87
-msgid "a stool"
-msgstr ""
-
-#: bin/genStall.py:87
 msgid "a pin"
 msgstr ""
 
-#: bin/genStall.py:88
+msgid "a stool"
+msgstr ""
+
+msgid "an opal"
+msgstr ""
+
+msgid "walking stick"
+msgstr ""
+
 msgid "a belt"
 msgstr ""
 
-#: bin/genStall.py:88
 msgid "a dented helmet"
 msgstr ""
 
-#: bin/genStall.py:88
-msgid "a wooden spoon"
-msgstr ""
-
-#: bin/genStall.py:88
 msgid "a knife"
 msgstr ""
 
-#: bin/genStall.py:89
+msgid "a wooden spoon"
+msgstr ""
+
 msgid "a bottle of cider"
 msgstr ""
 
-#: bin/genStall.py:113
 msgid "{} bought {} for {} coppers{}\n"
+msgstr ""
+
+msgid "How much does the king owe? "
+msgstr ""
+
+#, sh-format
+msgid "That's the right answer, but you used $NB_CMD commands!"
 msgstr ""

@@ -3,17 +3,20 @@ LANG=$(wildcard i18n/*.po)
 SH_FILES= start.sh bin/archive.sh lib/gameshell.sh lib/utils.sh lib/os_aliases.sh
 OTHER_FILES=
 
+ADD_LOCATION=
+
 all: $(LANG)
 
+add-locations: ADD_LOCATION=--add-location --sort-by-file
+add-locations: all
+
 $(LANG):%.po: i18n/template.pot FORCE
-	@msgmerge --quiet --update --no-wrap --no-location $@ i18n/template.pot
-	msgmerge --quiet --update --no-wrap $@ i18n/template.pot
+	msgmerge --quiet --update --no-wrap --no-location $(ADD_LOCATION) $@ i18n/template.pot
 
 i18n/template.pot: $(SH_FILES) $(OTHER_FILES) FORCE
 	@mkdir -p i18n/
 	@touch i18n/template.pot
-	@xgettext --from-code=UTF-8 --omit-header --no-wrap --no-location --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
-	xgettext --from-code=UTF-8 --omit-header --no-wrap --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
+	xgettext --from-code=UTF-8 --omit-header --no-wrap --no-location $(ADD_LOCATION) --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
 
 new: i18n/template.pot
 	@read -p "language code: " lang; \

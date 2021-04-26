@@ -12,40 +12,31 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: init.sh:3 init.sh:15 init.sh:18 static.sh:3 static.sh:5 static.sh:7
-#: auto.sh:1
 #, sh-format
 msgid "$GASH_HOME/Castle/Main_building/Library"
 msgstr ""
 
-#: init.sh:3 static.sh:7
+msgid "Mathematics_101"
+msgstr ""
+
+msgid "Too slow! You need to give the answers in less than 10 seconds..."
+msgstr ""
+
+msgid "That's not even a number!"
+msgstr ""
+
+#, sh-format
+msgid "Too bad! The expected answer was $c..."
+msgstr ""
+
 msgid "Greek_Latin_and_other_modern_languages"
 msgstr ""
 
-#: init.sh:12
 msgid ""
 "The book 'Mathematics_101' contains all the anwsers for the exam.\n"
 "\n"
 "You just need to copy all the lines in this book."
 msgstr ""
 
-#: init.sh:15
 msgid ".How_to_cheat_for_exams"
-msgstr ""
-
-#: init.sh:18 static.sh:5 auto.sh:1
-msgid "Mathematics_101"
-msgstr ""
-
-#: check.sh:15
-msgid "Too slow! You need to give the answers in less than 10 seconds..."
-msgstr ""
-
-#: check.sh:22
-msgid "That's not even a number!"
-msgstr ""
-
-#: check.sh:29
-#, sh-format
-msgid "Too bad! The expected answer was $c..."
 msgstr ""

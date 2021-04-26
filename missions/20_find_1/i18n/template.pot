@@ -12,52 +12,40 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: init.sh:3 init.sh:8 auto.sh:5 clean.sh:7 clean.sh:12 check.sh:25
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr ""
 
-#: init.sh:3 clean.sh:7
+msgid "maze"
+msgstr ""
+
+msgid "coin"
+msgstr ""
+
+msgid "Some of the coins are not in your chest!"
+msgstr ""
+
+msgid "gold_coin"
+msgstr ""
+
+msgid "There are too many gold coins in the  maze!"
+msgstr ""
+
+msgid "There still are some gold coins in the  maze!"
+msgstr ""
+
+msgid "GolD_CoiN"
+msgstr ""
+
 msgid ".Long*Corridor*"
 msgstr ""
 
-#: init.sh:8
+msgid "Pffft... You are back to the entrance of the maze..."
+msgstr ""
+
 #, sh-format
 msgid ".Long $r1 Corridor $r2"
 msgstr ""
 
-#: init.sh:12 auto.sh:5 clean.sh:6 clean.sh:12 check.sh:25
-msgid "maze"
-msgstr ""
-
-#: init.sh:20
 msgid "maze generation:"
-msgstr ""
-
-#: init.sh:36 init.sh:37 clean.sh:14 check.sh:27 check.sh:40
-msgid "gold_coin"
-msgstr ""
-
-#: init.sh:40 init.sh:41 clean.sh:14 check.sh:40
-msgid "GolD_CoiN"
-msgstr ""
-
-#: auto.sh:6
-msgid "coin"
-msgstr ""
-
-#: clean.sh:8
-msgid "Pffft... You are back to the entrance of the maze..."
-msgstr ""
-
-#: check.sh:12
-msgid "Some of the coins are not in your chest!"
-msgstr ""
-
-#: check.sh:30
-msgid "There are too many gold coins in the  maze!"
-msgstr ""
-
-#: check.sh:35
-msgid "There still are some gold coins in the  maze!"
 msgstr ""

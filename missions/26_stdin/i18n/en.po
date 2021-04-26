@@ -12,11 +12,9 @@ msgstr "$MISSION_DIR/goal/en.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
-#: check.sh:13
 msgid "That's not even a number!"
 msgstr "That's not even a number!"
 
-#: check.sh:20
 #, sh-format
 msgid "Too bad! The expected answer was $c..."
 msgstr "Too bad! The expected answer was $c..."

@@ -12,39 +12,31 @@ msgstr ""
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-#: init.sh:5 auto.sh:1 check.sh:9 check.sh:49
-msgid "coin"
-msgstr ""
-
-#: init.sh:7 static.sh:1 auto.sh:1 check.sh:3
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr ""
 
-#: auto.sh:2 check.sh:4
+msgid "coin"
+msgstr ""
+
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr ""
 
-#: check.sh:14
 #, sh-format
 msgid "The coin '$COIN' is still in the cellar!"
 msgstr ""
 
-#: check.sh:21
 #, sh-format
 msgid "The coin '$COIN' is not in the chest!"
 msgstr ""
 
-#: check.sh:28 check.sh:36
 #, sh-format
 msgid "The coin '$COIN' has been tampered with..."
 msgstr ""
 
-#: check.sh:50
 msgid "chest"
 msgstr ""
 
-#: check.sh:51
 msgid "cabin"
 msgstr ""
