@@ -1,0 +1,8 @@
+
+Congratulations!
+
+You have finished all the missions.
+
+You can run ``gash check`` to start a new game in "admin" mode if 
+you want.
+
