@@ -3,6 +3,7 @@
 export GASH_BASE="$(dirname "$0")/.."
 source $GASH_BASE/lib/os_aliases.sh
 GASH_BASE=$(REALPATH "$GASH_BASE")
+source $GASH_BASE/lib/utils.sh
 source $GASH_BASE/lib/make_index.sh
 
 export GASH_MISSIONS="$GASH_BASE/missions"
@@ -116,9 +117,9 @@ find "$TMP_DIR/$NAME" -name "template.pot" -print0 | xargs -0 rm -f
 # change admin password
 if [ "$ADMIN_PASSWD" ]
 then
-  echo "changing admin password"
+  echo "setting admin password"
   ADMIN_HASH=$(checksum "$ADMIN_PASSWD")
-  sed -i "s/^export ADMIN_HASH='[0-9a-f]*'$/export ADMIN_HASH='$ADMIN_HASH'/" "$TMP_DIR/$NAME/lib/utils.sh"
+  sed -i "s/^\(\s*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$TMP_DIR/$NAME/start.sh"
 fi
 
 # choose default mode

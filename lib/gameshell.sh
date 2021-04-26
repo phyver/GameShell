@@ -206,7 +206,6 @@ _gash_pass() {
   fi
   if ! admin_mode
   then
-    echo "$(gettext "wrong password")" >&2
     return 1
   fi
   _log_action "$nb" "PASS"
@@ -237,7 +236,6 @@ _gash_auto() {
 
   if ! admin_mode
   then
-    echo "$(gettext "wrong password")" >&2
     return 1
   fi
 
@@ -574,7 +572,6 @@ EOH
 
       if ! admin_mode
       then
-        echo "$(gettext "wrong password")" >&2
         return 1
       fi
 
