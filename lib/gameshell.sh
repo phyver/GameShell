@@ -171,7 +171,7 @@ Restarting...")"
 
     if [ "$BASHPID" != $$ ]
     then
-      if ! cmp --quiet "$GASH_MISSION_DATA"/env-before "$GASH_MISSION_DATA"/env-after
+      if ! cmp -s "$GASH_MISSION_DATA"/env-before "$GASH_MISSION_DATA"/env-after
       then
         echo "$(gettext "NOTE: this mission was initialized in a sub-shell.
 You should run the command

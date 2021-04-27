@@ -13,7 +13,7 @@ _local_check_p() {
         echo $file
         return 1
     fi
-    if ! diff -q "$path" "$GASH_MISSION_DATA/$file" > /dev/null
+    if ! cmp -s "$path" "$GASH_MISSION_DATA/$file"
     then
         echo "$(eval_gettext 'Coin '$file' in your chest is invalid!')"
         return 1
