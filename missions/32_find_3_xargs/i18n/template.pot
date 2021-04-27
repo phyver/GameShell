@@ -1,16 +1,16 @@
-#, fuzzy
-msgid ""
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr ""
 
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
+#, fuzzy
+msgid ""
 msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
@@ -38,6 +38,10 @@ msgid ".Long*Corridor*"
 msgstr ""
 
 msgid "Pffft... You are back to the entrance of the maze..."
+msgstr ""
+
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr ""
 
 #, sh-format
