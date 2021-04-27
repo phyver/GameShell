@@ -255,7 +255,7 @@ Do you want to continue this game? [Y/n]') " r
   make_index "$@" 2> /dev/null | sed "s;$GASH_MISSIONS;.;" > "$GASH_DATA/index.txt"
 
   # Installing all missions.
-  local nb_missions=0
+  local MISSION_NB=0
   while read MISSION_DIR
   do
     case $MISSION_DIR in
@@ -263,7 +263,7 @@ Do you want to continue this game? [Y/n]') " r
         continue
         ;;
     esac
-    nb_missions=$((nb_missions+1))
+    MISSION_NB=$((MISSION_NB+1))
     export MISSION_DIR
     MISSION_DIR=$GASH_MISSIONS/$MISSION_DIR
 
@@ -301,10 +301,7 @@ EOH
     # source the static part of the mission
     if [ -f "$MISSION_DIR/static.sh" ]
     then
-      export TEXTDOMAIN="$DOMAIN"
-      # shellcheck source=/dev/null
-      source "$MISSION_DIR/static.sh"
-      export TEXTDOMAIN="gash"
+      mission_source "$MISSION_DIR/static.sh"
     fi
 
     # copy all the shell config files of the mission
@@ -314,14 +311,14 @@ EOH
     fi
     printf "."
   done < "$GASH_DATA/index.txt"
-  if [ "$nb_missions" -eq 0 ]
+  if [ "$MISSION_NB" -eq 0 ]
   then
     echo "$(gettext "No mission were found!
 Aborting")"
     exit 1
   fi
   echo
-  unset MISSION_DIR
+  unset MISSION_DIR MISSION_NB
 }
 
 
