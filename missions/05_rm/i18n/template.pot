@@ -16,14 +16,14 @@ msgstr ""
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr ""
 
-msgid "rat"
+msgid "spider"
 msgstr ""
 
-msgid "There are still rats in the cellar!"
+msgid "There are still spiders in the cellar!"
 msgstr ""
 
-msgid "cat"
+msgid "salamander"
 msgstr ""
 
-msgid "The cat has disappeared!!!"
+msgid "Hey! You removed the salamander!"
 msgstr ""
