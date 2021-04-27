@@ -6,18 +6,15 @@ msgstr ""
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
+msgstr ""
 
 # path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Cellar"
-msgstr "$GASH_HOME/Chateau/Cave"
-
-msgid "maze"
-msgstr "labyrinthe"
+msgid "$GASH_HOME/Botanical_garden/.Maze"
+msgstr "$GASH_HOME/Jardin_botanique/Labyrinthe"
 
 msgid "diamond"
 msgstr "diamant"
@@ -37,19 +34,12 @@ msgstr "Le diamand n'est pas dans le coffre !"
 msgid "The diamond in your chest is not valid!"
 msgstr "Le diamant du coffre est invalide !"
 
-msgid ".Long*Corridor*"
-msgstr ".Long*Couloir*"
-
 msgid "Pffft... You are back to the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr "$GASH_HOME/Foret/Cabane/Coffre"
-
-#, sh-format
-msgid ".Long $r1 Corridor $r2"
-msgstr ".Long $r1 Couloir $r2"
 
 msgid "maze generation:"
 msgstr "génération du labyrinthe :"

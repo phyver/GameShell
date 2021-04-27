@@ -1,7 +1,9 @@
 Mission goal
 ============
 
-Go back to the cellar and delete all the rats.
+Go back to the cellar and remove the spiders that live there.
+Leave the salamanders be: they are are on the coat of arms of the 
+castle and are supposed to bring luck.
 
 
 Useful commands

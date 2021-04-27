@@ -22,3 +22,15 @@ msgstr "Le fichier '$journal' n'existe pas..."
 #, sh-format
 msgid "The file '$journal' is empty..."
 msgstr "Le fichier '$journal' est vide..."
+
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin/Chest"
+msgstr ""
+
+#, sh-format
+msgid ""
+"The command 'nano' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'nano')"
+msgstr ""
+"La commande 'nano' est nécessaire pour la mission $MISSION_NAME.\n"
+"(Debian / Ubuntu : installez le paquet 'nano')"

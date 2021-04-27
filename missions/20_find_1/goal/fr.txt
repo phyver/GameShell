@@ -1,8 +1,9 @@
 Objectif
 ========
 
-Retrouvez les deux pièces d'or dans labyrinthe au fond du couloir 
-caché dans la cave, et les déplacer dans votre coffre.
+Retrouvez les pièces d'or dans le labyrinthe caché dans le jardin et 
+déplacer la dans votre coffre.
+Le jardin botanique se trouve devant le château.
 
 
 Remarque : la description de la commande ``find`` est volontairement 

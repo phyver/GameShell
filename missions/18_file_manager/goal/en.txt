@@ -1,11 +1,10 @@
 Mission goal
 ============
 
-Find the copper coin in the (small) maze at the end of the corridor 
-hidden in the cellar, and move it to your chest.
+Find the copper coin in the (small) maze hidden in the garden and 
+move it to your chest.
+The botanical garden can be found in front of the castle.
 
-You can, if you want, use a graphical file manager.
-The maze can be found in
+You can, if you want, use a graphical file manager. Point it to the 
+directory
   $maze
-
-(Don't forget to make sure the file manager displays hidden files!)

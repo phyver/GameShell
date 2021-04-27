@@ -1,8 +1,9 @@
 Objectif
 ========
 
-Retrouvez la pièce d'argent dans le (petit) labyrinthe et la 
-déplacez dans votre coffre.
+Retrouvez la pièce d'argent dans le (petit) labyrinthe caché dans le 
+jardin et déplacer la dans votre coffre.
+Le jardin botanique se trouve devant le château.
 
 
 Commandes utiles

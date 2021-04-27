@@ -1,11 +1,9 @@
 #!/bin/bash
 
 _local_check() {
-    local lab
-    lab=$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext "maze")" -type d)
-    echo $lab
-    local nb
-    nb=$(find "$lab" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")" | wc -l)
+    local maze="$(eval_gettext '$GASH_HOME/Botanical_garden/.Maze')"
+
+    local nb=$(find "$maze" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")" | wc -l)
     echo $nb
 
     if [ "$nb" -gt 1 ]

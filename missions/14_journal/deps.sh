@@ -1,5 +1,5 @@
 if ! command -v nano > /dev/null; then
-    echo "Attention, la commande nano n'est pas installée, la mission $_MISSION_NB ne sera pas faite"
-    echo "sous Debian / Ubuntu, il faut installer le paquet nano"
-    exit 1
+    echo "$(eval_gettext "The command 'nano' is required for mission \$MISSION_NAME.
+(Debian / Ubuntu: install package 'nano')")"
+    false
 fi

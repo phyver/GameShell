@@ -1,3 +1,5 @@
+#!/bin/bash
+
 goal=$(REALPATH "$(eval_gettext "\$GASH_HOME/Castle/Cellar")")
 current=$(REALPATH "$PWD")
 

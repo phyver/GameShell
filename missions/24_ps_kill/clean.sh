@@ -1,5 +1,3 @@
-#!/bin/bash
-
 exec 3>&2          # 3 is now a copy of 2
 exec 2> /dev/null  # 2 now points to /dev/null
 killall -s SIGKILL -q cat_generator cat-generator

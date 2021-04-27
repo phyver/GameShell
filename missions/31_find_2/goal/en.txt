@@ -1,7 +1,8 @@
 Mission goal
 ============
 
-Look for the ruby in the maze, and move it to your chest.
+Look for the ruby in the maze (in the garden), and move it to your 
+chest.
 
 Hint: the filename does not contain the chaine "ruby". One possible 
 strategy is to look for a **file** (instead of a directory), and 

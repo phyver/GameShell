@@ -1,16 +1,31 @@
-BURROW="$(eval_gettext "\$GASH_HOME/Castle/Cellar")/.$(gettext "Burrow")"
+#!/bin/bash
 
-S1=$(command ls "$BURROW" | checksum)
-S2=$(cat "$GASH_MISSION_DATA/cats")
+_local_check() {
+    local CELLAR="$(eval_gettext "\$GASH_HOME/Castle/Cellar")"
 
-if [ "$S1" = "$S2" ]
+    local nb_spiders=$(find "$CELLAR" -maxdepth 1 -name "*$(gettext "spider")" | wc -l)
+    if [ "$nb_spiders" -ne 0 ]
+    then
+        echo "$(eval_gettext "There still are some spiders ($nb_spiders) in the cellar!")"
+        return 1
+    fi
+
+    local S1=$(find "$CELLAR" -maxdepth 1 -name ".*$(gettext "salamander")" | sort | checksum)
+    local S2=$(cat "$GASH_MISSION_DATA/salamanders")
+
+    if [ "$S1" != "$S2" ]
+    then
+        echo "$(eval_gettext "Some salamanders have been modified!")"
+        return 1
+    fi
+    return 0
+}
+
+if _local_check
 then
-  rm -f "$GASH_MISSION_DATA/cats"
-  unset BURROW S1 S2
+  unset -f _local_check
   true
 else
-  rm -f "$GASH_MISSION_DATA/cats"
-  rm -f "$BURROW"/*
-  unset BURROW S1 S2
+  unset -f _local_check
   false
 fi

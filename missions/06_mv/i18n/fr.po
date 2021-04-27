@@ -20,23 +20,32 @@ msgid "coin"
 msgstr "pièce"
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Cabin/Chest"
-msgstr "$GASH_HOME/Foret/Cabane/Coffre"
+msgid "The coin '$coin' is still in the cellar!"
+msgstr "La pièce '$coin' est toujours dans la cave !"
 
 #, sh-format
-msgid "The coin '$COIN' is still in the cellar!"
-msgstr "La pièce '$COIN' est toujours dans la cave !"
+msgid "The coin '$coin' is not in the chest!"
+msgstr "La pièce '$coin' n'est pas dans le coffre !"
 
 #, sh-format
-msgid "The coin '$COIN' is not in the chest!"
-msgstr "La pièce '$COIN' n'est pas dans le coffre !"
-
-#, sh-format
-msgid "The coin '$COIN' has been tampered with..."
-msgstr "La pièce '$COIN' a été modifiée..."
+msgid "The coin '$coin' has been tampered with..."
+msgstr "La pièce '$coin' a été modifiée..."
 
 msgid "chest"
 msgstr "coffre"
 
 msgid "cabin"
 msgstr "cabane"
+
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin/Chest"
+msgstr "$GASH_HOME/Foret/Cabane/Coffre"
+
+#~ msgid "The coin '$COIN' has been tampered with..."
+#~ msgstr "La pièce '$COIN' a été modifiée..."
+
+#~ msgid "The coin '$COIN' is not in the chest!"
+#~ msgstr "La pièce '$COIN' n'est pas dans le coffre !"
+
+#~ msgid "The coin '$COIN' is still in the cellar!"
+#~ msgstr "La pièce '$COIN' est toujours dans la cave !"

@@ -1,2 +1,2 @@
-rm "$(eval_gettext "\$GASH_HOME/Castle/Cellar")/.$(gettext "Burrow")/"*_$(gettext "rat")
+rm -f "$(eval_gettext '$GASH_HOME/Castle/Cellar')/".*_$(gettext "spider")
 gash check

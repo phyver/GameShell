@@ -19,5 +19,5 @@ msgstr ""
 msgid "You are not at the top of the dungeon!"
 msgstr ""
 
-msgid "You will start over from the starting point of the mission."
+msgid "You need to start over from the start."
 msgstr ""

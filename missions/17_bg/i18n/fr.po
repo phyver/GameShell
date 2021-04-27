@@ -15,5 +15,21 @@ msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 msgid "You haven't run the 'xeyes' command directly."
 msgstr "Vous n'avez pas lancé la commande 'xeyes' directement."
 
-msgid "There doesn't seem to be an 'xeye' process running."
+msgid "There doesn't seem to be an 'xeyes' process running."
 msgstr "Il n'y a pas de processus 'xeyes' en cours."
+
+#, sh-format
+msgid ""
+"The variable DISPLAY is not defined.\n"
+"A running X server is required for mission $MISSION_NAME."
+msgstr ""
+"La variable DISPLAY n'est pas définie.\n"
+"Un serveur X est nécessaire pour la mission $MISSION_NAME."
+
+#, sh-format
+msgid ""
+"The command 'xeyes' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'x11-apps')"
+msgstr ""
+"La commande 'xeyes' est nécessaire pour la mission $MISSION_NAME.\n"
+"(Debian / Ubuntu : installez le paquet 'x11-apps')"

@@ -1,23 +1,20 @@
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
-
 #, fuzzy
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#, sh-format
-msgid "$GASH_HOME/Castle/Cellar"
-msgstr "$GASH_HOME/Chateau/Cave"
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
 
-msgid "maze"
-msgstr "labyrinthe"
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#, sh-format
+msgid "$GASH_HOME/Botanical_garden/.Maze"
+msgstr ""
 
 msgid "silver_coin"
 msgstr "silver_coin"
@@ -31,22 +28,20 @@ msgstr "Il n'y a pas de pièce d'argent dans votre coffre !"
 msgid "Booh... The silver coin in you chest is invalid!"
 msgstr "Bouh... La pièce d'argent de votre coffre est invalide !"
 
-msgid ".Long*Corridor*"
-msgstr ".Long*Couloir*"
-
 msgid "Pffft... You are back to the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
-msgid "silver"
-msgstr "argent"
+#, sh-format
+msgid ""
+"The command 'tree' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'tree')"
+msgstr ""
+"La commande 'tree' est nécessaire pour la mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: installez le paquet 'tree')"
 
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr "$GASH_HOME/Foret/Cabane/Coffre"
-
-#, sh-format
-msgid ".Long $r1 Corridor $r2"
-msgstr ".Long $r1 Couloir $r2"
 
 msgid "maze generation:"
 msgstr "génération du labyrinthe :"

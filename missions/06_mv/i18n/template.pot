@@ -20,23 +20,23 @@ msgid "coin"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Cabin/Chest"
+msgid "The coin '$coin' is still in the cellar!"
 msgstr ""
 
 #, sh-format
-msgid "The coin '$COIN' is still in the cellar!"
+msgid "The coin '$coin' is not in the chest!"
 msgstr ""
 
 #, sh-format
-msgid "The coin '$COIN' is not in the chest!"
-msgstr ""
-
-#, sh-format
-msgid "The coin '$COIN' has been tampered with..."
+msgid "The coin '$coin' has been tampered with..."
 msgstr ""
 
 msgid "chest"
 msgstr ""
 
 msgid "cabin"
+msgstr ""
+
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr ""

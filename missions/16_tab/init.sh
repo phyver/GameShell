@@ -7,7 +7,7 @@ if [ -z "$corridor" ]
 then
     r1=$(checksum $RANDOM)
     r2=$(checksum $RANDOM)
-    corridor="$(eval_gettext '$GASH_HOME/Castle/Cellar')/$(eval_gettext '.Long $r1 Corridor $r2')"
+    corridor="$(eval_gettext '$GASH_HOME/Castle/Cellar')/$(eval_gettext '.Long $r1 Corridor $r2')"
     mkdir -p "$corridor"
 fi
 

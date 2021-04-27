@@ -1,13 +1,9 @@
-#!/bin/bash
-
 cd "$(eval_gettext '$GASH_HOME/Mountain/Cave')"
 
-# les commandes ne sont pas dans l'historique, il faut les y ajouter à la main !
+# commands from a sourced file aren't saved in the history,
+# we need to do that explicitly
 history -s tail -n 4  $(gettext "potion_ingredients")
 history -s gash check
-
-tail -n 4  $(gettext "potion_ingredients")
 gash check
 
 history -d -2--1
-

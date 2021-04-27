@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# fichier lu par le shell à chaque démarrage de la mission
+[ -z "$GASH_CHEST" ] && GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest/Cabin/Chest')"
+mkdir -p "$GASH_CHEST"
+
+find "$GASH_HOME" -iname "$(gettext "painting")_*" -print0 | xargs -0 rm -rf
 
 filename=$(mktemp "$(eval_gettext '$GASH_HOME/Castle/Dungeon/First_floor')"/$(gettext "painting")_XXXXXX)
 parchment "$MISSION_DIR/painting-pipe" Diamond > "$filename"

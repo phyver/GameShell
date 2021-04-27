@@ -19,3 +19,9 @@ msgstr ""
 #, sh-format
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr ""
+
+#, sh-format
+msgid ""
+"The command 'cal' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'bsdmainutils')"
+msgstr ""

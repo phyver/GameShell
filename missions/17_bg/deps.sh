@@ -1,10 +1,11 @@
-if ! command -v xeyes > /dev/null; then
-    echo "Attention, la commande xeyes n'est pas installée, la mission $_MISSION_NB ne sera pas faite."
-    echo "sous Debian / Ubuntu, il faut installer le paquet x11-apps"
-    exit 1
+if [ -z "$DISPLAY" ]; then
+    echo "$(eval_gettext "The variable DISPLAY is not defined.
+A running X server is required for mission \$MISSION_NAME.")"
+    false
 fi
 
-if [ -z "$DISPLAY" ]; then
-    echo "Attention, la variable \$DISPLAY n'est pas définie, la mission $_MISSION_NB ne sera pas faite."
-    exit 1
+if ! command -v xeyes > /dev/null; then
+    echo "$(eval_gettext "The command 'xeyes' is required for mission \$MISSION_NAME.
+(Debian / Ubuntu: install package 'x11-apps')")"
+    false
 fi

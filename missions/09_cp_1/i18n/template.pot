@@ -20,19 +20,15 @@ msgid "standard"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Cabin"
+msgid "The standard $I is not in the chest."
 msgstr ""
 
 #, sh-format
-msgid "The standard $I is not in the cabin."
+msgid "The standard $I disapeared from the entrance."
 msgstr ""
 
 #, sh-format
-msgid "The standard $I disapeared form the entrance."
-msgstr ""
-
-#, sh-format
-msgid "The standard $I in the cabin is not right."
+msgid "The standard $I in the chest is not right."
 msgstr ""
 
 #, sh-format
@@ -40,9 +36,13 @@ msgid "The standard $I in the entrance is not right."
 msgstr ""
 
 #, sh-format
-msgid "The standard $I in the cabin is invalid."
+msgid "The standard $I in the chest is invalid."
 msgstr ""
 
 #, sh-format
 msgid "The standard $I in the entrance is invalid."
+msgstr ""
+
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr ""

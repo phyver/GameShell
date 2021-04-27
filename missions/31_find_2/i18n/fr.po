@@ -13,11 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Cellar"
-msgstr "$GASH_HOME/Chateau/Cave"
-
-msgid "maze"
-msgstr "labyrinthe"
+msgid "$GASH_HOME/Botanical_garden/.Maze"
+msgstr "$GASH_HOME/Jardin_botanique/Labyrinthe"
 
 msgid "ruby"
 msgstr "rubis"
@@ -34,19 +31,12 @@ msgstr "Le rubis n'est pas dans le coffre !"
 msgid "The ruby in your chest is not valid!"
 msgstr "Le rubis du coffre n'est pas valide !"
 
-msgid ".Long*Corridor*"
-msgstr ".Long*Couloir*"
-
 msgid "Pffft... You are back to the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr "$GASH_HOME/Foret/Cabane/Coffre"
-
-#, sh-format
-msgid ".Long $r1 Corridor $r2"
-msgstr ".Long $r1 Couloir $r2"
 
 msgid "maze generation:"
 msgstr "génération du labyrinthe :"

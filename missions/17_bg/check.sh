@@ -10,7 +10,7 @@ then
     false
 elif ! LC_MESSAGES=C jobs | grep "xeyes.*&" | grep -qi running
 then
-    echo "$(gettext "There doesn't seem to be an 'xeye' process running.")"
+    echo "$(gettext "There doesn't seem to be an 'xeyes' process running.")"
     killall -q -9 xeyes
     false
 else
