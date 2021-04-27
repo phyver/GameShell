@@ -1,16 +1,16 @@
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
-
 #, fuzzy
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
@@ -28,11 +28,11 @@ msgstr "Il y a trop de rubis dans le labyrinthe !"
 msgid "The ruby is still in the maze!"
 msgstr "Le rubis est toujours dans le labyrinthe !"
 
-msgid "There is no ruby in the chest!"
-msgstr "Il n'y a pas de rubis dans le coffre !"
+msgid "The ruby is not in the chest!"
+msgstr "Le rubis n'est pas dans le coffre !"
 
-msgid "The ruby file in the chest is invalid..."
-msgstr "Le fichier rubis du coffre n'est pas valide..."
+msgid "The ruby in your chest is not valid!"
+msgstr "Le rubis du coffre n'est pas valide !"
 
 msgid ".Long*Corridor*"
 msgstr ".Long*Couloir*"

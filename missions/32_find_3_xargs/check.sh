@@ -26,20 +26,17 @@ _local_check() {
         return 1
     fi
 
-    local K
-    K=$(cut -f2 -d" " "$diamond")
-    local K2
-    K2=$(basename "$diamond")
-    local S
-    S=$(cut -f3 -d" " "$diamond")
-    local S2
-    S2=$(checksum "$K.$(gettext "diamond")")
-    if [ "$K" != "$K2" ] || [ "$S" != "$S2" ]
+    local filename=$(cut -d" " -f1 $GASH_MISSION_DATA/diamond)
+
+    if ! [ -f "$GASH_CHEST/$filename" ]
     then
-        echo "$(gettext "The diamond file in the chest is not valid!")"
+        echo "$(gettext "The diamond is not in the chest!")"
+        return 1
+    elif ! cmp --quiet "$GASH_MISSION_DATA/diamond" "$GASH_CHEST/$filename"
+    then
+        echo "$(gettext "The diamond in your chest is not valid!")"
         return 1
     fi
-
     return 0
 }
 

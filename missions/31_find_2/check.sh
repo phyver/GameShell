@@ -19,29 +19,17 @@ _local_check() {
         return 1
     fi
 
-    local rubis
-    rubis=$(find "$GASH_CHEST" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")")
+    local filename=$(cut -d" " -f1 $GASH_MISSION_DATA/ruby)
 
-    if [ -z "$rubis" ]
+    if ! [ -f "$GASH_CHEST/$filename" ]
     then
-        echo "$(gettext "There is no ruby in the chest!")"
+        echo "$(gettext "The ruby is not in the chest!")"
+        return 1
+    elif ! cmp --quiet "$GASH_MISSION_DATA/ruby" "$GASH_CHEST/$filename"
+    then
+        echo "$(gettext "The ruby in your chest is not valid!")"
         return 1
     fi
-
-    local K
-    K=$(cut -f2 -d" " "$rubis")
-    local K2
-    K2=$(basename "$rubis")
-    local S
-    S=$(cut -f3 -d" " "$rubis")
-    local S2
-    S2=$(checksum "$K.$(gettext "ruby")")
-    if [ "$K" != "$K2" ] || [ "$S" != "$S2" ]
-    then
-        echo "$(gettext "The ruby file in the chest is invalid...")"
-        return 1
-    fi
-
     return 0
 }
 

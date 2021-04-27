@@ -14,9 +14,9 @@ fi
 
 lab="$corridor/$(gettext "maze")"
 
-echo -n "$(gettext "maze generation:")"
 if ! command -v python3 > /dev/null
 then
+    echo -n "$(gettext "maze generation:")"
     t=$(date +%s)
     N=10
     r1="$((1 + RANDOM%N)),$((1 + RANDOM%N)),$((1 + RANDOM%N))"
@@ -51,7 +51,7 @@ then
     echo
 else
     mkdir -p "$lab"
-    d=$("$GASH_LOCAL_BIN"/maze_generator.py "$lab" 3 10 2)
+    d=$(python3 "$MISSION_DIR"/init.py "$lab" 3 10 2)
     d1=$(echo "$d" | head -n 1)
     d2=$(echo "$d" | head -n 1)
     echo "$(checksum "$d1")" > "$lab/$d1/$(gettext "gold_coin")"

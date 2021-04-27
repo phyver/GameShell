@@ -1,16 +1,16 @@
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
-
 #, fuzzy
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
 msgid "$GASH_HOME/Castle/Cellar"
@@ -31,8 +31,11 @@ msgstr "Le diamand est toujours dans le labyrinthe."
 msgid "There is no diamond in your chest."
 msgstr "Il n'y a pas de diamant dans votre coffre."
 
-msgid "The diamond file in the chest is not valid!"
-msgstr "Le fichier diamant dans votre coffre est invalid !"
+msgid "The diamond is not in the chest!"
+msgstr "Le diamand n'est pas dans le coffre !"
+
+msgid "The diamond in your chest is not valid!"
+msgstr "Le diamant du coffre est invalide !"
 
 msgid ".Long*Corridor*"
 msgstr ".Long*Couloir*"
