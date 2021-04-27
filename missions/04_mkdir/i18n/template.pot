@@ -28,11 +28,8 @@ msgstr ""
 msgid "You did not build a cabin in the forest!"
 msgstr ""
 
-msgid "Your built your cabin too far in the forest..."
-msgstr ""
-
 #, sh-format
-msgid "The $cabin directory does not exist!"
+msgid "The $GASH_CABIN directory does not exist!"
 msgstr ""
 
 msgid "You built too many chests in your cabin!"
@@ -41,16 +38,10 @@ msgstr ""
 msgid "You did not build a chest in your cabin!"
 msgstr ""
 
-msgid "You built a chest in the forest!"
-msgstr ""
-
-msgid "The chest is not in the right place in your cabin."
+#, sh-format
+msgid "The $GASH_CHEST directory does not exist!"
 msgstr ""
 
 #, sh-format
-msgid "The $chest directory does not exist!"
-msgstr ""
-
-#, sh-format
-msgid "You are back at the starting point: start over."
+msgid "You are back at the starting point."
 msgstr ""

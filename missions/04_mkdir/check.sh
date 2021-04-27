@@ -1,6 +1,7 @@
+#!/bin/bash
+
 _local_check() {
-    local forest
-    forest="$(eval_gettext "\$GASH_HOME/Forest")"
+    local forest="$(eval_gettext '$GASH_HOME/Forest')"
 
     # Check that there is only one cabin.
     local nb_cabins
@@ -16,26 +17,16 @@ _local_check() {
         return 1
     fi
 
-    # Check that the cabin is at the root of the forest.
-    local cabin
-    cabin=$(find "$forest" -maxdepth 1 -iname "$(gettext "Cabin")" -type d)
-    if [ -z "$cabin" ]
-    then
-        echo "$(gettext "Your built your cabin too far in the forest...")"
-        return 1
-    fi
-
     # Check the name of the cabin.
-    cabin="$forest/$(gettext "Cabin")"
-    if [ ! -d "$cabin" ]
+    if [ ! -d "$GASH_CABIN" ]
     then
-        echo "$(eval_gettext "The \$cabin directory does not exist!")"
+        echo "$(eval_gettext "The \$GASH_CABIN directory does not exist!")"
         return 1
     fi
 
     # Check that there is only one chest.
     local nb_chests
-    nb_chests=$(find "$cabin" -iname "$(gettext "Chest")" -type d | wc -l)
+    nb_chests=$(find "$forest" -iname "$(gettext "Chest")" -type d | wc -l)
     if [ "$nb_chests" -ge 2 ]
     then
         echo "$(gettext "You built too many chests in your cabin!")"
@@ -47,31 +38,14 @@ _local_check() {
         return 1
     fi
 
-    # Check that there are no chests in the forest that are not in the cabin.
-    local nb_in_forest
-    nb_in_forest=$(find "$forest" -iname "$(gettext "Chest")" -type d | wc -l)
-    if [ "$nb_in_forest" -gt "$nb_chests" ]
-    then
-        echo "$(gettext "You built a chest in the forest!")"
-        return 1
-    fi
-
     # Check that the chest is at the root of the cabin.
     local chest
-    chest=$(find "$cabin" -maxdepth 1 -iname "$(gettext "Chest")" -type d)
-    if [ -z "$chest" ]
+    if ! [ -d "$GASH_CHEST" ]
     then
-        echo "$(gettext "The chest is not in the right place in your cabin.")"
+        echo "$(eval_gettext "The \$GASH_CHEST directory does not exist!")"
         return 1
     fi
 
-    # Check the name of the chest.
-    chest="$cabin/$(gettext "Chest")"
-    if [ ! -d "$chest" ]
-    then
-        echo "$(eval_gettext "The \$chest directory does not exist!")"
-        return 1
-    fi
     return 0
 }
 
@@ -84,6 +58,6 @@ else
     find "$GASH_HOME" -iname "*$(gettext "Cabin")*" -print0 | xargs -0 rm -rf
     find "$GASH_HOME" -iname "*$(gettext "Chest")*" -print0 | xargs -0 rm -rf
     cd "$GASH_HOME"
-    echo "$(eval_gettext "You are back at the starting point: start over.")"
+    echo "$(eval_gettext "You are back at the starting point.")"
     false
 fi
