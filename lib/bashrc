@@ -9,6 +9,11 @@ export HISTIGNORE=""
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 
+
+# get this game's configuration
+[ -f "$GASH_CONFIG"/config.sh ] && source "$GASH_CONFIG"/config.sh
+
+
 # shellcheck source=./lib/gameshell.sh
 source "$GASH_LIB/gameshell.sh"
 
@@ -29,8 +34,6 @@ sudo() {
 doas() {
     echo "gash: doas: command not found" >&2
 }
-
-[ -f "$GASH_CONFIG"/config.sh ] && source "$GASH_CONFIG"/config.sh
 
 shopt -s nullglob
 for file in "$GASH_CONFIG"/*.bashrc.sh
