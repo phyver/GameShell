@@ -14,12 +14,12 @@ trap "_gash_exit TERM" SIGTERM
 
 # log an action to the missions.log file
 _log_action() {
-  local nb action D S
-  nb=$1
+  local MISSION_NB action D S
+  MISSION_NB=$1
   action=$2
   D="$(date +%s)"
-  S="$(checksum "$GASH_UID#$nb#$action#$D")"
-  echo "$nb $action $D $S" >> "$GASH_DATA/missions.log"
+  S="$(checksum "$GASH_UID#$MISSION_NB#$action#$D")"
+  echo "$MISSION_NB $action $D $S" >> "$GASH_DATA/missions.log"
 }
 
 
@@ -56,10 +56,10 @@ _gash_reset() {
 
 # called when gash exits
 _gash_exit() {
-  local nb=$(_get_current_mission)
+  local MISSION_NB=$(_get_current_mission)
   local signal=$1
-  _log_action "$nb" "$signal"
-  _gash_clean "$nb"
+  _log_action "$MISSION_NB" "$signal"
+  _gash_clean "$MISSION_NB"
   [ "$GASH_MODE" != "DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && _gash_unprotect
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
@@ -67,23 +67,23 @@ _gash_exit() {
 
 # display the goal of a mission given by its number
 _gash_show() {
-  local nb
+  local MISSION_NB
   if [ "$#" -eq 0 ]
   then
-    nb="$(_get_current_mission)"
+    MISSION_NB="$(_get_current_mission)"
   else
-    nb="$1"
+    MISSION_NB="$1"
     shift
   fi
 
-  if [ -z "$nb" ]
+  if [ -z "$MISSION_NB" ]
   then
     local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
 
   if [ -f "$MISSION_DIR/goal.txt" ]
   then
@@ -119,27 +119,27 @@ _gash_start() {
     quiet="true"
     shift
   fi
-  local nb D S
+  local MISSION_NB D S
   if [ -z "$1" ]
   then
-    nb=$(_get_current_mission)
+    MISSION_NB=$(_get_current_mission)
   else
-    nb=$1
+    MISSION_NB=$1
   fi
 
-  [ -z "$nb" ] && nb=1
+  [ -z "$MISSION_NB" ] && MISSION_NB=1
 
-  if [ -z "$nb" ]
+  if [ -z "$MISSION_NB" ]
   then
     local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
   if [ -z "$MISSION_DIR" ]
   then
-    color_echo red "$(eval_gettext "Mission \$nb doesn't exist!
+    color_echo red "$(eval_gettext "Mission \$MISSION_NB doesn't exist!
 Restarting...")"
     echo
     read -erp "$(gettext "Press Enter")"
@@ -152,8 +152,8 @@ Restarting...")"
     if ! bash "$MISSION_DIR/deps.sh"
     then
       echo "$(gettext "The mission is cancelled because some dependencies are not met.")" >&2
-      _log_action "$nb" "CANCEL_DEP_PB"
-      _gash_start "$((nb + 1))"
+      _log_action "$MISSION_NB" "CANCEL_DEP_PB"
+      _gash_start "$((MISSION_NB + 1))"
       return
     fi
   fi
@@ -182,11 +182,11 @@ to make sure the mission is initialized properly.")" >&2
     fi
   fi
 
-  _log_action "$nb" "START"
+  _log_action "$MISSION_NB" "START"
 
   if [ -n "$quiet" ]
   then
-    if [ "$nb" -eq 1 ]
+    if [ "$MISSION_NB" -eq 1 ]
     then
       parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-init-msg/en.txt')" Inverted
     else
@@ -197,40 +197,40 @@ to make sure the mission is initialized properly.")" >&2
 
 # stop a mission given by its number
 _gash_pass() {
-  local nb="$(_get_current_mission)"
-  if [ -z "$nb" ]
+  local MISSION_NB="$(_get_current_mission)"
+  if [ -z "$MISSION_NB" ]
   then
     local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
     return 1
   fi
   if ! admin_mode
   then
     return 1
   fi
-  _log_action "$nb" "PASS"
-  _gash_clean "$nb"
-  color_echo yellow "$(eval_gettext 'Mission $nb has been cancelled.')" >&2
+  _log_action "$MISSION_NB" "PASS"
+  _gash_clean "$MISSION_NB"
+  color_echo yellow "$(eval_gettext 'Mission $MISSION_NB has been cancelled.')" >&2
 
-  _gash_start $((10#$nb + 1))
+  _gash_start $((10#$MISSION_NB + 1))
 }
 
 # applies auto.sh script, if it exists
 _gash_auto() {
-  local nb="$(_get_current_mission)"
+  local MISSION_NB="$(_get_current_mission)"
 
-  if [ -z "$nb" ]
+  if [ -z "$MISSION_NB" ]
   then
     local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
 
   if ! [ -f "$MISSION_DIR/auto.sh" ]
   then
-    echo "$(eval_gettext "Mission \$nb doesn't have an auto script.")" >&2
+    echo "$(eval_gettext "Mission \$MISSION_NB doesn't have an auto script.")" >&2
     return 1
   fi
 
@@ -240,34 +240,34 @@ _gash_auto() {
   fi
 
   mission_source "$MISSION_DIR/auto.sh"
-  _log_action "$nb" "AUTO"
+  _log_action "$MISSION_NB" "AUTO"
   return 0
 }
 
 
 # check completion of a mission given by its number
 _gash_check() {
-  local nb="$(_get_current_mission)"
+  local MISSION_NB="$(_get_current_mission)"
 
-  if [ -z "$nb" ]
+  if [ -z "$MISSION_NB" ]
   then
     local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
 
   if ! [ -f "$MISSION_DIR/check.sh" ]
   then
-    echo "$(eval_gettext "Error: mission \$nb doesn't have a check script.")" >&2
+    echo "$(eval_gettext "Error: mission \$MISSION_NB doesn't have a check script.")" >&2
     return 1
   fi
 
-  if grep -q "^$nb OK" "$GASH_DATA/missions.log"
+  if grep -q "^$MISSION_NB OK" "$GASH_DATA/missions.log"
   then
     echo
-    color_echo yellow "$(eval_gettext "Mission \$nb has already been succesfully checked!")"
+    color_echo yellow "$(eval_gettext "Mission \$MISSION_NB has already been succesfully checked!")"
     echo
   else
     mission_source "$MISSION_DIR/check.sh"
@@ -276,12 +276,12 @@ _gash_check() {
     if [ "$exit_status" -eq 0 ]
     then
       echo
-      color_echo green "$(eval_gettext 'Mission $nb has been successfully completed!')"
+      color_echo green "$(eval_gettext 'Mission $MISSION_NB has been successfully completed!')"
       echo
 
-      _log_action "$nb" "CHECK_OK"
+      _log_action "$MISSION_NB" "CHECK_OK"
 
-      _gash_clean "$nb"
+      _gash_clean "$MISSION_NB"
 
       if [ -f "$MISSION_DIR/treasure.sh" ]
       then
@@ -320,31 +320,31 @@ You are advised to use the command
     $ gash reset")"
         fi
       fi
-      _gash_start $((10#$nb + 1))
+      _gash_start $((10#$MISSION_NB + 1))
     else
       echo
-      color_echo red "$(eval_gettext "Mission \$nb hasn't been completed.")"
+      color_echo red "$(eval_gettext "Mission \$MISSION_NB hasn't been completed.")"
       echo
 
-      _log_action "$nb" "CHECK_OOPS"
+      _log_action "$MISSION_NB" "CHECK_OOPS"
 
-      _gash_clean "$nb"
-      _gash_start "$nb"
+      _gash_clean "$MISSION_NB"
+      _gash_start "$MISSION_NB"
     fi
   fi
 }
 
 _gash_clean() {
-  local nb="$(_get_current_mission)"
+  local MISSION_NB="$(_get_current_mission)"
 
-  if [ -z "$nb" ]
+  if [ -z "$MISSION_NB" ]
   then
     local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
 
   if [ -f "$MISSION_DIR/clean.sh" ]
   then
@@ -353,7 +353,7 @@ _gash_clean() {
 }
 
 _gash_assert_check() {
-  local nb="$(_get_current_mission)"
+  local MISSION_NB="$(_get_current_mission)"
 
   local expected=$1
   if [ "$expected" != "true" ] && [ "$expected" != "false" ]
@@ -363,7 +363,7 @@ _gash_assert_check() {
   fi
   local msg=$3
 
-  local MISSION_DIR="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
 
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
@@ -381,8 +381,8 @@ _gash_assert_check() {
     [ -n "$msg" ] && echo "$msg"
   fi
 
-  _gash_clean "$nb"
-  _gash_start -quiet "$nb"
+  _gash_clean "$MISSION_NB"
+  _gash_start -quiet "$MISSION_NB"
 }
 [ "$GASH_MODE" != "DEBUG" ] && unset -f _gash_assert_check
 
@@ -407,19 +407,19 @@ _gash_assert() {
 [ "$GASH_MODE" != "DEBUG" ] && unset -f _gash_assert
 
 _gash_test() {
-  local nb="$(_get_current_mission)"
-  if [ -z "$nb" ]
+  local MISSION_NB="$(_get_current_mission)"
+  if [ -z "$MISSION_NB" ]
   then
     local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$nb' (\$fn_name)")" >&2
+    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$nb")"
+  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
 
   if ! [ -f "$MISSION_DIR/test.sh" ]
   then
-    echo "$(eval_gettext "Error: mission \$nb doesn't have a test script.")" >&2
+    echo "$(eval_gettext "Error: mission \$MISSION_NB doesn't have a test script.")" >&2
     return 1
   fi
 
@@ -470,7 +470,7 @@ EOM
     fi
   fi
 
-  _log_action "$nb" "SAVE"
+  _log_action "$MISSION_NB" "SAVE"
 
   tarfile=$REAL_HOME/GameShell_$(whoami)-SAVE.tgz
   tar -zcf "$tarfile" --exclude=".git*" -C "$GASH_BASE/.." "$(basename "$GASH_BASE")"
