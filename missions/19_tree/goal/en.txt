@@ -1,8 +1,9 @@
 Mission goal
 ============
 
-Find the silver coin in the (small) maze hidden in the cellar, and 
+Find the silver coin in the (small) maze hidden in the garden and 
 move it to your chest.
+The botanical garden can be found in front of the castle.
 
 
 Useful commands

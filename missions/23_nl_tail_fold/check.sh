@@ -1,9 +1,6 @@
 #!/bin/bash
 
 _local_check() {
-    # turn history on (off by default for non-interactive shells
-    HISTFILE=$GASH_DATA/history
-
     local pc
     pc=$(fc -nl -2 -2 | grep '|')
 
@@ -13,7 +10,7 @@ _local_check() {
     current=$(REALPATH "$PWD")
 
     local expected
-    expected=$(head -n 11 "$(eval_gettext '$GASH_HOME/Mountain/Cave')/$(gettext "potion_recipe")" | tail -n 3)
+    expected=$(nl "$(eval_gettext '$MISSION_DIR/recipe/en.txt')" | tail -n 7 | fold -s -w50)
     local res
     res=$(eval "$pc")
 

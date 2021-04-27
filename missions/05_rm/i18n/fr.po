@@ -16,14 +16,14 @@ msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Chateau/Cave"
 
-msgid "rat"
-msgstr "rat"
+msgid "spider"
+msgstr "spider"
 
-msgid "There are still rats in the cellar!"
-msgstr "Il reste des rats dans la cave !"
+msgid "There are still spiders in the cellar!"
+msgstr "Il reste des araignées dans la cave !"
 
-msgid "cat"
-msgstr "chat"
+msgid "salamander"
+msgstr "salamandre"
 
-msgid "The cat has disappeared!!!"
-msgstr "Le chat a disparu !!!"
+msgid "Hey! You removed the salamander!"
+msgstr "Hé ! Vous avez supprimé la salamandre !"

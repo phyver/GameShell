@@ -49,7 +49,6 @@ then
     true
 else
     unset -f _local_check
-    find "$GASH_HOME" -iname "$(gettext "painting")_*" -print0 | xargs -0 rm -rf
     false
 fi
 

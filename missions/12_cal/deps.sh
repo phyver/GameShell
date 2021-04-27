@@ -1,5 +1,5 @@
 if ! command -v cal > /dev/null; then
-    echo "Attention, la commande cal n'est pas installée, la mission $_MISSION_NB ne sera pas faite"
-    echo "sous Debian / Ubuntu, il faut installer le paquet bsdmainutils"
-    exit 1
+    echo "$(eval_gettext "The command 'cal' is required for mission \$MISSION_NAME.
+(Debian / Ubuntu: install package 'bsdmainutils')")"
+    false
 fi

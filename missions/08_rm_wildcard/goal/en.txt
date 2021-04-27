@@ -1,8 +1,8 @@
 Mission goal
 ============
 
-Delete all the rats in the burrow hidden in the cellar, without 
-touching the cats.
+Remove all the spiders that hide in cellar, without touching the 
+lucky salamanders.
 
 
 Useful commands

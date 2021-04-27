@@ -32,3 +32,6 @@ msgstr "Votre commande précédente ne donne pas le résultat attendu..."
 #, sh-format
 msgid "$MISSION_DIR/recipe/en.txt"
 msgstr "$MISSION_DIR/recipe/fr.txt"
+
+msgid "start"
+msgstr "debut"

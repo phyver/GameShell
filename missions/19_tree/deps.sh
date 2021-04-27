@@ -1,5 +1,5 @@
 if ! command -v tree > /dev/null; then
-    echo "Attention, la commande tree n'est pas installée, la mission $_MISSION_NB ne sera pas faite"
-    echo "sous Debian / Ubuntu, il faut installer le paquet tree"
-    exit 1
+    echo "$(eval_gettext "The command 'tree' is required for mission \$MISSION_NAME.
+(Debian / Ubuntu: install package 'tree')")"
+    false
 fi

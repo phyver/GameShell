@@ -19,16 +19,6 @@ msgstr ""
 msgid "ornament"
 msgstr ""
 
-#, sh-format
-msgid "$GASH_HOME/Forest/Cabin"
-msgstr ""
-
-msgid "Where is the castle's entrance?!"
-msgstr ""
-
-msgid "Where is the cabin?!"
-msgstr ""
-
 msgid "You changed the contents of the entrance!"
 msgstr ""
 
@@ -45,4 +35,8 @@ msgid "I only wanted the ornaments!"
 msgstr ""
 
 msgid "I wanted all the ornements!"
+msgstr ""
+
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr ""

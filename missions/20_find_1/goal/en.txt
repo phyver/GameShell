@@ -1,8 +1,9 @@
 Mission goal
 ============
 
-Find the 2 gold coins in the maze, at the end of the hidden corridor 
-in the cellar; and move them to your chest.
+Find the gold coins in the maze hidden in the garden and move it to 
+your chest.
+The botanical garden can be found in front of the castle.
 
 
 NOTE: the description of the ``find`` command is voluntarily very 

@@ -1,3 +1,2 @@
-cp "$(eval_gettext "\$GASH_HOME/Castle/Entrance")"/*_$(gettext "ornament") \
-  "$(eval_gettext "\$GASH_HOME/Forest/Cabin")"
+cp "$(eval_gettext '$GASH_HOME/Castle/Entrance')"/*_$(gettext "ornament")_* "$GASH_CHEST"
 gash check

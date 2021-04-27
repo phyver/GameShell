@@ -28,12 +28,9 @@ msgstr "Vous avez construit trop de cabanes dans la forêt !"
 msgid "You did not build a cabin in the forest!"
 msgstr "Vous n'avez pas construit de cabane dans la fôret !"
 
-msgid "Your built your cabin too far in the forest..."
-msgstr "Votre cabane est trop loin dans la forêt..."
-
 #, sh-format
-msgid "The $cabin directory does not exist!"
-msgstr "Le répertoire $cabin n'existe pas !"
+msgid "The $GASH_CABIN directory does not exist!"
+msgstr "Le répertoire $GASH_CABIN n'existe pas !"
 
 msgid "You built too many chests in your cabin!"
 msgstr "Vous avez construit trop de coffres dans votre cabane !"
@@ -41,16 +38,10 @@ msgstr "Vous avez construit trop de coffres dans votre cabane !"
 msgid "You did not build a chest in your cabin!"
 msgstr "Vous n'avez pas construit de coffre dans votre cabane !"
 
-msgid "You built a chest in the forest!"
-msgstr "Vous avez construit un coffre dans la forêt !"
-
-msgid "The chest is not in the right place in your cabin."
-msgstr "Le coffre n'est pas au bon endroit dans votre cabane."
+#, sh-format
+msgid "The $GASH_CHEST directory does not exist!"
+msgstr "Le répertoire $GASH_CHEST n'existe pas !"
 
 #, sh-format
-msgid "The $chest directory does not exist!"
-msgstr "Le répertoire $chest n'existe pas!"
-
-#, sh-format
-msgid "You are back at the starting point: start over."
-msgstr "Vous êtes de retour au point de départ : recommencez."
+msgid "You are back at the starting point."
+msgstr "Vous êtes de retour au point de départ."

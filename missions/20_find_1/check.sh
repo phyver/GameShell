@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#TODO
-
 _local_check_p() {
     local file=$1
     local path
@@ -21,18 +19,17 @@ _local_check_p() {
 }
 
 _local_check() {
-    local lab
-    lab=$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext "maze")" -type d)
-    local nb
-    nb=$(find "$lab" -iname "$(gettext "gold_coin")" -type f | wc -l)
+    local maze="$(eval_gettext '$GASH_HOME/Botanical_garden/.Maze')"
+
+    local nb=$(find "$maze" -iname "$(gettext "gold_coin")" -type f | wc -l)
     if [ "$nb" -gt 2 ]
     then
-        echo "$(gettext "There are too many gold coins in the  maze!")"
+        echo "$(gettext "There are too many gold coins in the maze!")"
         return 1
     fi
     if [ "$nb" -ne 0 ]
     then
-        echo "$(gettext "There still are some gold coins in the  maze!")"
+        echo "$(gettext "There still are some gold coins in the maze!")"
         return 1
         return 1
     fi

@@ -4,6 +4,7 @@ Mission goal
 The old hermit is brewing a potion in the cave.
 You need to find him and show him the first 4 items in the list of 
 ingredients.
+Once you've shown the appropriate ingredients, run ``gash check``.
 
 
 Useful commands

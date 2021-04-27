@@ -1,12 +1,10 @@
 Objectif
 ========
 
-Retrouvez la pièce de bronze dans le (petit) labyrinthe au bout du 
-couloir caché dans la cave, et la déplacer dans votre coffre.
+Retrouvez la pièce de bronze dans le (petit) labyrinthe caché dans 
+le jardin et déplacer la dans votre coffre.
+Le jardin botanique se trouve devant le château.
 
 Vous pouvez utiliser le gestionnaire de fichiers graphique si vous 
 le souhaitez. Pour cela, il faut aller dans le répertoire
-
   $maze
-
-(N'oubliez pas d'activer l'affichage des fichiers cachés...)

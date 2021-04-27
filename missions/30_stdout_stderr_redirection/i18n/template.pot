@@ -18,3 +18,9 @@ msgstr ""
 
 msgid "What is the secret key?"
 msgstr ""
+
+#, sh-format
+msgid ""
+"The python3 interpreter, or a C compiler is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install one of the packages 'python3', 'gcc' or 'clang')"
+msgstr ""

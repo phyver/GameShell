@@ -1,32 +1,32 @@
 #!/bin/bash
 
-ENTRANCE="$(eval_gettext "\$GASH_HOME/Castle/Entrance")"
-CABIN="$(eval_gettext "\$GASH_HOME/Forest/Cabin")"
-
 _local_check() {
+  local ENTRANCE="$(eval_gettext '$GASH_HOME/Castle/Entrance')"
+
+  local I
   for I in $(seq 4)
   do
     local F="$(gettext "standard")_${I}"
 
-    # Check that the standard file exists is in the cabin.
-    if [ ! -f "${CABIN}/${F}" ]
+    # Check that the standard file exists is in the chest
+    if [ ! -f "$GASH_CHEST/${F}" ]
     then
-      echo "$(eval_gettext "The standard \$I is not in the cabin.")"
+      echo "$(eval_gettext "The standard \$I is not in the chest.")"
       return 1
     fi
 
     # Check that the standard is still in the entrance.
     if [ ! -f "${ENTRANCE}/${F}" ]
     then
-      echo "$(eval_gettext "The standard \$I disapeared form the entrance.")"
+      echo "$(eval_gettext "The standard \$I disapeared from the entrance.")"
       return 1
     fi
 
     # Check that the prefix of the first line is the name of the file.
-    local P=$(cut -f 1 -d ' ' "${CABIN}/${F}")
+    local P=$(cut -f 1 -d ' ' "$GASH_CHEST/${F}")
     if [ "$(echo "${P}" | cut -f1 -d '#')" != "${F}" ]
     then
-      echo "$(eval_gettext "The standard \$I in the cabin is not right.")"
+      echo "$(eval_gettext "The standard \$I in the chest is not right.")"
       return 1
     fi
 
@@ -39,10 +39,10 @@ _local_check() {
     fi
 
     # Check that the suffix of the first line is the checksum.
-    local S=$(cut -f 2 -d ' ' "${CABIN}/${F}")
+    local S=$(cut -f 2 -d ' ' "$GASH_CHEST/${F}")
     if [ "${S}" != "$(checksum "${P}")" ]
     then
-      echo "$(eval_gettext "The standard \$I in the cabin is invalid.")"
+      echo "$(eval_gettext "The standard \$I in the chest is invalid.")"
       return 1
     fi
 
@@ -61,11 +61,9 @@ _local_check() {
 if _local_check
 then
   unset -f _local_check
-  unset ENTRANCE CABIN
   true
 else
   find "$GASH_HOME" -name "$(gettext "standard")_?" -type f -print0 | xargs -0 rm -f
   unset -f _local_check
-  unset ENTRANCE CABIN
   false
 fi
