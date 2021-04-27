@@ -32,7 +32,7 @@ _local_check() {
     then
         echo "$(gettext "The diamond is not in the chest!")"
         return 1
-    elif ! cmp --quiet "$GASH_MISSION_DATA/diamond" "$GASH_CHEST/$filename"
+    elif ! cmp -s "$GASH_MISSION_DATA/diamond" "$GASH_CHEST/$filename"
     then
         echo "$(gettext "The diamond in your chest is not valid!")"
         return 1

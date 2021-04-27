@@ -139,7 +139,7 @@ mission_source() {
   ls "$GASH_MISSION_DATA" > "$TEMP"/after-D
 
   local msg="DEBUG: environment modifications while sourcing .../${FILENAME#$GASH_BASE/}"
-  if ! cmp --quiet "$TEMP"/{before,after}-V
+  if ! cmp -s "$TEMP"/{before,after}-V
   then
     [ -n "$msg" ] && echo "$msg"
     msg=""
@@ -147,7 +147,7 @@ mission_source() {
     comm -3 "$TEMP"/{before,after}-V
   fi
 
-  if ! cmp --quiet "$TEMP"/{before,after}-F
+  if ! cmp -s "$TEMP"/{before,after}-F
   then
     [ -n "$msg" ] && echo "$msg"
     msg=""
@@ -155,7 +155,7 @@ mission_source() {
     comm -3 "$TEMP"/{before,after}-F
   fi
 
-  if ! cmp --quiet "$TEMP"/{before,after}-A
+  if ! cmp -s "$TEMP"/{before,after}-A
   then
     [ -n "$msg" ] && echo "$msg"
     msg=""
@@ -163,7 +163,7 @@ mission_source() {
     comm -3 "$TEMP"/{before,after}-A
   fi
 
-  if ! cmp --quiet "$TEMP"/{before,after}-D
+  if ! cmp -s "$TEMP"/{before,after}-D
   then
     [ -n "$msg" ] && echo "$msg"
     msg=""

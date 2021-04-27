@@ -25,7 +25,7 @@ _local_check() {
     then
         echo "$(gettext "The ruby is not in the chest!")"
         return 1
-    elif ! cmp --quiet "$GASH_MISSION_DATA/ruby" "$GASH_CHEST/$filename"
+    elif ! cmp -s "$GASH_MISSION_DATA/ruby" "$GASH_CHEST/$filename"
     then
         echo "$(gettext "The ruby in your chest is not valid!")"
         return 1

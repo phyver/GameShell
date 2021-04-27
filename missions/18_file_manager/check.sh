@@ -20,7 +20,7 @@ _local_check() {
         return 1
     fi
 
-    if ! diff -q "$coin" "$GASH_MISSION_DATA/copper_coin" > /dev/null
+    if ! cmp -s "$coin" "$GASH_MISSION_DATA/copper_coin"
     then
         echo "$(gettext "Booh... The copper coin in you chest is invalid!")"
         return 1
