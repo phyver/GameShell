@@ -116,7 +116,7 @@ _gash_start() {
   local quiet=""
   if [ "$1" = "-quiet" ]
   then
-    quiet="true"
+    quiet="-quiet"
     shift
   fi
   local MISSION_NB D S
@@ -184,7 +184,7 @@ to make sure the mission is initialized properly.")" >&2
 
   _log_action "$MISSION_NB" "START"
 
-  if [ -n "$quiet" ]
+  if [ -z "$quiet" ]
   then
     if [ "$MISSION_NB" -eq 1 ]
     then
