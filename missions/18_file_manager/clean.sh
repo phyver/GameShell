@@ -11,6 +11,3 @@ esac
 rm -f "$GASH_MISSION_DATA/copper_coin"
 
 find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext "maze")" -type d -print0 | xargs -0 rm -rf
-
-#fixme
-find "$GASH_HOME" -iname "*$(gettext "copper_coin")*" -not -iname "*journal*" -print0 | xargs -0 rm -f
