@@ -3,7 +3,9 @@ Objectif
 
 L'ermite est en train de préparer une potion dans la grotte.
 Vous devez le rejoindre et lui afficher les quatre premiers 
-ingrédients de la liste des ingrédients...
+ingrédients de la liste des ingrédients.
+Une fois que vous avez affiché les ingrédients demandés, lancez la 
+commande ``gash check``.
 
 
 Commandes utiles
