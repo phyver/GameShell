@@ -153,7 +153,9 @@ Restarting...")"
   ### tester le fichier deps.sh
   if [ -f "$MISSION_DIR/deps.sh" ]
   then
-    if ! bash "$MISSION_DIR/deps.sh"
+    mission_source "$MISSION_DIR/deps.sh"
+    local exit_status=$?
+    if [ "$exit_status" -ne 0 ]
     then
       echo "$(gettext "The mission is cancelled because some dependencies are not met.")" >&2
       _log_action "$MISSION_NB" "CANCEL_DEP_PB"
