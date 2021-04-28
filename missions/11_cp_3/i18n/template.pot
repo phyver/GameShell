@@ -39,3 +39,7 @@ msgstr ""
 
 msgid "The painting in your chest is invalid..."
 msgstr ""
+
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin/Chest"
+msgstr ""

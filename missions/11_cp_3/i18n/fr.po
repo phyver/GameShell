@@ -41,3 +41,7 @@ msgstr "La peinture n'est pas dans votre coffre..."
 
 msgid "The painting in your chest is invalid..."
 msgstr "La peinture de votre coffre est invalid..."
+
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin/Chest"
+msgstr "$GASH_HOME/Foret/Cabane/Coffre"
