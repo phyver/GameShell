@@ -21,7 +21,7 @@ msgid ".Long*Corridor*"
 msgstr ".Long*Couloir*"
 
 msgid "Pffft... You are back to the beginning, in front of the castle..."
-msgstr "Pffft... Vous voila de retour au point de départ, devant le chateau..."
+msgstr "Pffft... Vous voila de retour au point de départ, devant le château..."
 
 #, sh-format
 msgid ".Long $r1 Corridor $r2"
