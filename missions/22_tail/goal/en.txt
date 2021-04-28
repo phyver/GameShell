@@ -3,6 +3,7 @@ Mission goal
 
 While you are still reading the list of ingredients, the hermit 
 stopped listening and asks for the last 4 ingredients.
+Once you've shown the appropriate ingredients, run ``gash check``.
 
 
 Useful commands
