@@ -115,6 +115,50 @@ _gash_show() {
 }
 
 
+# display the mission index
+# TODO translation support
+_gash_index() {
+  local CUR_MISSION="$(_get_current_mission)"
+  local MISSION_NB="1"
+  local MISSION COLOR STATUS LEAD
+
+  for MISSION in $(grep -v "^#" "$GASH_DATA/index.txt" | grep "\S")
+  do
+    if grep -q "^$MISSION_NB CHECK_OK" "$GASH_DATA/missions.log"
+    then
+      COLOR="green"
+      STATUS=" (done)"
+    elif grep -q "^$MISSION_NB CHECK_OOPS" "$GASH_DATA/missions.log"
+    then
+      COLOR="red"
+      STATUS=" (failed)"
+    elif grep -q "^$MISSION_NB PASS" "$GASH_DATA/missions.log"
+    then
+      COLOR="yellow"
+      STATUS=" (passed)"
+    elif grep -q "^$MISSION_NB CANCEL_DEP_PB" "$GASH_DATA/missions.log"
+    then
+      COLOR="magenta"
+      STATUS=" (cancelled)"
+    else
+      COLOR="white"
+      STATUS=""
+    fi
+
+    LEAD="   "
+    if [ "$CUR_MISSION" -eq "$MISSION_NB" ]
+    then
+      LEAD="-> "
+    fi
+
+    printf "%s%2d   " "$LEAD" "$MISSION_NB"
+    color_echo "$COLOR" "$MISSION$STATUS"
+
+    MISSION_NB="$((MISSION_NB + 1))"
+  done
+}
+
+
 # start a mission given by its number
 _gash_start() {
   local quiet=""
@@ -553,6 +597,9 @@ EOH
       ;;
     "sh" | "sho" | "show")
       _gash_show "$@"
+      ;;
+    "i" | "in" | "ind" | "inde" | "index")
+      _gash_index
       ;;
     "stat")
       awk -v GASH_UID="$GASH_UID" -f "$GASH_BIN/stat.awk" < "$GASH_DATA/missions.log"
