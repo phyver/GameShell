@@ -1,5 +1,4 @@
-# Turn history on (off by default for non-interactive shells).
-HISTFILE=$GASH_DATA/history
+#!/bin/bash
 
 goal=$(REALPATH "$(eval_gettext "\$GASH_HOME/Castle/Main_building/Throne_room")")
 current=$(REALPATH "$PWD")
