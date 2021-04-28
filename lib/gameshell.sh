@@ -49,6 +49,10 @@ _gash_reset() {
     echo "$(gettext "The command 'gash reset' is useless when run inside a subshell!")" >&2
     return 1
   fi
+
+  # restore SDTIN that may have been closed in case of a redirection into gash check 
+  exec 0<"$GASH_STDIN"
+
   # on relance bash, histoire de recharcher la config
   exec bash --rcfile "$GASH_LIB/bashrc"
 }

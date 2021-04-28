@@ -59,4 +59,7 @@ unset file MISSION_DIR
 
 [ "$GASH_MODE" != "DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && _gash_protect
 
+# save STDIN
+export GASH_STDIN=$(realpath /dev/stdin)
+
 _gash_start
