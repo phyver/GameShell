@@ -1,23 +1,20 @@
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
-
 #, fuzzy
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#, sh-format
-msgid "$GASH_HOME/Castle/Cellar"
-msgstr "$GASH_HOME/Castle/Cellar"
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/en.txt"
 
-msgid "maze"
-msgstr "maze"
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/en.txt"
+
+#, sh-format
+msgid "$GASH_HOME/Botanical_garden/.Maze"
+msgstr "$GASH_HOME/Botanical_garden/.Maze"
 
 msgid "coin"
 msgstr "coin"
@@ -28,17 +25,14 @@ msgstr "Some of the coins are not in your chest!"
 msgid "gold_coin"
 msgstr "gold_coin"
 
-msgid "There are too many gold coins in the  maze!"
-msgstr "There are too many gold coins in the  maze!"
+msgid "There are too many gold coins in the maze!"
+msgstr "There are too many gold coins in the maze!"
 
-msgid "There still are some gold coins in the  maze!"
-msgstr "There still are some gold coins in the  maze!"
+msgid "There still are some gold coins in the maze!"
+msgstr "There still are some gold coins in the maze!"
 
 msgid "GolD_CoiN"
 msgstr "GolD_CoiN"
-
-msgid ".Long*Corridor*"
-msgstr ".Long*Corridor*"
 
 msgid "Pffft... You are back to the entrance of the maze..."
 msgstr "Pffft... You are back to the entrance of the maze..."
@@ -46,10 +40,6 @@ msgstr "Pffft... You are back to the entrance of the maze..."
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr "$GASH_HOME/Forest/Cabin/Chest"
-
-#, sh-format
-msgid ".Long $r1 Corridor $r2"
-msgstr ".Long $r1 Corridor $r2"
 
 msgid "maze generation:"
 msgstr "maze generation:"

@@ -1,23 +1,20 @@
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
-
 #, fuzzy
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#, sh-format
-msgid "$GASH_HOME/Castle/Cellar"
-msgstr "$GASH_HOME/Chateau/Cave"
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
 
-msgid "maze"
-msgstr "labyrinthe"
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
+#, sh-format
+msgid "$GASH_HOME/Botanical_garden/.Maze"
+msgstr "$GASH_HOME/Jardin_botanique/Labyrinthe"
 
 msgid "coin"
 msgstr "piece"
@@ -28,17 +25,14 @@ msgstr "Some of the coins are not in your chest!"
 msgid "gold_coin"
 msgstr "piece_d_or"
 
-msgid "There are too many gold coins in the  maze!"
-msgstr "There are too many gold coins in the  maze!"
+msgid "There are too many gold coins in the maze!"
+msgstr "Il y a trop de pièces d'or dans le labyrinthe !"
 
-msgid "There still are some gold coins in the  maze!"
-msgstr "There still are some gold coins in the  maze!"
+msgid "There still are some gold coins in the maze!"
+msgstr "Il y a encore des pièces d'or dans le labyrinthe !"
 
 msgid "GolD_CoiN"
 msgstr "PieCe_D_oR"
-
-msgid ".Long*Corridor*"
-msgstr ".Long*Couloir*"
 
 msgid "Pffft... You are back to the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
@@ -47,9 +41,9 @@ msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 msgid "$GASH_HOME/Forest/Cabin/Chest"
 msgstr "$GASH_HOME/Foret/Cabane/Coffre"
 
-#, sh-format
-msgid ".Long $r1 Corridor $r2"
-msgstr ".Long $r1 Couloir $r2"
-
 msgid "maze generation:"
 msgstr "génération du labyrinthe :"
+
+#, fuzzy
+#~ msgid "There still are some gold coins in the  maze!"
+#~ msgstr "Il y a encore des pièces d'or dans le labyrinthe !"
