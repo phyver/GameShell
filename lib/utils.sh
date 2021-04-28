@@ -108,19 +108,24 @@ admin_mode() {
 mission_source() {
   local FILENAME=$1
   # if we are not running in DEBUG mode, just source the file
-  if [ "$GASH_MODE" != "DEBUG" ]
+  if [ "$GASH_MODE" != "DEBUG" ] || [ -n "$GASH_QUIET_SOURCE" ]
   then
     local _TEXTDOMAIN=$TEXTDOMAIN
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+    local _MISSION_NAME=$MISSION_NAME
+    export MISSION_NAME="$(basename "$MISSION_DIR")"
     source "$FILENAME"
     local exit_status=$?
     export TEXTDOMAIN=$_TEXTDOMAIN
+    export MISSION_NAME=$_MISSION_NAME
     return $exit_status
   fi
 
   local TEMP=$(mktemp -d "$GASH_MISSION_DATA/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
   local _TEXTDOMAIN=""
+  local _MISSION_NAME=""
+  local MISSION_NAME=""
   local exit_status=""
   # otherwise, record the environment (variables, functions and aliases)
   # before and after to echo a message when there are differences
@@ -130,9 +135,12 @@ mission_source() {
   ls "$GASH_MISSION_DATA" > "$TEMP"/before-D
   _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+  _MISSION_NAME=$MISSION_NAME
+  export MISSION_NAME="$(basename "$MISSION_DIR")"
   source "$FILENAME"
   exit_status=$?
   export TEXTDOMAIN=$_TEXTDOMAIN
+  export MISSION_NAME=$_MISSION_NAME
   compgen -v | sort > "$TEMP"/after-V
   compgen -A function | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
