@@ -3,7 +3,7 @@ Mission goal
 
 I like the four standards in the entrance of the castle. However, 
 stealing them would not go unnoticed. I'd like a copy of each in my 
-cabin.
+chest.
 
 
 Useful commands
