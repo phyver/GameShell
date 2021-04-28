@@ -3,41 +3,32 @@
 [ -z "$GASH_CHEST" ] && GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest/Cabin/Chest')"
 mkdir -p "$GASH_CHEST"
 
-corridor="$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -type d -name "$(gettext ".Long*Corridor*")")"
-if [ -z "$corridor" ]
-then
-    r1=$(checksum $RANDOM)
-    r2=$(checksum $RANDOM)
-    corridor="$(eval_gettext '$GASH_HOME/Castle/Cellar')/$(eval_gettext '.Long $r1 Corridor $r2')"
-    mkdir -p "$corridor"
-fi
+maze="$(eval_gettext '$GASH_HOME/Botanical_garden/.Maze')"
+rm -rf "$maze"/?*
 
-lab="$corridor/$(gettext "maze")"
-
-t=$(date +%s)
-
-N=2
-r1="$((1 + RANDOM%N)),$((1 + RANDOM%N)),$((1 + RANDOM%N))"
-
-if ! command -v python3 > /dev/null
-then
+gen_maze_sh(){
     echo -n "$(gettext "maze generation:")"
+    local t=$(date +%s)
+    local N=2
+    local r1="$((1 + RANDOM%N)),$((1 + RANDOM%N)),$((1 + RANDOM%N))"
+
+    local i I j J k K
     for i in $(seq $N)
     do
         I=$(checksum "$t$i")
-        mkdir -p "$lab/$I"
+        mkdir -p "$maze/$I"
         for j in $(seq $N)
         do
             J=$(checksum "$t$i$j")
-            mkdir -p "$lab/$I/$J"
+            mkdir -p "$maze/$I/$J"
             for k in $(seq $N)
             do
                 K=$(checksum "$t$i$j$k")
-                mkdir -p "$lab/$I/$J/$K"
+                mkdir -p "$maze/$I/$J/$K"
 
                 if [ "$r1" = "$i,$j,$k" ]
                 then
-                    echo "$I $J $K" > "$lab/$I/$J/$K/$(gettext "silver_coin")"
+                    echo "$I $J $K" > "$maze/$I/$J/$K/$(gettext "silver_coin")"
                     echo "$I $J $K" > "$GASH_MISSION_DATA/silver_coin"
                 fi
             done
@@ -45,13 +36,22 @@ then
         done
     done
     echo
-else
-    mkdir -p "$lab"
-    d=$(python3 "$MISSION_DIR"/init.py "$lab" 3 3 1)
-    echo "$(checksum "$d")" > "$lab/$d/$(gettext "silver_coin")"
+}
+
+gen_maze_py(){
+    mkdir -p "$maze"
+    local d=$(python3 "$MISSION_DIR"/init.py "$maze" 3 3 1)
+    echo "$(checksum "$d")" > "$maze/$d/$(gettext "silver_coin")"
     echo "$(checksum "$d")" > "$GASH_MISSION_DATA/silver_coin"
+}
+
+if ! command -v python3 > /dev/null
+then
+    gen_maze_sh
+else
+    gen_maze_py
 fi
 
-unset i j k t corridor lab N r1 r2 I J K
-
+unset maze
+unset -f gen_maze_sh gen_maze_py
 
