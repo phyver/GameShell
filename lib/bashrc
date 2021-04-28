@@ -23,6 +23,8 @@ export PS2="> "
 export PS3=""
 export PS4="+ "
 
+
+# try to prevent using sudo and similar
 su() {
     echo "gash: su: command not found" >&2
 }
@@ -34,6 +36,10 @@ sudo() {
 doas() {
     echo "gash: doas: command not found" >&2
 }
+
+# remove quotes from filenames with special characters
+alias ls="ls --literal"
+
 
 shopt -s nullglob
 for file in "$GASH_CONFIG"/*.bashrc.sh

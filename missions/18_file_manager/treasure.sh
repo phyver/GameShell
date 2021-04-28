@@ -1,3 +1,3 @@
 #!/bin/bash
 
-alias ls='ls -p --color=auto'
+alias ls='ls --literal -p --color=auto'
