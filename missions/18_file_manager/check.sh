@@ -1,10 +1,9 @@
 #!/bin/bash
 
 _local_check() {
-    local lab
-    lab=$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext "maze")" -type d)
-    local coin
-    coin=$(find "$lab" -name "$(gettext "copper_coin")")
+    local maze="$(eval_gettext '$GASH_HOME/Botanical_garden/.Maze')"
+
+    local coin=$(find "$maze" -name "$(gettext "copper_coin")")
 
     if [ -n "$coin" ]
     then
