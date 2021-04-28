@@ -1,8 +1,8 @@
 Objectif
 ========
 
-Supprimez tous les rats dans le terrier caché dans la cave, sans 
-toucher aux chats.
+Supprimez toutes les araignées qui se cachent dans la cave, sans 
+toucher aux salamandre porte bonheur.
 
 
 Commandes utiles

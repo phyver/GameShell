@@ -1,21 +1,19 @@
-BURROW="$(eval_gettext "\$GASH_HOME/Castle/Cellar")/.$(gettext "Burrow")"
-mkdir -p "$BURROW"
+#!/bin/bash
 
-D=$(date +%s)
+CELLAR=$(eval_gettext "\$GASH_HOME/Castle/Cellar")
+mkdir -p "$CELLAR"
+rm -f "$CELLAR"/.??*
 
 for I in $(seq -w 10)
 do
-  S=$(checksum "$(gettext "cat")_${I}#${D}")
-  touch "${BURROW}/${S}_$(gettext "CAT")"
+  touch "${CELLAR}/.${RANDOM}_${I}_$(gettext "salamander")"
 done
 
 for I in $(seq -w 100)
 do
-  S=$(checksum "$(gettext "rat")_${I}#${D}")
-  touch "${BURROW}/${S}_$(gettext "rat")"
+  touch "${CELLAR}/.${RANDOM}_${I}_$(gettext "spider")"
 done
 
-command ls "$BURROW" | grep ".*$(gettext "CAT")$" | sort | sha1sum | \
-  cut -c 1-40 > "$GASH_MISSION_DATA/cats"
+find "$CELLAR" -maxdepth 1 -name ".*$(gettext "salamander")" | sort | checksum > "$GASH_MISSION_DATA/salamanders"
 
-unset BURROW D I S
+unset CELLAR D I S

@@ -16,14 +16,12 @@ msgstr "$MISSION_DIR/treasure-msg/en.txt"
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Castle/Cellar"
 
-msgid "Burrow"
-msgstr "Burrow"
+msgid "spider"
+msgstr "spider"
 
-msgid "rat"
-msgstr "rat"
+msgid "salamander"
+msgstr "salamander"
 
-msgid "cat"
-msgstr "cat"
-
-msgid "CAT"
-msgstr "CAT"
+#, sh-format
+msgid "Some salamanders have been modified!"
+msgstr "Some salamanders have been modified!"
