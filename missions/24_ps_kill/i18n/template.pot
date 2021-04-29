@@ -33,3 +33,6 @@ msgstr ""
 
 msgid "piece_of_cheese"
 msgstr ""
+
+msgid "There still are some hidden wind-up cats in the pantry!"
+msgstr ""
