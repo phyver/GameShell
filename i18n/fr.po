@@ -189,3 +189,46 @@ msgid ""
 msgstr ""
 "Aucune mission trouvée !\n"
 "Abandon..."
+
+msgid "This option is only available from an executable archive!"
+msgstr "Cette option n'est disponible que depuis une archive exécutable !"
+
+#, fuzzy, sh-format
+msgid "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
+msgstr "Problème : je n'ai pas pu récupérer la mission '$nb' ($fn_name)"
+
+#, fuzzy, sh-format
+msgid ""
+"Mission $MISSION_NB doesn't exist!\n"
+"Restarting..."
+msgstr ""
+"La mission $nb n'existe pas !\n"
+"Redémarrage..."
+
+#, fuzzy, sh-format
+msgid "Mission $MISSION_NB has been cancelled."
+msgstr "La mission $nb a été annulée"
+
+#, fuzzy, sh-format
+msgid "Mission $MISSION_NB doesn't have an auto script."
+msgstr "La mission $nb n'a pas de script automatique."
+
+#, fuzzy, sh-format
+msgid "Error: mission $MISSION_NB doesn't have a check script."
+msgstr "Erreur : la mission $nb n'a pas de script de vérification."
+
+#, fuzzy, sh-format
+msgid "Mission $MISSION_NB has already been succesfully checked!"
+msgstr "La mission $nb a déjà été réussie !"
+
+#, fuzzy, sh-format
+msgid "Mission $MISSION_NB has been successfully completed!"
+msgstr "La mission $nb a été vérifiée avec succès."
+
+#, fuzzy, sh-format
+msgid "Mission $MISSION_NB hasn't been completed."
+msgstr "La mission $nb a échoué."
+
+#, fuzzy, sh-format
+msgid "Error: mission $MISSION_NB doesn't have a test script."
+msgstr "Erreur : la mission $nb n'a pas de script de test."

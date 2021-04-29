@@ -160,3 +160,44 @@ msgid ""
 "No mission were found!\n"
 "Aborting"
 msgstr ""
+
+msgid "This option is only available from an executable archive!"
+msgstr ""
+
+#, sh-format
+msgid "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
+msgstr ""
+
+#, sh-format
+msgid ""
+"Mission $MISSION_NB doesn't exist!\n"
+"Restarting..."
+msgstr ""
+
+#, sh-format
+msgid "Mission $MISSION_NB has been cancelled."
+msgstr ""
+
+#, sh-format
+msgid "Mission $MISSION_NB doesn't have an auto script."
+msgstr ""
+
+#, sh-format
+msgid "Error: mission $MISSION_NB doesn't have a check script."
+msgstr ""
+
+#, sh-format
+msgid "Mission $MISSION_NB has already been succesfully checked!"
+msgstr ""
+
+#, sh-format
+msgid "Mission $MISSION_NB has been successfully completed!"
+msgstr ""
+
+#, sh-format
+msgid "Mission $MISSION_NB hasn't been completed."
+msgstr ""
+
+#, sh-format
+msgid "Error: mission $MISSION_NB doesn't have a test script."
+msgstr ""
