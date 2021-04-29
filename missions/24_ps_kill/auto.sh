@@ -1,3 +1,4 @@
-killall -q cat_generator cat-generator
-rm "$(eval_gettext '$GASH_HOME/Castle/Cellar')/".*_"$(gettext "cat")"
+killall -q cat-generator
+rm -f "$(eval_gettext '$GASH_HOME/Castle/Kitchen')/$(gettext "Pantry")"/.*_"$(gettext "wind-up_cat")"
+rm -f "$(eval_gettext '$GASH_HOME/Castle/Kitchen')/$(gettext "Pantry")"/*_"$(gettext "wind-up_cat")"
 gash check
