@@ -7,5 +7,5 @@ cat <<EOK>"$dir/$(gettext "Kings_quarter")/$(gettext "crown")"
  \@*@*@/
  {_____}
 EOK
-chmod 000 "$dir/$(gettext "Kings_quarter")"
+chmod -R -w "$dir/$(gettext "Kings_quarter")"
 unset dir
