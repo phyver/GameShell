@@ -38,7 +38,7 @@ export GASH_COLOR="OK"
 GASH_MODE="ANONYMOUS"
 RESET=""
 FORCE="FALSE"
-while getopts ":hcnPDACRF" opt
+while getopts ":hcnPDACRFX" opt
 do
   case $opt in
     h)
@@ -68,6 +68,10 @@ do
       ;;
     F)
       FORCE="TRUE"
+      ;;
+    X)
+      echo "$(gettext "This option is only available from an executable archive!")" >&2
+      exit 1
       ;;
     *)
       echo "$(eval_gettext "invalid option: '-\$OPTARG'")" >&2

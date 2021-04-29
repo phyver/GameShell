@@ -7,3 +7,6 @@ options:
   -C      don't ask: automatically continue current game (if relevant)
   -R      don't ask: automatically reset game
   -F      don't ask: force execution even in source repository
+
+  -X      only extract tgz archive (available when GameShell is run from
+          an executable archive)

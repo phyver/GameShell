@@ -16,12 +16,11 @@ create a GameShell standalone archive
 options:
   -h          this message
   -p ...      choose password for admin commands
-  -N ...      name of directory inside the GameShell archive (default: "GameShell")
+  -N ...      name of the archive / top directory (default: "GameShell")
   -a          keep 'auto.sh' scripts from missions that have one
   -P          use the "passport mode" by default when running GameShell
   -D          use the "debug mode" by default when running GameShell
   -A          use the "anonymous mode" by default when running GameShell
-  -o ...      name of the archive (default: ../DIR_NAME.sh, from -N option)
   -k          keep "standard" tgz archive
 EOH
 }
@@ -30,10 +29,9 @@ NAME="GameShell"
 ADMIN_PASSWD=""
 KEEP_AUTO=0
 DEFAULT_MODE="ANONYMOUS"
-OUTPUT=''
 KEEP_TGZ='false'
 
-while getopts ":hp:N:aPDo:k" opt
+while getopts ":hp:N:aPDk" opt
 do
   case $opt in
     h)
@@ -55,9 +53,6 @@ do
     D)
       DEFAULT_MODE="DEBUG"
       ;;
-    o)
-      OUTPUT=$OPTARG
-      ;;
     k)
       KEEP_TGZ='true'
       ;;
@@ -69,7 +64,8 @@ do
 done
 shift $(($OPTIND - 1))
 
-[ -z "$OUTPUT" ] && OUTPUT="$(pwd)/$NAME.sh"
+OUTPUT_DIR=$(dirname "$NAME")
+NAME=$(basename "$NAME")
 
 TMP_DIR=$(mktemp -d)
 mkdir "$TMP_DIR/$NAME"
@@ -80,7 +76,6 @@ cp --archive "$GASH_BASE/start.sh" "$GASH_BASE/bin/" "$GASH_BASE/lib/" "$GASH_BA
 
 # copy missions
 mkdir "$TMP_DIR/$NAME/missions"
-# cd $GASH_BASE/missions
 echo "copy missions"
 N=0
 make_index "$@" | while read MISSION_DIR
@@ -137,20 +132,17 @@ esac
 
 # create archive
 echo "creating archive"
-cd "$TMP_DIR"
-tar -zcf "$NAME.tgz" "$NAME"
-mv "$NAME.tgz" "${OUTPUT%.sh}.tgz"
-cd -
+tar -zcf "$OUTPUT_DIR/$NAME.tgz" -C "$TMP_DIR" "$NAME"
 
 # create self-extracting archive
 echo "creating self-extracting archive"
-cat "$GASH_BASE/lib/init.sh" "${OUTPUT%.sh}.tgz" > "$OUTPUT"
-chmod +x "$OUTPUT"
+cat "$GASH_BASE/lib/init.sh" "$OUTPUT_DIR/$NAME.tgz" > "$OUTPUT_DIR/$NAME.sh"
+chmod +x "$OUTPUT_DIR/$NAME.sh"
 
 if [ "$KEEP_TGZ" = 'false' ]
 then
   echo "removing tgz archive"
-  rm "${OUTPUT%.sh}.tgz"
+  rm "$OUTPUT_DIR/$NAME.tgz"
 fi
 
 echo "removing temporary directory"
