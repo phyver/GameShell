@@ -46,3 +46,11 @@ msgstr "génération du labyrinthe :"
 
 msgid "stone"
 msgstr "cailloux"
+
+#, sh-format
+msgid "$GASH_HOME/Botanical_garden/Orchard"
+msgstr "$GASH_HOME/Jardin_botanique/Verger"
+
+#, fuzzy, sh-format
+msgid "$GASH_HOME/Botanical_garden/Shed"
+msgstr "$GASH_HOME/Jardin_botanique/Cabanon"

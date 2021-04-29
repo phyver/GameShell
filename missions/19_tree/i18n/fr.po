@@ -14,7 +14,7 @@ msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
 msgid "$GASH_HOME/Botanical_garden/.Maze"
-msgstr ""
+msgstr "$GASH_HOME/Jardin_botanique/.Labyrinthe"
 
 msgid "silver_coin"
 msgstr "silver_coin"
@@ -45,3 +45,11 @@ msgstr "$GASH_HOME/Foret/Cabane/Coffre"
 
 msgid "maze generation:"
 msgstr "génération du labyrinthe :"
+
+#, sh-format
+msgid "$GASH_HOME/Botanical_garden/Orchard"
+msgstr "$GASH_HOME/Jardin_botanique/Verger"
+
+#, sh-format
+msgid "$GASH_HOME/Botanical_garden/Shed"
+msgstr "$GASH_HOME/Jardin_botanique/Cabanon"

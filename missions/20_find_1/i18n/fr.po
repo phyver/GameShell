@@ -44,6 +44,10 @@ msgstr "$GASH_HOME/Foret/Cabane/Coffre"
 msgid "maze generation:"
 msgstr "génération du labyrinthe :"
 
-#, fuzzy
-#~ msgid "There still are some gold coins in the  maze!"
-#~ msgstr "Il y a encore des pièces d'or dans le labyrinthe !"
+#, sh-format
+msgid "$GASH_HOME/Botanical_garden/Orchard"
+msgstr "$GASH_HOME/Jardin_botanique/Verger"
+
+#, sh-format
+msgid "$GASH_HOME/Botanical_garden/Shed"
+msgstr "$GASH_HOME/Jardin_botanique/Cabanon"
