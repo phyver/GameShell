@@ -127,19 +127,19 @@ _gash_index() {
     if grep -q "^$MISSION_NB CHECK_OK" "$GASH_DATA/missions.log"
     then
       COLOR="green"
-      STATUS=" (done)"
+      STATUS=" ($(gettext "done"))"
     elif grep -q "^$MISSION_NB CHECK_OOPS" "$GASH_DATA/missions.log"
     then
       COLOR="red"
-      STATUS=" (failed)"
+      STATUS=" ($(gettext "failed"))"
     elif grep -q "^$MISSION_NB PASS" "$GASH_DATA/missions.log"
     then
       COLOR="yellow"
-      STATUS=" (passed)"
+      STATUS=" ($(gettext "passed"))"
     elif grep -q "^$MISSION_NB CANCEL_DEP_PB" "$GASH_DATA/missions.log"
     then
       COLOR="magenta"
-      STATUS=" (cancelled)"
+      STATUS=" ($(gettext "cancelled"))"
     else
       COLOR="white"
       STATUS=""
