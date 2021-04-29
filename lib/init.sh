@@ -42,6 +42,7 @@ FILENAME=${FILENAME%-save}-save.$EXT
 cat "$TMP_DIR/$ROOT_DIR/lib/init.sh" "$TMP_DIR/$ROOT_DIR.tgz" > "$FILENAME"
 chmod +x "$FILENAME"
 
+chmod -R 777 "$TMP_DIR"
 rm -rf "$TMP_DIR"
 
 exit 0
