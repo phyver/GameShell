@@ -1,41 +1,48 @@
 #!/bin/bash
 
-if [ -z "$BASH_SOURCE" ]
+if [ -z "$BASH_SOURCE" ] || ! [ -f "$BASH_SOURCE" ]
 then
     echo "GameShell must be run with Bash from a file."
     exit 1
 fi
 
-EXE=$(basename "$0")
-DIR=$(dirname "$0")
+FILENAME="$0"
+DIR=$(dirname "$FILENAME")
 
-TMPDIR=$(mktemp -d "$DIR/GameShell-XXXXXX")
+NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$FILENAME")
 
-NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' $0)
+for arg in "$@"
+do
+    if [ "$arg" = "-X" ]
+    then
+        tail -n+"$NB_LINES" "$FILENAME" > "${FILENAME%.*}.tgz"
+        echo "Archive saved in ${FILENAME%.*}.tgz"
+        exit 0
+    fi
+done
 
-tail -n+$NB_LINES $0 | tar -zx -C $TMPDIR
 
-bash "$TMPDIR"/GameShell/start.sh "$@"
+TMP_DIR=$(mktemp -d "$DIR/GameShell-XXXXXX")
 
-OLDDIR="$PWD"
-cd "$TMPDIR"
-tar -zcf "GameShell.tgz" "./GameShell/"
-cd "$OLDDIR"
+tail -n+"$NB_LINES" "$FILENAME" | tar -zx -C "$TMP_DIR"
 
-filename=${EXE%.sh}
-filename=${filename%-save*}
-filename="$DIR/$filename-save"
-suffix=""
-# while [ -f "$filename$suffix.sh" ]
-# do
-#     suffix=${suffix#_}
-#     suffix="_$(echo -n "00$((suffix + 1))" | tail -c3)"
-# done
+ROOT_DIR=$(ls "$TMP_DIR" | head -n1)
 
-cat "$TMPDIR/GameShell/lib/init.sh" "$TMPDIR/GameShell.tgz" > "$filename$suffix.sh"
-chmod +x "$filename$suffix.sh"
+bash "$TMP_DIR/$ROOT_DIR"/start.sh "$@"
 
-rm -rf $TMPDIR
+tar -zcf "$TMP_DIR/$ROOT_DIR.tgz" -C "$TMP_DIR" ./"$ROOT_DIR"
+
+# get extension
+EXT=${FILENAME##*.}
+# remove extension
+FILENAME=${FILENAME%.*}
+# remove "-save" suffix (if present), and add it again, with the extension
+FILENAME=${FILENAME%-save}-save.$EXT
+
+cat "$TMP_DIR/$ROOT_DIR/lib/init.sh" "$TMP_DIR/$ROOT_DIR.tgz" > "$FILENAME"
+chmod +x "$FILENAME"
+
+rm -rf "$TMP_DIR"
 
 exit 0
 
