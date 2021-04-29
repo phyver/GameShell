@@ -6,7 +6,7 @@ n=0
 
 while true; do
     n=$((1-n))
-    name=$(checksum $RANDOM)_$nature
+    name=${RANDOM}_$nature
     [ "$n" -eq 0 ] && name=.$name
     touch "$dir/$name"
     sleep 1

@@ -12,7 +12,7 @@ msgstr "$MISSION_DIR/goal/fr.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
-#, fuzzy, sh-format
+#, sh-format
 msgid "$GASH_HOME/Castle/Kitchen"
 msgstr "$GASH_HOME/Chateau/Cuisine"
 
@@ -33,3 +33,6 @@ msgstr "tonneau_de_pommes"
 
 msgid "piece_of_cheese"
 msgstr "morceau_de_fromage"
+
+msgid "There still are some hidden wind-up cats in the pantry!"
+msgstr "Il reste des chats cachés dans le garde manger !"
