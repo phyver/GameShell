@@ -261,7 +261,6 @@ Do you want to continue this game? [Y/n]') " r
 
   make_index "$@" 2> /dev/null | sed "s;$GASH_MISSIONS;.;" > "$GASH_DATA/index.txt"
 
-  time {
   # Installing all missions.
   local MISSION_NB=0
   while read MISSION_DIR
@@ -322,7 +321,6 @@ EOH
     fi
     printf "."
   done < "$GASH_DATA/index.txt"
-  }
   if [ "$MISSION_NB" -eq 0 ]
   then
     echo "$(gettext "No mission were found!
