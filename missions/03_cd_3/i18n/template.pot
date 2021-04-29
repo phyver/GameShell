@@ -15,3 +15,11 @@ msgstr ""
 #, sh-format
 msgid "$GASH_HOME/Castle/Main_building/Throne_room"
 msgstr ""
+
+#, sh-format
+msgid "Kings_quarter"
+msgstr ""
+
+#, sh-format
+msgid "crown"
+msgstr ""
