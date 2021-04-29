@@ -232,3 +232,15 @@ msgstr "La mission $nb a échoué."
 #, fuzzy, sh-format
 msgid "Error: mission $MISSION_NB doesn't have a test script."
 msgstr "Erreur : la mission $nb n'a pas de script de test."
+
+msgid "done"
+msgstr "réussie"
+
+msgid "failed"
+msgstr "échouée"
+
+msgid "passed"
+msgstr "sautée"
+
+msgid "cancelled"
+msgstr "annulée"
