@@ -8,19 +8,31 @@ msgid "The command 'gash reset' is useless when run inside a subshell!"
 msgstr "La commande 'gash reset' est inutile lorsqu'on l'exécute dans un sous shell !"
 
 #, sh-format
-msgid "Problem: couldn't get mission number '$nb' ($fn_name)"
-msgstr "Problème : je n'ai pas pu récupérer la mission '$nb' ($fn_name)"
+msgid "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
+msgstr "Problème : je n'ai pas pu récupérer la mission '$MISSION_NB' ($fn_name)"
 
 #, sh-format
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/fr.txt"
 
+msgid "done"
+msgstr "réussie"
+
+msgid "failed"
+msgstr "échouée"
+
+msgid "passed"
+msgstr "sautée"
+
+msgid "cancelled"
+msgstr "annulée"
+
 #, sh-format
 msgid ""
-"Mission $nb doesn't exist!\n"
+"Mission $MISSION_NB doesn't exist!\n"
 "Restarting..."
 msgstr ""
-"La mission $nb n'existe pas !\n"
+"La mission $MISSION_NB n'existe pas !\n"
 "Redémarrage..."
 
 msgid "Press Enter"
@@ -51,32 +63,32 @@ msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-init-msg-short/fr.txt"
 
 #, sh-format
-msgid "Mission $nb has been cancelled."
-msgstr "La mission $nb a été annulée"
+msgid "Mission $MISSION_NB has been cancelled."
+msgstr "La mission $MISSION_NB a été annulée"
 
 #, sh-format
-msgid "Mission $nb doesn't have an auto script."
-msgstr "La mission $nb n'a pas de script automatique."
+msgid "Mission $MISSION_NB doesn't have an auto script."
+msgstr "La mission $MISSION_NB n'a pas de script automatique."
 
 #, sh-format
-msgid "Error: mission $nb doesn't have a check script."
-msgstr "Erreur : la mission $nb n'a pas de script de vérification."
+msgid "Error: mission $MISSION_NB doesn't have a check script."
+msgstr "Erreur : la mission $MISSION_NB n'a pas de script de vérification."
 
 #, sh-format
-msgid "Mission $nb has already been succesfully checked!"
-msgstr "La mission $nb a déjà été réussie !"
+msgid "Mission $MISSION_NB has already been succesfully checked!"
+msgstr "La mission $MISSION_NB a déjà été réussie !"
 
 #, sh-format
-msgid "Mission $nb has been successfully completed!"
-msgstr "La mission $nb a été vérifiée avec succès."
+msgid "Mission $MISSION_NB has been successfully completed!"
+msgstr "La mission $MISSION_NB a été vérifiée avec succès."
 
 #, sh-format
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "Mission $nb hasn't been completed."
-msgstr "La mission $nb a échoué."
+msgid "Mission $MISSION_NB hasn't been completed."
+msgstr "La mission $MISSION_NB a échoué."
 
 #, sh-format
 msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
@@ -87,8 +99,8 @@ msgid "test $_NB_TESTS failed"
 msgstr "test $_NB_TESTS échoué"
 
 #, sh-format
-msgid "Error: mission $nb doesn't have a test script."
-msgstr "Erreur : la mission $nb n'a pas de script de test."
+msgid "Error: mission $MISSION_NB doesn't have a test script."
+msgstr "Erreur : la mission $MISSION_NB n'a pas de script de test."
 
 # help file
 #, sh-format
@@ -125,6 +137,9 @@ msgstr "mauvais mot de passe"
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
 msgstr "$GASH_BASE/i18n/start-help/fr.txt"
+
+msgid "This option is only available from an executable archive!"
+msgstr "Cette option n'est disponible que depuis une archive exécutable !"
 
 #, sh-format
 msgid "invalid option: '-$OPTARG'"
@@ -189,58 +204,3 @@ msgid ""
 msgstr ""
 "Aucune mission trouvée !\n"
 "Abandon..."
-
-msgid "This option is only available from an executable archive!"
-msgstr "Cette option n'est disponible que depuis une archive exécutable !"
-
-#, fuzzy, sh-format
-msgid "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
-msgstr "Problème : je n'ai pas pu récupérer la mission '$nb' ($fn_name)"
-
-#, fuzzy, sh-format
-msgid ""
-"Mission $MISSION_NB doesn't exist!\n"
-"Restarting..."
-msgstr ""
-"La mission $nb n'existe pas !\n"
-"Redémarrage..."
-
-#, fuzzy, sh-format
-msgid "Mission $MISSION_NB has been cancelled."
-msgstr "La mission $nb a été annulée"
-
-#, fuzzy, sh-format
-msgid "Mission $MISSION_NB doesn't have an auto script."
-msgstr "La mission $nb n'a pas de script automatique."
-
-#, fuzzy, sh-format
-msgid "Error: mission $MISSION_NB doesn't have a check script."
-msgstr "Erreur : la mission $nb n'a pas de script de vérification."
-
-#, fuzzy, sh-format
-msgid "Mission $MISSION_NB has already been succesfully checked!"
-msgstr "La mission $nb a déjà été réussie !"
-
-#, fuzzy, sh-format
-msgid "Mission $MISSION_NB has been successfully completed!"
-msgstr "La mission $nb a été vérifiée avec succès."
-
-#, fuzzy, sh-format
-msgid "Mission $MISSION_NB hasn't been completed."
-msgstr "La mission $nb a échoué."
-
-#, fuzzy, sh-format
-msgid "Error: mission $MISSION_NB doesn't have a test script."
-msgstr "Erreur : la mission $nb n'a pas de script de test."
-
-msgid "done"
-msgstr "réussie"
-
-msgid "failed"
-msgstr "échouée"
-
-msgid "passed"
-msgstr "sautée"
-
-msgid "cancelled"
-msgstr "annulée"
