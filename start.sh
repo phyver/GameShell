@@ -19,8 +19,11 @@ export TEXTDOMAIN="gash"
 # generate GameShell translation files for gettext
 for PO_FILE in "$GASH_BASE"/i18n/*.po; do
   PO_LANG=$(basename "$PO_FILE" .po)
-  mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
-  msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
+  if ! [ -f "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" ]
+  then
+    mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
+    msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
+  fi
 done
 
 source $GASH_BASE/lib/utils.sh
@@ -258,6 +261,7 @@ Do you want to continue this game? [Y/n]') " r
 
   make_index "$@" 2> /dev/null | sed "s;$GASH_MISSIONS;.;" > "$GASH_DATA/index.txt"
 
+  time {
   # Installing all missions.
   local MISSION_NB=0
   while read MISSION_DIR
@@ -280,8 +284,11 @@ Do you want to continue this game? [Y/n]') " r
       shopt -s nullglob
       for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
         PO_LANG=$(basename "$PO_FILE" .po)
-        mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
-        msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
+        if ! [ -f "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" ]
+        then
+          mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
+          msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
+        fi
       done
       shopt -u nullglob
     fi
@@ -315,6 +322,7 @@ EOH
     fi
     printf "."
   done < "$GASH_DATA/index.txt"
+  }
   if [ "$MISSION_NB" -eq 0 ]
   then
     echo "$(gettext "No mission were found!
