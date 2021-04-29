@@ -217,3 +217,15 @@ msgstr "Mission $nb hasn't been completed."
 #, fuzzy, sh-format
 msgid "Error: mission $MISSION_NB doesn't have a test script."
 msgstr "Error: mission $nb doesn't have a test script."
+
+msgid "done"
+msgstr "done"
+
+msgid "failed"
+msgstr "failed"
+
+msgid "passed"
+msgstr "passed"
+
+msgid "cancelled"
+msgstr "cancelled"

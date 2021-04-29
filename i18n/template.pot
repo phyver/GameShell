@@ -201,3 +201,15 @@ msgstr ""
 #, sh-format
 msgid "Error: mission $MISSION_NB doesn't have a test script."
 msgstr ""
+
+msgid "done"
+msgstr ""
+
+msgid "failed"
+msgstr ""
+
+msgid "passed"
+msgstr ""
+
+msgid "cancelled"
+msgstr ""
