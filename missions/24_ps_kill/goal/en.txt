@@ -1,11 +1,12 @@
 Mission goal
 ============
 
-The mice are not happy: a cat generator has been installed in the 
-cellar!
+The rats are not happy: to scare them away, an infernal machine that 
+generates wind-up cats has been installed in the pantry (in the 
+kitchen).
 
-Find and kill the cat generator, and remove all the hidden cats that 
-populate the cellar.
+Find and kill the cat generator, and remove all the cats that hide 
+in the pantry.
 
 NOTE: the generator is a process, while the cats themselves are 
 files.

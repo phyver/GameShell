@@ -13,8 +13,23 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Cellar"
+msgid "$GASH_HOME/Castle/Kitchen"
 msgstr ""
 
-msgid "cat"
+msgid "Pantry"
+msgstr ""
+
+msgid "wind-up_cat"
+msgstr ""
+
+msgid "There still are some wind-up cats in the pantry!"
+msgstr ""
+
+msgid "The content of the pantry has changed!"
+msgstr ""
+
+msgid "barrel_of_apples"
+msgstr ""
+
+msgid "piece_of_cheese"
 msgstr ""
