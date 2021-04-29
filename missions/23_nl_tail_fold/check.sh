@@ -10,7 +10,7 @@ _local_check() {
     current=$(REALPATH "$PWD")
 
     local expected
-    expected=$(head -n 11 "$(eval_gettext '$MISSION_DIR/recipe/en.txt')" | tail -n 3)
+    expected=$(nl "$(eval_gettext '$MISSION_DIR/recipe/en.txt')" | tail -n 7 | fold -s -w50)
     local res
     res=$(eval "$pc")
 

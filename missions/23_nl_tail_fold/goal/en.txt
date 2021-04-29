@@ -1,0 +1,45 @@
+Mission goal
+============
+
+The hermit now wants to see the end of the recipe for his potion. 
+Unfortunately, the steps are not numbered.
+You need to list the last steps of the recipe with a single command, 
+while respecting the constraints given by the old man:
+  - only the last 7 steps of the recipe are shown,
+  - each step is numbered as it would be in the complete recipe,
+  - no line of the recipe should be more than 50 characters wide.
+
+To do that, you will need to combine the previous two commands
+using a ``|``.
+
+NOTE: to help you, the hermit has written the start of the recipe 
+with the same constraints.
+
+
+Useful commands
+===============
+
+cat FICHIER
+  Output the file content.
+
+fold FICHIER
+  Add newlines inside long lines.
+
+  If FILE is omitted, the command acts on its standard input.
+
+  Useful options:
+    -w WIDTH      maximal width of the lines
+    -s            only break lines on spaces
+
+nl FILE
+  Output each line of the file with its line number.
+
+  If FILE is omitted, the command acts on its standard input.
+
+tail -n K FILE
+  Output the last K lines from the file.
+
+  If FILE is omitted, the command acts on its standard input.
+
+CMD1 | CMD2
+ Make CMD2 acts on what it receives from CMD1.

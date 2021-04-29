@@ -6,28 +6,31 @@ msgstr ""
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgstr "$MISSION_DIR/goal/en.txt"
 
 # path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
 msgid "$GASH_HOME/Mountain/Cave"
-msgstr ""
+msgstr "$GASH_HOME/Mountain/Cave"
 
 msgid "potion_recipe"
-msgstr ""
+msgstr "potion_recipe"
 
 msgid "You are not standing in the cave with the ermit!"
-msgstr ""
+msgstr "You are not standing in the cave with the ermit!"
 
 msgid "You haven't used the operator '|'!"
-msgstr ""
+msgstr "You haven't used the operator '|'!"
 
 msgid "Your previous command doesn't give the expected result..."
-msgstr ""
+msgstr "Your previous command doesn't give the expected result..."
 
 #, sh-format
 msgid "$MISSION_DIR/recipe/en.txt"
-msgstr ""
+msgstr "$MISSION_DIR/recipe/en.txt"
+
+msgid "start"
+msgstr "start"

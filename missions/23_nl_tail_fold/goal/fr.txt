@@ -1,0 +1,47 @@
+Objectif
+========
+
+L'ermite aimerait maintenant regarder la fin de la recette de sa 
+potion. Malheureusement, les étapes ne sont pas numérotées.
+Vous devez afficher les dernières étapes de la recette avec une 
+seule commande, en respectant les contraintes imposées par le vieil 
+homme :
+  - seules les 7 dernières étapes de la recette sont affichées,
+  - chaque étape est numérotée comme elle le serait dans la recette 
+    complète,
+  - les lignes de la recette ne font pas plus de 50 caractères.
+
+Il faudra pour ceci combiner plusieurs commandes précédentes avec 
+``|``.
+
+NOTE : pour vous aidez, l'ermite a écrit le début de la recette avec 
+les même contraintes.
+
+
+Commandes utiles
+================
+
+cat FICHIER
+  Affiche le contenu du fichier.
+
+fold FICHIER
+  Ajoute des retours chariots sur lignes trop longues.
+
+  Si FICHIER est omis, la commande agit sur l'entrée standard.
+
+  Options utiles :
+    -w LARGEUR    largeur maximale autorisée pour les lignes
+    -s            ne coupe les lignes que sur des espaces
+
+nl FICHIER
+  Affiche les lignes d'un fichier en ajoutant leur numéro de ligne.
+
+  Si FICHIER est omis, la commande agit sur l'entrée standard.
+
+tail -n K FICHIER
+  Affiche les K dernières lignes du fichier.
+
+  Si FICHIER est omis, la commande agit sur l'entrée standard.
+
+CMD1 | CMD2
+ Fait agir CMD2 sur ce qu'elle reçoit de CMD1.
