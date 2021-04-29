@@ -1,21 +1,37 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 msgid "The command 'gash reset' is useless when run inside a subshell!"
 msgstr ""
 
 #, sh-format
-msgid "Problem: couldn't get mission number '$nb' ($fn_name)"
+msgid "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
 msgstr ""
 
 #, sh-format
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr ""
 
+msgid "done"
+msgstr ""
+
+msgid "failed"
+msgstr ""
+
+msgid "passed"
+msgstr ""
+
+msgid "cancelled"
+msgstr ""
+
 #, sh-format
 msgid ""
-"Mission $nb doesn't exist!\n"
+"Mission $MISSION_NB doesn't exist!\n"
 "Restarting..."
 msgstr ""
-"Mission $nb doesn't exist!\n"
-"Restarting..."
 
 msgid "Press Enter"
 msgstr ""
@@ -39,23 +55,23 @@ msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "Mission $nb has been cancelled."
+msgid "Mission $MISSION_NB has been cancelled."
 msgstr ""
 
 #, sh-format
-msgid "Mission $nb doesn't have an auto script."
+msgid "Mission $MISSION_NB doesn't have an auto script."
 msgstr ""
 
 #, sh-format
-msgid "Error: mission $nb doesn't have a check script."
+msgid "Error: mission $MISSION_NB doesn't have a check script."
 msgstr ""
 
 #, sh-format
-msgid "Mission $nb has already been succesfully checked!"
+msgid "Mission $MISSION_NB has already been succesfully checked!"
 msgstr ""
 
 #, sh-format
-msgid "Mission $nb has been successfully completed!"
+msgid "Mission $MISSION_NB has been successfully completed!"
 msgstr ""
 
 #, sh-format
@@ -63,7 +79,7 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "Mission $nb hasn't been completed."
+msgid "Mission $MISSION_NB hasn't been completed."
 msgstr ""
 
 #, sh-format
@@ -75,7 +91,7 @@ msgid "test $_NB_TESTS failed"
 msgstr ""
 
 #, sh-format
-msgid "Error: mission $nb doesn't have a test script."
+msgid "Error: mission $MISSION_NB doesn't have a test script."
 msgstr ""
 
 #, sh-format
@@ -105,6 +121,9 @@ msgstr ""
 
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
+msgstr ""
+
+msgid "This option is only available from an executable archive!"
 msgstr ""
 
 #, sh-format
@@ -159,57 +178,4 @@ msgstr ""
 msgid ""
 "No mission were found!\n"
 "Aborting"
-msgstr ""
-
-msgid "This option is only available from an executable archive!"
-msgstr ""
-
-#, sh-format
-msgid "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
-msgstr ""
-
-#, sh-format
-msgid ""
-"Mission $MISSION_NB doesn't exist!\n"
-"Restarting..."
-msgstr ""
-
-#, sh-format
-msgid "Mission $MISSION_NB has been cancelled."
-msgstr ""
-
-#, sh-format
-msgid "Mission $MISSION_NB doesn't have an auto script."
-msgstr ""
-
-#, sh-format
-msgid "Error: mission $MISSION_NB doesn't have a check script."
-msgstr ""
-
-#, sh-format
-msgid "Mission $MISSION_NB has already been succesfully checked!"
-msgstr ""
-
-#, sh-format
-msgid "Mission $MISSION_NB has been successfully completed!"
-msgstr ""
-
-#, sh-format
-msgid "Mission $MISSION_NB hasn't been completed."
-msgstr ""
-
-#, sh-format
-msgid "Error: mission $MISSION_NB doesn't have a test script."
-msgstr ""
-
-msgid "done"
-msgstr ""
-
-msgid "failed"
-msgstr ""
-
-msgid "passed"
-msgstr ""
-
-msgid "cancelled"
 msgstr ""
