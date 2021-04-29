@@ -43,3 +43,11 @@ msgstr ""
 
 msgid "maze generation:"
 msgstr ""
+
+#, sh-format
+msgid "$GASH_HOME/Botanical_garden/Orchard"
+msgstr ""
+
+#, sh-format
+msgid "$GASH_HOME/Botanical_garden/Shed"
+msgstr ""
