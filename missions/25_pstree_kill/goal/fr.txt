@@ -1,17 +1,18 @@
 Objectif
 ========
 
-Les souris se sont alliées avec Felix, dont les descendants 
-remplissent la cave de fromages.
+Les rats ont trouvé un amis, Linguini, qui a installé des machines 
+pour distribuer des morceaux de fromage dans la cuisine.
 
-Malheureusement, Gros-Minet a trois descendants générateurs de chats 
-dans la cave...
+Malheureusement, le chef cuistot, Skinner, a installé des machines 
+qui disséminent de la mort au rats.
 
-Vous devez tuer les descendants de Gros-Minet, mais épargner les 
-descendants de Felix (sinon plus de fromage). Après, il faudra 
-supprimer tous les chats de la cave.
+Vous devez tuer les générateur de mort aux rats, tout en épargnant 
+les générateurs de fromage.
+Il faudra ensuite supprimer toute la mort aux rats présente dans la 
+cuisine.
 
-NOTE : il ne faut tuer ni Gros-Minet, ni Felix...
+NOTE : il ne faut tuer ni Linguini, ni Skinner.
 
 
 Commandes utiles

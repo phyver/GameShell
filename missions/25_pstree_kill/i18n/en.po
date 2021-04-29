@@ -13,8 +13,23 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Cellar"
-msgstr "$GASH_HOME/Castle/Cellar"
+msgid "$GASH_HOME/Castle/Kitchen"
+msgstr "$GASH_HOME/Castle/Kitchen"
 
-msgid "cat"
-msgstr "cat"
+msgid "rat_poison"
+msgstr "rat_poison"
+
+msgid "cheese"
+msgstr "cheese"
+
+msgid "There still is some rat poison in the kitchen!"
+msgstr "There still is some rat poison in the kitchen!"
+
+msgid "There still is some rat poison hidden in the kitchen!"
+msgstr "There still is some rat poison hidden in the kitchen!"
+
+msgid "Are you sure you killed all the rat poison generators?"
+msgstr "Are you sure you killed all the rat poison generators?"
+
+msgid "Did you kill some cheese generator?"
+msgstr "Did you kill some cheese generator?"

@@ -1,16 +1,16 @@
 Mission goal
 ============
 
-The mice have found a friend named Felix, whose three children are 
-generating cheese in the cellar.
+The rats have found a friend named Linguini, who installed some 
+device to distribute morsels of cheese in the kitchen.
 
-Unfortunately, Gros-Minet has three children who are generating cats 
-in the cellar.
+Unfortunately, the chef, Skinner, installed some machines that 
+disseminate rat poison.
 
-Kill the children of Gros-Minet, but keep the children of Felix. 
-Then, remove all the cats from the cellar.
+Kill the rat poison generators, but keep the cheese generators.
+Then, remove all the rat poison from the cellar.
 
-NOTE: do not kill Gros-Minet or Felix.
+NOTE: do not kill Linguini or Felix.
 
 
 Useful commands

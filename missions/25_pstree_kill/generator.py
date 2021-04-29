@@ -9,7 +9,12 @@ from random import randint
 
 dir = argv[1]
 nature = argv[2]
+n = 0
 
 while True:
-    open(f"{dir}/.{randint(0,2**15)}_{nature}", mode="a").close()
-    sleep(1)
+    n = 1 - n
+    name = f"{randint(0,2**15)}_{nature}"
+    if n == 0:
+        name = "." + name
+    open(f"{dir}/{name}", mode="a").close()
+    sleep(3)
