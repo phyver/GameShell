@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ -z "$BASH_SOURCE" ]
+then
+    echo "GameShell must be run with Bash from a file."
+    exit 1
+fi
+
 EXE=$(basename "$0")
 DIR=$(dirname "$0")
 
