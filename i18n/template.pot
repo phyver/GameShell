@@ -87,11 +87,19 @@ msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
 msgstr ""
 
 #, sh-format
-msgid "test $_NB_TESTS failed"
+msgid "test $NB_TESTS failed"
 msgstr ""
 
 #, sh-format
 msgid "Error: mission $MISSION_NB doesn't have a test script."
+msgstr ""
+
+#, sh-format
+msgid "$NB_TESTS successful tests"
+msgstr ""
+
+#, sh-format
+msgid "$NB_ERRORS errors out of $NB_TESTS tests"
 msgstr ""
 
 #, sh-format

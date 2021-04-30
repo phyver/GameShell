@@ -418,16 +418,16 @@ _gash_assert_check() {
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
 
-  _NB_TESTS=$((_NB_TESTS + 1))
+  NB_TESTS=$((NB_TESTS + 1))
   if [ "$expected" = "true" ] && [ "$exit_status" -ne 0 ]
   then
-    _NB_ERRORS=$((_NB_ERRORS + 1))
-    color_echo red "$(eval_gettext 'test $_NB_TESTS failed') (expected check 'true')"
+    NB_ERRORS=$((NB_ERRORS + 1))
+    color_echo red "$(eval_gettext 'test $NB_TESTS failed') (expected check 'true')"
     [ -n "$msg" ] && echo "$msg"
   elif [ "$expected" = "false" ] && [ "$exit_status" -eq 0 ]
   then
-    _NB_ERRORS=$((_NB_ERRORS + 1))
-    color_echo red "$(eval_gettext 'test $_NB_TESTS failed') (expected check 'false')"
+    NB_ERRORS=$((NB_ERRORS + 1))
+    color_echo red "$(eval_gettext 'test $NB_TESTS failed') (expected check 'false')"
     [ -n "$msg" ] && echo "$msg"
   fi
 
@@ -446,11 +446,11 @@ _gash_assert() {
   fi
   local msg=$2
 
-  _NB_TESTS=$((_NB_TESTS + 1))
+  NB_TESTS=$((NB_TESTS + 1))
   if ! eval "$condition"
   then
-    _NB_ERRORS=$((_NB_ERRORS + 1))
-    color_echo red "$(eval_gettext 'test $_NB_TESTS failed') (expected condition 'true')"
+    NB_ERRORS=$((NB_ERRORS + 1))
+    color_echo red "$(eval_gettext 'test $NB_TESTS failed') (expected condition 'true')"
     [ -n "$msg" ] && echo "$msg"
   fi
 }
@@ -473,20 +473,20 @@ _gash_test() {
     return 1
   fi
 
-  export _NB_TESTS=0
-  export _NB_ERRORS=0
+  export NB_TESTS=0
+  export NB_ERRORS=0
   mission_source "$MISSION_DIR/test.sh"
-  if [ "$_NB_ERRORS" = 0 ]
+  if [ "$NB_ERRORS" = 0 ]
   then
     echo
-    color_echo green "$_NB_TESTS successful tests"
+    color_echo green "$(eval_gettext '$NB_TESTS successful tests')"
     echo
   else
     echo
-    color_echo red "$_NB_ERRORS errors out of $_NB_TESTS tests"
+    color_echo red "$(eval_gettext '$NB_ERRORS errors out of $NB_TESTS tests')"
     echo
   fi
-  unset _NB_TESTS _NB_ERRORS
+  unset NB_TESTS NB_ERRORS
 }
 [ "$GASH_MODE" != "DEBUG" ] && unset -f _gash_test
 
