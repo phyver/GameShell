@@ -1,0 +1,22 @@
+Mission goal
+============
+
+The safe in the throne room contains the king's crown.
+You need steal it and store it in your chest.
+
+Also, the base of the crown is inscribed with a magical sequence of 
+digits. Look at those digits and remember them.
+
+
+Useful commands
+===============
+
+ls -l
+  Lists the files with their important meta-data.
+
+  Access permissions are listed first on each line.
+
+chmod [OPTIONS] FILE
+  Modifies the permissions for eth file (or directory).
+
+  Refer to the manual to discover which options are available.

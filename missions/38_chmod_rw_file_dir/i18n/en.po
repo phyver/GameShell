@@ -1,0 +1,44 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+#, sh-format
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/en.txt"
+
+# path for the text file containing the treasure message
+#, sh-format
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/en.txt"
+
+#, sh-format
+msgid "$GASH_HOME/Forest/Cabin/Chest"
+msgstr "$GASH_HOME/Forest/Cabin/Chest"
+
+#, sh-format
+msgid "$GASH_HOME/Castle/Main_building/Throne_room"
+msgstr "$GASH_HOME/Castle/Main_building/Throne_room"
+
+msgid "Safe"
+msgstr "Safe"
+
+msgid "crown"
+msgstr "crown"
+
+msgid "There is no crown in your chest!"
+msgstr "There is no crown in your chest!"
+
+msgid "The crown in your chest is not readable!"
+msgstr "The crown in your chest is not readable!"
+
+msgid "The crown in your chest is a fake!"
+msgstr "The crown in your chest is a fake!"
+
+msgid "What are the 3 digits inscribed on the base of the crown?"
+msgstr "What are the 3 digits inscribed on the base of the crown?"
+
+msgid "Those digits are not right!"
+msgstr "Those digits are not right!"

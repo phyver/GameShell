@@ -1,0 +1,29 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+#, sh-format
+msgid "$GASH_HOME/Castle/Main_building/Throne_room/Kings_quarter"
+msgstr ""
+
+msgid "secret_note"
+msgstr ""
+
+msgid "note"
+msgstr ""
+
+msgid "What's the secret key to open the safe?"
+msgstr ""
+
+msgid "That's not the real key!"
+msgstr ""
