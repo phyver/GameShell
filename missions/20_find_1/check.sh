@@ -3,7 +3,7 @@
 _local_check_p() {
     local file=$1
     local path
-    path=$(find "$GASH_CHEST" -name "*$file*" -type f)
+    path=$(find "$GASH_CHEST" -name "*$(gettext "$file")*" -type f)
 
     if [ -z "$path" ]
     then
@@ -13,7 +13,7 @@ _local_check_p() {
     fi
     if ! cmp -s "$path" "$GASH_MISSION_DATA/$file"
     then
-        echo "$(eval_gettext 'Coin '$file' in your chest is invalid!')"
+        echo "$(eval_gettext "Coin '\$file' in your chest is invalid!")"
         return 1
     fi
 }
@@ -34,7 +34,7 @@ _local_check() {
         return 1
     fi
 
-    _local_check_p "$(gettext "gold_coin")" && _local_check_p "$(gettext "GolD_CoiN")"
+    _local_check_p "gold_coin" && _local_check_p "GolD_CoiN"
 }
 
 if _local_check
