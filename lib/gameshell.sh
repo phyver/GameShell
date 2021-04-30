@@ -570,13 +570,6 @@ gash() {
   export TEXTDOMAIN="gash"
   local cmd=$1
   shift
-  if [ -z "$cmd" ]
-  then
-    cat <<EOH
-gash <commande>
-commandes possibles : help, show, check, reset, save
-EOH
-  fi
 
   case $cmd in
     "c" | "ch" | "che" | "chec" | "check")
@@ -662,7 +655,8 @@ EOH
       _gash_unprotect
       ;;
     *)
-      echo "$(eval_gettext "unkwnown command: \$cmd")" >&2
+      echo "$(eval_gettext 'unkwnown gash command $cmd')" >&2
+      echo "$(gettext "use one of the following commands:")  help, show, check, reset or HELP" >&2
       export TEXTDOMAIN=$_TEXTDOMAIN
       unset _TEXTDOMAIN
       return 1
