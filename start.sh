@@ -41,7 +41,7 @@ export GASH_COLOR="OK"
 GASH_MODE="ANONYMOUS"
 RESET=""
 FORCE="FALSE"
-while getopts ":hcnPDACRFX" opt
+while getopts ":hcnPDACRFXv" opt
 do
   case $opt in
     h)
@@ -59,6 +59,9 @@ do
       ;;
     D)
       GASH_MODE="DEBUG"
+      ;;
+    v)
+      export GASH_VERBOSE_SOURCE="true"
       ;;
     A)
       GASH_MODE="ANONYMOUS"

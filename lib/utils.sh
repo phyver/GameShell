@@ -108,7 +108,7 @@ admin_mode() {
 mission_source() {
   local FILENAME=$1
   # if we are not running in DEBUG mode, just source the file
-  if [ "$GASH_MODE" != "DEBUG" ] || [ -n "$GASH_QUIET_SOURCE" ]
+  if [ "$GASH_MODE" != "DEBUG" ] || [ -z "$GASH_VERBOSE_SOURCE" ]
   then
     local _TEXTDOMAIN=$TEXTDOMAIN
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
