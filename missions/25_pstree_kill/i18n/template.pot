@@ -19,9 +19,6 @@ msgstr ""
 msgid "rat_poison"
 msgstr ""
 
-msgid "cheese"
-msgstr ""
-
 msgid "There still is some rat poison in the kitchen!"
 msgstr ""
 
@@ -32,4 +29,13 @@ msgid "Are you sure you killed all the rat poison generators?"
 msgstr ""
 
 msgid "Did you kill some cheese generator?"
+msgstr ""
+
+#, sh-format
+msgid ""
+"The command 'pstree' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'psmisc')"
+msgstr ""
+
+msgid "cheese"
 msgstr ""

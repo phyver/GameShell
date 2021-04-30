@@ -19,9 +19,6 @@ msgstr "$GASH_HOME/Castle/Kitchen"
 msgid "rat_poison"
 msgstr "rat_poison"
 
-msgid "cheese"
-msgstr "cheese"
-
 msgid "There still is some rat poison in the kitchen!"
 msgstr "There still is some rat poison in the kitchen!"
 
@@ -33,3 +30,14 @@ msgstr "Are you sure you killed all the rat poison generators?"
 
 msgid "Did you kill some cheese generator?"
 msgstr "Did you kill some cheese generator?"
+
+#, sh-format
+msgid ""
+"The command 'pstree' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'psmisc')"
+msgstr ""
+"The command 'pstree' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'psmisc')"
+
+msgid "cheese"
+msgstr "cheese"
