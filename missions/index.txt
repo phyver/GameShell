@@ -34,5 +34,8 @@
 33_pipe_1
 34_pipe_2
 35_tr
+36_chmod_x_dir
+37_chmod_r_file
+38_chmod_rw_file_dir
 99_THE_END
 # end of index file $GASH_MISSIONS/index.txt
