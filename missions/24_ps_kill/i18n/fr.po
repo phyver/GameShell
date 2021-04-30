@@ -23,7 +23,7 @@ msgid "wind-up_cat"
 msgstr "chat-a-ressort"
 
 msgid "There still are some wind-up cats in the pantry!"
-msgstr "Il rest des chats dans le garde manger !"
+msgstr "Il reste des chats dans le garde manger !"
 
 msgid "The content of the pantry has changed!"
 msgstr "Le contenu du garde manger à changé !"

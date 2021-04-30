@@ -10,7 +10,7 @@ msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
 msgid "$GASH_HOME/Botanical_garden/.Maze"
-msgstr "$GASH_HOME/Jardin_botanique/Labyrinthe"
+msgstr "$GASH_HOME/Jardin_botanique/.Labyrinthe"
 
 msgid "copper_coin"
 msgstr "piece_de_bronze"

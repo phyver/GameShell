@@ -2,11 +2,11 @@ Objectif
 ========
 
 Les rats n'en peuvent plus : pour leur faire peur, une machine 
-infernale qui génère des chats à ressort a été installé dans le 
+infernale qui génère des chats à ressort a été installée dans le 
 garde manger (dans la cuisine) !
 
 Trouvez et tuez le générateur de chats, avant de supprimer tous les 
-chats cachés dans la cave.
+chats cachés dans le garde manger.
 
 NOTE : le générateur de chat est un processus, alors que les chats 
 sont des fichiers...

@@ -20,5 +20,5 @@ ls
 Rappel
 ======
 
-gash restart
+gash reset
   reinitialise la mission en cours

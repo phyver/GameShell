@@ -6,15 +6,15 @@ msgstr ""
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgstr "$MISSION_DIR/goal/fr.txt"
 
 # path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
 msgid "$GASH_HOME/Botanical_garden/.Maze"
-msgstr "$GASH_HOME/Jardin_botanique/Labyrinthe"
+msgstr "$GASH_HOME/Jardin_botanique/.Labyrinthe"
 
 msgid "diamond"
 msgstr "diamant"
@@ -51,6 +51,6 @@ msgstr "cailloux"
 msgid "$GASH_HOME/Botanical_garden/Orchard"
 msgstr "$GASH_HOME/Jardin_botanique/Verger"
 
-#, fuzzy, sh-format
+#, sh-format
 msgid "$GASH_HOME/Botanical_garden/Shed"
 msgstr "$GASH_HOME/Jardin_botanique/Cabanon"
