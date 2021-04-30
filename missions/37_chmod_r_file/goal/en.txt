@@ -1,0 +1,23 @@
+Mission goal
+============
+
+The King is rumored to keep the secret key to his safe written on a 
+note in his room.
+Find that secret key.
+
+NOTE: the King probably tried to make this note unreadable!
+
+
+Useful commands
+===============
+
+ls -l
+  Lists the files with their important meta-data.
+
+  Access permissions are listed first on each line.
+
+chmod [OPTIONS] FILE
+  Modifies the permissions for eth file (or directory).
+
+  Refer to the manual to discover which options are available.
+

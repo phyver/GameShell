@@ -1,0 +1,23 @@
+Objectif
+========
+
+L'accès aux quartiers du roi se trouve dans la salle du trône.
+Rendez vous dans la chambre du roi.
+
+NOTE : il est probable que l'accès à cette partie du château vous 
+soit interdite.
+
+
+Commandes utiles
+================
+
+ls -l
+  Affiche la liste des fichiers avec leurs métadonnées importantes.
+
+  Les droits d'accès sont donnés en début de ligne.
+
+chmod [OPTIONS] FICHIER
+  Modifie les droits d'accès à un fichier ou répertoire.
+
+  Consultez la page de manuel pour découvrir quelles options vous 
+  pouvez utiliser.
