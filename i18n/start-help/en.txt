@@ -3,6 +3,7 @@ options:
   -n      black and white: don't use ANSI escape codes for color
   -P      passport mode: ask for name / emails of player
   -D      debug mode
+  -v      verbose source of file (only useful in debug mode)
   -A      anonymous mode
   -C      don't ask: automatically continue current game (if relevant)
   -R      don't ask: automatically reset game
