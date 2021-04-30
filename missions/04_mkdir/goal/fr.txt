@@ -4,11 +4,11 @@ Objectif
 Construisez une "Cabane" dans la forêt, et un "Coffre" dans la 
 cabane.
 
-NOTE : le coffre doit se trouver **dans** la cabane.
+NOTE : le Coffre doit se trouver **dans** la Cabane.
 
 
 Commandes utiles
 ===================
 
 mkdir REPERTOIRE
-  crée un nouveau répertoire dans le répertoire courant
+  Crée un nouveau répertoire dans le répertoire courant.

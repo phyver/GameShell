@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Créer un fichier journal nommé 'journal.txt' dans votre coffre, et 
+Créez un fichier journal nommé 'journal.txt' dans votre coffre, et 
 inscrivez y un petit message.
 Vous pourrez l'utiliser pour prendre des notes sur vos solutions 
 pour les missions suivantes.
@@ -10,9 +10,9 @@ pour les missions suivantes.
 Détails
 -------
 
-``nano`` est un éditeur de texte en ligne de commande.
-Vous pouvez l'utiliser à chaque fois que vous avez besoin de 
-modifier un fichier texte depuis le shell.
+``nano`` est un éditeur de texte en ligne de commandes. Vous pouvez 
+l'utiliser à chaque fois que vous avez besoin de modifier un fichier 
+texte depuis le shell.
 
 
 
@@ -20,7 +20,8 @@ Commandes utiles
 ================
 
 nano FICHIER
-  édite le fichier dans le terminal
+  Édite le fichier dans le terminal.
+
   Les raccourcis claviers sont affichés en bas :
   (le symbole "^" signifie "Control")
     Control-x     quitter nano

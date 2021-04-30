@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Ramassez toutes les pièces qui se trouvent dans la cave du château, 
+Ramassez toutes les pièces qui se trouvent dans la cave du château 
 et placez les dans votre coffre (dans votre cabane, dans la forêt).
 
 
@@ -9,9 +9,9 @@ Commandes utiles
 ================
 
 mv FICHIER1 FICHIER2 ... FICHIERn DOSSIER
-  déplace les fichiers vers le dossier
+  Déplace les fichiers vers le dossier.
 
 ~
   abréviation pour le répertoire initial
-  exemple : ~/Dossier représente le dossier "Dossier" dans le 
-  répertoire initial
+  Exemple : ~/Dossier représente le dossier "Dossier" dans le 
+  répertoire initial.

@@ -1,9 +1,6 @@
 #!/bin/bash
 
 _local_check() {
-    # turn history on (off by default for non-interactive shells
-    HISTFILE=$GASH_DATA/history
-
     local pc
     pc=$(fc -nl -2 -2 | grep 'grep')
 

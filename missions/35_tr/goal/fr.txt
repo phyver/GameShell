@@ -12,7 +12,7 @@ Commandes utiles
 ================
 
 tr CHAINE1 CHAINE2 < FICHIER
-  remplace le caractère CHAINE1[i] par CHAINE2[i] dans FICHIER, et 
+  Remplace le caractère CHAINE1[i] par CHAINE2[i] dans FICHIER, et 
   affiche le résultat. (Le fichier n'est pas modifié.)
 
   Exemple : si

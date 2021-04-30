@@ -17,14 +17,14 @@ Commandes utiles
 ================
 
 ls -A
-  affiche tous les fichiers du répertoire courant, en incluant les 
-  fichiers cachés
-  (un fichier est "caché" si son nom commence par le caractère ".")
+  Affiche tous les fichiers du répertoire courant, en incluant les 
+  fichiers cachés.
+  (Un fichier est "caché" si son nom commence par le caractère ".".)
 
 Tab
-  la touche "Tab" "complète" un nom de fichier ou de répertoire dès 
-  qu'on en tapé le début
+  La touche "Tab" "complète" un nom de fichier ou de répertoire dès 
+  qu'on en tapé le début.
 
 Tab-Tab
-  deux appuis successifs sur la touche tabulation affichent la liste 
-  des complétions possibles
+  Deux appuis successifs sur la touche tabulation affichent la liste 
+  des complétions possibles.

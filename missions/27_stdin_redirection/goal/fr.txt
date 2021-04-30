@@ -3,7 +3,8 @@ Objectif
 
 Pour progresser en magie, il faut maitriser le calcul mental.
 
-Vérifiez votre aptitude aux multiplications !
+Vérifiez votre aptitude aux multiplications avec la commande ``gash 
+check``.
 
 Attention, il y a maintenant une contrainte de temps.
 
@@ -15,7 +16,7 @@ Commandes utiles
 ================
 
 CMD  <  FICHIER
-  remplace l'entrée standard d'une commande (le clavier) par un 
-  fichier
+  Remplace l'entrée standard d'une commande (le clavier) par un 
+  fichier.
   Au lieu de lire les lignes à partir du clavier, la commande lira 
   les lignes dans le fichier.

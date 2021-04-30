@@ -19,13 +19,13 @@ Commandes utiles
 ================
 
 pstree
-  affiche la liste de tous les processus, avec leur lien de parenté
+  Affiche la liste de tous les processus, avec leur lien de parenté.
 
-  options intéressantes
+  Options utiles :
     -p : affiche également les PID des processus
     $$ : affiche seulement les descendant du shell courant
          ($$ contient le PID du shell courant et peut être remplacé 
          par un autre PID)
 
 kill N
-  tue le processus dont le numéro ("PID") est N
+  Tue le processus dont le numéro ("PID") est N.

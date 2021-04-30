@@ -4,7 +4,7 @@ Objectif
 L'ermite est en train de préparer une potion dans la grotte.
 Vous devez le rejoindre et lui afficher les quatre premiers 
 ingrédients de la liste des ingrédients.
-Une fois que vous avez affiché les ingrédients demandés, lancez la 
+Dès que vous avez affiché les ingrédients demandés, lancez la 
 commande ``gash check``.
 
 
@@ -12,7 +12,7 @@ Commandes utiles
 ================
 
 head FICHIER
-  affiche les 10 premières lignes du FICHIER
+  Affiche les 10 premières lignes du FICHIER.
 
 head -n K FICHIER
-  affiche les K premières lignes du FICHIER
+  Affiche les K premières lignes du FICHIER.

@@ -1,13 +1,13 @@
 Objectif
 ========
 
-J'aime bien les quatre étendards à l'entrée du Château. Toutefois, 
-les voler ne passerait pas inaperçu. J'en voudrais une copie de 
-chaque dans mon coffre.
+Les quatre étendards à l'entrée du Château sont vraiment très jolis. 
+Les voler ne passerait pas inaperçu, alors faites en une copie dans 
+votre coffre.
 
 
 Commandes utiles
 ================
 
 cp FICHIER1 FICHIER2 ... FICHIERn DOSSIER
-  copie les fichiers dans un autre dossier
+  Copie les fichiers dans un autre dossier.
