@@ -15,11 +15,3 @@ msgstr "$MISSION_DIR/treasure-msg/en.txt"
 #, sh-format
 msgid "$GASH_HOME/Castle/Main_building/Throne_room"
 msgstr "$GASH_HOME/Castle/Main_building/Throne_room"
-
-#, sh-format
-msgid "Kings_quarter"
-msgstr "Kings_quarter"
-
-#, sh-format
-msgid "crown"
-msgstr "crown"
