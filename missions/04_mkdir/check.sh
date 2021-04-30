@@ -2,6 +2,7 @@
 
 _local_check() {
     local forest="$(eval_gettext '$GASH_HOME/Forest')"
+    local cabin=$(eval_gettext '$GASH_HOME/Forest')/$(gettext "Cabin")
 
     # Check that there is only one cabin.
     local nb_cabins
@@ -18,9 +19,9 @@ _local_check() {
     fi
 
     # Check the name of the cabin.
-    if [ ! -d "$GASH_CABIN" ]
+    if [ ! -d "$cabin" ]
     then
-        echo "$(eval_gettext "The \$GASH_CABIN directory does not exist!")"
+        echo "$(eval_gettext 'The $cabin directory does not exist!')"
         return 1
     fi
 

@@ -29,8 +29,8 @@ msgid "You did not build a cabin in the forest!"
 msgstr "You did not build a cabin in the forest!"
 
 #, sh-format
-msgid "The $GASH_CABIN directory does not exist!"
-msgstr "The $GASH_CABIN directory does not exist!"
+msgid "The $cabin directory does not exist!"
+msgstr "The $cabin directory does not exist!"
 
 msgid "You built too many chests in your cabin!"
 msgstr "You built too many chests in your cabin!"
