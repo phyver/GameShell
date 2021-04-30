@@ -8,18 +8,15 @@ Useful commands
 ===============
 
 cd LOCATION
-  move to the given location
+  Lets you move to the given LOCATION.
+  Remark: ``cd`` stands for “change directory”.
 
 pwd
-  display the current location
+  Shows the current location.
+  Remark: ``pwd`` stands for “print working directory”.
 
 ls
-  list all the locations that can be accessed from the current 
-  location
-
-
-Reminder
-========
+  Lists the locations that are currently accessible.
 
 gash reset
-  restart the current mission from the start
+  Lets you restart the mission from the beginning.
