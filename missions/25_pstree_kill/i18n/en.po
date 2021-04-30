@@ -41,3 +41,6 @@ msgstr ""
 
 msgid "cheese"
 msgstr "cheese"
+
+msgid "Did you eat some cheese?"
+msgstr "Did you eat some cheese?"

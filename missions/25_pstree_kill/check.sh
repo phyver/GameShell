@@ -8,15 +8,15 @@ _local_check() {
     sleep 1
     echo .
 
-    #TODO : il faudrait aussi vérifier que les fromages sont encore là !!!
-    local poison=$(find "$(eval_gettext '$GASH_HOME/Castle/Kitchen')" -name "*_$(gettext "rat_poison")")
+    local kitchen=$(eval_gettext '$GASH_HOME/Castle/Kitchen')
+    local poison=$(ls "$kitchen"/*_"$(gettext "rat_poison")" 2>/dev/null)
     if [ -n "$poison" ]
     then
         echo "$(gettext "There still is some rat poison in the kitchen!")"
         return 1
     fi
 
-    poison=$(find "$(eval_gettext '$GASH_HOME/Castle/Kitchen')" -name ".*_$(gettext "rat_poison")")
+    poison=$(ls "$kitchen"/.*_"$(gettext "rat_poison")" 2>/dev/null)
     if [ -n "$poison" ]
     then
         echo "$(gettext "There still is some rat poison hidden in the kitchen!")"
@@ -34,8 +34,16 @@ _local_check() {
         return 1
     fi
 
-    # TODO check fork skinner.sh and linguini.sh
+    cd "$kitchen"
+    sort "$GASH_MISSION_DATA"/cheese-? | uniq > "$GASH_MISSION_DATA"/cheese-generated
+    ls {,.}*_"$(gettext "cheese")" 2>/dev/null | sort | uniq > "$GASH_MISSION_DATA"/cheese-present
+    local nb=$(comm -1 -3 "$GASH_MISSION_DATA"/cheese-present "$GASH_MISSION_DATA"/cheese-generated | wc -l)
 
+    if [ "$nb" -gt 1 ]
+    then
+        echo "$(gettext "Did you eat some cheese?")"
+        return 1
+    fi
     return 0
 }
 
