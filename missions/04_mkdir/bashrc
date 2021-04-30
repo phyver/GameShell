@@ -1,2 +1,1 @@
-export GASH_CABIN="$(eval_gettext "\$GASH_HOME/Forest")/$(gettext "Cabin")"
-export GASH_CHEST="$GASH_CABIN/$(gettext "Chest")"
+export GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest')/$(gettext "Cabin")/$(gettext "Chest")"
