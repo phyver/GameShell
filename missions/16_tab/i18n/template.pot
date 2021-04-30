@@ -26,3 +26,7 @@ msgstr ""
 #, sh-format
 msgid ".Long $r1 Corridor $r2"
 msgstr ""
+
+#, sh-format
+msgid ".Long $r1 Corridor $r2"
+msgstr ""
