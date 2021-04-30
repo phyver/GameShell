@@ -259,7 +259,7 @@ Do you want to continue this game? [Y/n]') " r
 
 
   # Message d'accueil.
-  clear
+  [ "$GASH_MODE" = "DEBUG" ] || clear
   echo "$(gettext "======== Initialisation of GameShell ========")"
 
   make_index "$@" 2> /dev/null | sed "s;$GASH_MISSIONS;.;" > "$GASH_DATA/index.txt"
