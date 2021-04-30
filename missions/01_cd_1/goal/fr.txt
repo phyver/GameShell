@@ -8,17 +8,17 @@ Commandes utiles
 ================
 
 cd LIEU
-  permet de se déplacer dans un lieu
+  Change de lieu.
 
 pwd
-  affiche la position actuelle
+  Affiche la position actuelle.
 
 ls
-  affiche la liste des lieux accessibles depuis la position actuelle
+  Affiche la liste des lieux accessibles depuis la position actuelle.
 
 
 Rappel
 ======
 
 gash reset
-  reinitialise la mission en cours
+  Reinitialise la mission en cours.

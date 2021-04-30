@@ -12,17 +12,17 @@ Commandes utiles
 ================
 
 find
-  cherche des fichiers à partir du répertoire courant
+  Cherche des fichiers à partir du répertoire courant.
   Les conditions peuvent porter sur le nom des fichiers, leur 
   taille, leur date de création, etc.
 
 grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
-  recherche une chaine parmi les fichiers
+  Recherche une chaine parmi les fichiers.
   Parmi les options, vous avez notamment
     -l  qui affiche juste le nom des fichiers contenant la chaine
 
 xargs CMD
-  lit des lignes sur l'entrée standard, et exécute la commande CMD 
-  LIGNE1 LIGNE3 ... LIGNEn
+  Lit des lignes sur l'entrée standard, et exécute la commande CMD 
+  LIGNE1 LIGNE3 ... LIGNEn.
   Cette commande est particulièrement utile derrière une redirection 
   "|"

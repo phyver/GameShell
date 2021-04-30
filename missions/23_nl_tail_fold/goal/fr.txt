@@ -26,7 +26,6 @@ cat FICHIER
 
 fold FICHIER
   Ajoute des retours chariots sur lignes trop longues.
-
   Si FICHIER est omis, la commande agit sur l'entrée standard.
 
   Options utiles :
@@ -35,12 +34,10 @@ fold FICHIER
 
 nl FICHIER
   Affiche les lignes d'un fichier en ajoutant leur numéro de ligne.
-
   Si FICHIER est omis, la commande agit sur l'entrée standard.
 
 tail -n K FICHIER
   Affiche les K dernières lignes du fichier.
-
   Si FICHIER est omis, la commande agit sur l'entrée standard.
 
 CMD1 | CMD2

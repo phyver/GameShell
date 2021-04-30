@@ -10,11 +10,12 @@ Commandes utiles
 ================
 
 CMD  >  FICHIER
-  le résultat de la commande CMD est écrit dans le fichier FICHIER 
-  au lieu d'être affiché sur la sortie standard (l'écran)
+  Envoie le résultat de la commande CMD dans le fichier au lieu de 
+  l'afficher sur la sortie standard (l'écran).
 
 less FICHIER
-  affiche un fichier page par page
+  Affiche un fichier page par page.
+
   Les touches importantes sont
     Espace    passer à la page suivante
     q         quitter

@@ -24,20 +24,22 @@ Par défaut, on ne peut pas différencier ces affichages.
 On peut par contre rediriger les deux affichages indépendamment.
 
 grep CHAINE FICHIER1 ... FICHIERn
-  recherche une chaine dans les fichiers et affiche les lignes 
-  correspondantes options intéressantes :
+  Recherche une chaine dans les fichiers et affiche les lignes 
+  correspondantes.
+
+  Options intéressantes :
     -l : n'affiche pas les lignes mais seulement le nom des fichiers
-         qui contiennent la chaine
-    -i : ne différencie pas les majuscules et minuscules
+         qui contiennent la chaine,
+    -i : ne différencie pas les majuscules et minuscules.
 
 CMD  >  FICHIER
-  le résultat de la commande CMD est écrit dans le fichier FICHIER 
-  au lieu d'être affiché sur la sortie standard (STDOUT)
+  Envoie le résultat de la commande CMD dans le fichier au lieu de 
+  l'afficher sur la sortie standard.
 
 CMD  2>  FICHIER
-  les erreurs de la commande CMD sont écrites dans le fichier 
-  FICHIER au lieu d'être affichées sur la sortie d'erreurs (STDERR)
+  Envoie les messages d'erreurs de la commande CMD dans le fichier 
+  au lieu de l'afficher sur la sortie d'erreurs.
 
 /dev/null
-  fichier "virtuel" qui fait office de trou noir : tout ce qui y est 
-  envoyé est ignoré
+  Fichier "virtuel" qui fait office de trou noir : tout ce qui y est 
+  envoyé est ignoré.

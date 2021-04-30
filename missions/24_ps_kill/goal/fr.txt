@@ -9,14 +9,14 @@ Trouvez et tuez le générateur de chats, avant de supprimer tous les
 chats cachés dans le garde manger.
 
 NOTE : le générateur de chat est un processus, alors que les chats 
-sont des fichiers...
+sont des fichiers.
 
 
 Commandes utiles
 ================
 
 ps
-  affiche la liste des processus lancés par le shell
+  Affiche la liste des processus lancés par le shell.
 
 kill N
-  tue le processus dont le numéro ("PID") est N
+  Tue le processus dont le numéro ("PID") est N.

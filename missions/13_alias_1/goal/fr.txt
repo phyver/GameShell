@@ -17,4 +17,4 @@ Commandes utiles
 
 alias NOM='CMD'
   NOM est une chaine de caractères (courte), qui sera remplacée par 
-  la commande CMD (longue)
+  la commande CMD (longue).

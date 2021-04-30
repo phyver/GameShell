@@ -1,9 +1,8 @@
 Objectif
 ========
 
-D'ailleurs, je pense que tous les ornements de l'entrée du château 
-sont très jolis. Comme je ne peux pas les retirer d'ici, je voudrais 
-une copie de ces ornements dans mon coffre.
+Tous les ornements de l'entrée du château sont d'ailleurs jolis. 
+Faites une copie dans votre coffre.
 
 
 Rappel
@@ -21,8 +20,7 @@ Rappel
   Par exemple, si le répertoire contient
       Fichier-1 Dossier-1 fichier-14 lustucru
   alors
-    *     -->  Fichier-1 Dossier-1 fichier-14 
-               lustucru
+    *     -->  Fichier-1 Dossier-1 fichier-14 lustucru
     *1    -->  Fichier-1 Dossier-1
     *s*   -->  Dossier-1 lustucru
     x*    -->  erreur, aucun fichier ne correspond

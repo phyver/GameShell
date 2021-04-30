@@ -15,13 +15,13 @@ Commandes utiles
 ================
 
 grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
-  filtre les lignes du fichier et ne conserve que celles qui 
-  contiennent la chaine
+  Filtre les lignes du fichier et ne conserve que celles qui 
+  contiennent la chaine.
   Si aucun fichier n'est spécifié, la commande utilise stdin.
 
   Option intéressante :
     -v : inverse la condition, les lignes conservées sont celle qui 
-    ne contiennent pas la chaine
+    ne contiennent pas la chaine.
 
 wc [FICHIER]
   Compte le nombre de lignes/mots/lettres dans un fichier. Si aucun 

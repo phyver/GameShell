@@ -1,24 +1,23 @@
 Objectif
 ========
 
-En me promenant au premier étage du donjon, je me suis arrêté 
-devant de superbes tableaux. Je suis moi même un amateur d'art.
-Ajoutez une copie (même nom, même contenu) du plus vieux de ces 
-tableaux à votre coffre.
+Au premier étage du donjon se trouvent de superbes tableaux. Ajoutez 
+une copie (même nom, même contenu) du plus vieux de ces tableaux à 
+votre coffre.
 
 
 Objectif secondaire
 -------------------
 
-Admirez vous aussi les trois tableaux.
+Admirez aussi les trois tableaux.
 
 
 Commandes utiles
 ================
 
 ls -l
-  affiche la liste des fichiers avec de nombreuses informations, 
-  incluant la date de modification
+  Affiche la liste des fichiers avec de nombreuses informations, 
+  incluant la date de modification.
 
 cat FICHIER
-  affiche le contenu du fichier
+  Affiche le contenu du fichier.

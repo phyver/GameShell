@@ -8,7 +8,7 @@ fichier journal.
 Détails
 -------
 
-Pour éditer le journal depuis la cave, ou la salle au trésor avec 
+Pour éditer le journal depuis la cave ou la salle au trésor avec 
 ``nano``, il faut donner le chemin complet du journal : 
 "~/Foret/.../.../journal.txt"
 
@@ -24,9 +24,9 @@ Commandes utiles
 ================
 
 nano FICHIER
-  édite le fichier dans le terminal
+  Édite le fichier dans le terminal.
   (Si le fichier n'existe pas, il sera créé.)
 
 alias NOM='CMD'
   NOM est une chaine de caractères (petite), qui sera remplacée par 
-  la commande CMD (longue)
+  la commande CMD (longue).
