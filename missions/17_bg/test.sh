@@ -23,6 +23,6 @@ history -s "xeyes"
 gash assert check true
 history -d -2--1
 
-killall -q -9 xeyes
+ps -e | awk '/xeyes/ {print $1}' | xargs kill -9 2> /dev/null
 
 

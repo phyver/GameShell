@@ -1,2 +1,2 @@
 rm -f "$GASH_MISSION_DATA/cat-generator"
-killall -s SIGKILL -q cat-generator
+ps -e | awk '/cat-generator/ {print $1}' | xargs kill -9 2> /dev/null
