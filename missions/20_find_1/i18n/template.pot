@@ -51,3 +51,7 @@ msgstr ""
 #, sh-format
 msgid "$GASH_HOME/Botanical_garden/Shed"
 msgstr ""
+
+#, sh-format
+msgid "Coin '$file' in your chest is invalid!"
+msgstr ""
