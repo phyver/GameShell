@@ -95,12 +95,20 @@ msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
 msgstr "Problème: _gash_assert_check n'accepte que true' et 'false' comme argument"
 
 #, sh-format
-msgid "test $_NB_TESTS failed"
-msgstr "test $_NB_TESTS échoué"
+msgid "test $NB_TESTS failed"
+msgstr "test $NB_TESTS échoué"
 
 #, sh-format
 msgid "Error: mission $MISSION_NB doesn't have a test script."
 msgstr "Erreur : la mission $MISSION_NB n'a pas de script de test."
+
+#, sh-format
+msgid "$NB_TESTS successful tests"
+msgstr "$NB_TESTS tests passés avec succès"
+
+#, sh-format
+msgid "$NB_ERRORS errors out of $NB_TESTS tests"
+msgstr "$NB_ERRORS erreurs sur $NB_TESTS tests"
 
 # help file
 #, sh-format
@@ -173,7 +181,7 @@ msgstr ""
 "\n"
 "    $tarfile\n"
 "\n"
-"pour être sûr que la sauvegarde est correcte."
+"pour être sûr que la sauvegarde est correcte.\n"
 
 msgid "command 'goto' requires a mission number as argument"
 msgstr ""

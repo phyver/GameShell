@@ -93,12 +93,20 @@ msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
 msgstr "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
 
 #, sh-format
-msgid "test $_NB_TESTS failed"
-msgstr "test $_NB_TESTS failed"
+msgid "test $NB_TESTS failed"
+msgstr "test $NB_TESTS failed"
 
 #, sh-format
 msgid "Error: mission $MISSION_NB doesn't have a test script."
 msgstr "Error: mission $MISSION_NB doesn't have a test script."
+
+#, sh-format
+msgid "$NB_TESTS successful tests"
+msgstr "$NB_TESTS successful tests"
+
+#, sh-format
+msgid "$NB_ERRORS errors out of $NB_TESTS tests"
+msgstr "$NB_ERRORS errors out of $NB_TESTS tests"
 
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-help/en.txt"
