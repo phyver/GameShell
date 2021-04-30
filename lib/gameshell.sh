@@ -502,47 +502,47 @@ _gash_HELP() {
 _gash_save() {
   if jobs | grep -iq stopped
   then
-    cat <<EOM
-ATTENTION, vous avez des tâches en pause...
-Ces processus vont être stoppés.
-(Vous pouvez obtenir la liste de ces tâches avec
-$ jobs -s
-)
-Les changements non enregistrés ne seront pas sauvés.
-
-Êtes-vous sûr de vouloir sauver ? [o/N]
-
-EOM
-    read -er r
-    if [ "$r" != "o" ] &&  [ "$r" != "O" ]
-    then
-      return
-    fi
+    while true
+    do
+      read -erp "$(gettext "NOTE, there are stopped jobs in your session.
+Those processes will be terminated.
+You can get the list of those jobs with
+    \$ jobs -s
+Do you still want to save and quit? [y/N]") " r
+      if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] ||  [ "$r" = "$(gettext "N")" ]
+      then
+        return
+      elif [ "$r" = "$(gettext "y")" ] ||  [ "$r" = "$(gettext "Y")" ]
+      then
+        break
+      fi
+    done
+    kill -9 $(jobs -ps)
   fi
 
   _log_action "$MISSION_NB" "SAVE"
 
   tarfile=$REAL_HOME/GameShell_$(whoami)-SAVE.tgz
-  tar -zcf "$tarfile" --exclude=".git*" -C "$GASH_BASE/.." "$(basename "$GASH_BASE")"
-  cat <<EOM
-******************************************************
-******************************************************
+  if tar -zcf "$tarfile" --exclude=".git*" -C "$GASH_BASE/.." "$(basename "$GASH_BASE")"
+  then
+    echo "$(eval_gettext "An archive containing your current game has been saved to
 
-Une archive contenant l'état courant a été créée dans
-votre répertoire personnel. Le fichier se trouve ici :
+    \$tarfile
 
-$tarfile
-
-Vous pouvez transférer ce fichier sur un autre
-ordinateur, à la racine de votre répertoire personnel,
-et rétablir votre sauvegarde avec la commande
-
-$ tar -zxvf $(basename "$tarfile")
-
-******************************************************
-******************************************************
-EOM
+You can transfer and extract this file, and restart your game
+with the start.sh script included therein.")"
   exit 0
+  else
+    echo
+    color_echo red "$(eval_gettext "Possible failure while creating save file.")"
+    echo "$(eval_gettext "Check the file
+
+    \$tarfile
+
+to make sure everything is OK.
+")"
+    return 1
+  fi
 }
 
 _gash_protect() {
