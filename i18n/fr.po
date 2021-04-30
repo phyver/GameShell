@@ -183,8 +183,11 @@ msgid "Error: command '$cmd' is only available in debug mode."
 msgstr ""
 
 #, sh-format
-msgid "unkwnown command: $cmd"
-msgstr "commande inconnue : $cmd"
+msgid "unkwnown gash command $cmd"
+msgstr "commande gash inconnue $cmd"
+
+msgid "use one of the following commands:"
+msgstr "utilisez une des commandes suivantes"
 
 #, sh-format
 msgid ""

@@ -153,7 +153,10 @@ msgid "Error: command '$cmd' is only available in debug mode."
 msgstr ""
 
 #, sh-format
-msgid "unkwnown command: $cmd"
+msgid "unkwnown gash command $cmd"
+msgstr ""
+
+msgid "use one of the following commands:"
 msgstr ""
 
 #, sh-format
