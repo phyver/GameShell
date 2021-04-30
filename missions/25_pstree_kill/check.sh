@@ -23,12 +23,12 @@ _local_check() {
         return 1
     fi
 
-    nbp=$(ps ax | grep "generator" | wc -l)
-    if [ "$nbp" -gt 4 ] # 4, because there is the grep process
+    nbp=$(ps -e | grep "generator" | wc -l)
+    if [ "$nbp" -gt 3 ]
     then
         echo "$(gettext "Are you sure you killed all the rat poison generators?")"
         return 1
-    elif [ "$nbp" -lt 4 ] # 4, because there is the grep process
+    elif [ "$nbp" -lt 3 ]
     then
         echo "$(gettext "Did you kill some cheese generator?")"
         return 1
