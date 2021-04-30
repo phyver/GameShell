@@ -24,9 +24,5 @@ msgid "Pffft... You are back to the beginning, in front of the castle..."
 msgstr "Pffft... You are back to the beginning, in front of the castle..."
 
 #, sh-format
-msgid ".Long $r1 Corridor $r2"
-msgstr ".Long $r1 Corridor $r2"
-
-#, fuzzy, sh-format
 msgid ".Long $r1 Corridor $r2"
 msgstr ".Long $r1 Corridor $r2"
