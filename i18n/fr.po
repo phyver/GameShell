@@ -80,7 +80,7 @@ msgstr "La mission $MISSION_NB a déjà été réussie !"
 
 #, sh-format
 msgid "Mission $MISSION_NB has been successfully completed!"
-msgstr "La mission $MISSION_NB a été vérifiée avec succès."
+msgstr "Vous avez réussi la mission $MISSION_NB !"
 
 #, sh-format
 msgid "$MISSION_DIR/treasure-msg/en.txt"
@@ -183,12 +183,12 @@ msgstr ""
 "\n"
 "pour être sûr que la sauvegarde est correcte.\n"
 
-msgid "command 'goto' requires a mission number as argument"
-msgstr ""
+msgid "The 'goto' command requires a mission number as argument."
+msgstr "La commande 'goto' a besoin d'un nombre en argument."
 
 #, sh-format
 msgid "Error: command '$cmd' is only available in debug mode."
-msgstr ""
+msgstr "Erreur : la command '$cmd' est seulement disponible on mode debug."
 
 #, sh-format
 msgid "unkwnown gash command $cmd"
@@ -273,3 +273,7 @@ msgid ""
 msgstr ""
 "Aucune mission trouvée !\n"
 "Abandon..."
+
+#, fuzzy
+msgid "command 'goto' requires a mission number as argument"
+msgstr "La commande 'goto' a besoin d'un nombre en argument."
