@@ -14,19 +14,20 @@ Commandes utiles
 ================
 
 find CONDITION
-  cherche des fichiers à partir du répertoire courant
+  Cherche des fichiers à partir du répertoire courant.
+
   Les conditions peuvent porter sur le nom des fichiers, leur 
   taille, leur date de création, etc.
   Une condition intéressante est :
     -type TYPE
 
 cat FICHIER
-  affiche tout le contenu d'un fichier sur le terminal
+  Affiche tout le contenu d'un fichier sur le terminal.
 
 man CMD
-  consulte l'aide de la commande CMD
+  Consulte l'aide de la commande CMD.
 
-  touches utilisées par la commande "man"
+  Touches utilisées par la commande "man"
     q           quitter
     Space       faire défiler une page
     / CHAINE    rechercher une chaine

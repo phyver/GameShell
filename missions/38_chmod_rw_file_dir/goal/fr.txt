@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Le coffre fort dans la salle du trône contient la couronne du roi.
+Le coffre-fort dans la salle du trône contient la couronne du roi.
 Vous devez la dérober et la stocker dans votre coffre.
 
 Aussi, au bas de la couronne est inscrite une séquence magique de 3 
@@ -21,5 +21,3 @@ chmod [OPTIONS] FICHIER
 
   Consultez la page de manuel pour découvrir quelles options vous 
   pouvez utiliser.
-
-

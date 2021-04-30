@@ -2,7 +2,7 @@ Objectif
 ========
 
 Retrouvez la pièce d'argent dans le (petit) labyrinthe caché dans le 
-jardin et déplacer la dans votre coffre.
+jardin et déplacez la dans votre coffre.
 Le jardin botanique se trouve devant le château.
 
 
@@ -10,11 +10,12 @@ Commandes utiles
 ================
 
 ls -R
-  affiche la liste des fichiers, y compris dans les sous-répertoires
+  Affiche la liste des fichiers, y compris dans les 
+  sous-répertoires.
 
 tree
-  affiche l'arborescence des fichiers et répertoires depuis le 
-  répertoire courant
+  Affiche l'arborescence des fichiers et répertoires depuis le 
+  répertoire courant.
 
   NOTE : la commande "tree" n'est pas standard et pas toujours 
   installée par défaut.

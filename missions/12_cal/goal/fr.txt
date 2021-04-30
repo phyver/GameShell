@@ -11,7 +11,7 @@ Commandes utiles
 ================
 
 cal
-  affiche en petit calendrier du mois courant
+  Affiche en petit calendrier du mois courant.
 
 cal YYYY
-  affiche en petit calendrier pour l'année YYYY
+  Affiche en petit calendrier pour l'année YYYY.

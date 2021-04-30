@@ -14,8 +14,8 @@ Commandes utiles
 ================
 
 cd -
-  retourne dans le lieu précédent
+  Retourne dans le lieu précédent.
 
 cd ..
-  se déplace au lieu qui se trouve "avant" le lieu actuel dans la 
-  liste donnée par ``pwd``
+  Se déplace dans le lieu qui se trouve "avant" le lieu actuel dans 
+  la liste donnée par ``pwd``.

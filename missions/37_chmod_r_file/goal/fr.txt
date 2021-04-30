@@ -5,7 +5,7 @@ Il parait que le roi garde le code secret de son coffre-fort inscrit
 sur un bout de papier dans sa chambre.
 Trouvez ce code secret.
 
-NOTE : le roi a probablement essayé de rendre ce papier illisible ! 
+NOTE : le roi a probablement essayé de rendre ce papier illisible !
 
 
 Commandes utiles
@@ -21,4 +21,3 @@ chmod [OPTIONS] FICHIER
 
   Consultez la page de manuel pour découvrir quelles options vous 
   pouvez utiliser.
-

@@ -20,8 +20,7 @@ Commandes utiles
   Par exemple, si le répertoire contient
       Fichier-1 Dossier-1 fichier-14 lustucru
   alors
-    *     -->  Fichier-1 Dossier-1 fichier-14 
-               lustucru
+    *     -->  Fichier-1 Dossier-1 fichier-14 lustucru
     *1    -->  Fichier-1 Dossier-1
     *s*   -->  Dossier-1 lustucru
     x*    -->  erreur, aucun fichier ne correspond

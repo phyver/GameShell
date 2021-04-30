@@ -10,4 +10,4 @@ Commandes utiles
 ================
 
 rm FICHIER1 FICHIER2 ... FICHIERn
-  supprime (définitivement) des fichiers
+  Supprime (définitivement) des fichiers.

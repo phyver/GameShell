@@ -1,7 +1,7 @@
 Objectif
 ========
 
-1/ Lancez la commande ``xeyes`` puis la stopper.
+1/ Lancez la commande ``xeyes`` puis stoppez la.
 2/ Lancez la commande ``xeyes`` en tâche de fond.
 
 
@@ -9,11 +9,11 @@ Commandes utiles
 ================
 
 xeyes
-  affiche deux yeux qui suivent le mouvement de la souris
+  Affiche deux yeux qui suivent le mouvement de la souris.
 
 CMD &
-  lance la commande CMD en tâche de fond
+  Lance la commande CMD en tâche de fond.
 
 Control-c
-  cette combinaison de touche permet en général de stopper la 
-  commande en cours
+  Cette combinaison de touche permet en général de stopper la 
+  commande en cours.

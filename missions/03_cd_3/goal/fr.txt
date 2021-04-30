@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Retourner au point de départ puis aller dans la salle du trône en 
+Retournez au point de départ puis allez dans la salle du trône en 
 utilisant seulement 2 commandes.
 
 NOTE : pour valider cette mission il faut que les conditions 
@@ -15,7 +15,7 @@ Commandes utiles
 ================
 
 cd
-  revient au lieu initial
+  Revient au lieu initial.
 
 cd LIEU1/LIEU2/LIEU3
-  fait plusieurs déplacements d'un seul coup
+  Fait plusieurs déplacements d'un seul coup.

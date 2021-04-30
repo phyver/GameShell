@@ -2,7 +2,7 @@ Objectif
 ========
 
 Retrouvez la pièce de bronze dans le (petit) labyrinthe caché dans 
-le jardin et déplacer la dans votre coffre.
+le jardin et déplacez la dans votre coffre.
 Le jardin botanique se trouve devant le château.
 
 Vous pouvez utiliser le gestionnaire de fichiers graphique si vous 

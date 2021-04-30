@@ -2,7 +2,7 @@ Objectif
 ========
 
 Retrouvez les pièces d'or dans le labyrinthe caché dans le jardin et 
-déplacer la dans votre coffre.
+déplacez la dans votre coffre.
 Le jardin botanique se trouve devant le château.
 
 
@@ -15,7 +15,7 @@ Commandes utiles
 ================
 
 find CONDITION
-  cherche des fichiers à partir du répertoire courant
+  Cherche des fichiers à partir du répertoire courant.
 
   Les conditions peuvent porter sur le nom des fichiers, leur 
   taille, leur date de création, etc.
@@ -24,9 +24,9 @@ find CONDITION
     -iname "MOTIF"
 
 man CMD
-  pour consulter l'aide de la commande CMD
+  Affiche l'aide de la commande CMD.
 
-  touches utilisées par la commande "man"
+  Touches utilisées par la commande "man"
     q           quitter une page d'aide
     Space       faire défiler une page
     / CHAINE    rechercher une chaine
