@@ -20,10 +20,12 @@ EOH
 
 
 first_unused_number() {
-    find "$GASH_BASE/missions/" -type d -name "*_*"     | \
-    sed -n '/.*\/\([0-9]*\)_[^/]*/p'                    | \
-    sed 's|.*/\([0-9]*\)_[^/]*|\1|'                     | \
-    sort -n                                             | \
+    cd "$GASH_BASE"/missions
+    find -name "check.sh"                   | \
+    sed 's|/check\.sh||'                    | \
+    sed 's|.*/\([^/]*\)|\1|'                | \
+    sed 's|\([0-9]*\)_.*|\1|'               | \
+    sort -n                                 | \
     awk 'BEGIN {N=1} /[0-9]+/ {if ($1 != N) {print N; exit 0;} N++}'
 }
 
@@ -79,6 +81,9 @@ EOF
 
     mkdir "$MISSION_DIR/goal/"
     cat <<'EOF' > "$MISSION_DIR"/goal/en.txt
+Mission goal
+============
+
 This file or one of its more complex variants (refer to the documentation) is
 required.
 
@@ -86,16 +91,22 @@ It is displayed in its entirety by the command
   $ gash show
 It should describe the goal of the mission.
 
-Note: if the __first_ line of this file is of the form
+Note: if the _first_ line of this file is of the form
 # variables: $VAR1 $VAR2
 those variables are substituted in the file.
+
+Useful commands
+===============
+
+gash check
+  Checks that the missions has been completed.
 EOF
 }
 
 new_init_file() {
     MISSION_DIR="$1"
 
-    cat <<'EOF' > "$MISSION_DIR"/init.txt
+    cat <<'EOF' > "$MISSION_DIR"/init.sh
 #!/bin/bash
 
 # This file is not required: it is sourced every time the mission is started.
@@ -139,8 +150,8 @@ then
     unset ...
     true
 else
-   unset ...
-   false
+    unset ...
+    false
 fi
 EOF
 }
@@ -223,6 +234,29 @@ ignored.)
 EOF
 }
 
+new_test_file() {
+    MISSION_DIR="$1"
+
+    cat <<'EOF' > "$MISSION_DIR"/_test.sh
+#!/bin/bash
+
+#
+# This file is not required: it is sourced by the command "gash test".
+# You can use some special commands
+# gash assert check true
+# gash assert check false
+# gash assert CONDITION
+# to check that specific conditions are satisfied.
+#
+# Since it is sourced, it may define environment variables if you really need
+# them, but it should "unset" any local variable it has created.
+#
+# NOTE that the commands "gash test" and "gash assert" are only available in
+# debug mode
+#
+EOF
+}
+
 new_template_file() {
     cat <<'EOF'
 #, fuzzy
@@ -302,6 +336,7 @@ new_mission_without_gettext() {
     new_clean_file "$MISSION_DIR"
     new_treasure_file "$MISSION_DIR"
     new_treasure-msg_file "$MISSION_DIR"
+    new_test_file "$MISSION_DIR"
 }
 
 
@@ -328,8 +363,10 @@ new_mission_with_gettext() {
     new_clean_file "$MISSION_DIR"
     new_treasure_file "$MISSION_DIR"
     new_gettext_treasure-msg_file "$MISSION_DIR"
+    mkdir -p "$MISSION_DIR"/i18n/
     new_template_file > "$MISSION_DIR"/i18n/template.pot
     new_makefile > "$MISSION_DIR"/Makefile
+    new_test_file "$MISSION_DIR"
 }
 
 
