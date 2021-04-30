@@ -4,5 +4,5 @@
 safe="$(eval_gettext '$GASH_HOME/Castle/Main_building/Throne_room')/$(gettext "Safe")"
 mkdir -p "$safe"
 chmod 755 "$safe"
-chmod 644 "$safe/$(gettext "crown")"
+chmod -f 644 "$safe/$(gettext "crown")"
 unset safe
