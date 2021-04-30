@@ -102,6 +102,60 @@ msgstr ""
 msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
 msgstr ""
 
+msgid ""
+"NOTE, there are stopped jobs in your session.\n"
+"Those processes will be terminated.\n"
+"You can get the list of those jobs with\n"
+"    $ jobs -s\n"
+"Do you still want to save and quit? [y/N]"
+msgstr ""
+
+msgid "N"
+msgstr ""
+
+msgid "n"
+msgstr ""
+
+msgid "Y"
+msgstr ""
+
+msgid "y"
+msgstr ""
+
+#, sh-format
+msgid ""
+"An archive containing your current game has been saved to\n"
+"\n"
+"    $tarfile\n"
+"\n"
+"You can transfer and extract this file, and restart your game\n"
+"with the start.sh script included therein."
+msgstr ""
+
+#, sh-format
+msgid "Possible failure while creating save file."
+msgstr ""
+
+#, sh-format
+msgid ""
+"Check the file\n"
+"\n"
+"    $tarfile\n"
+"\n"
+"to make sure everything is OK.\n"
+msgstr ""
+
+msgid "command 'goto' requires a mission number as argument"
+msgstr ""
+
+#, sh-format
+msgid "Error: command '$cmd' is only available in debug mode."
+msgstr ""
+
+#, sh-format
+msgid "unkwnown command: $cmd"
+msgstr ""
+
 #, sh-format
 msgid ""
 "Unknown system: OSTYPE=$OSTYPE.\n"
@@ -140,18 +194,6 @@ msgid "You won't be able to change this information."
 msgstr ""
 
 msgid "Is this information correct? [Y/n]"
-msgstr ""
-
-msgid "Y"
-msgstr ""
-
-msgid "y"
-msgstr ""
-
-msgid "N"
-msgstr ""
-
-msgid "n"
 msgstr ""
 
 msgid ""

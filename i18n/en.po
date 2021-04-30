@@ -108,6 +108,76 @@ msgstr "$GASH_BASE/i18n/gameshell-help/en.txt"
 msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-HELP/en.txt"
 
+msgid ""
+"NOTE, there are stopped jobs in your session.\n"
+"Those processes will be terminated.\n"
+"You can get the list of those jobs with\n"
+"    $ jobs -s\n"
+"Do you still want to save and quit? [y/N]"
+msgstr ""
+"NOTE, there are stopped jobs in your session.\n"
+"Those processes will be terminated.\n"
+"You can get the list of those jobs with\n"
+"    $ jobs -s\n"
+"Do you still want to save and quit? [y/N]"
+
+msgid "N"
+msgstr "N"
+
+msgid "n"
+msgstr "n"
+
+msgid "Y"
+msgstr "Y"
+
+msgid "y"
+msgstr "y"
+
+#, sh-format
+msgid ""
+"An archive containing your current game has been saved to\n"
+"\n"
+"    $tarfile\n"
+"\n"
+"You can transfer and extract this file, and restart your game\n"
+"with the start.sh script included therein."
+msgstr ""
+"An archive containing your current game has been saved to\n"
+"\n"
+"    $tarfile\n"
+"\n"
+"You can transfer and extract this file, and restart your game\n"
+"with the start.sh script included therein."
+
+#, sh-format
+msgid "Possible failure while creating save file."
+msgstr ""
+
+#, sh-format
+msgid ""
+"Check the file\n"
+"\n"
+"    $tarfile\n"
+"\n"
+"to make sure everything is OK.\n"
+msgstr ""
+"Check the file\n"
+"\n"
+"    $tarfile\n"
+"\n"
+"to make sure everything is OK.\n"
+
+msgid "command 'goto' requires a mission number as argument"
+msgstr ""
+
+#, sh-format
+msgid "Error: command '$cmd' is only available in debug mode."
+msgstr ""
+
+#, sh-format
+msgid "unkwnown command: $cmd"
+msgstr "unkwnown command: $cmd"
+
 #, sh-format
 msgid ""
 "Unknown system: OSTYPE=$OSTYPE.\n"
@@ -151,18 +221,6 @@ msgstr "You won't be able to change this information."
 
 msgid "Is this information correct? [Y/n]"
 msgstr "Is this information correct? [Y/n]"
-
-msgid "Y"
-msgstr "Y"
-
-msgid "y"
-msgstr "y"
-
-msgid "N"
-msgstr "N"
-
-msgid "n"
-msgstr "n"
 
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
