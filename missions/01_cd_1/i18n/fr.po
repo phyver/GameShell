@@ -19,6 +19,5 @@ msgstr "$GASH_HOME/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_du_donjon"
 msgid "You are not at the top of the dungeon!"
 msgstr "Vous n'êtes pas en haut du donjon !"
 
-#, fuzzy
 msgid "You need to start over from the start."
 msgstr "Vous allez devoir recommencer du point de départ."
