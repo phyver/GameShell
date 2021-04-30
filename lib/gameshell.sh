@@ -612,7 +612,7 @@ gash() {
     "goto")
       if [ -z "$1" ]
       then
-        echo "$(gettext "command 'goto' requires a mission number as argument")" >&2
+        echo "$(gettext "The 'goto' command requires a mission number as argument.")" >&2
         return 1
       fi
 

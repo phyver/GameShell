@@ -232,6 +232,3 @@ msgid ""
 "No mission were found!\n"
 "Aborting"
 msgstr ""
-
-msgid "command 'goto' requires a mission number as argument"
-msgstr ""

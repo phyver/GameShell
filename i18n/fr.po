@@ -273,7 +273,3 @@ msgid ""
 msgstr ""
 "Aucune mission trouvée !\n"
 "Abandon..."
-
-#, fuzzy
-msgid "command 'goto' requires a mission number as argument"
-msgstr "La commande 'goto' a besoin d'un nombre en argument."
