@@ -115,3 +115,9 @@ msgstr ""
 #, sh-format
 msgid "That's the right answer, but you used $NB_CMD commands!"
 msgstr ""
+
+#, sh-format
+msgid ""
+"The command 'python3' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'python3')"
+msgstr ""

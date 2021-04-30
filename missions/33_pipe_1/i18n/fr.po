@@ -115,3 +115,11 @@ msgstr "Quelle est la dette du roi ? "
 #, sh-format
 msgid "That's the right answer, but you used $NB_CMD commands!"
 msgstr "C'est la bonne réponse, mais vous avez utilisé $NB_CMD commandes !"
+
+#, sh-format
+msgid ""
+"The command 'python3' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'python3')"
+msgstr ""
+"La commande 'python3' est nécessaire pour la mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: installez le paquet 'python3')"
