@@ -175,12 +175,12 @@ msgstr ""
 "\n"
 "to make sure everything is OK.\n"
 
-msgid "command 'goto' requires a mission number as argument"
-msgstr ""
+msgid "The 'goto' command requires a mission number as argument."
+msgstr "The 'goto' command requires a mission number as argument."
 
 #, sh-format
 msgid "Error: command '$cmd' is only available in debug mode."
-msgstr ""
+msgstr "Error: command '$cmd' is only available in debug mode."
 
 #, sh-format
 msgid "unkwnown gash command $cmd"
@@ -264,3 +264,7 @@ msgid ""
 msgstr ""
 "No mission were found!\n"
 "Aborting"
+
+#, fuzzy
+msgid "command 'goto' requires a mission number as argument"
+msgstr "The 'goto' command requires a mission number as argument."
