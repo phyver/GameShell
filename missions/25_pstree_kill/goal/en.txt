@@ -1,29 +1,31 @@
 Mission goal
 ============
 
-The rats have found a friend named Linguini, who installed some 
-device to distribute morsels of cheese in the kitchen.
+The rats have found a friend named Linguini, who has installed 
+a device to distribute cheese in the kitchen.
 
-Unfortunately, the chef, Skinner, installed some machines that 
-disseminate rat poison.
+Unfortunately, the chef, Skinner, has installed some machines 
+that disseminate rat poison.
 
 Kill the rat poison generators, but keep the cheese generators.
-Then, remove all the rat poison from the cellar.
+Then, remove all the rat poison from the kitchen.
 
-NOTE: do not kill Linguini or Felix.
+NOTE: do not kill Linguini or Skinner.
 
 
 Useful commands
 ===============
 
 pstree
-  show the list of processes, with the parent / child relationship
+  Print the list of processes with their parent / child 
+  relationship.
 
-  useful options
-    -p : show the processes' PID
-    $$ : only show the children of the current shell
+  Useful options:
+    -p   show the process identifier (PID) of all processes
+    $$   only show the children of the current shell
          ($$ cointains the PID of the current shell, it can be 
          replaced by any other PID)
 
 kill N
-  kill the process with number ("PID") N
+  Kill the process with number N.
+  Remark: N is called PID, or "process identifier".

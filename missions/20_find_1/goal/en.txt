@@ -1,32 +1,33 @@
 Mission goal
 ============
 
-Find the gold coins in the maze hidden in the garden and move it to 
-your chest.
-The botanical garden can be found in front of the castle.
+Find the gold coins in the maze hidden in the garden and move 
+them to your chest.
+The garden is situated in front of the castle.
 
-
-NOTE: the description of the ``find`` command is voluntarily very 
-short. You will need to look at the manual to get more information.
+NOTE: the description of the ``find`` command is deliberately 
+kept short. You will find more information in the manual.
 
 
 Useful commands
 ===============
 
 find CONDITION
-  search for file starting from the current working directory
+  Search for files satisfying the CONDITION in your current 
+  working directory.
 
-  Conditions restrict the files being searched, they can involve the 
-  name, the size, the modification date, etc.
-  Two interesting conditions are
-    -name "GLOB"
-    -iname "GLOB"
+  There are many possible conditions. They can constrain the
+  file names, size, modification date, etc. For example 
+    -name "PATTERN"
+  or
+    -iname "PATTERN"
+  are related to file names.
 
 man CMD
-  display the manual of the command
+  Display the manual of the command CMD.
 
-  important keybindings
-    q           quit
-    Space       scroll down one page
-    / STRING    search for the string in the manual
-    n           go to the next occurrence of the last search string
+  Important key bindings:
+    q           Quit
+    Space       Scroll down one page
+    / STRING    Search for the STRING in the manual
+    n           Find the next occurrence for the last search
