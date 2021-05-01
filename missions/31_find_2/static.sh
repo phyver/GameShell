@@ -1,3 +1,3 @@
-mkdir -p "$(eval_gettext '$GASH_HOME/Botanical_garden/.Maze')"
-mkdir -p "$(eval_gettext '$GASH_HOME/Botanical_garden/Orchard')"
-mkdir -p "$(eval_gettext '$GASH_HOME/Botanical_garden/Shed')"
+mkdir -p "$(eval_gettext '$GASH_HOME/Garden/.Maze')"
+mkdir -p "$(eval_gettext '$GASH_HOME/Garden/Orchard')"
+mkdir -p "$(eval_gettext '$GASH_HOME/Garden/Shed')"
