@@ -1,23 +1,23 @@
 Mission goal
 ============
 
-Find the silver coin in the (small) maze hidden in the garden and 
-move it to your chest.
-The botanical garden can be found in front of the castle.
+Find the silver coin in the small maze hidden in the garden 
+and move it to your chest.
+The garden is situated in front of the castle.
 
 
 Useful commands
 ===============
 
 ls -R
-  print the list of all files / directory, including those in 
-  sub-directories (recursively)
+  Print the list of all files / directory, including those in 
+  sub-directories (recursively).
 
 tree
-  print the tree of files and directory, starting from the current 
-  working directory
+  Print the tree of files and directories, starting from the 
+  current working directory.
 
-  NOTE: this command is not standard and not always installed by 
-  default.
+  NOTE: this command is not standard and not always installed 
+  by default.
 
   The option "-C" adds colors to the output of the command.

@@ -4,8 +4,8 @@ Mission goal
 Go back to the starting location and then go to the throne room 
 using only two commands.
 
-NOTE: to validate the mission the following conditions need to be 
-met
+NOTE: you may experiment with as many commands as you want, but
+to validate the mission the following conditions need to be met:
   - the second to last command takes you to the starting point,
   - the last command takes you directly to the throne room.
 
@@ -14,7 +14,7 @@ Useful commands
 ===============
 
 cd
-  move back to the starting location
+  Move back to the starting location.
 
 cd LOCATION1/LOCATION2/LOCATION3
-  make several moves in one command
+  Make several moves in one command.

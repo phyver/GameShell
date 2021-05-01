@@ -1,8 +1,8 @@
 Mission goal
 ============
 
-Remove all the spiders that hide in cellar, without touching the 
-lucky salamanders.
+Get rid of all the spiders that are hiding in the cellar. 
+Again, do not do not disturb the salamanders.
 
 
 Useful commands
@@ -10,13 +10,14 @@ Useful commands
 
 *
 ?
-  The "*" character is a wildcard for any string of character.
+  The "*" character stands in for any sequence of characters
+  (including an empty sequence).
 
-  The "? character is a wildcard for any single character.
+  The "?" character stands in for any single character.
 
   They can be used to denote lists of existing files.
 
-  For instance, if the folder contains
+  Example: if the current folder contains
       File-1 Folder-1 file-14 potato
   then
     *     -->  File-1 Folder-1 file-14 potato
