@@ -10,6 +10,7 @@ Définissez l'alias
 
 et vérifiez que cela rajoute une commande ``la`` qui affiche les 
 fichiers cachés.
+Ça tombe bien, il y a un joli caillou caché juste là où vous êtes.
 
 
 Commandes utiles
