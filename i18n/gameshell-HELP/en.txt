@@ -7,21 +7,20 @@ Commands specific to GameShell
 
   gash assert_check true/false [msg]    (DEBUG)
     check the current mission's goal has been achieved
-    if the result doesn't coincide with the expected 
-    result, display an error message
+    if the result doesn't coincide with the expected result, display 
+    an error message
 
   gash auto    (ADMIN)
-    source the current mission's automatic script, if 
-    it exists
+    source the current mission's automatic script, if it exists
 
   gash check
-    check whether the current mission's goal has been 
-    achieved or not
+    check whether the current mission's goal has been achieved or 
+    not
 
   gash exit
     quit GameShell
-    (you can start from the current mission by running 
-    the start.sh script with the "-C" flag)
+    (you can start from the current mission by running the start.sh 
+    script with the "-C" flag)
 
   gash goto N (ADMIN)
     directly go to mission N
@@ -32,9 +31,11 @@ Commands specific to GameShell
   gash help
     shorter help message
 
+  gash index
+    show list of missions, with their status
+
   gash pass    (ADMIN)
-    give up on the current mission and go to the next 
-    one
+    give up on the current mission and go to the next one
 
   gash protect
   gash unprotect
@@ -44,8 +45,8 @@ Commands specific to GameShell
     reset the current mission
 
   gash save
-    generate an archive suitable to start GameShell 
-    from the current mission
+    generate an archive suitable to start GameShell from the current 
+    mission
 
   gash show [N]
     show the current mission's goal
