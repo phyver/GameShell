@@ -29,6 +29,7 @@ _get_current_mission() {
   if [ -z "$n" ]
   then
     echo "1"
+    return 1
   else
     echo "$n"
   fi
@@ -40,6 +41,13 @@ _get_mission_dir() {
   local n=$1
   local dir=$(awk -v n="$n" -v DIR="$GASH_MISSIONS" '/^#/{next} /^$/{next} {N++} (N == n){print DIR "/" $0; exit}' "$GASH_DATA/index.txt")
   echo "$(REALPATH "$dir")"
+}
+
+# welcome message
+_gash_welcome() {
+  local msg_file=$(eval_gettext '$GASH_BASE/i18n/gameshell-welcome/en.txt')
+  [ -r "$msg_file" ] || return 1
+  parchment "$msg_file" Braid
 }
 
 # reset the bash configuration
@@ -171,6 +179,11 @@ _gash_start() {
   if [ -z "$1" ]
   then
     MISSION_NB=$(_get_current_mission)
+    if [ "$?" -eq 1 ]
+    then
+      _gash_welcome
+      read -erp "$(gettext "Press Enter")"
+    fi
   else
     MISSION_NB=$1
   fi
@@ -593,6 +606,9 @@ gash() {
       ;;
     "i" | "in" | "ind" | "inde" | "index")
       _gash_index
+      ;;
+    "w" | "we" | "wel" | "welc" | "welco" | "welcom" | "welcome")
+      _gash_welcome
       ;;
     "stat")
       awk -v GASH_UID="$GASH_UID" -f "$GASH_BIN/stat.awk" < "$GASH_DATA/missions.log"
