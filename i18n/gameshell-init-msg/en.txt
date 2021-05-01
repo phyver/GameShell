@@ -1,12 +1,10 @@
-
 Run the command
     $ gash show
-to discover the goal of your first mission.
+to discover your first mission.
 
-You can check the goal has been achieved with
+You can check the mission has been completed with
     $ gash check
 
 The command
     $ gash help
 displays the list of available (gash) commands.
-
