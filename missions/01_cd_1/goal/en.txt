@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-Go to the top of the dungeon.
+Go to the top of the main tower of the castle.
 
 
 Useful commands
