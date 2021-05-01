@@ -25,5 +25,5 @@ msgstr "Il reste des araignées dans la cave !"
 msgid "salamander"
 msgstr "salamandre"
 
-msgid "Hey! You removed the salamander!"
-msgstr "Hé ! Vous avez supprimé la salamandre !"
+msgid "Hey! You removed a salamander!"
+msgstr "Hé ! Vous avez supprimé une salamandre !"
