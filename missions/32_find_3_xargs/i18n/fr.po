@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/.Maze"
-msgstr "$GASH_HOME/Jardin_botanique/.Labyrinthe"
+msgid "$GASH_HOME/Garden/.Maze"
+msgstr "$GASH_HOME/Jardin/.Labyrinthe"
 
 msgid "diamond"
 msgstr "diamant"
@@ -48,9 +48,9 @@ msgid "stone"
 msgstr "cailloux"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/Orchard"
-msgstr "$GASH_HOME/Jardin_botanique/Verger"
+msgid "$GASH_HOME/Garden/Orchard"
+msgstr "$GASH_HOME/Jardin/Verger"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/Shed"
-msgstr "$GASH_HOME/Jardin_botanique/Cabanon"
+msgid "$GASH_HOME/Garden/Shed"
+msgstr "$GASH_HOME/Jardin/Cabanon"
