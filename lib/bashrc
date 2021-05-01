@@ -9,6 +9,7 @@ export HISTIGNORE=""
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 
+unset LS_COLORS
 
 # get this game's configuration
 [ -f "$GASH_CONFIG"/config.sh ] && source "$GASH_CONFIG"/config.sh
