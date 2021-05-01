@@ -45,19 +45,22 @@ parchment() {
     local P=$2
     [ -z "$P" ] && P=$(( 16#$(checksum "$GASH_UID:$MISSION_DIR" | cut -c 10-17) % 7 ))
     case "$P" in
-      0 | 1) P="Parchment";;
-      2) P="Parchment2";;
-      3) P="Parchment3";;
-      4) P="Parchment4";;
-      5) P="Scroll";;
-      6) P="Scroll2";;
+      0) P="Parchment1";;
+      1) P="Parchment2";;
+      2) P="Parchment3";;
+      3) P="Parchment4";;
+      4) P="Parchment5";;
+      5) P="Parchment6";;
+      6) P="Parchment7";;
+      7) P="Parchment8";;
+      8) P="Parchment9";;
     esac
     echo ""
     if [ -z "$file" ]
     then
-      python3 "$GASH_BIN/box8.py" -b $P
+      python3 "$GASH_BIN/box8.py" --center --box="$P"
     else
-      python3 "$GASH_BIN/box8.py" -b $P < "$file"
+      python3 "$GASH_BIN/box8.py" --center --box="$P" < "$file"
     fi
     echo ""
   else
