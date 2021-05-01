@@ -21,3 +21,7 @@ ps
 kill N
   Kill the process with number N.
   Remark: N is called PID, or "process identifier".
+
+Recall that wildcards "*" and "?" do not see hidden files. You need 
+to add an explicit dot at the start of the pattern to capture hidden 
+files.
