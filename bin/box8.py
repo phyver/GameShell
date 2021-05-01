@@ -29,28 +29,11 @@ def next_multiple(n, m):
         return n + m - tmp
 
 
-def normalize_text(text, margin=(0, 2, 0, 2), width=None, height=None, align=LALIGN, fill_char=" "):
+def normalize_text(text, width=None, fill_char=" "):
     if width is None:
         width = text_width(text)
-    m_top, m_right, m_bottom, m_left = margin
-    text = [""]*m_top + text + [""]*m_bottom
-    th = text_height(text)
-    if height is None:
-        height = th-m_top-m_bottom
-
-    if th < height:
-        if align == LALIGN:
-            text.extend([""] * (height-th))
-        elif align == RALIGN:
-            text = [""] * (height-th) + text
-        else:
-            h = (height-th) // 2
-            text = [""] * h + text
-            text.extend([""] * (height-th-h))
-
-    template = fill_char*m_left + "{:" + fill_char + align + str(width) + "}" + fill_char*m_right
     for i in range(len(text)):
-        text[i] = template.format(text[i])
+        text[i] = text[i].ljust(width, fill_char)
     return text
 
 
@@ -104,42 +87,58 @@ def make_box(text, margin=(0, 0, 0, 0),
     if isinstance(text, str):
         text = text.split("\n")
 
-    # width of the frame consisting of UM / LM blocks
-    UM_width = next_multiple(text_width(text) + m_right + m_left - np_right - np_left, w_UM)
-    nb_UM = UM_width // w_UM
-    tw = UM_width + np_right + np_left - m_right - m_left
+    text = normalize_text(text, fill_char=fill_char)
+    # add upper / lower margins
+    text = [""]*m_top + text + [""]*m_bottom
+    # add left / right margins
+    text = [fill_char*m_left + line + fill_char*m_right for line in text]
 
     # height of the frame consisting of the ML / MR blocks
-    ML_height = next_multiple(text_height(text) + m_top + m_bottom - np_top - np_bottom, text_height(ML))
+    ML_height = next_multiple(text_height(text) - np_top - np_bottom, text_height(ML))
     # nb_ML = ML_height // h_ML
-    th = ML_height + np_top + np_bottom     # FIXME: tw / th are not uniform!
+    th = ML_height + np_top + np_bottom
+    delta = th - len(text)
+    if align == LALIGN:
+        text.extend([""]*delta)
+    elif align == CENTER:
+        text = [""]*(delta//2) + text + [""]*(delta - delta//2)
+    else:
+        text = [""]*delta + text
 
-    text = normalize_text(text, margin=margin, width=tw, height=th, align=align, fill_char=fill_char)
+    # width of the frame consisting of UM / LM blocks
+    UM_width = next_multiple(text_width(text) - np_right - np_left, w_UM)
+    nb_UM = UM_width // w_UM
+    tw = UM_width + np_right + np_left
+    if align == LALIGN:
+        text = [line.ljust(tw, fill_char) for line in text]
+    elif align == CENTER:
+        text = [line.center(tw, fill_char) for line in text]
+    else:
+        text = [line.rjust(tw, fill_char) for line in text]
 
     # Left and Right parts
     Left = []
     Right = []
 
     for i in range(text_height(UL) - np_top):
-        Left.append(UL[i].rstrip(" ").ljust(w_UL, fill_char))
+        Left.append(UL[i].rstrip(" ").ljust(w_UL, " "))
         Right.append(UR[i])
 
     for i in range(text_height(UL) - np_top, text_height(UL)):
-        Left.append(UL[i].rstrip(" ").ljust(w_UL - np_left, fill_char))
+        Left.append(UL[i].rstrip(" ").ljust(w_UL - np_left, " "))
         Right.append(UR[i][np_right:])
 
     h = h_ML
-    # for i in range(text_height(text) - np_top - np_bottom):
     for i in range(ML_height):
-        Left.append(ML[i % h].rstrip(" ").ljust(w_UL - np_left, fill_char))
+        Left.append(ML[i % h].rstrip(" ").ljust(w_UL - np_left, " "))
         Right.append(MR[i % h][np_right:])
 
     for i in range(np_bottom):
-        Left.append(LL[i].rstrip(" ").ljust(w_UL - np_left, fill_char))
+        Left.append(LL[i].rstrip(" ").ljust(w_UL - np_left, " "))
         Right.append(LR[i][np_right:])
 
     for i in range(np_bottom, text_height(LL)):
-        Left.append(LL[i].rstrip(" ").ljust(w_UL, fill_char))
+        Left.append(LL[i].rstrip(" ").ljust(w_UL, " "))
         Right.append(LR[i])
 
     # Middle part
@@ -245,41 +244,6 @@ Ascii_box = {
     "UL": "+", "UM": "-", "UR": "+",
     "ML": "|",            "MR": "|",
     "LL": "+", "LM": "-", "LR": "+",
-    "neg_padding": (0, 0, 0, 0),
-    "default_margin": (0, 1, 0, 1),
-}
-
-Double_Ascii_box = {
-    "UL": [
-        "+--",
-        "| +"
-    ],
-    "UR": [
-        "--+",
-        "+ |"
-    ],
-    "UM": [
-        "-",
-        "-",
-    ],
-    "LL": [
-        "| +",
-        "+--",
-    ],
-    "LR": [
-        "+ |",
-        "--+",
-    ],
-    "LM": [
-        "-",
-        "-",
-    ],
-    "ML": [
-        "| |",
-    ],
-    "MR": [
-        "| |",
-    ],
     "neg_padding": (0, 0, 0, 0),
     "default_margin": (0, 1, 0, 1),
 }
@@ -433,7 +397,7 @@ Braid_box = {
         r"//\\",
     ],
     "neg_padding": (1, 0, 1, 0),
-    "default_margin": (0, 1, 0, 1),
+    "default_margin": (1, 1, 1, 1),
 }
 
 
@@ -611,7 +575,7 @@ Wavy_box = {
     "descr": "Normand Veilleux @ https://asciiart.website/index.php?art=art%20and%20design/borders",
 }
 
-Parchment_box = {
+Parchment1_box = {
     "UL": [
         r"      _____",
         r"    / \    ",
@@ -656,84 +620,7 @@ Parchment_box = {
     "descr": "dc @ https://www.asciiart.eu/art-and-design/borders"
 }
 
-Scroll_box = {
-    "UL": [
-        r" __^__ ",
-        r"( ___ )",
-    ],
-    "UR": [
-        r" __^__ ",
-        r"( ___ )",
-    ],
-    "UM": [
-        r" ",
-        r"-",
-    ],
-    "LL": [
-        r" |___| ",
-        r"(_____)",
-    ],
-    "LR": [
-        r" |___| ",
-        r"(_____)",
-    ],
-    "LM": [
-        r" ",
-        r"-",
-    ],
-    "ML": [
-        r" | / | ",
-    ],
-    "MR": [
-        r" | \ | ",
-    ],
-    "neg_padding": (0, 1, 1, 1),
-    "default_margin": (1, 2, 1, 2),
-    "descr": "coded by Thomas Jensen <boxes@thomasjensen.com> (boxes)",
-}
-
 Parchment2_box = {
-    "UL": [
-        r"     ___",
-        r"()==( ",
-        r"     '__",
-    ],
-    "UR": [
-        r"_     ",
-        r"(@==()",
-        r"_'|   ",
-    ],
-    "UM": [
-        r"_",
-        r" ",
-        r"_",
-    ],
-    "LL": [
-        r"     __)",
-        r"()==(   ",
-        r"     '--",
-    ],
-    "LR": [
-        r"__|    ",
-        r" (@==()",
-        r"-'     ",
-    ],
-    "LM": [
-        r"_",
-        r" ",
-        r"-",
-    ],
-    "ML": [
-        r"       |",
-    ],
-    "MR": [
-        r"  |",
-    ],
-    "neg_padding": (0, 2, 0, 0),
-    "default_margin": (1, 1, 0, 1),
-}
-
-Parchment3_box = {
     "UL": [
         r"  ,---",
         r" (_\  ",
@@ -778,153 +665,52 @@ Parchment3_box = {
 }
 # cf http://ascii.co.uk/art/scroll
 
-Parchment4_box = {
+Parchment3_box = {
     "UL": [
-        r' /"\/\_..',
-        r'(     _||',
-        r' \_/\/ ||',
+        r"  ______",
+        r" /  __  ",
+        r"|  /  \ ",
+        r"|\ \   |",
+        r"| \___/|",
     ],
     "UR": [
-        r'-._/\/"\ ',
-        r'||_     )',
-        r'|| \/\_/ '
+        r"______ ",
+        r"  __  \ ",
+        r" /  \  |",
+        r"|   / /|",
+        r"|\___/ |",
     ],
     "UM": [
-        r"-",
+        r"_",
+        r" ",
+        r" ",
         r" ",
         r" ",
     ],
     "LL": [
-        r' /"\/\_|-',
-        r'(     _| ',
-        r' \_/\/ `-'
+        r" \     |",
+        r"  \___/ ",
     ],
     "LR": [
-        r'-|_/\/"\ ',
-        r' |_     )',
-        r"-' \/\_/ ",
+        r"|     / ",
+        r" \___/  ",
     ],
     "LM": [
-        r"-",
+        r"_",
         r" ",
-        r"-",
     ],
     "ML": [
-        r"       ||",
+        r"|      |",
     ],
     "MR": [
-        r"||",
+        r"|      |",
     ],
-    "neg_padding": (2, 0, 0, 0),
-    "default_margin": (1, 3, 1, 3),
-    "descr": "coded by Tristano Ajmone <tajmone@gmail.com> (boxes)",
-}
-
-Parchment5_box = {
-    "UL": [
-        r"     __",
-        r"    /\ ",
-        r"(O)===)",
-        r"    \/'",
-        r"    (  ",
-    ],
-    "UR": [
-        r"_       ",
-        r" \      ",
-        r"><)==(O)",
-        r"'/       ",
-        r"(        ",
-    ],
-    "UM": [
-        r"__",
-        r"  ",
-        r"><",
-        r"''",
-        r"  ",
-    ],
-    "LL": [
-        r"    /\'",
-        r"(O)===)",
-        r"    \/_",
-    ],
-    "LR": [
-        r"'\      ",
-        r"><)==(O)",
-        r"_/      ",
-    ],
-    "LM": [
-        r"''",
-        r"><",
-        r"__",
-    ],
-    "ML": [
-        r"     ) ",
-        r"    (  ",
-    ],
-    "MR": [
-        r" )    ",
-        r"(     ",
-    ],
-    "neg_padding": (1, 0, 0, 1),
+    "neg_padding": (4, 0, 0, 0),
     "default_margin": (1, 2, 1, 2),
-    "descr": "https://www.asciiart.eu/art-and-design/borders"
+    "descr": "inspired by Thomas Jensen <boxes@thomasjensen.com> (boxes)",
 }
 
-Parchment6_box = {
-    "UL": [
-        r"  .------",
-        r" /  .-.  ",
-        r"|  /   \ ",
-        r"| |\_.  |",
-        r"|\|  | /|",
-        r"| `---' |",
-    ],
-    "UR": [
-        r"------.  ",
-        r"  .-.  \ ",
-        r" /   \  |",
-        r"|    /| |",
-        r"|\  | |/|",
-        r"| `---' |",
-    ],
-    "UM": [
-        r"-",
-        r" ",
-        r" ",
-        r" ",
-        r" ",
-        r" ",
-    ],
-    "LL": [
-        r"|       |",
-        r"\       |",
-        r" \     / ",
-        r"  `---'  ",
-    ],
-    "LR": [
-        r"|       |",
-        r"|       /",
-        r" \     / ",
-        r"  `---'  ",
-    ],
-    "LM": [
-        r"-",
-        r" ",
-        r" ",
-        r" ",
-    ],
-    "ML": [
-        "|       |"
-    ],
-    "MR": [
-        "|       |"
-    ],
-    "neg_padding": (5, 0, 0, 0),
-    "default_margin": (2, 3, 1, 3),
-    "descr": "https://www.asciiart.eu/art-and-design/borders"
-}
-
-Parchment7_box = {
+Parchment4_box = {
     "UL": [
         r"         ",
         r"         ",
@@ -990,57 +776,232 @@ Parchment7_box = {
     "MR": [
         "        |"
     ],
-    "neg_padding": (5, 6, 1, 0),
+    "neg_padding": (5, 7, 1, 0),
     "default_margin": (2, 4, 2, 3),
     "descr": "https://www.asciiart.eu/art-and-design/borders"
 }
 
-Scroll2_box = {
+Parchment5_box = {
     "UL": [
-        r" / ~~~~~",
-        r"|  /~~\ ",
-        r"|\ \   |",
-        r"| \   /|",
-        r"|  ~~  |",
+        r"  .------",
+        r" /  .-.  ",
+        r"|  /   \ ",
+        r"| |\_.  |",
+        r"|\|  | /|",
+        r"| `---' |",
     ],
     "UR": [
-        r"~~~~~ \ ",
-        r" /~~\  |",
-        r"|   / /|",
-        r"|\   / |",
-        r"|  ~~  |",
+        r"------.  ",
+        r"  .-.  \ ",
+        r" /   \  |",
+        r"|    /| |",
+        r"|\  | |/|",
+        r"| `---' |",
     ],
     "UM": [
-        r"~",
+        r"-",
+        r" ",
         r" ",
         r" ",
         r" ",
         r" ",
     ],
     "LL": [
-        r" \     |",
-        r"  \   / ",
-        r"   ~~~  ",
+        r"|       |",
+        r"\       |",
+        r" \     / ",
+        r"  `---'  ",
     ],
     "LR": [
-        r"|     / ",
-        r" \   /  ",
-        r"  ~~~   ",
+        r"|       |",
+        r"|       /",
+        r" \     / ",
+        r"  `---'  ",
     ],
     "LM": [
-        r"~",
+        r"-",
+        r" ",
         r" ",
         r" ",
     ],
     "ML": [
-        r"|      |",
+        "|       |"
     ],
     "MR": [
-        r"|      |",
+        "|       |"
     ],
-    "neg_padding": (4, 0, 0, 0),
+    "neg_padding": (5, 0, 0, 0),
+    "default_margin": (2, 3, 1, 3),
+    "descr": "https://www.asciiart.eu/art-and-design/borders"
+}
+
+Parchment6_box = {
+    "UL": [
+        r" __^__ ",
+        r"( ___ )",
+    ],
+    "UR": [
+        r" __^__ ",
+        r"( ___ )",
+    ],
+    "UM": [
+        r" ",
+        r"-",
+    ],
+    "LL": [
+        r" |___| ",
+        r"(_____)",
+    ],
+    "LR": [
+        r" |___| ",
+        r"(_____)",
+    ],
+    "LM": [
+        r" ",
+        r"-",
+    ],
+    "ML": [
+        r" | / | ",
+    ],
+    "MR": [
+        r" | \ | ",
+    ],
+    "neg_padding": (0, 1, 1, 1),
     "default_margin": (1, 2, 1, 2),
     "descr": "coded by Thomas Jensen <boxes@thomasjensen.com> (boxes)",
+}
+
+Parchment7_box = {
+    "UL": [
+        r' /"\/\_..',
+        r'(     _||',
+        r' \_/\/ ||',
+    ],
+    "UR": [
+        r'-._/\/"\ ',
+        r'||_     )',
+        r'|| \/\_/ '
+    ],
+    "UM": [
+        r"-",
+        r" ",
+        r" ",
+    ],
+    "LL": [
+        r' /"\/\_|-',
+        r'(     _| ',
+        r' \_/\/ `-'
+    ],
+    "LR": [
+        r'-|_/\/"\ ',
+        r' |_     )',
+        r"-' \/\_/ ",
+    ],
+    "LM": [
+        r"-",
+        r" ",
+        r"-",
+    ],
+    "ML": [
+        r"       ||",
+    ],
+    "MR": [
+        r"||",
+    ],
+    "neg_padding": (2, 0, 0, 0),
+    "default_margin": (1, 3, 1, 3),
+    "descr": "coded by Tristano Ajmone <tajmone@gmail.com> (boxes)",
+}
+
+Parchment8_box = {
+    "UL": [
+        r"     __",
+        r"    /\ ",
+        r"(O)===)",
+        r"    \/'",
+        r"    (  ",
+    ],
+    "UR": [
+        r"_       ",
+        r" \      ",
+        r"><)==(O)",
+        r"'/       ",
+        r"(        ",
+    ],
+    "UM": [
+        r"__",
+        r"  ",
+        r"><",
+        r"''",
+        r"  ",
+    ],
+    "LL": [
+        r"    /\'",
+        r"(O)===)",
+        r"    \/_",
+    ],
+    "LR": [
+        r"'\      ",
+        r"><)==(O)",
+        r"_/      ",
+    ],
+    "LM": [
+        r"''",
+        r"><",
+        r"__",
+    ],
+    "ML": [
+        r"     ) ",
+        r"    (  ",
+    ],
+    "MR": [
+        r" )    ",
+        r"(     ",
+    ],
+    "neg_padding": (1, 0, 0, 1),
+    "default_margin": (1, 2, 1, 2),
+    "descr": "https://www.asciiart.eu/art-and-design/borders"
+}
+
+Parchment9_box = {
+    "UL": [
+        r"     ___",
+        r"()==( ",
+        r"     '__",
+    ],
+    "UR": [
+        r"_     ",
+        r"(@==()",
+        r"_'|   ",
+    ],
+    "UM": [
+        r"_",
+        r" ",
+        r"_",
+    ],
+    "LL": [
+        r"     __)",
+        r"()==(   ",
+        r"     '--",
+    ],
+    "LR": [
+        r"__|    ",
+        r" (@==()",
+        r"-'     ",
+    ],
+    "LM": [
+        r"_",
+        r" ",
+        r"-",
+    ],
+    "ML": [
+        r"       |",
+    ],
+    "MR": [
+        r"  |",
+    ],
+    "neg_padding": (0, 2, 0, 0),
+    "default_margin": (1, 1, 0, 1),
 }
 
 Twisted_box = {
@@ -1264,7 +1225,7 @@ Test_box = {
 
 BOXES = {
     "ASCII": Ascii_box,
-    "ASCII_double": Double_Ascii_box,
+    "Inverted": Inverted_corners_box,
     "Braid": Braid_box,
     "DoubleDiamond": DoubleDiamond_box,
     "Diamond": Diamond_box,
@@ -1275,7 +1236,7 @@ BOXES = {
     "C": C_box,
     "C2": C2_box,
     "C3": C3_box,
-    "HTMl": HTML_box,
+    "HTML": HTML_box,
     "HTMl2": HTML2_box,
     "CAMl": CAML_box,
     "Unicode": Unicode_simple_box,
@@ -1284,18 +1245,17 @@ BOXES = {
     "Unicode_bold": Unicode_bold_box,
     "Unicode_shadow": Unicode_shadow_box,
     "Unicode_shadow2": Unicode_shadow2_box,
+    "Unicode_inverted": Unicode_inverted_corners_box,
     "Wavy": Wavy_box,
-    "Parchment": Parchment_box,
+    "Parchment1": Parchment1_box,
     "Parchment2": Parchment2_box,
     "Parchment3": Parchment3_box,
     "Parchment4": Parchment4_box,
     "Parchment5": Parchment5_box,
     "Parchment6": Parchment6_box,
     "Parchment7": Parchment7_box,
-    "Scroll": Scroll_box,
-    "Scroll2": Scroll2_box,
-    "Unicode_inverted": Unicode_inverted_corners_box,
-    "Inverted": Inverted_corners_box,
+    "Parchment8": Parchment8_box,
+    "Parchment9": Parchment9_box,
     "Twisted": Twisted_box,
     "Twinkle": Twinkle_box,
     "Test": Test_box,
