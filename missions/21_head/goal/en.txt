@@ -1,17 +1,17 @@
 Mission goal
 ============
 
-The old hermit is brewing a potion in the cave.
-You need to find him and show him the first 4 items in the list of 
-ingredients.
-Once you've shown the appropriate ingredients, run ``gash check``.
+An old hermit is brewing a potion in a cave. You need to find him 
+and read out first four ingredients of his potion.
+
+When you are done, run ``gash check`` to finish the mission.
 
 
 Useful commands
 ===============
 
 head FILE
-  output the first 10 lines of the file
+  Print the first 10 lines of the FILE.
 
 head -n K FILE
-  output the first K lines of the file
+  Print the first K lines of the FILE.
