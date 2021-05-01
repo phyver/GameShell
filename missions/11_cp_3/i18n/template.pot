@@ -13,7 +13,7 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Dungeon/First_floor"
+msgid "$GASH_HOME/Castle/Main_tower/First_floor"
 msgstr ""
 
 #, sh-format
@@ -31,7 +31,7 @@ msgstr ""
 msgid "There are too many paintings in your chest..."
 msgstr ""
 
-msgid "The painting is not in the dungeon anymore..."
+msgid "The painting is not in the tower anymore..."
 msgstr ""
 
 msgid "The painting is not in your chest..."

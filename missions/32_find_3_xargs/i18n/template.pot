@@ -13,7 +13,7 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/.Maze"
+msgid "$GASH_HOME/Garden/.Maze"
 msgstr ""
 
 msgid "diamond"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "The diamond in your chest is not valid!"
 msgstr ""
 
-msgid "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
 msgstr ""
 
 #, sh-format
@@ -48,9 +48,9 @@ msgid "stone"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/Orchard"
+msgid "$GASH_HOME/Garden/Orchard"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/Shed"
+msgid "$GASH_HOME/Garden/Shed"
 msgstr ""

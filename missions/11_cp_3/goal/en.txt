@@ -1,9 +1,9 @@
 Mission goal
 ============
 
-While wandering around the first floor of the dungeon, some 
-magnificent paintings catch your eye. Add a copy (same name
-and same content) of the oldest painting to your chest.
+While wandering around the first floor of the main tower, some 
+magnificent paintings catch your eye. Add a copy (same name and same 
+content) of the oldest painting to your chest.
 
 
 Secondary objectives
@@ -16,8 +16,8 @@ Useful commands
 ===============
 
 ls -l
-  Print the list of files of the current directory, with
-  additional information including last modification date.
+  Print the list of files of the current directory, with additional 
+  information including last modification date.
 
 cat FILE
   Display the contents of the file.

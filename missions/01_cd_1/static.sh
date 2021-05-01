@@ -1,1 +1,1 @@
-mkdir -p "$(eval_gettext "\$GASH_HOME/Castle/Dungeon/First_floor/Second_floor/Top_of_the_dungeon")"
+mkdir -p "$(eval_gettext "\$GASH_HOME/Castle/Main_tower/First_floor/Second_floor/Top_of_the_tower")"

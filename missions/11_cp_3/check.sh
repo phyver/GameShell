@@ -23,9 +23,9 @@ Make one first.")"
         return 1
     fi
 
-    if [ ! -f "$(eval_gettext '$GASH_HOME/Castle/Dungeon/First_floor')/$filename" ]
+    if [ ! -f "$(eval_gettext '$GASH_HOME/Castle/Main_tower/First_floor')/$filename" ]
     then
-        echo "$(gettext "The painting is not in the dungeon anymore...")"
+        echo "$(gettext "The painting is not in the tower anymore...")"
         return 1
     fi
 
