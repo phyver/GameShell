@@ -221,6 +221,9 @@ Restarting...")"
     fi
   fi
 
+  # re-source static.sh, in case some important directory was removed by accident
+  [ -f "$MISSION_DIR/static.sh" ] && mission_source "$MISSION_DIR/static.sh"
+
   if [ -f "$MISSION_DIR/init.sh" ]
   then
     # attention, si l'initialisation a lieu dans un sous-shell et qu'elle
