@@ -1,7 +1,6 @@
-
 Utilisez la commande
   $ gash show
-pour découvrir le premier objectif
+pour découvrir votre première mission.
 
 Vous pouvez vérifier si l'objectif est atteint avec
   $ gash check
@@ -9,4 +8,3 @@ Vous pouvez vérifier si l'objectif est atteint avec
 La commande
   $ gash help
 affiche la liste des commandes (gash) disponibles.
-
