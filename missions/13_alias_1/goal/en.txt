@@ -10,6 +10,7 @@ Define the alias
   la='ls -A'
 
 and check that it works as expected.
+How fortunate, there is a nice rock hidden just where you are.
 
 
 Useful commands
