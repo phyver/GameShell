@@ -1,10 +1,11 @@
 Objectif
 ========
 
-Trouvez le jour de la semaine pour le $DD-$MM-$YYYY.
+Nostradamus a prévu une conjonction spectaculaires des astres pour 
+le $DD-$MM-$YYYY.
+Mais quel jours de la semaine tombera donc cette date ?
 
 Lorsque vous le connaissez, lancez la commande ``gash check``.
-
 
 
 Commandes utiles

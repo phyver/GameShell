@@ -1,7 +1,9 @@
 Mission goal
 ============
 
-Find what day of the week corresponds to the date $MM-$DD-$YYYY.
+Nostradamus predicted a spectacular star conjunction on the 
+$MM-$DD-$YYYY.
+But what will the day of the week be on that date?
 
 When you have it, run the command ``gash check``.
 
