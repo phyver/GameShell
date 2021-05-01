@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/.Maze"
-msgstr "$GASH_HOME/Jardin_botanique/.Labyrinthe"
+msgid "$GASH_HOME/Garden/.Maze"
+msgstr "$GASH_HOME/Jardin/.Labyrinthe"
 
 msgid "diamond"
 msgstr "diamant"
@@ -34,7 +34,7 @@ msgstr "Le diamand n'est pas dans le coffre !"
 msgid "The diamond in your chest is not valid!"
 msgstr "Le diamant du coffre est invalide !"
 
-msgid "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
 #, sh-format
@@ -48,9 +48,9 @@ msgid "stone"
 msgstr "cailloux"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/Orchard"
-msgstr "$GASH_HOME/Jardin_botanique/Verger"
+msgid "$GASH_HOME/Garden/Orchard"
+msgstr "$GASH_HOME/Jardin/Verger"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/Shed"
-msgstr "$GASH_HOME/Jardin_botanique/Cabanon"
+msgid "$GASH_HOME/Garden/Shed"
+msgstr "$GASH_HOME/Jardin/Cabanon"

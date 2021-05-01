@@ -9,8 +9,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/.Maze"
-msgstr "$GASH_HOME/Jardin_botanique/.Labyrinthe"
+msgid "$GASH_HOME/Garden/.Maze"
+msgstr "$GASH_HOME/Jardin/.Labyrinthe"
 
 msgid "copper_coin"
 msgstr "piece_de_bronze"
@@ -24,7 +24,7 @@ msgstr "Il n'y a pas de pièce d'argent dans votre coffre !"
 msgid "Booh... The copper coin in you chest is invalid!"
 msgstr "Bouh... La pièce de bronze de votre coffre est invalide !"
 
-msgid "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
 # path for the text file containing the goal
@@ -40,9 +40,9 @@ msgid "maze generation:"
 msgstr "génération du labyrinthe :"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/Orchard"
-msgstr "$GASH_HOME/Jardin_botanique/Verger"
+msgid "$GASH_HOME/Garden/Orchard"
+msgstr "$GASH_HOME/Jardin/Verger"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/Shed"
-msgstr "$GASH_HOME/Jardin_botanique/Cabanon"
+msgid "$GASH_HOME/Garden/Shed"
+msgstr "$GASH_HOME/Jardin/Cabanon"

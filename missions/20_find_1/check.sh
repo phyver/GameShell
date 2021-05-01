@@ -19,7 +19,7 @@ _local_check_p() {
 }
 
 _local_check() {
-    local maze="$(eval_gettext '$GASH_HOME/Botanical_garden/.Maze')"
+    local maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
 
     local nb=$(find "$maze" -iname "$(gettext "gold_coin")" -type f | wc -l)
     if [ "$nb" -gt 2 ]

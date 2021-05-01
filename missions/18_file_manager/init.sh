@@ -3,7 +3,7 @@
 [ -z "$GASH_CHEST" ] && GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest/Cabin/Chest')"
 mkdir -p "$GASH_CHEST"
 
-maze="$(eval_gettext '$GASH_HOME/Botanical_garden/.Maze')"
+maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
 rm -rf "$maze"/?*
 
 gen_maze_sh(){

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _local_check() {
-    local maze="$(eval_gettext '$GASH_HOME/Botanical_garden/.Maze')"
+    local maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
 
     local coin=$(find "$maze" -name "$(gettext "copper_coin")")
 

@@ -1,8 +1,8 @@
-maze="$(eval_gettext '$GASH_HOME/Botanical_garden/.Maze')"
+maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
 case $PWD in
     "$maze"/?*)
         cd "$maze"
-        echo "$(gettext "Pffft... You are back to the entrance of the maze...")"
+        echo "$(gettext "You are back at the entrance of the maze...")"
         ;;
 esac
 

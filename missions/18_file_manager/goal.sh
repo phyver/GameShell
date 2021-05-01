@@ -1,3 +1,3 @@
-export maze="$(eval_gettext '$GASH_HOME/Botanical_garden/.Maze')"
+export maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
 envsubst '$maze' < "$(eval_gettext '$MISSION_DIR/goal/en.txt')"
 unset maze
