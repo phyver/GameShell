@@ -2,27 +2,24 @@ Commandes propres a GameShell
 =============================
 
   gash assert condition [msg]
-    vérifie si la condition est vrai
+    vérifie si la condition est vraie,
     sinon, affiche un message d'erreur
 
   gash assert_check true/false [msg]
-    vérifie si l'objectif de la mission en cours est 
-    atteint
-    si le résultat ne correspond pas au résultat 
-    attendu, affiche un message d'erreur
+    vérifie si l'objectif de la mission en cours est atteint
+    si le résultat ne correspond pas au résultat attendu, affiche un 
+    message d'erreur
 
   gash auto    (ADMIN)
-    lance le script automatique de la mission en cours, 
-    s'il existe.
+    lance le script automatique de la mission en cours, s'il existe.
 
   gash check
-    vérifie que l'objectif de la mission en cours est 
-    atteint
+    vérifie que l'objectif de la mission en cours est atteint
 
   gash exit
     quitte la partie en cours
-    (vous pouvez reprendre à la mission en cours en 
-    lançant le script start.sh avec l'option -C)
+    (vous pouvez reprendre à la mission en cours en lançant le 
+    script start.sh avec l'option -C)
 
   gash goto N (ADMIN)
     passe directement à la mission N
@@ -33,29 +30,30 @@ Commandes propres a GameShell
   gash help
     affiche un petit message d'aide
 
+  gash index
+    affiche la liste des missions, avec leur statut
+
   gash pass    (ADMIN)
-    abandonne la mission en cours et passe à la 
-    suivante
+    abandonne la mission en cours et passe à la suivante
 
   gash protect
   gash unprotect
-    ajoute / supprimer les protections d'accès sur les
-    répertoires de GameShell
+    ajoute / supprimer les protections d'accès sur les répertoires 
+    de GameShell
 
   gash reset
     ré-initialise la mission en cours
 
   gash save
-    génère une archive pour pouvoir relance GameShell à 
-    partir de la mission en cours
+    génère une archive pour pouvoir relance GameShell à partir de la 
+    mission en cours
 
   gash show [N]
     affiche l'objectif de la mission en cours
     si N est donné, affiche l'objectif de la mission N
 
   gash test
-    lance le script de test de la mission en cours, 
-    s'il existe
+    lance le script de test de la mission en cours, s'il existe
 
   gash welcome
     affiche le message de bienvenu
