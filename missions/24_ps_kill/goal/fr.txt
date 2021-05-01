@@ -20,3 +20,7 @@ ps
 
 kill N
   Tue le processus dont le numéro ("PID") est N.
+
+Rappelez vous que les joker "*" et "?" ne voient pas les fichiers 
+cachés. Il faut ajouter un point explicite au début du motif pour 
+capturer les fichiers cachés.
