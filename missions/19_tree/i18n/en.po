@@ -28,8 +28,8 @@ msgstr "There is no silver coin in your chest!"
 msgid "Booh... The silver coin in you chest is invalid!"
 msgstr "Booh... The silver coin in you chest is invalid!"
 
-msgid "Pffft... You are back to the entrance of the maze..."
-msgstr "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
+msgstr "You are back at the entrance of the maze..."
 
 #, sh-format
 msgid ""

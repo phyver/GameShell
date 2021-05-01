@@ -28,7 +28,7 @@ msgstr ""
 msgid "Booh... The silver coin in you chest is invalid!"
 msgstr ""
 
-msgid "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
 msgstr ""
 
 #, sh-format

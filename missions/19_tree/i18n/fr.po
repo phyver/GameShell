@@ -28,7 +28,7 @@ msgstr "Il n'y a pas de pièce d'argent dans votre coffre !"
 msgid "Booh... The silver coin in you chest is invalid!"
 msgstr "Bouh... La pièce d'argent de votre coffre est invalide !"
 
-msgid "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
 #, sh-format
