@@ -34,8 +34,8 @@ msgstr "The diamond is not in the chest!"
 msgid "The diamond in your chest is not valid!"
 msgstr "The diamond in your chest is not valid!"
 
-msgid "Pffft... You are back to the entrance of the maze..."
-msgstr "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
+msgstr "You are back at the entrance of the maze..."
 
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin/Chest"

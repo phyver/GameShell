@@ -34,7 +34,7 @@ msgstr "Le diamand n'est pas dans le coffre !"
 msgid "The diamond in your chest is not valid!"
 msgstr "Le diamant du coffre est invalide !"
 
-msgid "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
 #, sh-format
