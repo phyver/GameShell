@@ -1,6 +1,10 @@
 Mission goal
 ============
 
+As you are walking around the castle, you feel like you are 
+being watched... Turn your head quickly enough and you may 
+see one of the paintings' eyes following you...
+
 1/ Run the ``xeyes`` command, and stop it.
 2/ Run the ``xeyes`` command in the background.
 
@@ -9,11 +13,11 @@ Useful commands
 ===============
 
 xeyes
-  open a window with 2 eyes that track your mouse
+  Open a window with 2 eyes that track your mouse.
 
 CMD &
-  run the command in the background
+  Run the command in the background.
 
 Control-c
-  this keybinding usually stop the current command if it is still 
-  running
+  This key binding usually stops the current command if it 
+  is still running.

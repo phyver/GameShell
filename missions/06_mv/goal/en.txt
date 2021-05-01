@@ -1,18 +1,21 @@
 Mission goal
 ============
 
-Pick up all the coins that you can find in the cellar of the castle, 
-and place them in your chest (in your cabin in the forest).
+Collect all the coins that you can find in the cellar of the 
+castle, and put them in your chest in your cabin in the forest.
 
 
 Useful commands
 ===============
 
-mv FILE1 FILE2 ... FILEn DIRECTORY
-  move all the files to the directory
+mv FILE1 FILE2 ... FILEn DIRNAME
+  Move all the files to the directory DIRNAME.
+  Remark: ``mv`` is an abbreviation of "move".
 
 ~
-  abbreviation for the initial directory (its location
-  may depend on the shell that is used)
-  example : ~/Directory refers to directory "Directory" 
-  in the initial directory
+  Abbreviation for the initial directory. In our game, this
+  directory is called "World" and can be seen in the path
+  given by ``pwd``. (The initial directory may depend on the
+  shell that is used.)
+  Example: if you are in the "Forest", ``ls ~/Castle`` lists
+  the locations accessible from the "Castle".

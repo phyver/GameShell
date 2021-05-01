@@ -1,13 +1,14 @@
 Mission goal
 ============
 
-I like the four standards in the entrance of the castle. However, 
-stealing them would not go unnoticed. I'd like a copy of each in my 
-chest.
+You have taken a fancy to the four standards at the entrance of 
+the castle. As stealing them would not go unnoticed, put a copy 
+of each in your chest.
 
 
 Useful commands
 ===============
 
-cp FILE1 FILE2 ... FILEn DIRECTORY
-  copy the files to another directory
+cp FILE1 FILE2 ... FILEn DIRNAME
+  Copy the files to the directory named DIRNAME.
+  Remark: ``cp`` is an abbreviation of "copy".

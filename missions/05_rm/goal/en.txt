@@ -1,13 +1,14 @@
 Mission goal
 ============
 
-Go back to the cellar and remove the spiders that live there.
-Leave the salamanders be: they are are on the coat of arms of the 
-castle and are supposed to bring luck.
+Go back to the cellar and get rid of all the spiders. Leave the 
+salamanders alone: they appear on the castle's coat of arms and 
+are said to confer luck.
 
 
 Useful commands
 ===============
 
 rm FILE1 FILE2 ... FILEn
-  delete files (permanently)
+  Delete files (permanently).
+  Remark: ``rm`` is an abbreviation for "remove".
