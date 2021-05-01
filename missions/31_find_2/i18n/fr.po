@@ -31,7 +31,7 @@ msgstr "Le rubis n'est pas dans le coffre !"
 msgid "The ruby in your chest is not valid!"
 msgstr "Le rubis du coffre n'est pas valide !"
 
-msgid "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
 #, sh-format
