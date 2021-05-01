@@ -3,7 +3,7 @@ Objectif
 
 Retrouvez les pièces d'or dans le labyrinthe caché dans le jardin et 
 déplacez la dans votre coffre.
-Le jardin botanique se trouve devant le château.
+Le jardin se trouve devant le château.
 
 
 Remarque : la description de la commande ``find`` est volontairement 

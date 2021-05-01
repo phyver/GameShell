@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/.Maze"
-msgstr "$GASH_HOME/Botanical_garden/.Maze"
+msgid "$GASH_HOME/Garden/.Maze"
+msgstr "$GASH_HOME/Garden/.Maze"
 
 msgid "coin"
 msgstr "coin"
@@ -45,12 +45,12 @@ msgid "maze generation:"
 msgstr "maze generation:"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/Orchard"
-msgstr "$GASH_HOME/Botanical_garden/Orchard"
+msgid "$GASH_HOME/Garden/Orchard"
+msgstr "$GASH_HOME/Garden/Orchard"
 
 #, sh-format
-msgid "$GASH_HOME/Botanical_garden/Shed"
-msgstr "$GASH_HOME/Botanical_garden/Shed"
+msgid "$GASH_HOME/Garden/Shed"
+msgstr "$GASH_HOME/Garden/Shed"
 
 #, sh-format
 msgid "Coin '$file' in your chest is invalid!"
