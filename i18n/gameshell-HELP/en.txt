@@ -53,3 +53,6 @@ Commands specific to GameShell
 
   gash test
     run the curent mission's test script, if it exists
+
+  gash welcome
+    show the welcome message
