@@ -1,3 +1,3 @@
 Tapez la commande
     $ gash show
-pour découvrir l'objectif suivant.
+pour découvrir la mission suivante.
