@@ -1,4 +1,4 @@
-Congratulation!
+Congratulations!
 
 From now on, the command ``ls`` will use a color code to make it 
 easier to differentiate between directories and several kinds of 

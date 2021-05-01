@@ -1,17 +1,16 @@
 Mission goal
 ============
 
-Find the day of the week for the $MM-$DD-$YYYY.
+Find what day of the week corresponds to the date $MM-$DD-$YYYY.
 
 When you have it, run the command ``gash check``.
-
 
 
 Useful commands
 ===============
 
 cal
-  print a calendar for the current month
+  Print a calendar for the current month.
 
 cal YYYY
-  print a calendar for the whole year YYYY
+  Print a calendar for the whole year YYYY.

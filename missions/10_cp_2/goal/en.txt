@@ -1,22 +1,24 @@
 Mission goal
 ============
 
-By the way, I think that the ornaments in the castle's entrance look 
-really nice. Since I cannot just remove them from here, I would like 
-to have a copy of these ornaments in my chest.
+The ornaments in the castle's entrance are also particularly 
+beautiful. Since you can't just take them, put a copy of each
+in your chest.
+
 
 Useful commands
 ===============
 
 *
 ?
-  The "*" character is a wildcard for any string of character.
+  The "*" character stands in for any sequence of characters
+  (including an empty sequence).
 
-  The "? character is a wildcard for any single character.
+  The "?" character stands in for any single character.
 
   They can be used to denote lists of existing files.
 
-  For instance, if the folder contains
+  Example: if the current folder contains
       File-1 Folder-1 file-14 potato
   then
     *     -->  File-1 Folder-1 file-14 potato

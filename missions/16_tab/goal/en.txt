@@ -1,11 +1,17 @@
 Mission goal
 ============
 
-Go in the corridor hidden in the cellar.
+Go to the hidden corridor in the cellar.
 
 
 Useful commands
 ===============
 
-The "Tab" key will complete the beginning of a name (file or 
-directory) when pressed.
+Tab
+  The tabulation key "completes" the name of a file or directory 
+  once you have typed the beginning of its name. This only works
+  if there is only one possible completion.
+
+Tab-Tab
+  Pressing tabulation twice successively shows a list of possible 
+  completions.
