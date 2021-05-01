@@ -34,7 +34,7 @@ msgstr "Il y a encore des pièces d'or dans le labyrinthe !"
 msgid "GolD_CoiN"
 msgstr "PieCe_D_oR"
 
-msgid "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
 
 #, sh-format

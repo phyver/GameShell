@@ -34,8 +34,8 @@ msgstr "There still are some gold coins in the maze!"
 msgid "GolD_CoiN"
 msgstr "GolD_CoiN"
 
-msgid "Pffft... You are back to the entrance of the maze..."
-msgstr "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
+msgstr "You are back at the entrance of the maze..."
 
 #, sh-format
 msgid "$GASH_HOME/Forest/Cabin/Chest"
