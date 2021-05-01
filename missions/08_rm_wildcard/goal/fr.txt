@@ -15,14 +15,18 @@ Commandes utiles
 
   Le caractère "?" est un "joker" pour n'importe caractère.
 
-  On peut les utiliser pour dénoter une liste de fichiers existants.
+  On peut les utiliser pour dénoter une liste de fichiers / dossiers 
+  existants.
 
   Par exemple, si le répertoire contient
-      Fichier-1 Dossier-1 fichier-14 lustucru
+      fichier-1 Dossier-1 fichier-14 lustucru
   alors
-    *     -->  Fichier-1 Dossier-1 fichier-14 lustucru
-    *1    -->  Fichier-1 Dossier-1
+    *     -->  fichier-1 Dossier-1 fichier-14 lustucru
+    *1    -->  fichier-1 Dossier-1
     *s*   -->  Dossier-1 lustucru
     x*    -->  erreur, aucun fichier ne correspond
-    *-?   -->  Fichier-1 Dossier-1
+    *-?   -->  fichier-1 Dossier-1
     *-??  -->  fichier-14
+
+  NOTE : "*" et "?" ne voient pas les fichiers cachés, il faut 
+  ajouter un point explicite au début du motif.
