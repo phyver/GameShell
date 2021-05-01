@@ -24,7 +24,7 @@ msgstr ""
 msgid "Booh... The copper coin in you chest is invalid!"
 msgstr ""
 
-msgid "Pffft... You are back to the entrance of the maze..."
+msgid "You are back at the entrance of the maze..."
 msgstr ""
 
 # path for the text file containing the goal
