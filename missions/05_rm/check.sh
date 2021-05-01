@@ -13,12 +13,12 @@ _local_check() {
         return 1
     fi
 
-    # Check that the salamander is still there.
-    local salamander
-    salamander=$(find "$cellar" -name "$(gettext "salamander")*")
-    if [ -z "$salamander" ]
+    # Check that the salamanders are still there.
+    local salamanders_nb
+    salamanders_nb=$(find "$cellar" -name "$(gettext "salamander")*" | wc -l)
+    if [ "$salamanders_nb" -ne 2 ]
     then
-        echo "$(gettext "Hey! You removed the salamander!")"
+        echo "$(gettext "Hey! You removed a salamander!")"
         return 1
     fi
 
