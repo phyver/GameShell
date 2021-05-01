@@ -22,7 +22,7 @@ Commandes propres a GameShell
   gash exit
     quitte la partie en cours
     (vous pouvez reprendre à la mission en cours en 
-    lançant le script stats.sh avec l'option -C)
+    lançant le script start.sh avec l'option -C)
 
   gash goto N (ADMIN)
     passe directement à la mission N
@@ -56,3 +56,6 @@ Commandes propres a GameShell
   gash test
     lance le script de test de la mission en cours, 
     s'il existe
+
+  gash welcome
+    affiche le message de bienvenu

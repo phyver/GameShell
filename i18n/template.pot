@@ -4,6 +4,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# welcome message file
+#, sh-format
+msgid "$GASH_BASE/i18n/gameshell-welcome/en.txt"
+msgstr ""
+
 msgid "The command 'gash reset' is useless when run inside a subshell!"
 msgstr ""
 
@@ -27,13 +32,13 @@ msgstr ""
 msgid "cancelled"
 msgstr ""
 
+msgid "Press Enter"
+msgstr ""
+
 #, sh-format
 msgid ""
 "Mission $MISSION_NB doesn't exist!\n"
 "Restarting..."
-msgstr ""
-
-msgid "Press Enter"
 msgstr ""
 
 msgid "The mission is cancelled because some dependencies are not met."
