@@ -179,7 +179,7 @@ _gash_start() {
   if [ -z "$1" ]
   then
     MISSION_NB=$(_get_current_mission)
-    if [ "$?" -eq 1 ]
+    if [ "$?" -eq 1 ] && [ "$GASH_MODE" != "DEBUG" ]
     then
       _gash_welcome
       read -erp "$(gettext "Press Enter")"
