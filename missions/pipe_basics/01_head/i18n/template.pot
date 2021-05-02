@@ -1,0 +1,39 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+#, sh-format
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr ""
+
+#, sh-format
+msgid "$GASH_HOME/Mountain/Cave"
+msgstr ""
+
+msgid "Book_of_Potions"
+msgstr ""
+
+msgid "page"
+msgstr ""
+
+msgid "You altered the book..."
+msgstr ""
+
+msgid "You are not in the cave with Servillus!"
+msgstr ""
+
+msgid "You have not used the 'head' command!"
+msgstr ""
+
+msgid "Your previous command does not give the expected result..."
+msgstr ""
+
+#, sh-format
+msgid "$MISSION_DIR/book_of_potions/en.txt"
+msgstr ""
+
+msgid "table_of_contents"
+msgstr ""
