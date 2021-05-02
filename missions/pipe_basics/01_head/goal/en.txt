@@ -1,0 +1,23 @@
+Mission goal
+============
+
+A forgetful old hermit called Servillus has set up camp in a 
+cave with his old, leather-bound potion book. Go to the cave 
+and help him remember the recipe of his famous herbal tea.
+
+In order to validate the mission, your last command prior to 
+``gash check`` must show the recipe (including its title) but 
+nothing else (there should be no blank line at the end).
+
+
+Useful commands
+===============
+
+cat FILE
+  Display the contents of the FILE.
+
+head FILE
+  Print the first 10 lines of the FILE.
+
+head -n K FILE
+  Print the first K lines of the FILE.

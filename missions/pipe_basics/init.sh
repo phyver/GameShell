@@ -1,0 +1,3 @@
+GRIMOIRE=grimoire/en.txt
+
+
