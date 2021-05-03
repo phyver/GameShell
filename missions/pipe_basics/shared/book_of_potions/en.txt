@@ -7,7 +7,7 @@
 7. Homeopathic healing potion (part 1) ------------ pages 8-9
 8. Homeopathic healing potion (part 2) -------------- page 10
 9. Homeopathic healing potion (part 3) -------------- page 11
-10. Toadstool soup ---------------------------------- page 12
+10. Toadstool stew ---------------------------------- page 12
 11. Distilled water --------------------------------- page 13
 12. King's ale -------------------------------------- Page 13
 == page 1 ===================================================
@@ -148,7 +148,7 @@ Homeopathic healing potion (part 3)
 8) Fill the cauldron with water.
 9) Pour the contents of the cauldron in a flask and drink.
 == page 12 ==================================================
-Toadstool soup
+Toadstool stew
 --------------
 
 1) Boil water in a cauldron.
@@ -164,7 +164,7 @@ Toadstool soup
 Distilled water
 ---------------
 
-1) Boil water in a bit pot.
+1) Boil water in a big pot.
 2) Condense the vapor in a fresh container.
 3) Add minerals for a better taste (optional).
 
