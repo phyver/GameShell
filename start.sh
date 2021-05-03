@@ -265,15 +265,17 @@ Do you want to continue this game? [Y/n]') " r
   make_index "$@" 2> /dev/null | sed "s;$GASH_MISSIONS;.;" > "$GASH_DATA/index.txt"
 
   # Installing all missions.
-  local MISSION_NB=0
+  local MISSION_NB=1
   while read MISSION_DIR
   do
     case $MISSION_DIR in
       "" | "#"* )
         continue
         ;;
+      "!"*)
+        MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
+        ;;
     esac
-    MISSION_NB=$((MISSION_NB+1))
     export MISSION_DIR
     MISSION_DIR=$GASH_MISSIONS/$MISSION_DIR
 
@@ -323,6 +325,7 @@ EOH
       cp "$MISSION_DIR/bashrc" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).bashrc.sh"
     fi
     printf "."
+    MISSION_NB=$((MISSION_NB+1))
   done < "$GASH_DATA/index.txt"
   if [ "$MISSION_NB" -eq 0 ]
   then

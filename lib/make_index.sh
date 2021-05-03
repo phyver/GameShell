@@ -5,6 +5,7 @@ parse_index() {
   local index_file=$(REALPATH "$1")
   local dir
   local short_index_file
+  local DUMMY
 
   case "$index_file" in
     "$GASH_MISSIONS"* )
@@ -24,11 +25,18 @@ parse_index() {
       "" | "#"* )
         continue
         ;;
+      "!"*)
+        DUMMY="!"
+        MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
+        ;;
+      *)
+        DUMMY=""
+        ;;
     esac
     path="$dir/$MISSION_DIR"
-    if [ -d "$path" ] && [ -f "$path/check.sh" ]
+    if [ -d "$path" ]
     then
-      echo "${path#$GASH_MISSIONS/}"
+      echo "$DUMMY${path#$GASH_MISSIONS/}"
     elif [ -f "$path" ]
     then
       parse_index "$path"
