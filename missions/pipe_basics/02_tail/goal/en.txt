@@ -1,0 +1,24 @@
+Mission goal
+============
+
+The old man seems to enjoy your company very much. He invites 
+you to stay for supper, and starts preparing a delicious stew 
+for the both of you. While getting the cauldron ready he asks 
+for your help. Read the steps of the recipe from his book.
+
+In order to validate the mission, your last command prior to 
+``gash check`` must show the steps of the recipe, but not its 
+title nor any blank lines.
+
+
+Useful commands
+===============
+
+cat FILE
+  Display the contents of the FILE.
+
+tail FILE
+  Print the last 10 lines of the FILE.
+
+tail -n K FILE
+  Print the last K lines of the FILE.
