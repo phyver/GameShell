@@ -70,6 +70,27 @@ _gash_reset() {
 _gash_exit() {
   local MISSION_NB=$(_get_current_mission)
   local signal=$1
+
+  if jobs | grep -iq stopped
+  then
+    while true
+    do
+      read -erp "$(gettext "note, there are stopped jobs in your session.
+those processes will be terminated.
+you can get the list of those jobs with
+    \$ jobs -s
+do you still want to quit? [y/n]") " r
+      if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] ||  [ "$r" = "$(gettext "n")" ]
+      then
+        return
+      elif [ "$r" = "$(gettext "y")" ] ||  [ "$r" = "$(gettext "y")" ]
+      then
+        break
+      fi
+    done
+    kill -9 $(jobs -ps)
+  fi
+
   _log_action "$MISSION_NB" "$signal"
   _gash_clean "$MISSION_NB"
   [ "$GASH_MODE" != "DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && _gash_unprotect
@@ -514,53 +535,6 @@ _gash_HELP() {
   parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-HELP/en.txt')" Parchment2
 }
 
-
-_gash_save() {
-  if jobs | grep -iq stopped
-  then
-    while true
-    do
-      read -erp "$(gettext "NOTE, there are stopped jobs in your session.
-Those processes will be terminated.
-You can get the list of those jobs with
-    \$ jobs -s
-Do you still want to save and quit? [y/N]") " r
-      if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] ||  [ "$r" = "$(gettext "N")" ]
-      then
-        return
-      elif [ "$r" = "$(gettext "y")" ] ||  [ "$r" = "$(gettext "Y")" ]
-      then
-        break
-      fi
-    done
-    kill -9 $(jobs -ps)
-  fi
-
-  _log_action "$MISSION_NB" "SAVE"
-
-  tarfile=$REAL_HOME/GameShell_$(whoami)-SAVE.tgz
-  if tar -zcf "$tarfile" --exclude=".git*" -C "$GASH_BASE/.." "$(basename "$GASH_BASE")"
-  then
-    echo "$(eval_gettext "An archive containing your current game has been saved to
-
-    \$tarfile
-
-You can transfer and extract this file, and restart your game
-with the start.sh script included therein.")"
-  exit 0
-  else
-    echo
-    color_echo red "$(eval_gettext "Possible failure while creating save file.")"
-    echo "$(eval_gettext "Check the file
-
-    \$tarfile
-
-to make sure everything is OK.
-")"
-    return 1
-  fi
-}
-
 _gash_protect() {
   chmod a-rw $GASH_BASE
   chmod a-rw $GASH_MISSIONS
@@ -600,9 +574,6 @@ gash() {
     "r" | "re" | "res" | "rese" | "reset")
       _gash_clean
       _gash_reset
-      ;;
-    "sa" | "sav" | "save")
-      _gash_save
       ;;
     "sh" | "sho" | "show")
       _gash_show "$@"

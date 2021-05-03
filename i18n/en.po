@@ -12,6 +12,25 @@ msgstr "$GASH_BASE/i18n/gameshell-welcome/en.txt"
 msgid "The command 'gash reset' is useless when run inside a subshell!"
 msgstr "The command 'gash reset' is useless when run inside a subshell!"
 
+msgid ""
+"note, there are stopped jobs in your session.\n"
+"those processes will be terminated.\n"
+"you can get the list of those jobs with\n"
+"    $ jobs -s\n"
+"do you still want to quit? [y/n]"
+msgstr ""
+"NOTE, there are stopped jobs in your session.\n"
+"Those processes will be terminated.\n"
+"You can get the list of those jobs with\n"
+"    $ jobs -s\n"
+"Do you still want to quit? [y/N]"
+
+msgid "n"
+msgstr "n"
+
+msgid "y"
+msgstr "y"
+
 #, sh-format
 msgid "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
 msgstr "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
@@ -121,65 +140,6 @@ msgstr "$GASH_BASE/i18n/gameshell-help/en.txt"
 msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-HELP/en.txt"
 
-msgid ""
-"NOTE, there are stopped jobs in your session.\n"
-"Those processes will be terminated.\n"
-"You can get the list of those jobs with\n"
-"    $ jobs -s\n"
-"Do you still want to save and quit? [y/N]"
-msgstr ""
-"NOTE, there are stopped jobs in your session.\n"
-"Those processes will be terminated.\n"
-"You can get the list of those jobs with\n"
-"    $ jobs -s\n"
-"Do you still want to save and quit? [y/N]"
-
-msgid "N"
-msgstr "N"
-
-msgid "n"
-msgstr "n"
-
-msgid "Y"
-msgstr "Y"
-
-msgid "y"
-msgstr "y"
-
-#, sh-format
-msgid ""
-"An archive containing your current game has been saved to\n"
-"\n"
-"    $tarfile\n"
-"\n"
-"You can transfer and extract this file, and restart your game\n"
-"with the start.sh script included therein."
-msgstr ""
-"An archive containing your current game has been saved to\n"
-"\n"
-"    $tarfile\n"
-"\n"
-"You can transfer and extract this file, and restart your game\n"
-"with the start.sh script included therein."
-
-#, sh-format
-msgid "Possible failure while creating save file."
-msgstr ""
-
-#, sh-format
-msgid ""
-"Check the file\n"
-"\n"
-"    $tarfile\n"
-"\n"
-"to make sure everything is OK.\n"
-msgstr ""
-"Check the file\n"
-"\n"
-"    $tarfile\n"
-"\n"
-"to make sure everything is OK.\n"
-
 msgid "The 'goto' command requires a mission number as argument."
 msgstr "The 'goto' command requires a mission number as argument."
 
@@ -237,6 +197,12 @@ msgstr "You won't be able to change this information."
 
 msgid "Is this information correct? [Y/n]"
 msgstr "Is this information correct? [Y/n]"
+
+msgid "Y"
+msgstr "Y"
+
+msgid "N"
+msgstr "N"
 
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
