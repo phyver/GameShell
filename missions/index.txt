@@ -1,4 +1,3 @@
-# start of index file $GASH_MISSIONS/index.txt
 01_cd_1
 02_cd_2
 03_cd_3
@@ -12,6 +11,7 @@
 11_cp_3
 12_cal
 13_alias_1
+!13_test
 14_journal
 15_alias_2
 16_tab
@@ -38,4 +38,3 @@
 37_chmod_r_file
 38_chmod_rw_file_dir
 99_THE_END
-# end of index file $GASH_MISSIONS/index.txt
