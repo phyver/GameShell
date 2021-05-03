@@ -151,8 +151,17 @@ _gash_index() {
   local MISSION_NB="1"
   local MISSION COLOR STATUS LEAD
 
-  for MISSION in $(grep -v "^#" "$GASH_DATA/index.txt" | grep "\S")
+  local line
+  while read line
   do
+    if echo $line | grep -q "^\s*$"
+    then
+      continue
+    elif echo $line | grep -q "^\s*[#!]"
+    then
+      continue
+    fi
+
     if grep -q "^$MISSION_NB CHECK_OK" "$GASH_DATA/missions.log"
     then
       COLOR="green"
@@ -174,6 +183,7 @@ _gash_index() {
       STATUS=""
     fi
 
+    MISSION=$(echo "$line" | sed 's/\s*[0-9][0-9]*_//')
     LEAD="   "
     if [ "$CUR_MISSION" -eq "$MISSION_NB" ]
     then
@@ -184,7 +194,7 @@ _gash_index() {
     color_echo "$COLOR" "$MISSION$STATUS"
 
     MISSION_NB="$((MISSION_NB + 1))"
-  done
+  done < "$GASH_DATA/index.txt"
 }
 
 
