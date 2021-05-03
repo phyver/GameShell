@@ -12,6 +12,27 @@ msgstr "$GASH_BASE/i18n/gameshell-welcome/fr.txt"
 msgid "The command 'gash reset' is useless when run inside a subshell!"
 msgstr "La commande 'gash reset' est inutile lorsqu'on l'exécute dans un sous shell !"
 
+msgid ""
+"note, there are stopped jobs in your session.\n"
+"those processes will be terminated.\n"
+"you can get the list of those jobs with\n"
+"    $ jobs -s\n"
+"do you still want to quit? [y/n]"
+msgstr ""
+"ATTENTION, il y a des processus stoppés dans votre session.\n"
+"Ces processus vont être arêtés.\n"
+"Vous pouvez obtenir la list de ces processus avec\n"
+"    $ jobs -s\n"
+"Êtes vous sûr de vouloir quitter ? [o/N]"
+
+# abbreviation for "no" (lowercase)
+msgid "n"
+msgstr "n"
+
+# abbreviation for "yes" (lowercase)
+msgid "y"
+msgstr "o"
+
 #, sh-format
 msgid "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
 msgstr "Problème : je n'ai pas pu récupérer la mission '$MISSION_NB' ($fn_name)"
@@ -125,69 +146,6 @@ msgstr "$GASH_BASE/i18n/gameshell-help/fr.txt"
 msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-HELP/fr.txt"
 
-msgid ""
-"NOTE, there are stopped jobs in your session.\n"
-"Those processes will be terminated.\n"
-"You can get the list of those jobs with\n"
-"    $ jobs -s\n"
-"Do you still want to save and quit? [y/N]"
-msgstr ""
-"ATTENTION, il y a des processus stoppés dans votre session.\n"
-"Ces processus vont être arêtés.\n"
-"Vous pouvez obtenir la list de ces processus avec\n"
-"    $ jobs -s\n"
-"Êtes vous sûr de vouloir sauver et quitter ? [o/N]"
-
-# abbreviation for "no" (uppercase)
-msgid "N"
-msgstr "N"
-
-# abbreviation for "no" (lowercase)
-msgid "n"
-msgstr "n"
-
-# abbreviation for "yes" (uppercase)
-msgid "Y"
-msgstr "O"
-
-# abbreviation for "yes" (lowercase)
-msgid "y"
-msgstr "o"
-
-#, sh-format
-msgid ""
-"An archive containing your current game has been saved to\n"
-"\n"
-"    $tarfile\n"
-"\n"
-"You can transfer and extract this file, and restart your game\n"
-"with the start.sh script included therein."
-msgstr ""
-"Une archive contenant votre partie courante a été sauvée dans\n"
-"\n"
-"    $tarfile\n"
-"\n"
-"Vous pouvez transférer et extraire ce fichier, puis relance votre partie\n"
-"avec le script start.sh inclu."
-
-#, sh-format
-msgid "Possible failure while creating save file."
-msgstr ""
-
-#, sh-format
-msgid ""
-"Check the file\n"
-"\n"
-"    $tarfile\n"
-"\n"
-"to make sure everything is OK.\n"
-msgstr ""
-"Vérifiez le fichier\n"
-"\n"
-"    $tarfile\n"
-"\n"
-"pour être sûr que la sauvegarde est correcte.\n"
-
 msgid "The 'goto' command requires a mission number as argument."
 msgstr "La commande 'goto' a besoin d'un nombre en argument."
 
@@ -246,6 +204,14 @@ msgstr "Vous ne pourrez plus modifier ces informations."
 
 msgid "Is this information correct? [Y/n]"
 msgstr "Est-ce que ces informations sont correctes ? [O/n]"
+
+# abbreviation for "yes" (uppercase)
+msgid "Y"
+msgstr "O"
+
+# abbreviation for "no" (uppercase)
+msgid "N"
+msgstr "N"
 
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"

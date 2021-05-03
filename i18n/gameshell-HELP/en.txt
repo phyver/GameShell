@@ -44,10 +44,6 @@ Commands specific to GameShell
   gash reset
     reset the current mission
 
-  gash save
-    generate an archive suitable to start GameShell from the current 
-    mission
-
   gash show [N]
     show the current mission's goal
     if N is given, show the goal for mission N
