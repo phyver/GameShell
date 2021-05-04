@@ -18,7 +18,7 @@ echo
 
 bash <<EOS
   cd $office
-  command ls $(gettext "grimoire")_* | sort > $GASH_MISSION_DATA/list_grimoires
+  command ls $(gettext "grimoire")_* | sort > $GASH_MISSION_DATA/inventory_grimoires
 EOS
 
 unset i file office
