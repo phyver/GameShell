@@ -54,7 +54,7 @@ _gash_welcome() {
 _gash_reset() {
   if [ "$BASHPID" != $$ ]
   then
-    echo "$(gettext "The command 'gash reset' is useless when run inside a subshell!")" >&2
+    echo "$(gettext "Error: the command 'gash reset' is useless when run inside a subshell!")" >&2
     return 1
   fi
 
@@ -75,11 +75,11 @@ _gash_exit() {
   then
     while true
     do
-      read -erp "$(gettext "note, there are stopped jobs in your session.
-those processes will be terminated.
-you can get the list of those jobs with
+      read -erp "$(gettext "There are stopped jobs in your session.
+Those processes will be terminated.
+You can get the list of those jobs with
     \$ jobs -s
-do you still want to quit? [y/n]") " r
+Do you still want to quit? [y/n]") " r
       if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] ||  [ "$r" = "$(gettext "n")" ]
       then
         return
@@ -111,8 +111,8 @@ _gash_show() {
 
   if [ -z "$MISSION_NB" ]
   then
-    local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
+    local FUNCTION_NAME="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
     return 1
   fi
 
@@ -223,16 +223,16 @@ _gash_start() {
 
   if [ -z "$MISSION_NB" ]
   then
-    local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
+    local FUNCTION_NAME="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
     return 1
   fi
 
   local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
   if [ -z "$MISSION_DIR" ]
   then
-    color_echo red "$(eval_gettext "Mission \$MISSION_NB doesn't exist!
-Restarting...")"
+    color_echo red "$(eval_gettext "Error: mission \$MISSION_NB doesn't exist!
+Restarting from previous mission.")" >&2
     echo
     read -erp "$(gettext "Press Enter")"
     gash reset
@@ -245,7 +245,7 @@ Restarting...")"
     local exit_status=$?
     if [ "$exit_status" -ne 0 ]
     then
-      echo "$(gettext "The mission is cancelled because some dependencies are not met.")" >&2
+      echo "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
       _log_action "$MISSION_NB" "CANCEL_DEP_PB"
       _gash_start "$((MISSION_NB + 1))"
       return
@@ -270,7 +270,7 @@ Restarting...")"
     then
       if ! cmp -s "$GASH_MISSION_DATA"/env-before "$GASH_MISSION_DATA"/env-after
       then
-        echo "$(gettext "NOTE: this mission was initialized in a sub-shell.
+        echo "$(gettext "Error: this mission was initialized in a subshell.
 You should run the command
     gash reset
 to make sure the mission is initialized properly.")" >&2
@@ -297,8 +297,8 @@ _gash_pass() {
   local MISSION_NB="$(_get_current_mission)"
   if [ -z "$MISSION_NB" ]
   then
-    local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
+    local FUNCTION_NAME="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
     return 1
   fi
   if ! admin_mode
@@ -318,8 +318,8 @@ _gash_auto() {
 
   if [ -z "$MISSION_NB" ]
   then
-    local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
+    local FUNCTION_NAME="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
     return 1
   fi
 
@@ -327,7 +327,7 @@ _gash_auto() {
 
   if ! [ -f "$MISSION_DIR/auto.sh" ]
   then
-    echo "$(eval_gettext "Mission \$MISSION_NB doesn't have an auto script.")" >&2
+    echo "$(eval_gettext "Error: mission \$MISSION_NB doesn't have an auto script.")" >&2
     return 1
   fi
 
@@ -348,8 +348,8 @@ _gash_check() {
 
   if [ -z "$MISSION_NB" ]
   then
-    local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
+    local FUNCTION_NAME="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
     return 1
   fi
 
@@ -361,73 +361,66 @@ _gash_check() {
     return 1
   fi
 
-  if grep -q "^$MISSION_NB OK" "$GASH_DATA/missions.log"
+  mission_source "$MISSION_DIR/check.sh"
+  local exit_status=$?
+
+  if [ "$exit_status" -eq 0 ]
   then
     echo
-    color_echo yellow "$(eval_gettext "Mission \$MISSION_NB has already been succesfully checked!")"
+    color_echo green "$(eval_gettext 'Congratulations, $MISSION_NB has been successfully completed!')"
     echo
-  else
-    mission_source "$MISSION_DIR/check.sh"
-    local exit_status=$?
 
-    if [ "$exit_status" -eq 0 ]
+    _log_action "$MISSION_NB" "CHECK_OK"
+
+    _gash_clean "$MISSION_NB"
+
+    if [ -f "$MISSION_DIR/treasure.sh" ]
     then
-      echo
-      color_echo green "$(eval_gettext 'Mission $MISSION_NB has been successfully completed!')"
-      echo
+      # Record the treasure to be loaded by GameShell's bashrc.
+      cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).treasure.sh"
 
-      _log_action "$MISSION_NB" "CHECK_OK"
-
-      _gash_clean "$MISSION_NB"
-
-      if [ -f "$MISSION_DIR/treasure.sh" ]
+      # Display the text message (if it exists).
+      if [ -f "$MISSION_DIR/treasure-msg.txt" ]
       then
-        # Record the treasure to be loaded by GameShell's bashrc.
-        cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).treasure.sh"
-
-        # Display the text message (if it exists).
-        if [ -f "$MISSION_DIR/treasure-msg.txt" ]
+        echo ""
+        cat "$MISSION_DIR/treasure-msg.txt"
+        echo ""
+      elif [ -f "$MISSION_DIR/treasure-msg.sh" ]
+      then
+        echo ""
+        mission_source "$MISSION_DIR/treasure-msg.sh"
+        echo ""
+      else
+        local file_msg="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
+        if [ -f "$file_msg" ]
         then
           echo ""
-          cat "$MISSION_DIR/treasure-msg.txt"
+          cat "$file_msg"
           echo ""
-        elif [ -f "$MISSION_DIR/treasure-msg.sh" ]
-        then
-          echo ""
-          mission_source "$MISSION_DIR/treasure-msg.sh"
-          echo ""
-        else
-          local file_msg="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
-          if [ -f "$file_msg" ]
-          then
-            echo ""
-            cat "$file_msg"
-            echo ""
-          fi
-        fi
-
-        # Load the treasure in the current shell.
-        mission_source "$MISSION_DIR/treasure.sh"
-
-        #sourcing the file isn't very robust as the "gash check" may happen in a subshell!
-        if [ "$BASHPID" != $$ ]
-        then
-          echo "$(gettext "Note: the file 'treasure.sh' was sourced from a subshell.
-You are advised to use the command
-    $ gash reset")"
         fi
       fi
-      _gash_start $((10#$MISSION_NB + 1))
-    else
-      echo
-      color_echo red "$(eval_gettext "Mission \$MISSION_NB hasn't been completed.")"
-      echo
 
-      _log_action "$MISSION_NB" "CHECK_OOPS"
+      # Load the treasure in the current shell.
+      mission_source "$MISSION_DIR/treasure.sh"
 
-      _gash_clean "$MISSION_NB"
-      _gash_start "$MISSION_NB"
+      #sourcing the file isn't very robust as the "gash check" may happen in a subshell!
+      if [ "$BASHPID" != $$ ]
+      then
+        echo "$(gettext "Error: the file 'treasure.sh' was sourced from a subshell.
+You should use the command
+  $ gash reset")" >&2
+      fi
     fi
+    _gash_start $((10#$MISSION_NB + 1))
+  else
+    echo
+    color_echo red "$(eval_gettext "Sorry, mission \$MISSION_NB hasn't been completed.")"
+    echo
+
+    _log_action "$MISSION_NB" "CHECK_OOPS"
+
+    _gash_clean "$MISSION_NB"
+    _gash_start "$MISSION_NB"
   fi
 }
 
@@ -436,8 +429,8 @@ _gash_clean() {
 
   if [ -z "$MISSION_NB" ]
   then
-    local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
+    local FUNCTION_NAME="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
     return 1
   fi
 
@@ -455,7 +448,7 @@ _gash_assert_check() {
   local expected=$1
   if [ "$expected" != "true" ] && [ "$expected" != "false" ]
   then
-    echo "$(eval_gettext "Problem: _gash_assert_check only accept 'true' and 'false' as argument")" >&2
+    echo "$(eval_gettext "Error: _gash_assert_check only accept 'true' and 'false' as argument.")" >&2
     return 1
   fi
   local msg=$3
@@ -507,8 +500,8 @@ _gash_test() {
   local MISSION_NB="$(_get_current_mission)"
   if [ -z "$MISSION_NB" ]
   then
-    local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Problem: couldn't get mission number '\$MISSION_NB' (\$fn_name)")" >&2
+    local FUNCTION_NAME="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
     return 1
   fi
 
@@ -568,10 +561,10 @@ _gash_unprotect() {
 gash() {
   local _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="gash"
-  local cmd=$1
+  local CMD=$1
   shift
 
-  case $cmd in
+  case $CMD in
     "c" | "ch" | "che" | "chec" | "check")
       _gash_check
       ;;
@@ -612,7 +605,7 @@ gash() {
     "goto")
       if [ -z "$1" ]
       then
-        echo "$(gettext "The 'goto' command requires a mission number as argument.")" >&2
+        echo "$(gettext "Error: the 'goto' command requires a mission number as argument.")" >&2
         return 1
       fi
 
@@ -627,7 +620,7 @@ gash() {
     "test")
       if [ "$GASH_MODE" != "DEBUG" ]
       then
-        echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
+        echo "$(eval_gettext "Error: command '\$CMD' is only available in debug mode.")" >&2
       else
         _gash_test
       fi
@@ -635,7 +628,7 @@ gash() {
     "assert_check")
       if [ "$GASH_MODE" != "DEBUG" ]
       then
-        echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
+        echo "$(eval_gettext "Error: command '\$CMD' is only available in debug mode.")" >&2
       else
         _gash_assert_check "$@"
       fi
@@ -643,7 +636,7 @@ gash() {
     "assert")
       if [ "$GASH_MODE" != "DEBUG" ]
       then
-        echo "$(eval_gettext "Error: command '\$cmd' is only available in debug mode.")" >&2
+        echo "$(eval_gettext "Error: command '\$CMD' is only available in debug mode.")" >&2
       else
         _gash_assert "$@"
       fi
@@ -655,8 +648,8 @@ gash() {
       _gash_unprotect
       ;;
     *)
-      echo "$(eval_gettext 'unkwnown gash command $cmd')" >&2
-      echo "$(gettext "use one of the following commands:")  help, show, check, reset or HELP" >&2
+      echo "$(eval_gettext "Error: unknown gash command '\$CMD'
+use one of the following commands:")  check, help, HELP, reset or show" >&2
       export TEXTDOMAIN=$_TEXTDOMAIN
       unset _TEXTDOMAIN
       return 1

@@ -109,7 +109,6 @@ _confirm_passport() {
   echo "======================================================="
   cat "$PASSPORT"
   echo "======================================================="
-  color_echo yellow "$(gettext "You won't be able to change this information.")"
   while true
   do
     read -erp "$(gettext "Is this information correct? [Y/n]") " OK
@@ -241,15 +240,8 @@ Do you want to continue this game? [Y/n]') " r
     esac
 
     # check information is correct
-    if _confirm_passport "$PASSPORT"
-    then
-      break
-    else
-      rm -f "$PASSPORT"
-      color_echo yellow "$(gettext "Start again!")"
-      echo
-      fi
-    done
+    _confirm_passport "$PASSPORT" && break
+  done
 
 
   # Génération de l'UID du groupe.
