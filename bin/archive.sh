@@ -84,6 +84,13 @@ do
     "" | "#"* )
       continue
       ;;
+    "!"*)
+      DUMMY="!"
+      MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
+      ;;
+    *)
+      DUMMY=""
+      ;;
   esac
   N=$((10#$N + 1))
   N=$(echo -n "000000$N" | tail -c 6)
@@ -91,7 +98,7 @@ do
   echo "    $(basename "$MISSION_DIR")  -->  $(basename "$ARCHIVE_MISSION_DIR")"
   mkdir "$ARCHIVE_MISSION_DIR"
   cp --archive "$GASH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR"
-  echo "$(basename "$ARCHIVE_MISSION_DIR")" >> "$TMP_DIR/$NAME/missions/index.txt"
+  echo "$DUMMY$(basename "$ARCHIVE_MISSION_DIR")" >> "$TMP_DIR/$NAME/missions/index.txt"
 done
 
 
