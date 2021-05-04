@@ -23,7 +23,7 @@ ps
 
 kill N
   Envoie le signal d'arrêt au processus numéro N.
-  Note : N est appelé le PID ("process identifier").
+  Note : N est appelé le PID ("process identifier") du processus.
 
 
 Rappelez vous que les joker "*" et "?" ne voient pas les fichiers 

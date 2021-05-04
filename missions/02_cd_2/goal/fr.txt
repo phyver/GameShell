@@ -7,7 +7,7 @@ Allez dans la cave du château.
 Objectif secondaire
 -------------------
 
-Faite la différence entre ``cd -`` et ``cd ..``.
+Apprenez à faire la différence entre ``cd -`` et ``cd ..``.
 
 
 Commandes utiles

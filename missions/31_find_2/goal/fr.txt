@@ -10,7 +10,7 @@ Indice
 Le nom du fichier ne contient pas la chaine "rubis". Comme il n'y a 
 pas beaucoup de fichiers dans le labyrinthe, une stratégie est de 
 chercher les **fichier** et de chercher à la main celui qui contient 
-bien la chaine "rubis".
+la chaine "rubis".
 
 
 Commandes utiles

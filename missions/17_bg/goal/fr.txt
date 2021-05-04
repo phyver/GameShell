@@ -4,7 +4,7 @@ Objectif
 Pendant que vous vous promenez dans le chateau, vous avez 
 l'impression qu'on vous observe... Si vous tournez la tête 
 rapidement, vous verrez peut-être que les yeux d'une peinture vous 
-suive...
+suivent...
 
 1/ Lancez la commande ``xeyes`` puis stoppez la.
 2/ Lancez la commande ``xeyes`` en tâche de fond.

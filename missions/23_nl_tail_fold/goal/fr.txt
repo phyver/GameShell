@@ -11,8 +11,7 @@ homme :
     complète,
   - les lignes de la recette ne font pas plus de 50 caractères.
 
-Il faudra pour ceci combiner plusieurs commandes précédentes avec 
-``|``.
+Il faudra pour ceci combiner plusieurs commandes avec ``|``.
 
 Remarque
 --------
