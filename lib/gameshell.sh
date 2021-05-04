@@ -124,21 +124,21 @@ _gash_show() {
     VARS=$(sed -n '/^\s*#.*variables/p;1q' "$FILE")
     if [ -z "$VARS" ]
     then
-      parchment "$FILE"
+      parchment "$FILE" | more
     else
-      sed '1d' "$FILE" | envsubst "$VARS" | parchment
+      sed '1d' "$FILE" | envsubst "$VARS" | parchment | more
     fi
   elif [ -f "$MISSION_DIR/goal.sh" ]
   then
-    mission_source "$MISSION_DIR/goal.sh" | parchment
+    mission_source "$MISSION_DIR/goal.sh" | parchment | more
   else
     FILE="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/goal/en.txt')"
     VARS=$(sed -n '/^\s*#.*variables/p;1q' "$FILE")
     if [ -z "$VARS" ]
     then
-      parchment "$FILE"
+      parchment "$FILE" | more
     else
-      sed '1d' "$FILE" | envsubst "$VARS" | parchment
+      sed '1d' "$FILE" | envsubst "$VARS" | parchment | more
     fi
   fi
 }
