@@ -76,8 +76,19 @@ parse_index() {
     "" | "#"* )
       continue
       ;;
+
+     # "dummy" mission: it will only be used during the initialisation phase
+    "!"*)
+      DUMMY="!"
+      MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
+      ;;
+
+    # standard mission
+    *)
+      DUMMY=""
+      ;;
   esac
-  parse_mission "$(REALPATH "$dir/$MISSION_DIR")"
+  parse_mission "$DUMMY$(REALPATH "$dir/$MISSION_DIR")"
   done
 }
 
