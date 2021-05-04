@@ -26,7 +26,7 @@ EOH
 }
 
 NAME="GameShell"
-ADMIN_PASSWD=""
+ADMIN_PASSWD="gsh"
 KEEP_AUTO=0
 DEFAULT_MODE="ANONYMOUS"
 KEEP_TGZ='false'
@@ -118,12 +118,9 @@ find "$TMP_DIR/$NAME" -name "Makefile" -print0 | xargs -0 rm -f
 find "$TMP_DIR/$NAME" -name "template.pot" -print0 | xargs -0 rm -f
 
 # change admin password
-if [ "$ADMIN_PASSWD" ]
-then
-  echo "setting admin password"
-  ADMIN_HASH=$(checksum "$ADMIN_PASSWD")
-  sed -i "s/^\(\s*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$TMP_DIR/$NAME/start.sh"
-fi
+echo "setting admin password"
+ADMIN_HASH=$(checksum "$ADMIN_PASSWD")
+sed -i "s/^\(\s*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$TMP_DIR/$NAME/start.sh"
 
 # choose default mode
 echo "setting default GameShell mode"
