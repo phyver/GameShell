@@ -12,7 +12,7 @@ Commandes utiles
 ================
 
 tail FICHIER
-  Affiche les 10 dernières lignes du FICHIER.
+  Affiche les 10 dernières lignes du fichier.
 
 tail -n K FICHIER
-  Affiche les K dernières lignes du FICHIER.
+  Affiche les K dernières lignes du fichier.

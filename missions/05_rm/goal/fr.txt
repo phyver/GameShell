@@ -10,4 +10,5 @@ Commandes utiles
 ================
 
 rm FICHIER1 FICHIER2 ... FICHIERn
-  Supprime (définitivement) des fichiers.
+  Supprime (définitivement) les fichiers.
+  Note : ``rm`` est une abréviation pour "remove".

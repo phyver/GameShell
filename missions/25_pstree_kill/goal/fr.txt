@@ -1,10 +1,10 @@
 Objectif
 ========
 
-Les rats ont trouvé un amis, Linguini, qui a installé des machines 
+Les rats ont trouvé un ami, Linguini, qui a installé des machines 
 pour distribuer des morceaux de fromage dans la cuisine.
 
-Malheureusement, le chef cuistot, Skinner, a installé des machines 
+Malheureusement, le responsable, Skinner, a installé des machines 
 qui disséminent de la mort au rats.
 
 Vous devez tuer les générateur de mort aux rats, tout en épargnant 
@@ -12,20 +12,27 @@ les générateurs de fromage.
 Il faudra ensuite supprimer toute la mort aux rats présente dans la 
 cuisine.
 
-NOTE : il ne faut tuer ni Linguini, ni Skinner.
+Remarque
+--------
+
+Il ne faut tuer ni Linguini, ni Skinner.
 
 
 Commandes utiles
 ================
 
-pstree
-  Affiche la liste de tous les processus, avec leur lien de parenté.
+pstree PID
+  Affiche la liste des processus descendants de PID, avec leurs 
+  liens de parenté.
+
+  Si PID est omis, affiche tous les processus avec leurs liens de 
+  parenté.
 
   Options utiles :
     -p : affiche également les PID des processus
-    $$ : affiche seulement les descendant du shell courant
-         ($$ contient le PID du shell courant et peut être remplacé 
-         par un autre PID)
+    $$ : cette variable spéciale contient le numéro de processus
+         du shell courant et peut donc prendre la place du PID.
 
 kill N
-  Tue le processus dont le numéro ("PID") est N.
+  Envoie le signal d'arrêt au processus numéro N.
+  Note : N est appelé le PID ("process identifier").

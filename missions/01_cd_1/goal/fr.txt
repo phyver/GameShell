@@ -8,15 +8,24 @@ Commandes utiles
 ================
 
 cd LIEU
-  Permet de se déplacer vers le LIEU donné.
-  Note: en anglais ``cd`` signifie « change directory ».
-
-pwd
-  Affiche la position actuelle.
-  Note: en anglais ``pwd`` signifie « print working directory ».
+  Permet de se déplacer vers le lieu donné.
+  Note : ``cd`` est une abréviation pour "change directory".
 
 ls
   Liste les lieux accessibles depuis la position actuelle.
+  Note : ``ls`` est une abréviation pour "liste".
+
+pwd
+  Affiche la position actuelle.
+  Note : ``pwd`` est une abréviation pour "print working directory".
 
 gash reset
-  Permet de recommencer la mission au début.
+  Ré-initialise la mission au début.
+
+
+Remarque
+--------
+
+Les termes apparaissant en MAJUSCULES dans les commandes sont des 
+méta-variables : vous devez les remplacer par des valeurs (chaines 
+de caractères) appropriées.

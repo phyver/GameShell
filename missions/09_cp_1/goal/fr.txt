@@ -10,4 +10,5 @@ Commandes utiles
 ================
 
 cp FICHIER1 FICHIER2 ... FICHIERn DOSSIER
-  Copie les fichiers dans un autre dossier.
+  Copie les fichiers dans le dossier.
+  Note : ``cp`` est une abréviation pour "copy".

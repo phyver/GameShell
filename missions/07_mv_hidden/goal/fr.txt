@@ -9,8 +9,7 @@ forêt).
 Objectif secondaire
 ===================
 
-Maitriser l'utilisation de la touche "Tabulation" pour aller plus 
-vite.
+Apprenez à utiliser la touche "Tabulation" pour aller plus vite.
 
 
 Commandes utiles
@@ -22,7 +21,7 @@ ls -A
   (Un fichier est "caché" si son nom commence par le caractère ".".)
 
 Tab
-  La touche "Tab" "complète" un nom de fichier ou de répertoire dès 
+  La touche "Tab" complète un nom de fichier ou de répertoire dès 
   qu'on en tapé le début.
 
 Tab-Tab

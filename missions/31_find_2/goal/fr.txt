@@ -4,10 +4,13 @@ Objectif
 Retrouvez le rubis dans labyrinthe (dans le jardin) et déplacez le 
 dans votre coffre.
 
-Indice : le nom du fichier ne contient pas la chaine "rubis". Une 
-stratégie est donc de chercher un **fichier** (par opposition à un 
-dossier) et de vérifier à la main que ce fichier contient bien la 
-chaine "rubis".
+Indice
+------
+
+Le nom du fichier ne contient pas la chaine "rubis". Comme il n'y a 
+pas beaucoup de fichiers dans le labyrinthe, une stratégie est de 
+chercher les **fichier** et de chercher à la main celui qui contient 
+bien la chaine "rubis".
 
 
 Commandes utiles
@@ -24,12 +27,19 @@ find CONDITION
 cat FICHIER
   Affiche tout le contenu d'un fichier sur le terminal.
 
-man CMD
-  Consulte l'aide de la commande CMD.
+man COMMANDE
+  Affiche l'aide de la commande.
 
   Touches utilisées par la commande "man"
     q           quitter
-    Space       faire défiler une page
+    Espace      faire défiler une page
     / CHAINE    rechercher une chaine
-    n           aller à la prochaine occurrence de la chaine
-                cherchée
+    n           aller à l'occurrence suivante de la chaine cherchée
+
+Remarque
+--------
+
+La description de la commande ``find`` est volontairement succincte. 
+Vous devrez consulter l'aide pour comprendre comment l'utiliser. 
+(Vous pouvez par exemple faire une recherche sur la chaine "-type" 
+dans la page du manuel...)

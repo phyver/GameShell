@@ -3,8 +3,8 @@ Objectif
 
 Créez un fichier journal nommé 'journal.txt' dans votre coffre, et 
 inscrivez y un petit message.
-Vous pourrez l'utiliser pour prendre des notes sur vos solutions 
-pour les missions suivantes.
+Vous pourrez utiliser ce fichier pour prendre des notes sur vos 
+solutions lors des missions suivantes.
 
 
 Détails
@@ -21,11 +21,12 @@ Commandes utiles
 
 nano FICHIER
   Édite le fichier dans le terminal.
+  (Si le fichier n'existe pas, il est créé.)
 
   Les raccourcis claviers sont affichés en bas :
   (le symbole "^" signifie "Control")
     Control-x     quitter nano
     Control-o     sauver le fichier
-    Control-w     rechercher dans le texte
+    Control-w     rechercher une chaine dans le fichier ouvert
 
-  NOTE : n'utilisez pas Control-s ou Control-z!
+  Remarque : n'utilisez pas Control-s ou Control-z!

@@ -6,10 +6,12 @@ l'observatoire et tient des propos incohérents, voire
 incompréhensibles.
 
 Vous devez déchiffrer son charabia car il est le seul à connaitre la 
-clé secrète...
+clé secrète.
 
-Indice : il y a fort à parier que le message de merlin soit truffé 
-d'erreurs.
+Indice
+------
+
+Il y a fort à parier que le message de Merlin soit truffé d'erreurs.
 
 
 Commandes utiles
@@ -19,14 +21,14 @@ Commandes utiles
   Exécute un fichier exécutable en tant que programme. Il va de soi 
   que Merlin l'est (exécutable)...
 
-CMD  >  FICHIER
-  Envoie la sortie standard (STDOUT) d'une commande vers un fichier.
+COMMANDE  >  FICHIER
+  Envoie la sortie standard (stdout) d'une commande vers un fichier.
   (Le fichier est écrasé.)
 
-CMD  2>  FICHIER
-  Envoie la sortie d'erreurs (STDERR) d'une commande vers un 
+COMMANDE  2>  FICHIER
+  Envoie la sortie d'erreurs (stderr) d'une commande vers un 
   fichier.
   (Le fichier est écrasé.)
 
-CMD  <  FICHIER
-  Envoie un fichier vers l'entrée standard (STDIN) d'une commande.
+COMMANDE  <  FICHIER
+  Envoie un fichier vers l'entrée standard (stdin) d'une commande.

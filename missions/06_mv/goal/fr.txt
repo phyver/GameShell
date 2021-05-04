@@ -8,10 +8,11 @@ et placez les dans votre coffre (dans votre cabane, dans la forêt).
 Commandes utiles
 ================
 
-mv FICHIER1 FICHIER2 ... FICHIERn DOSSIER
-  Déplace les fichiers vers le dossier.
+mv FICHIER1 FICHIER2 ... FICHIERn REPERTOIRE
+  Déplace les fichiers vers le répertoire.
+  Note : ``mv`` est une abréviation pour "move".
 
 ~
-  abréviation pour le répertoire initial
-  Exemple : ~/Dossier représente le dossier "Dossier" dans le 
-  répertoire initial.
+  Le symbole "~" est une abréviation pour le répertoire initial.
+  Exemple : ~/Taverne représente le dossier (ou fichier) "Taverne" 
+  dans le répertoire initial.
