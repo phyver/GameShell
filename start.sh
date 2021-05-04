@@ -139,7 +139,7 @@ init_gash() {
   export GASH_CONFIG="$GASH_BASE/.config"
   export GASH_LOCAL_BIN="$GASH_BASE/.bin"
 
-  ADMIN_HASH=''
+  ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
 
   # message when a new game is started from the developpment directory
   if [ -e "$GASH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
