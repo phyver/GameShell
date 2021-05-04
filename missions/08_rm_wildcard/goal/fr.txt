@@ -10,7 +10,7 @@ Motifs shell
 
 *
   Le caractère "*" est un joker pour n'importe quelle chaine de 
-  caractères.
+  caractères (y compris la chaine vide).
 
 ?
   Le caractère "?" est un joker pour n'importe caractère.

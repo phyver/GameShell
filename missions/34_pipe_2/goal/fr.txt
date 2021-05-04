@@ -27,7 +27,7 @@ grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
     ne contiennent pas la chaine.
 
 wc FICHIER
-  Compte le nombre de lignes/mots/lettres dans un fichier.
+  Compte le nombre de lignes / mots / lettres dans un fichier.
 
-  Si aucun fichier n'est spécifié, ``wc`` compte les 
-  lignes/mots/lettres lus sur l'entrée standard.
+  Si aucun fichier n'est spécifié, ``wc`` compte les lignes / mots / 
+  lettres lus sur l'entrée standard.

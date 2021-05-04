@@ -4,7 +4,10 @@ Mission goal
 Go back to the starting location and then go to the throne room 
 using only two commands.
 
-NOTE: you may experiment with as many commands as you want, but
+Remark
+------
+
+You may experiment with as many commands as you want, but
 to validate the mission the following conditions need to be met:
   - the second to last command takes you to the starting point,
   - the last command takes you directly to the throne room.
@@ -18,3 +21,10 @@ cd
 
 cd LOCATION1/LOCATION2/LOCATION3
   Make several moves in one command.
+
+
+Remark
+------
+
+UPPERCASE words appearing in commands are meta-variables: you need 
+to replace them by appropriate (string) values.

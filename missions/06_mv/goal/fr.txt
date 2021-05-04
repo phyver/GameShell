@@ -14,5 +14,5 @@ mv FICHIER1 FICHIER2 ... FICHIERn REPERTOIRE
 
 ~
   Le symbole "~" est une abréviation pour le répertoire initial.
-  Exemple : ~/Taverne représente le dossier (ou fichier) "Taverne" 
-  dans le répertoire initial.
+  Exemple : où que vous soyez, ``~/Taverne`` représente le dossier 
+  (ou fichier) "Taverne" dans le répertoire initial.

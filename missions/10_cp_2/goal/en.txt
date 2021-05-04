@@ -6,24 +6,25 @@ beautiful. Since you can't just take them, put a copy of each
 in your chest.
 
 
-Useful commands
-===============
+Shell patterns
+==============
 
 *
-?
   The "*" character stands in for any sequence of characters
   (including an empty sequence).
 
+?
   The "?" character stands in for any single character.
 
-  They can be used to denote lists of existing files.
+Those wildcards can be used to denote lists of existing files / 
+directories
 
-  Example: if the current folder contains
-      File-1 Folder-1 file-14 potato
-  then
-    *     -->  File-1 Folder-1 file-14 potato
-    *1    -->  File-1 Folder-1
+For example: if the current folder contains
+      file-1 Folder-1 file-14 potato
+then
+    *     -->  file-1 Folder-1 file-14 potato
+    *1    -->  file-1 Folder-1
     *o*   -->  Folder-1 potato
     x*    -->  error, no matching file
-    *-?   -->  File-1 Folder-1
+    *-?   -->  file-1 Folder-1
     *-??  -->  file-14

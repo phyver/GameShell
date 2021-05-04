@@ -8,14 +8,11 @@ castle, and put them in your chest in your cabin in the forest.
 Useful commands
 ===============
 
-mv FILE1 FILE2 ... FILEn DIRNAME
-  Move all the files to the directory DIRNAME.
+mv FILE1 FILE2 ... FILEn DIRECTORY
+  Move all the files to the directory.
   Remark: ``mv`` is an abbreviation of "move".
 
 ~
-  Abbreviation for the initial directory. In our game, this
-  directory is called "World" and can be seen in the path
-  given by ``pwd``. (The initial directory may depend on the
-  shell that is used.)
-  Example: if you are in the "Forest", ``ls ~/Castle`` lists
-  the locations accessible from the "Castle".
+  The "~" symbol is an abbreviation for the initial directory.
+  Example: wherever you are, ``~/Tavern`` denotes the directory (or 
+  file) "Tavern" in the initial directory.

@@ -9,15 +9,15 @@ file called "inventory.txt", in the drawer...
 Useful commands
 ===============
 
-CMD  >  FILE
-  the output of the command is sent to the file instead of being 
-  printed on the standard output (the screen)
+COMMAND  >  FILE
+  Send the command's output to a file instead of printing it on the 
+  screen.
 
 less FILE
-  display the content of a text file, one page at a time
+  display the content of a file, one page at a time
 
   Important keybindings are
-    Space     scroll down one page
     q         quit
-    / STRING  search the string in the file
-    n         go to the next occurrence of the last search string
+    Space     scroll down one page
+    / STRING  search for a string
+    n         go to the next occurrence of the search string

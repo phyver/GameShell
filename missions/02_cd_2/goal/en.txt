@@ -13,12 +13,13 @@ Understand the difference between ``cd -`` and ``cd ..``.
 Useful commands
 ===============
 
-pwd
-  See the path to your current location.
-  Remark: ``pwd`` stands for "print working directory".
-
 cd -
   Jump back to the location you were in prior to your last move.
 
 cd ..
-  Move one step back along the path to your current location.
+  Move to the parent directory (one step back along the path to your 
+  current location).
+
+pwd
+  See the path to your current location.
+

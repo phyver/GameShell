@@ -7,23 +7,26 @@ mumbles incoherently.
 You need to make sense of this because he is the only one who knows 
 the secret key!
 
-Hint: it is likely that Merlin's message is riddled with errors.
+Hint
+----
+
+It is likely that Merlin's message is riddled with errors.
 
 
 Useful commands
 ===============
 
 ./FILE
-  run an executable file as a program. Needless to stay the Merlin 
+  Run an executable file as a program. Needless to say that Merlin 
   is executable...
 
-CMD  >  FILE
-  send standard output (STDOUT) for the command to a file
+COMMAND  >  FILE
+  Send standard output (stdout) for the command to a file.
   (The file is overwritten.)
 
-CMD  2>  FICHIER
-  send error output (STDERR) for the command to a file
+COMMAND  2>  FICHIER
+  Send error output (stderr) for the command to a file.
   (The file is overwritten.)
 
-CMD  <  FILE
-  send the file to the standard input (STDIN) of the command
+COMMAND  <  FILE
+  Send the file to the standard input (stdin) of the command.

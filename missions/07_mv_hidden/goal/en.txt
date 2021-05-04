@@ -16,7 +16,7 @@ Useful commands
 
 ls -A
   List all the files of the current directory, including hidden 
-  files (a file is "hidden" when its name starts with a dot).
+  files. (A file is "hidden" when its name starts with a dot.)
 
 Tab
   The tabulation key "completes" the name of a file or directory 

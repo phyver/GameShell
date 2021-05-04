@@ -1,21 +1,23 @@
 Mission goal
 ============
 
-It is taking too long to check for hidden spiders! Create an 
-alias "la" to run the command ``ls -A`` in order to list all
-files, including hidden ones, more easily.
+Checking for hidden files is taking too long!
 
-Define the alias
+Create an alias "la" to run the command ``ls -A`` in order to list 
+all files, including hidden ones, with only 2 letters.
+
+Define the synonym
 
   la='ls -A'
 
 and check that it works as expected.
+
 How fortunate, there is a nice rock hidden just where you are.
 
 
 Useful commands
 ===============
 
-alias NAME='CMD'
-  Create a command with a short name NAME to stand for the 
-  longer command CMD.
+alias STRING='COMMAND'
+  Create a synonym for a short string, that will stand for a longer 
+  command.

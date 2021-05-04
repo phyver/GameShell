@@ -16,8 +16,3 @@ ls -R
 tree
   Print the tree of files and directories, starting from the 
   current working directory.
-
-  NOTE: this command is not standard and not always installed 
-  by default.
-
-  The option "-C" adds colors to the output of the command.

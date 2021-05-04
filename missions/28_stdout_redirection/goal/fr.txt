@@ -11,7 +11,7 @@ Commandes utiles
 
 COMMANDE  >  FICHIER
   Envoie le résultat de la commande dans le fichier au lieu de 
-  l'afficher sur la sortie standard (l'écran).
+  l'afficher sur l'écran.
 
 less FICHIER
   Affiche un fichier page par page.

@@ -33,8 +33,7 @@ Commandes utiles
 grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
   Filtre les lignes du fichier et n'affiche que celles qui 
   contiennent la chaine.
-  Si aucun fichier n'est spécifié, ``grep`` filtre les lignes lues 
-  sur l'entrée standard.
+  Si aucun fichier n'est donné, ``grep`` utilise l'entrée standard.
 
   Option utile :
     -v : affiche les lignes qui **ne contiennent pas** la chaine.
