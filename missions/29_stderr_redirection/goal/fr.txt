@@ -22,7 +22,7 @@ Commandes utiles
 Chaque commande peut écrire sur l'écran de deux manières :
   - affichage du résultat ("stdout")
   - affichage des message d'erreur ("stderr")
-Par défaut, on ne peut pas différencier ces affichages.
+On ne peut pas différencier ces affichages.
 
 On peut par contre rediriger les deux affichages indépendamment.
 

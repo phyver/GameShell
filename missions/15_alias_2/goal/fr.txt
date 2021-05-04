@@ -13,9 +13,7 @@ Pour éditer le journal depuis la cave ou la salle au trésor avec
 "~/Foret/.../journal.txt"
 
 Pour éviter de taper cette commande en entier à chaque fois, créez 
-un alias sur le même schéma que le
-
-  alias la='ls -a'
+un alias "journal" pour éditer votre fichier "journal.txt".
 
 
 Commandes utiles

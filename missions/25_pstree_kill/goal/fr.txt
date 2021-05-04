@@ -24,7 +24,6 @@ Commandes utiles
 pstree PID
   Affiche la liste des processus descendants de PID, avec leurs 
   liens de parenté.
-
   Si PID est omis, affiche tous les processus avec leurs liens de 
   parenté.
 

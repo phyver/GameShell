@@ -8,7 +8,7 @@ Commandes utiles
 ================
 
 cd LIEU
-  Permet de se déplacer vers le lieu donné.
+  Se déplace vers le lieu donné.
   Note : ``cd`` est une abréviation pour "change directory".
 
 ls

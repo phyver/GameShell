@@ -22,7 +22,7 @@ find
 grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
   Recherche une chaine parmi les fichiers.
 
-  Option utile
+  Option utile :
     -l  affiche juste le nom des fichiers contenant la chaine.
 
 xargs COMMANDE

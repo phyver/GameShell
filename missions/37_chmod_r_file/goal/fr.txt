@@ -1,9 +1,9 @@
 Objectif
 ========
 
-Il parait que le roi garde le code secret de son coffre-fort inscrit 
+Il parait que le roi garde la combinaison de son coffre-fort notée 
 sur un bout de papier dans sa chambre.
-Trouvez ce code secret.
+Trouvez la combinaison du coffre du roi.
 
 Remarque
 --------

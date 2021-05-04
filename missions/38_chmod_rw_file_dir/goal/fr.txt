@@ -6,20 +6,3 @@ Vous devez la dérober et la stocker dans votre coffre.
 
 Aussi, au bas de la couronne est inscrite une séquence magique de 3 
 chiffres. Regardez cette séquence et souvenez vous en.
-
-
-Commandes utiles
-================
-
-cat FICHIER
-  Affiche le contenu du fichier sur la sortie standard.
-
-chmod [OPTIONS] FICHIER
-  Modifie les droits d'accès à un fichier ou répertoire.
-  Consultez le début de la page de manuel pour découvrir comment 
-  spécifier les droit d'accès.
-
-ls -l
-  Affiche la liste des fichiers avec leurs métadonnées importantes.
-  Les droits d'accès sont donnés en début de ligne.
-
