@@ -37,3 +37,7 @@ msgstr "$MISSION_DIR/book_of_potions/en.txt"
 
 msgid "table_of_contents"
 msgstr "table_of_contents"
+
+#, sh-format
+msgid "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
+msgstr "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
