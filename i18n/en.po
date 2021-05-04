@@ -4,40 +4,191 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-# welcome message file
+#, sh-format
+msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
+msgstr "$GASH_BASE/i18n/gameshell-HELP/en.txt"
+
+#, sh-format
+msgid "$GASH_BASE/i18n/gameshell-help/en.txt"
+msgstr "$GASH_BASE/i18n/gameshell-help/en.txt"
+
+#, sh-format
+msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
+msgstr "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
+
+#, sh-format
+msgid "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
+msgstr "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
+
 #, sh-format
 msgid "$GASH_BASE/i18n/gameshell-welcome/en.txt"
 msgstr "$GASH_BASE/i18n/gameshell-welcome/en.txt"
 
-msgid "The command 'gash reset' is useless when run inside a subshell!"
-msgstr "The command 'gash reset' is useless when run inside a subshell!"
-
-msgid ""
-"note, there are stopped jobs in your session.\n"
-"those processes will be terminated.\n"
-"you can get the list of those jobs with\n"
-"    $ jobs -s\n"
-"do you still want to quit? [y/n]"
-msgstr ""
-"NOTE, there are stopped jobs in your session.\n"
-"Those processes will be terminated.\n"
-"You can get the list of those jobs with\n"
-"    $ jobs -s\n"
-"Do you still want to quit? [y/N]"
-
-msgid "n"
-msgstr "n"
-
-msgid "y"
-msgstr "y"
-
 #, sh-format
-msgid "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
-msgstr "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
+msgid "$GASH_BASE/i18n/start-help/en.txt"
+msgstr "$GASH_BASE/i18n/start-help/en.txt"
 
 #, sh-format
 msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/en.txt"
+
+#, sh-format
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/en.txt"
+
+#, sh-format
+msgid "$NB_ERRORS errors out of $NB_TESTS tests"
+msgstr "$NB_ERRORS errors out of $NB_TESTS tests"
+
+#, sh-format
+msgid "$NB_TESTS successful tests"
+msgstr "$NB_TESTS successful tests"
+
+msgid "======== Initialisation of GameShell ========"
+msgstr "======== Initialisation of GameShell ========"
+
+#, sh-format
+msgid "Congratulations, $MISSION_NB has been successfully completed!"
+msgstr "Congratulations, $MISSION_NB has been successfully completed!"
+
+#, sh-format
+msgid "Error: _gash_assert_check only accept 'true' and 'false' as argument."
+msgstr "Error: _gash_assert_check only accept 'true' and 'false' as argument."
+
+#, sh-format
+msgid "Error: command '$CMD' is only available in debug mode."
+msgstr "Error: command '$CMD' is only available in debug mode."
+
+#, sh-format
+msgid "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
+msgstr "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
+
+#, sh-format
+msgid ""
+"Error: mission $MISSION_NB doesn't exist!\n"
+"Restarting from previous mission."
+msgstr ""
+"Error: mission $MISSION_NB doesn't exist!\n"
+"Restarting from previous mission."
+
+#, sh-format
+msgid "Error: mission $MISSION_NB doesn't have a check script."
+msgstr "Error: mission $MISSION_NB doesn't have a check script."
+
+#, sh-format
+msgid "Error: mission $MISSION_NB doesn't have a test script."
+msgstr "Error: mission $MISSION_NB doesn't have a test script."
+
+#, sh-format
+msgid "Error: mission $MISSION_NB doesn't have an auto script."
+msgstr "Error: mission $MISSION_NB doesn't have an auto script."
+
+#, sh-format
+msgid "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
+msgstr "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
+
+msgid "Error: the 'goto' command requires a mission number as argument."
+msgstr "Error: the 'goto' command requires a mission number as argument."
+
+msgid "Error: the command 'gash reset' is useless when run inside a subshell!"
+msgstr "Error: the command 'gash reset' is useless when run inside a subshell!"
+
+msgid ""
+"Error: this mission was initialized in a subshell.\n"
+"You should run the command\n"
+"    gash reset\n"
+"to make sure the mission is initialized properly."
+msgstr ""
+"Error: this mission was initialized in a subshell.\n"
+"You should run the command\n"
+"    gash reset\n"
+"to make sure the mission is initialized properly."
+
+#, sh-format
+msgid ""
+"Error: unknown gash command '$CMD'\n"
+"use one of the following commands:"
+msgstr ""
+"Error: unknown gash command '$CMD'\n"
+"use one of the following commands:"
+
+#, sh-format
+msgid ""
+"Error: unknown system: OSTYPE=$OSTYPE.\n"
+"GameShell will use 'gnu-linux', without guarantee."
+msgstr ""
+"Error: unknown system: OSTYPE=$OSTYPE.\n"
+"GameShell will use 'gnu-linux', without guarantee."
+
+msgid "Is this information correct? [Y/n]"
+msgstr "Is this information correct? [Y/n]"
+
+#, sh-format
+msgid "Mission $MISSION_NB has been cancelled."
+msgstr "Mission $MISSION_NB has been cancelled."
+
+msgid "N"
+msgstr "N"
+
+msgid ""
+"No mission were found!\n"
+"Aborting"
+msgstr ""
+"No mission were found!\n"
+"Aborting"
+
+msgid "Player's email:"
+msgstr "Player's email:"
+
+msgid "Player's name:"
+msgstr "Player's name:"
+
+msgid "Press Enter"
+msgstr "Press Enter"
+
+#, sh-format
+msgid "Sorry, mission $MISSION_NB hasn't been completed."
+msgstr "Sorry, mission $MISSION_NB hasn't been completed."
+
+#, sh-format
+msgid ""
+"The directory $GASH_DATA contains meta-data from a previous game.\n"
+"Do you want to continue this game? [Y/n]"
+msgstr ""
+"The directory $GASH_DATA contains meta-data from a previous game.\n"
+"Do you want to continue this game? [Y/n]"
+
+msgid ""
+"There are stopped jobs in your session.\n"
+"Those processes will be terminated.\n"
+"You can get the list of those jobs with\n"
+"    $ jobs -s\n"
+"Do you still want to quit? [y/n]"
+msgstr ""
+"There are stopped jobs in your session.\n"
+"Those processes will be terminated.\n"
+"You can get the list of those jobs with\n"
+"    $ jobs -s\n"
+"Do you still want to quit? [y/n]"
+
+msgid "This option is only available from an executable archive!"
+msgstr "This option is only available from an executable archive!"
+
+msgid "Y"
+msgstr "Y"
+
+msgid "You are not allowed to run this command."
+msgstr "You are not allowed to run this command."
+
+msgid ""
+"You are trying to run GameShell inside the developpment directory.\n"
+"Do you want to continue? [y/N]"
+msgstr ""
+"You are trying to run GameShell inside the developpment directory.\n"
+"Do you want to continue? [y/N]"
+
+msgid "cancelled"
+msgstr "cancelled"
 
 msgid "done"
 msgstr "done"
@@ -45,193 +196,29 @@ msgstr "done"
 msgid "failed"
 msgstr "failed"
 
+#, sh-format
+msgid "invalid option: '-$OPTARG'"
+msgstr "invalid option: '-$OPTARG'"
+
+msgid "n"
+msgstr "n"
+
 msgid "passed"
 msgstr "passed"
 
-msgid "cancelled"
-msgstr "cancelled"
-
-msgid "Press Enter"
-msgstr "Press Enter"
-
-#, sh-format
-msgid ""
-"Mission $MISSION_NB doesn't exist!\n"
-"Restarting..."
-msgstr ""
-"Mission $MISSION_NB doesn't exist!\n"
-"Restarting..."
-
-msgid "The mission is cancelled because some dependencies are not met."
-msgstr "The mission is cancelled because some dependencies are not met."
-
-msgid ""
-"NOTE: this mission was initialized in a sub-shell.\n"
-"You should run the command\n"
-"    gash reset\n"
-"to make sure the mission is initialized properly."
-msgstr ""
-"NOTE: this mission was initialized in a sub-shell.\n"
-"You should run the command\n"
-"    gash reset\n"
-"to make sure the mission is initialized properly."
-
-#, sh-format
-msgid "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
-msgstr "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
-
-#, sh-format
-msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
-msgstr "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
-
-#, sh-format
-msgid "Mission $MISSION_NB has been cancelled."
-msgstr "Mission $MISSION_NB has been cancelled."
-
-#, sh-format
-msgid "Mission $MISSION_NB doesn't have an auto script."
-msgstr "Mission $MISSION_NB doesn't have an auto script."
-
-#, sh-format
-msgid "Error: mission $MISSION_NB doesn't have a check script."
-msgstr "Error: mission $MISSION_NB doesn't have a check script."
-
-#, sh-format
-msgid "Mission $MISSION_NB has already been succesfully checked!"
-msgstr "Mission $MISSION_NB has already been succesfully checked!"
-
-#, sh-format
-msgid "Mission $MISSION_NB has been successfully completed!"
-msgstr "Mission $MISSION_NB has been successfully completed!"
-
-#, sh-format
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
-
-#, sh-format
-msgid "Mission $MISSION_NB hasn't been completed."
-msgstr "Mission $MISSION_NB hasn't been completed."
-
-#, sh-format
-msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
-msgstr "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
+msgid "password:"
+msgstr "password:"
 
 #, sh-format
 msgid "test $NB_TESTS failed"
 msgstr "test $NB_TESTS failed"
 
 #, sh-format
-msgid "Error: mission $MISSION_NB doesn't have a test script."
-msgstr "Error: mission $MISSION_NB doesn't have a test script."
-
-#, sh-format
-msgid "$NB_TESTS successful tests"
-msgstr "$NB_TESTS successful tests"
-
-#, sh-format
-msgid "$NB_ERRORS errors out of $NB_TESTS tests"
-msgstr "$NB_ERRORS errors out of $NB_TESTS tests"
-
-#, sh-format
-msgid "$GASH_BASE/i18n/gameshell-help/en.txt"
-msgstr "$GASH_BASE/i18n/gameshell-help/en.txt"
-
-#, sh-format
-msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
-msgstr "$GASH_BASE/i18n/gameshell-HELP/en.txt"
-
-msgid "The 'goto' command requires a mission number as argument."
-msgstr "The 'goto' command requires a mission number as argument."
-
-#, sh-format
-msgid "Error: command '$cmd' is only available in debug mode."
-msgstr "Error: command '$cmd' is only available in debug mode."
-
-#, sh-format
-msgid "unkwnown gash command $cmd"
-msgstr "unkwnown gash command: $cmd"
-
-msgid "use one of the following commands:"
-msgstr "use one of the following commands:"
-
-#, sh-format
-msgid ""
-"Unknown system: OSTYPE=$OSTYPE.\n"
-"GameShell will use 'gnu-linux', without guarantee.\n"
-"Please report this as a bug.\n"
-"Press Enter to continue."
-msgstr ""
-"Unknown system: OSTYPE=$OSTYPE.\n"
-"GameShell will use 'gnu-linux', without guarantee.\n"
-"Please report this as a bug.\n"
-"Press Enter to continue."
-
-msgid "You are not allowed to run this command."
-msgstr "You are not allowed to run this command."
-
-msgid "password:"
-msgstr "password:"
+msgid "unknown mode: $MODE"
+msgstr "unknown mode: $MODE"
 
 msgid "wrong password"
 msgstr "wrong password"
 
-#, sh-format
-msgid "$GASH_BASE/i18n/start-help/en.txt"
-msgstr "$GASH_BASE/i18n/start-help/en.txt"
-
-msgid "This option is only available from an executable archive!"
-msgstr "This option is only available from an executable archive!"
-
-#, sh-format
-msgid "invalid option: '-$OPTARG'"
-msgstr "invalid option: '-$OPTARG'"
-
-msgid "Player's name:"
-msgstr "Player's name:"
-
-msgid "Player's email:"
-msgstr "Player's email:"
-
-msgid "You won't be able to change this information."
-msgstr "You won't be able to change this information."
-
-msgid "Is this information correct? [Y/n]"
-msgstr "Is this information correct? [Y/n]"
-
-msgid "Y"
-msgstr "Y"
-
-msgid "N"
-msgstr "N"
-
-msgid ""
-"You are trying to run GameShell inside the developpment directory.\n"
-"Do you want to continue? [y/N]"
-msgstr ""
-"You are trying to run GameShell inside the developpment directory.\n"
-"Do you want to continue? [y/N]"
-
-#, sh-format
-msgid ""
-"The directory $GASH_DATA contains meta-data from a previous game.\n"
-"Do you want to continue this game? [Y/n]"
-msgstr ""
-"The directory $GASH_DATA contains meta-data from a previous game.\n"
-"Do you want to continue this game? [Y/n]"
-
-#, sh-format
-msgid "unknown mode: $MODE"
-msgstr "unknown mode: $MODE"
-
-msgid "Start again!"
-msgstr "Start again!"
-
-msgid "======== Initialisation of GameShell ========"
-msgstr "======== Initialisation of GameShell ========"
-
-msgid ""
-"No mission were found!\n"
-"Aborting"
-msgstr ""
-"No mission were found!\n"
-"Aborting"
+msgid "y"
+msgstr "y"

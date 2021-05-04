@@ -3,7 +3,7 @@ LANG=$(wildcard i18n/*.po)
 SH_FILES= start.sh bin/archive.sh lib/gameshell.sh lib/utils.sh lib/os_aliases.sh
 OTHER_FILES=
 
-ADD_LOCATION=
+ADD_LOCATION=--sort-output
 
 all: $(LANG)
 

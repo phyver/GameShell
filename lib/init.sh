@@ -2,8 +2,8 @@
 
 if [ -z "$BASH_SOURCE" ] || ! [ -f "$BASH_SOURCE" ]
 then
-    echo "GameShell must be run with Bash from a file."
-    exit 1
+  echo "GameShell must be run with Bash from a file."
+  exit 1
 fi
 
 FILENAME="$0"
@@ -13,12 +13,12 @@ NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$FI
 
 for arg in "$@"
 do
-    if [ "$arg" = "-X" ]
-    then
-        tail -n+"$NB_LINES" "$FILENAME" > "${FILENAME%.*}.tgz"
-        echo "Archive saved in ${FILENAME%.*}.tgz"
-        exit 0
-    fi
+  if [ "$arg" = "-X" ]
+  then
+    tail -n+"$NB_LINES" "$FILENAME" > "${FILENAME%.*}.tgz"
+    echo "Archive saved in ${FILENAME%.*}.tgz"
+    exit 0
+  fi
 done
 
 
