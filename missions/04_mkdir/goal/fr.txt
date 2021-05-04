@@ -4,7 +4,10 @@ Objectif
 Construisez une "Cabane" dans la forêt, et un "Coffre" dans la 
 cabane.
 
-NOTE : le Coffre doit se trouver **dans** la Cabane.
+Remarque
+--------
+
+Le Coffre doit se trouver **dans** la Cabane.
 
 
 Commandes utiles
@@ -12,3 +15,12 @@ Commandes utiles
 
 mkdir REPERTOIRE
   Crée un nouveau répertoire dans le répertoire courant.
+  Note : ``mkdir`` est une abréviation pour "make directory."
+
+
+Remarque
+--------
+
+Les termes apparaissant en MAJUSCULES dans les commandes sont des 
+méta-variables : vous devez les remplacer par des valeurs (chaines 
+de caractères) appropriées.

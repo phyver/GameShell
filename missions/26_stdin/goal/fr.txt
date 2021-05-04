@@ -3,5 +3,7 @@ Objectif
 
 Pour progresser en magie, il faut maitriser le calcul mental !
 
-Vérifiez votre aptitude aux additions avec la commande ``gash 
-check``.
+Préparez vous, car Merlin va tester votre précision sur des 
+additions.
+
+Lancez la commande ``gash check`` pour commencer.

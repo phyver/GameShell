@@ -10,8 +10,10 @@ tout sur un parchemin. Lorsqu'une dette est remboursée, il inscrit
 Combinez plusieurs commandes avec le pipe ``|`` pour déterminez la 
 dette du Duc.
 
-NOTE : vous ne disposez que de 3 commandes pour atteindre cet 
-objectif.
+Remarque
+--------
+
+Vous ne disposez que de 3 commandes pour atteindre cet objectif.
 Vous pouvez réinitialiser le compteur avec la commande ``gash 
 reset``, mais dans ce cas, l'échoppe sera re-générée.
 
@@ -29,11 +31,10 @@ Commandes utiles
 ================
 
 grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
-  Filtre les lignes du fichier et ne conserve que celles qui 
+  Filtre les lignes du fichier et n'affiche que celles qui 
   contiennent la chaine.
-  Si aucun fichier n'est spécifié, grep filtre les lignes lues sur 
-  l'entrée standard.
+  Si aucun fichier n'est spécifié, ``grep`` filtre les lignes lues 
+  sur l'entrée standard.
 
-  Option intéressante :
-    -v : inverse la condition, les lignes conservées sont celle qui 
-    ne contiennent pas la chaine.
+  Option utile :
+    -v : affiche les lignes qui **ne contiennent pas** la chaine.

@@ -17,8 +17,8 @@ Commandes utiles
 ================
 
 Chaque commande peut écrire sur l'écran de deux manières :
-  - affichage du résultat ("STDOUT")
-  - affichage des message d'erreur ("STDERR")
+  - affichage du résultat ("stdout")
+  - affichage des message d'erreur ("stderr")
 Par défaut, on ne peut pas différencier ces affichages.
 
 On peut par contre rediriger les deux affichages indépendamment.
@@ -27,19 +27,20 @@ grep CHAINE FICHIER1 ... FICHIERn
   Recherche une chaine dans les fichiers et affiche les lignes 
   correspondantes.
 
-  Options intéressantes :
+  Options utiles :
     -l : n'affiche pas les lignes mais seulement le nom des fichiers
          qui contiennent la chaine,
     -i : ne différencie pas les majuscules et minuscules.
 
-CMD  >  FICHIER
-  Envoie le résultat de la commande CMD dans le fichier au lieu de 
-  l'afficher sur la sortie standard.
+COMMANDE  >  FICHIER
+  Envoie le résultat (stdout) de la commande dans le fichier.
+  (Le fichier est écrasé.)
 
-CMD  2>  FICHIER
-  Envoie les messages d'erreurs de la commande CMD dans le fichier 
-  au lieu de l'afficher sur la sortie d'erreurs.
+COMMANDE  2>  FICHIER
+  Envoie les messages d'erreurs (stdout) de la commande dans le 
+  fichier.
+  (Le fichier est écrasé.)
 
 /dev/null
-  Fichier "virtuel" qui fait office de trou noir : tout ce qui y est 
+  Fichier "virtuel" qui fait office de poubelle : tout ce qui y est 
   envoyé est ignoré.

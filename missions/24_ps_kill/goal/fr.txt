@@ -19,8 +19,10 @@ ps
   Affiche la liste des processus lancés par le shell.
 
 kill N
-  Tue le processus dont le numéro ("PID") est N.
+  Envoie le signal d'arrêt au processus numéro N.
+  Note : N est appelé le PID ("process identifier").
+
 
 Rappelez vous que les joker "*" et "?" ne voient pas les fichiers 
-cachés. Il faut ajouter un point explicite au début du motif pour 
-capturer les fichiers cachés.
+cachés. Il faut ajouter un point explicite au début du motif si vous 
+souhaitez capturer les fichiers cachés.

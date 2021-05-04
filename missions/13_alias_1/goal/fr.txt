@@ -1,21 +1,23 @@
 Objectif
 ========
 
+Chercher les fichiers cachés prend trop de temps.
+
 Créez un alias "la" qui lance la commande ``ls -A`` pour afficher 
 les fichiers cachés en seulement 2 lettres !
 
-Définissez l'alias
+Définissez pour ceci le synonyme
 
   la='ls -A'
 
-et vérifiez que cela rajoute une commande ``la`` qui affiche les 
-fichiers cachés.
+et vérifiez que ``la`` affiche bien les fichiers cachés.
+
 Ça tombe bien, il y a un joli caillou caché juste là où vous êtes.
 
 
 Commandes utiles
 ================
 
-alias NOM='CMD'
-  NOM est une chaine de caractères (courte), qui sera remplacée par 
-  la commande CMD (longue).
+alias CHAINE='COMMANDE'
+  Crée un synonyme pour une chaine de caractères (courte), qui sera 
+  remplacée par la commande (longue).

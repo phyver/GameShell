@@ -11,16 +11,19 @@ commandes.
 Commandes utiles
 ================
 
-tr CHAINE1 CHAINE2 < FICHIER
-  Remplace le caractère CHAINE1[i] par CHAINE2[i] dans FICHIER, et 
-  affiche le résultat. (Le fichier n'est pas modifié.)
+tr CHAINE1 CHAINE2
+  Remplace le caractère CHAINE1[i] par CHAINE2[i] dans les lignes 
+  lues sur l'entrée standard, et affiche le résultat au fur et à 
+  mesure.
 
-  Exemple : si
+  Par exemple : si
       chaine1 = "abcdef"
       chaine2 = "klmnop"
-  le fichier sera affiché avec la substitution suivante (les autres 
-  caractères ne changent pas) :
+  la substitution suivante sera faite :
+  (les autres caractères ne changent pas) :
       a -> k      b -> l      c -> m
       d -> n      e -> o      f -> p
 
   Astuce : au lieu d'écrire "abcdefg", on peut utiliser "a-g".
+
+  Cette commande est surtout utile avec une redirection ``<``.

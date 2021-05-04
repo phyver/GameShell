@@ -5,24 +5,25 @@ Tous les ornements de l'entrée du château sont d'ailleurs jolis.
 Faites une copie dans votre coffre.
 
 
-Rappel
-======
+Motifs shell
+============
 
 *
-?
-  Le caractère "*" est un "joker" pour n'importe quelle chaine de 
+  Le caractère "*" est un joker pour n'importe quelle chaine de 
   caractères.
 
-  Le caractère "?" est un "joker" pour n'importe caractère.
+?
+  Le caractère "?" est un joker pour n'importe caractère.
 
-  On peut les utiliser pour dénoter une liste de fichiers existants.
+On peut utiliser les jokers pour dénoter une liste de fichiers / 
+dossiers existants.
 
-  Par exemple, si le répertoire contient
-      Fichier-1 Dossier-1 fichier-14 lustucru
-  alors
-    *     -->  Fichier-1 Dossier-1 fichier-14 lustucru
-    *1    -->  Fichier-1 Dossier-1
+Par exemple, si le répertoire courant contient
+      fichier-1 Dossier-1 fichier-14 lustucru
+alors
+    *     -->  fichier-1 Dossier-1 fichier-14 lustucru
+    *1    -->  fichier-1 Dossier-1
     *s*   -->  Dossier-1 lustucru
     x*    -->  erreur, aucun fichier ne correspond
-    *-?   -->  Fichier-1 Dossier-1
+    *-?   -->  fichier-1 Dossier-1
     *-??  -->  fichier-14

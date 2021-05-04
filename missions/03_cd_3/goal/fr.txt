@@ -4,8 +4,12 @@ Objectif
 Retournez au point de départ puis allez dans la salle du trône en 
 utilisant seulement 2 commandes.
 
-NOTE : pour valider cette mission il faut que les conditions 
-suivantes soient satisfaites
+Remarque
+--------
+
+Vous pouvez faire tous les déplacements que vous souhaitez, mais 
+pour valider cette mission il faut que les conditions suivantes 
+soient satisfaites
   - l'avant-dernière commande vous ramène au point de départ,
   - la dernière commande vous amène directement dans la salle du 
     trône.
@@ -19,3 +23,11 @@ cd
 
 cd LIEU1/LIEU2/LIEU3
   Fait plusieurs déplacements d'un seul coup.
+
+
+Remarque
+--------
+
+Les termes apparaissant en MAJUSCULES dans les commandes sont des 
+méta-variables : vous devez les remplacer par des valeurs (chaines 
+de caractères) appropriées.

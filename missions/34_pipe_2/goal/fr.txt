@@ -4,8 +4,11 @@ Objectif
 Combinez plusieurs commandes avec ``|`` pour connaitre le nombre 
 d'achats impayés.
 
-NOTE : vous ne pouvez utiliser qu'une seule commande en plus de 
-``gash check``.
+Remarque
+--------
+
+Vous ne pouvez utiliser qu'une seule commande en plus de ``gash 
+check``.
 
 Vous pouvez réinitialiser le compteur avec la commande ``gash 
 reset``, mais l'échoppe sera re-générée.
@@ -19,11 +22,12 @@ grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
   contiennent la chaine.
   Si aucun fichier n'est spécifié, la commande utilise stdin.
 
-  Option intéressante :
-    -v : inverse la condition, les lignes conservées sont celle qui 
+  Option utile :
+    -v : affiche les lignes qui **ne contiennent pas** la chaine.
     ne contiennent pas la chaine.
 
-wc [FICHIER]
-  Compte le nombre de lignes/mots/lettres dans un fichier. Si aucun 
-  fichier n'est spécifié, wc compte les lignes/mots/lettres lus sur 
-  l'entrée standard.
+wc FICHIER
+  Compte le nombre de lignes/mots/lettres dans un fichier.
+
+  Si aucun fichier n'est spécifié, ``wc`` compte les 
+  lignes/mots/lettres lus sur l'entrée standard.
