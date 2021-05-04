@@ -5,22 +5,22 @@ Supprimez toutes les araignées qui se cachent dans la cave, sans
 toucher aux salamandre porte bonheur.
 
 
-Commandes utiles
-================
+Motifs shell
+============
 
 *
-?
-  Le caractère "*" est un "joker" pour n'importe quelle chaine de 
+  Le caractère "*" est un joker pour n'importe quelle chaine de 
   caractères.
 
-  Le caractère "?" est un "joker" pour n'importe caractère.
+?
+  Le caractère "?" est un joker pour n'importe caractère.
 
-  On peut les utiliser pour dénoter une liste de fichiers / dossiers 
-  existants.
+On peut utiliser les jokers pour dénoter une liste de fichiers / 
+dossiers existants.
 
-  Par exemple, si le répertoire contient
+Par exemple, si le répertoire courant contient
       fichier-1 Dossier-1 fichier-14 lustucru
-  alors
+alors
     *     -->  fichier-1 Dossier-1 fichier-14 lustucru
     *1    -->  fichier-1 Dossier-1
     *s*   -->  Dossier-1 lustucru
@@ -28,5 +28,9 @@ Commandes utiles
     *-?   -->  fichier-1 Dossier-1
     *-??  -->  fichier-14
 
-  NOTE : "*" et "?" ne voient pas les fichiers cachés, il faut 
-  ajouter un point explicite au début du motif.
+
+Remarque
+--------
+
+Les jokers "*" et "?" ne voient pas les fichiers cachés, il faut 
+ajouter un point explicite au début du motif.

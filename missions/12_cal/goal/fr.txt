@@ -3,7 +3,7 @@ Objectif
 
 Nostradamus a prévu une conjonction spectaculaires des astres pour 
 le $DD-$MM-$YYYY.
-Mais quel jours de la semaine tombera donc cette date ?
+Mais sur quel jour de la semaine tombera donc cette date ?
 
 Lorsque vous le connaissez, lancez la commande ``gash check``.
 
@@ -14,5 +14,5 @@ Commandes utiles
 cal
   Affiche en petit calendrier du mois courant.
 
-cal YYYY
-  Affiche en petit calendrier pour l'année YYYY.
+cal ANNEE
+  Affiche en petit calendrier pour l'année donnée.

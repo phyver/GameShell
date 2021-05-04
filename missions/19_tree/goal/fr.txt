@@ -17,8 +17,5 @@ tree
   Affiche l'arborescence des fichiers et répertoires depuis le 
   répertoire courant.
 
-  NOTE : la commande "tree" n'est pas standard et pas toujours 
+  Remarque : la commande "tree" n'est pas standard et pas toujours 
   installée par défaut.
-
-  L'option "-C" permet d'obtenir un affichage en couleurs.
-

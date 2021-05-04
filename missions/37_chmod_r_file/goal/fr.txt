@@ -5,19 +5,24 @@ Il parait que le roi garde le code secret de son coffre-fort inscrit
 sur un bout de papier dans sa chambre.
 Trouvez ce code secret.
 
-NOTE : le roi a probablement essayé de rendre ce papier illisible !
+Remarque
+--------
+
+Le roi a probablement essayé de rendre ce papier illisible !
 
 
 Commandes utiles
 ================
 
-ls -l
-  Affiche la liste des fichiers avec leurs métadonnées importantes.
-
-  Les droits d'accès sont donnés en début de ligne.
+cat FICHIER
+  Affiche le contenu du fichier sur la sortie standard.
 
 chmod [OPTIONS] FICHIER
   Modifie les droits d'accès à un fichier ou répertoire.
+  Consultez le début de la page de manuel pour découvrir comment 
+  spécifier les droit d'accès.
 
-  Consultez la page de manuel pour découvrir quelles options vous 
-  pouvez utiliser.
+ls -l
+  Affiche la liste des fichiers avec leurs métadonnées importantes.
+  Les droits d'accès sont donnés en début de ligne.
+

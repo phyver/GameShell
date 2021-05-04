@@ -14,8 +14,11 @@ homme :
 Il faudra pour ceci combiner plusieurs commandes précédentes avec 
 ``|``.
 
-NOTE : pour vous aidez, l'ermite a écrit le début de la recette avec 
-les même contraintes.
+Remarque
+--------
+
+Pour vous aidez, l'ermite a écrit le début de la recette en 
+respectant les même contraintes.
 
 
 Commandes utiles
@@ -26,7 +29,7 @@ cat FICHIER
 
 fold FICHIER
   Ajoute des retours chariots sur lignes trop longues.
-  Si FICHIER est omis, la commande agit sur l'entrée standard.
+  Si le fichier est omis, la commande agit sur l'entrée standard.
 
   Options utiles :
     -w LARGEUR    largeur maximale autorisée pour les lignes
@@ -34,11 +37,12 @@ fold FICHIER
 
 nl FICHIER
   Affiche les lignes d'un fichier en ajoutant leur numéro de ligne.
-  Si FICHIER est omis, la commande agit sur l'entrée standard.
+  Si le fichier est omis, la commande agit sur l'entrée standard.
 
 tail -n K FICHIER
   Affiche les K dernières lignes du fichier.
-  Si FICHIER est omis, la commande agit sur l'entrée standard.
+  Si le fichier est omis, la commande agit sur l'entrée standard.
 
-CMD1 | CMD2
- Fait agir CMD2 sur ce qu'elle reçoit de CMD1.
+COMMANDE1 | COMMANDE2 | COMMANDE3 | ...
+ Branche la sortie de chaque commande sur l'entrée de la suivante. 
+
