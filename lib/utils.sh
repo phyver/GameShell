@@ -85,7 +85,7 @@ admin_mode() {
 
   if ! [ -f "$GASH_DATA/admin_hash" ]
   then
-    echo "$(gettext "You are not allowed to run this command.")" >&2
+    echo "$(gettext "Error: you are not allowed to run this command.")" >&2
     return 1
   fi
 
@@ -99,7 +99,7 @@ admin_mode() {
       return 0
     fi
   done
-  echo "$(gettext "wrong password")" >&2
+  echo "$(gettext "Error: wrong password")" >&2
   return 1
 }
 
