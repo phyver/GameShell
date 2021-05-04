@@ -22,15 +22,15 @@ msgstr ""
 msgid "grimoire"
 msgstr ""
 
-msgid "list.txt"
+msgid "inventory.txt"
 msgstr ""
 
 #, sh-format
-msgid "There is no $list in the drawer..."
+msgid "There is no $inventory in the drawer..."
 msgstr ""
 
 msgid ""
-"The content of $list is invalid.\n"
+"The content of $inventory is invalid.\n"
 "You can check its content with the command\n"
-"    $ less $list"
+"    $ less $inventory"
 msgstr ""

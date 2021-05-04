@@ -3,19 +3,19 @@
 _local_check() {
     local office
     office="$(eval_gettext '$GASH_HOME/Castle/Main_building/Library/Merlin_s_office')"
-    list="$(gettext "list.txt")"
+    inventory="$(gettext "inventory.txt")"
 
-    if [ ! -f "$office/$(gettext "Drawer")/$list" ]
+    if [ ! -f "$office/$(gettext "Drawer")/$inventory" ]
     then
-        echo "$(eval_gettext 'There is no $list in the drawer...')"
+        echo "$(eval_gettext 'There is no $inventory in the drawer...')"
         return 1
     fi
 
-    if ! cmp -s <(sort "$office/$(gettext "Drawer")/$list") "$GASH_MISSION_DATA/list_grimoires"
+    if ! cmp -s <(sort "$office/$(gettext "Drawer")/$inventory") "$GASH_MISSION_DATA/inventory_grimoires"
     then
-        echo "$(eval_gettext 'The content of $list is invalid.
+        echo "$(eval_gettext 'The content of $inventory is invalid.
 You can check its content with the command
-    $ less $list')"
+    $ less $inventory')"
         return 1
     fi
 
