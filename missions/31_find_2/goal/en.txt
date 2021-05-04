@@ -4,16 +4,19 @@ Mission goal
 Look for the ruby in the maze (in the garden), and move it to your 
 chest.
 
-Hint: the filename does not contain the chaine "ruby". One possible 
-strategy is to look for a **file** (instead of a directory), and 
-check by hand that the file contains the string "ruby".
+Hint
+----
+
+The filename does not contain the chaine "ruby". Since there aren't 
+many files in the maze, a possible strategy is to look for all 
+**file**, and check by hand which one contains the string "ruby".
 
 
 Useful commands
 ===============
 
 find
-  search files from the current working directory
+  Search files from the current working directory.
 
   Conditions on the file may be added about filenames, size, 
   modification date, etc.
@@ -22,13 +25,20 @@ find
     -type TYPE
 
 cat FILE
-  output the content of the file on the screen
+  Output the content of the file on the screen.
 
-man CMD
-  to read the manual for command CMD
+man COMMAND
+  Display the manual of the command.
 
-  Here are the main keybindings in manual pages:
+  Important key bindings:
     q           quit
     Space       scroll down one page
-    / STRING    search for string
-    n           go to next occurrence of previous search string
+    / STRING    search for the string
+    n           find the next occurrence for the search string
+
+Remark
+------
+
+The description of the ``find`` command is deliberately kept short. 
+You will find more information in the manual. (You can for exemple 
+search for the string "-type" in the manual.)

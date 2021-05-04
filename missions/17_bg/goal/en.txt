@@ -15,7 +15,7 @@ Useful commands
 xeyes
   Open a window with 2 eyes that track your mouse.
 
-CMD &
+COMMAND &
   Run the command in the background.
 
 Control-c

@@ -13,10 +13,10 @@ find CONDITION
   Cherche des fichiers à partir du répertoire courant.
 
   Les conditions peuvent porter sur le nom des fichiers, leur 
-  taille, leur date de création, etc.
-  Deux conditions intéressantes sont :
+  taille, leur date de création, etc. Par exemple,
     -name "MOTIF"
     -iname "MOTIF"
+  sont 2 conditions sur les noms des fichiers.
 
 man COMMANDE
   Affiche l'aide de la commande.

@@ -9,24 +9,22 @@ Details
 -------
 
 To edit the journal file with ``nano`` from, for example, the 
-cellar or the throne room, you need to give the full path to 
-the file: "~/Forest/...../journal.txt".
+cellar or the throne room, you need to give the full path to the 
+file: "~/Forest/.../journal.txt".
 
-To avoid typing this long command each time, you can create an 
-alias as we saw with 
+To avoid typing this long command each time, you can create an alias 
+just like
 
   alias la='ls -a'
-
-in a previous mission.
 
 
 Useful commands
 ===============
 
 nano FILE
-  Edit the FILE from the shell.
+  Edit the file from the shell.
   (If the file does not exist, it will be created.)
 
-alias NAME='CMD'
-  Create a command with a short name NAME to stand for the 
-  longer command CMD.
+alias STRING='COMMAND'
+  Create a synonym for a short string, that will stand for a longer 
+  command.

@@ -5,7 +5,10 @@ The King is rumored to keep the secret key to his safe written on a
 note in his room.
 Find that secret key.
 
-NOTE: the King probably tried to make this note unreadable!
+Remark
+------
+
+The King probably tried to make this note unreadable!
 
 
 Useful commands

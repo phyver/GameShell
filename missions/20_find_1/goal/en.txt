@@ -5,29 +5,33 @@ Find the gold coins in the maze hidden in the garden and move
 them to your chest.
 The garden is situated in front of the castle.
 
-NOTE: the description of the ``find`` command is deliberately 
-kept short. You will find more information in the manual.
-
 
 Useful commands
 ===============
 
 find CONDITION
-  Search for files satisfying the CONDITION in your current 
-  working directory.
+  Search for files satisfying the condition, starting from your 
+  current working directory.
 
   There are many possible conditions. They can constrain the
   file names, size, modification date, etc. For example 
     -name "PATTERN"
-  or
     -iname "PATTERN"
-  are related to file names.
+  are both related to file names.
 
-man CMD
-  Display the manual of the command CMD.
+man COMMAND
+  Display the manual of the command.
 
   Important key bindings:
-    q           Quit
-    Space       Scroll down one page
-    / STRING    Search for the STRING in the manual
-    n           Find the next occurrence for the last search
+    q           quit
+    Space       scroll down one page
+    / STRING    search for the string
+    n           find the next occurrence for the search string
+
+Remark
+------
+
+The description of the ``find`` command is deliberately kept short. 
+You will find more information in the manual. (You can for exemple 
+search for the string "-name" in the manual.)
+

@@ -10,5 +10,5 @@ Useful commands
 ===============
 
 cp FILE1 FILE2 ... FILEn DIRNAME
-  Copy the files to the directory named DIRNAME.
+  Copy the files to the directory.
   Remark: ``cp`` is an abbreviation of "copy".

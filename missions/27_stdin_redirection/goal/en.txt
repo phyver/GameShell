@@ -3,18 +3,26 @@ Mission goal
 
 To get better in the magical art, one needs to know mental math.
 
-Test your multiplication skill!
+Get ready, because Merlin is about to test you speed with products. 
 
-NOTE: there now is a time constraint.
+Run the command ``gash check`` to start.
 
-Hint: the library is rumored to contain some mathematics books and 
-hidden volumes...
+Remark
+------
+
+There now is a time constraint.
+
+Hint
+----
+
+The library is rumored to contain some mathematics books and hidden 
+volumes.
 
 
 Useful commands
 ===============
 
-CMD  <  FILE
-  replace the standard input (the keyboard) of the command by a file
-  Instead of reading string from the keyboard, the command will read 
-  them from the file.
+COMMAND  <  FILE
+  Replace the command's standard input by a file.
+  Instead of reading lines from the keyboard device, the command 
+  will read lines from the file.

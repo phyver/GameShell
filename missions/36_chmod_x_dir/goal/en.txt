@@ -4,7 +4,10 @@ Mission goal
 The door to the King's quarter is in the throne room.
 Go to the King's quarter.
 
-NOTE: access to this part of the castle is probably restricted.
+Remark
+------
+
+Occess to this part of the castle is probably restricted.
 
 
 Useful commands

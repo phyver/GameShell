@@ -8,16 +8,23 @@ Useful commands
 ===============
 
 cd LOCATION
-  Move to the given LOCATION.
-  Remark: ``cd`` stands for "change directory".
+  Move to the given location.
+  Remark: ``cd`` is an abbreviation for "change directory".
 
 pwd
-  See the path to your current location.
-  Remark: ``pwd`` stands for "print working directory".
+  Show the path to your current location.
+  Remark: ``pwd`` is an abbreviation for "print working directory".
 
 ls
-  See a list of locations that are currently accessible.
+  Show a list of locations that are currently accessible.
   Remark: ``ls`` is an abbreviation of "list".
 
 gash reset
   Restart the mission from the beginning.
+
+
+Remark
+------
+
+UPPERCASE words appearing in commands are meta-variables: you need 
+to replace them by appropriate (string) values.

@@ -1,15 +1,17 @@
 Mission goal
 ============
 
-The rats are not happy: to scare them away, an infernal machine 
-that generates wind-up cats has been installed in the pantry (in 
-the castle's cellar).
+The rats are not happy: to scare them away, an infernal machine that 
+generates wind-up cats has been installed in the pantry (in the 
+castle's kitchen).
 
 Find and kill the cat generator, and remove all the cats that 
 are hiding in the pantry.
 
-NOTE: the generator is a process, while the cats themselves are 
-files.
+Remark
+------
+
+The generator is a process, while the cats themselves are files.
 
 
 Useful commands
@@ -19,7 +21,7 @@ ps
   List the processes that are currently executed by the shell.
 
 kill N
-  Kill the process with number N.
+  Send the termination signal to process number N.
   Remark: N is called PID, or "process identifier".
 
 Recall that wildcards "*" and "?" do not see hidden files. You need 
