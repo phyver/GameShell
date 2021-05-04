@@ -297,6 +297,7 @@ Do you want to remove it and start a new game? [y/N]') " r
         BIN_NAME=$(basename "$BIN_FILE")
         cat > "$GASH_LOCAL_BIN/$BIN_NAME" <<EOH
 #!/bin/bash
+export MISSION_DIR="$MISSION_DIR"
 export TEXTDOMAIN="$DOMAIN"
 exec $BIN_FILE "\$@"
 EOH

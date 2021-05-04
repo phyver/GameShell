@@ -37,3 +37,7 @@ msgstr ""
 
 msgid "table_of_contents"
 msgstr ""
+
+#, sh-format
+msgid "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
+msgstr ""

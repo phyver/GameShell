@@ -1,0 +1,20 @@
+msgid "Book_of_Potions"
+msgstr ""
+
+msgid "page"
+msgstr ""
+
+#, sh-format
+msgid "$MISSION_DIR/book_of_potions/en.txt"
+msgstr ""
+
+msgid "table_of_contents"
+msgstr ""
+
+#, sh-format
+msgid "$MISSION_DIR/torn_page5/en.txt"
+msgstr ""
+
+#, sh-format
+msgid "$MISSION_DIR/torn_page6/en.txt"
+msgstr ""
