@@ -165,7 +165,7 @@ _gash_index() {
     if grep -q "^$MISSION_NB CHECK_OK" "$GASH_DATA/missions.log"
     then
       COLOR="green"
-      STATUS=" ($(gettext "done"))"
+      STATUS=" ($(gettext "completed"))"
     elif grep -q "^$MISSION_NB CHECK_OOPS" "$GASH_DATA/missions.log"
     then
       COLOR="red"
@@ -523,7 +523,7 @@ _gash_test() {
     echo
   else
     echo
-    color_echo red "$(eval_gettext '$NB_ERRORS errors out of $NB_TESTS tests')"
+    color_echo red "$(eval_gettext '$NB_ERRORS failures out of $NB_TESTS tests')"
     echo
   fi
   unset NB_TESTS NB_ERRORS
@@ -648,8 +648,8 @@ gash() {
       _gash_unprotect
       ;;
     *)
-      echo "$(eval_gettext "Error: unknown gash command '\$CMD'
-use one of the following commands:")  check, help, HELP, reset or show" >&2
+      echo "$(eval_gettext "Error: unknown gash command '\$CMD'.
+Use one of the following commands:")  check, help, HELP, reset or show" >&2
       export TEXTDOMAIN=$_TEXTDOMAIN
       unset _TEXTDOMAIN
       return 1

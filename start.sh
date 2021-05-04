@@ -76,11 +76,11 @@ do
       FORCE="TRUE"
       ;;
     X)
-      echo "$(gettext "This option is only available from an executable archive!")" >&2
+      echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
       exit 1
       ;;
     *)
-      echo "$(eval_gettext "invalid option: '-\$OPTARG'")" >&2
+      echo "$(eval_gettext "Error: invalid option: '-\$OPTARG'")" >&2
       exit 1
       ;;
   esac
@@ -170,11 +170,11 @@ Do you want to continue? [y/N]") " r
       while true
       do
         read -erp "$(eval_gettext 'The directory $GASH_DATA contains meta-data from a previous game.
-Do you want to continue this game? [Y/n]') " r
-        if [ -z "$r" ] || [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ]
+Do you want to remove it and start a new game? [y/N]') " r
+        if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] || [ "$r" = "$(gettext "N")" ]
         then
           return 1
-        elif [ "$r" = "$(gettext "n")" ] || [ "$r" = "$(gettext "N")" ]
+        elif [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ]
         then
           break
         fi
@@ -235,7 +235,7 @@ Do you want to continue this game? [Y/n]') " r
         _passport "$PASSPORT"
         ;;
       *)
-        echo "$(eval_gettext 'unknown mode: $MODE')" >&2
+        echo "$(eval_gettext "Error: unknown mode '\$MODE'.")" >&2
         ;;
     esac
 
@@ -321,7 +321,7 @@ EOH
   done < "$GASH_DATA/index.txt"
   if [ "$MISSION_NB" -eq 0 ]
   then
-    echo "$(gettext "No mission were found!
+    echo "$(gettext "Error: no mission was found!
 Aborting")"
     exit 1
   fi

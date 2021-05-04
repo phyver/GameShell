@@ -37,8 +37,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$NB_ERRORS errors out of $NB_TESTS tests"
-msgstr "$NB_ERRORS errors out of $NB_TESTS tests"
+msgid "$NB_ERRORS failures out of $NB_TESTS tests"
+msgstr "$NB_ERRORS failures out of $NB_TESTS tests"
 
 #, sh-format
 msgid "$NB_TESTS successful tests"
@@ -64,6 +64,10 @@ msgid "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
 msgstr "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
 
 #, sh-format
+msgid "Error: invalid option: '-$OPTARG'"
+msgstr "Error: invalid option: '-$OPTARG'"
+
+#, sh-format
 msgid ""
 "Error: mission $MISSION_NB doesn't exist!\n"
 "Restarting from previous mission."
@@ -87,6 +91,13 @@ msgstr "Error: mission $MISSION_NB doesn't have an auto script."
 msgid "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
 msgstr "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
 
+msgid ""
+"Error: no mission was found!\n"
+"Aborting"
+msgstr ""
+"Error: no mission was found!\n"
+"Aborting"
+
 msgid "Error: the 'goto' command requires a mission number as argument."
 msgstr "Error: the 'goto' command requires a mission number as argument."
 
@@ -104,13 +115,20 @@ msgstr ""
 "    gash reset\n"
 "to make sure the mission is initialized properly."
 
+msgid "Error: this option is only available from an executable archive!"
+msgstr "Error: this option is only available from an executable archive!"
+
 #, sh-format
 msgid ""
-"Error: unknown gash command '$CMD'\n"
-"use one of the following commands:"
+"Error: unknown gash command '$CMD'.\n"
+"Use one of the following commands:"
 msgstr ""
-"Error: unknown gash command '$CMD'\n"
-"use one of the following commands:"
+"Error: unknown gash command '$CMD'.\n"
+"Use one of the following commands:"
+
+#, sh-format
+msgid "Error: unknown mode '$MODE'."
+msgstr "Error: unknown mode '$MODE'."
 
 #, sh-format
 msgid ""
@@ -119,6 +137,12 @@ msgid ""
 msgstr ""
 "Error: unknown system: OSTYPE=$OSTYPE.\n"
 "GameShell will use 'gnu-linux', without guarantee."
+
+msgid "Error: wrong password"
+msgstr "Error: wrong password"
+
+msgid "Error: you are not allowed to run this command."
+msgstr "Error: you are not allowed to run this command."
 
 msgid "Is this information correct? [Y/n]"
 msgstr "Is this information correct? [Y/n]"
@@ -127,15 +151,9 @@ msgstr "Is this information correct? [Y/n]"
 msgid "Mission $MISSION_NB has been cancelled."
 msgstr "Mission $MISSION_NB has been cancelled."
 
+# abbreviation for "no" (uppercase)
 msgid "N"
 msgstr "N"
-
-msgid ""
-"No mission were found!\n"
-"Aborting"
-msgstr ""
-"No mission were found!\n"
-"Aborting"
 
 msgid "Player's email:"
 msgstr "Player's email:"
@@ -153,10 +171,10 @@ msgstr "Sorry, mission $MISSION_NB hasn't been completed."
 #, sh-format
 msgid ""
 "The directory $GASH_DATA contains meta-data from a previous game.\n"
-"Do you want to continue this game? [Y/n]"
+"Do you want to remove it and start a new game? [y/N]"
 msgstr ""
 "The directory $GASH_DATA contains meta-data from a previous game.\n"
-"Do you want to continue this game? [Y/n]"
+"Do you want to remove it and start a new game? [y/N]"
 
 msgid ""
 "There are stopped jobs in your session.\n"
@@ -171,14 +189,9 @@ msgstr ""
 "    $ jobs -s\n"
 "Do you still want to quit? [y/n]"
 
-msgid "This option is only available from an executable archive!"
-msgstr "This option is only available from an executable archive!"
-
+# abbreviation for "yes" (uppercase)
 msgid "Y"
 msgstr "Y"
-
-msgid "You are not allowed to run this command."
-msgstr "You are not allowed to run this command."
 
 msgid ""
 "You are trying to run GameShell inside the developpment directory.\n"
@@ -190,16 +203,13 @@ msgstr ""
 msgid "cancelled"
 msgstr "cancelled"
 
-msgid "done"
-msgstr "done"
+msgid "completed"
+msgstr "completed"
 
 msgid "failed"
 msgstr "failed"
 
-#, sh-format
-msgid "invalid option: '-$OPTARG'"
-msgstr "invalid option: '-$OPTARG'"
-
+# abbreviation for "no" (lowercase)
 msgid "n"
 msgstr "n"
 
@@ -213,12 +223,6 @@ msgstr "password:"
 msgid "test $NB_TESTS failed"
 msgstr "test $NB_TESTS failed"
 
-#, sh-format
-msgid "unknown mode: $MODE"
-msgstr "unknown mode: $MODE"
-
-msgid "wrong password"
-msgstr "wrong password"
-
+# abbreviation for "yes" (lowercase)
 msgid "y"
 msgstr "y"
