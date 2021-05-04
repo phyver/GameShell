@@ -4,121 +4,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-# welcome message file
 #, sh-format
-msgid "$GASH_BASE/i18n/gameshell-welcome/en.txt"
-msgstr ""
-
-msgid "The command 'gash reset' is useless when run inside a subshell!"
-msgstr ""
-
-msgid ""
-"note, there are stopped jobs in your session.\n"
-"those processes will be terminated.\n"
-"you can get the list of those jobs with\n"
-"    $ jobs -s\n"
-"do you still want to quit? [y/n]"
-msgstr ""
-
-msgid "n"
-msgstr ""
-
-msgid "y"
-msgstr ""
-
-#, sh-format
-msgid "Problem: couldn't get mission number '$MISSION_NB' ($fn_name)"
-msgstr ""
-
-#, sh-format
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
-
-msgid "done"
-msgstr ""
-
-msgid "failed"
-msgstr ""
-
-msgid "passed"
-msgstr ""
-
-msgid "cancelled"
-msgstr ""
-
-msgid "Press Enter"
-msgstr ""
-
-#, sh-format
-msgid ""
-"Mission $MISSION_NB doesn't exist!\n"
-"Restarting..."
-msgstr ""
-
-msgid "The mission is cancelled because some dependencies are not met."
-msgstr ""
-
-msgid ""
-"NOTE: this mission was initialized in a sub-shell.\n"
-"You should run the command\n"
-"    gash reset\n"
-"to make sure the mission is initialized properly."
-msgstr ""
-
-#, sh-format
-msgid "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
-msgstr ""
-
-#, sh-format
-msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
-msgstr ""
-
-#, sh-format
-msgid "Mission $MISSION_NB has been cancelled."
-msgstr ""
-
-#, sh-format
-msgid "Mission $MISSION_NB doesn't have an auto script."
-msgstr ""
-
-#, sh-format
-msgid "Error: mission $MISSION_NB doesn't have a check script."
-msgstr ""
-
-#, sh-format
-msgid "Mission $MISSION_NB has already been succesfully checked!"
-msgstr ""
-
-#, sh-format
-msgid "Mission $MISSION_NB has been successfully completed!"
-msgstr ""
-
-#, sh-format
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
-
-#, sh-format
-msgid "Mission $MISSION_NB hasn't been completed."
-msgstr ""
-
-#, sh-format
-msgid "Problem: _gash_assert_check only accept 'true' and 'false' as argument"
-msgstr ""
-
-#, sh-format
-msgid "test $NB_TESTS failed"
-msgstr ""
-
-#, sh-format
-msgid "Error: mission $MISSION_NB doesn't have a test script."
-msgstr ""
-
-#, sh-format
-msgid "$NB_TESTS successful tests"
-msgstr ""
-
-#, sh-format
-msgid "$NB_ERRORS errors out of $NB_TESTS tests"
+msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
 msgstr ""
 
 #, sh-format
@@ -126,72 +13,129 @@ msgid "$GASH_BASE/i18n/gameshell-help/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
-msgstr ""
-
-msgid "The 'goto' command requires a mission number as argument."
+msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "Error: command '$cmd' is only available in debug mode."
+msgid "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "unkwnown gash command $cmd"
-msgstr ""
-
-msgid "use one of the following commands:"
-msgstr ""
-
-#, sh-format
-msgid ""
-"Unknown system: OSTYPE=$OSTYPE.\n"
-"GameShell will use 'gnu-linux', without guarantee.\n"
-"Please report this as a bug.\n"
-"Press Enter to continue."
-msgstr ""
-
-msgid "You are not allowed to run this command."
-msgstr ""
-
-msgid "password:"
-msgstr ""
-
-msgid "wrong password"
+msgid "$GASH_BASE/i18n/gameshell-welcome/en.txt"
 msgstr ""
 
 #, sh-format
 msgid "$GASH_BASE/i18n/start-help/en.txt"
 msgstr ""
 
-msgid "This option is only available from an executable archive!"
+#, sh-format
+msgid "$MISSION_DIR/goal/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "invalid option: '-$OPTARG'"
+msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
-msgid "Player's name:"
+#, sh-format
+msgid "$NB_ERRORS errors out of $NB_TESTS tests"
 msgstr ""
 
-msgid "Player's email:"
+#, sh-format
+msgid "$NB_TESTS successful tests"
 msgstr ""
 
-msgid "You won't be able to change this information."
+msgid "======== Initialisation of GameShell ========"
+msgstr ""
+
+#, sh-format
+msgid "Congratulations, $MISSION_NB has been successfully completed!"
+msgstr ""
+
+#, sh-format
+msgid "Error: _gash_assert_check only accept 'true' and 'false' as argument."
+msgstr ""
+
+#, sh-format
+msgid "Error: command '$CMD' is only available in debug mode."
+msgstr ""
+
+#, sh-format
+msgid "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
+msgstr ""
+
+#, sh-format
+msgid ""
+"Error: mission $MISSION_NB doesn't exist!\n"
+"Restarting from previous mission."
+msgstr ""
+
+#, sh-format
+msgid "Error: mission $MISSION_NB doesn't have a check script."
+msgstr ""
+
+#, sh-format
+msgid "Error: mission $MISSION_NB doesn't have a test script."
+msgstr ""
+
+#, sh-format
+msgid "Error: mission $MISSION_NB doesn't have an auto script."
+msgstr ""
+
+#, sh-format
+msgid "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
+msgstr ""
+
+msgid "Error: the 'goto' command requires a mission number as argument."
+msgstr ""
+
+msgid "Error: the command 'gash reset' is useless when run inside a subshell!"
+msgstr ""
+
+msgid ""
+"Error: this mission was initialized in a subshell.\n"
+"You should run the command\n"
+"    gash reset\n"
+"to make sure the mission is initialized properly."
+msgstr ""
+
+#, sh-format
+msgid ""
+"Error: unknown gash command '$CMD'\n"
+"use one of the following commands:"
+msgstr ""
+
+#, sh-format
+msgid ""
+"Error: unknown system: OSTYPE=$OSTYPE.\n"
+"GameShell will use 'gnu-linux', without guarantee."
 msgstr ""
 
 msgid "Is this information correct? [Y/n]"
 msgstr ""
 
-msgid "Y"
+#, sh-format
+msgid "Mission $MISSION_NB has been cancelled."
 msgstr ""
 
 msgid "N"
 msgstr ""
 
 msgid ""
-"You are trying to run GameShell inside the developpment directory.\n"
-"Do you want to continue? [y/N]"
+"No mission were found!\n"
+"Aborting"
+msgstr ""
+
+msgid "Player's email:"
+msgstr ""
+
+msgid "Player's name:"
+msgstr ""
+
+msgid "Press Enter"
+msgstr ""
+
+#, sh-format
+msgid "Sorry, mission $MISSION_NB hasn't been completed."
 msgstr ""
 
 #, sh-format
@@ -200,17 +144,60 @@ msgid ""
 "Do you want to continue this game? [Y/n]"
 msgstr ""
 
+msgid ""
+"There are stopped jobs in your session.\n"
+"Those processes will be terminated.\n"
+"You can get the list of those jobs with\n"
+"    $ jobs -s\n"
+"Do you still want to quit? [y/n]"
+msgstr ""
+
+msgid "This option is only available from an executable archive!"
+msgstr ""
+
+msgid "Y"
+msgstr ""
+
+msgid "You are not allowed to run this command."
+msgstr ""
+
+msgid ""
+"You are trying to run GameShell inside the developpment directory.\n"
+"Do you want to continue? [y/N]"
+msgstr ""
+
+msgid "cancelled"
+msgstr ""
+
+msgid "done"
+msgstr ""
+
+msgid "failed"
+msgstr ""
+
+#, sh-format
+msgid "invalid option: '-$OPTARG'"
+msgstr ""
+
+msgid "n"
+msgstr ""
+
+msgid "passed"
+msgstr ""
+
+msgid "password:"
+msgstr ""
+
+#, sh-format
+msgid "test $NB_TESTS failed"
+msgstr ""
+
 #, sh-format
 msgid "unknown mode: $MODE"
 msgstr ""
 
-msgid "Start again!"
+msgid "wrong password"
 msgstr ""
 
-msgid "======== Initialisation of GameShell ========"
-msgstr ""
-
-msgid ""
-"No mission were found!\n"
-"Aborting"
+msgid "y"
 msgstr ""
