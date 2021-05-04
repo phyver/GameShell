@@ -4,8 +4,11 @@ Objectif
 Combinez plusieurs commandes avec ``|`` pour retrouver le diamant 
 dans labyrinthe et le déplacer dans votre coffre.
 
-Note : le nom du fichier ne contient pas la chaine "diamant".
-Il faut donc chercher un fichier qui contient la chaine "diamant".
+Remarque
+--------
+
+Le nom du fichier ne contient pas la chaine "diamant". Il faut donc 
+chercher un fichier qui contient la chaine "diamant".
 
 
 Commandes utiles

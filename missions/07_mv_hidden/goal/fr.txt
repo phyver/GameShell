@@ -22,7 +22,8 @@ ls -A
 
 Tab
   La touche "Tab" complète un nom de fichier ou de répertoire dès 
-  qu'on en tapé le début.
+  qu'on en tapé le début. Cela ne fonctionne que s'il y a une seule 
+  complétion possible.
 
 Tab-Tab
   Deux appuis successifs sur la touche tabulation affichent la liste 

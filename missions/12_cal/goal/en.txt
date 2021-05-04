@@ -14,5 +14,5 @@ Useful commands
 cal
   Print a calendar for the current month.
 
-cal YYYY
-  Print a calendar for the whole year YYYY.
+cal YEAR
+  Print a calendar for the given year.

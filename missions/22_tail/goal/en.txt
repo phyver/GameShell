@@ -11,7 +11,7 @@ Useful commands
 ===============
 
 tail FILE
-  Print the last 10 lines of the FILE.
+  Print the last 10 lines of the file.
 
 tail -n K FILE
-  Print the last K lines of the FILE.
+  Print the last K lines of the file.

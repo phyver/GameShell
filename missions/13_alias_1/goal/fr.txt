@@ -4,7 +4,8 @@ Objectif
 Chercher les fichiers cachés prend trop de temps.
 
 Créez un alias "la" qui lance la commande ``ls -A`` pour afficher 
-les fichiers cachés en seulement 2 lettres !
+les fichiers, en incluant les fichiers cachés, avec seulement 2 
+lettres !
 
 Définissez pour ceci le synonyme
 

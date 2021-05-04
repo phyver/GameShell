@@ -8,8 +8,11 @@ garde manger (dans la cuisine) !
 Trouvez et tuez le générateur de chats, avant de supprimer tous les 
 chats cachés dans le garde manger.
 
-NOTE : le générateur de chat est un processus, alors que les chats 
-sont des fichiers.
+Remarque
+--------
+
+Le générateur de chat est un processus, alors que les chats sont des 
+fichiers.
 
 
 Commandes utiles
