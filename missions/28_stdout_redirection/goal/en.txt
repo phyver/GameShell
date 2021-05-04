@@ -3,7 +3,7 @@ Mission goal
 
 Merlin's old spell books are kept in his office, in the library. You 
 need to save a list of all those spell books (and nothing else) in a 
-file called "list.txt", in the drawer...
+file called "inventory.txt", in the drawer...
 
 
 Useful commands
