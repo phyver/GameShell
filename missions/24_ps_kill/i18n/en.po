@@ -25,14 +25,22 @@ msgstr "wind-up_cat"
 msgid "There still are some wind-up cats in the pantry!"
 msgstr "There still are some wind-up cats in the pantry!"
 
+msgid "There still are some hidden wind-up cats in the pantry!"
+msgstr "There still are some hidden wind-up cats in the pantry!"
+
 msgid "The content of the pantry has changed!"
 msgstr "The content of the pantry has changed!"
+
+#, sh-format
+msgid ""
+"The command 'ps' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'psproc')"
+msgstr ""
+"The command 'ps' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'psproc')"
 
 msgid "barrel_of_apples"
 msgstr "barrel_of_apples"
 
 msgid "piece_of_cheese"
 msgstr "piece_of_cheese"
-
-msgid "There still are some hidden wind-up cats in the pantry!"
-msgstr "There still are some hidden wind-up cats in the pantry!"

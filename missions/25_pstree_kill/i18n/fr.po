@@ -31,6 +31,20 @@ msgstr "Vous êtes sûr d'avoir tué tous les générateurs de mort aux rats ?"
 msgid "Did you kill some cheese generator?"
 msgstr "Est-ce que vous avez tué des générateurs de fromage ?"
 
+msgid "cheese"
+msgstr "fromage"
+
+msgid "Did you eat some cheese?"
+msgstr "Est-ce que vous avez mangé du fromage ?"
+
+#, sh-format
+msgid ""
+"The command 'ps' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'psproc')"
+msgstr ""
+"La commande 'ps' est nécessaire pour la mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: installez le paquet 'psproc')"
+
 #, sh-format
 msgid ""
 "The command 'pstree' is required for mission $MISSION_NAME.\n"
@@ -38,9 +52,3 @@ msgid ""
 msgstr ""
 "La commande 'pstree' est nécessaire pour la mission $MISSION_NAME.\n"
 "(Debian / Ubuntu: installez le paquet 'psmisc')"
-
-msgid "cheese"
-msgstr "fromage"
-
-msgid "Did you eat some cheese?"
-msgstr "Est-ce que vous avez mangé du fromage ?"
