@@ -2,3 +2,4 @@
 01_head
 02_tail
 03_cat
+04_pipe

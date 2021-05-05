@@ -15,7 +15,7 @@ _local_check() {
     local expected
     expected=$(head -n 6 "$GASH_MISSION_DATA/book_of_potions/$(gettext 'page')_07")
     local res
-    res=$($pc)
+    res=$(eval "$pc")
 
     if ! diff -q "$cave/$(gettext 'Book_of_Potions')" "$GASH_MISSION_DATA/book_of_potions" > /dev/null
     then
