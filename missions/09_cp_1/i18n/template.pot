@@ -44,5 +44,5 @@ msgid "The standard $I in the entrance is invalid."
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Cabin/Chest"
+msgid "$GASH_HOME/Forest/Hut/Chest"
 msgstr ""

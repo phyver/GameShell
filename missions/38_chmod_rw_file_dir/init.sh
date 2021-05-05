@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -z "$GASH_CHEST" ] && GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest/Cabin/Chest')"
+[ -z "$GASH_CHEST" ] && GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest/Hut/Chest')"
 mkdir -p "$GASH_CHEST"
 
 safe="$(eval_gettext '$GASH_HOME/Castle/Main_building/Throne_room')/$(gettext "Safe")"

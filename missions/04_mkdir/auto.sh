@@ -1,2 +1,2 @@
-mkdir -p "$(eval_gettext "\$GASH_HOME/Forest")/$(gettext "Cabin")/$(gettext "Chest")"
+mkdir -p "$(eval_gettext "\$GASH_HOME/Forest")/$(gettext "Hut")/$(gettext "Chest")"
 gash check

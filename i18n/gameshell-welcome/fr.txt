@@ -13,7 +13,7 @@ l'utilisation ou la gestion d'un ordinateur :
 Les "objets" que vous rencontrerez sont simplement des fichiers 
 standards (souvent avec un contenu aléatoire) et les "lieux" que 
 vous visiterez sont simplement des répertoires.
-Ainsi, "construire une cabane" revient simplement à créer un 
-répertoire appelé "Cabane", et "mettre les pièces dans le coffre" 
+Ainsi, "construire une hutte" revient simplement à créer un 
+répertoire appelé "Hutte", et "mettre les pièces dans le coffre" 
 revient simplement à déplacer les fichiers "piece" dans le 
 répertoire "Coffre".

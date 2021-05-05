@@ -34,9 +34,9 @@ msgstr ""
 msgid "chest"
 msgstr ""
 
-msgid "cabin"
+msgid "hut"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Cabin/Chest"
+msgid "$GASH_HOME/Forest/Hut/Chest"
 msgstr ""

@@ -1,13 +1,13 @@
 Objectif
 ========
 
-Construisez une "Cabane" dans la forêt, et un "Coffre" dans la 
-cabane.
+Construisez une "Hutte" dans la forêt, et un "Coffre" dans la 
+hutte.
 
 Remarque
 --------
 
-Le Coffre doit se trouver **dans** la Cabane.
+Le Coffre doit se trouver **dans** la hutte.
 
 
 Commandes utiles

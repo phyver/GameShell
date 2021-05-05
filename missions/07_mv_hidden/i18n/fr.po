@@ -46,9 +46,9 @@ msgstr "La pièce '$COIN...' n'a pas le bon nom..."
 msgid "chest"
 msgstr "coffre"
 
-msgid "cabin"
-msgstr "cabane"
+msgid "hut"
+msgstr "hutte"
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Cabin/Chest"
-msgstr "$GASH_HOME/Foret/Cabane/Coffre"
+msgid "$GASH_HOME/Forest/Hut/Chest"
+msgstr "$GASH_HOME/Foret/Hutte/Coffre"
