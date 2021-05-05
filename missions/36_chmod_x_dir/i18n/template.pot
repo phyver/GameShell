@@ -18,3 +18,9 @@ msgstr ""
 
 msgid "You are not in the King's quarter!"
 msgstr ""
+
+#, sh-format
+msgid ""
+"The command 'man' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'man-db')"
+msgstr ""
