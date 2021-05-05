@@ -33,6 +33,5 @@ msgstr "Votre commande précédente ne donne pas le résultat attendu..."
 msgid "potion_recipe"
 msgstr "recette_potion"
 
-#, fuzzy
 msgid "potion_recipe.start"
 msgstr "recette_potion.debut"
