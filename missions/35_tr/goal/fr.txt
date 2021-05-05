@@ -7,6 +7,12 @@ Il a probablement été chiffré avec un décalage de César.
 Décryptez le en faisant une recherche exhaustive avec la ligne de 
 commandes.
 
+Indice
+------
+
+Tous les autres messages secrets de ce type qui ont été trouvés 
+utilisaient un décalage compris entre 10 et 16.
+
 
 Commandes utiles
 ================
