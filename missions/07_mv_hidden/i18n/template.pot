@@ -20,27 +20,27 @@ msgid "coin"
 msgstr ""
 
 #, sh-format
-msgid "There are several '$COIN...' in the cellar!"
+msgid "There are several '$COIN_NAME...' in the cellar!"
 msgstr ""
 
 #, sh-format
-msgid "The coin '$COIN...' is still in the cellar!"
+msgid "The coin '$COIN_NAME...' is still in the cellar!"
 msgstr ""
 
 #, sh-format
-msgid "There are several '$COIN...' in your chest!"
+msgid "There are several '$COIN_NAME...' in your chest!"
 msgstr ""
 
 #, sh-format
-msgid "There is no '$COIN...' in your chest!"
+msgid "There is no '$COIN_NAME...' in your chest!"
 msgstr ""
 
 #, sh-format
-msgid "The coin '$COIN...' has been tampered with..."
+msgid "The coin '$COIN_NAME...' has been tampered with..."
 msgstr ""
 
 #, sh-format
-msgid "The coin '$COIN...' has a wrong file name..."
+msgid "The coin '$COIN_NAME...' has a wrong file name..."
 msgstr ""
 
 msgid "chest"

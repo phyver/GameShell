@@ -16,16 +16,16 @@ msgid "journal"
 msgstr "journal"
 
 #, sh-format
-msgid "The file '$journal' doesn't exist..."
-msgstr "Le fichier '$journal' n'existe pas..."
+msgid "The file '$JOURNAL_FILE' doesn't exist..."
+msgstr "Le fichier '$JOURNAL_FILE' n'existe pas..."
 
 #, sh-format
-msgid "The file '$journal' is empty..."
-msgstr "Le fichier '$journal' est vide..."
+msgid "The file '$JOURNAL_FILE' is empty..."
+msgstr "Le fichier '$JOURNAL_FILE' est vide..."
 
 #, sh-format
 msgid "$GASH_HOME/Forest/Hut/Chest"
-msgstr ""
+msgstr "$GASH_HOME/Foret/Hutte/Coffre"
 
 #, sh-format
 msgid ""

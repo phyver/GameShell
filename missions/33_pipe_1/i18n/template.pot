@@ -109,7 +109,7 @@ msgstr ""
 msgid "{} bought {} for {} coppers{}\n"
 msgstr ""
 
-msgid "How much does the king owe? "
+msgid "How much does the king owe?"
 msgstr ""
 
 #, sh-format

@@ -20,27 +20,27 @@ msgid "standard"
 msgstr ""
 
 #, sh-format
-msgid "The standard $I is not in the chest."
+msgid "The standard $N is not in the chest."
 msgstr ""
 
 #, sh-format
-msgid "The standard $I disapeared from the entrance."
+msgid "The standard $N disapeared from the entrance."
 msgstr ""
 
 #, sh-format
-msgid "The standard $I in the chest is not right."
+msgid "The standard $N in the chest is not right."
 msgstr ""
 
 #, sh-format
-msgid "The standard $I in the entrance is not right."
+msgid "The standard $N in the entrance is not right."
 msgstr ""
 
 #, sh-format
-msgid "The standard $I in the chest is invalid."
+msgid "The standard $N in the chest is invalid."
 msgstr ""
 
 #, sh-format
-msgid "The standard $I in the entrance is invalid."
+msgid "The standard $N in the entrance is invalid."
 msgstr ""
 
 #, sh-format

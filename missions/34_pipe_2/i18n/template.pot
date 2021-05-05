@@ -19,7 +19,7 @@ msgstr ""
 msgid "PAID"
 msgstr ""
 
-msgid "How many unpaid items are there? "
+msgid "How many unpaid items are there?"
 msgstr ""
 
 #, sh-format

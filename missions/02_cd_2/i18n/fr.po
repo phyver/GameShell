@@ -17,4 +17,4 @@ msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Chateau/Cave"
 
 msgid "You are not in the cellar..."
-msgstr "You are not in the cellar..."
+msgstr "Vous n'êtes pas dans la cave..."

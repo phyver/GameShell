@@ -16,8 +16,10 @@ msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 msgid "$GASH_HOME/Mountain/Cave"
 msgstr "$GASH_HOME/Montagne/Grotte"
 
-msgid "potion_recipe"
-msgstr "recette_potion"
+# path for the text file containing the goal
+#, sh-format
+msgid "$MISSION_DIR/recipe/en.txt"
+msgstr "$MISSION_DIR/recipe/fr.txt"
 
 msgid "You are not standing in the cave with the ermit!"
 msgstr "Vous n'êtes pas dans la grotte avec l'ermite !"
@@ -28,10 +30,9 @@ msgstr "Vous n'avez pas utilisé l'opérateur '|' !"
 msgid "Your previous command doesn't give the expected result..."
 msgstr "Votre commande précédente ne donne pas le résultat attendu..."
 
-# path for the text file containing the goal
-#, sh-format
-msgid "$MISSION_DIR/recipe/en.txt"
-msgstr "$MISSION_DIR/recipe/fr.txt"
+msgid "potion_recipe"
+msgstr "recette_potion"
 
-msgid "start"
-msgstr "debut"
+#, fuzzy
+msgid "potion_recipe.start"
+msgstr "recette_potion.debut"

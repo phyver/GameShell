@@ -1,23 +1,23 @@
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
-
 #, fuzzy
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+
 msgid ""
-"The admin password is now '$password'. Use\n"
+"The admin password is now '$PASSWORD'. Use\n"
 "    $ gash HELP\n"
 "for a list including admin commands."
 msgstr ""
-"Le mot de passe administrateur est maintenant '$password'.\n"
+"Le mot de passe administrateur est maintenant '$PASSWORD'.\n"
 "Utilisez\n"
 "    $ gash HELP\n"
 "pour une liste incluant les commandes administrateurs."
@@ -52,19 +52,19 @@ msgid "c"
 msgstr "c"
 
 #, sh-format
-msgid "unknown choice: $choice"
-msgstr "choix inconnu : $choice"
+msgid "unknown choice: $CHOICE"
+msgstr "choix inconnu : $CHOICE"
 
 msgid "qwerty"
 msgstr "azerty"
 
 #, sh-format
-msgid "invalid mission number: $choice"
-msgstr "numéro de mission invalide : $choice"
-
-#, sh-format
-msgid "Please choose a number between 1 and $nb_missions"
-msgstr "Choisissez un numéro entre 1 et $nb_missions"
+msgid ""
+"Error: invalid mission number: $CHOICE.\n"
+"Please choose a number between 1 and $NB_MISSIONS"
+msgstr ""
+"Erreur : numéro de mission invalide : $CHOICE.\n"
+"Choisissez un numéro entre 1 et $NB_MISSIONS"
 
 #, sh-format
 msgid "$MISSION_DIR/msg/en.txt"
