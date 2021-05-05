@@ -31,14 +31,20 @@ msgstr ""
 msgid "Did you kill some cheese generator?"
 msgstr ""
 
-#, sh-format
-msgid ""
-"The command 'pstree' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'psmisc')"
-msgstr ""
-
 msgid "cheese"
 msgstr ""
 
 msgid "Did you eat some cheese?"
+msgstr ""
+
+#, sh-format
+msgid ""
+"The command 'ps' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'psproc')"
+msgstr ""
+
+#, sh-format
+msgid ""
+"The command 'pstree' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'psmisc')"
 msgstr ""
