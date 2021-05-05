@@ -54,7 +54,7 @@ then
 else
     find "$GASH_HOME" -name ".$(gettext "coin")_?_*" -type f -print0 | xargs -0 rm -f
     find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -iname "*$(gettext "chest")*" -type f -print0 | xargs -0 rm -f
-    find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -iname "*$(gettext "cabin")*" -type f -print0 | xargs -0 rm -f
+    find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -iname "*$(gettext "hut")*" -type f -print0 | xargs -0 rm -f
     unset -f _local_check
     unset CELLAR GASH_CHEST
     false

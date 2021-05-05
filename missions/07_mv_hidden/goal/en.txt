@@ -2,7 +2,7 @@ Mission goal
 ============
 
 Collect all the coins hidden in the cellar of the castle, and 
-put them in your chest (in your cabin in the forest).
+put them in your chest (in your hut in the forest).
 
 
 Secondary objective

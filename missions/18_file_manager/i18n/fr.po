@@ -33,8 +33,8 @@ msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Cabin/Chest"
-msgstr "$GASH_HOME/Foret/Cabane/Coffre"
+msgid "$GASH_HOME/Forest/Hut/Chest"
+msgstr "$GASH_HOME/Foret/Hutte/Coffre"
 
 msgid "maze generation:"
 msgstr "génération du labyrinthe :"
