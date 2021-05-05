@@ -9,7 +9,7 @@ rd=pylptbbpbqmtaojeqalfrdzfswddcicuwtohudysakdtzqcswwzyrfwbilbkkusz
 SECRET_KEY="${rd:( $RANDOM % ((${#rd}) -4) ):4}"
 echo "$SECRET_KEY" > "$GASH_MISSION_DATA/secret_key"
 
-random_shift=$((3 + RANDOM % 20))
+random_shift=$((12 + RANDOM % 3))
 
 ab=abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
 D=${ab:random_shift:26} # je crée mon alphabet d'arrivée en tronquand la chaine ci-dessus et en m'aidant du décalage de César

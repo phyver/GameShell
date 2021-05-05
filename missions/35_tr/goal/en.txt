@@ -6,6 +6,12 @@ It was probably enciphered using a Caesar shift cipher.
 
 Decrypt it by making an exhaustive search from the command line.
 
+Hint
+----
+
+All other secret messages that have been found were using a shift 
+between 10 and 16.
+
 
 Useful commands
 ===============
