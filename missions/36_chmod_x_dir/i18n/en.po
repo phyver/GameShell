@@ -18,3 +18,11 @@ msgstr "$GASH_HOME/Castle/Main_building/Throne_room/Kings_quarter"
 
 msgid "You are not in the King's quarter!"
 msgstr "You are not in the King's quarter!"
+
+#, sh-format
+msgid ""
+"The command 'man' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'man-db')"
+msgstr ""
+"The command 'man' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'man-db')"

@@ -19,11 +19,19 @@ msgstr "$GASH_HOME/Castle/Main_building/Throne_room/Kings_quarter"
 msgid "secret_note"
 msgstr "secret_note"
 
-msgid "note"
-msgstr "note"
-
 msgid "What's the secret key to open the safe?"
 msgstr "What's the secret key to open the safe?"
 
 msgid "That's not the real key!"
 msgstr "That's not the real key!"
+
+#, sh-format
+msgid ""
+"The command 'man' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'man-db')"
+msgstr ""
+"The command 'man' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'man-db')"
+
+msgid "note"
+msgstr "note"

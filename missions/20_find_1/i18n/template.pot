@@ -22,6 +22,10 @@ msgstr ""
 msgid "Some of the coins are not in your chest!"
 msgstr ""
 
+#, sh-format
+msgid "Coin '$file' in your chest is invalid!"
+msgstr ""
+
 msgid "gold_coin"
 msgstr ""
 
@@ -31,10 +35,13 @@ msgstr ""
 msgid "There still are some gold coins in the maze!"
 msgstr ""
 
-msgid "GolD_CoiN"
+msgid "You are back at the entrance of the maze..."
 msgstr ""
 
-msgid "You are back at the entrance of the maze..."
+#, sh-format
+msgid ""
+"The command 'man' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'man-db')"
 msgstr ""
 
 #, sh-format
@@ -44,14 +51,13 @@ msgstr ""
 msgid "maze generation:"
 msgstr ""
 
+msgid "GolD_CoiN"
+msgstr ""
+
 #, sh-format
 msgid "$GASH_HOME/Garden/Orchard"
 msgstr ""
 
 #, sh-format
 msgid "$GASH_HOME/Garden/Shed"
-msgstr ""
-
-#, sh-format
-msgid "Coin '$file' in your chest is invalid!"
 msgstr ""

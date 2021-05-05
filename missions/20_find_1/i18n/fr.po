@@ -22,6 +22,10 @@ msgstr "piece"
 msgid "Some of the coins are not in your chest!"
 msgstr "Some of the coins are not in your chest!"
 
+#, sh-format
+msgid "Coin '$file' in your chest is invalid!"
+msgstr "La pièce '$file' dans votre coffre est invalide !"
+
 msgid "gold_coin"
 msgstr "piece_d_or"
 
@@ -31,11 +35,16 @@ msgstr "Il y a trop de pièces d'or dans le labyrinthe !"
 msgid "There still are some gold coins in the maze!"
 msgstr "Il y a encore des pièces d'or dans le labyrinthe !"
 
-msgid "GolD_CoiN"
-msgstr "PieCe_D_oR"
-
 msgid "You are back at the entrance of the maze..."
 msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
+
+#, sh-format
+msgid ""
+"The command 'man' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'man-db')"
+msgstr ""
+"La commande 'man' est nécessaire pour la mission $MISSION_NAME.\n"
+"(Debian / Ubuntu : installez le paquet 'man-db')"
 
 #, sh-format
 msgid "$GASH_HOME/Forest/Hut/Chest"
@@ -44,6 +53,9 @@ msgstr "$GASH_HOME/Foret/Hutte/Coffre"
 msgid "maze generation:"
 msgstr "génération du labyrinthe :"
 
+msgid "GolD_CoiN"
+msgstr "PieCe_D_oR"
+
 #, sh-format
 msgid "$GASH_HOME/Garden/Orchard"
 msgstr "$GASH_HOME/Jardin/Verger"
@@ -51,7 +63,3 @@ msgstr "$GASH_HOME/Jardin/Verger"
 #, sh-format
 msgid "$GASH_HOME/Garden/Shed"
 msgstr "$GASH_HOME/Jardin/Cabanon"
-
-#, sh-format
-msgid "Coin '$file' in your chest is invalid!"
-msgstr "La pièce '$file' dans votre coffre est invalide !"
