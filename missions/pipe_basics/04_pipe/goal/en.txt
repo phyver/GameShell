@@ -1,0 +1,47 @@
+Mission goal
+============
+
+The old hermit notices your interest for potion recipes, and 
+sees promise in your ability to lookup lists of ingredients. 
+He challenges you to find the steps for the elixir of Youth.
+
+In order to validate the mission, your last command prior to 
+``gash check`` must show the steps for the recipe and nothing 
+else (no title, no blank lines).
+
+
+Useful commands
+===============
+
+cat FILE1 FILE2 ... FILEn
+  Display the contents of the files in order.
+
+tail
+  Print the last 10 lines sent on the standard input.
+
+tail -n K
+  Print the last K lines sent on the standard input.
+
+COMMAND1 | COMMAND2
+  Run the two commands, feeding the "standard output" of the 
+  former as the "standard input" of the latter.
+  Remark: by analogy with plumbing "|" is called "pipe".
+
+
+Explanations
+============
+
+Many of the commands we have seen so far are used to process 
+text: they receive text as input and produce text as output. 
+It is common for commands to take their input in one or more 
+files, and to write their output to their "standard output", 
+which means that (by default) the output is written into the
+terminal. Dually to the "standard output" commands also have 
+a "standard input" on which they can receive input.
+
+Most commands are able to receive input either through files 
+(given as arguments) or their standard input. For example:
+- ``head FILE`` reads its input from the file,
+- ``head`` reads its input on the standard input,
+- ``cat FILE1 FILE2`` reads its input from the files,
+- ``cat`` reads its input on the standard input.
