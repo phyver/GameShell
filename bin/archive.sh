@@ -15,13 +15,14 @@ create a GameShell standalone archive
 
 options:
   -h          this message
+
   -p ...      choose password for admin commands
-  -N ...      name of the archive / top directory (default: "GameShell")
-  -a          keep 'auto.sh' scripts from missions that have one
   -P          use the "passport mode" by default when running GameShell
-  -D          use the "debug mode" by default when running GameShell
   -A          use the "anonymous mode" by default when running GameShell
-  -k          keep "standard" tgz archive
+
+  -a          keep 'auto.sh' scripts from missions that have one
+  -N ...      name of the archive / top directory (default: "GameShell")
+  -k          keep tgz archive
 EOH
 }
 
@@ -30,8 +31,9 @@ ADMIN_PASSWD="gsh"
 KEEP_AUTO=0
 DEFAULT_MODE="ANONYMOUS"
 KEEP_TGZ='false'
+GENERATE_MO='true'
 
-while getopts ":hp:N:aPDk" opt
+while getopts ":hp:N:aPk" opt
 do
   case $opt in
     h)
@@ -49,9 +51,6 @@ do
       ;;
     P)
       DEFAULT_MODE="PASSPORT"
-      ;;
-    D)
-      DEFAULT_MODE="DEBUG"
       ;;
     k)
       KEEP_TGZ='true'
@@ -101,6 +100,50 @@ do
   echo "$DUMMY$(basename "$ARCHIVE_MISSION_DIR")" >> "$TMP_DIR/$NAME/missions/index.txt"
 done
 
+# generate .mo files
+if [ "$GENERATE_MO" = 'true' ]
+then
+  echo "generating '.mo' files"
+  {
+    # gameshell
+    GASH_BASE=$TMP_DIR/$NAME
+    GASH_DATA="$GASH_BASE/.session_data"
+
+    export TEXTDOMAINDIR="$GASH_BASE/locale"
+    export TEXTDOMAIN="gash"
+    for PO_FILE in "$GASH_BASE"/i18n/*.po; do
+      PO_LANG=$(basename "$PO_FILE" .po)
+      mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
+      msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
+    done
+
+    # all missions
+    while read MISSION_DIR
+    do
+      case $MISSION_DIR in
+        "" | "#"* )
+          continue
+          ;;
+        "!"*)
+          MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
+          ;;
+      esac
+      export DOMAIN=$(basename "$MISSION_DIR")
+
+      if [ -d "$MISSION_DIR/i18n" ]
+      then
+        shopt -s nullglob
+        for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
+          PO_LANG=$(basename "$PO_FILE" .po)
+          mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
+          msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
+        done
+        shopt -u nullglob
+      fi
+    done < "$GASH_BASE/missions/index.txt"
+  }
+fi
+
 
 # remove auto.sh files
 if [ "$KEEP_AUTO" -ne 1 ]
@@ -116,6 +159,7 @@ find "$TMP_DIR/$NAME" -name "_*.sh" -print0 | xargs -0 rm -f
 find "$TMP_DIR/$NAME" -name "test.sh" -print0 | xargs -0 rm -f
 find "$TMP_DIR/$NAME" -name "Makefile" -print0 | xargs -0 rm -f
 find "$TMP_DIR/$NAME" -name "template.pot" -print0 | xargs -0 rm -f
+[ "$GENERATE_MO" = 'true' ] && find "$TMP_DIR/$NAME" -name "*.po" -print0 | xargs -0 rm -f
 
 # change admin password
 echo "setting admin password"
