@@ -35,6 +35,12 @@ msgid "You are back at the entrance of the maze..."
 msgstr ""
 
 #, sh-format
+msgid ""
+"The command 'man' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'man-db')"
+msgstr ""
+
+#, sh-format
 msgid "$GASH_HOME/Forest/Hut/Chest"
 msgstr ""
 
