@@ -17,11 +17,11 @@ msgid "$GASH_HOME/Castle/Entrance"
 msgstr "$GASH_HOME/Chateau/Entree"
 
 msgid "standard"
-msgstr "étendard"
+msgstr "etendard"
 
 #, sh-format
 msgid "The standard $N is not in the chest."
-msgstr "L'étendard $N n'est pas dans la hutte."
+msgstr "L'étendard $N n'est pas dans le coffre."
 
 #, sh-format
 msgid "The standard $N disapeared from the entrance."

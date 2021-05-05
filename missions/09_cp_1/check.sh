@@ -6,7 +6,7 @@ _local_check() {
   local N
   for N in $(seq 4)
   do
-    local F="$(gettext "standard")_${I}"
+    local F="$(gettext "standard")_${N}"
 
     # Check that the standard file exists is in the chest
     if [ ! -f "$GASH_CHEST/${F}" ]
