@@ -1,7 +1,7 @@
 #!/bin/bash
 
 y=$(cat "$GASH_MISSION_DATA/nbUnpaid")
-read -erp "$(gettext "How many unpaid items are there? ")" d
+read -erp "$(gettext "How many unpaid items are there?") " d
 
 x=$(checksum "$d")
 

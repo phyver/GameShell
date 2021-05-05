@@ -16,11 +16,11 @@ msgstr "$MISSION_DIR/treasure-msg/en.txt"
 msgid "$GASH_HOME/Forest"
 msgstr "$GASH_HOME/Forest"
 
-msgid "Hut"
-msgstr "Hut"
-
 msgid "Chest"
 msgstr "Chest"
+
+msgid "Hut"
+msgstr "Hut"
 
 msgid "You built too many huts in the forest!"
 msgstr "You built too many huts in the forest!"
@@ -29,8 +29,8 @@ msgid "You did not build a hut in the forest!"
 msgstr "You did not build a hut in the forest!"
 
 #, sh-format
-msgid "The $hut directory does not exist!"
-msgstr "The $hut directory does not exist!"
+msgid "The $HUT_DIR directory does not exist!"
+msgstr "The $HUT_DIR directory does not exist!"
 
 msgid "You built too many chests in your hut!"
 msgstr "You built too many chests in your hut!"

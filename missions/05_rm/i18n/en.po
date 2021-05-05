@@ -16,6 +16,7 @@ msgstr "$MISSION_DIR/treasure-msg/en.txt"
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr "$GASH_HOME/Castle/Cellar"
 
+# filename
 msgid "spider"
 msgstr "spider"
 

@@ -1,17 +1,17 @@
 #!/bin/bash
 
 _local_check() {
-    local journal="$GASH_CHEST/$(gettext "journal").txt"
-    if [ ! -f "$journal" ]
+    local JOURNAL_FILE="$GASH_CHEST/$(gettext "journal").txt"
+    if [ ! -f "$JOURNAL_FILE" ]
     then
         journal=~${journal#$GASH_BASE}
-        echo "$(eval_gettext "The file '\$journal' doesn't exist...")"
+        echo "$(eval_gettext "The file '\$JOURNAL_FILE' doesn't exist...")"
         find "$GASH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -f
         return 1
-    elif [ ! -s "$journal" ]
+    elif [ ! -s "$JOURNAL_FILE" ]
     then
         journal=~${journal#$GASH_BASE}
-        echo "$(eval_gettext "The file '\$journal' is empty...")"
+        echo "$(eval_gettext "The file '\$JOURNAL_FILE' is empty...")"
         find "$GASH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -f
         return 1
     else

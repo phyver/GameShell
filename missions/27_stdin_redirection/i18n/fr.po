@@ -41,5 +41,5 @@ msgstr ""
 "\n"
 "Il te suffit de recopier les lignes de ce livre."
 
-msgid ".How_to_cheat_for_exams"
-msgstr ".Comment_tricher_aux_examens"
+msgid "How_to_cheat_for_exams"
+msgstr "Comment_tricher_aux_examens"

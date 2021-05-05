@@ -20,28 +20,28 @@ msgid "standard"
 msgstr "étendard"
 
 #, sh-format
-msgid "The standard $I is not in the chest."
-msgstr "L'étendard $I n'est pas dans la hutte."
+msgid "The standard $N is not in the chest."
+msgstr "L'étendard $N n'est pas dans la hutte."
 
 #, sh-format
-msgid "The standard $I disapeared from the entrance."
-msgstr "L'étendard $I a disparu de l'entrée."
+msgid "The standard $N disapeared from the entrance."
+msgstr "L'étendard $N a disparu de l'entrée."
 
 #, sh-format
-msgid "The standard $I in the chest is not right."
-msgstr "L'étendard $I de la hutte n'est pas correct."
+msgid "The standard $N in the chest is not right."
+msgstr "L'étendard $N de la hutte n'est pas correct."
 
 #, sh-format
-msgid "The standard $I in the entrance is not right."
-msgstr "L'étendard $I de l'entrée n'est pas correct."
+msgid "The standard $N in the entrance is not right."
+msgstr "L'étendard $N de l'entrée n'est pas correct."
 
 #, sh-format
-msgid "The standard $I in the chest is invalid."
-msgstr "L'étendard $I de la hutte est invalide."
+msgid "The standard $N in the chest is invalid."
+msgstr "L'étendard $N de la hutte est invalide."
 
 #, sh-format
-msgid "The standard $I in the entrance is invalid."
-msgstr "L'étendard $I de l'entrée est invalide."
+msgid "The standard $N in the entrance is invalid."
+msgstr "L'étendard $N de l'entrée est invalide."
 
 #, sh-format
 msgid "$GASH_HOME/Forest/Hut/Chest"

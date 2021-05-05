@@ -19,8 +19,8 @@ msgstr "$GASH_HOME/Echoppe"
 msgid "PAID"
 msgstr "PAYÉ"
 
-msgid "How many unpaid items are there? "
-msgstr "Combien y a t'il d'objets impayés ? "
+msgid "How many unpaid items are there?"
+msgstr "Combien y a t'il d'objets impayés ?"
 
 #, sh-format
 msgid "That's the right answer, but you used $NB_CMD commands!"

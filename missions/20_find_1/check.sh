@@ -1,19 +1,19 @@
 #!/bin/bash
 
 _local_check_p() {
-    local file=$1
+    local COIN_NAME=$1
     local path
-    path=$(find "$GASH_CHEST" -name "*$(gettext "$file")*" -type f)
+    path=$(find "$GASH_CHEST" -name "*$(gettext "$COIN_NAME")*" -type f)
 
     if [ -z "$path" ]
     then
         echo "$(gettext "Some of the coins are not in your chest!")"
-        echo $file
+        echo $COIN_NAME
         return 1
     fi
-    if ! cmp -s "$path" "$GASH_MISSION_DATA/$file"
+    if ! cmp -s "$path" "$GASH_MISSION_DATA/$COIN_NAME"
     then
-        echo "$(eval_gettext "Coin '\$file' in your chest is invalid!")"
+        echo "$(eval_gettext "Coin '\$COIN_NAME' in your chest is invalid!")"
         return 1
     fi
 }

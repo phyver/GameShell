@@ -20,28 +20,28 @@ msgid "coin"
 msgstr "pièce"
 
 #, sh-format
-msgid "There are several '$COIN...' in the cellar!"
-msgstr "Il y a plusieurs pièces '$COIN...' dans la cave !"
+msgid "There are several '$COIN_NAME...' in the cellar!"
+msgstr "Il y a plusieurs pièces '$COIN_NAME...' dans la cave !"
 
 #, sh-format
-msgid "The coin '$COIN...' is still in the cellar!"
-msgstr "La pièce '$COIN...' est toujours dans la cave !"
+msgid "The coin '$COIN_NAME...' is still in the cellar!"
+msgstr "La pièce '$COIN_NAME...' est toujours dans la cave !"
 
 #, sh-format
-msgid "There are several '$COIN...' in your chest!"
-msgstr "Il y a plusieurs pièces '$COIN...' dans le coffre !"
+msgid "There are several '$COIN_NAME...' in your chest!"
+msgstr "Il y a plusieurs pièces '$COIN_NAME...' dans le coffre !"
 
 #, sh-format
-msgid "There is no '$COIN...' in your chest!"
-msgstr "Il n'y a pas de pièce '$COIN...' dans le coffre !"
+msgid "There is no '$COIN_NAME...' in your chest!"
+msgstr "Il n'y a pas de pièce '$COIN_NAME...' dans le coffre !"
 
 #, sh-format
-msgid "The coin '$COIN...' has been tampered with..."
-msgstr "La pièce '$COIN...' a été modifiée..."
+msgid "The coin '$COIN_NAME...' has been tampered with..."
+msgstr "La pièce '$COIN_NAME...' a été modifiée..."
 
 #, sh-format
-msgid "The coin '$COIN...' has a wrong file name..."
-msgstr "La pièce '$COIN...' n'a pas le bon nom..."
+msgid "The coin '$COIN_NAME...' has a wrong file name..."
+msgstr "La pièce '$COIN_NAME...' n'a pas le bon nom..."
 
 msgid "chest"
 msgstr "coffre"

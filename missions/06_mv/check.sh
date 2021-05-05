@@ -2,34 +2,34 @@
 
 # Receives coin number as first argument.
 _local_check() {
-    local coin="$(gettext "coin")_$1"
+    local COIN_NAME="$(gettext "coin")_$1"
 
     # Check that the coin is not in the cellar.
-    if [ -f "$(eval_gettext '$GASH_HOME/Castle/Cellar')/$coin" ]
+    if [ -f "$(eval_gettext '$GASH_HOME/Castle/Cellar')/$COIN_NAME" ]
     then
-        echo "$(eval_gettext "The coin '\$coin' is still in the cellar!")"
+        echo "$(eval_gettext "The coin '\$COIN_NAME' is still in the cellar!")"
         return 1
     fi
 
     # Check that the coin is in the chest.
-    if [ ! -f "$GASH_CHEST/$coin" ]
+    if [ ! -f "$GASH_CHEST/$COIN_NAME" ]
     then
-        echo "$(eval_gettext "The coin '\$coin' is not in the chest!")"
+        echo "$(eval_gettext "The coin '\$COIN_NAME' is not in the chest!")"
         return 1
     fi
 
     # Check that the contents of the coin.
-    if [ "$(cut -f 1 -d ' ' "$GASH_CHEST/$coin" | cut -f 1 -d '#')" != "$coin" ]
+    if [ "$(cut -f 1 -d ' ' "$GASH_CHEST/$COIN_NAME" | cut -f 1 -d '#')" != "$COIN_NAME" ]
     then
-        echo "$(eval_gettext "The coin '\$coin' has been tampered with...")"
+        echo "$(eval_gettext "The coin '\$COIN_NAME' has been tampered with...")"
         return 1
     fi
 
     # Verify the checksum in the coin.
-    local coin_data=$(cut -f 1 -d ' ' "$GASH_CHEST/$coin")
-    if [ "$(cut -f 2 -d ' ' "$GASH_CHEST/$coin")" != "$(checksum "$coin_data")" ]
+    local coin_data=$(cut -f 1 -d ' ' "$GASH_CHEST/$COIN_NAME")
+    if [ "$(cut -f 2 -d ' ' "$GASH_CHEST/$COIN_NAME")" != "$(checksum "$coin_data")" ]
     then
-        echo "$(eval_gettext "The coin '\$coin' has been tampered with...")"
+        echo "$(eval_gettext "The coin '\$COIN_NAME' has been tampered with...")"
         return 1
     fi
 
