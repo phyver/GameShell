@@ -16,7 +16,8 @@ msgstr ""
 msgid "$GASH_HOME/Mountain/Cave"
 msgstr ""
 
-msgid "potion_recipe"
+#, sh-format
+msgid "$MISSION_DIR/recipe/en.txt"
 msgstr ""
 
 msgid "You are not standing in the cave with the ermit!"
@@ -28,9 +29,8 @@ msgstr ""
 msgid "Your previous command doesn't give the expected result..."
 msgstr ""
 
-#, sh-format
-msgid "$MISSION_DIR/recipe/en.txt"
+msgid "potion_recipe"
 msgstr ""
 
-msgid "start"
+msgid "potion_recipe.start"
 msgstr ""

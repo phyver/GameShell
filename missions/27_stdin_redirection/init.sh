@@ -12,7 +12,7 @@ EOB
 echo "$(gettext "The book 'Mathematics_101' contains all the anwsers for the exam.
 
 You just need to copy all the lines in this book.")" \
-    > "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')/$(gettext ".How_to_cheat_for_exams")"
+    > "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')/.$(gettext "How_to_cheat_for_exams")"
 
 
 book="$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')/$(gettext "Mathematics_101")"

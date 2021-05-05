@@ -109,8 +109,8 @@ msgstr "une bouteille de cidre"
 msgid "{} bought {} for {} coppers{}\n"
 msgstr "{} a acheté {} pour {} piécettes{}\n"
 
-msgid "How much does the king owe? "
-msgstr "Quelle est la dette du roi ? "
+msgid "How much does the king owe?"
+msgstr "Quelle est la dette du roi ?"
 
 #, sh-format
 msgid "That's the right answer, but you used $NB_CMD commands!"

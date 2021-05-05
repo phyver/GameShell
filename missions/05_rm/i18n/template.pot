@@ -16,6 +16,7 @@ msgstr ""
 msgid "$GASH_HOME/Castle/Cellar"
 msgstr ""
 
+# filename
 msgid "spider"
 msgstr ""
 

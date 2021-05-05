@@ -1,11 +1,11 @@
 #!/bin/bash
 
 change_password() {
-  local password=$1
-  local ADMIN_HASH=$(checksum "$password")
+  local PASSWORD=$1
+  local ADMIN_HASH=$(checksum "$PASSWORD")
   echo "$ADMIN_HASH" > "$GASH_DATA/admin_hash"
   echo""
-  echo "$(eval_gettext "The admin password is now '\$password'. Use
+  echo "$(eval_gettext "The admin password is now '\$PASSWORD'. Use
     \$ gash HELP
 for a list including admin commands.")"
   echo""
@@ -20,9 +20,9 @@ do
     (q)         quit
     (c)         continue
     (number)    restart from this mission")"
-    read -erp "$(gettext "Your choice [qC] or a number:") " choice
+    read -erp "$(gettext "Your choice [qC] or a number:") " CHOICE
 
-    case $choice in
+    case $CHOICE in
         "$(gettext "q")" | "$(gettext "Q")")
             gash exit
             ;;
@@ -30,18 +30,19 @@ do
             break;
             ;;
         *[!0-9]*)
-            echo "$(eval_gettext 'unknown choice: $choice')" >&2
+            echo "$(eval_gettext 'unknown choice: $CHOICE')" >&2
             ;;
         *)
-            nb_missions=$(sed -e '/^$/d' -e '/^#/d' "$GASH_DATA/index.txt" | wc -l)
-            if  [ 0 -lt "$choice" ] && [ "$choice" -le "$nb_missions" ]
+            NB_MISSIONS=$(sed -e '/^$/d' -e '/^#/d' "$GASH_DATA/index.txt" | wc -l)
+            if  [ 0 -lt "$CHOICE" ] && [ "$CHOICE" -le "$NB_MISSIONS" ]
             then
                 change_password "$(gettext "qwerty")"
-                _gash_start -quiet $choice
+                _gash_start -quiet $CHOICE
+                unset CHOICE
                 gash reset
             else
-                echo "$(eval_gettext 'invalid mission number: $choice')" >&2
-                echo "$(eval_gettext 'Please choose a number between 1 and $nb_missions')" >&2
+                echo "$(eval_gettext 'Error: invalid mission number: $CHOICE.
+Please choose a number between 1 and $NB_MISSIONS')" >&2
                 echo "" >&2
             fi
             ;;

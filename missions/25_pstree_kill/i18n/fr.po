@@ -20,7 +20,7 @@ msgid "rat_poison"
 msgstr "mort_aux_rats"
 
 msgid "There still is some rat poison in the kitchen!"
-msgstr "Il rest de la mort aux rats dans la cuisine !"
+msgstr "Il reste de la mort aux rats dans la cuisine !"
 
 msgid "There still is some rat poison hidden in the kitchen!"
 msgstr "Il reste de la mort aux rats cachée dans la cuisine !"

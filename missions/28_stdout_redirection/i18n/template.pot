@@ -26,11 +26,11 @@ msgid "inventory.txt"
 msgstr ""
 
 #, sh-format
-msgid "There is no $inventory in the drawer..."
+msgid "There is no $INVENTORY_FILE in the drawer..."
 msgstr ""
 
 msgid ""
-"The content of $inventory is invalid.\n"
+"The content of $INVENTORY_FILE is invalid.\n"
 "You can check its content with the command\n"
-"    $ less $inventory"
+"    $ less $INVENTORY_FILE"
 msgstr ""

@@ -20,7 +20,11 @@ msgid "coin"
 msgstr "piece"
 
 msgid "Some of the coins are not in your chest!"
-msgstr "Some of the coins are not in your chest!"
+msgstr "Certaines des pièces ne sont pas dans votre coffre !"
+
+#, sh-format
+msgid "Coin '$COIN_NAME' in your chest is invalid!"
+msgstr "La pièce '$COIN_NAME' dans votre coffre est invalide !"
 
 #, sh-format
 msgid "Coin '$file' in your chest is invalid!"

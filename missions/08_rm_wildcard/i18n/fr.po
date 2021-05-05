@@ -27,5 +27,5 @@ msgid "Some salamanders have been modified!"
 msgstr "Certaines salamandres ont été modifiées !"
 
 #, sh-format
-msgid "There still are some spiders ($nb_spiders) in the cellar!"
-msgstr "Il reste des araignées ($nb_spiders) dans la cave !"
+msgid "There still are some spiders ($NB_SPIDERS) in the cellar!"
+msgstr "Il reste des araignées ($NB_SPIDERS) dans la cave !"

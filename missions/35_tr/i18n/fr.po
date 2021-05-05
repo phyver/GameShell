@@ -28,7 +28,7 @@ msgid "$MISSION_DIR/secret_recipe/en.txt"
 msgstr "$MISSION_DIR/secret_recipe/fr.txt"
 
 msgid "That's not the secret key."
-msgstr "Ce n'est pas la bonne cl."
+msgstr "Ce n'est pas la bonne clé."
 
 #, sh-format
 msgid ""

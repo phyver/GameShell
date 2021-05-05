@@ -23,7 +23,7 @@ msgid "Some of the coins are not in your chest!"
 msgstr ""
 
 #, sh-format
-msgid "Coin '$file' in your chest is invalid!"
+msgid "Coin '$COIN_NAME' in your chest is invalid!"
 msgstr ""
 
 msgid "gold_coin"
@@ -36,12 +36,15 @@ msgid "There still are some gold coins in the maze!"
 msgstr ""
 
 msgid "You are back at the entrance of the maze..."
+<<<<<<< HEAD
 msgstr ""
 
 #, sh-format
 msgid ""
 "The command 'man' is required for mission $MISSION_NAME.\n"
 "(Debian / Ubuntu: install package 'man-db')"
+=======
+>>>>>>> c8c54bc... normalizing .po files for missions
 msgstr ""
 
 #, sh-format

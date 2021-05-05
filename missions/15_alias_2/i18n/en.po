@@ -16,16 +16,20 @@ msgid "journal"
 msgstr "journal"
 
 #, sh-format
-msgid "No alias '$_alias' has been found..."
-msgstr "No alias '$_alias' has been found..."
+msgid "No alias '$ALIAS_NAME' has been found..."
+msgstr "No alias '$ALIAS_NAME' has been found..."
 
 #, sh-format
 msgid ""
-"It seems you alias doesn't refer to the appropriate file ($f).\n"
+"It seems you alias doesn't refer to the appropriate file ($FILE_NAME).\n"
 "Make sure to use an absolute path..."
 msgstr ""
-"It seems you alias doesn't refer to the appropriate file ($f).\n"
+"It seems you alias doesn't refer to the appropriate file ($FILE_NAME).\n"
 "Make sure to use an absolute path..."
 
 msgid "Your alias doesn't use the command 'nano'..."
 msgstr "Your alias doesn't use the command 'nano'..."
+
+#, sh-format
+msgid "$GASH_HOME/Forest/Hut/Chest"
+msgstr ""

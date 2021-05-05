@@ -4,12 +4,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
-
 # path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
 msgstr ""
 
 #, sh-format
@@ -20,15 +20,15 @@ msgid "coin"
 msgstr ""
 
 #, sh-format
-msgid "The coin '$coin' is still in the cellar!"
+msgid "The coin '$COIN_NAME' is still in the cellar!"
 msgstr ""
 
 #, sh-format
-msgid "The coin '$coin' is not in the chest!"
+msgid "The coin '$COIN_NAME' is not in the chest!"
 msgstr ""
 
 #, sh-format
-msgid "The coin '$coin' has been tampered with..."
+msgid "The coin '$COIN_NAME' has been tampered with..."
 msgstr ""
 
 msgid "chest"

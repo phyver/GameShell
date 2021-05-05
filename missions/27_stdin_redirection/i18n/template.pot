@@ -38,5 +38,5 @@ msgid ""
 "You just need to copy all the lines in this book."
 msgstr ""
 
-msgid ".How_to_cheat_for_exams"
+msgid "How_to_cheat_for_exams"
 msgstr ""

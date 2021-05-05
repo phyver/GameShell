@@ -41,5 +41,5 @@ msgstr ""
 "\n"
 "You just need to copy all the lines in this book."
 
-msgid ".How_to_cheat_for_exams"
-msgstr ".How_to_cheat_for_exams"
+msgid "How_to_cheat_for_exams"
+msgstr "How_to_cheat_for_exams"

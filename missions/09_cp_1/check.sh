@@ -3,22 +3,22 @@
 _local_check() {
   local ENTRANCE="$(eval_gettext '$GASH_HOME/Castle/Entrance')"
 
-  local I
-  for I in $(seq 4)
+  local N
+  for N in $(seq 4)
   do
     local F="$(gettext "standard")_${I}"
 
     # Check that the standard file exists is in the chest
     if [ ! -f "$GASH_CHEST/${F}" ]
     then
-      echo "$(eval_gettext "The standard \$I is not in the chest.")"
+      echo "$(eval_gettext "The standard \$N is not in the chest.")"
       return 1
     fi
 
     # Check that the standard is still in the entrance.
     if [ ! -f "${ENTRANCE}/${F}" ]
     then
-      echo "$(eval_gettext "The standard \$I disapeared from the entrance.")"
+      echo "$(eval_gettext "The standard \$N disapeared from the entrance.")"
       return 1
     fi
 
@@ -26,7 +26,7 @@ _local_check() {
     local P=$(cut -f 1 -d ' ' "$GASH_CHEST/${F}")
     if [ "$(echo "${P}" | cut -f1 -d '#')" != "${F}" ]
     then
-      echo "$(eval_gettext "The standard \$I in the chest is not right.")"
+      echo "$(eval_gettext "The standard \$N in the chest is not right.")"
       return 1
     fi
 
@@ -34,7 +34,7 @@ _local_check() {
     P=$(cut -f 1 -d ' ' "${ENTRANCE}/${F}")
     if [ "$(echo "${P}" | cut -f1 -d '#')" != "${F}" ]
     then
-      echo "$(eval_gettext "The standard \$I in the entrance is not right.")"
+      echo "$(eval_gettext "The standard \$N in the entrance is not right.")"
       return 1
     fi
 
@@ -42,7 +42,7 @@ _local_check() {
     local S=$(cut -f 2 -d ' ' "$GASH_CHEST/${F}")
     if [ "${S}" != "$(checksum "${P}")" ]
     then
-      echo "$(eval_gettext "The standard \$I in the chest is invalid.")"
+      echo "$(eval_gettext "The standard \$N in the chest is invalid.")"
       return 1
     fi
 
@@ -50,7 +50,7 @@ _local_check() {
     S=$(cut -f 2 -d ' ' "${ENTRANCE}/${F}")
     if [ "${S}" != "$(checksum "${P}")" ]
     then
-      echo "$(eval_gettext "The standard \$I in the entrance is invalid.")"
+      echo "$(eval_gettext "The standard \$N in the entrance is invalid.")"
       return 1
     fi
   done
