@@ -16,27 +16,27 @@ msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 msgid "$GASH_HOME/Forest"
 msgstr "$GASH_HOME/Foret"
 
-msgid "Cabin"
-msgstr "Cabane"
+msgid "Hut"
+msgstr "Hutte"
 
 msgid "Chest"
 msgstr "Coffre"
 
-msgid "You built too many cabins in the forest!"
-msgstr "Vous avez construit trop de cabanes dans la forêt !"
+msgid "You built too many huts in the forest!"
+msgstr "Vous avez construit trop de huttes dans la forêt !"
 
-msgid "You did not build a cabin in the forest!"
-msgstr "Vous n'avez pas construit de cabane dans la fôret !"
+msgid "You did not build a hut in the forest!"
+msgstr "Vous n'avez pas construit de hutte dans la fôret !"
 
 #, sh-format
-msgid "The $cabin directory does not exist!"
-msgstr "Le répertoire $cabin n'existe pas !"
+msgid "The $hut directory does not exist!"
+msgstr "Le répertoire $hut n'existe pas !"
 
-msgid "You built too many chests in your cabin!"
-msgstr "Vous avez construit trop de coffres dans votre cabane !"
+msgid "You built too many chests in your hut!"
+msgstr "Vous avez construit trop de coffres dans votre hutte !"
 
-msgid "You did not build a chest in your cabin!"
-msgstr "Vous n'avez pas construit de coffre dans votre cabane !"
+msgid "You did not build a chest in your hut!"
+msgstr "Vous n'avez pas construit de coffre dans votre hutte !"
 
 #, sh-format
 msgid "The $GASH_CHEST directory does not exist!"

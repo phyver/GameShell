@@ -2,7 +2,7 @@ Mission goal
 ============
 
 Collect all the coins that you can find in the cellar of the 
-castle, and put them in your chest in your cabin in the forest.
+castle, and put them in your chest in your hut in the forest.
 
 
 Useful commands

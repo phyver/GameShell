@@ -16,26 +16,26 @@ msgstr ""
 msgid "$GASH_HOME/Forest"
 msgstr ""
 
-msgid "Cabin"
+msgid "Hut"
 msgstr ""
 
 msgid "Chest"
 msgstr ""
 
-msgid "You built too many cabins in the forest!"
+msgid "You built too many huts in the forest!"
 msgstr ""
 
-msgid "You did not build a cabin in the forest!"
+msgid "You did not build a hut in the forest!"
 msgstr ""
 
 #, sh-format
-msgid "The $cabin directory does not exist!"
+msgid "The $hut directory does not exist!"
 msgstr ""
 
-msgid "You built too many chests in your cabin!"
+msgid "You built too many chests in your hut!"
 msgstr ""
 
-msgid "You did not build a chest in your cabin!"
+msgid "You did not build a chest in your hut!"
 msgstr ""
 
 #, sh-format

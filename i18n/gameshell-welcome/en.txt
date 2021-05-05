@@ -13,6 +13,6 @@ administering a computer:
 The "things" you will meet are simply standard files (often with 
 some random content) and the "places" you will visit are simply 
 directories.
-So, "build a cabin" amounts to creating a directory called "Cabin", 
+So, "build a hut" amounts to creating a directory called "Hut", 
 and "put the coins in your chest" amounts to moving the files called 
 "coin" into the directory called "Chest".

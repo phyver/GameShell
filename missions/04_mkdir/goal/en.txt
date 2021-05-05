@@ -1,13 +1,13 @@
 Mission goal
 ============
 
-Build a "Cabin" in the forest, and then build a "Chest" in the 
-cabin.
+Build a "Hut" in the forest, and then build a "Chest" in the 
+hut.
 
 Remark
 ------
 
-The chest must be **in** the cabin.
+The chest must be **in** the hut.
 
 
 Useful commands

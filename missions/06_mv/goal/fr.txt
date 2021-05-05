@@ -2,7 +2,7 @@ Objectif
 ========
 
 Ramassez toutes les pièces qui se trouvent dans la cave du château 
-et placez les dans votre coffre (dans votre cabane, dans la forêt).
+et placez les dans votre coffre (dans votre hutte, dans la forêt).
 
 
 Commandes utiles

@@ -46,9 +46,9 @@ msgstr "The coin '$COIN...' has a wrong file name..."
 msgid "chest"
 msgstr "chest"
 
-msgid "cabin"
-msgstr "cabin"
+msgid "hut"
+msgstr "hut"
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Cabin/Chest"
-msgstr "$GASH_HOME/Forest/Cabin/Chest"
+msgid "$GASH_HOME/Forest/Hut/Chest"
+msgstr "$GASH_HOME/Forest/Hut/Chest"
