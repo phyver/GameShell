@@ -1,14 +1,18 @@
 options :
   -h      ce message
-  -n      mode noir et blanc : n'utilise pas les séquences ANSI
+
   -P      mode passeport : demande le noms / email du joueur
   -D      mode debug
   -v      lecture "verbeuse" des scripts de mission (seulement en mode debug)
   -A      mode anonyme
+
   -C      continue la partie en cours, sans poser de question
   -R      rénitialise la partie en cours, sans poser de question
   -F      force l'exécution dans le dépot de développement, sans poser
           de question
 
+  -L      initialise la variable LANGUAGE (ex : -L fr:it:en)
+
+  -n      mode noir et blanc : n'utilise pas les séquences ANSI
   -X      extrait juste l'archive tgz (disponible seulement quand
           Gameshell est lancé depuis une archive exécutable)

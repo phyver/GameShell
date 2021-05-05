@@ -41,7 +41,7 @@ export GASH_COLOR="OK"
 GASH_MODE="ANONYMOUS"
 RESET=""
 FORCE="FALSE"
-while getopts ":hcnPDACRFXv" opt
+while getopts ":hcnPDACRFXvL:" opt
 do
   case $opt in
     h)
@@ -74,6 +74,9 @@ do
       ;;
     F)
       FORCE="TRUE"
+      ;;
+    L)
+      LANGUAGE=$OPTARG
       ;;
     X)
       echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
