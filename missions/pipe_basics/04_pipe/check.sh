@@ -13,7 +13,7 @@ _local_check() {
     current=$(REALPATH "$PWD")
 
     local expected
-    expected=$(tail -n 9 "$GASH_MISSION_DATA/book_of_potions/$(gettext 'page')_12")
+    expected=$(cat "$GASH_MISSION_DATA/book_of_potions/$(gettext 'page')_0"[34] | tail -n 16)
     local res
     res=$(eval "$pc")
 
