@@ -13,9 +13,9 @@ _mission_check() {
     current=$(REALPATH "$PWD")
 
     local expected
-    expected=$(cat "$GASH_MISSION_DATA/book_of_potions/$(gettext 'page')_01" "$GASH_MISSION_DATA/book_of_potions/$(gettext 'page')_02")
+    expected="$(cat "$GASH_MISSION_DATA/book_of_potions/$(gettext 'page')_0"[12])"
     local res
-    res=$(eval "$pc")
+    res="$(eval "$pc")"
 
     if ! diff -q "$cave/$(gettext 'Book_of_Potions')" "$GASH_MISSION_DATA/book_of_potions" > /dev/null
     then
