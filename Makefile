@@ -1,29 +1,34 @@
-
 LANG=$(wildcard i18n/*.po)
+LANG:=$(filter-out i18n/en.po, $(LANG))
 SH_FILES= start.sh bin/archive.sh lib/gameshell.sh lib/utils.sh lib/os_aliases.sh
 OTHER_FILES=
 
-ADD_LOCATION=--sort-output
+SORT=--sort-output
+OPTIONS=--indent --no-wrap --no-location
 
-all: $(LANG)
+all: i18n/en.po $(LANG)
 
-add-locations: ADD_LOCATION=--add-location --sort-by-file
+add-locations: SORT=--add-location --sort-by-file
 add-locations: all
 
+i18n/en.po: i18n/template.pot FORCE
+	@echo "msgen $@"
+	@msgen $(OPTIONS) $(SORT) i18n/template.pot --output=$@
+
 $(LANG):%.po: i18n/template.pot FORCE
-	msgmerge --quiet --update --no-wrap --no-location $(ADD_LOCATION) $@ i18n/template.pot
+	@echo "msgmerge $@"
+	@msgmerge --quiet --update $(OPTIONS) $(SORT) $@ i18n/template.pot
 
 i18n/template.pot: $(SH_FILES) $(OTHER_FILES) FORCE
 	@mkdir -p i18n/
-	@touch i18n/template.pot
-	xgettext --from-code=UTF-8 --omit-header --no-wrap --no-location $(ADD_LOCATION) --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
+	@echo "generating i18n/template.pot"
+	@xgettext --from-code=UTF-8 --omit-header $(OPTIONS) $(SORT) --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
 
 new: i18n/template.pot
 	@read -p "language code: " lang; \
 		[ -e "./i18n/$$lang.po" ] && echo "file i18n/$$lang.po already exists" && exit; \
 		echo "file i18n/$$lang.po created"; \
-		msgen --no-wrap --output i18n/$$lang.po i18n/template.pot; \
-		touch --date="2000-01-01" "i18n/$$lang.po"
+		msgcat $(OPTIONS) --output i18n/$$lang.po i18n/template.pot
 
 clean:
 	rm -rf i18n/*~ locale GameShell.tgz GameShell.sh GameShell-save.sh .bin .config .xsession_data .mission_data .session_data World
