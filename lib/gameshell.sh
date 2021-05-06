@@ -250,13 +250,14 @@ Restarting from previous mission.")" >&2
     # la session bash.
     # je sauvegarde l'environnement avant / après l'initialisation pour
     # afficher un message dans ce cas
+    _PWD=$(pwd)
     [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_MISSION_DATA"/env-before
     mission_source "$MISSION_DIR/init.sh"
     [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_MISSION_DATA"/env-after
 
     if [ "$BASHPID" != $$ ]
     then
-      if ! cmp -s "$GASH_MISSION_DATA"/env-before "$GASH_MISSION_DATA"/env-after
+      if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$GASH_MISSION_DATA"/env-before "$GASH_MISSION_DATA"/env-after
       then
         echo "$(gettext "Error: this mission was initialized in a subshell.
 You should run the command
