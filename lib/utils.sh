@@ -145,7 +145,9 @@ mission_source() {
   export TEXTDOMAIN=$_TEXTDOMAIN
   export MISSION_NAME=$_MISSION_NAME
   compgen -v | sort > "$TEMP"/after-V
-  compgen -A function | sort > "$TEMP"/after-F
+  # FIXME: not a very nice way to ignore _mission_check function (should only
+  # be used when sourcing check.sh)
+  compgen -A function | grep -v "_mission_check" | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
   ls "$GASH_MISSION_DATA" > "$TEMP"/after-D
 
