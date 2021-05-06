@@ -1,228 +1,211 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid "$GASH_BASE/i18n/gameshell-HELP/en.txt"
-msgstr "$GASH_BASE/i18n/gameshell-HELP/fr.txt"
+msgid   "$GASH_BASE/i18n/gameshell-HELP/en.txt"
+msgstr  "$GASH_BASE/i18n/gameshell-HELP/fr.txt"
 
 #, sh-format
-msgid "$GASH_BASE/i18n/gameshell-help/en.txt"
-msgstr "$GASH_BASE/i18n/gameshell-help/fr.txt"
+msgid   "$GASH_BASE/i18n/gameshell-help/en.txt"
+msgstr  "$GASH_BASE/i18n/gameshell-help/fr.txt"
 
 #, sh-format
-msgid "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
-msgstr "$GASH_BASE/i18n/gameshell-init-msg-short/fr.txt"
+msgid   "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
+msgstr  "$GASH_BASE/i18n/gameshell-init-msg-short/fr.txt"
 
 #, sh-format
-msgid "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
-msgstr "$GASH_BASE/i18n/gameshell-init-msg/fr.txt"
+msgid   "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
+msgstr  "$GASH_BASE/i18n/gameshell-init-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_BASE/i18n/gameshell-welcome/en.txt"
-msgstr "$GASH_BASE/i18n/gameshell-welcome/fr.txt"
+msgid   "$GASH_BASE/i18n/gameshell-welcome/en.txt"
+msgstr  "$GASH_BASE/i18n/gameshell-welcome/fr.txt"
 
 #, sh-format
-msgid "$GASH_BASE/i18n/start-help/en.txt"
-msgstr "$GASH_BASE/i18n/start-help/fr.txt"
+msgid   "$GASH_BASE/i18n/start-help/en.txt"
+msgstr  "$GASH_BASE/i18n/start-help/fr.txt"
 
 #, sh-format
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
 
 #, sh-format
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$NB_ERRORS failures out of $NB_TESTS tests"
-msgstr "$NB_ERRORS échecs sur $NB_TESTS tests"
+msgid   "$NB_ERRORS failures out of $NB_TESTS tests"
+msgstr  "$NB_ERRORS échecs sur $NB_TESTS tests"
 
 #, sh-format
-msgid "$NB_TESTS successful tests"
-msgstr "$NB_TESTS tests passés avec succès"
+msgid   "$NB_TESTS successful tests"
+msgstr  "$NB_TESTS tests passés avec succès"
 
-msgid "======== Initialisation of GameShell ========"
-msgstr "======== Initialisation de GameShell ========"
-
-#, sh-format
-msgid "Congratulations, $MISSION_NB has been successfully completed!"
-msgstr "Bravo, vous avez réussi la mission $MISSION_NB !"
+msgid   "======== Initialisation of GameShell ========"
+msgstr  "======== Initialisation de GameShell ========"
 
 #, sh-format
-msgid "Error: _gash_assert_check only accept 'true' and 'false' as argument."
-msgstr "Erreur : _gash_assert_check n'accepte que true' et 'false' comme argument."
+msgid   "Congratulations, $MISSION_NB has been successfully completed!"
+msgstr  "Bravo, vous avez réussi la mission $MISSION_NB !"
 
 #, sh-format
-msgid "Error: command '$CMD' is only available in debug mode."
-msgstr "Erreur : la command '$CMD' est seulement disponible on mode debug."
+msgid   "Error: _gash_assert_check only accept 'true' and 'false' as argument."
+msgstr  "Erreur : _gash_assert_check n'accepte que true' et 'false' comme argument."
 
 #, sh-format
-msgid "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
-msgstr "Error : mission '$MISSION_NB' introuvable (dans $FUNCTION_NAME)"
+msgid   "Error: command '$CMD' is only available in debug mode."
+msgstr  "Erreur : la command '$CMD' est seulement disponible on mode debug."
 
 #, sh-format
-msgid "Error: invalid option: '-$OPTARG'"
-msgstr "Erreur : option invalide: '-$OPTARG'"
+msgid   "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
+msgstr  "Error : mission '$MISSION_NB' introuvable (dans $FUNCTION_NAME)"
 
 #, sh-format
-msgid ""
-"Error: mission $MISSION_NB doesn't exist!\n"
-"Restarting from previous mission."
-msgstr ""
-"Erreur : la a mission $MISSION_NB n'existe pas !\n"
-"Redémarrage à la mission précédente."
+msgid   "Error: invalid option: '-$OPTARG'"
+msgstr  "Erreur : option invalide: '-$OPTARG'"
 
 #, sh-format
-msgid "Error: mission $MISSION_NB doesn't have a check script."
-msgstr "Erreur : la mission $MISSION_NB n'a pas de script de vérification."
+msgid   "Error: mission $MISSION_NB doesn't exist!\n"
+        "Restarting from previous mission."
+msgstr  "Erreur : la a mission $MISSION_NB n'existe pas !\n"
+        "Redémarrage à la mission précédente."
 
 #, sh-format
-msgid "Error: mission $MISSION_NB doesn't have a test script."
-msgstr "Erreur : la mission $MISSION_NB n'a pas de script de test."
+msgid   "Error: mission $MISSION_NB doesn't have a check script."
+msgstr  "Erreur : la mission $MISSION_NB n'a pas de script de vérification."
 
 #, sh-format
-msgid "Error: mission $MISSION_NB doesn't have an auto script."
-msgstr "Erreur : la mission $MISSION_NB n'a pas de script automatique."
+msgid   "Error: mission $MISSION_NB doesn't have a test script."
+msgstr  "Erreur : la mission $MISSION_NB n'a pas de script de test."
 
 #, sh-format
-msgid "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
-msgstr "Erreur : la mission $MISSION_NB est annulée car des dépendances ne sont pas satisfaites."
-
-msgid ""
-"Error: no mission was found!\n"
-"Aborting"
-msgstr ""
-"Erreur : aucune mission trouvée !\n"
-"Abandon"
-
-msgid "Error: the 'goto' command requires a mission number as argument."
-msgstr "Erreur : la commande 'goto' a besoin d'un numéro de mission en argument."
-
-msgid "Error: the command 'gash reset' is useless when run inside a subshell!"
-msgstr "Erreur : la commande 'gash reset' est inutile lorsqu'on l'exécute dans un sous-shell !"
-
-msgid ""
-"Error: this mission was initialized in a subshell.\n"
-"You should run the command\n"
-"    gash reset\n"
-"to make sure the mission is initialized properly."
-msgstr ""
-"Erreur : cette mission a été initailisée dans un sous-shell.\n"
-"Il est conseillé de lancer la commande\n"
-"    gash reset\n"
-"pour qu'elle soit initialisée correctement."
-
-msgid "Error: this option is only available from an executable archive!"
-msgstr "Erreur : cette option n'est disponible que depuis une archive exécutable !"
+msgid   "Error: mission $MISSION_NB doesn't have an auto script."
+msgstr  "Erreur : la mission $MISSION_NB n'a pas de script automatique."
 
 #, sh-format
-msgid ""
-"Error: unknown gash command '$CMD'.\n"
-"Use one of the following commands:"
-msgstr ""
-"Erreur : command gash inconnue '$CMD'.\n"
-"Utilisez une des commandes suivantes :"
+msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
+msgstr  "Erreur : la mission $MISSION_NB est annulée car des dépendances ne sont pas satisfaites."
+
+msgid   "Error: no mission was found!\n"
+        "Aborting"
+msgstr  "Erreur : aucune mission trouvée !\n"
+        "Abandon"
+
+msgid   "Error: the 'goto' command requires a mission number as argument."
+msgstr  "Erreur : la commande 'goto' a besoin d'un numéro de mission en argument."
+
+msgid   "Error: the command 'gash reset' is useless when run inside a subshell!"
+msgstr  "Erreur : la commande 'gash reset' est inutile lorsqu'on l'exécute dans un sous-shell !"
+
+msgid   "Error: this mission was initialized in a subshell.\n"
+        "You should run the command\n"
+        "    gash reset\n"
+        "to make sure the mission is initialized properly."
+msgstr  "Erreur : cette mission a été initailisée dans un sous-shell.\n"
+        "Il est conseillé de lancer la commande\n"
+        "    gash reset\n"
+        "pour qu'elle soit initialisée correctement."
+
+msgid   "Error: this option is only available from an executable archive!"
+msgstr  "Erreur : cette option n'est disponible que depuis une archive exécutable !"
 
 #, sh-format
-msgid "Error: unknown mode '$MODE'."
-msgstr "Erreur : mode inconnu : '$MODE'."
+msgid   "Error: unknown gash command '$CMD'.\n"
+        "Use one of the following commands:"
+msgstr  "Erreur : command gash inconnue '$CMD'.\n"
+        "Utilisez une des commandes suivantes :"
 
 #, sh-format
-msgid ""
-"Error: unknown system: OSTYPE=$OSTYPE.\n"
-"GameShell will use 'gnu-linux', without guarantee."
-msgstr ""
-"Erreur : système inconnu : OSTYPE=$OSTYPE.\n"
-"GameShell sera lancé en mode 'gnu-linux', sans garantie."
-
-msgid "Error: wrong password"
-msgstr "Erreur : mauvais mot de passe"
-
-msgid "Error: you are not allowed to run this command."
-msgstr "Erreur : vous n'avez pas le droit d'exécuter cette commande."
-
-msgid "Is this information correct? [Y/n]"
-msgstr "Est-ce que ces informations sont correctes ? [O/n]"
+msgid   "Error: unknown mode '$MODE'."
+msgstr  "Erreur : mode inconnu : '$MODE'."
 
 #, sh-format
-msgid "Mission $MISSION_NB has been cancelled."
-msgstr "La mission $MISSION_NB a été annulée"
+msgid   "Error: unknown system: OSTYPE=$OSTYPE.\n"
+        "GameShell will use 'gnu-linux', without guarantee."
+msgstr  "Erreur : système inconnu : OSTYPE=$OSTYPE.\n"
+        "GameShell sera lancé en mode 'gnu-linux', sans garantie."
+
+msgid   "Error: wrong password"
+msgstr  "Erreur : mauvais mot de passe"
+
+msgid   "Error: you are not allowed to run this command."
+msgstr  "Erreur : vous n'avez pas le droit d'exécuter cette commande."
+
+msgid   "Is this information correct? [Y/n]"
+msgstr  "Est-ce que ces informations sont correctes ? [O/n]"
+
+#, sh-format
+msgid   "Mission $MISSION_NB has been cancelled."
+msgstr  "La mission $MISSION_NB a été annulée"
 
 # abbreviation for "no" (uppercase)
-msgid "N"
-msgstr "N"
+msgid   "N"
+msgstr  "N"
 
-msgid "Player's email:"
-msgstr "Player's email: "
+msgid   "Player's email:"
+msgstr  "Player's email: "
 
-msgid "Player's name:"
-msgstr "Player's name: "
+msgid   "Player's name:"
+msgstr  "Player's name: "
 
-msgid "Press Enter"
-msgstr "Appuyez sur Entrée"
-
-#, sh-format
-msgid "Sorry, mission $MISSION_NB hasn't been completed."
-msgstr "Désolé, la mission $MISSION_NB a échoué."
+msgid   "Press Enter"
+msgstr  "Appuyez sur Entrée"
 
 #, sh-format
-msgid ""
-"The directory $GASH_DATA contains meta-data from a previous game.\n"
-"Do you want to remove it and start a new game? [y/N]"
-msgstr ""
-"Le répertoire $GASH_DATA contient des méta-données provenant d'une partie précédente.\n"
-"Voulez vous les supprimer et commencer une nouvelle partie ? [o/N]"
+msgid   "Sorry, mission $MISSION_NB hasn't been completed."
+msgstr  "Désolé, la mission $MISSION_NB a échoué."
 
-msgid ""
-"There are stopped jobs in your session.\n"
-"Those processes will be terminated.\n"
-"You can get the list of those jobs with\n"
-"    $ jobs -s\n"
-"Do you still want to quit? [y/n]"
-msgstr ""
-"Il y a des processus stoppés dans votre session.\n"
-"Ces processus vont être arêtés.\n"
-"Vous pouvez obtenir la liste de ces processus avec\n"
-"    $ jobs -s\n"
-"Êtes vous sûr de vouloir quitter ? [o/N]"
+#, sh-format
+msgid   "The directory $GASH_DATA contains meta-data from a previous game.\n"
+        "Do you want to remove it and start a new game? [y/N]"
+msgstr  "Le répertoire $GASH_DATA contient des méta-données provenant d'une partie précédente.\n"
+        "Voulez vous les supprimer et commencer une nouvelle partie ? [o/N]"
+
+msgid   "There are stopped jobs in your session.\n"
+        "Those processes will be terminated.\n"
+        "You can get the list of those jobs with\n"
+        "    $ jobs -s\n"
+        "Do you still want to quit? [y/n]"
+msgstr  "Il y a des processus stoppés dans votre session.\n"
+        "Ces processus vont être arêtés.\n"
+        "Vous pouvez obtenir la liste de ces processus avec\n"
+        "    $ jobs -s\n"
+        "Êtes vous sûr de vouloir quitter ? [o/N]"
 
 # abbreviation for "yes" (uppercase)
-msgid "Y"
-msgstr "O"
+msgid   "Y"
+msgstr  "O"
 
-msgid ""
-"You are trying to run GameShell inside the developpment directory.\n"
-"Do you want to continue? [y/N]"
-msgstr ""
-"Vous êtes en train d'exécuter GameShell dans l'arborescence de développement.\n"
-"Faut-il continuer ? [o/N]"
+msgid   "You are trying to run GameShell inside the developpment directory.\n"
+        "Do you want to continue? [y/N]"
+msgstr  "Vous êtes en train d'exécuter GameShell dans l'arborescence de développement.\n"
+        "Faut-il continuer ? [o/N]"
 
-msgid "cancelled"
-msgstr "annulée"
+msgid   "cancelled"
+msgstr  "annulée"
 
-msgid "completed"
-msgstr "réussie"
+msgid   "completed"
+msgstr  "réussie"
 
-msgid "failed"
-msgstr "échouée"
+msgid   "failed"
+msgstr  "échouée"
 
 # abbreviation for "no" (lowercase)
-msgid "n"
-msgstr "n"
+msgid   "n"
+msgstr  "n"
 
-msgid "passed"
-msgstr "sautée"
+msgid   "passed"
+msgstr  "sautée"
 
-msgid "password:"
-msgstr "mot de passe :"
+msgid   "password:"
+msgstr  "mot de passe :"
 
 #, sh-format
-msgid "test $NB_TESTS failed"
-msgstr "test $NB_TESTS échoué"
+msgid   "test $NB_TESTS failed"
+msgstr  "test $NB_TESTS échoué"
 
 # abbreviation for "yes" (lowercase)
-msgid "y"
-msgstr "o"
+msgid   "y"
+msgstr  "o"
