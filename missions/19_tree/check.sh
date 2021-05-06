@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     local maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
 
     local coin=$(find "$maze" -name "*$(gettext "silver_coin")*")
@@ -26,11 +26,4 @@ _local_check() {
     fi
 }
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    false
-fi
+_mission_check

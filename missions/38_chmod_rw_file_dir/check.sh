@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     if ! [ -f "$GASH_CHEST/$(gettext "crown")" ]
     then
         echo "$(gettext "There is no crown in your chest!")"
@@ -31,11 +31,4 @@ _local_check() {
     return 0
 }
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    false
-fi
+_mission_check

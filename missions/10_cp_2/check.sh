@@ -1,6 +1,6 @@
 #!/bin/bash
 
-check () {
+_mission_check () {
   local ENTRANCE="$(eval_gettext '$GASH_HOME/Castle/Entrance')"
 
   if ! cmp -s "$GASH_MISSION_DATA/entrance_contents" <(command ls "$ENTRANCE" | sort)
@@ -25,12 +25,4 @@ check () {
   return 0
 }
 
-if check
-then
-  unset -f check
-  true
-else
-  unset -f check
-  false
-fi
-
+_mission_check

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     local maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
 
     local nb=$(find "$maze" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")" | wc -l)
@@ -31,11 +31,4 @@ _local_check() {
 }
 
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    false
-fi
+_mission_check

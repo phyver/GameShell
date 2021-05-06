@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     local goal
     goal=$(REALPATH "$(eval_gettext '$GASH_HOME/Mountain/Cave')")
     local current
@@ -39,11 +39,4 @@ _local_check() {
 }
 
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    false
-fi
+_mission_check

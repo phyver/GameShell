@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check_p() {
+_mission_check_p() {
     local COIN_NAME=$1
     local path
     path=$(find "$GASH_CHEST" -name "*$(gettext "$COIN_NAME")*" -type f)
@@ -18,7 +18,7 @@ _local_check_p() {
     fi
 }
 
-_local_check() {
+_mission_check() {
     local maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
 
     local nb=$(find "$maze" -iname "$(gettext "gold_coin")" -type f | wc -l)
@@ -34,15 +34,15 @@ _local_check() {
         return 1
     fi
 
-    _local_check_p "gold_coin" && _local_check_p "GolD_CoiN"
+    _mission_check_p "gold_coin" && _mission_check_p "GolD_CoiN"
 }
 
-if _local_check
+if _mission_check
 then
-    unset -f _local_check _local_check_p
+    unset -f _mission_check_p
     true
 else
-    unset -f _local_check _local_check_p
+    unset -f _mission_check_p
     find "$GASH_HOME" -iname piece_d_or -not -iname "*journal*" -print0 | xargs -0 rm -f
     false
 fi

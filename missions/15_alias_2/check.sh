@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     local cmd
     cmd=$(alias $(gettext "journal") 2> /dev/null | cut -f2 -d"=" | tr -d "'")
     if [ -z "$cmd" ]
@@ -42,12 +42,4 @@ Make sure to use an absolute path...")"
     esac
 }
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    false
-fi
-
+_mission_check

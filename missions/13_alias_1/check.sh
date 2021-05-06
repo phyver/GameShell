@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     local cmd=$(alias la 2> /dev/null | cut -f2 -d"=" | tr -d "' \t")
     if [ -z "$cmd" ]
     then
@@ -21,11 +21,4 @@ _local_check() {
     fi
 }
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    false
-fi
+_mission_check
