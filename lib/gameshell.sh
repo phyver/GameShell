@@ -351,6 +351,8 @@ _gash_check() {
 
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
+  # unset the _mission_check function
+  unset -f _mission_check
 
   if [ "$exit_status" -eq 0 ]
   then
