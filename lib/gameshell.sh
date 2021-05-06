@@ -118,28 +118,16 @@ _gash_show() {
 
   local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
 
-  if [ -f "$MISSION_DIR/goal.txt" ]
-  then
-    FILE="$MISSION_DIR/goal.txt"
-    VARS=$(sed -n '/^\s*#.*variables/p;1q' "$FILE")
-    if [ -z "$VARS" ]
-    then
-      parchment "$FILE" | more
-    else
-      sed '1d' "$FILE" | envsubst "$VARS" | parchment | more
-    fi
-  elif [ -f "$MISSION_DIR/goal.sh" ]
+  if [ -f "$MISSION_DIR/goal.sh" ]
   then
     mission_source "$MISSION_DIR/goal.sh" | parchment | more
+  elif [ -f "$MISSION_DIR/goal.txt" ]
+  then
+    FILE="$MISSION_DIR/goal.txt"
+    parchment "$FILE" | more
   else
     FILE="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/goal/en.txt')"
-    VARS=$(sed -n '/^\s*#.*variables/p;1q' "$FILE")
-    if [ -z "$VARS" ]
-    then
-      parchment "$FILE" | more
-    else
-      sed '1d' "$FILE" | envsubst "$VARS" | parchment | more
-    fi
+    parchment "$FILE" | more
   fi
 }
 
@@ -380,15 +368,15 @@ _gash_check() {
       cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).treasure.sh"
 
       # Display the text message (if it exists).
-      if [ -f "$MISSION_DIR/treasure-msg.txt" ]
-      then
-        echo ""
-        cat "$MISSION_DIR/treasure-msg.txt"
-        echo ""
-      elif [ -f "$MISSION_DIR/treasure-msg.sh" ]
+      if [ -f "$MISSION_DIR/treasure-msg.sh" ]
       then
         echo ""
         mission_source "$MISSION_DIR/treasure-msg.sh"
+        echo ""
+      elif [ -f "$MISSION_DIR/treasure-msg.txt" ]
+      then
+        echo ""
+        cat "$MISSION_DIR/treasure-msg.txt"
         echo ""
       else
         local file_msg="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
