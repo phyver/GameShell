@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     local office
     office="$(eval_gettext '$GASH_HOME/Castle/Main_building/Library/Merlin_s_office')"
     INVENTORY_FILE="$(gettext "inventory.txt")"
@@ -23,11 +23,4 @@ You can check its content with the command
 }
 
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    false
-fi
+_mission_check

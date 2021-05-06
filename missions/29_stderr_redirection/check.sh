@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     local pc
     # TODO: for some unknown reason, redirecting the output of fc into another
     # command shifts the results: it then sees the "gash check" command that
@@ -24,11 +24,4 @@ _local_check() {
 }
 
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    false
-fi
+_mission_check
