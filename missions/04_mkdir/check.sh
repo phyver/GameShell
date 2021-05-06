@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     local forest="$(eval_gettext '$GASH_HOME/Forest')"
     local HUT_DIR=$(eval_gettext '$GASH_HOME/Forest')/$(gettext "Hut")
 
@@ -50,15 +50,4 @@ _local_check() {
     return 0
 }
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    find "$GASH_HOME" -iname "*$(gettext "Hut")*" -print0 | xargs -0 rm -rf
-    find "$GASH_HOME" -iname "*$(gettext "Chest")*" -print0 | xargs -0 rm -rf
-    cd "$GASH_HOME"
-    echo "$(eval_gettext "You are back at the starting point.")"
-    false
-fi
+_mission_check

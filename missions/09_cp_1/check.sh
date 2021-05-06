@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
   local ENTRANCE="$(eval_gettext '$GASH_HOME/Castle/Entrance')"
 
   local N
@@ -58,12 +58,11 @@ _local_check() {
   return 0
 }
 
-if _local_check
+if _mission_check
 then
-  unset -f _local_check
   true
 else
+  # FIXME
   find "$GASH_HOME" -name "$(gettext "standard")_?" -type f -print0 | xargs -0 rm -f
-  unset -f _local_check
   false
 fi

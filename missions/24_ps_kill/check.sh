@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     # make sure the generator produces some cats
     echo -n .
     sleep 1
@@ -34,11 +34,4 @@ _local_check() {
     return 0
 }
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    false
-fi
+_mission_check

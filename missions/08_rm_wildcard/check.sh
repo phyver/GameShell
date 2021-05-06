@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     local CELLAR="$(eval_gettext "\$GASH_HOME/Castle/Cellar")"
 
     local NB_SPIDERS=$(find "$CELLAR" -maxdepth 1 -name "*$(gettext "spider")" | wc -l)
@@ -21,11 +21,4 @@ _local_check() {
     return 0
 }
 
-if _local_check
-then
-  unset -f _local_check
-  true
-else
-  unset -f _local_check
-  false
-fi
+_mission_check

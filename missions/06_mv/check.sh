@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Receives coin number as first argument.
-_local_check() {
+_mission_check() {
     local COIN_NAME="$(gettext "coin")_$1"
 
     # Check that the coin is not in the cellar.
@@ -36,14 +36,14 @@ _local_check() {
     return 0
 }
 
-if _local_check 1 && _local_check 2 && _local_check 3
+if _mission_check 1 && _mission_check 2 && _mission_check 3
 then
-    unset -f _local_check
+    unset -f _mission_check
     true
 else
     find "$GASH_HOME" -name "$(gettext "coin")_?" -type f -print0 | xargs -0 rm -f
     find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -iname "*$(gettext "chest")*" -type f -print0 | xargs -0 rm -f
     find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -iname "*$(gettext "hut")*" -type f -print0 | xargs -0 rm -f
-    unset -f _local_check
+    unset -f _mission_check
     false
 fi

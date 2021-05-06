@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_local_check() {
+_mission_check() {
     local JOURNAL_FILE="$GASH_CHEST/$(gettext "journal").txt"
     if [ ! -f "$JOURNAL_FILE" ]
     then
@@ -19,12 +19,4 @@ _local_check() {
     fi
 }
 
-if _local_check
-then
-    unset -f _local_check
-    true
-else
-    unset -f _local_check
-    false
-fi
-
+_mission_check
