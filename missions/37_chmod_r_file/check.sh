@@ -1,7 +1,7 @@
 #!/bin/bash
 
 read -erp "$(gettext "What's the secret key to open the safe?") " key
-real_key=$(cat "$GASH_MISSION_DATA/key")
+real_key=$(cat "$GSH_MISSION_DATA/key")
 
 if [ "$key" = "$real_key" ]
 then

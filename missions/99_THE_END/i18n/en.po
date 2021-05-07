@@ -14,11 +14,11 @@ msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
 msgid ""
 "The admin password is now '$PASSWORD'. Use\n"
-"    $ gash HELP\n"
+"    $ gsh HELP\n"
 "for a list including admin commands."
 msgstr ""
 "The admin password is now '$PASSWORD'. Use\n"
-"    $ gash HELP\n"
+"    $ gsh HELP\n"
 "for a list including admin commands."
 
 msgid "Press Enter to continue."

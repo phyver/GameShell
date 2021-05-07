@@ -1,11 +1,11 @@
-cd "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library/Merlin_s_office')"
+cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
 
 # les commandes ne sont pas dans l'historique, il faut les y ajouter à la main !
 history -s 'grep -il "pq" "$(gettext "grimoire")"_* 2> /dev/null'
-history -s gash check
+history -s gsh check
 
 grep -il "pq" "$(gettext "grimoire")"_* 2> /dev/null
-gash check
+gsh check
 
 history -d -2--1
 

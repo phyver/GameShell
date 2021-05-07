@@ -1,9 +1,9 @@
 #!/bin/bash
 
-[ -z "$GASH_CHEST" ] && GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest/Hut/Chest')"
-mkdir -p "$GASH_CHEST"
+[ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
+mkdir -p "$GSH_CHEST"
 
-maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
+maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
 rm -rf "$maze"/?*
 
 gen_maze_sh(){
@@ -33,7 +33,7 @@ gen_maze_sh(){
                 then
                     local sum=$(checksum "$K.$(gettext "ruby")")
                     echo "$K $(gettext "ruby") $sum" > "$maze/$I/$J/$K"
-                    echo "$K $(gettext "ruby") $sum" > "$GASH_MISSION_DATA/ruby"
+                    echo "$K $(gettext "ruby") $sum" > "$GSH_MISSION_DATA/ruby"
                 elif [ "$r2" = "$i,$j,$k" ] || \
                      [ "$r3" = "$i,$j,$k" ] || \
                      [ "$r4" = "$i,$j,$k" ] || \
@@ -58,7 +58,7 @@ gen_maze_py(){
     local K=$RANDOM
     local sum=$(checksum "$K $(gettext "ruby")")
     echo "$K $(gettext "ruby") $sum" > "$maze/$d1/$K"
-    echo "$K $(gettext "ruby") $sum" > "$GASH_MISSION_DATA/ruby"
+    echo "$K $(gettext "ruby") $sum" > "$GSH_MISSION_DATA/ruby"
 
     echo "$d" | sed '1d' | while read d1
     do

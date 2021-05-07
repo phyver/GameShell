@@ -5,7 +5,7 @@ L'ermite est en train de préparer une potion dans la grotte.
 Vous devez le rejoindre et lui montrer les 4 premiers ingrédients de 
 la liste.
 Dès que vous avez affiché les ingrédients demandés, lancez la 
-commande ``gash check``.
+commande ``gsh check``.
 
 
 Commandes utiles

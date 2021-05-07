@@ -1,55 +1,55 @@
 Commands specific to GameShell
 ==============================
 
-  gash assert condition [msg]       (DEBUG)
+  gsh assert condition [msg]            (DEBUG)
     check if the condition is true
     if not, display an error message
 
-  gash assert_check true/false [msg]    (DEBUG)
+  gsh assert_check true/false [msg]     (DEBUG)
     check the current mission's goal has been achieved
     if the result doesn't coincide with the expected result, display 
     an error message
 
-  gash auto    (ADMIN)
+  gsh auto                              (ADMIN)
     source the current mission's automatic script, if it exists
 
-  gash check
+  gsh check
     check whether the current mission's goal has been achieved or 
     not
 
-  gash exit
+  gsh exit
     quit GameShell
     (you can start from the current mission by running the start.sh 
     script with the "-C" flag)
 
-  gash goto N (ADMIN)
+  gsh goto N                            (ADMIN)
     directly go to mission N
 
-  gash HELP
+  gsh HELP
     this message
 
-  gash help
+  gsh help
     shorter help message
 
-  gash index
+  gsh index
     show list of missions, with their status
 
-  gash pass    (ADMIN)
+  gsh pass                              (ADMIN)
     give up on the current mission and go to the next one
 
-  gash protect
-  gash unprotect
+  gsh protect
+  gsh unprotect
     add / remove protection on GameShell directories
 
-  gash reset
+  gsh reset
     reset the current mission
 
-  gash show [N]
+  gsh show [N]
     show the current mission's goal
     if N is given, show the goal for mission N
 
-  gash test
+  gsh test
     run the curent mission's test script, if it exists
 
-  gash welcome
+  gsh welcome
     show the welcome message

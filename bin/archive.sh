@@ -1,12 +1,12 @@
 #!/bin/bash
 
-export GASH_BASE="$(dirname "$0")/.."
-source $GASH_BASE/lib/os_aliases.sh
-GASH_BASE=$(REALPATH "$GASH_BASE")
-source $GASH_BASE/lib/utils.sh
-source $GASH_BASE/lib/make_index.sh
+export GSH_BASE="$(dirname "$0")/.."
+source $GSH_BASE/lib/os_aliases.sh
+GSH_BASE=$(REALPATH "$GSH_BASE")
+source $GSH_BASE/lib/utils.sh
+source $GSH_BASE/lib/make_index.sh
 
-export GASH_MISSIONS="$GASH_BASE/missions"
+export GSH_MISSIONS="$GSH_BASE/missions"
 
 display_help() {
 cat <<EOH
@@ -71,7 +71,7 @@ mkdir "$TMP_DIR/$NAME"
 
 
 # copy source files
-cp --archive "$GASH_BASE/start.sh" "$GASH_BASE/bin/" "$GASH_BASE/lib/" "$GASH_BASE/i18n/" "$TMP_DIR/$NAME"
+cp --archive "$GSH_BASE/start.sh" "$GSH_BASE/bin/" "$GSH_BASE/lib/" "$GSH_BASE/i18n/" "$TMP_DIR/$NAME"
 
 # copy missions
 mkdir "$TMP_DIR/$NAME/missions"
@@ -96,7 +96,7 @@ do
   ARCHIVE_MISSION_DIR=$TMP_DIR/$NAME/missions/${N}_${MISSION_DIR#*_}
   echo "    $(basename "$MISSION_DIR")  -->  $(basename "$ARCHIVE_MISSION_DIR")"
   mkdir "$ARCHIVE_MISSION_DIR"
-  cp --archive "$GASH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR"
+  cp --archive "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR"
   echo "$DUMMY$(basename "$ARCHIVE_MISSION_DIR")" >> "$TMP_DIR/$NAME/missions/index.txt"
 done
 
@@ -106,15 +106,15 @@ then
   echo "generating '.mo' files"
   {
     # gameshell
-    GASH_BASE=$TMP_DIR/$NAME
-    GASH_DATA="$GASH_BASE/.session_data"
+    GSH_BASE=$TMP_DIR/$NAME
+    GSH_DATA="$GSH_BASE/.session_data"
 
-    export TEXTDOMAINDIR="$GASH_BASE/locale"
-    export TEXTDOMAIN="gash"
-    for PO_FILE in "$GASH_BASE"/i18n/*.po; do
+    export TEXTDOMAINDIR="$GSH_BASE/locale"
+    export TEXTDOMAIN="gsh"
+    for PO_FILE in "$GSH_BASE"/i18n/*.po; do
       PO_LANG=$(basename "$PO_FILE" .po)
-      mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
-      msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
+      mkdir -p "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES"
+      msgfmt -o "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
     done
 
     # all missions
@@ -135,12 +135,12 @@ then
         shopt -s nullglob
         for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
           PO_LANG=$(basename "$PO_FILE" .po)
-          mkdir -p "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES"
-          msgfmt -o "$GASH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
+          mkdir -p "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES"
+          msgfmt -o "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
         done
         shopt -u nullglob
       fi
-    done < "$GASH_BASE/missions/index.txt"
+    done < "$GSH_BASE/missions/index.txt"
   }
 fi
 
@@ -170,7 +170,7 @@ sed -i "s/^\(\s*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$TMP_DIR/$NAME/sta
 echo "setting default GameShell mode"
 case $DEFAULT_MODE in
   DEBUG | PASSPORT | ANONYMOUS )
-    sed -i "s/^GASH_MODE=.*$/GASH_MODE='$DEFAULT_MODE'/" "$TMP_DIR/$NAME/start.sh"
+    sed -i "s/^GSH_MODE=.*$/GSH_MODE='$DEFAULT_MODE'/" "$TMP_DIR/$NAME/start.sh"
     ;;
   *)
     echo "unknown mode: $MODE" >&2
@@ -184,7 +184,7 @@ tar -zcf "$OUTPUT_DIR/$NAME.tgz" -C "$TMP_DIR" "$NAME"
 
 # create self-extracting archive
 echo "creating self-extracting archive"
-cat "$GASH_BASE/lib/init.sh" "$OUTPUT_DIR/$NAME.tgz" > "$OUTPUT_DIR/$NAME.sh"
+cat "$GSH_BASE/lib/init.sh" "$OUTPUT_DIR/$NAME.tgz" > "$OUTPUT_DIR/$NAME.sh"
 chmod +x "$OUTPUT_DIR/$NAME.sh"
 
 if [ "$KEEP_TGZ" = 'false' ]

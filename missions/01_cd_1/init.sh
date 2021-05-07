@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cd "$GASH_HOME"
+cd "$GSH_HOME"

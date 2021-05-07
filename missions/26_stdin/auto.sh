@@ -1,1 +1,1 @@
-gash check < "$GASH_MISSION_DATA/additions.txt"
+gsh check < "$GSH_MISSION_DATA/additions.txt"

@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Garden/.Maze"
-msgstr "$GASH_HOME/Garden/.Maze"
+msgid "$GSH_HOME/Garden/.Maze"
+msgstr "$GSH_HOME/Garden/.Maze"
 
 msgid "silver_coin"
 msgstr "silver_coin"
@@ -40,16 +40,16 @@ msgstr ""
 "(Debian / Ubuntu: install package 'tree')"
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Hut/Chest"
-msgstr "$GASH_HOME/Forest/Hut/Chest"
+msgid "$GSH_HOME/Forest/Hut/Chest"
+msgstr "$GSH_HOME/Forest/Hut/Chest"
 
 msgid "maze generation:"
 msgstr "maze generation:"
 
 #, sh-format
-msgid "$GASH_HOME/Garden/Orchard"
-msgstr "$GASH_HOME/Garden/Orchard"
+msgid "$GSH_HOME/Garden/Orchard"
+msgstr "$GSH_HOME/Garden/Orchard"
 
 #, sh-format
-msgid "$GASH_HOME/Garden/Shed"
-msgstr "$GASH_HOME/Garden/Shed"
+msgid "$GSH_HOME/Garden/Shed"
+msgstr "$GSH_HOME/Garden/Shed"

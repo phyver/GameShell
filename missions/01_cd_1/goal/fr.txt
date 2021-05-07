@@ -19,7 +19,7 @@ pwd
   Affiche la position actuelle.
   Note : ``pwd`` est une abréviation pour "print working directory".
 
-gash reset
+gsh reset
   Ré-initialise la mission au début.
 
 

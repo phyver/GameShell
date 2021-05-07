@@ -1,6 +1,6 @@
-export YYYY=$(cut -d"-" -f1 "$GASH_MISSION_DATA"/date)
-export MM=$(cut -d"-" -f2 "$GASH_MISSION_DATA"/date)
-export DD=$(cut -d"-" -f3 "$GASH_MISSION_DATA"/date)
+export YYYY=$(cut -d"-" -f1 "$GSH_MISSION_DATA"/date)
+export MM=$(cut -d"-" -f2 "$GSH_MISSION_DATA"/date)
+export DD=$(cut -d"-" -f3 "$GSH_MISSION_DATA"/date)
 
 day=$(date --date="$YYYY-$MM-$DD" +%A)
 
@@ -16,7 +16,7 @@ done
 
 unset day i answer YYYY MM DD
 
-gash check < <(echo "$n_day")
+gsh check < <(echo "$n_day")
 
 unset n_day
 

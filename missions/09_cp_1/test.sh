@@ -1,8 +1,8 @@
 
-cp "$(eval_gettext '$GASH_HOME/Castle/Entrance')"/$(gettext "standard")_? "$GASH_CHEST"
-gash assert check true
+cp "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/$(gettext "standard")_? "$GSH_CHEST"
+gsh assert check true
 
-mv "$(eval_gettext '$GASH_HOME/Castle/Entrance')"/$(gettext "standard")_? "$GASH_CHEST"
-gash assert check false
+mv "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/$(gettext "standard")_? "$GSH_CHEST"
+gsh assert check false
 
-gash assert check false
+gsh assert check false

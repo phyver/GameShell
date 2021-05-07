@@ -5,7 +5,7 @@ Nostradamus predicted a spectacular star conjunction on the
 $MM-$DD-$YYYY.
 But what will the day of the week be on that date?
 
-When you have it, run the command ``gash check``.
+When you have it, run the command ``gsh check``.
 
 
 Useful commands

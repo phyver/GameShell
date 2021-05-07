@@ -13,7 +13,7 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Main_tower/First_floor/Second_floor/Top_of_the_tower"
+msgid "$GSH_HOME/Castle/Main_tower/First_floor/Second_floor/Top_of_the_tower"
 msgstr ""
 
 msgid "You are not at the top of the tower!"

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-[ -z "$GASH_CHEST" ] && GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest/Hut/Chest')"
-mkdir -p "$GASH_CHEST"
+[ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
+mkdir -p "$GSH_CHEST"
 
-maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
+maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
 rm -rf "$maze"/?*
 
 gen_maze_sh(){
@@ -29,7 +29,7 @@ gen_maze_sh(){
                 if [ "$r1" = "$i,$j,$k" ]
                 then
                     echo "$I $J $K" > "$maze/$I/$J/$K/$(gettext "copper_coin")"
-                    echo "$I $J $K" > "$GASH_MISSION_DATA/copper_coin"
+                    echo "$I $J $K" > "$GSH_MISSION_DATA/copper_coin"
                 fi
             done
             echo -n "."
@@ -42,7 +42,7 @@ gen_maze_py(){
     mkdir -p "$maze"
     local d=$(python3 "$MISSION_DIR"/init.py "$maze" 3 2 1)
     echo "$(checksum "$d")" > "$maze/$d/$(gettext "copper_coin")"
-    echo "$(checksum "$d")" > "$GASH_MISSION_DATA/copper_coin"
+    echo "$(checksum "$d")" > "$GSH_MISSION_DATA/copper_coin"
 }
 
 if ! command -v python3 > /dev/null

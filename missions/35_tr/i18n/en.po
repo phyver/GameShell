@@ -16,12 +16,12 @@ msgid "What's the key that will make Merlin's chest to appear?"
 msgstr "What's the key that will make Merlin's chest to appear?"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Cellar/Merlin_s_Chest"
-msgstr "$GASH_HOME/Castle/Cellar/Merlin_s_Chest"
+msgid "$GSH_HOME/Castle/Cellar/Merlin_s_Chest"
+msgstr "$GSH_HOME/Castle/Cellar/Merlin_s_Chest"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
-msgstr "$GASH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
+msgid "$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
+msgstr "$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
 
 #, sh-format
 msgid "$MISSION_DIR/secret_recipe/en.txt"
@@ -45,9 +45,9 @@ msgstr ""
 "merlin the enchanter"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Main_building/Library/.secret_message"
-msgstr "$GASH_HOME/Castle/Main_building/Library/.secret_message"
+msgid "$GSH_HOME/Castle/Main_building/Library/.secret_message"
+msgstr "$GSH_HOME/Castle/Main_building/Library/.secret_message"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Main_building/Library/"
-msgstr "$GASH_HOME/Castle/Main_building/Library/"
+msgid "$GSH_HOME/Castle/Main_building/Library/"
+msgstr "$GSH_HOME/Castle/Main_building/Library/"

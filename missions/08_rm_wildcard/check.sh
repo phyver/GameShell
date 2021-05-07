@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _mission_check() {
-    local CELLAR="$(eval_gettext "\$GASH_HOME/Castle/Cellar")"
+    local CELLAR="$(eval_gettext "\$GSH_HOME/Castle/Cellar")"
 
     local NB_SPIDERS=$(find "$CELLAR" -maxdepth 1 -name "*$(gettext "spider")" | wc -l)
     if [ "$NB_SPIDERS" -ne 0 ]
@@ -11,7 +11,7 @@ _mission_check() {
     fi
 
     local S1=$(find "$CELLAR" -maxdepth 1 -name ".*$(gettext "salamander")" | sort | checksum)
-    local S2=$(cat "$GASH_MISSION_DATA/salamanders")
+    local S2=$(cat "$GSH_MISSION_DATA/salamanders")
 
     if [ "$S1" != "$S2" ]
     then

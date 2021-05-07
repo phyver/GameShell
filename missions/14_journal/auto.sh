@@ -1,3 +1,3 @@
-mkdir -p "$GASH_CHEST"
-echo "I'll be back." > "$GASH_CHEST/$(gettext "journal").txt"
-gash check
+mkdir -p "$GSH_CHEST"
+echo "I'll be back." > "$GSH_CHEST/$(gettext "journal").txt"
+gsh check

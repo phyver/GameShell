@@ -14,7 +14,7 @@ msgstr ""
 
 msgid ""
 "The admin password is now '$PASSWORD'. Use\n"
-"    $ gash HELP\n"
+"    $ gsh HELP\n"
 "for a list including admin commands."
 msgstr ""
 

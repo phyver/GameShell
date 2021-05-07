@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Stall"
-msgstr "$GASH_HOME/Stall"
+msgid "$GSH_HOME/Stall"
+msgstr "$GSH_HOME/Stall"
 
 msgid "PAID"
 msgstr "PAID"

@@ -7,7 +7,7 @@ for the both of you. While getting the cauldron ready he asks
 for your help. Read the steps of the recipe from his book.
 
 In order to validate the mission, your last command prior to 
-``gash check`` must show the steps of the recipe, but not its 
+``gsh check`` must show the steps of the recipe, but not its 
 title nor any blank lines.
 
 

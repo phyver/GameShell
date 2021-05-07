@@ -1,2 +1,2 @@
 alias la="ls -A"
-gash check
+gsh check

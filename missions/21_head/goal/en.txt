@@ -4,7 +4,7 @@ Mission goal
 An old hermit is brewing a potion in a cave. You need to find him 
 and read out the first 4 ingredients of his potion.
 
-When you are done, run ``gash check`` to finish the mission.
+When you are done, run ``gsh check`` to finish the mission.
 
 
 Useful commands

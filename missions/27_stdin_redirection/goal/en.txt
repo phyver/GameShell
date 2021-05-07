@@ -5,7 +5,7 @@ To get better in the magical art, one needs to know mental math.
 
 Get ready, because Merlin is about to test you speed with products. 
 
-Run the command ``gash check`` to start.
+Run the command ``gsh check`` to start.
 
 Remark
 ------

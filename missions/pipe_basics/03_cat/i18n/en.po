@@ -10,8 +10,8 @@ msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/en.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Mountain/Cave"
-msgstr "$GASH_HOME/Mountain/Cave"
+msgid "$GSH_HOME/Mountain/Cave"
+msgstr "$GSH_HOME/Mountain/Cave"
 
 msgid "Book_of_Potions"
 msgstr "Book_of_Potions"

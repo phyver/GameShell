@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Entrance"
-msgstr "$GASH_HOME/Chateau/Entree"
+msgid "$GSH_HOME/Castle/Entrance"
+msgstr "$GSH_HOME/Chateau/Entree"
 
 msgid "standard"
 msgstr "etendard"
@@ -44,5 +44,5 @@ msgid "The standard $N in the entrance is invalid."
 msgstr "L'étendard $N de l'entrée est invalide."
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Hut/Chest"
-msgstr "$GASH_HOME/Foret/Hutte/Coffre"
+msgid "$GSH_HOME/Forest/Hut/Chest"
+msgstr "$GSH_HOME/Foret/Hutte/Coffre"

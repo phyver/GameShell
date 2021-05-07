@@ -1,4 +1,4 @@
-maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
+maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
 case $PWD in
     "$maze"/?*)
         cd "$maze"
@@ -6,5 +6,5 @@ case $PWD in
         ;;
 esac
 
-rm -f "$GASH_MISSION_DATA/silver_coin"
+rm -f "$GSH_MISSION_DATA/silver_coin"
 rm -rf "$maze"/*

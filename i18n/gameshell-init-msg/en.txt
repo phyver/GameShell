@@ -1,10 +1,10 @@
 Run the command
-    $ gash show
+    $ gsh show
 to discover your first mission.
 
 You can check the mission has been completed with
-    $ gash check
+    $ gsh check
 
 The command
-    $ gash help
-displays the list of available (gash) commands.
+    $ gsh help
+displays the list of available (gsh) commands.
