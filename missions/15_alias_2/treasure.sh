@@ -1,1 +1,1 @@
-alias "$(gettext "journal")"="nano $GASH_CHEST/$(gettext "journal").txt"
+alias "$(gettext "journal")"="nano $GSH_CHEST/$(gettext "journal").txt"

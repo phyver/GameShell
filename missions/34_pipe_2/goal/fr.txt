@@ -7,10 +7,10 @@ d'achats impayés.
 Remarque
 --------
 
-Vous ne pouvez utiliser qu'une seule commande en plus de ``gash 
+Vous ne pouvez utiliser qu'une seule commande en plus de ``gsh 
 check``.
 
-Vous pouvez réinitialiser le compteur avec la commande ``gash 
+Vous pouvez réinitialiser le compteur avec la commande ``gsh 
 reset``, mais l'échoppe sera re-générée.
 
 

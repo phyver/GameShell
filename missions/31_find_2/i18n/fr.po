@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Garden/.Maze"
-msgstr "$GASH_HOME/Jardin/.Labyrinthe"
+msgid "$GSH_HOME/Garden/.Maze"
+msgstr "$GSH_HOME/Jardin/.Labyrinthe"
 
 msgid "ruby"
 msgstr "rubis"
@@ -43,8 +43,8 @@ msgstr ""
 "(Debian / Ubuntu : installez le paquet 'man-db')"
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Hut/Chest"
-msgstr "$GASH_HOME/Foret/Hutte/Coffre"
+msgid "$GSH_HOME/Forest/Hut/Chest"
+msgstr "$GSH_HOME/Foret/Hutte/Coffre"
 
 msgid "maze generation:"
 msgstr "génération du labyrinthe :"
@@ -53,9 +53,9 @@ msgid "stone"
 msgstr "cailloux"
 
 #, sh-format
-msgid "$GASH_HOME/Garden/Orchard"
-msgstr "$GASH_HOME/Jardin/Verger"
+msgid "$GSH_HOME/Garden/Orchard"
+msgstr "$GSH_HOME/Jardin/Verger"
 
 #, sh-format
-msgid "$GASH_HOME/Garden/Shed"
-msgstr "$GASH_HOME/Jardin/Cabanon"
+msgid "$GSH_HOME/Garden/Shed"
+msgstr "$GSH_HOME/Jardin/Cabanon"

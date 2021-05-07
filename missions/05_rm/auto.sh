@@ -1,2 +1,2 @@
-rm "$(eval_gettext '$GASH_HOME/Castle/Cellar')/$(gettext "spider")"?
-gash check
+rm "$(eval_gettext '$GSH_HOME/Castle/Cellar')/$(gettext "spider")"?
+gsh check

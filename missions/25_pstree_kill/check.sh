@@ -8,7 +8,7 @@ _mission_check() {
     sleep 1
     echo .
 
-    local kitchen=$(eval_gettext '$GASH_HOME/Castle/Kitchen')
+    local kitchen=$(eval_gettext '$GSH_HOME/Castle/Kitchen')
     local poison=$(ls "$kitchen"/*_"$(gettext "rat_poison")" 2>/dev/null)
     if [ -n "$poison" ]
     then
@@ -35,9 +35,9 @@ _mission_check() {
     fi
 
     cd "$kitchen"
-    sort "$GASH_MISSION_DATA"/cheese-? | uniq > "$GASH_MISSION_DATA"/cheese-generated
-    ls {,.}*_"$(gettext "cheese")" 2>/dev/null | sort | uniq > "$GASH_MISSION_DATA"/cheese-present
-    local nb=$(comm -1 -3 "$GASH_MISSION_DATA"/cheese-present "$GASH_MISSION_DATA"/cheese-generated | wc -l)
+    sort "$GSH_MISSION_DATA"/cheese-? | uniq > "$GSH_MISSION_DATA"/cheese-generated
+    ls {,.}*_"$(gettext "cheese")" 2>/dev/null | sort | uniq > "$GSH_MISSION_DATA"/cheese-present
+    local nb=$(comm -1 -3 "$GSH_MISSION_DATA"/cheese-present "$GSH_MISSION_DATA"/cheese-generated | wc -l)
 
     if [ "$nb" -gt 1 ]
     then

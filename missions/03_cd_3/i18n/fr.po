@@ -13,5 +13,5 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Main_building/Throne_room"
-msgstr "$GASH_HOME/Chateau/Batiment_principal/Salle_du_trone"
+msgid "$GSH_HOME/Castle/Main_building/Throne_room"
+msgstr "$GSH_HOME/Chateau/Batiment_principal/Salle_du_trone"

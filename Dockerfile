@@ -12,8 +12,8 @@ RUN apt update && apt install -y \
  && rm -rf /var/lib/apt/lists/*
 
 # Set user and group
-ARG user=gash-user
-ARG group=gash-user
+ARG user=gsh-user
+ARG group=gsh-user
 ARG uid=1000
 ARG gid=1000
 RUN groupadd -g ${gid} ${group}

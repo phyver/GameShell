@@ -14,7 +14,7 @@ Remarque
 --------
 
 Vous ne disposez que de 3 commandes pour atteindre cet objectif.
-Vous pouvez réinitialiser le compteur avec la commande ``gash 
+Vous pouvez réinitialiser le compteur avec la commande ``gsh 
 reset``, mais dans ce cas, l'échoppe sera re-générée.
 
 

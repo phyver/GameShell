@@ -1,1 +1,1 @@
-gash check < "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library')/$(gettext "Mathematics_101")"
+gsh check < "$(eval_gettext '$GSH_HOME/Castle/Main_building/Library')/$(gettext "Mathematics_101")"

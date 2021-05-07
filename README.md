@@ -1,7 +1,7 @@
 # GameShell : un "jeu" pour apprendre le shell
 
 
-GameShell (gash) est le résultat d'une réflexion sur comment enseigner les
+GameShell (gsh) est le résultat d'une réflexion sur comment enseigner les
 rudiments (et un peu plus) du shell à des étudiants en première année à
 l'université Savoie Mont Blanc.
 
@@ -118,7 +118,7 @@ fourni pour lancer GameShell sans s'occuper des dépendances :
 
 Création de l'image :
 
-    $ docker build -t gash .
+    $ docker build -t gsh .
 
 Lancement de l'image, si vous avez un serveur X :
 
@@ -126,24 +126,24 @@ Lancement de l'image, si vous avez un serveur X :
     && docker run -it \
          -e DISPLAY=${DISPLAY} \
          -v /tmp/.X11-unix:/tmp/.X11-unix \
-         gash
+         gsh
 
 Lancement de l'image, sans serveur X :
 
-    docker run -it gash
+    docker run -it gsh
 
 
 Commandes de base
 -----------------
 
 GameShell est simplement une instance de bash avec des fonctions
-supplémentaires. Ces fonctionnalités passent par la commande ``gash``.
+supplémentaires. Ces fonctionnalités passent par la commande ``gsh``.
 
-  - `gash help` : affiche une petite liste des commandes
-  - `gash HELP` : affiche une liste plus complète des commandes
-  - `gash show` : affiche l'objectif de la mission courante
-  - `gash check` : vérifie si la mission actuelle est validée
-  - `gash reset` : recommence la mission courante
+  - `gsh help` : affiche une petite liste des commandes
+  - `gsh HELP` : affiche une liste plus complète des commandes
+  - `gsh show` : affiche l'objectif de la mission courante
+  - `gsh check` : vérifie si la mission actuelle est validée
+  - `gsh reset` : recommence la mission courante
 
 
 
@@ -170,7 +170,7 @@ fichiers suivants
   - `bin`
         répertoire contenant des exécutables utilisés pendant la partie
         Les fichiers contenus dans ce répertoire sont recopiés dans un
-        répertoire caché `$GASH_HOME/.bin`, qui est ajouté au `PATH` global.
+        répertoire caché `$GSH_HOME/.bin`, qui est ajouté au `PATH` global.
         (répertoire, facultatif)
 
   - `deps.sh`
@@ -190,7 +190,7 @@ fichiers suivants
         (fichier bash, facultatif)
 
   - `goal.txt`
-        petite description de la mission, affichée par ``gash show``
+        petite description de la mission, affichée par ``gsh show``
         (fichier texte, obligatoire)
 
   - `check.sh`

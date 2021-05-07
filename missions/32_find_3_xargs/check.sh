@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _mission_check() {
-    local maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
+    local maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
     local nb=$(find "$maze" -type f -print0 | xargs -0 grep -l "$(gettext "diamond")" | wc -l)
 
     if [ "$nb" -gt 1 ]
@@ -16,7 +16,7 @@ _mission_check() {
     fi
 
     local diamond
-    diamond=$(find "$GASH_CHEST" -type f -print0 | xargs -0 grep -l "$(gettext "diamond")")
+    diamond=$(find "$GSH_CHEST" -type f -print0 | xargs -0 grep -l "$(gettext "diamond")")
 
     if [ -z "$diamond" ]
     then
@@ -24,13 +24,13 @@ _mission_check() {
         return 1
     fi
 
-    local filename=$(cut -d" " -f1 $GASH_MISSION_DATA/diamond)
+    local filename=$(cut -d" " -f1 $GSH_MISSION_DATA/diamond)
 
-    if ! [ -f "$GASH_CHEST/$filename" ]
+    if ! [ -f "$GSH_CHEST/$filename" ]
     then
         echo "$(gettext "The diamond is not in the chest!")"
         return 1
-    elif ! cmp -s "$GASH_MISSION_DATA/diamond" "$GASH_CHEST/$filename"
+    elif ! cmp -s "$GSH_MISSION_DATA/diamond" "$GSH_CHEST/$filename"
     then
         echo "$(gettext "The diamond in your chest is not valid!")"
         return 1

@@ -1,2 +1,2 @@
-cd "$(eval_gettext "\$GASH_HOME/Castle/Cellar")"
-gash check
+cd "$(eval_gettext "\$GSH_HOME/Castle/Cellar")"
+gsh check

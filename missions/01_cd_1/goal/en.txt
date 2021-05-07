@@ -19,7 +19,7 @@ ls
   Show a list of locations that are currently accessible.
   Remark: ``ls`` is an abbreviation of "list".
 
-gash reset
+gsh reset
   Restart the mission from the beginning.
 
 

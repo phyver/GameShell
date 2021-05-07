@@ -13,7 +13,7 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Kitchen"
+msgid "$GSH_HOME/Castle/Kitchen"
 msgstr ""
 
 msgid "Pantry"

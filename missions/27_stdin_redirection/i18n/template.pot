@@ -13,7 +13,7 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Main_building/Library"
+msgid "$GSH_HOME/Castle/Main_building/Library"
 msgstr ""
 
 msgid "Mathematics_101"

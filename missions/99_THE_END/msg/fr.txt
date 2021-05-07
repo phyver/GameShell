@@ -3,7 +3,7 @@ BRAVO !
 
 Vous avez terminé toutes les missions.
 
-Vous pouvez lancer ``gash check`` pour 
+Vous pouvez lancer ``gsh check`` pour 
 recommencer une partie en mode 
 "administrateur" si vous le souhaitez.
 

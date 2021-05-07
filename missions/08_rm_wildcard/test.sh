@@ -1,8 +1,8 @@
-gash assert check false
+gsh assert check false
 
-rm -f "$(eval_gettext '$GASH_HOME/Castle/Cellar')"/.??*
-gash assert check false
+rm -f "$(eval_gettext '$GSH_HOME/Castle/Cellar')"/.??*
+gsh assert check false
 
-rm -f "$(eval_gettext '$GASH_HOME/Castle/Cellar')"/.*_"$(gettext "spider")"
-gash assert check true
+rm -f "$(eval_gettext '$GSH_HOME/Castle/Cellar')"/.*_"$(gettext "spider")"
+gsh assert check true
 

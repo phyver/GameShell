@@ -1,10 +1,10 @@
-rm "$GASH_CHEST/$(gettext "journal").txt"
-gash assert check false
+rm "$GSH_CHEST/$(gettext "journal").txt"
+gsh assert check false
 
-touch "$GASH_CHEST/$(gettext "journal").txt"
-gash assert check false
+touch "$GSH_CHEST/$(gettext "journal").txt"
+gsh assert check false
 
-echo "TEST" > "$GASH_CHEST/$(gettext "journal").txt"
-gash assert check true
+echo "TEST" > "$GSH_CHEST/$(gettext "journal").txt"
+gsh assert check true
 
-rm "$GASH_CHEST/$(gettext "journal").txt"
+rm "$GSH_CHEST/$(gettext "journal").txt"

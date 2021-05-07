@@ -2,7 +2,7 @@
 
 _mission_check() {
     local cave
-    cave="$(eval_gettext '$GASH_HOME/Mountain/Cave')"
+    cave="$(eval_gettext '$GSH_HOME/Mountain/Cave')"
 
     local pc
     pc=$(fc -nl -2 -2 | grep 'head')
@@ -13,11 +13,11 @@ _mission_check() {
     current=$(REALPATH "$PWD")
 
     local expected
-    expected="$(head -n 6 "$GASH_MISSION_DATA/book_of_potions/$(gettext 'page')_07")"
+    expected="$(head -n 6 "$GSH_MISSION_DATA/book_of_potions/$(gettext 'page')_07")"
     local res
     res="$(eval "$pc")"
 
-    if ! diff -q "$cave/$(gettext 'Book_of_Potions')" "$GASH_MISSION_DATA/book_of_potions" > /dev/null
+    if ! diff -q "$cave/$(gettext 'Book_of_Potions')" "$GSH_MISSION_DATA/book_of_potions" > /dev/null
     then
       echo "$(gettext "You altered the book...")"
       return 1

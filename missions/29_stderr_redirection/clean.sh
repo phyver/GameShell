@@ -1,12 +1,12 @@
 #!/bin/bash
 
 
-if [ -f "$GASH_MISSION_DATA" ]
+if [ -f "$GSH_MISSION_DATA" ]
 then
     while read file
     do
         rm "$file"
-    done < "$GASH_MISSION_DATA/list_grimoires_RO"
+    done < "$GSH_MISSION_DATA/list_grimoires_RO"
 fi
-rm -f "$GASH_MISSION_DATA/list_grimoires_RO"
-rm -f "$GASH_MISSION_DATA/list_grimoires_PQ"
+rm -f "$GSH_MISSION_DATA/list_grimoires_RO"
+rm -f "$GSH_MISSION_DATA/list_grimoires_PQ"

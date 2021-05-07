@@ -7,7 +7,7 @@ rd=pylptbbpbqmtaojeqalfrdzfswddcicuwtohudysakdtzqcswwzyrfwbilbkkusz
 
 # je choisis une clé en prenant un bout au hasard de la chaine ci dessus
 SECRET_KEY="${rd:( $RANDOM % ((${#rd}) -4) ):4}"
-echo "$SECRET_KEY" > "$GASH_MISSION_DATA/secret_key"
+echo "$SECRET_KEY" > "$GSH_MISSION_DATA/secret_key"
 
 random_shift=$((12 + RANDOM % 3))
 
@@ -18,6 +18,6 @@ echo "$(eval_gettext "here is my will:
 you will get my chest, and everything it contains.
 this check is in the cellar, and the key to make
 it re-appear is: \$SECRET_KEY
-merlin the enchanter")" | tr "a-z" "$D" > "$(eval_gettext '$GASH_HOME/Castle/Main_building/Library/.secret_message')"
+merlin the enchanter")" | tr "a-z" "$D" > "$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/.secret_message')"
 
 unset rd SECRET_KEY random_shift ab D

@@ -111,8 +111,8 @@ def genBooks(nbLines, nbKing, prob_paid, dir):
             if not paid:
                 amountKing += price
         scroll.write(_("{} bought {} for {} coppers{}\n").format(name, object, price, end))
-    getoutput("echo -n {} | sha1sum | cut -c 1-40 > $GASH_MISSION_DATA/amountKing".format(amountKing))
-    getoutput("echo -n {} | sha1sum | cut -c 1-40 > $GASH_MISSION_DATA/nbUnpaid".format(nbUnpaid))
+    getoutput("echo -n {} | sha1sum | cut -c 1-40 > $GSH_MISSION_DATA/amountKing".format(amountKing))
+    getoutput("echo -n {} | sha1sum | cut -c 1-40 > $GSH_MISSION_DATA/nbUnpaid".format(nbUnpaid))
 
 
 def genObjects(nbObjects, dir):

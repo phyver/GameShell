@@ -3,7 +3,7 @@
 _mission_check_p() {
     local COIN_NAME=$1
     local path
-    path=$(find "$GASH_CHEST" -name "*$(gettext "$COIN_NAME")*" -type f)
+    path=$(find "$GSH_CHEST" -name "*$(gettext "$COIN_NAME")*" -type f)
 
     if [ -z "$path" ]
     then
@@ -11,7 +11,7 @@ _mission_check_p() {
         echo $COIN_NAME
         return 1
     fi
-    if ! cmp -s "$path" "$GASH_MISSION_DATA/$COIN_NAME"
+    if ! cmp -s "$path" "$GSH_MISSION_DATA/$COIN_NAME"
     then
         echo "$(eval_gettext "Coin '\$COIN_NAME' in your chest is invalid!")"
         return 1
@@ -19,7 +19,7 @@ _mission_check_p() {
 }
 
 _mission_check() {
-    local maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
+    local maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
 
     local nb=$(find "$maze" -iname "$(gettext "gold_coin")" -type f | wc -l)
     if [ "$nb" -gt 2 ]
@@ -43,7 +43,7 @@ then
     true
 else
     unset -f _mission_check_p
-    find "$GASH_HOME" -iname piece_d_or -not -iname "*journal*" -print0 | xargs -0 rm -f
+    find "$GSH_HOME" -iname piece_d_or -not -iname "*journal*" -print0 | xargs -0 rm -f
     false
 fi
 

@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Main_tower/First_floor/Second_floor/Top_of_the_tower"
-msgstr "$GASH_HOME/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_du_donjon"
+msgid "$GSH_HOME/Castle/Main_tower/First_floor/Second_floor/Top_of_the_tower"
+msgstr "$GSH_HOME/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_du_donjon"
 
 msgid "You are not at the top of the tower!"
 msgstr "Vous n'êtes pas en haut du donjon !"

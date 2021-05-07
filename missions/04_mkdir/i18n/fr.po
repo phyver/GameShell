@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Forest"
-msgstr "$GASH_HOME/Foret"
+msgid "$GSH_HOME/Forest"
+msgstr "$GSH_HOME/Foret"
 
 msgid "Chest"
 msgstr "Coffre"
@@ -39,8 +39,8 @@ msgid "You did not build a chest in your hut!"
 msgstr "Vous n'avez pas construit de coffre dans votre hutte !"
 
 #, sh-format
-msgid "The $GASH_CHEST directory does not exist!"
-msgstr "Le répertoire $GASH_CHEST n'existe pas !"
+msgid "The $GSH_CHEST directory does not exist!"
+msgstr "Le répertoire $GSH_CHEST n'existe pas !"
 
 #, sh-format
 msgid "You are back at the starting point."

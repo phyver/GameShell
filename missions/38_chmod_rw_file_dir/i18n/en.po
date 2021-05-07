@@ -15,12 +15,12 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Hut/Chest"
-msgstr "$GASH_HOME/Forest/Hut/Chest"
+msgid "$GSH_HOME/Forest/Hut/Chest"
+msgstr "$GSH_HOME/Forest/Hut/Chest"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Main_building/Throne_room"
-msgstr "$GASH_HOME/Castle/Main_building/Throne_room"
+msgid "$GSH_HOME/Castle/Main_building/Throne_room"
+msgstr "$GSH_HOME/Castle/Main_building/Throne_room"
 
 msgid "Safe"
 msgstr "Safe"

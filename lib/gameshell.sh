@@ -5,11 +5,11 @@
 source gettext.sh
 
 # shellcheck source=./lib/utils.sh
-source "$GASH_LIB/utils.sh"
+source "$GSH_LIB/utils.sh"
 
-trap "_gash_exit EXIT" EXIT
-trap "_gash_exit TERM" SIGTERM
-# trap "_gash_exit INT" SIGINT
+trap "_gsh_exit EXIT" EXIT
+trap "_gsh_exit TERM" SIGTERM
+# trap "_gsh_exit INT" SIGINT
 
 
 # log an action to the missions.log file
@@ -18,14 +18,14 @@ _log_action() {
   MISSION_NB=$1
   action=$2
   D="$(date +%s)"
-  S="$(checksum "$GASH_UID#$MISSION_NB#$action#$D")"
-  echo "$MISSION_NB $action $D $S" >> "$GASH_DATA/missions.log"
+  S="$(checksum "$GSH_UID#$MISSION_NB#$action#$D")"
+  echo "$MISSION_NB $action $D $S" >> "$GSH_DATA/missions.log"
 }
 
 
 # get the last started mission
 _get_current_mission() {
-  local n="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GASH_DATA/missions.log")"
+  local n="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GSH_DATA/missions.log")"
   if [ -z "$n" ]
   then
     echo "1"
@@ -39,35 +39,35 @@ _get_current_mission() {
 # get the mission directory
 _get_mission_dir() {
   local n=$1
-  local dir=$(awk -v n="$n" -v DIR="$GASH_MISSIONS" '/^\s*[#!]/{next} /^$/{next} {N++} (N == n){print DIR "/" $0; exit}' "$GASH_DATA/index.txt")
+  local dir=$(awk -v n="$n" -v DIR="$GSH_MISSIONS" '/^\s*[#!]/{next} /^$/{next} {N++} (N == n){print DIR "/" $0; exit}' "$GSH_DATA/index.txt")
   echo "$(REALPATH "$dir")"
 }
 
 # welcome message
-_gash_welcome() {
-  local msg_file=$(eval_gettext '$GASH_BASE/i18n/gameshell-welcome/en.txt')
+_gsh_welcome() {
+  local msg_file=$(eval_gettext '$GSH_BASE/i18n/gameshell-welcome/en.txt')
   [ -r "$msg_file" ] || return 1
   parchment "$msg_file" Braid
 }
 
 # reset the bash configuration
-_gash_reset() {
+_gsh_reset() {
   if [ "$BASHPID" != $$ ]
   then
-    echo "$(gettext "Error: the command 'gash reset' is useless when run inside a subshell!")" >&2
+    echo "$(gettext "Error: the command 'gsh reset' is useless when run inside a subshell!")" >&2
     return 1
   fi
 
-  # restore SDTIN that may have been closed in case of a redirection into gash check 
-  exec 0<"$GASH_STDIN"
+  # restore SDTIN that may have been closed in case of a redirection into gsh check 
+  exec 0<"$GSH_STDIN"
 
   # on relance bash, histoire de recharcher la config
-  exec bash --rcfile "$GASH_LIB/bashrc"
+  exec bash --rcfile "$GSH_LIB/bashrc"
 }
 
 
-# called when gash exits
-_gash_exit() {
+# called when gsh exits
+_gsh_exit() {
   local MISSION_NB=$(_get_current_mission)
   local signal=$1
 
@@ -92,14 +92,14 @@ Do you still want to quit? [y/n]") " r
   fi
 
   _log_action "$MISSION_NB" "$signal"
-  _gash_clean "$MISSION_NB"
-  [ "$GASH_MODE" != "DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && _gash_unprotect
+  _gsh_clean "$MISSION_NB"
+  [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_BASE/.git" ] && _gsh_unprotect
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
 
 
 # display the goal of a mission given by its number
-_gash_show() {
+_gsh_show() {
   local MISSION_NB
   if [ "$#" -eq 0 ]
   then
@@ -134,7 +134,7 @@ _gash_show() {
 
 # display the mission index
 # TODO translation support
-_gash_index() {
+_gsh_index() {
   local CUR_MISSION="$(_get_current_mission)"
   local MISSION_NB="1"
   local MISSION COLOR STATUS LEAD
@@ -150,19 +150,19 @@ _gash_index() {
       continue
     fi
 
-    if grep -q "^$MISSION_NB CHECK_OK" "$GASH_DATA/missions.log"
+    if grep -q "^$MISSION_NB CHECK_OK" "$GSH_DATA/missions.log"
     then
       COLOR="green"
       STATUS=" ($(gettext "completed"))"
-    elif grep -q "^$MISSION_NB CHECK_OOPS" "$GASH_DATA/missions.log"
+    elif grep -q "^$MISSION_NB CHECK_OOPS" "$GSH_DATA/missions.log"
     then
       COLOR="red"
       STATUS=" ($(gettext "failed"))"
-    elif grep -q "^$MISSION_NB PASS" "$GASH_DATA/missions.log"
+    elif grep -q "^$MISSION_NB PASS" "$GSH_DATA/missions.log"
     then
       COLOR="yellow"
       STATUS=" ($(gettext "passed"))"
-    elif grep -q "^$MISSION_NB CANCEL_DEP_PB" "$GASH_DATA/missions.log"
+    elif grep -q "^$MISSION_NB CANCEL_DEP_PB" "$GSH_DATA/missions.log"
     then
       COLOR="magenta"
       STATUS=" ($(gettext "cancelled"))"
@@ -182,12 +182,12 @@ _gash_index() {
     color_echo "$COLOR" "$MISSION$STATUS"
 
     MISSION_NB="$((MISSION_NB + 1))"
-  done < "$GASH_DATA/index.txt"
+  done < "$GSH_DATA/index.txt"
 }
 
 
 # start a mission given by its number
-_gash_start() {
+_gsh_start() {
   local quiet=""
   if [ "$1" = "-quiet" ]
   then
@@ -198,9 +198,9 @@ _gash_start() {
   if [ -z "$1" ]
   then
     MISSION_NB=$(_get_current_mission)
-    if [ "$?" -eq 1 ] && [ "$GASH_MODE" != "DEBUG" ]
+    if [ "$?" -eq 1 ] && [ "$GSH_MODE" != "DEBUG" ]
     then
-      _gash_welcome
+      _gsh_welcome
       read -erp "$(gettext "Press Enter")"
     fi
   else
@@ -223,7 +223,7 @@ _gash_start() {
 Restarting from previous mission.")" >&2
     echo
     read -erp "$(gettext "Press Enter")"
-    gash reset
+    gsh reset
   fi
 
   ### tester le fichier deps.sh
@@ -235,7 +235,7 @@ Restarting from previous mission.")" >&2
     then
       echo "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
       _log_action "$MISSION_NB" "CANCEL_DEP_PB"
-      _gash_start "$((MISSION_NB + 1))"
+      _gsh_start "$((MISSION_NB + 1))"
       return
     fi
   fi
@@ -251,19 +251,19 @@ Restarting from previous mission.")" >&2
     # je sauvegarde l'environnement avant / après l'initialisation pour
     # afficher un message dans ce cas
     _PWD=$(pwd)
-    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_MISSION_DATA"/env-before
+    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_MISSION_DATA"/env-before
     mission_source "$MISSION_DIR/init.sh"
-    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GASH_MISSION_DATA"/env-after
+    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_MISSION_DATA"/env-after
 
     if [ "$BASHPID" != $$ ]
     then
-      if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$GASH_MISSION_DATA"/env-before "$GASH_MISSION_DATA"/env-after
+      if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$GSH_MISSION_DATA"/env-before "$GSH_MISSION_DATA"/env-after
       then
         echo "$(gettext "Error: this mission was initialized in a subshell.
 You should run the command
-    gash reset
+    gsh reset
 to make sure the mission is initialized properly.")" >&2
-        rm -f "$GASH_MISSION_DATA"/env-{before,after}
+        rm -f "$GSH_MISSION_DATA"/env-{before,after}
       fi
     fi
   fi
@@ -274,15 +274,15 @@ to make sure the mission is initialized properly.")" >&2
   then
     if [ "$MISSION_NB" -eq 1 ]
     then
-      parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-init-msg/en.txt')" Inverted
+      parchment "$(eval_gettext '$GSH_BASE/i18n/gameshell-init-msg/en.txt')" Inverted
     else
-      parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-init-msg-short/en.txt')" Inverted
+      parchment "$(eval_gettext '$GSH_BASE/i18n/gameshell-init-msg-short/en.txt')" Inverted
     fi
   fi
 }
 
 # stop a mission given by its number
-_gash_pass() {
+_gsh_pass() {
   local MISSION_NB="$(_get_current_mission)"
   if [ -z "$MISSION_NB" ]
   then
@@ -295,14 +295,14 @@ _gash_pass() {
     return 1
   fi
   _log_action "$MISSION_NB" "PASS"
-  _gash_clean "$MISSION_NB"
+  _gsh_clean "$MISSION_NB"
   color_echo yellow "$(eval_gettext 'Mission $MISSION_NB has been cancelled.')" >&2
 
-  _gash_start $((10#$MISSION_NB + 1))
+  _gsh_start $((10#$MISSION_NB + 1))
 }
 
 # applies auto.sh script, if it exists
-_gash_auto() {
+_gsh_auto() {
   local MISSION_NB="$(_get_current_mission)"
 
   if [ -z "$MISSION_NB" ]
@@ -332,7 +332,7 @@ _gash_auto() {
 
 
 # check completion of a mission given by its number
-_gash_check() {
+_gsh_check() {
   local MISSION_NB="$(_get_current_mission)"
 
   if [ -z "$MISSION_NB" ]
@@ -363,12 +363,12 @@ _gash_check() {
 
     _log_action "$MISSION_NB" "CHECK_OK"
 
-    _gash_clean "$MISSION_NB"
+    _gsh_clean "$MISSION_NB"
 
     if [ -f "$MISSION_DIR/treasure.sh" ]
     then
       # Record the treasure to be loaded by GameShell's bashrc.
-      cp "$MISSION_DIR/treasure.sh" "$GASH_CONFIG/$(basename "$MISSION_DIR" /).treasure.sh"
+      cp "$MISSION_DIR/treasure.sh" "$GSH_CONFIG/$(basename "$MISSION_DIR" /).treasure.sh"
 
       # Display the text message (if it exists).
       if [ -f "$MISSION_DIR/treasure-msg.sh" ]
@@ -394,15 +394,15 @@ _gash_check() {
       # Load the treasure in the current shell.
       mission_source "$MISSION_DIR/treasure.sh"
 
-      #sourcing the file isn't very robust as the "gash check" may happen in a subshell!
+      #sourcing the file isn't very robust as the "gsh check" may happen in a subshell!
       if [ "$BASHPID" != $$ ]
       then
         echo "$(gettext "Error: the file 'treasure.sh' was sourced from a subshell.
 You should use the command
-  $ gash reset")" >&2
+  $ gsh reset")" >&2
       fi
     fi
-    _gash_start $((10#$MISSION_NB + 1))
+    _gsh_start $((10#$MISSION_NB + 1))
   else
     echo
     color_echo red "$(eval_gettext "Sorry, mission \$MISSION_NB hasn't been completed.")"
@@ -410,12 +410,12 @@ You should use the command
 
     _log_action "$MISSION_NB" "CHECK_OOPS"
 
-    _gash_clean "$MISSION_NB"
-    _gash_start "$MISSION_NB"
+    _gsh_clean "$MISSION_NB"
+    _gsh_start "$MISSION_NB"
   fi
 }
 
-_gash_clean() {
+_gsh_clean() {
   local MISSION_NB="$(_get_current_mission)"
 
   if [ -z "$MISSION_NB" ]
@@ -433,13 +433,13 @@ _gash_clean() {
   fi
 }
 
-_gash_assert_check() {
+_gsh_assert_check() {
   local MISSION_NB="$(_get_current_mission)"
 
   local expected=$1
   if [ "$expected" != "true" ] && [ "$expected" != "false" ]
   then
-    echo "$(eval_gettext "Error: _gash_assert_check only accept 'true' and 'false' as argument.")" >&2
+    echo "$(eval_gettext "Error: _gsh_assert_check only accept 'true' and 'false' as argument.")" >&2
     return 1
   fi
   local msg=$3
@@ -462,17 +462,17 @@ _gash_assert_check() {
     [ -n "$msg" ] && echo "$msg"
   fi
 
-  _gash_clean "$MISSION_NB"
-  _gash_start -quiet "$MISSION_NB"
+  _gsh_clean "$MISSION_NB"
+  _gsh_start -quiet "$MISSION_NB"
 }
-[ "$GASH_MODE" != "DEBUG" ] && unset -f _gash_assert_check
+[ "$GSH_MODE" != "DEBUG" ] && unset -f _gsh_assert_check
 
-_gash_assert() {
+_gsh_assert() {
   local condition=$1
   if [ "$condition" = "check" ]
   then
     shift
-    _gash_assert_check "$@"
+    _gsh_assert_check "$@"
     return
   fi
   local msg=$2
@@ -485,9 +485,9 @@ _gash_assert() {
     [ -n "$msg" ] && echo "$msg"
   fi
 }
-[ "$GASH_MODE" != "DEBUG" ] && unset -f _gash_assert
+[ "$GSH_MODE" != "DEBUG" ] && unset -f _gsh_assert
 
-_gash_test() {
+_gsh_test() {
   local MISSION_NB="$(_get_current_mission)"
   if [ -z "$MISSION_NB" ]
   then
@@ -519,67 +519,67 @@ _gash_test() {
   fi
   unset NB_TESTS NB_ERRORS
 }
-[ "$GASH_MODE" != "DEBUG" ] && unset -f _gash_test
+[ "$GSH_MODE" != "DEBUG" ] && unset -f _gsh_test
 
-_gash_help() {
-  parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-help/en.txt')" Parchment2
+_gsh_help() {
+  parchment "$(eval_gettext '$GSH_BASE/i18n/gameshell-help/en.txt')" Parchment2
 }
 
-_gash_HELP() {
-  parchment "$(eval_gettext '$GASH_BASE/i18n/gameshell-HELP/en.txt')" Parchment2
+_gsh_HELP() {
+  parchment "$(eval_gettext '$GSH_BASE/i18n/gameshell-HELP/en.txt')" Parchment2
 }
 
-_gash_protect() {
-  chmod a-rw $GASH_BASE
-  chmod a-rw $GASH_MISSIONS
-  chmod a-rw $GASH_DATA
-  chmod a-r $GASH_MISSION_DATA
-  chmod a-rw $GASH_BIN
-  chmod a-rw $GASH_LOCAL_BIN
+_gsh_protect() {
+  chmod a-rw $GSH_BASE
+  chmod a-rw $GSH_MISSIONS
+  chmod a-rw $GSH_DATA
+  chmod a-r $GSH_MISSION_DATA
+  chmod a-rw $GSH_BIN
+  chmod a-rw $GSH_LOCAL_BIN
 }
 
-_gash_unprotect() {
-  chmod u+rw $GASH_BASE
-  chmod u+rw $GASH_MISSIONS
-  chmod u+rw $GASH_DATA
-  chmod u+r $GASH_MISSION_DATA
-  chmod u+rw $GASH_BIN
-  chmod u+rw $GASH_LOCAL_BIN
+_gsh_unprotect() {
+  chmod u+rw $GSH_BASE
+  chmod u+rw $GSH_MISSIONS
+  chmod u+rw $GSH_DATA
+  chmod u+r $GSH_MISSION_DATA
+  chmod u+rw $GSH_BIN
+  chmod u+rw $GSH_LOCAL_BIN
 }
 
 
 
-gash() {
+gsh() {
   local _TEXTDOMAIN=$TEXTDOMAIN
-  export TEXTDOMAIN="gash"
+  export TEXTDOMAIN="gsh"
   local CMD=$1
   shift
 
   case $CMD in
     "c" | "ch" | "che" | "chec" | "check")
-      _gash_check
+      _gsh_check
       ;;
     "h" | "he" | "hel" | "help")
-      _gash_help
+      _gsh_help
       ;;
     "H" | "HE" | "HEL" | "HELP")
-      _gash_HELP
+      _gsh_HELP
       ;;
     "r" | "re" | "res" | "rese" | "reset")
-      _gash_clean
-      _gash_reset
+      _gsh_clean
+      _gsh_reset
       ;;
     "sh" | "sho" | "show")
-      _gash_show "$@"
+      _gsh_show "$@"
       ;;
     "i" | "in" | "ind" | "inde" | "index")
-      _gash_index
+      _gsh_index
       ;;
     "w" | "we" | "wel" | "welc" | "welco" | "welcom" | "welcome")
-      _gash_welcome
+      _gsh_welcome
       ;;
     "stat")
-      awk -v GASH_UID="$GASH_UID" -f "$GASH_BIN/stat.awk" < "$GASH_DATA/missions.log"
+      awk -v GSH_UID="$GSH_UID" -f "$GSH_BIN/stat.awk" < "$GSH_DATA/missions.log"
       ;;
     "exit")
       exit 0
@@ -588,10 +588,10 @@ gash() {
     # admin stuff
     # TODO: something to regenerate static world
     "pass")
-        _gash_pass
+        _gsh_pass
       ;;
     "auto")
-      _gash_auto
+      _gsh_auto
       ;;
     "goto")
       if [ -z "$1" ]
@@ -605,41 +605,41 @@ gash() {
         return 1
       fi
 
-      _gash_clean
-      _gash_start "$@"
+      _gsh_clean
+      _gsh_start "$@"
       ;;
     "test")
-      if [ "$GASH_MODE" != "DEBUG" ]
+      if [ "$GSH_MODE" != "DEBUG" ]
       then
         echo "$(eval_gettext "Error: command '\$CMD' is only available in debug mode.")" >&2
       else
-        _gash_test
+        _gsh_test
       fi
       ;;
     "assert_check")
-      if [ "$GASH_MODE" != "DEBUG" ]
+      if [ "$GSH_MODE" != "DEBUG" ]
       then
         echo "$(eval_gettext "Error: command '\$CMD' is only available in debug mode.")" >&2
       else
-        _gash_assert_check "$@"
+        _gsh_assert_check "$@"
       fi
       ;;
     "assert")
-      if [ "$GASH_MODE" != "DEBUG" ]
+      if [ "$GSH_MODE" != "DEBUG" ]
       then
         echo "$(eval_gettext "Error: command '\$CMD' is only available in debug mode.")" >&2
       else
-        _gash_assert "$@"
+        _gsh_assert "$@"
       fi
       ;;
     "protect")
-      _gash_protect
+      _gsh_protect
       ;;
     "unprotect")
-      _gash_unprotect
+      _gsh_unprotect
       ;;
     *)
-      echo "$(eval_gettext "Error: unknown gash command '\$CMD'.
+      echo "$(eval_gettext "Error: unknown gsh command '\$CMD'.
 Use one of the following commands:")  check, help, HELP, reset or show" >&2
       export TEXTDOMAIN=$_TEXTDOMAIN
       unset _TEXTDOMAIN

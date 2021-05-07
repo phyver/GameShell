@@ -1,10 +1,10 @@
 Utilisez la commande
-  $ gash show
+  $ gsh show
 pour découvrir votre première mission.
 
 Vous pouvez vérifier si l'objectif est atteint avec
-  $ gash check
+  $ gsh check
 
 La commande
-  $ gash help
-affiche la liste des commandes (gash) disponibles.
+  $ gsh help
+affiche la liste des commandes (gsh) disponibles.

@@ -5,7 +5,7 @@ Nostradamus a prévu une conjonction spectaculaires des astres pour
 le $DD-$MM-$YYYY.
 Mais sur quel jour de la semaine tombera donc cette date ?
 
-Lorsque vous le connaissez, lancez la commande ``gash check``.
+Lorsque vous le connaissez, lancez la commande ``gsh check``.
 
 
 Commandes utiles

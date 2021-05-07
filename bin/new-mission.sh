@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export GASH_BASE="$(dirname "$0")/.."
+export GSH_BASE="$(dirname "$0")/.."
 
 display_help() {
 cat <<EOH
@@ -20,7 +20,7 @@ EOH
 
 
 first_unused_number() {
-    cd "$GASH_BASE"/missions
+    cd "$GSH_BASE"/missions
     find -name "check.sh"                   | \
     sed 's|/check\.sh||'                    | \
     sed 's|.*/\([^/]*\)|\1|'                | \
@@ -55,7 +55,7 @@ This file or one of its more complex variants (refer to the documentation) is
 required.
 
 It is displayed in its entirety by the command
-  $ gash show
+  $ gsh show
 It should describe the goal of the mission.
 
 Note: if the __first_ line of this file is of the form
@@ -72,9 +72,9 @@ new_goal_gettext_file() {
 
 # This file is not required. It can be used to generate dynamic goal messages.
 # If the file exists, it is sourced by the command
-#  $ gash show
+#  $ gsh show
 # If neither this file nor "goal.txt" exists, the command
-#  $ gash show
+#  $ gsh show
 # is equivalent to having the following line in goal.sh
 cat "$(eval_gettext '$MISSION_DIR/goal/en.txt')"
 EOF
@@ -88,7 +88,7 @@ This file or one of its more complex variants (refer to the documentation) is
 required.
 
 It is displayed in its entirety by the command
-  $ gash show
+  $ gsh show
 It should describe the goal of the mission.
 
 Note: if the _first_ line of this file is of the form
@@ -98,7 +98,7 @@ those variables are substituted in the file.
 Useful commands
 ===============
 
-gash check
+gsh check
   Checks that the missions has been completed.
 EOF
 }
@@ -120,10 +120,10 @@ new_init_file() {
 # Note however that should the mission be initialized in a subshell, those
 # environment variables will disappear! (That typically happens a mission is
 # checked using process redirection, as in
-#   $ SOMETHING | gash check
+#   $ SOMETHING | gsh check
 # To mitigate the problem, GameShell will display a message asking the player
 # to run
-#   $ gash reset
+#   $ gsh reset
 # in that case.
 EOF
 }
@@ -193,10 +193,10 @@ new_treasure_file() {
 # Note that should the mission be completed in a subshell, aliases or
 # environment variables will disappear.
 # That typically happens a mission is checked using process redirection, as in
-#   $ SOMETHING | gash check
+#   $ SOMETHING | gsh check
 # To mitigate the problem, GameShell will display a message asking the player
 # to run
-#   $ gash reset
+#   $ gsh reset
 # in that case.
 EOF
 }
@@ -241,17 +241,17 @@ new_test_file() {
 #!/bin/bash
 
 #
-# This file is not required: it is sourced by the command "gash test".
+# This file is not required: it is sourced by the command "gsh test".
 # You can use some special commands
-# gash assert check true
-# gash assert check false
-# gash assert CONDITION
+# gsh assert check true
+# gsh assert check false
+# gsh assert CONDITION
 # to check that specific conditions are satisfied.
 #
 # Since it is sourced, it may define environment variables if you really need
 # them, but it should "unset" any local variable it has created.
 #
-# NOTE that the commands "gash test" and "gash assert" are only available in
+# NOTE that the commands "gsh test" and "gsh assert" are only available in
 # debug mode
 #
 EOF
@@ -320,7 +320,7 @@ EOF
 new_mission_without_gettext() {
     NB=$1
     NAME=$2
-    MISSION_DIR="$GASH_BASE/missions/contrib/${NB}_${NAME}"
+    MISSION_DIR="$GSH_BASE/missions/contrib/${NB}_${NAME}"
 
     if [ -e "$MISSION_DIR" ]
     then
@@ -329,7 +329,7 @@ new_mission_without_gettext() {
         exit 1
     fi
 
-    echo "Creating mission ${NB}_${NAME} in directory $GASH_BASE/missions/contrib/"
+    echo "Creating mission ${NB}_${NAME} in directory $GSH_BASE/missions/contrib/"
     mkdir "$MISSION_DIR"
 
     new_static_file "$MISSION_DIR"
@@ -347,7 +347,7 @@ new_mission_without_gettext() {
 new_mission_with_gettext() {
     NB=$1
     NAME=$2
-    MISSION_DIR="$GASH_BASE/missions/contrib/${NB}_${NAME}"
+    MISSION_DIR="$GSH_BASE/missions/contrib/${NB}_${NAME}"
 
     if [ -e "$MISSION_DIR" ]
     then
@@ -356,7 +356,7 @@ new_mission_with_gettext() {
         exit 1
     fi
 
-    echo "Creating mission ${NB}_${NAME} in directory $GASH_BASE/missions/contrib/"
+    echo "Creating mission ${NB}_${NAME} in directory $GSH_BASE/missions/contrib/"
     mkdir "$MISSION_DIR"
 
     new_static_file "$MISSION_DIR"
@@ -420,7 +420,7 @@ else
 fi
 
 
-_m=$(find "$GASH_BASE/missions/" -type d -name "${NB}_*" -print -quit)
+_m=$(find "$GSH_BASE/missions/" -type d -name "${NB}_*" -print -quit)
 if [ -n "$_m" ]
 then
     echo "There is at least another mission with number $NB: $_m." >&2
