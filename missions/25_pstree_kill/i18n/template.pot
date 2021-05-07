@@ -21,6 +21,10 @@ msgstr  ""
 msgid   "Did you eat some cheese?"
 msgstr  ""
 
+#, sh-format
+msgid   "Did you kill $NAME?"
+msgstr  ""
+
 msgid   "Did you kill some cheese generator?"
 msgstr  ""
 

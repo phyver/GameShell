@@ -22,6 +22,10 @@ msgstr  "Are you sure you killed all the rat poison generators?"
 msgid   "Did you eat some cheese?"
 msgstr  "Did you eat some cheese?"
 
+#, sh-format
+msgid   "Did you kill $NAME?"
+msgstr  "Did you kill $NAME?"
+
 msgid   "Did you kill some cheese generator?"
 msgstr  "Did you kill some cheese generator?"
 
