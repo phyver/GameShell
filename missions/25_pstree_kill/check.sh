@@ -35,9 +35,9 @@ _mission_check() {
     fi
 
     cd "$kitchen"
-    sort "$GSH_MISSION_DATA"/cheese-? | uniq > "$GSH_MISSION_DATA"/cheese-generated
-    ls {,.}*_"$(gettext "cheese")" 2>/dev/null | sort | uniq > "$GSH_MISSION_DATA"/cheese-present
-    local nb=$(comm -1 -3 "$GSH_MISSION_DATA"/cheese-present "$GSH_MISSION_DATA"/cheese-generated | wc -l)
+    sort "$GSH_VAR"/cheese-? | uniq > "$GSH_VAR"/cheese-generated
+    ls {,.}*_"$(gettext "cheese")" 2>/dev/null | sort | uniq > "$GSH_VAR"/cheese-present
+    local nb=$(comm -1 -3 "$GSH_VAR"/cheese-present "$GSH_VAR"/cheese-generated | wc -l)
 
     if [ "$nb" -gt 1 ]
     then

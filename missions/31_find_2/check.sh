@@ -16,13 +16,13 @@ _mission_check() {
         return 1
     fi
 
-    local filename=$(cut -d" " -f1 $GSH_MISSION_DATA/ruby)
+    local filename=$(cut -d" " -f1 $GSH_VAR/ruby)
 
     if ! [ -f "$GSH_CHEST/$filename" ]
     then
         echo "$(gettext "The ruby is not in the chest!")"
         return 1
-    elif ! cmp -s "$GSH_MISSION_DATA/ruby" "$GSH_CHEST/$filename"
+    elif ! cmp -s "$GSH_VAR/ruby" "$GSH_CHEST/$filename"
     then
         echo "$(gettext "The ruby in your chest is not valid!")"
         return 1

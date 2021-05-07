@@ -11,7 +11,7 @@ _mission_check_p() {
         echo $COIN_NAME
         return 1
     fi
-    if ! cmp -s "$path" "$GSH_MISSION_DATA/$COIN_NAME"
+    if ! cmp -s "$path" "$GSH_VAR/$COIN_NAME"
     then
         echo "$(eval_gettext "Coin '\$COIN_NAME' in your chest is invalid!")"
         return 1

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-exec 3< "$GSH_MISSION_DATA/arith.txt"
+exec 3< "$GSH_VAR/arith.txt"
 OK="OK"
 while IFS='' read -r -u 3 l
 do

@@ -6,5 +6,5 @@ case $PWD in
         ;;
 esac
 
-rm -f "$GSH_MISSION_DATA/ruby"
+rm -f "$GSH_VAR/ruby"
 rm -rf "$maze"/*

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 S1=$(basename "$PWD" / | checksum)
-S2=$(cat "$GSH_MISSION_DATA/corridor")
+S2=$(cat "$GSH_VAR/corridor")
 
 if [ "$S1" = "$S2" ]
 then

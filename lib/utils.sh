@@ -83,13 +83,13 @@ admin_mode() {
     return 0
   fi
 
-  if ! [ -f "$GSH_DATA/admin_hash" ]
+  if ! [ -f "$GSH_CONFIG/admin_hash" ]
   then
     echo "$(gettext "Error: you are not allowed to run this command.")" >&2
     return 1
   fi
 
-  local HASH=$(cat "$GSH_DATA/admin_hash")
+  local HASH=$(cat "$GSH_CONFIG/admin_hash")
   for _ in $(seq 3)
   do
     read -serp "$(gettext "password:" )" mdp
@@ -124,7 +124,7 @@ mission_source() {
     return $exit_status
   fi
 
-  local TEMP=$(mktemp -d "$GSH_MISSION_DATA/env-XXXXXX")
+  local TEMP=$(mktemp -d "$GSH_VAR/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
   local _TEXTDOMAIN=""
   local _MISSION_NAME=""
@@ -135,7 +135,7 @@ mission_source() {
   compgen -v | sort > "$TEMP"/before-V
   compgen -A function | sort > "$TEMP"/before-F
   compgen -a | sort > "$TEMP"/before-A
-  ls "$GSH_MISSION_DATA" > "$TEMP"/before-D
+  ls "$GSH_VAR" > "$TEMP"/before-D
   _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="$(basename "$MISSION_DIR")"
   _MISSION_NAME=$MISSION_NAME
@@ -149,9 +149,9 @@ mission_source() {
   # be used when sourcing check.sh)
   compgen -A function | grep -v "_mission_check" | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
-  ls "$GSH_MISSION_DATA" > "$TEMP"/after-D
+  ls "$GSH_VAR" > "$TEMP"/after-D
 
-  local msg="DEBUG: environment modifications while sourcing .../${FILENAME#$GSH_BASE/}"
+  local msg="DEBUG: environment modifications while sourcing .../${FILENAME#$GSH_ROOT/}"
   if ! cmp -s "$TEMP"/{before,after}-V
   then
     [ -n "$msg" ] && echo "$msg"

@@ -1,12 +1,12 @@
 #!/bin/bash
 
-export GSH_BASE="$(dirname "$0")/.."
-source $GSH_BASE/lib/os_aliases.sh
-GSH_BASE=$(REALPATH "$GSH_BASE")
-source $GSH_BASE/lib/utils.sh
-source $GSH_BASE/lib/make_index.sh
+export GSH_ROOT="$(dirname "$0")/.."
+source $GSH_ROOT/lib/os_aliases.sh
+GSH_ROOT=$(REALPATH "$GSH_ROOT")
+source $GSH_ROOT/lib/utils.sh
+source $GSH_ROOT/lib/make_index.sh
 
-export GSH_MISSIONS="$GSH_BASE/missions"
+export GSH_MISSIONS="$GSH_ROOT/missions"
 
 display_help() {
 cat <<EOH
@@ -71,7 +71,7 @@ mkdir "$TMP_DIR/$NAME"
 
 
 # copy source files
-cp --archive "$GSH_BASE/start.sh" "$GSH_BASE/bin/" "$GSH_BASE/lib/" "$GSH_BASE/i18n/" "$TMP_DIR/$NAME"
+cp --archive "$GSH_ROOT/start.sh" "$GSH_ROOT/bin/" "$GSH_ROOT/lib/" "$GSH_ROOT/i18n/" "$TMP_DIR/$NAME"
 
 # copy missions
 mkdir "$TMP_DIR/$NAME/missions"
@@ -106,15 +106,15 @@ then
   echo "generating '.mo' files"
   {
     # gameshell
-    GSH_BASE=$TMP_DIR/$NAME
-    GSH_DATA="$GSH_BASE/.session_data"
+    GSH_ROOT=$TMP_DIR/$NAME
+    GSH_CONFIG="$GSH_ROOT/.session_data"
 
-    export TEXTDOMAINDIR="$GSH_BASE/locale"
+    export TEXTDOMAINDIR="$GSH_ROOT/locale"
     export TEXTDOMAIN="gsh"
-    for PO_FILE in "$GSH_BASE"/i18n/*.po; do
+    for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
       PO_LANG=$(basename "$PO_FILE" .po)
-      mkdir -p "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES"
-      msgfmt -o "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
+      mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
+      msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
     done
 
     # all missions
@@ -135,12 +135,12 @@ then
         shopt -s nullglob
         for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
           PO_LANG=$(basename "$PO_FILE" .po)
-          mkdir -p "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES"
-          msgfmt -o "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
+          mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
+          msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
         done
         shopt -u nullglob
       fi
-    done < "$GSH_BASE/missions/index.txt"
+    done < "$GSH_ROOT/missions/index.txt"
   }
 fi
 
@@ -184,7 +184,7 @@ tar -zcf "$OUTPUT_DIR/$NAME.tgz" -C "$TMP_DIR" "$NAME"
 
 # create self-extracting archive
 echo "creating self-extracting archive"
-cat "$GSH_BASE/lib/init.sh" "$OUTPUT_DIR/$NAME.tgz" > "$OUTPUT_DIR/$NAME.sh"
+cat "$GSH_ROOT/lib/init.sh" "$OUTPUT_DIR/$NAME.tgz" > "$OUTPUT_DIR/$NAME.sh"
 chmod +x "$OUTPUT_DIR/$NAME.sh"
 
 if [ "$KEEP_TGZ" = 'false' ]

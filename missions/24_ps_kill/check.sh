@@ -25,7 +25,7 @@ _mission_check() {
     fi
 
     local sum=$(cat "$dir"/* | checksum)
-    if [ "$sum" != "$(cat "$GSH_MISSION_DATA/pantry")" ]
+    if [ "$sum" != "$(cat "$GSH_VAR/pantry")" ]
     then
         echo "$(gettext "The content of the pantry has changed!")"
         return 1

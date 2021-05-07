@@ -13,11 +13,11 @@ _mission_check() {
     current=$(REALPATH "$PWD")
 
     local expected
-    expected="$(head -n 6 "$GSH_MISSION_DATA/book_of_potions/$(gettext 'page')_07")"
+    expected="$(head -n 6 "$GSH_VAR/book_of_potions/$(gettext 'page')_07")"
     local res
     res="$(eval "$pc")"
 
-    if ! diff -q "$cave/$(gettext 'Book_of_Potions')" "$GSH_MISSION_DATA/book_of_potions" > /dev/null
+    if ! diff -q "$cave/$(gettext 'Book_of_Potions')" "$GSH_VAR/book_of_potions" > /dev/null
     then
       echo "$(gettext "You altered the book...")"
       return 1

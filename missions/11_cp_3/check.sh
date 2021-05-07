@@ -2,8 +2,8 @@
 
 _mission_check() {
 
-    local filename="$(head -n1 "$GSH_MISSION_DATA/painting")"
-    local s="$(tail -n1 "$GSH_MISSION_DATA/painting")"
+    local filename="$(head -n1 "$GSH_VAR/painting")"
+    local s="$(tail -n1 "$GSH_VAR/painting")"
 
     if ! [ -d "$GSH_CHEST" ]
     then

@@ -4,28 +4,28 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/gameshell-HELP/en.txt"
-msgstr  "$GSH_BASE/i18n/gameshell-HELP/fr.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-HELP/fr.txt"
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/gameshell-help/en.txt"
-msgstr  "$GSH_BASE/i18n/gameshell-help/fr.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-help/fr.txt"
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/gameshell-init-msg-short/en.txt"
-msgstr  "$GSH_BASE/i18n/gameshell-init-msg-short/fr.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-init-msg-short/fr.txt"
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/gameshell-init-msg/en.txt"
-msgstr  "$GSH_BASE/i18n/gameshell-init-msg/fr.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-init-msg/fr.txt"
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/gameshell-welcome/en.txt"
-msgstr  "$GSH_BASE/i18n/gameshell-welcome/fr.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-welcome/fr.txt"
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/start-help/en.txt"
-msgstr  "$GSH_BASE/i18n/start-help/fr.txt"
+msgid   "$GSH_ROOT/i18n/start-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/start-help/fr.txt"
 
 #, sh-format
 msgid   "$MISSION_DIR/goal/en.txt"
@@ -158,9 +158,9 @@ msgid   "Sorry, mission $MISSION_NB hasn't been completed."
 msgstr  "Désolé, la mission $MISSION_NB a échoué."
 
 #, sh-format
-msgid   "The directory $GSH_DATA contains meta-data from a previous game.\n"
+msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
         "Do you want to remove it and start a new game? [y/N]"
-msgstr  "Le répertoire $GSH_DATA contient des méta-données provenant d'une partie précédente.\n"
+msgstr  "Le répertoire $GSH_CONFIG contient des méta-données provenant d'une partie précédente.\n"
         "Voulez vous les supprimer et commencer une nouvelle partie ? [o/N]"
 
 msgid   "There are stopped jobs in your session.\n"

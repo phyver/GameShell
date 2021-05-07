@@ -7,5 +7,5 @@ alias "$(gettext "journal")"="nano $(gettext "journal").txt"
 gsh assert check false
 
 cd
-alias "$(gettext "journal")"="nano ${GSH_CHEST#$GSH_BASE/}/$(gettext "journal").txt"
+alias "$(gettext "journal")"="nano ${GSH_CHEST#$GSH_ROOT/}/$(gettext "journal").txt"
 gsh assert check false

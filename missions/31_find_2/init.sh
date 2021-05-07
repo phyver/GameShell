@@ -33,7 +33,7 @@ gen_maze_sh(){
                 then
                     local sum=$(checksum "$K.$(gettext "ruby")")
                     echo "$K $(gettext "ruby") $sum" > "$maze/$I/$J/$K"
-                    echo "$K $(gettext "ruby") $sum" > "$GSH_MISSION_DATA/ruby"
+                    echo "$K $(gettext "ruby") $sum" > "$GSH_VAR/ruby"
                 elif [ "$r2" = "$i,$j,$k" ] || \
                      [ "$r3" = "$i,$j,$k" ] || \
                      [ "$r4" = "$i,$j,$k" ] || \
@@ -58,7 +58,7 @@ gen_maze_py(){
     local K=$RANDOM
     local sum=$(checksum "$K $(gettext "ruby")")
     echo "$K $(gettext "ruby") $sum" > "$maze/$d1/$K"
-    echo "$K $(gettext "ruby") $sum" > "$GSH_MISSION_DATA/ruby"
+    echo "$K $(gettext "ruby") $sum" > "$GSH_VAR/ruby"
 
     echo "$d" | sed '1d' | while read d1
     do

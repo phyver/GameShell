@@ -17,7 +17,7 @@ cat <<EOK>"$safe/$(gettext "crown")"
  {_${k}_}
 EOK
 
-cp "$safe/$(gettext "crown")" "$GSH_MISSION_DATA"/crown
+cp "$safe/$(gettext "crown")" "$GSH_VAR"/crown
 
 chmod 000 "$safe/$(gettext "crown")"
 chmod 000 "$safe"
