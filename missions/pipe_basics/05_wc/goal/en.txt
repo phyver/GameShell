@@ -1,0 +1,26 @@
+Mission goal
+============
+
+While skimming the book you notice that the page that should 
+contain the recipe of the bottled death potion has been torn 
+off. Each line of the page (excluding the first three lines) 
+must have contained a step of the recipe. But how many steps 
+were there? Find out!
+
+In order to validate the mission, your last command prior to 
+``gsh check`` must give the number of steps in the recipe.
+
+
+Useful commands
+===============
+
+wc -l
+  Count the number of lines sent on the standard input.
+
+tail -n +K FILE
+  Print the last lines of the file starting with line K.
+
+COMMAND1 | COMMAND2
+  Run the two commands, feeding the "standard output" of the 
+  former as the "standard input" of the latter.
+  Remark: by analogy with plumbing "|" is called "pipe".
