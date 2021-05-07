@@ -1,0 +1,6 @@
+!00_shared
+01_ls_cd
+02_tree
+03_find_1
+04_find_2
+05_find_xargs_grep

@@ -9,7 +9,7 @@ import hashlib
 import os
 
 
-def gen_maze(nb_path):
+def gen_maze(nb_path, stone):
     r = str(randrange(0, 2**128))
 
     def md5(s):
@@ -39,7 +39,16 @@ def gen_maze(nb_path):
             else:
                 break
 
-        os.mkdir(os.path.join(DIR,*p))
+        if len(t) == DEPTH:
+            filename = os.path.join(DIR,*p)
+            f = open(filename, mode="w")
+            h = md5(filename)
+            f.write(h[:randrange(4, 16)] + " " + stone + " " + h[16:randrange(20, 32)])
+            f.close()
+
+
+        else:
+            os.mkdir(os.path.join(DIR,*p))
 
         if len(t) == DEPTH:
             if len(path) < nb_path:
@@ -56,12 +65,16 @@ def gen_maze(nb_path):
 
 if __name__ == "__main__":
     from sys import argv, exit
-    if len(argv) not in [5, 6]:
-        print(f"usage: {argv[0]} dir depth width nb_path")
+    if len(argv) != 6:
+        print(f"""usage: {argv[0]} dir depth width nb_path stone
+create a maze of given depth and width inside the given directory
+all leaves are text files containing 'stone'
+nb_path random file path are printed on the screen""")
         exit(1)
     DIR = argv[1]
     DEPTH = int(argv[2])
     WIDTH = int(argv[3])
     nb_path = int(argv[4])
+    stone = argv[5]
 
-    gen_maze(nb_path)
+    gen_maze(nb_path, stone)

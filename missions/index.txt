@@ -15,9 +15,10 @@
 15_alias_2
 16_tab
 17_bg
-18_file_manager
-19_tree
-20_find_1
+!finding_files_maze/00_shared
+finding_files_maze/01_ls_cd
+finding_files_maze/02_tree
+finding_files_maze/03_find_1
 21_head
 22_tail
 23_nl_tail_fold
@@ -28,8 +29,8 @@
 28_stdout_redirection
 29_stderr_redirection
 30_stdout_stderr_redirection
-31_find_2
-32_find_3_xargs
+finding_files_maze/04_find_2
+finding_files_maze/05_find_xargs_grep
 33_pipe_1
 34_pipe_2
 35_tr

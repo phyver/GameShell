@@ -1,0 +1,14 @@
+#, sh-format
+msgid "$GSH_HOME/Garden/.Maze"
+msgstr "$GSH_HOME/Garden/.Maze"
+
+#, sh-format
+msgid "$GSH_HOME/Garden/Orchard"
+msgstr "$GSH_HOME/Garden/Orchard"
+
+#, sh-format
+msgid "$GSH_HOME/Garden/Shed"
+msgstr "$GSH_HOME/Garden/Shed"
+
+msgid "You are back at the entrance of the maze..."
+msgstr "You are back at the entrance of the maze..."
