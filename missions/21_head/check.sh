@@ -18,7 +18,7 @@ _mission_check() {
     # I grep the previous command to avoid looping by re-running "gsh check"
     # recursively. Because of the previous remark, I need to look at the "-2"
     # command
-    pc=$(fc -nl -2 -2 | grep -v 'check')
+    pc=$(fc -nl -2 -2 | grep -v 'check' | grep 'head')
 
     local expected
     expected=$(head -n 4 "$(eval_gettext '$MISSION_DIR/ingredients/en.txt')")

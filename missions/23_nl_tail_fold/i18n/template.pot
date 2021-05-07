@@ -22,6 +22,9 @@ msgstr  ""
 msgid   "You are not standing in the cave with the ermit!"
 msgstr  ""
 
+msgid   "You haven't used any redirection '|' or the given commands!"
+msgstr  ""
+
 msgid   "You haven't used the operator '|'!"
 msgstr  ""
 
