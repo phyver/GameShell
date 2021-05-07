@@ -34,4 +34,5 @@ else
 fi
 chmod 755 "$GSH_VAR/cat-generator"
 "$GSH_VAR/cat-generator" "$(eval_gettext '$GSH_HOME/Castle/Kitchen')/$(gettext "Pantry")" "$(gettext "wind-up_cat")" &
+echo $! > "$GSH_VAR"/cat-generator.pid
 disown
