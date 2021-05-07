@@ -1,10 +1,7 @@
 #!/bin/bash
 
-export GSH_ROOT="$(dirname "$0")/.."
-source $GSH_ROOT/lib/os_aliases.sh
-GSH_ROOT=$(REALPATH "$GSH_ROOT")
-source $GSH_ROOT/lib/utils.sh
-source $GSH_ROOT/lib/make_index.sh
+export GSH_ROOT=$(dirname "$0")/..
+source $GSH_ROOT/lib/common.sh
 
 export GSH_MISSIONS="$GSH_ROOT/missions"
 
@@ -117,8 +114,10 @@ do
   esac
   N=$((10#$N + 1))
   N=$(echo -n "000000$N" | tail -c 6)
-  ARCHIVE_MISSION_DIR=$TMP_DIR/$NAME/missions/${N}_${MISSION_DIR#*_}
-  echo "    $(basename "$MISSION_DIR")  -->  $(basename "$ARCHIVE_MISSION_DIR")"
+  MISSION_NAME=$(basename $MISSION_DIR)
+  MISSION_NAME=${N}_${MISSION_NAME#*_}
+  ARCHIVE_MISSION_DIR=$TMP_DIR/$NAME/missions/$MISSION_NAME
+  echo "    $(basename "$MISSION_DIR")  -->  $MISSION_NAME"
   mkdir "$ARCHIVE_MISSION_DIR"
   cp --archive "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR"
   echo "$DUMMY$(basename "$ARCHIVE_MISSION_DIR")" >> "$TMP_DIR/$NAME/missions/index.txt"
@@ -131,7 +130,8 @@ then
   echo "removing unwanted languages"
   GSH_ROOT=$TMP_DIR/$NAME
 
-  find $GSH_ROOT -path "*/i18n/*.po" | while read po_file
+  # find $GSH_ROOT -path "*/i18n/*.po" | while read po_file
+  for po_file in "$GSH_ROOT/i18n"/*.po "$GSH_ROOT/missions"/*/i18n/*.po
   do
     if ! keep_language "${po_file%.po}" "$LANGUAGES"
     then
@@ -143,12 +143,10 @@ fi
 # generate .mo files
 if [ "$GENERATE_MO" = 'true' ]
 then
-  echo "generating '.mo' files"
+  echo -n "generating '.mo' files: "
   {
     # gameshell
-    GSH_ROOT=$TMP_DIR/$NAME
-    GSH_CONFIG="$GSH_ROOT/.session_data"
-
+    GSH_ROOT=$(REALPATH "$TMP_DIR/$NAME")
     export TEXTDOMAINDIR="$GSH_ROOT/locale"
     export TEXTDOMAIN="gsh"
     for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
@@ -156,6 +154,7 @@ then
       mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
       msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
     done
+    echo -n "."
 
     # all missions
     while read MISSION_DIR
@@ -168,6 +167,7 @@ then
           MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
           ;;
       esac
+      MISSION_DIR=$GSH_ROOT/missions/$MISSION_DIR
       export DOMAIN=$(basename "$MISSION_DIR")
 
       if [ -d "$MISSION_DIR/i18n" ]
@@ -177,10 +177,12 @@ then
           PO_LANG=$(basename "$PO_FILE" .po)
           mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
           msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
+          echo -n "."
         done
         shopt -u nullglob
       fi
     done < "$GSH_ROOT/missions/index.txt"
+    echo
   }
 fi
 
