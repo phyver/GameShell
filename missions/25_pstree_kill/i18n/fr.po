@@ -21,6 +21,10 @@ msgstr  "Vous êtes sûr d'avoir tué tous les générateurs de mort aux rats ?"
 msgid   "Did you eat some cheese?"
 msgstr  "Est-ce que vous avez mangé du fromage ?"
 
+#, sh-format
+msgid   "Did you kill $NAME?"
+msgstr  "Est-ce que vous avez tué $NAME ?"
+
 msgid   "Did you kill some cheese generator?"
 msgstr  "Est-ce que vous avez tué des générateurs de fromage ?"
 
