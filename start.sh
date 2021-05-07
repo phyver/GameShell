@@ -202,7 +202,7 @@ Do you want to remove it and start a new game? [y/N]') " r
 
   while true
   do
-    # Lecture du login des étudiants.
+    # Reading the player name (if in passport mode).
     case "$GSH_MODE" in
       DEBUG)
         echo "DEBUG MODE" >> "$PASSPORT"
@@ -220,20 +220,21 @@ Do you want to remove it and start a new game? [y/N]') " r
         ;;
     esac
 
-    # check information is correct
+    # Check that the information is correct.
     _confirm_passport "$PASSPORT" && break
   done
 
 
-  # Génération de l'UID du groupe.
+  # Generation of a unique identifier for the the player.
   export GSH_UID="$(sha1sum "$PASSPORT" | cut -c 1-40)"
   echo "GSH_UID=$GSH_UID" >> "$PASSPORT"
   echo "$GSH_UID" > "$GSH_CONFIG/uid"
 
 
-  # Message d'accueil.
+  # Clear the screen.
   [ "$GSH_MODE" = "DEBUG" ] || clear
-  echo "$(gettext "======== Initialisation of GameShell ========")"
+
+  [ "$GSH_MODE" = "DEBUG" ] && printf "Mission initialisation: "
 
   make_index "$@" 2> /dev/null | sed "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
 
@@ -305,7 +306,8 @@ EOH
     then
       cp "$MISSION_DIR/bashrc" "$GSH_BASHRC/$(basename "$MISSION_DIR" /).bashrc.sh"
     fi
-    printf "."
+
+    [ "$GSH_MODE" = "DEBUG" ] && printf "."
   done < "$GSH_CONFIG/index.txt"
   if [ "$MISSION_NB" -eq 0 ]
   then
@@ -313,13 +315,13 @@ EOH
 Aborting")"
     exit 1
   fi
-  echo
+  [ "$GSH_MODE" = "DEBUG" ] && echo " [DONE]"
   unset MISSION_DIR MISSION_NB
 }
 
 
 start_gsh() {
-  # Lancement du jeu.
+  # Starting the game.
   cd "$GSH_HOME"
   export GSH_UID=$(cat "$GSH_CONFIG/uid")
   bash --rcfile "$GSH_LIB/bashrc"
