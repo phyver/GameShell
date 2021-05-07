@@ -18,6 +18,9 @@ msgstr  ""
 msgid   "Pantry"
 msgstr  ""
 
+msgid   "The cat generator is still running!"
+msgstr  ""
+
 #, sh-format
 msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'psproc')"
