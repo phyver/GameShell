@@ -7,7 +7,7 @@ rd=pylptbbpbqmtaojeqalfrdzfswddcicuwtohudysakdtzqcswwzyrfwbilbkkusz
 
 # je choisis une clé en prenant un bout au hasard de la chaine ci dessus
 SECRET_KEY="${rd:( $RANDOM % ((${#rd}) -4) ):4}"
-echo "$SECRET_KEY" > "$GSH_MISSION_DATA/secret_key"
+echo "$SECRET_KEY" > "$GSH_VAR/secret_key"
 
 random_shift=$((12 + RANDOM % 3))
 

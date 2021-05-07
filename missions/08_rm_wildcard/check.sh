@@ -11,7 +11,7 @@ _mission_check() {
     fi
 
     local S1=$(find "$CELLAR" -maxdepth 1 -name ".*$(gettext "salamander")" | sort | checksum)
-    local S2=$(cat "$GSH_MISSION_DATA/salamanders")
+    local S2=$(cat "$GSH_VAR/salamanders")
 
     if [ "$S1" != "$S2" ]
     then

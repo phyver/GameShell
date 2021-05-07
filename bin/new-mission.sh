@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export GSH_BASE="$(dirname "$0")/.."
+export GSH_ROOT="$(dirname "$0")/.."
 
 display_help() {
 cat <<EOH
@@ -20,7 +20,7 @@ EOH
 
 
 first_unused_number() {
-    cd "$GSH_BASE"/missions
+    cd "$GSH_ROOT"/missions
     find -name "check.sh"                   | \
     sed 's|/check\.sh||'                    | \
     sed 's|.*/\([^/]*\)|\1|'                | \
@@ -320,7 +320,7 @@ EOF
 new_mission_without_gettext() {
     NB=$1
     NAME=$2
-    MISSION_DIR="$GSH_BASE/missions/contrib/${NB}_${NAME}"
+    MISSION_DIR="$GSH_ROOT/missions/contrib/${NB}_${NAME}"
 
     if [ -e "$MISSION_DIR" ]
     then
@@ -329,7 +329,7 @@ new_mission_without_gettext() {
         exit 1
     fi
 
-    echo "Creating mission ${NB}_${NAME} in directory $GSH_BASE/missions/contrib/"
+    echo "Creating mission ${NB}_${NAME} in directory $GSH_ROOT/missions/contrib/"
     mkdir "$MISSION_DIR"
 
     new_static_file "$MISSION_DIR"
@@ -347,7 +347,7 @@ new_mission_without_gettext() {
 new_mission_with_gettext() {
     NB=$1
     NAME=$2
-    MISSION_DIR="$GSH_BASE/missions/contrib/${NB}_${NAME}"
+    MISSION_DIR="$GSH_ROOT/missions/contrib/${NB}_${NAME}"
 
     if [ -e "$MISSION_DIR" ]
     then
@@ -356,7 +356,7 @@ new_mission_with_gettext() {
         exit 1
     fi
 
-    echo "Creating mission ${NB}_${NAME} in directory $GSH_BASE/missions/contrib/"
+    echo "Creating mission ${NB}_${NAME} in directory $GSH_ROOT/missions/contrib/"
     mkdir "$MISSION_DIR"
 
     new_static_file "$MISSION_DIR"
@@ -420,7 +420,7 @@ else
 fi
 
 
-_m=$(find "$GSH_BASE/missions/" -type d -name "${NB}_*" -print -quit)
+_m=$(find "$GSH_ROOT/missions/" -type d -name "${NB}_*" -print -quit)
 if [ -n "$_m" ]
 then
     echo "There is at least another mission with number $NB: $_m." >&2

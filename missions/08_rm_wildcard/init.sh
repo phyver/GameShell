@@ -14,6 +14,6 @@ do
   touch "${CELLAR}/.${RANDOM}_${I}_$(gettext "spider")"
 done
 
-find "$CELLAR" -maxdepth 1 -name ".*$(gettext "salamander")" | sort | checksum > "$GSH_MISSION_DATA/salamanders"
+find "$CELLAR" -maxdepth 1 -name ".*$(gettext "salamander")" | sort | checksum > "$GSH_VAR/salamanders"
 
 unset CELLAR D I S

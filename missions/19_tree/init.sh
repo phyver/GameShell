@@ -29,7 +29,7 @@ gen_maze_sh(){
                 if [ "$r1" = "$i,$j,$k" ]
                 then
                     echo "$I $J $K" > "$maze/$I/$J/$K/OOOOO_$(gettext "silver_coin")_OOOOO"
-                    echo "$I $J $K" > "$GSH_MISSION_DATA/silver_coin"
+                    echo "$I $J $K" > "$GSH_VAR/silver_coin"
                 fi
             done
             echo -n "."
@@ -42,7 +42,7 @@ gen_maze_py(){
     mkdir -p "$maze"
     local d=$(python3 "$MISSION_DIR"/init.py "$maze" 3 3 1)
     echo "$(checksum "$d")" > "$maze/$d/OOOOO_$(gettext "silver_coin")_OOOOO"
-    echo "$(checksum "$d")" > "$GSH_MISSION_DATA/silver_coin"
+    echo "$(checksum "$d")" > "$GSH_VAR/silver_coin"
 }
 
 if ! command -v python3 > /dev/null

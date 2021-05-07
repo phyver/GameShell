@@ -1,9 +1,9 @@
 get_answer() {
     local offset=$1
 
-    local YYYY=$(cut -d"-" -f1 "$GSH_MISSION_DATA"/date)
-    local MM=$(cut -d"-" -f2 "$GSH_MISSION_DATA"/date)
-    local DD=$(cut -d"-" -f3 "$GSH_MISSION_DATA"/date)
+    local YYYY=$(cut -d"-" -f1 "$GSH_VAR"/date)
+    local MM=$(cut -d"-" -f2 "$GSH_VAR"/date)
+    local DD=$(cut -d"-" -f3 "$GSH_VAR"/date)
 
     local day=$(date --date="$YYYY-$MM-$DD" +%A)
     local i

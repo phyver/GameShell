@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # turn history on (off by default for non-interactive shells
-HISTFILE=$GSH_DATA/history
+HISTFILE=$GSH_CONFIG/history
 
 if ! (fc -nl -4 | grep -qx "[[:blank:]]*xeyes[[:blank:]]*")
 then

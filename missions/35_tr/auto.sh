@@ -1,1 +1,1 @@
-gsh check < "$GSH_MISSION_DATA/secret_key"
+gsh check < "$GSH_VAR/secret_key"

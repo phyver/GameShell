@@ -6,11 +6,11 @@ shopt -s expand_aliases
 case $OSTYPE in
   linux|linux-gnu|linux-gnueabihf)
     # shellcheck source=./lib/gnu_aliases.sh
-    source "$GSH_BASE"/lib/gnu_aliases.sh
+    source "$GSH_ROOT"/lib/gnu_aliases.sh
     ;;
   darwin*)
     # shellcheck source=./lib/macos_aliases.sh
-    source "$GSH_BASE"/lib/macos_aliases.sh
+    source "$GSH_ROOT"/lib/macos_aliases.sh
     ;;
   openbsd*|FreeBSD|netbsd)
     # shellcheck source=./lib/bsd_aliases.sh
@@ -21,7 +21,7 @@ case $OSTYPE in
 GameShell will use 'gnu-linux', without guarantee.")"
     read -erp "$(gettext "Press Enter")"
     # shellcheck source=./lib/gnu_aliases.sh
-    source "$GSH_BASE"/lib/gnu_aliases.sh
+    source "$GSH_ROOT"/lib/gnu_aliases.sh
     ;;
 esac
 

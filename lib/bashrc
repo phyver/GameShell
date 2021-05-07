@@ -3,7 +3,7 @@
 export REAL_HOME="$HOME"
 export HOME="$GSH_HOME"
 
-export HISTFILE="$GSH_DATA/history"
+export HISTFILE="$GSH_CONFIG/history"
 export HISTCONTROL="ignoredups"
 export HISTIGNORE=""
 export HISTSIZE=50000
@@ -12,7 +12,7 @@ export HISTFILESIZE=50000
 unset LS_COLORS
 
 # get this game's configuration
-[ -f "$GSH_CONFIG"/config.sh ] && source "$GSH_CONFIG"/config.sh
+[ -f "$GSH_BASHRC"/config.sh ] && source "$GSH_BASHRC"/config.sh
 
 
 # shellcheck source=./lib/gameshell.sh
@@ -43,7 +43,7 @@ alias ls="ls --literal"
 
 
 shopt -s nullglob
-for file in "$GSH_CONFIG"/*.bashrc.sh
+for file in "$GSH_BASHRC"/*.bashrc.sh
 do
     # shellcheck source=/dev/null
     export MISSION_DIR=$(basename "$file")
@@ -53,7 +53,7 @@ done
 shopt -u nullglob
 
 shopt -s nullglob
-for file in "$GSH_CONFIG"/*.treasure.sh
+for file in "$GSH_BASHRC"/*.treasure.sh
 do
     # shellcheck source=/dev/null
     export MISSION_DIR=$(basename "$file")
@@ -64,7 +64,7 @@ shopt -u nullglob
 
 unset file MISSION_DIR
 
-[ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_BASE/.git" ] && _gsh_protect
+[ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && _gsh_protect
 
 # save STDIN
 export GSH_STDIN=$(realpath /dev/stdin)

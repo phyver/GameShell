@@ -19,13 +19,13 @@ _log_action() {
   action=$2
   D="$(date +%s)"
   S="$(checksum "$GSH_UID#$MISSION_NB#$action#$D")"
-  echo "$MISSION_NB $action $D $S" >> "$GSH_DATA/missions.log"
+  echo "$MISSION_NB $action $D $S" >> "$GSH_CONFIG/missions.log"
 }
 
 
 # get the last started mission
 _get_current_mission() {
-  local n="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GSH_DATA/missions.log")"
+  local n="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GSH_CONFIG/missions.log")"
   if [ -z "$n" ]
   then
     echo "1"
@@ -39,13 +39,13 @@ _get_current_mission() {
 # get the mission directory
 _get_mission_dir() {
   local n=$1
-  local dir=$(awk -v n="$n" -v DIR="$GSH_MISSIONS" '/^\s*[#!]/{next} /^$/{next} {N++} (N == n){print DIR "/" $0; exit}' "$GSH_DATA/index.txt")
+  local dir=$(awk -v n="$n" -v DIR="$GSH_MISSIONS" '/^\s*[#!]/{next} /^$/{next} {N++} (N == n){print DIR "/" $0; exit}' "$GSH_CONFIG/index.txt")
   echo "$(REALPATH "$dir")"
 }
 
 # welcome message
 _gsh_welcome() {
-  local msg_file=$(eval_gettext '$GSH_BASE/i18n/gameshell-welcome/en.txt')
+  local msg_file=$(eval_gettext '$GSH_ROOT/i18n/gameshell-welcome/en.txt')
   [ -r "$msg_file" ] || return 1
   parchment "$msg_file" Braid
 }
@@ -93,7 +93,7 @@ Do you still want to quit? [y/n]") " r
 
   _log_action "$MISSION_NB" "$signal"
   _gsh_clean "$MISSION_NB"
-  [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_BASE/.git" ] && _gsh_unprotect
+  [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && _gsh_unprotect
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
 }
 
@@ -150,19 +150,19 @@ _gsh_index() {
       continue
     fi
 
-    if grep -q "^$MISSION_NB CHECK_OK" "$GSH_DATA/missions.log"
+    if grep -q "^$MISSION_NB CHECK_OK" "$GSH_CONFIG/missions.log"
     then
       COLOR="green"
       STATUS=" ($(gettext "completed"))"
-    elif grep -q "^$MISSION_NB CHECK_OOPS" "$GSH_DATA/missions.log"
+    elif grep -q "^$MISSION_NB CHECK_OOPS" "$GSH_CONFIG/missions.log"
     then
       COLOR="red"
       STATUS=" ($(gettext "failed"))"
-    elif grep -q "^$MISSION_NB PASS" "$GSH_DATA/missions.log"
+    elif grep -q "^$MISSION_NB PASS" "$GSH_CONFIG/missions.log"
     then
       COLOR="yellow"
       STATUS=" ($(gettext "passed"))"
-    elif grep -q "^$MISSION_NB CANCEL_DEP_PB" "$GSH_DATA/missions.log"
+    elif grep -q "^$MISSION_NB CANCEL_DEP_PB" "$GSH_CONFIG/missions.log"
     then
       COLOR="magenta"
       STATUS=" ($(gettext "cancelled"))"
@@ -182,7 +182,7 @@ _gsh_index() {
     color_echo "$COLOR" "$MISSION$STATUS"
 
     MISSION_NB="$((MISSION_NB + 1))"
-  done < "$GSH_DATA/index.txt"
+  done < "$GSH_CONFIG/index.txt"
 }
 
 
@@ -251,19 +251,19 @@ Restarting from previous mission.")" >&2
     # je sauvegarde l'environnement avant / après l'initialisation pour
     # afficher un message dans ce cas
     _PWD=$(pwd)
-    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_MISSION_DATA"/env-before
+    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-before
     mission_source "$MISSION_DIR/init.sh"
-    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_MISSION_DATA"/env-after
+    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-after
 
     if [ "$BASHPID" != $$ ]
     then
-      if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$GSH_MISSION_DATA"/env-before "$GSH_MISSION_DATA"/env-after
+      if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$GSH_VAR"/env-before "$GSH_VAR"/env-after
       then
         echo "$(gettext "Error: this mission was initialized in a subshell.
 You should run the command
     gsh reset
 to make sure the mission is initialized properly.")" >&2
-        rm -f "$GSH_MISSION_DATA"/env-{before,after}
+        rm -f "$GSH_VAR"/env-{before,after}
       fi
     fi
   fi
@@ -274,9 +274,9 @@ to make sure the mission is initialized properly.")" >&2
   then
     if [ "$MISSION_NB" -eq 1 ]
     then
-      parchment "$(eval_gettext '$GSH_BASE/i18n/gameshell-init-msg/en.txt')" Inverted
+      parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-init-msg/en.txt')" Inverted
     else
-      parchment "$(eval_gettext '$GSH_BASE/i18n/gameshell-init-msg-short/en.txt')" Inverted
+      parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt')" Inverted
     fi
   fi
 }
@@ -368,7 +368,7 @@ _gsh_check() {
     if [ -f "$MISSION_DIR/treasure.sh" ]
     then
       # Record the treasure to be loaded by GameShell's bashrc.
-      cp "$MISSION_DIR/treasure.sh" "$GSH_CONFIG/$(basename "$MISSION_DIR" /).treasure.sh"
+      cp "$MISSION_DIR/treasure.sh" "$GSH_BASHRC/$(basename "$MISSION_DIR" /).treasure.sh"
 
       # Display the text message (if it exists).
       if [ -f "$MISSION_DIR/treasure-msg.sh" ]
@@ -522,29 +522,29 @@ _gsh_test() {
 [ "$GSH_MODE" != "DEBUG" ] && unset -f _gsh_test
 
 _gsh_help() {
-  parchment "$(eval_gettext '$GSH_BASE/i18n/gameshell-help/en.txt')" Parchment2
+  parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-help/en.txt')" Parchment2
 }
 
 _gsh_HELP() {
-  parchment "$(eval_gettext '$GSH_BASE/i18n/gameshell-HELP/en.txt')" Parchment2
+  parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-HELP/en.txt')" Parchment2
 }
 
 _gsh_protect() {
-  chmod a-rw $GSH_BASE
+  chmod a-rw $GSH_ROOT
   chmod a-rw $GSH_MISSIONS
-  chmod a-rw $GSH_DATA
-  chmod a-r $GSH_MISSION_DATA
+  chmod a-rw $GSH_CONFIG
+  chmod a-r $GSH_VAR
   chmod a-rw $GSH_BIN
-  chmod a-rw $GSH_LOCAL_BIN
+  chmod a-rw $GSH_MISSIONS_BIN
 }
 
 _gsh_unprotect() {
-  chmod u+rw $GSH_BASE
+  chmod u+rw $GSH_ROOT
   chmod u+rw $GSH_MISSIONS
-  chmod u+rw $GSH_DATA
-  chmod u+r $GSH_MISSION_DATA
+  chmod u+rw $GSH_CONFIG
+  chmod u+r $GSH_VAR
   chmod u+rw $GSH_BIN
-  chmod u+rw $GSH_LOCAL_BIN
+  chmod u+rw $GSH_MISSIONS_BIN
 }
 
 
@@ -579,7 +579,7 @@ gsh() {
       _gsh_welcome
       ;;
     "stat")
-      awk -v GSH_UID="$GSH_UID" -f "$GSH_BIN/stat.awk" < "$GSH_DATA/missions.log"
+      awk -v GSH_UID="$GSH_UID" -f "$GSH_BIN/stat.awk" < "$GSH_CONFIG/missions.log"
       ;;
     "exit")
       exit 0
