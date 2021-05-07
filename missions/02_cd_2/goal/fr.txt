@@ -17,7 +17,7 @@ cd -
   Retourne dans le lieu précédent.
 
 cd ..
-  Se déplace dans le dossier parent (le lieu qui se trouve 
+  Se déplace dans le répertoire parent (le lieu qui se trouve 
   "avant" le lieu actuel dans la liste donnée par ``pwd``).
 
 pwd
