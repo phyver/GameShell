@@ -85,10 +85,10 @@ environment variables.
 ### `goal.sh` / `goal.txt` (mandatory)
 
 The file `goal.sh` is read by bash (with `source goal.sh`) whenever the player
-runs `gsh show`. It is intended to display the mission instructions.
+runs `gsh goal`. It is intended to display the mission instructions.
 
 As an alternative it is possible to only provide a file `goal.txt` which is
-simply displayed (with `cat goal.txt`) on `gsh show`. This option should be
+simply displayed (with `cat goal.txt`) on `gsh goal`. This option should be
 avoided if you plan to internationalise your mission.
 
 ### `init.sh` (optional)

@@ -10,11 +10,11 @@ Commands specific to GameShell
     (you can start from the current mission by running 
     GameShell with the "-C" flag)
 
+  gsh goal
+    show the current mission's goal
+
   gsh help
     shorter help message
 
   gsh reset
     reset the current mission
-
-  gsh show
-    show the current mission's goal
