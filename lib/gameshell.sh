@@ -4,8 +4,7 @@
 
 source gettext.sh
 
-# shellcheck source=./lib/utils.sh
-source "$GSH_LIB/utils.sh"
+source "$GSH_LIB/common.sh"
 
 trap "_gsh_exit EXIT" EXIT
 trap "_gsh_exit TERM" SIGTERM
