@@ -297,6 +297,10 @@ Do you want to remove it and start a new game? [y/N]') " r
     then
       shopt -s nullglob
       for BIN_FILE in "$MISSION_DIR"/bin/*; do
+        if ! [ -f "$BIN_FILE" ] || ! [ -x "$BIN_FILE" ]
+        then
+          continue
+        fi
         BIN_NAME=$(basename "$BIN_FILE")
         cat > "$GASH_LOCAL_BIN/$BIN_NAME" <<EOH
 #!/bin/bash
