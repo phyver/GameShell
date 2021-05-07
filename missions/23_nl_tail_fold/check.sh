@@ -18,7 +18,7 @@ _mission_check() {
     # I grep the previous command to avoid looping by re-running "gsh check"
     # recursively. Because of the previous remark, I need to look at the "-2"
     # command
-    pc=$(fc -nl -2 -2 | grep -v check)
+    pc=$(fc -nl -2 -2 | grep -v check | grep '|' | grep fold | grep nl | grep tail)
 
     local expected
     expected=$(nl "$(eval_gettext '$MISSION_DIR/recipe/en.txt')" | tail -n 7 | fold -s -w50)
@@ -27,7 +27,7 @@ _mission_check() {
 
     if [ -z "$pc" ]
     then
-        echo "$(gettext "You haven't used the operator '|'!")"
+        echo "$(gettext "You haven't used any redirection '|' or the given commands!")"
         return 1
     fi
     if [ "$res" != "$expected" ]
