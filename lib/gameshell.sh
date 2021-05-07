@@ -120,14 +120,14 @@ _gsh_goal() {
 
   if [ -f "$MISSION_DIR/goal.sh" ]
   then
-    mission_source "$MISSION_DIR/goal.sh" | parchment | more
+    mission_source "$MISSION_DIR/goal.sh" | parchment | PAGER
   elif [ -f "$MISSION_DIR/goal.txt" ]
   then
     FILE="$MISSION_DIR/goal.txt"
-    parchment "$FILE" | more
+    parchment "$FILE" | PAGER
   else
     FILE="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/goal/en.txt')"
-    parchment "$FILE" | more
+    parchment "$FILE" | PAGER
   fi
 }
 
