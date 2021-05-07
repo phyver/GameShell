@@ -9,7 +9,9 @@ fi
 chmod 755 "$GSH_VAR"/generator
 
 "$MISSION_DIR"/linguini.sh &
+echo $! > "$GSH_VAR/linguini.pid"
 disown
 "$MISSION_DIR"/skinner.sh &
+echo $! > "$GSH_VAR/skinner.pid"
 disown
 
