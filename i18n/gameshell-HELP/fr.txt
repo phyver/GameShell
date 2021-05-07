@@ -21,6 +21,10 @@ Commandes propres a GameShell
     (vous pouvez reprendre à la mission en cours en lançant le 
     script start.sh avec l'option -C)
 
+  gsh goal [N]
+    affiche l'objectif de la mission en cours
+    si N est donné, affiche l'objectif de la mission N
+
   gsh goto N                            (ADMIN)
     passe directement à la mission N
 
@@ -43,10 +47,6 @@ Commandes propres a GameShell
 
   gsh reset
     ré-initialise la mission en cours
-
-  gsh show [N]
-    affiche l'objectif de la mission en cours
-    si N est donné, affiche l'objectif de la mission N
 
   gsh test
     lance le script de test de la mission en cours, s'il existe

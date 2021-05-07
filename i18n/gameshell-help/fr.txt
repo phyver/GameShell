@@ -10,11 +10,11 @@ Commandes propres a GameShell
     (vous pouvez recommencer à la mission courante en 
     lançant GameShell avec l'option "-C")
 
+  gsh goal
+    affiche l'objectif de la mission en cours
+
   gsh help
     affiche ce message
 
   gsh reset
     ré-initialise la mission en cours
-
-  gsh show
-    affiche l'objectif de la mission en cours
