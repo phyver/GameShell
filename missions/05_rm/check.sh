@@ -2,7 +2,7 @@
 
 _mission_check() {
     local cellar
-    cellar="$(eval_gettext '$GASH_HOME/Castle/Cellar')"
+    cellar="$(eval_gettext '$GSH_HOME/Castle/Cellar')"
 
     # Check that there are no more spiders.
     local spiders

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=$(eval_gettext '$GASH_HOME/Castle/Kitchen')/$(gettext "Pantry")
+dir=$(eval_gettext '$GSH_HOME/Castle/Kitchen')/$(gettext "Pantry")
 cat > "$dir/$(gettext "barrel_of_apples")" <<'EOF'
 
   ,--./,-.
@@ -24,14 +24,14 @@ cat > "$dir/$(gettext "piece_of_cheese")" <<'EOF'
 
 EOF
 
-cat "$dir"/* | checksum > "$GASH_MISSION_DATA"/pantry
+cat "$dir"/* | checksum > "$GSH_MISSION_DATA"/pantry
 
 if [ -x /usr/bin/python3 ]
 then
-    cp "$MISSION_DIR/cat-generator.py" "$GASH_MISSION_DATA/cat-generator"
+    cp "$MISSION_DIR/cat-generator.py" "$GSH_MISSION_DATA/cat-generator"
 else
-    cp "$MISSION_DIR/cat-generator.sh" "$GASH_MISSION_DATA/cat-generator"
+    cp "$MISSION_DIR/cat-generator.sh" "$GSH_MISSION_DATA/cat-generator"
 fi
-chmod 755 "$GASH_MISSION_DATA/cat-generator"
-"$GASH_MISSION_DATA/cat-generator" "$(eval_gettext '$GASH_HOME/Castle/Kitchen')/$(gettext "Pantry")" "$(gettext "wind-up_cat")" &
+chmod 755 "$GSH_MISSION_DATA/cat-generator"
+"$GSH_MISSION_DATA/cat-generator" "$(eval_gettext '$GSH_HOME/Castle/Kitchen')/$(gettext "Pantry")" "$(gettext "wind-up_cat")" &
 disown

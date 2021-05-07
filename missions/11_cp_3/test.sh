@@ -1,12 +1,12 @@
-cp "$(eval_gettext '$GASH_HOME/Castle/Main_tower/First_floor')/$(head -n1 "$GASH_MISSION_DATA/painting")" "$GASH_CHEST"
-gash assert check true
+cp "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')/$(head -n1 "$GSH_MISSION_DATA/painting")" "$GSH_CHEST"
+gsh assert check true
 
-gash assert check false
+gsh assert check false
 
-cp "$(eval_gettext '$GASH_HOME/Castle/Main_tower/First_floor')/$(gettext "painting")_"* "$GASH_CHEST"
-gash assert check false
+cp "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')/$(gettext "painting")_"* "$GSH_CHEST"
+gsh assert check false
 
-gash assert '[ "$(find "$GASH_HOME" -name "'$(gettext "painting")'_*" | wc -l)" -eq 3 ]'
+gsh assert '[ "$(find "$GSH_HOME" -name "'$(gettext "painting")'_*" | wc -l)" -eq 3 ]'
 
-cp "$(eval_gettext '$GASH_HOME/Castle/Main_tower/First_floor')/$(head -n1 "$GASH_MISSION_DATA/painting")" "$GASH_CHEST"
-gash assert check true
+cp "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')/$(head -n1 "$GSH_MISSION_DATA/painting")" "$GSH_CHEST"
+gsh assert check true

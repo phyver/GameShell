@@ -13,12 +13,12 @@ _mission_check() {
     case "$cmd" in
         *nano*)
             # "cd /" permet d'éviter de valider si les étudiants ont utilisé
-            # alias journal="nano journal.txt" et que le gash check est fait
+            # alias journal="nano journal.txt" et que le gsh check est fait
             # depuis le coffre
             local FILE_NAME
             # FILE_NAME="$(cd / ; eval $(echo "$cmd" | sed 's/nano/$REALPATH/'))"
             FILE_NAME="$(cd / ; eval "${cmd//nano/REALPATH}")"
-            if [ "$FILE_NAME" = "$(REALPATH "$GASH_CHEST/$(gettext "journal").txt")" ]
+            if [ "$FILE_NAME" = "$(REALPATH "$GSH_CHEST/$(gettext "journal").txt")" ]
             then
                 return 0
             else
@@ -28,7 +28,7 @@ _mission_check() {
                 echo "$(eval_gettext "It seems you alias doesn't refer to the appropriate file (\$FILE_NAME).
 Make sure to use an absolute path...")"
                 unalias $(gettext "journal")
-                find "$GASH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -rf
+                find "$GSH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -rf
                 return 1
             fi
 
@@ -36,7 +36,7 @@ Make sure to use an absolute path...")"
         *)
             echo "$(gettext "Your alias doesn't use the command 'nano'...")"
             unalias $(gettext "journal")
-            find "$GASH_HOME" -iname "*$(gettext "journal")*" -print 0 | xargs -0 rm -rf
+            find "$GSH_HOME" -iname "*$(gettext "journal")*" -print 0 | xargs -0 rm -rf
             return 1
             ;;
     esac

@@ -1,2 +1,2 @@
-mv "$(eval_gettext '$GASH_HOME/Castle/Cellar')/$(gettext "coin")_"? "$GASH_CHEST"
-gash check
+mv "$(eval_gettext '$GSH_HOME/Castle/Cellar')/$(gettext "coin")_"? "$GSH_CHEST"
+gsh check

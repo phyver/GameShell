@@ -30,8 +30,8 @@ BEGIN {
     if (nb_mission > last_mission) {
         last_mission = nb_mission;
     }
-    # check actual checksum function in gash
-    cmd = "echo -n \"" GASH_UID "#" $1 "#" $2 "#" $3 "\" | sha1sum | cut -c 1-40"
+    # check actual checksum function in gsh
+    cmd = "echo -n \"" GSH_UID "#" $1 "#" $2 "#" $3 "\" | sha1sum | cut -c 1-40"
     cmd | getline checksum;
     # if (checksum != $4) {
     #     print "CHECKSUM PROBLEM : ";
@@ -70,7 +70,7 @@ BEGIN {
 
 END {
 
-    print "UID : " GASH_UID;
+    print "UID : " GSH_UID;
     cmd = "date -d @" initial_time;
     cmd | getline tmp_date
     print "début du TP : " tmp_date

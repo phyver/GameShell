@@ -1,6 +1,6 @@
 
 revoir l'arborescence :
-   GASH_BASE
+   GSH_BASE
        # statiques
        bin
        missions
@@ -22,9 +22,9 @@ mode debug :
   - pas de mot de passe admin
   - creation du coffre automatiquement
 
-gash auto : utilise un fichier "auto.sh" pour valider la mission
+gsh auto : utilise un fichier "auto.sh" pour valider la mission
 
-mot de passe demandé "dans" les fonctions _gash_...
+mot de passe demandé "dans" les fonctions _gsh_...
 
 vérifier si la commande ldapsearch est présente...
 
@@ -36,13 +36,13 @@ BUG si 2 missions ont le même numéro
 
 améliorer la gestion du coffre pour les scripts "check" :
   - par la fonction _coffre : ajout de scripts "statiques" dans les missions ?
-  - ajout d'une définition GASH_COFFRE GASH_CABANE
+  - ajout d'une définition GSH_COFFRE GSH_CABANE
 
 vérifier la présence du coffre dans les missions ?
 
 
 
-gash replay <speed>, avec un script par mission
+gsh replay <speed>, avec un script par mission
   => compliqué : ttyrec relance un shell à chaque fois, on perd donc certains
   trucs (alias, etc.)
 

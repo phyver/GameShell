@@ -1,17 +1,17 @@
 #!/bin/bash
 
-[ -z "$GASH_CHEST" ] && GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest/Hut/Chest')"
-mkdir -p "$GASH_CHEST"
+[ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
+mkdir -p "$GSH_CHEST"
 
 D=$(date +%s)
 
-rm -f "$(eval_gettext '$GASH_HOME/Castle/Cellar')/.$(gettext "coin")_"*
+rm -f "$(eval_gettext '$GSH_HOME/Castle/Cellar')/.$(gettext "coin")_"*
 
 for I in $(seq 3)
 do
   C=".$(gettext "coin")_$I"
   S=$(checksum "$C#$D")
-  echo "$C#$D $S" > "$(eval_gettext '$GASH_HOME/Castle/Cellar')/${C}_$S"
+  echo "$C#$D $S" > "$(eval_gettext '$GSH_HOME/Castle/Cellar')/${C}_$S"
 done
 
 unset DATE D I C S

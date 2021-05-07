@@ -1,8 +1,8 @@
 cd
-gash assert check false
+gsh assert check false
 
-cd "$(eval_gettext '$GASH_HOME/Castle/Cellar')"
-gash assert check false
+cd "$(eval_gettext '$GSH_HOME/Castle/Cellar')"
+gsh assert check false
 
-cd "$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -name "$(gettext ".Long*Corridor*")" -type d)"
-gash assert check true
+cd "$(find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -name "$(gettext ".Long*Corridor*")" -type d)"
+gsh assert check true

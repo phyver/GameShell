@@ -31,5 +31,5 @@ msgid "Your alias doesn't use the command 'nano'..."
 msgstr "Your alias doesn't use the command 'nano'..."
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Hut/Chest"
+msgid "$GSH_HOME/Forest/Hut/Chest"
 msgstr ""

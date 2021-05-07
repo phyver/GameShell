@@ -1,9 +1,9 @@
 #!/bin/bash
 
 export REAL_HOME="$HOME"
-export HOME="$GASH_HOME"
+export HOME="$GSH_HOME"
 
-export HISTFILE="$GASH_DATA/history"
+export HISTFILE="$GSH_DATA/history"
 export HISTCONTROL="ignoredups"
 export HISTIGNORE=""
 export HISTSIZE=50000
@@ -12,11 +12,11 @@ export HISTFILESIZE=50000
 unset LS_COLORS
 
 # get this game's configuration
-[ -f "$GASH_CONFIG"/config.sh ] && source "$GASH_CONFIG"/config.sh
+[ -f "$GSH_CONFIG"/config.sh ] && source "$GSH_CONFIG"/config.sh
 
 
 # shellcheck source=./lib/gameshell.sh
-source "$GASH_LIB/gameshell.sh"
+source "$GSH_LIB/gameshell.sh"
 
 
 export PS1='[mission $(_get_current_mission)] $ '
@@ -27,15 +27,15 @@ export PS4="+ "
 
 # try to prevent using sudo and similar
 su() {
-    echo "gash: su: command not found" >&2
+    echo "gsh: su: command not found" >&2
 }
 
 sudo() {
-    echo "gash: sudo: command not found" >&2
+    echo "gsh: sudo: command not found" >&2
 }
 
 doas() {
-    echo "gash: doas: command not found" >&2
+    echo "gsh: doas: command not found" >&2
 }
 
 # remove quotes from filenames with special characters
@@ -43,7 +43,7 @@ alias ls="ls --literal"
 
 
 shopt -s nullglob
-for file in "$GASH_CONFIG"/*.bashrc.sh
+for file in "$GSH_CONFIG"/*.bashrc.sh
 do
     # shellcheck source=/dev/null
     export MISSION_DIR=$(basename "$file")
@@ -53,7 +53,7 @@ done
 shopt -u nullglob
 
 shopt -s nullglob
-for file in "$GASH_CONFIG"/*.treasure.sh
+for file in "$GSH_CONFIG"/*.treasure.sh
 do
     # shellcheck source=/dev/null
     export MISSION_DIR=$(basename "$file")
@@ -64,9 +64,9 @@ shopt -u nullglob
 
 unset file MISSION_DIR
 
-[ "$GASH_MODE" != "DEBUG" ] && ! [ -d "$GASH_BASE/.git" ] && _gash_protect
+[ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_BASE/.git" ] && _gsh_protect
 
 # save STDIN
-export GASH_STDIN=$(realpath /dev/stdin)
+export GSH_STDIN=$(realpath /dev/stdin)
 
-_gash_start
+_gsh_start

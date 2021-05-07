@@ -1,9 +1,9 @@
 #!/bin/bash
 
-[ -z "$GASH_CHEST" ] && GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest/Hut/Chest')"
-mkdir -p "$GASH_CHEST"
+[ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
+mkdir -p "$GSH_CHEST"
 
-safe="$(eval_gettext '$GASH_HOME/Castle/Main_building/Throne_room')/$(gettext "Safe")"
+safe="$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')/$(gettext "Safe")"
 mkdir -p "$safe"
 chmod 755 "$safe"
 chmod -f 644 "$safe/$(gettext "crown")"
@@ -17,7 +17,7 @@ cat <<EOK>"$safe/$(gettext "crown")"
  {_${k}_}
 EOK
 
-cp "$safe/$(gettext "crown")" "$GASH_MISSION_DATA"/crown
+cp "$safe/$(gettext "crown")" "$GSH_MISSION_DATA"/crown
 
 chmod 000 "$safe/$(gettext "crown")"
 chmod 000 "$safe"

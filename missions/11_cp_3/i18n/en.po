@@ -13,15 +13,15 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Main_tower/First_floor"
-msgstr "$GASH_HOME/Castle/Main_tower/First_floor"
+msgid "$GSH_HOME/Castle/Main_tower/First_floor"
+msgstr "$GSH_HOME/Castle/Main_tower/First_floor"
 
 #, sh-format
 msgid ""
-"You don't have a chest ($GASH_CHEST).\n"
+"You don't have a chest ($GSH_CHEST).\n"
 "Make one first."
 msgstr ""
-"You don't have a chest ($GASH_CHEST).\n"
+"You don't have a chest ($GSH_CHEST).\n"
 "Make one first."
 
 msgid "painting"
@@ -43,5 +43,5 @@ msgid "The painting in your chest is invalid..."
 msgstr "The painting in your chest is invalid..."
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Hut/Chest"
-msgstr "$GASH_HOME/Forest/Hut/Chest"
+msgid "$GSH_HOME/Forest/Hut/Chest"
+msgstr "$GSH_HOME/Forest/Hut/Chest"

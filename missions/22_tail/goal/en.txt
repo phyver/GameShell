@@ -4,7 +4,7 @@ Mission goal
 While you are still reading the list of ingredients, the hermit 
 stops listening and then asks for the last 4 ingredients.
 
-After showing the required ingredients, run ``gash check``.
+After showing the required ingredients, run ``gsh check``.
 
 
 Useful commands

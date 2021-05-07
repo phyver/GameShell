@@ -77,7 +77,7 @@ the directory structure in the mission, and to install other static files.
 
 The script can make use of the following variables:
 - `$MISSION_DIR` containing an absolute path to the mission directory.
-- `$GASH_HOME` containing an absolute path to the GameShell home directory.
+- `$GSH_HOME` containing an absolute path to the GameShell home directory.
 
 Note that this file is read by bash (with `source static.sh`) so it can create
 environment variables.
@@ -85,10 +85,10 @@ environment variables.
 ### `goal.sh` / `goal.txt` (mandatory)
 
 The file `goal.sh` is read by bash (with `source goal.sh`) whenever the player
-runs `gash show`. It is intended to display the mission instructions.
+runs `gsh show`. It is intended to display the mission instructions.
 
 As an alternative it is possible to only provide a file `goal.txt` which is
-simply displayed (with `cat goal.txt`) on `gash show`. This option should be
+simply displayed (with `cat goal.txt`) on `gsh show`. This option should be
 avoided if you plan to internationalise your mission.
 
 ### `init.sh` (optional)
@@ -107,7 +107,7 @@ the necessary actions to complete the mission.
 
 ### `check.sh` (mandatory)
 
-This file is read by bash (with `source check.sh`) on `gash check` to validate
+This file is read by bash (with `source check.sh`) on `gsh check` to validate
 the mission. It must be terminated by a command returning 0 (typically `true`)
 in case of success, and by a command returning 1 (typically `false`) in case
 of failure. In case of failure an explanation message is expected.
@@ -115,7 +115,7 @@ of failure. In case of failure an explanation message is expected.
 ### `treasure.sh` (optional)
 
 This file is read by bash (with `source treasure.sh`) after the mission has
-been successfully validated (with `gash check`). It can be used to add new
+been successfully validated (with `gsh check`). It can be used to add new
 features as rewards to certain missions.
 
 Note that the file is also added to the global configuration of the bash so

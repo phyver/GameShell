@@ -26,7 +26,7 @@ color_echo() {
     white   |  w) color=7; shift;;
     *) color=7;;
   esac
-  if [ -n "$GASH_COLOR" ]
+  if [ -n "$GSH_COLOR" ]
   then
     tput setaf $color 2>/dev/null
     echo "$@"
@@ -43,7 +43,7 @@ parchment() {
   if [ -x "$(command -v python3)" ]
   then
     local P=$2
-    [ -z "$P" ] && P=$(( 16#$(checksum "$GASH_UID:$MISSION_DIR" | cut -c 10-17) % 7 ))
+    [ -z "$P" ] && P=$(( 16#$(checksum "$GSH_UID:$MISSION_DIR" | cut -c 10-17) % 7 ))
     case "$P" in
       0) P="Parchment1";;
       1) P="Parchment2";;
@@ -58,9 +58,9 @@ parchment() {
     echo ""
     if [ -z "$file" ]
     then
-      python3 "$GASH_BIN/box8.py" --center --box="$P"
+      python3 "$GSH_BIN/box8.py" --center --box="$P"
     else
-      python3 "$GASH_BIN/box8.py" --center --box="$P" < "$file"
+      python3 "$GSH_BIN/box8.py" --center --box="$P" < "$file"
     fi
     echo ""
   else
@@ -78,18 +78,18 @@ parchment() {
 
 # ask admin password, except in DEBUG mode
 admin_mode() {
-  if [ "$GASH_MODE" = "DEBUG" ]
+  if [ "$GSH_MODE" = "DEBUG" ]
   then
     return 0
   fi
 
-  if ! [ -f "$GASH_DATA/admin_hash" ]
+  if ! [ -f "$GSH_DATA/admin_hash" ]
   then
     echo "$(gettext "Error: you are not allowed to run this command.")" >&2
     return 1
   fi
 
-  local HASH=$(cat "$GASH_DATA/admin_hash")
+  local HASH=$(cat "$GSH_DATA/admin_hash")
   for _ in $(seq 3)
   do
     read -serp "$(gettext "password:" )" mdp
@@ -111,7 +111,7 @@ admin_mode() {
 mission_source() {
   local FILENAME=$1
   # if we are not running in DEBUG mode, just source the file
-  if [ "$GASH_MODE" != "DEBUG" ] || [ -z "$GASH_VERBOSE_SOURCE" ]
+  if [ "$GSH_MODE" != "DEBUG" ] || [ -z "$GSH_VERBOSE_SOURCE" ]
   then
     local _TEXTDOMAIN=$TEXTDOMAIN
     export TEXTDOMAIN="$(basename "$MISSION_DIR")"
@@ -124,7 +124,7 @@ mission_source() {
     return $exit_status
   fi
 
-  local TEMP=$(mktemp -d "$GASH_MISSION_DATA/env-XXXXXX")
+  local TEMP=$(mktemp -d "$GSH_MISSION_DATA/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
   local _TEXTDOMAIN=""
   local _MISSION_NAME=""
@@ -135,7 +135,7 @@ mission_source() {
   compgen -v | sort > "$TEMP"/before-V
   compgen -A function | sort > "$TEMP"/before-F
   compgen -a | sort > "$TEMP"/before-A
-  ls "$GASH_MISSION_DATA" > "$TEMP"/before-D
+  ls "$GSH_MISSION_DATA" > "$TEMP"/before-D
   _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="$(basename "$MISSION_DIR")"
   _MISSION_NAME=$MISSION_NAME
@@ -149,9 +149,9 @@ mission_source() {
   # be used when sourcing check.sh)
   compgen -A function | grep -v "_mission_check" | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
-  ls "$GASH_MISSION_DATA" > "$TEMP"/after-D
+  ls "$GSH_MISSION_DATA" > "$TEMP"/after-D
 
-  local msg="DEBUG: environment modifications while sourcing .../${FILENAME#$GASH_BASE/}"
+  local msg="DEBUG: environment modifications while sourcing .../${FILENAME#$GSH_BASE/}"
   if ! cmp -s "$TEMP"/{before,after}-V
   then
     [ -n "$msg" ] && echo "$msg"

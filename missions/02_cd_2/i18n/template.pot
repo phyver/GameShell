@@ -13,7 +13,7 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Cellar"
+msgid "$GSH_HOME/Castle/Cellar"
 msgstr ""
 
 msgid "You are not in the cellar..."

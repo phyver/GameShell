@@ -1,1 +1,1 @@
-mkdir -p "$(eval_gettext '$GASH_HOME/Stall')"
+mkdir -p "$(eval_gettext '$GSH_HOME/Stall')"

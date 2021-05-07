@@ -4,7 +4,7 @@
 _mission_check() {
     local COIN_NAME=".$(gettext "coin")_$1"
 
-    local n=$(find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -maxdepth 1 -name "$COIN_NAME*" | wc -l)
+    local n=$(find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -maxdepth 1 -name "$COIN_NAME*" | wc -l)
     if [ "$n" -gt 1 ]
     then
         echo "$(eval_gettext "There are several '\$COIN_NAME...' in the cellar!")"
@@ -15,7 +15,7 @@ _mission_check() {
         return 1
     fi
 
-    local n=$(find "$GASH_CHEST" -maxdepth 1 -name "$COIN_NAME*" | wc -l)
+    local n=$(find "$GSH_CHEST" -maxdepth 1 -name "$COIN_NAME*" | wc -l)
     if [ "$n" -gt 1 ]
     then
         echo "$(eval_gettext "There are several '\$COIN_NAME...' in your chest!")"
@@ -26,7 +26,7 @@ _mission_check() {
         return 1
     fi
 
-    local chest_coin=$(find "$GASH_CHEST" -maxdepth 1 -name "$COIN_NAME*")
+    local chest_coin=$(find "$GSH_CHEST" -maxdepth 1 -name "$COIN_NAME*")
     # Verify the checksum in the coin.
     local COIN_DATA=$(cut -f 1 -d ' ' "$chest_coin")
     local CHECK_SUM=$(cut -f 2 -d ' ' "$chest_coin")
@@ -50,13 +50,13 @@ _mission_check() {
 if _mission_check 1 && _mission_check 2 && _mission_check 3
 then
     unset -f _mission_check
-    unset GASH_CHEST
+    unset GSH_CHEST
     true
 else
-    find "$GASH_HOME" -name ".$(gettext "coin")_?_*" -type f -print0 | xargs -0 rm -f
-    find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -iname "*$(gettext "chest")*" -type f -print0 | xargs -0 rm -f
-    find "$(eval_gettext '$GASH_HOME/Castle/Cellar')" -iname "*$(gettext "hut")*" -type f -print0 | xargs -0 rm -f
+    find "$GSH_HOME" -name ".$(gettext "coin")_?_*" -type f -print0 | xargs -0 rm -f
+    find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -iname "*$(gettext "chest")*" -type f -print0 | xargs -0 rm -f
+    find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -iname "*$(gettext "hut")*" -type f -print0 | xargs -0 rm -f
     unset -f _mission_check
-    unset CELLAR GASH_CHEST
+    unset CELLAR GSH_CHEST
     false
 fi

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _mission_check() {
-    local maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
+    local maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
 
     local coin=$(find "$maze" -name "$(gettext "copper_coin")")
 
@@ -12,14 +12,14 @@ _mission_check() {
     fi
 
     local coin
-    coin=$(find "$GASH_CHEST" -maxdepth 1 -name "$(gettext "copper_coin")")
+    coin=$(find "$GSH_CHEST" -maxdepth 1 -name "$(gettext "copper_coin")")
     if [ -z "$coin" ]
     then
         echo "$(gettext "There is no copper coin in your chest!")"
         return 1
     fi
 
-    if ! cmp -s "$coin" "$GASH_MISSION_DATA/copper_coin"
+    if ! cmp -s "$coin" "$GSH_MISSION_DATA/copper_coin"
     then
         echo "$(gettext "Booh... The copper coin in you chest is invalid!")"
         return 1

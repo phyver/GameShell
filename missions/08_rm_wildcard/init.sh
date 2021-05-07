@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CELLAR=$(eval_gettext "\$GASH_HOME/Castle/Cellar")
+CELLAR=$(eval_gettext "\$GSH_HOME/Castle/Cellar")
 mkdir -p "$CELLAR"
 rm -f "$CELLAR"/.??*
 
@@ -14,6 +14,6 @@ do
   touch "${CELLAR}/.${RANDOM}_${I}_$(gettext "spider")"
 done
 
-find "$CELLAR" -maxdepth 1 -name ".*$(gettext "salamander")" | sort | checksum > "$GASH_MISSION_DATA/salamanders"
+find "$CELLAR" -maxdepth 1 -name ".*$(gettext "salamander")" | sort | checksum > "$GSH_MISSION_DATA/salamanders"
 
 unset CELLAR D I S

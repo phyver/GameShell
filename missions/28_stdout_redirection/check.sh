@@ -2,7 +2,7 @@
 
 _mission_check() {
     local office
-    office="$(eval_gettext '$GASH_HOME/Castle/Main_building/Library/Merlin_s_office')"
+    office="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
     INVENTORY_FILE="$(gettext "inventory.txt")"
 
     if [ ! -f "$office/$(gettext "Drawer")/$INVENTORY_FILE" ]
@@ -11,7 +11,7 @@ _mission_check() {
         return 1
     fi
 
-    if ! cmp -s <(sort "$office/$(gettext "Drawer")/$INVENTORY_FILE") "$GASH_MISSION_DATA/inventory_grimoires"
+    if ! cmp -s <(sort "$office/$(gettext "Drawer")/$INVENTORY_FILE") "$GSH_MISSION_DATA/inventory_grimoires"
     then
         echo "$(eval_gettext 'The content of $INVENTORY_FILE is invalid.
 You can check its content with the command

@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Main_building/Library/Merlin_s_office"
-msgstr "$GASH_HOME/Castle/Main_building/Library/Merlin_s_office"
+msgid "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
+msgstr "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
 
 msgid "Drawer"
 msgstr "Drawer"

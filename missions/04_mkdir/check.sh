@@ -1,8 +1,8 @@
 #!/bin/bash
 
 _mission_check() {
-    local forest="$(eval_gettext '$GASH_HOME/Forest')"
-    local HUT_DIR=$(eval_gettext '$GASH_HOME/Forest')/$(gettext "Hut")
+    local forest="$(eval_gettext '$GSH_HOME/Forest')"
+    local HUT_DIR=$(eval_gettext '$GSH_HOME/Forest')/$(gettext "Hut")
 
     # Check that there is only one hut.
     local nb_huts
@@ -41,9 +41,9 @@ _mission_check() {
 
     # Check that the chest is at the root of the hut.
     local chest
-    if ! [ -d "$GASH_CHEST" ]
+    if ! [ -d "$GSH_CHEST" ]
     then
-        echo "$(eval_gettext "The \$GASH_CHEST directory does not exist!")"
+        echo "$(eval_gettext "The \$GSH_CHEST directory does not exist!")"
         return 1
     fi
 

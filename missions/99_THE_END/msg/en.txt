@@ -5,6 +5,6 @@ CONGRATULATIONS!
 You have finished all the missions.
 
 
-You can run ``gash check`` to start a new 
+You can run ``gsh check`` to start a new 
 game in "admin" mode if you want.
 

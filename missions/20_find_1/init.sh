@@ -1,9 +1,9 @@
 #!/bin/bash
 
-[ -z "$GASH_CHEST" ] && GASH_CHEST="$(eval_gettext '$GASH_HOME/Forest/Hut/Chest')"
-mkdir -p "$GASH_CHEST"
+[ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
+mkdir -p "$GSH_CHEST"
 
-maze="$(eval_gettext '$GASH_HOME/Garden/.Maze')"
+maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
 rm -rf "$maze"/?*
 
 gen_maze_sh(){
@@ -30,11 +30,11 @@ gen_maze_sh(){
                 if [ "$r1" = "$i,$j,$k" ]
                 then
                     echo "$I $J $K" > "$maze/$I/$J/$K/$(gettext "gold_coin")"
-                    echo "$I $J $K" > "$GASH_MISSION_DATA/gold_coin"
+                    echo "$I $J $K" > "$GSH_MISSION_DATA/gold_coin"
                 elif [ "$r2" = "$i,$j,$k" ]
                 then
                     echo "$I $J $K" > "$maze/$I/$J/$K/$(gettext "GolD_CoiN")"
-                    echo "$I $J $K" > "$GASH_MISSION_DATA/GolD_CoiN"
+                    echo "$I $J $K" > "$GSH_MISSION_DATA/GolD_CoiN"
                 fi
             done
             echo -n "."
@@ -49,9 +49,9 @@ gen_maze_py(){
     local d1=$(echo "$d" | head -n 1)
     local d2=$(echo "$d" | head -n 1)
     echo "$(checksum "$d1")" > "$maze/$d1/$(gettext "gold_coin")"
-    echo "$(checksum "$d1")" > "$GASH_MISSION_DATA/gold_coin"
+    echo "$(checksum "$d1")" > "$GSH_MISSION_DATA/gold_coin"
     echo "$(checksum "$d2")" > "$maze/$d2/$(gettext "GolD_CoiN")"
-    echo "$(checksum "$d2")" > "$GASH_MISSION_DATA/GolD_CoiN"
+    echo "$(checksum "$d2")" > "$GSH_MISSION_DATA/GolD_CoiN"
 }
 
 if ! command -v python3 > /dev/null

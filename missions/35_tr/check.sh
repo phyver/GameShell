@@ -3,11 +3,11 @@
 echo "$(gettext "What's the key that will make Merlin's chest to appear?")"
 read -er dcode
 
-if [ "$dcode" = "$(cat "$GASH_MISSION_DATA/secret_key")" ]
+if [ "$dcode" = "$(cat "$GSH_MISSION_DATA/secret_key")" ]
 then
     unset dcode
-    mkdir -p "$(eval_gettext '$GASH_HOME/Castle/Cellar/Merlin_s_Chest')"
-    cp "$(eval_gettext '$MISSION_DIR/secret_recipe/en.txt')" "$(eval_gettext '$GASH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe')"
+    mkdir -p "$(eval_gettext '$GSH_HOME/Castle/Cellar/Merlin_s_Chest')"
+    cp "$(eval_gettext '$MISSION_DIR/secret_recipe/en.txt')" "$(eval_gettext '$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe')"
     true
 else
     echo "$(gettext "That's not the secret key.")"

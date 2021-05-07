@@ -14,7 +14,7 @@ Remark
 ------
 
 You are only allowed 3 commands to find the King's debt.
-You can always reset the counter with `gash reset`, but the whole 
+You can always reset the counter with `gsh reset`, but the whole 
 stall and the debts of everyone will be re-generated as well.
 
 

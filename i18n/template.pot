@@ -4,27 +4,27 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/gameshell-HELP/en.txt"
+msgid   "$GSH_BASE/i18n/gameshell-HELP/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/gameshell-help/en.txt"
+msgid   "$GSH_BASE/i18n/gameshell-help/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
+msgid   "$GSH_BASE/i18n/gameshell-init-msg-short/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
+msgid   "$GSH_BASE/i18n/gameshell-init-msg/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/gameshell-welcome/en.txt"
+msgid   "$GSH_BASE/i18n/gameshell-welcome/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/start-help/en.txt"
+msgid   "$GSH_BASE/i18n/start-help/en.txt"
 msgstr  ""
 
 #, sh-format
@@ -51,7 +51,7 @@ msgid   "Congratulations, $MISSION_NB has been successfully completed!"
 msgstr  ""
 
 #, sh-format
-msgid   "Error: _gash_assert_check only accept 'true' and 'false' as argument."
+msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
 msgstr  ""
 
 #, sh-format
@@ -94,12 +94,12 @@ msgstr  ""
 msgid   "Error: the 'goto' command requires a mission number as argument."
 msgstr  ""
 
-msgid   "Error: the command 'gash reset' is useless when run inside a subshell!"
+msgid   "Error: the command 'gsh reset' is useless when run inside a subshell!"
 msgstr  ""
 
 msgid   "Error: this mission was initialized in a subshell.\n"
         "You should run the command\n"
-        "    gash reset\n"
+        "    gsh reset\n"
         "to make sure the mission is initialized properly."
 msgstr  ""
 
@@ -107,7 +107,7 @@ msgid   "Error: this option is only available from an executable archive!"
 msgstr  ""
 
 #, sh-format
-msgid   "Error: unknown gash command '$CMD'.\n"
+msgid   "Error: unknown gsh command '$CMD'.\n"
         "Use one of the following commands:"
 msgstr  ""
 
@@ -151,7 +151,7 @@ msgid   "Sorry, mission $MISSION_NB hasn't been completed."
 msgstr  ""
 
 #, sh-format
-msgid   "The directory $GASH_DATA contains meta-data from a previous game.\n"
+msgid   "The directory $GSH_DATA contains meta-data from a previous game.\n"
         "Do you want to remove it and start a new game? [y/N]"
 msgstr  ""
 

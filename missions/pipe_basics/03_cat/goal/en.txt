@@ -7,7 +7,7 @@ appearance of anyone. Read the recipe of the potion from the
 hermit's book.
 
 In order to validate the mission, your last command prior to 
-``gash check`` must show the whole recipe (title and steps).
+``gsh check`` must show the whole recipe (title and steps).
 
 
 Useful commands

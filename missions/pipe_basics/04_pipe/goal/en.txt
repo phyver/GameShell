@@ -6,7 +6,7 @@ sees promise in your ability to lookup lists of ingredients.
 He challenges you to find the steps for the elixir of Youth.
 
 In order to validate the mission, your last command prior to 
-``gash check`` must show the steps for the recipe and nothing 
+``gsh check`` must show the steps for the recipe and nothing 
 else (no title, no blank lines).
 
 

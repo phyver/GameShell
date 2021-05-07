@@ -1,6 +1,6 @@
 #!/bin/bash
 
-goal=$(REALPATH "$(eval_gettext "\$GASH_HOME/Castle/Cellar")")
+goal=$(REALPATH "$(eval_gettext "\$GSH_HOME/Castle/Cellar")")
 current=$(REALPATH "$PWD")
 
 if [ "$goal" = "$current" ]

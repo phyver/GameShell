@@ -1,7 +1,7 @@
 #!/bin/bash
 
 S1=$(basename "$PWD" / | checksum)
-S2=$(cat "$GASH_MISSION_DATA/corridor")
+S2=$(cat "$GSH_MISSION_DATA/corridor")
 
 if [ "$S1" = "$S2" ]
 then
@@ -10,7 +10,7 @@ then
 else
     unset S1 S2
     cd
-    rm -rf "$(eval_gettext '$GASH_HOME/Castle/Cellar')"/$(eval_gettext '.Long*Corridor*')
+    rm -rf "$(eval_gettext '$GSH_HOME/Castle/Cellar')"/$(eval_gettext '.Long*Corridor*')
     echo "$(gettext "Pffft... You are back to the beginning, in front of the castle...")"
     false
 fi

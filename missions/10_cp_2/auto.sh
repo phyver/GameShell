@@ -1,2 +1,2 @@
-cp "$(eval_gettext '$GASH_HOME/Castle/Entrance')"/*_$(gettext "ornament")_* "$GASH_CHEST"
-gash check
+cp "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/*_$(gettext "ornament")_* "$GSH_CHEST"
+gsh check

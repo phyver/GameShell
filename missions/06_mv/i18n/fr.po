@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/goal/en.txt"
 msgstr "$MISSION_DIR/goal/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Cellar"
-msgstr "$GASH_HOME/Chateau/Cave"
+msgid "$GSH_HOME/Castle/Cellar"
+msgstr "$GSH_HOME/Chateau/Cave"
 
 msgid "coin"
 msgstr "pièce"
@@ -38,5 +38,5 @@ msgid "hut"
 msgstr "hutte"
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Hut/Chest"
-msgstr "$GASH_HOME/Foret/Hutte/Coffre"
+msgid "$GSH_HOME/Forest/Hut/Chest"
+msgstr "$GSH_HOME/Foret/Hutte/Coffre"

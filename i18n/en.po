@@ -4,28 +4,28 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/gameshell-HELP/en.txt"
-msgstr  "$GASH_BASE/i18n/gameshell-HELP/en.txt"
+msgid   "$GSH_BASE/i18n/gameshell-HELP/en.txt"
+msgstr  "$GSH_BASE/i18n/gameshell-HELP/en.txt"
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/gameshell-help/en.txt"
-msgstr  "$GASH_BASE/i18n/gameshell-help/en.txt"
+msgid   "$GSH_BASE/i18n/gameshell-help/en.txt"
+msgstr  "$GSH_BASE/i18n/gameshell-help/en.txt"
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
-msgstr  "$GASH_BASE/i18n/gameshell-init-msg-short/en.txt"
+msgid   "$GSH_BASE/i18n/gameshell-init-msg-short/en.txt"
+msgstr  "$GSH_BASE/i18n/gameshell-init-msg-short/en.txt"
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
-msgstr  "$GASH_BASE/i18n/gameshell-init-msg/en.txt"
+msgid   "$GSH_BASE/i18n/gameshell-init-msg/en.txt"
+msgstr  "$GSH_BASE/i18n/gameshell-init-msg/en.txt"
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/gameshell-welcome/en.txt"
-msgstr  "$GASH_BASE/i18n/gameshell-welcome/en.txt"
+msgid   "$GSH_BASE/i18n/gameshell-welcome/en.txt"
+msgstr  "$GSH_BASE/i18n/gameshell-welcome/en.txt"
 
 #, sh-format
-msgid   "$GASH_BASE/i18n/start-help/en.txt"
-msgstr  "$GASH_BASE/i18n/start-help/en.txt"
+msgid   "$GSH_BASE/i18n/start-help/en.txt"
+msgstr  "$GSH_BASE/i18n/start-help/en.txt"
 
 #, sh-format
 msgid   "$MISSION_DIR/goal/en.txt"
@@ -51,8 +51,8 @@ msgid   "Congratulations, $MISSION_NB has been successfully completed!"
 msgstr  "Congratulations, $MISSION_NB has been successfully completed!"
 
 #, sh-format
-msgid   "Error: _gash_assert_check only accept 'true' and 'false' as argument."
-msgstr  "Error: _gash_assert_check only accept 'true' and 'false' as argument."
+msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
+msgstr  "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
 
 #, sh-format
 msgid   "Error: command '$CMD' is only available in debug mode."
@@ -96,25 +96,25 @@ msgstr  "Error: no mission was found!\n"
 msgid   "Error: the 'goto' command requires a mission number as argument."
 msgstr  "Error: the 'goto' command requires a mission number as argument."
 
-msgid   "Error: the command 'gash reset' is useless when run inside a subshell!"
-msgstr  "Error: the command 'gash reset' is useless when run inside a subshell!"
+msgid   "Error: the command 'gsh reset' is useless when run inside a subshell!"
+msgstr  "Error: the command 'gsh reset' is useless when run inside a subshell!"
 
 msgid   "Error: this mission was initialized in a subshell.\n"
         "You should run the command\n"
-        "    gash reset\n"
+        "    gsh reset\n"
         "to make sure the mission is initialized properly."
 msgstr  "Error: this mission was initialized in a subshell.\n"
         "You should run the command\n"
-        "    gash reset\n"
+        "    gsh reset\n"
         "to make sure the mission is initialized properly."
 
 msgid   "Error: this option is only available from an executable archive!"
 msgstr  "Error: this option is only available from an executable archive!"
 
 #, sh-format
-msgid   "Error: unknown gash command '$CMD'.\n"
+msgid   "Error: unknown gsh command '$CMD'.\n"
         "Use one of the following commands:"
-msgstr  "Error: unknown gash command '$CMD'.\n"
+msgstr  "Error: unknown gsh command '$CMD'.\n"
         "Use one of the following commands:"
 
 #, sh-format
@@ -158,9 +158,9 @@ msgid   "Sorry, mission $MISSION_NB hasn't been completed."
 msgstr  "Sorry, mission $MISSION_NB hasn't been completed."
 
 #, sh-format
-msgid   "The directory $GASH_DATA contains meta-data from a previous game.\n"
+msgid   "The directory $GSH_DATA contains meta-data from a previous game.\n"
         "Do you want to remove it and start a new game? [y/N]"
-msgstr  "The directory $GASH_DATA contains meta-data from a previous game.\n"
+msgstr  "The directory $GSH_DATA contains meta-data from a previous game.\n"
         "Do you want to remove it and start a new game? [y/N]"
 
 msgid   "There are stopped jobs in your session.\n"

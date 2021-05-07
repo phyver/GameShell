@@ -13,8 +13,8 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GASH_HOME/Castle/Observatory"
-msgstr "$GASH_HOME/Chateau/Observatoire"
+msgid "$GSH_HOME/Castle/Observatory"
+msgstr "$GSH_HOME/Chateau/Observatoire"
 
 msgid "What is the secret key?"
 msgstr "Quelle est la clé secrête ?"

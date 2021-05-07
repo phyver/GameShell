@@ -31,14 +31,14 @@ parse_mission() {
     # if a directory contains a check.sh script, it is a standard mission
     elif  [ -f "$MISSION_DIR/check.sh" ] || [ -n "$DUMMY" ]
     then
-      echo "$DUMMY${MISSION_DIR#$GASH_MISSIONS/}"
+      echo "$DUMMY${MISSION_DIR#$GSH_MISSIONS/}"
 
     # when given a directory containing either a "bin" directory or a
     # "static.sh" script, this is a dummy mission. Just print the path
     # prefixed with a "!"
     elif [ -f "$MISSION_DIR/static.sh" ] || [ -d "$MISSION_DIR/bin" ]
     then
-      echo "!${MISSION_DIR#$GASH_MISSIONS/}"
+      echo "!${MISSION_DIR#$GSH_MISSIONS/}"
 
     else
       echo "        invalid argument (parse_mission): $MISSION_DIR" >&2
@@ -56,16 +56,16 @@ parse_index() {
   local dir DUMMY
 
   case "$index_file" in
-    "$GASH_MISSIONS"* )
-      # if the index file lives under $GASH_MISSIONS, the "current root
+    "$GSH_MISSIONS"* )
+      # if the index file lives under $GSH_MISSIONS, the "current root
       # directory" for missions is just dirname $index_file: all missions read
       # from the file will be relative to $dir
       dir=$(dirname "$index_file")
       ;;
     *)
       # otherwise, we assume all the missions in the file are given relative to
-      # $GASH_MISSIONS
-      dir=$GASH_MISSIONS
+      # $GSH_MISSIONS
+      dir=$GSH_MISSIONS
       ;;
   esac
 
@@ -96,7 +96,7 @@ make_index() {
   if [ "$#" -eq 0 ]
   then
     # without argument, use the default index file
-    parse_index "$GASH_MISSIONS/index.txt"
+    parse_index "$GSH_MISSIONS/index.txt"
     return 0
       # when given a directory containing either a "bin" directory or a
       # "static.sh" script, this is a dummy mission. Just print the path

@@ -24,8 +24,8 @@ msgid "The file '$JOURNAL_FILE' is empty..."
 msgstr "Le fichier '$JOURNAL_FILE' est vide..."
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Hut/Chest"
-msgstr "$GASH_HOME/Foret/Hutte/Coffre"
+msgid "$GSH_HOME/Forest/Hut/Chest"
+msgstr "$GSH_HOME/Foret/Hutte/Coffre"
 
 #, sh-format
 msgid ""

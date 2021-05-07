@@ -8,7 +8,7 @@ _mission_check() {
     sleep 1
     echo .
 
-    local dir=$(eval_gettext '$GASH_HOME/Castle/Kitchen')/$(gettext "Pantry")
+    local dir=$(eval_gettext '$GSH_HOME/Castle/Kitchen')/$(gettext "Pantry")
     local cat=$(find "$dir" -name "*_$(gettext "wind-up_cat")")
 
     if [ -n "$cat" ]
@@ -25,7 +25,7 @@ _mission_check() {
     fi
 
     local sum=$(cat "$dir"/* | checksum)
-    if [ "$sum" != "$(cat "$GASH_MISSION_DATA/pantry")" ]
+    if [ "$sum" != "$(cat "$GSH_MISSION_DATA/pantry")" ]
     then
         echo "$(gettext "The content of the pantry has changed!")"
         return 1

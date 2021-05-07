@@ -13,7 +13,7 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Garden/.Maze"
+msgid "$GSH_HOME/Garden/.Maze"
 msgstr ""
 
 msgid "coin"
@@ -48,7 +48,7 @@ msgid ""
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Forest/Hut/Chest"
+msgid "$GSH_HOME/Forest/Hut/Chest"
 msgstr ""
 
 msgid "maze generation:"
@@ -58,9 +58,9 @@ msgid "GolD_CoiN"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Garden/Orchard"
+msgid "$GSH_HOME/Garden/Orchard"
 msgstr ""
 
 #, sh-format
-msgid "$GASH_HOME/Garden/Shed"
+msgid "$GSH_HOME/Garden/Shed"
 msgstr ""
