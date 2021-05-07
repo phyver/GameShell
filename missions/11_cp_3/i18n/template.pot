@@ -1,45 +1,43 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_tower/First_floor"
+msgstr  ""
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  ""
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+msgid   "The painting in your chest is invalid..."
+msgstr  ""
+
+msgid   "The painting is not in the tower anymore..."
+msgstr  ""
+
+msgid   "The painting is not in your chest..."
+msgstr  ""
+
+msgid   "There are too many paintings in your chest..."
+msgstr  ""
+
+msgid   "There is no painting in your chest..."
+msgstr  ""
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Main_tower/First_floor"
-msgstr ""
+msgid   "You don't have a chest ($GSH_CHEST).\n"
+        "Make one first."
+msgstr  ""
 
-#, sh-format
-msgid ""
-"You don't have a chest ($GSH_CHEST).\n"
-"Make one first."
-msgstr ""
-
-msgid "painting"
-msgstr ""
-
-msgid "There is no painting in your chest..."
-msgstr ""
-
-msgid "There are too many paintings in your chest..."
-msgstr ""
-
-msgid "The painting is not in the tower anymore..."
-msgstr ""
-
-msgid "The painting is not in your chest..."
-msgstr ""
-
-msgid "The painting in your chest is invalid..."
-msgstr ""
-
-#, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr ""
+msgid   "painting"
+msgstr  ""

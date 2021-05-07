@@ -1,42 +1,41 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Entrance"
-msgstr "$GSH_HOME/Chateau/Entree"
-
-msgid "ornament"
-msgstr "ornement"
-
-msgid "You changed the contents of the entrance!"
-msgstr "Vous avez changé le contenu de l'entrée !"
-
-msgid "garbage"
-msgstr "détritus"
-
-msgid "gravel"
-msgstr "gravas"
-
-msgid "hay"
-msgstr "foin"
-
-msgid "I only wanted the ornaments!"
-msgstr "Je ne voulais que les ornements !"
-
-msgid "I wanted all the ornements!"
-msgstr "Je voulais tous les ornements !"
+msgid   "$GSH_HOME/Castle/Entrance"
+msgstr  "$GSH_HOME/Chateau/Entree"
 
 #, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr "$GSH_HOME/Foret/Hutte/Coffre"
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
+
+msgid   "I only wanted the ornaments!"
+msgstr  "Je ne voulais que les ornements !"
+
+msgid   "I wanted all the ornements!"
+msgstr  "Je voulais tous les ornements !"
+
+msgid   "You changed the contents of the entrance!"
+msgstr  "Vous avez changé le contenu de l'entrée !"
+
+msgid   "garbage"
+msgstr  "détritus"
+
+msgid   "gravel"
+msgstr  "gravas"
+
+msgid   "hay"
+msgstr  "foin"
+
+msgid   "ornament"
+msgstr  "ornement"

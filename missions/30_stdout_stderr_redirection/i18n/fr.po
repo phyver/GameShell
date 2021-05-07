@@ -1,28 +1,25 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Observatory"
+msgstr  "$GSH_HOME/Chateau/Observatoire"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Observatory"
-msgstr "$GSH_HOME/Chateau/Observatoire"
+msgid   "The python3 interpreter, or a C compiler is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install one of the packages 'python3', 'gcc' or 'clang')"
+msgstr  "Un interpréteur python3, ou un compilateur C est nécessaire pour la mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu : installez un des paquest 'python3', 'gcc' ou 'clang')"
 
-msgid "What is the secret key?"
-msgstr "Quelle est la clé secrête ?"
-
-#, sh-format
-msgid ""
-"The python3 interpreter, or a C compiler is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install one of the packages 'python3', 'gcc' or 'clang')"
-msgstr ""
-"Un interpréteur python3, ou un compilateur C est nécessaire pour la mission $MISSION_NAME.\n"
-"(Debian / Ubuntu : installez un des paquest 'python3', 'gcc' ou 'clang')"
+msgid   "What is the secret key?"
+msgstr  "Quelle est la clé secrête ?"

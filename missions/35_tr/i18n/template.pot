@@ -1,48 +1,46 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar/Merlin_s_Chest"
+msgstr  ""
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
+msgstr  ""
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Library/"
+msgstr  ""
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Library/.secret_message"
+msgstr  ""
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
+
+#, sh-format
+msgid   "$MISSION_DIR/secret_recipe/en.txt"
+msgstr  ""
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
 
-msgid "What's the key that will make Merlin's chest to appear?"
-msgstr ""
+msgid   "That's not the secret key."
+msgstr  ""
 
-#, sh-format
-msgid "$GSH_HOME/Castle/Cellar/Merlin_s_Chest"
-msgstr ""
-
-#, sh-format
-msgid "$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
-msgstr ""
+msgid   "What's the key that will make Merlin's chest to appear?"
+msgstr  ""
 
 #, sh-format
-msgid "$MISSION_DIR/secret_recipe/en.txt"
-msgstr ""
-
-msgid "That's not the secret key."
-msgstr ""
-
-#, sh-format
-msgid ""
-"here is my will:\n"
-"you will get my chest, and everything it contains.\n"
-"this check is in the cellar, and the key to make\n"
-"it re-appear is: $SECRET_KEY\n"
-"merlin the enchanter"
-msgstr ""
-
-#, sh-format
-msgid "$GSH_HOME/Castle/Main_building/Library/.secret_message"
-msgstr ""
-
-#, sh-format
-msgid "$GSH_HOME/Castle/Main_building/Library/"
-msgstr ""
+msgid   "here is my will:\n"
+        "you will get my chest, and everything it contains.\n"
+        "this check is in the cellar, and the key to make\n"
+        "it re-appear is: $SECRET_KEY\n"
+        "merlin the enchanter"
+msgstr  ""

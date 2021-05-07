@@ -1,45 +1,43 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Library"
+msgstr  "$GSH_HOME/Castle/Main_building/Library"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+msgid   "Greek_Latin_and_other_modern_languages"
+msgstr  "Greek_Latin_and_other_modern_languages"
+
+msgid   "How_to_cheat_for_exams"
+msgstr  "How_to_cheat_for_exams"
+
+msgid   "Mathematics_101"
+msgstr  "Mathematics_101"
+
+msgid   "That's not even a number!"
+msgstr  "That's not even a number!"
+
+msgid   "The book 'Mathematics_101' contains all the anwsers for the exam.\n"
+        "\n"
+        "You just need to copy all the lines in this book."
+msgstr  "The book 'Mathematics_101' contains all the anwsers for the exam.\n"
+        "\n"
+        "You just need to copy all the lines in this book."
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Main_building/Library"
-msgstr "$GSH_HOME/Castle/Main_building/Library"
+msgid   "Too bad! The expected answer was $c..."
+msgstr  "Too bad! The expected answer was $c..."
 
-msgid "Mathematics_101"
-msgstr "Mathematics_101"
-
-msgid "Too slow! You need to give the answers in less than 10 seconds..."
-msgstr "Too slow! You need to give the answers in less than 10 seconds..."
-
-msgid "That's not even a number!"
-msgstr "That's not even a number!"
-
-#, sh-format
-msgid "Too bad! The expected answer was $c..."
-msgstr "Too bad! The expected answer was $c..."
-
-msgid "Greek_Latin_and_other_modern_languages"
-msgstr "Greek_Latin_and_other_modern_languages"
-
-msgid ""
-"The book 'Mathematics_101' contains all the anwsers for the exam.\n"
-"\n"
-"You just need to copy all the lines in this book."
-msgstr ""
-"The book 'Mathematics_101' contains all the anwsers for the exam.\n"
-"\n"
-"You just need to copy all the lines in this book."
-
-msgid "How_to_cheat_for_exams"
-msgstr "How_to_cheat_for_exams"
+msgid   "Too slow! You need to give the answers in less than 10 seconds..."
+msgstr  "Too slow! You need to give the answers in less than 10 seconds..."

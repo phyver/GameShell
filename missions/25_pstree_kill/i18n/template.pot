@@ -1,50 +1,47 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Kitchen"
+msgstr  ""
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+msgid   "Are you sure you killed all the rat poison generators?"
+msgstr  ""
+
+msgid   "Did you eat some cheese?"
+msgstr  ""
+
+msgid   "Did you kill some cheese generator?"
+msgstr  ""
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Kitchen"
-msgstr ""
-
-msgid "rat_poison"
-msgstr ""
-
-msgid "There still is some rat poison in the kitchen!"
-msgstr ""
-
-msgid "There still is some rat poison hidden in the kitchen!"
-msgstr ""
-
-msgid "Are you sure you killed all the rat poison generators?"
-msgstr ""
-
-msgid "Did you kill some cheese generator?"
-msgstr ""
-
-msgid "cheese"
-msgstr ""
-
-msgid "Did you eat some cheese?"
-msgstr ""
+msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psproc')"
+msgstr  ""
 
 #, sh-format
-msgid ""
-"The command 'ps' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'psproc')"
-msgstr ""
+msgid   "The command 'pstree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+msgstr  ""
 
-#, sh-format
-msgid ""
-"The command 'pstree' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'psmisc')"
-msgstr ""
+msgid   "There still is some rat poison hidden in the kitchen!"
+msgstr  ""
+
+msgid   "There still is some rat poison in the kitchen!"
+msgstr  ""
+
+msgid   "cheese"
+msgstr  ""
+
+msgid   "rat_poison"
+msgstr  ""

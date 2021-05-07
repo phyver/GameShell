@@ -1,48 +1,48 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Entrance"
+msgstr  "$GSH_HOME/Castle/Entrance"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Forest/Hut/Chest"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Entrance"
-msgstr "$GSH_HOME/Castle/Entrance"
-
-msgid "standard"
-msgstr "standard"
+msgid   "The standard $N disapeared from the entrance."
+msgstr  "The standard $N disapeared from the entrance."
 
 #, sh-format
-msgid "The standard $N is not in the chest."
-msgstr "The standard $N is not in the chest."
+msgid   "The standard $N in the chest is invalid."
+msgstr  "The standard $N in the chest is invalid."
 
 #, sh-format
-msgid "The standard $N disapeared from the entrance."
-msgstr "The standard $N disapeared from the entrance."
+msgid   "The standard $N in the chest is not right."
+msgstr  "The standard $N in the chest is not right."
 
 #, sh-format
-msgid "The standard $N in the chest is not right."
-msgstr "The standard $N in the chest is not right."
+msgid   "The standard $N in the entrance is invalid."
+msgstr  "The standard $N in the entrance is invalid."
 
 #, sh-format
-msgid "The standard $N in the entrance is not right."
-msgstr "The standard $N in the entrance is not right."
+msgid   "The standard $N in the entrance is not right."
+msgstr  "The standard $N in the entrance is not right."
 
 #, sh-format
-msgid "The standard $N in the chest is invalid."
-msgstr "The standard $N in the chest is invalid."
+msgid   "The standard $N is not in the chest."
+msgstr  "The standard $N is not in the chest."
 
-#, sh-format
-msgid "The standard $N in the entrance is invalid."
-msgstr "The standard $N in the entrance is invalid."
-
-#, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr "$GSH_HOME/Forest/Hut/Chest"
+msgid   "standard"
+msgstr  "standard"

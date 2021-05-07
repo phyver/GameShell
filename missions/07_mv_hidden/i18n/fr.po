@@ -1,54 +1,53 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Chateau/Cave"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Cellar"
-msgstr "$GSH_HOME/Chateau/Cave"
-
-msgid "coin"
-msgstr "pièce"
+msgid   "The coin '$COIN_NAME...' has a wrong file name..."
+msgstr  "La pièce '$COIN_NAME...' n'a pas le bon nom..."
 
 #, sh-format
-msgid "There are several '$COIN_NAME...' in the cellar!"
-msgstr "Il y a plusieurs pièces '$COIN_NAME...' dans la cave !"
+msgid   "The coin '$COIN_NAME...' has been tampered with..."
+msgstr  "La pièce '$COIN_NAME...' a été modifiée..."
 
 #, sh-format
-msgid "The coin '$COIN_NAME...' is still in the cellar!"
-msgstr "La pièce '$COIN_NAME...' est toujours dans la cave !"
+msgid   "The coin '$COIN_NAME...' is still in the cellar!"
+msgstr  "La pièce '$COIN_NAME...' est toujours dans la cave !"
 
 #, sh-format
-msgid "There are several '$COIN_NAME...' in your chest!"
-msgstr "Il y a plusieurs pièces '$COIN_NAME...' dans le coffre !"
+msgid   "There are several '$COIN_NAME...' in the cellar!"
+msgstr  "Il y a plusieurs pièces '$COIN_NAME...' dans la cave !"
 
 #, sh-format
-msgid "There is no '$COIN_NAME...' in your chest!"
-msgstr "Il n'y a pas de pièce '$COIN_NAME...' dans le coffre !"
+msgid   "There are several '$COIN_NAME...' in your chest!"
+msgstr  "Il y a plusieurs pièces '$COIN_NAME...' dans le coffre !"
 
 #, sh-format
-msgid "The coin '$COIN_NAME...' has been tampered with..."
-msgstr "La pièce '$COIN_NAME...' a été modifiée..."
+msgid   "There is no '$COIN_NAME...' in your chest!"
+msgstr  "Il n'y a pas de pièce '$COIN_NAME...' dans le coffre !"
 
-#, sh-format
-msgid "The coin '$COIN_NAME...' has a wrong file name..."
-msgstr "La pièce '$COIN_NAME...' n'a pas le bon nom..."
+msgid   "chest"
+msgstr  "coffre"
 
-msgid "chest"
-msgstr "coffre"
+msgid   "coin"
+msgstr  "pièce"
 
-msgid "hut"
-msgstr "hutte"
-
-#, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr "$GSH_HOME/Foret/Hutte/Coffre"
+msgid   "hut"
+msgstr  "hutte"

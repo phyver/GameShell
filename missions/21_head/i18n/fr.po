@@ -1,33 +1,32 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Mountain/Cave"
+msgstr  "$GSH_HOME/Montagne/Grotte"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/ingredients/en.txt"
+msgstr  "$MISSION_DIR/ingredients/fr.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
-#, sh-format
-msgid "$GSH_HOME/Mountain/Cave"
-msgstr "$GSH_HOME/Montagne/Grotte"
+msgid   "You are not standing in the cave with the ermit!"
+msgstr  "Vous n'êtes pas dans la grotte avec l'ermite !"
 
-msgid "potion_ingredients"
-msgstr "ingredients_potion"
+msgid   "You haven't used the 'head' command!"
+msgstr  "Vous n'avez pas utilisé la commande 'head' !"
 
-msgid "You are not standing in the cave with the ermit!"
-msgstr "Vous n'êtes pas dans la grotte avec l'ermite !"
+msgid   "Your previous command doesn't give the expected result..."
+msgstr  "Votre commande précédente ne donne pas le résultat attendu..."
 
-msgid "You haven't used the 'head' command!"
-msgstr "Vous n'avez pas utilisé la commande 'head' !"
-
-msgid "Your previous command doesn't give the expected result..."
-msgstr "Votre commande précédente ne donne pas le résultat attendu..."
-
-#, sh-format
-msgid "$MISSION_DIR/ingredients/en.txt"
-msgstr "$MISSION_DIR/ingredients/fr.txt"
+msgid   "potion_ingredients"
+msgstr  "ingredients_potion"

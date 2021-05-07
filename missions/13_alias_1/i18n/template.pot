@@ -1,26 +1,25 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
 
 # path for the text file containing the goal
 #, sh-format
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
 
-msgid "The alias 'la' doesn't exist..."
-msgstr ""
+msgid   "The alias 'la' doesn't exist..."
+msgstr  ""
 
-msgid "The alias 'la' is invalid..."
-msgstr ""
+msgid   "The alias 'la' doesn't run 'ls -A'..."
+msgstr  ""
 
-msgid "The alias 'la' doesn't run 'ls -A'..."
-msgstr ""
+msgid   "The alias 'la' is invalid..."
+msgstr  ""
 
-msgid "nice_rock"
-msgstr ""
+msgid   "nice_rock"
+msgstr  ""

@@ -1,48 +1,47 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Entrance"
+msgstr  ""
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  ""
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Entrance"
-msgstr ""
-
-msgid "standard"
-msgstr ""
+msgid   "The standard $N disapeared from the entrance."
+msgstr  ""
 
 #, sh-format
-msgid "The standard $N is not in the chest."
-msgstr ""
+msgid   "The standard $N in the chest is invalid."
+msgstr  ""
 
 #, sh-format
-msgid "The standard $N disapeared from the entrance."
-msgstr ""
+msgid   "The standard $N in the chest is not right."
+msgstr  ""
 
 #, sh-format
-msgid "The standard $N in the chest is not right."
-msgstr ""
+msgid   "The standard $N in the entrance is invalid."
+msgstr  ""
 
 #, sh-format
-msgid "The standard $N in the entrance is not right."
-msgstr ""
+msgid   "The standard $N in the entrance is not right."
+msgstr  ""
 
 #, sh-format
-msgid "The standard $N in the chest is invalid."
-msgstr ""
+msgid   "The standard $N is not in the chest."
+msgstr  ""
 
-#, sh-format
-msgid "The standard $N in the entrance is invalid."
-msgstr ""
-
-#, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr ""
+msgid   "standard"
+msgstr  ""

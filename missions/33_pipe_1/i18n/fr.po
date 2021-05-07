@@ -1,125 +1,122 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Stall"
+msgstr  "$GSH_HOME/Echoppe"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
+
+msgid   "Georges' son"
+msgstr  "le fils au Georges"
+
+msgid   "How much does the king owe?"
+msgstr  "Quelle est la dette du roi ?"
+
+msgid   "PAID"
+msgstr  "PAYÉ"
 
 #, sh-format
-msgid "$GSH_HOME/Stall"
-msgstr "$GSH_HOME/Echoppe"
-
-msgid "PAID"
-msgstr "PAYÉ"
-
-msgid "the King"
-msgstr "le Roi"
-
-msgid "the son of Martin"
-msgstr "le fils de Martin"
-
-msgid "the Bold"
-msgstr "le Chauve"
-
-msgid "Georges' son"
-msgstr "le fils au Georges"
-
-msgid "from next town"
-msgstr "du village voisin"
-
-msgid "a chicken"
-msgstr "une poule"
-
-msgid "a horse"
-msgstr "un cheval"
-
-msgid "a pick"
-msgstr "un pic"
-
-msgid "a spade"
-msgstr "une pelle"
-
-msgid "an apple"
-msgstr "une pomme"
-
-msgid "a bag flour"
-msgstr "un sac de farine"
-
-msgid "a chackal"
-msgstr "un chacal"
-
-msgid "a cow"
-msgstr "une vache"
-
-msgid "a goat"
-msgstr "une chèvre"
-
-msgid "a ruby"
-msgstr "un rubis"
-
-msgid "a blanket"
-msgstr "une couverture"
-
-msgid "a leather ball"
-msgstr "une balle en cuir"
-
-msgid "a piece of soap"
-msgstr "un morceau de savon"
-
-msgid "a shiny rock"
-msgstr "un caillon brillant"
-
-msgid "a leather bag"
-msgstr "une besace en cuir"
-
-msgid "a pin"
-msgstr "une épingle"
-
-msgid "a stool"
-msgstr "un tabouret"
-
-msgid "an opal"
-msgstr "une opale"
-
-msgid "walking stick"
-msgstr "un baton de marche"
-
-msgid "a belt"
-msgstr "une ceinture"
-
-msgid "a dented helmet"
-msgstr "un heaume cabossé"
-
-msgid "a knife"
-msgstr "un couteau"
-
-msgid "a wooden spoon"
-msgstr "une cuillère en bois"
-
-msgid "a bottle of cider"
-msgstr "une bouteille de cidre"
-
-msgid "{} bought {} for {} coppers{}\n"
-msgstr "{} a acheté {} pour {} piécettes{}\n"
-
-msgid "How much does the king owe?"
-msgstr "Quelle est la dette du roi ?"
+msgid   "That's the right answer, but you used $NB_CMD commands!"
+msgstr  "C'est la bonne réponse, mais vous avez utilisé $NB_CMD commandes !"
 
 #, sh-format
-msgid "That's the right answer, but you used $NB_CMD commands!"
-msgstr "C'est la bonne réponse, mais vous avez utilisé $NB_CMD commandes !"
+msgid   "The command 'python3' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'python3')"
+msgstr  "La commande 'python3' est nécessaire pour la mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: installez le paquet 'python3')"
 
-#, sh-format
-msgid ""
-"The command 'python3' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'python3')"
-msgstr ""
-"La commande 'python3' est nécessaire pour la mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: installez le paquet 'python3')"
+msgid   "a bag flour"
+msgstr  "un sac de farine"
+
+msgid   "a belt"
+msgstr  "une ceinture"
+
+msgid   "a blanket"
+msgstr  "une couverture"
+
+msgid   "a bottle of cider"
+msgstr  "une bouteille de cidre"
+
+msgid   "a chackal"
+msgstr  "un chacal"
+
+msgid   "a chicken"
+msgstr  "une poule"
+
+msgid   "a cow"
+msgstr  "une vache"
+
+msgid   "a dented helmet"
+msgstr  "un heaume cabossé"
+
+msgid   "a goat"
+msgstr  "une chèvre"
+
+msgid   "a horse"
+msgstr  "un cheval"
+
+msgid   "a knife"
+msgstr  "un couteau"
+
+msgid   "a leather bag"
+msgstr  "une besace en cuir"
+
+msgid   "a leather ball"
+msgstr  "une balle en cuir"
+
+msgid   "a pick"
+msgstr  "un pic"
+
+msgid   "a piece of soap"
+msgstr  "un morceau de savon"
+
+msgid   "a pin"
+msgstr  "une épingle"
+
+msgid   "a ruby"
+msgstr  "un rubis"
+
+msgid   "a shiny rock"
+msgstr  "un caillon brillant"
+
+msgid   "a spade"
+msgstr  "une pelle"
+
+msgid   "a stool"
+msgstr  "un tabouret"
+
+msgid   "a wooden spoon"
+msgstr  "une cuillère en bois"
+
+msgid   "an apple"
+msgstr  "une pomme"
+
+msgid   "an opal"
+msgstr  "une opale"
+
+msgid   "from next town"
+msgstr  "du village voisin"
+
+msgid   "the Bold"
+msgstr  "le Chauve"
+
+msgid   "the King"
+msgstr  "le Roi"
+
+msgid   "the son of Martin"
+msgstr  "le fils de Martin"
+
+msgid   "walking stick"
+msgstr  "un baton de marche"
+
+msgid   "{} bought {} for {} coppers{}\n"
+msgstr  "{} a acheté {} pour {} piécettes{}\n"

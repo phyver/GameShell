@@ -1,30 +1,30 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
-
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Cellar"
-msgstr "$GSH_HOME/Castle/Cellar"
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Castle/Cellar"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+msgid   "Hey! You removed a salamander!"
+msgstr  "Hey! You removed a salamander!"
+
+msgid   "There are still spiders in the cellar!"
+msgstr  "There are still spiders in the cellar!"
+
+msgid   "salamander"
+msgstr  "salamander"
 
 # filename
-msgid "spider"
-msgstr "spider"
-
-msgid "There are still spiders in the cellar!"
-msgstr "There are still spiders in the cellar!"
-
-msgid "salamander"
-msgstr "salamander"
-
-msgid "Hey! You removed a salamander!"
-msgstr "Hey! You removed a salamander!"
+msgid   "spider"
+msgstr  "spider"
