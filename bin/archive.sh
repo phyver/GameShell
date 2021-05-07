@@ -19,11 +19,30 @@ options:
   -p ...      choose password for admin commands
   -P          use the "passport mode" by default when running GameShell
   -A          use the "anonymous mode" by default when running GameShell
+  -L LANGS    only keep the given languages (ex: -L 'en*,fr')
 
   -a          keep 'auto.sh' scripts from missions that have one
   -N ...      name of the archive / top directory (default: "GameShell")
   -k          keep tgz archive
 EOH
+}
+
+keep_language() {
+  local filename=$(basename "$1")
+  local languages=$2
+  set -f    # disable globing
+  local g
+  for g in $(echo "$languages" | tr ',' ' ')
+  do
+    set +f  # enable globing
+    case $filename in
+      $g )
+        return 0
+        ;;
+    esac
+  done
+  set +f  # enable globing, in case the loop was empty
+  return 1
 }
 
 NAME="GameShell"
@@ -32,8 +51,10 @@ KEEP_AUTO=0
 DEFAULT_MODE="ANONYMOUS"
 KEEP_TGZ='false'
 GENERATE_MO='true'
+KEEP_PO='false'
+LANGUAGES=""
 
-while getopts ":hp:N:aPk" opt
+while getopts ":hp:N:aPkL:" opt
 do
   case $opt in
     h)
@@ -54,6 +75,9 @@ do
       ;;
     k)
       KEEP_TGZ='true'
+      ;;
+    L)
+      LANGUAGES=$OPTARG
       ;;
     *)
       echo "invalid option: '-$OPTARG'" >&2
@@ -100,6 +124,22 @@ do
   echo "$DUMMY$(basename "$ARCHIVE_MISSION_DIR")" >> "$TMP_DIR/$NAME/missions/index.txt"
 done
 
+
+# remove unwanted languages
+if [ -n "$LANGUAGES" ]
+then
+  echo "removing unwanted languages"
+  GSH_ROOT=$TMP_DIR/$NAME
+
+  find $GSH_ROOT -path "*/i18n/*.po" | while read po_file
+  do
+    if ! keep_language "${po_file%.po}" "$LANGUAGES"
+    then
+      rm -f "$po_file"
+    fi
+  done
+fi
+
 # generate .mo files
 if [ "$GENERATE_MO" = 'true' ]
 then
@@ -144,22 +184,15 @@ then
   }
 fi
 
-
-# remove auto.sh files
-if [ "$KEEP_AUTO" -ne 1 ]
-then
-  echo "removing 'auto.sh' scripts"
-  find "$TMP_DIR/$NAME/missions" -name auto.sh -print0 | xargs -0 rm -f
-fi
-
 # remove "_" files
-echo "removing unnecessary (_*.sh, Makefile) files"
+echo "removing unnecessary files"
 find "$TMP_DIR/$NAME" -name "*~" -print0 | xargs -0 rm -f
 find "$TMP_DIR/$NAME" -name "_*.sh" -print0 | xargs -0 rm -f
 find "$TMP_DIR/$NAME" -name "test.sh" -print0 | xargs -0 rm -f
 find "$TMP_DIR/$NAME" -name "Makefile" -print0 | xargs -0 rm -f
 find "$TMP_DIR/$NAME" -name "template.pot" -print0 | xargs -0 rm -f
-[ "$GENERATE_MO" = 'true' ] && find "$TMP_DIR/$NAME" -name "*.po" -print0 | xargs -0 rm -f
+[ "$KEEP_PO" = 'true' ] && [ "$GENERATE_MO" = 'true' ] && find "$TMP_DIR/$NAME" -name "*.po" -print0 | xargs -0 rm -f
+[ "$KEEP_AUTO" -ne 1 ] && find "$TMP_DIR/$NAME/missions" -name auto.sh -print0 | xargs -0 rm -f
 
 # change admin password
 echo "setting admin password"
