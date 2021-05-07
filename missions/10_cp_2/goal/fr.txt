@@ -16,14 +16,14 @@ Motifs shell
   Le caractère "?" est un joker pour n'importe caractère.
 
 On peut utiliser les jokers pour dénoter une liste de fichiers / 
-dossiers existants.
+répertoire existants.
 
 Par exemple, si le répertoire courant contient
-      fichier-1 Dossier-1 fichier-14 lustucru
+      fichier-1 Repertoire-1 fichier-14 lustucru
 alors
-    *     -->  fichier-1 Dossier-1 fichier-14 lustucru
-    *1    -->  fichier-1 Dossier-1
-    *s*   -->  Dossier-1 lustucru
+    *     -->  fichier-1 Repertoire-1 fichier-14 lustucru
+    *1    -->  fichier-1 Repertoire-1
+    *s*   -->  Repertoire-1 lustucru
     x*    -->  erreur, aucun fichier ne correspond
-    *-?   -->  fichier-1 Dossier-1
+    *-?   -->  fichier-1 Repertoire-1
     *-??  -->  fichier-14
