@@ -6,5 +6,4 @@ case $PWD in
         ;;
 esac
 
-rm -f "$GSH_VAR/diamond"
 rm -rf "$maze"/*
