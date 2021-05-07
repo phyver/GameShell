@@ -293,6 +293,7 @@ add-locations: all
 i18n/en.po: i18n/template.pot FORCE
 	@echo "msgen $@"
 	@msgen $(OPTIONS) $(SORT) i18n/template.pot --output=$@
+	@sed -i '1s/^/'"# AUTOMATICALLY GENERATED -- DO NOT EDIT\n/" $@
 
 $(LANG):%.po: i18n/template.pot FORCE
 	@echo "msgmerge $@"
