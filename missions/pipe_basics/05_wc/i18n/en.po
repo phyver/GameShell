@@ -1,0 +1,36 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+#, sh-format
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/en.txt"
+
+#, sh-format
+msgid "$GSH_HOME/Mountain/Cave"
+msgstr "$GSH_HOME/Mountain/Cave"
+
+msgid "Book_of_Potions"
+msgstr "Book_of_Potions"
+
+msgid "page"
+msgstr "page"
+
+msgid "You altered the book..."
+msgstr "You altered the book..."
+
+msgid "You are not in the cave with Servillus!"
+msgstr "You are not in the cave with Servillus!"
+
+msgid "You have not used the 'wc' command!"
+msgstr "You have not used the 'wc' command!"
+
+msgid "Your previous command does not give the expected result..."
+msgstr "Your previous command does not give the expected result..."
+
+#, sh-format
+msgid "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
+msgstr "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
