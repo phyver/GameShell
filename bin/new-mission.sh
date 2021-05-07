@@ -55,7 +55,7 @@ This file or one of its more complex variants (refer to the documentation) is
 required.
 
 It is displayed in its entirety by the command
-  $ gsh show
+  $ gsh goal
 It should describe the goal of the mission.
 
 Note: if the __first_ line of this file is of the form
@@ -72,9 +72,9 @@ new_goal_gettext_file() {
 
 # This file is not required. It can be used to generate dynamic goal messages.
 # If the file exists, it is sourced by the command
-#  $ gsh show
+#  $ gsh goal
 # If neither this file nor "goal.txt" exists, the command
-#  $ gsh show
+#  $ gsh goal
 # is equivalent to having the following line in goal.sh
 cat "$(eval_gettext '$MISSION_DIR/goal/en.txt')"
 EOF
@@ -88,7 +88,7 @@ This file or one of its more complex variants (refer to the documentation) is
 required.
 
 It is displayed in its entirety by the command
-  $ gsh show
+  $ gsh goal
 It should describe the goal of the mission.
 
 Note: if the _first_ line of this file is of the form

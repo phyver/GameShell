@@ -1,5 +1,5 @@
 Run the command
-    $ gsh show
+    $ gsh goal
 to discover your first mission.
 
 You can check the mission has been completed with

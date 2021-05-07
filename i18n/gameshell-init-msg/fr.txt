@@ -1,5 +1,5 @@
 Utilisez la commande
-  $ gsh show
+  $ gsh goal
 pour découvrir votre première mission.
 
 Vous pouvez vérifier si l'objectif est atteint avec

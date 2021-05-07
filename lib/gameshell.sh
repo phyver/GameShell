@@ -99,7 +99,7 @@ Do you still want to quit? [y/n]") " r
 
 
 # display the goal of a mission given by its number
-_gsh_show() {
+_gsh_goal() {
   local MISSION_NB
   if [ "$#" -eq 0 ]
   then
@@ -569,8 +569,8 @@ gsh() {
       _gsh_clean
       _gsh_reset
       ;;
-    "sh" | "sho" | "show")
-      _gsh_show "$@"
+    "g" | "go" | "goa" | "goal")
+      _gsh_goal "$@"
       ;;
     "i" | "in" | "ind" | "inde" | "index")
       _gsh_index
@@ -640,7 +640,7 @@ gsh() {
       ;;
     *)
       echo "$(eval_gettext "Error: unknown gsh command '\$CMD'.
-Use one of the following commands:")  check, help, HELP, reset or show" >&2
+Use one of the following commands:")  check, goal, help, HELP or reset" >&2
       export TEXTDOMAIN=$_TEXTDOMAIN
       unset _TEXTDOMAIN
       return 1

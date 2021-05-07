@@ -141,7 +141,7 @@ supplémentaires. Ces fonctionnalités passent par la commande ``gsh``.
 
   - `gsh help` : affiche une petite liste des commandes
   - `gsh HELP` : affiche une liste plus complète des commandes
-  - `gsh show` : affiche l'objectif de la mission courante
+  - `gsh goal` : affiche l'objectif de la mission courante
   - `gsh check` : vérifie si la mission actuelle est validée
   - `gsh reset` : recommence la mission courante
 
@@ -190,7 +190,7 @@ fichiers suivants
         (fichier bash, facultatif)
 
   - `goal.txt`
-        petite description de la mission, affichée par ``gsh show``
+        petite description de la mission, affichée par ``gsh goal``
         (fichier texte, obligatoire)
 
   - `check.sh`
