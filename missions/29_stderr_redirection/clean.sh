@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if [ -f "$GSH_VAR" ]
+if [ -f "$GSH_VAR/list_grimoires_RO" ]
 then
     while read file
     do
