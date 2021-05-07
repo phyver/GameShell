@@ -11,6 +11,6 @@ then
     mkdir -p "$corridor"
 fi
 
-basename "$corridor" | checksum > "$GSH_MISSION_DATA/corridor"
+basename "$corridor" | checksum > "$GSH_VAR/corridor"
 
 unset corridor r1 r2

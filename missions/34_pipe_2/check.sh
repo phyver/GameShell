@@ -1,6 +1,6 @@
 #!/bin/bash
 
-y=$(cat "$GSH_MISSION_DATA/nbUnpaid")
+y=$(cat "$GSH_VAR/nbUnpaid")
 read -erp "$(gettext "How many unpaid items are there?") " d
 
 x=$(checksum "$d")

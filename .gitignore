@@ -1,10 +1,10 @@
 tmp
 TODO
 GameShell.tgz
+.bashrc
 .bin
 .config
-.session_data
-.mission_data
+.var
 World
 locale/
 *~

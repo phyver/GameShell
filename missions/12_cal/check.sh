@@ -1,8 +1,8 @@
 #!/bin/bash
 
-YYYY=$(cut -d"-" -f1 "$GSH_MISSION_DATA"/date)
-MM=$(cut -d"-" -f2 "$GSH_MISSION_DATA"/date)
-DD=$(cut -d"-" -f3 "$GSH_MISSION_DATA"/date)
+YYYY=$(cut -d"-" -f1 "$GSH_VAR"/date)
+MM=$(cut -d"-" -f2 "$GSH_VAR"/date)
+DD=$(cut -d"-" -f3 "$GSH_VAR"/date)
 
 while true
 do

@@ -4,13 +4,13 @@ source gettext.sh
 
 dir=$(eval_gettext '$GSH_HOME/Castle/Kitchen')
 nature=$(gettext "cheese")
-logfile=$GSH_MISSION_DATA/cheese
+logfile=$GSH_VAR/cheese
 
-"$GSH_MISSION_DATA"/generator 0 "$logfile-0" "$dir" "$nature" &
+"$GSH_VAR"/generator 0 "$logfile-0" "$dir" "$nature" &
 disown
-"$GSH_MISSION_DATA"/generator 1 "$logfile-1" "$dir" "$nature" &
+"$GSH_VAR"/generator 1 "$logfile-1" "$dir" "$nature" &
 disown
-"$GSH_MISSION_DATA"/generator 2 "$logfile-2" "$dir" "$nature" &
+"$GSH_VAR"/generator 2 "$logfile-2" "$dir" "$nature" &
 disown
 
 trap "" SIGTERM SIGINT

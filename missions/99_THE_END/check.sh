@@ -3,7 +3,7 @@
 change_password() {
   local PASSWORD=$1
   local ADMIN_HASH=$(checksum "$PASSWORD")
-  echo "$ADMIN_HASH" > "$GSH_DATA/admin_hash"
+  echo "$ADMIN_HASH" > "$GSH_CONFIG/admin_hash"
   echo""
   echo "$(eval_gettext "The admin password is now '\$PASSWORD'. Use
     \$ gsh HELP
@@ -33,7 +33,7 @@ do
             echo "$(eval_gettext 'unknown choice: $CHOICE')" >&2
             ;;
         *)
-            NB_MISSIONS=$(sed -e '/^$/d' -e '/^#/d' "$GSH_DATA/index.txt" | wc -l)
+            NB_MISSIONS=$(sed -e '/^$/d' -e '/^#/d' "$GSH_CONFIG/index.txt" | wc -l)
             if  [ 0 -lt "$CHOICE" ] && [ "$CHOICE" -le "$NB_MISSIONS" ]
             then
                 change_password "$(gettext "qwerty")"

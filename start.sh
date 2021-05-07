@@ -6,34 +6,34 @@
 source gettext.sh
 
 # shellcheck source=./lib/os_aliases.sh
-export GSH_BASE="$(dirname "$0")"
-export TEXTDOMAINDIR="$GSH_BASE/locale"
+export GSH_ROOT="$(dirname "$0")"
+export TEXTDOMAINDIR="$GSH_ROOT/locale"
 export TEXTDOMAIN="gsh"
 
-source "$GSH_BASE"/lib/os_aliases.sh
-# we can now normalize GSH_BASE
-export GSH_BASE=$(REALPATH "$(dirname "$0")"/)
-export TEXTDOMAINDIR="$GSH_BASE/locale"
+source "$GSH_ROOT"/lib/os_aliases.sh
+# we can now normalize GSH_ROOT
+export GSH_ROOT=$(REALPATH "$(dirname "$0")"/)
+export TEXTDOMAINDIR="$GSH_ROOT/locale"
 export TEXTDOMAIN="gsh"
 
 # generate GameShell translation files for gettext
-for PO_FILE in "$GSH_BASE"/i18n/*.po; do
+for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
   PO_LANG=$(basename "$PO_FILE" .po)
-  if ! [ -f "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" ]
+  if ! [ -f "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" ]
   then
-    mkdir -p "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES"
-    msgfmt -o "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
+    mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
+    msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
   fi
 done
 
-source $GSH_BASE/lib/utils.sh
-source $GSH_BASE/lib/make_index.sh
+source $GSH_ROOT/lib/utils.sh
+source $GSH_ROOT/lib/make_index.sh
 
-cd "$GSH_BASE"
+cd "$GSH_ROOT"
 
 
 display_help() {
-  cat "$(eval_gettext "\$GSH_BASE/i18n/start-help/en.txt")"
+  cat "$(eval_gettext "\$GSH_ROOT/i18n/start-help/en.txt")"
 }
 
 
@@ -130,22 +130,22 @@ _confirm_passport() {
 init_gsh() {
 
   # these directories should not be modified during a game
-  export GSH_LIB="$GSH_BASE/lib"
-  export GSH_MISSIONS="$GSH_BASE/missions"
-  export GSH_BIN="$GSH_BASE/bin"
+  export GSH_LIB="$GSH_ROOT/lib"
+  export GSH_MISSIONS="$GSH_ROOT/missions"
+  export GSH_BIN="$GSH_ROOT/bin"
 
   # these directories should be erased when a new game is started, they only contain
   # dynamic data
-  export GSH_HOME="$GSH_BASE/World"
-  export GSH_DATA="$GSH_BASE/.session_data"
-  export GSH_MISSION_DATA="$GSH_BASE/.mission_data"
-  export GSH_CONFIG="$GSH_BASE/.config"
-  export GSH_LOCAL_BIN="$GSH_BASE/.bin"
+  export GSH_HOME="$GSH_ROOT/World"
+  export GSH_CONFIG="$GSH_ROOT/.config"
+  export GSH_VAR="$GSH_ROOT/.var"
+  export GSH_BASHRC="$GSH_ROOT/.bashrc"
+  export GSH_MISSIONS_BIN="$GSH_ROOT/.bin"
 
   ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
 
   # message when a new game is started from the developpment directory
-  if [ -e "$GSH_BASE/.git" ] && [ "$FORCE" != "TRUE" ]
+  if [ -e "$GSH_ROOT/.git" ] && [ "$FORCE" != "TRUE" ]
   then
     local r
     while true
@@ -165,14 +165,14 @@ Do you want to continue? [y/N]") " r
   # message when data from a previous play is found. We can either
   #    - restart a new game
   #    - continue the previous game
-  if [ -e "$GSH_DATA" ]
+  if [ -e "$GSH_CONFIG" ]
   then
     if [ -z "$RESET" ]
     then
       local r
       while true
       do
-        read -erp "$(eval_gettext 'The directory $GSH_DATA contains meta-data from a previous game.
+        read -erp "$(eval_gettext 'The directory $GSH_CONFIG contains meta-data from a previous game.
 Do you want to remove it and start a new game? [y/N]') " r
         if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] || [ "$r" = "$(gettext "N")" ]
         then
@@ -192,35 +192,35 @@ Do you want to remove it and start a new game? [y/N]') " r
 
   # remove all the game data
   rm -rf "$GSH_HOME"
-  rm -rf "$GSH_DATA"
-  rm -rf "$GSH_MISSION_DATA"
   rm -rf "$GSH_CONFIG"
-  rm -rf "$GSH_LOCAL_BIN"
+  rm -rf "$GSH_VAR"
+  rm -rf "$GSH_BASHRC"
+  rm -rf "$GSH_MISSIONS_BIN"
 
   # recreate them
   mkdir -p "$GSH_HOME"
 
-  mkdir -p "$GSH_DATA"
-  echo "# mission action date checksum" >> "$GSH_DATA/missions.log"
-
   mkdir -p "$GSH_CONFIG"
-  cp "$GSH_LIB/bashrc" "$GSH_CONFIG"
+  echo "# mission action date checksum" >> "$GSH_CONFIG/missions.log"
+
+  mkdir -p "$GSH_BASHRC"
+  cp "$GSH_LIB/bashrc" "$GSH_BASHRC"
 
   # save current locale
-  locale | sed "s/^/export /" > "$GSH_CONFIG"/config.sh
-  echo "export GSH_MODE=$GSH_MODE" >> "$GSH_CONFIG"/config.sh
+  locale | sed "s/^/export /" > "$GSH_BASHRC"/config.sh
+  echo "export GSH_MODE=$GSH_MODE" >> "$GSH_BASHRC"/config.sh
   # TODO save other config (color ?)
 
   # save hash for admin password
-  [ -n "$ADMIN_HASH" ] && echo "$ADMIN_HASH" > "$GSH_DATA/admin_hash"
+  [ -n "$ADMIN_HASH" ] && echo "$ADMIN_HASH" > "$GSH_CONFIG/admin_hash"
 
-  mkdir -p "$GSH_LOCAL_BIN"
+  mkdir -p "$GSH_MISSIONS_BIN"
 
-  mkdir -p "$GSH_MISSION_DATA"
+  mkdir -p "$GSH_VAR"
 
 
   # id of player
-  PASSPORT="$GSH_DATA/passport.txt"
+  PASSPORT="$GSH_CONFIG/passport.txt"
 
   while true
   do
@@ -250,14 +250,14 @@ Do you want to remove it and start a new game? [y/N]') " r
   # Génération de l'UID du groupe.
   export GSH_UID="$(sha1sum "$PASSPORT" | cut -c 1-40)"
   echo "GSH_UID=$GSH_UID" >> "$PASSPORT"
-  echo "$GSH_UID" > "$GSH_DATA/uid"
+  echo "$GSH_UID" > "$GSH_CONFIG/uid"
 
 
   # Message d'accueil.
   [ "$GSH_MODE" = "DEBUG" ] || clear
   echo "$(gettext "======== Initialisation of GameShell ========")"
 
-  make_index "$@" 2> /dev/null | sed "s;$GSH_MISSIONS;.;" > "$GSH_DATA/index.txt"
+  make_index "$@" 2> /dev/null | sed "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
 
   # Installing all missions.
   local MISSION_NB=1
@@ -283,10 +283,10 @@ Do you want to remove it and start a new game? [y/N]') " r
       shopt -s nullglob
       for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
         PO_LANG=$(basename "$PO_FILE" .po)
-        if ! [ -f "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" ]
+        if ! [ -f "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" ]
         then
-          mkdir -p "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES"
-          msgfmt -o "$GSH_BASE/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
+          mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
+          msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
         fi
       done
       shopt -u nullglob
@@ -302,13 +302,13 @@ Do you want to remove it and start a new game? [y/N]') " r
           continue
         fi
         BIN_NAME=$(basename "$BIN_FILE")
-        cat > "$GSH_LOCAL_BIN/$BIN_NAME" <<EOH
+        cat > "$GSH_MISSIONS_BIN/$BIN_NAME" <<EOH
 #!/bin/bash
 export MISSION_DIR="$MISSION_DIR"
 export TEXTDOMAIN="$DOMAIN"
 exec $BIN_FILE "\$@"
 EOH
-        chmod +x "$GSH_LOCAL_BIN/$BIN_NAME"
+        chmod +x "$GSH_MISSIONS_BIN/$BIN_NAME"
       done
       shopt -u nullglob
     fi
@@ -322,11 +322,11 @@ EOH
     # copy all the shell config files of the mission
     if [ -f "$MISSION_DIR/bashrc" ]
     then
-      cp "$MISSION_DIR/bashrc" "$GSH_CONFIG/$(basename "$MISSION_DIR" /).bashrc.sh"
+      cp "$MISSION_DIR/bashrc" "$GSH_BASHRC/$(basename "$MISSION_DIR" /).bashrc.sh"
     fi
     printf "."
     MISSION_NB=$((MISSION_NB+1))
-  done < "$GSH_DATA/index.txt"
+  done < "$GSH_CONFIG/index.txt"
   if [ "$MISSION_NB" -eq 0 ]
   then
     echo "$(gettext "Error: no mission was found!
@@ -341,7 +341,7 @@ Aborting")"
 start_gsh() {
   # Lancement du jeu.
   cd "$GSH_HOME"
-  export GSH_UID=$(cat "$GSH_DATA/uid")
+  export GSH_UID=$(cat "$GSH_CONFIG/uid")
   bash --rcfile "$GSH_LIB/bashrc"
 }
 

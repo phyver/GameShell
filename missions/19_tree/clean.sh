@@ -6,5 +6,5 @@ case $PWD in
         ;;
 esac
 
-rm -f "$GSH_MISSION_DATA/silver_coin"
+rm -f "$GSH_VAR/silver_coin"
 rm -rf "$maze"/*

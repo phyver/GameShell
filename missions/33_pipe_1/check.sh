@@ -1,6 +1,6 @@
 #!/bin/bash
 
-y=$(cat "$GSH_MISSION_DATA/amountKing")
+y=$(cat "$GSH_VAR/amountKing")
 read -erp "$(gettext "How much does the king owe?") " d
 
 x=$(checksum "$d")

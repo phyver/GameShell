@@ -11,7 +11,7 @@ _mission_check() {
         return 1
     fi
 
-    if ! cmp -s <(sort "$office/$(gettext "Drawer")/$INVENTORY_FILE") "$GSH_MISSION_DATA/inventory_grimoires"
+    if ! cmp -s <(sort "$office/$(gettext "Drawer")/$INVENTORY_FILE") "$GSH_VAR/inventory_grimoires"
     then
         echo "$(eval_gettext 'The content of $INVENTORY_FILE is invalid.
 You can check its content with the command

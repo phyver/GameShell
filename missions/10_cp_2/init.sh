@@ -34,6 +34,6 @@ do
   touch "${ENTRANCE}/${RANDOM}_${K}_${RANDOM}"
 done
 
-ls "$ENTRANCE" | sort > "$GSH_MISSION_DATA/entrance_contents"
+ls "$ENTRANCE" | sort > "$GSH_VAR/entrance_contents"
 
 unset ENTRANCE D I K S

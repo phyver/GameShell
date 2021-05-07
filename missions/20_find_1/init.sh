@@ -30,11 +30,11 @@ gen_maze_sh(){
                 if [ "$r1" = "$i,$j,$k" ]
                 then
                     echo "$I $J $K" > "$maze/$I/$J/$K/$(gettext "gold_coin")"
-                    echo "$I $J $K" > "$GSH_MISSION_DATA/gold_coin"
+                    echo "$I $J $K" > "$GSH_VAR/gold_coin"
                 elif [ "$r2" = "$i,$j,$k" ]
                 then
                     echo "$I $J $K" > "$maze/$I/$J/$K/$(gettext "GolD_CoiN")"
-                    echo "$I $J $K" > "$GSH_MISSION_DATA/GolD_CoiN"
+                    echo "$I $J $K" > "$GSH_VAR/GolD_CoiN"
                 fi
             done
             echo -n "."
@@ -49,9 +49,9 @@ gen_maze_py(){
     local d1=$(echo "$d" | head -n 1)
     local d2=$(echo "$d" | head -n 1)
     echo "$(checksum "$d1")" > "$maze/$d1/$(gettext "gold_coin")"
-    echo "$(checksum "$d1")" > "$GSH_MISSION_DATA/gold_coin"
+    echo "$(checksum "$d1")" > "$GSH_VAR/gold_coin"
     echo "$(checksum "$d2")" > "$maze/$d2/$(gettext "GolD_CoiN")"
-    echo "$(checksum "$d2")" > "$GSH_MISSION_DATA/GolD_CoiN"
+    echo "$(checksum "$d2")" > "$GSH_VAR/GolD_CoiN"
 }
 
 if ! command -v python3 > /dev/null

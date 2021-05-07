@@ -1,6 +1,6 @@
 
 revoir l'arborescence :
-   GSH_BASE
+   GSH_ROOT
        # statiques
        bin
        missions

@@ -29,7 +29,7 @@ gen_maze_sh(){
                 then
                     local sum=$(checksum "$K $(gettext "diamond")")
                     echo "$K $(gettext "diamond") $sum" > "$maze/$I/$J/$K"
-                    echo "$K $(gettext "diamond") $sum" > "$GSH_MISSION_DATA/diamond"
+                    echo "$K $(gettext "diamond") $sum" > "$GSH_VAR/diamond"
                 else
                     local sum=$(checksum "$K $(gettext "stone")")
                     echo "$K $(gettext "stone") $K $sum" > "$maze/$I/$J/$K"
@@ -47,7 +47,7 @@ gen_maze_py(){
     local K=$(basename "$f")
     local sum=$(checksum "$K $(gettext "diamond")")
     echo "$K $(gettext "diamond") $sum" > "$maze/$f"
-    echo "$K $(gettext "diamond") $sum" > "$GSH_MISSION_DATA/diamond"
+    echo "$K $(gettext "diamond") $sum" > "$GSH_VAR/diamond"
 }
 
 if ! command -v python3 > /dev/null

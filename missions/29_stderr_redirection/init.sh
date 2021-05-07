@@ -3,7 +3,7 @@
 bib="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
 find "$bib" -type f -name "$(gettext "grimoire")_*" -print0 | xargs -0 rm -f
 
-rm -f "$GSH_MISSION_DATA/list_grimoires_RO"
+rm -f "$GSH_VAR/list_grimoires_RO"
 for i in $(seq 100)
 do
     file="$bib/$(gettext "grimoire")_$(checksum $RANDOM)"
@@ -12,7 +12,7 @@ do
     if [ $(( RANDOM % 2 )) -eq 0 ]
     then
         chmod -r "$file"
-        echo "$file" >> "$GSH_MISSION_DATA/list_grimoires_RO"
+        echo "$file" >> "$GSH_VAR/list_grimoires_RO"
     fi
     [ $((i%5)) -eq 0 ] && echo -n "."
 done
@@ -20,7 +20,7 @@ echo
 
 bash <<EOS
   cd $bib
-  grep -il "pq" * 2> /dev/null | sort > $GSH_MISSION_DATA/list_grimoires_PQ
+  grep -il "pq" * 2> /dev/null | sort > $GSH_VAR/list_grimoires_PQ
 EOS
 
 unset i file

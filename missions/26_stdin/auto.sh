@@ -1,1 +1,1 @@
-gsh check < "$GSH_MISSION_DATA/additions.txt"
+gsh check < "$GSH_VAR/additions.txt"

@@ -4,27 +4,27 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/gameshell-HELP/en.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/gameshell-help/en.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/gameshell-init-msg-short/en.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/gameshell-init-msg/en.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/gameshell-welcome/en.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GSH_BASE/i18n/start-help/en.txt"
+msgid   "$GSH_ROOT/i18n/start-help/en.txt"
 msgstr  ""
 
 #, sh-format
@@ -151,7 +151,7 @@ msgid   "Sorry, mission $MISSION_NB hasn't been completed."
 msgstr  ""
 
 #, sh-format
-msgid   "The directory $GSH_DATA contains meta-data from a previous game.\n"
+msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
         "Do you want to remove it and start a new game? [y/N]"
 msgstr  ""
 
