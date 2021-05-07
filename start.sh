@@ -2,32 +2,10 @@
 
 # shellcheck disable=SC2005
 
-# shellcheck source=./lib/os_aliases.sh
 source gettext.sh
 
-# shellcheck source=./lib/os_aliases.sh
 export GSH_ROOT="$(dirname "$0")"
-export TEXTDOMAINDIR="$GSH_ROOT/locale"
-export TEXTDOMAIN="gsh"
-
-source "$GSH_ROOT"/lib/os_aliases.sh
-# we can now normalize GSH_ROOT
-export GSH_ROOT=$(REALPATH "$(dirname "$0")"/)
-export TEXTDOMAINDIR="$GSH_ROOT/locale"
-export TEXTDOMAIN="gsh"
-
-# generate GameShell translation files for gettext
-for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
-  PO_LANG=$(basename "$PO_FILE" .po)
-  if ! [ -f "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" ]
-  then
-    mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
-    msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
-  fi
-done
-
-source $GSH_ROOT/lib/utils.sh
-source $GSH_ROOT/lib/make_index.sh
+source "$GSH_ROOT"/lib/common.sh
 
 cd "$GSH_ROOT"
 
