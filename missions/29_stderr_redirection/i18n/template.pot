@@ -15,5 +15,8 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
+msgid   "Your previous command doesn't use the 'grep' command..."
+msgstr  ""
+
 msgid   "grimoire"
 msgstr  ""

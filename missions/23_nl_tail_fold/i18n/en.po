@@ -23,6 +23,9 @@ msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 msgid   "You are not standing in the cave with the ermit!"
 msgstr  "You are not standing in the cave with the ermit!"
 
+msgid   "You haven't used any redirection '|' or the given commands!"
+msgstr  "You haven't used any redirection '|' or the given commands!"
+
 msgid   "You haven't used the operator '|'!"
 msgstr  "You haven't used the operator '|'!"
 

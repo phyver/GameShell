@@ -8,10 +8,11 @@ _mission_check() {
     # I grep the previous command to avoid looping by re-running "gsh check"
     # recursively. Because of the previous remark, I need to look at the "-2"
     # command
-    pc=$(fc -nl -2 -2 | grep -v check)
+    pc=$(fc -nl -2 -2 | grep -v check | grep grep)
 
     if [ -z "$pc" ]
     then
+        echo "$(gettext "Your previous command doesn't use the 'grep' command...")"
         return 1
     fi
 
