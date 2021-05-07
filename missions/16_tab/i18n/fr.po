@@ -1,28 +1,27 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Chateau/Cave"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Cellar"
-msgstr "$GSH_HOME/Chateau/Cave"
+msgid   ".Long $r1 Corridor $r2"
+msgstr  ".Long $r1 Couloir $r2"
 
 #, sh-format
-msgid ".Long*Corridor*"
-msgstr ".Long*Couloir*"
+msgid   ".Long*Corridor*"
+msgstr  ".Long*Couloir*"
 
-msgid "Pffft... You are back to the beginning, in front of the castle..."
-msgstr "Pffft... Vous voila de retour au point de départ, devant le château..."
-
-#, sh-format
-msgid ".Long $r1 Corridor $r2"
-msgstr ".Long $r1 Couloir $r2"
+msgid   "Pffft... You are back to the beginning, in front of the castle..."
+msgstr  "Pffft... Vous voila de retour au point de départ, devant le château..."

@@ -1,47 +1,47 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest"
+msgstr  "$GSH_HOME/Forest"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+msgid   "Chest"
+msgstr  "Chest"
+
+msgid   "Hut"
+msgstr  "Hut"
 
 #, sh-format
-msgid "$GSH_HOME/Forest"
-msgstr "$GSH_HOME/Forest"
-
-msgid "Chest"
-msgstr "Chest"
-
-msgid "Hut"
-msgstr "Hut"
-
-msgid "You built too many huts in the forest!"
-msgstr "You built too many huts in the forest!"
-
-msgid "You did not build a hut in the forest!"
-msgstr "You did not build a hut in the forest!"
+msgid   "The $GSH_CHEST directory does not exist!"
+msgstr  "The $GSH_CHEST directory does not exist!"
 
 #, sh-format
-msgid "The $HUT_DIR directory does not exist!"
-msgstr "The $HUT_DIR directory does not exist!"
-
-msgid "You built too many chests in your hut!"
-msgstr "You built too many chests in your hut!"
-
-msgid "You did not build a chest in your hut!"
-msgstr "You did not build a chest in your hut!"
+msgid   "The $HUT_DIR directory does not exist!"
+msgstr  "The $HUT_DIR directory does not exist!"
 
 #, sh-format
-msgid "The $GSH_CHEST directory does not exist!"
-msgstr "The $GSH_CHEST directory does not exist!"
+msgid   "You are back at the starting point."
+msgstr  "You are back at the starting point."
 
-#, sh-format
-msgid "You are back at the starting point."
-msgstr "You are back at the starting point."
+msgid   "You built too many chests in your hut!"
+msgstr  "You built too many chests in your hut!"
+
+msgid   "You built too many huts in the forest!"
+msgstr  "You built too many huts in the forest!"
+
+msgid   "You did not build a chest in your hut!"
+msgstr  "You did not build a chest in your hut!"
+
+msgid   "You did not build a hut in the forest!"
+msgstr  "You did not build a hut in the forest!"

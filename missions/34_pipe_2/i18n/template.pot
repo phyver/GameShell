@@ -1,27 +1,26 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Stall"
+msgstr  ""
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+msgid   "How many unpaid items are there?"
+msgstr  ""
+
+msgid   "PAID"
+msgstr  ""
 
 #, sh-format
-msgid "$GSH_HOME/Stall"
-msgstr ""
-
-msgid "PAID"
-msgstr ""
-
-msgid "How many unpaid items are there?"
-msgstr ""
-
-#, sh-format
-msgid "That's the right answer, but you used $NB_CMD commands!"
-msgstr ""
+msgid   "That's the right answer, but you used $NB_CMD commands!"
+msgstr  ""

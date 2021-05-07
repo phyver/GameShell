@@ -1,54 +1,49 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Kitchen"
+msgstr  "$GSH_HOME/Chateau/Cuisine"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
+
+msgid   "Are you sure you killed all the rat poison generators?"
+msgstr  "Vous êtes sûr d'avoir tué tous les générateurs de mort aux rats ?"
+
+msgid   "Did you eat some cheese?"
+msgstr  "Est-ce que vous avez mangé du fromage ?"
+
+msgid   "Did you kill some cheese generator?"
+msgstr  "Est-ce que vous avez tué des générateurs de fromage ?"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Kitchen"
-msgstr "$GSH_HOME/Chateau/Cuisine"
-
-msgid "rat_poison"
-msgstr "mort_aux_rats"
-
-msgid "There still is some rat poison in the kitchen!"
-msgstr "Il reste de la mort aux rats dans la cuisine !"
-
-msgid "There still is some rat poison hidden in the kitchen!"
-msgstr "Il reste de la mort aux rats cachée dans la cuisine !"
-
-msgid "Are you sure you killed all the rat poison generators?"
-msgstr "Vous êtes sûr d'avoir tué tous les générateurs de mort aux rats ?"
-
-msgid "Did you kill some cheese generator?"
-msgstr "Est-ce que vous avez tué des générateurs de fromage ?"
-
-msgid "cheese"
-msgstr "fromage"
-
-msgid "Did you eat some cheese?"
-msgstr "Est-ce que vous avez mangé du fromage ?"
+msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psproc')"
+msgstr  "La commande 'ps' est nécessaire pour la mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: installez le paquet 'psproc')"
 
 #, sh-format
-msgid ""
-"The command 'ps' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'psproc')"
-msgstr ""
-"La commande 'ps' est nécessaire pour la mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: installez le paquet 'psproc')"
+msgid   "The command 'pstree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+msgstr  "La commande 'pstree' est nécessaire pour la mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: installez le paquet 'psmisc')"
 
-#, sh-format
-msgid ""
-"The command 'pstree' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'psmisc')"
-msgstr ""
-"La commande 'pstree' est nécessaire pour la mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: installez le paquet 'psmisc')"
+msgid   "There still is some rat poison hidden in the kitchen!"
+msgstr  "Il reste de la mort aux rats cachée dans la cuisine !"
+
+msgid   "There still is some rat poison in the kitchen!"
+msgstr  "Il reste de la mort aux rats dans la cuisine !"
+
+msgid   "cheese"
+msgstr  "fromage"
+
+msgid   "rat_poison"
+msgstr  "mort_aux_rats"

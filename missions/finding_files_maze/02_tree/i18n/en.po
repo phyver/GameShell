@@ -1,55 +1,53 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Forest/Hut/Chest"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/.Maze"
+msgstr  "$GSH_HOME/Garden/.Maze"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/Orchard"
+msgstr  "$GSH_HOME/Garden/Orchard"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/Shed"
+msgstr  "$GSH_HOME/Garden/Shed"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+msgid   "Booh... The silver coin in you chest is invalid!"
+msgstr  "Booh... The silver coin in you chest is invalid!"
 
 #, sh-format
-msgid "$GSH_HOME/Garden/.Maze"
-msgstr "$GSH_HOME/Garden/.Maze"
+msgid   "The command 'tree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'tree')"
+msgstr  "The command 'tree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'tree')"
 
-msgid "silver_coin"
-msgstr "silver_coin"
+msgid   "There is no silver coin in your chest!"
+msgstr  "There is no silver coin in your chest!"
 
-msgid "There still are some silver coins in the maze!"
-msgstr "There still are some silver coins in the maze!"
+msgid   "There still are some silver coins in the maze!"
+msgstr  "There still are some silver coins in the maze!"
 
-msgid "There is no silver coin in your chest!"
-msgstr "There is no silver coin in your chest!"
+msgid   "You are back at the entrance of the maze..."
+msgstr  "You are back at the entrance of the maze..."
 
-msgid "Booh... The silver coin in you chest is invalid!"
-msgstr "Booh... The silver coin in you chest is invalid!"
+msgid   "maze generation:"
+msgstr  "maze generation:"
 
-msgid "You are back at the entrance of the maze..."
-msgstr "You are back at the entrance of the maze..."
-
-#, sh-format
-msgid ""
-"The command 'tree' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'tree')"
-msgstr ""
-"The command 'tree' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'tree')"
-
-#, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr "$GSH_HOME/Forest/Hut/Chest"
-
-msgid "maze generation:"
-msgstr "maze generation:"
-
-#, sh-format
-msgid "$GSH_HOME/Garden/Orchard"
-msgstr "$GSH_HOME/Garden/Orchard"
-
-#, sh-format
-msgid "$GSH_HOME/Garden/Shed"
-msgstr "$GSH_HOME/Garden/Shed"
+msgid   "silver_coin"
+msgstr  "silver_coin"

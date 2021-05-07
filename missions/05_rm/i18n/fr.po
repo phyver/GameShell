@@ -1,30 +1,29 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
-
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Cellar"
-msgstr "$GSH_HOME/Chateau/Cave"
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Chateau/Cave"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
+
+msgid   "Hey! You removed a salamander!"
+msgstr  "Hé ! Vous avez supprimé une salamandre !"
+
+msgid   "There are still spiders in the cellar!"
+msgstr  "Il reste des araignées dans la cave !"
+
+msgid   "salamander"
+msgstr  "salamandre"
 
 # filename
-msgid "spider"
-msgstr "araignee"
-
-msgid "There are still spiders in the cellar!"
-msgstr "Il reste des araignées dans la cave !"
-
-msgid "salamander"
-msgstr "salamandre"
-
-msgid "Hey! You removed a salamander!"
-msgstr "Hé ! Vous avez supprimé une salamandre !"
+msgid   "spider"
+msgstr  "araignee"

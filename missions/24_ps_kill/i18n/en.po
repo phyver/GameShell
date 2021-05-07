@@ -1,46 +1,44 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Kitchen"
+msgstr  "$GSH_HOME/Castle/Kitchen"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+msgid   "Pantry"
+msgstr  "Pantry"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Kitchen"
-msgstr "$GSH_HOME/Castle/Kitchen"
+msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psproc')"
+msgstr  "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psproc')"
 
-msgid "Pantry"
-msgstr "Pantry"
+msgid   "The content of the pantry has changed!"
+msgstr  "The content of the pantry has changed!"
 
-msgid "wind-up_cat"
-msgstr "wind-up_cat"
+msgid   "There still are some hidden wind-up cats in the pantry!"
+msgstr  "There still are some hidden wind-up cats in the pantry!"
 
-msgid "There still are some wind-up cats in the pantry!"
-msgstr "There still are some wind-up cats in the pantry!"
+msgid   "There still are some wind-up cats in the pantry!"
+msgstr  "There still are some wind-up cats in the pantry!"
 
-msgid "There still are some hidden wind-up cats in the pantry!"
-msgstr "There still are some hidden wind-up cats in the pantry!"
+msgid   "barrel_of_apples"
+msgstr  "barrel_of_apples"
 
-msgid "The content of the pantry has changed!"
-msgstr "The content of the pantry has changed!"
+msgid   "piece_of_cheese"
+msgstr  "piece_of_cheese"
 
-#, sh-format
-msgid ""
-"The command 'ps' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'psproc')"
-msgstr ""
-"The command 'ps' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'psproc')"
-
-msgid "barrel_of_apples"
-msgstr "barrel_of_apples"
-
-msgid "piece_of_cheese"
-msgstr "piece_of_cheese"
+msgid   "wind-up_cat"
+msgstr  "wind-up_cat"

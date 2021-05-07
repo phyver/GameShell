@@ -1,42 +1,40 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Library"
+msgstr  ""
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+msgid   "Greek_Latin_and_other_modern_languages"
+msgstr  ""
+
+msgid   "How_to_cheat_for_exams"
+msgstr  ""
+
+msgid   "Mathematics_101"
+msgstr  ""
+
+msgid   "That's not even a number!"
+msgstr  ""
+
+msgid   "The book 'Mathematics_101' contains all the anwsers for the exam.\n"
+        "\n"
+        "You just need to copy all the lines in this book."
+msgstr  ""
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Main_building/Library"
-msgstr ""
+msgid   "Too bad! The expected answer was $c..."
+msgstr  ""
 
-msgid "Mathematics_101"
-msgstr ""
-
-msgid "Too slow! You need to give the answers in less than 10 seconds..."
-msgstr ""
-
-msgid "That's not even a number!"
-msgstr ""
-
-#, sh-format
-msgid "Too bad! The expected answer was $c..."
-msgstr ""
-
-msgid "Greek_Latin_and_other_modern_languages"
-msgstr ""
-
-msgid ""
-"The book 'Mathematics_101' contains all the anwsers for the exam.\n"
-"\n"
-"You just need to copy all the lines in this book."
-msgstr ""
-
-msgid "How_to_cheat_for_exams"
-msgstr ""
+msgid   "Too slow! You need to give the answers in less than 10 seconds..."
+msgstr  ""
