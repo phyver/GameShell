@@ -1,12 +1,12 @@
 #!/bin/bash
 
 _mission_check() {
-    # make sure the generator produces some cats
-    echo -n .
-    sleep 1
-    echo -n .
-    sleep 1
-    echo .
+    local pid=$(cat "$GSH_VAR/cat-generator.pid")
+    if ps -p $pid | grep cat-generator > /dev/null
+    then
+        echo "$(gettext "The cat generator is still running!")"
+        return 1
+    fi
 
     local dir=$(eval_gettext '$GSH_HOME/Castle/Kitchen')/$(gettext "Pantry")
     local cat=$(find "$dir" -name "*_$(gettext "wind-up_cat")")
