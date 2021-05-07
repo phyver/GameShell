@@ -260,7 +260,7 @@ Do you want to remove it and start a new game? [y/N]') " r
   make_index "$@" 2> /dev/null | sed "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
 
   # Installing all missions.
-  local MISSION_NB=1
+  local MISSION_NB=0
   while read MISSION_DIR
   do
     case $MISSION_DIR in
@@ -273,6 +273,9 @@ Do you want to remove it and start a new game? [y/N]') " r
     esac
     export MISSION_DIR
     MISSION_DIR=$GSH_MISSIONS/$MISSION_DIR
+
+    [ -d "$MISSION_DIR" ] || continue
+    [ -f "$MISSION_DIR/check.sh" ] && MISSION_NB=$((MISSION_NB+1))
 
     # To be used as TEXTDOMAIN environment variable for the mission.
     export DOMAIN=$(basename "$MISSION_DIR")
@@ -325,7 +328,6 @@ EOH
       cp "$MISSION_DIR/bashrc" "$GSH_BASHRC/$(basename "$MISSION_DIR" /).bashrc.sh"
     fi
     printf "."
-    MISSION_NB=$((MISSION_NB+1))
   done < "$GSH_CONFIG/index.txt"
   if [ "$MISSION_NB" -eq 0 ]
   then
