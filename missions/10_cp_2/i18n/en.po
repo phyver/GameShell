@@ -1,42 +1,42 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Entrance"
+msgstr  "$GSH_HOME/Castle/Entrance"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Forest/Hut/Chest"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
-#, sh-format
-msgid "$GSH_HOME/Castle/Entrance"
-msgstr "$GSH_HOME/Castle/Entrance"
+msgid   "I only wanted the ornaments!"
+msgstr  "I only wanted the ornaments!"
 
-msgid "ornament"
-msgstr "ornament"
+msgid   "I wanted all the ornements!"
+msgstr  "I wanted all the ornements!"
 
-msgid "You changed the contents of the entrance!"
-msgstr "You changed the contents of the entrance!"
+msgid   "You changed the contents of the entrance!"
+msgstr  "You changed the contents of the entrance!"
 
-msgid "garbage"
-msgstr "garbage"
+msgid   "garbage"
+msgstr  "garbage"
 
-msgid "gravel"
-msgstr "gravel"
+msgid   "gravel"
+msgstr  "gravel"
 
-msgid "hay"
-msgstr "hay"
+msgid   "hay"
+msgstr  "hay"
 
-msgid "I only wanted the ornaments!"
-msgstr "I only wanted the ornaments!"
-
-msgid "I wanted all the ornements!"
-msgstr "I wanted all the ornements!"
-
-#, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr "$GSH_HOME/Forest/Hut/Chest"
+msgid   "ornament"
+msgstr  "ornament"

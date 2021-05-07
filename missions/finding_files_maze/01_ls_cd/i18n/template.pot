@@ -1,48 +1,47 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid "$GSH_HOME/Garden/.Maze"
-msgstr ""
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  ""
 
-msgid "copper_coin"
-msgstr ""
+#, sh-format
+msgid   "$GSH_HOME/Garden/.Maze"
+msgstr  ""
 
-msgid "There still are some copper coins in the maze!"
-msgstr ""
+#, sh-format
+msgid   "$GSH_HOME/Garden/Orchard"
+msgstr  ""
 
-msgid "There is no copper coin in your chest!"
-msgstr ""
-
-msgid "Booh... The copper coin in you chest is invalid!"
-msgstr ""
-
-msgid "You are back at the entrance of the maze..."
-msgstr ""
+#, sh-format
+msgid   "$GSH_HOME/Garden/Shed"
+msgstr  ""
 
 # path for the text file containing the goal
 #, sh-format
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
 
-#, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr ""
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
 
-msgid "maze generation:"
-msgstr ""
+msgid   "Booh... The copper coin in you chest is invalid!"
+msgstr  ""
 
-#, sh-format
-msgid "$GSH_HOME/Garden/Orchard"
-msgstr ""
+msgid   "There is no copper coin in your chest!"
+msgstr  ""
 
-#, sh-format
-msgid "$GSH_HOME/Garden/Shed"
-msgstr ""
+msgid   "There still are some copper coins in the maze!"
+msgstr  ""
+
+msgid   "You are back at the entrance of the maze..."
+msgstr  ""
+
+msgid   "copper_coin"
+msgstr  ""
+
+msgid   "maze generation:"
+msgstr  ""

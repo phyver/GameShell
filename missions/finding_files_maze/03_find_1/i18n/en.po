@@ -1,65 +1,63 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Forest/Hut/Chest"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/.Maze"
+msgstr  "$GSH_HOME/Garden/.Maze"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/Orchard"
+msgstr  "$GSH_HOME/Garden/Orchard"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/Shed"
+msgstr  "$GSH_HOME/Garden/Shed"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$GSH_HOME/Garden/.Maze"
-msgstr "$GSH_HOME/Garden/.Maze"
+msgid   "Coin '$COIN_NAME' in your chest is invalid!"
+msgstr  "Coin '$COIN_NAME' in your chest is invalid!"
 
-msgid "coin"
-msgstr "coin"
+msgid   "GolD_CoiN"
+msgstr  "GolD_CoiN"
 
-msgid "Some of the coins are not in your chest!"
-msgstr "Some of the coins are not in your chest!"
-
-#, sh-format
-msgid "Coin '$COIN_NAME' in your chest is invalid!"
-msgstr "Coin '$COIN_NAME' in your chest is invalid!"
-
-msgid "gold_coin"
-msgstr "gold_coin"
-
-msgid "There are too many gold coins in the maze!"
-msgstr "There are too many gold coins in the maze!"
-
-msgid "There still are some gold coins in the maze!"
-msgstr "There still are some gold coins in the maze!"
-
-msgid "You are back at the entrance of the maze..."
-msgstr "You are back at the entrance of the maze..."
+msgid   "Some of the coins are not in your chest!"
+msgstr  "Some of the coins are not in your chest!"
 
 #, sh-format
-msgid ""
-"The command 'man' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'man-db')"
-msgstr ""
-"The command 'man' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'man-db')"
+msgid   "The command 'man' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'man-db')"
+msgstr  "The command 'man' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'man-db')"
 
-#, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr "$GSH_HOME/Forest/Hut/Chest"
+msgid   "There are too many gold coins in the maze!"
+msgstr  "There are too many gold coins in the maze!"
 
-msgid "maze generation:"
-msgstr "maze generation:"
+msgid   "There still are some gold coins in the maze!"
+msgstr  "There still are some gold coins in the maze!"
 
-msgid "GolD_CoiN"
-msgstr "GolD_CoiN"
+msgid   "You are back at the entrance of the maze..."
+msgstr  "You are back at the entrance of the maze..."
 
-#, sh-format
-msgid "$GSH_HOME/Garden/Orchard"
-msgstr "$GSH_HOME/Garden/Orchard"
+msgid   "coin"
+msgstr  "coin"
 
-#, sh-format
-msgid "$GSH_HOME/Garden/Shed"
-msgstr "$GSH_HOME/Garden/Shed"
+msgid   "gold_coin"
+msgstr  "gold_coin"
+
+msgid   "maze generation:"
+msgstr  "maze generation:"

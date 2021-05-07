@@ -1,47 +1,46 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest"
+msgstr  ""
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+msgid   "Chest"
+msgstr  ""
+
+msgid   "Hut"
+msgstr  ""
 
 #, sh-format
-msgid "$GSH_HOME/Forest"
-msgstr ""
-
-msgid "Chest"
-msgstr ""
-
-msgid "Hut"
-msgstr ""
-
-msgid "You built too many huts in the forest!"
-msgstr ""
-
-msgid "You did not build a hut in the forest!"
-msgstr ""
+msgid   "The $GSH_CHEST directory does not exist!"
+msgstr  ""
 
 #, sh-format
-msgid "The $HUT_DIR directory does not exist!"
-msgstr ""
-
-msgid "You built too many chests in your hut!"
-msgstr ""
-
-msgid "You did not build a chest in your hut!"
-msgstr ""
+msgid   "The $HUT_DIR directory does not exist!"
+msgstr  ""
 
 #, sh-format
-msgid "The $GSH_CHEST directory does not exist!"
-msgstr ""
+msgid   "You are back at the starting point."
+msgstr  ""
 
-#, sh-format
-msgid "You are back at the starting point."
-msgstr ""
+msgid   "You built too many chests in your hut!"
+msgstr  ""
+
+msgid   "You built too many huts in the forest!"
+msgstr  ""
+
+msgid   "You did not build a chest in your hut!"
+msgstr  ""
+
+msgid   "You did not build a hut in the forest!"
+msgstr  ""

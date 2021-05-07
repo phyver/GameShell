@@ -1,39 +1,36 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
+msgstr  "$GSH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
+
+msgid   "Drawer"
+msgstr  "Tiroir"
+
+msgid   "The content of $INVENTORY_FILE is invalid.\n"
+        "You can check its content with the command\n"
+        "    $ less $INVENTORY_FILE"
+msgstr  "Le contenu de $INVENTORY_FILE n'est pas correct.\n"
+        "Vous pouvez vérifier son contenu avec la commande\n"
+        "    $ less $INVENTORY_FILE"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
-msgstr "$GSH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin"
+msgid   "There is no $INVENTORY_FILE in the drawer..."
+msgstr  "Il n'y a pas de $INVENTORY_FILE dans le tiroir..."
 
-msgid "Drawer"
-msgstr "Tiroir"
+msgid   "grimoire"
+msgstr  "grimoire"
 
-msgid "grimoire"
-msgstr "grimoire"
-
-msgid "inventory.txt"
-msgstr "inventaire.txt"
-
-#, sh-format
-msgid "There is no $INVENTORY_FILE in the drawer..."
-msgstr "Il n'y a pas de $INVENTORY_FILE dans le tiroir..."
-
-msgid ""
-"The content of $INVENTORY_FILE is invalid.\n"
-"You can check its content with the command\n"
-"    $ less $INVENTORY_FILE"
-msgstr ""
-"Le contenu de $INVENTORY_FILE n'est pas correct.\n"
-"Vous pouvez vérifier son contenu avec la commande\n"
-"    $ less $INVENTORY_FILE"
+msgid   "inventory.txt"
+msgstr  "inventaire.txt"

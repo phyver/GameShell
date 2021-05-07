@@ -1,29 +1,26 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
-
-#, sh-format
-msgid "What was the day of the week for the $MM-$DD-$YYYY?"
-msgstr "Quel était le jours de la semaine pour le $DD-$MM-$YYYY ?"
-
-msgid "Your answer: "
-msgstr "Votre réponse : "
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
 
 # path for the text file containing the goal
 #, sh-format
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid ""
-"The command 'cal' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'bsdmainutils')"
-msgstr ""
-"La commande 'cal' est nécessaire pour la mission $MISSION_NAME.\n"
-"(Debian / Ubuntu : installez le paquet 'bsdmainutils')"
+msgid   "The command 'cal' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'bsdmainutils')"
+msgstr  "La commande 'cal' est nécessaire pour la mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu : installez le paquet 'bsdmainutils')"
+
+#, sh-format
+msgid   "What was the day of the week for the $MM-$DD-$YYYY?"
+msgstr  "Quel était le jours de la semaine pour le $DD-$MM-$YYYY ?"
+
+msgid   "Your answer: "
+msgstr  "Votre réponse : "

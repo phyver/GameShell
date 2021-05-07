@@ -1,23 +1,22 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/fr.txt"
-
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/fr.txt"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Main_tower/First_floor/Second_floor/Top_of_the_tower"
-msgstr "$GSH_HOME/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_du_donjon"
+msgid   "$GSH_HOME/Castle/Main_tower/First_floor/Second_floor/Top_of_the_tower"
+msgstr  "$GSH_HOME/Chateau/Donjon/Premier_etage/Deuxieme_etage/Haut_du_donjon"
 
-msgid "You are not at the top of the tower!"
-msgstr "Vous n'êtes pas en haut du donjon !"
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
 
-msgid "You need to start over from the start."
-msgstr "Vous allez devoir recommencer du point de départ."
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
+
+msgid   "You are not at the top of the tower!"
+msgstr  "Vous n'êtes pas en haut du donjon !"
+
+msgid   "You need to start over from the start."
+msgstr  "Vous allez devoir recommencer du point de départ."

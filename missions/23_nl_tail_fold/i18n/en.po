@@ -1,36 +1,36 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Mountain/Cave"
+msgstr  "$GSH_HOME/Mountain/Cave"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/recipe/en.txt"
+msgstr  "$MISSION_DIR/recipe/en.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
-#, sh-format
-msgid "$GSH_HOME/Mountain/Cave"
-msgstr "$GSH_HOME/Mountain/Cave"
+msgid   "You are not standing in the cave with the ermit!"
+msgstr  "You are not standing in the cave with the ermit!"
 
-#, sh-format
-msgid "$MISSION_DIR/recipe/en.txt"
-msgstr "$MISSION_DIR/recipe/en.txt"
+msgid   "You haven't used the operator '|'!"
+msgstr  "You haven't used the operator '|'!"
 
-msgid "You are not standing in the cave with the ermit!"
-msgstr "You are not standing in the cave with the ermit!"
+msgid   "Your previous command doesn't give the expected result..."
+msgstr  "Your previous command doesn't give the expected result..."
 
-msgid "You haven't used the operator '|'!"
-msgstr "You haven't used the operator '|'!"
+msgid   "potion_recipe"
+msgstr  "potion_recipe"
 
-msgid "Your previous command doesn't give the expected result..."
-msgstr "Your previous command doesn't give the expected result..."
-
-msgid "potion_recipe"
-msgstr "potion_recipe"
-
-msgid "potion_recipe.start"
-msgstr "potion_recipe.start"
+msgid   "potion_recipe.start"
+msgstr  "potion_recipe.start"

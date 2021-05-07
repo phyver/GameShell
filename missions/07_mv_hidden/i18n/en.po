@@ -1,54 +1,54 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Castle/Cellar"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Forest/Hut/Chest"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Cellar"
-msgstr "$GSH_HOME/Castle/Cellar"
-
-msgid "coin"
-msgstr "coin"
+msgid   "The coin '$COIN_NAME...' has a wrong file name..."
+msgstr  "The coin '$COIN_NAME...' has a wrong file name..."
 
 #, sh-format
-msgid "There are several '$COIN_NAME...' in the cellar!"
-msgstr "There are several '$COIN_NAME...' in the cellar!"
+msgid   "The coin '$COIN_NAME...' has been tampered with..."
+msgstr  "The coin '$COIN_NAME...' has been tampered with..."
 
 #, sh-format
-msgid "The coin '$COIN_NAME...' is still in the cellar!"
-msgstr "The coin '$COIN_NAME...' is still in the cellar!"
+msgid   "The coin '$COIN_NAME...' is still in the cellar!"
+msgstr  "The coin '$COIN_NAME...' is still in the cellar!"
 
 #, sh-format
-msgid "There are several '$COIN_NAME...' in your chest!"
-msgstr "There are several '$COIN_NAME...' in your chest!"
+msgid   "There are several '$COIN_NAME...' in the cellar!"
+msgstr  "There are several '$COIN_NAME...' in the cellar!"
 
 #, sh-format
-msgid "There is no '$COIN_NAME...' in your chest!"
-msgstr "There is no '$COIN_NAME...' in your chest!"
+msgid   "There are several '$COIN_NAME...' in your chest!"
+msgstr  "There are several '$COIN_NAME...' in your chest!"
 
 #, sh-format
-msgid "The coin '$COIN_NAME...' has been tampered with..."
-msgstr "The coin '$COIN_NAME...' has been tampered with..."
+msgid   "There is no '$COIN_NAME...' in your chest!"
+msgstr  "There is no '$COIN_NAME...' in your chest!"
 
-#, sh-format
-msgid "The coin '$COIN_NAME...' has a wrong file name..."
-msgstr "The coin '$COIN_NAME...' has a wrong file name..."
+msgid   "chest"
+msgstr  "chest"
 
-msgid "chest"
-msgstr "chest"
+msgid   "coin"
+msgstr  "coin"
 
-msgid "hut"
-msgstr "hut"
-
-#, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr "$GSH_HOME/Forest/Hut/Chest"
+msgid   "hut"
+msgstr  "hut"

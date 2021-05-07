@@ -1,26 +1,24 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Throne_room/Kings_quarter"
+msgstr  ""
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Main_building/Throne_room/Kings_quarter"
-msgstr ""
+msgid   "The command 'man' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'man-db')"
+msgstr  ""
 
-msgid "You are not in the King's quarter!"
-msgstr ""
-
-#, sh-format
-msgid ""
-"The command 'man' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'man-db')"
-msgstr ""
+msgid   "You are not in the King's quarter!"
+msgstr  ""

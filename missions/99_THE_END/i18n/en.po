@@ -1,70 +1,64 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/msg/en.txt"
+msgstr  "$MISSION_DIR/msg/en.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
-msgid ""
-"The admin password is now '$PASSWORD'. Use\n"
-"    $ gsh HELP\n"
-"for a list including admin commands."
-msgstr ""
-"The admin password is now '$PASSWORD'. Use\n"
-"    $ gsh HELP\n"
-"for a list including admin commands."
-
-msgid "Press Enter to continue."
-msgstr "Press Enter to continue."
-
-msgid ""
-"What do you want to do?\n"
-"    (q)         quit\n"
-"    (c)         continue\n"
-"    (number)    restart from this mission"
-msgstr ""
-"What do you want to do?\n"
-"    (q)         quit\n"
-"    (c)         continue\n"
-"    (number)    restart from this mission"
-
-msgid "Your choice [qC] or a number:"
-msgstr "Your choice [qC] or a number:"
-
-msgid "Q"
-msgstr "Q"
-
-msgid "q"
-msgstr "q"
-
-msgid "C"
-msgstr "C"
-
-msgid "c"
-msgstr "c"
+msgid   "C"
+msgstr  "C"
 
 #, sh-format
-msgid "unknown choice: $CHOICE"
-msgstr "unknown choice: $CHOICE"
+msgid   "Error: invalid mission number: $CHOICE.\n"
+        "Please choose a number between 1 and $NB_MISSIONS"
+msgstr  "Error: invalid mission number: $CHOICE.\n"
+        "Please choose a number between 1 and $NB_MISSIONS"
 
-msgid "qwerty"
-msgstr "qwerty"
+msgid   "Press Enter to continue."
+msgstr  "Press Enter to continue."
+
+msgid   "Q"
+msgstr  "Q"
+
+msgid   "The admin password is now '$PASSWORD'. Use\n"
+        "    $ gsh HELP\n"
+        "for a list including admin commands."
+msgstr  "The admin password is now '$PASSWORD'. Use\n"
+        "    $ gsh HELP\n"
+        "for a list including admin commands."
+
+msgid   "What do you want to do?\n"
+        "    (q)         quit\n"
+        "    (c)         continue\n"
+        "    (number)    restart from this mission"
+msgstr  "What do you want to do?\n"
+        "    (q)         quit\n"
+        "    (c)         continue\n"
+        "    (number)    restart from this mission"
+
+msgid   "Your choice [qC] or a number:"
+msgstr  "Your choice [qC] or a number:"
+
+msgid   "c"
+msgstr  "c"
+
+msgid   "q"
+msgstr  "q"
+
+msgid   "qwerty"
+msgstr  "qwerty"
 
 #, sh-format
-msgid ""
-"Error: invalid mission number: $CHOICE.\n"
-"Please choose a number between 1 and $NB_MISSIONS"
-msgstr ""
-"Error: invalid mission number: $CHOICE.\n"
-"Please choose a number between 1 and $NB_MISSIONS"
-
-#, sh-format
-msgid "$MISSION_DIR/msg/en.txt"
-msgstr "$MISSION_DIR/msg/en.txt"
+msgid   "unknown choice: $CHOICE"
+msgstr  "unknown choice: $CHOICE"

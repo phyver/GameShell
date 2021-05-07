@@ -1,23 +1,22 @@
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
-# path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr ""
-
-# path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Main_tower/First_floor/Second_floor/Top_of_the_tower"
-msgstr ""
+msgid   "$GSH_HOME/Castle/Main_tower/First_floor/Second_floor/Top_of_the_tower"
+msgstr  ""
 
-msgid "You are not at the top of the tower!"
-msgstr ""
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
 
-msgid "You need to start over from the start."
-msgstr ""
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+msgid   "You are not at the top of the tower!"
+msgstr  ""
+
+msgid   "You need to start over from the start."
+msgstr  ""
