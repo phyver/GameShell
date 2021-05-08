@@ -25,7 +25,7 @@ install_book() {
   BOOK="$1"
   if [[ "$BOOK" == */ ]]
   then
-    BOOK="$BOOK$(gettext "Book_of_Potions")"
+    BOOK="$BOOK$(gettext "Book_of_potions")"
   fi
 
   mkdir -p "$BOOK"

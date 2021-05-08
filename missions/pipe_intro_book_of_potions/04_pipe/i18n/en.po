@@ -1,36 +1,36 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Mountain/Cave"
+msgstr  "$GSH_HOME/Mountain/Cave"
 
 # path for the text file containing the goal
 #, sh-format
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
+
+msgid   "Book_of_potions"
+msgstr  "Book_of_potions"
 
 #, sh-format
-msgid "$GSH_HOME/Mountain/Cave"
-msgstr "$GSH_HOME/Mountain/Cave"
+msgid   "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
+msgstr  "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
 
-msgid "Book_of_Potions"
-msgstr "Book_of_Potions"
+msgid   "You altered the book..."
+msgstr  "You altered the book..."
 
-msgid "page"
-msgstr "page"
+msgid   "You are not in the cave with Servillus!"
+msgstr  "You are not in the cave with Servillus!"
 
-msgid "You altered the book..."
-msgstr "You altered the book..."
+msgid   "You have not used the 'tail' command!"
+msgstr  "You have not used the 'tail' command!"
 
-msgid "You are not in the cave with Servillus!"
-msgstr "You are not in the cave with Servillus!"
+msgid   "Your previous command does not give the expected result..."
+msgstr  "Your previous command does not give the expected result..."
 
-msgid "You have not used the 'tail' command!"
-msgstr "You have not used the 'tail' command!"
-
-msgid "Your previous command does not give the expected result..."
-msgstr "Your previous command does not give the expected result..."
-
-#, sh-format
-msgid "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
-msgstr "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
+msgid   "page"
+msgstr  "page"

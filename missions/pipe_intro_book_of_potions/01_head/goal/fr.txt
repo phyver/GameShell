@@ -1,0 +1,23 @@
+Objectif
+========
+
+Un vieil hermite un peu tête en l'air appelé Servillus s'est 
+installé dans une grotte avec son vieux livre de potions.
+Rendez vous dans la grotte et aidez le à retrouver la recette de sa 
+célèbre tisane.
+
+Pour valider la mission, votre dernière commande avant ``gsh check`` 
+doit afficher cette recette (avec son titre), mais rien d'autre.
+
+
+Commandes utiles
+================
+
+cat FICHIER
+  Affiche le contenu du fichier.
+
+head FICHIER
+  Affiche les 10 premières lignes du fichier.
+
+head -n K FICHIER
+  Affiche les K premières lignes du fichier.

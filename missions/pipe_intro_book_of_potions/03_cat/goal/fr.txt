@@ -1,0 +1,18 @@
+Objectif
+========
+
+Pendant qu'il fait la vaisselle, Servillus mentionne une potion 
+intéressante qui donne (temporairement) au buveur l'apparence 
+physique de quelqu'un d'autre.
+Lisez cette recette dans le livre de l'ermite.
+
+Pour valider la mission, votre dernière commande avant ``gsh check`` 
+doit afficher la recette complète (avec son titre).
+
+
+Commandes utiles
+================
+
+cat FICHIER1 FICHIER2 ... FICHIERn
+  Affiche le contenu des fichiers, dans l'ordre donné.
+  Note : ``cat`` est une abréviation de "concatenate".
