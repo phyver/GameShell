@@ -374,21 +374,21 @@ _gsh_check() {
       # Display the text message (if it exists).
       if [ -f "$MISSION_DIR/treasure-msg.sh" ]
       then
-        echo ""
+        echo
         mission_source "$MISSION_DIR/treasure-msg.sh"
-        echo ""
+        echo
       elif [ -f "$MISSION_DIR/treasure-msg.txt" ]
       then
-        echo ""
+        echo
         cat "$MISSION_DIR/treasure-msg.txt"
-        echo ""
+        echo
       else
         local file_msg="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
         if [ -f "$file_msg" ]
         then
-          echo ""
+          echo
           cat "$file_msg"
-          echo ""
+          echo
         fi
       fi
 
