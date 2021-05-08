@@ -48,6 +48,12 @@ checksum() {
 }
 export -f checksum
 
+textdomainname() {
+  local MISSION_DIR=$1
+  echo "${MISSION_DIR#$GSH_MISSIONS/}" | tr "/" ","
+}
+export -f textdomainname
+
 # simple "echo" command with colors
 color_echo() {
   local color
@@ -150,7 +156,7 @@ mission_source() {
   if [ "$GSH_MODE" != "DEBUG" ] || [ -z "$GSH_VERBOSE_SOURCE" ]
   then
     local _TEXTDOMAIN=$TEXTDOMAIN
-    export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+    export TEXTDOMAIN="$(textdomainname "$MISSION_DIR")"
     local _MISSION_NAME=$MISSION_NAME
     export MISSION_NAME="$(basename "$MISSION_DIR")"
     source "$FILENAME"
@@ -173,7 +179,7 @@ mission_source() {
   compgen -a | sort > "$TEMP"/before-A
   ls "$GSH_VAR" > "$TEMP"/before-D
   _TEXTDOMAIN=$TEXTDOMAIN
-  export TEXTDOMAIN="$(basename "$MISSION_DIR")"
+  export TEXTDOMAIN="$(textdomainname "$MISSION_DIR")"
   _MISSION_NAME=$MISSION_NAME
   export MISSION_NAME="$(basename "$MISSION_DIR")"
   source "$FILENAME"
