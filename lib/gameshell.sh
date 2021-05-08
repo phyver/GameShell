@@ -200,7 +200,7 @@ _gsh_start() {
     if [ "$?" -eq 1 ] && [ "$GSH_MODE" != "DEBUG" ]
     then
       _gsh_welcome
-      read -erp "$(gettext "Press Enter")"
+      read -serp "$(gettext "Press Enter")"
     fi
   else
     MISSION_NB=$1
@@ -221,7 +221,7 @@ _gsh_start() {
     color_echo red "$(eval_gettext "Error: mission \$MISSION_NB doesn't exist!
 Restarting from previous mission.")" >&2
     echo
-    read -erp "$(gettext "Press Enter")"
+    read -serp "$(gettext "Press Enter")"
     gsh reset
   fi
 
