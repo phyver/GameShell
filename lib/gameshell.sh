@@ -201,6 +201,7 @@ _gsh_start() {
     then
       _gsh_welcome
       read -serp "$(gettext "Press Enter")"
+      echo
     fi
   else
     MISSION_NB=$1
@@ -222,6 +223,7 @@ _gsh_start() {
 Restarting from previous mission.")" >&2
     echo
     read -serp "$(gettext "Press Enter")"
+    echo
     gsh reset
   fi
 
