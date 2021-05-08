@@ -1,1 +1,1 @@
-mkdir -p "$(eval_gettext '$GSH_HOME/Mountain/Cave')"
+../00_shared/static.sh

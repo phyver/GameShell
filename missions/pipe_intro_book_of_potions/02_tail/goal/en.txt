@@ -1,24 +1,23 @@
 Mission goal
 ============
 
-The old man seems to enjoy your company very much. He invites 
-you to stay for supper, and starts preparing a delicious stew 
-for the both of you. While getting the cauldron ready he asks 
-for your help. Read the steps of the recipe from his book.
+The old man seems to enjoy your company very much. He invites you to 
+stay for supper, and starts preparing a delicious stew for the both 
+of you. While getting the cauldron ready he asks for your help.
+Read him the steps of the recipe from his book.
 
-In order to validate the mission, your last command prior to 
-``gsh check`` must show the steps of the recipe, but not its 
-title nor any blank lines.
+In order to validate the mission, your last command prior to ``gsh 
+check`` must show the steps of the recipe, but not its title.
 
 
 Useful commands
 ===============
 
 cat FILE
-  Display the contents of the FILE.
+  Display the contents of the file.
 
 tail FILE
-  Print the last 10 lines of the FILE.
+  Print the last 10 lines of the file.
 
 tail -n K FILE
-  Print the last K lines of the FILE.
+  Print the last K lines of the file.

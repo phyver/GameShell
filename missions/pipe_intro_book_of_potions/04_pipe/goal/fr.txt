@@ -1,0 +1,45 @@
+Objectif
+========
+
+Le vieil ermite remarque votre intérêt pour les recettes de potions, 
+et il vous met au défi de trouver les étapes de l'élixir de 
+jeunesse.
+
+Pour valider la mission, votre dernière commande avant ``gsh check`` 
+doit afficher les étapes de la recette, mais pas son titre.
+
+
+Useful commands
+===============
+
+cat FILE1 FILE2 ... FILEn
+  Display the contents of the files in order.
+
+tail
+  Affiche les 10 dernières lignes reçues sur l'entrée standard.
+
+tail -n K
+  Affiche les K dernières lignes reçues sur l'entrée standard.
+
+COMMANDE1  |  COMMANDE2
+  Exécute les deux commandes en envoyant la "sortie standard" de la 
+  première dans l'"entrée standard" de la seconde.
+  Note : par analogie avec la plomberie, "|" est appelé un "tube".
+
+
+Explications
+============
+
+Beaucoup des commandes que nous avons vues manipulent du texte : 
+elle reçoivent du texte en entrée et produisent du texte en sortie. 
+Il est courant que les commandent prennent leur entrées dans un ou 
+plusieurs fichiers, et qu'elles écrivent leur résultats sur leurs 
+"sortie standard". Cela signifie que, par défaut, le résultat est 
+affiché dans le terminal. Les commandes ont également une "entrée 
+standard" sur laquelle elles lisent leur entrée.
+
+La plupart des commandes peuvent recevoir leurs entrées soit par des 
+fichiers (donnés en argument), soit sur leur entrée standard. Par 
+exemple :
+- ``head FICHIER`` lit son entrée dans le fichier,
+- ``head`` lit sont entrée sur l'entrée standard.
