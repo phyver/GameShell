@@ -257,7 +257,7 @@ Do you want to remove it and start a new game? [y/N]') " r
     [ -f "$MISSION_DIR/check.sh" ] && MISSION_NB=$((MISSION_NB+1))
 
     # To be used as TEXTDOMAIN environment variable for the mission.
-    export DOMAIN=$(basename "$MISSION_DIR")
+    export DOMAIN=$(textdomainname "$MISSION_DIR")
 
     # Preparing the locales
     if [ -d "$MISSION_DIR/i18n" ]
