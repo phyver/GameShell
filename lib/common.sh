@@ -266,10 +266,10 @@ parse_mission() {
       echo "!${MISSION_DIR#$GSH_MISSIONS/}"
 
     else
-      echo "        invalid argument (parse_mission): $MISSION_DIR" >&2
+      echo "***** invalid argument (parse_mission): '$MISSION_DIR'" >&2
     fi
   else
-    echo "        invalid argument (parse_mission): $MISSION_DIR" >&2
+    echo "***** invalid argument (parse_mission): '$MISSION_DIR'" >&2
   fi
 }
 
@@ -313,7 +313,13 @@ parse_index() {
       DUMMY=""
       ;;
   esac
-  parse_mission "$DUMMY$(REALPATH "$dir/$MISSION_DIR")"
+  MISSION_DIR=$dir/$MISSION_DIR
+  if [ -e "$MISSION_DIR" ]
+  then
+    parse_mission "$DUMMY$(REALPATH "$MISSION_DIR")"
+  else
+    echo "***** invalid argument (parse_index): '${MISSION_DIR#$GSH_MISSIONS/}'" >&2
+  fi
   done
 }
 
@@ -331,7 +337,12 @@ make_index() {
   while [ "$#" -gt 0 ]
   do
     local MISSION_DIR=$(REALPATH "$1")
-    parse_mission "$MISSION_DIR"
+    if [ -e "$MISSION_DIR" ]
+    then
+      parse_mission "$MISSION_DIR"
+    else
+      echo "***** invalid argument (make_index): '$1'" >&2
+    fi
     shift
   done
 }
