@@ -91,6 +91,7 @@ Do you still want to quit? [y/n]") " r
   fi
 
   _log_action "$MISSION_NB" "$signal"
+  export GSH_LAST_ACTION='exit'
   _gsh_clean "$MISSION_NB"
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && _gsh_unprotect
   # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
@@ -296,6 +297,7 @@ _gsh_pass() {
     return 1
   fi
   _log_action "$MISSION_NB" "PASS"
+  export GSH_LAST_ACTION='pass'
   _gsh_clean "$MISSION_NB"
   color_echo yellow "$(eval_gettext 'Mission $MISSION_NB has been cancelled.')" >&2
 
@@ -363,7 +365,7 @@ _gsh_check() {
     echo
 
     _log_action "$MISSION_NB" "CHECK_OK"
-
+    export GSH_LAST_ACTION='check_true'
     _gsh_clean "$MISSION_NB"
 
     if [ -f "$MISSION_DIR/treasure.sh" ]
@@ -410,7 +412,7 @@ You should use the command
     echo
 
     _log_action "$MISSION_NB" "CHECK_OOPS"
-
+    export GSH_LAST_ACTION='check_false'
     _gsh_clean "$MISSION_NB"
     _gsh_start "$MISSION_NB"
   fi
@@ -432,6 +434,7 @@ _gsh_clean() {
   then
     mission_source "$MISSION_DIR/clean.sh"
   fi
+  unset GSH_LAST_ACTION
 }
 
 _gsh_assert_check() {
@@ -463,6 +466,7 @@ _gsh_assert_check() {
     [ -n "$msg" ] && echo "$msg"
   fi
 
+  export GSH_LAST_ACTION="assert_check"
   _gsh_clean "$MISSION_NB"
   _gsh_start -quiet "$MISSION_NB"
 }
@@ -567,6 +571,7 @@ gsh() {
       _gsh_HELP
       ;;
     "r" | "re" | "res" | "rese" | "reset")
+      export GSH_LAST_ACTION='check_reset'
       _gsh_clean
       _gsh_reset
       ;;
@@ -606,6 +611,7 @@ gsh() {
         return 1
       fi
 
+      export GSH_LAST_ACTION='check_goto'
       _gsh_clean
       _gsh_start "$@"
       ;;
