@@ -13,12 +13,12 @@ _mission_check() {
         return 1
     fi
 
-    # Check that the salamanders are still there.
-    local salamanders_nb
-    salamanders_nb=$(find "$cellar" -name "$(gettext "salamander")*" | wc -l)
-    if [ "$salamanders_nb" -ne 2 ]
+    # Check that the bats are still there.
+    local bats_nb
+    bats_nb=$(find "$cellar" -name "$(gettext "bat")*" | wc -l)
+    if [ "$bats_nb" -ne 2 ]
     then
-        echo "$(gettext "Hey! You removed a salamander!")"
+        echo "$(gettext "Hey! You removed a bat!")"
         return 1
     fi
 

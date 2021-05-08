@@ -2,7 +2,7 @@ Objectif
 ========
 
 Retournez dans la cave, et supprimez les araignées qui s'y trouvent.
-Laissez les salamandres tranquilles : elles apparaissent sur le 
+Laissez les chauves-souris tranquilles : elles apparaissent sur le 
 blason du chateau et on dit qu'elles portent chance.
 
 
