@@ -91,23 +91,23 @@ parchment() {
       7) P="Parchment8";;
       8) P="Parchment9";;
     esac
-    echo ""
+    echo
     if [ -z "$file" ]
     then
       python3 "$GSH_BIN/box8.py" --center --box="$P"
     else
       python3 "$GSH_BIN/box8.py" --center --box="$P" < "$file"
     fi
-    echo ""
+    echo
   else
-    echo ""
+    echo
     if [ -z "$file" ]
     then
       cat
     else
       cat "$file"
     fi
-    echo ""
+    echo
   fi
 }
 
@@ -129,7 +129,7 @@ admin_mode() {
   for _ in $(seq 3)
   do
     read -serp "$(gettext "password:" )" mdp
-    echo ""
+    echo
     if [ "$(checksum "$mdp")" = "$HASH" ]
     then
       return 0
