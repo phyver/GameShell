@@ -1,0 +1,148 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
+#, fuzzy
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#: bin/genStall.py:78
+msgid   "the son of Martin"
+msgstr  "the son of Martin"
+
+#: bin/genStall.py:79
+msgid   "the Bold"
+msgstr  "the Bold"
+
+#: bin/genStall.py:80
+msgid   "Georges' son"
+msgstr  "Georges' son"
+
+#: bin/genStall.py:80
+msgid   "from next town"
+msgstr  "from next town"
+
+#: bin/genStall.py:85
+msgid   "a chicken"
+msgstr  "a chicken"
+
+#: bin/genStall.py:85
+msgid   "a horse"
+msgstr  "a horse"
+
+#: bin/genStall.py:85
+msgid   "a pick"
+msgstr  "a pick"
+
+#: bin/genStall.py:85
+msgid   "a spade"
+msgstr  "a spade"
+
+#: bin/genStall.py:85
+msgid   "an apple"
+msgstr  "an apple"
+
+#: bin/genStall.py:86
+msgid   "a bag flour"
+msgstr  "a bag flour"
+
+#: bin/genStall.py:86
+msgid   "a chackal"
+msgstr  "a chackal"
+
+#: bin/genStall.py:86
+msgid   "a cow"
+msgstr  "a cow"
+
+#: bin/genStall.py:86
+msgid   "a goat"
+msgstr  "a goat"
+
+#: bin/genStall.py:86
+msgid   "a ruby"
+msgstr  "a ruby"
+
+#: bin/genStall.py:87
+msgid   "a blanket"
+msgstr  "a blanket"
+
+#: bin/genStall.py:87
+msgid   "a leather ball"
+msgstr  "a leather ball"
+
+#: bin/genStall.py:87
+msgid   "a piece of soap"
+msgstr  "a piece of soap"
+
+#: bin/genStall.py:87
+msgid   "a shiny rock"
+msgstr  "a shiny rock"
+
+#: bin/genStall.py:88
+msgid   "a leather bag"
+msgstr  "a leather bag"
+
+#: bin/genStall.py:88
+msgid   "a pin"
+msgstr  "a pin"
+
+#: bin/genStall.py:88
+msgid   "a stool"
+msgstr  "a stool"
+
+#: bin/genStall.py:88
+msgid   "an opal"
+msgstr  "an opal"
+
+#: bin/genStall.py:88
+msgid   "walking stick"
+msgstr  "walking stick"
+
+#: bin/genStall.py:89
+msgid   "a belt"
+msgstr  "a belt"
+
+#: bin/genStall.py:89
+msgid   "a dented helmet"
+msgstr  "a dented helmet"
+
+#: bin/genStall.py:89
+msgid   "a knife"
+msgstr  "a knife"
+
+#: bin/genStall.py:89
+msgid   "a wooden spoon"
+msgstr  "a wooden spoon"
+
+#: bin/genStall.py:90
+msgid   "a bottle of cider"
+msgstr  "a bottle of cider"
+
+#: bin/genStall.py:105
+msgid   "PAID"
+msgstr  "PAID"
+
+#: bin/genStall.py:113
+msgid   "the King"
+msgstr  "the King"
+
+#: bin/genStall.py:116
+msgid   "{} bought {} for {} coppers{}\n"
+msgstr  "{} bought {} for {} coppers{}\n"
+
+#: clean.sh:1 static.sh:1
+#, sh-format
+msgid   "$GSH_HOME/Stall"
+msgstr  "$GSH_HOME/Stall"
+
+#: deps.sh:2
+#, sh-format
+msgid   "The command 'python3' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'python3')"
+msgstr  "The command 'python3' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'python3')"
+
+#: deps.sh:7
+#, sh-format
+msgid   "The script 'genStall.py' is necessary for mission $MISSION_NAME.\n"
+        "Make sure the corresponding mission is included."
+msgstr  "The script 'genStall.py' is necessary for mission $MISSION_NAME.\n"
+        "Make sure the corresponding mission is included."
