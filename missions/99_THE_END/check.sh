@@ -9,7 +9,7 @@ change_password() {
     \$ gsh HELP
 for a list including admin commands.")"
   echo""
-  read -p "$(gettext "Press Enter to continue.")"
+  read -serp "$(gettext "Press Enter to continue.")"
   echo""
 }
 
