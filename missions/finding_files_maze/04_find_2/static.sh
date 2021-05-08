@@ -1,1 +1,1 @@
-source "$GSH_VAR"/maze_static.sh
+../00_shared/static.sh

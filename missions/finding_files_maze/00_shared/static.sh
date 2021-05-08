@@ -1,2 +1,4 @@
-cp "$MISSION_DIR"/shared_clean.sh "$GSH_VAR"/maze_clean.sh
-cp "$MISSION_DIR"/shared_static.sh "$GSH_VAR"/maze_static.sh
+mkdir -p "$(eval_gettext '$GSH_HOME/Garden/.Maze')"
+mkdir -p "$(eval_gettext '$GSH_HOME/Garden/Orchard')"
+mkdir -p "$(eval_gettext '$GSH_HOME/Garden/Shed')"
+
