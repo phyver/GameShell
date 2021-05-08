@@ -1,0 +1,145 @@
+#, fuzzy
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#: bin/genStall.py:78
+msgid   "the son of Martin"
+msgstr  ""
+
+#: bin/genStall.py:79
+msgid   "the Bold"
+msgstr  ""
+
+#: bin/genStall.py:80
+msgid   "Georges' son"
+msgstr  ""
+
+#: bin/genStall.py:80
+msgid   "from next town"
+msgstr  ""
+
+#: bin/genStall.py:85
+msgid   "a chicken"
+msgstr  ""
+
+#: bin/genStall.py:85
+msgid   "a horse"
+msgstr  ""
+
+#: bin/genStall.py:85
+msgid   "a pick"
+msgstr  ""
+
+#: bin/genStall.py:85
+msgid   "a spade"
+msgstr  ""
+
+#: bin/genStall.py:85
+msgid   "an apple"
+msgstr  ""
+
+#: bin/genStall.py:86
+msgid   "a bag flour"
+msgstr  ""
+
+#: bin/genStall.py:86
+msgid   "a chackal"
+msgstr  ""
+
+#: bin/genStall.py:86
+msgid   "a cow"
+msgstr  ""
+
+#: bin/genStall.py:86
+msgid   "a goat"
+msgstr  ""
+
+#: bin/genStall.py:86
+msgid   "a ruby"
+msgstr  ""
+
+#: bin/genStall.py:87
+msgid   "a blanket"
+msgstr  ""
+
+#: bin/genStall.py:87
+msgid   "a leather ball"
+msgstr  ""
+
+#: bin/genStall.py:87
+msgid   "a piece of soap"
+msgstr  ""
+
+#: bin/genStall.py:87
+msgid   "a shiny rock"
+msgstr  ""
+
+#: bin/genStall.py:88
+msgid   "a leather bag"
+msgstr  ""
+
+#: bin/genStall.py:88
+msgid   "a pin"
+msgstr  ""
+
+#: bin/genStall.py:88
+msgid   "a stool"
+msgstr  ""
+
+#: bin/genStall.py:88
+msgid   "an opal"
+msgstr  ""
+
+#: bin/genStall.py:88
+msgid   "walking stick"
+msgstr  ""
+
+#: bin/genStall.py:89
+msgid   "a belt"
+msgstr  ""
+
+#: bin/genStall.py:89
+msgid   "a dented helmet"
+msgstr  ""
+
+#: bin/genStall.py:89
+msgid   "a knife"
+msgstr  ""
+
+#: bin/genStall.py:89
+msgid   "a wooden spoon"
+msgstr  ""
+
+#: bin/genStall.py:90
+msgid   "a bottle of cider"
+msgstr  ""
+
+#: bin/genStall.py:105
+msgid   "PAID"
+msgstr  ""
+
+#: bin/genStall.py:113
+msgid   "the King"
+msgstr  ""
+
+#: bin/genStall.py:116
+msgid   "{} bought {} for {} coppers{}\n"
+msgstr  ""
+
+#: clean.sh:1 static.sh:1
+#, sh-format
+msgid   "$GSH_HOME/Stall"
+msgstr  ""
+
+#: deps.sh:2
+#, sh-format
+msgid   "The command 'python3' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'python3')"
+msgstr  ""
+
+#: deps.sh:7
+#, sh-format
+msgid   "The script 'genStall.py' is necessary for mission $MISSION_NAME.\n"
+        "Make sure the corresponding mission is included."
+msgstr  ""
