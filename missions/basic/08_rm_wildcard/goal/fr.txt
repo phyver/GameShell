@@ -2,7 +2,7 @@ Objectif
 ========
 
 Supprimez toutes les araignées qui se cachent dans la cave, sans 
-toucher aux salamandre porte bonheur.
+toucher aux chauves-souris porte bonheur.
 
 
 Motifs shell

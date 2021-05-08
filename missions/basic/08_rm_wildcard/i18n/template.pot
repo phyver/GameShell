@@ -16,14 +16,14 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "Some salamanders have been modified!"
+msgid   "Some bats have been modified!"
 msgstr  ""
 
 #, sh-format
 msgid   "There still are some spiders ($NB_SPIDERS) in the cellar!"
 msgstr  ""
 
-msgid   "salamander"
+msgid   "bat"
 msgstr  ""
 
 msgid   "spider"

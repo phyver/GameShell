@@ -1,8 +1,8 @@
 Mission goal
 ============
 
-Get rid of all the spiders that are hiding in the cellar. 
-Again, do not do not disturb the salamanders.
+Get rid of all the spiders that are hiding in the cellar. Again, do 
+not do not disturb the bats.
 
 
 Shell patterns

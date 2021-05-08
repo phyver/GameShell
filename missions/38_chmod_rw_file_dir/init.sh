@@ -14,7 +14,7 @@ cat <<EOK>"$safe/$(gettext "crown")"
   _.+._
 (^\/^\/^)
  \@*@*@/
- {_${k}_}
+ {_${k}_}           jgs
 EOK
 
 cp "$safe/$(gettext "crown")" "$GSH_VAR"/crown
