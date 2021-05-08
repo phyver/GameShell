@@ -63,12 +63,25 @@ msgid   "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
 msgstr  ""
 
 #, sh-format
+msgid   "Error: invalid choice: $CHOICE"
+msgstr  ""
+
+#, sh-format
+msgid   "Error: invalid mission number: $CHOICE.\n"
+        "Please choose a number between 1 and $LAST_MISSION"
+msgstr  ""
+
+#, sh-format
+msgid   "Error: invalid mission number: $CHOICE.\n"
+        "Please choose a number between 1 and $LAST_MISSION."
+msgstr  ""
+
+#, sh-format
 msgid   "Error: invalid option: '-$OPTARG'"
 msgstr  ""
 
 #, sh-format
-msgid   "Error: mission $MISSION_NB doesn't exist!\n"
-        "Restarting from previous mission."
+msgid   "Error: mission $MISSION_NB doesn't exist!"
 msgstr  ""
 
 #, sh-format
@@ -126,6 +139,9 @@ msgstr  ""
 msgid   "Error: you are not allowed to run this command."
 msgstr  ""
 
+msgid   "I"
+msgstr  ""
+
 msgid   "Is this information correct? [Y/n]"
 msgstr  ""
 
@@ -146,6 +162,9 @@ msgstr  ""
 msgid   "Press Enter"
 msgstr  ""
 
+msgid   "Q"
+msgstr  ""
+
 #, sh-format
 msgid   "Sorry, mission $MISSION_NB hasn't been completed."
 msgstr  ""
@@ -162,12 +181,23 @@ msgid   "There are stopped jobs in your session.\n"
         "Do you still want to quit? [y/n]"
 msgstr  ""
 
+#, sh-format
+msgid   "What do you want to do?\n"
+        "      (Enter)     restart from last mission\n"
+        "      (q)         quit\n"
+        "      (i)         display the list of missions\n"
+        "      (N)         restart from mission #N (N less than $LAST_MISSION)"
+msgstr  ""
+
 # abbreviation for "yes" (uppercase)
 msgid   "Y"
 msgstr  ""
 
 msgid   "You are trying to run GameShell inside the developpment directory.\n"
         "Do you want to continue? [y/N]"
+msgstr  ""
+
+msgid   "Your choice [qi] or a number:"
 msgstr  ""
 
 msgid   "cancelled"
@@ -179,6 +209,9 @@ msgstr  ""
 msgid   "failed"
 msgstr  ""
 
+msgid   "i"
+msgstr  ""
+
 # abbreviation for "no" (lowercase)
 msgid   "n"
 msgstr  ""
@@ -187,6 +220,9 @@ msgid   "passed"
 msgstr  ""
 
 msgid   "password:"
+msgstr  ""
+
+msgid   "q"
 msgstr  ""
 
 #, sh-format

@@ -220,12 +220,48 @@ _gsh_start() {
   local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
   if [ -z "$MISSION_DIR" ]
   then
-    color_echo red "$(eval_gettext "Error: mission \$MISSION_NB doesn't exist!
-Restarting from previous mission.")" >&2
+    color_echo red "$(eval_gettext "Error: mission \$MISSION_NB doesn't exist!")" >&2
     echo
-    read -serp "$(gettext "Press Enter")"
-    echo
-    gsh reset
+
+
+    local LAST_MISSION=$(cut -d" " -f1 "$GSH_CONFIG/missions.log" | sort -n | tail -n1)
+    while true
+    do
+      echo "$(eval_gettext "What do you want to do?
+      (Enter)     restart from last mission
+      (q)         quit
+      (i)         display the list of missions
+      (N)         restart from mission #N (N less than \$LAST_MISSION)")"
+      read -erp "$(gettext "Your choice [qi] or a number:") " CHOICE
+
+      case $CHOICE in
+        "")
+            unset CHOICE
+            gsh reset
+            ;;
+        "$(gettext "q")" | "$(gettext "Q")")
+          gsh exit
+          ;;
+        "$(gettext "i")" | "$(gettext "I")")
+          gsh index
+          ;;
+        *[!0-9]*)
+          echo "$(eval_gettext "Error: invalid choice: \$CHOICE")" >&2
+          ;;
+        *)
+          if  [ 0 -lt "$CHOICE" ] && [ "$CHOICE" -le "$LAST_MISSION" ]
+          then
+            _gsh_start -quiet $CHOICE
+            unset CHOICE
+            gsh reset
+          else
+            echo "$(eval_gettext "Error: invalid mission number: \$CHOICE.
+Please choose a number between 1 and \$LAST_MISSION.")" >&2
+            echo >&2
+            fi
+            ;;
+        esac
+      done
   fi
 
   ### tester le fichier deps.sh

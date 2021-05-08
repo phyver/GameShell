@@ -63,14 +63,28 @@ msgid   "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
 msgstr  "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
 
 #, sh-format
+msgid   "Error: invalid choice: $CHOICE"
+msgstr  "Error: invalid choice: $CHOICE"
+
+#, sh-format
+msgid   "Error: invalid mission number: $CHOICE.\n"
+        "Please choose a number between 1 and $LAST_MISSION"
+msgstr  "Error: invalid mission number: $CHOICE.\n"
+        "Please choose a number between 1 and $LAST_MISSION"
+
+#, sh-format
+msgid   "Error: invalid mission number: $CHOICE.\n"
+        "Please choose a number between 1 and $LAST_MISSION."
+msgstr  "Error: invalid mission number: $CHOICE.\n"
+        "Please choose a number between 1 and $LAST_MISSION."
+
+#, sh-format
 msgid   "Error: invalid option: '-$OPTARG'"
 msgstr  "Error: invalid option: '-$OPTARG'"
 
 #, sh-format
-msgid   "Error: mission $MISSION_NB doesn't exist!\n"
-        "Restarting from previous mission."
-msgstr  "Error: mission $MISSION_NB doesn't exist!\n"
-        "Restarting from previous mission."
+msgid   "Error: mission $MISSION_NB doesn't exist!"
+msgstr  "Error: mission $MISSION_NB doesn't exist!"
 
 #, sh-format
 msgid   "Error: mission $MISSION_NB doesn't have a check script."
@@ -133,6 +147,9 @@ msgstr  "Error: wrong password"
 msgid   "Error: you are not allowed to run this command."
 msgstr  "Error: you are not allowed to run this command."
 
+msgid   "I"
+msgstr  "I"
+
 msgid   "Is this information correct? [Y/n]"
 msgstr  "Is this information correct? [Y/n]"
 
@@ -152,6 +169,9 @@ msgstr  "Player's name:"
 
 msgid   "Press Enter"
 msgstr  "Press Enter"
+
+msgid   "Q"
+msgstr  "Q"
 
 #, sh-format
 msgid   "Sorry, mission $MISSION_NB hasn't been completed."
@@ -174,6 +194,18 @@ msgstr  "There are stopped jobs in your session.\n"
         "    $ jobs -s\n"
         "Do you still want to quit? [y/n]"
 
+#, sh-format
+msgid   "What do you want to do?\n"
+        "      (Enter)     restart from last mission\n"
+        "      (q)         quit\n"
+        "      (i)         display the list of missions\n"
+        "      (N)         restart from mission #N (N less than $LAST_MISSION)"
+msgstr  "What do you want to do?\n"
+        "      (Enter)     restart from last mission\n"
+        "      (q)         quit\n"
+        "      (i)         display the list of missions\n"
+        "      (N)         restart from mission #N (N less than $LAST_MISSION)"
+
 # abbreviation for "yes" (uppercase)
 msgid   "Y"
 msgstr  "Y"
@@ -182,6 +214,9 @@ msgid   "You are trying to run GameShell inside the developpment directory.\n"
         "Do you want to continue? [y/N]"
 msgstr  "You are trying to run GameShell inside the developpment directory.\n"
         "Do you want to continue? [y/N]"
+
+msgid   "Your choice [qi] or a number:"
+msgstr  "Your choice [qi] or a number:"
 
 msgid   "cancelled"
 msgstr  "cancelled"
@@ -192,6 +227,9 @@ msgstr  "completed"
 msgid   "failed"
 msgstr  "failed"
 
+msgid   "i"
+msgstr  "i"
+
 # abbreviation for "no" (lowercase)
 msgid   "n"
 msgstr  "n"
@@ -201,6 +239,9 @@ msgstr  "passed"
 
 msgid   "password:"
 msgstr  "password:"
+
+msgid   "q"
+msgstr  "q"
 
 #, sh-format
 msgid   "test $NB_TESTS failed"
