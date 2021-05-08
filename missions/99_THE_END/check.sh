@@ -4,13 +4,13 @@ change_password() {
   local PASSWORD=$1
   local ADMIN_HASH=$(checksum "$PASSWORD")
   echo "$ADMIN_HASH" > "$GSH_CONFIG/admin_hash"
-  echo""
+  echo
   echo "$(eval_gettext "The admin password is now '\$PASSWORD'. Use
     \$ gsh HELP
 for a list including admin commands.")"
-  echo""
+  echo
   read -serp "$(gettext "Press Enter to continue.")"
-  echo""
+  echo
 }
 
 
@@ -43,7 +43,7 @@ do
             else
                 echo "$(eval_gettext 'Error: invalid mission number: $CHOICE.
 Please choose a number between 1 and $NB_MISSIONS')" >&2
-                echo "" >&2
+                echo >&2
             fi
             ;;
     esac
