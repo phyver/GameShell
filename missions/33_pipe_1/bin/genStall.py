@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import random
+from random import randrange
 import sys
 from subprocess import getoutput
 import gettext
@@ -92,11 +93,13 @@ thing = [_("a spade"), _("a pick"), _("an apple"), _("a chicken"), _("a horse"),
 def genBooks(nbLines, nbKing, prob_paid, dir):
     amountKing = 0
     nbUnpaid = 0
-    scroll = open(f"{dir}/{random.randint(0,1<<128):032x}_{_('_s_c_r_o_l_l_')}_{random.randint(0,1<<128):032x}", mode="w")
-    for i in range(random.randint(int(nbLines*0.9), int(nbLines*1.1))):
+    r1 = f"{randrange(0,1<<128):032x}"[:randrange(8, 24)]
+    r2 = f"{randrange(0,1<<128):032x}"[:randrange(8, 24)]
+    scroll = open(f"{dir}/{r1}_{_('_s_c_r_o_l_l_')}_{r2}", mode="w")
+    for i in range(randrange(int(nbLines*0.9), int(nbLines*1.1))):
         name = random.choice(firstname) + " " + random.choice(lastname)
         object = random.choice(thing)
-        price = random.randint(2, 5)
+        price = randrange(2, 6)
 
         if random.random() <= prob_paid:
             end = " -- " + _("PAID")
@@ -106,7 +109,7 @@ def genBooks(nbLines, nbKing, prob_paid, dir):
             paid = False
             nbUnpaid += 1
 
-        if i == 0 or random.randint(1, nbLines) <= nbKing:
+        if i == 0 or randrange(1, nbLines+1) <= nbKing:
             name = _("the King")
             if not paid:
                 amountKing += price
@@ -116,8 +119,10 @@ def genBooks(nbLines, nbKing, prob_paid, dir):
 
 
 def genObjects(nbObjects, dir):
-    for i in range(random.randint(int(nbObjects*0.9), int(nbObjects*1.1))):
-        open(f"{dir}/{random.randint(0,1<<128):032x}_{_('boring_object')}_{random.randint(0,1<<128):032x}", mode="a").close()
+    for i in range(randrange(int(nbObjects*0.9), int(nbObjects*1.1))):
+        r1 = f"{randrange(0,1<<128):032x}"[:randrange(8, 24)]
+        r2 = f"{randrange(0,1<<128):032x}"[:randrange(8, 24)]
+        open(f"{dir}/{r1}_{_('boring_object')}_{r2}", mode="a").close()
 
 
 if __name__ == "__main__":
