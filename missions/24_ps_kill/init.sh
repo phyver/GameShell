@@ -7,7 +7,7 @@ cat > "$dir/$(gettext "barrel_of_apples")" <<'EOF'
  / #      \
 |          |
  \        /
-  `._,._,'
+  `._,._,'              hjw
 
 EOF
 
@@ -20,7 +20,7 @@ cat > "$dir/$(gettext "piece_of_cheese")" <<'EOF'
    \_     /    _  _/
      ) /\/  _ (o)(
      \ \_) (o)   /
-      \/________/
+      \/________/       mic
 
 EOF
 

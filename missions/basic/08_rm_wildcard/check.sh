@@ -10,12 +10,12 @@ _mission_check() {
         return 1
     fi
 
-    local S1=$(find "$CELLAR" -maxdepth 1 -name ".*$(gettext "salamander")" | sort | checksum)
-    local S2=$(cat "$GSH_VAR/salamanders")
+    local S1=$(find "$CELLAR" -maxdepth 1 -name ".*$(gettext "bat")" | sort | checksum)
+    local S2=$(cat "$GSH_VAR/bats")
 
     if [ "$S1" != "$S2" ]
     then
-        echo "$(eval_gettext "Some salamanders have been modified!")"
+        echo "$(eval_gettext "Some bats have been modified!")"
         return 1
     fi
     return 0
