@@ -112,15 +112,11 @@ do
       DUMMY=""
       ;;
   esac
-  N=$((10#$N + 1))
-  N=$(echo -n "000000$N" | tail -c 6)
-  MISSION_NAME=$(basename $MISSION_DIR)
-  MISSION_NAME=${N}_${MISSION_NAME#*_}
-  ARCHIVE_MISSION_DIR=$TMP_DIR/$NAME/missions/$MISSION_NAME
-  echo "    $(basename "$MISSION_DIR")  -->  $MISSION_NAME"
-  mkdir "$ARCHIVE_MISSION_DIR"
-  cp --archive "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR"
-  echo "$DUMMY$(basename "$ARCHIVE_MISSION_DIR")" >> "$TMP_DIR/$NAME/missions/index.txt"
+  echo "  -> copy $MISSION_DIR"
+  mkdir -p "$TMP_DIR/$NAME/missions/$MISSION_DIR"
+  ARCHIVE_MISSION_DIR=$TMP_DIR/$NAME/missions/$MISSION_DIR
+  cp --archive "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR/"
+  echo "$DUMMY$MISSION_DIR" >> "$TMP_DIR/$NAME/missions/index.txt"
 done
 
 
@@ -130,8 +126,7 @@ then
   echo "removing unwanted languages"
   GSH_ROOT=$TMP_DIR/$NAME
 
-  # find $GSH_ROOT -path "*/i18n/*.po" | while read po_file
-  for po_file in "$GSH_ROOT/i18n"/*.po "$GSH_ROOT/missions"/*/i18n/*.po
+  find $GSH_ROOT -path "*/i18n/*.po" | while read po_file
   do
     if ! keep_language "${po_file%.po}" "$LANGUAGES"
     then
