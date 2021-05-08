@@ -1,10 +1,10 @@
 Mission goal
 ============
 
-While cleaning the dishes, Servillus mentions an interesting 
-potion that lets the drinker (temporarily) take the physical
-appearance of anyone. Read the recipe of the potion from the
-hermit's book.
+While cleaning the dishes, Servillus mentions an interesting potion 
+that lets the drinker (temporarily) take the physical appearance of 
+anyone.
+Read the recipe of the potion from the hermit's book.
 
 In order to validate the mission, your last command prior to 
 ``gsh check`` must show the whole recipe (title and steps).
@@ -15,3 +15,4 @@ Useful commands
 
 cat FILE1 FILE2 ... FILEn
   Display the contents of the files in order.
+  Remark: ``cat`` is an abbreviation for "concatenate".

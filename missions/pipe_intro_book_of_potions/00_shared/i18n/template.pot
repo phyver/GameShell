@@ -1,20 +1,24 @@
-msgid "Book_of_Potions"
-msgstr ""
-
-msgid "page"
-msgstr ""
+#, sh-format
+msgid   "$GSH_HOME/Mountain/Cave"
+msgstr  ""
 
 #, sh-format
-msgid "$MISSION_DIR/book_of_potions/en.txt"
-msgstr ""
-
-msgid "table_of_contents"
-msgstr ""
+msgid   "$MISSION_DIR/book_of_potions/en.txt"
+msgstr  ""
 
 #, sh-format
-msgid "$MISSION_DIR/torn_page5/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/torn_page5/en.txt"
+msgstr  ""
 
 #, sh-format
-msgid "$MISSION_DIR/torn_page6/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/torn_page6/en.txt"
+msgstr  ""
+
+msgid   "Book_of_potions"
+msgstr  ""
+
+msgid   "page"
+msgstr  ""
+
+msgid   "table_of_contents"
+msgstr  ""

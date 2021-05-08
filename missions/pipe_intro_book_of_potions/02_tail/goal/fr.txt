@@ -1,0 +1,24 @@
+Objectif
+========
+
+Le vieil homme a l'air de vraiment apprécier votre compagnie. Il 
+vous invite à rester pour le repas et commence à préparer un 
+délicieux ragout. Pendant qu'il prépare le chaudron, il vous demande 
+de l'aide.
+Lisez lui les étapes de la recette dans son livre.
+
+Pour valider la mission, votre dernière commande avant ``gsh check`` 
+doit afficher les étapes de la recette, mais pas son titre.
+
+
+Commandes utiles
+================
+
+cat FICHIER
+  Affiche le contenu du fichier.
+
+tail FICHIER
+  Affiche les 10 dernières lignes du fichier.
+
+tail -n K FICHIER
+  Affiche les K dernières lignes du fichier.

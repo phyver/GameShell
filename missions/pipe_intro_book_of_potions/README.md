@@ -21,7 +21,7 @@ Other mission ideas
   - Solution: `tail -n +4 Book_of_potions/page_12 | cut -d ' ' -f 2- | nl -w1 -s ") "`
   - Issue: currently all recipe are correctly numbered in the book.
 - Reattach the pages that were torn off using `paste`.
-  - Solution: `paste Book_of_Potions/page_06 somewhere/in/the/mountain/flying_page`
+  - Solution: `paste Book_of_potions/page_06 somewhere/in/the/mountain/flying_page`
   - Issue: how do we write the result ot the book? (use `sponge`?)
 - Mission with `sed` to correct an errors in the book.
   - Advantage: we can use the `-i` option to do inplace updates.
