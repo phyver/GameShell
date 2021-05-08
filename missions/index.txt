@@ -1,14 +1,4 @@
-01_cd_1
-02_cd_2
-03_cd_3
-04_mkdir
-05_rm
-06_mv
-07_mv_hidden
-08_rm_wildcard
-09_cp_1
-10_cp_2
-11_cp_3
+basic/index.txt
 12_cal
 13_alias_1
 14_journal
