@@ -151,10 +151,12 @@ admin_mode() {
 # Also, in DEBUG mode, is compares the environment before / after to
 # make it easier to detect variables that haven't been unset.
 mission_source() {
-  local FILENAME=$1
+  local FILENAME=$(REALPATH $1)
   # if we are not running in DEBUG mode, just source the file
   if [ "$GSH_MODE" != "DEBUG" ] || [ -z "$GSH_VERBOSE_SOURCE" ]
   then
+    local _MISSION_DIR=$MISSION_DIR
+    export MISSION_DIR=$(dirname "$FILENAME")
     local _TEXTDOMAIN=$TEXTDOMAIN
     export TEXTDOMAIN="$(textdomainname "$MISSION_DIR")"
     local _MISSION_NAME=$MISSION_NAME
@@ -163,6 +165,7 @@ mission_source() {
     local exit_status=$?
     export TEXTDOMAIN=$_TEXTDOMAIN
     export MISSION_NAME=$_MISSION_NAME
+    export MISSION_DIR=$_MISSION_DIR
     return $exit_status
   fi
 
@@ -178,6 +181,8 @@ mission_source() {
   compgen -A function | sort > "$TEMP"/before-F
   compgen -a | sort > "$TEMP"/before-A
   ls "$GSH_VAR" > "$TEMP"/before-D
+  local _MISSION_DIR=$MISSION_DIR
+  export MISSION_DIR=$(dirname "$FILENAME")
   _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="$(textdomainname "$MISSION_DIR")"
   _MISSION_NAME=$MISSION_NAME
@@ -186,6 +191,7 @@ mission_source() {
   exit_status=$?
   export TEXTDOMAIN=$_TEXTDOMAIN
   export MISSION_NAME=$_MISSION_NAME
+  export MISSION_DIR=$_MISSION_DIR
   compgen -v | sort > "$TEMP"/after-V
   # FIXME: not a very nice way to ignore _mission_check function (should only
   # be used when sourcing check.sh)
