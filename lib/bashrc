@@ -42,9 +42,8 @@ doas() {
 alias ls="ls --literal"
 
 
-# FIXME make sure they are sourced in order
 shopt -s nullglob
-for file in "$GSH_BASHRC"/*.bashrc.sh
+for file in "$GSH_BASHRC"/bashrc_*.sh
 do
     # shellcheck source=/dev/null
     export MISSION_DIR=$(basename "$file")
@@ -53,9 +52,8 @@ do
 done
 shopt -u nullglob
 
-# FIXME make sure they are sourced in order
 shopt -s nullglob
-for file in "$GSH_BASHRC"/*.treasure.sh
+for file in "$GSH_BASHRC"/treasure_*.sh
 do
     # shellcheck source=/dev/null
     export MISSION_DIR=$(basename "$file")
