@@ -47,8 +47,8 @@ msgid   "======== Initialisation of GameShell ========"
 msgstr  "======== Initialisation of GameShell ========"
 
 #, sh-format
-msgid   "Congratulations, $MISSION_NB has been successfully completed!"
-msgstr  "Congratulations, $MISSION_NB has been successfully completed!"
+msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
+msgstr  "Congratulations, mission $MISSION_NB has been successfully completed!"
 
 #, sh-format
 msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
