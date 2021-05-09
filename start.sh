@@ -286,11 +286,12 @@ Do you want to remove it and start a new game? [y/N]') " r
         BIN_NAME=$(basename "$BIN_FILE")
         cat > "$GSH_MISSIONS_BIN/$BIN_NAME" <<EOH
 #!/bin/bash
-export MISSION_DIR="$MISSION_DIR"
-export TEXTDOMAIN="$DOMAIN"
+export MISSION_DIR=$MISSION_DIR
+export TEXTDOMAIN=$DOMAIN
 exec $BIN_FILE "\$@"
 EOH
         chmod +x "$GSH_MISSIONS_BIN/$BIN_NAME"
+        unset BIN_NAME
       done
       shopt -u nullglob
     fi
@@ -304,7 +305,13 @@ EOH
     # copy all the shell config files of the mission
     if [ -f "$MISSION_DIR/bashrc" ]
     then
-      cp "$MISSION_DIR/bashrc" "$GSH_BASHRC/$(basename "$MISSION_DIR" /).bashrc.sh"
+      # FIXME: add number to make sure they are sourced in order
+      # BEWARE, dummy missions may appear
+      FILENAME=$GSH_BASHRC/$(basename "$MISSION_DIR"/).bashrc.sh
+      echo "export TEXTDOMAIN=$DOMAIN" > "$FILENAME"
+      cat "$MISSION_DIR/bashrc" >> $FILENAME
+      echo "export TEXTDOMAIN=gsh" >> "$FILENAME"
+      unset FILENAME
     fi
 
     [ "$GSH_MODE" = "DEBUG" ] && printf "."
