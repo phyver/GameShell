@@ -406,8 +406,13 @@ _gsh_check() {
 
     if [ -f "$MISSION_DIR/treasure.sh" ]
     then
+      # FIXME: add number to make sure they are sourced in order
       # Record the treasure to be loaded by GameShell's bashrc.
-      cp "$MISSION_DIR/treasure.sh" "$GSH_BASHRC/$(basename "$MISSION_DIR" /).treasure.sh"
+      FILENAME=$GSH_BASHRC/$(basename "$MISSION_DIR"/).treasure.sh
+      echo "export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")" > "$FILENAME"
+      cat "$MISSION_DIR/treasure.sh" >> $FILENAME
+      echo "export TEXTDOMAIN=gsh" >> "$FILENAME"
+      unset FILENAME
 
       # Display the text message (if it exists).
       if [ -f "$MISSION_DIR/treasure-msg.sh" ]
