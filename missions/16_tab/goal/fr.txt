@@ -1,11 +1,28 @@
 Objectif
 ========
 
-Rendez vous dans le couloir caché au fond de la cave.
+Au fond de la cave, il y a une petite ouverture cachée qui mène dans 
+la tanière de la reine des araignées.
+Rendez-vous dans cette tanière, et supprimer la reine des araignées 
+(et rien d'autre).
+
+
+Remarque : vous avez un temps limité (20 secondes) pour effectuer 
+cette tâche. Vous pouvez utiliser la commande ``gsh reset`` pour 
+ré-initialiser le chronomètre.
+
+D'autre part les motifs shell ont été désactivés. Vous ne pourrez 
+donc pas utiliser les jokers ``*`` ou ``?``.
 
 
 Commandes utiles
 ================
 
-La touche Tabulation permet de compléter le début d'un nom de 
-fichier ou de répertoire.
+Tab
+  La touche "Tabulation" permet de compléter le début d'un nom de 
+  fichier ou de répertoire. Cela ne fonctionne que s'il n'y a qu'une 
+  seule complétion possible.
+
+Tab-Tab
+  Appuyer 2 fois sur la touche "Tabulation" successivement affiche 
+  la liste des complétions possibles.
