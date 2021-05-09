@@ -22,6 +22,10 @@ msgstr  ""
 msgid   "Good, but you took $NB_SECONDS seconds. You needed to take less than $MAX_DELAY seconds..."
 msgstr  ""
 
+#, sh-format
+msgid   "Perfect, it took you only $NB_SECONDS seconds to complete this mission!"
+msgstr  ""
+
 msgid   "The queen spider is still in its lair..."
 msgstr  ""
 
