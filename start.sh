@@ -19,7 +19,7 @@ export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
 RESET=""
 FORCE="FALSE"
-while getopts ":hcnPDACRFXvL:" opt
+while getopts ":hcnPDACRFXvqL:" opt
 do
   case $opt in
     h)
@@ -40,6 +40,9 @@ do
       ;;
     v)
       export GSH_VERBOSE_SOURCE="true"
+      ;;
+    q)
+      export GSH_QUIET_INTRO="true"
       ;;
     A)
       GSH_MODE="ANONYMOUS"

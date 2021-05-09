@@ -310,7 +310,7 @@ to make sure the mission is initialized properly.")" >&2
 
   _log_action "$MISSION_NB" "START"
 
-  if [ -z "$quiet" ]
+  if [ -z "$GSH_QUIET_INTRO" ] && [ -z "$quiet" ]
   then
     if [ "$MISSION_NB" -eq 1 ]
     then
