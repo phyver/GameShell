@@ -38,9 +38,6 @@ TODO NOW
 
   - [ ] 28: mention `ls FILES` / `ls PATTERN`
 
-  - [ ] translate merlin.c / merlin.py in mission 30 cf
-        https://mohan43u.wordpress.com/2012/07/02/gnu-gettext-yet-another-tutorial/
-
   - [ ] check all group with shared data have appropriate `deps.sh`
 
   - [ ] finish the hierarchy for missions
@@ -52,6 +49,12 @@ TODO NOW
 
   - [ ] mission 15: add a treasure to source `$GSH_CHEST/bashrc`, and suggest
         adding aliases like `gg => gsh goal` and `gc => gsh check`
+
+  - [ ] mission 24: change
+  - [ ] mission 25: change
+
+  - [x] translate merlin.c / merlin.py in mission 30 cf
+        https://mohan43u.wordpress.com/2012/07/02/gnu-gettext-yet-another-tutorial/
 
 
 FOR LATER
