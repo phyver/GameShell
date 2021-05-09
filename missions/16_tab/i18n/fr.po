@@ -22,6 +22,10 @@ msgstr  ".Taniere_de_la_reine_araignee"
 msgid   "Good, but you took $NB_SECONDS seconds. You needed to take less than $MAX_DELAY seconds..."
 msgstr  "Bien, mais vous avez pris $NB_SECONDS secondes. Il faut prendre moins de $MAX_DELAY secondes..."
 
+#, sh-format
+msgid   "Perfect, it took you only $NB_SECONDS seconds to complete this mission!"
+msgstr  "Parfait, il ne vous a fallu que $NB_SECONDS secondes pour finir cette mission !"
+
 msgid   "The queen spider is still in its lair..."
 msgstr  "La reine araignée est toujours dans sa tanière..."
 
