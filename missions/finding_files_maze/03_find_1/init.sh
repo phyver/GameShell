@@ -14,8 +14,8 @@ else
     d=$("$GSH_MISSIONS_BIN"/maze1.py "$maze" 3 10 2)
 fi
 
-d1=$(echo "$d" | head -n 1)
-d2=$(echo "$d" | head -n 1)
+d1=$(echo "$d" | sed -n '1p;1q')
+d2=$(echo "$d" | sed -n '2p;2q')
 echo "$(checksum "$d1")" > "$maze/$d1/$(gettext "gold_coin")"
 echo "$(checksum "$d1")" > "$GSH_VAR/gold_coin"
 echo "$(checksum "$d2")" > "$maze/$d2/$(gettext "GolD_CoiN")"
