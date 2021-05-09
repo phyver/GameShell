@@ -2,7 +2,6 @@
 
 export GSH_ROOT=$(dirname "$0")/..
 source $GSH_ROOT/lib/common.sh
-
 export GSH_MISSIONS="$GSH_ROOT/missions"
 
 display_help() {
@@ -119,13 +118,15 @@ do
   echo "$DUMMY$MISSION_DIR" >> "$TMP_DIR/$NAME/missions/index.txt"
 done
 
+export GSH_ROOT=$TMP_DIR/$NAME
+source $GSH_ROOT/lib/common.sh
+export GSH_MISSIONS="$GSH_ROOT/missions"
+
 
 # remove unwanted languages
 if [ -n "$LANGUAGES" ]
 then
   echo "removing unwanted languages"
-  GSH_ROOT=$TMP_DIR/$NAME
-
   find $GSH_ROOT -path "*/i18n/*.po" | while read po_file
   do
     if ! keep_language "${po_file%.po}" "$LANGUAGES"
@@ -141,7 +142,6 @@ then
   echo -n "generating '.mo' files: "
   {
     # gameshell
-    GSH_ROOT=$(REALPATH "$TMP_DIR/$NAME")
     export TEXTDOMAINDIR="$GSH_ROOT/locale"
     export TEXTDOMAIN="gsh"
     for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
@@ -163,7 +163,7 @@ then
           ;;
       esac
       MISSION_DIR=$GSH_ROOT/missions/$MISSION_DIR
-      export DOMAIN=$(basename "$MISSION_DIR")
+      export DOMAIN=$(textdomainname "$MISSION_DIR")
 
       if [ -d "$MISSION_DIR/i18n" ]
       then
@@ -183,24 +183,24 @@ fi
 
 # remove "_" files
 echo "removing unnecessary files"
-find "$TMP_DIR/$NAME" -name "*~" -print0 | xargs -0 rm -f
-find "$TMP_DIR/$NAME" -name "_*.sh" -print0 | xargs -0 rm -f
-find "$TMP_DIR/$NAME" -name "test.sh" -print0 | xargs -0 rm -f
-find "$TMP_DIR/$NAME" -name "Makefile" -print0 | xargs -0 rm -f
-find "$TMP_DIR/$NAME" -name "template.pot" -print0 | xargs -0 rm -f
-[ "$KEEP_PO" = 'true' ] && [ "$GENERATE_MO" = 'true' ] && find "$TMP_DIR/$NAME" -name "*.po" -print0 | xargs -0 rm -f
-[ "$KEEP_AUTO" -ne 1 ] && find "$TMP_DIR/$NAME/missions" -name auto.sh -print0 | xargs -0 rm -f
+find "$GSH_ROOT" -name "*~" -print0 | xargs -0 rm -f
+find "$GSH_ROOT" -name "_*.sh" -print0 | xargs -0 rm -f
+find "$GSH_ROOT" -name "test.sh" -print0 | xargs -0 rm -f
+find "$GSH_ROOT" -name "Makefile" -print0 | xargs -0 rm -f
+find "$GSH_ROOT" -name "template.pot" -print0 | xargs -0 rm -f
+[ "$KEEP_PO" = 'true' ] && [ "$GENERATE_MO" = 'true' ] && find "$GSH_ROOT" -name "*.po" -print0 | xargs -0 rm -f
+[ "$KEEP_AUTO" -ne 1 ] && find "$GSH_MISSIONS" -name auto.sh -print0 | xargs -0 rm -f
 
 # change admin password
 echo "setting admin password"
 ADMIN_HASH=$(checksum "$ADMIN_PASSWD")
-sed -i "s/^\(\s*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$TMP_DIR/$NAME/start.sh"
+sed -i "s/^\(\s*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$GSH_ROOT/start.sh"
 
 # choose default mode
 echo "setting default GameShell mode"
 case $DEFAULT_MODE in
   DEBUG | PASSPORT | ANONYMOUS )
-    sed -i "s/^GSH_MODE=.*$/GSH_MODE='$DEFAULT_MODE'/" "$TMP_DIR/$NAME/start.sh"
+    sed -i "s/^GSH_MODE=.*$/GSH_MODE='$DEFAULT_MODE'/" "$GSH_ROOT/start.sh"
     ;;
   *)
     echo "unknown mode: $MODE" >&2
