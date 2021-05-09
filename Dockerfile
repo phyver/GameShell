@@ -25,15 +25,15 @@ USER ${uid}:${gid}
 WORKDIR /home/${user}
 
 ## use the latest github version
-ADD --chown=gsh-user:gsh-user https://api.github.com/repos/phyver/GameShell/tarball GameShell.tgz
-RUN mkdir GameShell
-RUN tar -xzf GameShell.tgz -C GameShell --strip-components 1
-RUN rm -f GameShell.tgz
-RUN GameShell/bin/archive.sh
-RUN rm -rf GameShell
+# ADD --chown=gsh-user:gsh-user https://api.github.com/repos/phyver/GameShell/tarball GameShell.tgz
+# RUN mkdir GameShell
+# RUN tar -xzf GameShell.tgz -C GameShell --strip-components 1
+# RUN rm -f GameShell.tgz
+# RUN GameShell/bin/archive.sh
+# RUN rm -rf GameShell
 
 ## if you want to copy a local, customized version, comment the preceeding
 ## lines and uncomment the next one
-#COPY GameShell.sh .
+COPY GameShell.sh .
 
 ENTRYPOINT ["./GameShell.sh"]
