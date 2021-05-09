@@ -1,0 +1,5 @@
+01_stdin_additions
+02_stdin_redirection_multiplications
+03_stdout_redirection_inventory
+04_stderr_dev-null_grimoires
+05_stdout_stderr_redirection_merlin
