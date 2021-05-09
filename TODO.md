@@ -121,6 +121,7 @@ Some missions ideas
   - `wget` / `curl`
 
   - `tar` / `zip`
+    - Idea: receive/send a package (archive = packaging).
 
   - `fuser` / `lsof`
 
@@ -139,3 +140,14 @@ Some missions ideas
 
   - function `drop` to move a file from the chest to the CWD
 
+  - "summary missions" to practice what has been learnt at the end of the
+    `missions/basic` mission group. We could ask the player o tidy up the
+    pantry, initially filled with a big mess of files (fruits, cheese, meat,
+    wine, trash, ...) and the player would have to organise everything into
+    a specified directory structure: fruits in "barels", cheese on "shelves",
+    get rid of trash, ...
+
+  - manage an inventory (or the `Chest`) with aliases:
+    - `alias inventory='ls ~/Forest/Hut/Chest | nl` to show the inventory,
+    - `alias pick='mv -t ~/Forest/Hut/Chest` to pick an item,
+    - `alias drop='...'` to drop an item at the current location.
