@@ -23,7 +23,7 @@ echo "$d" | sed '1d' | while read d1
 do
     K=$RANDOM
     sum=$(checksum "$K $(gettext "stone")")
-    echo "$$K (gettext "stone") $sum" > "$maze/$d1/$K"
+    echo "$K $(gettext "stone") $sum" > "$maze/$d1/$K"
 done
 
 unset maze
