@@ -223,6 +223,8 @@ _gsh_start() {
     color_echo red "$(eval_gettext "Error: mission \$MISSION_NB doesn't exist!")" >&2
     echo
 
+    # restore SDTIN that may have been closed in case of a redirection into gsh check 
+    exec 0<"$GSH_STDIN"
 
     local LAST_MISSION=$(cut -d" " -f1 "$GSH_CONFIG/missions.log" | sort -n | tail -n1)
     while true
