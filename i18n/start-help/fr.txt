@@ -13,6 +13,7 @@ options :
 
   -L      initialise la variable LANGUAGE (ex : -L fr:it:en)
 
+  -q      mode silencieux : pas de message au début de chaque mission
   -n      mode noir et blanc : n'utilise pas les séquences ANSI
   -X      extrait juste l'archive tgz (disponible seulement quand
           Gameshell est lancé depuis une archive exécutable)
