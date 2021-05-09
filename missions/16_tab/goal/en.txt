@@ -1,17 +1,26 @@
 Mission goal
 ============
 
-Go to the hidden corridor in the cellar.
+At the back of the cellar, there is a small opening going to the 
+spider queen's lair.
+Go there, and remove the spider queen (and nothing else).
+
+
+Note: you have a limited amount of time (20 seconds) to do that. You 
+can use the command ``gsh reset`` to reset the timer.
+
+Another thing: shell patterns have been deactivated. You cannot use 
+the wildcards ``*`` or ``?``.
 
 
 Useful commands
 ===============
 
 Tab
-  The tabulation key "completes" the name of a file or directory 
+  The "Tabulation" key completes the name of a file or directory 
   once you have typed the beginning of its name. This only works
   if there is only one possible completion.
 
 Tab-Tab
-  Pressing tabulation twice successively shows a list of possible 
-  completions.
+  Pressing the "Tabulation" key twice successively shows a list of 
+  possible completions.

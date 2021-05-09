@@ -15,13 +15,27 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
-#, sh-format
-msgid   ".Long $r1 Corridor $r2"
-msgstr  ".Long $r1 Couloir $r2"
+msgid   ".Lair_of_the_spider_queen"
+msgstr  ".Taniere_de_la_reine_araignee"
 
 #, sh-format
-msgid   ".Long*Corridor*"
-msgstr  ".Long*Couloir*"
+msgid   "Good, but you took $NB_SECONDS seconds. You needed to take less than $MAX_DELAY seconds..."
+msgstr  "Bien, mais vous avez pris $NB_SECONDS secondes. Il faut prendre moins de $MAX_DELAY secondes..."
 
-msgid   "Pffft... You are back to the beginning, in front of the castle..."
-msgstr  "Pffft... Vous voila de retour au point de départ, devant le château..."
+msgid   "The queen spider is still in its lair..."
+msgstr  "La reine araignée est toujours dans sa tanière..."
+
+msgid   "Where is the baby bat?"
+msgstr  "Où est le bébé chauve-souris ?"
+
+msgid   "You are back in the cellar."
+msgstr  "Vous voilà de retour dans la cave."
+
+msgid   "You are not in the queen spider lair!"
+msgstr  "Vous n'êtes pas dans la tanière de la reine araignée !"
+
+msgid   "baby_bat"
+msgstr  "bebe_chauve_souris"
+
+msgid   "spider_queen"
+msgstr  "reine_araignee"
