@@ -15,13 +15,27 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
-#, sh-format
-msgid   ".Long $r1 Corridor $r2"
+msgid   ".Lair_of_the_spider_queen"
 msgstr  ""
 
 #, sh-format
-msgid   ".Long*Corridor*"
+msgid   "Good, but you took $NB_SECONDS seconds. You needed to take less than $MAX_DELAY seconds..."
 msgstr  ""
 
-msgid   "Pffft... You are back to the beginning, in front of the castle..."
+msgid   "The queen spider is still in its lair..."
+msgstr  ""
+
+msgid   "Where is the baby bat?"
+msgstr  ""
+
+msgid   "You are back in the cellar."
+msgstr  ""
+
+msgid   "You are not in the queen spider lair!"
+msgstr  ""
+
+msgid   "baby_bat"
+msgstr  ""
+
+msgid   "spider_queen"
 msgstr  ""
