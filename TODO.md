@@ -6,9 +6,9 @@ TODO NOW
 
   - [ ] doc
 
-  - [ ] try to make sure pager handles colors correctly
+  - [x] try to make sure pager handles colors correctly
 
-  - [ ] use PAGER on gsh index
+  - [x] use PAGER on gsh index
 
 
 FOR LATER

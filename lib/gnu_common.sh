@@ -6,9 +6,9 @@ function REALPATH() {
 export -f REALPATH
 
 function PAGER() {
-    if [ -n "$PAGER" ]
+    if command -v less 2> /dev/null
     then
-        $PAGER "$@"
+        less -rEX "$@"
     else
         more -d "$@"
     fi
