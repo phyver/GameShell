@@ -40,11 +40,6 @@ TODO NOW
 
   - [ ] check all group with shared data have appropriate `deps.sh`
 
-  - [ ] finish the hierarchy for missions
-
-  - [ ] rename all missions to have more informative names, eg
-        `basic/01_cd_tower` and similar
-
   - [ ] mission 9: add other items to prevent using `cp *`
 
   - [ ] mission 15: add a treasure to source `$GSH_CHEST/bashrc`, and suggest
@@ -53,6 +48,9 @@ TODO NOW
   - [ ] mission 24: change
   - [ ] mission 25: change
 
+  - [x] finish the hierarchy for missions
+  - [x] rename all missions to have more informative names, eg
+        `basic/01_cd_tower` and similar
   - [x] translate merlin.c / merlin.py in mission 30 cf
         https://mohan43u.wordpress.com/2012/07/02/gnu-gettext-yet-another-tutorial/
 

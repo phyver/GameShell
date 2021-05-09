@@ -1,0 +1,3 @@
+01_chmod_x_dir_king_quarter
+02_chmod_r_file_king_quarter
+03_chmod_rw_file_dir_throne_room
