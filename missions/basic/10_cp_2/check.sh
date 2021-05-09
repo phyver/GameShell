@@ -9,14 +9,14 @@ _mission_check () {
     return 1
   fi
 
-  if command ls "$GSH_CHEST" | grep -Eq "_$(gettext "hay")|_$(gettext "gravel")|_$(gettext "garbage")"
+  if command ls "$GSH_CHEST" | grep -Eq "_$(gettext "decorative_sword")|_$(gettext "suit_of_armour")|_$(gettext "stag_head")"
   then
-    echo "$(gettext "I only wanted the ornaments!")"
+    echo "$(gettext "I only wanted the tapestries!")"
     return 1
   fi
 
-  if ! cmp -s <(grep "_$(gettext "ornament")" "$GSH_VAR/entrance_contents") \
-    <(command ls "$GSH_CHEST" | sort | grep "_$(gettext "ornament")")
+  if ! cmp -s <(grep "_$(gettext "tapestry")" "$GSH_VAR/entrance_contents") \
+    <(command ls "$GSH_CHEST" | sort | grep "_$(gettext "tapestry")")
   then
     echo "$(gettext "I wanted all the ornements!")"
     return 1

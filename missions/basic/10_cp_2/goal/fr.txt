@@ -1,8 +1,8 @@
 Objectif
 ========
 
-Tous les ornements de l'entrée du château sont d'ailleurs jolis. 
-Faites une copie dans votre coffre.
+Toutes les tapisseries de l'entrée du château sont d'ailleurs 
+jolies. Faites une copie dans votre coffre.
 
 
 Motifs shell

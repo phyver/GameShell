@@ -19,7 +19,7 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
-msgid   "I only wanted the ornaments!"
+msgid   "I only wanted the tapestries!"
 msgstr  ""
 
 msgid   "I wanted all the ornements!"
@@ -28,14 +28,14 @@ msgstr  ""
 msgid   "You changed the contents of the entrance!"
 msgstr  ""
 
-msgid   "garbage"
+msgid   "stag_head"
 msgstr  ""
 
-msgid   "gravel"
+msgid   "suit_of_armour"
 msgstr  ""
 
-msgid   "hay"
+msgid   "decorative_sword"
 msgstr  ""
 
-msgid   "ornament"
+msgid   "tapestry"
 msgstr  ""
