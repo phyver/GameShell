@@ -1,18 +1,19 @@
-Welcome to GameShell
+Welcome to GameShell!
 
-During a game of GameShell, you will receive "missions" that 
-correspond to standard tasks one may have while using or 
-administering a computer:
+Using and administering a computer running a Unix-like operating 
+system (e.g., Linux, BSD or macOS) requires using a command line 
+interface called "shell". In this game you will learn how to use 
+the shell by journeying through various missions that will teach 
+you to perform standard tasks such as:
+  - creating directories,
+  - creating, viewing and editing files,
+  - searching for files satisfying certain criteria, or
+  - running and interrupting programs.
 
-  - create directories,
-  - create ou visualise files,
-  - search for files that satisfy simple or complex criteria,
-  - run or stop programs,
-  - etc.
-
-The "things" you will meet are simply standard files (often with 
-some random content) and the "places" you will visit are simply 
-directories.
-So, "build a hut" amounts to creating a directory called "Hut", 
-and "put the coins in your chest" amounts to moving the files called 
-"coin" into the directory called "Chest".
+During your adventure you will need to visit locations, interact 
+with people, and find various objects. However, you have to keep 
+in mind that these are standard directories, programs, and files 
+(often with random contents). So, for example:
+  - "build a hut" means creating a directory called "Hut", and
+  - "put a coin in your chest" means moving a file called "coin" 
+    to a directory called "Chest".
