@@ -621,7 +621,7 @@ gsh() {
       _gsh_goal "$@"
       ;;
     "i" | "in" | "ind" | "inde" | "index")
-      _gsh_index
+      _gsh_index | PAGER
       ;;
     "w" | "we" | "wel" | "welc" | "welco" | "welcom" | "welcome")
       _gsh_welcome
