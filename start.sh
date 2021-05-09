@@ -71,7 +71,6 @@ shift $((OPTIND - 1))
 
 _passport() {
   local PASSPORT=$1
-  local NB
   NOM=""
   while [ -z "$NOM" ]
   do
@@ -239,7 +238,9 @@ Do you want to remove it and start a new game? [y/N]') " r
   make_index "$@" 2> /dev/null | sed "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
 
   # Installing all missions.
-  local MISSION_NB=0
+  local MISSION_NB=1      # current mission number
+  local MISSION_SUB_NB="" # when a dummy mission is found, as a "sub-number" as well
+  local FULL_NB           # the 2 together
   while read MISSION_DIR
   do
     case $MISSION_DIR in
@@ -248,13 +249,22 @@ Do you want to remove it and start a new game? [y/N]') " r
         ;;
       "!"*)
         MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
+        if [ -z "$MISSION_SUB_NB" ]
+        then
+          MISSION_SUB_NB=1
+        else
+          MISSION_SUB_NB=$((MISSION_SUB_NB + 1))
+        fi
+        ;;
+      *)
+          MISSION_SUB_NB=""
         ;;
     esac
+    FULL_NB=$(printf "%04d" $MISSION_NB)
+    [ -n "$MISSION_SUB_NB" ] && FULL_NB="$FULL_NB-$(printf "%04d" "$MISSION_SUB_NB")"
+
     export MISSION_DIR
     MISSION_DIR=$GSH_MISSIONS/$MISSION_DIR
-
-    [ -d "$MISSION_DIR" ] || continue
-    [ -f "$MISSION_DIR/check.sh" ] && MISSION_NB=$((MISSION_NB+1))
 
     # To be used as TEXTDOMAIN environment variable for the mission.
     export DOMAIN=$(textdomainname "$MISSION_DIR")
@@ -305,9 +315,7 @@ EOH
     # copy all the shell config files of the mission
     if [ -f "$MISSION_DIR/bashrc" ]
     then
-      # FIXME: add number to make sure they are sourced in order
-      # BEWARE, dummy missions may appear
-      FILENAME=$GSH_BASHRC/$(basename "$MISSION_DIR"/).bashrc.sh
+      FILENAME=$GSH_BASHRC/bashrc_${FULL_NB}_$(basename "$MISSION_DIR").sh
       echo "export TEXTDOMAIN=$DOMAIN" > "$FILENAME"
       cat "$MISSION_DIR/bashrc" >> $FILENAME
       echo "export TEXTDOMAIN=gsh" >> "$FILENAME"
@@ -315,8 +323,11 @@ EOH
     fi
 
     [ "$GSH_MODE" = "DEBUG" ] && printf "."
+
+    [ -z "$MISSION_SUB_NB" ] && MISSION_NB=$((MISSION_NB+1))
+
   done < "$GSH_CONFIG/index.txt"
-  if [ "$MISSION_NB" -eq 0 ]
+  if [ "$MISSION_NB" -eq 1 ]
   then
     echo "$(gettext "Error: no mission was found!
 Aborting")"
