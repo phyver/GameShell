@@ -35,6 +35,7 @@ mission_check() {
         return 1
     fi
 
+    echo "$(eval_gettext "Perfect, it took you only \$NB_SECONDS seconds to complete this mission!")"
     return 0
 }
 
