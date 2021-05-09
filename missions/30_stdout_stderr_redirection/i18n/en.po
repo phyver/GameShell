@@ -17,10 +17,11 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid   "The python3 interpreter, or a C compiler is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install one of the packages 'python3', 'gcc' or 'clang')"
-msgstr  "The python3 interpreter, or a C compiler is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install one of the packages 'python3', 'gcc' or 'clang')"
+msgid   "Error: $CMD takes no argument."
+msgstr  "Error: $CMD takes no argument."
+
+msgid   "THESECRETKEYISONSTDERR"
+msgstr  "THESECRETKEYISONSTDERR"
 
 msgid   "What is the secret key?"
 msgstr  "What is the secret key?"
