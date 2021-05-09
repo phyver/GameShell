@@ -20,8 +20,8 @@ msgstr  "$MISSION_DIR/goal/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
-msgid   "I only wanted the ornaments!"
-msgstr  "I only wanted the ornaments!"
+msgid   "I only wanted the tapestries!"
+msgstr  "I only wanted the tapestries!"
 
 msgid   "I wanted all the ornements!"
 msgstr  "I wanted all the ornements!"
@@ -29,14 +29,14 @@ msgstr  "I wanted all the ornements!"
 msgid   "You changed the contents of the entrance!"
 msgstr  "You changed the contents of the entrance!"
 
-msgid   "garbage"
-msgstr  "garbage"
+msgid   "stag_head"
+msgstr  "stag_head"
 
-msgid   "gravel"
-msgstr  "gravel"
+msgid   "suit_of_armour"
+msgstr  "suit_of_armour"
 
-msgid   "hay"
-msgstr  "hay"
+msgid   "decorative_sword"
+msgstr  "decorative_sword"
 
-msgid   "ornament"
-msgstr  "ornament"
+msgid   "tapestry"
+msgstr  "tapestry"
