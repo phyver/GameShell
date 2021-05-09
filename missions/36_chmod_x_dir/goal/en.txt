@@ -7,7 +7,7 @@ Go to the King's quarter.
 Remark
 ------
 
-Occess to this part of the castle is probably restricted.
+Access to this part of the castle is probably restricted.
 
 
 Useful commands
@@ -19,6 +19,6 @@ ls -l
   Access permissions are listed first on each line.
 
 chmod [OPTIONS] FILE
-  Modifies the permissions for eth file (or directory).
+  Modifies the permissions for the file (or directory).
 
   Refer to the manual to discover which options are available.
