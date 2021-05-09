@@ -47,7 +47,7 @@ msgid   "======== Initialisation of GameShell ========"
 msgstr  "======== Initialisation de GameShell ========"
 
 #, sh-format
-msgid   "Congratulations, $MISSION_NB has been successfully completed!"
+msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
 msgstr  "Bravo, vous avez réussi la mission $MISSION_NB !"
 
 #, sh-format

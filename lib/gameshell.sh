@@ -397,7 +397,7 @@ _gsh_check() {
   if [ "$exit_status" -eq 0 ]
   then
     echo
-    color_echo green "$(eval_gettext 'Congratulations, $MISSION_NB has been successfully completed!')"
+    color_echo green "$(eval_gettext 'Congratulations, mission $MISSION_NB has been successfully completed!')"
     echo
 
     _log_action "$MISSION_NB" "CHECK_OK"
