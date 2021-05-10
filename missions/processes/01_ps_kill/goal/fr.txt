@@ -1,18 +1,16 @@
 Objectif
 ========
 
-Les rats n'en peuvent plus : pour leur faire peur, une machine 
-infernale qui génère des chats à ressort a été installée dans le 
-garde manger (dans la cuisine) !
+Un lutin des montagnes espiègle a lancé un sortilège qui fait 
+apparaitre des tâches de peintures (ou est-ce quelque chose de pire) 
+un peu partout dans le chateau.
+Vous devez trouver ce sortilège et le supprimer.
 
-Trouvez et tuez le générateur de chats, avant de supprimer tous les 
-chats cachés dans le garde manger.
 
 Remarque
 --------
 
-Le générateur de chat est un processus, alors que les chats sont des 
-fichiers.
+Le sortilège est un processus.
 
 
 Commandes utiles
@@ -25,7 +23,7 @@ kill N
   Envoie le signal d'arrêt au processus numéro N.
   Note : N est appelé le PID ("process identifier") du processus.
 
-
-Rappelez vous que les joker "*" et "?" ne voient pas les fichiers 
-cachés. Il faut ajouter un point explicite au début du motif si vous 
-souhaitez capturer les fichiers cachés.
+clear
+  Efface l'écran du terminal.
+  La combinaison de touches "Control-l" fait la même chose et est 
+  souvent plus rapide à utiliser.
