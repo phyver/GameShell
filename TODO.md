@@ -5,6 +5,8 @@ TODO NOW
 --------
 
   - [ ] doc
+  - [ ] make the treasure messages stand out more (use some ASCII treasure
+        chest?)
 
   - [x] put back progress bar on startup (possibly doing something nice)???
   - [x] try to make sure pager handles colors correctly
@@ -13,6 +15,8 @@ TODO NOW
 
 FOR LATER
 ---------
+
+  - [ ] nice "progress bar" for missions that take longuer to initialize
 
   - [ ] `gsh config` command to configure some options (boxes, color,
         verbose_source, quiet, pager...)
