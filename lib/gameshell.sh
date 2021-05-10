@@ -158,10 +158,10 @@ _gsh_index() {
     then
       COLOR="red"
       STATUS=" ($(gettext "failed"))"
-    elif grep -q "^$MISSION_NB PASS" "$GSH_CONFIG/missions.log"
+    elif grep -q "^$MISSION_NB SKIP" "$GSH_CONFIG/missions.log"
     then
       COLOR="yellow"
-      STATUS=" ($(gettext "passed"))"
+      STATUS=" ($(gettext "skipped"))"
     elif grep -q "^$MISSION_NB CANCEL_DEP_PB" "$GSH_CONFIG/missions.log"
     then
       COLOR="magenta"
@@ -322,7 +322,7 @@ to make sure the mission is initialized properly.")" >&2
 }
 
 # stop a mission given by its number
-_gsh_pass() {
+_gsh_skip() {
   local MISSION_NB="$(_get_current_mission)"
   if [ -z "$MISSION_NB" ]
   then
@@ -334,8 +334,8 @@ _gsh_pass() {
   then
     return 1
   fi
-  _log_action "$MISSION_NB" "PASS"
-  export GSH_LAST_ACTION='pass'
+  _log_action "$MISSION_NB" "SKIP"
+  export GSH_LAST_ACTION='skip'
   _gsh_clean "$MISSION_NB"
   color_echo yellow "$(eval_gettext 'Mission $MISSION_NB has been cancelled.')" >&2
 
@@ -635,8 +635,8 @@ gsh() {
 
     # admin stuff
     # TODO: something to regenerate static world
-    "pass")
-        _gsh_pass
+    "skip")
+        _gsh_skip
       ;;
     "auto")
       _gsh_auto

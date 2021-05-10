@@ -37,9 +37,6 @@ Commandes propres a GameShell
   gsh index
     affiche la liste des missions, avec leur statut
 
-  gsh pass                              (ADMIN)
-    abandonne la mission en cours et passe à la suivante
-
   gsh protect
   gsh unprotect
     ajoute / supprimer les protections d'accès sur les répertoires 
@@ -47,6 +44,9 @@ Commandes propres a GameShell
 
   gsh reset
     ré-initialise la mission en cours
+
+  gsh skip                              (ADMIN)
+    abandonne la mission en cours et passe à la suivante
 
   gsh test
     lance le script de test de la mission en cours, s'il existe

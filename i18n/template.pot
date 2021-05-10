@@ -3,177 +3,38 @@ msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
-msgstr  ""
-
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
-msgstr  ""
-
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
-msgstr  ""
-
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
-msgstr  ""
-
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
-msgstr  ""
-
-#, sh-format
-msgid   "$GSH_ROOT/i18n/start-help/en.txt"
-msgstr  ""
-
-#, sh-format
-msgid   "$MISSION_DIR/goal/en.txt"
-msgstr  ""
-
-#, sh-format
-msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  ""
-
-#, sh-format
-msgid   "$NB_ERRORS failures out of $NB_TESTS tests"
-msgstr  ""
-
-#, sh-format
-msgid   "$NB_TESTS successful tests"
-msgstr  ""
-
-msgid   "======== Initialisation of GameShell ========"
-msgstr  ""
-
-#, sh-format
-msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
-msgstr  ""
-
-#, sh-format
-msgid   "Error: command '$CMD' is only available in debug mode."
-msgstr  ""
-
-#, sh-format
-msgid   "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: invalid choice: $CHOICE"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: invalid mission number: $CHOICE.\n"
-        "Please choose a number between 1 and $LAST_MISSION"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: invalid mission number: $CHOICE.\n"
-        "Please choose a number between 1 and $LAST_MISSION."
-msgstr  ""
-
-#, sh-format
-msgid   "Error: invalid option: '-$OPTARG'"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: mission $MISSION_NB doesn't exist!"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: mission $MISSION_NB doesn't have a check script."
-msgstr  ""
-
-#, sh-format
-msgid   "Error: mission $MISSION_NB doesn't have a test script."
-msgstr  ""
-
-#, sh-format
-msgid   "Error: mission $MISSION_NB doesn't have an auto script."
-msgstr  ""
-
-#, sh-format
-msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
-msgstr  ""
-
-msgid   "Error: no mission was found!\n"
-        "Aborting"
-msgstr  ""
-
-msgid   "Error: the 'goto' command requires a mission number as argument."
-msgstr  ""
-
-msgid   "Error: the command 'gsh reset' is useless when run inside a subshell!"
-msgstr  ""
-
-msgid   "Error: this mission was initialized in a subshell.\n"
-        "You should run the command\n"
-        "    gsh reset\n"
-        "to make sure the mission is initialized properly."
-msgstr  ""
-
-msgid   "Error: this option is only available from an executable archive!"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: unknown gsh command '$CMD'.\n"
-        "Use one of the following commands:"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: unknown mode '$MODE'."
-msgstr  ""
-
+#: lib/common.sh:28
 #, sh-format
 msgid   "Error: unknown system: OSTYPE=$OSTYPE.\n"
         "GameShell will use 'gnu-linux', without guarantee."
 msgstr  ""
 
-msgid   "Error: wrong password"
-msgstr  ""
-
-msgid   "Error: you are not allowed to run this command."
-msgstr  ""
-
-msgid   "I"
-msgstr  ""
-
-msgid   "Is this information correct? [Y/n]"
-msgstr  ""
-
-#, sh-format
-msgid   "Mission $MISSION_NB has been cancelled."
-msgstr  ""
-
-# abbreviation for "no" (uppercase)
-msgid   "N"
-msgstr  ""
-
-msgid   "Player's email:"
-msgstr  ""
-
-msgid   "Player's name:"
-msgstr  ""
-
+#: lib/common.sh:30 lib/gameshell.sh:204
 msgid   "Press Enter"
 msgstr  ""
 
-msgid   "Q"
+#: lib/common.sh:130
+msgid   "Error: you are not allowed to run this command."
 msgstr  ""
 
+#: lib/common.sh:137
+msgid   "password:"
+msgstr  ""
+
+#: lib/common.sh:144
+msgid   "Error: wrong password"
+msgstr  ""
+
+#: lib/gameshell.sh:47
 #, sh-format
-msgid   "Sorry, mission $MISSION_NB hasn't been completed."
+msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
 msgstr  ""
 
-#, sh-format
-msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
-        "Do you want to remove it and start a new game? [y/N]"
+#: lib/gameshell.sh:56
+msgid   "Error: the command 'gsh reset' is useless when run inside a subshell!"
 msgstr  ""
 
+#: lib/gameshell.sh:77
 msgid   "There are stopped jobs in your session.\n"
         "Those processes will be terminated.\n"
         "You can get the list of those jobs with\n"
@@ -181,6 +42,50 @@ msgid   "There are stopped jobs in your session.\n"
         "Do you still want to quit? [y/n]"
 msgstr  ""
 
+# abbreviation for "no" (lowercase)
+#: lib/gameshell.sh:82 start.sh:102 start.sh:155 start.sh:177
+msgid   "n"
+msgstr  ""
+
+# abbreviation for "yes" (lowercase)
+#: lib/gameshell.sh:85 start.sh:99 start.sh:158 start.sh:180
+msgid   "y"
+msgstr  ""
+
+#: lib/gameshell.sh:115 lib/gameshell.sh:216 lib/gameshell.sh:330
+#: lib/gameshell.sh:352 lib/gameshell.sh:382 lib/gameshell.sh:469
+#: lib/gameshell.sh:542
+#, sh-format
+msgid   "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
+msgstr  ""
+
+#: lib/gameshell.sh:129
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
+
+#: lib/gameshell.sh:156
+msgid   "completed"
+msgstr  ""
+
+#: lib/gameshell.sh:160
+msgid   "failed"
+msgstr  ""
+
+#: lib/gameshell.sh:164
+msgid   "skipped"
+msgstr  ""
+
+#: lib/gameshell.sh:168
+msgid   "cancelled"
+msgstr  ""
+
+#: lib/gameshell.sh:223
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't exist!"
+msgstr  ""
+
+#: lib/gameshell.sh:232
 #, sh-format
 msgid   "What do you want to do?\n"
         "      (Enter)     restart from last mission\n"
@@ -189,46 +94,192 @@ msgid   "What do you want to do?\n"
         "      (N)         restart from mission #N (N less than $LAST_MISSION)"
 msgstr  ""
 
-# abbreviation for "yes" (uppercase)
-msgid   "Y"
-msgstr  ""
-
-msgid   "You are trying to run GameShell inside the developpment directory.\n"
-        "Do you want to continue? [y/N]"
-msgstr  ""
-
+#: lib/gameshell.sh:237
 msgid   "Your choice [qi] or a number:"
 msgstr  ""
 
-msgid   "cancelled"
+#: lib/gameshell.sh:244
+msgid   "Q"
 msgstr  ""
 
-msgid   "completed"
-msgstr  ""
-
-msgid   "failed"
-msgstr  ""
-
-msgid   "i"
-msgstr  ""
-
-# abbreviation for "no" (lowercase)
-msgid   "n"
-msgstr  ""
-
-msgid   "passed"
-msgstr  ""
-
-msgid   "password:"
-msgstr  ""
-
+#: lib/gameshell.sh:244
 msgid   "q"
 msgstr  ""
 
+#: lib/gameshell.sh:247
+msgid   "I"
+msgstr  ""
+
+#: lib/gameshell.sh:247
+msgid   "i"
+msgstr  ""
+
+#: lib/gameshell.sh:251
+#, sh-format
+msgid   "Error: invalid choice: $CHOICE"
+msgstr  ""
+
+#: lib/gameshell.sh:260
+#, sh-format
+msgid   "Error: invalid mission number: $CHOICE.\n"
+        "Please choose a number between 1 and $LAST_MISSION."
+msgstr  ""
+
+#: lib/gameshell.sh:276
+#, sh-format
+msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
+msgstr  ""
+
+#: lib/gameshell.sh:302
+msgid   "Error: this mission was initialized in a subshell.\n"
+        "You should run the command\n"
+        "    gsh reset\n"
+        "to make sure the mission is initialized properly."
+msgstr  ""
+
+#: lib/gameshell.sh:317
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
+msgstr  ""
+
+#: lib/gameshell.sh:319
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
+msgstr  ""
+
+#: lib/gameshell.sh:340
+#, sh-format
+msgid   "Mission $MISSION_NB has been cancelled."
+msgstr  ""
+
+#: lib/gameshell.sh:360
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't have an auto script."
+msgstr  ""
+
+#: lib/gameshell.sh:390
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't have a check script."
+msgstr  ""
+
+#: lib/gameshell.sh:402
+#, sh-format
+msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
+msgstr  ""
+
+#: lib/gameshell.sh:430
+#, sh-format
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+#: lib/gameshell.sh:453
+#, sh-format
+msgid   "Sorry, mission $MISSION_NB hasn't been completed."
+msgstr  ""
+
+#: lib/gameshell.sh:488
+#, sh-format
+msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
+msgstr  ""
+
+#: lib/gameshell.sh:502 lib/gameshell.sh:507 lib/gameshell.sh:531
 #, sh-format
 msgid   "test $NB_TESTS failed"
 msgstr  ""
 
-# abbreviation for "yes" (lowercase)
-msgid   "y"
+#: lib/gameshell.sh:550
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't have a test script."
+msgstr  ""
+
+#: lib/gameshell.sh:560
+#, sh-format
+msgid   "$NB_TESTS successful tests"
+msgstr  ""
+
+#: lib/gameshell.sh:564
+#, sh-format
+msgid   "$NB_ERRORS failures out of $NB_TESTS tests"
+msgstr  ""
+
+#: lib/gameshell.sh:572
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
+msgstr  ""
+
+#: lib/gameshell.sh:576
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
+msgstr  ""
+
+#: lib/gameshell.sh:647
+msgid   "Error: the 'goto' command requires a mission number as argument."
+msgstr  ""
+
+#: lib/gameshell.sh:663 lib/gameshell.sh:671 lib/gameshell.sh:679
+#, sh-format
+msgid   "Error: command '$CMD' is only available in debug mode."
+msgstr  ""
+
+#: lib/gameshell.sh:691
+#, sh-format
+msgid   "Error: unknown gsh command '$CMD'.\n"
+        "Use one of the following commands:"
+msgstr  ""
+
+#: start.sh:14
+#, sh-format
+msgid   "$GSH_ROOT/i18n/start-help/en.txt"
+msgstr  ""
+
+#: start.sh:63
+msgid   "Error: this option is only available from an executable archive!"
+msgstr  ""
+
+#: start.sh:67
+#, sh-format
+msgid   "Error: invalid option: '-$OPTARG'"
+msgstr  ""
+
+#: start.sh:80
+msgid   "Player's name:"
+msgstr  ""
+
+#: start.sh:85
+msgid   "Player's email:"
+msgstr  ""
+
+#: start.sh:97
+msgid   "Is this information correct? [Y/n]"
+msgstr  ""
+
+# abbreviation for "yes" (uppercase)
+#: start.sh:99 start.sh:158 start.sh:180
+msgid   "Y"
+msgstr  ""
+
+# abbreviation for "no" (uppercase)
+#: start.sh:102 start.sh:155 start.sh:177
+msgid   "N"
+msgstr  ""
+
+#: start.sh:153
+msgid   "You are trying to run GameShell inside the developpment directory.\n"
+        "Do you want to continue? [y/N]"
+msgstr  ""
+
+#: start.sh:175
+#, sh-format
+msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
+        "Do you want to remove it and start a new game? [y/N]"
+msgstr  ""
+
+#: start.sh:241
+#, sh-format
+msgid   "Error: unknown mode '$MODE'."
+msgstr  ""
+
+#: start.sh:360
+msgid   "Error: no mission was found!\n"
+        "Aborting"
 msgstr  ""
