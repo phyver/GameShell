@@ -1,38 +1,7 @@
 #!/bin/bash
 
-dir=$(eval_gettext '$GSH_HOME/Castle/Kitchen')/$(gettext "Pantry")
-cat > "$dir/$(gettext "barrel_of_apples")" <<'EOF'
-
-  ,--./,-.
- / #      \
-|          |
- \        /
-  `._,._,'              hjw
-
-EOF
-
-cat > "$dir/$(gettext "piece_of_cheese")" <<'EOF'
-       ___ _____
-      /\ (_)    \
-     /  \      (_,
-    _)  _\   _    \
-   /   (_)\_( )____\
-   \_     /    _  _/
-     ) /\/  _ (o)(
-     \ \_) (o)   /
-      \/________/       mic
-
-EOF
-
-cat "$dir"/* | checksum > "$GSH_VAR"/pantry
-
-if [ -x /usr/bin/python3 ]
-then
-    cp "$MISSION_DIR/cat-generator.py" "$GSH_VAR/cat-generator"
-else
-    cp "$MISSION_DIR/cat-generator.sh" "$GSH_VAR/cat-generator"
-fi
-chmod 755 "$GSH_VAR/cat-generator"
-"$GSH_VAR/cat-generator" "$(eval_gettext '$GSH_HOME/Castle/Kitchen')/$(gettext "Pantry")" "$(gettext "wind-up_cat")" &
-echo $! > "$GSH_VAR"/cat-generator.pid
+cp "$MISSION_DIR/spell.sh" "$GSH_VAR/$(gettext "spell")"
+chmod 755 "$GSH_VAR/$(gettext "spell")"
+"$GSH_VAR/$(gettext "spell")" &
+echo $! > "$GSH_VAR"/spell.pid
 disown

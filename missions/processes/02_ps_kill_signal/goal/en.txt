@@ -1,0 +1,41 @@
+Mission goal
+============
+
+The mischievous imp has more than one trick up his sleeve. He 
+managed to protect his spell against most tampering.
+You need to find this spell and try to remove it with standard 
+signal. If it doesn't work, use a more brutal signal.
+
+
+Remark
+------
+
+The spell is a process.
+
+
+Useful commands
+===============
+
+ps
+  List the processes that are currently executed by the shell.
+
+kill N
+  Send the termination signal to process number N.
+
+  Useful options:
+    -s SIGNAL   choose the signal to send by giving its name
+    -NUMBER     choose the signal to send by giving its number
+    -l          give the list of available signals with their number
+
+clear
+  Clear the screen.
+  The keybinding "Control-l" does the same and is often quicker to 
+  use.
+
+Details
+-------
+
+By default ``kill`` sends the "TERM" signal to the processes (TERM 
+stands for "termination").
+Processes may ignore some signals, but the "KILL" signal cannot be 
+ignored!
