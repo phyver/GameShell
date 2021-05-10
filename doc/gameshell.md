@@ -53,14 +53,14 @@ Playing GameShell, other commands
 In some situations, some other commands are useful. They are described by the
 `gsh HELP` command. Here are the main ones.
 
-* `gsh pass`: it has unfortunately happened that some bug prevented a mission
-  to be completed successfully. The command `gsh pass` will cancel the
+* `gsh skip`: it has unfortunately happened that some bug prevented a mission
+  to be completed successfully. The command `gsh skip` will cancel the
   current mission and go to the next one. Running this command will first ask
   for a password (except in debug mode) to avoid students overusing it. (Just
   like most other `gsh` commands, the use of this command is logged.)
 
 * `gsh goto N`: when the previous command isn't sufficient, `gsh goto N`
-  which will go directly to mission `N`. Just like `gsh pass`, this command
+  which will go directly to mission `N`. Just like `gsh skip`, this command
   will first ask for a password.
 
 * `gsh protect` and `gsh unprotect`: the directories containing GameShell
@@ -73,14 +73,14 @@ In some situations, some other commands are useful. They are described by the
 * `gsh auto`: if the mission comes with an automatic script (`auto.sh`), this
   command will call it. This script is suppose to complete the mission and
   call `gsh check`.
-  This is useful for testing purposes, but also if using `gsh pass` is not
+  This is useful for testing purposes, but also if using `gsh skip` is not
   sufficient. For example, the mission might ask to create a directory. `gsh
   auto` should ensure it is created correctly.
-  Just like `gsh pass` and `gsh goto N`, this command will first ask for a
+  Just like `gsh skip` and `gsh goto N`, this command will first ask for a
   password.
 
 * `gsh index`: this will display the list of available missions, with there
-  status. If you've used `pass` and `goto` a lot, this might come in handy.
+  status. If you've used `skip` and `goto` a lot, this might come in handy.
 
 The other commands are either self-explanatory (`gsh welcome`) or only useful
 while creating missions (`gsh assert ...`, `gsh test`).
