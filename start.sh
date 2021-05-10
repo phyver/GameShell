@@ -106,6 +106,26 @@ _confirm_passport() {
   done
 }
 
+progress_bar() {
+    if [ -z "$progress_I" ]
+    then
+      progress_filename=$GSH_ROOT/lib/titlescreen
+      local N=$(wc -l "$GSH_CONFIG/index.txt" | cut -d" " -f1)
+      local size=$(wc -c $progress_filename | cut -d" " -f1)
+      progress_delta=$((size/N + 1))
+      head -c$((progress_delta - 1)) $progress_filename
+      progress_I=1
+    else
+      tail -c+$((progress_I * progress_delta)) $progress_filename | head -c$progress_delta
+      progress_I=$((progress_I+1))
+    fi
+}
+
+progress_bar_finish() {
+  tail -c+$((progress_I*progress_delta)) $progress_filename
+  unset progress_filename progress_delta progress_I
+}
+
 
 init_gsh() {
 
@@ -325,7 +345,12 @@ EOH
       unset FILENAME
     fi
 
-    [ "$GSH_MODE" = "DEBUG" ] && printf "."
+    if [ "$GSH_MODE" = "DEBUG" ]
+    then
+      printf "."
+    else
+      progress_bar
+    fi
 
     [ -z "$MISSION_SUB_NB" ] && MISSION_NB=$((MISSION_NB+1))
 
@@ -336,7 +361,12 @@ EOH
 Aborting")"
     exit 1
   fi
-  [ "$GSH_MODE" = "DEBUG" ] && echo " [DONE]"
+  if [ "$GSH_MODE" = "DEBUG" ]
+  then
+    echo " [DONE]"
+  else
+      progress_bar_finish
+  fi
   unset MISSION_DIR MISSION_NB
 }
 
