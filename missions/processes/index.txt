@@ -1,2 +1,2 @@
 01_ps_kill
-02_pstree_kill
+02_ps_kill_signal
