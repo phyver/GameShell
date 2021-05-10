@@ -1,0 +1,36 @@
+Mission goal
+============
+
+The mischievous imp met with a nice fairy, and they are having a 
+friendly contest to decide who has more magic.
+They met in the cellar, and  imp is conjuring lumps of coal while 
+the fairy is conjuring delicate snowflakes.
+
+You need to remove the imp's spells and the coal that litters the 
+cellar. Don't touch the snowflakes!
+
+
+Remark
+------
+
+Do not kill the imp or the fairy.
+
+
+Useful commands
+================
+
+pstree PID
+  Print the list of processes with their parent / child 
+  relationship.
+
+  If no PID is given, show the list of all processes with their 
+  parent / child relationship.
+
+  Useful options:
+    -p   show the PID of processes
+    $$   This variable contains the PID of the current shell and can
+         be given as the PID.
+
+kill N
+  Send the termination signal to process number N.
+  Remark: N is called PID, or "process identifier".
