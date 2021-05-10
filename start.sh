@@ -375,7 +375,7 @@ start_gsh() {
   # Starting the game.
   cd "$GSH_HOME"
   export GSH_UID=$(cat "$GSH_CONFIG/uid")
-  bash --rcfile "$GSH_LIB/bashrc"
+  exec bash --rcfile "$GSH_LIB/bashrc"
 }
 
 
