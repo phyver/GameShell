@@ -38,15 +38,15 @@ Commands specific to GameShell
   gsh index
     show list of missions, with their status
 
-  gsh pass                              (ADMIN)
-    give up on the current mission and go to the next one
-
   gsh protect
   gsh unprotect
     add / remove protection on GameShell directories
 
   gsh reset
     reset the current mission
+
+  gsh skip                              (ADMIN)
+    give up on the current mission and go to the next one
 
   gsh test
     run the curent mission's test script, if it exists

@@ -229,7 +229,7 @@ remaining missions, use a `treasure.sh` file.
 This file is sourced:
 
 * after the mission is checked (successfully or not),
-* when the mission is "passed" with `gsh pass`,
+* when the mission is "skipped" with `gsh skip`,
 * when the mission is left with `gsh goto N`,
 * when the player exits GameShell.
 
