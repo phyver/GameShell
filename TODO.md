@@ -134,13 +134,6 @@ Some missions ideas
     (put `bind 'set disable-completion' on` in the first mission's `bashrc`,
     and `bind ... of` in some mission' `treasuse.sh`)
 
-  - alias `pick` for moving a file into the chest
-    NOTE: it probably requires GNU's `mv` with option `-t`
-
-  - alias `inventory` to list the content of the chest (with `nl`)
-
-  - function `drop` to move a file from the chest to the CWD
-
   - "summary missions" to practice what has been learnt at the end of the
     `missions/basic` mission group. We could ask the player o tidy up the
     pantry, initially filled with a big mess of files (fruits, cheese, meat,
@@ -150,5 +143,7 @@ Some missions ideas
 
   - manage an inventory (or the `Chest`) with aliases:
     - `alias inventory='ls ~/Forest/Hut/Chest | nl` to show the inventory,
-    - `alias pick='mv -t ~/Forest/Hut/Chest` to pick an item,
-    - `alias drop='...'` to drop an item at the current location.
+    - `alias pick='mv -t ~/Forest/Hut/Chest` to pick an item (NOTE: it
+      probably requires GNU's `mv` with option `-t`)
+    - `alias drop='...'` to drop an item at the current location (NOTE: that's
+      probably better to use a function for that, no?)
