@@ -1,0 +1,58 @@
+#, fuzzy
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Chateau/Cave"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
+
+msgid   "Are you sure you removed all the imp's spells?"
+msgstr  "Vous êtes sûr d'avoir supprimé tous les sortilèges du lutin ?"
+
+msgid   "Did you kill the fairy?"
+msgstr  "Est-ce que vous avez tué la fée ?"
+
+msgid   "Did you kill the imp?"
+msgstr  "Est-ce que vous avez tué le lutin ?"
+
+msgid   "Did you remove some of the fairy's spells?"
+msgstr  "Est-ce que vous avez supprimé un sortilège de la fée ?"
+
+#, sh-format
+msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psproc')"
+msgstr  "La commande 'ps' est nécessaire pour la mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: installez le paquet 'psproc')"
+
+#, sh-format
+msgid   "The command 'pstree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+msgstr  "La commande 'pstree' est nécessaire pour la mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: installez le paquet 'psmisc')"
+
+msgid   "There still is some coal in the cellar!"
+msgstr  "Il reste des morceaux de charbon dans la cave !"
+
+msgid   "coal"
+msgstr  "charbon"
+
+msgid   "mischievous_imp"
+msgstr  "lutin_espiegle"
+
+msgid   "nice_fairy"
+msgstr  "gentille_fee"
+
+msgid   "snowflake"
+msgstr  "flocon_de_neige"
+
+msgid   "spell"
+msgstr  "sortilege"
