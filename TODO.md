@@ -6,8 +6,8 @@ TODO NOW
 
   - [ ] doc
 
+  - [x] put back progress bar on startup (possibly doing something nice)???
   - [x] try to make sure pager handles colors correctly
-
   - [x] use PAGER on gsh index
 
 
