@@ -1,17 +1,14 @@
 Mission goal
 ============
 
-The rats are not happy: to scare them away, an infernal machine that 
-generates wind-up cats has been installed in the pantry (in the 
-castle's kitchen).
-
-Find and kill the cat generator, and remove all the cats that 
-are hiding in the pantry.
+A mischievous mountain imp cast a spell that puts paint (or is it 
+something worse?) stains everywhere in the castle.
+You need to find this spell and remove it.
 
 Remark
 ------
 
-The generator is a process, while the cats themselves are files.
+The spell is a process.
 
 
 Useful commands
@@ -24,6 +21,7 @@ kill N
   Send the termination signal to process number N.
   Remark: N is called PID, or "process identifier".
 
-Recall that wildcards "*" and "?" do not see hidden files. You need 
-to add an explicit dot at the start of the pattern to capture hidden 
-files.
+clear
+  Clear the screen.
+  The keybinding "Control-l" does the same and is often quicker to 
+  use.

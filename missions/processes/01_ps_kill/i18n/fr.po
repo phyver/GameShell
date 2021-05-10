@@ -5,7 +5,7 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 
 #, sh-format
 msgid   "$GSH_HOME/Castle/Kitchen"
-msgstr  "$GSH_HOME/Chateau/Cuisine"
+msgstr  ""
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
@@ -15,32 +15,9 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
-msgid   "Pantry"
-msgstr  "Garde_manger"
+#, fuzzy
+msgid   "The spell is still running!"
+msgstr  "Le sortilège est toujours en fonctionnement !"
 
-msgid   "The cat generator is still running!"
-msgstr  "Le générateur de chat est toujours en fonctionnement !"
-
-#, sh-format
-msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'psproc')"
-msgstr  "La commande 'ps' est nécessaire pour la mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu : installez le paquet 'ps-proc')"
-
-msgid   "The content of the pantry has changed!"
-msgstr  "Le contenu du garde manger à changé !"
-
-msgid   "There still are some hidden wind-up cats in the pantry!"
-msgstr  "Il reste des chats cachés dans le garde manger !"
-
-msgid   "There still are some wind-up cats in the pantry!"
-msgstr  "Il reste des chats dans le garde manger !"
-
-msgid   "barrel_of_apples"
-msgstr  "tonneau_de_pommes"
-
-msgid   "piece_of_cheese"
-msgstr  "morceau_de_fromage"
-
-msgid   "wind-up_cat"
-msgstr  "chat-a-ressort"
+msgid   "spell"
+msgstr  "sortilege"

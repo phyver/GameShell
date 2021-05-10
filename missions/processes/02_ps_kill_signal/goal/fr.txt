@@ -1,0 +1,43 @@
+Objectif
+========
+
+Le lutin espiègle a plus d'un tour dans son sac. Il a réussit à 
+protéger son sortilège contre la plupart des tentative de sabotage.
+Vous devez trouver ce sortilège et le tenter de le supprimer avec le 
+signal standard. Si ça ne marche pas, essayer un signal plus brutal.
+
+
+Remarque
+--------
+
+Le sortilège est un processus.
+
+
+Commandes utiles
+================
+
+ps
+  Affiche la liste des processus lancés par le shell.
+
+kill N
+  Envoie le signal d'arrêt au processus numéro N.
+
+  Options utiles
+    -s SIGNAL   choisit un signal en donnant son nom
+    -NUMBER     choisit un signal en donnant son numéro
+    -l          donne la liste des signaux disponibles avec leur
+                numéro
+
+
+clear
+  Efface l'écran du terminal.
+  La combinaison de touches "Control-l" fait la même chose et est 
+  souvent plus rapide à utiliser.
+
+Détails
+-------
+
+Par défaut ``kill` envoie le signal "TERM" aux processus (TERM est 
+une abréviation pour "termination").
+Les processus peuvent ignorer certains signaux, mais le signal 
+"KILL" ne peut pas être ignoré !
