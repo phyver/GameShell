@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mission_check() {
+_mission_check() {
 
     # adjust
     local MAX_DELAY=20
@@ -39,4 +39,4 @@ mission_check() {
     return 0
 }
 
-mission_check
+_mission_check
