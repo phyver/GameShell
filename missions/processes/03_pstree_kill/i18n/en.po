@@ -1,0 +1,59 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
+#, fuzzy
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Castle/Cellar"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+msgid   "Are you sure you removed all the imp's spells?"
+msgstr  "Are you sure you removed all the imp's spells?"
+
+msgid   "Did you kill the fairy?"
+msgstr  "Did you kill the fairy?"
+
+msgid   "Did you kill the imp?"
+msgstr  "Did you kill the imp?"
+
+msgid   "Did you remove some of the fairy's spells?"
+msgstr  "Did you remove some of the fairy's spells?"
+
+#, sh-format
+msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psproc')"
+msgstr  "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psproc')"
+
+#, sh-format
+msgid   "The command 'pstree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+msgstr  "The command 'pstree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+
+msgid   "There still is some coal in the cellar!"
+msgstr  "There still is some coal in the cellar!"
+
+msgid   "coal"
+msgstr  "coal"
+
+msgid   "mischievous_imp"
+msgstr  "mischievous_imp"
+
+msgid   "nice_fairy"
+msgstr  "nice_fairy"
+
+msgid   "snowflake"
+msgstr  "snowflake"
+
+msgid   "spell"
+msgstr  "spell"
