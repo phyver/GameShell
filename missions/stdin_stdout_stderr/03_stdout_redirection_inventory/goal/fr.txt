@@ -21,3 +21,8 @@ less FICHIER
     Espace    faire défiler une page
     /         rechercher une chaine
     n         aller à l'occurrence suivante de la chaine cherchée
+
+ls FICHIER1 ... FICHIERn
+  Affiche la liste des fichiers donnés en argument.
+  Ceci est particulièrement utile si on utilise des motifs avec des 
+  jokers.

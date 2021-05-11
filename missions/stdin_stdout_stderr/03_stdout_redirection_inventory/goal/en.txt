@@ -21,3 +21,8 @@ less FILE
     Space     scroll down one page
     / STRING  search for a string
     n         go to the next occurrence of the search string
+
+ls FILE1 ... FILEn
+  Show the list of files given as arguments.
+  This is particularly useful if you use shell patterns with 
+  wildcards.
