@@ -16,7 +16,7 @@ TODO NOW
 FOR LATER
 ---------
 
-  - [ ] nice "progress bar" for missions that take longuer to initialize
+  - [ ] nice "progress bar" for missions that take longer to initialize
 
   - [ ] `gsh config` command to configure some options (boxes, color,
         verbose_source, quiet, pager...)
@@ -40,8 +40,6 @@ Existing missions
 TODO NOW
 --------
 
-  - [ ] 28: mention `ls FILES` / `ls PATTERN`
-
   - [ ] check all group with shared data have appropriate `deps.sh`
 
   - [ ] mission 9: add other items to prevent using `cp *`
@@ -49,9 +47,9 @@ TODO NOW
   - [ ] mission 15: add a treasure to source `$GSH_CHEST/bashrc`, and suggest
         adding aliases like `gg => gsh goal` and `gc => gsh check`
 
-  - [ ] mission 24: change
-  - [ ] mission 25: change
-
+  - [x] 28: mention `ls FILES` / `ls PATTERN`
+  - [x] mission 24: change
+  - [x] mission 25: change
   - [x] finish the hierarchy for missions
   - [x] rename all missions to have more informative names, eg
         `basic/01_cd_tower` and similar
