@@ -62,6 +62,8 @@ TODO NOW
 FOR LATER
 ---------
 
+  - for missions that generate many files, remove most of them in `clean.sh`
+
   - clean.sh for GSH_CHEST mission, using GSH_ACTION
 
   - mission 9: clean the `check.sh`
