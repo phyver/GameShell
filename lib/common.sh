@@ -49,7 +49,7 @@ checksum() {
 export -f checksum
 
 textdomainname() {
-  local MISSION_DIR=$1
+  local MISSION_DIR=$(REALPATH "$1")  # follow symbolic links to make sure translation is found
   echo "${MISSION_DIR#$GSH_MISSIONS/}" | tr "/" ","
 }
 export -f textdomainname
@@ -151,12 +151,12 @@ admin_mode() {
 # Also, in DEBUG mode, is compares the environment before / after to
 # make it easier to detect variables that haven't been unset.
 mission_source() {
-  local FILENAME=$(REALPATH $1)
+  local FILENAME=$1
   # if we are not running in DEBUG mode, just source the file
   if [ "$GSH_MODE" != "DEBUG" ] || [ -z "$GSH_VERBOSE_SOURCE" ]
   then
     local _MISSION_DIR=$MISSION_DIR
-    export MISSION_DIR=$(dirname "$FILENAME")
+    export MISSION_DIR=$(dirname "$(REALPATH "$FILENAME")")
     local _TEXTDOMAIN=$TEXTDOMAIN
     export TEXTDOMAIN="$(textdomainname "$MISSION_DIR")"
     local _MISSION_NAME=$MISSION_NAME
@@ -182,7 +182,7 @@ mission_source() {
   compgen -a | sort > "$TEMP"/before-A
   ls "$GSH_VAR" > "$TEMP"/before-D
   local _MISSION_DIR=$MISSION_DIR
-  export MISSION_DIR=$(dirname "$FILENAME")
+  export MISSION_DIR=$(dirname "$(REALPATH "$FILENAME")")
   _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="$(textdomainname "$MISSION_DIR")"
   _MISSION_NAME=$MISSION_NAME

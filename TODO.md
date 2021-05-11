@@ -8,6 +8,10 @@ TODO NOW
   - [ ] make the treasure messages stand out more (use some ASCII treasure
         chest?)
 
+  - [x] sourcing a mission file initializes `MISSION_DIR`, `TEXTDOMAIN`,
+        and `MISSION_NAME` from the file path. To get the appropriate
+        translation, I need to use the "realpath", but then, `MISSION_DIR` is
+        changed
   - [x] put back progress bar on startup (possibly doing something nice)???
   - [x] try to make sure pager handles colors correctly
   - [x] use PAGER on gsh index
