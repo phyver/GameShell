@@ -3,7 +3,7 @@
 new_progress () {
   # Get a temporary file name.
   local PIPE
-  PIPE=$(mktemp gsh_progress_pipe.XXXX)
+  PIPE=$(mktemp -t gsh_progress_pipe.XXXX)
 
   # Create a named pipe and return the file name.
   rm -f "$PIPE"
