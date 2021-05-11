@@ -1,12 +1,11 @@
 #!/bin/bash
 
 source gettext.sh
-export TEXTDOMAIN=$1
 
 DELAY=3
-OFFSET=$2
+OFFSET=$1
 
-sleep $OFFSET
+sleep ${OFFSET:-1}
 while true
 do
     INDENT=$(echo "                       " | cut -c1-$((2+RANDOM%15)))

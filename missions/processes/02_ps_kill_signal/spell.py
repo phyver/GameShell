@@ -16,7 +16,10 @@ gettext.textdomain(os.environ.get(TEXTDOMAIN))
 
 def spawn(a, b):
     print(gettext.gettext("You'll need to do better than that!"))
-    os.fork()
+    p = os.fork()
+    if p > 0:
+        f = open(os.path.expandvars("$GSH_VAR/spell-term.pids"), mode="a")
+        f.write(str(p) + "\n")
 
 
 signal.signal(signal.SIGTERM, spawn)

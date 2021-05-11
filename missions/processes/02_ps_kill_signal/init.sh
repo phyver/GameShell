@@ -8,5 +8,4 @@ else
 fi
 chmod 755 "$GSH_VAR/$(gettext "spell")"
 "$GSH_VAR/$(gettext "spell")" "$TEXTDOMAIN" &
-echo $! > "$GSH_VAR/spell.pids"
 disown
