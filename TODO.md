@@ -48,9 +48,8 @@ TODO NOW
 
   - [ ] mission 9: add other items to prevent using `cp *`
 
-  - [ ] mission 15: add a treasure to source `$GSH_CHEST/bashrc`, and suggest
+  - [x] mission 15: add a treasure to source `$GSH_CHEST/bashrc`, and suggest
         adding aliases like `gg => gsh goal` and `gc => gsh check`
-
   - [x] 28: mention `ls FILES` / `ls PATTERN`
   - [x] mission 24: change
   - [x] mission 25: change

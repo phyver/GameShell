@@ -15,6 +15,10 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
+# path for bashrc containing the explanations
+msgid   "$MISSION_DIR/bashrc/en.sh"
+msgstr  ""
+
 #, sh-format
 msgid   "It seems you alias doesn't refer to the appropriate file ($FILE_NAME).\n"
         "Make sure to use an absolute path..."
