@@ -5,6 +5,7 @@
 source gettext.sh
 
 source "$GSH_LIB/common.sh"
+source "$GSH_LIB/progress.sh"
 
 trap "_gsh_exit EXIT" EXIT
 trap "_gsh_exit TERM" SIGTERM
