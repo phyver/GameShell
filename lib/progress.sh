@@ -1,59 +1,9 @@
 #!/bin/bash
 
-new_progress () {
-  # Get a temporary file name.
-  local PIPE
-  PIPE=$(mktemp -t gsh_progress_pipe.XXXX)
-
-  # Create a named pipe and return the file name.
-  rm -f "$PIPE"
-  mkfifo "$PIPE"
-  echo "$PIPE"
-}
-
-progress_step () {
-  if [ "$#" -ne 1 ]
-  then
-    echo "Function [progress_step] expects exactly one argument."
-    return 1
-  fi
-
-  local PIPE="$1"
-
-  if [ ! -p "$PIPE" ]
-  then
-    echo "The file [$PIPE] does not exist."
-    return 1
-  fi
-
-  echo "." > "$PIPE"
-}
-
-progress_done () {
-  if [ "$#" -ne 1 ]
-  then
-    echo "Function [progress_done] expects exactly one argument."
-    return 1
-  fi
-
-  local PIPE="$1"
-
-  if [ ! -p "$PIPE" ]
-  then
-    echo "The file [$PIPE] does not exist."
-    return 1
-  fi
-
-  echo "e" > "$PIPE"
-
-  # Wait acknowledgment.
-  while [ -p "$PIPE" ]
-  do
-    :
-  done
-}
-
-_progress_start () {
+# Print a progress bar as a flying bat: each character received on
+# [stdin] makes the bat move forward. The animation stops when the
+# end of file is reached.
+progress_bat () {
   local PIPE="$1"
   local BAT1='\,/'
   local BAT2='/`\'
@@ -63,14 +13,9 @@ _progress_start () {
   # Print initial message.
   printf "While you are waiting, a bat flies by...\n"
 
-  # Interactive part.
-  while read -rn1 C < "$PIPE"
+  # Make progress for each character read on [stdin].
+  while read -rn1 C
   do
-    if [ "$C" == "e" ]
-    then
-      break
-    fi
-
     printf "\r"
 
     for I in $(seq 0 "$COUNT")
@@ -86,6 +31,9 @@ _progress_start () {
     fi
 
     COUNT=$((COUNT+1))
+
+    # Slow down the animation a little bit.
+    sleep 0.05
   done
 
   # Clear the line with the bat.
@@ -95,25 +43,4 @@ _progress_start () {
     printf " "
   done
   printf "\r"
-
-  # Remove the pipe.
-  rm -f "$PIPE"
-}
-
-progress_start () {
-  if [ "$#" -ne 1 ]
-  then
-    echo "Function [progress_start] expects exactly one argument."
-    return 1
-  fi
-
-  local PIPE="$1"
-
-  if [ ! -p "$PIPE" ]
-  then
-    echo "The file [$PIPE] does not exist."
-    return 1
-  fi
-
-  _progress_start "$PIPE"&
 }
