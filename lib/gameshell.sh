@@ -219,7 +219,7 @@ _gsh_start() {
     if [ "$?" -eq 1 ] && [ "$GSH_MODE" != "DEBUG" ]
     then
       _gsh_welcome
-      read -serpn1 "$(gettext "Press any key to continue.")"
+      read -sern1 -p "$(gettext "Press any key to continue.")"
       echo
     fi
   else
