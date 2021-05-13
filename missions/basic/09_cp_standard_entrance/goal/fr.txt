@@ -9,6 +9,6 @@ votre coffre.
 Commandes utiles
 ================
 
-cp FICHIER1 FICHIER2 ... FICHIERn REPERTOIRE
-  Copie les fichiers dans le répertoire.
+cp FICHIER REPERTOIRE
+  Copie le fichier dans le répertoire.
   Note : ``cp`` est une abréviation pour "copy".

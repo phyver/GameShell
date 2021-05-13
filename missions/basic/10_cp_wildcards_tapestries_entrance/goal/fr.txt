@@ -5,6 +5,14 @@ Toutes les tapisseries de l'entrée du château sont d'ailleurs
 jolies. Faites une copie dans votre coffre.
 
 
+Commandes utiles
+================
+
+cp FICHIER1 FICHIER2 ... FICHIERn REPERTOIRE
+  Copie les fichiers dans le répertoire.
+  Note : ``cp`` est une abréviation pour "copy".
+
+
 Motifs shell
 ============
 
