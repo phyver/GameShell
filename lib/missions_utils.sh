@@ -74,14 +74,10 @@ sign_file() {
   fi
   local rd=$RANDOM
   local sum=$(sed "1i${name:+$(basename "$target")}#$rd" "$source" | checksum)
-  echo 1
   sed "1i$sum#$rd" "$source" > "$tempfile"
-  echo 2
   if [ "$tempfile" != "$target" ]
   then
-  echo 3
     cat "$tempfile" > "$target"
-  echo 4
     rm -f "$tempfile"
   fi
 }
