@@ -50,11 +50,28 @@ _gsh_welcome() {
   parchment "$msg_file" Parchment5
 }
 
-# reset the bash configuration
 _gsh_reset() {
+  local MISSION_NB="$(_get_current_mission)"
+  if [ -z "$MISSION_NB" ]
+  then
+    local FUNCTION_NAME="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
+    return 1
+  fi
   if [ "$BASHPID" != $$ ]
   then
-    echo "$(gettext "Error: the command 'gsh reset' is useless when run inside a subshell!")" >&2
+    echo "$(gettext "Error: the command 'gsh reset' shouldn't be run inside a subshell!")" >&2
+    return 1
+  fi
+
+  _gsh_start "$MISSION_NB"
+}
+
+# reset the bash configuration
+_gsh_hard_reset() {
+  if [ "$BASHPID" != $$ ]
+  then
+    echo "$(gettext "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!")" >&2
     return 1
   fi
 
@@ -202,7 +219,7 @@ _gsh_start() {
     if [ "$?" -eq 1 ] && [ "$GSH_MODE" != "DEBUG" ]
     then
       _gsh_welcome
-      read -serp "$(gettext "Press Enter")"
+      read -serpn1 "$(gettext "Press any key to continue.")"
       echo
     fi
   else
@@ -641,6 +658,11 @@ gsh() {
       ;;
     "auto")
       _gsh_auto
+      ;;
+    "hardreset")
+      export GSH_LAST_ACTION='check_reset'
+      _gsh_clean
+      _gsh_hard_reset
       ;;
     "goto")
       if [ -z "$1" ]
