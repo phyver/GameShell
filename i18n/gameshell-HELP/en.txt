@@ -29,6 +29,9 @@ Commands specific to GameShell
   gsh goto N                            (ADMIN)
     directly go to mission N
 
+  gsh hardreset
+    reset the current mission by restarting the bash session
+
   gsh HELP
     this message
 

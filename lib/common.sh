@@ -27,7 +27,7 @@ case $OSTYPE in
   *)
     read -erp "$(eval_gettext "Error: unknown system: OSTYPE=\$OSTYPE.
 GameShell will use 'gnu-linux', without guarantee.")"
-    read -serp "$(gettext "Press Enter")"
+    read -serpn1 "$(gettext "Press any key to continue.")"
     # shellcheck source=./lib/gnu_aliases.sh
     source "$GSH_ROOT"/lib/gnu_aliases.sh
     ;;
