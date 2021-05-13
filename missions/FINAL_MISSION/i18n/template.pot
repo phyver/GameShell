@@ -23,7 +23,7 @@ msgid   "Error: invalid mission number: $CHOICE.\n"
         "Please choose a number between 1 and $NB_MISSIONS"
 msgstr  ""
 
-msgid   "Press Enter to continue."
+msgid   "Press any key to continue."
 msgstr  ""
 
 msgid   "Q"
