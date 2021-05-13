@@ -15,18 +15,18 @@ msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  "$MISSION_DIR/goal/fr.txt"
 
-# path for the text file containing the goal
-msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
-
 msgid   "I only wanted the tapestries!"
 msgstr  "Je ne voulais que les tapisseries !"
 
-msgid   "I wanted all the ornements!"
+msgid   "I wanted all the tapestries!"
 msgstr  "Je voulais toutes les tapisseries !"
 
 msgid   "You changed the contents of the entrance!"
 msgstr  "Vous avez changé le contenu de l'entrée !"
+
+#, fuzzy
+msgid   "decorative_shield"
+msgstr  "bouclier_decoratif"
 
 msgid   "stag_head"
 msgstr  "tete_de_cerf"
@@ -34,8 +34,9 @@ msgstr  "tete_de_cerf"
 msgid   "suit_of_armour"
 msgstr  "armure"
 
-msgid   "decorative_sword"
-msgstr  "epee_decorative"
-
 msgid   "tapestry"
 msgstr  "tapisserie"
+
+# path for the text file containing the goal
+#~ msgid        "$MISSION_DIR/treasure-msg/en.txt"
+#~ msgstr       "$MISSION_DIR/treasure-msg/fr.txt"

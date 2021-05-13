@@ -1,12 +1,16 @@
-cp "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/*_$(gettext "tapestry")_* "$GSH_CHEST"
+
+cp "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/*"$(gettext "tapestry")"* "$GSH_CHEST"
 gsh assert check true
 
-mv "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/* "$GSH_CHEST"
+mv "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/*"$(gettext "tapestry")"* "$GSH_CHEST"
 gsh assert check false
 
-mv "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/*_$(gettext "tapestry")_* "$GSH_CHEST"
+cp "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/* "$GSH_CHEST"
 gsh assert check false
 
-cp "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/*_$(gettext "tapestry")_* "$GSH_CHEST"
-gsh assert check true
+gsh assert check false
+
+cp "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/*"$(gettext "tapestry")"* "$GSH_CHEST"
+rm "$(eval_gettext '$GSH_HOME/Castle/Entrance')"/*"$(gettext "stag_head")"*
+gsh assert check false
 

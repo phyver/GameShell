@@ -15,26 +15,22 @@ msgstr  ""
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  ""
 
-# path for the text file containing the treasure message
-msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  ""
-
 msgid   "I only wanted the tapestries!"
 msgstr  ""
 
-msgid   "I wanted all the ornements!"
+msgid   "I wanted all the tapestries!"
 msgstr  ""
 
 msgid   "You changed the contents of the entrance!"
+msgstr  ""
+
+msgid   "decorative_shield"
 msgstr  ""
 
 msgid   "stag_head"
 msgstr  ""
 
 msgid   "suit_of_armour"
-msgstr  ""
-
-msgid   "decorative_sword"
 msgstr  ""
 
 msgid   "tapestry"
