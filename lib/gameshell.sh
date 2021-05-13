@@ -258,6 +258,7 @@ _gsh_start() {
         "")
             unset CHOICE
             gsh reset
+            return 1
             ;;
         "$(gettext "q")" | "$(gettext "Q")")
           gsh exit
@@ -273,7 +274,7 @@ _gsh_start() {
           then
             _gsh_start -quiet $CHOICE
             unset CHOICE
-            gsh reset
+            return 0
           else
             echo "$(eval_gettext "Error: invalid mission number: \$CHOICE.
 Please choose a number between 1 and \$LAST_MISSION.")" >&2
