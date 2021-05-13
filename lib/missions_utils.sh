@@ -122,11 +122,11 @@ export -f check_file
 # [stdin] makes the bat move forward. The animation stops when the
 # end of file is reached.
 progress_bat () {
-  BAT=('\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/'
-       '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
+  local BAT=('\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/'
+             '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
 
   # Print initial message.
-  printf "While you are waiting, a bat flies by...\n"
+  echo "While you are waiting, a bat flies by..."
 
   # Make progress for each character read on [stdin].
   local COUNT
