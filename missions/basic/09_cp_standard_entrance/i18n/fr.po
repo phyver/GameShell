@@ -19,29 +19,23 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
-#, sh-format
-msgid   "The standard $N disapeared from the entrance."
-msgstr  "L'étendard $N a disparu de l'entrée."
+msgid   "I only wanted the standards!"
+msgstr  "Je ne voulais que les étendards !"
 
-#, sh-format
-msgid   "The standard $N in the chest is invalid."
-msgstr  "L'étendard $N de la hutte est invalide."
+msgid   "I wanted all the standards!"
+msgstr  "Je voulais tous les étendards !"
 
-#, sh-format
-msgid   "The standard $N in the chest is not right."
-msgstr  "L'étendard $N de la hutte n'est pas correct."
+msgid   "You changed the contents of the entrance!"
+msgstr  "Vous avez modifié le contenu de l'entrée !"
 
-#, sh-format
-msgid   "The standard $N in the entrance is invalid."
-msgstr  "L'étendard $N de l'entrée est invalide."
+msgid   "decorative_shield"
+msgstr  "bouclier_decoratif"
 
-#, sh-format
-msgid   "The standard $N in the entrance is not right."
-msgstr  "L'étendard $N de l'entrée n'est pas correct."
-
-#, sh-format
-msgid   "The standard $N is not in the chest."
-msgstr  "L'étendard $N n'est pas dans le coffre."
+msgid   "stag_head"
+msgstr  "tete_de_cerf"
 
 msgid   "standard"
 msgstr  "etendard"
+
+msgid   "suit_of_armour"
+msgstr  "armure"
