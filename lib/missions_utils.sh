@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# export GSH_ROOT="$(dirname "$BASH_SOURCE")/.."
-# source "$GSH_ROOT"/lib/common.sh
+[ -z "$GSH_ROOT" ] && export GSH_ROOT="$(dirname "$BASH_SOURCE")/.." && source "$GSH_ROOT"/lib/common.sh
 
 # create a script to call a mission executable with appropriate context:
 # correct TEXTDOMAIN (for translations) and MISSION_DIR (to use data files)
@@ -58,20 +57,33 @@ sign_file() {
     name=""
     shift
   fi
-  if [ "${#@}" -ne 1 ]
+  if [ "${#@}" -ne 1 ] && [ "${#@}" -ne 2 ]
   then
-    echo "Error: sign_file requires 1 argument." >&2
+    echo "Error: sign_file requires 1 or 2 arguments." >&2
     return 1
   fi
-  local filename=$1
-  if ! [ -w "$filename" ]
+  local source=$1
+  local target tempfile
+  if [ "${#@}" -eq 2 ]
   then
-    echo "Error: sign_file argument is not a writable file." >&2
-    return 1
+    target=$2
+    tempfile=$2
+  else
+    target=$source
+    tempfile=$(mktemp --tmpdir="$(dirname "$source")" -t tmp-XXXXXX)
   fi
   local rd=$RANDOM
-  local sum=$(sed "1i${name:+$(basename "$filename")}#$rd" "$filename" | checksum)
-  sed -i "1i$sum#$rd" "$filename"
+  local sum=$(sed "1i${name:+$(basename "$target")}#$rd" "$source" | checksum)
+  echo 1
+  sed "1i$sum#$rd" "$source" > "$tempfile"
+  echo 2
+  if [ "$tempfile" != "$target" ]
+  then
+  echo 3
+    cat "$tempfile" > "$target"
+  echo 4
+    rm -f "$tempfile"
+  fi
 }
 export -f sign_file
 
@@ -110,45 +122,23 @@ export -f check_file
 # [stdin] makes the bat move forward. The animation stops when the
 # end of file is reached.
 progress_bat () {
-  local PIPE="$1"
-  local BAT1='\,/'
-  local BAT2='/`\'
-  local COUNT=0
-  local I
+  BAT=('\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/'
+       '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
 
   # Print initial message.
   printf "While you are waiting, a bat flies by...\n"
 
   # Make progress for each character read on [stdin].
+  local COUNT
+  local L=${#BAT[@]}
   while read -rn1 C
   do
-    printf "\r"
-
-    for I in $(seq 0 "$COUNT")
-    do
-      printf " "
-    done
-
-    if ((COUNT % 8 < 4))
-    then
-      printf "%s" "$BAT1";
-    else
-      printf "%s" "$BAT2";
-    fi
-
-    COUNT=$((COUNT+1))
-
+    echo -en "${BAT[$COUNT]}"
+    COUNT=$(((COUNT+1)%L))
     # Slow down the animation a little bit.
-    sleep 0.05
+    sleep 0.1
   done
-
-  # Clear the line with the bat.
-  printf "\r"
-  for I in $(seq 0 "$((COUNT+4))")
-  do
-    printf " "
-  done
-  printf "\r"
+  echo
 }
 export -f progress_bat
 
