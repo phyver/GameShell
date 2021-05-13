@@ -20,29 +20,23 @@ msgstr  "$MISSION_DIR/goal/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
-#, sh-format
-msgid   "The standard $N disapeared from the entrance."
-msgstr  "The standard $N disapeared from the entrance."
+msgid   "I only wanted the standards!"
+msgstr  "I only wanted the standards!"
 
-#, sh-format
-msgid   "The standard $N in the chest is invalid."
-msgstr  "The standard $N in the chest is invalid."
+msgid   "I wanted all the standards!"
+msgstr  "I wanted all the standards!"
 
-#, sh-format
-msgid   "The standard $N in the chest is not right."
-msgstr  "The standard $N in the chest is not right."
+msgid   "You changed the contents of the entrance!"
+msgstr  "You changed the contents of the entrance!"
 
-#, sh-format
-msgid   "The standard $N in the entrance is invalid."
-msgstr  "The standard $N in the entrance is invalid."
+msgid   "decorative_shield"
+msgstr  "decorative_shield"
 
-#, sh-format
-msgid   "The standard $N in the entrance is not right."
-msgstr  "The standard $N in the entrance is not right."
-
-#, sh-format
-msgid   "The standard $N is not in the chest."
-msgstr  "The standard $N is not in the chest."
+msgid   "stag_head"
+msgstr  "stag_head"
 
 msgid   "standard"
 msgstr  "standard"
+
+msgid   "suit_of_armour"
+msgstr  "suit_of_armour"
