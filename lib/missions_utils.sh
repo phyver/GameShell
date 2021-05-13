@@ -73,8 +73,14 @@ sign_file() {
     tempfile=$(mktemp --tmpdir="$(dirname "$source")" -t tmp-XXXXXX)
   fi
   local rd=$RANDOM
-  local sum=$(sed "1i${name:+$(basename "$target")}#$rd" "$source" | checksum)
-  sed "1i$sum#$rd" "$source" > "$tempfile"
+  if [ -s "$source" ]
+  then
+    local sum=$(sed "1i${name:+$(basename "$target")}#$rd" "$source" | checksum)
+    sed "1i$sum#$rd" "$source" > "$tempfile"
+  else
+    local sum=$(echo "${name:+$(basename "$target")}#$rd" | checksum)
+    echo -n "$sum#$rd" > "$tempfile"
+  fi
   if [ "$tempfile" != "$target" ]
   then
     cat "$tempfile" > "$target"
