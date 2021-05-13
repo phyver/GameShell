@@ -7,11 +7,13 @@ TODO NOW
   - [ ] doc
   - [ ] make the treasure messages stand out more (use some ASCII treasure
         chest?)
+  - [ ] remove `$GSH_MISSIONS_BIN` directory, or don't copy `$MISSION_DIR/bin`
+        files automatically?
+  - [ ] clean `lib` folder ?
 
-  - [x] sourcing a mission file initializes `MISSION_DIR`, `TEXTDOMAIN`,
-        and `MISSION_NAME` from the file path. To get the appropriate
-        translation, I need to use the "realpath", but then, `MISSION_DIR` is
-        changed
+
+  - [x] add specific functions for missions: `make_bin`, `sign_file`,
+    `check_file`, `progress`
   - [x] put back progress bar on startup (possibly doing something nice)???
   - [x] try to make sure pager handles colors correctly
   - [x] use PAGER on gsh index
@@ -37,12 +39,16 @@ FOR LATER
 
   - [ ] think again about using `ttyrec` and `ttyreplay`?
 
+  - [ ] allow configuration of titlescreen and list of boxes
+
 
 Existing missions
 =================
 
 TODO NOW
 --------
+
+  - [ ] use less hidden files
 
   - [ ] check all group with shared data have appropriate `deps.sh`
 
