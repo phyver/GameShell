@@ -214,7 +214,7 @@ tar -zcf "$OUTPUT_DIR/$NAME.tgz" -C "$TMP_DIR" "$NAME"
 
 # create self-extracting archive
 echo "creating self-extracting archive"
-cat "$GSH_ROOT/lib/init.sh" "$OUTPUT_DIR/$NAME.tgz" > "$OUTPUT_DIR/$NAME.sh"
+cat "$GSH_ROOT/lib/header.sh" "$OUTPUT_DIR/$NAME.tgz" > "$OUTPUT_DIR/$NAME.sh"
 chmod +x "$OUTPUT_DIR/$NAME.sh"
 
 if [ "$KEEP_TGZ" = 'false' ]
