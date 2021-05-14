@@ -22,7 +22,7 @@ TODO NOW
 FOR LATER
 ---------
 
-  - [ ] nice "progress bar" for missions that take longer to initialize
+  - [ ] improve "progress_bar" function
 
   - [ ] `gsh config` command to configure some options (boxes, color,
         verbose_source, quiet, pager...)
@@ -53,6 +53,7 @@ TODO NOW
   - [ ] check all group with shared data have appropriate `deps.sh`
 
   - [ ] change entrance to "great hall"
+
   - [ ] change last mission in group "book_of_potions"
   - [ ] translate "book_of_potions"
 

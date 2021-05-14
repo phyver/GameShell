@@ -10,7 +10,7 @@ _init_grimoires () {
   do
     file="$bib/$(gettext "grimoire")_$(checksum $RANDOM)"
     tr -dc A-Za-z </dev/urandom | head -c 100 > "$file"
-  
+
     if [ $(( RANDOM % 2 )) -eq 0 ]
     then
       chmod -r "$file"
@@ -21,7 +21,7 @@ _init_grimoires () {
   printf "\n"
 }
 
-_init_grimoires | progress_bat
+_init_grimoires | progress_bar
 
 bash <<EOS
   cd $bib
