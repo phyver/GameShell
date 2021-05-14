@@ -126,6 +126,8 @@ export -f check_file
 progress_bat () {
   local BAT=('\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/'
              '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
+  local PRE="   "
+  local POST="\b\b\b   "
 
   # Print initial message.
   echo "While you are waiting, a bat flies by..."
@@ -133,6 +135,7 @@ progress_bat () {
   # Make progress for each character read on [stdin].
   local COUNT
   local L=${#BAT[@]}
+  echo -en "$PRE"
   while read -rn1 C
   do
     echo -en "${BAT[$COUNT]}"
@@ -140,6 +143,7 @@ progress_bat () {
     # Slow down the animation a little bit.
     sleep 0.1
   done
+  echo -en "$POST"
   echo
 }
 export -f progress_bat
