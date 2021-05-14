@@ -1,10 +1,3 @@
-cat <<EOF > ./".$(gettext "nice_rock")"
-  .     '     ,
-    _________
- _ /_|_____|_\ _
-   '. \   / .'
-     '.\ /.'
-       '.'          Donovan Bake
-EOF
+cp "$MISSION_DIR/ascii-art/diamond.txt" ./".$(gettext "nice_rock")"
 cat "$(eval_gettext '$MISSION_DIR/goal/en.txt')"
 
