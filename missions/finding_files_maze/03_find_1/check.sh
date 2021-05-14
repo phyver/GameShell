@@ -19,7 +19,7 @@ _mission_check_p() {
 }
 
 _mission_check() {
-    local maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
+    local maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 
     local nb=$(find "$maze" -iname "$(gettext "gold_coin")" -type f | wc -l)
     if [ "$nb" -gt 2 ]

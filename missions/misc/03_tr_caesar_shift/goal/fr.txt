@@ -1,8 +1,8 @@
 Objectif
 ========
 
-Un message secret a été trouvé dans la bibliothèque.
-Il a probablement été chiffré avec un décalage de César.
+Un message secret a été trouvé, il est dans le tiroir du bureau de 
+Merlin. Il a probablement été chiffré avec un décalage de César.
 
 Décryptez le en faisant une recherche exhaustive avec la ligne de 
 commandes.

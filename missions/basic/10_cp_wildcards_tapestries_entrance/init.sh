@@ -11,12 +11,7 @@ D=$(date +%s)
 
 for I in $(seq -w 10)
 do
-    if [ $((i%2)) -eq 0 ]
-    then
-        f=${ENTRANCE}/${RANDOM}_$(gettext "tapestry")
-    else
-        f=${ENTRANCE}/$(gettext "tapestry")_$RANDOM
-    fi
+    f=${ENTRANCE}/${RANDOM}_$(gettext "tapestry")_$I
     cp "$MISSION_DIR/ascii-art/tapestry-$((RANDOM%5)).txt" "$f"
     sign_file "$f"
 done

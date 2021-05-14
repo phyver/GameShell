@@ -35,7 +35,7 @@ msgid   "chest"
 msgstr  "coffre"
 
 msgid   "coin"
-msgstr  "pièce"
+msgstr  "piece"
 
 msgid   "hut"
 msgstr  "hutte"

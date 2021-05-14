@@ -1,6 +1,6 @@
 #, sh-format
-msgid "$GSH_HOME/Garden/.Maze"
-msgstr "$GSH_HOME/Jardin/.Labyrinthe"
+msgid "$GSH_HOME/Garden/Maze"
+msgstr "$GSH_HOME/Jardin/Labyrinthe"
 
 #, sh-format
 msgid "$GSH_HOME/Garden/Orchard"

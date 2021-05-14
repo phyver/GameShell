@@ -1,5 +1,5 @@
 #, sh-format
-msgid   "$GSH_HOME/Garden/.Maze"
+msgid   "$GSH_HOME/Garden/Maze"
 msgstr  ""
 
 #, sh-format
