@@ -7,7 +7,7 @@ clean() {
     exit 0
 }
 
-DELAY=3
+DELAY=5
 
 while true
 do

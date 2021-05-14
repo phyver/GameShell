@@ -27,7 +27,7 @@ do
             gsh exit
             ;;
         "$(gettext "c")" | "$(gettext "C")" | "")
-            break;
+            gsh hardreset
             ;;
         *[!0-9]*)
             echo "$(eval_gettext 'unknown choice: $CHOICE')" >&2
@@ -38,8 +38,7 @@ do
             then
                 change_password "$(gettext "qwerty")"
                 _gsh_start -quiet $CHOICE
-                unset CHOICE
-                gsh reset
+                gsh hardreset
             else
                 echo "$(eval_gettext 'Error: invalid mission number: $CHOICE.
 Please choose a number between 1 and $NB_MISSIONS')" >&2

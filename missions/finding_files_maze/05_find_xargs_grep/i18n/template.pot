@@ -8,7 +8,7 @@ msgid   "$GSH_HOME/Forest/Hut/Chest"
 msgstr  ""
 
 #, sh-format
-msgid   "$GSH_HOME/Garden/.Maze"
+msgid   "$GSH_HOME/Garden/Maze"
 msgstr  ""
 
 #, sh-format

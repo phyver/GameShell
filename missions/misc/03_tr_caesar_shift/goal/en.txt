@@ -1,8 +1,9 @@
 Mission goal
 ============
 
-A secret message has been found in the library.
-It was probably enciphered using a Caesar shift cipher.
+A secret message has been found, it is kept in the drawer in 
+Merlin's office. It was probably enciphered using a Caesar shift 
+cipher.
 
 Decrypt it by making an exhaustive search from the command line.
 

@@ -19,15 +19,14 @@ _mission_check() {
     fi
 
     # Check that the contents of the coin.
-    if [ "$(cut -f 1 -d ' ' "$GSH_CHEST/$COIN_NAME" | cut -f 1 -d '#')" != "$COIN_NAME" ]
+    if ! check_file "$GSH_CHEST/$COIN_NAME"
     then
         echo "$(eval_gettext "The coin '\$COIN_NAME' has been tampered with...")"
         return 1
     fi
 
     # Verify the checksum in the coin.
-    local coin_data=$(cut -f 1 -d ' ' "$GSH_CHEST/$COIN_NAME")
-    if [ "$(cut -f 2 -d ' ' "$GSH_CHEST/$COIN_NAME")" != "$(checksum "$coin_data")" ]
+    if ! check_file "$GSH_CHEST/$COIN_NAME"
     then
         echo "$(eval_gettext "The coin '\$COIN_NAME' has been tampered with...")"
         return 1

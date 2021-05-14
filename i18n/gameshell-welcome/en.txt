@@ -7,8 +7,9 @@ the shell by journeying through various missions that will teach
 you to perform standard tasks such as:
   - creating directories,
   - creating, viewing and editing files,
-  - searching for files satisfying certain criteria, or
-  - running and interrupting programs.
+  - searching for files satisfying certain criteria,
+  - running and interrupting programs,
+  - etc.
 
 During your adventure you will need to visit locations, interact 
 with people, and find various objects. However, you have to keep 

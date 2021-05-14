@@ -48,8 +48,6 @@ export -f copy_bin
 # add a hash to check for simple tampering on a file
 # the hash signs the content of the file, a random number (added with the
 # hash), and the file name (except when the option -noname is given)
-# TODO: add possibility of giving a $source / $target to copy the result
-# directly: ``sign_file source target``
 sign_file() {
   local name="name"
   if [ "$1" = "-noname" ]
@@ -63,6 +61,12 @@ sign_file() {
     return 1
   fi
   local source=$1
+  if ! [ -f "$source" ] || ! [ -r "$source" ]
+  then
+    echo "Error: sign_file file $source doesn't exist, or is not readable." >&2
+    return 1
+  fi
+
   local target tempfile
   if [ "${#@}" -eq 2 ]
   then

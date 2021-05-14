@@ -6,7 +6,7 @@ _mission_check() {
 
     # Check that there are no more spiders.
     local spiders
-    spiders=$(find "$cellar" -name "$(gettext "spider")*")
+    spiders=$(find "$cellar" -name "$(gettext "spider")_*")
     if [ -n "$spiders" ]
     then
         echo "$(gettext "There are still spiders in the cellar!")"
@@ -15,7 +15,7 @@ _mission_check() {
 
     # Check that the bats are still there.
     local bats_nb
-    bats_nb=$(find "$cellar" -name "$(gettext "bat")*" | wc -l)
+    bats_nb=$(find "$cellar" -name "$(gettext "bat")_*" | wc -l)
     if [ "$bats_nb" -ne 2 ]
     then
         echo "$(gettext "Hey! You removed a bat!")"

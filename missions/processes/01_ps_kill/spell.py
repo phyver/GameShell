@@ -10,7 +10,7 @@ coal = """
        !$-#
 """.split("\n")
 
-DELAY = 3
+DELAY = 5
 
 while True:
     INDENT = randint(2, 15)

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _mission_check() {
-    local maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
+    local maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 
     local coin=$(find "$maze" -name "$(gettext "copper_coin")")
 

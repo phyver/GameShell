@@ -1,11 +1,11 @@
 gsh assert check false
 
-find "$(eval_gettext '$GSH_HOME/Garden/.Maze')" -name "$(gettext "copper_coin")" -type f -print0 | xargs -0 rm -rf
+find "$(eval_gettext '$GSH_HOME/Garden/Maze')" -name "$(gettext "copper_coin")" -type f -print0 | xargs -0 rm -rf
 gsh assert check false
 
-find "$(eval_gettext '$GSH_HOME/Garden/.Maze')" -name "$(gettext "copper_coin")" -type f -print0 | xargs -0 rm -rf
-echo "coin" > "$(eval_gettext '$GSH_HOME/Garden/.Maze')/copper_coin"
+find "$(eval_gettext '$GSH_HOME/Garden/Maze')" -name "$(gettext "copper_coin")" -type f -print0 | xargs -0 rm -rf
+echo "coin" > "$(eval_gettext '$GSH_HOME/Garden/Maze')/copper_coin"
 gsh assert check false
 
-find "$(eval_gettext '$GSH_HOME/Garden/.Maze')" -name "$(gettext "copper_coin")" -type f -print0 | xargs -0 mv -t "$GSH_CHEST"
+find "$(eval_gettext '$GSH_HOME/Garden/Maze')" -name "$(gettext "copper_coin")" -type f -print0 | xargs -0 mv -t "$GSH_CHEST"
 gsh assert check true

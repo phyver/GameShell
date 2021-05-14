@@ -13,12 +13,8 @@ msgid   "$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
 msgstr  "$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
 
 #, sh-format
-msgid   "$GSH_HOME/Castle/Main_building/Library/"
-msgstr  "$GSH_HOME/Castle/Main_building/Library/"
-
-#, sh-format
-msgid   "$GSH_HOME/Castle/Main_building/Library/.secret_message"
-msgstr  "$GSH_HOME/Castle/Main_building/Library/.secret_message"
+msgid   "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office/Drawer"
+msgstr  "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office/Drawer"
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
@@ -49,3 +45,6 @@ msgstr  "here is my will:\n"
         "this check is in the cellar, and the key to make\n"
         "it re-appear is: $SECRET_KEY\n"
         "merlin the enchanter"
+
+msgid   "secret_message"
+msgstr  "secret_message"

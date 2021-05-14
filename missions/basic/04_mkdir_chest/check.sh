@@ -21,7 +21,8 @@ _mission_check() {
     # Check the name of the hut.
     if [ ! -d "$HUT_DIR" ]
     then
-        echo "$(eval_gettext 'The $HUT_DIR directory does not exist!')"
+        local DIR=.../${HUT_DIR#$GSH_HOME/}
+        echo "$(eval_gettext 'The $DIR directory does not exist!')"
         return 1
     fi
 
@@ -43,7 +44,8 @@ _mission_check() {
     local chest
     if ! [ -d "$GSH_CHEST" ]
     then
-        echo "$(eval_gettext "The \$GSH_CHEST directory does not exist!")"
+        local DIR=.../${GSH_CHEST#$GSH_HOME/}
+        echo "$(eval_gettext 'The $DIR directory does not exist!')"
         return 1
     fi
 
