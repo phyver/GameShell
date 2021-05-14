@@ -144,7 +144,7 @@ _gsh_goal() {
     FILE="$MISSION_DIR/goal.txt"
     parchment "$FILE" | PAGER
   else
-    FILE="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/goal/en.txt')"
+    FILE="$(TEXTDOMAIN="$(textdomainname "$MISSION_DIR")" eval_gettext '$MISSION_DIR/goal/en.txt')"
     parchment "$FILE" | PAGER
   fi
 }
@@ -446,7 +446,7 @@ _gsh_check() {
         cat "$MISSION_DIR/treasure-msg.txt"
         echo
       else
-        local file_msg="$(TEXTDOMAIN="$(basename "$MISSION_DIR")" eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
+        local file_msg="$(TEXTDOMAIN="$(textdomainname "$MISSION_DIR")" eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
         if [ -f "$file_msg" ]
         then
           echo

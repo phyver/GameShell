@@ -170,6 +170,9 @@ progress_bar () {
   # local POST='\b\b\b\b\b     '
   # local MSG=$(gettext "While you are waiting, an ant crawls by...\n")
 
+  # hide cursor
+  tput civis 2> /dev/null
+
   # Print  initial message.
   echo "$MSG"
 
@@ -187,6 +190,8 @@ progress_bar () {
   done
   echo -en "$POST"
   echo
+  # show cursor
+  tput cnorm 2> /dev/null
 }
 export -f progress_bar
 
