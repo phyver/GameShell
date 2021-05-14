@@ -3,12 +3,12 @@
 [ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
 mkdir -p "$GSH_CHEST"
 
-maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
+maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 rm -rf "$maze"/?*
 
 mkdir -p "$maze"
 
-if ! command -v python3 > /dev/null
+if ! command -v python3 &> /dev/null
 then
     f=$("$GSH_MISSIONS_BIN"/maze2.sh "$maze" 10 1 "$(gettext "stone")")
 else

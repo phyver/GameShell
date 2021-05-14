@@ -7,7 +7,7 @@ cellar=$(eval_gettext '$GSH_HOME/Castle/Cellar')
 
 sleep 2
 kill_imp_spell
-rm -f "$cellar"/.*_"$(gettext "coal")"
+rm -f "$cellar"/*_"$(gettext "coal")"
 gsh assert_check true
 
 sleep 2
@@ -16,8 +16,8 @@ gsh assert_check false
 
 sleep 2
 kill_imp_spell
-rm -f "$cellar"/.*_"$(gettext "coal")"
-rm -f "$cellar"/.*_"$(gettext "snowflake")"
+rm -f "$cellar"/*_"$(gettext "coal")"
+rm -f "$cellar"/*_"$(gettext "snowflake")"
 gsh assert_check false
 
 

@@ -95,7 +95,7 @@ def genBooks(nbLines, nbKing, prob_paid, dir):
     nbUnpaid = 0
     r1 = f"{randrange(0,1<<128):032x}"[:randrange(8, 24)]
     r2 = f"{randrange(0,1<<128):032x}"[:randrange(8, 24)]
-    scroll = open(f"{dir}/{r1}_{_('_s_c_r_o_l_l_')}_{r2}", mode="w")
+    scroll = open("{}/{}_{}_{}".format(dir, r1, _('_s_c_r_o_l_l_'), r2), mode="w")
     for i in range(randrange(int(nbLines*0.9), int(nbLines*1.1))):
         name = random.choice(firstname) + " " + random.choice(lastname)
         object = random.choice(thing)
@@ -122,7 +122,7 @@ def genObjects(nbObjects, dir):
     for i in range(randrange(int(nbObjects*0.9), int(nbObjects*1.1))):
         r1 = f"{randrange(0,1<<128):032x}"[:randrange(8, 24)]
         r2 = f"{randrange(0,1<<128):032x}"[:randrange(8, 24)]
-        open(f"{dir}/{r1}_{_('boring_object')}_{r2}", mode="a").close()
+        open("{}/{}_{}_{}".format(dir, r1, _('boring_object'), r2), mode="a").close()
 
 
 if __name__ == "__main__":

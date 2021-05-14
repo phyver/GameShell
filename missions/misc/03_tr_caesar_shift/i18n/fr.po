@@ -12,12 +12,8 @@ msgid   "$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
 msgstr  "$GSH_HOME/Chateau/Cave/Coffre_de_Merlin/recette_secrete"
 
 #, sh-format
-msgid   "$GSH_HOME/Castle/Main_building/Library/"
-msgstr  "$GSH_HOME/Chateau/Batiment_principal/Bibliotheque/"
-
-#, sh-format
-msgid   "$GSH_HOME/Castle/Main_building/Library/.secret_message"
-msgstr  "$GSH_HOME/Chateau/Batiment_principal/Bibliotheque/.message_secret"
+msgid   "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office/Drawer"
+msgstr  "$GSH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin/Tiroir"
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
@@ -48,3 +44,12 @@ msgstr  "voici mon testament :\n"
         "le coffre se trouve dans la cave, et la clé\n"
         "qui le fait ré-apparaitre est : $SECRET_KEY\n"
         "merlin l'enchanteur"
+
+msgid   "secret_message"
+msgstr  "message_secret"
+
+#~ msgid        "$GSH_HOME/Castle/Main_building/Library/"
+#~ msgstr       "$GSH_HOME/Chateau/Batiment_principal/Bibliotheque/"
+
+#~ msgid        "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
+#~ msgstr       "$GSH_HOME/Chateau/Batiment_principal/Bibliotheque/Bureau_de_Merlin"

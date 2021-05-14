@@ -10,8 +10,8 @@ from sys import argv
 
 TEXTDOMAIN = argv[1]
 
-gettext.bindtextdomain(os.environ.get(TEXTDOMAIN), localedir=os.environ.get("TEXTDOMAINDIR"))
-gettext.textdomain(os.environ.get(TEXTDOMAIN))
+gettext.bindtextdomain(TEXTDOMAIN, localedir=os.environ.get("TEXTDOMAINDIR"))
+gettext.textdomain(TEXTDOMAIN)
 
 
 def spawn(a, b):

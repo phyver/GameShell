@@ -1,4 +1,4 @@
-maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
+maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 case $PWD in
     "$maze"/?*)
         cd "$maze"

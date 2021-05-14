@@ -82,7 +82,7 @@ color_echo() {
 parchment() {
   local file=$1
   [ -n "$file" ] && [ ! -e "$file" ] && return 1
-  if [ -x "$(command -v python3)" ]
+  if command -v python3 &> /dev/null
   then
     local P=$2
     [ -z "$P" ] && P=$(( 16#$(checksum "$GSH_UID:$MISSION_DIR" | cut -c 10-17) % 7 ))

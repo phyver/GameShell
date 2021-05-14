@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _mission_check() {
-    local maze="$(eval_gettext '$GSH_HOME/Garden/.Maze')"
+    local maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 
     local nb=$(find "$maze" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")" | wc -l)
 

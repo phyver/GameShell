@@ -18,6 +18,6 @@ echo "$(eval_gettext "here is my will:
 you will get my chest, and everything it contains.
 this check is in the cellar, and the key to make
 it re-appear is: \$SECRET_KEY
-merlin the enchanter")" | tr "a-z" "$D" > "$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/.secret_message')"
+merlin the enchanter")" | tr "a-z" "$D" > "$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office/Drawer')/$(gettext 'secret_message')"
 
 unset rd SECRET_KEY random_shift ab D

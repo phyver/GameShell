@@ -1,7 +1,7 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, sh-format
-msgid   "$GSH_HOME/Garden/.Maze"
-msgstr  "$GSH_HOME/Garden/.Maze"
+msgid   "$GSH_HOME/Garden/Maze"
+msgstr  "$GSH_HOME/Garden/Maze"
 
 #, sh-format
 msgid   "$GSH_HOME/Garden/Orchard"

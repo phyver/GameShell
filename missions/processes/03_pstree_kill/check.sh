@@ -31,7 +31,7 @@ _mission_check() {
     fi
 
     local cellar=$(eval_gettext '$GSH_HOME/Castle/Cellar')
-    local coals=$(find "$cellar" -name ".*_$(gettext "coal")" | wc -l)
+    local coals=$(find "$cellar" -name "*_$(gettext "coal")" | wc -l)
     if [ "$coals" -ne 0 ]
     then
         echo "$(gettext "There still is some coal in the cellar!")"
@@ -40,7 +40,7 @@ _mission_check() {
 
     cd "$cellar"
     sort "$GSH_VAR"/snowflakes-{0,1,2}.list 2>/dev/null | uniq > "$GSH_VAR"/snowflakes-generated
-    ls .*_"$(gettext "snowflake")" 2>/dev/null | sort | uniq > "$GSH_VAR"/snowflakes-present
+    ls *_"$(gettext "snowflake")" 2>/dev/null | sort | uniq > "$GSH_VAR"/snowflakes-present
     local nb=$(comm -1 -3 "$GSH_VAR"/snowflakes-present "$GSH_VAR"/snowflakes-generated | wc -l)
 
     if [ "$nb" -gt 1 ]
