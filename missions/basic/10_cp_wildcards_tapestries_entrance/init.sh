@@ -17,7 +17,7 @@ do
     else
         f=${ENTRANCE}/$(gettext "tapestry")_$RANDOM
     fi
-    cp "$MISSION_DIR/art/tapestry-$((RANDOM%5)).txt" "$f"
+    cp "$MISSION_DIR/ascii-art/tapestry-$((RANDOM%5)).txt" "$f"
     sign_file "$f"
 done
 

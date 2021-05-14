@@ -9,13 +9,7 @@ chmod 755 "$safe"
 chmod -f 644 "$safe/$(gettext "crown")"
 k=$(echo -n "000$(($RANDOM % 1000))" | tail -c3)
 
-
-cat <<EOK>"$safe/$(gettext "crown")"
-  _.+._
-(^\/^\/^)
- \@*@*@/
- {_${k}_}           jgs
-EOK
+sed "s/KEY/$k/" "$MISSION_DIR/ascii-art/crown.txt" > "$safe/$(gettext "crown")"
 
 cp "$safe/$(gettext "crown")" "$GSH_VAR"/crown
 
