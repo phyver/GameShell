@@ -67,7 +67,8 @@ sign_file() {
   if [ "${#@}" -eq 2 ]
   then
     target=$2
-    tempfile=$2
+    [ -d "$target" ] && target=$target/$(basename "$source")
+    tempfile=$target
   else
     target=$source
     tempfile=$(mktemp --tmpdir="$(dirname "$source")" -t tmp-XXXXXX)
