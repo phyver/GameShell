@@ -39,7 +39,7 @@ FILENAME=${FILENAME%.*}
 # remove "-save" suffix (if present), and add it again, with the extension
 FILENAME=${FILENAME%-save}-save.$EXT
 
-cat "$TMP_DIR/$ROOT_DIR/lib/init.sh" "$TMP_DIR/$ROOT_DIR.tgz" > "$FILENAME"
+cat "$TMP_DIR/$ROOT_DIR/lib/header.sh" "$TMP_DIR/$ROOT_DIR.tgz" > "$FILENAME"
 chmod +x "$FILENAME"
 
 chmod -R 777 "$TMP_DIR"
