@@ -109,7 +109,7 @@ _confirm_passport() {
 progress_bar() {
     if [ -z "$progress_I" ]
     then
-      progress_filename=$GSH_ROOT/lib/titlescreen
+      progress_filename=$GSH_ROOT/lib/ascii-art/titlescreen
       local N=$(wc -l "$GSH_CONFIG/index.txt" | cut -d" " -f1)
       local size=$(wc -c $progress_filename | cut -d" " -f1)
       progress_delta=$((size/N + 1))

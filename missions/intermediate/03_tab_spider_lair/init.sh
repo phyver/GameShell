@@ -16,32 +16,12 @@ mkdir -p "$lair"
 r1=$(checksum $RANDOM)
 r2=$(checksum $RANDOM)
 queen="${r1}_$(gettext "spider_queen")_$r2"
-cat <<'EOS' > "$lair/$queen"
-              (
-               )
-              (
-        /\  .-"""-.  /\
-       //\\/  ,,,  \//\\
-       |/\| ,;;;;;, |/\|
-       //\\\;-"""-;///\\
-      //  \/   .   \/  \\
-     (| ,-_| \ | / |_-, |)
-       //`__\.-.-./__`\\
-      // /.-(() ())-.\ \\
-     (\ |)   '---'   (| /)
-      ` (|           |) `
-        \)           (/     jgs
-EOS
+sign_file "$MISSION_DIR/ascii-art/spider-queen.txt" "$lair/$queen"
 
 r1=$(checksum $RANDOM)
 r2=$(checksum $RANDOM)
 bat="${r1}_$(gettext "baby_bat")_$r2"
-cat <<'EOS' > "$lair/$bat"
-      _   ,_,   _
-     / `'=) (='` \
-    /.-.-.\ /.-.-.\
-    `      "      `   jgs
-EOS
+sign_file "$MISSION_DIR/ascii-art/baby-bat.txt" "$lair/$bat"
 
 date +%s > "$GSH_VAR/start_time"
 
