@@ -3,7 +3,6 @@
 _mission_check() {
 
     local filename="$(head -n1 "$GSH_VAR/painting")"
-    local s="$(tail -n1 "$GSH_VAR/painting")"
 
     if ! [ -d "$GSH_CHEST" ]
     then
@@ -35,7 +34,7 @@ Make one first.")"
         return 1
     fi
 
-    if [ "$s" != "$(checksum < "$GSH_CHEST/$filename")" ]
+    if ! check_file "$GSH_CHEST/$filename"
     then
         echo "$(gettext "The painting in your chest is invalid...")"
         return 1
