@@ -123,22 +123,63 @@ export -f check_file
 # Print a progress bar as a flying bat: each character received on
 # [stdin] makes the bat move forward. The animation stops when the
 # end of file is reached.
-progress_bat () {
-  local BAT=('\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/'
-             '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
-  local PRE="   "
-  local POST="\b\b\b   "
+progress_bar () {
+  # # simple dots
+  # local STR=('.')
+  # local PRE=''
+  # local POST=''
+  # local MSG=""
 
-  # Print initial message.
-  echo "While you are waiting, a bat flies by..."
+  # # rotating bar
+  # local STR=('\b|' '\b/' '\b-' '\b\\')
+  # local PRE='-'
+  # local POST='\b>'
+  # local MSG=""
+
+  local STR=('\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/'
+             '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
+  local PRE='   '
+  local POST='\b\b\b   '
+  local MSG=$(gettext "While you are waiting, a bat flies by...\n")
+
+  # # snake
+  # local STR=(
+  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b __/\__/\__/\<:>'
+  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b _/\__/\__/\_<:>'
+  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b /\__/\__/\__<:>'
+  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>'
+  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>'
+  #      )
+  # local PRE='\__/\__/\__/<:>'
+  # local POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b               '
+  # local MSG=$(gettext "While you are waiting, a snake slithers by...\n")
+
+  # # centipede
+  # local STR=(
+  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b ,`,`,`,`,`,`,`(:)'
+  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b `,`,`,`,`,`,`,(:)'
+  #      )
+  # local PRE='`,`,`,`,`,`,`,(:)'
+  # local POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b                  '
+  # local MSG=$(gettext "While you are waiting, a centipede crawls by...\n")
+
+  # # ant
+  # local STR=('\b\b\b\b\b >|<()')
+  # local PRE='>|<()'
+  # local POST='\b\b\b\b\b     '
+  # local MSG=$(gettext "While you are waiting, an ant crawls by...\n")
+
+  # Print  initial message.
+  echo "$MSG"
+
 
   # Make progress for each character read on [stdin].
   local COUNT
-  local L=${#BAT[@]}
+  local L=${#STR[@]}
   echo -en "$PRE"
   while read -rn1 C
   do
-    echo -en "${BAT[$COUNT]}"
+    echo -en "${STR[$COUNT]}"
     COUNT=$(((COUNT+1)%L))
     # Slow down the animation a little bit.
     sleep 0.1
@@ -146,6 +187,6 @@ progress_bat () {
   echo -en "$POST"
   echo
 }
-export -f progress_bat
+export -f progress_bar
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2
