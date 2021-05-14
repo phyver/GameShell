@@ -107,23 +107,27 @@ _confirm_passport() {
 }
 
 progress_bar() {
-    if [ -z "$progress_I" ]
-    then
-      progress_filename=$GSH_ROOT/lib/ascii-art/titlescreen
-      local N=$(wc -l "$GSH_CONFIG/index.txt" | cut -d" " -f1)
-      local size=$(wc -c $progress_filename | cut -d" " -f1)
-      progress_delta=$((size/N + 1))
-      head -c$((progress_delta - 1)) $progress_filename
-      progress_I=1
-    else
-      tail -c+$((progress_I * progress_delta)) $progress_filename | head -c$progress_delta
-      progress_I=$((progress_I+1))
-    fi
+  # hide cursor
+  tput civis 2> /dev/null
+  if [ -z "$progress_I" ]
+  then
+    progress_filename=$GSH_ROOT/lib/ascii-art/titlescreen
+    local N=$(wc -l "$GSH_CONFIG/index.txt" | cut -d" " -f1)
+    local size=$(wc -c $progress_filename | cut -d" " -f1)
+    progress_delta=$((size/N + 1))
+    head -c$((progress_delta - 1)) $progress_filename
+    progress_I=1
+  else
+    tail -c+$((progress_I * progress_delta)) $progress_filename | head -c$progress_delta
+    progress_I=$((progress_I+1))
+  fi
 }
 
 progress_bar_finish() {
   tail -c+$((progress_I*progress_delta)) $progress_filename
   unset progress_filename progress_delta progress_I
+  # show cursor
+  tput cnorm 2> /dev/null
 }
 
 
