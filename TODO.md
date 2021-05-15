@@ -48,7 +48,16 @@ Existing missions
 TODO NOW
 --------
 
-  - [ ] use less hidden files
+  - [ ] move missions 6 and 7 to the Garden
+
+  - [ ] put some ascii-art in different places:
+          - [ ] Merlin drawer?
+          - [ ] the observatory?
+          - [ ] king's quarter?
+          - [ ] Shed / Orchard?
+          - [ ] cellar?
+
+  - [ ] `merchant_stall/pipe_2`: the prompt is not reset correctly
 
   - [ ] check all group with shared data have appropriate `deps.sh`
 
