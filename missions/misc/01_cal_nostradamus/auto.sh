@@ -3,22 +3,22 @@ export MM=$(cut -d"-" -f2 "$GSH_VAR"/date)
 export DD=$(cut -d"-" -f3 "$GSH_VAR"/date)
 
 DOW() {
-    case $OSTYPE in
-        linux|linux-gnu|linux-gnueabihf)
-            date --date="$1" +%A
-            ;;
-        darwin*)
-            date -jf "%Y-%m-%d" "$1" +%A
-            ;;
-        freebsd*|netbsd*|openbsd*)
-            date -jf "%Y-%m-%d" "$1" +%A
-            ;;
-        *)
-            date --date="$1" +%A
-            ;;
-    esac
+    local dow
+    if dow=$(date --date="$1" +%A 2> /dev/null)
+    then
+        # with gnu "date" command
+        echo $dow
+        return 0
+    elif dow=$(date -jf "%Y-%m-%d" "$1" +%A 2> /dev/null)
+    then
+        # with freebsd "date" command
+        echo $dow
+        return 0
+    else
+        echo "$(gettext "Error: can not get day of week with 'date' command.")" >&2
+        return 1
+    fi
 }
-
 
 day=$(DOW "$YYYY-$MM-$DD")
 
