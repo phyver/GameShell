@@ -18,6 +18,9 @@ msgstr  "$MISSION_DIR/torn_page6/en.txt"
 msgid   "Book_of_potions"
 msgstr  "Book_of_potions"
 
+msgid   "cauldron"
+msgstr  "cauldron"
+
 msgid   "page"
 msgstr  "page"
 
