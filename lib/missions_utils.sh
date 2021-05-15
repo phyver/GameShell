@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 [ -z "$GSH_ROOT" ] && export GSH_ROOT="$(dirname "$BASH_SOURCE")/.." && source "$GSH_ROOT"/lib/common.sh
 
@@ -36,7 +36,7 @@ copy_bin() {
     return 1
   fi
   cat > "$target" <<EOH
-#!/bin/bash
+#!/usr/bin/env bash
 export MISSION_DIR=$MISSION_DIR
 export TEXTDOMAIN=$DOMAIN
 exec $source "\$@"
@@ -75,15 +75,16 @@ sign_file() {
     tempfile=$target
   else
     target=$source
-    tempfile=$(mktemp --tmpdir="$(dirname "$source")" -t tmp-XXXXXX)
+    tempfile=$(mktemp -t sign_file-XXXXXX)
   fi
   local rd=$RANDOM
   if [ -s "$source" ]
   then
-    local sum=$(sed "1i${name:+$(basename "$target")}#$rd" "$source" | checksum)
-    sed "1i$sum#$rd" "$source" > "$tempfile"
+    # POSIX sed requires '\' and a newline after "i" command
+    local sum=$(sed -e $'1i\\\n'"${name:+$(basename "$target")}#$rd" "$source" | CHECKSUM)
+    sed -e $'1i\\\n'"$sum#$rd" "$source" > "$tempfile"
   else
-    local sum=$(echo "${name:+$(basename "$target")}#$rd" | checksum)
+    local sum=$(echo "${name:+$(basename "$target")}#$rd" | CHECKSUM)
     echo -n "$sum#$rd" > "$tempfile"
   fi
   if [ "$tempfile" != "$target" ]
@@ -119,7 +120,8 @@ check_file() {
   local filename=$1
   local rd=$(head -n1 "$filename" | cut -d'#' -f 2)
   local sum=$(head -n1 "$filename" | cut -d'#' -f 1)
-  local check=$(sed "1c${name:+$(basename "$filename")}#$rd" "$filename" | checksum)
+    # POSIX sed requires '\' and a newline after "c" command
+  local check=$(sed -e $'1c\\\n'"${name:+$(basename "$filename")}#$rd" "$filename" | CHECKSUM)
   [ "$sum" = "$check" ]
 }
 export -f check_file
@@ -198,5 +200,18 @@ progress_bar () {
   tput cnorm 2> /dev/null
 }
 export -f progress_bar
+
+random_string() {
+  local n=$1
+awk -v n=${n:-32} -v seed=$RANDOM 'BEGIN {
+  srand(seed);
+  chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  s = "";
+  for(i=0;i<n;i++) {
+    s = s "" substr(chars, int(rand()*62), 1);
+  }
+  print s
+}'
+}
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2

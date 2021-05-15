@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 safe="$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')/$(gettext "Safe")"
 chmod 755 "$safe"

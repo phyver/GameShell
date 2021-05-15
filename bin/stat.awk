@@ -30,13 +30,13 @@ BEGIN {
     if (nb_mission > last_mission) {
         last_mission = nb_mission;
     }
-    # check actual checksum function in gsh
+    # check actual CHECKSUM function in gsh
     cmd = "echo -n \"" GSH_UID "#" $1 "#" $2 "#" $3 "\" | sha1sum | cut -c 1-40"
-    cmd | getline checksum;
-    # if (checksum != $4) {
+    cmd | getline CHECKSUM;
+    # if (CHECKSUM != $4) {
     #     print "CHECKSUM PROBLEM : ";
     #     print "  expected " $4;
-    #     print "       got " checksum;
+    #     print "       got " CHECKSUM;
     #     print "cmd = " cmd;
     # }
 }

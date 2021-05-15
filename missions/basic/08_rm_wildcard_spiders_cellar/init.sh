@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 _init_mission() {
     local CELLAR=$(eval_gettext "\$GSH_HOME/Castle/Cellar")
@@ -26,6 +26,6 @@ _init_mission() {
         fi
     done
 
-    find "$CELLAR" -maxdepth 1 -name ".*_$(gettext "bat")_*" | sort | checksum > "$GSH_VAR/bats"
+    find "$CELLAR" -maxdepth 1 -name ".*_$(gettext "bat")_*" | sort | CHECKSUM > "$GSH_VAR/bats"
 }
 _init_mission | progress_bar

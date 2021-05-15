@@ -26,7 +26,7 @@ history -s "gsh check"
 gsh assert check false
 history -d -2--1
 
-sed -i '1d' $(gettext "Book_of_potions")/$(gettext "page")_01
+SED-i '1d' $(gettext "Book_of_potions")/$(gettext "page")_01
 history -s "cat \"$(gettext "Book_of_potions")/$(gettext "page")_0\"[12]"
 history -s "gsh check"
 gsh assert check false

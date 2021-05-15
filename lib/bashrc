@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export REAL_HOME="$HOME"
 export HOME="$GSH_HOME"
@@ -39,7 +39,8 @@ doas() {
 }
 
 # remove quotes from filenames with special characters
-alias ls="ls --literal"
+# alias ls="ls --literal"
+# NOTE: --literal doesn't exist in freebsd
 
 
 shopt -s nullglob

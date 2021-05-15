@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Receives coin number as first argument.
 _mission_check() {
@@ -27,16 +27,16 @@ _mission_check() {
     fi
 
     local chest_coin=$(find "$GSH_CHEST" -maxdepth 1 -name "$COIN_NAME*")
-    # Verify the checksum in the coin.
+    # Verify the CHECKSUM in the coin.
     local COIN_DATA=$(cut -f 1 -d ' ' "$chest_coin")
     local CHECK_SUM=$(cut -f 2 -d ' ' "$chest_coin")
-    if [ "$CHECK_SUM" != "$(checksum "$COIN_DATA")" ]
+    if [ "$CHECK_SUM" != "$(CHECKSUM "$COIN_DATA")" ]
     then
         echo "$(eval_gettext "The coin '\$COIN_NAME...' has been tampered with...")"
         return 1
     fi
 
-    # Verify the the checksum also match the file name.
+    # Verify the the CHECKSUM also match the file name.
     if [ "$CHECK_SUM" != "$(basename "$chest_coin" | cut -f 3 -d '_')" ]
     then
         echo "$(eval_gettext "The coin '\$COIN_NAME...' has a wrong file name...")"

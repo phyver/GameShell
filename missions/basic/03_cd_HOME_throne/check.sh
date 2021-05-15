@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 goal=$(REALPATH "$(eval_gettext "\$GSH_HOME/Castle/Main_building/Throne_room")")
 current=$(REALPATH "$PWD")
@@ -7,7 +7,7 @@ current=$(REALPATH "$PWD")
 # command shifts the results: it then sees the "gsh check" command that
 # was used to run this function
 # Because of the previous remark, I need to look at the "-3" command.
-ppc=$(fc -nl -3 -3 | sed 's/^\s*//' | sed 's/\s*$//')
+ppc=$(fc -nl -3 -3 | sed 's/^[[:blank:]]*//' | sed 's/[[:blank:]]*$//')
 
 # TODO also accept other commands to go back to the starting point?
 if [ "$goal" = "$current" ] && [  "$ppc" = "cd" ]

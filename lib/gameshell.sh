@@ -18,7 +18,7 @@ _log_action() {
   MISSION_NB=$1
   action=$2
   D="$(date +%s)"
-  S="$(checksum "$GSH_UID#$MISSION_NB#$action#$D")"
+  S="$(CHECKSUM "$GSH_UID#$MISSION_NB#$action#$D")"
   echo "$MISSION_NB $action $D $S" >> "$GSH_CONFIG/missions.log"
 }
 
@@ -189,7 +189,7 @@ _gsh_index() {
       STATUS=""
     fi
 
-    MISSION=$(echo "$line" | sed 's/\s*[0-9][0-9]*_//')
+    MISSION=$(echo "$line" | sed -e 's/[[:blank:]]*[0-9][0-9]*_//')
     LEAD="   "
     if [ "$CUR_MISSION" -eq "$MISSION_NB" ]
     then

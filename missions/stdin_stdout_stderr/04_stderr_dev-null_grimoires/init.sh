@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 bib="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
 find "$bib" -type f -name "$(gettext "grimoire")_*" -print0 | xargs -0 rm -f
@@ -8,8 +8,8 @@ rm -f "$GSH_VAR/list_grimoires_RO"
 _init_grimoires () {
   for i in $(seq 100)
   do
-    file="$bib/$(gettext "grimoire")_$(checksum $RANDOM)"
-    tr -dc A-Za-z </dev/urandom | head -c 100 > "$file"
+    file="$bib/$(gettext "grimoire")_$(CHECKSUM $RANDOM)"
+    random_string 100 > "$file"
 
     if [ $(( RANDOM % 2 )) -eq 0 ]
     then

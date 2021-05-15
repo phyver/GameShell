@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # shellcheck disable=SC2005
 
@@ -112,8 +112,8 @@ progress_bar() {
   if [ -z "$progress_I" ]
   then
     progress_filename=$GSH_ROOT/lib/ascii-art/titlescreen
-    local N=$(wc -l "$GSH_CONFIG/index.txt" | cut -d" " -f1)
-    local size=$(wc -c $progress_filename | cut -d" " -f1)
+    local N=$(wc -l "$GSH_CONFIG/index.txt" | awk '{print $1}')
+    local size=$(wc -c $progress_filename | awk '{print $1}')
     progress_delta=$((size/N + 1))
     head -c$((progress_delta - 1)) $progress_filename
     progress_I=1
@@ -205,13 +205,13 @@ Do you want to remove it and start a new game? [y/N]') " r
   mkdir -p "$GSH_HOME"
 
   mkdir -p "$GSH_CONFIG"
-  echo "# mission action date checksum" >> "$GSH_CONFIG/missions.log"
+  echo "# mission action date CHECKSUM" >> "$GSH_CONFIG/missions.log"
 
   mkdir -p "$GSH_BASHRC"
   cp "$GSH_LIB/bashrc" "$GSH_BASHRC"
 
   # save current locale
-  locale | sed "s/^/export /" > "$GSH_BASHRC"/config.sh
+  locale | sed -e "s/^/export /" > "$GSH_BASHRC"/config.sh
   echo "export GSH_MODE=$GSH_MODE" >> "$GSH_BASHRC"/config.sh
   # TODO save other config (color ?)
 
@@ -252,7 +252,7 @@ Do you want to remove it and start a new game? [y/N]') " r
 
 
   # Generation of a unique identifier for the the player.
-  export GSH_UID="$(sha1sum "$PASSPORT" | cut -c 1-40)"
+  export GSH_UID="$(CHECKSUM < "$PASSPORT" | cut -c 1-40)"
   echo "GSH_UID=$GSH_UID" >> "$PASSPORT"
   echo "$GSH_UID" > "$GSH_CONFIG/uid"
 
@@ -262,7 +262,7 @@ Do you want to remove it and start a new game? [y/N]') " r
 
   [ "$GSH_MODE" = "DEBUG" ] && printf "Mission initialisation: "
 
-  make_index "$@" 2> /dev/null | sed "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
+  make_index "$@" 2> /dev/null | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
 
   # Installing all missions.
   local MISSION_NB=1      # current mission number
@@ -322,7 +322,7 @@ Do you want to remove it and start a new game? [y/N]') " r
         fi
         BIN_NAME=$(basename "$BIN_FILE")
         cat > "$GSH_MISSIONS_BIN/$BIN_NAME" <<EOH
-#!/bin/bash
+#!/usr/bin/env bash
 export MISSION_DIR=$MISSION_DIR
 export TEXTDOMAIN=$DOMAIN
 exec $BIN_FILE "\$@"
