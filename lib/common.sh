@@ -106,6 +106,28 @@ parchment() {
   fi
 }
 
+# display a treasure message
+treasure_message() {
+  local WIDTH=31  # width of treasure-chest.txt file (wc -L)
+  paste "$GSH_LIB/ascii-art/treasure-chest.txt" "$1" | awk -v width=$WIDTH -v seed=$RANDOM '
+BEGIN{
+    srand(seed) ;
+    chars = ".\",-_ ";
+}
+/^\t/ {
+    s = "";
+    for (i=0; i<width; i++) {
+        if (rand() < 0.05) {
+            s = s "" substr(chars, int(rand()*length(chars)), 1);
+        } else {
+            s = s " ";
+        }
+    }
+    print s "" $0;
+}
+/^[^\t]/ { print $0; }
+' | column -t -s$'\t'
+}
 
 # ask admin password, except in DEBUG mode
 admin_mode() {

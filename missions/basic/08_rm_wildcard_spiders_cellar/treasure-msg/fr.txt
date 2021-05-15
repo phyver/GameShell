@@ -1,4 +1,5 @@
 Bravo !
 
-À partir de maintenant, la commande ``ls`` affichera automatiquement un
-caractère "/" à la fin des répertoires.
+À partir de maintenant, la commande ``ls`` 
+affichera automatiquement un caractère "/" à 
+la fin des répertoires.

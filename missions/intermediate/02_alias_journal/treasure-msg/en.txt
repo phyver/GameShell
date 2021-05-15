@@ -1,5 +1,7 @@
 Congratulations!
 
-From now on you can use the file "~/Forest/Hut/Chest/bashrc" 
-to record aliases. More information can be found in the file 
-(it has been created for you).
+From now on you can use the file
+    "~/Forest/Hut/Chest/bashrc"
+to record aliases. More information can be 
+found in the file (it has been created for 
+you).
