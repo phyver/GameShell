@@ -17,6 +17,7 @@ TODO NOW
         interpreter name
   - [ ] finding_files, grep -Z mission 35
 
+  - [x] giving missions to `start.sh` doesn't work outside `$GSH_ROOT`
   - [x] `date` doesn't have the same argument in freebsd (mission nostradamus)
   - [x] generate `.mo` if `.po` is newer
   - [x] crown not found

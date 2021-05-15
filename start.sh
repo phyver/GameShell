@@ -7,9 +7,6 @@ source gettext.sh
 export GSH_ROOT="$(dirname "$0")"
 source "$GSH_ROOT"/lib/common.sh
 
-cd "$GSH_ROOT"
-
-
 display_help() {
   cat "$(eval_gettext "\$GSH_ROOT/i18n/start-help/en.txt")"
 }
@@ -262,7 +259,8 @@ Do you want to remove it and start a new game? [y/N]') " r
 
   [ "$GSH_MODE" = "DEBUG" ] && printf "Mission initialisation: "
 
-  make_index "$@" 2> /dev/null | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
+  make_index "$@" | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
+  # make_index "$@" 2> /dev/null | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
 
   # Installing all missions.
   local MISSION_NB=1      # current mission number
