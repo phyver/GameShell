@@ -25,8 +25,8 @@ Transformation potion
 9) Heat for 30 seconds on a low heat.
 == page 2 -==================================================
 10) Add 3 measures of boomslang skin to the cauldron.
-11) Crush 1 measure of bicorn horn into a fine powder.
-12) Add one measure of the crushed horn to the cauldron.
+11) Crush a bicorn horn into a fine powder.
+12) Add 1 measure of the crushed horn to the cauldron.
 13) Heat for 20 seconds at a high temperature.
 14) Wave your wand then let potion brew for 24 hours.
 15) Add 1 additional scoop of lacewings to the cauldron.
@@ -90,8 +90,8 @@ Herbal tea
 2) Add herbs from the forest.
 3) Let it sit for five minutes and drink while hot.
 
-  Draft of invisibility (instruction in invisible ink)
-  ----------------------------------------------------
+Draft of invisibility (instruction in invisible ink)
+----------------------------------------------------
 
  `                .
            '   
