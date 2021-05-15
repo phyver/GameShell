@@ -134,7 +134,7 @@ export -f check_file
 # first (and only) argument. Examples of value are 'bat' or 'snake'.
 progress_bar () {
   local ANIMALS=('bat' 'snake' 'centipede' 'ant' 'fish' 'large-fish'
-                 'fish-back-and-forth')
+                 'fish-back-and-forth' 'snail')
   local CHOICE
 
   local STR
@@ -233,6 +233,16 @@ progress_bar () {
       PRE="><(((('>"
       POST='\b\b\b\b\b\b\b\b        \r'
       MSG="$(gettext "While you are waiting, a large fish swims by...")\n"
+      ;;
+
+    "snail")
+      # Snail
+      STR=('\b\b\b\b\b\b\b_(@)__/"'
+           '\b\b\b\b\b\b\b\b__(@)_/"'
+           '\b\b\b\b\b\b\b\b _(@)_/"')
+      PRE='_(O)_/"'
+      POST='\b\b\b\b\b\b\b       \r'
+      MSG="$(gettext "While you are waiting, a snail goes by...")\n"
       ;;
 
     *)
