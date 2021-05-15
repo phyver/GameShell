@@ -4,14 +4,14 @@
 _mission_check() {
     local COIN_NAME=".$(gettext "coin")_$1"
 
-    local n=$(find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -maxdepth 1 -name "$COIN_NAME*" | wc -l)
+    local n=$(find "$(eval_gettext '$GSH_HOME/Garden')" -maxdepth 1 -name "$COIN_NAME*" | wc -l)
     if [ "$n" -gt 1 ]
     then
-        echo "$(eval_gettext "There are several '\$COIN_NAME...' in the cellar!")"
+        echo "$(eval_gettext "There are several '\$COIN_NAME...' in the garden!")"
         return 1
     elif [ "$n" -eq 1 ]
     then
-        echo "$(eval_gettext "The coin '\$COIN_NAME...' is still in the cellar!")"
+        echo "$(eval_gettext "The coin '\$COIN_NAME...' is still in the garden!")"
         return 1
     fi
 
@@ -54,9 +54,9 @@ then
     true
 else
     find "$GSH_HOME" -name ".$(gettext "coin")_?_*" -type f -print0 | xargs -0 rm -f
-    find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -iname "*$(gettext "chest")*" -type f -print0 | xargs -0 rm -f
-    find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -iname "*$(gettext "hut")*" -type f -print0 | xargs -0 rm -f
+    find "$(eval_gettext '$GSH_HOME/Garden')" -iname "*$(gettext "chest")*" -type f -print0 | xargs -0 rm -f
+    find "$(eval_gettext '$GSH_HOME/Garden')" -iname "*$(gettext "hut")*" -type f -print0 | xargs -0 rm -f
     unset -f _mission_check
-    unset CELLAR GSH_CHEST
+    unset GSH_CHEST
     false
 fi

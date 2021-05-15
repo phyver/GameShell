@@ -8,8 +8,8 @@ D=$(date +%s)
 for I in $(seq 3)
 do
   C="$(gettext "coin")_$I"
-  touch "$(eval_gettext "\$GSH_HOME/Castle/Cellar")/$C"
-  sign_file "$(eval_gettext "\$GSH_HOME/Castle/Cellar")/$C"
+  touch "$(eval_gettext "\$GSH_HOME/Garden")/$C"
+  sign_file "$(eval_gettext "\$GSH_HOME/Garden")/$C"
 done
 
 unset DATE D I C S
