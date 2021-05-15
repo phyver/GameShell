@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 [ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
 mkdir -p "$GSH_CHEST"
@@ -15,8 +15,8 @@ else
     d=$("$GSH_MISSIONS_BIN"/maze1.py "$maze" 3 2 1)
 fi
 
-echo "$(checksum "$d")" > "$maze/$d/$(gettext "copper_coin")"
-echo "$(checksum "$d")" > "$GSH_VAR/copper_coin"
+echo "$(CHECKSUM "$d")" > "$maze/$d/$(gettext "copper_coin")"
+echo "$(CHECKSUM "$d")" > "$GSH_VAR/copper_coin"
 
 unset maze d
 

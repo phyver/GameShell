@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # fichier lu par le shell à chaque démarrage de la mission
 

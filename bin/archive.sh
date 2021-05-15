@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export GSH_ROOT=$(dirname "$0")/..
 source $GSH_ROOT/lib/common.sh
@@ -193,14 +193,14 @@ find "$GSH_ROOT" -name "template.pot" -print0 | xargs -0 rm -f
 
 # change admin password
 echo "setting admin password"
-ADMIN_HASH=$(checksum "$ADMIN_PASSWD")
-sed -i "s/^\(\s*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$GSH_ROOT/start.sh"
+ADMIN_HASH=$(CHECKSUM "$ADMIN_PASSWD")
+SED-i -e "s/^\([[:blank:]]*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$GSH_ROOT/start.sh"
 
 # choose default mode
 echo "setting default GameShell mode"
 case $DEFAULT_MODE in
   DEBUG | PASSPORT | ANONYMOUS )
-    sed -i "s/^GSH_MODE=.*$/GSH_MODE='$DEFAULT_MODE'/" "$GSH_ROOT/start.sh"
+    SED-i -e "s/^GSH_MODE=.*$/GSH_MODE='$DEFAULT_MODE'/" "$GSH_ROOT/start.sh"
     ;;
   *)
     echo "unknown mode: $MODE" >&2

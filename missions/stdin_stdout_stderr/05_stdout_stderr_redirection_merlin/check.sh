@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 secret=$(cat "$GSH_VAR/secret_key")
 

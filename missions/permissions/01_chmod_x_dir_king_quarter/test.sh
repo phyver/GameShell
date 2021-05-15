@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 gsh assert check false
 

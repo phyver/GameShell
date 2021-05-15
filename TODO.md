@@ -10,6 +10,20 @@ TODO NOW
   - [ ] remove `$GSH_MISSIONS_BIN` directory, or don't copy `$MISSION_DIR/bin`
         files automatically?
 
+  - [ ] `ls --literal` doesn't exist in freebsd
+  - [ ] `date` doesn't have the same argument in freebsd (mission
+        nostradamus)
+  - [ ] for processes in processes group, the shebang needs to be changed
+        depending on the path to the interpreter
+        in freebsd, the process name isn't taken from argv[0] but contains the
+        interpreter name
+  - [ ] finding_files, grep -Z mission 35
+
+  - [x] crown not found
+  - [x] `sed -i` doesn't have the same meaning in gnu / bsd
+  - [x] `ls --color=auto` may not work
+  - [x] inventory and grimoire: `tr` in freebsd doesn't accept binary
+  - [x] move `checksum` to os_aliases.sh
   - [x] clean `lib` folder ?
   - [x] add specific functions for missions: `make_bin`, `sign_file`,
     `check_file`, `progress`

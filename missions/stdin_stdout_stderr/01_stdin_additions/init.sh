@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 book="$GSH_VAR/additions.txt"
 rm -f "$book"

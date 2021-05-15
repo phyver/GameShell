@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 _mission_check() {
     local CELLAR="$(eval_gettext "\$GSH_HOME/Castle/Cellar")"
@@ -10,7 +10,7 @@ _mission_check() {
         return 1
     fi
 
-    local S1=$(find "$CELLAR" -maxdepth 1 -name ".*_$(gettext "bat")_*" | sort | checksum)
+    local S1=$(find "$CELLAR" -maxdepth 1 -name ".*_$(gettext "bat")_*" | sort | CHECKSUM)
     local S2=$(cat "$GSH_VAR/bats")
 
     if [ "$S1" != "$S2" ]

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 [ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
 mkdir -p "$GSH_CHEST"
@@ -15,7 +15,7 @@ else
     f=$("$GSH_MISSIONS_BIN"/maze2.py "$maze" 3 10 1 "$(gettext "stone")")
 fi
 K=$(basename "$f")
-sum=$(checksum "$K $(gettext "diamond")")
+sum=$(CHECKSUM "$K $(gettext "diamond")")
 echo "$K $(gettext "diamond") $sum" > "$maze/$f"
 echo "$K $(gettext "diamond") $sum" > "$GSH_VAR/diamond"
 

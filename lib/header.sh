@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ -z "$BASH_SOURCE" ] || ! [ -f "$BASH_SOURCE" ]
 then
@@ -24,7 +24,9 @@ done
 
 TMP_DIR=$(mktemp -d "$DIR/GameShell-XXXXXX")
 
-tail -n+"$NB_LINES" "$FILENAME" | tar -zx -C "$TMP_DIR"
+tail -n+"$NB_LINES" "$FILENAME" > "$TMP_DIR/gameshell.tgz"
+tar -zx -C "$TMP_DIR" -f "$TMP_DIR/gameshell.tgz"
+rm "$TMP_DIR/gameshell.tgz"
 
 ROOT_DIR=$(ls "$TMP_DIR" | head -n1)
 

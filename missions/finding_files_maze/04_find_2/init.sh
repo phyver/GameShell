@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 [ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
 mkdir -p "$GSH_CHEST"
@@ -15,14 +15,14 @@ else
 fi
 d1=$(echo "$d" | head -n 1)
 K=$RANDOM
-sum=$(checksum "$K $(gettext "ruby")")
+sum=$(CHECKSUM "$K $(gettext "ruby")")
 echo "$K $(gettext "ruby") $sum" > "$maze/$d1/$K"
 echo "$K $(gettext "ruby") $sum" > "$GSH_VAR/ruby"
 
 echo "$d" | sed '1d' | while read d1
 do
     K=$RANDOM
-    sum=$(checksum "$K $(gettext "stone")")
+    sum=$(CHECKSUM "$K $(gettext "stone")")
     echo "$K $(gettext "stone") $sum" > "$maze/$d1/$K"
 done
 
