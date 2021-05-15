@@ -6,7 +6,8 @@ TEXTDOMAIN="gsh"
 # generate GameShell translation files for gettext
 for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
   PO_LANG=$(basename "$PO_FILE" .po)
-  if ! [ -f "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" ]
+  MO_FILE="$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo"
+  if ! [ -f "$MO_FILE" ] || [ "$PO_FILE" -nt "$MO_FILE" ]
   then
     mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
     msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"

@@ -302,7 +302,8 @@ Do you want to remove it and start a new game? [y/N]') " r
       shopt -s nullglob
       for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
         PO_LANG=$(basename "$PO_FILE" .po)
-        if ! [ -f "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" ]
+        MO_FILE="$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo"
+        if ! [ -f "$MO_FILE" ] || [ "$PO_FILE" -nt "$MO_FILE" ]
         then
           mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
           msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
