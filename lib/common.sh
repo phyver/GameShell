@@ -22,7 +22,7 @@ case $OSTYPE in
   darwin*)
     source "$GSH_ROOT"/lib/macos_common.sh
     ;;
-  *bsd*|FreeBSD|netbsd)
+  freebsd*|netbsd*|openbsd*)
     source "$GSH_ROOT"/lib/bsd_common.sh
     ;;
   *)
