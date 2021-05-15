@@ -10,13 +10,13 @@ TODO NOW
   - [ ] remove `$GSH_MISSIONS_BIN` directory, or don't copy `$MISSION_DIR/bin`
         files automatically?
 
-  - [ ] `ls --literal` doesn't exist in freebsd
   - [ ] for processes in processes group, the shebang needs to be changed
         depending on the path to the interpreter
         in freebsd, the process name isn't taken from argv[0] but contains the
         interpreter name
   - [ ] finding_files, grep -Z mission 35
 
+  - [x] `ls --literal` doesn't exist in freebsd
   - [x] giving missions to `start.sh` doesn't work outside `$GSH_ROOT`
   - [x] `date` doesn't have the same argument in freebsd (mission nostradamus)
   - [x] generate `.mo` if `.po` is newer
