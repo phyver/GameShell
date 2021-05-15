@@ -58,9 +58,8 @@ TODO NOW
 
   - [ ] check all group with shared data have appropriate `deps.sh`
 
-  - [ ] change last mission in group "book_of_potions"
-
   - [x] move missions 6 and 7 to the Garden
+  - [x] change last mission in group "book_of_potions"
   - [x] change entrance to "great hall"
   - [x] translate "book_of_potions"
   - [x] mission 9: add other items to prevent using `cp *`
