@@ -18,3 +18,6 @@ msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
 msgid   "You are not in the cellar..."
 msgstr  "You are not in the cellar..."
+
+msgid   "barrel_of_apples"
+msgstr  "barrel_of_apples"

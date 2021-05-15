@@ -29,6 +29,9 @@ msgstr  "Le contenu de $INVENTORY_FILE n'est pas correct.\n"
 msgid   "There is no $INVENTORY_FILE in the drawer..."
 msgstr  "Il n'y a pas de $INVENTORY_FILE dans le tiroir..."
 
+msgid   "candle"
+msgstr  "bougie"
+
 msgid   "grimoire"
 msgstr  "grimoire"
 

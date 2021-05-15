@@ -45,6 +45,9 @@ msgstr  "voici mon testament :\n"
         "qui le fait ré-apparaitre est : $SECRET_KEY\n"
         "merlin l'enchanteur"
 
+msgid   "ink_and_scroll"
+msgstr  "encre_et_parchemin"
+
 msgid   "secret_message"
 msgstr  "message_secret"
 

@@ -13,6 +13,9 @@ msgstr  "$MISSION_DIR/goal/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
+msgid   "Error: can not get day of week with 'date' command."
+msgstr  "Error: can not get day of week with 'date' command."
+
 #, sh-format
 msgid   "The command 'cal' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'bsdmainutils')"

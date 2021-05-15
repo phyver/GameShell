@@ -1,14 +1,25 @@
-#, sh-format
-msgid "$GSH_HOME/Garden/Maze"
-msgstr "$GSH_HOME/Jardin/Labyrinthe"
+#, fuzzy
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, fuzzy, sh-format
+msgid   "$GSH_HOME/Garden/Flower_garden"
+msgstr  "$GSH_HOME/Jardin/Verger"
 
 #, sh-format
-msgid "$GSH_HOME/Garden/Orchard"
-msgstr "$GSH_HOME/Jardin/Verger"
+msgid   "$GSH_HOME/Garden/Maze"
+msgstr  "$GSH_HOME/Jardin/Labyrinthe"
 
 #, sh-format
-msgid "$GSH_HOME/Garden/Shed"
-msgstr "$GSH_HOME/Jardin/Cabanon"
+msgid   "$GSH_HOME/Garden/Shed"
+msgstr  "$GSH_HOME/Jardin/Cabanon"
 
-msgid "You are back at the entrance of the maze..."
-msgstr "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
+msgid   "You are back at the entrance of the maze..."
+msgstr  "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
+
+msgid   "bucket"
+msgstr  "seau"
+
+msgid   "flowers"
+msgstr  ""

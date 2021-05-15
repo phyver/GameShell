@@ -24,3 +24,6 @@ msgstr  ""
 
 msgid   "What is the secret key?"
 msgstr  ""
+
+msgid   "star_chart"
+msgstr  ""

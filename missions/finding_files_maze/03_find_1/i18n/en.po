@@ -9,12 +9,12 @@ msgid   "$GSH_HOME/Forest/Hut/Chest"
 msgstr  "$GSH_HOME/Forest/Hut/Chest"
 
 #, sh-format
-msgid   "$GSH_HOME/Garden/Maze"
-msgstr  "$GSH_HOME/Garden/Maze"
+msgid   "$GSH_HOME/Garden/Flower_garden"
+msgstr  "$GSH_HOME/Garden/Flower_garden"
 
 #, sh-format
-msgid   "$GSH_HOME/Garden/Orchard"
-msgstr  "$GSH_HOME/Garden/Orchard"
+msgid   "$GSH_HOME/Garden/Maze"
+msgstr  "$GSH_HOME/Garden/Maze"
 
 #, sh-format
 msgid   "$GSH_HOME/Garden/Shed"
@@ -50,14 +50,14 @@ msgstr  "There are too many gold coins in the maze!"
 msgid   "There still are some gold coins in the maze!"
 msgstr  "There still are some gold coins in the maze!"
 
-msgid   "You are back at the entrance of the maze..."
-msgstr  "You are back at the entrance of the maze..."
+msgid   "bucket"
+msgstr  "bucket"
 
 msgid   "coin"
 msgstr  "coin"
 
+msgid   "flowers"
+msgstr  "flowers"
+
 msgid   "gold_coin"
 msgstr  "gold_coin"
-
-msgid   "maze generation:"
-msgstr  "maze generation:"

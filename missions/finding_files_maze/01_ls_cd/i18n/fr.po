@@ -7,13 +7,13 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Forest/Hut/Chest"
 msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
 
+#, fuzzy, sh-format
+msgid   "$GSH_HOME/Garden/Flower_garden"
+msgstr  "$GSH_HOME/Jardin/Verger"
+
 #, sh-format
 msgid   "$GSH_HOME/Garden/Maze"
 msgstr  "$GSH_HOME/Jardin/Labyrinthe"
-
-#, sh-format
-msgid   "$GSH_HOME/Garden/Orchard"
-msgstr  "$GSH_HOME/Jardin/Verger"
 
 #, sh-format
 msgid   "$GSH_HOME/Garden/Shed"
@@ -37,11 +37,11 @@ msgstr  "Il n'y a pas de pièce d'argent dans votre coffre !"
 msgid   "There still are some copper coins in the maze!"
 msgstr  "Il y a encore des pièces de bronze dans le labyrinthe !"
 
-msgid   "You are back at the entrance of the maze..."
-msgstr  "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
+msgid   "bucket"
+msgstr  ""
 
 msgid   "copper_coin"
 msgstr  "piece_de_bronze"
 
-msgid   "maze generation:"
-msgstr  "génération du labyrinthe :"
+msgid   "flowers"
+msgstr  ""
