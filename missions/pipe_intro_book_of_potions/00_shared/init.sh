@@ -7,4 +7,5 @@ bash "$GSH_MISSIONS_BIN/install_potion_book.sh" book "$(eval_gettext '$GSH_HOME/
 bash "$GSH_MISSIONS_BIN/install_potion_book.sh" book "$GSH_VAR/book_of_potions"
 
 # put Servillus in the cave
+rm -f "$(eval_gettext '$GSH_HOME/Mountain/Cave')/$(gettext "cauldron")"
 sign_file $MISSION_DIR/../00_shared/ascii-art/servillus.txt "$(eval_gettext '$GSH_HOME/Mountain/Cave')/servillus"
