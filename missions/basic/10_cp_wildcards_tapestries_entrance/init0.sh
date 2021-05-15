@@ -1,1 +1,0 @@
-../09_cp_standard_entrance/init0.sh
