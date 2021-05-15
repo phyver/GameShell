@@ -9,7 +9,7 @@ great_hall="$(eval_gettext '$GSH_HOME/Castle/Great_hall')"
 
 D=$(date +%s)
 
-for I in $(seq 3)
+for I in $(seq 4)
 do
   F="$(gettext "standard")_${I}"
   touch "${great_hall}/${F}"
