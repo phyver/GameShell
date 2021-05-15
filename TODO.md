@@ -19,6 +19,7 @@ TODO NOW
         interpreter name
   - [ ] finding_files, grep -Z mission 35
 
+  - [x] generate `.mo` if `.po` is newer
   - [x] crown not found
   - [x] `sed -i` doesn't have the same meaning in gnu / bsd
   - [x] `ls --color=auto` may not work
