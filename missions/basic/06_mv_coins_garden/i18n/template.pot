@@ -4,7 +4,7 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid   "$GSH_HOME/Castle/Cellar"
+msgid   "$GSH_HOME/Garden"
 msgstr  ""
 
 #, sh-format
@@ -28,7 +28,7 @@ msgid   "The coin '$COIN_NAME' is not in the chest!"
 msgstr  ""
 
 #, sh-format
-msgid   "The coin '$COIN_NAME' is still in the cellar!"
+msgid   "The coin '$COIN_NAME' is still in the garden!"
 msgstr  ""
 
 msgid   "chest"

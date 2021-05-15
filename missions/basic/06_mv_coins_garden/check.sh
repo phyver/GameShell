@@ -4,10 +4,10 @@
 _mission_check() {
     local COIN_NAME="$(gettext "coin")_$1"
 
-    # Check that the coin is not in the cellar.
-    if [ -f "$(eval_gettext '$GSH_HOME/Castle/Cellar')/$COIN_NAME" ]
+    # Check that the coin is not in the garden.
+    if [ -f "$(eval_gettext '$GSH_HOME/Garden')/$COIN_NAME" ]
     then
-        echo "$(eval_gettext "The coin '\$COIN_NAME' is still in the cellar!")"
+        echo "$(eval_gettext "The coin '\$COIN_NAME' is still in the garden!")"
         return 1
     fi
 
@@ -41,8 +41,8 @@ then
     true
 else
     find "$GSH_HOME" -name "$(gettext "coin")_?" -type f -print0 | xargs -0 rm -f
-    find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -iname "*$(gettext "chest")*" -type f -print0 | xargs -0 rm -f
-    find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -iname "*$(gettext "hut")*" -type f -print0 | xargs -0 rm -f
+    find "$(eval_gettext '$GSH_HOME/Garden')" -iname "*$(gettext "chest")*" -type f -print0 | xargs -0 rm -f
+    find "$(eval_gettext '$GSH_HOME/Garden')" -iname "*$(gettext "hut")*" -type f -print0 | xargs -0 rm -f
     unset -f _mission_check
     false
 fi

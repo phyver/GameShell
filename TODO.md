@@ -9,9 +9,8 @@ TODO NOW
         chest?)
   - [ ] remove `$GSH_MISSIONS_BIN` directory, or don't copy `$MISSION_DIR/bin`
         files automatically?
-  - [ ] clean `lib` folder ?
 
-
+  - [x] clean `lib` folder ?
   - [x] add specific functions for missions: `make_bin`, `sign_file`,
     `check_file`, `progress`
   - [x] put back progress bar on startup (possibly doing something nice)???
@@ -48,8 +47,6 @@ Existing missions
 TODO NOW
 --------
 
-  - [ ] move missions 6 and 7 to the Garden
-
   - [ ] put some ascii-art in different places:
           - [ ] Merlin drawer?
           - [ ] the observatory?
@@ -63,6 +60,7 @@ TODO NOW
 
   - [ ] change last mission in group "book_of_potions"
 
+  - [x] move missions 6 and 7 to the Garden
   - [x] change entrance to "great hall"
   - [x] translate "book_of_potions"
   - [x] mission 9: add other items to prevent using `cp *`
