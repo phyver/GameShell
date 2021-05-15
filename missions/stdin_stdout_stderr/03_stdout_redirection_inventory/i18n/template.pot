@@ -27,6 +27,9 @@ msgstr  ""
 msgid   "There is no $INVENTORY_FILE in the drawer..."
 msgstr  ""
 
+msgid   "candle"
+msgstr  ""
+
 msgid   "grimoire"
 msgstr  ""
 

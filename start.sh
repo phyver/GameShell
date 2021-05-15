@@ -5,7 +5,8 @@
 source gettext.sh
 
 export GSH_ROOT="$(dirname "$0")"
-source "$GSH_ROOT"/lib/common.sh
+source "$GSH_ROOT/lib/common.sh"
+source "$GSH_ROOT/lib/missions_utils.sh"
 
 display_help() {
   cat "$(eval_gettext "\$GSH_ROOT/i18n/start-help/en.txt")"

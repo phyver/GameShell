@@ -41,5 +41,8 @@ msgid   "here is my will:\n"
         "merlin the enchanter"
 msgstr  ""
 
+msgid   "ink_and_scroll"
+msgstr  ""
+
 msgid   "secret_message"
 msgstr  ""

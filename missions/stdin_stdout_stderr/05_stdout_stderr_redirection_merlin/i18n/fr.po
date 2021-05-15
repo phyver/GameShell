@@ -24,3 +24,6 @@ msgstr  "LACLESECRETEESTSURSTDERR"
 
 msgid   "What is the secret key?"
 msgstr  "Quelle est la clé secrête ?"
+
+msgid   "star_chart"
+msgstr  "carte_du_ciel"

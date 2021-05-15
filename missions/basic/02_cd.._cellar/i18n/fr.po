@@ -17,3 +17,6 @@ msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 msgid   "You are not in the cellar..."
 msgstr  "Vous n'êtes pas dans la cave..."
+
+msgid   "barrel_of_apples"
+msgstr  "tonneau_de_pommes"
