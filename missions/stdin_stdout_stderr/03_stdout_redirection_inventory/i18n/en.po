@@ -30,6 +30,9 @@ msgstr  "The content of $INVENTORY_FILE is invalid.\n"
 msgid   "There is no $INVENTORY_FILE in the drawer..."
 msgstr  "There is no $INVENTORY_FILE in the drawer..."
 
+msgid   "candle"
+msgstr  "candle"
+
 msgid   "grimoire"
 msgstr  "grimoire"
 

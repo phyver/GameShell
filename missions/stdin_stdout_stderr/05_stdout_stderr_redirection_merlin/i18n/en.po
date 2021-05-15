@@ -25,3 +25,6 @@ msgstr  "THESECRETKEYISONSTDERR"
 
 msgid   "What is the secret key?"
 msgstr  "What is the secret key?"
+
+msgid   "star_chart"
+msgstr  "star_chart"

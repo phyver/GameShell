@@ -46,5 +46,8 @@ msgstr  "here is my will:\n"
         "it re-appear is: $SECRET_KEY\n"
         "merlin the enchanter"
 
+msgid   "ink_and_scroll"
+msgstr  "ink_and_scroll"
+
 msgid   "secret_message"
 msgstr  "secret_message"

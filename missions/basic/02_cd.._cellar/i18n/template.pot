@@ -17,3 +17,6 @@ msgstr  ""
 
 msgid   "You are not in the cellar..."
 msgstr  ""
+
+msgid   "barrel_of_apples"
+msgstr  ""

@@ -5,8 +5,6 @@ TODO NOW
 --------
 
   - [ ] doc
-  - [ ] make the treasure messages stand out more (use some ASCII treasure
-        chest?)
   - [ ] remove `$GSH_MISSIONS_BIN` directory, or don't copy `$MISSION_DIR/bin`
         files automatically?
 
@@ -16,6 +14,8 @@ TODO NOW
         interpreter name
   - [ ] finding_files, grep -Z mission 35
 
+  - [x] make the treasure messages stand out more (use some ASCII treasure
+    chest?)
   - [x] `ls --literal` doesn't exist in freebsd
   - [x] giving missions to `start.sh` doesn't work outside `$GSH_ROOT`
   - [x] `date` doesn't have the same argument in freebsd (mission nostradamus)
@@ -62,17 +62,15 @@ Existing missions
 TODO NOW
 --------
 
-  - [ ] put some ascii-art in different places:
-          - [ ] Merlin drawer?
-          - [ ] the observatory?
-          - [ ] king's quarter?
-          - [ ] Shed / Orchard?
-          - [ ] cellar?
-
   - [ ] `merchant_stall/pipe_2`: the prompt is not reset correctly
 
   - [ ] check all group with shared data have appropriate `deps.sh`
 
+  - [x] put some ascii-art in different places:
+          - [x] Merlin drawer?
+          - [x] the observatory?
+          - [x] Shed / Orchard?
+          - [x] cellar?
   - [x] move missions 6 and 7 to the Garden
   - [x] change last mission in group "book_of_potions"
   - [x] change entrance to "great hall"

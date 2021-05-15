@@ -7,13 +7,13 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Forest/Hut/Chest"
 msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
 
+#, fuzzy, sh-format
+msgid   "$GSH_HOME/Garden/Flower_garden"
+msgstr  "$GSH_HOME/Jardin/Verger"
+
 #, sh-format
 msgid   "$GSH_HOME/Garden/Maze"
 msgstr  "$GSH_HOME/Jardin/Labyrinthe"
-
-#, sh-format
-msgid   "$GSH_HOME/Garden/Orchard"
-msgstr  "$GSH_HOME/Jardin/Verger"
 
 #, sh-format
 msgid   "$GSH_HOME/Garden/Shed"
@@ -45,11 +45,11 @@ msgstr  "Le rubis est toujours dans le labyrinthe !"
 msgid   "There are too many rubys in the maze!"
 msgstr  "Il y a trop de rubis dans le labyrinthe !"
 
-msgid   "You are back at the entrance of the maze..."
-msgstr  "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
+msgid   "bucket"
+msgstr  ""
 
-msgid   "maze generation:"
-msgstr  "génération du labyrinthe :"
+msgid   "flowers"
+msgstr  ""
 
 msgid   "ruby"
 msgstr  "rubis"
