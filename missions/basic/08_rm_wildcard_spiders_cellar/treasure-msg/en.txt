@@ -1,4 +1,5 @@
 Congratulations !
 
-From now on, the ``ls`` command will automatically show
-a "/" character at the end of directories.
+From now on, the ``ls`` command will 
+automatically show a "/" character at the end 
+of directories.
