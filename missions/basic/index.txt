@@ -6,6 +6,6 @@
 06_mv_coins_cellar
 07_mv_hidden_coins_cellar
 08_rm_wildcard_spiders_cellar
-09_cp_standard_entrance
-10_cp_wildcards_tapestries_entrance
+09_cp_standard_great_hall
+10_cp_wildcards_tapestries_great_hall
 11_cp_ls_mtime_paintings_tower

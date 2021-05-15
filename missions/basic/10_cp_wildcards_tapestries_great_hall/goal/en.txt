@@ -1,0 +1,38 @@
+Mission goal
+============
+
+The tapestries in the castle's great hall are also particularly 
+beautiful. Since you can't just take them, put a copy of each 
+in your chest.
+
+
+Useful commands
+===============
+
+cp FILE1 FILE2 ... FILEn DIRNAME
+  Copy the files to the directory.
+  Remark: ``cp`` is an abbreviation of "copy".
+
+
+Shell patterns
+==============
+
+*
+  The "*" character stands in for any sequence of characters
+  (including an empty sequence).
+
+?
+  The "?" character stands in for any single character.
+
+Those wildcards can be used to denote lists of existing files / 
+directories
+
+For example: if the current folder contains
+      file-1 Folder-1 file-14 potato
+then
+    *     -->  file-1 Folder-1 file-14 potato
+    *1    -->  file-1 Folder-1
+    *o*   -->  Folder-1 potato
+    x*    -->  error, no matching file
+    *-?   -->  file-1 Folder-1
+    *-??  -->  file-14

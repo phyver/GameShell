@@ -1,0 +1,14 @@
+Mission goal
+============
+
+You have taken a fancy to the four standards in the great hall 
+of the castle. As stealing them would not go unnoticed, put a 
+copy of each in your chest.
+
+
+Useful commands
+===============
+
+cp FILE DIRNAME
+  Copy the file to the directory.
+  Remark: ``cp`` is an abbreviation of "copy".
