@@ -127,61 +127,125 @@ check_file() {
 export -f check_file
 
 
-# Print a progress bar as a flying bat: each character received on
-# [stdin] makes the bat move forward. The animation stops when the
-# end of file is reached.
+# Print a progress bar. Each character received on [stdin] advances the
+# animation. The animation stops when the end of file is reached. If no
+# argument is provided, a random animal-themed progress bar is picked.
+# Otherwise, the name of a specific progress bar can be passed as the
+# first (and only) argument. Examples of value are 'bat' or 'snake'.
 progress_bar () {
-  # # simple dots
-  # local STR=('.')
-  # local PRE=''
-  # local POST=''
-  # local MSG=""
+  local ANIMALS=('bat' 'snake' 'centipede' 'ant' 'fish' 'large-fish'
+                 'fish-back-and-forth')
+  local CHOICE
 
-  # # rotating bar
-  # local STR=('\b|' '\b/' '\b-' '\b\\')
-  # local PRE='-'
-  # local POST='\b>'
-  # local MSG=""
+  local STR
+  local PRE
+  local POST
+  local MSG
 
-  local STR=('\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/'
-             '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
-  local PRE='   '
-  local POST='\b\b\b   '
-  local MSG=$(gettext "While you are waiting, a bat flies by...\n")
+  if [ -z "$1" ]
+  then
+    # Pick a random animal-base progress bar.
+    CHOICE=${ANIMALS[$RANDOM % ${#ANIMALS[@]} ]}
+  else
+    # Use specified progress bar.
+    CHOICE="$1"
+  fi
 
-  # # snake
-  # local STR=(
-  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b __/\__/\__/\<:>'
-  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b _/\__/\__/\_<:>'
-  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b /\__/\__/\__<:>'
-  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>'
-  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>'
-  #      )
-  # local PRE='\__/\__/\__/<:>'
-  # local POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b               '
-  # local MSG=$(gettext "While you are waiting, a snake slithers by...\n")
+  case $CHOICE in
+    "dots")
+      # simple dots
+      STR=('.')
+      PRE=''
+      POST='\n'
+      MSG=''
+      ;;
 
-  # # centipede
-  # local STR=(
-  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b ,`,`,`,`,`,`,`(:)'
-  #      '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b `,`,`,`,`,`,`,(:)'
-  #      )
-  # local PRE='`,`,`,`,`,`,`,(:)'
-  # local POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b                  '
-  # local MSG=$(gettext "While you are waiting, a centipede crawls by...\n")
+    "rotation")
+      # rotating bar
+      STR=('\b|' '\b/' '\b-' '\b\\')
+      PRE='-'
+      POST='\b \b'
+      MSG=""
+      ;;
 
-  # # ant
-  # local STR=('\b\b\b\b\b >|<()')
-  # local PRE='>|<()'
-  # local POST='\b\b\b\b\b     '
-  # local MSG=$(gettext "While you are waiting, an ant crawls by...\n")
+    "bat")
+      # flying bat
+      STR=('\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/'
+           '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
+      PRE='   '
+      POST='\b\b\b   \r'
+      MSG="$(gettext "While you are waiting, a bat flies by...")\n"
+      ;;
 
-  # hide cursor
+    "snake")
+      # slithering snake
+      STR=('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b __/\__/\__/\<:>'
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b _/\__/\__/\_<:>'
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b /\__/\__/\__<:>'
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>'
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>')
+      PRE='\__/\__/\__/<:>'
+      POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b               \r'
+      MSG="$(gettext "While you are waiting, a snake slithers by...")\n"
+      ;;
+
+    "centipede")
+      # crawling centipede
+      STR=('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b ,`,`,`,`,`,`,`(:)'
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b `,`,`,`,`,`,`,(:)')
+      PRE='`,`,`,`,`,`,`,(:)'
+      POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b                  \r'
+      MSG="$(gettext "While you are waiting, a centipede crawls by...")\n"
+      ;;
+
+    "ant")
+      # crawling ant
+      STR=('\b\b\b\b\b >|<()')
+      PRE='>|<()'
+      POST='\b\b\b\b\b     \r'
+      MSG="$(gettext "While you are waiting, an ant crawls by...")\n"
+      ;;
+
+    "fish")
+      # Swimming fish (small)
+      STR=('\b\b\b ><>')
+      PRE='><>'
+      POST='\b\b\b   \r'
+      MSG="$(gettext "While you are waiting, a fish swims by...")\n"
+      ;;
+
+    "fish-back-and-forth")
+      # Swimming fish (small) going back and forth
+      STR=('\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>'
+           '\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>'
+           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><'
+           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><'
+           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><'
+           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><')
+      PRE='><>'
+      POST='\b\b\b   \r'
+      MSG="$(gettext "While you are waiting, you see a fish swimming in circles...")\n"
+      ;;
+
+    "large-fish")
+      # Swimming fish (large)
+      STR=("\b\b\b\b\b\b\b\b ><(((('>")
+      PRE="><(((('>"
+      POST='\b\b\b\b\b\b\b\b        \r'
+      MSG="$(gettext "While you are waiting, a large fish swims by...")\n"
+      ;;
+
+    *)
+      echo "Unknown progress kind."
+      return 1
+      ;;
+  esac
+
+  # Hide cursor.
   tput civis 2> /dev/null
 
-  # Print  initial message.
-  echo "$MSG"
-
+  # Print initial message.
+  echo -en "$MSG"
 
   # Make progress for each character read on [stdin].
   local COUNT
@@ -195,8 +259,8 @@ progress_bar () {
     sleep 0.1
   done
   echo -en "$POST"
-  echo
-  # show cursor
+
+  # Show cursor.
   tput cnorm 2> /dev/null
 }
 export -f progress_bar
