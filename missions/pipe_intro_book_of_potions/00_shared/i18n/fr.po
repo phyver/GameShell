@@ -4,15 +4,15 @@ msgstr  "$GSH_HOME/Montagne/Grotte"
 
 #, sh-format
 msgid   "$MISSION_DIR/book_of_potions/en.txt"
-msgstr  "$MISSION_DIR/book_of_potions/en.txt"
+msgstr  "$MISSION_DIR/book_of_potions/fr.txt"
 
 #, sh-format
 msgid   "$MISSION_DIR/torn_page5/en.txt"
-msgstr  "$MISSION_DIR/torn_page5/en.txt"
+msgstr  "$MISSION_DIR/torn_page5/fr.txt"
 
 #, sh-format
 msgid   "$MISSION_DIR/torn_page6/en.txt"
-msgstr  "$MISSION_DIR/torn_page6/en.txt"
+msgstr  "$MISSION_DIR/torn_page6/fr.txt"
 
 msgid   "Book_of_potions"
 msgstr  "Livre_de_potions"
