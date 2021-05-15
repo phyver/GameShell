@@ -438,19 +438,19 @@ _gsh_check() {
       if [ -f "$MISSION_DIR/treasure-msg.sh" ]
       then
         echo
-        mission_source "$MISSION_DIR/treasure-msg.sh"
+        treasure_message <(mission_source "$MISSION_DIR/treasure-msg.sh")
         echo
       elif [ -f "$MISSION_DIR/treasure-msg.txt" ]
       then
         echo
-        cat "$MISSION_DIR/treasure-msg.txt"
+        treasure_message "$MISSION_DIR/treasure-msg.txt"
         echo
       else
         local file_msg="$(TEXTDOMAIN="$(textdomainname "$MISSION_DIR")" eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
         if [ -f "$file_msg" ]
         then
           echo
-          cat "$file_msg"
+          treasure_message "$file_msg"
           echo
         fi
       fi

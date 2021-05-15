@@ -1,5 +1,7 @@
 Bravo !
 
-Le fichier "~/Foret/Hutte/Coffre/bashrc" peut maintenant être 
-utilisé pour sauvegarder des alias. D'autres informations ont 
-été écrites dans le fichier (il a été créé pour vous).
+Vous pouvez maintenant utiliser le fichier
+    "~/Foret/Hutte/Coffre/bashrc"
+pour sauvegarder des alias. D'autres 
+informations ont été écrites dans le fichier 
+(il a été créé pour vous).

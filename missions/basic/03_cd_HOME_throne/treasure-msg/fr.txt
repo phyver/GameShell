@@ -1,4 +1,4 @@
 Bravo !!!
 
-À partir de maintenant, le lieu actuel sera affiché
-juste avant l'invite de commande.
+À partir de maintenant, le lieu actuel sera 
+affiché juste avant l'invite de commande.

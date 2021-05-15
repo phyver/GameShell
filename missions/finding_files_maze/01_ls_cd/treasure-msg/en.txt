@@ -1,5 +1,6 @@
 Congratulations!
 
-From now on, the command ``ls`` will try using a color code to make 
-it easier to differentiate between directories and several kinds of 
-files.
+From now on, the command ``ls`` will try 
+using a color code to make it easier to 
+differentiate between directories and several 
+kinds of files.
