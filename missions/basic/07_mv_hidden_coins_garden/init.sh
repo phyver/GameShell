@@ -5,13 +5,13 @@ mkdir -p "$GSH_CHEST"
 
 D=$(date +%s)
 
-rm -f "$(eval_gettext '$GSH_HOME/Castle/Cellar')/.$(gettext "coin")_"*
+rm -f "$(eval_gettext '$GSH_HOME/Garden')/.$(gettext "coin")_"*
 
 for I in $(seq 3)
 do
   C=".$(gettext "coin")_$I"
   S=$(checksum "$C#$D")
-  echo "$C#$D $S" > "$(eval_gettext '$GSH_HOME/Castle/Cellar')/${C}_$S"
+  echo "$C#$D $S" > "$(eval_gettext '$GSH_HOME/Garden')/${C}_$S"
 done
 
 unset DATE D I C S
