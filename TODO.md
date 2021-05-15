@@ -52,11 +52,10 @@ TODO NOW
 
   - [ ] check all group with shared data have appropriate `deps.sh`
 
-  - [ ] change entrance to "great hall"
-
   - [ ] change last mission in group "book_of_potions"
-  - [ ] translate "book_of_potions"
 
+  - [x] change entrance to "great hall"
+  - [x] translate "book_of_potions"
   - [x] mission 9: add other items to prevent using `cp *`
   - [x] mission 15: add a treasure to source `$GSH_CHEST/bashrc`, and suggest
         adding aliases like `gg => gsh goal` and `gc => gsh check`
