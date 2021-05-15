@@ -3,4 +3,4 @@
 02_tail
 03_cat
 04_pipe
-05_wc
+05_pipe_head_tail

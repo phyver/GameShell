@@ -1,0 +1,34 @@
+Objectif
+========
+
+Le vieil ermite a soif et il voudrait que vous cherchiez pour lui 
+la recette de l'eau distillée dans le livre.
+
+Pour valider la mission, votre dernière commande avant ``gsh check`` 
+doit afficher les étapes de la recette, mais rien d'autre.
+
+
+Commandes utiles
+================
+
+head [-n K] [FICHIER]
+  Affiche les premières lignes (10 par défaut, ou K si ``-n K`` est 
+  donné) du fichier donné, ou de l'entrée standard si aucun fichier 
+  n'est donné.
+
+tail [-n K] [FICHIER]
+  Affiche les dernières lignes (10 par défaut, ou K si ``-n K`` est 
+  donné) du fichier donné, ou de l'entrée standard si aucun fichier 
+  n'est donné.
+
+COMMANDE1  |  COMMANDE2
+  Exécute les deux commandes en envoyant la "sortie standard" de la 
+  première dans l'"entrée standard" de la seconde.
+  Note : par analogie avec la plomberie, "|" est appelé un "tube".
+
+
+Remarque
+--------
+
+Les parties [entre crochets] dans les descriptions de commandes sont 
+optionnelles. Les crochets ne font pas partie de la syntaxe.
