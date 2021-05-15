@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 _mission_check() {
     local NB_SPELLS=$(ps -e | grep "$(gettext "spell")" | wc -l)

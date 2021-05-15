@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export GSH_ROOT="$(dirname "$0")/.."
 
@@ -22,9 +22,9 @@ EOH
 first_unused_number() {
     cd "$GSH_ROOT"/missions
     find -name "check.sh"                   | \
-    sed 's|/check\.sh||'                    | \
-    sed 's|.*/\([^/]*\)|\1|'                | \
-    sed 's|\([0-9]*\)_.*|\1|'               | \
+    sed -e 's|/check\.sh||'                 | \
+    sed -e 's|.*/\([^/]*\)|\1|'             | \
+    sed -e 's|\([0-9]*\)_.*|\1|'            | \
     sort -n                                 | \
     awk 'BEGIN {N=1} /[0-9]+/ {if ($1 != N) {print N; exit 0;} N++}'
 }
@@ -34,7 +34,7 @@ new_static_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/static.sh
-#!/bin/bash
+#!/usr/bin/env bash
 
 #
 # This file is not required: it is sourced once when initialising a GameShell
@@ -68,7 +68,7 @@ new_goal_gettext_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_goal.sh
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This file is not required. It can be used to generate dynamic goal messages.
 # If the file exists, it is sourced by the command
@@ -107,7 +107,7 @@ new_init_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/init.sh
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This file is not required: it is sourced every time the mission is started.
 # It typically creates the parts that are necessary for completing.
@@ -132,7 +132,7 @@ new_check_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/check.sh
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This file is required. It is sourced when checking the goal of the mission
 # has been achieved.
@@ -160,7 +160,7 @@ new_auto_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_auto.sh
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This file is not required. When it exists, it is used to automatically
 # validate the mission.
@@ -172,7 +172,7 @@ new_clean_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_clean.sh
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This file is not required. When it exists, it is used to clean the mission,
 # for example on completion, or when restarting it.
@@ -183,7 +183,7 @@ new_treasure_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_treasure.sh
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This file is not required. When it exists, it is sourced on successfull
 # completion and is added to the global configuration.
@@ -215,7 +215,7 @@ new_gettext_treasure-msg_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_treasure-msg.sh
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This file is not required. It can be used to generate dynamic treasure
 # messages.
@@ -238,7 +238,7 @@ new_test_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_test.sh
-#!/bin/bash
+#!/usr/bin/env bash
 
 #
 # This file is not required: it is sourced by the command "gsh test".
@@ -293,7 +293,7 @@ add-locations: all
 i18n/en.po: i18n/template.pot FORCE
 	@echo "msgen $@"
 	@msgen $(OPTIONS) $(SORT) i18n/template.pot --output=$@
-	@sed -i '1s/^/'"# AUTOMATICALLY GENERATED -- DO NOT EDIT\n/" $@
+	@sed -i -e '1s/^/'"# AUTOMATICALLY GENERATED -- DO NOT EDIT\n/" $@
 
 $(LANG):%.po: i18n/template.pot FORCE
 	@echo "msgmerge $@"

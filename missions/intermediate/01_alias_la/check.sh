@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 _mission_check() {
     local cmd=$(alias la 2> /dev/null | cut -f2 -d"=" | tr -d "' \t")

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 source gettext.sh
 
@@ -29,8 +29,13 @@ install_book() {
   fi
 
   mkdir -p "$BOOK"
-  csplit -s --suppress-matched --prefix="$BOOK/$(gettext "page")_" \
-    "$(eval_gettext '$MISSION_DIR/book_of_potions/en.txt')" "/^==.*/" "{*}"
+  # NOTE: option --supress-matched doesn't exist in freebsd, nor does the "{*}" repetition
+  csplit -ks -f "$BOOK/$(gettext "page")_" "$(eval_gettext '$MISSION_DIR/book_of_potions/en.txt')" "/^==.*/" "{99}" 2> /dev/null
+  local f
+  for f in "$BOOK/$(gettext "page")_"*
+  do
+      SED-i -e "/^==.*/d" "$f"
+  done
 
   mv "$BOOK/$(gettext "page")_00" "$BOOK/$(gettext "table_of_contents")"
 }

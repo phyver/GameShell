@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 y=$(cat "$GSH_VAR/amountKing")
 read -erp "$(gettext "How much does the king owe?") " d
 
-x=$(checksum "$d")
+x=$(CHECKSUM "$d")
 if [ "$x" = "$y" ]
 then
     if [ "$NB_CMD" -le 3 ] && [ "$x" = "$y" ]

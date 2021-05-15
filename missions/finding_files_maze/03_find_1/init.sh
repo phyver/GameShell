@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 [ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
 mkdir -p "$GSH_CHEST"
@@ -16,9 +16,9 @@ fi
 
 d1=$(echo "$d" | sed -n '1p;1q')
 d2=$(echo "$d" | sed -n '2p;2q')
-echo "$(checksum "$d1")" > "$maze/$d1/$(gettext "gold_coin")"
-echo "$(checksum "$d1")" > "$GSH_VAR/gold_coin"
-echo "$(checksum "$d2")" > "$maze/$d2/$(gettext "GolD_CoiN")"
-echo "$(checksum "$d2")" > "$GSH_VAR/GolD_CoiN"
+echo "$(CHECKSUM "$d1")" > "$maze/$d1/$(gettext "gold_coin")"
+echo "$(CHECKSUM "$d1")" > "$GSH_VAR/gold_coin"
+echo "$(CHECKSUM "$d2")" > "$maze/$d2/$(gettext "GolD_CoiN")"
+echo "$(CHECKSUM "$d2")" > "$GSH_VAR/GolD_CoiN"
 
 unset maze d d1 d2

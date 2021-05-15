@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 y=$(cat "$GSH_VAR/nbUnpaid")
 read -erp "$(gettext "How many unpaid items are there?") " d
 
-x=$(checksum "$d")
+x=$(CHECKSUM "$d")
 
 if [ "$NB_CMD" -le 2 ] && [ "$x" == "$y" ]
 then

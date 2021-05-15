@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Install the book for the mission.
 bash "$GSH_MISSIONS_BIN/install_potion_book.sh" book "$(eval_gettext '$GSH_HOME/Mountain/Cave')/"

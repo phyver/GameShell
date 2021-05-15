@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 dir=$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room/Kings_quarter')
 key=$RANDOM$RANDOM

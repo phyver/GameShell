@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Receives coin number as first argument.
 _mission_check() {
@@ -25,7 +25,7 @@ _mission_check() {
         return 1
     fi
 
-    # Verify the checksum in the coin.
+    # Verify the CHECKSUM in the coin.
     if ! check_file "$GSH_CHEST/$COIN_NAME"
     then
         echo "$(eval_gettext "The coin '\$COIN_NAME' has been tampered with...")"

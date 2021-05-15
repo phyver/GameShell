@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 _mission_check() {
     local JOURNAL_FILE="$GSH_CHEST/$(gettext "journal").txt"

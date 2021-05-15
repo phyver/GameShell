@@ -21,7 +21,7 @@ case $OSTYPE in
   darwin*)
     source "$GSH_ROOT"/lib/macos_common.sh
     ;;
-  openbsd*|FreeBSD|netbsd)
+  *bsd*|FreeBSD|netbsd)
     source "$GSH_ROOT"/lib/bsd_common.sh
     ;;
   *)
@@ -35,18 +35,6 @@ esac
 
 export GSH_ROOT=$(REALPATH "$GSH_ROOT")
 export TEXTDOMAINDIR="$GSH_ROOT/locale"
-
-# computes a checksum of a string
-# with no argument, reads the string from STDIN
-checksum() {
-  if [ "$#" -eq 0 ]
-  then
-    sha1sum | cut -c 1-40
-  else
-    echo -n "$@" | sha1sum | cut -c 1-40
-  fi
-}
-export -f checksum
 
 textdomainname() {
   local MISSION_DIR=$(REALPATH "$1")  # follow symbolic links to make sure translation is found
@@ -85,7 +73,7 @@ parchment() {
   if command -v python3 &> /dev/null
   then
     local P=$2
-    [ -z "$P" ] && P=$(( 16#$(checksum "$GSH_UID:$MISSION_DIR" | cut -c 10-17) % 7 ))
+    [ -z "$P" ] && P=$(( 16#$(CHECKSUM "$GSH_UID:$MISSION_DIR" | cut -c 10-17) % 7 ))
     case "$P" in
       0) P="Parchment1";;
       1) P="Parchment2";;
@@ -136,7 +124,7 @@ admin_mode() {
   do
     read -serp "$(gettext "password:" )" mdp
     echo
-    if [ "$(checksum "$mdp")" = "$HASH" ]
+    if [ "$(CHECKSUM "$mdp")" = "$HASH" ]
     then
       return 0
     fi
