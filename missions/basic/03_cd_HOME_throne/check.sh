@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 goal=$(REALPATH "$(eval_gettext "\$GSH_HOME/Castle/Main_building/Throne_room")")
 current=$(REALPATH "$PWD")

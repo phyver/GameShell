@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 [ -z "$GSH_ROOT" ] && export GSH_ROOT="$(dirname "$BASH_SOURCE")/.." && source "$GSH_ROOT"/lib/common.sh
 
@@ -36,7 +36,7 @@ copy_bin() {
     return 1
   fi
   cat > "$target" <<EOH
-#!/usr/bin/env bash
+#!/bin/bash
 export MISSION_DIR=$MISSION_DIR
 export TEXTDOMAIN=$DOMAIN
 exec $source "\$@"

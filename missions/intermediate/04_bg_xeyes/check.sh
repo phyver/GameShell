@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # turn history on (off by default for non-interactive shells
 HISTFILE=$GSH_CONFIG/history

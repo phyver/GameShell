@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 export GSH_ROOT=$(dirname "$0")/..
 source $GSH_ROOT/lib/common.sh

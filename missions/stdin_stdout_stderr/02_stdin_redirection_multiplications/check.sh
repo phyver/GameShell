@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 OK=1
 LIMIT=$(( $(date +%s) + 10 ))

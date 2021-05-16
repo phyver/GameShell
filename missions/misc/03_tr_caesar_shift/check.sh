@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 echo "$(gettext "What's the key that will make Merlin's chest to appear?")"
 read -er dcode

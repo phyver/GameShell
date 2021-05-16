@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 great_hall="$(eval_gettext '$GSH_HOME/Castle/Great_hall')"
 

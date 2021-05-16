@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 change_password() {
   local PASSWORD=$1
