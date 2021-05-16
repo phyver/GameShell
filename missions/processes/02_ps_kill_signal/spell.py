@@ -35,7 +35,7 @@ coal = """
 DELAY = 5
 
 while True:
+    sleep(DELAY)
     INDENT = randint(2, 15)
     for line in coal:
         print(" "*INDENT + line)
-    sleep(DELAY)

@@ -16,8 +16,23 @@ msgstr  "$MISSION_DIR/goal/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
+#: auto.sh:1 check.sh:5 clean.sh:1 init.sh:6 init.sh:9 init.sh:11 init.sh:12
+#: test.sh:1
+msgid   "spell"
+msgstr  "spell"
+
+#: check.sh:7
 msgid   "The spell is still running!"
 msgstr  "The spell is still running!"
 
-msgid   "spell"
-msgstr  "spell"
+#: deps.sh:9
+#, sh-format
+msgid   "Process names should be equal to the corresponding filename for mission $MISSION_NAME."
+msgstr  "Process names should be equal to the corresponding filename for mission $MISSION_NAME."
+
+#: deps.sh:14
+#, sh-format
+msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psproc')"
+msgstr  "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psproc')"

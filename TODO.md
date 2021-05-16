@@ -9,12 +9,12 @@ TODO NOW
         files automatically?
   - [ ] clean progress messages in debug mode during initialization
 
-  - [ ] for processes in processes group, the shebang needs to be changed
+  - [ ] finding_files, grep -Z mission 35
+
+  - [x] for processes in processes group, the shebang needs to be changed
         depending on the path to the interpreter
         in freebsd, the process name isn't taken from argv[0] but contains the
         interpreter name
-  - [ ] finding_files, grep -Z mission 35
-
   - [x] make the treasure messages stand out more (use some ASCII treasure
     chest?)
   - [x] `ls --literal` doesn't exist in freebsd
