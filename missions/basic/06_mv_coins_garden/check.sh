@@ -25,7 +25,7 @@ _mission_check() {
         return 1
     fi
 
-    # Verify the CHECKSUM in the coin.
+    # check the coin.
     if ! check_file "$GSH_CHEST/$COIN_NAME"
     then
         echo "$(eval_gettext "The coin '\$COIN_NAME' has been tampered with...")"
