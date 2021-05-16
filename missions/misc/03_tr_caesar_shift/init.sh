@@ -2,11 +2,9 @@
 
 # mission originaly created by Tiemen Duvillard
 
-# une chaine aléatoire
-rd=pylptbbpbqmtaojeqalfrdzfswddcicuwtohudysakdtzqcswwzyrfwbilbkkusz
-
 # je choisis une clé en prenant un bout au hasard de la chaine ci dessus
-SECRET_KEY="${rd:( $RANDOM % ((${#rd}) -4) ):4}"
+SECRET_KEY=$(random_string 4 | tr A-Z a-z)
+# TODO, only store hash of key?
 echo "$SECRET_KEY" > "$GSH_VAR/secret_key"
 
 random_shift=$((12 + RANDOM % 3))
