@@ -839,14 +839,17 @@ Parchment6_box = {
     "UL": [
         r" __^__ ",
         r"( ___ )",
+        r" |   | ",
     ],
     "UR": [
         r" __^__ ",
         r"( ___ )",
+        r" |   | ",
     ],
     "UM": [
         r" ",
         r"-",
+        r" ",
     ],
     "LL": [
         r" |___| ",
@@ -866,8 +869,8 @@ Parchment6_box = {
     "MR": [
         r" | \ | ",
     ],
-    "neg_padding": (0, 1, 1, 1),
-    "default_margin": (1, 2, 1, 2),
+    "neg_padding": (0, 1, 0, 1),
+    "default_margin": (0, 2, 0, 2),
     "descr": "coded by Thomas Jensen <boxes@thomasjensen.com> (boxes)",
 }
 
@@ -966,7 +969,7 @@ Parchment8_box = {
 Parchment9_box = {
     "UL": [
         r"     ___",
-        r"()==( ",
+        r"()==(   ",
         r"     '__",
     ],
     "UR": [
@@ -1167,8 +1170,8 @@ Twinkle_box = {
 Test_box = {
     "UL": [
         r"+---->",
-        r"|",
-        r"v",
+        r"|     ",
+        r"v     ",
     ],
     "UM": [
         r"<--->",
@@ -1181,11 +1184,11 @@ Test_box = {
         r"   v",
     ],
     "ML": [
-        r"^    ",
-        r"|    ",
-        r"|    ",
-        r"|    ",
-        r"v  ",
+        r"^     ",
+        r"|     ",
+        r"|     ",
+        r"|     ",
+        r"v     ",
     ],
     "MR": [
         r"   ^",
@@ -1297,7 +1300,7 @@ def main():
     short_options = "hb:lm:c:LRC"
 
     long_options = ["help", "box=", "list", "margin=", "lorem", "rect=",
-                    "fill-char=", "left-align", "right-align", "center"]
+                    "fill-char=", "left-align", "right-align", "center", "awk"]
 
     try:
         opts, args = getopt.getopt(sys.argv[1:], short_options, long_options)
@@ -1332,7 +1335,8 @@ Options:
    -R, --right-align                right/bottom align text in the box
    -C, --center                     center text in the box
    --lorem                          test a design with Lorem text
-   --rectange=<w>x<h>               test a design using a rectangle for text
+   --rect=<w>x<h>                   test a design using a rectangle for text
+   --awk                            output boxes definition to use with awk version
 """.format(prog=sys.argv[0]))
             sys.exit(0)
         elif o in ["-l", "--list"]:
@@ -1349,6 +1353,53 @@ Options:
                     text = LOREM
                 Box(text, margin, BOXES[b], align=align, fill_char=fill_char)
                 print("")
+            sys.exit(0)
+        elif o in ["--awk"]:
+            from json import dumps
+            designs = sorted(list(BOXES.keys()))
+            print("BEGIN {")
+            print("    n = 0;")
+            for b in designs:
+                print(f'    BOXES[n++] = "{b}";')
+            print()
+
+            first = True
+            for b in designs:
+                if first:
+                    print(f'    if (box == "{b}") {{')
+                    first = False
+                else:
+                    print(f'    }} else if (box == "{b}") {{')
+
+                s = dumps("\n".join(BOXES[b]["UL"]), ensure_ascii=False)
+                print(f'        Uh = split({s}, UL, "\\n");')
+                s = dumps("\n".join(BOXES[b]["UM"]), ensure_ascii=False)
+                print(f'        split({s}, UM, "\\n");')
+                s = dumps("\n".join(BOXES[b]["UR"]), ensure_ascii=False)
+                print(f'        split({s}, UR, "\\n");')
+                s = dumps("\n".join(BOXES[b]["ML"]), ensure_ascii=False)
+                print(f'        Mh = split({s}, ML, "\\n");')
+                s = dumps("\n".join(BOXES[b]["MR"]), ensure_ascii=False)
+                print(f'        split({s}, MR, "\\n");')
+                s = dumps("\n".join(BOXES[b]["LL"]), ensure_ascii=False)
+                print(f'        Lh = split({s}, LL, "\\n");')
+                s = dumps("\n".join(BOXES[b]["LM"]), ensure_ascii=False)
+                print(f'        split({s}, LM, "\\n");')
+                s = dumps("\n".join(BOXES[b]["LR"]), ensure_ascii=False)
+                print(f'        split({s}, LR, "\\n");')
+
+                print(f'        margin["T"] = {BOXES[b]["default_margin"][0]};')
+                print(f'        margin["R"] = {BOXES[b]["default_margin"][1]};')
+                print(f'        margin["B"] = {BOXES[b]["default_margin"][2]};')
+                print(f'        margin["L"] = {BOXES[b]["default_margin"][3]};')
+                print()
+                print(f'        neg_margin["T"] = {BOXES[b]["neg_padding"][0]};')
+                print(f'        neg_margin["R"] = {BOXES[b]["neg_padding"][1]};')
+                print(f'        neg_margin["B"] = {BOXES[b]["neg_padding"][2]};')
+                print(f'        neg_margin["L"] = {BOXES[b]["neg_padding"][3]};')
+
+            print("    }")
+            print("}")
             sys.exit(0)
         elif o in ["-m", "--margin"]:
             try:
