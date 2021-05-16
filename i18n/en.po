@@ -200,6 +200,33 @@ msgstr  "What do you want to do?\n"
         "      (i)         display the list of missions\n"
         "      (N)         restart from mission #N (N less than $LAST_MISSION)"
 
+msgid   "While you are waiting, a bat flies by..."
+msgstr  "While you are waiting, a bat flies by..."
+
+msgid   "While you are waiting, a caterpillar crawls by..."
+msgstr  "While you are waiting, a caterpillar crawls by..."
+
+msgid   "While you are waiting, a centipede crawls by..."
+msgstr  "While you are waiting, a centipede crawls by..."
+
+msgid   "While you are waiting, a fish swims by..."
+msgstr  "While you are waiting, a fish swims by..."
+
+msgid   "While you are waiting, a large fish swims by..."
+msgstr  "While you are waiting, a large fish swims by..."
+
+msgid   "While you are waiting, a snail goes by..."
+msgstr  "While you are waiting, a snail goes by..."
+
+msgid   "While you are waiting, a snake slithers by..."
+msgstr  "While you are waiting, a snake slithers by..."
+
+msgid   "While you are waiting, an ant crawls by..."
+msgstr  "While you are waiting, an ant crawls by..."
+
+msgid   "While you are waiting, you see a fish swimming in circles..."
+msgstr  "While you are waiting, you see a fish swimming in circles..."
+
 # abbreviation for "yes" (uppercase)
 msgid   "Y"
 msgstr  "Y"
