@@ -3,6 +3,7 @@ sed -e $'1c\\\n'"#!$BASH" "$MISSION_DIR/test-proc-name.sh" > "$GSH_VAR/test-proc
 chmod 755 "$GSH_VAR/test-proc-name"
 "$GSH_VAR/test-proc-name" &
 PID=$!
+disown "$PID"
 if ! ps | grep "\b$PID\b" | grep -v bash
 then
     kill -9 "$PID" &> /dev/null
