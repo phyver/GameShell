@@ -241,7 +241,7 @@ progress_bar () {
            '\b\b\b\b\b\b\b\b__(@)_/"'
            '\b\b\b\b\b\b\b\b _(@)_/"')
       PRE='_(O)_/"'
-      POST='\b\b\b\b\b\b\b       \r'
+      POST='\b\b\b\b\b\b\b\b        \r'
       MSG="$(gettext "While you are waiting, a snail goes by...")\n"
       ;;
 
