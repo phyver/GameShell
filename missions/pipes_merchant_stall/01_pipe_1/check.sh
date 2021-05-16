@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 y=$(cat "$GSH_VAR/amountKing")
 read -erp "$(gettext "How much does the king owe?") " d

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 _init_mission() {
     local CELLAR=$(eval_gettext "\$GSH_HOME/Castle/Cellar")

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 
 if [ -f "$GSH_VAR/list_grimoires_RO" ]

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 case "$(pwd)" in
     "$(eval_gettext '$GSH_HOME/Castle/Cellar')/$(gettext ".Lair_of_the_spider_queen")"*)

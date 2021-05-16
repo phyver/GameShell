@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 office="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
 find "$office" -type f -name "$(gettext "grimoire")_*" -print0 | xargs -0 rm -f
