@@ -184,6 +184,33 @@ msgid   "What do you want to do?\n"
         "      (N)         restart from mission #N (N less than $LAST_MISSION)"
 msgstr  ""
 
+msgid   "While you are waiting, a bat flies by..."
+msgstr  ""
+
+msgid   "While you are waiting, a caterpillar crawls by..."
+msgstr  ""
+
+msgid   "While you are waiting, a centipede crawls by..."
+msgstr  ""
+
+msgid   "While you are waiting, a fish swims by..."
+msgstr  ""
+
+msgid   "While you are waiting, a large fish swims by..."
+msgstr  ""
+
+msgid   "While you are waiting, a snail goes by..."
+msgstr  ""
+
+msgid   "While you are waiting, a snake slithers by..."
+msgstr  ""
+
+msgid   "While you are waiting, an ant crawls by..."
+msgstr  ""
+
+msgid   "While you are waiting, you see a fish swimming in circles..."
+msgstr  ""
+
 # abbreviation for "yes" (uppercase)
 msgid   "Y"
 msgstr  ""
