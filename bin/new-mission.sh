@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 export GSH_ROOT="$(dirname "$0")/.."
 
@@ -34,7 +34,7 @@ new_static_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/static.sh
-#!/usr/bin/env bash
+#!/bin/bash
 
 #
 # This file is not required: it is sourced once when initialising a GameShell
@@ -68,7 +68,7 @@ new_goal_gettext_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_goal.sh
-#!/usr/bin/env bash
+#!/bin/bash
 
 # This file is not required. It can be used to generate dynamic goal messages.
 # If the file exists, it is sourced by the command
@@ -107,7 +107,7 @@ new_init_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/init.sh
-#!/usr/bin/env bash
+#!/bin/bash
 
 # This file is not required: it is sourced every time the mission is started.
 # It typically creates the parts that are necessary for completing.
@@ -132,7 +132,7 @@ new_check_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/check.sh
-#!/usr/bin/env bash
+#!/bin/bash
 
 # This file is required. It is sourced when checking the goal of the mission
 # has been achieved.
@@ -160,7 +160,7 @@ new_auto_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_auto.sh
-#!/usr/bin/env bash
+#!/bin/bash
 
 # This file is not required. When it exists, it is used to automatically
 # validate the mission.
@@ -172,7 +172,7 @@ new_clean_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_clean.sh
-#!/usr/bin/env bash
+#!/bin/bash
 
 # This file is not required. When it exists, it is used to clean the mission,
 # for example on completion, or when restarting it.
@@ -183,7 +183,7 @@ new_treasure_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_treasure.sh
-#!/usr/bin/env bash
+#!/bin/bash
 
 # This file is not required. When it exists, it is sourced on successfull
 # completion and is added to the global configuration.
@@ -215,7 +215,7 @@ new_gettext_treasure-msg_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_treasure-msg.sh
-#!/usr/bin/env bash
+#!/bin/bash
 
 # This file is not required. It can be used to generate dynamic treasure
 # messages.
@@ -238,7 +238,7 @@ new_test_file() {
     MISSION_DIR="$1"
 
     cat <<'EOF' > "$MISSION_DIR"/_test.sh
-#!/usr/bin/env bash
+#!/bin/bash
 
 #
 # This file is not required: it is sourced by the command "gsh test".

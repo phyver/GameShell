@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 read -erp "$(gettext "What's the secret key to open the safe?") " key
 real_key=$(cat "$GSH_VAR/key")

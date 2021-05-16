@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 y=$(cat "$GSH_VAR/nbUnpaid")
 read -erp "$(gettext "How many unpaid items are there?") " d

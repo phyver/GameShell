@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 _mission_check_p() {
     local COIN_NAME=$1

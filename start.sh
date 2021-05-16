@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # shellcheck disable=SC2005
 
@@ -322,7 +322,7 @@ Do you want to remove it and start a new game? [y/N]') " r
         fi
         BIN_NAME=$(basename "$BIN_FILE")
         cat > "$GSH_MISSIONS_BIN/$BIN_NAME" <<EOH
-#!/usr/bin/env bash
+#!/bin/bash
 export MISSION_DIR=$MISSION_DIR
 export TEXTDOMAIN=$DOMAIN
 exec $BIN_FILE "\$@"

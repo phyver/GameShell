@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 mkdir -p "$(eval_gettext '$GSH_HOME/Castle/Observatory')"
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 exec 3< "$GSH_VAR/arith.txt"
 OK="OK"
