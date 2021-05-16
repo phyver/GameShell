@@ -9,9 +9,9 @@ rm -f "$(eval_gettext '$GSH_HOME/Garden')/.$(gettext "coin")_"*
 
 for I in $(seq 3)
 do
-  C=".$(gettext "coin")_$I"
-  S=$(CHECKSUM "$C#$D")
-  echo "$C#$D $S" > "$(eval_gettext '$GSH_HOME/Garden')/${C}_$S"
+  f=$(eval_gettext '$GSH_HOME/Garden')/.${RANDOM}_$(gettext "coin")_$I
+  touch "$f"
+  sign_file "$f"
 done
 
-unset DATE D I C S
+unset DATE D I f S
