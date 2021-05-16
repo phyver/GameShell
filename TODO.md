@@ -7,6 +7,7 @@ TODO NOW
   - [ ] doc
   - [ ] remove `$GSH_MISSIONS_BIN` directory, or don't copy `$MISSION_DIR/bin`
         files automatically?
+  - [ ] clean progress messages in debug mode during initialization
 
   - [ ] for processes in processes group, the shebang needs to be changed
         depending on the path to the interpreter
@@ -90,6 +91,9 @@ TODO NOW
 
 FOR LATER
 ---------
+
+  - implement a simple `box.awk` script to generate at least one parchment
+    without python3
 
   - for missions that generate many files, remove most of them in `clean.sh`
 
