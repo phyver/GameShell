@@ -134,7 +134,7 @@ export -f check_file
 # first (and only) argument. Examples of value are 'bat' or 'snake'.
 progress_bar () {
   local ANIMALS=('bat' 'snake' 'centipede' 'ant' 'fish' 'large-fish'
-                 'fish-back-and-forth' 'snail')
+                 'fish-back-and-forth' 'snail' 'caterpillar')
   local CHOICE
 
   local STR
@@ -245,6 +245,18 @@ progress_bar () {
       MSG="$(gettext "While you are waiting, a snail goes by...")\n"
       ;;
 
+    "caterpillar")
+      STR=("\b\b\b\b\b\b\b\b\b ___^___@"
+           "\b\b\b\b\b\b\b\b __/\__@"
+           "\b\b\b\b\b\b\b _/^\_@"
+           "\b\b\b\b\b\b __/\__@"
+           "\b\b\b\b\b\b\b ___^___@"
+           "\b\b\b\b\b\b\b\b\b ________@")
+      PRE='_______@"'
+      POST='\b\b\b\b\b\b\b\b\b         \r'
+      MSG="$(gettext "While you are waiting, a caterpillar crawls by...")\n"
+      ;;
+
     *)
       echo "Unknown progress kind."
       return 1
@@ -266,7 +278,7 @@ progress_bar () {
     echo -en "${STR[$COUNT]}"
     COUNT=$(((COUNT+1)%L))
     # Slow down the animation a little bit.
-    sleep 0.1
+    sleep .1
   done
   echo -en "$POST"
 
