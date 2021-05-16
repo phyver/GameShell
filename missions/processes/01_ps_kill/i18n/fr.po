@@ -3,10 +3,6 @@ msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
-#, sh-format
-msgid   "$GSH_HOME/Castle/Kitchen"
-msgstr  ""
-
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  "$MISSION_DIR/goal/fr.txt"
@@ -15,9 +11,24 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
+#: auto.sh:1 check.sh:5 clean.sh:1 init.sh:6 init.sh:9 init.sh:11 init.sh:12
+#: test.sh:1
+msgid   "spell"
+msgstr  "sortilege"
+
+#: check.sh:7
 #, fuzzy
 msgid   "The spell is still running!"
 msgstr  "Le sortilège est toujours en fonctionnement !"
 
-msgid   "spell"
-msgstr  "sortilege"
+#: deps.sh:9
+#, sh-format
+msgid   "Process names should be equal to the corresponding filename for mission $MISSION_NAME."
+msgstr  "Les nom des processus doit être égal au nom du fichier correspondant pour la mission $MISSION_NAME"
+
+#: deps.sh:14
+#, sh-format
+msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psproc')"
+msgstr  "La command 'ps' est nécessaire pour la mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu : installez le paquet 'psproc')"
