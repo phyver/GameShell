@@ -17,7 +17,7 @@ export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
 RESET=""
 FORCE="FALSE"
-while getopts ":hcnPDACRFXvqL:" opt
+while getopts ":hcnPDACRFXvqL:K" opt
 do
   case $opt in
     h)
@@ -60,6 +60,9 @@ do
     X)
       echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
       exit 1
+      ;;
+    K)
+      :  # used by the self-extracting archive
       ;;
     *)
       echo "$(eval_gettext "Error: invalid option: '-\$OPTARG'")" >&2
