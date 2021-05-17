@@ -32,6 +32,6 @@ new: i18n/template.pot
 
 clean:
 	rm -rf i18n/*~ locale GameShell.tgz GameShell.sh GameShell-save.sh
-	rm -rf .bashrc .bin .config .var World
+	rm -rf .bashrc .bin .config .sbin .var World
 
 .PHONY: clean new FORCE
