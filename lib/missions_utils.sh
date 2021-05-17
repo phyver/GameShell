@@ -134,7 +134,7 @@ export -f check_file
 # first (and only) argument. Examples of value are 'bat' or 'snake'.
 progress_bar () {
   local ANIMALS=('bat' 'snake' 'centipede' 'ant' 'fish' 'large-fish'
-                 'fish-back-and-forth' 'snail' 'caterpillar')
+                 'fish-back-and-forth' 'snail' 'caterpillar' 'spider')
   local CHOICE
 
   local STR
@@ -182,7 +182,6 @@ progress_bar () {
       STR=('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b __/\__/\__/\<:>'
            '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b _/\__/\__/\_<:>'
            '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b /\__/\__/\__<:>'
-           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>'
            '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>')
       PRE='\__/\__/\__/<:>'
       POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b               \r'
@@ -192,7 +191,7 @@ progress_bar () {
     "centipede")
       # crawling centipede
       STR=('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b ,`,`,`,`,`,`,`(:)'
-           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b `,`,`,`,`,`,`,(:)')
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b`,`,`,`,`,`,`,(:)')
       PRE='`,`,`,`,`,`,`,(:)'
       POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b                  \r'
       MSG="$(gettext "While you are waiting, a centipede crawls by...")\n"
@@ -255,6 +254,29 @@ progress_bar () {
       PRE='_______@"'
       POST='\b\b\b\b\b\b\b\b\b         \r'
       MSG="$(gettext "While you are waiting, a caterpillar crawls by...")\n"
+      ;;
+
+    "duck")
+      STR=(
+      '\b\b\b\b\\_@<'
+      '\b\b\b\b \\_@='
+      '\b\b\b\b\\_@='
+      '\b\b\b\b\\_@<')
+      PRE='\\_@<'
+      POST='\b\b\b\b\b     \r'
+      MSG="$(gettext "While you are waiting, a duck swims by...")\n"
+      ;;
+
+    "spider")
+      STR=(
+      '\b\b\b\b\b //o\\\\'
+      '\b\b\b\b\b //o\\\\'
+      '\b\b\b\b\b///o\\'
+      '\b\b\b\b\b///o\\'
+      )
+      PRE='//o\\\\'
+      POST='\b\b\b\b\b     \r'
+      MSG="$(gettext "While you are waiting, a spider crawls by...")\n"
       ;;
 
     *)
