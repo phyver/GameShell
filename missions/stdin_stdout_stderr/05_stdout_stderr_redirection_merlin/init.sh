@@ -14,5 +14,5 @@ random_key 200 > "$GSH_VAR/secret_key"
 
 # certains se débrouillent pour écraser merlin ! Il faut mieux le regénérer,
 # même si le fichier existe !
-cp  "$GSH_MISSIONS_BIN"/merlin.sh "$(eval_gettext '$GSH_HOME/Castle/Observatory')/merlin"
+cp  "$GSH_MISSIONS_SBIN"/merlin.sh "$(eval_gettext '$GSH_HOME/Castle/Observatory')/merlin"
 chmod 755 "$(eval_gettext '$GSH_HOME/Castle/Observatory')/merlin"

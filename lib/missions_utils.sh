@@ -11,19 +11,9 @@ copy_bin() {
     return 1
   fi
   local source=$1
-  case "$source" in
-    "$GSH_MISSIONS"/* )
-      local MISSION_DIR=$(dirname "$(REALPATH "$source")")
-      local TEXTDOMAIN="$(textdomainname "$MISSION_DIR")"
-      ;;
-    *)
-      echo "Error: source of copy_bin does not live in a mission directory." >&2
-      return 1
-      ;;
-  esac
-  if ! [ -f "$target" ] || ! [ -x "$target" ]
+  if ! [ -f "$source" ] || ! [ -x "$source" ]
   then
-    echo "Error: source of copy_bin is not an executable file." >&2
+    echo "Error: source of copy_bin is not an executable file. ($source)" >&2
     return 1
   fi
   local target=$2
@@ -32,7 +22,7 @@ copy_bin() {
     target=$target/$(basename "$source")
   elif [ -e "$target" ]
   then
-    echo "Error: target of copy_bin already exists." >&2
+    echo "Error: target of copy_bin already exists. ($target)" >&2
     return 1
   fi
   cat > "$target" <<EOH

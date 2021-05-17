@@ -3,7 +3,7 @@ if ! command -v python3 &> /dev/null; then
 (Debian / Ubuntu: install package 'python3')")"
     false
 fi
-if ! [ -x "$GSH_MISSIONS_BIN/genStall.py" ]; then
+if ! [ -x "$GSH_MISSIONS_SBIN/genStall.py" ]; then
     echo "$(eval_gettext "The script 'genStall.py' is necessary for mission \$MISSION_NAME.
 Make sure the corresponding mission is included.")"
     false
