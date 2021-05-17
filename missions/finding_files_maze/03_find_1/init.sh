@@ -9,9 +9,9 @@ rm -rf "$maze"/?*
 mkdir -p "$maze"
 if ! command -v python3 &> /dev/null
 then
-    d=$("$GSH_MISSIONS_BIN"/maze1.sh "$maze" 10 2)
+    d=$("$GSH_MISSIONS_SBIN"/maze1.sh "$maze" 10 2)
 else
-    d=$("$GSH_MISSIONS_BIN"/maze1.py "$maze" 3 10 2)
+    d=$("$GSH_MISSIONS_SBIN"/maze1.py "$maze" 3 10 2)
 fi
 
 d1=$(echo "$d" | sed -n '1p;1q')

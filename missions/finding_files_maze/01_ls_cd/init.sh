@@ -10,9 +10,9 @@ mkdir -p "$maze"
 
 if ! command -v python3 &> /dev/null
 then
-    d=$("$GSH_MISSIONS_BIN"/maze1.sh "$maze" 2 1)
+    d=$("$GSH_MISSIONS_SBIN"/maze1.sh "$maze" 2 1)
 else
-    d=$("$GSH_MISSIONS_BIN"/maze1.py "$maze" 3 2 1)
+    d=$("$GSH_MISSIONS_SBIN"/maze1.py "$maze" 3 2 1)
 fi
 
 echo "$(CHECKSUM "$d")" > "$maze/$d/$(gettext "copper_coin")"
