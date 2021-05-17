@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 box=$1
 filename=$2

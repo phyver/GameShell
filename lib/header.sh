@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ -z "$BASH_SOURCE" ] || ! [ -f "$BASH_SOURCE" ]
 then
