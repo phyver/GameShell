@@ -27,7 +27,7 @@ Playing GameShell, standard commands
 Playing GameShell involves very few commands specific to GameShell. They are
 
 * `gsh goal`: displays the current mission's goal. If the goal doesn't fit on
-  the screen, it is paginated with `more` command.
+  the screen, it is paginated with the `less` or `more` command.
   If `python3` is installed, an ASCII-art box is added around the goal.
 
 * `gsh check`: checks if the current mission is completed. If so, a
@@ -38,6 +38,7 @@ Playing GameShell involves very few commands specific to GameShell. They are
 * `gsh reset`: if the player messed up the mission by removing an important
   file, this command will try to reset the mission, without checking for
   completion first.
+  In rare cases, `gsh hardreset` might be necessary.
 
 * `gsh help`: displays a small message with this very information.
 
@@ -94,7 +95,7 @@ The script `bin/archive.sh` is used to create an executable archive to
 distribute a (customized) version of GameShell.
 
 By default, it creates an archive with all the missions listed in the
-`missions/index.txt` file and with all the translations available.
+`missions/index.txt` file and with all the available translations.
 
 You can customize the archive with the following options
 
@@ -105,7 +106,7 @@ You can customize the archive with the following options
   classroom as it makes it easier to link a game to the corresponding student.
   (The player can run the archive in anonymous mode with the `-A` option.)
 * `-p PASSWORD`: you can choose the admin password for the archive. This is
-  also useful in the classroom as we might now want the students to learn of
+  also useful in the classroom as we might not want the students to learn of
   this password. :)
 * `-a`: keep the automatic scripts. Some missions come with a script that
   automagically completes the missions. By default, those scripts are **not**
