@@ -18,6 +18,9 @@ do
     tail -n+"$NB_LINES" "$FILENAME" > "${FILENAME%.*}.tgz"
     echo "Archive saved in ${FILENAME%.*}.tgz"
     exit 0
+  elif [ "$arg" = "-K" ]
+  then
+    KEEP_DIR="true"
   fi
 done
 
@@ -45,7 +48,12 @@ cat "$TMP_DIR/$ROOT_DIR/lib/header.sh" "$TMP_DIR/$ROOT_DIR.tgz" > "$FILENAME"
 chmod +x "$FILENAME"
 
 chmod -R 777 "$TMP_DIR"
-rm -rf "$TMP_DIR"
+if [ "$KEEP_DIR" = "true" ]
+then
+  rm -f "$TMP_DIR/$ROOT_DIR.tgz"
+else
+  rm -rf "$TMP_DIR"
+fi
 
 exit 0
 
