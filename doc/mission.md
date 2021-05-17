@@ -24,8 +24,8 @@ GameShell files are organized in several directories. The important ones when
 creating missions are the following:
 
 * `$GSH_HOME` contains the root of GameShell's "world", ie the file
-  hierarchy where the player is expected to move around. It is created empty,
-  and the missions will populate it.
+  hierarchy where the player is expected to move around. It is initialy empty,
+  and the missions populate it.
   Even though this is also the `HOME` directory of the player, using
   `$GSH_HOME` is preferred over other abbreviations like `$HOME` or `~`.
 
@@ -42,12 +42,8 @@ A mission is simply a directory with a set of files. This directory must be
 somewhere under [`$GSH_ROOT/missions/`](../missions), typically inside
 [`$GSH_ROOT/missions/contrib/`](../missions/contrib).
 
-The directory is expected to have a name of the form `NB_NAME`, where `NB` is
-number and `NAME` is a mission name (typically referring to the commands used
-during the mission).
-
-A mission will have the following structure, with most of these
-files being optional:
+A mission has the following structure, with most of the files being
+optional:
 
     $GSH_ROOT/missions/NB_NAME
     ├── auto.sh
@@ -63,6 +59,9 @@ files being optional:
     │   ├── ...
     │   └── ...
     ├── init.sh                     ALMOST REQUIRED
+    ├── sbin
+    │   ├── ...
+    │   └── ...
     ├── static.sh                   ALMOST REQUIRED
     ├── test.sh
     ├── treasure.sh
@@ -97,7 +96,7 @@ It is first sourced when initializing a new game, and its typical use is
 creating the "world map". A mission taking place in the castle's cellar would
 use
 
-    mkdir -p $GSH_HOME/Castle/Cellar
+    mkdir -p "$GSH_HOME/Castle/Cellar"
 
 and would thus make sure the cellar exists when the game is started, even
 though the first mission might take place somewhere else.
@@ -109,8 +108,8 @@ depend on them being created by another mission.
 Because of that, sourcing `static.sh` shouldn't provoke an error if a place /
 object already exists.
 
-To avoid potential problem if a player removed part of the world, this file is
-also sourced whenever the corresponding missions starts.
+To avoid potential problems if a player removed part of the world, this file is
+also sourced whenever the corresponding missions is started.
 
 This file should always use absolute path by using `$GSH_HOME`. It can also
 use the directory `$MISSION_DIR` that points to the mission's directory. This
@@ -151,7 +150,7 @@ They usually follow the following pattern:
     cd PLACE
       Move to the given place, if accessible from you current location.
 
-Meta-variables in commands should be in UPPERCASE.
+For uniformity, meta-variables in commands should be in UPPERCASE.
 
 If you require a "dynamic" goal, for example because it contains some
 randomized data, you can replace `goal.txt` by `goal.sh`, which will be
@@ -196,9 +195,9 @@ sourced when the player runs `gsh check` to validate (or not) the current
 mission.
 
 Since it is sourced (for uniformity with the other scripts), it requires some
-care. It must be terminated by a command returning 0 (typically `true`) in
-case of success, and by a command returning 1 (typically `false`) in case of
-failure. In case of failure an explanation message is expected.
+care. It must end with a command returning 0 (typically `true`) in case of
+success, and by a command returning 1 (typically `false`) in case of failure.
+In case of failure an explanation message is expected.
 
 Whenever checking is even slightly complex, the script `check.sh` looks like
 
@@ -253,7 +252,7 @@ They will be available throughout the game.
 
 ### `deps.sh` (optional)
 
-This is sourced when the mission is started. if the last return value is
+This is sourced when the mission is started. If the last return value is
 `false` (anything different from `0`), the mission is cancelled.
 
 This is typically used to check that the dependencies for the mission are met
@@ -287,10 +286,10 @@ generate a dynamic message. If it exists, `treasure-msg.sh` is sourced when
 the mission is successfully completed.
 
 
-### `bin/` (optional)
+### `sbin/` (optional)
 
 The files contained in this directory will be "copied" to the directory
-`$LOCAL_BIN` to be made available to all missions. (The directory is not
+`$LOCAL_SBIN` to be made available to all missions. (The directory is not
 in the global `PATH`, so those files are _not_ directly available to the
 player.) This is particularly useful for "dummy" missions.
 
