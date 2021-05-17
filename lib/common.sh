@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 TEXTDOMAINDIR="$GSH_ROOT/locale"
 TEXTDOMAIN="gsh"
