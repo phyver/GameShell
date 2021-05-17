@@ -17,3 +17,6 @@ options :
   -n      mode noir et blanc : n'utilise pas les séquences ANSI
   -X      extrait juste l'archive tgz (disponible seulement quand
           Gameshell est lancé depuis une archive exécutable)
+  -K      ne supprime pas le répertoire temporaire de GameShell
+          (disponible seulement quand Gameshell est lancé depuis une
+          archive exécutable)

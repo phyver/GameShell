@@ -14,5 +14,8 @@ options:
 
   -q      quiet: don't show message at the start of each mission
   -n      black and white: don't use ANSI escape codes for color
-  -X      only extract tgz archive (available when GameShell is run from
-          an executable archive)
+  -X      only extract tgz archive (only available when GameShell is run
+          from an executable archive)
+  -K      do not remove GameShell temporary directory (only available
+          when GameShell is run from an executable archive)
+
