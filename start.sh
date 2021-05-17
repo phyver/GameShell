@@ -254,6 +254,17 @@ Do you want to remove it and start a new game? [y/N]') " r
   echo "GSH_UID=$GSH_UID" >> "$PASSPORT"
   echo "$GSH_UID" > "$GSH_CONFIG/uid"
 
+  # save system config, in case of problems
+  echo "=========================" >> "$GSH_CONFIG/system"
+  echo "OSTYPE=$OSTYPE" >> "$GSH_CONFIG/system"
+  echo "=========================" >> "$GSH_CONFIG/system"
+  echo "bash --version" >> "$GSH_CONFIG/system"
+  bash --version | head -n1 &>> "$GSH_CONFIG/system"
+  echo "=========================" >> "$GSH_CONFIG/system"
+  echo "uname -a" >> "$GSH_CONFIG/system"
+  uname -a >> "$GSH_CONFIG/system"
+  echo "=========================" >> "$GSH_CONFIG/system"
+
 
   # Clear the screen.
   [ "$GSH_MODE" = "DEBUG" ] || clear
