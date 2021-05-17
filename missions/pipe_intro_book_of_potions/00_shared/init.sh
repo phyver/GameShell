@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Install the book for the mission.
-bash "$GSH_MISSIONS_BIN/install_potion_book.sh" book "$(eval_gettext '$GSH_HOME/Mountain/Cave')/"
+bash "$GSH_MISSIONS_SBIN/install_potion_book.sh" book "$(eval_gettext '$GSH_HOME/Mountain/Cave')/"
 
 # Install a copy for later checks. TODO: only do that in the check file?
-bash "$GSH_MISSIONS_BIN/install_potion_book.sh" book "$GSH_VAR/book_of_potions"
+bash "$GSH_MISSIONS_SBIN/install_potion_book.sh" book "$GSH_VAR/book_of_potions"
 
 # put Servillus in the cave
 rm -f "$(eval_gettext '$GSH_HOME/Mountain/Cave')/$(gettext "cauldron")"

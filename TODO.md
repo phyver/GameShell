@@ -5,11 +5,9 @@ TODO NOW
 --------
 
   - [ ] doc
-  - [ ] remove `$GSH_MISSIONS_BIN` directory, or don't copy `$MISSION_DIR/bin`
-        files automatically?
   - [ ] clean progress messages in debug mode during initialization
-
   - [ ] finding_files, grep -Z mission 35
+
 
   - [x] for processes in processes group, the shebang needs to be changed
         depending on the path to the interpreter

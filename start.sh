@@ -143,6 +143,7 @@ init_gsh() {
   export GSH_VAR="$GSH_ROOT/.var"
   export GSH_BASHRC="$GSH_ROOT/.bashrc"
   export GSH_MISSIONS_BIN="$GSH_ROOT/.bin"
+  export GSH_MISSIONS_SBIN="$GSH_ROOT/.sbin"
 
   ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
 
@@ -198,6 +199,7 @@ Do you want to remove it and start a new game? [y/N]') " r
   rm -rf "$GSH_VAR"
   rm -rf "$GSH_BASHRC"
   rm -rf "$GSH_MISSIONS_BIN"
+  rm -rf "$GSH_MISSIONS_SBIN"
 
   # recreate them
   mkdir -p "$GSH_HOME"
@@ -217,6 +219,7 @@ Do you want to remove it and start a new game? [y/N]') " r
   [ -n "$ADMIN_HASH" ] && echo "$ADMIN_HASH" > "$GSH_CONFIG/admin_hash"
 
   mkdir -p "$GSH_MISSIONS_BIN"
+  mkdir -p "$GSH_MISSIONS_SBIN"
 
   mkdir -p "$GSH_VAR"
 
@@ -323,23 +326,19 @@ Do you want to remove it and start a new game? [y/N]') " r
     fi
 
     # Setting up the binaries
+    if [ -d "$MISSION_DIR/sbin" ]
+    then
+      shopt -s nullglob
+      for BIN_FILE in "$MISSION_DIR"/sbin/*; do
+        [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_MISSIONS_SBIN"
+      done
+      shopt -u nullglob
+    fi
     if [ -d "$MISSION_DIR/bin" ]
     then
       shopt -s nullglob
       for BIN_FILE in "$MISSION_DIR"/bin/*; do
-        if ! [ -f "$BIN_FILE" ] || ! [ -x "$BIN_FILE" ]
-        then
-          continue
-        fi
-        BIN_NAME=$(basename "$BIN_FILE")
-        cat > "$GSH_MISSIONS_BIN/$BIN_NAME" <<EOH
-#!/bin/bash
-export MISSION_DIR=$MISSION_DIR
-export TEXTDOMAIN=$DOMAIN
-exec $BIN_FILE "\$@"
-EOH
-        chmod +x "$GSH_MISSIONS_BIN/$BIN_NAME"
-        unset BIN_NAME
+        [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_MISSIONS_BIN"
       done
       shopt -u nullglob
     fi
