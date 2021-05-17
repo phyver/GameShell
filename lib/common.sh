@@ -158,9 +158,16 @@ admin_mode() {
 
 
 # this function is used to source a mission file with the corresponding
-# TEXTDOMAIN value. The value of TEXTDOMAIN is saved and restored after.
-# Also, in DEBUG mode, is compares the environment before / after to
-# make it easier to detect variables that haven't been unset.
+# MISSION_DIR and TEXTDOMAIN values. Since those values are derived from the
+# directory containing the file, **the file MUST be in the root directory of
+# the mission**.
+# The current values of MISSION_DIR and TEXTDOMAIN are saved and restored
+# after.
+# Also, in DEBUG mode, is compares the environment before / after to make it
+# easier to detect variables that haven't been unset.
+# NOTE: MISSION_DIR and TEXTDOMAIN refer to the physical location (symbolic
+# links are resolved), while MISSION_NAME refers to the logical location of the
+# file.
 mission_source() {
   local FILENAME=$1
   # if we are not running in DEBUG mode, just source the file
@@ -169,9 +176,9 @@ mission_source() {
     local _MISSION_DIR=$MISSION_DIR
     export MISSION_DIR=$(dirname "$(REALPATH "$FILENAME")")
     local _TEXTDOMAIN=$TEXTDOMAIN
-    export TEXTDOMAIN="$(textdomainname "$MISSION_DIR")"
+    export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")
     local _MISSION_NAME=$MISSION_NAME
-    export MISSION_NAME="$(basename "$MISSION_DIR")"
+    export MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
     source "$FILENAME"
     local exit_status=$?
     export TEXTDOMAIN=$_TEXTDOMAIN
@@ -195,9 +202,9 @@ mission_source() {
   local _MISSION_DIR=$MISSION_DIR
   export MISSION_DIR=$(dirname "$(REALPATH "$FILENAME")")
   _TEXTDOMAIN=$TEXTDOMAIN
-  export TEXTDOMAIN="$(textdomainname "$MISSION_DIR")"
+  export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")
   _MISSION_NAME=$MISSION_NAME
-  export MISSION_NAME="$(basename "$MISSION_DIR")"
+  export MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
   source "$FILENAME"
   exit_status=$?
   export TEXTDOMAIN=$_TEXTDOMAIN
