@@ -5,7 +5,12 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 
 #, sh-format
 msgid   "$GSH_HOME/Forest/Hut/Chest"
-msgstr  ""
+msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
+
+# path for bashrc containing the explanations
+#, sh-format
+msgid   "$MISSION_DIR/bashrc/en.sh"
+msgstr  "$MISSION_DIR/bashrc/fr.sh"
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
@@ -14,10 +19,6 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 # path for the text file containing the treasure message
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
-
-# path for bashrc containing the explanations
-msgid   "$MISSION_DIR/bashrc/en.sh"
-msgstr  "$MISSION_DIR/bashrc/fr.sh"
 
 #, sh-format
 msgid   "It seems you alias doesn't refer to the appropriate file ($FILE_NAME).\n"

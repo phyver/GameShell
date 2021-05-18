@@ -15,12 +15,6 @@ msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 msgid   "Some spells ($NB_SPELLS) are still running!"
 msgstr  "Des sortilèges ($NB_SPELLS) sont toujours en fonctionnement !"
 
-#, sh-format
-msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'psproc')"
-msgstr  "La commande 'ps' est nécessaire pour la mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: installez le paquet 'psproc')"
-
 msgid   "You haven't tried using the standard TERM signal on the spell."
 msgstr  "Vous n'avez pas testé le signal TERM sur le sortilège."
 

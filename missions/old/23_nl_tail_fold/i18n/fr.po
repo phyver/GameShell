@@ -27,7 +27,7 @@ msgid   "You haven't used any redirection '|' or the given commands!"
 msgstr  "Vous n'avez pas utilisé de redirection '|' ou les commandes données !"
 
 msgid   "You haven't used the operator '|'!"
-msgstr  ""
+msgstr  "Vous n'avez pas utilisé l'opérateur '|' !"
 
 msgid   "Your previous command doesn't give the expected result..."
 msgstr  "Votre commande précédente ne donne pas le résultat attendu..."

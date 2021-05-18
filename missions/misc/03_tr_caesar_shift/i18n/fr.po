@@ -58,6 +58,3 @@ msgstr  "message_secret"
 
 msgid   "secret_recipe"
 msgstr  "recette_secrete"
-
-#~ msgid        "$GSH_HOME/Castle/Main_building/Library/"
-#~ msgstr       "$GSH_HOME/Chateau/Batiment_principal/Bibliotheque/"

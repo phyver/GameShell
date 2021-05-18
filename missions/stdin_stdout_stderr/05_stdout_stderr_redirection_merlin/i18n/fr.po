@@ -3,6 +3,10 @@ msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
+#, sh-format
+msgid   "$GSH_HOME/Castle/Observatory"
+msgstr  "$GSH_HOME/Chateau/Observatoire"
+
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  "$MISSION_DIR/goal/fr.txt"
@@ -11,33 +15,21 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
-#: auto.sh:1 init.sh:3 init.sh:17 init.sh:18 static.sh:1 static.sh:2
-#, sh-format
-msgid   "$GSH_HOME/Castle/Observatory"
-msgstr  "$GSH_HOME/Chateau/Observatoire"
-
-#: check.sh:7
-msgid   "What is the secret key?"
-msgstr  "Quelle est la clé secrête ?"
-
-#: check.sh:11
-#, fuzzy
-msgid   "That's not the correct key!"
-msgstr  "Quelle est la clé secrête ?"
-
-#: check.sh:18
-msgid   "That's correct, but you need to use a redirection to complete this mission!"
-msgstr  "C'est exact, mais vous devez utiliser une redirection pour réussir cette mission !"
-
-#: merlin.sh:10
 #, sh-format
 msgid   "Error: $CMD takes no argument."
 msgstr  "Erreur : $CMD ne prend pas d'argument."
 
-#: merlin.sh:14
 msgid   "THESECRETKEYISONSTDERR"
 msgstr  "LACLESECRETEESTSURSTDERR"
 
-#: static.sh:2
+msgid   "That's correct, but you need to use a redirection to complete this mission!"
+msgstr  "C'est exact, mais vous devez utiliser une redirection pour réussir cette mission !"
+
+msgid   "That's not the correct key!"
+msgstr  "Ce n'est pas la clé secrête !"
+
+msgid   "What is the secret key?"
+msgstr  "Quelle est la clé secrête ?"
+
 msgid   "star_chart"
 msgstr  "carte_du_ciel"

@@ -4,12 +4,12 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid   "$GSH_HOME/Garden"
-msgstr  "$GSH_HOME/Chateau/Cave"
-
-#, sh-format
 msgid   "$GSH_HOME/Forest/Hut/Chest"
 msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden"
+msgstr  "$GSH_HOME/Chateau/Cave"
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
