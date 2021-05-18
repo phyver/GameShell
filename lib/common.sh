@@ -254,6 +254,21 @@ mission_source() {
   return $exit_status
 }
 
+# display some info about the system
+systemconfig() {
+  echo "========================="
+  echo "OSTYPE=$OSTYPE"
+  echo "========================="
+  echo "uname -a"
+  uname -a
+  echo "========================="
+  echo "bash --version"
+  bash --version | head -n1
+  echo "========================="
+  echo "awk --version"
+  (awk -Wversion 2>/dev/null || awk --version) | head -n1
+  echo "========================="
+}
 
 # parse a single mission
 parse_mission() {

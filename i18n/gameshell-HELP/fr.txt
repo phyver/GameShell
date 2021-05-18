@@ -51,6 +51,9 @@ Commandes propres a GameShell
   gsh skip                              (ADMIN)
     abandonne la mission en cours et passe à la suivante
 
+  gsh systemconfig
+    affiche la configuration du système
+
   gsh test
     lance le script de test de la mission en cours, s'il existe
 
