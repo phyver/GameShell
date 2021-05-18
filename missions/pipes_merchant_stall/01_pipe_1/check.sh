@@ -2,23 +2,21 @@
 
 y=$(cat "$GSH_VAR/amountKing")
 read -erp "$(gettext "How much does the king owe?") " d
+NB_CMD=$(cat "$GSH_VAR/nb_commands")
 
 x=$(CHECKSUM "$d")
 if [ "$x" = "$y" ]
 then
     if [ "$NB_CMD" -le 3 ] && [ "$x" = "$y" ]
     then
-        PROMPT_COMMAND=$OLD_PROMPT_COMMAND
-        unset OLD_PROMPT_COMMAND NB_CMD y d x
+        unset y d x NB_CMD
         true
     else
-        PROMPT_COMMAND=$OLD_PROMPT_COMMAND
         echo "$(eval_gettext "That's the right answer, but you used \$NB_CMD commands!")"
-        unset OLD_PROMPT_COMMAND NB_CMD y d x
+        unset y d x NB_CMD
         false
     fi
 else
-    PROMPT_COMMAND=$OLD_PROMPT_COMMAND
-    unset OLD_PROMPT_COMMAND NB_CMD y d x
+    unset y d x NB_CMD
     false
 fi
