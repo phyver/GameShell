@@ -1,0 +1,30 @@
+#, fuzzy
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  ""
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+#, sh-format
+msgid   "Some bats have been modified!"
+msgstr  ""
+
+#, sh-format
+msgid   "There still are some spiders ($NB_SPIDERS) in the cellar!"
+msgstr  ""
+
+msgid   "bat"
+msgstr  ""
+
+msgid   "spider"
+msgstr  ""
