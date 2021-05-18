@@ -529,7 +529,7 @@ _gsh_assert_check() {
     [ -n "$msg" ] && echo "$msg"
   fi
 
-  export GSH_LAST_ACTION="assert_check"
+  export GSH_LAST_ACTION="assert"
   _gsh_clean "$MISSION_NB"
   _gsh_start -quiet "$MISSION_NB"
 }
@@ -633,7 +633,7 @@ gsh() {
       _gsh_HELP
       ;;
     "r" | "re" | "res" | "rese" | "reset")
-      export GSH_LAST_ACTION='check_reset'
+      export GSH_LAST_ACTION='reset'
       _gsh_clean
       _gsh_reset
       ;;
@@ -662,7 +662,7 @@ gsh() {
       _gsh_auto
       ;;
     "hardreset")
-      export GSH_LAST_ACTION='check_reset'
+      export GSH_LAST_ACTION='hardreset'
       _gsh_clean
       _gsh_hard_reset
       ;;
@@ -678,7 +678,7 @@ gsh() {
         return 1
       fi
 
-      export GSH_LAST_ACTION='check_goto'
+      export GSH_LAST_ACTION='goto'
       _gsh_clean
       _gsh_start "$@"
       ;;
