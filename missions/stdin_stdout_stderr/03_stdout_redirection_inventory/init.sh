@@ -1,24 +1,28 @@
 #!/bin/bash
 
-office="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
-find "$office" -type f -name "$(gettext "grimoire")_*" -print0 | xargs -0 rm -f
+_mission_init() {
+  local office="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
+  find "$office" -type f -name "$(gettext "grimoire")_*" -print0 | xargs -0 rm -f
 
-for i in $(seq 100)
-do
-    file="$office/$(gettext "grimoire")_$(CHECKSUM $RANDOM)"
+  local i
+  for i in $(seq 100)
+  do
+    local file="$office/$(gettext "grimoire")_$(CHECKSUM $RANDOM)"
     random_string 100 > "$file"
 
     if [ $(( RANDOM % 2 )) -eq 0 ]
     then
-        chmod -r "$file"
+      chmod -r "$file"
     fi
-    [ $((i%5)) -eq 0 ] && echo -n "."
-done
-echo
+    [ $((i%3)) -eq 0 ] && echo -n "."
+  done
+  echo
 
-bash <<EOS
-  cd $office
-  command ls $(gettext "grimoire")_* | sort > "$GSH_VAR/inventory_grimoires"
-EOS
+  {
+    cd $office
+    command ls $(gettext "grimoire")_* | sort > "$GSH_VAR/inventory_grimoires"
+  }
 
-unset i file office
+}
+
+_mission_init | progress_bar
