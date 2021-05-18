@@ -197,6 +197,20 @@ mission_source() {
   local _MISSION_NAME=""
   local MISSION_NAME=""
   local exit_status=""
+  # exclude the function corresponding to the file name:
+  #   static.sh => _mission_static
+  #   check.sh => _mission_check
+  #   etc.
+  local EXCLUDE=$(basename "$FILENAME")
+  case "$EXCLUDE" in
+    check.sh | clean.sh | deps.sh | init.sh | static.sh )
+      EXCLUDE=_mission_${EXCLUDE%.*}
+      ;;
+    *)
+      EXCLUDE='^\s*$'
+      ;;
+  esac
+
   # otherwise, record the environment (variables, functions and aliases)
   # before and after to echo a message when there are differences
   compgen -v | sort > "$TEMP"/before-V
@@ -214,9 +228,7 @@ mission_source() {
   export MISSION_NAME=$_MISSION_NAME
   export MISSION_DIR=$_MISSION_DIR
   compgen -v | sort > "$TEMP"/after-V
-  # FIXME: not a very nice way to ignore _mission_check & Co. (they should
-  # only be ignored when sourcing the corresponding file)
-  compgen -A function | sed "/_mission_static\|_mission_check\|_mission_init\|_mission_deps\|_mission_clean/d" | sort > "$TEMP"/after-F
+  compgen -A function | sed "/$EXCLUDE/d" | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
 
   local msg="DEBUG: environment modifications while sourcing .../${FILENAME#$GSH_ROOT/}"
