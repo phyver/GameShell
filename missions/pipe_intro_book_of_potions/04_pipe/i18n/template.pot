@@ -15,10 +15,6 @@ msgstr  ""
 msgid   "Book_of_potions"
 msgstr  ""
 
-#, sh-format
-msgid   "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
-msgstr  ""
-
 msgid   "You altered the book..."
 msgstr  ""
 

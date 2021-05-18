@@ -15,17 +15,12 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "Book_of_potions"
 msgstr  "Livre_de_potions"
 
-#, sh-format
-msgid   "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
-msgstr  "La mission factice \"pipe_basics/00_shared\" est nécessaire pour $MISSION_NAME."
-
 msgid   "You altered the book..."
 msgstr  "Vous avez modifié le livre..."
 
 msgid   "You are not in the cave with Servillus!"
 msgstr  "Vous n'êtes pas dans la cave avec Servillus !"
 
-#, fuzzy
 msgid   "You have not used a combination of 'head' and 'tail'!"
 msgstr  "Vous n'avez pas utilisé une combinaison de 'head' et 'tail' !"
 

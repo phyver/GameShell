@@ -24,3 +24,6 @@ msgstr  "bucket"
 
 msgid   "flowers"
 msgstr  "flowers"
+
+msgid   "wheelbarrow"
+msgstr  "wheelbarrow"

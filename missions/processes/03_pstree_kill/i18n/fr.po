@@ -24,20 +24,11 @@ msgstr  "Est-ce que vous avez tué la fée ?"
 msgid   "Did you kill the imp?"
 msgstr  "Est-ce que vous avez tué le lutin ?"
 
+msgid   "Did you melt some of the snowflakes?"
+msgstr  "Est-ce que vous avez fait fondre des flocons ?"
+
 msgid   "Did you remove some of the fairy's spells?"
 msgstr  "Est-ce que vous avez supprimé un sortilège de la fée ?"
-
-#, sh-format
-msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'psproc')"
-msgstr  "La commande 'ps' est nécessaire pour la mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: installez le paquet 'psproc')"
-
-#, sh-format
-msgid   "The command 'pstree' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'psmisc')"
-msgstr  "La commande 'pstree' est nécessaire pour la mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: installez le paquet 'psmisc')"
 
 msgid   "There still is some coal in the cellar!"
 msgstr  "Il reste des morceaux de charbon dans la cave !"

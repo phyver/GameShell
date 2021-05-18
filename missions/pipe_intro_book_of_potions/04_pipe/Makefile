@@ -1,7 +1,7 @@
 LANG=$(wildcard i18n/*.po)
 LANG:=$(filter-out i18n/en.po, $(LANG))
 SH_FILES=$(wildcard *.sh)
-SH_FILES:=$(filter-out init.sh static.sh, $(SH_FILES))
+SH_FILES:=$(filter-out clean.sh deps.sh init.sh static.sh, $(SH_FILES))
 OTHER_FILES=
 
 SORT=--sort-output
