@@ -1,7 +1,7 @@
 LANG=$(wildcard i18n/*.po)
 LANG:=$(filter-out i18n/en.po, $(LANG))
 SH_FILES=$(wildcard *.sh)
-OTHER_FILES=bin/merlin.sh
+OTHER_FILES=
 
 SORT=--sort-output
 OPTIONS=--indent --no-wrap --no-location
