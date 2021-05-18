@@ -157,13 +157,13 @@ _gsh_index() {
   local MISSION_NB="1"
   local MISSION COLOR STATUS LEAD
 
-  local line
-  while read line
+  local MISSION_NAME
+  while read MISSION_NAME
   do
-    if echo $line | grep -q '^\s*$'
+    if echo $MISSION_NAME | grep -q '^\s*$'
     then
       continue
-    elif echo $line | grep -q '^\s*[#!]'
+    elif echo $MISSION_NAME | grep -q '^\s*[#!]'
     then
       continue
     fi
@@ -189,7 +189,6 @@ _gsh_index() {
       STATUS=""
     fi
 
-    MISSION=$(echo "$line" | sed -e 's/[[:blank:]]*[0-9][0-9]*_//')
     LEAD="   "
     if [ "$CUR_MISSION" -eq "$MISSION_NB" ]
     then
@@ -197,7 +196,7 @@ _gsh_index() {
     fi
 
     printf "%s%2d   " "$LEAD" "$MISSION_NB"
-    color_echo "$COLOR" "$MISSION$STATUS"
+    color_echo "$COLOR" "$MISSION_NAME$STATUS"
 
     MISSION_NB="$((MISSION_NB + 1))"
   done < "$GSH_CONFIG/index.txt"
