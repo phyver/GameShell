@@ -7,7 +7,7 @@ unpaid items.
 Remark
 ------
 
-You are only allowed a single command besides ``gsh check``.
+You are only allowed a single command.
 
 You can always reset the counter with `gsh reset`, but the whole 
 stall will be re-generated.

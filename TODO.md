@@ -64,13 +64,13 @@ Existing missions
 TODO NOW
 --------
 
-  - [ ] `merchant_stall/pipe_2`: the prompt is not reset correctly
-  - [ ] do not count `gsh` commands in `pipes_merchant_stall/pipe_1`
   - [ ] in mission `misc/tr_caesar_shift`, make the chest appear in Merlin's
         office. Add a few thinks in the chest as well.
 
   - [ ] check all group with shared data have appropriate `deps.sh`
 
+  - [x] `merchant_stall/pipe_2`: the prompt is not reset correctly
+  - [x] do not count `gsh` commands in `pipes_merchant_stall/pipe_1`
   - [x] make sure there are at least a few grimoires with `pq` in stdin_stdout_stderr/stderr_dev-null_grimoires
   - [x] split mission `basic/rm_wildcard_spiders_cellar` in 2: first a lot of
     spiders to introduce wildcards, and then a lot of hidden spiders to
