@@ -5,12 +5,8 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid   "$GSH_HOME/Castle/Cellar/Merlin_s_Chest"
-msgstr  "$GSH_HOME/Castle/Cellar/Merlin_s_Chest"
-
-#, sh-format
-msgid   "$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
-msgstr  "$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe"
+msgid   "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
+msgstr  "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
 
 #, sh-format
 msgid   "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office/Drawer"
@@ -28,11 +24,17 @@ msgstr  "$MISSION_DIR/secret_recipe/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
+msgid   "Merlin_s_chest"
+msgstr  "Merlin_s_chest"
+
 msgid   "That's not the secret key."
 msgstr  "That's not the secret key."
 
 msgid   "What's the key that will make Merlin's chest to appear?"
 msgstr  "What's the key that will make Merlin's chest to appear?"
+
+msgid   "bottle"
+msgstr  "bottle"
 
 #, sh-format
 msgid   "here is my will:\n"
@@ -49,5 +51,11 @@ msgstr  "here is my will:\n"
 msgid   "ink_and_scroll"
 msgstr  "ink_and_scroll"
 
+msgid   "medal"
+msgstr  "medal"
+
 msgid   "secret_message"
 msgstr  "secret_message"
+
+msgid   "secret_recipe"
+msgstr  "secret_recipe"
