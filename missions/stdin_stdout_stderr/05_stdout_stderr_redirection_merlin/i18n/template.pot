@@ -1,29 +1,42 @@
-#, fuzzy
-msgid   ""
-msgstr  "Content-Type: text/plain; charset=UTF-8\n"
-        "Content-Transfer-Encoding: 8bit\n"
-
-#, sh-format
-msgid   "$GSH_HOME/Castle/Observatory"
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  ""
 
-# path for the text file containing the treasure message
-msgid   "$MISSION_DIR/treasure-msg/en.txt"
+#, fuzzy
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#: auto.sh:1 init.sh:3 init.sh:17 init.sh:18 static.sh:1 static.sh:2
+#, sh-format
+msgid   "$GSH_HOME/Castle/Observatory"
 msgstr  ""
 
+#: check.sh:7
+msgid   "What is the secret key?"
+msgstr  ""
+
+#: check.sh:11
+msgid   "That's not the correct key!"
+msgstr  ""
+
+#: check.sh:18
+msgid   "That's correct, but you need to use a redirection to complete this mission!"
+msgstr  ""
+
+#: merlin.sh:10
 #, sh-format
 msgid   "Error: $CMD takes no argument."
 msgstr  ""
 
+#: merlin.sh:14
 msgid   "THESECRETKEYISONSTDERR"
 msgstr  ""
 
-msgid   "What is the secret key?"
-msgstr  ""
-
+#: static.sh:2
 msgid   "star_chart"
 msgstr  ""
