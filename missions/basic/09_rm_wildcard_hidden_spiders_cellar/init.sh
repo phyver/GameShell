@@ -3,12 +3,12 @@
 _init_mission() {
     local CELLAR=$(eval_gettext "\$GSH_HOME/Castle/Cellar")
     mkdir -p "$CELLAR"
-    rm -f "$CELLAR"/*_"$(gettext "spider")"_*
+    rm -f "$CELLAR"/.??*
 
     local I
     for I in $(seq 100)
     do
-        local spider=${CELLAR}/${RANDOM}_$(gettext "spider")_$I
+        local spider=${CELLAR}/.${RANDOM}_$(gettext "spider")_$I
         sign_file "$MISSION_DIR/ascii-art/spider-$((RANDOM%3)).txt" "$spider"
         if [ "$((I%5))" -eq 0 ]
         then
@@ -16,9 +16,9 @@ _init_mission() {
         fi
     done
 
-    for I in $(seq 5)
+    for I in $(seq 10)
     do
-        local bat=${CELLAR}/${RANDOM}_$(gettext "bat")_$I
+        local bat=${CELLAR}/.${RANDOM}_$(gettext "bat")_$I
         sign_file "$MISSION_DIR/ascii-art/bat-$((RANDOM%3)).txt" "$bat"
         if [ "$((I%5))" -eq 0 ]
         then

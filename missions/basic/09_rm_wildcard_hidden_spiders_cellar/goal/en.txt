@@ -1,8 +1,9 @@
 Mission goal
 ============
 
-Get rid of all the spiders that are crawling in the cellar. Again, 
-do not do not disturb the bats.
+The spiders are getting clever: they found a way to hide.
+Get rid of all the spiders that are hiding in the cellar without 
+disturbing the bats.
 
 
 Shell patterns
@@ -27,3 +28,10 @@ then
     x*    -->  error, no matching file
     *-?   -->  file-1 Folder-1
     *-??  -->  file-14
+
+
+Remark
+------
+
+The wildcards "*" and "?" don't see hidden files, you need to add an 
+explicit dot at the start of the pattern.

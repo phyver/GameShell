@@ -1,8 +1,10 @@
 Objectif
 ========
 
-Supprimez toutes les araignées qui grouillent dans la cave, sans 
-toucher aux chauves-souris.
+Les araignées deviennent plus intelligentes : elles ont appris à se 
+cacher
+Supprimez toutes les araignées qui se cachent dans la cave, sans 
+toucher.
 
 
 Motifs shell
@@ -27,3 +29,10 @@ alors
     x*    -->  erreur, aucun fichier ne correspond
     *-?   -->  fichier-1 Repertoire-1
     *-??  -->  fichier-14
+
+
+Remarque
+--------
+
+Les jokers "*" et "?" ne voient pas les fichiers cachés, il faut 
+ajouter un point explicite au début du motif.
