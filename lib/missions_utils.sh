@@ -20,10 +20,6 @@ copy_bin() {
   if [ -d "$target" ]
   then
     target=$target/$(basename "$source")
-  elif [ -e "$target" ]
-  then
-    echo "Error: target of copy_bin already exists. ($target)" >&2
-    return 1
   fi
   cat > "$target" <<EOH
 #!/bin/bash
