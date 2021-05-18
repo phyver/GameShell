@@ -9,7 +9,7 @@ _init_grimoires () {
   for i in $(seq 100)
   do
     file="$bib/$(gettext "grimoire")_$(CHECKSUM $RANDOM)"
-    random_string 100 > "$file"
+    random_string $((100 + RANDOM%600)) > "$file"
 
     if [ $(( RANDOM % 2 )) -eq 0 ]
     then
