@@ -5,4 +5,5 @@ safe="$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')/$(gettext "Sa
 mkdir -p "$safe"
 chmod 755 "$safe"
 chmod -f 644 "$safe/$(gettext "crown")"
+rm -f "$GSH_VAR/crown"
 unset safe

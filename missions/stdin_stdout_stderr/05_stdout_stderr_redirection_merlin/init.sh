@@ -2,15 +2,7 @@
 
 mkdir -p "$(eval_gettext '$GSH_HOME/Castle/Observatory')"
 
-random_key(){
-    local ALPHA=ABCDEFGHIJKLMNOPQRSTUVWXYZ
-    local i
-    for i in $(seq $1)
-    do
-        echo -n "${ALPHA:$((RANDOM%26)):1}"
-    done
-}
-random_key 200 > "$GSH_VAR/secret_key"
+random_string 200 > "$GSH_VAR/secret_key"
 
 # certains se débrouillent pour écraser merlin ! Il faut mieux le regénérer,
 # même si le fichier existe !

@@ -22,20 +22,18 @@ DOW() {
 
 day=$(DOW "$YYYY-$MM-$DD")
 
-for i in $(seq 7)
+for I in $(seq 7)
 do
-    answer=$(DOW "2000-05-$i")
+    answer=$(DOW "2000-05-$I")
     if [ "$day" = "$answer" ]
     then
-        n_day=$i
+        n_day=$I
         break
     fi
 done
 
-unset day i answer YYYY MM DD
-
+unset day I answer YYYY MM DD
 gsh check < <(echo "$n_day")
-
 unset n_day
 unset -f DOW
 

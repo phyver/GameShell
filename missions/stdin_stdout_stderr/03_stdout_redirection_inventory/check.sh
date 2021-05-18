@@ -3,7 +3,7 @@
 _mission_check() {
     local office
     office="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
-    INVENTORY_FILE="$(gettext "inventory.txt")"
+    local INVENTORY_FILE="$(gettext "inventory.txt")"
 
     if [ ! -f "$office/$(gettext "Drawer")/$INVENTORY_FILE" ]
     then

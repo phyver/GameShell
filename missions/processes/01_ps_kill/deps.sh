@@ -1,6 +1,6 @@
 process_test() {
-  local BASH=$(command -v bash)
-  sed -e $'1c\\\n'"#!$BASH" "$MISSION_DIR/test-proc-name.sh" > "$GSH_VAR/test-proc-name"
+  local BASH_PATH=$(command -v bash)
+  sed -e $'1c\\\n'"#!$BASH_PATH" "$MISSION_DIR/test-proc-name.sh" > "$GSH_VAR/test-proc-name"
   chmod 755 "$GSH_VAR/test-proc-name"
   "$GSH_VAR/test-proc-name" &
   local PID=$!
@@ -8,6 +8,7 @@ process_test() {
   ps | grep "\b$PID\b" | grep -v bash &> /dev/null
   local r=$?
   kill -9 "$PID" &> /dev/null
+  rm -f "$GSH_VAR/test-proc-name"
   return $r
 }
 
@@ -23,3 +24,5 @@ then
     unset -f process_test
     false
 fi
+unset -f process_test
+true

@@ -347,11 +347,11 @@ Do you want to remove it and start a new game? [y/N]') " r
     # copy all the shell config files of the mission
     if [ -f "$MISSION_DIR/bashrc" ]
     then
-      FILENAME=$GSH_BASHRC/bashrc_${FULL_NB}_$(basename "$MISSION_DIR").sh
-      echo "export TEXTDOMAIN=$DOMAIN" > "$FILENAME"
-      cat "$MISSION_DIR/bashrc" >> $FILENAME
-      echo "export TEXTDOMAIN=gsh" >> "$FILENAME"
-      unset FILENAME
+      BASHRC_FILE=$GSH_BASHRC/bashrc_${FULL_NB}_$(basename "$MISSION_DIR").sh
+      echo "export TEXTDOMAIN=$DOMAIN" > "$BASHRC_FILE"
+      cat "$MISSION_DIR/bashrc" >> $BASHRC_FILE
+      echo "export TEXTDOMAIN=gsh" >> "$BASHRC_FILE"
+      unset BASHRC_FILE
     fi
 
     if [ "$GSH_MODE" = "DEBUG" ]

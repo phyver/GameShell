@@ -8,7 +8,7 @@ x=$(CHECKSUM "$d")
 
 if [ "$NB_CMD" -le 1 ] && [ "$x" == "$y" ]
 then
-    unset y x d
+    unset y x d NB_CMD
     true
 elif [ "$x" == "$y" ]
 then
