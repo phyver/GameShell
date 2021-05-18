@@ -5,6 +5,9 @@ TODO NOW
 --------
 
   - [ ] doc
+  - [ ] should a password be necessary for `gsh protect / unprotect`?
+  - [ ] should `GSH_MISSIONS_SBIN` be added to the path while sourcing mission
+        files?
 
   - [x] for processes in processes group, the shebang needs to be changed
         depending on the path to the interpreter

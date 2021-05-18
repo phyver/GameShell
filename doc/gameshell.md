@@ -5,20 +5,25 @@ GameShell user manual
 Starting GameShell
 ------------------
 
-You can either start GameShell from an executable archive (typically
+You can start GameShell from an executable archive (typically
 `GameShell.sh`) with
 
+````
     $ ./GameShell.sh
+````
 
 or from the `start.sh` script in the source-code directory
 
+````
     $ ./GameShell/start.sh
+````
 
 If for some reason those files don't the execute bit set, you can run them
 with `bash` or set the execute bit with `chmod +x ...`
 
 The default options shouldn't need changing, but if they do, use the `-h` flag
 to get a list of available options.
+
 
 
 Playing GameShell, standard commands
@@ -28,7 +33,9 @@ Playing GameShell involves very few commands specific to GameShell. They are
 
 * `gsh goal`: displays the current mission's goal. If the goal doesn't fit on
   the screen, it is paginated with the `less` or `more` command.
-  If `python3` is installed, an ASCII-art box is added around the goal.
+  An ASCII-art box is added around the goal with Python (if available) or
+  `awk`. (Depending on your `awk` version, UTF-8 characters might cause
+  mis-alignments.)
 
 * `gsh check`: checks if the current mission is completed. If so, a
   congratulation message is displayed, and the player starts the next mission.
@@ -51,7 +58,7 @@ the sequence `Control-d` for the same purpose.
 Playing GameShell, other commands
 ---------------------------------
 
-In some situations, some other commands are useful. They are described by the
+In some situations, some other commands are needed. They are described by the
 `gsh HELP` command. Here are the main ones.
 
 * `gsh skip`: it has unfortunately happened that some bug prevented a mission
@@ -72,15 +79,15 @@ In some situations, some other commands are useful. They are described by the
   for them.)
 
 * `gsh auto`: if the mission comes with an automatic script (`auto.sh`), this
-  command will call it. This script is suppose to complete the mission and
+  command will call it. This script is supposed to complete the mission and
   call `gsh check`.
   This is useful for testing purposes, but also if using `gsh skip` is not
-  sufficient. For example, the mission might ask to create a directory. `gsh
-  auto` should ensure it is created correctly.
+  sufficient. For example, if the mission's goal is to create a directory.
+  `gsh auto` would ensure it is created correctly.
   Just like `gsh skip` and `gsh goto N`, this command will first ask for a
   password.
 
-* `gsh index`: this will display the list of available missions, with there
+* `gsh index`: this will display the list of available missions, with their
   status. If you've used `skip` and `goto` a lot, this might come in handy.
 
 The other commands are either self-explanatory (`gsh welcome`) or only useful
@@ -112,8 +119,7 @@ You can customize the archive with the following options
   automagically completes the missions. By default, those scripts are **not**
   included in the archive. Use `-a` if you want to keep them.
 * `-N NAME`: if you want the archive and its directory to be called something
-  different than "GameShell", you can set the name with this option.
+  other than "GameShell", you can set the name with this option.
 * `-k`: keep the GameShell archive. The compressed `tar` archive is appended
   to a `bash` script to create the executable archive. With this option, you
-  can keep the "standard" `tar` archive as well as the executable one. (I'm
-  not sure why you would want to keep it though.)
+  can keep the "standard" `tar` archive as well as the executable one.
