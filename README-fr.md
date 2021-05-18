@@ -46,8 +46,10 @@ Debian/Ubuntu, la seule vrai dépendance (à part `bash`) pour jouer est le
 Si vous souhaitez créer vos propres missions et les traduire, il faudra
 également installer le paquet `gettext`.
 
-Il est cependant conseillé d'installer `python3` : GameShell l'utilise
-lorsqu'il est présent, et certaines missions en dépendent.
+Si disponible, `python3` est utilisé pour afficher des boites en ASCII-art
+("parchemins") autours de plusieurs messages. Sinon, `awk` est utilisé.
+Suivant votre version de `awk`, les caractères UTF-8 peuvent provoquer des
+erreurs d'alignement. Si c'est un problème, installez `python3`.
 
 Certaines missions ont des dépendances supplémentaires. Si elles ne sont pas
 satisfaites, ces missions seront simplement ignorées. Pour pouvoir lancer
@@ -61,6 +63,7 @@ suivantes
   - `tree` (paquet `tree` sous Debian/Ubuntu)
   - `cal` (paquet `bsdmainutils` sous Debian/Ubuntu)
   - `xeyes` (paquet `x11-apps` sous Debian/Ubuntu)
+  - `python3` (paquet `python3` sous Debian/Ubuntu)
 
 Sur un système Debian / Ubuntu, la commande suivante devrait garantir que vous
 pouvez lancer une partie de GameShell sans problème.
@@ -228,6 +231,14 @@ Contributeurs missions
 * Sébastien Tavenas
 * Tiemen Duvillard
 
+
+Remerciements
+-------------
+
+* Tous mes étudiants qui ont testé les toutes premières versions
+* Joan Stark, qui a créé des centaines d'ASCII-art à la fin des années 90. La
+  majorité des ASCII-art que vous rencontrerez dans GameShell lui sont dus.
+  (Les "`jgs`" que vous verrez sont ses initiales.)
 
 Licence
 -------
