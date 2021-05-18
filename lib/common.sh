@@ -71,39 +71,42 @@ color_echo() {
 parchment() {
   local file=$1
   [ -n "$file" ] && [ ! -e "$file" ] && return 1
+  local P=$2
+  [ -z "$P" ] && P=$(( 16#$(CHECKSUM "$GSH_UID:$MISSION_DIR" | cut -c 10-17) % 7 ))
+  case "$P" in
+    0) P="Parchment1";;
+    1) P="Parchment2";;
+    2) P="Parchment3";;
+    3) P="Parchment4";;
+    4) P="Parchment5";;
+    5) P="Parchment6";;
+    6) P="Parchment7";;
+    7) P="Parchment8";;
+    8) P="Parchment9";;
+  esac
+  echo
   if command -v python3 &> /dev/null
+  # if available, use the python box8.py script
   then
-    local P=$2
-    [ -z "$P" ] && P=$(( 16#$(CHECKSUM "$GSH_UID:$MISSION_DIR" | cut -c 10-17) % 7 ))
-    case "$P" in
-      0) P="Parchment1";;
-      1) P="Parchment2";;
-      2) P="Parchment3";;
-      3) P="Parchment4";;
-      4) P="Parchment5";;
-      5) P="Parchment6";;
-      6) P="Parchment7";;
-      7) P="Parchment8";;
-      8) P="Parchment9";;
-    esac
-    echo
     if [ -z "$file" ]
     then
       python3 "$GSH_BIN/box8.py" --center --box="$P"
     else
       python3 "$GSH_BIN/box8.py" --center --box="$P" < "$file"
     fi
-    echo
   else
-    echo
+  # if not, use the awk version
     if [ -z "$file" ]
     then
-      cat
+      local tempfile=$(mktemp)
+      cat > "$tempfile"
+      bash "$GSH_BIN/box.sh" "$P" "$tempfile"
+      rm -f "$tempfile"
     else
-      cat "$file"
+      bash "$GSH_BIN/box.sh" "$P" "$file"
     fi
-    echo
   fi
+  echo
 }
 
 # display a treasure message
