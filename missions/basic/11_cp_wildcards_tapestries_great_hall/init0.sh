@@ -1,1 +1,1 @@
-../09_cp_standard_great_hall/init0.sh
+../10_cp_standard_great_hall/init0.sh

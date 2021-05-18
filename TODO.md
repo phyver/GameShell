@@ -100,23 +100,11 @@ TODO NOW
 FOR LATER
 ---------
 
-  - implement a simple `box.awk` script to generate at least one parchment
-    without python3
-
   - for missions that generate many files, remove most of them in `clean.sh`
 
-  - clean.sh for GSH_CHEST mission, using GSH_ACTION
-
-  - mission 9: clean the `check.sh`
-
-  - mission 33, 34: clean python code for initialization
-
-  - mission 24, 25: Rodolphe once had mission 25 initialized in a subshell!
+  - merchant stall: clean python code for initialization
 
   - in missions re-evaluating the previous command, run it with timeout (if available).
-
-  - mission 23: too complex, split in 2 missions
-    (or wait until Rodolphe has finished the book of potions mission group)
 
   - mission 14: allow using another editor if `$EDITOR` is set
 

@@ -18,3 +18,6 @@ sed -e $'1c\\\n'"#!$BASH" "$MISSION_DIR/imp/spell.sh" >  "$GSH_VAR/imp/$(gettext
 chmod 755 "$GSH_VAR/imp/$(gettext "spell")"
 "$GSH_VAR/$(gettext "mischievous_imp")" &
 echo "$!" > "$GSH_VAR/imp.pid"
+
+
+unset BASH
