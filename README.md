@@ -41,12 +41,16 @@ Dépendencies
 
 GameShell should (??) work on any standard Linux system. On Debian/Ubuntu, the
 only dependency (besides `bash`) required to play is the package `gettext-base`.
+`awk` is also required, but should be installed by default.
 
 If you want create your own missions and translate them, you'll need the full
 `gettext` package as well.
 
-We advise you also install `python3`: GameShell uses it if available, and a
-few missions require it.
+If available, `python3` is used to display ASCII-art boxes ("parchment")
+around some messages. If not, `awk` is used instead, but depending on your
+`awk` version, UTF-8 characters might cause glitches in alignements of
+borders. If that's a problem, install `python3`.
+
 
 Some missions have additional dependencies. If they are not met, those
 missions are ignored. To run all the currently available missions, you need
@@ -59,6 +63,7 @@ the following
   - `tree` (`tree` package in Debian/Ubuntu)
   - `cal` (`bsdmainutils` package in Debian/Ubuntu)
   - `xeyes` (`x11-apps` package in Debian/Ubuntu)
+  - `python3` (`python3` package in Debian/Ubuntu)
 
 On a Debian / Ubuntu system, the following ensures you have everything you
 need to run GameShell without problems.
@@ -224,6 +229,15 @@ Missions contributors
 * Clovis Eberhart
 * Sébastien Tavenas
 * Tiemen Duvillard
+
+
+Special thanks
+--------------
+
+* All my students who discovered many bugs in the early versions
+* Joan Stark, who designed hundreds of ASCII-art pieces in the late 90'. Most
+  of the ASCII-art you encounter in GameShell are due to her. (That's the
+  meaning of the "`jgs`" initials you'll see there.)
 
 
 Licence
