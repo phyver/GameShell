@@ -614,7 +614,6 @@ _gsh_unprotect() {
 }
 
 
-
 gsh() {
   local _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="gsh"
@@ -710,6 +709,9 @@ gsh() {
       ;;
     "unprotect")
       _gsh_unprotect
+      ;;
+    "systemconfig")
+      systemconfig
       ;;
     *)
       echo "$(eval_gettext "Error: unknown gsh command '\$CMD'.
