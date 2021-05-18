@@ -174,7 +174,7 @@ admin_mode() {
 mission_source() {
   local FILENAME=$1
   # if we are not running in DEBUG mode, just source the file
-  if [ "$GSH_MODE" != "DEBUG" ] || [ -z "$GSH_VERBOSE_SOURCE" ]
+  if [ "$GSH_MODE" != "DEBUG" ] || [ -z "$GSH_VERBOSE_DEBUG" ]
   then
     local _MISSION_DIR=$MISSION_DIR
     export MISSION_DIR=$(dirname "$(REALPATH "$FILENAME")")
