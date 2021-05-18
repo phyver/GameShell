@@ -289,8 +289,8 @@ Please choose a number between 1 and \$LAST_MISSION.")" >&2
   if [ -f "$MISSION_DIR/deps.sh" ]
   then
     mission_source "$MISSION_DIR/deps.sh"
-    unset -f _mission_deps
     local exit_status=$?
+    unset -f _mission_deps
     if [ "$exit_status" -ne 0 ]
     then
       echo "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
@@ -514,8 +514,8 @@ _gsh_assert_check() {
   local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
 
   mission_source "$MISSION_DIR/check.sh"
-  unset -f _mission_check
   local exit_status=$?
+  unset -f _mission_check
 
   NB_TESTS=$((NB_TESTS + 1))
   if [ "$expected" = "true" ] && [ "$exit_status" -ne 0 ]
