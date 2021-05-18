@@ -64,10 +64,10 @@ Existing missions
 TODO NOW
 --------
 
-  - [ ] in mission `misc/tr_caesar_shift`, make the chest appear in Merlin's
-        office. Add a few thinks in the chest as well.
-
   - [ ] check all group with shared data have appropriate `deps.sh`
+
+  - [x] in mission `misc/tr_caesar_shift`, make the chest appear in Merlin's
+        office. Add a few thinks in the chest as well.
 
   - [x] `merchant_stall/pipe_2`: the prompt is not reset correctly
   - [x] do not count `gsh` commands in `pipes_merchant_stall/pipe_1`

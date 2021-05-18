@@ -5,13 +5,16 @@ read -er dcode
 
 if [ "$dcode" = "$(cat "$GSH_VAR/secret_key")" ]
 then
-    unset dcode
-    mkdir -p "$(eval_gettext '$GSH_HOME/Castle/Cellar/Merlin_s_Chest')"
-    cp "$(eval_gettext '$MISSION_DIR/secret_recipe/en.txt')" "$(eval_gettext '$GSH_HOME/Castle/Cellar/Merlin_s_Chest/secret_recipe')"
-    true
+  unset dcode
+  merlin_chest=$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')/$(gettext 'Merlin_s_chest')
+  mkdir -p "$merlin_chest"
+  cp "$(eval_gettext '$MISSION_DIR/secret_recipe/en.txt')" "$merlin_chest/$(gettext 'secret_recipe')"
+  sign_file "$MISSION_DIR/ascii-art/medal.txt"  "$merlin_chest/$(gettext 'medal')"
+  sign_file "$MISSION_DIR/ascii-art/bottle.txt"  "$merlin_chest/$(gettext 'bottle')"
+  true
 else
-    echo "$(gettext "That's not the secret key.")"
-    unset dcode
-    false
+  echo "$(gettext "That's not the secret key.")"
+  unset dcode
+  false
 fi
 
