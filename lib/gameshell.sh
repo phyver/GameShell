@@ -592,7 +592,7 @@ _gsh_help() {
 }
 
 _gsh_HELP() {
-  parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-HELP/en.txt')" Parchment2
+  parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-HELP/en.txt')" Parchment2 | PAGER
 }
 
 _gsh_protect() {
