@@ -5,8 +5,6 @@ TODO NOW
 --------
 
   - [ ] doc
-  - [ ] clean progress messages in debug mode during initialization
-
 
   - [x] for processes in processes group, the shebang needs to be changed
         depending on the path to the interpreter
@@ -39,8 +37,12 @@ FOR LATER
   - [ ] minimize number of bashism's? (not sure if it is worth trying to be
         POSIX compliant though)
 
-  - [ ] `gsh config` command to configure some options (boxes, color,
-        verbose_source, quiet, pager...)
+  - [ ] `gsh config` command to configure some options
+         - verbose option (debug only)
+         - ansi colors
+         - quiet
+         - pager
+         - no box option
 
   - [ ] `gsh reset static` command
 
@@ -63,11 +65,9 @@ Existing missions
 TODO NOW
 --------
 
-  - [ ] check all group with shared data have appropriate `deps.sh`
-
+  - [x] check all group with shared data have appropriate `deps.sh`
   - [x] in mission `misc/tr_caesar_shift`, make the chest appear in Merlin's
         office. Add a few thinks in the chest as well.
-
   - [x] `merchant_stall/pipe_2`: the prompt is not reset correctly
   - [x] do not count `gsh` commands in `pipes_merchant_stall/pipe_1`
   - [x] make sure there are at least a few grimoires with `pq` in stdin_stdout_stderr/stderr_dev-null_grimoires

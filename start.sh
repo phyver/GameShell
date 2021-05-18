@@ -37,7 +37,7 @@ do
       GSH_MODE="DEBUG"
       ;;
     v)
-      export GSH_VERBOSE_SOURCE="true"
+      export GSH_VERBOSE_DEBUG="true"
       ;;
     q)
       export GSH_QUIET_INTRO="true"
@@ -265,12 +265,14 @@ Do you want to remove it and start a new game? [y/N]') " r
 
 
   # Clear the screen.
-  [ "$GSH_MODE" = "DEBUG" ] || clear
-
-  [ "$GSH_MODE" = "DEBUG" ] && printf "Mission initialisation: "
+  if [ "$GSH_MODE" = "DEBUG" ]
+  then
+    echo -n "[MISSION INITIALISATION]"
+  else
+    clear
+  fi
 
   make_index "$@" | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
-  # make_index "$@" 2> /dev/null | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
 
   # Installing all missions.
   local MISSION_NB=1      # current mission number
@@ -292,7 +294,7 @@ Do you want to remove it and start a new game? [y/N]') " r
         fi
         ;;
       *)
-          MISSION_SUB_NB=""
+        MISSION_SUB_NB=""
         ;;
     esac
     FULL_NB=$(printf "%04d" $MISSION_NB)
@@ -354,9 +356,12 @@ Do you want to remove it and start a new game? [y/N]') " r
       unset BASHRC_FILE
     fi
 
-    if [ "$GSH_MODE" = "DEBUG" ]
+    if [ "$GSH_MODE" = "DEBUG" ] && [ "$GSH_VERBOSE_DEBUG" = true ]
     then
-      printf "."
+      printf "\n%3d -> %s" "$MISSION_NB" "${MISSION_DIR#GSH_MISSIONS/}"
+    elif [ "$GSH_MODE" = "DEBUG" ]
+    then
+      echo -n "."
     else
       progress_bar
     fi
@@ -367,14 +372,15 @@ Do you want to remove it and start a new game? [y/N]') " r
   if [ "$MISSION_NB" -eq 1 ]
   then
     echo "$(gettext "Error: no mission was found!
-Aborting")"
+    Aborting")"
     exit 1
   fi
   if [ "$GSH_MODE" = "DEBUG" ]
   then
-    echo " [DONE]"
+    [ "$GSH_VERBOSE_DEBUG" = true ] && echo
+    echo "[DONE]"
   else
-      progress_bar_finish
+    progress_bar_finish
   fi
   unset MISSION_DIR MISSION_NB
 }
