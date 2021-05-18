@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_init_mission() {
+_mission_init() {
     local CELLAR=$(eval_gettext "\$GSH_HOME/Castle/Cellar")
     mkdir -p "$CELLAR"
     rm -f "$CELLAR"/*_"$(gettext "spider")"_*
@@ -28,4 +28,4 @@ _init_mission() {
 
     find "$CELLAR" -maxdepth 1 -name "*_$(gettext "bat")_*" | sort | CHECKSUM > "$GSH_VAR/bats"
 }
-_init_mission | progress_bar
+_mission_init | progress_bar

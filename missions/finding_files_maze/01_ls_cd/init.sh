@@ -19,5 +19,3 @@ echo "$(CHECKSUM "$d")" > "$maze/$d/$(gettext "copper_coin")"
 echo "$(CHECKSUM "$d")" > "$GSH_VAR/copper_coin"
 
 unset maze d
-
-

@@ -10,6 +10,7 @@ case "$GSH_LAST_ACTION" in
         great_hall="$(eval_gettext '$GSH_HOME/Castle/Great_hall')"
         rm -f "$great_hall/*$(gettext "standard")*"
         rm -f "$GSH_CHEST"/*"$(gettext "standard")"*
+        unset great_hall
         ;;
 esac
 

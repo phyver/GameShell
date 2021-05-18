@@ -6,7 +6,6 @@ TODO NOW
 
   - [ ] doc
   - [ ] clean progress messages in debug mode during initialization
-  - [ ] finding_files, grep -Z mission 35
 
 
   - [x] for processes in processes group, the shebang needs to be changed

@@ -26,5 +26,4 @@ do
     echo "$K $(gettext "stone") $sum" > "$maze/$d1/$K"
 done
 
-unset maze
-unset -f gen_maze_sh gen_maze_py
+unset maze d1 K sum d

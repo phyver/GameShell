@@ -289,6 +289,7 @@ Please choose a number between 1 and \$LAST_MISSION.")" >&2
   if [ -f "$MISSION_DIR/deps.sh" ]
   then
     mission_source "$MISSION_DIR/deps.sh"
+    unset -f _mission_deps
     local exit_status=$?
     if [ "$exit_status" -ne 0 ]
     then
@@ -309,7 +310,9 @@ Please choose a number between 1 and \$LAST_MISSION.")" >&2
 
   # re-source static.sh, in case some important directory was removed by accident
   [ -f "$MISSION_DIR/static.sh" ] && mission_source "$MISSION_DIR/static.sh"
+  unset -f _mission_static
   [ -f "$MISSION_DIR/init.sh" ] && mission_source "$MISSION_DIR/init.sh"
+  unset -f _mission_init
 
   [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-after
 
@@ -426,11 +429,11 @@ _gsh_check() {
     if [ -f "$MISSION_DIR/treasure.sh" ]
     then
       # Record the treasure to be loaded by GameShell's bashrc.
-      FILENAME=$GSH_BASHRC/treasure_$(printf "%04d" "$MISSION_NB")_$(basename "$MISSION_DIR"/).sh
-      echo "export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")" > "$FILENAME"
-      cat "$MISSION_DIR/treasure.sh" >> $FILENAME
-      echo "export TEXTDOMAIN=gsh" >> "$FILENAME"
-      unset FILENAME
+      TREASURE_FILE=$GSH_BASHRC/treasure_$(printf "%04d" "$MISSION_NB")_$(basename "$MISSION_DIR"/).sh
+      echo "export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")" > "$TREASURE_FILE"
+      cat "$MISSION_DIR/treasure.sh" >> $TREASURE_FILE
+      echo "export TEXTDOMAIN=gsh" >> "$TREASURE_FILE"
+      unset TREASURE_FILE
 
       # Display the text message (if it exists).
       if [ -f "$MISSION_DIR/treasure-msg.sh" ]
@@ -492,6 +495,7 @@ _gsh_clean() {
   if [ -f "$MISSION_DIR/clean.sh" ]
   then
     mission_source "$MISSION_DIR/clean.sh"
+    unset -f _mission_clean
   fi
   unset GSH_LAST_ACTION
 }
@@ -510,6 +514,7 @@ _gsh_assert_check() {
   local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
 
   mission_source "$MISSION_DIR/check.sh"
+  unset -f _mission_check
   local exit_status=$?
 
   NB_TESTS=$((NB_TESTS + 1))
