@@ -64,9 +64,6 @@ Existing missions
 TODO NOW
 --------
 
-  - [ ] split mission `basic/rm_wildcard_spiders_cellar` in 2: first a couple
-        of hidden spiders, then a lot, to introduce hidden files and wildcards
-        separately
   - [ ] make sure there are at least a few grimoires with `pq` in stdin_stdout_stderr/stderr_dev-null_grimoires
   - [ ] add hint in mission
         `stdin_stdout_stderr/stdout_stderr_redirection_merlin`
@@ -77,6 +74,9 @@ TODO NOW
 
   - [ ] check all group with shared data have appropriate `deps.sh`
 
+  - [x] split mission `basic/rm_wildcard_spiders_cellar` in 2: first a lot of
+    spiders to introduce wildcards, and then a lot of hidden spiders to
+    introduce wildcards on hidden files
   - [x] put some ascii-art in different places:
           - [x] Merlin drawer?
           - [x] the observatory?
