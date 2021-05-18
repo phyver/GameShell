@@ -299,31 +299,29 @@ Please choose a number between 1 and \$LAST_MISSION.")" >&2
     fi
   fi
 
+  # attention, si l'initialisation a lieu dans un sous-shell et qu'elle
+  # définit des variables d'environnement, elles ne seront pas définies dans
+  # la session bash.
+  # je sauvegarde l'environnement avant / après l'initialisation pour
+  # afficher un message dans ce cas
+  _PWD=$(pwd)
+  [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-before
+
   # re-source static.sh, in case some important directory was removed by accident
   [ -f "$MISSION_DIR/static.sh" ] && mission_source "$MISSION_DIR/static.sh"
+  [ -f "$MISSION_DIR/init.sh" ] && mission_source "$MISSION_DIR/init.sh"
 
-  if [ -f "$MISSION_DIR/init.sh" ]
+  [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-after
+
+  if [ "$BASHPID" != $$ ]
   then
-    # attention, si l'initialisation a lieu dans un sous-shell et qu'elle
-    # définit des variables d'environnement, elles ne seront pas définies dans
-    # la session bash.
-    # je sauvegarde l'environnement avant / après l'initialisation pour
-    # afficher un message dans ce cas
-    _PWD=$(pwd)
-    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-before
-    mission_source "$MISSION_DIR/init.sh"
-    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-after
-
-    if [ "$BASHPID" != $$ ]
+    if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$GSH_VAR"/env-before "$GSH_VAR"/env-after
     then
-      if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$GSH_VAR"/env-before "$GSH_VAR"/env-after
-      then
-        echo "$(gettext "Error: this mission was initialized in a subshell.
+      echo "$(gettext "Error: this mission was initialized in a subshell.
 You should run the command
     gsh reset
 to make sure the mission is initialized properly.")" >&2
-        rm -f "$GSH_VAR"/env-{before,after}
-      fi
+      rm -f "$GSH_VAR"/env-{before,after}
     fi
   fi
 
