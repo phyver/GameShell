@@ -7,6 +7,14 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Forest"
 msgstr  "$GSH_HOME/Foret"
 
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
+
 msgid   "Chest"
 msgstr  "Coffre"
 
@@ -28,11 +36,3 @@ msgstr  "Vous n'avez pas construit de coffre dans votre hutte !"
 
 msgid   "You did not build a hut in the forest!"
 msgstr  "Vous n'avez pas construit de hutte dans la fôret !"
-
-# path for the text file containing the goal
-#~ msgid        "$MISSION_DIR/goal/en.txt"
-#~ msgstr       "$MISSION_DIR/goal/fr.txt"
-
-# path for the text file containing the goal
-#~ msgid        "$MISSION_DIR/treasure-msg/en.txt"
-#~ msgstr       "$MISSION_DIR/treasure-msg/fr.txt"

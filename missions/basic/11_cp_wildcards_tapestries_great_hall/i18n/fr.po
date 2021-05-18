@@ -24,7 +24,6 @@ msgstr  "Je voulais toutes les tapisseries !"
 msgid   "You changed the contents of the great hall!"
 msgstr  "Vous avez changé le contenu de la grande salle !"
 
-#, fuzzy
 msgid   "decorative_shield"
 msgstr  "bouclier_decoratif"
 
@@ -36,7 +35,3 @@ msgstr  "armure"
 
 msgid   "tapestry"
 msgstr  "tapisserie"
-
-# path for the text file containing the goal
-#~ msgid        "$MISSION_DIR/treasure-msg/en.txt"
-#~ msgstr       "$MISSION_DIR/treasure-msg/fr.txt"

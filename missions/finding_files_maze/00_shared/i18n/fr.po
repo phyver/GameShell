@@ -3,9 +3,9 @@ msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
-#, fuzzy, sh-format
+#, sh-format
 msgid   "$GSH_HOME/Garden/Flower_garden"
-msgstr  "$GSH_HOME/Jardin/Verger"
+msgstr  "$GSH_HOME/Jardin/Jardin_des_fleurs"
 
 #, sh-format
 msgid   "$GSH_HOME/Garden/Maze"
@@ -22,4 +22,7 @@ msgid   "bucket"
 msgstr  "seau"
 
 msgid   "flowers"
-msgstr  ""
+msgstr  "fleurs"
+
+msgid   "wheelbarrow"
+msgstr  "brouette"

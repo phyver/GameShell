@@ -9,16 +9,8 @@ msgid   "$GSH_HOME/Forest/Hut/Chest"
 msgstr  "$GSH_HOME/Forest/Hut/Chest"
 
 #, sh-format
-msgid   "$GSH_HOME/Garden/Flower_garden"
-msgstr  "$GSH_HOME/Garden/Flower_garden"
-
-#, sh-format
 msgid   "$GSH_HOME/Garden/Maze"
 msgstr  "$GSH_HOME/Garden/Maze"
-
-#, sh-format
-msgid   "$GSH_HOME/Garden/Shed"
-msgstr  "$GSH_HOME/Garden/Shed"
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
@@ -43,14 +35,8 @@ msgstr  "There are too many diamonds in the maze!"
 msgid   "There is no diamond in your chest."
 msgstr  "There is no diamond in your chest."
 
-msgid   "bucket"
-msgstr  "bucket"
-
 msgid   "diamond"
 msgstr  "diamond"
-
-msgid   "flowers"
-msgstr  "flowers"
 
 msgid   "stone"
 msgstr  "stone"

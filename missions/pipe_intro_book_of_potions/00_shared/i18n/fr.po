@@ -37,6 +37,6 @@ msgid   "cauldron"
 msgstr  "chaudron"
 
 #: deps.sh:4
-#, fuzzy, sh-format
+#, sh-format
 msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
 msgstr  "La mission factice \"$DUMMY_MISSION\" est nécessaire pour la mission $MISSION_NB ($MISSION_NAME)."

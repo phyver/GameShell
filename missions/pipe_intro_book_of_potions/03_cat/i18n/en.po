@@ -16,10 +16,6 @@ msgstr  "$MISSION_DIR/goal/en.txt"
 msgid   "Book_of_potions"
 msgstr  "Book_of_potions"
 
-#, sh-format
-msgid   "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
-msgstr  "Dummy mission \"pipe_basics/00_shared\" is required for $MISSION_NAME."
-
 msgid   "You altered the book..."
 msgstr  "You altered the book..."
 

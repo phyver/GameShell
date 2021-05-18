@@ -15,9 +15,6 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
-msgid   "Georges' son"
-msgstr  ""
-
 msgid   "How much does the king owe?"
 msgstr  ""
 
@@ -28,94 +25,5 @@ msgstr  ""
 msgid   "That's the right answer, but you used $NB_CMD commands!"
 msgstr  ""
 
-#, sh-format
-msgid   "The command 'python3' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'python3')"
-msgstr  ""
-
-msgid   "a bag flour"
-msgstr  ""
-
-msgid   "a belt"
-msgstr  ""
-
-msgid   "a blanket"
-msgstr  ""
-
-msgid   "a bottle of cider"
-msgstr  ""
-
-msgid   "a chackal"
-msgstr  ""
-
-msgid   "a chicken"
-msgstr  ""
-
-msgid   "a cow"
-msgstr  ""
-
-msgid   "a dented helmet"
-msgstr  ""
-
-msgid   "a goat"
-msgstr  ""
-
-msgid   "a horse"
-msgstr  ""
-
-msgid   "a knife"
-msgstr  ""
-
-msgid   "a leather bag"
-msgstr  ""
-
-msgid   "a leather ball"
-msgstr  ""
-
-msgid   "a pick"
-msgstr  ""
-
-msgid   "a piece of soap"
-msgstr  ""
-
-msgid   "a pin"
-msgstr  ""
-
-msgid   "a ruby"
-msgstr  ""
-
-msgid   "a shiny rock"
-msgstr  ""
-
-msgid   "a spade"
-msgstr  ""
-
-msgid   "a stool"
-msgstr  ""
-
-msgid   "a wooden spoon"
-msgstr  ""
-
-msgid   "an apple"
-msgstr  ""
-
-msgid   "an opal"
-msgstr  ""
-
-msgid   "from next town"
-msgstr  ""
-
-msgid   "the Bold"
-msgstr  ""
-
 msgid   "the King"
-msgstr  ""
-
-msgid   "the son of Martin"
-msgstr  ""
-
-msgid   "walking stick"
-msgstr  ""
-
-msgid   "{} bought {} for {} coppers{}\n"
 msgstr  ""
