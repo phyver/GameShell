@@ -1,6 +1,6 @@
 #!/bin/bash
 
-book="$GSH_VAR/additions.txt"
+book=$GSH_VAR/additions.txt
 rm -f "$book"
 questions=$GSH_VAR/arith.txt
 rm -f "$questions"
@@ -13,3 +13,4 @@ do
     echo $c >> "$book"
     echo "$a + $b = ?? |$c" >> "$questions"
 done
+unset a b c book questions

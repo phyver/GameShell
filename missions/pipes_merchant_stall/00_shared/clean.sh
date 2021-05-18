@@ -5,3 +5,4 @@ PROMPT_COMMAND=$OLD_PROMPT_COMMAND
 unset OLD_PROMPT_COMMAND NB_CMD
 unset -f _cmd
 
+rm -f "$GSH_VAR/nbUnpaid" "$GSH_VAR/amountKing"

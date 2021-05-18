@@ -25,6 +25,6 @@ sign_file "$MISSION_DIR/ascii-art/baby-bat.txt" "$lair/$bat"
 
 date +%s > "$GSH_VAR/start_time"
 
-unset lair queen r1 r2
+unset lair bat queen r1 r2
 
 set -o noglob

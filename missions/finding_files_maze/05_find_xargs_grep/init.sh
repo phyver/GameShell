@@ -19,4 +19,4 @@ sum=$(CHECKSUM "$K $(gettext "diamond")")
 echo "$K $(gettext "diamond") $sum" > "$maze/$f"
 echo "$K $(gettext "diamond") $sum" > "$GSH_VAR/diamond"
 
-unset maze K sum
+unset maze K sum f

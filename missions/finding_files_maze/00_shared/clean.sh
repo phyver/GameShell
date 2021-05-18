@@ -7,3 +7,4 @@ case $PWD in
 esac
 
 rm -rf "$maze"/*
+unset maze

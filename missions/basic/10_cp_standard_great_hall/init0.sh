@@ -8,3 +8,4 @@ rm -f "$great_hall/"*_"$(gettext "decorative_shield")"
 sign_file "$MISSION_DIR/ascii-art/shield.txt" "$great_hall/${RANDOM}_$(gettext "decorative_shield")"
 rm -f "$great_hall/"*_"$(gettext "suit_of_armour")"
 sign_file "$MISSION_DIR/ascii-art/armour.txt" "$great_hall/${RANDOM}_$(gettext "suit_of_armour")"
+unset great_hall

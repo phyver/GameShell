@@ -192,6 +192,7 @@ mission_source() {
 
   local TEMP=$(mktemp -d "$GSH_VAR/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
+  local _MISSION_DIR=""
   local _TEXTDOMAIN=""
   local _MISSION_NAME=""
   local MISSION_NAME=""
@@ -201,7 +202,6 @@ mission_source() {
   compgen -v | sort > "$TEMP"/before-V
   compgen -A function | sort > "$TEMP"/before-F
   compgen -a | sort > "$TEMP"/before-A
-  ls "$GSH_VAR" > "$TEMP"/before-D
   local _MISSION_DIR=$MISSION_DIR
   export MISSION_DIR=$(dirname "$(REALPATH "$FILENAME")")
   _TEXTDOMAIN=$TEXTDOMAIN
@@ -214,11 +214,10 @@ mission_source() {
   export MISSION_NAME=$_MISSION_NAME
   export MISSION_DIR=$_MISSION_DIR
   compgen -v | sort > "$TEMP"/after-V
-  # FIXME: not a very nice way to ignore _mission_check function (should only
-  # be used when sourcing check.sh)
-  compgen -A function | grep -v "_mission_check" | sort > "$TEMP"/after-F
+  # FIXME: not a very nice way to ignore _mission_check & Co. (they should
+  # only be ignored when sourcing the corresponding file)
+  compgen -A function | sed "/_mission_static\|_mission_check\|_mission_init\|_mission_deps\|_mission_clean/d" | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
-  ls "$GSH_VAR" > "$TEMP"/after-D
 
   local msg="DEBUG: environment modifications while sourcing .../${FILENAME#$GSH_ROOT/}"
   if ! cmp -s "$TEMP"/{before,after}-V
@@ -243,14 +242,6 @@ mission_source() {
     msg=""
     echo "Alias before / after"
     comm -3 "$TEMP"/{before,after}-A
-  fi
-
-  if ! cmp -s "$TEMP"/{before,after}-D
-  then
-    [ -n "$msg" ] && echo "$msg"
-    msg=""
-    echo "mission data, before / after"
-    comm -3 "$TEMP"/{before,after}-D
   fi
 
   rm -rf "$TEMP"

@@ -28,4 +28,5 @@ bash <<EOS
   grep -il "pq" * 2> /dev/null | sort > $GSH_VAR/list_grimoires_PQ
 EOS
 
-unset -f _init_grimoires i file
+unset -f _init_grimoires
+unset i file bib
