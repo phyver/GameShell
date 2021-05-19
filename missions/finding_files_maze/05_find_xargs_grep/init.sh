@@ -10,9 +10,9 @@ mkdir -p "$maze"
 
 if ! command -v python3 &> /dev/null
 then
-    f=$("$GSH_MISSIONS_SBIN"/maze2.sh "$maze" 10 1 "$(gettext "stone")")
+    f=$(maze2.sh "$maze" 10 1 "$(gettext "stone")")
 else
-    f=$("$GSH_MISSIONS_SBIN"/maze2.py "$maze" 3 10 1 "$(gettext "stone")")
+    f=$(maze2.py "$maze" 3 10 1 "$(gettext "stone")")
 fi
 K=$(basename "$f")
 sum=$(CHECKSUM "$K $(gettext "diamond")")

@@ -5,9 +5,9 @@ TODO NOW
 --------
 
   - [ ] doc
-  - [ ] add `GSH_MISSIONS_SBIN` to the path while sourcing mission files
   - [ ] add tests to check `os_common.sh` functions are working
 
+  - [x] add `GSH_MISSIONS_SBIN` to the path while sourcing mission files
   - [x] add a password for `gsh protect / unprotect`
   - [x] for processes in processes group, the shebang needs to be changed
         depending on the path to the interpreter
