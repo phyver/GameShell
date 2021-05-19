@@ -112,7 +112,7 @@ Do you still want to quit? [y/n]") " r
   export GSH_LAST_ACTION='exit'
   _gsh_clean "$MISSION_NB"
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && _gsh_unprotect
-  # jobs -p | xargs kill -sSIGHUP     # ??? est-ce qu'il faut le garder ???
+  jobs -p | xargs kill -sSIGHUP 2> /dev/null
 }
 
 

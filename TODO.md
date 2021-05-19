@@ -6,6 +6,7 @@ TODO NOW
 
   - [ ] doc
 
+  - [ ] randomize uid even in anonymous / debug mode
   - [x] add tests to check `os_common.sh` functions are working
   - [x] add `GSH_MISSIONS_SBIN` to the path while sourcing mission files
   - [x] add a password for `gsh protect / unprotect`
@@ -68,6 +69,7 @@ FOR LATER
           - `gettext` => `printf`
           - `eval_gettext` => `eval` + `gettext`
           - `sleep 0.1`
+          - `realpath` / `readlink` => see https://github.com/ko1nksm/readlinkf/blob/master/readlinkf.sh
 
   - [ ] `gsh config` command to configure some options
          - verbose option (debug only)
