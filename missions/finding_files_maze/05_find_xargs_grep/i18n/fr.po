@@ -19,6 +19,10 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
+#, sh-format
+msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "La mission factice \"$DUMMY_MISSION\" est nécessaire pour la mission $MISSION_NB ($MISSION_NAME)."
+
 msgid   "The diamond in your chest is not valid!"
 msgstr  "Le diamant du coffre est invalide !"
 

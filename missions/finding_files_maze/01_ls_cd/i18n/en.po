@@ -24,6 +24,10 @@ msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 msgid   "Booh... The copper coin in you chest is invalid!"
 msgstr  "Booh... The copper coin in you chest is invalid!"
 
+#, sh-format
+msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+
 msgid   "There is no copper coin in your chest!"
 msgstr  "There is no copper coin in your chest!"
 

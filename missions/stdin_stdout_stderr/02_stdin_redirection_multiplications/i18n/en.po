@@ -36,8 +36,8 @@ msgstr  "The book 'Mathematics_101' contains all the anwsers for the exam.\n"
         "You just need to copy all the lines in this book."
 
 #, sh-format
-msgid   "Too bad! The expected answer was $c..."
-msgstr  "Too bad! The expected answer was $c..."
+msgid   "Too bad! The expected answer was $result..."
+msgstr  "Too bad! The expected answer was $result..."
 
 msgid   "Too slow! You need to give the answers in less than 10 seconds..."
 msgstr  "Too slow! You need to give the answers in less than 10 seconds..."
