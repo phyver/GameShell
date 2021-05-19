@@ -1,17 +1,17 @@
 #!/bin/bash
 
 function REALPATH() {
-    readlink -f "$@"
+  readlink -f "$@"
 }
 export -f REALPATH
 
 function PAGER() {
-    if command -v less &> /dev/null
-    then
-        less -rEX "$@"
-    else
-        more "$@"
-    fi
+  if command -v less &> /dev/null
+  then
+    less -rEX "$@"
+  else
+    more -d "$@"
+  fi
 }
 export -f PAGER
 
@@ -20,14 +20,14 @@ export -f PAGER
 CHECKSUM() {
   if [ "$#" -eq 0 ]
   then
-    sha1 | cut -c 1-40
+    sha1sum | cut -c 1-40
   else
-    echo -n "$@" | sha1 | cut -c 1-40
+    echo -n "$@" | sha1sum | cut -c 1-40
   fi
 }
 export -f CHECKSUM
 
 SED-i() {
-    sed -i '' "$@"
+  sed -i "$@"
 }
 export -f SED-i

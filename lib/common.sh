@@ -17,20 +17,23 @@ done
 
 case $OSTYPE in
   linux|linux-gnu|linux-gnueabihf)
-    source "$GSH_ROOT"/lib/gnu_common.sh
+    # shellcheck source=./lib/common_gnu.sh
+    source "$GSH_ROOT"/lib/common_gnu.sh
     ;;
   darwin*)
-    source "$GSH_ROOT"/lib/macos_common.sh
+    # shellcheck source=./lib/common_macos.sh
+    source "$GSH_ROOT"/lib/common_macos.sh
     ;;
   freebsd*|netbsd*|openbsd*)
-    source "$GSH_ROOT"/lib/bsd_common.sh
+    # shellcheck source=./lib/common_bsd.sh
+    source "$GSH_ROOT"/lib/common_bsd.sh
     ;;
   *)
     read -erp "$(eval_gettext "Error: unknown system: OSTYPE=\$OSTYPE.
 GameShell will use 'gnu-linux', without guarantee.")"
     read -serpn1 "$(gettext "Press any key to continue.")"
-    # shellcheck source=./lib/gnu_aliases.sh
-    source "$GSH_ROOT"/lib/gnu_aliases.sh
+    # shellcheck source=./lib/common_gnu.sh
+    source "$GSH_ROOT"/lib/common_gnu.sh
     ;;
 esac
 
