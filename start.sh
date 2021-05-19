@@ -257,6 +257,8 @@ Do you want to remove it and start a new game? [y/N]') " r
     _confirm_passport "$PASSPORT" && break
   done
 
+  printf "\n==========\nRANDOM=%d\n" $RANDOM >> "$PASSPORT"
+
 
   # Generation of a unique identifier for the the player.
   export GSH_UID="$(CHECKSUM < "$PASSPORT" | cut -c 1-40)"

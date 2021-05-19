@@ -6,7 +6,7 @@ TODO NOW
 
   - [ ] doc
 
-  - [ ] randomize uid even in anonymous / debug mode
+  - [x] randomize uid even in anonymous / debug mode
   - [x] add tests to check `os_common.sh` functions are working
   - [x] add `GSH_MISSIONS_SBIN` to the path while sourcing mission files
   - [x] add a password for `gsh protect / unprotect`
