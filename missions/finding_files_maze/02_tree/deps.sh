@@ -1,4 +1,4 @@
-if ! [ -e "$GSH_MISSIONS_SBIN/maze1.sh" ]
+if ! command -v maze1.sh &> /dev/null
 then
   DUMMY_MISSION=$(REALPATH "$MISSION_DIR/../00_shared")
   DUMMY_MISSION=${DUMMY_MISSION#$GSH_MISSIONS/}

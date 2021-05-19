@@ -182,11 +182,14 @@ mission_source() {
     export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")
     local _MISSION_NAME=$MISSION_NAME
     export MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
+    local _PATH=$PATH
+    export PATH=$PATH:$GSH_MISSIONS_SBIN
     source "$FILENAME"
     local exit_status=$?
     export TEXTDOMAIN=$_TEXTDOMAIN
     export MISSION_NAME=$_MISSION_NAME
     export MISSION_DIR=$_MISSION_DIR
+    export PATH=$_PATH
     return $exit_status
   fi
 
@@ -196,6 +199,7 @@ mission_source() {
   local _TEXTDOMAIN=""
   local _MISSION_NAME=""
   local MISSION_NAME=""
+  local _PATH=""
   local exit_status=""
   # exclude the function corresponding to the file name:
   #   static.sh => _mission_static
@@ -222,11 +226,14 @@ mission_source() {
   export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")
   _MISSION_NAME=$MISSION_NAME
   export MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
+  local _PATH=$PATH
+  export PATH=$PATH:$GSH_MISSIONS_SBIN
   source "$FILENAME"
   exit_status=$?
   export TEXTDOMAIN=$_TEXTDOMAIN
   export MISSION_NAME=$_MISSION_NAME
   export MISSION_DIR=$_MISSION_DIR
+  export PATH=$_PATH
   compgen -v | sort > "$TEMP"/after-V
   compgen -A function | sed "/$EXCLUDE/d" | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
