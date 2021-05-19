@@ -1,4 +1,4 @@
-_mission_test() {
+_mission_deps() {
   local BASH_PATH=$(command -v bash)
   sed -e $'1c\\\n'"#!$BASH_PATH" "$MISSION_DIR/test-proc-name.sh" > "$GSH_VAR/test-proc-name"
   chmod 755 "$GSH_VAR/test-proc-name"
@@ -12,7 +12,7 @@ _mission_test() {
   return $r
 }
 
-if ! _mission_test
+if ! _mission_deps
 then
   echo "$(eval_gettext "Process names should be equal to the corresponding filename for mission \$MISSION_NAME.")"
   unset -f process_test
