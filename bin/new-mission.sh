@@ -277,11 +277,13 @@ EOF
 
 new_makefile() {
     cat <<'EOF'
-LANG=$(wildcard i18n/*.po)
-LANG:=$(filter-out i18n/en.po, $(LANG))
 SH_FILES=$(wildcard *.sh)
+EXCEPTIONS=
 OTHER_FILES=
 
+LANG=$(wildcard i18n/*.po)
+LANG:=$(filter-out i18n/en.po, $(LANG))
+SH_FILES:=$(filter-out $(EXCEPTIONS), $(SH_FILES))
 SORT=--sort-output
 OPTIONS=--indent --no-wrap --no-location
 
