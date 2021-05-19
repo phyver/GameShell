@@ -110,6 +110,7 @@ _confirm_passport() {
 progress_bar() {
   # hide cursor
   tput civis 2> /dev/null
+  trap "tput cnorm 2> /dev/null;echo;exit 1" INT TERM QUIT
   if [ -z "$progress_I" ]
   then
     progress_filename=$GSH_ROOT/lib/ascii-art/titlescreen
