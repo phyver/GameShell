@@ -36,6 +36,12 @@ GameShell will use 'gnu-linux', without guarantee.")"
     source "$GSH_ROOT"/lib/common_gnu.sh
     ;;
 esac
+if ! bash "$GSH_ROOT/lib/common_test.sh"
+then
+  echo "$(gettext "Error: a least one base function is not working properly.
+Aborting!")"
+  exit 1
+fi
 
 export GSH_ROOT=$(REALPATH "$GSH_ROOT")
 export TEXTDOMAINDIR="$GSH_ROOT/locale"
