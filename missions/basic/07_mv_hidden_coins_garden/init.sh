@@ -1,17 +1,20 @@
 #!/bin/bash
 
-[ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
-mkdir -p "$GSH_CHEST"
+_mission_init() {
+  [ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
+  mkdir -p "$GSH_CHEST"
 
-D=$(date +%s)
+  local D=$(date +%s)
 
-rm -f "$(eval_gettext '$GSH_HOME/Garden')/.$(gettext "coin")_"*
+  rm -f "$(eval_gettext '$GSH_HOME/Garden')/.$(gettext "coin")_"*
 
-for I in $(seq 3)
-do
-  f=$(eval_gettext '$GSH_HOME/Garden')/.${RANDOM}_$(gettext "coin")_$I
-  touch "$f"
-  sign_file "$f"
-done
+  local i
+  for i in $(seq 3)
+  do
+    local f=$(eval_gettext '$GSH_HOME/Garden')/.${RANDOM}_$(gettext "coin")_$i
+    touch "$f"
+    sign_file "$f"
+  done
+}
 
-unset DATE D I f S
+_mission_init

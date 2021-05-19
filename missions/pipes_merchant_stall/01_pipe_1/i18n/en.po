@@ -22,6 +22,9 @@ msgstr  "How much does the king owe?"
 msgid   "PAID"
 msgstr  "PAID"
 
+msgid   "That's not the right answer!"
+msgstr  "That's not the right answer!"
+
 #, sh-format
 msgid   "That's the right answer, but you used $NB_CMD commands!"
 msgstr  "That's the right answer, but you used $NB_CMD commands!"

@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# fichier lu par le shell à chaque démarrage de la mission
+_mission_init() {
+  local YYYY=$((1900 + RANDOM % 300))
+  local MM=$(printf "%02d" "$((1 + RANDOM % 12))")
+  local DD=$(printf "%02d" "$((13 + RANDOM % 5))")
+  echo "$YYYY-$MM-$DD" > $GSH_VAR/date
+}
 
-YYYY=$((1900 + RANDOM % 300))
-MM=$( echo "00$((1 + RANDOM % 12))" | tail -c3 )
-DD=$( echo "00$((13 + RANDOM % 5))" | tail -c3 )
-
-echo "$YYYY-$MM-$DD" > $GSH_VAR/date
-
-unset YYYY MM DD
+_mission_init

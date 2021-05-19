@@ -1,21 +1,23 @@
 #!/bin/bash
 
-y=$(cat "$GSH_VAR/nbUnpaid")
-read -erp "$(gettext "How many unpaid items are there?") " d
-NB_CMD=$(cat "$GSH_VAR/nb_commands")
+_mission_check() {
+  local nb_unpaid=$(cat "$GSH_VAR/nbUnpaid")
+  local response
+  read -erp "$(gettext "How many unpaid items are there?") " response
+  NB_CMD=$(cat "$GSH_VAR/nb_commands")
 
-x=$(CHECKSUM "$d")
+  local s=$(CHECKSUM "$response")
 
-if [ "$NB_CMD" -le 1 ] && [ "$x" == "$y" ]
-then
-    unset y x d NB_CMD
-    true
-elif [ "$x" == "$y" ]
-then
+  if [ "$s" != "$nb_unpaid" ]
+  then
+      echo "$(gettext "That's not the right answer!")"
+      return 1
+  elif [ "$NB_CMD" -gt 1 ]
+  then
     echo "$(eval_gettext "That's the right answer, but you used \$NB_CMD commands!")"
-    unset y x d NB_CMD
-    false
-else
-    unset y x d NB_CMD
-    false
-fi
+      return 1
+  fi
+  return 0
+}
+
+_mission_check

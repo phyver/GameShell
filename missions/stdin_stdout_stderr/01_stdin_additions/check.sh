@@ -1,36 +1,30 @@
 #!/bin/bash
 
-exec 3< "$GSH_VAR/arith.txt"
-OK="OK"
-while IFS='' read -r -u 3 l
-do
-    q="$(echo "$l" | cut -d"|" -f1)"
-    c="$(echo "$l" | cut -d"|" -f2)"
+_mission_check() {
+  exec 3< "$GSH_VAR/arith.txt"
+  local line
+  while IFS='' read -r -u 3 line
+  do
+    local question="$(echo "$line" | cut -d"|" -f1)"
+    local result="$(echo "$line" | cut -d"|" -f2)"
 
-    read -erp "$q" r
-    case "$r" in
-        "" | *[!0-9]*)
-            echo "$(gettext "That's not even a number!")"
-            OK=""
-            break
-            ;;
-        *)
-            if [ "$c" -ne "$r" ]
-            then
-                echo "$(eval_gettext 'Too bad! The expected answer was $c...')"
-                OK=""
-                break
-            fi
-            ;;
+    local response
+    read -erp "$question" response
+    case "$response" in
+      "" | *[!0-9]*)
+        echo "$(gettext "That's not even a number!")"
+        return 1
+        ;;
+      *)
+        if [ "$result" -ne "$response" ]
+        then
+          echo "$(eval_gettext 'Too bad! The expected answer was $result...')"
+          return 1
+        fi
+        ;;
     esac
-done
+  done
+  return 0
+}
 
-if [ -n "$OK" ]
-then
-    unset OK LIMIT l q c r
-    true
-else
-    unset OK LIMIT l q c r
-    false
-fi
-
+_mission_check
