@@ -5,8 +5,8 @@ TODO NOW
 --------
 
   - [ ] doc
-  - [ ] add tests to check `os_common.sh` functions are working
 
+  - [x] add tests to check `os_common.sh` functions are working
   - [x] add `GSH_MISSIONS_SBIN` to the path while sourcing mission files
   - [x] add a password for `gsh protect / unprotect`
   - [x] for processes in processes group, the shebang needs to be changed
@@ -35,12 +35,32 @@ TODO NOW
 FOR LATER
 ---------
 
+  - [ ] replace all script which have to `unset` many variables to functions
+        with local variables
+
   - [ ] add a `posix_common.sh` file for unknown systems
 
   - [ ] improve "progress_bar" function
 
+  - [ ] `error` function for `echo "$@" >&2`
+
   - [ ] minimize number of bashism's? (not sure if it is worth trying to be
         POSIX compliant though)
+          - `$RANDOM` => use `awk` function `rand`
+          - `source` => `.`
+          - `echo -n` => `printf`
+          - `read -p` => `printf` + `read`
+          - `read -s` => `stty -echo` + `read` + `stty echo`
+          - `$'...'` string => ???
+          - `OSTYPE` => probably not useful
+          - `local` variables => ??? (cf
+            htps://stackoverflow.com/questions/18597697/posix-compliant-way-to-scope-variables-to-a-function-in-a-shell-script)
+
+          - `mktemp` => write our own
+          - `xargs -0` / `find ... -print0` => assume no newline in file names
+          - `gettext` => `printf`
+          - `eval_gettext` => `eval` + `gettext`
+          - `sleep 0.1`
 
   - [ ] `gsh config` command to configure some options
          - verbose option (debug only)
@@ -106,6 +126,11 @@ TODO NOW
 
 FOR LATER
 ---------
+
+  - change `progress_bar` interface to `progress_bar CMD`?
+    That should make it possible to store error messages in display them at
+    the end, and get a uniform delay between updates. (No read necessary: we
+    display the animation and stop when CMD stops.)
 
   - for missions that generate many files, remove most of them in `clean.sh`
 
