@@ -21,6 +21,9 @@ msgstr  ""
 msgid   "PAID"
 msgstr  ""
 
+msgid   "That's not the right answer!"
+msgstr  ""
+
 #, sh-format
 msgid   "That's the right answer, but you used $NB_CMD commands!"
 msgstr  ""

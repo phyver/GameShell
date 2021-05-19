@@ -1,22 +1,22 @@
 #!/bin/bash
 
-y=$(cat "$GSH_VAR/amountKing")
-read -erp "$(gettext "How much does the king owe?") " d
-NB_CMD=$(cat "$GSH_VAR/nb_commands")
+_mission_check() {
+  local amount=$(cat "$GSH_VAR/amountKing")
+  local response
+  read -erp "$(gettext "How much does the king owe?") " response
+  local NB_CMD=$(cat "$GSH_VAR/nb_commands")
 
-x=$(CHECKSUM "$d")
-if [ "$x" = "$y" ]
-then
-    if [ "$NB_CMD" -le 3 ] && [ "$x" = "$y" ]
-    then
-        unset y d x NB_CMD
-        true
-    else
-        echo "$(eval_gettext "That's the right answer, but you used \$NB_CMD commands!")"
-        unset y d x NB_CMD
-        false
-    fi
-else
-    unset y d x NB_CMD
-    false
-fi
+  local s=$(CHECKSUM "$response")
+  if [ "$s" != "$amount" ]
+  then
+      echo "$(gettext "That's not the right answer!")"
+      return 1
+  elif [ "$NB_CMD" -gt 3 ]
+  then
+    echo "$(eval_gettext "That's the right answer, but you used \$NB_CMD commands!")"
+    return 1
+  fi
+  return 0
+}
+
+_mission_check

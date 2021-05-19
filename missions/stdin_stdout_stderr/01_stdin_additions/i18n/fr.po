@@ -15,5 +15,5 @@ msgid   "That's not even a number!"
 msgstr  "Ce n'est même pas un nombre !"
 
 #, sh-format
-msgid   "Too bad! The expected answer was $c..."
-msgstr  "Dommage ! La réponse était $c..."
+msgid   "Too bad! The expected answer was $result..."
+msgstr  "Dommage ! La réponse était $result..."

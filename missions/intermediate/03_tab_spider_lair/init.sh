@@ -1,30 +1,23 @@
 #!/bin/bash
 
-case "$(pwd)" in
-    "$(eval_gettext '$GSH_HOME/Castle/Cellar')/$(gettext ".Lair_of_the_spider_queen")"*)
-        cd "$(eval_gettext '$GSH_HOME/Castle/Cellar')"
-        echo "$(gettext "You are back in the cellar.")"
-        ;;
-esac
-rm -rf "$(eval_gettext '$GSH_HOME/Castle/Cellar')/$(gettext ".Lair_of_the_spider_queen")"*
+_mission_init() {
+  local r1=$(CHECKSUM $RANDOM)
+  local r2=$(CHECKSUM $RANDOM)
+  local lair="$(eval_gettext '$GSH_HOME/Castle/Cellar')/$(gettext ".Lair_of_the_spider_queen") ${r1} ${r2}"
+  mkdir -p "$lair"
 
-r1=$(CHECKSUM $RANDOM)
-r2=$(CHECKSUM $RANDOM)
-lair="$(eval_gettext '$GSH_HOME/Castle/Cellar')/$(gettext ".Lair_of_the_spider_queen") ${r1} ${r2}"
-mkdir -p "$lair"
+  r1=$(CHECKSUM $RANDOM)
+  r2=$(CHECKSUM $RANDOM)
+  local queen="${r1}_$(gettext "spider_queen")_$r2"
+  sign_file "$MISSION_DIR/ascii-art/spider-queen.txt" "$lair/$queen"
 
-r1=$(CHECKSUM $RANDOM)
-r2=$(CHECKSUM $RANDOM)
-queen="${r1}_$(gettext "spider_queen")_$r2"
-sign_file "$MISSION_DIR/ascii-art/spider-queen.txt" "$lair/$queen"
+  r1=$(CHECKSUM $RANDOM)
+  r2=$(CHECKSUM $RANDOM)
+  local bat="${r1}_$(gettext "baby_bat")_$r2"
+  sign_file "$MISSION_DIR/ascii-art/baby-bat.txt" "$lair/$bat"
 
-r1=$(CHECKSUM $RANDOM)
-r2=$(CHECKSUM $RANDOM)
-bat="${r1}_$(gettext "baby_bat")_$r2"
-sign_file "$MISSION_DIR/ascii-art/baby-bat.txt" "$lair/$bat"
-
-date +%s > "$GSH_VAR/start_time"
-
-unset lair bat queen r1 r2
+  date +%s > "$GSH_VAR/start_time"
+}
 
 set -o noglob
+_mission_init

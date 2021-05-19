@@ -1,61 +1,56 @@
 #!/bin/bash
 
-YYYY=$(cut -d"-" -f1 "$GSH_VAR"/date)
-MM=$(cut -d"-" -f2 "$GSH_VAR"/date)
-DD=$(cut -d"-" -f3 "$GSH_VAR"/date)
-
-DOW() {
+_mission_check() {
+  DOW() (
     local dow
     if dow=$(date --date="$1" +%A 2> /dev/null)
     then
-        # with gnu "date" command
-        echo $dow
-        return 0
+      # with gnu "date" command
+      echo $dow
+      return 0
     elif dow=$(date -jf "%Y-%m-%d" "$1" +%A 2> /dev/null)
     then
-        # with freebsd "date" command
-        echo $dow
-        return 0
+      # with freebsd "date" command
+      echo $dow
+      return 0
     else
-        echo "$(gettext "Error: can not get day of week with 'date' command.")" >&2
-        return 1
+      echo "$(gettext "Error: can not get day of week with 'date' command.")" >&2
+      return 1
     fi
-}
+  )
 
-while true
-do
+  local YYYY=$(cut -d"-" -f1 "$GSH_VAR"/date)
+  local MM=$(cut -d"-" -f2 "$GSH_VAR"/date)
+  local DD=$(cut -d"-" -f3 "$GSH_VAR"/date)
+
+  while true
+  do
     echo "$(eval_gettext 'What was the day of the week for the $MM-$DD-$YYYY?')"
 
+    local i
     for i in $(seq 7)
     do
-        echo -n "  $i : "
-        DOW "2000-05-$i"
+      echo -n "  $i : "
+      DOW "2000-05-$i"
     done
+    local n
     read -erp "$(gettext "Your answer: ")" n
 
+    local s
     case "$n" in
-        *[!0-9]) ;;
-        *)
-            if [ "$n" -le 7 ] &&  [ "$n" -ge 1 ]
-            then
-                s=$(DOW "2000-05-$n")
-                break
-            fi
+      *[!0-9]) ;;
+      *)
+        if [ "$n" -le 7 ] &&  [ "$n" -ge 1 ]
+        then
+          s=$(DOW "2000-05-$n")
+          break
+        fi
     esac
-done
+  done
 
-t=$(DOW "$YYYY-$MM-$DD")
+  local t=$(DOW "$YYYY-$MM-$DD")
+  unset -f DOW
+  [ "$t" = "$s" ]
+}
 
-if [ "$t" = "$s" ]
-then
-    unset t s DD MM YYYY i n
-    # unset -f DOW
-    true
-else
-    unset t s DD MM YYYY i n DOW
-    # unset -f DOW
-    false
-fi
-
-
-
+_mission_check
