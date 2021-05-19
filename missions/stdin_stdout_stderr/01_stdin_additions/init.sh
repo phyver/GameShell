@@ -1,16 +1,19 @@
 #!/bin/bash
 
-book=$GSH_VAR/additions.txt
-rm -f "$book"
-questions=$GSH_VAR/arith.txt
-rm -f "$questions"
+_mission_init() {
+  local results=$GSH_VAR/additions.txt
+  rm -f "$results"
+  local questions=$GSH_VAR/arith.txt
+  rm -f "$questions"
 
-for _ in $(seq 5)
-do
-    a=$((1+RANDOM%100))
-    b=$((1+RANDOM%100))
-    c=$((a + b))
-    echo $c >> "$book"
-    echo "$a + $b = ?? |$c" >> "$questions"
-done
-unset a b c book questions
+  for _ in $(seq 5)
+  do
+    local a=$((1+RANDOM%100))
+    local b=$((1+RANDOM%100))
+    local r=$((a + b))
+    echo $r >> "$results"
+    echo "$a + $b = ?? |$r" >> "$questions"
+  done
+}
+
+_mission_init

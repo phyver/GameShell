@@ -35,12 +35,15 @@ TODO NOW
 FOR LATER
 ---------
 
-  - [ ] replace all script which have to `unset` many variables to functions
-        with local variables
+  - [ ] replace all script which have to `unset` several variables to
+        functions with local variables
 
   - [ ] add a `posix_common.sh` file for unknown systems
 
-  - [ ] improve "progress_bar" function
+  - [ ] change `progress_bar` interface to `progress_bar CMD`? That should
+        make it possible to store error messages in display them at the end,
+        and get a uniform delay between updates. (No read necessary: we
+        display the animation and stop when `CMD` stops.)
 
   - [ ] `error` function for `echo "$@" >&2`
 
@@ -126,11 +129,6 @@ TODO NOW
 
 FOR LATER
 ---------
-
-  - change `progress_bar` interface to `progress_bar CMD`?
-    That should make it possible to store error messages in display them at
-    the end, and get a uniform delay between updates. (No read necessary: we
-    display the animation and stop when CMD stops.)
 
   - for missions that generate many files, remove most of them in `clean.sh`
 
