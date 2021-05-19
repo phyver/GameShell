@@ -598,21 +598,29 @@ _gsh_HELP() {
 }
 
 _gsh_protect() {
+  if ! admin_mode
+  then
+    return 1
+  fi
   chmod a-rw $GSH_ROOT
   chmod a-rw $GSH_MISSIONS
   chmod a-rw $GSH_CONFIG
   chmod a-r $GSH_VAR
   chmod a-rw $GSH_BIN
-  chmod a-rw $GSH_MISSIONS_BIN
+  chmod a-rw $GSH_MISSIONS_SBIN
 }
 
 _gsh_unprotect() {
-  chmod u+rw $GSH_ROOT
-  chmod u+rw $GSH_MISSIONS
-  chmod u+rw $GSH_CONFIG
-  chmod u+r $GSH_VAR
-  chmod u+rw $GSH_BIN
-  chmod u+rw $GSH_MISSIONS_BIN
+  if ! admin_mode
+  then
+    return 1
+  fi
+  chmod $(umask -S) $GSH_ROOT
+  chmod $(umask -S) $GSH_MISSIONS
+  chmod $(umask -S) $GSH_CONFIG
+  chmod $(umask -S) $GSH_VAR
+  chmod $(umask -S) $GSH_BIN
+  chmod $(umask -S) $GSH_MISSIONS_SBIN
 }
 
 
