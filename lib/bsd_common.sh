@@ -31,9 +31,3 @@ SED-i() {
     sed -i '' "$@"
 }
 export -f SED-i
-
-
-function GET_MTIME() {
-    stat -f %S%m "$@"
-}
-export -f GET_MTIME
