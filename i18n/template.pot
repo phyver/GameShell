@@ -51,6 +51,10 @@ msgstr  ""
 msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
 msgstr  ""
 
+msgid   "Error: a least one base function is not working properly.\n"
+        "Aborting!"
+msgstr  ""
+
 #, sh-format
 msgid   "Error: command '$CMD' is only available in debug mode."
 msgstr  ""
@@ -90,6 +94,10 @@ msgstr  ""
 
 #, sh-format
 msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
+msgstr  ""
+
+msgid   "Error: no mission was found!\n"
+        "    Aborting"
 msgstr  ""
 
 msgid   "Error: no mission was found!\n"

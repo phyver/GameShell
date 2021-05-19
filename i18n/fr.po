@@ -51,6 +51,11 @@ msgstr  "Bravo, vous avez réussi la mission $MISSION_NB !"
 msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
 msgstr  "Erreur : _gsh_assert_check n'accepte que true' et 'false' comme argument."
 
+msgid   "Error: a least one base function is not working properly.\n"
+        "Aborting!"
+msgstr  "Erreur : au moins une fonction de base ne marche pas correctement.\n"
+        "Abandon."
+
 #, sh-format
 msgid   "Error: command '$CMD' is only available in debug mode."
 msgstr  "Erreur : la command '$CMD' est seulement disponible on mode debug."
@@ -92,6 +97,12 @@ msgstr  "Erreur : la mission $MISSION_NB n'a pas de script automatique."
 #, sh-format
 msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
 msgstr  "Erreur : la mission $MISSION_NB est annulée car des dépendances ne sont pas satisfaites."
+
+#, fuzzy
+msgid   "Error: no mission was found!\n"
+        "    Aborting"
+msgstr  "Erreur : aucune mission trouvée !\n"
+        "Abandon"
 
 msgid   "Error: no mission was found!\n"
         "Aborting"
