@@ -56,7 +56,7 @@ FOR LATER
           - `read -p` => `printf` + `read`
           - `read -s` => `stty -echo` + `read` + `stty echo`
           - `$'...'` string => ???
-          - `OSTYPE` => probably not useful
+          - `OSTYPE` => probably not useful if we reach for full POSIX
           - `local` variables => ??? (cf
             htps://stackoverflow.com/questions/18597697/posix-compliant-way-to-scope-variables-to-a-function-in-a-shell-script)
 
