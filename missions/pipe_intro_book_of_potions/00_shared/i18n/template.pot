@@ -3,45 +3,34 @@ msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
-#: bin/install_potion_book.sh:28
-msgid   "Book_of_potions"
-msgstr  ""
-
-#: bin/install_potion_book.sh:33
-#, sh-format
-msgid   "$MISSION_DIR/book_of_potions/en.txt"
-msgstr  ""
-
-#: bin/install_potion_book.sh:33 bin/install_potion_book.sh:35
-#: bin/install_potion_book.sh:40
-msgid   "page"
-msgstr  ""
-
-#: bin/install_potion_book.sh:40
-msgid   "table_of_contents"
-msgstr  ""
-
-#: bin/install_potion_book.sh:46
-#, sh-format
-msgid   "$MISSION_DIR/torn_page5/en.txt"
-msgstr  ""
-
-#: bin/install_potion_book.sh:54
-#, sh-format
-msgid   "$MISSION_DIR/torn_page6/en.txt"
-msgstr  ""
-
-#: clean.sh:1 clean.sh:2 init.sh:4 init.sh:10 init.sh:11 static.sh:1
-#: static.sh:2
 #, sh-format
 msgid   "$GSH_HOME/Mountain/Cave"
 msgstr  ""
 
-#: clean.sh:2 init.sh:10 static.sh:2
+#, sh-format
+msgid   "$MISSION_DIR/book_of_potions/en.txt"
+msgstr  ""
+
+#, sh-format
+msgid   "$MISSION_DIR/torn_page5/en.txt"
+msgstr  ""
+
+#, sh-format
+msgid   "$MISSION_DIR/torn_page6/en.txt"
+msgstr  ""
+
+msgid   "Book_of_potions"
+msgstr  ""
+
+#, sh-format
+msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  ""
+
 msgid   "cauldron"
 msgstr  ""
 
-#: deps.sh:4
-#, sh-format
-msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+msgid   "page"
+msgstr  ""
+
+msgid   "table_of_contents"
 msgstr  ""

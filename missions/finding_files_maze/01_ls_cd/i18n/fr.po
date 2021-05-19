@@ -23,6 +23,10 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "Booh... The copper coin in you chest is invalid!"
 msgstr  "Bouh... La pièce de bronze de votre coffre est invalide !"
 
+#, sh-format
+msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "La mission factice \"$DUMMY_MISSION\" est nécessaire pour la mission $MISSION_NB ($MISSION_NAME)."
+
 msgid   "There is no copper coin in your chest!"
 msgstr  "Il n'y a pas de pièce d'argent dans votre coffre !"
 
