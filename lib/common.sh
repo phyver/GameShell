@@ -155,7 +155,9 @@ admin_mode() {
   fi
 
   local HASH=$(cat "$GSH_CONFIG/admin_hash")
-  for _ in $(seq 3)
+  local try=0
+  # NOTE: seq is not POSIX compliant
+  while [ "$try" -lt 3 ]
   do
     read -serp "$(gettext "password:" )" mdp
     echo
@@ -163,6 +165,7 @@ admin_mode() {
     then
       return 0
     fi
+    try=$((try+1))
   done
   echo "$(gettext "Error: wrong password")" >&2
   return 1
@@ -290,7 +293,7 @@ systemconfig() {
   bash --version | head -n1
   echo "========================="
   echo "awk --version"
-  (awk -Wversion 2>/dev/null || awk --version) | head -n1
+  (awk -Wversion 2>/dev/null || awk --version 2>/dev/null || awk -V 2>/dev/null) | head -n1
   echo "========================="
 }
 

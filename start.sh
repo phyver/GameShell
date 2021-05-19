@@ -117,10 +117,12 @@ progress_bar() {
     local N=$(wc -l "$GSH_CONFIG/index.txt" | awk '{print $1}')
     local size=$(wc -c $progress_filename | awk '{print $1}')
     progress_delta=$((size/N + 1))
-    head -c$((progress_delta - 1)) $progress_filename
+    # head -c$((progress_delta - 1)) $progress_filename => not POSIX compliant
+    dd if="$progress_filename" bs="$progress_delta" count=1 2> /dev/null
     progress_I=1
   else
-    tail -c+$((progress_I * progress_delta)) $progress_filename | head -c$progress_delta
+    # tail -c+$((progress_I * progress_delta)) $progress_filename | head -c$progress_delta => not POSIX compliant
+    dd if="$progress_filename" bs="$progress_delta" skip="$progress_I" count=1 2> /dev/null
     progress_I=$((progress_I+1))
   fi
 }
