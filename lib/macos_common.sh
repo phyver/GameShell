@@ -33,8 +33,3 @@ SED-i() {
     sed -i '' "$@"
 }
 export -f SED-i
-
-function GET_MTIME() {
-    gstat -c %y "$@"
-}
-export -f GET_MTIME
