@@ -12,6 +12,8 @@ Indice
 ------
 
 Il y a fort à parier que le message de Merlin soit truffé d'erreurs.
+Pour réussir cette mission, vous devez donner la clé secrète **en 
+utilisant une redirection de fichiers**.
 
 
 Commandes utiles

@@ -11,6 +11,8 @@ Hint
 ----
 
 It is likely that Merlin's message is riddled with errors.
+To complete this mission, you have to give the secret key **using a 
+file redirection**.
 
 
 Useful commands
