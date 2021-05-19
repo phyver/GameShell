@@ -1,17 +1,19 @@
 #!/bin/bash
 
+# la version de "readlink" de macOS n'a pas l'option "-f", il faut utiliser
+# "greadlink" qui fait partie de "coreutils"
 function REALPATH() {
-    readlink -f "$@"
+  greadlink -f "$@"
 }
 export -f REALPATH
 
 function PAGER() {
-    if command -v less &> /dev/null
-    then
-        less -rEX "$@"
-    else
-        more -d "$@"
-    fi
+  if command -v less &> /dev/null
+  then
+    less -rEX "$@"
+  else
+    more "$@"
+  fi
 }
 export -f PAGER
 
@@ -28,6 +30,6 @@ CHECKSUM() {
 export -f CHECKSUM
 
 SED-i() {
-    sed -i "$@"
+  sed -i '' "$@"
 }
 export -f SED-i
