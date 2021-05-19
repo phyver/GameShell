@@ -182,6 +182,19 @@ admin_mode() {
 # file.
 mission_source() {
   local FILENAME=$1
+  # the function corresponding to the file name:
+  #   static.sh => _mission_static
+  #   check.sh => _mission_check
+  #   etc.
+  local MISSION_FN=$(basename "$FILENAME")
+  case "$MISSION_FN" in
+    auto.sh | check.sh | clean.sh | deps.sh | init.sh | static.sh | test.sh)
+      MISSION_FN=_mission_${MISSION_FN%.*}
+      ;;
+    *)
+      MISSION_FN='^\s*$'
+      ;;
+  esac
   # if we are not running in DEBUG mode, just source the file
   if [ "$GSH_MODE" != "DEBUG" ] || [ -z "$GSH_VERBOSE_DEBUG" ]
   then
@@ -199,6 +212,7 @@ mission_source() {
     export MISSION_NAME=$_MISSION_NAME
     export MISSION_DIR=$_MISSION_DIR
     export PATH=$_PATH
+    unset -f "$MISSION_FN"
     return $exit_status
   fi
 
@@ -210,19 +224,6 @@ mission_source() {
   local MISSION_NAME=""
   local _PATH=""
   local exit_status=""
-  # exclude the function corresponding to the file name:
-  #   static.sh => _mission_static
-  #   check.sh => _mission_check
-  #   etc.
-  local EXCLUDE=$(basename "$FILENAME")
-  case "$EXCLUDE" in
-    check.sh | clean.sh | deps.sh | init.sh | static.sh )
-      EXCLUDE=_mission_${EXCLUDE%.*}
-      ;;
-    *)
-      EXCLUDE='^\s*$'
-      ;;
-  esac
 
   # otherwise, record the environment (variables, functions and aliases)
   # before and after to echo a message when there are differences
@@ -244,7 +245,7 @@ mission_source() {
   export MISSION_DIR=$_MISSION_DIR
   export PATH=$_PATH
   compgen -v | sort > "$TEMP"/after-V
-  compgen -A function | sed "/$EXCLUDE/d" | sort > "$TEMP"/after-F
+  compgen -A function | sed "/$MISSION_FN/d" | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
 
   local msg="DEBUG: environment modifications while sourcing .../${FILENAME#$GSH_ROOT/}"
@@ -273,6 +274,7 @@ mission_source() {
   fi
 
   rm -rf "$TEMP"
+  unset -f "$MISSION_FN"
   return $exit_status
 }
 

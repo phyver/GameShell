@@ -289,7 +289,6 @@ Please choose a number between 1 and \$LAST_MISSION.")" >&2
   then
     mission_source "$MISSION_DIR/deps.sh"
     local exit_status=$?
-    unset -f _mission_deps
     if [ "$exit_status" -ne 0 ]
     then
       echo "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
@@ -309,9 +308,7 @@ Please choose a number between 1 and \$LAST_MISSION.")" >&2
 
   # re-source static.sh, in case some important directory was removed by accident
   [ -f "$MISSION_DIR/static.sh" ] && mission_source "$MISSION_DIR/static.sh"
-  unset -f _mission_static
   [ -f "$MISSION_DIR/init.sh" ] && mission_source "$MISSION_DIR/init.sh"
-  unset -f _mission_init
 
   [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-after
 
@@ -412,8 +409,6 @@ _gsh_check() {
 
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
-  # unset the _mission_check function
-  unset -f _mission_check
 
   if [ "$exit_status" -eq 0 ]
   then
@@ -494,7 +489,6 @@ _gsh_clean() {
   if [ -f "$MISSION_DIR/clean.sh" ]
   then
     mission_source "$MISSION_DIR/clean.sh"
-    unset -f _mission_clean
   fi
   unset GSH_LAST_ACTION
 }
@@ -514,7 +508,6 @@ _gsh_assert_check() {
 
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
-  unset -f _mission_check
 
   NB_TESTS=$((NB_TESTS + 1))
   if [ "$expected" = "true" ] && [ "$exit_status" -ne 0 ]
