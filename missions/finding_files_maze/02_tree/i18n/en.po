@@ -24,6 +24,10 @@ msgid   "Booh... The silver coin in you chest is invalid!"
 msgstr  "Booh... The silver coin in you chest is invalid!"
 
 #, sh-format
+msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+
+#, sh-format
 msgid   "The command 'tree' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'tree')"
 msgstr  "The command 'tree' is required for mission $MISSION_NAME.\n"

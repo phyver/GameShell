@@ -15,6 +15,10 @@ msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  "$MISSION_DIR/goal/fr.txt"
 
+#, sh-format
+msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "La mission factice \"$DUMMY_MISSION\" est nécessaire pour la mission $MISSION_NB ($MISSION_NAME)."
+
 msgid   "I only wanted the tapestries!"
 msgstr  "Je ne voulais que les tapisseries !"
 

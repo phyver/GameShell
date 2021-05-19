@@ -33,7 +33,7 @@ msgid   "The book 'Mathematics_101' contains all the anwsers for the exam.\n"
 msgstr  ""
 
 #, sh-format
-msgid   "Too bad! The expected answer was $c..."
+msgid   "Too bad! The expected answer was $result..."
 msgstr  ""
 
 msgid   "Too slow! You need to give the answers in less than 10 seconds..."

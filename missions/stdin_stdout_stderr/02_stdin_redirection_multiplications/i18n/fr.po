@@ -35,8 +35,8 @@ msgstr  "Le livre 'Mathematiques_en_premiere_annee' contient les réponses de l'
         "Il te suffit de recopier les lignes de ce livre."
 
 #, sh-format
-msgid   "Too bad! The expected answer was $c..."
-msgstr  "Dommage ! La réponse était $c..."
+msgid   "Too bad! The expected answer was $result..."
+msgstr  "Dommage ! La réponse était $result..."
 
 msgid   "Too slow! You need to give the answers in less than 10 seconds..."
 msgstr  "Trop lent ! Il faut donner les réponses en moins de 10 secondes..."

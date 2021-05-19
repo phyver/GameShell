@@ -1,14 +1,14 @@
-LANG=$(wildcard i18n/*.po)
-LANG:=$(filter-out i18n/en.po, $(LANG))
 SH_FILES=$(wildcard *.sh)
-SH_FILES:=$(filter-out init.sh static.sh, $(SH_FILES))
+EXCEPTIONS=clean.sh deps.sh init.sh static.sh
 OTHER_FILES=
 
+LANG=$(wildcard i18n/*.po)
+LANG:=$(filter-out i18n/en.po, $(LANG))
+SH_FILES:=$(filter-out $(EXCEPTIONS), $(SH_FILES))
 SORT=--sort-output
 OPTIONS=--indent --no-wrap --no-location
 
 all: i18n/en.po $(LANG)
-	echo $(SH_FILES)
 
 add-locations: SORT=--add-location --sort-by-file
 add-locations: all
@@ -16,7 +16,7 @@ add-locations: all
 i18n/en.po: i18n/template.pot FORCE
 	@echo "msgen $@"
 	@msgen $(OPTIONS) $(SORT) i18n/template.pot --output=$@
-	@sed -i '1s/^/'"# AUTOMATICALLY GENERATED -- DO NOT EDIT\n/" $@
+	@sed -i -e '1s/^/'"# AUTOMATICALLY GENERATED -- DO NOT EDIT\n/" $@
 
 $(LANG):%.po: i18n/template.pot FORCE
 	@echo "msgmerge $@"
