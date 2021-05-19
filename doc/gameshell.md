@@ -71,12 +71,12 @@ In some situations, some other commands are needed. They are described by the
   which will go directly to mission `N`. Just like `gsh skip`, this command
   will first ask for a password.
 
-* `gsh protect` and `gsh unprotect`: the directories containing GameShell
-  code and data are neither readable nor writable by the player. (Except in
-  debug mode, or when running from the source repository.) That's to prevent
-  accident where a player inadvertently removes some important file.
-  Those commands reset the read / write permissions. (No password is necessary
-  for them.)
+* `gsh protect` and `gsh unprotect`: the directories containing GameShell code
+  and data are neither readable nor writable by the player. (Except in debug
+  mode, or when running from the source repository.) That's to prevent
+  accident where a player inadvertently removes some important file. Those
+  commands reset the read / write permissions. (The admin password is
+  necessary for running those commands.)
 
 * `gsh auto`: if the mission comes with an automatic script (`auto.sh`), this
   command will call it. This script is supposed to complete the mission and
