@@ -59,6 +59,10 @@ FOR LATER
           - `local` variables => ??? (cf
             htps://stackoverflow.com/questions/18597697/posix-compliant-way-to-scope-variables-to-a-function-in-a-shell-script)
 
+          - `head -c` - `tail -c` => `dd` ???
+          - `head ... -N` => ???
+          - `tail ... +N` => ???
+          - `seq` => while loop
           - `mktemp` => write our own
           - `xargs -0` / `find ... -print0` => assume no newline in file names
           - `gettext` => `printf`
