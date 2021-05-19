@@ -30,6 +30,6 @@ CHECKSUM() {
 export -f CHECKSUM
 
 SED-i() {
-  sed -i '' "$@"
+  sed -i'' "$@"
 }
 export -f SED-i
