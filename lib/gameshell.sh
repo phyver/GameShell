@@ -219,7 +219,7 @@ _gsh_start() {
     then
       _gsh_welcome
       read -sern1 -p "$(gettext "Press any key to continue.")"
-      echo
+      clear
     fi
   else
     MISSION_NB=$1

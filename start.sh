@@ -279,6 +279,12 @@ Do you want to remove it and start a new game? [y/N]') " r
 
   make_index "$@" | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
 
+  if [ "$GSH_MODE" != "DEBUG" ]
+  then
+    echo
+    cat "$GSH_LIB/ascii-art/GameShell.txt"
+    echo
+  fi
   # Installing all missions.
   local MISSION_NB=1      # current mission number
   local MISSION_SUB_NB="" # when a dummy mission is found, as a "sub-number" as well
@@ -386,6 +392,9 @@ Do you want to remove it and start a new game? [y/N]') " r
     echo "[DONE]"
   else
     progress_bar_finish
+    echo
+    read -sern1 -p "$(gettext "Press any key to continue.")"
+    clear
   fi
   unset MISSION_DIR MISSION_NB
 }
