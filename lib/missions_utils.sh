@@ -273,6 +273,7 @@ progress_bar () {
 
   # Hide cursor.
   tput civis 2> /dev/null
+  trap 'tput cnorm 2> /dev/null;echo;exit 1' INT TERM QUIT
 
   # Print initial message.
   echo -en "$MSG"
