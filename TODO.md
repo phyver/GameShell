@@ -70,6 +70,9 @@ Existing missions
 TODO NOW
 --------
 
+  - [x] add hint in mission
+        `stdin_stdout_stderr/05_stdout_stderr_redirection_merlin` to explain
+        the key needs to be given by a file redirection
   - [x] check all group with shared data have appropriate `deps.sh`
   - [x] in mission `misc/tr_caesar_shift`, make the chest appear in Merlin's
         office. Add a few thinks in the chest as well.
