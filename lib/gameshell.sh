@@ -591,10 +591,6 @@ _gsh_HELP() {
 }
 
 _gsh_protect() {
-  if ! admin_mode
-  then
-    return 1
-  fi
   chmod a-rw $GSH_ROOT
   chmod a-rw $GSH_MISSIONS
   chmod a-rw $GSH_CONFIG
@@ -604,10 +600,6 @@ _gsh_protect() {
 }
 
 _gsh_unprotect() {
-  if ! admin_mode
-  then
-    return 1
-  fi
   chmod $(umask -S) $GSH_ROOT
   chmod $(umask -S) $GSH_MISSIONS
   chmod $(umask -S) $GSH_CONFIG
@@ -708,10 +700,16 @@ gsh() {
       fi
       ;;
     "protect")
-      _gsh_protect
+      if admin_mode
+      then
+        _gsh_protect
+      fi
       ;;
     "unprotect")
-      _gsh_unprotect
+      if admin_mode
+      then
+        _gsh_unprotect
+      fi
       ;;
     "systemconfig")
       systemconfig
