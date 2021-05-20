@@ -63,6 +63,8 @@ BEGIN {
         margin["B"] += padding - int(padding/2);
     }
 
+    for (i=0; i<width+margin["L"]+margin["R"]; i++) blanks = blanks " ";
+
     if (DEBUG) printf("width=%d, height=%d, margin[T]=%d, margin[B]=%d\n", width, height, margin["T"], margin["B"]);
     if (DEBUG) printf("Uh=%d, Mh=%d, Lh=%d\n", Uh, Mh, Lh);
     if (DEBUG) printf("neg_margin[T]=%d, neg_margin[B]=%d\n", neg_margin["T"], neg_margin["B"]);
@@ -93,7 +95,7 @@ BEGIN {
         update();
 
         printf("%s", substr(left_string, 1, length(left_string)-neg_margin["L"]));
-        for (j=0; j<margin["L"]+width+margin["R"]; j++) printf(" ");
+        printf(blanks);
         printf("%s", substr(right_string, neg_margin["R"]+1));
         if (DEBUG)
             printf(" <-- UPPER MARGIN: %s[%d], n=%d",
@@ -106,9 +108,9 @@ BEGIN {
     update();
 
     printf("%s", substr(left_string, 1, length(left_string)-neg_margin["L"]));
-    for (j=0; j<margin["L"]; j++) printf(" ");
+    printf(substr(blanks, 1, margin["L"]));
     printf("%s", $0);
-    for (j=0; j<width-length($0)+margin["R"]; j++) printf(" ");
+    printf(substr(blanks, 1+length($0)+margin["R"]));
     printf("%s", substr(right_string, neg_margin["R"]+1));
     if (DEBUG)
             printf(" <-- TEXT: %s[%d], n=%d",
@@ -124,7 +126,7 @@ END {
         update();
 
         printf("%s", substr(left_string, 1, length(left_string)-neg_margin["L"]));
-        for (j=0; j<margin["L"]+width+margin["R"]; j++) printf(" ");
+        printf(blanks);
         printf("%s", substr(right_string, neg_margin["R"]+1));
         if (DEBUG)
             printf(" <-- LOWER MARGIN: %s[%d], n=%d",

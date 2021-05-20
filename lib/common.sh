@@ -107,9 +107,7 @@ parchment() {
   # if not, use the awk version
     if [ -z "$file" ]
     then
-      local tempfile=$(mktemp)
-      cat > "$tempfile"
-      bash "$GSH_BIN/box.sh" "$P" "$tempfile"
+      bash "$GSH_BIN/box.sh" "$P"
       rm -f "$tempfile"
     else
       bash "$GSH_BIN/box.sh" "$P" "$file"
