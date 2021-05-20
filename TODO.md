@@ -59,6 +59,8 @@ FOR LATER
           - `OSTYPE` => probably not useful if we reach for full POSIX
           - `local` variables => ??? (cf
             htps://stackoverflow.com/questions/18597697/posix-compliant-way-to-scope-variables-to-a-function-in-a-shell-script)
+          - `export -f` => put exported functions into separate files
+          - `compgen` => `set` ? `env` for variables, but not sure about functions
 
           - `head -c` - `tail -c` => `dd` ???
           - `head ... -N` => ???
@@ -70,6 +72,11 @@ FOR LATER
           - `eval_gettext` => `eval` + `gettext`
           - `sleep 0.1`
           - `realpath` / `readlink` => see https://github.com/ko1nksm/readlinkf/blob/master/readlinkf.sh
+
+  - [ ] should `gsh` commands return error codes ?
+        That could be useful for `gsh check`, but since it is automatically
+        followed by the initialisation of the next (or same) missions, that
+        could be confusing
 
   - [ ] `gsh config` command to configure some options
          - verbose option (debug only)

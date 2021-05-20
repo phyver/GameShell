@@ -74,10 +74,6 @@ _gsh_hard_reset() {
     echo "$(gettext "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!")" >&2
     return 1
   fi
-
-  # restore SDTIN that may have been closed in case of a redirection into gsh check 
-  exec 0<"$GSH_STDIN"
-
   # on relance bash, histoire de recharcher la config
   exec bash --rcfile "$GSH_LIB/bashrc"
 }
@@ -239,9 +235,6 @@ _gsh_start() {
   then
     color_echo red "$(eval_gettext "Error: mission \$MISSION_NB doesn't exist!")" >&2
     echo
-
-    # restore SDTIN that may have been closed in case of a redirection into gsh check 
-    exec 0<"$GSH_STDIN"
 
     local LAST_MISSION=$(cut -d" " -f1 "$GSH_CONFIG/missions.log" | sort -n | tail -n1)
     while true
