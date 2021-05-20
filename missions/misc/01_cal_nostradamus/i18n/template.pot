@@ -15,6 +15,9 @@ msgstr  ""
 msgid   "Error: can not get day of week with 'date' command."
 msgstr  ""
 
+msgid   "That's not even a valid answer!"
+msgstr  ""
+
 #, sh-format
 msgid   "The command 'cal' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'bsdmainutils')"
