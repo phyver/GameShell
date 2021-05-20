@@ -404,7 +404,8 @@ start_gsh() {
   # Starting the game.
   cd "$GSH_HOME"
   export GSH_UID=$(cat "$GSH_CONFIG/uid")
-  exec bash --rcfile "$GSH_LIB/bashrc"
+  # make sure the shell reads it's config file by making it interactive (-i)
+  exec bash --rcfile "$GSH_LIB/bashrc" -i
 }
 
 
