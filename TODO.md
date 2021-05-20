@@ -181,7 +181,8 @@ Some missions ideas
 
   - history of commands
 
-  - more missions using shell patterns
+  - more missions using shell patterns `[...]` and `[^...]` (or `[!...]` as
+    specified by POSIX, but this interacts with bash' history expansion)
 
   - something with regular expressions and `grep`
 
@@ -193,7 +194,7 @@ Some missions ideas
 
   - `comm` to compare before / after file
 
-  - `paste`
+  - `paste` to "restore" a torn treasure map
 
   - `join`
 
