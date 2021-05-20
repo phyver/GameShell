@@ -1,0 +1,22 @@
+name: GameShell CI
+on: [push]
+jobs:
+  test:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Checkout the GameShell repo
+        uses: actions/checkout@v2
+      - if: ${{ matrix.platform == 'ubuntu-latest' }}
+        name: Install Linux deps
+        run: |
+          sudo apt install gettext-base python3 man-db psmisc nano tree bsdmainutils x11-apps gettext
+      - if: ${{ matrix.platform == 'macos-latest' }}
+        name: Install macOS deps
+        run: |
+          brew install coreutils pstree tree man-db
+      - name: Run the tests
+        run: |
+          echo 'for _ in $(seq 42); do gsh auto; done' | ./start.sh -FRDqv
