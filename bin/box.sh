@@ -1,12 +1,31 @@
 #!/usr/bin/env bash
 
-box=$1
-filename=$2
+box() {
+  echo "$#"
+  case $# in
+    1)
+      box=$1
+      filename=$(mktemp)
+      echo "$box $filename"
+      cat > "$filename"
+      ;;
+    2)
+      box=$1
+      filename=$2
+      ;;
+    *)
+      echo "Usage: $0 BOX [FILENAME]" &>2
+      return 1
+  esac
 
-get_size() {
-    awk '{w=w<length($0) ? length($0) : w;} END {printf("-v width=%d -v height=%d", w, NR);}'
+
+  size=$(awk '{w=w<length($0) ? length($0) : w;} END {printf("-v width=%d -v height=%d", w, NR);}' < "$filename")
+  awk -v box=$box $size -f "$(dirname "$0")/box-data.awk" -f "$(dirname "$0")/box.awk" < "$filename"
+
+  if [  "$#" -eq 1 ]
+  then
+    rm -f "$filename"
+  fi
 }
 
-size=$(get_size < "$filename")
-
-awk -v box=$box $size -f "$(dirname "$0")/box-data.awk" -f "$(dirname "$0")/box.awk" < "$filename"
+box "$@"
