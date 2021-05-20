@@ -41,8 +41,8 @@ Commands specific to GameShell
   gsh index
     show list of missions, with their status
 
-  gsh protect
-  gsh unprotect
+  gsh protect                           (ADMIN)
+  gsh unprotect                         (ADMIN)
     add / remove protection on GameShell directories
 
   gsh reset
