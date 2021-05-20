@@ -23,8 +23,6 @@ _mission_check() {
   local MM=$(cut -d"-" -f2 "$GSH_VAR"/date)
   local DD=$(cut -d"-" -f3 "$GSH_VAR"/date)
 
-  while true
-  do
     echo "$(eval_gettext 'What was the day of the week for the $MM-$DD-$YYYY?')"
 
     local i
@@ -36,21 +34,22 @@ _mission_check() {
     local n
     read -erp "$(gettext "Your answer: ")" n
 
-    local s
     case "$n" in
-      *[!0-9]) ;;
+      *[!0-9]* | "")
+        echo "$(gettext "That's not even a valid answer!")"
+        return 1
+        ;;
       *)
-        if [ "$n" -le 7 ] &&  [ "$n" -ge 1 ]
+        if [ "$n" -gt 7 ] ||  [ "$n" -lt 1 ]
         then
-          s=$(DOW "2000-05-$n")
-          break
+          echo "$(gettext "That's not even a valid answer!")"
+          return 1
         fi
+        local s=$(DOW "2000-05-$n")
+        local t=$(DOW "$YYYY-$MM-$DD")
+        unset -f DOW
+        [ "$t" = "$s" ]
     esac
-  done
-
-  local t=$(DOW "$YYYY-$MM-$DD")
-  unset -f DOW
-  [ "$t" = "$s" ]
 }
 
 _mission_check
