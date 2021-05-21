@@ -34,7 +34,7 @@ install_book() {
   local f
   for f in "$BOOK/$(gettext "page")_"*
   do
-      SED-i -e "/^==.*/d" "$f"
+      sed-i "/^==.*/d" "$f"
   done
 
   mv "$BOOK/$(gettext "page")_00" "$BOOK/$(gettext "table_of_contents")"

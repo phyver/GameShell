@@ -588,8 +588,8 @@ _gsh_protect() {
   chmod a-rw $GSH_MISSIONS
   chmod a-rw $GSH_CONFIG
   chmod a-r $GSH_VAR
-  chmod a-rw $GSH_BIN
-  chmod a-rw $GSH_MISSIONS_SBIN
+  chmod a-rw $GSH_UTILS
+  chmod a-rw $GSH_SBIN
 }
 
 _gsh_unprotect() {
@@ -597,8 +597,8 @@ _gsh_unprotect() {
   chmod $(umask -S) $GSH_MISSIONS
   chmod $(umask -S) $GSH_CONFIG
   chmod $(umask -S) $GSH_VAR
-  chmod $(umask -S) $GSH_BIN
-  chmod $(umask -S) $GSH_MISSIONS_SBIN
+  chmod $(umask -S) $GSH_UTILS
+  chmod $(umask -S) $GSH_SBIN
 }
 
 
@@ -633,7 +633,7 @@ gsh() {
       _gsh_welcome
       ;;
     "stat")
-      awk -v GSH_UID="$GSH_UID" -f "$GSH_BIN/stat.awk" < "$GSH_CONFIG/missions.log"
+      awk -v GSH_UID="$GSH_UID" -f "$GSH_UTILS/stat.awk" < "$GSH_CONFIG/missions.log"
       ;;
     "exit")
       exit 0
