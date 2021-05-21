@@ -101,14 +101,14 @@ Do you still want to quit? [y/n]") " r
         break
       fi
     done
-    kill -9 $(jobs -ps)
+    kill $(jobs -ps)
   fi
 
   _log_action "$MISSION_NB" "$signal"
   export GSH_LAST_ACTION='exit'
   _gsh_clean "$MISSION_NB"
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && _gsh_unprotect
-  jobs -p | xargs kill -sSIGHUP 2> /dev/null
+  kill -sSIGHUP $(jobs -p) 2>/dev/null
 }
 
 
@@ -202,9 +202,9 @@ _gsh_index() {
 # start a mission given by its number
 _gsh_start() {
   local quiet=""
-  if [ "$1" = "-quiet" ]
+  if [ "$1" = "--quiet" ]
   then
-    quiet="-quiet"
+    quiet="--quiet"
     shift
   fi
   local MISSION_NB D S
@@ -236,6 +236,8 @@ _gsh_start() {
     color_echo red "$(eval_gettext "Error: mission \$MISSION_NB doesn't exist!")" >&2
     echo
 
+    [ -t 0 ] || exit 1
+
     local LAST_MISSION=$(cut -d" " -f1 "$GSH_CONFIG/missions.log" | sort -n | tail -n1)
     while true
     do
@@ -264,7 +266,7 @@ _gsh_start() {
         *)
           if  [ 0 -lt "$CHOICE" ] && [ "$CHOICE" -le "$LAST_MISSION" ]
           then
-            _gsh_start -quiet $CHOICE
+            _gsh_start --quiet $CHOICE
             unset CHOICE
             return 0
           else
@@ -455,6 +457,7 @@ You should use the command
       fi
     fi
     _gsh_start $((10#$MISSION_NB + 1))
+    return 0
   else
     echo
     color_echo red "$(eval_gettext "Sorry, mission \$MISSION_NB hasn't been completed.")"
@@ -464,6 +467,7 @@ You should use the command
     export GSH_LAST_ACTION='check_false'
     _gsh_clean "$MISSION_NB"
     _gsh_start "$MISSION_NB"
+    return 255
   fi
 }
 
@@ -503,6 +507,7 @@ _gsh_assert_check() {
   local exit_status=$?
 
   NB_TESTS=$((NB_TESTS + 1))
+
   if [ "$expected" = "true" ] && [ "$exit_status" -ne 0 ]
   then
     NB_ERRORS=$((NB_ERRORS + 1))
@@ -517,7 +522,7 @@ _gsh_assert_check() {
 
   export GSH_LAST_ACTION="assert"
   _gsh_clean "$MISSION_NB"
-  _gsh_start -quiet "$MISSION_NB"
+  _gsh_start --quiet "$MISSION_NB"
 }
 [ "$GSH_MODE" != "DEBUG" ] && unset -f _gsh_assert_check
 
@@ -555,23 +560,27 @@ _gsh_test() {
   if ! [ -f "$MISSION_DIR/test.sh" ]
   then
     echo "$(eval_gettext "Error: mission \$MISSION_NB doesn't have a test script.")" >&2
-    return 1
+    return 2
   fi
 
   export NB_TESTS=0
   export NB_ERRORS=0
   mission_source "$MISSION_DIR/test.sh"
+  local ret
   if [ "$NB_ERRORS" = 0 ]
   then
     echo
     color_echo green "$(eval_gettext '$NB_TESTS successful tests')"
     echo
+    ret=0
   else
     echo
     color_echo red "$(eval_gettext '$NB_ERRORS failures out of $NB_TESTS tests')"
     echo
+    ret=255
   fi
   unset NB_TESTS NB_ERRORS
+  return "$ret"
 }
 [ "$GSH_MODE" != "DEBUG" ] && unset -f _gsh_test
 
@@ -608,9 +617,18 @@ gsh() {
   local CMD=$1
   shift
 
+  # should the command abort GameShell on failure (gsh test / gsh auto)
+  if [ "$1" = "--abort" ]
+  then
+    local ABORT="true"
+    shift
+  fi
+
+  local ret=0
   case $CMD in
     "c" | "ch" | "che" | "chec" | "check")
       _gsh_check
+      ret=$?
       ;;
     "h" | "he" | "hel" | "help")
       _gsh_help
@@ -675,6 +693,7 @@ gsh() {
       else
         _gsh_test
       fi
+      ret=$?
       ;;
     "assert_check")
       if [ "$GSH_MODE" != "DEBUG" ]
@@ -717,6 +736,8 @@ Use one of the following commands:")  check, goal, help, HELP or reset" >&2
   esac
   export TEXTDOMAIN=$_TEXTDOMAIN
   unset _TEXTDOMAIN
+  [ -n "$ABORT" ] && [ "$ret" -eq 255 ] && exit 1
+  return "$ret"
 }
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2

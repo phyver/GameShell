@@ -157,18 +157,9 @@ init_gsh() {
   if [ -e "$GSH_ROOT/.git" ] && [ "$FORCE" != "TRUE" ]
   then
     local r
-    while true
-    do
-      read -erp "$(gettext "You are trying to run GameShell inside the developpment directory.
+    read -erp "$(gettext "You are trying to run GameShell inside the developpment directory.
 Do you want to continue? [y/N]") " r
-      if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] || [ "$r" = "$(gettext "N")" ]
-      then
-        exit 1
-      elif [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ]
-      then
-        break
-      fi
-    done
+    [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ] || exit 1
   fi
 
   # message when data from a previous play is found. We can either
@@ -179,18 +170,10 @@ Do you want to continue? [y/N]") " r
     if [ -z "$RESET" ]
     then
       local r
-      while true
-      do
-        read -erp "$(eval_gettext 'The directory $GSH_CONFIG contains meta-data from a previous game.
+      read -erp "$(eval_gettext 'The directory $GSH_CONFIG contains meta-data from a previous game.
 Do you want to remove it and start a new game? [y/N]') " r
-        if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] || [ "$r" = "$(gettext "N")" ]
-        then
-          return 1
-        elif [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ]
-        then
-          break
-        fi
-      done
+      [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ] || return 1
+
     elif [ "$RESET" = "FALSE" ]
     then
       return 1
