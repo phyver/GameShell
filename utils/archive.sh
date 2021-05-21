@@ -17,7 +17,8 @@ options:
   -A          use the "anonymous mode" by default when running GameShell
   -L LANGS    only keep the given languages (ex: -L 'en*,fr')
 
-  -a          keep 'auto.sh' scripts from missions that have one
+  -a          keep 'auto.sh' scripts for missions that have one
+  -A          keep 'test.sh' scripts for missions that have one
   -N ...      name of the archive / top directory (default: "GameShell")
   -k          keep tgz archive
 EOH
@@ -44,13 +45,14 @@ keep_language() {
 NAME="GameShell"
 ADMIN_PASSWD="gsh"
 KEEP_AUTO=0
+KEEP_TEST=0
 DEFAULT_MODE="ANONYMOUS"
-KEEP_TGZ='false'
-GENERATE_MO='true'
-KEEP_PO='false'
+KEEP_TGZ=0
+GENERATE_MO=1
+KEEP_PO=0
 LANGUAGES=""
 
-while getopts ":hp:N:aPkL:" opt
+while getopts ":hp:N:aAPkL:" opt
 do
   case $opt in
     h)
@@ -66,11 +68,14 @@ do
     a)
       KEEP_AUTO=1
       ;;
+    A)
+      KEEP_TEST=1
+      ;;
     P)
       DEFAULT_MODE="PASSPORT"
       ;;
     k)
-      KEEP_TGZ='true'
+      KEEP_TGZ=1
       ;;
     L)
       LANGUAGES=$OPTARG
@@ -137,7 +142,7 @@ then
 fi
 
 # generate .mo files
-if [ "$GENERATE_MO" = 'true' ]
+if [ "$GENERATE_MO" -eq 1 ]
 then
   echo -n "generating '.mo' files: "
   {
@@ -185,10 +190,10 @@ fi
 echo "removing unnecessary files"
 find "$GSH_ROOT" -name "*~" -print0 | xargs -0 rm -f
 find "$GSH_ROOT" -name "_*.sh" -print0 | xargs -0 rm -f
-find "$GSH_ROOT" -name "test.sh" -print0 | xargs -0 rm -f
 find "$GSH_ROOT" -name "Makefile" -print0 | xargs -0 rm -f
 find "$GSH_ROOT" -name "template.pot" -print0 | xargs -0 rm -f
-[ "$KEEP_PO" = 'true' ] && [ "$GENERATE_MO" = 'true' ] && find "$GSH_ROOT" -name "*.po" -print0 | xargs -0 rm -f
+[ "$KEEP_TEST" -ne 1 ] && echo "remove tests" && find "$GSH_MISSIONS" -name "test.sh" -print0 | xargs -0 rm -f
+[ "$KEEP_PO" -ne 1 ] && [ "$GENERATE_MO" -eq 1 ] && find "$GSH_ROOT" -name "*.po" -print0 | xargs -0 rm -f
 [ "$KEEP_AUTO" -ne 1 ] && find "$GSH_MISSIONS" -name auto.sh -print0 | xargs -0 rm -f
 
 # change admin password
@@ -217,7 +222,7 @@ echo "creating self-extracting archive"
 cat "$GSH_ROOT/lib/header.sh" "$OUTPUT_DIR/$NAME.tgz" > "$OUTPUT_DIR/$NAME.sh"
 chmod +x "$OUTPUT_DIR/$NAME.sh"
 
-if [ "$KEEP_TGZ" = 'false' ]
+if [ "$KEEP_TGZ" = 0 ]
 then
   echo "removing tgz archive"
   rm "$OUTPUT_DIR/$NAME.tgz"
