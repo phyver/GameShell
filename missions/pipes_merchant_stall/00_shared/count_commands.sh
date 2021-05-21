@@ -24,7 +24,7 @@ _cmd() {
 }
 export -f _cmd
 
-PROMPT_COMMAND=$(echo "$PROMPT_COMMAND" | sed "s/\s*;\?\s*_cmd.*//")
+PROMPT_COMMAND=$(echo "$PROMPT_COMMAND" | sed 's|[[:blank:]]*;\?[[:blank:]]*_cmd.*||')
 if [ -z "$PROMPT_COMMAND" ]
 then
     PROMPT_COMMAND="_cmd"

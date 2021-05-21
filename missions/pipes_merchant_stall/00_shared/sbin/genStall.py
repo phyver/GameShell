@@ -3,7 +3,6 @@
 import random
 from random import randrange
 import sys
-from subprocess import getoutput
 import gettext
 import os
 
@@ -114,8 +113,9 @@ def genBooks(nbLines, nbKing, prob_paid, dir):
             if not paid:
                 amountKing += price
         scroll.write(_("{} bought {} for {} coppers{}\n").format(name, object, price, end))
-    getoutput("echo -n {} | sha1sum | cut -c 1-40 > $GSH_VAR/amountKing".format(amountKing))
-    getoutput("echo -n {} | sha1sum | cut -c 1-40 > $GSH_VAR/nbUnpaid".format(nbUnpaid))
+
+    open(os.path.expandvars("$GSH_VAR/amountKing"), mode="w").write(str(amountKing))
+    open(os.path.expandvars("$GSH_VAR/nbUnpaid"), mode="w").write(str(nbUnpaid))
 
 
 def genObjects(nbObjects, dir):

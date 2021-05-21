@@ -116,6 +116,7 @@ TODO NOW
         that requires changing a little its interface because it is currently
         writing progress on STDERR and printing directories on STDOUT
 
+  - [x] `treasure.sh`: macos `ls` doesn't use `--color` but `-G`
   - [x] add hint in mission
         `stdin_stdout_stderr/05_stdout_stderr_redirection_merlin` to explain
         the key needs to be given by a file redirection
@@ -163,6 +164,7 @@ FOR LATER
 
   - some `test.sh`: don't use ranges in `history -d ...` because older
     versions of bash do not support it.
+    (apparently, macos doesn't support it)
 
   - make sure all missions have a `test.sh`, and that it works in English and
     French
