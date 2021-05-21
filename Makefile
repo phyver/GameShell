@@ -1,6 +1,6 @@
 LANG=$(wildcard i18n/*.po)
 LANG:=$(filter-out i18n/en.po, $(LANG))
-SH_FILES= start.sh bin/archive.sh lib/gameshell.sh lib/common*.sh
+SH_FILES= start.sh utils/archive.sh lib/gameshell.sh lib/common*.sh lib/missions_utils.sh
 OTHER_FILES=
 
 SORT=--sort-output

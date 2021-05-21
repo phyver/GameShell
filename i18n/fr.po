@@ -98,25 +98,19 @@ msgstr  "Erreur : la mission $MISSION_NB n'a pas de script automatique."
 msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
 msgstr  "Erreur : la mission $MISSION_NB est annulée car des dépendances ne sont pas satisfaites."
 
-#, fuzzy
 msgid   "Error: no mission was found!\n"
-        "    Aborting"
+        "Aborting."
 msgstr  "Erreur : aucune mission trouvée !\n"
-        "Abandon"
-
-msgid   "Error: no mission was found!\n"
-        "Aborting"
-msgstr  "Erreur : aucune mission trouvée !\n"
-        "Abandon"
+        "Abandon."
 
 msgid   "Error: the 'goto' command requires a mission number as argument."
 msgstr  "Erreur : la commande 'goto' a besoin d'un numéro de mission en argument."
 
 msgid   "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!"
-msgstr  "Erreur : la commande 'gsh hardreset' ne devrait pas être lancée dans un sous-shelle !"
+msgstr  "Erreur : la commande 'gsh hardreset' ne devrait pas être lancée dans un sous-shell !"
 
 msgid   "Error: the command 'gsh reset' shouldn't be run inside a subshell!"
-msgstr  "Erreur : la commande 'gsh reset' ne devrait pas être lancée dans un sous-shelle !"
+msgstr  "Erreur : la commande 'gsh reset' ne devrait pas être lancée dans un sous-shell !"
 
 msgid   "Error: this mission was initialized in a subshell.\n"
         "You should run the command\n"
@@ -199,6 +193,13 @@ msgstr  "Il y a des processus stoppés dans votre session.\n"
         "    $ jobs -s\n"
         "Êtes vous sûr de vouloir quitter ? [o/N]"
 
+msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
+        "You should use the command\n"
+        "  $ gsh reset"
+msgstr  "Warning : le fichier 'treasure.sh' a été chargé dans un sous-shell.\n"
+        "Vous devriez lancer la commande\n"
+        "  $ gsh reset"
+
 #, sh-format
 msgid   "What do you want to do?\n"
         "      (Enter)     restart from last mission\n"
@@ -220,6 +221,9 @@ msgstr  "Pendant que vous attendez, une chenille passe..."
 msgid   "While you are waiting, a centipede crawls by..."
 msgstr  "Pendant que vous attendez, un mille pates passe..."
 
+msgid   "While you are waiting, a duck swims by..."
+msgstr  "Pendant que vous attendez, un poisson passe..."
+
 msgid   "While you are waiting, a fish swims by..."
 msgstr  "Pendant que vous attendez, un poisson passe..."
 
@@ -231,6 +235,9 @@ msgstr  "Pendant que vous attendez, un escargot passe..."
 
 msgid   "While you are waiting, a snake slithers by..."
 msgstr  "Pendant que vous attendez, une serpent passe..."
+
+msgid   "While you are waiting, a spider crawls by..."
+msgstr  "Pendant que vous attendez, un mille pates passe..."
 
 msgid   "While you are waiting, an ant crawls by..."
 msgstr  "Pendant que vous attendez, une fourmi passe..."

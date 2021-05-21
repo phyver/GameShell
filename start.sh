@@ -366,7 +366,7 @@ Do you want to remove it and start a new game? [y/N]') " r
   if [ "$MISSION_NB" -eq 1 ]
   then
     echo "$(gettext "Error: no mission was found!
-    Aborting")"
+Aborting.")"
     exit 1
   fi
   if [ "$GSH_MODE" = "DEBUG" ]
