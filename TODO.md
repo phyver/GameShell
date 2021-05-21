@@ -112,6 +112,10 @@ Existing missions
 TODO NOW
 --------
 
+  - [ ] use `progress_bar` in missions using `maze2.sh`
+        that requires changing a little its interface because it is currently
+        writing progress on STDERR and printing directories on STDOUT
+
   - [x] add hint in mission
         `stdin_stdout_stderr/05_stdout_stderr_redirection_merlin` to explain
         the key needs to be given by a file redirection

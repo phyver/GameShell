@@ -16,7 +16,7 @@ history -s "gsh check"
 gsh assert check false
 history -d -3--1
 
-sed -i '1d' $(gettext "Book_of_potions")/$(gettext "page")_01
+sed-i '1d' $(gettext "Book_of_potions")/$(gettext "page")_01
 history -s "head -n 6 \"$(gettext "Book_of_potions")/$(gettext 'page')_13\" | tail -n 3"
 history -s "gsh check"
 gsh assert check false

@@ -7,7 +7,7 @@ _mission_auto() {
 
   DOW() (
     local dow
-    if local dow=$(date --date="$1" +%A 2> /dev/null)
+    if dow=$(date --date="$1" +%A 2> /dev/null)
     then
       # with gnu "date" command
       echo $dow
