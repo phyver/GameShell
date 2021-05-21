@@ -99,14 +99,9 @@ msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are n
 msgstr  "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
 
 msgid   "Error: no mission was found!\n"
-        "    Aborting"
+        "Aborting."
 msgstr  "Error: no mission was found!\n"
-        "    Aborting"
-
-msgid   "Error: no mission was found!\n"
-        "Aborting"
-msgstr  "Error: no mission was found!\n"
-        "Aborting"
+        "Aborting."
 
 msgid   "Error: the 'goto' command requires a mission number as argument."
 msgstr  "Error: the 'goto' command requires a mission number as argument."
@@ -198,6 +193,13 @@ msgstr  "There are stopped jobs in your session.\n"
         "    $ jobs -s\n"
         "Do you still want to quit? [y/n]"
 
+msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
+        "You should use the command\n"
+        "  $ gsh reset"
+msgstr  "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
+        "You should use the command\n"
+        "  $ gsh reset"
+
 #, sh-format
 msgid   "What do you want to do?\n"
         "      (Enter)     restart from last mission\n"
@@ -219,6 +221,9 @@ msgstr  "While you are waiting, a caterpillar crawls by..."
 msgid   "While you are waiting, a centipede crawls by..."
 msgstr  "While you are waiting, a centipede crawls by..."
 
+msgid   "While you are waiting, a duck swims by..."
+msgstr  "While you are waiting, a duck swims by..."
+
 msgid   "While you are waiting, a fish swims by..."
 msgstr  "While you are waiting, a fish swims by..."
 
@@ -230,6 +235,9 @@ msgstr  "While you are waiting, a snail goes by..."
 
 msgid   "While you are waiting, a snake slithers by..."
 msgstr  "While you are waiting, a snake slithers by..."
+
+msgid   "While you are waiting, a spider crawls by..."
+msgstr  "While you are waiting, a spider crawls by..."
 
 msgid   "While you are waiting, an ant crawls by..."
 msgstr  "While you are waiting, an ant crawls by..."
