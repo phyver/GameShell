@@ -98,7 +98,7 @@ while creating missions (`gsh assert ...`, `gsh test`).
 Creating an executable archive
 ------------------------------
 
-The script `bin/archive.sh` is used to create an executable archive to
+The script `utils/archive.sh` is used to create an executable archive to
 distribute a (customized) version of GameShell.
 
 By default, it creates an archive with all the missions listed in the

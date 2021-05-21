@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ -z "$GSH_ROOT" ]
+then
+ echo "Error: GSH_ROOT undefined"
+ exit 1
+fi
+
 TEXTDOMAINDIR="$GSH_ROOT/locale"
 TEXTDOMAIN="gsh"
 
@@ -99,18 +105,18 @@ parchment() {
   then
     if [ -z "$file" ]
     then
-      python3 "$GSH_BIN/box8.py" --center --box="$P"
+      python3 "$GSH_UTILS/box8.py" --center --box="$P"
     else
-      python3 "$GSH_BIN/box8.py" --center --box="$P" < "$file"
+      python3 "$GSH_UTILS/box8.py" --center --box="$P" < "$file"
     fi
   else
   # if not, use the awk version
     if [ -z "$file" ]
     then
-      bash "$GSH_BIN/box.sh" "$P"
+      bash "$GSH_UTILS/box.sh" "$P"
       rm -f "$tempfile"
     else
-      bash "$GSH_BIN/box.sh" "$P" "$file"
+      bash "$GSH_UTILS/box.sh" "$P" "$file"
     fi
   fi
   echo
@@ -206,7 +212,7 @@ mission_source() {
     local _MISSION_NAME=$MISSION_NAME
     export MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
     local _PATH=$PATH
-    export PATH=$PATH:$GSH_MISSIONS_SBIN
+    export PATH=$PATH:$GSH_SBIN
     source "$FILENAME"
     local exit_status=$?
     export TEXTDOMAIN=$_TEXTDOMAIN
@@ -238,7 +244,7 @@ mission_source() {
   _MISSION_NAME=$MISSION_NAME
   export MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
   local _PATH=$PATH
-  export PATH=$PATH:$GSH_MISSIONS_SBIN
+  export PATH=$PATH:$GSH_SBIN
   source "$FILENAME"
   exit_status=$?
   export TEXTDOMAIN=$_TEXTDOMAIN
@@ -416,5 +422,30 @@ make_index() {
     shift
   done
 }
+
+sed-i() {
+  if [ $# -gt 2 ]
+  then
+    echo "usage: sed-i 'EXPRESSION' FILENAME" >&2
+    return 1
+  fi
+  local expr=$1
+  local filename=$2
+  local tmp=$(mktemp)
+  local bak="$filename~"
+  trap "rm -f \"$tmp\" \"$bak\"" SIGTERM SIGINT
+  if sed -e "$expr" "$filename" > "$tmp"
+  then
+    cp "$filename" "$bak"
+    trap "" SIGTERM SIGINT
+    cp "$tmp" "$filename"
+    rm -f "$tmp" "$bak"
+  else
+    local ret=$?
+    rm -f "$tmp" "$bak"
+    return $ret
+  fi
+}
+export -f sed-i
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2

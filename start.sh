@@ -140,7 +140,7 @@ init_gsh() {
   # these directories should not be modified during a game
   export GSH_LIB="$GSH_ROOT/lib"
   export GSH_MISSIONS="$GSH_ROOT/missions"
-  export GSH_BIN="$GSH_ROOT/bin"
+  export GSH_UTILS="$GSH_ROOT/utils"
 
   # these directories should be erased when a new game is started, they only contain
   # dynamic data
@@ -148,8 +148,8 @@ init_gsh() {
   export GSH_CONFIG="$GSH_ROOT/.config"
   export GSH_VAR="$GSH_ROOT/.var"
   export GSH_BASHRC="$GSH_ROOT/.bashrc"
-  export GSH_MISSIONS_BIN="$GSH_ROOT/.bin"
-  export GSH_MISSIONS_SBIN="$GSH_ROOT/.sbin"
+  export GSH_BIN="$GSH_ROOT/.bin"
+  export GSH_SBIN="$GSH_ROOT/.sbin"
 
   ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
 
@@ -204,8 +204,8 @@ Do you want to remove it and start a new game? [y/N]') " r
   rm -rf "$GSH_CONFIG"
   rm -rf "$GSH_VAR"
   rm -rf "$GSH_BASHRC"
-  rm -rf "$GSH_MISSIONS_BIN"
-  rm -rf "$GSH_MISSIONS_SBIN"
+  rm -rf "$GSH_BIN"
+  rm -rf "$GSH_SBIN"
 
   # recreate them
   mkdir -p "$GSH_HOME"
@@ -224,8 +224,8 @@ Do you want to remove it and start a new game? [y/N]') " r
   # save hash for admin password
   [ -n "$ADMIN_HASH" ] && echo "$ADMIN_HASH" > "$GSH_CONFIG/admin_hash"
 
-  mkdir -p "$GSH_MISSIONS_BIN"
-  mkdir -p "$GSH_MISSIONS_SBIN"
+  mkdir -p "$GSH_BIN"
+  mkdir -p "$GSH_SBIN"
 
   mkdir -p "$GSH_VAR"
 
@@ -338,7 +338,7 @@ Do you want to remove it and start a new game? [y/N]') " r
     then
       shopt -s nullglob
       for BIN_FILE in "$MISSION_DIR"/sbin/*; do
-        [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_MISSIONS_SBIN"
+        [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_SBIN"
       done
       shopt -u nullglob
     fi
@@ -346,7 +346,7 @@ Do you want to remove it and start a new game? [y/N]') " r
     then
       shopt -s nullglob
       for BIN_FILE in "$MISSION_DIR"/bin/*; do
-        [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_MISSIONS_BIN"
+        [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_BIN"
       done
       shopt -u nullglob
     fi

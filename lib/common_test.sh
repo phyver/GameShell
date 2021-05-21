@@ -67,21 +67,4 @@ test_CHECKSUM() {
   return 0
 }
 
-test_SED-i() {
-  local tmp1=$(mktemp)
-  printf 'abc\nDEF\nghi\n' > "$tmp1"
-  local tmp2=$(mktemp)
-  printf 'abc\nYYY\nghi\n' > "$tmp2"
-  SED-i "s/D.F/YYY/" "$tmp1" 2> /dev/null
-  if ! cmp -s "$tmp1" "$tmp2"
-  then
-    echo "Error: SED-i doesn't seem to be working." >&2
-    rm -f "$tmp1" "$tmp2"
-    return 1
-  fi
-  rm -f "$tmp1" "$tmp2"
-  return 0
-}
-
-
-test_mktemp && test_REALPATH && test_CHECKSUM && test_SED-i
+test_mktemp && test_REALPATH && test_CHECKSUM
