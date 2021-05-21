@@ -10,6 +10,7 @@ TEXTDOMAINDIR="$GSH_ROOT/locale"
 TEXTDOMAIN="gsh"
 
 # generate GameShell translation files for gettext
+shopt -s nullglob
 for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
   PO_LANG=$(basename "$PO_FILE" .po)
   MO_FILE="$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo"
@@ -19,6 +20,7 @@ for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
     msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
   fi
 done
+shopt -u nullglob
 
 
 case $OSTYPE in
@@ -223,6 +225,7 @@ mission_source() {
     return $exit_status
   fi
 
+  echo "DEBUG: sourcing ${FILENAME#GSH_ROOT/}"
   local TEMP=$(mktemp -d "$GSH_VAR/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
   local _MISSION_DIR=""

@@ -5,17 +5,12 @@ _mission_check() {
     cave="$(eval_gettext '$GSH_HOME/Mountain/Cave')"
 
     local pc
-    pc=$(fc -nl -2 -2 | grep 'cat')
+    pc=$(fc -nl -1 -1)
 
     local goal
     goal=$(REALPATH "$cave")
     local current
     current=$(REALPATH "$PWD")
-
-    local expected
-    expected="$(cat "$GSH_VAR/book_of_potions/$(gettext 'page')_0"[12])"
-    local res
-    res="$(eval "$pc")"
 
     if ! diff -q "$cave/$(gettext 'Book_of_potions')" "$GSH_VAR/book_of_potions" > /dev/null
     then
@@ -28,11 +23,18 @@ _mission_check() {
         echo "$(gettext "You are not in the cave with Servillus!")"
         return 1
     fi
-    if [ -z "$pc" ]
+    if [ -z "$(echo "$pc" | grep 'cat')" ]
     then
         echo "$(gettext "You have not used the 'cat' command!")"
         return 1
     fi
+
+    echo $pc | grep 'gsh\s\s*check' && return 1
+
+    local expected
+    expected="$(cat "$GSH_VAR/book_of_potions/$(gettext 'page')_0"[12])"
+    local res
+    res="$(eval "$pc")"
     if [ "$res" != "$expected" ]
     then
         echo "$(gettext "Your previous command does not give the expected result...")"

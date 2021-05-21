@@ -84,6 +84,7 @@ _gsh_exit() {
   local MISSION_NB=$(_get_current_mission)
   local signal=$1
 
+  echo 1
   if jobs | grep -iq stopped
   then
     while true
@@ -101,7 +102,9 @@ Do you still want to quit? [y/n]") " r
         break
       fi
     done
+  echo 2
     kill $(jobs -ps)
+  echo 3
   fi
 
   _log_action "$MISSION_NB" "$signal"
@@ -236,8 +239,8 @@ _gsh_start() {
     color_echo red "$(eval_gettext "Error: mission \$MISSION_NB doesn't exist!")" >&2
     echo
 
-    [ -t 0 ] || exit 1
-
+    # FIXME: if we reach this point from a 'gsh check' which redirected stdin,
+    # the user won't have a chance to enter her choice...
     local LAST_MISSION=$(cut -d" " -f1 "$GSH_CONFIG/missions.log" | sort -n | tail -n1)
     while true
     do

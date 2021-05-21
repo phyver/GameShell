@@ -6,8 +6,7 @@ _mission_check() {
   read -erp "$(gettext "How much does the king owe?") " response
   local NB_CMD=$(cat "$GSH_VAR/nb_commands")
 
-  local s=$(CHECKSUM "$response")
-  if [ "$s" != "$amount" ]
+  if [ "$response" != "$amount" ]
   then
       echo "$(gettext "That's not the right answer!")"
       return 1

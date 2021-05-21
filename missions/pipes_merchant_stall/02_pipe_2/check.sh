@@ -6,9 +6,7 @@ _mission_check() {
   read -erp "$(gettext "How many unpaid items are there?") " response
   NB_CMD=$(cat "$GSH_VAR/nb_commands")
 
-  local s=$(CHECKSUM "$response")
-
-  if [ "$s" != "$nb_unpaid" ]
+  if [ "$response" != "$nb_unpaid" ]
   then
       echo "$(gettext "That's not the right answer!")"
       return 1
