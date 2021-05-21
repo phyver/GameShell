@@ -207,6 +207,7 @@ mission_source() {
   # if we are not running in DEBUG mode, just source the file
   if [ "$GSH_MODE" != "DEBUG" ] || [ -z "$GSH_VERBOSE_DEBUG" ]
   then
+    echo "DEBUG: sourcing ${FILENAME#GSH_ROOT/}"
     local _MISSION_DIR=$MISSION_DIR
     export MISSION_DIR=$(dirname "$(REALPATH "$FILENAME")")
     local _TEXTDOMAIN=$TEXTDOMAIN
