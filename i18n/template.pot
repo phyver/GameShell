@@ -97,11 +97,7 @@ msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are n
 msgstr  ""
 
 msgid   "Error: no mission was found!\n"
-        "    Aborting"
-msgstr  ""
-
-msgid   "Error: no mission was found!\n"
-        "Aborting"
+        "Aborting."
 msgstr  ""
 
 msgid   "Error: the 'goto' command requires a mission number as argument."
@@ -184,6 +180,11 @@ msgid   "There are stopped jobs in your session.\n"
         "Do you still want to quit? [y/n]"
 msgstr  ""
 
+msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
+        "You should use the command\n"
+        "  $ gsh reset"
+msgstr  ""
+
 #, sh-format
 msgid   "What do you want to do?\n"
         "      (Enter)     restart from last mission\n"
@@ -201,6 +202,9 @@ msgstr  ""
 msgid   "While you are waiting, a centipede crawls by..."
 msgstr  ""
 
+msgid   "While you are waiting, a duck swims by..."
+msgstr  ""
+
 msgid   "While you are waiting, a fish swims by..."
 msgstr  ""
 
@@ -211,6 +215,9 @@ msgid   "While you are waiting, a snail goes by..."
 msgstr  ""
 
 msgid   "While you are waiting, a snake slithers by..."
+msgstr  ""
+
+msgid   "While you are waiting, a spider crawls by..."
 msgstr  ""
 
 msgid   "While you are waiting, an ant crawls by..."

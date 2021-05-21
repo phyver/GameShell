@@ -451,9 +451,9 @@ _gsh_check() {
       #sourcing the file isn't very robust as the "gsh check" may happen in a subshell!
       if [ "$BASHPID" != $$ ]
       then
-        echo "$(gettext "Error: the file 'treasure.sh' was sourced from a subshell.
+        echo "$(gettext "Warning: the file 'treasure.sh' was sourced from a subshell.
 You should use the command
-  $ gsh reset")" >&2
+  \$ gsh reset")" >&2
       fi
     fi
     _gsh_start $((10#$MISSION_NB + 1))
