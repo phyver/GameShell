@@ -22,8 +22,8 @@ copy_bin() {
     target=$target/$(basename "$source")
   fi
   cat > "$target" <<EOH
-#!/bin/bash
-export MISSION_DIR=$MISSION_DIR
+#!/usr/bin/env bash
+export MISSION_DIR=\$GSH_ROOT/${MISSION_DIR#$GSH_ROOT/}
 export TEXTDOMAIN=$DOMAIN
 exec $source "\$@"
 EOH
