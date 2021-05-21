@@ -38,7 +38,6 @@ _mission_check() {
     _mission_check_p "gold_coin" 1 && _mission_check_p "GolD_CoiN" 2
 }
 
-find "$GSH_CHEST"
 if _mission_check
 then
     unset -f _mission_check_p

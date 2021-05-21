@@ -5,7 +5,6 @@ _mission_check() {
     cave="$(eval_gettext '$GSH_HOME/Mountain/Cave')"
 
     local pc
-    fc -nl
     pc=$(fc -nl -1 -1)
 
     local goal
