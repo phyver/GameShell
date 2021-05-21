@@ -1,12 +1,10 @@
 #!/bin/sh
 
 box() {
-  echo "$#"
   case $# in
     1)
       box=$1
       filename=$(mktemp)
-      echo "$box $filename"
       cat > "$filename"
       ;;
     2)
