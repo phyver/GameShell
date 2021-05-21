@@ -91,7 +91,7 @@ mkdir "$TMP_DIR/$NAME"
 
 
 # copy source files
-cp --archive "$GSH_ROOT/start.sh" "$GSH_ROOT/bin/" "$GSH_ROOT/lib/" "$GSH_ROOT/i18n/" "$TMP_DIR/$NAME"
+cp --archive "$GSH_ROOT/start.sh" "$GSH_ROOT/utils/" "$GSH_ROOT/lib/" "$GSH_ROOT/i18n/" "$TMP_DIR/$NAME"
 
 # copy missions
 mkdir "$TMP_DIR/$NAME/missions"
@@ -194,13 +194,13 @@ find "$GSH_ROOT" -name "template.pot" -print0 | xargs -0 rm -f
 # change admin password
 echo "setting admin password"
 ADMIN_HASH=$(CHECKSUM "$ADMIN_PASSWD")
-SED-i -e "s/^\([[:blank:]]*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$GSH_ROOT/start.sh"
+sed-i "s/^\([[:blank:]]*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$GSH_ROOT/start.sh"
 
 # choose default mode
 echo "setting default GameShell mode"
 case $DEFAULT_MODE in
   DEBUG | PASSPORT | ANONYMOUS )
-    SED-i -e "s/^GSH_MODE=.*$/GSH_MODE='$DEFAULT_MODE'/" "$GSH_ROOT/start.sh"
+    sed-i "s/^GSH_MODE=.*$/GSH_MODE='$DEFAULT_MODE'/" "$GSH_ROOT/start.sh"
     ;;
   *)
     echo "unknown mode: $MODE" >&2

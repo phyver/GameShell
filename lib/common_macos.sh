@@ -28,8 +28,3 @@ CHECKSUM() {
   fi
 }
 export -f CHECKSUM
-
-SED-i() {
-  sed -i'' "$@"
-}
-export -f SED-i

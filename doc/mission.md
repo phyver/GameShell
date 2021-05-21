@@ -301,14 +301,14 @@ message shouldn't be more than 45 characters wide.
 ### `bin/` (optional)
 
 The files contained in this directory will be "copied" to the directory
-`$GSH_MISSIONS_BIN`. The directory is in the global `PATH`, so those files are
+`$GSH_BIN`. The directory is in the global `PATH`, so those files are
 directly available to the player.
 
 
 ### `sbin/` (optional)
 
 The files contained in this directory will be "copied" to the directory
-`$GSH_MISSIONS_SBIN`. (The directory is not in the global `PATH`, so those
+`$GSH_SBIN`. (The directory is not in the global `PATH`, so those
 files are _not_ directly available to the player.) This is particularly useful
 for "dummy" missions.
 
