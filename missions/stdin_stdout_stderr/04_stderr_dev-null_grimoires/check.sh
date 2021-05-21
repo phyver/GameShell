@@ -8,15 +8,17 @@ _mission_check() {
     # I grep the previous command to avoid looping by re-running "gsh check"
     # recursively. Because of the previous remark, I need to look at the "-2"
     # command
-    pc=$(fc -nl -2 -2 | grep -v check | grep grep)
+    pc=$(fc -nl -1 -1)
 
-    if [ -z "$pc" ]
+    echo $pc | grep 'gsh\s\s*check' && return 1
+
+    if [ -z "$(echo "$pc" | grep 'grep')" ]
     then
         echo "$(gettext "Your previous command doesn't use the 'grep' command...")"
         return 1
     fi
 
-    if ! diff -q "$GSH_VAR/list_grimoires_PQ" <(eval "$pc" |& sort) > /dev/null
+    if ! diff -q "$GSH_VAR/list_grimoires_PQ" <(eval "$pc" | sort) > /dev/null
     then
         return 1
     else

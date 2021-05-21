@@ -1,4 +1,4 @@
-rm -rf "$(eval_gettext '$GSH_HOME/Stall')"/*
+find "$(eval_gettext '$GSH_HOME/Stall')" -type f -exec rm "{}" \;
 rm -f "$GSH_VAR/nb_commands" "$GSH_VAR/last_command"
 
 PROMPT_COMMAND=$OLD_PROMPT_COMMAND

@@ -163,6 +163,7 @@ FOR LATER
 
   - some `test.sh`: don't use ranges in `history -d ...` because older
     versions of bash do not support it.
+    (apparently, macos doesn't support it)
 
   - make sure all missions have a `test.sh`, and that it works in English and
     French

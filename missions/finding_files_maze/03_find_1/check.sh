@@ -2,8 +2,9 @@
 
 _mission_check_p() {
     local COIN_NAME=$1
+    local COIN_NB=$2
     local path
-    path=$(find "$GSH_CHEST" -name "*$(gettext "$COIN_NAME")*" -type f)
+    path=$(find "$GSH_CHEST" -name "*$(gettext "$COIN_NAME")_$COIN_NB" -type f)
 
     if [ -z "$path" ]
     then
@@ -11,7 +12,7 @@ _mission_check_p() {
         echo $COIN_NAME
         return 1
     fi
-    if ! cmp -s "$path" "$GSH_VAR/$COIN_NAME"
+    if ! cmp -s "$path" "$GSH_VAR/${COIN_NAME}_$COIN_NB"
     then
         echo "$(eval_gettext "Coin '\$COIN_NAME' in your chest is invalid!")"
         return 1
@@ -34,9 +35,10 @@ _mission_check() {
         return 1
     fi
 
-    _mission_check_p "gold_coin" && _mission_check_p "GolD_CoiN"
+    _mission_check_p "gold_coin" 1 && _mission_check_p "GolD_CoiN" 2
 }
 
+find "$GSH_CHEST"
 if _mission_check
 then
     unset -f _mission_check_p
