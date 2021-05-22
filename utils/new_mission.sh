@@ -38,8 +38,9 @@ new_static_file() {
 
 #
 # This file is not required: it is sourced once when initialising a GameShell
-# game. It typically creates the parts of the mission that will be available
-# during the whole game, like the directory structure.
+# game, and whenever the corresponding missions is (re)started.
+# It typically creates the parts of the mission that will be available during
+# the whole game, like the directory structure.
 #
 # Since it is sourced, it may define environment variables if you really need
 # them, but it should "unset" any local variable it has created.
@@ -71,6 +72,8 @@ new_goal_gettext_file() {
 #!/bin/bash
 
 # This file is not required. It can be used to generate dynamic goal messages.
+# If you need that, rename the file to 'goal.sh'.
+#
 # If the file exists, it is sourced by the command
 #  $ gsh goal
 # If neither this file nor "goal.txt" exists, the command
@@ -139,20 +142,15 @@ new_check_file() {
 # It should end with a command returning 0 on success, and something else on
 # failure.
 # It should "unset" any local variable it has created, and any "global
-# variable" that were only used for the mission
+# variable" that were only used for the mission. (The function _mission_check
+# is automatically unset.)
 #
 
- ...
- ...
+_mission_check() {
+  ...
+}
 
-if ...
-then
-    unset ...
-    true
-else
-    unset ...
-    false
-fi
+_mission_check
 EOF
 }
 
@@ -189,6 +187,7 @@ new_treasure_file() {
 # completion and is added to the global configuration.
 # It is typically used to "reward" the player with new features like aliases
 # and the like.
+# If you need this file, rename it to 'treasure.txt'
 #
 # Note that should the mission be completed in a subshell, aliases or
 # environment variables will disappear.
@@ -219,6 +218,8 @@ new_gettext_treasure-msg_file() {
 
 # This file is not required. It can be used to generate dynamic treasure
 # messages.
+# If you need this file, rename it to 'treasure-msg.sh'
+#
 # If the file exists, it is sourced when the mission is succesfully checked,
 # when the treasure is sourced.
 # If neither this file nor "treasure-msg.txt" exists, a "treasure-msg.sh" file
@@ -242,6 +243,8 @@ new_test_file() {
 
 #
 # This file is not required: it is sourced by the command "gsh test".
+# If you need this file, rename it to 'test.sh'
+#
 # You can use some special commands
 # gsh assert check true
 # gsh assert check false

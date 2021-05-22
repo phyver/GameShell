@@ -9,7 +9,7 @@ _mission_init() {
   local i
   for i in $(seq 100)
   do
-    local file="$bib/$(gettext "grimoire")_$(CHECKSUM $RANDOM)"
+    local file="$bib/$(gettext "grimoire")_$(checksum $RANDOM)"
     random_string $((100 + RANDOM%600)) > "$file"
 
     if [ $(( RANDOM % 2 )) -eq 0 ]
@@ -20,10 +20,10 @@ _mission_init() {
     [ $((i%5)) -eq 0 ] && printf "."
   done
   printf "\n"
-  {
+  ( #subshell to avoid changing directory
     cd $bib
     grep -il "pq" * 2> /dev/null | sort > $GSH_VAR/list_grimoires_PQ
-  }
+  )
 }
 
 _mission_init | progress_bar

@@ -2,7 +2,7 @@
 
 change_password() {
   local PASSWORD=$1
-  local ADMIN_HASH=$(CHECKSUM "$PASSWORD")
+  local ADMIN_HASH=$(checksum "$PASSWORD")
   echo "$ADMIN_HASH" > "$GSH_CONFIG/admin_hash"
   echo
   echo "$(eval_gettext "The admin password is now '\$PASSWORD'. Use

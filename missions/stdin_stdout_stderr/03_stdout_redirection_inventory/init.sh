@@ -7,7 +7,7 @@ _mission_init() {
   local i
   for i in $(seq 100)
   do
-    local file="$office/$(gettext "grimoire")_$(CHECKSUM $RANDOM)"
+    local file="$office/$(gettext "grimoire")_$(checksum $RANDOM)"
     random_string 100 > "$file"
 
     if [ $(( RANDOM % 2 )) -eq 0 ]
@@ -18,10 +18,10 @@ _mission_init() {
   done
   echo
 
-  {
+  ( # subshell to avoid changing directory
     cd $office
-    command ls $(gettext "grimoire")_* | sort > "$GSH_VAR/inventory_grimoires"
-  }
+    ls $(gettext "grimoire")_* | sort > "$GSH_VAR/inventory_grimoires"
+  )
 
 }
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 source gettext.sh
 
@@ -15,5 +15,5 @@ disown
 echo -n "$!" >> "$GSH_VAR/fairy_spell.pids"
 disown
 
-trap "" SIGTERM SIGINT
+trap "" TERM INT
 tail -f /dev/null

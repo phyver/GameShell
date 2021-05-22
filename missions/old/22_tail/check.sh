@@ -2,9 +2,9 @@
 
 _mission_check() {
     local goal
-    goal=$(REALPATH "$(eval_gettext '$GSH_HOME/Mountain/Cave')")
+    goal=$(realpath "$(eval_gettext '$GSH_HOME/Mountain/Cave')")
     local current
-    current=$(REALPATH "$PWD")
+    current=$(realpath "$PWD")
     if [ "$goal" != "$current" ]
     then
         echo "$(gettext "You are not standing in the cave with the ermit!")"

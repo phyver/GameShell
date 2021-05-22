@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### test the various utilities in GSH_ROOT/bin/ directory
+
 function test_mktemp() {
   local tmp
   if ! tmp=$(mktemp 2> /dev/null)
@@ -16,31 +18,31 @@ function test_mktemp() {
 }
 
 
-function test_REALPATH() {
+function test_realpath() {
   local tmp=$(mktemp -d)
   cd "$tmp"
   touch a
-  local rpa=$(REALPATH ./a)
+  local rpa=$(realpath ./a)
   if [ -z "$rpa" ]
   then
-    echo "Error: REALPATH returned the empty string." >&2
+    echo "Error: realpath returned the empty string." >&2
     return 1
   fi
 
   case "$rpa" in
-    "$(REALPATH "$tmp")"* )
+    "$(realpath "$tmp")"* )
       ;;
     * )
-    echo "Error: REALPATH didn't give an absolute path." >&2
+    echo "Error: realpath didn't give an absolute path." >&2
     return 1
     ;;
   esac
 
   ln -s a b
-  local rpb=$(REALPATH b)
+  local rpb=$(realpath b)
   if [ "$rpa" != "$rpb" ]
   then
-    echo "Error: REALPATH doesn't resolve symbolic links." >&2
+    echo "Error: realpath doesn't resolve symbolic links." >&2
     return 1
   fi
 
@@ -48,8 +50,8 @@ function test_REALPATH() {
   return 0
 }
 
-test_CHECKSUM() {
-  case "$(CHECKSUM "gsh" 2> /dev/null)" in
+test_checksum() {
+  case "$(checksum "gsh" 2> /dev/null)" in
     ae9fa6d4a2de36b4477d0381b9f0b795)
       # md5
       ;;
@@ -60,11 +62,11 @@ test_CHECKSUM() {
       # cksum (POSIX)
       ;;
     *)
-    echo "Error: CHECKSUM doesn't return a correct checksum." >&2
+    echo "Error: checksum doesn't return a correct checksum." >&2
     return 1
     ;;
   esac
   return 0
 }
 
-test_mktemp && test_REALPATH && test_CHECKSUM
+test_mktemp && test_realpath && test_checksum

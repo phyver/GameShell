@@ -17,7 +17,7 @@ _mission_init() {
     file=$(maze2.py "$maze" 3 10 1 "$(gettext "stone")")
   fi
   local R=$(basename "$file")
-  local sum=$(CHECKSUM "$R $(gettext "diamond")")
+  local sum=$(checksum "$R $(gettext "diamond")")
   echo "$R $(gettext "diamond") $sum" > "$maze/$file"
   echo "$R $(gettext "diamond") $sum" > "$GSH_VAR/diamond"
 }

@@ -5,7 +5,6 @@
 source gettext.sh
 
 source "$GSH_LIB/common.sh"
-source "$GSH_LIB/missions_utils.sh"
 
 trap "_gsh_exit EXIT" EXIT
 trap "_gsh_exit TERM" SIGTERM
@@ -18,7 +17,7 @@ _log_action() {
   MISSION_NB=$1
   action=$2
   D="$(date +%s)"
-  S="$(CHECKSUM "$GSH_UID#$MISSION_NB#$action#$D")"
+  S="$(checksum "$GSH_UID#$MISSION_NB#$action#$D")"
   echo "$MISSION_NB $action $D $S" >> "$GSH_CONFIG/missions.log"
 }
 
@@ -40,22 +39,22 @@ _get_current_mission() {
 _get_mission_dir() {
   local n=$1
   local dir=$(awk -v n="$n" -v DIR="$GSH_MISSIONS" '/^\s*[#!]/{next} /^$/{next} {N++} (N == n){print DIR "/" $0; exit}' "$GSH_CONFIG/index.txt")
-  echo "$(REALPATH "$dir")"
+  echo "$(realpath "$dir")"
 }
 
 # welcome message
 _gsh_welcome() {
   local msg_file=$(eval_gettext '$GSH_ROOT/i18n/gameshell-welcome/en.txt')
   [ -r "$msg_file" ] || return 1
-  parchment "$msg_file" Parchment5 | PAGER
+  parchment "$msg_file" Parchment5 | pager
 }
 
 _gsh_reset() {
   local MISSION_NB="$(_get_current_mission)"
   if [ -z "$MISSION_NB" ]
   then
-    local FUNCTION_NAME="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
   fi
   if [ "$BASHPID" != $$ ]
@@ -128,8 +127,8 @@ _gsh_goal() {
 
   if [ -z "$MISSION_NB" ]
   then
-    local FUNCTION_NAME="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
   fi
 
@@ -137,14 +136,14 @@ _gsh_goal() {
 
   if [ -f "$MISSION_DIR/goal.sh" ]
   then
-    mission_source "$MISSION_DIR/goal.sh" | parchment | PAGER
+    mission_source "$MISSION_DIR/goal.sh" | parchment | pager
   elif [ -f "$MISSION_DIR/goal.txt" ]
   then
     FILE="$MISSION_DIR/goal.txt"
-    parchment "$FILE" | PAGER
+    parchment "$FILE" | pager
   else
     FILE="$(TEXTDOMAIN="$(textdomainname "$MISSION_DIR")" eval_gettext '$MISSION_DIR/goal/en.txt')"
-    parchment "$FILE" | PAGER
+    parchment "$FILE" | pager
   fi
 }
 
@@ -228,8 +227,8 @@ _gsh_start() {
 
   if [ -z "$MISSION_NB" ]
   then
-    local FUNCTION_NAME="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
   fi
 
@@ -316,7 +315,7 @@ Please choose a number between 1 and \$LAST_MISSION.")" >&2
     then
       echo "$(gettext "Error: this mission was initialized in a subshell.
 You should run the command
-    gsh reset
+    \$ gsh reset
 to make sure the mission is initialized properly.")" >&2
       rm -f "$GSH_VAR"/env-{before,after}
     fi
@@ -340,8 +339,8 @@ _gsh_skip() {
   local MISSION_NB="$(_get_current_mission)"
   if [ -z "$MISSION_NB" ]
   then
-    local FUNCTION_NAME="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
   fi
   if ! admin_mode
@@ -362,8 +361,8 @@ _gsh_auto() {
 
   if [ -z "$MISSION_NB" ]
   then
-    local FUNCTION_NAME="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
   fi
 
@@ -392,18 +391,12 @@ _gsh_check() {
 
   if [ -z "$MISSION_NB" ]
   then
-    local FUNCTION_NAME="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
   fi
 
   local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
-
-  if ! [ -f "$MISSION_DIR/check.sh" ]
-  then
-    echo "$(eval_gettext "Error: mission \$MISSION_NB doesn't have a check script.")" >&2
-    return 1
-  fi
 
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
@@ -479,8 +472,8 @@ _gsh_clean() {
 
   if [ -z "$MISSION_NB" ]
   then
-    local FUNCTION_NAME="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
   fi
 
@@ -509,17 +502,17 @@ _gsh_assert_check() {
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
 
-  NB_TESTS=$((NB_TESTS + 1))
+  nb_tests=$((nb_tests + 1))
 
   if [ "$expected" = "true" ] && [ "$exit_status" -ne 0 ]
   then
-    NB_ERRORS=$((NB_ERRORS + 1))
-    color_echo red "$(eval_gettext 'test $NB_TESTS failed') (expected check 'true')"
+    nb_failed_tests=$((nb_failed_tests + 1))
+    color_echo red "$(eval_gettext 'test $nb_tests failed') (expected check 'true')"
     [ -n "$msg" ] && echo "$msg"
   elif [ "$expected" = "false" ] && [ "$exit_status" -eq 0 ]
   then
-    NB_ERRORS=$((NB_ERRORS + 1))
-    color_echo red "$(eval_gettext 'test $NB_TESTS failed') (expected check 'false')"
+    nb_failed_tests=$((nb_failed_tests + 1))
+    color_echo red "$(eval_gettext 'test $nb_tests failed') (expected check 'false')"
     [ -n "$msg" ] && echo "$msg"
   fi
 
@@ -527,7 +520,6 @@ _gsh_assert_check() {
   _gsh_clean "$MISSION_NB"
   _gsh_start --quiet "$MISSION_NB"
 }
-[ "$GSH_MODE" != "DEBUG" ] && unset -f _gsh_assert_check
 
 _gsh_assert() {
   local condition=$1
@@ -539,22 +531,21 @@ _gsh_assert() {
   fi
   local msg=$2
 
-  NB_TESTS=$((NB_TESTS + 1))
+  nb_tests=$((nb_tests + 1))
   if ! eval "$condition"
   then
-    NB_ERRORS=$((NB_ERRORS + 1))
-    color_echo red "$(eval_gettext 'test $NB_TESTS failed') (expected condition 'true')"
+    nb_failed_tests=$((nb_failed_tests + 1))
+    color_echo red "$(eval_gettext 'test $nb_tests failed') (expected condition 'true')"
     [ -n "$msg" ] && echo "$msg"
   fi
 }
-[ "$GSH_MODE" != "DEBUG" ] && unset -f _gsh_assert
 
 _gsh_test() {
   local MISSION_NB="$(_get_current_mission)"
   if [ -z "$MISSION_NB" ]
   then
-    local FUNCTION_NAME="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$FUNCTION_NAME)")" >&2
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
   fi
 
@@ -566,33 +557,32 @@ _gsh_test() {
     return 2
   fi
 
-  export NB_TESTS=0
-  export NB_ERRORS=0
+  export nb_tests=0
+  export nb_failed_tests=0
   mission_source "$MISSION_DIR/test.sh"
   local ret
-  if [ "$NB_ERRORS" = 0 ]
+  if [ "$nb_failed_tests" = 0 ]
   then
     echo
-    color_echo green "$(eval_gettext '$NB_TESTS successful tests')"
+    color_echo green "$(eval_gettext '$nb_tests successful tests')"
     echo
     ret=0
   else
     echo
-    color_echo red "$(eval_gettext '$NB_ERRORS failures out of $NB_TESTS tests')"
+    color_echo red "$(eval_gettext '$nb_failed_tests failures out of $nb_tests tests')"
     echo
     ret=255
   fi
-  unset NB_TESTS NB_ERRORS
+  unset nb_tests nb_failed_tests
   return "$ret"
 }
-[ "$GSH_MODE" != "DEBUG" ] && unset -f _gsh_test
 
 _gsh_help() {
   parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-help/en.txt')" Parchment2
 }
 
 _gsh_HELP() {
-  parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-HELP/en.txt')" Parchment2 | PAGER
+  parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-HELP/en.txt')" Parchment2 | pager
 }
 
 _gsh_protect() {
@@ -617,7 +607,7 @@ _gsh_unprotect() {
 gsh() {
   local _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="gsh"
-  local CMD=$1
+  local cmd=$1
   shift
 
   # should the command abort GameShell on failure (gsh test / gsh auto)
@@ -628,7 +618,7 @@ gsh() {
   fi
 
   local ret=0
-  case $CMD in
+  case $cmd in
     "c" | "ch" | "che" | "chec" | "check")
       _gsh_check
       ret=$?
@@ -648,7 +638,7 @@ gsh() {
       _gsh_goal "$@"
       ;;
     "i" | "in" | "ind" | "inde" | "index")
-      _gsh_index | PAGER
+      _gsh_index | pager
       ;;
     "w" | "we" | "wel" | "welc" | "welco" | "welcom" | "welcome")
       _gsh_welcome
@@ -690,29 +680,14 @@ gsh() {
       _gsh_start "$@"
       ;;
     "test")
-      if [ "$GSH_MODE" != "DEBUG" ]
-      then
-        echo "$(eval_gettext "Error: command '\$CMD' is only available in debug mode.")" >&2
-      else
-        _gsh_test
-      fi
+      _gsh_test
       ret=$?
       ;;
     "assert_check")
-      if [ "$GSH_MODE" != "DEBUG" ]
-      then
-        echo "$(eval_gettext "Error: command '\$CMD' is only available in debug mode.")" >&2
-      else
-        _gsh_assert_check "$@"
-      fi
+      _gsh_assert_check "$@"
       ;;
     "assert")
-      if [ "$GSH_MODE" != "DEBUG" ]
-      then
-        echo "$(eval_gettext "Error: command '\$CMD' is only available in debug mode.")" >&2
-      else
-        _gsh_assert "$@"
-      fi
+      _gsh_assert "$@"
       ;;
     "protect")
       if admin_mode
@@ -727,10 +702,10 @@ gsh() {
       fi
       ;;
     "systemconfig")
-      systemconfig
+      system_config
       ;;
     *)
-      echo "$(eval_gettext "Error: unknown gsh command '\$CMD'.
+      echo "$(eval_gettext "Error: unknown gsh command '\$cmd'.
 Use one of the following commands:")  check, goal, help, HELP or reset" >&2
       export TEXTDOMAIN=$_TEXTDOMAIN
       unset _TEXTDOMAIN

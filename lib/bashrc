@@ -14,7 +14,8 @@ unset LS_COLORS
 # get this game's configuration
 [ -f "$GSH_BASHRC"/config.sh ] && source "$GSH_BASHRC"/config.sh
 
-export PATH=$PATH:$GSH_BIN
+export PATH=$GSH_ROOT/bin:$PATH:$GSH_BIN
+# export PATH=$PATH:$GSH_ROOT/bin:$GSH_BIN
 
 # shellcheck source=./lib/gameshell.sh
 source "$GSH_LIB/gameshell.sh"

@@ -2,7 +2,7 @@
 
 dir=$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room/Kings_quarter')
 
-if [ "$(REALPATH "$(pwd)")" = "$(REALPATH "$dir")" ]
+if [ "$(realpath "$(pwd)")" = "$(realpath "$dir")" ]
 then
     unset dir
     true
