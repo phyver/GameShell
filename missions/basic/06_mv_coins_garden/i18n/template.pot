@@ -20,15 +20,15 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "The coin '$COIN_NAME' has been tampered with..."
+msgid   "The coin '$coin_name' has been tampered with..."
 msgstr  ""
 
 #, sh-format
-msgid   "The coin '$COIN_NAME' is not in the chest!"
+msgid   "The coin '$coin_name' is not in the chest!"
 msgstr  ""
 
 #, sh-format
-msgid   "The coin '$COIN_NAME' is still in the garden!"
+msgid   "The coin '$coin_name' is still in the garden!"
 msgstr  ""
 
 msgid   "chest"

@@ -34,10 +34,5 @@ msgstr  ""
 msgid   "There is no painting in your chest..."
 msgstr  ""
 
-#, sh-format
-msgid   "You don't have a chest ($GSH_CHEST).\n"
-        "Make one first."
-msgstr  ""
-
 msgid   "painting"
 msgstr  ""

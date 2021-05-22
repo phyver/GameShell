@@ -11,6 +11,9 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
+msgid   "Have you run the 'xeyes' command directly?"
+msgstr  ""
+
 #, sh-format
 msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'psproc')"
@@ -26,8 +29,5 @@ msgid   "The variable DISPLAY is not defined.\n"
         "A running X server is required for mission $MISSION_NAME."
 msgstr  ""
 
-msgid   "There doesn't seem to be an 'xeyes' process running."
-msgstr  ""
-
-msgid   "You haven't run the 'xeyes' command directly."
+msgid   "There is no 'xeyes' process running."
 msgstr  ""

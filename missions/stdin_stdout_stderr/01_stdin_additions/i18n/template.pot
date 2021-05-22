@@ -15,5 +15,5 @@ msgid   "That's not even a number!"
 msgstr  ""
 
 #, sh-format
-msgid   "Too bad! The expected answer was $result..."
+msgid   "Too bad! The answer was $result..."
 msgstr  ""

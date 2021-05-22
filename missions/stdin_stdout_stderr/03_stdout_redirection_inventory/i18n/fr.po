@@ -18,16 +18,16 @@ msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 msgid   "Drawer"
 msgstr  "Tiroir"
 
-msgid   "The content of $INVENTORY_FILE is invalid.\n"
+msgid   "The content of $inventory_file is invalid.\n"
         "You can check its content with the command\n"
-        "    $ less $INVENTORY_FILE"
-msgstr  "Le contenu de $INVENTORY_FILE n'est pas correct.\n"
+        "    $ less $inventory_file"
+msgstr  "Le contenu de $inventory_file n'est pas correct.\n"
         "Vous pouvez vérifier son contenu avec la commande\n"
-        "    $ less $INVENTORY_FILE"
+        "    $ less $inventory_file"
 
 #, sh-format
-msgid   "There is no $INVENTORY_FILE in the drawer..."
-msgstr  "Il n'y a pas de $INVENTORY_FILE dans le tiroir..."
+msgid   "There is no $inventory_file in the drawer..."
+msgstr  "Il n'y a pas de $inventory_file dans le tiroir..."
 
 msgid   "candle"
 msgstr  "bougie"

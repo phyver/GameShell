@@ -27,10 +27,10 @@ msgid   "The diamond in your chest is not valid!"
 msgstr  "Le diamant du coffre est invalide !"
 
 msgid   "The diamond is not in the chest!"
-msgstr  "Le diamand n'est pas dans le coffre !"
+msgstr  "Le diamant n'est pas dans le coffre !"
 
 msgid   "The diamond is still in the maze."
-msgstr  "Le diamand est toujours dans le labyrinthe."
+msgstr  "Le diamant est toujours dans le labyrinthe."
 
 msgid   "There are too many diamonds in the maze!"
 msgstr  "Il y a trop de diamants dans le labyrinthe !"

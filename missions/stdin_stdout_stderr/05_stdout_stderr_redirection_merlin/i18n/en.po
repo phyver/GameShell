@@ -17,8 +17,8 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid   "Error: $CMD takes no argument."
-msgstr  "Error: $CMD takes no argument."
+msgid   "Error: $cmd_name takes no argument."
+msgstr  "Error: $cmd_name takes no argument."
 
 msgid   "THESECRETKEYISONSTDERR"
 msgstr  "THESECRETKEYISONSTDERR"

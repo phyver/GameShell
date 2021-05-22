@@ -26,7 +26,7 @@ _mission_check() {
         ;;
       *)
         [ "$result" -eq "$response" ] && continue
-        echo "$(eval_gettext 'Too bad! The expected answer was $result...')"
+        echo "$(eval_gettext 'Too bad! The answer was $result...')"
         return 1
         ;;
     esac

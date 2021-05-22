@@ -18,7 +18,7 @@ _mission_check() {
       *)
         if [ "$result" -ne "$response" ]
         then
-          echo "$(eval_gettext 'Too bad! The expected answer was $result...')"
+          echo "$(eval_gettext 'Too bad! The answer was $result...')"
           return 1
         fi
         ;;

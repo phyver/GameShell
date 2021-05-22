@@ -1,17 +1,17 @@
 #!/bin/bash
 
 _mission_check() {
-    local JOURNAL_FILE="$GSH_CHEST/$(gettext "journal").txt"
-    if [ ! -f "$JOURNAL_FILE" ]
+    local journal_file="$GSH_CHEST/$(gettext "journal").txt"
+    if [ ! -f "$journal_file" ]
     then
         journal=~${journal#$GSH_ROOT}
-        echo "$(eval_gettext "The file '\$JOURNAL_FILE' doesn't exist...")"
+        echo "$(eval_gettext "The file '\$journal_file' doesn't exist...")"
         find "$GSH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -f
         return 1
-    elif [ ! -s "$JOURNAL_FILE" ]
+    elif [ ! -s "$journal_file" ]
     then
         journal=~${journal#$GSH_ROOT}
-        echo "$(eval_gettext "The file '\$JOURNAL_FILE' is empty...")"
+        echo "$(eval_gettext "The file '\$journal_file' is empty...")"
         find "$GSH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -f
         return 1
     else

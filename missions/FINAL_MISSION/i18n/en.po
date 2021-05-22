@@ -16,13 +16,10 @@ msgstr  "$MISSION_DIR/msg/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
-msgid   "C"
-msgstr  "C"
-
 #, sh-format
-msgid   "Error: invalid mission number: $CHOICE.\n"
+msgid   "Error: invalid mission number: $choice.\n"
         "Please choose a number between 1 and $NB_MISSIONS"
-msgstr  "Error: invalid mission number: $CHOICE.\n"
+msgstr  "Error: invalid mission number: $choice.\n"
         "Please choose a number between 1 and $NB_MISSIONS"
 
 msgid   "Press any key to continue."
@@ -31,27 +28,22 @@ msgstr  "Press any key to continue."
 msgid   "Q"
 msgstr  "Q"
 
-msgid   "The admin password is now '$PASSWORD'. Use\n"
+msgid   "The admin password is now '$password'. Use\n"
         "    $ gsh HELP\n"
         "for a list including admin commands."
-msgstr  "The admin password is now '$PASSWORD'. Use\n"
+msgstr  "The admin password is now '$password'. Use\n"
         "    $ gsh HELP\n"
         "for a list including admin commands."
 
 msgid   "What do you want to do?\n"
         "    (q)         quit\n"
-        "    (c)         continue\n"
         "    (number)    restart from this mission"
 msgstr  "What do you want to do?\n"
         "    (q)         quit\n"
-        "    (c)         continue\n"
         "    (number)    restart from this mission"
 
-msgid   "Your choice [qC] or a number:"
-msgstr  "Your choice [qC] or a number:"
-
-msgid   "c"
-msgstr  "c"
+msgid   "Your choice [q] or a number:"
+msgstr  "Your choice [q] or a number:"
 
 msgid   "q"
 msgstr  "q"
@@ -60,5 +52,5 @@ msgid   "qwerty"
 msgstr  "qwerty"
 
 #, sh-format
-msgid   "unknown choice: $CHOICE"
-msgstr  "unknown choice: $CHOICE"
+msgid   "unknown choice: $choice"
+msgstr  "unknown choice: $choice"

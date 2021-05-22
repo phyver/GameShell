@@ -19,4 +19,4 @@ msgid   "You are not at the top of the tower!"
 msgstr  "Vous n'êtes pas en haut du donjon !"
 
 msgid   "You need to start over from the start."
-msgstr  "Vous allez devoir recommencer du point de départ."
+msgstr  "Vous devez recommencer du point de départ."

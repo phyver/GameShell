@@ -15,11 +15,8 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
-msgid   "C"
-msgstr  ""
-
 #, sh-format
-msgid   "Error: invalid mission number: $CHOICE.\n"
+msgid   "Error: invalid mission number: $choice.\n"
         "Please choose a number between 1 and $NB_MISSIONS"
 msgstr  ""
 
@@ -29,21 +26,17 @@ msgstr  ""
 msgid   "Q"
 msgstr  ""
 
-msgid   "The admin password is now '$PASSWORD'. Use\n"
+msgid   "The admin password is now '$password'. Use\n"
         "    $ gsh HELP\n"
         "for a list including admin commands."
 msgstr  ""
 
 msgid   "What do you want to do?\n"
         "    (q)         quit\n"
-        "    (c)         continue\n"
         "    (number)    restart from this mission"
 msgstr  ""
 
-msgid   "Your choice [qC] or a number:"
-msgstr  ""
-
-msgid   "c"
+msgid   "Your choice [q] or a number:"
 msgstr  ""
 
 msgid   "q"
@@ -53,5 +46,5 @@ msgid   "qwerty"
 msgstr  ""
 
 #, sh-format
-msgid   "unknown choice: $CHOICE"
+msgid   "unknown choice: $choice"
 msgstr  ""

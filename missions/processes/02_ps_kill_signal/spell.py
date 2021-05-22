@@ -15,7 +15,7 @@ gettext.textdomain(TEXTDOMAIN)
 
 
 def spawn(a, b):
-    print(gettext.gettext("You'll need to do better than that!"))
+    print(gettext.gettext("You'll need to do better than that to kill my spell!"))
     p = os.fork()
     if p > 0:
         f = open(os.path.expandvars("$GSH_VAR/spell-term.pids"), mode="a")

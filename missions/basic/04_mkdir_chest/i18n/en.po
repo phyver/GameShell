@@ -9,12 +9,12 @@ msgid   "$GSH_HOME/Forest"
 msgstr  "$GSH_HOME/Forest"
 
 # path for the text file containing the goal
-msgid   "$MISSION_DIR/goal/en.txt"
-msgstr  "$MISSION_DIR/goal/en.txt"
+msgid   "$MISSION_dir_name/goal/en.txt"
+msgstr  "$MISSION_dir_name/goal/en.txt"
 
 # path for the text file containing the treasure message
-msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+msgid   "$MISSION_dir_name/treasure-msg/en.txt"
+msgstr  "$MISSION_dir_name/treasure-msg/en.txt"
 
 msgid   "Chest"
 msgstr  "Chest"
@@ -23,8 +23,8 @@ msgid   "Hut"
 msgstr  "Hut"
 
 #, sh-format
-msgid   "The $DIR directory does not exist!"
-msgstr  "The $DIR directory does not exist!"
+msgid   "The $dir_name directory does not exist!"
+msgstr  "The $dir_name directory does not exist!"
 
 msgid   "You built too many chests in your hut!"
 msgstr  "You built too many chests in your hut!"

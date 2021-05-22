@@ -36,12 +36,12 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid   "$NB_ERRORS failures out of $NB_TESTS tests"
-msgstr  "$NB_ERRORS échecs sur $NB_TESTS tests"
+msgid   "$nb_failed_tests failures out of $nb_tests tests"
+msgstr  "$nb_failed_tests échecs sur $nb_tests tests"
 
 #, sh-format
-msgid   "$NB_TESTS successful tests"
-msgstr  "$NB_TESTS tests passés avec succès"
+msgid   "$nb_tests successful tests"
+msgstr  "$nb_tests tests passés avec succès"
 
 #, sh-format
 msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
@@ -57,12 +57,8 @@ msgstr  "Erreur : au moins une fonction de base ne marche pas correctement.\n"
         "Abandon."
 
 #, sh-format
-msgid   "Error: command '$CMD' is only available in debug mode."
-msgstr  "Erreur : la command '$CMD' est seulement disponible on mode debug."
-
-#, sh-format
-msgid   "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
-msgstr  "Error : mission '$MISSION_NB' introuvable (dans $FUNCTION_NAME)"
+msgid   "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
+msgstr  "Error : mission '$MISSION_NB' introuvable (dans $fn_name)"
 
 #, sh-format
 msgid   "Error: invalid choice: $CHOICE"
@@ -75,16 +71,12 @@ msgstr  "Erreur : numéro de mission invalide: $CHOICE.\n"
         "Choisissez un numéro entre 1 et $LAST_MISSION."
 
 #, sh-format
-msgid   "Error: invalid option: '-$OPTARG'"
-msgstr  "Erreur : option invalide: '-$OPTARG'"
+msgid   "Error: invalid option: '-$optarg'"
+msgstr  "Erreur : option invalide: '-$optarg'"
 
 #, sh-format
 msgid   "Error: mission $MISSION_NB doesn't exist!"
 msgstr  "Erreur : la mission $MISSION_NB n'existe pas !"
-
-#, sh-format
-msgid   "Error: mission $MISSION_NB doesn't have a check script."
-msgstr  "Erreur : la mission $MISSION_NB n'a pas de script de vérification."
 
 #, sh-format
 msgid   "Error: mission $MISSION_NB doesn't have a test script."
@@ -114,31 +106,21 @@ msgstr  "Erreur : la commande 'gsh reset' ne devrait pas être lancée dans un s
 
 msgid   "Error: this mission was initialized in a subshell.\n"
         "You should run the command\n"
-        "    gsh reset\n"
+        "    $ gsh reset\n"
         "to make sure the mission is initialized properly."
 msgstr  "Erreur : cette mission a été initailisée dans un sous-shell.\n"
         "Il est conseillé de lancer la commande\n"
-        "    gsh reset\n"
+        "    $ gsh reset\n"
         "pour qu'elle soit initialisée correctement."
 
 msgid   "Error: this option is only available from an executable archive!"
 msgstr  "Erreur : cette option n'est disponible que depuis une archive exécutable !"
 
 #, sh-format
-msgid   "Error: unknown gsh command '$CMD'.\n"
+msgid   "Error: unknown gsh command '$cmd'.\n"
         "Use one of the following commands:"
-msgstr  "Erreur : command gsh inconnue '$CMD'.\n"
+msgstr  "Erreur : command gsh inconnue '$cmd'.\n"
         "Utilisez une des commandes suivantes :"
-
-#, sh-format
-msgid   "Error: unknown mode '$MODE'."
-msgstr  "Erreur : mode inconnu : '$MODE'."
-
-#, sh-format
-msgid   "Error: unknown system: OSTYPE=$OSTYPE.\n"
-        "GameShell will use 'gnu-linux', without guarantee."
-msgstr  "Erreur : système inconnu : OSTYPE=$OSTYPE.\n"
-        "GameShell sera lancé en mode 'gnu-linux', sans garantie."
 
 msgid   "Error: wrong password"
 msgstr  "Erreur : mauvais mot de passe"
@@ -161,10 +143,10 @@ msgid   "N"
 msgstr  "N"
 
 msgid   "Player's email:"
-msgstr  "Player's email: "
+msgstr  "Email du joueur :"
 
 msgid   "Player's name:"
-msgstr  "Player's name: "
+msgstr  "Nom du joueur :"
 
 msgid   "Press any key to continue."
 msgstr  "Appuyez sur une touche pour continuer."
@@ -222,7 +204,7 @@ msgid   "While you are waiting, a centipede crawls by..."
 msgstr  "Pendant que vous attendez, un mille pates passe..."
 
 msgid   "While you are waiting, a duck swims by..."
-msgstr  "Pendant que vous attendez, un poisson passe..."
+msgstr  "Pendant que vous attendez, un canard passe..."
 
 msgid   "While you are waiting, a fish swims by..."
 msgstr  "Pendant que vous attendez, un poisson passe..."
@@ -237,7 +219,7 @@ msgid   "While you are waiting, a snake slithers by..."
 msgstr  "Pendant que vous attendez, une serpent passe..."
 
 msgid   "While you are waiting, a spider crawls by..."
-msgstr  "Pendant que vous attendez, un mille pates passe..."
+msgstr  "Pendant que vous attendez, une araignée passe..."
 
 msgid   "While you are waiting, an ant crawls by..."
 msgstr  "Pendant que vous attendez, une fourmi passe..."
@@ -283,8 +265,8 @@ msgid   "skipped"
 msgstr  "sautée"
 
 #, sh-format
-msgid   "test $NB_TESTS failed"
-msgstr  "test $NB_TESTS échoué"
+msgid   "test $nb_tests failed"
+msgstr  "test $nb_tests échoué"
 
 # abbreviation for "yes" (lowercase)
 msgid   "y"

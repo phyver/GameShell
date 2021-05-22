@@ -21,28 +21,28 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid   "The coin '$COIN_NAME...' has a wrong file name..."
-msgstr  "The coin '$COIN_NAME...' has a wrong file name..."
+msgid   "The coin '$coin_name...' has a wrong file name..."
+msgstr  "The coin '$coin_name...' has a wrong file name..."
 
 #, sh-format
-msgid   "The coin '$COIN_NAME...' has been tampered with..."
-msgstr  "The coin '$COIN_NAME...' has been tampered with..."
+msgid   "The coin '$coin_name...' has been tampered with..."
+msgstr  "The coin '$coin_name...' has been tampered with..."
 
 #, sh-format
-msgid   "The coin '$COIN_NAME...' is still in the garden!"
-msgstr  "The coin '$COIN_NAME...' is still in the garden!"
+msgid   "The coin '$coin_name...' is still in the garden!"
+msgstr  "The coin '$coin_name...' is still in the garden!"
 
 #, sh-format
-msgid   "There are several '$COIN_NAME...' in the garden!"
-msgstr  "There are several '$COIN_NAME...' in the garden!"
+msgid   "There are several '$coin_name...' in the garden!"
+msgstr  "There are several '$coin_name...' in the garden!"
 
 #, sh-format
-msgid   "There are several '$COIN_NAME...' in your chest!"
-msgstr  "There are several '$COIN_NAME...' in your chest!"
+msgid   "There are several '$coin_name...' in your chest!"
+msgstr  "There are several '$coin_name...' in your chest!"
 
 #, sh-format
-msgid   "There is no '$COIN_NAME...' in your chest!"
-msgstr  "There is no '$COIN_NAME...' in your chest!"
+msgid   "There is no '$coin_name...' in your chest!"
+msgstr  "There is no '$coin_name...' in your chest!"
 
 msgid   "chest"
 msgstr  "chest"

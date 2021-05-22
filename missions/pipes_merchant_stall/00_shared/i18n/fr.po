@@ -80,7 +80,7 @@ msgid   "a ruby"
 msgstr  "un rubis"
 
 msgid   "a shiny rock"
-msgstr  "un caillon brillant"
+msgstr  "un caillou brillant"
 
 msgid   "a spade"
 msgstr  "une pelle"

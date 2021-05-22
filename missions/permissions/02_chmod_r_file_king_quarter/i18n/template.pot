@@ -15,7 +15,7 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
-msgid   "That's not the real key!"
+msgid   "That's not the real combination!"
 msgstr  ""
 
 #, sh-format
@@ -23,7 +23,7 @@ msgid   "The command 'man' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'man-db')"
 msgstr  ""
 
-msgid   "What's the secret key to open the safe?"
+msgid   "What's the combination to open the King's safe?"
 msgstr  ""
 
 msgid   "note"
