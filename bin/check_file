@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# check the hash on the first line of a file
+# the hash is expected to sign the content of the file, a random number (given
+# with the hash), and the file name (except when the option -noname is given)
+check_file() {
+  name="name"
+  if [ "$1" = "-noname" ]
+  then
+    name=""
+    shift
+  fi
+  if [ "$#" -ne 1 ]
+  then
+    echo "Error: check_file requires 1 argument." >&2
+    return 1
+  fi
+  filename=$1
+  if ! [ -r "$filename" ]
+  then
+    echo "Error: check_file argument is not a readable file." >&2
+    return 1
+  fi
+  filename=$1
+  rd=$(head -n1 "$filename" | cut -d'@' -f 2)
+  sum=$(head -n1 "$filename" | cut -d'@' -f 1)
+    # POSIX sed requires '\' and a newline after "c" command
+  check=$(sed -e "1c\\
+${name:+$(basename "$filename")}@$rd" "$filename" | checksum)
+  [ "$sum" = "$check" ]
+}
+
+check_file "$@"
+
+

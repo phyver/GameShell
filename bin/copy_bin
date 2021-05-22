@@ -1,0 +1,37 @@
+#!/bin/sh
+
+if [ -z "$MISSION_DIR" ]
+then
+  echo "Error: copy_bin \$MISSION_DIR undefined." >&2
+  return 1
+fi
+
+# create a script to call a mission executable with appropriate context:
+# correct TEXTDOMAIN (for translations) and MISSION_DIR (to use data files)
+copy_bin() {
+  if [ "$#" -ne 2 ]
+  then
+    echo "Error: copy_bin requires 2 arguments." >&2
+    return 1
+  fi
+  source=$1
+  if ! [ -f "$source" ] || ! [ -x "$source" ]
+  then
+    echo "Error: source of copy_bin is not an executable file. ($source)" >&2
+    return 1
+  fi
+  target=$2
+  if [ -d "$target" ]
+  then
+    target=$target/$(basename "$source")
+  fi
+  cat > "$target" <<EOH
+#!/bin/sh
+export MISSION_DIR=\$GSH_ROOT/${MISSION_DIR#$GSH_ROOT/}
+export TEXTDOMAIN=$DOMAIN
+exec $source "\$@"
+EOH
+  chmod +x "$target"
+}
+
+copy_bin "$@"

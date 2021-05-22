@@ -1,8 +1,8 @@
 #!/bin/bash
 
 _mission_check() {
-  local goal=$(REALPATH "$(eval_gettext "\$GSH_HOME/Castle/Main_building/Throne_room")")
-  local current=$(REALPATH "$PWD")
+  local goal=$(realpath "$(eval_gettext "\$GSH_HOME/Castle/Main_building/Throne_room")")
+  local current=$(realpath "$PWD")
 
   # TODO: for some unknown reason, redirecting the output of fc into another
   # command shifts the results: it then sees the "gsh check" command that

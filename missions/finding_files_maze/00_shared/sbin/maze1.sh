@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-CHECKSUM_r() {
+checksum_r() {
     local n=$((8 + RANDOM % 24))
-    CHECKSUM "$1" | cut -c1-$n
+    checksum "$1" | cut -c1-$n
 }
 
 gen_maze() {
@@ -16,13 +16,13 @@ gen_maze() {
     local i I j J k K
     for i in $(seq $width)
     do
-        I=$(CHECKSUM_r "$t$i")
+        I=$(checksum_r "$t$i")
         for j in $(seq $width)
         do
-            J=$(CHECKSUM_r "$t$i$j")
+            J=$(checksum_r "$t$i$j")
             for k in $(seq $width)
             do
-                K=$(CHECKSUM_r "$t$i$j$k")
+                K=$(checksum_r "$t$i$j$k")
                 mkdir -p "$DIR/$I/$J/$K"
             done
             echo -n "." >&2

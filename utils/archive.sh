@@ -96,7 +96,7 @@ mkdir "$TMP_DIR/$NAME"
 
 
 # copy source files
-cp --archive "$GSH_ROOT/start.sh" "$GSH_ROOT/utils/" "$GSH_ROOT/lib/" "$GSH_ROOT/i18n/" "$TMP_DIR/$NAME"
+cp --archive "$GSH_ROOT/start.sh" "$GSH_ROOT/bin" "$GSH_ROOT/utils/" "$GSH_ROOT/lib/" "$GSH_ROOT/i18n/" "$TMP_DIR/$NAME"
 
 # copy missions
 mkdir "$TMP_DIR/$NAME/missions"
@@ -198,7 +198,7 @@ find "$GSH_ROOT" -name "template.pot" -print0 | xargs -0 rm -f
 
 # change admin password
 echo "setting admin password"
-ADMIN_HASH=$(CHECKSUM "$ADMIN_PASSWD")
+ADMIN_HASH=$(checksum "$ADMIN_PASSWD")
 sed-i "s/^\([[:blank:]]*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$GSH_ROOT/start.sh"
 
 # choose default mode

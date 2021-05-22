@@ -8,9 +8,9 @@ _mission_check() {
     pc=$(fc -nl -1 -1)
 
     local goal
-    goal=$(REALPATH "$cave")
+    goal=$(realpath "$cave")
     local current
-    current=$(REALPATH "$PWD")
+    current=$(realpath "$PWD")
 
     if ! diff -q "$cave/$(gettext 'Book_of_potions')" "$GSH_VAR/book_of_potions" > /dev/null
     then
