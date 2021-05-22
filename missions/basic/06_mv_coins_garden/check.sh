@@ -2,33 +2,33 @@
 
 # Receives coin number as first argument.
 _mission_check() {
-  local COIN_NAME="$(gettext "coin")_$1"
+  local coin_name="$(gettext "coin")_$1"
 
     # Check that the coin is not in the garden.
-    if [ -f "$(eval_gettext '$GSH_HOME/Garden')/$COIN_NAME" ]
+    if [ -f "$(eval_gettext '$GSH_HOME/Garden')/$coin_name" ]
     then
-      echo "$(eval_gettext "The coin '\$COIN_NAME' is still in the garden!")"
+      echo "$(eval_gettext "The coin '\$coin_name' is still in the garden!")"
       return 1
     fi
 
     # Check that the coin is in the chest.
-    if [ ! -f "$GSH_CHEST/$COIN_NAME" ]
+    if [ ! -f "$GSH_CHEST/$coin_name" ]
     then
-      echo "$(eval_gettext "The coin '\$COIN_NAME' is not in the chest!")"
+      echo "$(eval_gettext "The coin '\$coin_name' is not in the chest!")"
       return 1
     fi
 
     # Check that the contents of the coin.
-    if ! check_file "$GSH_CHEST/$COIN_NAME"
+    if ! check_file "$GSH_CHEST/$coin_name"
     then
-      echo "$(eval_gettext "The coin '\$COIN_NAME' has been tampered with...")"
+      echo "$(eval_gettext "The coin '\$coin_name' has been tampered with...")"
       return 1
     fi
 
     # check the coin.
-    if ! check_file "$GSH_CHEST/$COIN_NAME"
+    if ! check_file "$GSH_CHEST/$coin_name"
     then
-      echo "$(eval_gettext "The coin '\$COIN_NAME' has been tampered with...")"
+      echo "$(eval_gettext "The coin '\$coin_name' has been tampered with...")"
       return 1
     fi
 

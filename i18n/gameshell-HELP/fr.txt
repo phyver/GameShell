@@ -1,13 +1,13 @@
 Commandes propres a GameShell
 =============================
 
-  gsh assert condition [msg]            (DEBUG)
+  gsh assert condition [msg]
     vérifie si la condition est vraie,
     sinon, affiche un message d'erreur
 
-  gsh assert_check true/false [msg]     (DEBUG)
+  gsh assert_check true/false [msg]
     vérifie si l'objectif de la mission en cours est atteint
-    si le résultat ne correspond pas au résultat attendu, affiche un 
+    si le résultat ne correspond pas au résultat attendu, affiche un
     message d'erreur
 
   gsh auto                              (ADMIN)
@@ -18,7 +18,7 @@ Commandes propres a GameShell
 
   gsh exit
     quitte la partie en cours
-    (vous pouvez reprendre à la mission en cours en lançant le 
+    (vous pouvez reprendre à la mission en cours en lançant le
     script start.sh avec l'option -C)
 
   gsh goal [N]
@@ -42,7 +42,7 @@ Commandes propres a GameShell
 
   gsh protect                           (ADMIN)
   gsh unprotect                         (ADMIN)
-    ajoute / supprimer les protections d'accès sur les répertoires 
+    ajoute / supprimer les protections d'accès sur les répertoires
     de GameShell
 
   gsh reset

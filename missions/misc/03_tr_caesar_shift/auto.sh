@@ -1,1 +1,1 @@
-gsh check < "$GSH_VAR/secret_key"
+gsh check < "$GSH_VAR/magic_word"

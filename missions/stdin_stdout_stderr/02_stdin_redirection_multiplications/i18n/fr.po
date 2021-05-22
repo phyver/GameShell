@@ -27,15 +27,13 @@ msgstr  "Mathematiques_en_premiere_annee"
 msgid   "That's not even a number!"
 msgstr  "Ce n'est même pas un nombre !"
 
-msgid   "The book 'Mathematics_101' contains all the anwsers for the exam.\n"
-        "\n"
-        "You just need to copy all the lines in this book."
-msgstr  "Le livre 'Mathematiques_en_premiere_annee' contient les réponses de l'examen.\n"
-        "\n"
-        "Il te suffit de recopier les lignes de ce livre."
+msgid   "The book 'Mathematics_101' contains all the anwsers.\n"
+        "Just copy all its lines to get perfect score."
+msgstr  "Le livre 'Mathematiques_en_premiere_annee' contient les réponses.\n"
+        "Recopie simplement toutes ses lignes pour avoir la note maximale."
 
 #, sh-format
-msgid   "Too bad! The expected answer was $result..."
+msgid   "Too bad! The answer was $result..."
 msgstr  "Dommage ! La réponse était $result..."
 
 msgid   "Too slow! You need to give the answers in less than 10 seconds..."

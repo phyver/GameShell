@@ -20,7 +20,7 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "Coin '$COIN_NAME' in your chest is invalid!"
+msgid   "Coin '$coin_name' in your chest is invalid!"
 msgstr  ""
 
 #, sh-format

@@ -21,7 +21,7 @@ _mission_check() {
 
     if ! cmp -s "$coin" "$GSH_VAR/silver_coin"
     then
-        echo "$(gettext "Booh... The silver coin in you chest is invalid!")"
+        echo "$(gettext "The silver coin in you chest is invalid!")"
         return 1
     fi
 }

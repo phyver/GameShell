@@ -1,20 +1,20 @@
 #!/bin/bash
 
 _mission_check_p() {
-    local COIN_NAME=$1
+    local coin_name=$1
     local COIN_NB=$2
     local path
-    path=$(find "$GSH_CHEST" -name "*$(gettext "$COIN_NAME")_$COIN_NB" -type f)
+    path=$(find "$GSH_CHEST" -name "*$(gettext "$coin_name")_$COIN_NB" -type f)
 
     if [ -z "$path" ]
     then
         echo "$(gettext "Some of the coins are not in your chest!")"
-        echo $COIN_NAME
+        echo $coin_name
         return 1
     fi
-    if ! cmp -s "$path" "$GSH_VAR/${COIN_NAME}_$COIN_NB"
+    if ! cmp -s "$path" "$GSH_VAR/${coin_name}_$COIN_NB"
     then
-        echo "$(eval_gettext "Coin '\$COIN_NAME' in your chest is invalid!")"
+        echo "$(eval_gettext "Coin '\$coin_name' in your chest is invalid!")"
         return 1
     fi
 }

@@ -13,6 +13,6 @@ The chest must be **in** the hut.
 Useful commands
 ===============
 
-mkdir DIRECTORY
+mkdir dir_nameECTORY
   Create a new directory inside the current directory.
   Remark: ``mkdir`` is an abbreviation for "make directory".

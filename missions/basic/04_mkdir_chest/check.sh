@@ -2,7 +2,7 @@
 
 _mission_check() {
     local forest="$(eval_gettext '$GSH_HOME/Forest')"
-    local HUT_DIR=$(eval_gettext '$GSH_HOME/Forest')/$(gettext "Hut")
+    local HUT_dir_name=$(eval_gettext '$GSH_HOME/Forest')/$(gettext "Hut")
 
     # Check that there is only one hut.
     local nb_huts
@@ -19,10 +19,10 @@ _mission_check() {
     fi
 
     # Check the name of the hut.
-    if [ ! -d "$HUT_DIR" ]
+    if [ ! -d "$HUT_dir_name" ]
     then
-        local DIR=.../${HUT_DIR#$GSH_HOME/}
-        echo "$(eval_gettext 'The $DIR directory does not exist!')"
+        local dir_name=.../${HUT_dir_name#$GSH_HOME/}
+        echo "$(eval_gettext 'The $dir_name directory does not exist!')"
         return 1
     fi
 
@@ -44,8 +44,8 @@ _mission_check() {
     local chest
     if ! [ -d "$GSH_CHEST" ]
     then
-        local DIR=.../${GSH_CHEST#$GSH_HOME/}
-        echo "$(eval_gettext 'The $DIR directory does not exist!')"
+        local dir_name=.../${GSH_CHEST#$GSH_HOME/}
+        echo "$(eval_gettext 'The $dir_name directory does not exist!')"
         return 1
     fi
 

@@ -16,11 +16,11 @@ msgstr  "$MISSION_DIR/goal/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
-msgid   "Hey! You removed a bat!"
-msgstr  "Hey! You removed a bat!"
-
 msgid   "There are still spiders in the cellar!"
 msgstr  "There are still spiders in the cellar!"
+
+msgid   "You removed a bat!"
+msgstr  "You removed a bat!"
 
 msgid   "bat"
 msgstr  "bat"

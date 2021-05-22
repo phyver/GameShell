@@ -3,7 +3,7 @@
 _mission_init() {
   local r1=$(checksum $RANDOM)
   local r2=$(checksum $RANDOM)
-  local lair="$(eval_gettext '$GSH_HOME/Castle/Cellar')/$(gettext ".Lair_of_the_spider_queen") ${r1} ${r2}"
+  local lair="$(eval_gettext '$GSH_HOME/Castle/Cellar')/.$(gettext "Lair_of_the_spider_queen") ${r1} ${r2}"
   mkdir -p "$lair"
 
   r1=$(checksum $RANDOM)

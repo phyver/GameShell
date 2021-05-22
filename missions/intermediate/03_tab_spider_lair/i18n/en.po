@@ -16,16 +16,16 @@ msgstr  "$MISSION_DIR/goal/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
-msgid   ".Lair_of_the_spider_queen"
-msgstr  ".Lair_of_the_spider_queen"
+#, sh-format
+msgid   "Good, but you took $nb_seconds seconds. You needed to take less than $MAX_DELAY seconds..."
+msgstr  "Good, but you took $nb_seconds seconds. You needed to take less than $MAX_DELAY seconds..."
+
+msgid   "Lair_of_the_spider_queen"
+msgstr  "Lair_of_the_spider_queen"
 
 #, sh-format
-msgid   "Good, but you took $NB_SECONDS seconds. You needed to take less than $MAX_DELAY seconds..."
-msgstr  "Good, but you took $NB_SECONDS seconds. You needed to take less than $MAX_DELAY seconds..."
-
-#, sh-format
-msgid   "Perfect, it took you only $NB_SECONDS seconds to complete this mission!"
-msgstr  "Perfect, it took you only $NB_SECONDS seconds to complete this mission!"
+msgid   "Perfect, it took you only $nb_seconds seconds to complete this mission!"
+msgstr  "Perfect, it took you only $nb_seconds seconds to complete this mission!"
 
 msgid   "The queen spider is still in its lair..."
 msgstr  "The queen spider is still in its lair..."

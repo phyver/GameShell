@@ -12,13 +12,13 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "Some spells ($NB_SPELLS) are still running!"
+msgid   "Some spells ($nb_spells) are still running!"
 msgstr  ""
 
 msgid   "You haven't tried using the standard TERM signal on the spell."
 msgstr  ""
 
-msgid   "You'll need to do better than that!"
+msgid   "You'll need to do better than that to kill my spell!"
 msgstr  ""
 
 msgid   "spell"

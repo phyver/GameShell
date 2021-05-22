@@ -19,9 +19,6 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
-msgid   "Booh... The silver coin in you chest is invalid!"
-msgstr  ""
-
 #, sh-format
 msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
 msgstr  ""
@@ -29,6 +26,9 @@ msgstr  ""
 #, sh-format
 msgid   "The command 'tree' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'tree')"
+msgstr  ""
+
+msgid   "The silver coin in you chest is invalid!"
 msgstr  ""
 
 msgid   "There is no silver coin in your chest!"

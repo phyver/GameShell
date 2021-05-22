@@ -28,12 +28,12 @@ msgid   "The crown in your chest is a fake!"
 msgstr  "La couronne dans votre coffre est une fausse !"
 
 msgid   "The crown in your chest is not readable!"
-msgstr  "La couronne dans votre coffre n'est pas lisible !"
+msgstr  "La couronne dans votre coffre n'est pas accessible en lecture !"
 
 msgid   "There is no crown in your chest!"
 msgstr  "Il n'y a pas de couronne dans votre coffre !"
 
-msgid   "Those digits are not right!"
+msgid   "Those digits are not correct!"
 msgstr  "Ces chiffres ne sont pas corrects !"
 
 msgid   "What are the 3 digits inscribed on the base of the crown?"

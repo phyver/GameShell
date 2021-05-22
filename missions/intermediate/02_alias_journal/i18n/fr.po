@@ -21,14 +21,20 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid   "It seems you alias doesn't refer to the appropriate file ($FILE_NAME).\n"
+msgid   "It seems you alias doesn't refer to the appropriate file ($target_path).\n"
         "Make sure to use an absolute path..."
-msgstr  "Votre alias n'utilise pas le bon fichier ($FILE_NAME).\n"
+msgstr  "Votre alias n'utilise pas le bon fichier ($target_path).\n"
         "Vérifiez que vous utilisez bien un chemin absolu..."
 
 #, sh-format
-msgid   "No alias '$ALIAS_NAME' has been found..."
-msgstr  "Aucin alias '$ALIAS_NAME' n'a été trouvé..."
+msgid   "No alias '$alias_name' has been found..."
+msgstr  "Aucin alias '$alias_name' n'a été trouvé..."
+
+#, sh-format
+msgid   "The command 'nano' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'nano')"
+msgstr  "La commande 'nano' est nécessaire pour la mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu : installez le paquet 'nano')"
 
 msgid   "Your alias doesn't use the command 'nano'..."
 msgstr  "Votre alias n'utilise pas la commande 'nano'..."

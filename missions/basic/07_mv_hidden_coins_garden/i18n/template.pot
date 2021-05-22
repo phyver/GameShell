@@ -20,27 +20,27 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "The coin '$COIN_NAME...' has a wrong file name..."
+msgid   "The coin '$coin_name...' has a wrong file name..."
 msgstr  ""
 
 #, sh-format
-msgid   "The coin '$COIN_NAME...' has been tampered with..."
+msgid   "The coin '$coin_name...' has been tampered with..."
 msgstr  ""
 
 #, sh-format
-msgid   "The coin '$COIN_NAME...' is still in the garden!"
+msgid   "The coin '$coin_name...' is still in the garden!"
 msgstr  ""
 
 #, sh-format
-msgid   "There are several '$COIN_NAME...' in the garden!"
+msgid   "There are several '$coin_name...' in the garden!"
 msgstr  ""
 
 #, sh-format
-msgid   "There are several '$COIN_NAME...' in your chest!"
+msgid   "There are several '$coin_name...' in your chest!"
 msgstr  ""
 
 #, sh-format
-msgid   "There is no '$COIN_NAME...' in your chest!"
+msgid   "There is no '$coin_name...' in your chest!"
 msgstr  ""
 
 msgid   "chest"

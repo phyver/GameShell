@@ -11,6 +11,9 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
+msgid   "Have you run the 'xeyes' command directly?"
+msgstr  "Avez vous lancé la commande 'xeyes' directement."
+
 #, sh-format
 msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'psproc')"
@@ -29,8 +32,5 @@ msgid   "The variable DISPLAY is not defined.\n"
 msgstr  "La variable DISPLAY n'est pas définie.\n"
         "Un serveur X est nécessaire pour la mission $MISSION_NAME."
 
-msgid   "There doesn't seem to be an 'xeyes' process running."
+msgid   "There is no 'xeyes' process running."
 msgstr  "Il n'y a pas de processus 'xeyes' en cours."
-
-msgid   "You haven't run the 'xeyes' command directly."
-msgstr  "Vous n'avez pas lancé la commande 'xeyes' directement."
