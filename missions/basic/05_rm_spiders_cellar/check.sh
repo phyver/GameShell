@@ -18,7 +18,7 @@ _mission_check() {
     bats_nb=$(find "$cellar" -name "$(gettext "bat")_*" | wc -l)
     if [ "$bats_nb" -ne 2 ]
     then
-        echo "$(gettext "Hey! You removed a bat!")"
+        echo "$(gettext "You removed a bat!")"
         return 1
     fi
 

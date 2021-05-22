@@ -25,7 +25,7 @@ _mission_check() {
     read -erp "$(gettext "What are the 3 digits inscribed on the base of the crown?") " given_key
     if [ "$real_key" -ne "$given_key" ]
     then
-        echo "$(gettext "Those digits are not right!")"
+        echo "$(gettext "Those digits are not correct!")"
         return 1
     fi
     return 0

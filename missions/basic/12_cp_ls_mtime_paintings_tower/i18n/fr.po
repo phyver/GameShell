@@ -20,25 +20,19 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 msgid   "The painting in your chest is invalid..."
-msgstr  "La peinture de votre coffre est invalid..."
+msgstr  "Le tableau de votre coffre est invalide..."
 
 msgid   "The painting is not in the tower anymore..."
 msgstr  "Le tableau n'est plus dans le donjon..."
 
 msgid   "The painting is not in your chest..."
-msgstr  "La peinture n'est pas dans votre coffre..."
+msgstr  "Le tableau n'est pas dans votre coffre..."
 
 msgid   "There are too many paintings in your chest..."
 msgstr  "Il y a trop de tableaux dans votre coffre..."
 
 msgid   "There is no painting in your chest..."
 msgstr  "Il n'y a pas de tableau dans votre coffre..."
-
-#, sh-format
-msgid   "You don't have a chest ($GSH_CHEST).\n"
-        "Make one first."
-msgstr  "Vous n'avez pas de coffre ($GSH_CHEST).\n"
-        "Fabriquez en un en premier."
 
 msgid   "painting"
 msgstr  "tableau"

@@ -1,1 +1,1 @@
-rm -f "$GSH_VAR/secret_key"
+rm -f "$GSH_VAR/magic_word"

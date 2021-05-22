@@ -15,10 +15,10 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
-msgid   "Hey! You removed a bat!"
+msgid   "There are still spiders in the cellar!"
 msgstr  ""
 
-msgid   "There are still spiders in the cellar!"
+msgid   "You removed a bat!"
 msgstr  ""
 
 msgid   "bat"

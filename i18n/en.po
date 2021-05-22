@@ -36,12 +36,12 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid   "$NB_ERRORS failures out of $NB_TESTS tests"
-msgstr  "$NB_ERRORS failures out of $NB_TESTS tests"
+msgid   "$nb_failed_tests failures out of $nb_tests tests"
+msgstr  "$nb_failed_tests failures out of $nb_tests tests"
 
 #, sh-format
-msgid   "$NB_TESTS successful tests"
-msgstr  "$NB_TESTS successful tests"
+msgid   "$nb_tests successful tests"
+msgstr  "$nb_tests successful tests"
 
 #, sh-format
 msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
@@ -57,12 +57,8 @@ msgstr  "Error: a least one base function is not working properly.\n"
         "Aborting!"
 
 #, sh-format
-msgid   "Error: command '$CMD' is only available in debug mode."
-msgstr  "Error: command '$CMD' is only available in debug mode."
-
-#, sh-format
-msgid   "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
-msgstr  "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
+msgid   "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
+msgstr  "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
 
 #, sh-format
 msgid   "Error: invalid choice: $CHOICE"
@@ -75,16 +71,12 @@ msgstr  "Error: invalid mission number: $CHOICE.\n"
         "Please choose a number between 1 and $LAST_MISSION."
 
 #, sh-format
-msgid   "Error: invalid option: '-$OPTARG'"
-msgstr  "Error: invalid option: '-$OPTARG'"
+msgid   "Error: invalid option: '-$optarg'"
+msgstr  "Error: invalid option: '-$optarg'"
 
 #, sh-format
 msgid   "Error: mission $MISSION_NB doesn't exist!"
 msgstr  "Error: mission $MISSION_NB doesn't exist!"
-
-#, sh-format
-msgid   "Error: mission $MISSION_NB doesn't have a check script."
-msgstr  "Error: mission $MISSION_NB doesn't have a check script."
 
 #, sh-format
 msgid   "Error: mission $MISSION_NB doesn't have a test script."
@@ -114,31 +106,21 @@ msgstr  "Error: the command 'gsh reset' shouldn't be run inside a subshell!"
 
 msgid   "Error: this mission was initialized in a subshell.\n"
         "You should run the command\n"
-        "    gsh reset\n"
+        "    $ gsh reset\n"
         "to make sure the mission is initialized properly."
 msgstr  "Error: this mission was initialized in a subshell.\n"
         "You should run the command\n"
-        "    gsh reset\n"
+        "    $ gsh reset\n"
         "to make sure the mission is initialized properly."
 
 msgid   "Error: this option is only available from an executable archive!"
 msgstr  "Error: this option is only available from an executable archive!"
 
 #, sh-format
-msgid   "Error: unknown gsh command '$CMD'.\n"
+msgid   "Error: unknown gsh command '$cmd'.\n"
         "Use one of the following commands:"
-msgstr  "Error: unknown gsh command '$CMD'.\n"
+msgstr  "Error: unknown gsh command '$cmd'.\n"
         "Use one of the following commands:"
-
-#, sh-format
-msgid   "Error: unknown mode '$MODE'."
-msgstr  "Error: unknown mode '$MODE'."
-
-#, sh-format
-msgid   "Error: unknown system: OSTYPE=$OSTYPE.\n"
-        "GameShell will use 'gnu-linux', without guarantee."
-msgstr  "Error: unknown system: OSTYPE=$OSTYPE.\n"
-        "GameShell will use 'gnu-linux', without guarantee."
 
 msgid   "Error: wrong password"
 msgstr  "Error: wrong password"
@@ -283,8 +265,8 @@ msgid   "skipped"
 msgstr  "skipped"
 
 #, sh-format
-msgid   "test $NB_TESTS failed"
-msgstr  "test $NB_TESTS failed"
+msgid   "test $nb_tests failed"
+msgstr  "test $nb_tests failed"
 
 # abbreviation for "yes" (lowercase)
 msgid   "y"

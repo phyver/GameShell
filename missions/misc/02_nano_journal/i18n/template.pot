@@ -21,11 +21,11 @@ msgid   "The command 'nano' is required for mission $MISSION_NAME.\n"
 msgstr  ""
 
 #, sh-format
-msgid   "The file '$JOURNAL_FILE' doesn't exist..."
+msgid   "The file '$journal_file' doesn't exist..."
 msgstr  ""
 
 #, sh-format
-msgid   "The file '$JOURNAL_FILE' is empty..."
+msgid   "The file '$journal_file' is empty..."
 msgstr  ""
 
 msgid   "journal"

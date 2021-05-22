@@ -1,25 +1,25 @@
 Commands specific to GameShell
 ==============================
 
-  gsh assert condition [msg]            (DEBUG)
+  gsh assert condition [msg]
     check if the condition is true
     if not, display an error message
 
-  gsh assert_check true/false [msg]     (DEBUG)
+  gsh assert_check true/false [msg]
     check the current mission's goal has been achieved
-    if the result doesn't coincide with the expected result, display 
+    if the result doesn't coincide with the expected result, display
     an error message
 
   gsh auto                              (ADMIN)
     source the current mission's automatic script, if it exists
 
   gsh check
-    check whether the current mission's goal has been achieved or 
+    check whether the current mission's goal has been achieved or
     not
 
   gsh exit
     quit GameShell
-    (you can start from the current mission by running the start.sh 
+    (you can start from the current mission by running the start.sh
     script with the "-C" flag)
 
   gsh goal [N]

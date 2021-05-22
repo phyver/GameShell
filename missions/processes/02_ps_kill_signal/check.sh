@@ -1,11 +1,11 @@
 #!/bin/bash
 
 _mission_check() {
-    local NB_SPELLS=$(ps -e | grep "$(gettext "spell")" | wc -l)
+    local nb_spells=$(ps -e | grep "$(gettext "spell")" | wc -l)
 
-    if [ "$NB_SPELLS" -gt 0 ]
+    if [ "$nb_spells" -gt 0 ]
     then
-        echo "$(eval_gettext "Some spells (\$NB_SPELLS) are still running!")"
+        echo "$(eval_gettext "Some spells (\$nb_spells) are still running!")"
         return 1
     fi
 

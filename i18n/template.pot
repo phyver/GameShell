@@ -36,11 +36,11 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$NB_ERRORS failures out of $NB_TESTS tests"
+msgid   "$nb_failed_tests failures out of $nb_tests tests"
 msgstr  ""
 
 #, sh-format
-msgid   "$NB_TESTS successful tests"
+msgid   "$nb_tests successful tests"
 msgstr  ""
 
 #, sh-format
@@ -56,11 +56,7 @@ msgid   "Error: a least one base function is not working properly.\n"
 msgstr  ""
 
 #, sh-format
-msgid   "Error: command '$CMD' is only available in debug mode."
-msgstr  ""
-
-#, sh-format
-msgid   "Error: couldn't get mission number $MISSION_NB (from $FUNCTION_NAME)"
+msgid   "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
 msgstr  ""
 
 #, sh-format
@@ -73,15 +69,11 @@ msgid   "Error: invalid mission number: $CHOICE.\n"
 msgstr  ""
 
 #, sh-format
-msgid   "Error: invalid option: '-$OPTARG'"
+msgid   "Error: invalid option: '-$optarg'"
 msgstr  ""
 
 #, sh-format
 msgid   "Error: mission $MISSION_NB doesn't exist!"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: mission $MISSION_NB doesn't have a check script."
 msgstr  ""
 
 #, sh-format
@@ -111,7 +103,7 @@ msgstr  ""
 
 msgid   "Error: this mission was initialized in a subshell.\n"
         "You should run the command\n"
-        "    gsh reset\n"
+        "    $ gsh reset\n"
         "to make sure the mission is initialized properly."
 msgstr  ""
 
@@ -119,17 +111,8 @@ msgid   "Error: this option is only available from an executable archive!"
 msgstr  ""
 
 #, sh-format
-msgid   "Error: unknown gsh command '$CMD'.\n"
+msgid   "Error: unknown gsh command '$cmd'.\n"
         "Use one of the following commands:"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: unknown mode '$MODE'."
-msgstr  ""
-
-#, sh-format
-msgid   "Error: unknown system: OSTYPE=$OSTYPE.\n"
-        "GameShell will use 'gnu-linux', without guarantee."
 msgstr  ""
 
 msgid   "Error: wrong password"
@@ -263,7 +246,7 @@ msgid   "skipped"
 msgstr  ""
 
 #, sh-format
-msgid   "test $NB_TESTS failed"
+msgid   "test $nb_tests failed"
 msgstr  ""
 
 # abbreviation for "yes" (lowercase)

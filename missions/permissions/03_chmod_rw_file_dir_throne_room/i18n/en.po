@@ -34,8 +34,8 @@ msgstr  "The crown in your chest is not readable!"
 msgid   "There is no crown in your chest!"
 msgstr  "There is no crown in your chest!"
 
-msgid   "Those digits are not right!"
-msgstr  "Those digits are not right!"
+msgid   "Those digits are not correct!"
+msgstr  "Those digits are not correct!"
 
 msgid   "What are the 3 digits inscribed on the base of the crown?"
 msgstr  "What are the 3 digits inscribed on the base of the crown?"

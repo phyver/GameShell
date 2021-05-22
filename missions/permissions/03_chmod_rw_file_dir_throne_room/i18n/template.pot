@@ -33,7 +33,7 @@ msgstr  ""
 msgid   "There is no crown in your chest!"
 msgstr  ""
 
-msgid   "Those digits are not right!"
+msgid   "Those digits are not correct!"
 msgstr  ""
 
 msgid   "What are the 3 digits inscribed on the base of the crown?"

@@ -26,5 +26,5 @@ msgid   "That's not the right answer!"
 msgstr  "That's not the right answer!"
 
 #, sh-format
-msgid   "That's the right answer, but you used $NB_CMD commands!"
-msgstr  "That's the right answer, but you used $NB_CMD commands!"
+msgid   "That's the right answer, but you used $nb_cmd commands!"
+msgstr  "That's the right answer, but you used $nb_cmd commands!"

@@ -6,7 +6,7 @@ _mission_check() {
     local MAX_DELAY=20
 
 
-    local lair="$(find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -type d -name "$(gettext ".Lair_of_the_spider_queen")*")"
+    local lair="$(find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -type d -name ".$(gettext "Lair_of_the_spider_queen")*")"
     if [ "$(realpath "$(pwd)")" != "$(realpath "$lair")" ]
     then
         echo "$(gettext "You are not in the queen spider lair!")"
@@ -28,14 +28,14 @@ _mission_check() {
 
     local now=$(date +%s)
     local start=$(cat "$GSH_VAR/start_time")
-    local NB_SECONDS=$((now - start))
-    if [ "$NB_SECONDS" -gt "$MAX_DELAY" ]
+    local nb_seconds=$((now - start))
+    if [ "$nb_seconds" -gt "$MAX_DELAY" ]
     then
-        echo "$(eval_gettext "Good, but you took \$NB_SECONDS seconds. You needed to take less than \$MAX_DELAY seconds...")"
+        echo "$(eval_gettext "Good, but you took \$nb_seconds seconds. You needed to take less than \$MAX_DELAY seconds...")"
         return 1
     fi
 
-    echo "$(eval_gettext "Perfect, it took you only \$NB_SECONDS seconds to complete this mission!")"
+    echo "$(eval_gettext "Perfect, it took you only \$nb_seconds seconds to complete this mission!")"
     return 0
 }
 

@@ -21,8 +21,8 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid   "Coin '$COIN_NAME' in your chest is invalid!"
-msgstr  "Coin '$COIN_NAME' in your chest is invalid!"
+msgid   "Coin '$coin_name' in your chest is invalid!"
+msgstr  "Coin '$coin_name' in your chest is invalid!"
 
 #, sh-format
 msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."

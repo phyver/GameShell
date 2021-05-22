@@ -27,13 +27,12 @@ msgstr  ""
 msgid   "That's not even a number!"
 msgstr  ""
 
-msgid   "The book 'Mathematics_101' contains all the anwsers for the exam.\n"
-        "\n"
-        "You just need to copy all the lines in this book."
+msgid   "The book 'Mathematics_101' contains all the anwsers.\n"
+        "Just copy all its lines to get perfect score."
 msgstr  ""
 
 #, sh-format
-msgid   "Too bad! The expected answer was $result..."
+msgid   "Too bad! The answer was $result..."
 msgstr  ""
 
 msgid   "Too slow! You need to give the answers in less than 10 seconds..."

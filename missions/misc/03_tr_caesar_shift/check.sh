@@ -3,7 +3,7 @@
 echo "$(gettext "What's the key that will make Merlin's chest to appear?")"
 read -er dcode
 
-if [ "$dcode" = "$(cat "$GSH_VAR/secret_key")" ]
+if [ "$dcode" = "$(cat "$GSH_VAR/magic_word")" ]
 then
   merlin_chest=$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')/$(gettext 'Merlin_s_chest')
   mkdir -p "$merlin_chest"
@@ -13,7 +13,7 @@ then
   unset merlin_chest dcode
   true
 else
-  echo "$(gettext "That's not the secret key.")"
+  echo "$(gettext "That's not the magic word.")"
   unset dcode
   false
 fi

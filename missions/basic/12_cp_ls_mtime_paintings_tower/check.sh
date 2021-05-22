@@ -1,15 +1,7 @@
 #!/bin/bash
 
 _mission_check() {
-
     local filename="$(head -n1 "$GSH_VAR/painting")"
-
-    if ! [ -d "$GSH_CHEST" ]
-    then
-        echo "$(eval_gettext "You don't have a chest (\$GSH_CHEST).
-Make one first.")"
-        return 1
-    fi
 
     local n=$(find "$GSH_CHEST" -name "$(gettext "painting")_*" | wc -l)
     if [ "$n" -eq 0 ]

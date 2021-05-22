@@ -3,19 +3,19 @@
 _mission_check() {
     local office
     office="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
-    local INVENTORY_FILE="$(gettext "inventory.txt")"
+    local inventory_file="$(gettext "inventory.txt")"
 
-    if [ ! -f "$office/$(gettext "Drawer")/$INVENTORY_FILE" ]
+    if [ ! -f "$office/$(gettext "Drawer")/$inventory_file" ]
     then
-        echo "$(eval_gettext 'There is no $INVENTORY_FILE in the drawer...')"
+        echo "$(eval_gettext 'There is no $inventory_file in the drawer...')"
         return 1
     fi
 
-    if ! cmp -s <(sort "$office/$(gettext "Drawer")/$INVENTORY_FILE") "$GSH_VAR/inventory_grimoires"
+    if ! cmp -s <(sort "$office/$(gettext "Drawer")/$inventory_file") "$GSH_VAR/inventory_grimoires"
     then
-        echo "$(eval_gettext 'The content of $INVENTORY_FILE is invalid.
+        echo "$(eval_gettext 'The content of $inventory_file is invalid.
 You can check its content with the command
-    $ less $INVENTORY_FILE')"
+    $ less $inventory_file')"
         return 1
     fi
 

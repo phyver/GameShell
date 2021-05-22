@@ -16,8 +16,8 @@ msgstr  "$MISSION_DIR/goal/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
-msgid   "That's not the real key!"
-msgstr  "That's not the real key!"
+msgid   "That's not the real combination!"
+msgstr  "That's not the real combination!"
 
 #, sh-format
 msgid   "The command 'man' is required for mission $MISSION_NAME.\n"
@@ -25,8 +25,8 @@ msgid   "The command 'man' is required for mission $MISSION_NAME.\n"
 msgstr  "The command 'man' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'man-db')"
 
-msgid   "What's the secret key to open the safe?"
-msgstr  "What's the secret key to open the safe?"
+msgid   "What's the combination to open the King's safe?"
+msgstr  "What's the combination to open the King's safe?"
 
 msgid   "note"
 msgstr  "note"

@@ -6,8 +6,8 @@ source gettext.sh
 main() {
     if [ "${#@}" -ge 1 ]
     then
-        local CMD=$(basename "$0")
-        echo "$(eval_gettext 'Error: $CMD takes no argument.')" >&2
+        local cmd_name=$(basename "$0")
+        echo "$(eval_gettext 'Error: $cmd_name takes no argument.')" >&2
         return 1
     fi
 

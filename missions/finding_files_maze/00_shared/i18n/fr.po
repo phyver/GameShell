@@ -16,7 +16,7 @@ msgid   "$GSH_HOME/Garden/Shed"
 msgstr  "$GSH_HOME/Jardin/Cabanon"
 
 msgid   "You are back at the entrance of the maze..."
-msgstr  "Pffft... Vous voila de retour à l'entrée du labyrinthe..."
+msgstr  "Vous voila de retour à l'entrée du labyrinthe..."
 
 msgid   "bucket"
 msgstr  "seau"

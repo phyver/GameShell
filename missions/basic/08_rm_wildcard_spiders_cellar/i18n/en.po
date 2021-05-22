@@ -25,8 +25,8 @@ msgid   "Some bats have been modified!"
 msgstr  "Some bats have been modified!"
 
 #, sh-format
-msgid   "There still are some spiders ($NB_SPIDERS) in the cellar!"
-msgstr  "There still are some spiders ($NB_SPIDERS) in the cellar!"
+msgid   "There still are some spiders ($nb_spiders) in the cellar!"
+msgstr  "There still are some spiders ($nb_spiders) in the cellar!"
 
 msgid   "bat"
 msgstr  "bat"

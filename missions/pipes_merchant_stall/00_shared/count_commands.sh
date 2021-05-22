@@ -13,14 +13,14 @@ _cmd() {
   echo "$last_cmd_1" > "$GSH_VAR/last_command"
 
   local pc=$(tail -n1 "$HISTFILE")
-  local NB_CMD=$(cat "$GSH_VAR/nb_commands")
+  local nb_cmd=$(cat "$GSH_VAR/nb_commands")
 
   if [ "$last_cmd_1" != "$last_cmd_2" ] && [ -n "$pc" ] && ! echo "$pc" | grep -x "\s*gsh\s*\w*\s*" &> /dev/null
   then
-    NB_CMD=$((NB_CMD+1))
-    echo $NB_CMD > "$GSH_VAR/nb_commands"
+    nb_cmd=$((nb_cmd+1))
+    echo $nb_cmd > "$GSH_VAR/nb_commands"
   fi
-  echo "($NB_CMD)"
+  echo "($nb_cmd)"
 }
 export -f _cmd
 
