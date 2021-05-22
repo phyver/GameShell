@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# computes a checksum of a string
+# with no argument, reads the string from STDIN
+
+if command -v sha1sum > /dev/null 2>&1
+then
+  if [ "$#" -eq 0 ]
+  then
+    sha1sum | cut -c 1-40
+  else
+    echo -n "$@" | sha1sum | cut -c 1-40
+  fi
+elif command -v sha1 > /dev/null 2>&1
+then
+  if [ "$#" -eq 0 ]
+  then
+    sha1 | cut -c 1-40
+  else
+    echo -n "$@" | sha1 | cut -c 1-40
+  fi
+fi
+

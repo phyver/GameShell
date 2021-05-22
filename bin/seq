@@ -1,0 +1,33 @@
+#!/bin/sh
+
+seq() (
+  case "$#" in
+    1)
+      start=1
+      end=$1
+      step=1
+      ;;
+    2)
+      start=$1
+      end=$2
+      step=1
+      ;;
+    3)
+      start=$1
+      end=$3
+      step=$2
+      ;;
+    *)
+      echo "Error: seq only takes 1, 2 or 3 arguments." >&2
+      return 1
+  esac
+  i=$start
+  while [ "$i" -le $end ]
+  do
+    echo $i
+    i=$((i+step))
+  done
+  return 0
+)
+
+seq "$@"

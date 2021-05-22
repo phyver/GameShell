@@ -26,6 +26,6 @@ _mission_init() {
         fi
     done
 
-    find "$CELLAR" -maxdepth 1 -name "*_$(gettext "bat")_*" | sort | CHECKSUM > "$GSH_VAR/bats"
+    find "$CELLAR" -maxdepth 1 -name "*_$(gettext "bat")_*" | sort | checksum > "$GSH_VAR/bats"
 }
 _mission_init | progress_bar

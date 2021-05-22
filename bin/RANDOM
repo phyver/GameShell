@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# to replace bash' $RANDOM
+
+awk -v seed="$$" 'BEGIN { srand(seed); print int(rand()*65536); }'

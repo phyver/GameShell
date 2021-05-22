@@ -17,14 +17,14 @@ _mission_init() {
   fi
   local dir1=$(echo "$dir" | head -n 1)
   local R=$RANDOM
-  local sum=$(CHECKSUM "$R $(gettext "ruby")")
+  local sum=$(checksum "$R $(gettext "ruby")")
   echo "$R $(gettext "ruby") $sum" > "$maze/$dir1/$R"
   echo "$R $(gettext "ruby") $sum" > "$GSH_VAR/ruby"
 
   echo "$dir" | sed '1d' | while read dir1
   do
     R=$RANDOM
-    sum=$(CHECKSUM "$R $(gettext "stone")")
+    sum=$(checksum "$R $(gettext "stone")")
     echo "$R $(gettext "stone") $sum" > "$maze/$dir1/$R"
   done
 }

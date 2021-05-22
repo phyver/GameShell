@@ -1,6 +1,6 @@
 LANG=$(wildcard i18n/*.po)
 LANG:=$(filter-out i18n/en.po, $(LANG))
-SH_FILES= start.sh utils/archive.sh lib/gameshell.sh lib/common*.sh lib/missions_utils.sh
+SH_FILES= start.sh lib/gameshell.sh lib/common.sh bin/*
 OTHER_FILES=
 
 SORT=--sort-output
@@ -22,7 +22,7 @@ $(LANG):%.po: i18n/template.pot FORCE
 i18n/template.pot: $(SH_FILES) $(OTHER_FILES) FORCE
 	@mkdir -p i18n/
 	@echo "generating i18n/template.pot"
-	@xgettext --from-code=UTF-8 --omit-header $(OPTIONS) $(SORT) --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
+	@xgettext -L shell --from-code=UTF-8 --omit-header $(OPTIONS) $(SORT) --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
 
 new: i18n/template.pot
 	@read -p "language code: " lang; \

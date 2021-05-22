@@ -1,0 +1,41 @@
+#!/bin/sh
+
+GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
+GSH_CONFIG=$GSH_ROOT/.config
+
+[ -d "$GSH_CONFIG" ] || { echo "Error: GSH_CONFIG doesn't exists" >&2 ; exit 1 ; }
+
+# ask admin password, except in DEBUG mode
+admin_mode() {
+  if [ "$GSH_MODE" = "DEBUG" ]
+  then
+    return 0
+  fi
+
+  if ! [ -f "$GSH_CONFIG/admin_hash" ]
+  then
+    echo "$(gettext "Error: you are not allowed to run this command.")" >&2
+    return 1
+  fi
+
+  hash=$(cat "$GSH_CONFIG/admin_hash")
+  try=0
+  # NOTE: seq is not POSIX compliant
+  while [ "$try" -lt 3 ]
+  do
+    printf "%s " "$(gettext "password:")"
+    stty -echo
+    read -r mdp
+    stty echo
+    echo
+    if [ "$(checksum "$mdp")" = "$hash" ]
+    then
+      return 0
+    fi
+    try=$((try+1))
+  done
+  echo "$(gettext "Error: wrong password")" >&2
+  return 1
+}
+
+admin_mode "$@"

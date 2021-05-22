@@ -15,7 +15,7 @@ else
     d=$(maze1.py "$maze" 3 2 1)
 fi
 
-echo "$(CHECKSUM "$d")" > "$maze/$d/$(gettext "copper_coin")"
-echo "$(CHECKSUM "$d")" > "$GSH_VAR/copper_coin"
+echo "$(checksum "$d")" > "$maze/$d/$(gettext "copper_coin")"
+echo "$(checksum "$d")" > "$GSH_VAR/copper_coin"
 
 unset maze d

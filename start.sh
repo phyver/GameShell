@@ -6,7 +6,6 @@ source gettext.sh
 
 export GSH_ROOT="$(dirname "$0")"
 source "$GSH_ROOT/lib/common.sh"
-source "$GSH_ROOT/lib/missions_utils.sh"
 
 display_help() {
   cat "$(eval_gettext "\$GSH_ROOT/i18n/start-help/en.txt")"
@@ -55,7 +54,7 @@ do
       FORCE="TRUE"
       ;;
     L)
-      LANGUAGE=$OPTARG
+      LANGUAGE=$optarg
       ;;
     X)
       echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
@@ -65,7 +64,7 @@ do
       :  # used by the self-extracting archive
       ;;
     *)
-      echo "$(eval_gettext "Error: invalid option: '-\$OPTARG'")" >&2
+      echo "$(eval_gettext "Error: invalid option: '-\$optarg'")" >&2
       exit 1
       ;;
   esac
@@ -137,20 +136,6 @@ progress_bar_finish() {
 
 init_gsh() {
 
-  # these directories should not be modified during a game
-  export GSH_LIB="$GSH_ROOT/lib"
-  export GSH_MISSIONS="$GSH_ROOT/missions"
-  export GSH_UTILS="$GSH_ROOT/utils"
-
-  # these directories should be erased when a new game is started, they only contain
-  # dynamic data
-  export GSH_HOME="$GSH_ROOT/World"
-  export GSH_CONFIG="$GSH_ROOT/.config"
-  export GSH_VAR="$GSH_ROOT/.var"
-  export GSH_BASHRC="$GSH_ROOT/.bashrc"
-  export GSH_BIN="$GSH_ROOT/.bin"
-  export GSH_SBIN="$GSH_ROOT/.sbin"
-
   ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
 
   # message when a new game is started from the developpment directory
@@ -194,7 +179,7 @@ Do you want to remove it and start a new game? [y/N]') " r
   mkdir -p "$GSH_HOME"
 
   mkdir -p "$GSH_CONFIG"
-  echo "# mission action date CHECKSUM" >> "$GSH_CONFIG/missions.log"
+  echo "# mission action date checksum" >> "$GSH_CONFIG/missions.log"
 
   mkdir -p "$GSH_BASHRC"
   cp "$GSH_LIB/bashrc" "$GSH_BASHRC"
@@ -231,9 +216,6 @@ Do you want to remove it and start a new game? [y/N]') " r
       PASSPORT)
         _passport "$PASSPORT"
         ;;
-      *)
-        echo "$(eval_gettext "Error: unknown mode '\$MODE'.")" >&2
-        ;;
     esac
 
     # Check that the information is correct.
@@ -244,12 +226,12 @@ Do you want to remove it and start a new game? [y/N]') " r
 
 
   # Generation of a unique identifier for the the player.
-  export GSH_UID="$(CHECKSUM < "$PASSPORT" | cut -c 1-40)"
+  export GSH_UID="$(checksum < "$PASSPORT" | cut -c 1-40)"
   echo "GSH_UID=$GSH_UID" >> "$PASSPORT"
   echo "$GSH_UID" > "$GSH_CONFIG/uid"
 
   # save system config, in case of problems
-  systemconfig > "$GSH_CONFIG/system"
+  system_config > "$GSH_CONFIG/system"
 
 
   # Clear the screen.
@@ -382,18 +364,12 @@ Aborting.")"
   unset MISSION_DIR MISSION_NB
 }
 
-
-start_gsh() {
-  # Starting the game.
-  cd "$GSH_HOME"
-  export GSH_UID=$(cat "$GSH_CONFIG/uid")
-  # make sure the shell reads it's config file by making it interactive (-i)
-  exec bash --rcfile "$GSH_LIB/bashrc" -i
-}
-
-
 #######################################################################
+
 init_gsh "$@"
-start_gsh
+cd "$GSH_HOME"
+export GSH_UID=$(cat "$GSH_CONFIG/uid")
+# make sure the shell reads it's config file by making it interactive (-i)
+exec bash --rcfile "$GSH_LIB/bashrc" -i
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2
