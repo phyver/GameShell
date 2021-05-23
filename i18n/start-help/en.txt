@@ -2,9 +2,9 @@ options:
   -h      this message
 
   -P      passport mode: ask for name / emails of player
-  -D      debug mode
-  -v      verbose source of file (only useful in debug mode)
   -A      anonymous mode
+  -d      debug mode
+  -D      verbose debug mode
 
   -C      don't ask: automatically continue current game (if relevant)
   -R      don't ask: automatically reset game
@@ -13,8 +13,9 @@ options:
 
   -q      quiet: don't show message at the start of each mission
   -n      black and white: don't use ANSI escape codes for color
-  -X      only extract tgz archive (only available when GameShell is run
-          from an executable archive)
-  -K      do not remove GameShell temporary directory (only available
-          when GameShell is run from an executable archive)
+
+The following options are only available when GameShell is run from 
+an executable archive.
+  -X      only extract tgz archive
+  -K      do not remove GameShell temporary directory on exit
 
