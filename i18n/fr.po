@@ -71,8 +71,8 @@ msgstr  "Erreur : numéro de mission invalide: $CHOICE.\n"
         "Choisissez un numéro entre 1 et $LAST_MISSION."
 
 #, sh-format
-msgid   "Error: invalid option: '-$optarg'"
-msgstr  "Erreur : option invalide: '-$optarg'"
+msgid   "Error: invalid option: '-$OPTARG'"
+msgstr  "Erreur : option invalide: '-$OPTARG'"
 
 #, sh-format
 msgid   "Error: mission $MISSION_NB doesn't exist!"
@@ -230,11 +230,6 @@ msgstr  "Pendant que vous attendez, un poisson fait des ronds..."
 # abbreviation for "yes" (uppercase)
 msgid   "Y"
 msgstr  "O"
-
-msgid   "You are trying to run GameShell inside the developpment directory.\n"
-        "Do you want to continue? [y/N]"
-msgstr  "Vous êtes en train d'exécuter GameShell dans l'arborescence de développement.\n"
-        "Faut-il continuer ? [o/N]"
 
 msgid   "Your choice [qi] or a number:"
 msgstr  "Votre choix [qi] ou un numéro :"

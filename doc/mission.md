@@ -349,7 +349,7 @@ You can give a list of `index.txt` files and mission directories as arguments
 of GameShell if you want to customize the list / order of missions. This is
 particularly useful when testing a new mission:
 ````
-    $ ./start.sh -FRD missions/contrib/my_new_mission
+    $ ./start.sh -RD missions/contrib/my_new_mission
 ````
 (The `-F` flag forces execution in the source directory, the `-R` flag resets
 the previous game, and the flag `-D` will run GameShell in "debug" mode.)

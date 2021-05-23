@@ -15,8 +15,7 @@ display_help() {
 export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
 RESET=""
-FORCE="FALSE"
-while getopts ":hcnPDACRFXvqL:K" opt
+while getopts ":hcnPDACRXvqL:K" opt
 do
   case $opt in
     h)
@@ -50,11 +49,8 @@ do
     R)
       RESET="TRUE"
       ;;
-    F)
-      FORCE="TRUE"
-      ;;
     L)
-      LANGUAGE=$optarg
+      LANGUAGE=$OPTARG
       ;;
     X)
       echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
@@ -64,7 +60,7 @@ do
       :  # used by the self-extracting archive
       ;;
     *)
-      echo "$(eval_gettext "Error: invalid option: '-\$optarg'")" >&2
+      echo "$(eval_gettext "Error: invalid option: '-\$OPTARG'")" >&2
       exit 1
       ;;
   esac
@@ -137,15 +133,6 @@ progress_bar_finish() {
 init_gsh() {
 
   ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
-
-  # message when a new game is started from the developpment directory
-  if [ -e "$GSH_ROOT/.git" ] && [ "$FORCE" != "TRUE" ]
-  then
-    local r
-    read -erp "$(gettext "You are trying to run GameShell inside the developpment directory.
-Do you want to continue? [y/N]") " r
-    [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ] || exit 1
-  fi
 
   # message when data from a previous play is found. We can either
   #    - restart a new game
