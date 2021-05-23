@@ -10,4 +10,4 @@ then
 fi
 unset file
 rm -f "$GSH_VAR/list_grimoires_RO"
-rm -f "$GSH_VAR/list_grimoires_PQ"
+rm -f "$GSH_VAR/list_grimoires_GSH"
