@@ -7,7 +7,7 @@ of you. While getting the cauldron ready he asks for your help.
 Read him the steps of the recipe from his book.
 
 In order to validate the mission, your last command prior to ``gsh 
-check`` must show the steps of the recipe, but not its title.
+check`` must show the steps of the recipe (without its title).
 
 
 Useful commands

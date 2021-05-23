@@ -3,7 +3,7 @@ Mission goal
 
 As you are walking around the castle, you feel like you are 
 being watched... Turn your head quickly enough and you may 
-see one of the paintings' eyes following you...
+see one of the paintings' eyes following you.
 
 1/ Run the ``xeyes`` command, and stop it.
 2/ Run the ``xeyes`` command in the background.

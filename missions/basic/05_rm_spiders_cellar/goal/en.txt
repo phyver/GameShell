@@ -10,5 +10,5 @@ Useful commands
 ===============
 
 rm FILE1 FILE2 ... FILEn
-  Delete files (permanently).
+  Delete the files (permanently).
   Remark: ``rm`` is an abbreviation for "remove".
