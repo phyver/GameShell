@@ -41,7 +41,8 @@ realpath() ( # Execute the function in a *subshell* to localize variables and th
   while :
   do # Resolve potential symlinks until the ultimate target is found.
 
-    [ -L "$target" ] || [ -e "$target" ] || { command printf '%s\n' "ERROR: '$target' does not exist." >&2; return 1; }
+    # [ -L "$target" ] || [ -e "$target" ] || { command printf '%s\n' "ERROR: '$target' does not exist." >&2; return 1; }
+    [ -L "$target" ] || [ -e "$target" ] || return 1
 
     # Change to target dir; necessary for correct resolution of target path.
     command cd "$(command dirname -- "$target")"

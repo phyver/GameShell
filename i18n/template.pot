@@ -60,15 +60,6 @@ msgid   "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
 msgstr  ""
 
 #, sh-format
-msgid   "Error: invalid choice: $CHOICE"
-msgstr  ""
-
-#, sh-format
-msgid   "Error: invalid mission number: $CHOICE.\n"
-        "Please choose a number between 1 and $LAST_MISSION."
-msgstr  ""
-
-#, sh-format
 msgid   "Error: invalid option: '-$OPTARG'"
 msgstr  ""
 
@@ -121,9 +112,6 @@ msgstr  ""
 msgid   "Error: you are not allowed to run this command."
 msgstr  ""
 
-msgid   "I"
-msgstr  ""
-
 msgid   "Is this information correct? [Y/n]"
 msgstr  ""
 
@@ -142,9 +130,6 @@ msgid   "Player's name:"
 msgstr  ""
 
 msgid   "Press any key to continue."
-msgstr  ""
-
-msgid   "Q"
 msgstr  ""
 
 #, sh-format
@@ -166,14 +151,6 @@ msgstr  ""
 msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
         "You should use the command\n"
         "  $ gsh reset"
-msgstr  ""
-
-#, sh-format
-msgid   "What do you want to do?\n"
-        "      (Enter)     restart from last mission\n"
-        "      (q)         quit\n"
-        "      (i)         display the list of missions\n"
-        "      (N)         restart from mission #N (N less than $LAST_MISSION)"
 msgstr  ""
 
 msgid   "While you are waiting, a bat flies by..."
@@ -213,9 +190,6 @@ msgstr  ""
 msgid   "Y"
 msgstr  ""
 
-msgid   "Your choice [qi] or a number:"
-msgstr  ""
-
 msgid   "cancelled"
 msgstr  ""
 
@@ -225,17 +199,11 @@ msgstr  ""
 msgid   "failed"
 msgstr  ""
 
-msgid   "i"
-msgstr  ""
-
 # abbreviation for "no" (lowercase)
 msgid   "n"
 msgstr  ""
 
 msgid   "password:"
-msgstr  ""
-
-msgid   "q"
 msgstr  ""
 
 msgid   "skipped"

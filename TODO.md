@@ -11,8 +11,6 @@ TODO NOW
 
   - [ ] use `LC_ALL` instead of `LANGUAGE`, which is not supported everywhere
 
-  - [ ] rethink reaching end of game (when no more mission is found)
-
   - [x] remove test / question when running GameShell in the developpment dir
   - [x] randomize uid even in anonymous / debug mode
   - [x] add tests to check `os_common.sh` functions are working
