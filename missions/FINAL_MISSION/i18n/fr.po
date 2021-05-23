@@ -3,54 +3,21 @@ msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
-# path for the text file containing the goal
-msgid   "$MISSION_DIR/goal/en.txt"
-msgstr  "$MISSION_DIR/goal/fr.txt"
-
-#, sh-format
-msgid   "$MISSION_DIR/msg/en.txt"
-msgstr  "$MISSION_DIR/msg/fr.txt"
-
 # path for the text file containing the treasure message
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
-#, sh-format
-msgid   "Error: invalid mission number: $choice.\n"
-        "Please choose a number between 1 and $NB_MISSIONS"
-msgstr  "Erreur : numéro de mission invalide : $choice.\n"
-        "Choisissez un numéro entre 1 et $NB_MISSIONS"
-
-msgid   "Press any key to continue."
-msgstr  "Appuyez sur une touche pour continuer."
-
-msgid   "Q"
-msgstr  "Q"
-
-msgid   "The admin password is now '$password'. Use\n"
-        "    $ gsh HELP\n"
-        "for a list including admin commands."
-msgstr  "Le mot de passe administrateur est maintenant '$password'.\n"
-        "Utilisez\n"
-        "    $ gsh HELP\n"
-        "pour une liste incluant les commandes administrateurs."
-
-msgid   "What do you want to do?\n"
-        "    (q)         quit\n"
-        "    (number)    restart from this mission"
-msgstr  "Que voulez vous faire ?\n"
-        "    (q)         quitter\n"
-        "    (numéro)    recommencer à partir de cette mission"
-
-msgid   "Your choice [q] or a number:"
-msgstr  "Votre choix [q] ou un numéro :"
-
-msgid   "q"
-msgstr  "q"
-
+#: goal.sh:3
 msgid   "qwerty"
 msgstr  "azerty"
 
+# path for the text file containing the goal
+#: goal.sh:5
 #, sh-format
-msgid   "unknown choice: $choice"
-msgstr  "choix inconnu : $choice"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+#: init.sh:3
+#, sh-format
+msgid   "$MISSION_DIR/msg/en.txt"
+msgstr  "$MISSION_DIR/msg/fr.txt"

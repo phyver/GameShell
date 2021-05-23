@@ -3,6 +3,11 @@ Congratulations!
 
 You have finished all the missions.
 
-You can run ``gsh check`` to start a new game in "admin" mode if 
-you want.
+You can now quit GameShell, or go back to some old missions.
+
+Use ``gsh HELP`` to get a list of all GameShell commands.
+The commands ``gsh index`` and ``gsh goto N`` are particularly 
+interesting.
+
+Note: the admin password has been changed to '$password'.
 
