@@ -8,7 +8,6 @@ options:
 
   -C      don't ask: automatically continue current game (if relevant)
   -R      don't ask: automatically reset game
-  -F      don't ask: force execution even in source repository
 
   -L ...  set LANGUAGE variable (ex: -L fr:it:en)
 

@@ -69,7 +69,7 @@ msgid   "Error: invalid mission number: $CHOICE.\n"
 msgstr  ""
 
 #, sh-format
-msgid   "Error: invalid option: '-$optarg'"
+msgid   "Error: invalid option: '-$OPTARG'"
 msgstr  ""
 
 #, sh-format
@@ -211,10 +211,6 @@ msgstr  ""
 
 # abbreviation for "yes" (uppercase)
 msgid   "Y"
-msgstr  ""
-
-msgid   "You are trying to run GameShell inside the developpment directory.\n"
-        "Do you want to continue? [y/N]"
 msgstr  ""
 
 msgid   "Your choice [qi] or a number:"
