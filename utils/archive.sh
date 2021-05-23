@@ -17,10 +17,11 @@ options:
   -A          use the "anonymous mode" by default when running GameShell
   -L LANGS    only keep the given languages (ex: -L 'en*,fr')
 
-  -a          keep 'auto.sh' scripts for missions that have one
-  -A          keep 'test.sh' scripts for missions that have one
   -N ...      name of the archive / top directory (default: "GameShell")
-  -k          keep tgz archive
+
+  -a          keep 'auto.sh' scripts for missions that have one
+  -t          keep 'test.sh' scripts for missions that have one
+  -z          keep tgz archive
 EOH
 }
 
@@ -52,7 +53,7 @@ GENERATE_MO=1
 KEEP_PO=0
 LANGUAGES=""
 
-while getopts ":hp:N:aAPkL:" opt
+while getopts ":hp:N:atPzL:" opt
 do
   case $opt in
     h)
@@ -68,13 +69,13 @@ do
     a)
       KEEP_AUTO=1
       ;;
-    A)
+    t)
       KEEP_TEST=1
       ;;
     P)
       DEFAULT_MODE="PASSPORT"
       ;;
-    k)
+    z)
       KEEP_TGZ=1
       ;;
     L)
