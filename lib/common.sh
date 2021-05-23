@@ -21,8 +21,8 @@ export GSH_BASHRC="$GSH_ROOT/.bashrc"
 export GSH_BIN="$GSH_ROOT/.bin"
 export GSH_SBIN="$GSH_ROOT/.sbin"
 
-TEXTDOMAINDIR="$GSH_ROOT/locale"
-TEXTDOMAIN="gsh"
+export TEXTDOMAINDIR="$GSH_ROOT/locale"
+export TEXTDOMAIN="gsh"
 
 # PATH=$PATH:"$GSH_ROOT/bin"
 PATH="$GSH_ROOT/bin":$PATH
