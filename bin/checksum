@@ -3,6 +3,7 @@
 # computes a checksum of a string
 # with no argument, reads the string from STDIN
 
+# Linux
 if command -v sha1sum > /dev/null 2>&1
 then
   if [ "$#" -eq 0 ]
@@ -11,6 +12,19 @@ then
   else
     echo -n "$@" | sha1sum | cut -c 1-40
   fi
+
+# macos
+if command -v sha1sum > /dev/null 2>&1
+elif command -v shasum -a 1 > /dev/null 2>&1
+then
+  if [ "$#" -eq 0 ]
+  then
+    shasum -a 1 | cut -c 1-40
+  else
+    echo -n "$@" | sha1 | cut -c 1-40
+  fi
+
+# bsd
 elif command -v sha1 > /dev/null 2>&1
 then
   if [ "$#" -eq 0 ]
