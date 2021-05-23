@@ -13,10 +13,10 @@ jobs:
         name: Install Linux deps
         run: |
           sudo apt install gettext-base python3 man-db psmisc nano tree bsdmainutils x11-apps gettext
-      - if: ${{ matrix.platform == 'macos-latest' }}
-        name: Install macOS deps
-        run: |
-          brew install coreutils pstree tree man-db
+      # - if: ${{ matrix.platform == 'macos-latest' }}
+      #   name: Install macOS deps
+      #   run: |
+      #     brew install coreutils pstree tree man-db
       - name: Run the tests
         run: |
           echo 'for _ in $(seq 42); do gsh auto --abort; done' | ./start.sh -FRDqv
