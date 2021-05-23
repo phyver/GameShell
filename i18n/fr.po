@@ -61,16 +61,6 @@ msgid   "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
 msgstr  "Error : mission '$MISSION_NB' introuvable (dans $fn_name)"
 
 #, sh-format
-msgid   "Error: invalid choice: $CHOICE"
-msgstr  "Erreur : option invalide: $CHOICE"
-
-#, sh-format
-msgid   "Error: invalid mission number: $CHOICE.\n"
-        "Please choose a number between 1 and $LAST_MISSION."
-msgstr  "Erreur : numéro de mission invalide: $CHOICE.\n"
-        "Choisissez un numéro entre 1 et $LAST_MISSION."
-
-#, sh-format
 msgid   "Error: invalid option: '-$OPTARG'"
 msgstr  "Erreur : option invalide: '-$OPTARG'"
 
@@ -128,9 +118,6 @@ msgstr  "Erreur : mauvais mot de passe"
 msgid   "Error: you are not allowed to run this command."
 msgstr  "Erreur : vous n'avez pas le droit d'exécuter cette commande."
 
-msgid   "I"
-msgstr  "I"
-
 msgid   "Is this information correct? [Y/n]"
 msgstr  "Est-ce que ces informations sont correctes ? [O/n]"
 
@@ -150,9 +137,6 @@ msgstr  "Nom du joueur :"
 
 msgid   "Press any key to continue."
 msgstr  "Appuyez sur une touche pour continuer."
-
-msgid   "Q"
-msgstr  "Q"
 
 #, sh-format
 msgid   "Sorry, mission $MISSION_NB hasn't been completed."
@@ -181,18 +165,6 @@ msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
 msgstr  "Warning : le fichier 'treasure.sh' a été chargé dans un sous-shell.\n"
         "Vous devriez lancer la commande\n"
         "  $ gsh reset"
-
-#, sh-format
-msgid   "What do you want to do?\n"
-        "      (Enter)     restart from last mission\n"
-        "      (q)         quit\n"
-        "      (i)         display the list of missions\n"
-        "      (N)         restart from mission #N (N less than $LAST_MISSION)"
-msgstr  "Que voulez vous faire \n"
-        "      (Entrée)    recommencer à la dernière mission\n"
-        "      (q)         quitter\n"
-        "      (i)         affiche la liste des missions\n"
-        "      (N)         recommencer à la mission #N (N inférieur à $LAST_MISSION)"
 
 msgid   "While you are waiting, a bat flies by..."
 msgstr  "Pendant que vous attendez, une chauve-souris passe..."
@@ -231,9 +203,6 @@ msgstr  "Pendant que vous attendez, un poisson fait des ronds..."
 msgid   "Y"
 msgstr  "O"
 
-msgid   "Your choice [qi] or a number:"
-msgstr  "Votre choix [qi] ou un numéro :"
-
 msgid   "cancelled"
 msgstr  "annulée"
 
@@ -243,18 +212,12 @@ msgstr  "réussie"
 msgid   "failed"
 msgstr  "échouée"
 
-msgid   "i"
-msgstr  "i"
-
 # abbreviation for "no" (lowercase)
 msgid   "n"
 msgstr  "n"
 
 msgid   "password:"
 msgstr  "mot de passe :"
-
-msgid   "q"
-msgstr  "q"
 
 msgid   "skipped"
 msgstr  "sautée"

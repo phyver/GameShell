@@ -61,16 +61,6 @@ msgid   "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
 msgstr  "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
 
 #, sh-format
-msgid   "Error: invalid choice: $CHOICE"
-msgstr  "Error: invalid choice: $CHOICE"
-
-#, sh-format
-msgid   "Error: invalid mission number: $CHOICE.\n"
-        "Please choose a number between 1 and $LAST_MISSION."
-msgstr  "Error: invalid mission number: $CHOICE.\n"
-        "Please choose a number between 1 and $LAST_MISSION."
-
-#, sh-format
 msgid   "Error: invalid option: '-$OPTARG'"
 msgstr  "Error: invalid option: '-$OPTARG'"
 
@@ -128,9 +118,6 @@ msgstr  "Error: wrong password"
 msgid   "Error: you are not allowed to run this command."
 msgstr  "Error: you are not allowed to run this command."
 
-msgid   "I"
-msgstr  "I"
-
 msgid   "Is this information correct? [Y/n]"
 msgstr  "Is this information correct? [Y/n]"
 
@@ -150,9 +137,6 @@ msgstr  "Player's name:"
 
 msgid   "Press any key to continue."
 msgstr  "Press any key to continue."
-
-msgid   "Q"
-msgstr  "Q"
 
 #, sh-format
 msgid   "Sorry, mission $MISSION_NB hasn't been completed."
@@ -181,18 +165,6 @@ msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
 msgstr  "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
         "You should use the command\n"
         "  $ gsh reset"
-
-#, sh-format
-msgid   "What do you want to do?\n"
-        "      (Enter)     restart from last mission\n"
-        "      (q)         quit\n"
-        "      (i)         display the list of missions\n"
-        "      (N)         restart from mission #N (N less than $LAST_MISSION)"
-msgstr  "What do you want to do?\n"
-        "      (Enter)     restart from last mission\n"
-        "      (q)         quit\n"
-        "      (i)         display the list of missions\n"
-        "      (N)         restart from mission #N (N less than $LAST_MISSION)"
 
 msgid   "While you are waiting, a bat flies by..."
 msgstr  "While you are waiting, a bat flies by..."
@@ -231,9 +203,6 @@ msgstr  "While you are waiting, you see a fish swimming in circles..."
 msgid   "Y"
 msgstr  "Y"
 
-msgid   "Your choice [qi] or a number:"
-msgstr  "Your choice [qi] or a number:"
-
 msgid   "cancelled"
 msgstr  "cancelled"
 
@@ -243,18 +212,12 @@ msgstr  "completed"
 msgid   "failed"
 msgstr  "failed"
 
-msgid   "i"
-msgstr  "i"
-
 # abbreviation for "no" (lowercase)
 msgid   "n"
 msgstr  "n"
 
 msgid   "password:"
 msgstr  "password:"
-
-msgid   "q"
-msgstr  "q"
 
 msgid   "skipped"
 msgstr  "skipped"
