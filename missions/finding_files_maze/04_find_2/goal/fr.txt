@@ -9,18 +9,18 @@ Indice
 
 Le nom du fichier ne contient pas la chaine "rubis". Comme il n'y a 
 pas beaucoup de fichiers dans le labyrinthe, une stratégie est de 
-chercher les **fichier** et de regarder à la main celui qui contient 
-la chaine "rubis".
+chercher les **fichier** (par opposition aux répertoires) et de 
+regarder à la main celui qui contient la chaine "rubis".
 
 
 Commandes utiles
 ================
 
 find CONDITION
-  Cherche des fichiers à partir du répertoire courant.
+  Cherche des fichiers / répertoires à partir du répertoire courant.
 
-  Les conditions peuvent porter sur le nom des fichiers, leur 
-  taille, leur date de création, etc.
+  Les conditions peuvent porter sur leur nom, leur taille, leur date 
+  de création, etc.
   Une condition intéressante est :
     -type TYPE
 

@@ -9,19 +9,18 @@ Hint
 
 The filename does not contain the string "ruby". Since there aren't 
 many files in the maze, a possible strategy is to look for all 
-**file**, and check by hand which one contains the string "ruby".
+**file** (as opposed to directories), and check by hand which one 
+contains the string "ruby".
 
 
 Useful commands
 ===============
 
 find
-  Search files from the current working directory.
+  Search files / directories from the current working directory.
 
-  Conditions on the file may be added about filenames, size, 
-  modification date, etc.
-
-  An interesting condition is
+  Conditions may be added about names, size, modification date, etc.
+  An interesting condition is:
     -type TYPE
 
 cat FILE

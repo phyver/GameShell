@@ -18,8 +18,8 @@ Useful commands
 ===============
 
 tr STRING1 STRING2
-  replace ("tr"anslate) each character STRING1[i] by STRING2[i] in 
-  the file, and output the result. (The file is not modified.)
+  Replace each character STRING1[i] by STRING2[i] on the standard 
+  input, and output the result.
   Remark: ``tr`` is an abbreviation for "translate".
 
   Example: if

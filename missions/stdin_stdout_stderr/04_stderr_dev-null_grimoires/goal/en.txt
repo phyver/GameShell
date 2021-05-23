@@ -18,14 +18,6 @@ be printed on the screen.
 Useful commands
 ===============
 
-Every command can output messages to the screen in two ways:
-  - standard printing ("stdout")
-  - error printing ("stderr")
-By default, both kind of messages are show on the screen.
-
-It is however possible to redirect both of them to files 
-independently.
-
 grep STRING FILE1 ... FILEn
   Search for a string inside a file and print the corresponding 
   lines.
@@ -45,3 +37,15 @@ COMMAND  2>  FICHIER
 /dev/null
   "Virtual" file that is universally empty: anything sent to it is 
   disappears.
+
+Explanations
+------------
+
+Every command can output messages to the screen in two ways:
+  - standard printing ("stdout")
+  - error printing ("stderr")
+By default, both kind of messages are show on the screen.
+
+It is however possible to redirect both of them to files 
+independently.
+

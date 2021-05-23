@@ -19,11 +19,6 @@ partie de l'incantation ne doit pas être affichée.
 Commandes utiles
 ================
 
-Chaque commande peut écrire sur l'écran de deux manières :
-  - affichage du résultat ("stdout")
-  - affichage des message d'erreur ("stderr")
-On ne peut pas différencier ces affichages.
-
 On peut par contre rediriger les deux affichages indépendamment.
 
 grep CHAINE FICHIER1 ... FICHIERn
@@ -47,3 +42,12 @@ COMMANDE  2>  FICHIER
 /dev/null
   Fichier "virtuel" universellement vide : tout ce qui y est envoyé 
   disparait.
+
+Explications
+------------
+
+Chaque commande peut écrire sur l'écran de deux manières :
+  - affichage du résultat ("stdout")
+  - affichage des message d'erreur ("stderr")
+On ne peut pas différencier ces affichages.
+
