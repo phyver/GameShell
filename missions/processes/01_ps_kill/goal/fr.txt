@@ -1,9 +1,8 @@
 Objectif
 ========
 
-Un lutin des montagnes espiègle a lancé un sortilège qui fait 
-apparaitre des tâches de peintures (ou est-ce quelque chose de pire) 
-un peu partout dans le chateau.
+Un lutin espiègle a lancé un sortilège qui fait apparaitre des 
+traces de charbon un peu partout dans le chateau.
 Vous devez trouver ce sortilège et le supprimer.
 
 
@@ -25,5 +24,5 @@ kill N
 
 clear
   Efface l'écran du terminal.
-  La combinaison de touches "Control-l" fait la même chose et est 
+  La combinaison de touches "Control-L" fait la même chose et est 
   souvent plus rapide à utiliser.

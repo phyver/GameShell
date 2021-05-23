@@ -1,13 +1,12 @@
 Mission goal
 ============
 
-The mischievous imp met a fairy, and they are having a friendly 
-contest to compare their magic.
-They met in the cellar, and imp is conjuring lumps of coal while the 
-fairy is conjuring delicate snowflakes.
+The imp is comparing his magic with a fairy. They met in the cellar, 
+and imp is conjuring lumps of coal while the fairy is conjuring 
+delicate snowflakes.
 
-You need to remove the imp's spells and the coal that litters the 
-cellar. Don't touch the snowflakes!
+Remove the imp's spells and the coal that litters the cellar, but 
+don't touch the snowflakes!
 
 
 Remark

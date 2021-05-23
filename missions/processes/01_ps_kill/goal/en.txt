@@ -1,8 +1,8 @@
 Mission goal
 ============
 
-A mischievous mountain imp cast a spell that puts paint (or is it 
-something worse?) stains everywhere in the castle.
+A mischievous imp cast a spell that puts coal smudges everywhere in 
+the castle.
 You need to find this spell and remove it.
 
 Remark
@@ -23,5 +23,5 @@ kill N
 
 clear
   Clear the screen.
-  The keybinding "Control-l" does the same and is often quicker to 
+  The keybinding "Control-L" does the same and is often quicker to 
   use.
