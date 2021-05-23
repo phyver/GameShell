@@ -25,7 +25,12 @@ do
 done
 
 
-TMP_DIR=$(mktemp -d "$DIR/GameShell-XXXXXX")
+NAME=${FILENAME%.*}
+# remove "-save" suffix (if present)
+NAME=${NAME%-save}
+NAME=$(basename "${FILENAME%-save}")
+
+TMP_DIR=$(mktemp -d "$DIR/$NAME-XXXXXX")
 
 tail -n+"$NB_LINES" "$FILENAME" > "$TMP_DIR/gameshell.tgz"
 tar -zx -C "$TMP_DIR" -f "$TMP_DIR/gameshell.tgz"
