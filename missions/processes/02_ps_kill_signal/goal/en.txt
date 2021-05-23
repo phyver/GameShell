@@ -29,8 +29,8 @@ kill [OPTIONS] N
 
 clear
   Clear the screen.
-  The keybinding "Control-l" does the same and is often quicker to 
-  use.
+  The keybinding "Control-L" does the same and is often quicker to 
+  use in the terminal.
 
 Details
 -------

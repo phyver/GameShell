@@ -21,7 +21,7 @@ tail [-n K] [FILE]
 
 COMMAND1  |  COMMAND2
   Run the two commands, feeding the "standard output" of the 
-  former as the "standard input" of the latter.
+  former into the "standard input" of the latter.
   Remark: by analogy with plumbing "|" is called "pipe".
 
 

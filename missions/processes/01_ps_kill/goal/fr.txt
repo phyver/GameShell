@@ -3,7 +3,7 @@ Objectif
 
 Un lutin espiègle a lancé un sortilège qui fait apparaitre des 
 traces de charbon un peu partout dans le chateau.
-Vous devez trouver ce sortilège et le supprimer.
+Trouvez ce sortilège et supprimez le.
 
 
 Remarque
@@ -25,4 +25,4 @@ kill N
 clear
   Efface l'écran du terminal.
   La combinaison de touches "Control-L" fait la même chose et est 
-  souvent plus rapide à utiliser.
+  souvent plus rapide à utiliser dans un terminal.

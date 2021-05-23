@@ -1,9 +1,9 @@
 Mission goal
 ============
 
-The King is rumored to keep the secret key to his safe written on a 
+The King is rumored to keep the combination to his safe written on a 
 note in his room.
-Find that secret key.
+Find that combination.
 
 Remark
 ------

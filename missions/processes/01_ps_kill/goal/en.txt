@@ -1,9 +1,9 @@
 Mission goal
 ============
 
-A mischievous imp cast a spell that puts coal smudges everywhere in 
-the castle.
-You need to find this spell and remove it.
+A mischievous imp cast a spell that puts smudges of coal everywhere 
+in the castle.
+Find this spell and remove it.
 
 Remark
 ------
@@ -24,4 +24,4 @@ kill N
 clear
   Clear the screen.
   The keybinding "Control-L" does the same and is often quicker to 
-  use.
+  use in the terminal.

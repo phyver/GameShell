@@ -31,8 +31,8 @@ kill [OPTIONS] N
 
 clear
   Efface l'écran du terminal.
-  La combinaison de touches "Control-l" fait la même chose et est 
-  souvent plus rapide à utiliser.
+  La combinaison de touches "Control-L" fait la même chose et est 
+  souvent plus rapide à utiliser dans le terminal.
 
 Détails
 -------

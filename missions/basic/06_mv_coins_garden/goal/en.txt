@@ -9,7 +9,7 @@ Useful commands
 ===============
 
 mv FILE1 FILE2 ... FILEn DIRECTORY
-  Move all the files to the directory.
+  Move the files to the directory.
   Remark: ``mv`` is an abbreviation of "move".
 
 ~
