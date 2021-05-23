@@ -133,6 +133,9 @@ Existing missions
 TODO NOW
 --------
 
+  - [ ] use "gsh" instead of "pq" for the corresponding mission
+  - [ ] rephrase goal in merlin's mission
+
   - [ ] use the locale for the `goal` in mission about date
 
   - [ ] rething FINAL mission (just give a new password and let the player be

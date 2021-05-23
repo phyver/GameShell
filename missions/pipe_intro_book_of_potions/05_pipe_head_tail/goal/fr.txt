@@ -2,7 +2,7 @@ Objectif
 ========
 
 Le vieil ermite a soif et il voudrait que vous cherchiez pour lui 
-la recette de l'eau distillée dans le livre.
+la recette de l'eau distillée.
 
 Pour valider la mission, votre dernière commande avant ``gsh check`` 
 doit afficher les étapes de la recette, mais rien d'autre.
@@ -31,4 +31,4 @@ Remarque
 --------
 
 Les parties [entre crochets] dans les descriptions de commandes sont 
-optionnelles. Les crochets ne font pas partie de la syntaxe.
+optionnelles. Les crochets ne font pas partie de la commande.

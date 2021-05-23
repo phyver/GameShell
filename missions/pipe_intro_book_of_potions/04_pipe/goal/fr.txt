@@ -30,16 +30,18 @@ COMMANDE1  |  COMMANDE2
 Explications
 ============
 
-Beaucoup des commandes que nous avons vues manipulent du texte : 
-elle reçoivent du texte en entrée et produisent du texte en sortie. 
-Il est courant que les commandent prennent leur entrées dans un ou 
-plusieurs fichiers, et qu'elles écrivent leur résultats sur leurs 
-"sortie standard". Cela signifie que, par défaut, le résultat est 
-affiché dans le terminal. Les commandes ont également une "entrée 
-standard" sur laquelle elles lisent leur entrée.
+Beaucoup des commandes Unix manipulent du texte : elle reçoivent du 
+texte en entrée et produisent du texte en sortie.
 
-La plupart des commandes peuvent recevoir leurs entrées soit par des 
-fichiers (donnés en argument), soit sur leur entrée standard. Par 
-exemple :
+Il est courant que les commandes écrivent leur résultats sur leurs 
+"sortie standard". Cela signifie que, par défaut, le résultat est 
+affiché dans le terminal.
+
+La plupart de ces commandes peuvent recevoir leurs entrées soit par 
+des fichiers (donnés en argument), soit sur leur "entrée standard". 
+Par exemple :
 - ``head FICHIER`` lit son entrée dans le fichier,
 - ``head`` lit sont entrée sur l'entrée standard.
+
+Par défaut, les données de l'entrée standard sont lue du clavier, 
+mais un tube peut modifier ceci.
