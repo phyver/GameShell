@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # shellcheck disable=SC2005
 
@@ -15,7 +15,7 @@ display_help() {
 export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
 RESET=""
-while getopts ":hcnPDACRXvqL:K" opt
+while getopts ":hcnPdDACRXqL:K" opt
 do
   case $opt in
     h)
@@ -31,10 +31,11 @@ do
     P)
       GSH_MODE="PASSPORT"
       ;;
-    D)
+    d)
       GSH_MODE="DEBUG"
       ;;
-    v)
+    D)
+      GSH_MODE="DEBUG"
       export GSH_VERBOSE_DEBUG="true"
       ;;
     q)
