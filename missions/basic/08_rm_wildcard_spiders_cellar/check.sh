@@ -3,7 +3,7 @@
 _mission_check() {
     local CELLAR="$(eval_gettext "\$GSH_HOME/Castle/Cellar")"
 
-    local nb_spiders=$(find "$CELLAR" -maxdepth 1 -name "*_$(gettext "spider")_*" | wc -l)
+    local nb_spiders=$(find "$CELLAR" -maxdepth 1 -name "*_$(gettext "spider")_*" | wc -l | tr -d ' ')
     if [ "$nb_spiders" -ne 0 ]
     then
         echo "$(eval_gettext "There still are some spiders (\$nb_spiders) in the cellar!")"
