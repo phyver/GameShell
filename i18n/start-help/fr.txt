@@ -8,8 +8,6 @@ options :
 
   -C      continue la partie en cours, sans poser de question
   -R      rénitialise la partie en cours, sans poser de question
-  -F      force l'exécution dans le dépot de développement, sans poser
-          de question
 
   -L      initialise la variable LANGUAGE (ex : -L fr:it:en)
 
