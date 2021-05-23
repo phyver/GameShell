@@ -11,7 +11,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 EOB
 
 echo "$(gettext "The book 'Mathematics_101' contains all the anwsers.
-Just copy all its lines to get perfect score.")"
+Just copy all its lines to get perfect score.")" \
   > "$(eval_gettext '$GSH_HOME/Castle/Main_building/Library')/.$(gettext "How_to_cheat_for_exams")"
 
 
