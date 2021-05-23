@@ -42,7 +42,7 @@ ${name:+$(basename "$target")}@$rd" "$source" | checksum)
 $sum@$rd" "$source" > "$tempfile"
   else
     sum=$(echo "${name:+$(basename "$target")}@$rd" | checksum)
-    echo -n "$sum@$rd" > "$tempfile"
+    echo "$sum@$rd" > "$tempfile"
   fi
   if [ "$tempfile" != "$target" ]
   then
