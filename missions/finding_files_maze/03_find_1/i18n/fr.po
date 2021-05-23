@@ -24,8 +24,8 @@ msgid   "Coin '$coin_name' in your chest is invalid!"
 msgstr  "La pièce '$coin_name' dans votre coffre est invalide !"
 
 #, sh-format
-msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
-msgstr  "La mission factice \"$DUMMY_MISSION\" est nécessaire pour la mission $MISSION_NB ($MISSION_NAME)."
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "La mission factice '$DUMMY_MISSION' est nécessaire pour la mission $MISSION_NB ($MISSION_NAME)."
 
 msgid   "GolD_CoiN"
 msgstr  "PieCe_D_oR"
