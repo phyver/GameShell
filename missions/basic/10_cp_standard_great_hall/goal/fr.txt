@@ -3,7 +3,7 @@ Objectif
 
 Les quatre étendards dans la grande salle du Château sont vraiment 
 très jolis. Les voler ne passerait pas inaperçu, alors faites en 
-une copie dans votre coffre.
+une copie (même nom, même contenu) dans votre coffre.
 
 
 Commandes utiles

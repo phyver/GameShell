@@ -24,5 +24,5 @@ nano FICHIER
   (Si le fichier n'existe pas, il est créé.)
 
 alias CHAINE='COMMANDE'
-  Crée un synonyme pour une chaine de caractères (courte), qui sera 
-  remplacée par la commande (longue).
+  Crée un synonyme pour une chaine de caractères, qui sera remplacée 
+  par la commande.

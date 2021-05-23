@@ -42,6 +42,8 @@ TODO NOW
 FOR LATER
 ---------
 
+  - [ ] explore benefits (if any) of `set -e` when sourcing missions scripts
+
   - [ ] save seed from `random_string` / `RANDOM` for better PRNG if PID
         doesn't change
 

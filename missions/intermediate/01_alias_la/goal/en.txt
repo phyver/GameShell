@@ -19,5 +19,4 @@ Useful commands
 ===============
 
 alias STRING='COMMAND'
-  Create a synonym for a short string, that will stand for a longer 
-  command.
+  Create a synonym for a string, that will stand for a command.

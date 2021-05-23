@@ -1,9 +1,8 @@
 Mission goal
 ============
 
-Find the copper coin in the small maze hidden in the garden 
-and move it to your chest.
-The garden is situated in front of the castle.
+Find the copper coin in the small maze in the garden and move it to 
+your chest.
 
 If you want, you can use a graphical file manager. The maze 
 is to be found in directory

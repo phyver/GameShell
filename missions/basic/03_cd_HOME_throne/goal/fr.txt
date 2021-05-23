@@ -22,7 +22,7 @@ cd
   Revient au lieu initial.
 
 cd LIEU1/LIEU2/LIEU3
-  Fait plusieurs déplacements d'un seul coup.
+  Fait plusieurs déplacements avec une commande.
 
 
 Remarque

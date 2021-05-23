@@ -16,7 +16,7 @@ Shell patterns
   The "?" character stands in for any single character.
 
 Those wildcards can be used to denote lists of existing files / 
-directories
+directories in the current working directory.
 
 For example: if the current folder contains
       file-1 Folder-1 file-14 potato

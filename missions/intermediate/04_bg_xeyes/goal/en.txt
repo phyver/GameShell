@@ -19,5 +19,5 @@ COMMAND &
   Run the command in the background.
 
 Control-c
-  This key binding usually stops the current command if it 
-  is still running.
+  This key binding usually interrupts the current command by sending 
+  it the "INT" signal.
