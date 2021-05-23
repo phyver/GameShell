@@ -19,7 +19,7 @@ Useful commands
 ps
   List the processes that are currently executed by the shell.
 
-kill N
+kill [OPTIONS] N
   Send the termination signal to process number N.
 
   Useful options:

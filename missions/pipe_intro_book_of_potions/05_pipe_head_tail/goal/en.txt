@@ -2,7 +2,7 @@ Mission goal
 ============
 
 The old hermit is thirsty and he would like you lookup the recipe 
-for distilled water in the book.
+for distilled water.
 
 To validate the mission, your last command prior to ``gsh check`` 
 must show the steps for the recipe and nothing else.
@@ -29,4 +29,4 @@ Remark
 ------
 
 Parts in [square brackets] in command descriptions are stand for 
-optional parts. The brackets are not part of the syntax.
+optional parts. The brackets are not part of the command.

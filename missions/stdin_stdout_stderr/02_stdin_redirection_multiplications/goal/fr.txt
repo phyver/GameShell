@@ -8,7 +8,7 @@ multiplications.
 
 Lancez la commande ``gsh check`` pour commencer.
 
-Attention, il y a maintenant une contrainte de temps.
+Attention, il y a maintenant une limite de temps.
 
 Indices
 -------

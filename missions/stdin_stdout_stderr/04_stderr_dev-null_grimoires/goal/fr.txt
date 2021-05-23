@@ -45,5 +45,5 @@ COMMANDE  2>  FICHIER
   (Le fichier est écrasé.)
 
 /dev/null
-  Fichier "virtuel" qui fait office de poubelle : tout ce qui y est 
-  envoyé est ignoré.
+  Fichier "virtuel" universellement vide : tout ce qui y est envoyé 
+  disparait.

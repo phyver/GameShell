@@ -43,5 +43,5 @@ COMMAND  2>  FICHIER
   (The file is overwritten.)
 
 /dev/null
-  "Virtual" file that acts as a black hole: anything sent to it is 
-  ignored
+  "Virtual" file that is universally empty: anything sent to it is 
+  disappears.
