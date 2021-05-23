@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-Look for the ruby in the maze (in the garden), and move it to your 
+Look for the ruby in the maze in the garden, and move it to your 
 chest.
 
 Hint

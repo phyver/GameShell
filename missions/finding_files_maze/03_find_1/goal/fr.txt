@@ -1,9 +1,8 @@
 Objectif
 ========
 
-Retrouvez les deux pièces d'or dans le labyrinthe caché dans le 
-jardin et déplacez les dans votre coffre.
-Le jardin se trouve devant le château.
+Retrouvez les deux pièces d'or dans le labyrinthe du jardin et 
+déplacez les dans votre coffre.
 
 
 Commandes utiles
@@ -33,6 +32,6 @@ Remarque
 La description de la commande ``find`` est volontairement succincte. 
 Vous devrez consulter l'aide pour comprendre comment l'utiliser. 
 (Vous pouvez par exemple faire une recherche sur la chaine "-name" 
-dans la page du manuel...)
+dans le manuel...)
 
 

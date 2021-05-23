@@ -26,5 +26,4 @@ nano FILE
   (If the file does not exist, it will be created.)
 
 alias STRING='COMMAND'
-  Create a synonym for a short string, that will stand for a longer 
-  command.
+  Create a synonym for a string, that will stand for a command.

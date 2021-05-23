@@ -4,5 +4,5 @@ Objectif
 Le coffre-fort dans la salle du trône contient la couronne du roi.
 Vous devez la dérober et la stocker dans votre coffre.
 
-Aussi, au bas de la couronne est inscrite une séquence magique de 3 
-chiffres. Regardez cette séquence et souvenez vous en.
+De plus, une séquence magique de 3 chiffres est inscrite au bas de 
+la couronne. Regardez cette la et souvenez vous en.

@@ -12,7 +12,7 @@ Commandes utiles
 ================
 
 cal
-  Affiche en petit calendrier du mois courant.
+  Affiche un petit calendrier du mois courant.
 
 cal ANNEE
-  Affiche en petit calendrier pour l'année donnée.
+  Affiche un petit calendrier pour l'année donnée.

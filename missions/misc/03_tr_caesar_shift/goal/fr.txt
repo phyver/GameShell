@@ -4,8 +4,7 @@ Objectif
 Un message secret a été trouvé, il est dans le tiroir du bureau de 
 Merlin. Il a probablement été chiffré avec un décalage de César.
 
-Décryptez le en faisant une recherche exhaustive avec la ligne de 
-commandes.
+Décryptez le en faisant une recherche exhaustive dans le shell.
 
 Indice
 ------
@@ -21,6 +20,7 @@ tr CHAINE1 CHAINE2
   Remplace le caractère CHAINE1[i] par CHAINE2[i] dans les lignes 
   lues sur l'entrée standard, et affiche le résultat au fur et à 
   mesure.
+  Note : ``tr`` est une abréviation pour "translate".
 
   Par exemple : si
       chaine1 = "abcdef"
