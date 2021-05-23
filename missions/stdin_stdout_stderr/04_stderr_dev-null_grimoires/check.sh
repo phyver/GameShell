@@ -18,7 +18,7 @@ _mission_check() {
         return 1
     fi
 
-    if ! diff -q "$GSH_VAR/list_grimoires_PQ" <(eval "$pc" | sort) > /dev/null
+    if ! diff -q "$GSH_VAR/list_grimoires_GSH" <(eval "$pc" | sort) > /dev/null
     then
         return 1
     else

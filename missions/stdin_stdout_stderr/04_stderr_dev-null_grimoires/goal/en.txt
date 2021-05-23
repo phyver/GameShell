@@ -1,18 +1,20 @@
 Mission goal
 ============
 
-Merlin's old spell books are kept in his office, in the library. You 
-need to output a list of all the spell books containing the 
-incantation "pq" (or "Pq", or "pQ", or "PQ").
+Merlin's old alchemy books are kept in his office, in the library. 
+You need to output a list of all the books containing the alchemical 
+compound 'gsh' (for "Glutathione").
+Beware, it can be spelled with a mix of letters in upper and 
+lowercase.
 
-Some of those spell books are locked, and you are not allowed to 
-consult them. You need to ignore them.
+Some of those books are locked, and you are not allowed to consult 
+them. Ignore them.
 
 Remark
 ------
 
-Only the list of spell books is required. The incantation should not 
-be printed on the screen.
+Only the list of books is required. The chemical compounds should 
+not be shown on the screen.
 
 
 Useful commands
