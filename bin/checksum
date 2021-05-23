@@ -14,7 +14,6 @@ then
   fi
 
 # macos
-if command -v sha1sum > /dev/null 2>&1
 elif command -v shasum -a 1 > /dev/null 2>&1
 then
   if [ "$#" -eq 0 ]
