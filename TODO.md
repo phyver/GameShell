@@ -135,13 +135,11 @@ TODO NOW
 
   - [ ] mission alias journal: have the player add the alias to
         $GSH_CHEST/bashrc?
-        
+
   - [ ] use "gsh" instead of "pq" for the corresponding mission
   - [ ] rephrase goal in merlin's mission
 
-  - [ ] use the locale for the `goal` in mission about date
-
-  - [ ] rething FINAL mission (just give a new password and let the player be
+  - [ ] reaching FINAL mission (just give a new password and let the player be
   - [ ] change the `\"DUMMY_MISSION\"` messages
   - [ ] check for spaces in `$nb_spiders` messages
 
