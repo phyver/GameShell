@@ -4,11 +4,6 @@ Mission goal
 Build a "Hut" in the forest, and then build a "Chest" in the 
 hut.
 
-Remark
-------
-
-The chest must be **in** the hut.
-
 
 Useful commands
 ===============

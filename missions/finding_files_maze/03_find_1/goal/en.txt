@@ -3,7 +3,6 @@ Mission goal
 
 Find the gold coins in the maze hidden in the garden and move 
 them to your chest.
-The garden is situated in front of the castle.
 
 
 Useful commands

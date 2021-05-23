@@ -2,8 +2,7 @@ Objectif
 ========
 
 Au premier étage du donjon se trouvent de superbes tableaux. Ajoutez 
-une copie (même nom, même contenu) du plus vieux de ces tableaux à 
-votre coffre.
+une copie du plus vieux d'entre eux à votre coffre.
 
 
 Objectif secondaire

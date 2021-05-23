@@ -1,9 +1,9 @@
 Objectif
 ========
 
-Au fond de la cave, il y a une petite ouverture cachée qui mène dans 
-la tanière de la reine des araignées.
-Rendez-vous dans cette tanière, et supprimer la reine des araignées 
+Au fond de la cave, il y a une petite ouverture invisible qui mène 
+dans la tanière de la reine des araignées.
+Rendez-vous dans cette tanière, et supprimez la reine des araignées 
 (et rien d'autre).
 
 

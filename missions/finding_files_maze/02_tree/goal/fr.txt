@@ -1,9 +1,8 @@
 Objectif
 ========
 
-Retrouvez la pièce d'argent dans le (petit) labyrinthe caché dans le 
-jardin et déplacez la dans votre coffre.
-Le jardin se trouve devant le château.
+Retrouvez la pièce d'argent dans le (petit) labyrinthe du jardin et 
+déplacez la dans votre coffre en utilisant le shell.
 
 
 Commandes utiles

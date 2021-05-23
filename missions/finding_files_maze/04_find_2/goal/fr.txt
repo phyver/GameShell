@@ -1,15 +1,15 @@
 Objectif
 ========
 
-Retrouvez le rubis dans labyrinthe (dans le jardin) et déplacez le 
-dans votre coffre.
+Retrouvez le rubis dans labyrinthe du jardin et déplacez le dans 
+votre coffre.
 
 Indice
 ------
 
 Le nom du fichier ne contient pas la chaine "rubis". Comme il n'y a 
 pas beaucoup de fichiers dans le labyrinthe, une stratégie est de 
-chercher les **fichier** et de chercher à la main celui qui contient 
+chercher les **fichier** et de regarder à la main celui qui contient 
 la chaine "rubis".
 
 
