@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _mission_check() {
-    local nb_spells=$(ps -e | grep "$(gettext "spell")" | wc -l)
+    local nb_spells=$(ps -e | grep "$(gettext "spell")" | wc -l | tr -d ' ')
 
     if [ "$nb_spells" -gt 0 ]
     then

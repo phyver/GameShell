@@ -139,7 +139,6 @@ TODO NOW
   - [ ] rephrase goal in merlin's mission
 
   - [ ] change the `\"DUMMY_MISSION\"` messages
-  - [ ] check for spaces in `$nb_spiders` messages
 
   - [ ] awk version of genStall.py
 
@@ -147,6 +146,7 @@ TODO NOW
         that requires changing a little its interface because it is currently
         writing progress on STDERR and printing directories on STDOUT
 
+  - [x] check for spaces in `$nb_spiders` messages
   - [x] use "gsh" instead of "pq" for the corresponding mission
   - [x] simplify FINAL mission by just give a new password and let the player
         do what she wants
