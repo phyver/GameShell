@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ### test the various utilities in GSH_ROOT/bin/ directory
 
@@ -18,7 +18,7 @@ function test_mktemp() {
 }
 
 
-function test_realpath() {
+function test_realpath() (
   local tmp=$(mktemp -d)
   cd "$tmp"
   touch a
@@ -48,7 +48,7 @@ function test_realpath() {
 
   rm -rf "$tmp"
   return 0
-}
+)
 
 test_checksum() {
   s=$(checksum "gsh" 2> /dev/null)
@@ -69,4 +69,37 @@ test_checksum() {
   esac
 }
 
-test_mktemp && test_realpath && test_checksum
+test_sign() {
+  local tmp=$(mktemp)
+  echo "$(RANDOM)" > "$tmp"
+  sign_file "$tmp"
+  if ! check_file "$tmp"
+  then
+    echo "Error: inplace check_file didn't work on" >&2
+    echo "<<<" >&2
+    cat "$tmp" >&2
+    echo ">>>" >&2
+    rm -f "$tmp"
+    return 1
+  fi
+
+  echo $(RANDOM) > "$tmp"
+  local tmp2=$(mktemp)
+  sign_file "$tmp" "$tmp2"
+  if ! check_file "$tmp2"
+  then
+    echo "Error: check_file didn't work on" >&2
+    echo "<<<" >&2
+    cat "$tmp" >&2
+    echo "===" >&2
+    cat "$tmp2" >&2
+    echo ">>>" >&2
+    rm -f "$tmp" "$tmp2"
+    return 1
+  fi
+
+  rm -f $tmp $tmp2
+  return 0
+}
+
+test_mktemp && test_realpath && test_checksum && test_sign
