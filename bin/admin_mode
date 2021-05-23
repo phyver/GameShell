@@ -24,9 +24,9 @@ admin_mode() {
   while [ "$try" -lt 3 ]
   do
     printf "%s " "$(gettext "password:")"
-    stty -echo
+    stty -echo 2>/dev/null    # ignore errors, in case input comes from a redirection
     read -r mdp
-    stty echo
+    stty echo 2>/dev/null     # ignore errors, in case input comes from a redirection
     echo
     if [ "$(checksum "$mdp")" = "$hash" ]
     then
