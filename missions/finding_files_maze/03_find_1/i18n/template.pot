@@ -24,7 +24,7 @@ msgid   "Coin '$coin_name' in your chest is invalid!"
 msgstr  ""
 
 #, sh-format
-msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
 msgstr  ""
 
 msgid   "GolD_CoiN"

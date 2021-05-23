@@ -20,8 +20,8 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 #, sh-format
-msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
-msgstr  "La mission factice \"$DUMMY_MISSION\" est nécessaire pour la mission $MISSION_NB ($MISSION_NAME)."
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "La mission factice '$DUMMY_MISSION' est nécessaire pour la mission $MISSION_NB ($MISSION_NAME)."
 
 #, sh-format
 msgid   "The command 'tree' is required for mission $MISSION_NAME.\n"
