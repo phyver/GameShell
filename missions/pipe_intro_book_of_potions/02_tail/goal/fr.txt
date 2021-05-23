@@ -8,7 +8,7 @@ de l'aide.
 Lisez lui les étapes de la recette dans son livre.
 
 Pour valider la mission, votre dernière commande avant ``gsh check`` 
-doit afficher les étapes de la recette, mais pas son titre.
+doit afficher les étapes de la recette (sans son titre).
 
 
 Commandes utiles

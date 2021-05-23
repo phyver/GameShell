@@ -20,7 +20,7 @@ then
   then
     shasum -a 1 | cut -c 1-40
   else
-    echo "$@" | shasum | cut -c 1-40
+    echo "$@" | shasum -a 1 | cut -c 1-40
   fi
 
 # bsd
