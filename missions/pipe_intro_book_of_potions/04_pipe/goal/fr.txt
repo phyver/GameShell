@@ -13,7 +13,7 @@ Useful commands
 ===============
 
 cat FILE1 FILE2 ... FILEn
-  Display the contents of the files in order.
+  Affiche le contenu des fichiers dans l'ordre donné.
 
 tail
   Affiche les 10 dernières lignes reçues sur l'entrée standard.
