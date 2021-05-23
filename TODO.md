@@ -139,7 +139,6 @@ TODO NOW
   - [ ] use "gsh" instead of "pq" for the corresponding mission
   - [ ] rephrase goal in merlin's mission
 
-  - [ ] reaching FINAL mission (just give a new password and let the player be
   - [ ] change the `\"DUMMY_MISSION\"` messages
   - [ ] check for spaces in `$nb_spiders` messages
 
@@ -148,6 +147,9 @@ TODO NOW
   - [ ] use `progress_bar` in missions using `maze2.sh`
         that requires changing a little its interface because it is currently
         writing progress on STDERR and printing directories on STDOUT
+
+  - [x] simplify FINAL mission by just give a new password and let the player
+        do what she wants
 
   - [x] `treasure.sh`: macos `ls` doesn't use `--color` but `-G`
   - [x] add hint in mission
