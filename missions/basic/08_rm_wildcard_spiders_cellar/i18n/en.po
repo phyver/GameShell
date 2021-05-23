@@ -17,8 +17,8 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
 #, sh-format
-msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
-msgstr  "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
 
 #, sh-format
 msgid   "Some bats have been modified!"

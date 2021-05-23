@@ -133,18 +133,14 @@ Existing missions
 TODO NOW
 --------
 
+  - [ ] use `progress_bar` in missions using `maze2.sh`
+        that requires changing a little its interface because it is currently
+        writing progress on STDERR and printing directories on STDOUT
+
   - [ ] mission alias journal: have the player add the alias to
         $GSH_CHEST/bashrc?
 
   - [ ] rephrase goal in merlin's mission
-
-  - [ ] change the `\"DUMMY_MISSION\"` messages
-
-  - [ ] awk version of genStall.py
-
-  - [ ] use `progress_bar` in missions using `maze2.sh`
-        that requires changing a little its interface because it is currently
-        writing progress on STDERR and printing directories on STDOUT
 
   - [x] check for spaces in `$nb_spiders` messages
   - [x] use "gsh" instead of "pq" for the corresponding mission
@@ -188,6 +184,8 @@ TODO NOW
 
 FOR LATER
 ---------
+
+  - awk version of genStall.py
 
   - create `c` files for processes in processes group. That way, we can get
     "real" processes with "good" names on all platform that have a c compiler

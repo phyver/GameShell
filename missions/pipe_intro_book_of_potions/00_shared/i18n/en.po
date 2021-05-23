@@ -24,8 +24,8 @@ msgid   "Book_of_potions"
 msgstr  "Book_of_potions"
 
 #, sh-format
-msgid   "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
-msgstr  "Dummy mission \"$DUMMY_MISSION\" is required for mission $MISSION_NB ($MISSION_NAME)."
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
 
 msgid   "cauldron"
 msgstr  "cauldron"
