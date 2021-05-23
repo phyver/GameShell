@@ -1,19 +1,20 @@
 Objectif
 ========
 
-Les vieux grimoires de Merlin sont stockés dans son bureau, dans la 
-bibliothèque. Vous devez afficher une liste (exploitable) des 
-grimoires qui contiennent l'incantation "pq" (ou "Pq", ou "pQ", ou 
-"PQ").
+Les vieux livres d'alchimie de Merlin sont stockés dans son bureau, 
+dans la bibliothèque. Vous devez afficher une liste (exploitable) 
+des grimoires contenant le composé alchimique "gsh".
+Attention, ce composé peut être écrit avec des lettres en minuscule 
+et majuscule mélangées.
 
 Certain grimoires sont cadenassés et vous n'avez pas la permission 
-de les consulter. Il faut les ignorer pour l'affichage...
+de les consulter. Ignorez les.
 
 Remarque
 --------
 
-Seule la liste des grimoires (noms de fichiers) est demandée. La 
-partie de l'incantation ne doit pas être affichée.
+Seule la liste des grimoires est demandée. Les composés alchimiques 
+ne doivent pas être affichés.
 
 
 Commandes utiles

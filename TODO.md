@@ -136,7 +136,6 @@ TODO NOW
   - [ ] mission alias journal: have the player add the alias to
         $GSH_CHEST/bashrc?
 
-  - [ ] use "gsh" instead of "pq" for the corresponding mission
   - [ ] rephrase goal in merlin's mission
 
   - [ ] change the `\"DUMMY_MISSION\"` messages
@@ -148,6 +147,7 @@ TODO NOW
         that requires changing a little its interface because it is currently
         writing progress on STDERR and printing directories on STDOUT
 
+  - [x] use "gsh" instead of "pq" for the corresponding mission
   - [x] simplify FINAL mission by just give a new password and let the player
         do what she wants
 
