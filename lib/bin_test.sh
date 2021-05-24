@@ -53,13 +53,7 @@ function test_realpath() (
 test_checksum() {
   s=$(checksum "gsh" 2> /dev/null)
   case "$s" in
-    458d35da7471f475ed925a8191fdd7f8) # md5
-      return 0
-      ;;
-    868823a35f2107344c92f63751317a814860dbe8) # sha1
-      return 0
-      ;;
-    3614433770) # cksum (POSIX)
+    b88968dc60b003b9c188cc503a457101b4087109) # sha1
       return 0
       ;;
     *)

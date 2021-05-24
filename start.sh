@@ -146,7 +146,7 @@ progress_bar_finish() {
 
 init_gsh() {
 
-  ADMIN_HASH='868823a35f2107344c92f63751317a814860dbe8'    # default for 'gsh'
+  ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
 
   # message when data from a previous play is found. We can either
   #    - restart a new game
