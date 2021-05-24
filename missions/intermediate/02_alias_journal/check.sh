@@ -16,9 +16,8 @@ _mission_check() {
             # alias journal="nano journal.txt" et que le gsh check est fait
             # depuis le coffre
             local target_path
-            # target_path="$(cd / ; eval $(echo "$cmd" | sed 's/nano/$REALPATH/'))"
-            target_path="$(cd / ; eval "${cmd//nano/REALPATH}")"
-            if [ "$target_path" = "$(REALPATH "$GSH_CHEST/$(gettext "journal").txt")" ]
+            target_path="$(cd / ; eval "${cmd/nano/realpath}")"
+            if [ "$target_path" = "$(realpath "$GSH_CHEST/$(gettext "journal").txt")" ]
             then
                 return 0
             else
