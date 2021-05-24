@@ -181,6 +181,7 @@ Do you want to remove it and start a new game? [y/N]') " r
 
   mkdir -p "$GSH_CONFIG"
   echo "# mission action date checksum" >> "$GSH_CONFIG/missions.log"
+  awk -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN { srand(); printf("%s", int(2^32 * rand())) > seed_file; }'
 
   mkdir -p "$GSH_BASHRC"
   cp "$GSH_LIB/bashrc" "$GSH_BASHRC"
