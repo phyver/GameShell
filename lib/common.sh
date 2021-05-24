@@ -70,6 +70,7 @@ color_echo() {
   esac
   if [ -n "$GSH_COLOR" ]
   then
+    trap "tput sgr0 2>/dev/null" TERM INT
     tput setaf $color 2>/dev/null
     echo "$@"
     tput sgr0 2>/dev/null
