@@ -1,5 +1,16 @@
 #!/bin/sh
 
-# to replace bash' $RANDOM
+# to be used as a replacement for bash' $RANDOM
 
-awk -v seed="$$" 'BEGIN { srand(seed); print int(rand()*65536); }'
+if [ -s "$GSH_CONFIG/PRNG_seed" ]
+then
+  seed=$(cat "$GSH_CONFIG/PRNG_seed")
+else
+  seed=""     # awk will use time of day
+fi
+
+awk -v n=${n:-32} -v seed="$seed" -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN {
+  if (seed) srand(seed); else srand();
+  print int(rand()*65536);
+  if (seed) printf("%s", int(2^32 * rand())) > seed_file;
+}'

@@ -1,11 +1,20 @@
 #!/bin/sh
 
 n=$1
-awk -v n=${n:-32} -v seed=$$ 'BEGIN {
-  srand(seed);
+
+if [ -s "$GSH_CONFIG/PRNG_seed" ]
+then
+  seed=$(cat "$GSH_CONFIG/PRNG_seed")
+else
+  seed=""     # awk will use time of day
+fi
+
+awk -v n=${n:-32} -v seed="$seed" -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN {
+  if (seed) srand(seed); else srand();
   l = split("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z", chars);
   for(i=0;i<n;i++) {
     printf("%c", chars[1+int(rand()*l)]);
   }
-printf("\n");
+  printf("\n");
+  if (seed) printf("%s", int(2^32 * rand())) > seed_file;
 }'
