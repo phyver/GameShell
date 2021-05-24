@@ -13,3 +13,6 @@ echo "========================="
 echo "awk --version"
 (awk -Wversion 2>/dev/null || awk --version 2>/dev/null || awk -V 2>/dev/null) | head -n1
 echo "========================="
+echo "locale"
+locale
+echo "========================="
