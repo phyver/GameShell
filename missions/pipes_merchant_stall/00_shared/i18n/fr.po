@@ -3,117 +3,153 @@ msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
+#: clean.sh:4 static.sh:1
 #, sh-format
 msgid   "$GSH_HOME/Stall"
 msgstr  "$GSH_HOME/Echoppe"
 
-msgid   "Georges' son"
-msgstr  "le fils au Georges"
-
-msgid   "PAID"
-msgstr  "PAYÉ"
-
+#: deps.sh:3
 #, sh-format
 msgid   "The command 'python3' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'python3')"
 msgstr  "La commande 'python3' est nécessaire pour la mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: installez le paquet 'python3')"
 
+#: deps.sh:9
 #, sh-format
-msgid   "The script 'genStall.py' is necessary for mission $MISSION_NAME.\n"
+msgid   "The script 'generate_merchant_stall.py' is necessary for mission $MISSION_NAME.\n"
         "Make sure the corresponding mission is included."
-msgstr  "Le script 'genStall.py' est nécessaire pour la mission $MISSION_NAME.\n"
+msgstr  "Le script 'generate_merchant_stall.py' est nécessaire pour la mission $MISSION_NAME.\n"
         "Vérifiez que la mission correspondante est incluse."
 
-msgid   "_s_c_r_o_l_l_"
-msgstr  "_p_a_r_c_h_e_m_i_n"
-
-msgid   "a bag flour"
-msgstr  "un sac de farine"
-
-msgid   "a belt"
-msgstr  "une ceinture"
-
-msgid   "a blanket"
-msgstr  "une couverture"
-
-msgid   "a bottle of cider"
-msgstr  "une bouteille de cidre"
-
-msgid   "a chackal"
-msgstr  "un chacal"
-
-msgid   "a chicken"
-msgstr  "une poule"
-
-msgid   "a cow"
-msgstr  "une vache"
-
-msgid   "a dented helmet"
-msgstr  "un heaume cabossé"
-
-msgid   "a goat"
-msgstr  "une chèvre"
-
-msgid   "a horse"
-msgstr  "un cheval"
-
-msgid   "a knife"
-msgstr  "un couteau"
-
-msgid   "a leather bag"
-msgstr  "une besace en cuir"
-
-msgid   "a leather ball"
-msgstr  "une balle en cuir"
-
-msgid   "a pick"
-msgstr  "un pic"
-
-msgid   "a piece of soap"
-msgstr  "un morceau de savon"
-
-msgid   "a pin"
-msgstr  "une épingle"
-
-msgid   "a ruby"
-msgstr  "un rubis"
-
-msgid   "a shiny rock"
-msgstr  "un caillou brillant"
-
-msgid   "a spade"
-msgstr  "une pelle"
-
-msgid   "a stool"
-msgstr  "un tabouret"
-
-msgid   "a wooden spoon"
-msgstr  "une cuillère en bois"
-
-msgid   "an apple"
-msgstr  "une pomme"
-
-msgid   "an opal"
-msgstr  "une opale"
-
-msgid   "boring_object"
-msgstr  "objet_sans_interet"
-
-msgid   "from next town"
-msgstr  "du village voisin"
-
-msgid   "the Bold"
-msgstr  "le Chauve"
-
-msgid   "the King"
-msgstr  "le Roi"
-
+#: sbin/generate_merchant_stall.py:77
 msgid   "the son of Martin"
 msgstr  "le fils de Martin"
 
+#: sbin/generate_merchant_stall.py:78
+msgid   "the Bold"
+msgstr  "le Chauve"
+
+#: sbin/generate_merchant_stall.py:79
+msgid   "Georges' son"
+msgstr  "le fils au Georges"
+
+#: sbin/generate_merchant_stall.py:79
+msgid   "from next town"
+msgstr  "du village voisin"
+
+#: sbin/generate_merchant_stall.py:84
+msgid   "a chicken"
+msgstr  "une poule"
+
+#: sbin/generate_merchant_stall.py:84
+msgid   "a horse"
+msgstr  "un cheval"
+
+#: sbin/generate_merchant_stall.py:84
+msgid   "a pick"
+msgstr  "un pic"
+
+#: sbin/generate_merchant_stall.py:84
+msgid   "a spade"
+msgstr  "une pelle"
+
+#: sbin/generate_merchant_stall.py:84
+msgid   "an apple"
+msgstr  "une pomme"
+
+#: sbin/generate_merchant_stall.py:85
+msgid   "a bag flour"
+msgstr  "un sac de farine"
+
+#: sbin/generate_merchant_stall.py:85
+msgid   "a chackal"
+msgstr  "un chacal"
+
+#: sbin/generate_merchant_stall.py:85
+msgid   "a cow"
+msgstr  "une vache"
+
+#: sbin/generate_merchant_stall.py:85
+msgid   "a goat"
+msgstr  "une chèvre"
+
+#: sbin/generate_merchant_stall.py:85
+msgid   "a ruby"
+msgstr  "un rubis"
+
+#: sbin/generate_merchant_stall.py:86
+msgid   "a blanket"
+msgstr  "une couverture"
+
+#: sbin/generate_merchant_stall.py:86
+msgid   "a leather ball"
+msgstr  "une balle en cuir"
+
+#: sbin/generate_merchant_stall.py:86
+msgid   "a piece of soap"
+msgstr  "un morceau de savon"
+
+#: sbin/generate_merchant_stall.py:86
+msgid   "a shiny rock"
+msgstr  "un caillou brillant"
+
+#: sbin/generate_merchant_stall.py:87
+msgid   "a leather bag"
+msgstr  "une besace en cuir"
+
+#: sbin/generate_merchant_stall.py:87
+msgid   "a pin"
+msgstr  "une épingle"
+
+#: sbin/generate_merchant_stall.py:87
+msgid   "a stool"
+msgstr  "un tabouret"
+
+#: sbin/generate_merchant_stall.py:87
+msgid   "an opal"
+msgstr  "une opale"
+
+#: sbin/generate_merchant_stall.py:87
 msgid   "walking stick"
 msgstr  "un baton de marche"
 
+#: sbin/generate_merchant_stall.py:88
+msgid   "a belt"
+msgstr  "une ceinture"
+
+#: sbin/generate_merchant_stall.py:88
+msgid   "a dented helmet"
+msgstr  "un heaume cabossé"
+
+#: sbin/generate_merchant_stall.py:88
+msgid   "a knife"
+msgstr  "un couteau"
+
+#: sbin/generate_merchant_stall.py:88
+msgid   "a wooden spoon"
+msgstr  "une cuillère en bois"
+
+#: sbin/generate_merchant_stall.py:89
+msgid   "a bottle of cider"
+msgstr  "une bouteille de cidre"
+
+#: sbin/generate_merchant_stall.py:97
+msgid   "_s_c_r_o_l_l_"
+msgstr  "_p_a_r_c_h_e_m_i_n"
+
+#: sbin/generate_merchant_stall.py:104
+msgid   "PAID"
+msgstr  "PAYÉ"
+
+#: sbin/generate_merchant_stall.py:112
+msgid   "the King"
+msgstr  "le Roi"
+
+#: sbin/generate_merchant_stall.py:115
 msgid   "{} bought {} for {} coppers{}\n"
 msgstr  "{} a acheté {} pour {} piécettes{}\n"
+
+#: sbin/generate_merchant_stall.py:125
+msgid   "boring_object"
+msgstr  "objet_sans_interet"
