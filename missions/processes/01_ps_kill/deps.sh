@@ -1,7 +1,6 @@
 _mission_deps() {
-  local BASH_PATH=$(command -v bash)
-  sed -e $'1c\\\n'"#!$BASH_PATH" "$MISSION_DIR/test-proc-name.sh" > "$GSH_VAR/test-proc-name"
-  chmod 755 "$GSH_VAR/test-proc-name"
+  cp "$MISSION_DIR/test-proc-name.sh" "$GSH_VAR/test-proc-name"
+  chmod +x "$GSH_VAR/test-proc-name"
   "$GSH_VAR/test-proc-name" &
   local PID=$!
   disown $PID
