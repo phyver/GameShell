@@ -10,7 +10,7 @@ then
   then
     sha1sum | cut -c 1-40
   else
-    echo "$@" | sha1sum | cut -c 1-40
+    printf "%s" "$*" | sha1sum | cut -c 1-40
   fi
 
 # macos
@@ -20,7 +20,7 @@ then
   then
     shasum -a 1 | cut -c 1-40
   else
-    echo "$@" | shasum -a 1 | cut -c 1-40
+    printf "%s" "$*" | shasum -a 1 | cut -c 1-40
   fi
 
 # bsd
@@ -30,7 +30,7 @@ then
   then
     sha1 | cut -c 1-40
   else
-    echo "$@" | sha1 | cut -c 1-40
+    printf "%s" "$*" | sha1 | cut -c 1-40
   fi
 fi
 

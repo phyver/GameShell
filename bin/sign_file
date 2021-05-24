@@ -35,11 +35,8 @@ sign_file() {
   rd=$(RANDOM)
   if [ -s "$source" ]
   then
-    # POSIX sed requires '\' and a newline after "i" command
-    sum=$(sed -e "1i\\
-${name:+$(basename "$target")}@$rd" "$source" | checksum)
-    sed -e "1i\\
-$sum@$rd" "$source" > "$tempfile"
+    sum=$(echo "${name:+$(basename "$target")}@$rd" | cat - "$source" | checksum)
+    echo "$sum@$rd" | cat - "$source" > "$tempfile"
   else
     sum=$(echo "${name:+$(basename "$target")}@$rd" | checksum)
     echo "$sum@$rd" > "$tempfile"
