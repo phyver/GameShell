@@ -43,30 +43,30 @@ TODO NOW
 FOR LATER
 ---------
 
-  - [ ] `mission_source` should somehow return the fact that the environment
-        has changed, so that `gsh reset` & Co can know when that's the case
-
-  - [ ] explore benefits (if any) of `set -e` when sourcing missions scripts
-
   - [ ] merge `deps.sh` into `init.sh`
 
   - [ ] finish converting `common.sh` to scripts in `bin`
-
-  - [ ] `mktemp` script
-
-  - [ ] replace all script which have to `unset` several variables to
-        functions with local variables
 
   - [ ] change `progress_bar` interface to `progress_bar CMD`? That should
         make it possible to store error messages in display them at the end,
         and get a uniform delay between updates. (No read necessary: we
         display the animation and stop when `CMD` stops.)
 
+  - [ ] `mission_source` should somehow return the fact that the environment
+        has changed, so that `gsh reset` & Co can know when that's the case
+
+  - [ ] explore benefits (if any) of `set -e` when sourcing missions scripts
+
+  - [ ] `mktemp` script?
+
+  - [ ] replace all script which have to `unset` several variables to
+        functions with local variables
+
   - [ ] `error` function for `echo "$@" >&2`
 
   - [ ] minimize number of bashism's? (not sure if it is worth trying to be
         POSIX compliant though)
-          - `$RANDOM` => use `awk` function `rand`
+          - `$RANDOM` => use `awk`
           - `source` => `.`
           - `echo -n` => `printf`
           - `read -p` => `printf` + `read`
@@ -139,9 +139,6 @@ TODO NOW
         that requires changing a little its interface because it is currently
         writing progress on STDERR and printing directories on STDOUT
 
-  - [ ] mission alias journal: have the player add the alias to
-        $GSH_CHEST/bashrc?
-
   - [ ] rephrase goal in merlin's mission
 
   - [x] check for spaces in `$nb_spiders` messages
@@ -186,6 +183,8 @@ TODO NOW
 
 FOR LATER
 ---------
+
+  - mission alias journal: have the player add the alias to $GSH_CHEST/bashrc?
 
   - awk version of `maze1.py` `maze2.py`
 
