@@ -48,12 +48,6 @@ Aborting!")"
   exit 1
 fi
 
-textdomainname() {
-  local MISSION_DIR=$(realpath "$1")  # follow symbolic links to make sure translation is found
-  echo "${MISSION_DIR#$GSH_MISSIONS/}" | tr "/" ","
-}
-export -f textdomainname
-
 # simple "echo" command with colors
 color_echo() {
   local color
