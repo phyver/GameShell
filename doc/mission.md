@@ -34,8 +34,7 @@ A mission is simply a directory with a set of files. This directory must be
 somewhere under [`$GSH_ROOT/missions/`](../missions), typically inside
 [`$GSH_ROOT/missions/contrib/`](../missions/contrib).
 
-A mission has the following structure, with most of the files being
-optional:
+A mission has the following structure, most of the files being optional:
 
 ````
     $GSH_ROOT/missions/.../MISSION_NAME
@@ -69,9 +68,9 @@ However, most missions will also need 2 other files:
 * `static.sh` to initialize the static parts of the mission,
 * `init.sh` to initialize the dynamic parts of the mission
 
-The `static.sh` script is run once for all the mission during GameShell's
-initialisation (before the first mission is started). This allows to populate
-the world with the different places where the missions will take place.
+The `static.sh` script is run during GameShell's initialisation (before the
+first mission is even started). This allows to populate the world with the
+different places (i.e., directories) where the missions will take place.
 
 Th `init.sh` script is run whenever the mission is (re-)started. It allows to
 have missions with some randomized element to prevent brute force searching or
@@ -108,7 +107,7 @@ also sourced whenever the corresponding missions is (re-)started.
 
 This file should always use absolute path by using `$GSH_HOME`. It can also
 use the directory `$MISSION_DIR` that points to the mission's directory. This
-is useful if the mission needs to copy some file into GameShell's world.
+is useful if the mission needs to copy files into GameShell's world.
 
 
 _Note_ that because this file is sourced, it can change directory or define
@@ -157,7 +156,7 @@ sourced each time the player runs `gsh goal`.
 A fancy ASCII-art box is automatically added around the goal, either by a
 Python script (if a Python3 interpreter is available) or by an `awk` script.
 (There shouldn't be any difference between the 2, except that depending on
-your `awk` version, UTF-8 character might cause mis-alignments.)
+your `awk` version, UTF-8 character might cause misalignments.)
 
 
 ### `init.sh`
@@ -294,7 +293,7 @@ Instead of `treasure-msg.txt`, a script `treasure-msg.sh` can be used to
 generate a dynamic message. If it exists, `treasure-msg.sh` is sourced when
 the mission is successfully completed.
 
-A fancy treasure box is added on the right of the message. The width of the
+A fancy treasure chest is added to the left of the message. The width of the
 message shouldn't be more than 45 characters wide.
 
 

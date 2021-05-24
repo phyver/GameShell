@@ -2,40 +2,54 @@ GameShell user manual
 =====================
 
 
-Starting GameShell
-------------------
+Starting a game
+---------------
 
-You can start GameShell from an executable archive (typically
-`GameShell.sh`) with
+To start playing you need to download either a pre-built executable archive
+(found on the [releases page](https://github.com/phyver/GameShell/releases))
+or the source code of the game.
 
-````
-    $ ./GameShell.sh
-````
+### Using an executable archive
 
-or from the `start.sh` script in the source-code directory
+(Releases have not been set up yet: please, run the game from source.)
 
-````
-    $ ./GameShell/start.sh
-````
+The easiest way to start the game is to run a self-extracting executable
+archive (see the end of this page to know how to generate one yourself).
+Pre-built archives for the various versions of the game can be found on the
+[releases page](https://github.com/phyver/GameShell/releases).
 
-If for some reason those files don't the execute bit set, you can run them
-with `bash` or set the execute bit with `chmod +x ...`
+To download and start the latest version of the game simply run the following
+two commands in a terminal.
+```sh
+wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
+bash GameShell.sh
+```
+### Using the start script in the source code
 
-The default options shouldn't need changing, but if they do, use the `-h` flag
-to get a list of available options.
+Alternatively, you can run the game directly from the source code. In that
+case, simply download the repository (either by cloning it or by downloading
+a tarball) and start the game with the following commands:
+```sh
+git clone https://github.com/phyver/GameShell.git
+bash GameShell/start.sh
+```
 
+### Available flags
+
+You should not need to change the default options for the scripts, but you
+can see a list of available options using the `-h` flag.
 
 
 Playing GameShell, standard commands
 ------------------------------------
 
-Playing GameShell involves very few commands specific to GameShell. They are
+Playing GameShell involves very few game-specific commands. They are
 
 * `gsh goal`: displays the current mission's goal. If the goal doesn't fit on
   the screen, it is paginated with the `less` or `more` command.
   An ASCII-art box is added around the goal with Python (if available) or
   `awk`. (Depending on your `awk` version, UTF-8 characters might cause
-  mis-alignments.)
+  misalignments.)
 
 * `gsh check`: checks if the current mission is completed. If so, a
   congratulation message is displayed, and the player starts the next mission.
