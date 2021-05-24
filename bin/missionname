@@ -1,0 +1,40 @@
+#!/bin/sh
+
+GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
+GSH_MISSIONS=$GSH_ROOT/missions
+
+path=$(realpath "$1")
+
+if ! [ -e "$path" ]
+then
+  echo "Error missionname: path doesn't exist ('$1')." >&2
+  return 1
+elif [ -f "$path" ]
+then
+  cd "$(dirname "$path")"
+else
+  cd "$path"
+fi
+
+while true
+do
+  [ -f check.sh ] && break
+  [ -f static.sh ] && break
+  [ -f init.sh ] && break
+  [ $(pwd -P) = "/" ] && break
+  cd ..
+done
+
+
+
+case "$PWD" in
+  "$GSH_MISSIONS/"*)
+    path=$(pwd -P)
+    echo "${path#$GSH_MISSIONS/}"
+    ;;
+  *)
+    echo "Error missionname: not a mission path ('$1')." >&2
+    return 1
+    ;;
+esac
+
