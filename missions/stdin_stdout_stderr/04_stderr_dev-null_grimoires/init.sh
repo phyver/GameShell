@@ -14,7 +14,8 @@ _mission_init() ( #subshell to avoid changing directory
 
     if [ $((RANDOM % 2)) -eq 0 ]
     then
-      sed-i "s/gsh//gi" "$file"
+      # note: case insensitive matching isn't POSIX!
+      sed-i "s/[gG][sS][hH]//g" "$file"
     else
       local pattern
       case "$((RANDOM % 8))" in
