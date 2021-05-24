@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source gettext.sh
+. gettext.sh
 
 DELAY=3
 OFFSET=$1
