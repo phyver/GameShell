@@ -24,9 +24,7 @@ check_file() {
   filename=$1
   rd=$(head -n1 "$filename" | cut -d'@' -f 2)
   sum=$(head -n1 "$filename" | cut -d'@' -f 1)
-    # POSIX sed requires '\' and a newline after "c" command
-  check=$(sed -e "1c\\
-${name:+$(basename "$filename")}@$rd" "$filename" | checksum)
+  check=$({ echo "${name:+$(basename "$filename")}@$rd" ; sed "1d" "$filename" ; } | checksum)
   [ "$sum" = "$check" ]
 }
 
