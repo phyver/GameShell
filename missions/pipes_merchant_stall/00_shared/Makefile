@@ -1,6 +1,6 @@
 SH_FILES=$(wildcard *.sh)
 EXCEPTIONS=
-OTHER_FILES=sbin/genStall.py
+OTHER_FILES=sbin/generate_merchant_stall.py
 
 LANG=$(wildcard i18n/*.po)
 LANG:=$(filter-out i18n/en.po, $(LANG))

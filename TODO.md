@@ -43,6 +43,9 @@ TODO NOW
 FOR LATER
 ---------
 
+  - [ ] `mission_source` should somehow return the fact that the environment
+        has changed, so that `gsh reset` & Co can know when that's the case
+
   - [ ] explore benefits (if any) of `set -e` when sourcing missions scripts
 
   - [ ] merge `deps.sh` into `init.sh`
@@ -184,7 +187,9 @@ TODO NOW
 FOR LATER
 ---------
 
-  - awk version of genStall.py
+  - awk version of `maze1.py` `maze2.py`
+
+  - awk version of `genStall.py`
 
   - create `c` files for processes in processes group. That way, we can get
     "real" processes with "good" names on all platform that have a c compiler
