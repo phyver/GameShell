@@ -1,15 +1,14 @@
-_mission_deps() {
+_mission_deps() (
   cp "$MISSION_DIR/test-proc-name.sh" "$GSH_VAR/test-proc-name"
   chmod +x "$GSH_VAR/test-proc-name"
   "$GSH_VAR/test-proc-name" &
-  local PID=$!
-  disown $PID
+  PID=$!
   ps | grep "\b$PID\b" | grep -v bash &> /dev/null
   local r=$?
   kill -9 "$PID" &> /dev/null
   rm -f "$GSH_VAR/test-proc-name"
   return $r
-}
+)
 
 if ! _mission_deps
 then
