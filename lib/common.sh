@@ -27,7 +27,7 @@ export TEXTDOMAIN="gsh"
 # PATH=$PATH:"$GSH_ROOT/bin"
 PATH="$GSH_ROOT/bin":$PATH
 
-### generate GameShell translation files for gettext
+### generate GameShell translation files
 shopt -s nullglob
 for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
   PO_LANG=$(basename "$PO_FILE" .po)
@@ -41,100 +41,13 @@ done
 shopt -u nullglob
 
 
+### test some of the scripts
 if ! bash "$GSH_ROOT/lib/bin_test.sh"
 then
   echo "$(gettext "Error: a least one base function is not working properly.
 Aborting!")"
   exit 1
 fi
-
-# simple "echo" command with colors
-color_echo() {
-  local color
-  case "$1" in
-    black   | bk) color=0; shift;;
-    red     |  r) color=1; shift;;
-    green   |  g) color=2; shift;;
-    yellow  |  y) color=3; shift;;
-    blue    |  b) color=4; shift;;
-    magenta |  m) color=5; shift;;
-    cyan    |  c) color=6; shift;;
-    white   |  w) color=7; shift;;
-    *) color=7;;
-  esac
-  if [ -n "$GSH_COLOR" ]
-  then
-    trap "tput sgr0 2>/dev/null" TERM INT
-    tput setaf $color 2>/dev/null
-    echo "$@"
-    tput sgr0 2>/dev/null
-  else
-    echo "$@"
-  fi
-}
-
-# draws a parchment around a text file
-parchment() {
-  local file=$1
-  [ -n "$file" ] && [ ! -e "$file" ] && return 1
-  local P=$2
-  [ -z "$P" ] && P=$(( 16#$(checksum "$GSH_UID:$MISSION_DIR" | cut -c 10-17) % 7 ))
-  case "$P" in
-    0) P="Parchment1";;
-    1) P="Parchment2";;
-    2) P="Parchment3";;
-    3) P="Parchment4";;
-    4) P="Parchment5";;
-    5) P="Parchment6";;
-    6) P="Parchment7";;
-    7) P="Parchment8";;
-    8) P="Parchment9";;
-  esac
-  echo
-  if command -v python3 &> /dev/null
-  # if available, use the python box8.py script
-  then
-    if [ -z "$file" ]
-    then
-      python3 "$GSH_UTILS/box8.py" --center --box="$P"
-    else
-      python3 "$GSH_UTILS/box8.py" --center --box="$P" < "$file"
-    fi
-  else
-  # if not, use the awk version
-    if [ -z "$file" ]
-    then
-      bash "$GSH_UTILS/box.sh" "$P"
-      rm -f "$tempfile"
-    else
-      bash "$GSH_UTILS/box.sh" "$P" "$file"
-    fi
-  fi
-  echo
-}
-
-# display a treasure message
-treasure_message() {
-  local WIDTH=31  # width of treasure-chest.txt file (wc -L)
-  paste "$GSH_LIB/ascii-art/treasure-chest.txt" "$1" | awk -v width=$WIDTH -v seed=$RANDOM '
-BEGIN{
-    srand(seed) ;
-    chars = ".\",-_ ";
-}
-/^\t/ {
-    s = "";
-    for (i=0; i<width; i++) {
-        if (rand() < 0.05) {
-            s = s "" substr(chars, int(rand()*length(chars)), 1);
-        } else {
-            s = s " ";
-        }
-    }
-    print s "" $0;
-}
-/^[^\t]/ { print $0; }
-' | column -t -s$'\t'
-}
 
 # this function is used to source a mission file with the corresponding
 # MISSION_DIR and TEXTDOMAIN values. Since those values are derived from the
