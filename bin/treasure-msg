@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# display a treasure message
+
+GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
+GSH_LIB=$GSH_ROOT/lib
+GSH_CONFIG=$GSH_ROOT/.config
+
+treasure_msg_file=$1
+WIDTH=31  # width of treasure-chest.txt file (wc -L)
+seed=$(cat "$GSH_CONFIG/PRNG_seed" 2>/dev/null)
+
+paste "$GSH_LIB/ascii-art/treasure-chest.txt" "$treasure_msg_file" |
+awk -v width=$WIDTH -v seed="$seed" -v seed_file="$GSH_CONFIG/PRNG_seed" '
+BEGIN{
+  if (seed) srand(seed); else srand();
+  chars = ".\",-_ ";
+}
+/^\t/ {
+  s = "";
+  for (i=0; i<width; i++) {
+    if (rand() < 0.05) {
+      s = s "" substr(chars, int(rand()*length(chars)), 1);
+    } else {
+      s = s " ";
+    }
+  }
+  print s "" $0;
+}
+END {
+  if (seed) printf("%s", int(2^32 * rand())) > seed_file;
+}
+/^[^\t]/ { print $0; }
+' | column -t -s"	"
+

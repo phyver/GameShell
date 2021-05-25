@@ -1,0 +1,24 @@
+#!/bin/sh
+
+case "$1" in
+  black   | bk) color=0; shift;;
+  red     |  r) color=1; shift;;
+  green   |  g) color=2; shift;;
+  yellow  |  y) color=3; shift;;
+  blue    |  b) color=4; shift;;
+  magenta |  m) color=5; shift;;
+  cyan    |  c) color=6; shift;;
+  white   |  w) color=7; shift;;
+  *) color=7;;
+esac
+
+if [ -n "$GSH_COLOR" ]
+then
+  trap "tput sgr0 2>/dev/null" TERM INT
+  tput setaf $color 2>/dev/null
+  echo "$@"
+  tput sgr0 2>/dev/null
+else
+  echo "$@"
+fi
+

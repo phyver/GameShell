@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# draw a parchment around a text file
+
+GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
+GSH_MISSION_DIR=$GSH_ROOT/missions
+GSH_UID=$(cat "$GSH_ROOT/.config/uid" 2> /dev/null)
+
+file=$1
+[ -n "$file" ] && [ ! -e "$file" ] && return 1
+
+P=$2
+if [ -z "$P" ]
+then
+  P=$(( $(checksum "$GSH_UID:$MISSION_DIR" | tr -dc 0-9 | cut -c1-6 ) % 7 ))
+fi
+
+case "$P" in
+  0) P="Parchment1";;
+  1) P="Parchment2";;
+  2) P="Parchment3";;
+  3) P="Parchment4";;
+  4) P="Parchment5";;
+  5) P="Parchment6";;
+  6) P="Parchment7";;
+  7) P="Parchment8";;
+  8) P="Parchment9";;
+esac
+echo
+if command -v python3 &> /dev/null
+  # if available, use the python box8.py script
+then
+  if [ -z "$file" ]
+  then
+    python3 "$GSH_UTILS/box8.py" --center --box="$P"
+  else
+    python3 "$GSH_UTILS/box8.py" --center --box="$P" < "$file"
+  fi
+else
+  # if not, use the awk version
+  if [ -z "$file" ]
+  then
+    bash "$GSH_UTILS/box.sh" "$P"
+    rm -f "$tempfile"
+  else
+    bash "$GSH_UTILS/box.sh" "$P" "$file"
+  fi
+fi
+echo
+
