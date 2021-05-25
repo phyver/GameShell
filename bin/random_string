@@ -1,13 +1,11 @@
 #!/bin/sh
 
+GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
+GSH_CONFIG=$GSH_ROOT/.config
+
 n=$1
 
-if [ -s "$GSH_CONFIG/PRNG_seed" ]
-then
-  seed=$(cat "$GSH_CONFIG/PRNG_seed")
-else
-  seed=""     # awk will use time of day
-fi
+seed=$(cat "$GSH_CONFIG/PRNG_seed" 2>/dev/null)
 
 awk -v n=${n:-32} -v seed="$seed" -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN {
   if (seed) srand(seed); else srand();
