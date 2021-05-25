@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-#FIXME, convert to plain sh
-#  => array
-#  => RANDOM
+#FIXME, can we convert that to POSIX sh?
+#The main problem is the use of arrays to define designs...
 
 # Print a progress bar. Each character received on [stdin] advances the
 # animation. The animation stops when the end of file is reached. If no
@@ -10,19 +9,30 @@
 # Otherwise, the name of a specific progress bar can be passed as the
 # first (and only) argument. Examples of value are 'bat' or 'snake'.
 progress_bar () {
-  ANIMALS=('bat' 'snake' 'centipede' 'ant' 'fish' 'large-fish'
-  'fish-back-and-forth' 'snail' 'caterpillar' 'spider')
 
-  if [ -z "$1" ]
+  if [ -n "$1" ]
   then
-    # Pick a random animal-base progress bar.
-    CHOICE=${ANIMALS[$RANDOM % ${#ANIMALS[@]} ]}
-  else
     # Use specified progress bar.
-    CHOICE="$1"
+    design="$1"
+  else
+    case "$((RANDOM%7))" in        # only modulo 7, to get an "interesting" design
+      0) design=bat ;;
+      1) design=snake ;;
+      2) design=caterpillar ;;
+      3) design=snail ;;
+      4) design=spider ;;
+      5) design=fish-back-and-forth ;;
+      6) design=duck ;;
+      7) design=centipede ;;
+      8) design=ant ;;
+      9) design=fish ;;
+      10) design=large-fish ;;
+      11) design=dots ;;
+      12) design=rotation ;;
+    esac
   fi
 
-  case $CHOICE in
+  case $design in
     "dots")
       # simple dots
       STR=('.')
