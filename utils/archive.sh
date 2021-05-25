@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 export GSH_ROOT=$(dirname "$0")/..
-source $GSH_ROOT/lib/common.sh
-export GSH_MISSIONS="$GSH_ROOT/missions"
+source $GSH_ROOT/lib/init.sh
 
 display_help() {
 cat <<EOH
@@ -125,7 +124,7 @@ do
 done
 
 export GSH_ROOT=$TMP_DIR/$NAME
-source $GSH_ROOT/lib/common.sh
+source $GSH_ROOT/lib/init.sh
 export GSH_MISSIONS="$GSH_ROOT/missions"
 
 
