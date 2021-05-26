@@ -12,7 +12,7 @@ _mission_init() {
   echo ">>>>>>>"
   ps
   echo ">>>>>>>"
-  ps a
+  ps -a
   echo ">>>>>>>"
 
   kill -9 "$PID" &> /dev/null
