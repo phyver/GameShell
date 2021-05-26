@@ -23,11 +23,11 @@ mission_source() {
   #   etc.
   local MISSION_FN=$(basename "$FILENAME")
   case "$MISSION_FN" in
-    auto.sh | check.sh | clean.sh | deps.sh | init.sh | static.sh | test.sh)
+    auto.sh | check.sh | clean.sh | init.sh | static.sh | test.sh)
       MISSION_FN=_mission_${MISSION_FN%.*}
       ;;
     *)
-      MISSION_FN='^\s*$'
+      MISSION_FN='^[[:blank:]]*$'
       ;;
   esac
   # if we are not running in DEBUG mode, just source the file

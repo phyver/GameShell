@@ -1,5 +1,5 @@
 SH_FILES=$(wildcard *.sh)
-EXCEPTIONS=clean.sh deps.sh static.sh
+EXCEPTIONS=clean.sh static.sh
 OTHER_FILES=
 
 LANG=$(wildcard i18n/*.po)

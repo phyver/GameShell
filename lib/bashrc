@@ -52,9 +52,7 @@ shopt -s nullglob
 for file in "$GSH_BASHRC"/bashrc_*.sh
 do
     # shellcheck source=/dev/null
-    export MISSION_DIR=$(basename "$file")
-    MISSION_DIR=${MISSION_DIR%.bashrc.sh}
-    mission_source "$file"
+    source "$file"
 done
 shopt -u nullglob
 

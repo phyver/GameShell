@@ -187,6 +187,7 @@ progress_bar () {
 
   # Show cursor.
   tput cnorm 2> /dev/null
+  return 0
 }
 
 progress_bar "$@"

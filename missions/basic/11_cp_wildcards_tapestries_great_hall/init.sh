@@ -1,6 +1,14 @@
 #!/bin/bash
 
 _mission_init() {
+  if ! [ -e "$MISSION_DIR/init0.sh" ]
+  then
+    DUMMY_MISSION=$(missionname "$MISSION_DIR/init0.sh")
+    echo "$(eval_gettext "Dummy mission '\$DUMMY_MISSION' is required for mission \$MISSION_NB (\$MISSION_NAME).")"
+    unset DUMMY_MISSION
+    return 1
+  fi
+
   [ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
   mkdir -p "$GSH_CHEST"
 
@@ -18,6 +26,7 @@ _mission_init() {
   done
 
   ls "$great_hall" | sort > "$GSH_VAR/great_hall_contents"
+  return 0
 }
 
 _mission_init

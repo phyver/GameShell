@@ -45,7 +45,6 @@ A mission has the following structure, most of the files being optional:
     │   └── ...
     ├── check.sh                    REQUIRED
     ├── clean.sh                    OFTEN NEEDED
-    ├── deps.sh
     ├── goal.txt / goal.sh          REQUIRED
     ├── i18n
     │   ├── ...
@@ -184,6 +183,14 @@ environment variables or change of `CWD`), a message asking the player to run
 not in a subshell this time.
 
 
+**If the last return value is `false` (anything different from `0`), the mission
+is cancelled.**
+
+This is typically used to check that the dependencies for the mission are met
+(e.g., that every necessary command is available on the system). When some
+dependency is not met then a helpful error message is polite.
+
+
 ### `check.sh`
 
 The `check.sh` is the only required file in a mission. It is sourced when the
@@ -256,18 +263,6 @@ The other files are not used as often but allow to customize GameShell.
 This file is added to the global configuration of the bash session used during
 the game. It can be used to define variables, aliases, functions, etc..
 They will be available throughout the game.
-
-
-### `deps.sh` (optional)
-
-This is sourced when the mission is started. If the last return value is
-`false` (anything different from `0`), the mission is cancelled.
-
-This is typically used to check that the dependencies for the mission are met
-(e.g., that every necessary command is available on the system).
-
-If the dependencies are met the program should have no output. However, if the
-dependencies are not met then a helpful error message is polite.
 
 
 ### `treasure.sh` (optional)
