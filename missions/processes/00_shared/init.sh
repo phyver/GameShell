@@ -10,6 +10,8 @@ _mission_init() {
   echo ">>>>$PID"
   ps | grep "\b$PID\b"
   echo ">>>>>>>"
+  ps
+  echo ">>>>>>>"
 
   kill -9 "$PID" &> /dev/null
   rm -f "$GSH_VAR/test-proc-name"
