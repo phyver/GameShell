@@ -1,0 +1,15 @@
+name: Debugging workflow
+on: [push]
+jobs:
+  test:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Testing the ps command (with $$)
+        run: ps $$
+      - name: Testing the ps command (with -p $$)
+        run: ps -p $$
+      - name: Testing the ps command (no argument)
+        run: ps
