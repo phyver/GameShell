@@ -12,6 +12,8 @@ _mission_init() {
   echo ">>>>>>>"
   ps
   echo ">>>>>>>"
+  ps a
+  echo ">>>>>>>"
 
   kill -9 "$PID" &> /dev/null
   rm -f "$GSH_VAR/test-proc-name"
