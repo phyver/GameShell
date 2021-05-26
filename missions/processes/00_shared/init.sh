@@ -7,6 +7,10 @@ _mission_init() {
   local PID=$!
   disown $PID
   local r=$(ps | grep "\b$PID\b" | grep bash)
+  echo ">>>>$PID"
+  ps | grep "\b$PID\b"
+  echo ">>>>>>>"
+
   kill -9 "$PID" &> /dev/null
   rm -f "$GSH_VAR/test-proc-name"
 
