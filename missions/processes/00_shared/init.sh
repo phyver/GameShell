@@ -4,9 +4,9 @@ _mission_init() {
   cp "$MISSION_DIR/test-proc-name.sh" "$GSH_VAR/test-proc-name"
   chmod +x "$GSH_VAR/test-proc-name"
   "$GSH_VAR/test-proc-name" &
-  PID=$!
+  local PID=$!
   disown $PID
-  local r=$(ps | grep "\b$PID\b" | grep bash &> /dev/null)
+  local r=$(ps | grep "\b$PID\b" | grep bash)
   kill -9 "$PID" &> /dev/null
   rm -f "$GSH_VAR/test-proc-name"
 
