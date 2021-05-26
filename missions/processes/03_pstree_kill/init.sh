@@ -24,7 +24,7 @@ _mission_init() {
   cp "$MISSION_DIR/fairy/spell.sh" "$GSH_VAR/fairy/$(gettext "spell")"
   chmod 755 "$GSH_VAR/fairy/$(gettext "spell")"
   "$GSH_VAR/$(gettext "nice_fairy")" &
-  PID=$!
+  local PID=$!
   disown "$PID"
   echo "$PID" > "$GSH_VAR/fairy.pid"
 

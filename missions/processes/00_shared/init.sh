@@ -4,13 +4,14 @@ _mission_init() {
   cp "$MISSION_DIR/test-proc-name.sh" "$GSH_VAR/test-proc-name"
   chmod +x "$GSH_VAR/test-proc-name"
   "$GSH_VAR/test-proc-name" &
-  PID=$!
+  local PID=$!
   disown $PID
-  local r=$(ps | grep "\b$PID\b" | grep bash &> /dev/null)
+  local name=$(ps -p $PID | grep -v sh)
+
   kill -9 "$PID" &> /dev/null
   rm -f "$GSH_VAR/test-proc-name"
 
-  if [ -n "$r" ]
+  if [ -z "$name" ]
   then
     echo "$(eval_gettext "Process names should be equal to the corresponding filename for mission \$MISSION_NAME.")" >&2
     return 1
