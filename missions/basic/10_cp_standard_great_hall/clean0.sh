@@ -10,5 +10,6 @@ case "$GSH_LAST_ACTION" in
         rm -f "$GSH_CHEST"/*"$(gettext "stag_head")"*
         rm -f "$GSH_CHEST"/*"$(gettext "decorative_shield")"*
         rm -f "$GSH_CHEST"/*"$(gettext "suit_of_armour")"*
+        unset great_hall
         ;;
 esac

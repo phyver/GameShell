@@ -12,7 +12,8 @@ file=$1
 P=$2
 if [ -z "$P" ]
 then
-  P=$(( $(checksum "$GSH_UID:$MISSION_DIR" | tr -dc 0-9 | cut -c1-6 ) % 7 ))
+  n=$(checksum "$GSH_UID:$MISSION_DIR" | tr -dc 0-9 | cut -c1-6 )
+  P=$((n%9))
 fi
 
 case "$P" in
@@ -27,7 +28,7 @@ case "$P" in
   8) P="Parchment9";;
 esac
 echo
-if command -v python3 &> /dev/null
+if command -v python3 > /dev/null
   # if available, use the python box8.py script
 then
   if [ -z "$file" ]
