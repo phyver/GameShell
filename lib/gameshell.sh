@@ -244,11 +244,21 @@ _gsh_start() {
     return 1
   fi
 
-  ### tester le fichier deps.sh
-  if [ -f "$MISSION_DIR/deps.sh" ]
+
+  # re-source static.sh, in case some important directory was removed by accident
+  [ -f "$MISSION_DIR/static.sh" ] && mission_source "$MISSION_DIR/static.sh"
+  if [ -f "$MISSION_DIR/init.sh" ]
   then
-    mission_source "$MISSION_DIR/deps.sh"
+    # attention, si l'initialisation a lieu dans un sous-shell et qu'elle
+    # définit des variables d'environnement, elles ne seront pas définies dans
+    # la session bash.
+    # je sauvegarde l'environnement avant / après l'initialisation pour
+    # afficher un message dans ce cas
+    _PWD=$(pwd)
+    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-before
+    mission_source "$MISSION_DIR/init.sh"
     local exit_status=$?
+
     if [ "$exit_status" -ne 0 ]
     then
       echo "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
@@ -256,31 +266,19 @@ _gsh_start() {
       _gsh_start "$((MISSION_NB + 1))"
       return
     fi
-  fi
 
-  # attention, si l'initialisation a lieu dans un sous-shell et qu'elle
-  # définit des variables d'environnement, elles ne seront pas définies dans
-  # la session bash.
-  # je sauvegarde l'environnement avant / après l'initialisation pour
-  # afficher un message dans ce cas
-  _PWD=$(pwd)
-  [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-before
+    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-after
 
-  # re-source static.sh, in case some important directory was removed by accident
-  [ -f "$MISSION_DIR/static.sh" ] && mission_source "$MISSION_DIR/static.sh"
-  [ -f "$MISSION_DIR/init.sh" ] && mission_source "$MISSION_DIR/init.sh"
-
-  [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-after
-
-  if [ "$BASHPID" != $$ ]
-  then
-    if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$GSH_VAR"/env-before "$GSH_VAR"/env-after
+    if [ "$BASHPID" != $$ ]
     then
-      echo "$(gettext "Error: this mission was initialized in a subshell.
+      if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$GSH_VAR"/env-before "$GSH_VAR"/env-after
+      then
+        echo "$(gettext "Error: this mission was initialized in a subshell.
 You should run the command
     \$ gsh reset
 to make sure the mission is initialized properly.")" >&2
-      rm -f "$GSH_VAR"/env-{before,after}
+        rm -f "$GSH_VAR"/env-{before,after}
+      fi
     fi
   fi
 

@@ -23,6 +23,8 @@ _mission_init() {
     ls $(gettext "grimoire")_* | sort > "$GSH_VAR/inventory_grimoires"
   )
 
+  return 0
+
 }
 
 _mission_init | progress_bar

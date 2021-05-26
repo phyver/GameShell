@@ -1,6 +1,14 @@
 #!/bin/bash
 
 _mission_init() {
+  if ! command -v maze1.sh &> /dev/null
+  then
+    local DUMMY_MISSION=$(realpath "$MISSION_DIR/../00_shared")
+    DUMMY_MISSION=${DUMMY_MISSION#$GSH_MISSIONS/}
+    echo "$(eval_gettext "Dummy mission '\$DUMMY_MISSION' is required for mission \$MISSION_NB (\$MISSION_NAME).")" >&2
+    return 1
+  fi
+
   [ -z "$GSH_CHEST" ] && GSH_CHEST="$(eval_gettext '$GSH_HOME/Forest/Hut/Chest')"
   mkdir -p "$GSH_CHEST"
 
@@ -27,6 +35,7 @@ _mission_init() {
     sum=$(checksum "$R $(gettext "stone")")
     echo "$R $(gettext "stone") $sum" > "$maze/$dir1/$R"
   done
-}
 
+  return 0
+}
 _mission_init

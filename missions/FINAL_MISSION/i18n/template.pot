@@ -1,23 +1,20 @@
-# path for the text file containing the treasure message
-msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  ""
-
 #, fuzzy
 msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
-#: goal.sh:3
-msgid   "qwerty"
-msgstr  ""
-
 # path for the text file containing the goal
-#: goal.sh:5
 #, sh-format
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  ""
 
-#: init.sh:3
 #, sh-format
 msgid   "$MISSION_DIR/msg/en.txt"
+msgstr  ""
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+msgid   "qwerty"
 msgstr  ""
