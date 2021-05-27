@@ -1,6 +1,7 @@
 GameShell: a "game" to learn the Unix shell
 ===========================================
 
+![Illustration inspired by the game](art/illustration-small.png)
 
 GameShell (gsh) is the outcome of thinking how to best teach the basics (and
 slightly more) of using a shell to first year students at the université
