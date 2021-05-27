@@ -6,12 +6,12 @@ _mission_init() {
   "$GSH_VAR/test-proc-name" &
   local PID=$!
   disown $PID
-  local r=$(ps -e | grep "\b$PID\b" | grep bash)
+  local name=$(ps -e | grep "\b$PID\b" | grep -v bash)
 
   kill -9 "$PID" &> /dev/null
   rm -f "$GSH_VAR/test-proc-name"
 
-  if [ -n "$r" ]
+  if [ -z "$name" ]
   then
     echo "$(eval_gettext "Process names should be equal to the corresponding filename for mission \$MISSION_NAME.")" >&2
     return 1
