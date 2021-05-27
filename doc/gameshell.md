@@ -11,8 +11,6 @@ or the source code of the game.
 
 ### Using an executable archive
 
-(Releases have not been set up yet: please, run the game from source.)
-
 The easiest way to start the game is to run a self-extracting executable
 archive (see the end of this page to know how to generate one yourself).
 Pre-built archives for the various versions of the game can be found on the
@@ -24,6 +22,11 @@ two commands in a terminal.
 wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
 bash GameShell.sh
 ```
+
+Note that when you quit the game (with `control-d` or the command `gsh exit`)
+your progression will be saved in a new archive (called `GameShell-save.sh`).
+It can be run to resume the game where you left it.
+
 ### Using the start script in the source code
 
 Alternatively, you can run the game directly from the source code. In that
