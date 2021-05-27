@@ -23,10 +23,10 @@ main() {
     do
         if [ "$j" -ge "$J" ] || ( [ "$i" -lt "$I" ] && [ "$((RANDOM % (I+J)))" -lt "$I" ] )
         then
-            echo -n "${msg:$i:1}"
+            printf "${msg:$i:1}"
             i=$((i+1))
         else
-            echo -n "${key:$j:1}" >&2
+            printf "${key:$j:1}" >&2
             j=$((j+1))
         fi
     done

@@ -41,7 +41,7 @@ mission_source() {
     export MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
     local _PATH=$PATH
     export PATH=$PATH:$GSH_SBIN
-    source "$FILENAME"
+    . "$FILENAME"
     local exit_status=$?
     export TEXTDOMAIN=$_TEXTDOMAIN
     export MISSION_NAME=$_MISSION_NAME
@@ -74,7 +74,7 @@ mission_source() {
   export MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
   local _PATH=$PATH
   export PATH=$PATH:$GSH_SBIN
-  source "$FILENAME"
+  . "$FILENAME"
   exit_status=$?
   export TEXTDOMAIN=$_TEXTDOMAIN
   export MISSION_NAME=$_MISSION_NAME

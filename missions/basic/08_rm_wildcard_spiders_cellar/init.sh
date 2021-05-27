@@ -20,7 +20,7 @@ _mission_init() {
     sign_file "$MISSION_DIR/ascii-art/spider-$((RANDOM%3)).txt" "$spider"
     if [ "$((I%5))" -eq 0 ]
     then
-      echo -n "."
+      printf "."
     fi
   done
 
@@ -30,7 +30,7 @@ _mission_init() {
     sign_file "$MISSION_DIR/ascii-art/bat-$((RANDOM%3)).txt" "$bat"
     if [ "$((I%5))" -eq 0 ]
     then
-      echo -n "."
+      printf "."
     fi
   done
 

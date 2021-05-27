@@ -11,7 +11,7 @@ gen_maze(){
     local nb_path=$2
     local stone=$3
 
-    echo -n "$(gettext "maze generation:")" >&2
+    printf "$(gettext "maze generation:")" >&2
     local t=$(date +%s)
 
     local i I j J k K
@@ -29,10 +29,10 @@ gen_maze(){
                 local n1=$((4 + RANDOM % 12))
                 local n2=$((20 + RANDOM % 12))
                 echo $sum | cut -c1-$n1 | tr -d '\n'>  "$DIR/$I/$J/$K"
-                echo -n " $stone "                  >> "$DIR/$I/$J/$K"
+                printf " $stone "                  >> "$DIR/$I/$J/$K"
                 echo $sum | cut -c16-$n2            >> "$DIR/$I/$J/$K"
             done
-            echo -n "." >&2
+            printf "." >&2
         done
     done
     echo >&2

@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 export GSH_ROOT=$(dirname "$0")/..
-source $GSH_ROOT/lib/init.sh
+. $GSH_ROOT/lib/init.sh
 
 display_help() {
 cat <<EOH
@@ -124,7 +124,7 @@ do
 done
 
 export GSH_ROOT=$TMP_DIR/$NAME
-source $GSH_ROOT/lib/init.sh
+. $GSH_ROOT/lib/init.sh
 export GSH_MISSIONS="$GSH_ROOT/missions"
 
 
@@ -144,7 +144,7 @@ fi
 # generate .mo files
 if [ "$GENERATE_MO" -eq 1 ]
 then
-  echo -n "generating '.mo' files: "
+  printf "generating '.mo' files: "
   {
     # gameshell
     export TEXTDOMAINDIR="$GSH_ROOT/locale"
@@ -154,7 +154,7 @@ then
       mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
       msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
     done
-    echo -n "."
+    printf "."
 
     # all missions
     while read MISSION_DIR
@@ -172,14 +172,16 @@ then
 
       if [ -d "$MISSION_DIR/i18n" ]
       then
-        shopt -s nullglob
-        for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
-          PO_LANG=$(basename "$PO_FILE" .po)
-          mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
-          msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
-          echo -n "."
-        done
-        shopt -u nullglob
+        # NOTE: nullglob don't expand in POSIX sh and there is no shopt -s nullglob as in bash
+        if [ -n "$(find "$MISSION_DIR/i18n" -maxdepth 1 -name '*.po' -print -quit)" ]
+        then
+          for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
+            PO_LANG=$(basename "$PO_FILE" .po)
+            mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
+            msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
+            printf "."
+          done
+        fi
       fi
     done < "$GSH_ROOT/missions/index.txt"
     echo

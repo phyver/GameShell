@@ -135,11 +135,10 @@ utilisez
 
 ### 2/ depuis le dépôt git
 
-Après avoir cloné le dépot, lancez le script `start.sh` (avec l'option `-F`
-pour éviter un message d'avertissement) :
+Après avoir cloné le dépot, lancez le script `start.sh`
 
     $ git clone https://github.com/phyver/GameShell.git
-    $ ./GameShell/start.sh -F
+    $ ./GameShell/start.sh
     ...
     ...
 

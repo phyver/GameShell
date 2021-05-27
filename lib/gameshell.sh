@@ -1,11 +1,25 @@
 #!/bin/bash
 
+# warning about "echo $(cmd)", used many times with echo "$(gettext ...)"
 # shellcheck disable=SC2005
+#
+# warning about eval_gettext '$GSH_ROOT/...' about variable not expanding in single quotes
+# shellcheck disable=SC2016
+#
+# warning about using printf "$(gettext ...)" because the string may contain
+# escape characters (they don't)
+# shellcheck disable=SC2059
+#
+# warning about declaring and initializing at the same time: local x=...
+# shellcheck disable=SC2155
 
-source gettext.sh
+# shellcheck source=/dev/null
+. gettext.sh
 
-source "$GSH_LIB/init.sh"
-source "$GSH_LIB/mission_source.sh"
+# shellcheck source=lib/init.sh
+. "$GSH_LIB/init.sh"
+# shellcheck source=lib/mission_source.sh
+. "$GSH_LIB/mission_source.sh"
 
 trap "_gsh_exit EXIT" EXIT
 trap "_gsh_exit TERM" SIGTERM
@@ -89,20 +103,23 @@ _gsh_exit() {
   then
     while true
     do
-      read -erp "$(gettext "There are stopped jobs in your session.
+      printf "$(gettext "There are stopped jobs in your session.
 Those processes will be terminated.
 You can get the list of those jobs with
     \$ jobs -s
-Do you still want to quit? [y/n]") " r
-      if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] ||  [ "$r" = "$(gettext "n")" ]
+Do you still want to quit? [y/n]") "
+      local resp
+      read -r resp
+      if [ -z "$resp" ] || [ "$resp" = "$(gettext "n")" ] ||  [ "$resp" = "$(gettext "n")" ]
       then
         return
-      elif [ "$r" = "$(gettext "y")" ] ||  [ "$r" = "$(gettext "y")" ]
+      elif [ "$resp" = "$(gettext "y")" ] ||  [ "$resp" = "$(gettext "y")" ]
       then
         break
       fi
     done
   echo 2
+    #shellcheck disable=SC2046
     kill $(jobs -ps)
   echo 3
   fi
@@ -111,6 +128,7 @@ Do you still want to quit? [y/n]") " r
   export GSH_LAST_ACTION='exit'
   _gsh_clean "$MISSION_NB"
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && _gsh_unprotect
+  #shellcheck disable=SC2046
   kill -sSIGHUP $(jobs -p) 2>/dev/null
 }
 
@@ -154,15 +172,15 @@ _gsh_goal() {
 _gsh_index() {
   local CUR_MISSION="$(_get_current_mission)"
   local MISSION_NB="1"
-  local MISSION COLOR STATUS LEAD
+  local COLOR STATUS LEAD
 
   local MISSION_NAME
-  while read MISSION_NAME
+  while read -r MISSION_NAME
   do
-    if echo $MISSION_NAME | grep -q '^\s*$'
+    if echo "$MISSION_NAME" | grep -q '^\s*$'
     then
       continue
-    elif echo $MISSION_NAME | grep -q '^\s*[#!]'
+    elif echo "$MISSION_NAME" | grep -q '^\s*[#!]'
     then
       continue
     fi
@@ -217,7 +235,11 @@ _gsh_start() {
     if [ "$?" -eq 1 ] && [ "$GSH_MODE" != "DEBUG" ]
     then
       _gsh_welcome
-      read -sern1 -p "$(gettext "Press any key to continue.")"
+      echo
+      printf "$(gettext "Press Enter to continue.")"
+      stty -echo 2>/dev/null    # ignore errors, in case input comes from a redirection
+      read
+      stty echo 2>/dev/null    # ignore errors, in case input comes from a redirection
       clear
     fi
   else
@@ -377,7 +399,7 @@ _gsh_check() {
       # Record the treasure to be loaded by GameShell's bashrc.
       TREASURE_FILE=$GSH_BASHRC/treasure_$(printf "%04d" "$MISSION_NB")_$(basename "$MISSION_DIR"/).sh
       echo "export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")" > "$TREASURE_FILE"
-      cat "$MISSION_DIR/treasure.sh" >> $TREASURE_FILE
+      cat "$MISSION_DIR/treasure.sh" >> "$TREASURE_FILE"
       echo "export TEXTDOMAIN=gsh" >> "$TREASURE_FILE"
       unset TREASURE_FILE
 
@@ -505,6 +527,7 @@ _gsh_test() {
   local MISSION_NB="$(_get_current_mission)"
   if [ -z "$MISSION_NB" ]
   then
+    #shellcheck disable=SC2034
     local fn_name="${FUNCNAME[0]}"
     echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
@@ -547,21 +570,21 @@ _gsh_HELP() {
 }
 
 _gsh_protect() {
-  chmod a-rw $GSH_ROOT
-  chmod a-rw $GSH_MISSIONS
-  chmod a-rw $GSH_CONFIG
-  chmod a-r $GSH_VAR
-  chmod a-rw $GSH_UTILS
-  chmod a-rw $GSH_SBIN
+  chmod a-rw "$GSH_ROOT"
+  chmod a-rw "$GSH_MISSIONS"
+  chmod a-rw "$GSH_CONFIG"
+  chmod a-r  "$GSH_VAR"
+  chmod a-rw "$GSH_UTILS"
+  chmod a-rw "$GSH_SBIN"
 }
 
 _gsh_unprotect() {
-  chmod $(umask -S) $GSH_ROOT
-  chmod $(umask -S) $GSH_MISSIONS
-  chmod $(umask -S) $GSH_CONFIG
-  chmod $(umask -S) $GSH_VAR
-  chmod $(umask -S) $GSH_UTILS
-  chmod $(umask -S) $GSH_SBIN
+  chmod "$(umask -S)" "$GSH_ROOT"
+  chmod "$(umask -S)" "$GSH_MISSIONS"
+  chmod "$(umask -S)" "$GSH_CONFIG"
+  chmod "$(umask -S)" "$GSH_VAR"
+  chmod "$(umask -S)" "$GSH_UTILS"
+  chmod "$(umask -S)" "$GSH_SBIN"
 }
 
 

@@ -31,7 +31,7 @@ BEGIN {
         last_mission = nb_mission;
     }
     # check actual checksum function in gsh
-    cmd = "echo -n \"" GSH_UID "#" $1 "#" $2 "#" $3 "\" | sha1sum | cut -c 1-40"
+    cmd = "printf \"" GSH_UID "#" $1 "#" $2 "#" $3 "\" | sha1sum | cut -c 1-40"
     cmd | getline checksum;
     # if (checksum != $4) {
     #     print "checksum PROBLEM : ";

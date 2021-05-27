@@ -37,19 +37,19 @@ get_answer() {
 }
 
 gsh assert check true  < <(get_answer 0) > /dev/null
-echo -n "."
+printf "."
 gsh assert check false < <(get_answer 1) > /dev/null
-echo -n "."
+printf "."
 gsh assert check false < <(get_answer 2) > /dev/null
-echo -n "."
+printf "."
 gsh assert check false < <(get_answer 3) > /dev/null
-echo -n "."
+printf "."
 gsh assert check false < <(get_answer 4) > /dev/null
-echo -n "."
+printf "."
 gsh assert check false < <(get_answer 5) > /dev/null
-echo -n "."
+printf "."
 gsh assert check false < <(get_answer 6) > /dev/null
-echo -n "."
+printf "."
 gsh assert check true  < <(get_answer 7) > /dev/null
 
 unset -f get_answer _DOW

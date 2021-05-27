@@ -7,7 +7,7 @@ safe="$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')/$(gettext "Sa
 mkdir -p "$safe"
 chmod 755 "$safe"
 chmod 644 "$safe/$(gettext "crown")" 2> /dev/null
-k=$(echo -n "000$(($RANDOM % 1000))" | tail -c3)
+k=$(printf "000$(($RANDOM % 1000))" | tail -c3)
 
 sed "s/KEY/$k/" "$MISSION_DIR/ascii-art/crown.txt" > "$safe/$(gettext "crown")"
 
