@@ -7,111 +7,26 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Stall"
 msgstr  ""
 
-msgid   "Georges' son"
+msgid   "%s bought %s for %d coppers%s"
 msgstr  ""
 
 msgid   "PAID"
 msgstr  ""
 
-#, sh-format
-msgid   "The command 'python3' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'python3')"
-msgstr  ""
-
-#, sh-format
-msgid   "The script 'generate_merchant_stall.py' is necessary for mission $MISSION_NAME.\n"
-        "Make sure the corresponding mission is included."
-msgstr  ""
-
-msgid   "_s_c_r_o_l_l_"
-msgstr  ""
-
-msgid   "a bag flour"
-msgstr  ""
-
-msgid   "a belt"
-msgstr  ""
-
-msgid   "a blanket"
-msgstr  ""
-
-msgid   "a bottle of cider"
-msgstr  ""
-
-msgid   "a chackal"
-msgstr  ""
-
-msgid   "a chicken"
-msgstr  ""
-
-msgid   "a cow"
-msgstr  ""
-
-msgid   "a dented helmet"
-msgstr  ""
-
-msgid   "a goat"
-msgstr  ""
-
-msgid   "a horse"
-msgstr  ""
-
-msgid   "a knife"
-msgstr  ""
-
-msgid   "a leather bag"
-msgstr  ""
-
-msgid   "a leather ball"
-msgstr  ""
-
-msgid   "a pick"
-msgstr  ""
-
-msgid   "a piece of soap"
-msgstr  ""
-
-msgid   "a pin"
-msgstr  ""
-
-msgid   "a ruby"
-msgstr  ""
-
-msgid   "a shiny rock"
-msgstr  ""
-
-msgid   "a spade"
-msgstr  ""
-
-msgid   "a stool"
-msgstr  ""
-
-msgid   "a wooden spoon"
-msgstr  ""
-
-msgid   "an apple"
-msgstr  ""
-
-msgid   "an opal"
-msgstr  ""
-
 msgid   "boring_object"
 msgstr  ""
 
-msgid   "from next town"
+msgid   "firstnames.en"
 msgstr  ""
 
-msgid   "the Bold"
+msgid   "lastnames.en"
+msgstr  ""
+
+msgid   "objects.en"
+msgstr  ""
+
+msgid   "s_c_r_o_l_l"
 msgstr  ""
 
 msgid   "the King"
-msgstr  ""
-
-msgid   "the son of Martin"
-msgstr  ""
-
-msgid   "walking stick"
-msgstr  ""
-
-msgid   "{} bought {} for {} coppers{}\n"
 msgstr  ""
