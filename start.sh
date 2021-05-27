@@ -138,7 +138,8 @@ progress_bar() {
 }
 
 progress_bar_finish() {
-  tail -c+$((progress_I*progress_delta)) $progress_filename
+  # tail -c+$((progress_I*progress_delta)) $progress_filename => not POSIX compliant
+  dd if="$progress_filename" bs="$progress_delta" skip="$progress_I" 2> /dev/null
   unset progress_filename progress_delta progress_I
   # show cursor
   tput cnorm 2> /dev/null
