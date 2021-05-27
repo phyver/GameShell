@@ -23,3 +23,6 @@ msgstr  "Il va falloir faire mieux que ça !"
 
 msgid   "spell"
 msgstr  "sortilege"
+
+msgid "EN"
+msgstr "FR"
