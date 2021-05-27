@@ -5,9 +5,8 @@
 GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
 GSH_CONFIG=$GSH_ROOT/.config
 
-seed=$(cat "$GSH_CONFIG/PRNG_seed" 2>/dev/null)
-
-awk -v n=${n:-32} -v seed="$seed" -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN {
+awk -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN {
+  getline seed < seed_file;
   if (seed) srand(seed); else srand();
   print int(rand()*65536);
   if (seed) printf("%s", int(2^32 * rand())) > seed_file;

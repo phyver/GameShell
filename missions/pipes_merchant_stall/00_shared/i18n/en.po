@@ -8,113 +8,26 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Stall"
 msgstr  "$GSH_HOME/Stall"
 
-msgid   "Georges' son"
-msgstr  "Georges' son"
+msgid   "%s bought %s for %d coppers%s"
+msgstr  "%s bought %s for %d coppers%s"
 
 msgid   "PAID"
 msgstr  "PAID"
 
-#, sh-format
-msgid   "The command 'python3' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'python3')"
-msgstr  "The command 'python3' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'python3')"
-
-#, sh-format
-msgid   "The script 'generate_merchant_stall.py' is necessary for mission $MISSION_NAME.\n"
-        "Make sure the corresponding mission is included."
-msgstr  "The script 'generate_merchant_stall.py' is necessary for mission $MISSION_NAME.\n"
-        "Make sure the corresponding mission is included."
-
-msgid   "_s_c_r_o_l_l_"
-msgstr  "_s_c_r_o_l_l_"
-
-msgid   "a bag flour"
-msgstr  "a bag flour"
-
-msgid   "a belt"
-msgstr  "a belt"
-
-msgid   "a blanket"
-msgstr  "a blanket"
-
-msgid   "a bottle of cider"
-msgstr  "a bottle of cider"
-
-msgid   "a chackal"
-msgstr  "a chackal"
-
-msgid   "a chicken"
-msgstr  "a chicken"
-
-msgid   "a cow"
-msgstr  "a cow"
-
-msgid   "a dented helmet"
-msgstr  "a dented helmet"
-
-msgid   "a goat"
-msgstr  "a goat"
-
-msgid   "a horse"
-msgstr  "a horse"
-
-msgid   "a knife"
-msgstr  "a knife"
-
-msgid   "a leather bag"
-msgstr  "a leather bag"
-
-msgid   "a leather ball"
-msgstr  "a leather ball"
-
-msgid   "a pick"
-msgstr  "a pick"
-
-msgid   "a piece of soap"
-msgstr  "a piece of soap"
-
-msgid   "a pin"
-msgstr  "a pin"
-
-msgid   "a ruby"
-msgstr  "a ruby"
-
-msgid   "a shiny rock"
-msgstr  "a shiny rock"
-
-msgid   "a spade"
-msgstr  "a spade"
-
-msgid   "a stool"
-msgstr  "a stool"
-
-msgid   "a wooden spoon"
-msgstr  "a wooden spoon"
-
-msgid   "an apple"
-msgstr  "an apple"
-
-msgid   "an opal"
-msgstr  "an opal"
-
 msgid   "boring_object"
 msgstr  "boring_object"
 
-msgid   "from next town"
-msgstr  "from next town"
+msgid   "firstnames.en"
+msgstr  "firstnames.en"
 
-msgid   "the Bold"
-msgstr  "the Bold"
+msgid   "lastnames.en"
+msgstr  "lastnames.en"
+
+msgid   "objects.en"
+msgstr  "objects.en"
+
+msgid   "s_c_r_o_l_l"
+msgstr  "s_c_r_o_l_l"
 
 msgid   "the King"
 msgstr  "the King"
-
-msgid   "the son of Martin"
-msgstr  "the son of Martin"
-
-msgid   "walking stick"
-msgstr  "walking stick"
-
-msgid   "{} bought {} for {} coppers{}\n"
-msgstr  "{} bought {} for {} coppers{}\n"

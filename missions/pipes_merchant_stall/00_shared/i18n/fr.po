@@ -7,113 +7,28 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Stall"
 msgstr  "$GSH_HOME/Echoppe"
 
-msgid   "Georges' son"
-msgstr  "le fils au Georges"
+#, fuzzy
+msgid   "%s bought %s for %d coppers%s"
+msgstr  "{} a acheté {} pour {} piécettes{}\n"
 
 msgid   "PAID"
 msgstr  "PAYÉ"
 
-#, sh-format
-msgid   "The command 'python3' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'python3')"
-msgstr  "La commande 'python3' est nécessaire pour la mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: installez le paquet 'python3')"
-
-#, sh-format
-msgid   "The script 'generate_merchant_stall.py' is necessary for mission $MISSION_NAME.\n"
-        "Make sure the corresponding mission is included."
-msgstr  "Le script 'generate_merchant_stall.py' est nécessaire pour la mission $MISSION_NAME.\n"
-        "Vérifiez que la mission correspondante est incluse."
-
-msgid   "_s_c_r_o_l_l_"
-msgstr  "_p_a_r_c_h_e_m_i_n"
-
-msgid   "a bag flour"
-msgstr  "un sac de farine"
-
-msgid   "a belt"
-msgstr  "une ceinture"
-
-msgid   "a blanket"
-msgstr  "une couverture"
-
-msgid   "a bottle of cider"
-msgstr  "une bouteille de cidre"
-
-msgid   "a chackal"
-msgstr  "un chacal"
-
-msgid   "a chicken"
-msgstr  "une poule"
-
-msgid   "a cow"
-msgstr  "une vache"
-
-msgid   "a dented helmet"
-msgstr  "un heaume cabossé"
-
-msgid   "a goat"
-msgstr  "une chèvre"
-
-msgid   "a horse"
-msgstr  "un cheval"
-
-msgid   "a knife"
-msgstr  "un couteau"
-
-msgid   "a leather bag"
-msgstr  "une besace en cuir"
-
-msgid   "a leather ball"
-msgstr  "une balle en cuir"
-
-msgid   "a pick"
-msgstr  "un pic"
-
-msgid   "a piece of soap"
-msgstr  "un morceau de savon"
-
-msgid   "a pin"
-msgstr  "une épingle"
-
-msgid   "a ruby"
-msgstr  "un rubis"
-
-msgid   "a shiny rock"
-msgstr  "un caillou brillant"
-
-msgid   "a spade"
-msgstr  "une pelle"
-
-msgid   "a stool"
-msgstr  "un tabouret"
-
-msgid   "a wooden spoon"
-msgstr  "une cuillère en bois"
-
-msgid   "an apple"
-msgstr  "une pomme"
-
-msgid   "an opal"
-msgstr  "une opale"
-
 msgid   "boring_object"
 msgstr  "objet_sans_interet"
 
-msgid   "from next town"
-msgstr  "du village voisin"
+msgid   "firstnames.en"
+msgstr  "firstnames.en"
 
-msgid   "the Bold"
-msgstr  "le Chauve"
+msgid   "lastnames.en"
+msgstr  "lastnames.fr"
+
+msgid   "objects.en"
+msgstr  "objects.fr"
+
+#, fuzzy
+msgid   "s_c_r_o_l_l"
+msgstr  "_p_a_r_c_h_e_m_i_n"
 
 msgid   "the King"
 msgstr  "le Roi"
-
-msgid   "the son of Martin"
-msgstr  "le fils de Martin"
-
-msgid   "walking stick"
-msgstr  "un baton de marche"
-
-msgid   "{} bought {} for {} coppers{}\n"
-msgstr  "{} a acheté {} pour {} piécettes{}\n"

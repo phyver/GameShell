@@ -29,13 +29,7 @@ msgid   "That's the right answer, but you used $nb_cmd commands!"
 msgstr  "C'est la bonne réponse, mais vous avez utilisé $nb_cmd commandes !"
 
 #, sh-format
-msgid   "The command 'python3' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'python3')"
-msgstr  "La command 'python3' est nécessaire pour la mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu : installez le paquet 'python3')"
-
-#, sh-format
-msgid   "The script 'generate_merchant_stall.py' is necessary for mission $MISSION_NAME.\n"
+msgid   "The script 'generate_merchant_stall.sh' is necessary for mission $MISSION_NAME.\n"
         "Make sure the corresponding mission is included."
-msgstr  "Le script 'generate_merchant_stall.py' est nécessaire pour la mission $MISSION_NAME.\n"
+msgstr  "Le script 'generate_merchant_stall.sh' est nécessaire pour la mission $MISSION_NAME.\n"
         "Vérifiez que la mission correspondante est incluse."

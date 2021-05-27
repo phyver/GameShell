@@ -6,6 +6,12 @@ _mission_check() {
   read -erp "$(gettext "How many unpaid items are there?") " response
   nb_cmd=$(cat "$GSH_VAR/nb_commands")
 
+  # TODO, check the "boring objects" are still here, to avoid the possibility
+  # rm *boring*
+  # ...
+
+  echo $response
+  echo $nb_unpaid
   if [ "$response" != "$nb_unpaid" ]
   then
       echo "$(gettext "That's not the right answer!")"

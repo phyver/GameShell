@@ -8,11 +8,11 @@ GSH_CONFIG=$GSH_ROOT/.config
 
 treasure_msg_file=$1
 WIDTH=31  # width of treasure-chest.txt file (wc -L)
-seed=$(cat "$GSH_CONFIG/PRNG_seed" 2>/dev/null)
 
 paste "$GSH_LIB/ascii-art/treasure-chest.txt" "$treasure_msg_file" |
-awk -v width=$WIDTH -v seed="$seed" -v seed_file="$GSH_CONFIG/PRNG_seed" '
+awk -v width=$WIDTH -v seed_file="$GSH_CONFIG/PRNG_seed" '
 BEGIN{
+  getline seed < seed_file;
   if (seed) srand(seed); else srand();
   chars = ".\",-_ ";
 }

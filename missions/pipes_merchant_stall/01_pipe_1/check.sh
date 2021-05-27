@@ -6,6 +6,10 @@ _mission_check() {
   read -erp "$(gettext "How much does the king owe?") " response
   local nb_cmd=$(cat "$GSH_VAR/nb_commands")
 
+  # TODO, check the "boring objects" are still here, to avoid the possibility
+  # rm *boring*
+  # ...
+
   if [ "$response" != "$amount" ]
   then
       echo "$(gettext "That's not the right answer!")"
