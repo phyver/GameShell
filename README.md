@@ -146,11 +146,10 @@ following:
 
 ### 2/ from the git repository
 
-First clone the repository, and run the `start.sh` script (with the `-F`
-option to avoid a warning):
+First clone the repository, and run the `start.sh` script
 
     $ git clone https://github.com/phyver/GameShell.git
-    $ ./GameShell/start.sh -F
+    $ ./GameShell/start.sh
     ...
     ...
 

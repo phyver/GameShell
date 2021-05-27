@@ -28,7 +28,7 @@ _mission_check() {
     local i
     for i in $(seq 7)
     do
-      echo -n "  $i : "
+      printf "  $i : "
       DOW "2000-05-$i"
     done
     local n

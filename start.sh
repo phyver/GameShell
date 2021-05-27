@@ -1,12 +1,26 @@
 #!/usr/bin/env bash
 
+# warning about "echo $(cmd)", used many times with echo "$(gettext ...)"
 # shellcheck disable=SC2005
+#
+# warning about eval_gettext '$GSH_ROOT/...' about variable not expanding in single quotes
+# shellcheck disable=SC2016
+#
+# warning about using printf "$(gettext ...)" because the string may contain
+# escape characters (they don't)
+# shellcheck disable=SC2059
+#
+# warning about declaring and initializing at the same time: local x=...
+# shellcheck disable=SC2155
 
-source gettext.sh
+# shellcheck source=/dev/null
+. gettext.sh
 
 export GSH_ROOT="$(dirname "$0")"
-source "$GSH_ROOT/lib/init.sh"
-source "$GSH_ROOT/lib/mission_source.sh"
+# shellcheck source=lib/init.sh
+. "$GSH_ROOT/lib/init.sh"
+# shellcheck source=lib/mission_source.sh
+. "$GSH_ROOT/lib/mission_source.sh"
 
 display_help() {
   cat "$(eval_gettext "\$GSH_ROOT/i18n/start-help/en.txt")"
@@ -88,12 +102,14 @@ _passport() {
   NOM=""
   while [ -z "$NOM" ]
   do
-    read -erp "$(gettext "Player's name:") " NOM
+    printf "$(gettext "Player's name:") "
+    read -r NOM
   done
   EMAIL=""
   while [ -z "$EMAIL" ]
   do
-    read -erp "$(gettext "Player's email:") " EMAIL
+    printf "$(gettext "Player's email:") "
+    read -r EMAIL
   done
   echo "  $NOM <$EMAIL>" >> "$PASSPORT"
 }
@@ -105,7 +121,8 @@ _confirm_passport() {
   echo "======================================================="
   while true
   do
-    read -erp "$(gettext "Is this information correct? [Y/n]") " OK
+    printf "$(gettext "Is this information correct? [Y/n]") "
+    read -r OK
     echo
     if [ -z "$OK" ] || [ "$OK" = "$(gettext "y")" ] || [ "$OK" = "$(gettext "Y")" ]
     then
@@ -125,7 +142,7 @@ progress_bar() {
   then
     progress_filename=$GSH_ROOT/lib/ascii-art/titlescreen
     local N=$(wc -l "$GSH_CONFIG/index.txt" | awk '{print $1}')
-    local size=$(wc -c $progress_filename | awk '{print $1}')
+    local size=$(wc -c "$progress_filename" | awk '{print $1}')
     progress_delta=$((size/N + 1))
     # head -c$((progress_delta - 1)) $progress_filename => not POSIX compliant
     dd if="$progress_filename" bs="$progress_delta" count=1 2> /dev/null
@@ -158,8 +175,9 @@ init_gsh() {
     if [ -z "$RESET" ]
     then
       local r
-      read -erp "$(eval_gettext 'The directory $GSH_CONFIG contains meta-data from a previous game.
-Do you want to remove it and start a new game? [y/N]') " r
+      printf "$(eval_gettext 'The directory $GSH_CONFIG contains meta-data from a previous game.
+Do you want to remove it and start a new game? [y/N]') "
+      read -r r
       [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ] || return 1
 
     elif [ "$RESET" = "FALSE" ]
@@ -226,7 +244,7 @@ Do you want to remove it and start a new game? [y/N]') " r
     _confirm_passport "$PASSPORT" && break
   done
 
-  printf "\n==========\nRANDOM=%d\n" $RANDOM >> "$PASSPORT"
+  printf '\n==========\nRANDOM=%d\n' $RANDOM >> "$PASSPORT"
 
 
   # Generation of a unique identifier for the the player.
@@ -241,7 +259,7 @@ Do you want to remove it and start a new game? [y/N]') " r
   # Clear the screen.
   if [ "$GSH_MODE" = "DEBUG" ]
   then
-    echo -n "[MISSION INITIALISATION]"
+    printf "[MISSION INITIALISATION]"
   else
     clear
   fi
@@ -258,7 +276,7 @@ Do you want to remove it and start a new game? [y/N]') " r
   local MISSION_NB=1      # current mission number
   local MISSION_SUB_NB="" # when a dummy mission is found, as a "sub-number" as well
   local FULL_NB           # the 2 together
-  while read MISSION_DIR
+  while read -r MISSION_DIR
   do
     case $MISSION_DIR in
       "" | "#"* )
@@ -289,35 +307,41 @@ Do you want to remove it and start a new game? [y/N]') " r
     # Preparing the locales
     if [ -d "$MISSION_DIR/i18n" ]
     then
-      shopt -s nullglob
-      for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
-        PO_LANG=$(basename "$PO_FILE" .po)
-        MO_FILE="$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo"
-        if ! [ -f "$MO_FILE" ] || [ "$PO_FILE" -nt "$MO_FILE" ]
-        then
-          mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
-          msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
-        fi
-      done
-      shopt -u nullglob
+      # NOTE: shopt -s nullglob doesn't exist in POSIX sh
+      if [ -n "$(find "$MISSION_DIR/i18n" -maxdepth 1 -name '*.po' -print -quit)" ]
+      then
+        for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
+          PO_LANG=$(basename "$PO_FILE" .po)
+          MO_FILE="$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo"
+          if ! [ -f "$MO_FILE" ] || [ "$PO_FILE" -nt "$MO_FILE" ]
+          then
+            mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
+            msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$DOMAIN.mo" "$PO_FILE"
+          fi
+        done
+      fi
     fi
 
     # Setting up the binaries
     if [ -d "$MISSION_DIR/sbin" ]
     then
-      shopt -s nullglob
-      for BIN_FILE in "$MISSION_DIR"/sbin/*; do
-        [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_SBIN"
-      done
-      shopt -u nullglob
+      # NOTE: shopt -s nullglob doesn't exist in POSIX sh
+      if [ -n "$(find "$MISSION_DIR/sbin" -maxdepth 1 -type f -name '*' -print -quit)" ]
+      then
+        for BIN_FILE in "$MISSION_DIR"/sbin/*; do
+          [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_SBIN"
+        done
+      fi
     fi
     if [ -d "$MISSION_DIR/bin" ]
     then
-      shopt -s nullglob
-      for BIN_FILE in "$MISSION_DIR"/bin/*; do
-        [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_BIN"
-      done
-      shopt -u nullglob
+      # NOTE: shopt -s nullglob doesn't exist in POSIX sh
+      if [ -n "$(find "$MISSION_DIR/bin" -maxdepth 1 -type f -name '*' -print -quit)" ]
+      then
+        for BIN_FILE in "$MISSION_DIR"/bin/*; do
+          [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_BIN"
+        done
+      fi
     fi
 
     # source the static part of the mission
@@ -332,17 +356,17 @@ Do you want to remove it and start a new game? [y/N]') " r
       BASHRC_FILE=$GSH_BASHRC/bashrc_${FULL_NB}_$(basename "$MISSION_DIR").sh
       echo "export MISSION_DIR=$MISSION_DIR" > "$BASHRC_FILE"
       echo "export TEXTDOMAIN=$DOMAIN" >> "$BASHRC_FILE"
-      cat "$MISSION_DIR/bashrc" >> $BASHRC_FILE
+      cat "$MISSION_DIR/bashrc" >> "$BASHRC_FILE"
       echo "export TEXTDOMAIN=gsh" >> "$BASHRC_FILE"
       unset BASHRC_FILE
     fi
 
     if [ "$GSH_MODE" = "DEBUG" ] && [ "$GSH_VERBOSE_DEBUG" = true ]
     then
-      printf "\n%3d -> %s" "$MISSION_NB" "${MISSION_DIR#GSH_MISSIONS/}"
+      printf '\n%3d -> %s' "$MISSION_NB" "${MISSION_DIR#GSH_MISSIONS/}"
     elif [ "$GSH_MODE" = "DEBUG" ]
     then
-      echo -n "."
+      printf "."
     else
       progress_bar
     fi
@@ -363,7 +387,10 @@ Aborting.")"
   else
     progress_bar_finish
     echo
-    read -sern1 -p "$(gettext "Press any key to continue.")"
+    printf "$(gettext "Press Enter to continue.")"
+    stty -echo 2>/dev/null    # ignore errors, in case input comes from a redirection
+    read
+    stty echo 2>/dev/null    # ignore errors, in case input comes from a redirection
     clear
   fi
   unset MISSION_DIR MISSION_NB

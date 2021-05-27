@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 [ -z "$GSH_ROOT" ] && echo "Error: GSH_ROOT undefined" && exit 1
 
@@ -28,17 +28,19 @@ export TEXTDOMAIN="gsh"
 PATH="$GSH_ROOT/bin":$PATH
 
 ### generate GameShell translation files
-shopt -s nullglob
-for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
-  PO_LANG=$(basename "$PO_FILE" .po)
-  MO_FILE="$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo"
-  if ! [ -f "$MO_FILE" ] || [ "$PO_FILE" -nt "$MO_FILE" ]
-  then
-    mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
-    msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
-  fi
-done
-shopt -u nullglob
+# NOTE: nullglob don't expand in POSIX sh and there is no shopt -s nullglob as in bash
+if [ -n "$(find "$GSH_ROOT/i18n" -maxdepth 1 -name '*.po' -print -quit)" ]
+then
+  for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
+    PO_LANG=$(basename "$PO_FILE" .po)
+    MO_FILE="$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo"
+    if ! [ -f "$MO_FILE" ] || [ "$PO_FILE" -nt "$MO_FILE" ]
+    then
+      mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
+      msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
+    fi
+  done
+fi
 
 
 ### test some of the scripts

@@ -14,7 +14,7 @@ _mission_init() {
     then
       chmod -r "$file"
     fi
-    [ $((i%3)) -eq 0 ] && echo -n "."
+    [ $((i%3)) -eq 0 ] && printf "."
   done
   echo
 
