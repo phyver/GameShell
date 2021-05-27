@@ -1,31 +1,31 @@
-name: Latest game archive
+name: "Latest game archive"
 
 on:
   push:
     branches:
-      - master
+      - "master"
     tags-ignore:
-      - *
+      - "*"
 
 jobs:
   gh_pre_release:
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest"
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v2
+      - name: "Checkout source code"
+        uses: "actions/checkout@v2"
 
-      - name: Install Linux deps
+      - name: "Install Linux deps"
         run: |
           sudo apt install gettext-base psmisc bsdmainutils tar
 
-      - name: Creating the archive
+      - name: "Creating the archive"
         run: |
           ./utils/archive.sh
 
-      - uses: marvinpinto/action-automatic-releases@latest
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: latest
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
           prerelease: true
           title: "Latest game archive"
           files: |
