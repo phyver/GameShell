@@ -11,3 +11,5 @@ jobs:
         run: ps $$
       - name: Testing the ps command (no argument)
         run: ps
+      - name: Testing the ps command (with -p $$)
+        run: ps -p $$
