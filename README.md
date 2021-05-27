@@ -19,6 +19,14 @@ GameShell. We are particularly interested in any new mission you might create!
 GameShell released under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 
+NOTE
+====
+
+GameShell is currently undergoing heavy development. The current version
+hasn't been field tested by students. Don't hesitate to open issues on bug or
+suggestions.
+
+
 ### Developpers
 
 * Pierre Hyvernat
@@ -68,28 +76,41 @@ the following
 On a Debian / Ubuntu system, the following ensures you have everything you
 need to run GameShell without problems.
 
+````
     $ sudo apt install gettext-base python3 man-db psmisc nano tree bsdmainutils x11-apps gettext
+````
 
 
 ### Other systems
 
 #### macOS
 
-It should be possible to run GameShell on macOS, but we haven't tested in a
-long time.
+It should be possible to run GameShell on macOS, but we don't ourselves use
+macOS. Contact us if you have problems running GameShell and are willing to
+help us test it.
 
-The easiest is probably to use the package manager [homebrew](https://brew.sh/index_fr) :
+To install the dependencies, the easiest is probably to use the package
+manager [homebrew](https://brew.sh/index_fr) :
 
+````
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+````
 
 and to install the dependencies with
 
-    $ brew install coreutils md5sha1sum pstree tree man-db
+````
+    $ brew install nano pstree tree man-db
+````
 
 
 #### BSD ???
 
-TODO
+We haven't tested it a lot, but it should run on freeBSD once you install the
+dependencies:
+
+````
+    $ pkg install bash gettext pstree wget python3
+````
 
 
 #### Windows ???
@@ -140,7 +161,7 @@ cloned the repository, create an executable archive with the `archive.sh`
 script:
 
     $ cd GameShell
-    $ ./bin/archive.sh
+    $ ./utils/archive.sh
     copy missions
     01_cd_1  -->  000001_cd_1
     ...
