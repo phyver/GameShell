@@ -76,21 +76,31 @@ pouvez lancer une partie de GameShell sans problème.
 
 #### macOS
 
-Il devrait être possible de lancer GameShell depuis macOS, mais nous n'avons
-pas testé depuis bien longtemps.
+Il devrait être possible de lancer GameShell depuis macOS, mais comme nous
+n'utilisons pas macOS, ce n'est pas beaucoup testé. Contactez nous en cas de
+problème ou si vous souhaitez nous aider la dessus.
 
 Le plus simple est probablement d'utiliser le gestionnaire de paquets [homebrew](https://brew.sh/index_fr) :
 
+```
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 puis d'installer les paquets nécessaires avec
 
-    $ brew install coreutils md5sha1sum pstree tree man-db
+```
+    $ brew install nano pstree tree man-db
+```
 
 
 #### BSD ???
 
-TODO
+Nous n'avons pas beaucoup testé, mais GameShell semble fonctionner sous
+freeBSD si vous installez les dépendances :
+
+````
+    $ pkg install bash gettext pstree wget python3
+````
 
 
 #### Windows ???
@@ -140,7 +150,7 @@ C'est le plus simple pour distribuer GameShell à des étudiants. Après avoir
 cloné le dépot, créez une archive exécutable avec le script `archive.sh` :
 
     $ cd GameShell
-    $ ./bin/archive.sh
+    $ ./utils/archive.sh
     copy missions
     01_cd_1  -->  000001_cd_1
     ...
