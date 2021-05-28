@@ -50,9 +50,6 @@ Playing GameShell involves very few game-specific commands. They are
 
 * `gsh goal`: displays the current mission's goal. If the goal doesn't fit on
   the screen, it is paginated with the `less` or `more` command.
-  An ASCII-art box is added around the goal with Python (if available) or
-  `awk`. (Depending on your `awk` version, UTF-8 characters might cause
-  misalignments.)
 
 * `gsh check`: checks if the current mission is completed. If so, a
   congratulation message is displayed, and the player starts the next mission.

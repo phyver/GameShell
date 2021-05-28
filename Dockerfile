@@ -3,7 +3,6 @@ from debian:stable
 RUN apt update
 RUN apt install --no-install-recommends --assume-yes \
     gettext-base \
-    python3 \
     man-db \
     psmisc \
     nano tree \

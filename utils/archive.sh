@@ -192,6 +192,7 @@ fi
 echo "removing unnecessary files"
 find "$GSH_ROOT" -name "*~" -print0 | xargs -0 rm -f
 find "$GSH_ROOT" -name "_*.sh" -print0 | xargs -0 rm -f
+find "$GSH_ROOT" -name "boxes-data.awk" -print0 | xargs -0 rm -f
 find "$GSH_ROOT" -name "Makefile" -print0 | xargs -0 rm -f
 find "$GSH_ROOT" -name "template.pot" -print0 | xargs -0 rm -f
 [ "$KEEP_TEST" -ne 1 ] && echo "remove tests" && find "$GSH_MISSIONS" -name "test.sh" -print0 | xargs -0 rm -f

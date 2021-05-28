@@ -31,7 +31,7 @@ new: i18n/template.pot
 		msgcat $(OPTIONS) --output i18n/$$lang.po i18n/template.pot
 
 clean:
-	rm -rf i18n/*~ locale GameShell.tgz GameShell.sh GameShell-save.sh
+	rm -rf i18n/*~ locale GameShell.tgz GameShell.sh GameShell-save.sh bin/boxes-data.awk
 	rm -rf .bashrc .bin .config .sbin .var World
 
 .PHONY: clean new FORCE

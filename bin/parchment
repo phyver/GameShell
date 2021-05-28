@@ -28,24 +28,6 @@ case "$P" in
   8) P="Parchment9";;
 esac
 echo
-if command -v python3 > /dev/null
-  # if available, use the python box8.py script
-then
-  if [ -z "$file" ]
-  then
-    python3 "$GSH_UTILS/box8.py" --center --box="$P"
-  else
-    python3 "$GSH_UTILS/box8.py" --center --box="$P" < "$file"
-  fi
-else
-  # if not, use the awk version
-  if [ -z "$file" ]
-  then
-    bash "$GSH_UTILS/box.sh" "$P"
-    rm -f "$tempfile"
-  else
-    bash "$GSH_UTILS/box.sh" "$P" "$file"
-  fi
-fi
+box.sh -b "$P" "$file"
 echo
 

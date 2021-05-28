@@ -46,11 +46,6 @@ Debian/Ubuntu, la seule vrai dépendance (à part `bash`) pour jouer est le
 Si vous souhaitez créer vos propres missions et les traduire, il faudra
 également installer le paquet `gettext`.
 
-Si disponible, `python3` est utilisé pour afficher des boites en ASCII-art
-("parchemins") autours de plusieurs messages. Sinon, `awk` est utilisé.
-Suivant votre version de `awk`, les caractères UTF-8 peuvent provoquer des
-erreurs d'alignement. Si c'est un problème, installez `python3`.
-
 Certaines missions ont des dépendances supplémentaires. Si elles ne sont pas
 satisfaites, ces missions seront simplement ignorées. Pour pouvoir lancer
 toutes les missions actuellement disponibles, il faut disposer des commandes
@@ -99,7 +94,7 @@ Nous n'avons pas beaucoup testé, mais GameShell semble fonctionner sous
 freeBSD si vous installez les dépendances :
 
 ````
-    $ pkg install bash gettext pstree wget python3
+    $ pkg install bash gettext pstree wget
 ````
 
 
