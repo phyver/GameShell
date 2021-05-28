@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _mission_init() {
-  if ! command -v maze1.sh &> /dev/null
+  if ! command -v generate_maze.sh &> /dev/null
   then
     local DUMMY_MISSION=$(realpath "$MISSION_DIR/../00_shared")
     DUMMY_MISSION=${DUMMY_MISSION#$GSH_MISSIONS/}
@@ -17,15 +17,9 @@ _mission_init() {
 
   mkdir -p "$maze"
 
-  local d
-  if ! command -v python3 &> /dev/null
-  then
-    d=$(maze1.sh "$maze" 2 1)
-  else
-    d=$(maze1.py "$maze" 3 2 1)
-  fi
+  local d=$(generate_maze.sh "$maze" 3 2 1)
 
-  echo "$(checksum "$d")" > "$maze/$d/$(gettext "copper_coin")"
+  echo "$(checksum "$d")" > "$d/OOOOO_$(gettext "copper_coin")_OOOOO"
   echo "$(checksum "$d")" > "$GSH_VAR/copper_coin"
 
   return 0

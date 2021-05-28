@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _mission_init() {
-  if ! command -v maze2.sh &> /dev/null
+  if ! command -v generate_maze.sh &> /dev/null
   then
     local DUMMY_MISSION=$(realpath "$MISSION_DIR/../00_shared")
     DUMMY_MISSION=${DUMMY_MISSION#$GSH_MISSIONS/}
@@ -17,16 +17,11 @@ _mission_init() {
 
   mkdir -p "$maze"
 
-  local file
-  if ! command -v python3 &> /dev/null
-  then
-    file=$(maze2.sh "$maze" 10 1 "$(gettext "stone")")
-  else
-    file=$(maze2.py "$maze" 3 10 1 "$(gettext "stone")")
-  fi
+  local file=$(generate_maze.sh "$maze" 3 10 1 "$(gettext "stone")")
+
   local R=$(basename "$file")
   local sum=$(checksum "$R $(gettext "diamond")")
-  echo "$R $(gettext "diamond") $sum" > "$maze/$file"
+  echo "$R $(gettext "diamond") $sum" > "$file"
   echo "$R $(gettext "diamond") $sum" > "$GSH_VAR/diamond"
 
   return 0
