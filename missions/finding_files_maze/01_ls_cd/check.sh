@@ -3,7 +3,7 @@
 _mission_check() {
     local maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 
-    local coin=$(find "$maze" -name "$(gettext "copper_coin")")
+    local coin=$(find "$maze" -name "*_$(gettext "copper_coin")_*")
 
     if [ -n "$coin" ]
     then
@@ -12,7 +12,7 @@ _mission_check() {
     fi
 
     local coin
-    coin=$(find "$GSH_CHEST" -maxdepth 1 -name "$(gettext "copper_coin")")
+    coin=$(find "$GSH_CHEST" -maxdepth 1 -name "*_$(gettext "copper_coin")_*")
     if [ -z "$coin" ]
     then
         echo "$(gettext "There is no copper coin in your chest!")"
