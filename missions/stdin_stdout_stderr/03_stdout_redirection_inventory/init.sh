@@ -27,4 +27,5 @@ _mission_init() {
 
 }
 
-_mission_init | progress_bar
+export -f _mission_init
+animate _mission_init

@@ -1,0 +1,217 @@
+#!/usr/bin/env bash
+
+PATH=$PATH:$(dirname "$0")
+
+. gettext.sh
+
+get_design() {
+  case "$1" in
+    0 | bat) design=bat ;;
+    1 | snake) design=snake ;;
+    2 | caterpillar) design=caterpillar ;;
+    3 | snail) design=snail ;;
+    4 | spider) design=spider ;;
+    5 | fish-back-and-forth) design=fish-back-and-forth ;;
+    6 | duck) design=duck ;;
+    7 | centipede) design=centipede ;;
+    8 | ant) design=ant ;;
+    9 | fish) design=fish ;;
+    10 | large-fish) design=large-fish ;;
+    11 | dots) design=dots ;;
+    12 | rotation) design=rotation ;;
+  esac
+}
+
+init_data() {
+  design=$1
+
+  case $design in
+    "dots")
+      # simple dots
+      STR=('.')
+      PRE=''
+      POST='\n'
+      MSG=''
+      ;;
+
+    "rotation")
+      # rotating bar
+      STR=('\b|' '\b/' '\b-' '\b\\')
+      PRE='-'
+      POST='\b \b'
+      MSG=""
+      ;;
+
+    "bat")
+      # flying bat
+      STR=('\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/'
+           '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
+      PRE='   '
+      POST='\b\b\b   \r'
+      MSG="$(gettext "While you are waiting, a bat flies by...")\\n"
+      ;;
+
+    "snake")
+      # slithering snake
+      STR=('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b __/\__/\__/\<:>'
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b _/\__/\__/\_<:>'
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b /\__/\__/\__<:>'
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>')
+      PRE='\__/\__/\__/<:>'
+      POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b               \r'
+      MSG="$(gettext "While you are waiting, a snake slithers by...")\\n"
+      ;;
+
+    "caterpillar")
+      STR=('\b\b\b\b\b\b\b\b\b ___^___@'
+           '\b\b\b\b\b\b\b\b __/\__@'
+           '\b\b\b\b\b\b\b _/^\_@'
+           '\b\b\b\b\b\b __/\__@'
+           '\b\b\b\b\b\b\b ___^___@'
+           '\b\b\b\b\b\b\b\b\b ________@')
+      PRE='_______@"'
+      POST='\b\b\b\b\b\b\b\b\b         \r'
+      MSG="$(gettext "While you are waiting, a caterpillar crawls by...")\\n"
+      ;;
+
+    "snail")
+      # Snail
+      STR=('\b\b\b\b\b\b\b_(@)__/"'
+           '\b\b\b\b\b\b\b\b__(@)_/"'
+           '\b\b\b\b\b\b\b\b _(@)_/"')
+      PRE='_(O)_/"'
+      POST='\b\b\b\b\b\b\b\b        \r'
+      MSG="$(gettext "While you are waiting, a snail goes by...")\\n"
+      ;;
+
+    "spider")
+      STR=(
+        '\b\b\b\b\b //o\\\\'
+        '\b\b\b\b\b //o\\\\'
+        '\b\b\b\b\b///o\\'
+        '\b\b\b\b\b///o\\'
+      )
+      PRE='//o\\\\'
+      POST='\b\b\b\b\b     \r'
+      MSG="$(gettext "While you are waiting, a spider crawls by...")\\n"
+      ;;
+
+    "duck")
+      STR=(
+        '\b\b\b\b\\_@<'
+        '\b\b\b\b \\_@='
+        '\b\b\b\b\\_@='
+        '\b\b\b\b\\_@<')
+      PRE='\\_@<'
+      POST='\b\b\b\b\b     \r'
+      MSG="$(gettext "While you are waiting, a duck swims by...")\\n"
+      ;;
+
+    "fish-back-and-forth")
+      # Swimming fish (small) going back and forth
+      STR=('\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>'
+           '\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>'
+           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><'
+           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><'
+           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><'
+           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><')
+      PRE='><>'
+      POST='\b\b\b   \r'
+      MSG="$(gettext "While you are waiting, you see a fish swimming in circles...")\\n"
+      ;;
+
+    "centipede")
+      # crawling centipede
+      STR=('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b ,`,`,`,`,`,`,`(:)'
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b`,`,`,`,`,`,`,(:)')
+      PRE='`,`,`,`,`,`,`,(:)'
+      POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b                  \r'
+      MSG="$(gettext "While you are waiting, a centipede crawls by...")\\n"
+      ;;
+
+    "ant")
+      # crawling ant
+      STR=('\b\b\b\b\b >|<()')
+      PRE='>|<()'
+      POST='\b\b\b\b\b     \r'
+      MSG="$(gettext "While you are waiting, an ant crawls by...")\\n"
+      ;;
+
+    "fish")
+      # Swimming fish (small)
+      STR=('\b\b\b ><>')
+      PRE='><>'
+      POST='\b\b\b   \r'
+      MSG="$(gettext "While you are waiting, a fish swims by...")\\n"
+      ;;
+
+    "large-fish")
+      # Swimming fish (large)
+      STR=("\b\b\b\b\b\b\b\b ><(((('>")
+      PRE="><(((('>"
+      POST='\b\b\b\b\b\b\b\b        \r'
+      MSG="$(gettext "While you are waiting, a large fish swims by...")\\n"
+      ;;
+
+    *)
+      echo "Unknown progress kind."
+      return 1
+      ;;
+  esac
+}
+
+animation() {
+  # Hide cursor.
+  tput civis 2> /dev/null
+  # the additional \b\b\b   \b\b\b is used to erase the possible ^C
+  trap 'tput cnorm 2> /dev/null;printf "\b\b\b   \b\b\b$POST";exit 1' INT TERM QUIT HUP
+
+  # Print initial message.
+  printf "$MSG"
+
+  # Make progress for each character read on [stdin].
+  printf "$PRE"
+  while true
+  do
+    for s in "${STR[@]}"
+    do
+      printf "$s"
+      # Slow down the animation a little bit.
+      sleep .2
+    done
+  done
+  printf "$POST"
+}
+
+main() {
+
+  get_design "$1"
+  if [ -z "$design" ]
+  then
+    n=$(RANDOM)
+    get_design "$((n%7))"     # only modulo 7 to get the "interesting" animations
+  else
+    shift
+  fi
+
+  if [ -n "$GSH_DEBUG" ]
+  then
+    eval "$@"
+  else
+    init_data "$design"
+    animation &
+    PID=$!
+    trap "kill $PID" INT TERM QUIT HUP
+
+    LOG=$(mktemp)
+    eval "$@" >/dev/null 2>"$LOG"
+    r=$?
+    kill $PID
+    wait
+    cat "$LOG" >&2
+    rm -f "$LOG"
+    return $r
+  fi
+}
+
+main "$@"

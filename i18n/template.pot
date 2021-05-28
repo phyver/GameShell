@@ -3,83 +3,144 @@ msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
-#: bin/admin_mode:17
-msgid   "Error: you are not allowed to run this command."
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
 msgstr  ""
 
-#: bin/admin_mode:26
-msgid   "password:"
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
 msgstr  ""
 
-#: bin/admin_mode:37
-msgid   "Error: wrong password"
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
 msgstr  ""
 
-#: bin/progress_bar:58
-msgid   "While you are waiting, a bat flies by..."
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
 msgstr  ""
 
-#: bin/progress_bar:69
-msgid   "While you are waiting, a snake slithers by..."
-msgstr  ""
-
-#: bin/progress_bar:78
-msgid   "While you are waiting, a centipede crawls by..."
-msgstr  ""
-
-#: bin/progress_bar:86
-msgid   "While you are waiting, an ant crawls by..."
-msgstr  ""
-
-#: bin/progress_bar:94
-msgid   "While you are waiting, a fish swims by..."
-msgstr  ""
-
-#: bin/progress_bar:107
-msgid   "While you are waiting, you see a fish swimming in circles..."
-msgstr  ""
-
-#: bin/progress_bar:115
-msgid   "While you are waiting, a large fish swims by..."
-msgstr  ""
-
-#: bin/progress_bar:125
-msgid   "While you are waiting, a snail goes by..."
-msgstr  ""
-
-#: bin/progress_bar:137
-msgid   "While you are waiting, a caterpillar crawls by..."
-msgstr  ""
-
-#: bin/progress_bar:148
-msgid   "While you are waiting, a duck swims by..."
-msgstr  ""
-
-#: bin/progress_bar:160
-msgid   "While you are waiting, a spider crawls by..."
-msgstr  ""
-
-#: lib/gameshell.sh:48
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
 msgstr  ""
 
-#: lib/gameshell.sh:58 lib/gameshell.sh:132 lib/gameshell.sh:236
-#: lib/gameshell.sh:308 lib/gameshell.sh:330 lib/gameshell.sh:360
-#: lib/gameshell.sh:441 lib/gameshell.sh:513
+#, sh-format
+msgid   "$GSH_ROOT/i18n/start-help/en.txt"
+msgstr  ""
+
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
+
+#, sh-format
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+#, sh-format
+msgid   "$nb_failed_tests failures out of $nb_tests tests"
+msgstr  ""
+
+#, sh-format
+msgid   "$nb_tests successful tests"
+msgstr  ""
+
+#, sh-format
+msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
+msgstr  ""
+
+#, sh-format
+msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
+msgstr  ""
+
+msgid   "Error: a least one base function is not working properly.\n"
+        "Aborting!"
+msgstr  ""
+
 #, sh-format
 msgid   "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
 msgstr  ""
 
-#: lib/gameshell.sh:63
-msgid   "Error: the command 'gsh reset' shouldn't be run inside a subshell!"
+#, sh-format
+msgid   "Error: invalid option: '-$OPTARG'"
 msgstr  ""
 
-#: lib/gameshell.sh:74
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't exist!"
+msgstr  ""
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't have a test script."
+msgstr  ""
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't have an auto script."
+msgstr  ""
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
+msgstr  ""
+
+msgid   "Error: no mission was found!\n"
+        "Aborting."
+msgstr  ""
+
+msgid   "Error: the 'goto' command requires a mission number as argument."
+msgstr  ""
+
 msgid   "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!"
 msgstr  ""
 
-#: lib/gameshell.sh:92
+msgid   "Error: the command 'gsh reset' shouldn't be run inside a subshell!"
+msgstr  ""
+
+msgid   "Error: this mission was initialized in a subshell.\n"
+        "You should run the command\n"
+        "    $ gsh reset\n"
+        "to make sure the mission is initialized properly."
+msgstr  ""
+
+msgid   "Error: this option is only available from an executable archive!"
+msgstr  ""
+
+#, sh-format
+msgid   "Error: unknown gsh command '$cmd'.\n"
+        "Use one of the following commands:"
+msgstr  ""
+
+msgid   "Error: wrong password"
+msgstr  ""
+
+msgid   "Error: you are not allowed to run this command."
+msgstr  ""
+
+msgid   "Is this information correct? [Y/n]"
+msgstr  ""
+
+#, sh-format
+msgid   "Mission $MISSION_NB has been cancelled."
+msgstr  ""
+
+# abbreviation for "no" (uppercase)
+msgid   "N"
+msgstr  ""
+
+msgid   "Player's email:"
+msgstr  ""
+
+msgid   "Player's name:"
+msgstr  ""
+
+msgid   "Press Enter to continue."
+msgstr  ""
+
+#, sh-format
+msgid   "Sorry, mission $MISSION_NB hasn't been completed."
+msgstr  ""
+
+#, sh-format
+msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
+        "Do you want to remove it and start a new game? [y/N]"
+msgstr  ""
+
 msgid   "There are stopped jobs in your session.\n"
         "Those processes will be terminated.\n"
         "You can get the list of those jobs with\n"
@@ -87,192 +148,71 @@ msgid   "There are stopped jobs in your session.\n"
         "Do you still want to quit? [y/n]"
 msgstr  ""
 
-# abbreviation for "no" (lowercase)
-#: lib/gameshell.sh:97 start.sh:116
-msgid   "n"
-msgstr  ""
-
-# abbreviation for "yes" (lowercase)
-#: lib/gameshell.sh:100 start.sh:113 start.sh:167
-msgid   "y"
-msgstr  ""
-
-#: lib/gameshell.sh:146
-#, sh-format
-msgid   "$MISSION_DIR/goal/en.txt"
-msgstr  ""
-
-#: lib/gameshell.sh:173
-msgid   "completed"
-msgstr  ""
-
-#: lib/gameshell.sh:177
-msgid   "failed"
-msgstr  ""
-
-#: lib/gameshell.sh:181
-msgid   "skipped"
-msgstr  ""
-
-#: lib/gameshell.sh:185
-msgid   "cancelled"
-msgstr  ""
-
-#: lib/gameshell.sh:221 start.sh:376
-msgid   "Press Enter to continue."
-msgstr  ""
-
-#: lib/gameshell.sh:244
-#, sh-format
-msgid   "Error: mission $MISSION_NB doesn't exist!"
-msgstr  ""
-
-#: lib/gameshell.sh:268
-#, sh-format
-msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
-msgstr  ""
-
-#: lib/gameshell.sh:280
-msgid   "Error: this mission was initialized in a subshell.\n"
-        "You should run the command\n"
-        "    $ gsh reset\n"
-        "to make sure the mission is initialized properly."
-msgstr  ""
-
-#: lib/gameshell.sh:295
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
-msgstr  ""
-
-#: lib/gameshell.sh:297
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
-msgstr  ""
-
-#: lib/gameshell.sh:318
-#, sh-format
-msgid   "Mission $MISSION_NB has been cancelled."
-msgstr  ""
-
-#: lib/gameshell.sh:338
-#, sh-format
-msgid   "Error: mission $MISSION_NB doesn't have an auto script."
-msgstr  ""
-
-#: lib/gameshell.sh:372
-#, sh-format
-msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
-msgstr  ""
-
-#: lib/gameshell.sh:400
-#, sh-format
-msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  ""
-
-#: lib/gameshell.sh:415
 msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
         "You should use the command\n"
         "  $ gsh reset"
 msgstr  ""
 
-#: lib/gameshell.sh:424
-#, sh-format
-msgid   "Sorry, mission $MISSION_NB hasn't been completed."
+msgid   "While you are waiting, a bat flies by..."
 msgstr  ""
 
-#: lib/gameshell.sh:460
-#, sh-format
-msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
+msgid   "While you are waiting, a caterpillar crawls by..."
 msgstr  ""
 
-#: lib/gameshell.sh:475 lib/gameshell.sh:480 lib/gameshell.sh:503
+msgid   "While you are waiting, a centipede crawls by..."
+msgstr  ""
+
+msgid   "While you are waiting, a duck swims by..."
+msgstr  ""
+
+msgid   "While you are waiting, a fish swims by..."
+msgstr  ""
+
+msgid   "While you are waiting, a large fish swims by..."
+msgstr  ""
+
+msgid   "While you are waiting, a snail goes by..."
+msgstr  ""
+
+msgid   "While you are waiting, a snake slithers by..."
+msgstr  ""
+
+msgid   "While you are waiting, a spider crawls by..."
+msgstr  ""
+
+msgid   "While you are waiting, an ant crawls by..."
+msgstr  ""
+
+msgid   "While you are waiting, you see a fish swimming in circles..."
+msgstr  ""
+
+# abbreviation for "yes" (uppercase)
+msgid   "Y"
+msgstr  ""
+
+msgid   "cancelled"
+msgstr  ""
+
+msgid   "completed"
+msgstr  ""
+
+msgid   "failed"
+msgstr  ""
+
+# abbreviation for "no" (lowercase)
+msgid   "n"
+msgstr  ""
+
+msgid   "password:"
+msgstr  ""
+
+msgid   "skipped"
+msgstr  ""
+
 #, sh-format
 msgid   "test $nb_tests failed"
 msgstr  ""
 
-#: lib/gameshell.sh:521
-#, sh-format
-msgid   "Error: mission $MISSION_NB doesn't have a test script."
-msgstr  ""
-
-#: lib/gameshell.sh:532
-#, sh-format
-msgid   "$nb_tests successful tests"
-msgstr  ""
-
-#: lib/gameshell.sh:537
-#, sh-format
-msgid   "$nb_failed_tests failures out of $nb_tests tests"
-msgstr  ""
-
-#: lib/gameshell.sh:546
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
-msgstr  ""
-
-#: lib/gameshell.sh:550
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
-msgstr  ""
-
-#: lib/gameshell.sh:634
-msgid   "Error: the 'goto' command requires a mission number as argument."
-msgstr  ""
-
-#: lib/gameshell.sh:673
-#, sh-format
-msgid   "Error: unknown gsh command '$cmd'.\n"
-        "Use one of the following commands:"
-msgstr  ""
-
-#: lib/init.sh:49
-msgid   "Error: a least one base function is not working properly.\n"
-        "Aborting!"
-msgstr  ""
-
-#: start.sh:12
-#, sh-format
-msgid   "$GSH_ROOT/i18n/start-help/en.txt"
-msgstr  ""
-
-#: start.sh:71
-msgid   "Error: this option is only available from an executable archive!"
-msgstr  ""
-
-#: start.sh:78
-#, sh-format
-msgid   "Error: invalid option: '-$OPTARG'"
-msgstr  ""
-
-#: start.sh:91
-msgid   "Player's name:"
-msgstr  ""
-
-#: start.sh:97
-msgid   "Player's email:"
-msgstr  ""
-
-#: start.sh:110
-msgid   "Is this information correct? [Y/n]"
-msgstr  ""
-
-# abbreviation for "yes" (uppercase)
-#: start.sh:113 start.sh:167
-msgid   "Y"
-msgstr  ""
-
-# abbreviation for "no" (uppercase)
-#: start.sh:116
-msgid   "N"
-msgstr  ""
-
-#: start.sh:164
-#, sh-format
-msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
-        "Do you want to remove it and start a new game? [y/N]"
-msgstr  ""
-
-#: start.sh:365
-msgid   "Error: no mission was found!\n"
-        "Aborting."
+# abbreviation for "yes" (lowercase)
+msgid   "y"
 msgstr  ""

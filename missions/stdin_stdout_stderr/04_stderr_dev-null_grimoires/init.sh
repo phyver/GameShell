@@ -45,4 +45,5 @@ _mission_init() ( #subshell to avoid changing directory
   grep -il "gsh" * 2> /dev/null | sort > $GSH_VAR/list_grimoires_GSH
 )
 
-_mission_init | progress_bar
+export -f _mission_init
+animate _mission_init
