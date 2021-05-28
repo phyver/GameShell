@@ -11,3 +11,4 @@ locale/
 *~
 GameShell.sh
 GameShell-save.sh
+boxes-data.awk

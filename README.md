@@ -55,12 +55,6 @@ only dependency (besides `bash`) required to play is the package `gettext-base`.
 If you want create your own missions and translate them, you'll need the full
 `gettext` package as well.
 
-If available, `python3` is used to display ASCII-art boxes ("parchment")
-around some messages. If not, `awk` is used instead, but depending on your
-`awk` version, UTF-8 characters might cause glitches in alignements of
-borders. If that's a problem, install `python3`.
-
-
 Some missions have additional dependencies. If they are not met, those
 missions are ignored. To run all the currently available missions, you need
 the following
@@ -110,7 +104,7 @@ We haven't tested it a lot, but it should run on freeBSD once you install the
 dependencies:
 
 ````
-    $ pkg install bash gettext pstree wget python3
+    $ pkg install bash gettext pstree wget
 ````
 
 
