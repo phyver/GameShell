@@ -39,4 +39,4 @@ _mission_init() {
   return 0
 }
 
-. animate.sh _mission_init
+. progress_bar.sh _mission_init

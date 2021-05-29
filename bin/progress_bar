@@ -1,24 +1,21 @@
 #!/usr/bin/env bash
 
-PATH=$PATH:$(dirname "$0")
-
-. gettext.sh
-
 get_design() {
   case "$1" in
-    0 | bat) design=bat ;;
-    1 | snake) design=snake ;;
-    2 | caterpillar) design=caterpillar ;;
-    3 | snail) design=snail ;;
-    4 | spider) design=spider ;;
-    5 | fish-back-and-forth) design=fish-back-and-forth ;;
-    6 | duck) design=duck ;;
-    7 | centipede) design=centipede ;;
-    8 | ant) design=ant ;;
-    9 | fish) design=fish ;;
-    10 | large-fish) design=large-fish ;;
-    11 | dots) design=dots ;;
-    12 | rotation) design=rotation ;;
+    0 | bat)                  design=bat ;;
+    1 | snake)                design=snake ;;
+    2 | caterpillar)          design=caterpillar ;;
+    3 | snail)                design=snail ;;
+    4 | spider)               design=spider ;;
+    5 | fish-back-and-forth)  design=fish-back-and-forth ;;
+    6 | duck)                 design=duck ;;
+    7 | centipede)            design=centipede ;;
+    8 | ant)                  design=ant ;;
+    9 | fish)                 design=fish ;;
+    10 | large-fish)          design=large-fish ;;
+    11 | dots)                design=dots ;;
+    12 | bar)                 design=bar ;;
+    13 | rotation)            design=rotation ;;
   esac
 }
 
@@ -31,6 +28,14 @@ init_data() {
       STR=('.')
       PRE=''
       POST='\n'
+      MSG=''
+      ;;
+
+    "bar")
+      # simple dots
+      STR=('=')
+      PRE='['
+      POST=']\n'
       MSG=''
       ;;
 
@@ -185,21 +190,40 @@ animation() {
 
 main() {
 
+  design=RANDOM
+  if [ "$1" = "-b" ]
+  then
+    design=$2
+    shift 2
+  fi
+
+  if [ -z "$*" ]
+  then
+    echo "usage: $0 [-d DESIGN] PID" >&2
+    cat <<EOS >&2
+where DESIGN is one of bat, snake, caterpillar, snail, spider,
+fish-back-and-forth, duck, centipede, ant, fish, large-fish, dots, bar,
+rotation
+EOS
+    exit 1
+  fi
+
   PID=$1
-  shift
-  get_design "$1"
-  if [ -z "$design" ]
+
+  get_design "$design"
+  if [ "$design" == RANDOM ]
   then
     n=$(RANDOM)
     get_design "$((n%7))"     # only modulo 7 to get the "interesting" animations
-  else
-    shift
   fi
 
   init_data "$design"
-  animation
-  printf "$POST"
-  tput cnorm 2> /dev/null
+  if kill -0 $PID 2>/dev/null
+  then
+    animation
+    printf "$POST"
+    tput cnorm 2> /dev/null
+  fi
 }
 
 main "$@"
