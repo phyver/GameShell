@@ -178,13 +178,15 @@ animation() {
       printf "$s"
       # Slow down the animation a little bit.
       sleep .2
+      kill -0 $PID 2>/dev/null || return
     done
   done
-  printf "$POST"
 }
 
 main() {
 
+  PID=$1
+  shift
   get_design "$1"
   if [ -z "$design" ]
   then
@@ -194,24 +196,10 @@ main() {
     shift
   fi
 
-  if [ -n "$GSH_DEBUG" ]
-  then
-    eval "$@"
-  else
-    init_data "$design"
-    animation &
-    PID=$!
-    trap "kill $PID" INT TERM QUIT HUP
-
-    LOG=$(mktemp)
-    eval "$@" >/dev/null 2>"$LOG"
-    r=$?
-    kill $PID
-    wait
-    cat "$LOG" >&2
-    rm -f "$LOG"
-    return $r
-  fi
+  init_data "$design"
+  animation
+  printf "$POST"
+  tput cnorm 2> /dev/null
 }
 
 main "$@"

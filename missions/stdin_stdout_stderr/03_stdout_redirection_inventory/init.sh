@@ -27,5 +27,4 @@ _mission_init() {
 
 }
 
-export -f _mission_init
-animate _mission_init
+_mission_init >/dev/null & . animate.sh

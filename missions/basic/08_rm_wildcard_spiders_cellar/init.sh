@@ -37,5 +37,5 @@ _mission_init() {
   find "$CELLAR" -maxdepth 1 -name "*_$(gettext "bat")_*" | sort | checksum > "$GSH_VAR/bats"
   return 0
 }
-export -f _mission_init
-animate _mission_init
+
+_mission_init >/dev/null & . animate.sh
