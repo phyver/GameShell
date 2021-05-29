@@ -3,22 +3,15 @@ GameShell: a "game" to learn the Unix shell
 
 ![Illustration inspired by the game](art/illustration-small.png)
 
-GameShell (gsh) is the outcome of thinking how to best teach the basics (and
-slightly more) of using a shell to first year students at the université
-Savoie Mont Blanc.
+Teaching first-year university students or high schoolers to use a Unix shell is not always the easiest or most entertaining of tasks.
+GameShell was devised as a tool to help students at the [Université Savoie Mont Blanc](https://univ-smb.fr) to engage with a *real* shell, in a way that encourages learning while also having fun. 
 
-The original idea, due to Rodolphe Lepigre, was to run a standard bash session
-with an appropriate configuration file that defined "missions" which would be
-"checked" in order to advance in the game.
+The original idea, due to Rodolphe Lepigre, was to run a standard bash session with an appropriate configuration file that defined "missions" which would be "checked" in order to progress through the game.
 
 Here is the result...
 
-Do not hesitate to send us you remarks, questions or suggestions about
-GameShell. We are particularly interested in any new mission you might create!
-
-
-GameShell released under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
-
+Feel free to send us your remarks, questions or suggestions by opening [issues](https://github.com/phyver/GameShell/issues) or submitting [pull requests](https://github.com/phyver/GameShell/pulls).
+We are particularly interested in any new missions you might create!
 
 NOTE
 ====
@@ -45,7 +38,7 @@ pierre.hyvernat@univ-smb.fr
 
 
 
-Dépendencies
+Dependencies
 ------------
 
 GameShell should (??) work on any standard Linux system. On Debian/Ubuntu, the
@@ -80,11 +73,11 @@ need to run GameShell without problems.
 
 #### macOS
 
-It should be possible to run GameShell on macOS, but we don't ourselves use
+It should be possible to run GameShell on macOS, but we don't personally use
 macOS. Contact us if you have problems running GameShell and are willing to
 help us test it.
 
-To install the dependencies, the easiest is probably to use the package
+To install the dependencies, the easiest way is probably to use the package
 manager [homebrew](https://brew.sh/index_fr) :
 
 ````
@@ -100,7 +93,7 @@ and to install the dependencies with
 
 #### BSD ???
 
-We haven't tested it a lot, but it should run on freeBSD once you install the
+We haven't tested it much, but it should run on freeBSD once you install the
 dependencies:
 
 ````
@@ -150,9 +143,8 @@ First clone the repository, and run the `start.sh` script
 
 ### 3/ from an executable archive
 
-That's the easiest to distribute GameShell to a group of students. Once you've
-cloned the repository, create an executable archive with the `archive.sh`
-script:
+This is the easiest way to distribute GameShell to a group of students. Once you've
+cloned the repository, create an executable archive with the `archive.sh` script:
 
     $ cd GameShell
     $ ./utils/archive.sh
