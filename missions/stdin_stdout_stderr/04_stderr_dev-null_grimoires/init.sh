@@ -45,4 +45,4 @@ _mission_init() ( #subshell to avoid changing directory
   grep -il "gsh" * 2> /dev/null | sort > $GSH_VAR/list_grimoires_GSH
 )
 
-_mission_init >/dev/null & . animate.sh
+. animate.sh _mission_init

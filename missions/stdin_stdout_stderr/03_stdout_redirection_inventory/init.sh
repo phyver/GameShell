@@ -27,4 +27,4 @@ _mission_init() {
 
 }
 
-_mission_init >/dev/null & . animate.sh
+. animate.sh _mission_init
