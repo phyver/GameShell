@@ -38,4 +38,5 @@ _mission_init() {
 
   return 0
 }
-_mission_init | progress_bar
+
+. progress_bar.sh _mission_init

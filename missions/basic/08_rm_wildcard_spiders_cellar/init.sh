@@ -37,4 +37,5 @@ _mission_init() {
   find "$CELLAR" -maxdepth 1 -name "*_$(gettext "bat")_*" | sort | checksum > "$GSH_VAR/bats"
   return 0
 }
-_mission_init | progress_bar
+
+. progress_bar.sh _mission_init

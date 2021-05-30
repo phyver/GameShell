@@ -134,7 +134,7 @@ _confirm_passport() {
   done
 }
 
-progress_bar() {
+progress() {
   # hide cursor
   tput civis 2> /dev/null
   trap "tput cnorm 2> /dev/null;echo;exit 1" INT TERM QUIT
@@ -154,7 +154,7 @@ progress_bar() {
   fi
 }
 
-progress_bar_finish() {
+progress_finish() {
   # tail -c+$((progress_I*progress_delta)) $progress_filename => not POSIX compliant
   dd if="$progress_filename" bs="$progress_delta" skip="$progress_I" 2> /dev/null
   unset progress_filename progress_delta progress_I
@@ -368,7 +368,7 @@ Do you want to remove it and start a new game? [y/N]') "
     then
       printf "."
     else
-      progress_bar
+      progress
     fi
 
     [ -z "$MISSION_SUB_NB" ] && MISSION_NB=$((MISSION_NB+1))
@@ -385,7 +385,7 @@ Aborting.")"
     [ "$GSH_VERBOSE_DEBUG" = true ] && echo
     echo "[DONE]"
   else
-    progress_bar_finish
+    progress_finish
     echo
     printf "$(gettext "Press Enter to continue.")"
     stty -echo 2>/dev/null    # ignore errors, in case input comes from a redirection
