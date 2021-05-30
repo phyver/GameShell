@@ -1,3 +1,4 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, fuzzy
 msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
