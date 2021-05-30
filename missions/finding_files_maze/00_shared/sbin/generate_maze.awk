@@ -56,8 +56,11 @@ BEGIN {
         printf(leaf_content) > path;
         close(path);
       } else {
-        system("mkdir -p " path);
-        # FIXME: that's quite slow!
+        print path | "xargs mkdir -p";
+        # used to be
+        # system("mkdir -p " path);
+        # close("mkdir -p " path);
+        # but it was quite slow
       }
       if (int(rand()*nb_remaining_path) < nb_random_path) {
         print path;
@@ -69,8 +72,11 @@ BEGIN {
       for (i=0; i<current_level; i++) {
         path = path "/" PATH[i];
       }
-      system("mkdir -p " path);
-      # FIXME: that's quite slow!
+      print path | "xargs mkdir -p";
+      # used to be
+      # system("mkdir -p " path);
+      # close("mkdir -p " path);
+      # but it was quite slow
     }
   }
 
