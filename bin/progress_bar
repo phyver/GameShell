@@ -1,36 +1,26 @@
 #!/usr/bin/env bash
 
-#FIXME, can we convert that to POSIX sh?
-#The main problem is the use of arrays to define designs...
+get_design() {
+  case "$1" in
+    0 | bat)                  design=bat ;;
+    1 | snake)                design=snake ;;
+    2 | caterpillar)          design=caterpillar ;;
+    3 | snail)                design=snail ;;
+    4 | spider)               design=spider ;;
+    5 | fish-back-and-forth)  design=fish-back-and-forth ;;
+    6 | duck)                 design=duck ;;
+    7 | centipede)            design=centipede ;;
+    8 | ant)                  design=ant ;;
+    9 | fish)                 design=fish ;;
+    10 | large-fish)          design=large-fish ;;
+    11 | dots)                design=dots ;;
+    12 | bar)                 design=bar ;;
+    13 | rotation)            design=rotation ;;
+  esac
+}
 
-# Print a progress bar. Each character received on [stdin] advances the
-# animation. The animation stops when the end of file is reached. If no
-# argument is provided, a random animal-themed progress bar is picked.
-# Otherwise, the name of a specific progress bar can be passed as the
-# first (and only) argument. Examples of value are 'bat' or 'snake'.
-progress_bar () {
-
-  if [ -n "$1" ]
-  then
-    # Use specified progress bar.
-    design="$1"
-  else
-    case "$((RANDOM%7))" in        # only modulo 7, to get an "interesting" design
-      0) design=bat ;;
-      1) design=snake ;;
-      2) design=caterpillar ;;
-      3) design=snail ;;
-      4) design=spider ;;
-      5) design=fish-back-and-forth ;;
-      6) design=duck ;;
-      7) design=centipede ;;
-      8) design=ant ;;
-      9) design=fish ;;
-      10) design=large-fish ;;
-      11) design=dots ;;
-      12) design=rotation ;;
-    esac
-  fi
+init_data() {
+  design=$1
 
   case $design in
     "dots")
@@ -39,6 +29,16 @@ progress_bar () {
       PRE=''
       POST='\n'
       MSG=''
+      DELAY=0.2
+      ;;
+
+    "bar")
+      # simple dots
+      STR=('=')
+      PRE='['
+      POST=']\n'
+      MSG=''
+      DELAY=0.2
       ;;
 
     "rotation")
@@ -47,6 +47,7 @@ progress_bar () {
       PRE='-'
       POST='\b \b'
       MSG=""
+      DELAY=0.1
       ;;
 
     "bat")
@@ -55,7 +56,8 @@ progress_bar () {
            '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
       PRE='   '
       POST='\b\b\b   \r'
-      MSG="$(gettext "While you are waiting, a bat flies by...")\n"
+      MSG="$(gettext "While you are waiting, a bat flies by...")\\n"
+      DELAY=0.1
       ;;
 
     "snake")
@@ -66,32 +68,57 @@ progress_bar () {
            '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>')
       PRE='\__/\__/\__/<:>'
       POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b               \r'
-      MSG="$(gettext "While you are waiting, a snake slithers by...")\n"
+      MSG="$(gettext "While you are waiting, a snake slithers by...")\\n"
+      DELAY=0.2
       ;;
 
-    "centipede")
-      # crawling centipede
-      STR=('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b ,`,`,`,`,`,`,`(:)'
-           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b`,`,`,`,`,`,`,(:)')
-      PRE='`,`,`,`,`,`,`,(:)'
-      POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b                  \r'
-      MSG="$(gettext "While you are waiting, a centipede crawls by...")\n"
+    "caterpillar")
+      STR=('\b\b\b\b\b\b\b\b\b ___^___@'
+           '\b\b\b\b\b\b\b\b __/\__@'
+           '\b\b\b\b\b\b\b _/^\_@'
+           '\b\b\b\b\b\b __/\__@'
+           '\b\b\b\b\b\b\b ___^___@'
+           '\b\b\b\b\b\b\b\b\b ________@')
+      PRE='_______@"'
+      POST='\b\b\b\b\b\b\b\b\b         \r'
+      MSG="$(gettext "While you are waiting, a caterpillar crawls by...")\\n"
+      DELAY=0.2
       ;;
 
-    "ant")
-      # crawling ant
-      STR=('\b\b\b\b\b >|<()')
-      PRE='>|<()'
+    "snail")
+      # Snail
+      STR=('\b\b\b\b\b\b\b_(@)__/"'
+           '\b\b\b\b\b\b\b\b__(@)_/"'
+           '\b\b\b\b\b\b\b\b _(@)_/"')
+      PRE='_(O)_/"'
+      POST='\b\b\b\b\b\b\b\b        \r'
+      MSG="$(gettext "While you are waiting, a snail goes by...")\\n"
+      DELAY=0.3
+      ;;
+
+    "spider")
+      STR=(
+        '\b\b\b\b\b //o\\\\'
+        '\b\b\b\b\b //o\\\\'
+        '\b\b\b\b\b///o\\'
+        '\b\b\b\b\b///o\\'
+      )
+      PRE='//o\\\\'
       POST='\b\b\b\b\b     \r'
-      MSG="$(gettext "While you are waiting, an ant crawls by...")\n"
+      MSG="$(gettext "While you are waiting, a spider crawls by...")\\n"
+      DELAY=0.2
       ;;
 
-    "fish")
-      # Swimming fish (small)
-      STR=('\b\b\b ><>')
-      PRE='><>'
-      POST='\b\b\b   \r'
-      MSG="$(gettext "While you are waiting, a fish swims by...")\n"
+    "duck")
+      STR=(
+        '\b\b\b\b\\_@<'
+        '\b\b\b\b \\_@='
+        '\b\b\b\b\\_@='
+        '\b\b\b\b\\_@<')
+      PRE='\\_@<'
+      POST='\b\b\b\b\b     \r'
+      MSG="$(gettext "While you are waiting, a duck swims by...")\\n"
+      DELAY=0.1
       ;;
 
     "fish-back-and-forth")
@@ -104,7 +131,36 @@ progress_bar () {
            '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><')
       PRE='><>'
       POST='\b\b\b   \r'
-      MSG="$(gettext "While you are waiting, you see a fish swimming in circles...")\n"
+      MSG="$(gettext "While you are waiting, you see a fish swimming in circles...")\\n"
+      DELAY=0.2
+      ;;
+
+    "centipede")
+      # crawling centipede
+      STR=('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b ,`,`,`,`,`,`,`(:)'
+           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b`,`,`,`,`,`,`,(:)')
+      PRE='`,`,`,`,`,`,`,(:)'
+      POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b                  \r'
+      MSG="$(gettext "While you are waiting, a centipede crawls by...")\\n"
+      DELAY=0.2
+      ;;
+
+    "ant")
+      # crawling ant
+      STR=('\b\b\b\b\b >|<()')
+      PRE='>|<()'
+      POST='\b\b\b\b\b     \r'
+      MSG="$(gettext "While you are waiting, an ant crawls by...")\\n"
+      DELAY=0.1
+      ;;
+
+    "fish")
+      # Swimming fish (small)
+      STR=('\b\b\b ><>')
+      PRE='><>'
+      POST='\b\b\b   \r'
+      MSG="$(gettext "While you are waiting, a fish swims by...")\\n"
+      DELAY=0.2
       ;;
 
     "large-fish")
@@ -112,82 +168,76 @@ progress_bar () {
       STR=("\b\b\b\b\b\b\b\b ><(((('>")
       PRE="><(((('>"
       POST='\b\b\b\b\b\b\b\b        \r'
-      MSG="$(gettext "While you are waiting, a large fish swims by...")\n"
-      ;;
-
-    "snail")
-      # Snail
-      STR=('\b\b\b\b\b\b\b_(@)__/"'
-           '\b\b\b\b\b\b\b\b__(@)_/"'
-           '\b\b\b\b\b\b\b\b _(@)_/"')
-      PRE='_(O)_/"'
-      POST='\b\b\b\b\b\b\b\b        \r'
-      MSG="$(gettext "While you are waiting, a snail goes by...")\n"
-      ;;
-
-    "caterpillar")
-      STR=("\b\b\b\b\b\b\b\b\b ___^___@"
-           "\b\b\b\b\b\b\b\b __/\__@"
-           "\b\b\b\b\b\b\b _/^\_@"
-           "\b\b\b\b\b\b __/\__@"
-           "\b\b\b\b\b\b\b ___^___@"
-           "\b\b\b\b\b\b\b\b\b ________@")
-      PRE='_______@"'
-      POST='\b\b\b\b\b\b\b\b\b         \r'
-      MSG="$(gettext "While you are waiting, a caterpillar crawls by...")\n"
-      ;;
-
-    "duck")
-      STR=(
-      '\b\b\b\b\\_@<'
-      '\b\b\b\b \\_@='
-      '\b\b\b\b\\_@='
-      '\b\b\b\b\\_@<')
-      PRE='\\_@<'
-      POST='\b\b\b\b\b     \r'
-      MSG="$(gettext "While you are waiting, a duck swims by...")\n"
-      ;;
-
-    "spider")
-      STR=(
-      '\b\b\b\b\b //o\\\\'
-      '\b\b\b\b\b //o\\\\'
-      '\b\b\b\b\b///o\\'
-      '\b\b\b\b\b///o\\'
-      )
-      PRE='//o\\\\'
-      POST='\b\b\b\b\b     \r'
-      MSG="$(gettext "While you are waiting, a spider crawls by...")\n"
+      MSG="$(gettext "While you are waiting, a large fish swims by...")\\n"
+      DELAY=0.2
       ;;
 
     *)
-      echo "Unknown progress kind."
-      return 1
+      echo "progress_bar: unknown progress kind: '$design'."
+      exit 1
       ;;
   esac
-
-  # Hide cursor.
-  tput civis 2> /dev/null
-  trap 'tput cnorm 2> /dev/null;echo;exit 1' INT TERM QUIT
-
-  # Print initial message.
-  echo -en "$MSG"
-
-  # Make progress for each character read on [stdin].
-  L=${#STR[@]}
-  echo -en "$PRE"
-  while read -rn1 C
-  do
-    echo -en "${STR[$COUNT]}"
-    COUNT=$(((COUNT+1)%L))
-    # Slow down the animation a little bit.
-    sleep .1
-  done
-  echo -en "$POST"
-
-  # Show cursor.
-  tput cnorm 2> /dev/null
-  return 0
 }
 
-progress_bar "$@"
+animation() {
+  # Hide cursor.
+  tput civis 2> /dev/null
+  # the additional \b\b\b   \b\b\b is used to erase the possible ^C
+  trap 'tput cnorm 2> /dev/null;printf "\b\b\b   \b\b\b$POST";exit 1' INT TERM QUIT HUP
+
+  # Print initial message.
+  printf "$MSG"
+
+  # Make progress for each character read on [stdin].
+  printf "$PRE"
+  while true
+  do
+    for s in "${STR[@]}"
+    do
+      printf "$s"
+      # Slow down the animation a little bit.
+      sleep $DELAY
+      kill -0 $PID 2>/dev/null || return
+    done
+  done
+}
+
+main() {
+
+  design=RANDOM
+  if [ "$1" = "-b" ]
+  then
+    design=$2
+    shift 2
+  fi
+
+  if [ -z "$*" ]
+  then
+    echo "usage: $0 [-d DESIGN] PID" >&2
+    cat <<EOS >&2
+where DESIGN is one of bat, snake, caterpillar, snail, spider,
+fish-back-and-forth, duck, centipede, ant, fish, large-fish, dots, bar,
+rotation
+EOS
+    exit 1
+  fi
+
+  PID=$1
+
+  get_design "$design"
+  if [ "$design" == RANDOM ]
+  then
+    n=$(RANDOM)
+    get_design "$((n%7))"     # only modulo 7 to get the "interesting" animations
+  fi
+
+  init_data "$design"
+  if kill -0 $PID 2>/dev/null
+  then
+    animation
+    printf "$POST"
+    tput cnorm 2> /dev/null
+  fi
+}
+
+main "$@"

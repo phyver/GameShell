@@ -1,5 +1,7 @@
 #!/bin/sh
 
+PATH=$PATH:$(dirname "$0")
+
 # add a hash to check for simple tampering on a file
 # the hash signs the content of the file, a random number (added with the
 # hash), and the file name (except when the option -noname is given)
