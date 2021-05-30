@@ -53,6 +53,7 @@ BEGIN {
       }
       if (leaf_content) {
         printf(leaf_content) > path;
+        close(path);
         # much faster than system("touch " path);
       } else {
         system("mkdir -p " path);
