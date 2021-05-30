@@ -52,6 +52,9 @@ BEGIN {
         path = path "/" PATH[i];
       }
       if (leaf_content) {
+        # need to close this process to make sure all the pending directories
+        # exist at this point
+        close("xargs mkdir -p");
         # much faster than system("touch " path);
         printf(leaf_content) > path;
         close(path);
