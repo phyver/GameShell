@@ -52,9 +52,9 @@ BEGIN {
         path = path "/" PATH[i];
       }
       if (leaf_content) {
+        # much faster than system("touch " path);
         printf(leaf_content) > path;
         close(path);
-        # much faster than system("touch " path);
       } else {
         system("mkdir -p " path);
         # FIXME: that's quite slow!

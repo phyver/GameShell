@@ -53,6 +53,7 @@ END {
   for (i=0; i<nb_boring_objects; i++) {
     filename = dir "/" random_name(s_boring);
     printf("") > filename;
+    close(filename);
   }
 
   scroll = random_name(s_scroll);
@@ -85,8 +86,10 @@ END {
   }
   filename = ENVIRON["GSH_VAR"]"/nbUnpaid";
   print nbUnpaid > filename;
+  close(filename);
   filename = ENVIRON["GSH_VAR"]"/amountKing";
   print amountKing > filename;
+  close(filename);
 
   if (seed) printf("%s", int(2^32 * rand())) > seed_file;
 }
