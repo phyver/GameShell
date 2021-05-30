@@ -29,6 +29,7 @@ init_data() {
       PRE=''
       POST='\n'
       MSG=''
+      DELAY=0.2
       ;;
 
     "bar")
@@ -37,6 +38,7 @@ init_data() {
       PRE='['
       POST=']\n'
       MSG=''
+      DELAY=0.2
       ;;
 
     "rotation")
@@ -45,6 +47,7 @@ init_data() {
       PRE='-'
       POST='\b \b'
       MSG=""
+      DELAY=0.1
       ;;
 
     "bat")
@@ -54,6 +57,7 @@ init_data() {
       PRE='   '
       POST='\b\b\b   \r'
       MSG="$(gettext "While you are waiting, a bat flies by...")\\n"
+      DELAY=0.1
       ;;
 
     "snake")
@@ -65,6 +69,7 @@ init_data() {
       PRE='\__/\__/\__/<:>'
       POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b               \r'
       MSG="$(gettext "While you are waiting, a snake slithers by...")\\n"
+      DELAY=0.2
       ;;
 
     "caterpillar")
@@ -77,6 +82,7 @@ init_data() {
       PRE='_______@"'
       POST='\b\b\b\b\b\b\b\b\b         \r'
       MSG="$(gettext "While you are waiting, a caterpillar crawls by...")\\n"
+      DELAY=0.2
       ;;
 
     "snail")
@@ -87,6 +93,7 @@ init_data() {
       PRE='_(O)_/"'
       POST='\b\b\b\b\b\b\b\b        \r'
       MSG="$(gettext "While you are waiting, a snail goes by...")\\n"
+      DELAY=0.3
       ;;
 
     "spider")
@@ -99,6 +106,7 @@ init_data() {
       PRE='//o\\\\'
       POST='\b\b\b\b\b     \r'
       MSG="$(gettext "While you are waiting, a spider crawls by...")\\n"
+      DELAY=0.2
       ;;
 
     "duck")
@@ -110,6 +118,7 @@ init_data() {
       PRE='\\_@<'
       POST='\b\b\b\b\b     \r'
       MSG="$(gettext "While you are waiting, a duck swims by...")\\n"
+      DELAY=0.1
       ;;
 
     "fish-back-and-forth")
@@ -123,6 +132,7 @@ init_data() {
       PRE='><>'
       POST='\b\b\b   \r'
       MSG="$(gettext "While you are waiting, you see a fish swimming in circles...")\\n"
+      DELAY=0.2
       ;;
 
     "centipede")
@@ -132,6 +142,7 @@ init_data() {
       PRE='`,`,`,`,`,`,`,(:)'
       POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b                  \r'
       MSG="$(gettext "While you are waiting, a centipede crawls by...")\\n"
+      DELAY=0.2
       ;;
 
     "ant")
@@ -140,6 +151,7 @@ init_data() {
       PRE='>|<()'
       POST='\b\b\b\b\b     \r'
       MSG="$(gettext "While you are waiting, an ant crawls by...")\\n"
+      DELAY=0.1
       ;;
 
     "fish")
@@ -148,6 +160,7 @@ init_data() {
       PRE='><>'
       POST='\b\b\b   \r'
       MSG="$(gettext "While you are waiting, a fish swims by...")\\n"
+      DELAY=0.2
       ;;
 
     "large-fish")
@@ -156,11 +169,12 @@ init_data() {
       PRE="><(((('>"
       POST='\b\b\b\b\b\b\b\b        \r'
       MSG="$(gettext "While you are waiting, a large fish swims by...")\\n"
+      DELAY=0.2
       ;;
 
     *)
-      echo "Unknown progress kind."
-      return 1
+      echo "progress_bar: unknown progress kind: '$design'."
+      exit 1
       ;;
   esac
 }
@@ -182,7 +196,7 @@ animation() {
     do
       printf "$s"
       # Slow down the animation a little bit.
-      sleep .2
+      sleep $DELAY
       kill -0 $PID 2>/dev/null || return
     done
   done
