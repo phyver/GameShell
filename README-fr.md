@@ -1,231 +1,92 @@
 GameShell : un "jeu" pour apprendre le shell Unix
 =================================================
 
+![Illustration inspired by the game](art/illustration-small.png)
 
-GameShell (gsh) est le résultat d'une réflexion sur comment enseigner les
-rudiments (et un peu plus) du shell à des étudiants en première année à
-l'université Savoie Mont Blanc.
+Enseigner l'utilisation d'un shell Unix à des étudiants de première année à
+l'université ou à des lycéens n'est pas toujours simple, ni très amusant.
+GameShell a été conçu comme un outil pour aider les étudiants de [l'Université
+Savoie Mont Blanc](https://univ-smb.fr) à découvrir un *vrai* shell, avec une
+approche qui favorise l'apprentissage tout en s'amusant.
 
 L'idée initiale, due à Rodolphe Lepigre, était de lancer une session bash avec
 un fichier de configuration qui définissait des "missions", qui seraient
-"validées" pour avancer.
+"validées" pour avancer dans le jeu.
 
-Voila le résultat...
+Voilà le résultat...
 
-N'hésitez pas à nous envoyer vos remarques, questions ou suggestions autour de
-GameShell. Nous sommes particulièrement intéressés pas toute nouvelle mission
-que vous pourriez créer !
+N'hésitez pas à nous envoyer vos remarques, questions ou suggestions en
+ouvrant des ["issues"](https://github.com/phyver/GameShell/issues) ou en
+soumettant des ["pull requests"](https://github.com/phyver/GameShell/pulls).
+Nous sommes particulièrement intéressés pas toute nouvelle mission que vous
+pourriez créer !
 
-GameShell est distribué sous la licence [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
+Comment jouer ?
+---------------
+
+**Note:** GameShell est en phase de développement : la version courante n'a
+pas été intensivement testée par des étudiants. N'hésitez pas à rapporter tout
+problème que vous pourriez rencontrer et toute suggestions d'amélioration en
+ouvrant une ["issue"](https://github.com/phyver/GameShell/issues/new).
+
+GameShell devrait fonctionner sur n'importe quel système Linux standard, et
+aussi sur macOS et BSD (mais ces systèmes ont été moins testés). Sur Debian ou
+Ubuntu, les seules dépendances (autres que `bash`) sont les paquets `awk` et
+`gettext-base` (le premier étant généralement installé par défaut). Certaines
+missions ont des dépendances additionnelles : elles seront annulées si leurs
+dépendances ne sont pas satisfaites. Sur Debian ou Ubuntu, lancez la commande
+suivant pour installer toutes les dépendances pour le jeu et les missions.
+```sh
+sudo apt install gettext-base man-db psmisc nano tree bsdmainutils x11-apps gettext
+```
+Consultez le [manuel utilisateur](doc/user_manual.md) (en anglais) pour voir
+comment installer les dépendances sur d'autres systèmes (macOS, BSD, ...).
+
+En supposant que toutes les dépendances sont installées, vous pouvez essayer
+la plus récente version du jeu en lançant les deux commandes suivantes dans un
+terminal.
+```sh
+wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
+bash GameShell.sh
+```
+La première commande téléchargera la dernière version du jeu sous la forme
+d'une archive auto-extractible, et la seconde commande initialisera et lancera
+le jeu à partir de cette archive. Les instructions pour jouer sont données
+dans le jeu directement.
+
+Quand vous quitterez le jeu (avec `control-d` ou la commande `gsh exit`) votre
+progression sera sauvegardée dans une nouvelle archive (nommée
+`GameShell-save.sh`). Elle peut être lancée pour reprendre le jeu où vous vous
+étiez arrêté.
+
+
+Documentation
+-------------
+
+Pour en savoir plus sur GameShell les documents suivants sont disponibles (en
+langue anglaise uniquement):
+- Le [manuel utilisateur](doc/user_manual.md) explique, entre autres, comment
+  lancer le jeu sur toutes les plateformes supportées (Linux, macOS, BSD),
+  comment lancer le jeu à partir des sources, et comment générer une archive
+  de jeu personnalisée (ce qui est utile pour utiliser le jeu dans le cadre
+  d'un cours).
+- Le [manuel développeur](doc/dev_manual.md) explique, entre autres, comment
+  créer une nouvelle mission, comment traduire le jeu et les missions, et
+  comment participer au développement du jeu.
+
+
+Qui développe GameShell?
+------------------------
 
 ### Développeurs
 
-* Pierre Hyvernat
-* Rodolphe Lepigre
-
-
-### contact
-
-Pierre Hyvernat
-
-http://www.lama.univ-smb.fr/~hyvernat
-
-pierre.hyvernat@univ-smb.fr
-
-
-
-
-Prérequis
----------
-
-GameShell devrait (??) fonctionner sur un système Linux standard. Pour
-Debian/Ubuntu, la seule vrai dépendance (à part `bash`) pour jouer est le
-[paquet](paquet) `gettext-base`.
-
-Si vous souhaitez créer vos propres missions et les traduire, il faudra
-également installer le paquet `gettext`.
-
-Certaines missions ont des dépendances supplémentaires. Si elles ne sont pas
-satisfaites, ces missions seront simplement ignorées. Pour pouvoir lancer
-toutes les missions actuellement disponibles, il faut disposer des commandes
-suivantes
-
-  - `man` (paquet `man-db` sous Debian/Ubuntu)
-  - `ps` (paquet `procps` sous Debian/Ubuntu)
-  - `pstree` (paquet `psmisc` sous Debian/Ubuntu)
-  - `nano` (paquet `nano` sous Debian/Ubuntu)
-  - `tree` (paquet `tree` sous Debian/Ubuntu)
-  - `cal` (paquet `bsdmainutils` sous Debian/Ubuntu)
-  - `xeyes` (paquet `x11-apps` sous Debian/Ubuntu)
-  - `python3` (paquet `python3` sous Debian/Ubuntu)
-
-Sur un système Debian / Ubuntu, la commande suivante devrait garantir que vous
-pouvez lancer une partie de GameShell sans problème.
-
-    $ sudo apt install gettext-base python3 man-db psmisc nano tree bsdmainutils x11-apps gettext
-
-
-
-### Autres systèmes
-
-#### macOS
-
-Il devrait être possible de lancer GameShell depuis macOS, mais comme nous
-n'utilisons pas macOS, ce n'est pas beaucoup testé. Contactez nous en cas de
-problème ou si vous souhaitez nous aider la dessus.
-
-Le plus simple est probablement d'utiliser le gestionnaire de paquets [homebrew](https://brew.sh/index_fr) :
-
-```
-    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-puis d'installer les paquets nécessaires avec
-
-```
-    $ brew install nano pstree tree man-db
-```
-
-
-#### BSD ???
-
-Nous n'avons pas beaucoup testé, mais GameShell semble fonctionner sous
-freeBSD si vous installez les dépendances :
-
-````
-    $ pkg install bash gettext pstree wget
-````
-
-
-#### Windows ???
-
-Il est peut-être possible de lancer GameShell depuis Windows si vous avez
-installé [Cygwin](https://www.cygwin.com/).
-
-Nous n'avons pas testé.
-
-
-
-Lancer GameShell
-----------------
-
-### 1/ depuis les sources
-
-Récupérez l'archive et lancez le script `start.sh` :
-
-    $ rm -rf GameShell && mkdir GameShell && wget  https://api.github.com/repos/phyver/GameShell/tarball -O -  |  tar -xz -C GameShell --strip-components 1
-    $ ./GameShell/start.sh
-    ...
-    ...
-
-Si votre version de `tar` ne supporte pas l'option `--strip-components`,
-utilisez
-
-    $ rm -rf phyver-GameShell-* && wget  https://api.github.com/repos/phyver/GameShell/tarball -O -  |  tar -xz
-    $ ./phyver-GameShell-*/start.sh
-    ...
-    ...
-
-
-### 2/ depuis le dépôt git
-
-Après avoir cloné le dépot, lancez le script `start.sh`
-
-    $ git clone https://github.com/phyver/GameShell.git
-    $ ./GameShell/start.sh
-    ...
-    ...
-
-
-### 3/ depuis une archive exécutable
-
-C'est le plus simple pour distribuer GameShell à des étudiants. Après avoir
-cloné le dépot, créez une archive exécutable avec le script `archive.sh` :
-
-    $ cd GameShell
-    $ ./utils/archive.sh
-    copy missions
-    01_cd_1  -->  000001_cd_1
-    ...
-    ...
-    generating '.mo' files
-    removing 'auto.sh' scripts
-    removing unnecessary (_*.sh, Makefile) files
-    setting admin password
-    setting default GameShell mode
-    creating archive
-    creating self-extracting archive
-    removing tgz archive
-    removing temporary directory
-    $ ls
-    ... GameShell.sh ...
-
-Le fichier `GameShell.sh` contient une instance de GameShell que l'on peut
-transférer sur n'importe quel ordinateur. Pour le lancer, vous pouvez utiliser
-soit
-
-    $ ./GameShell.sh
-
-soit
-
-    $ bash ./GameShell.sh
-
-
-### 4/ en créant et utilisant une image Docker
-
-L'idée de GameShell est d'avoir une session "la plus proche possible" d'une
-session shell "standard". Je l'utilise donc sur des machines Linux "standard",
-ou sur une machine virtuelle.
-
-Il est possible de créer une image Docker en utilisant le fichier `Dockerfile`
-fourni pour lancer GameShell sans s'occuper des dépendances :
-
-* création de l'image :
-
-        $ docker build -t gsh .
-
-* lancement de l'image, si vous avez un serveur X :
-
-        $ host +"local:docker@" &&    \
-          docker run -it              \
-             -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix \
-             gsh
-
-* lancement de l'image, sans serveur X :
-
-        $ docker run -it gsh
-
-
-Commandes de base
------------------
-
-GameShell est simplement une instance de bash avec des commandes
-supplémentaires. Vous pouvez les appeler avec la commande ``gsh``.
-
-  - `gsh help` : affiche une petite liste des commandes
-  - `gsh goal` : affiche l'objectif de la mission courante
-  - `gsh check` : vérifie si la mission actuelle est validée
-  - `gsh reset` : recommence la mission courante
-
-D'autre commandes existent mais ne sont normalement pas utiles dans une partie
-standard. Vous pouvez en obtenir la liste avec
-
-  - `gsh HELP` : affiche une liste complète des commandes `gsh`
-
-Les commandes sont détaillés dans le fichier `doc/gameshell.md`.
-
-
-Ajout de missions
------------------
-
-La création de nouvelles missions est détaillées dans le fichier dédié
-`doc/missions.md`.
-
-
-
-Contributeurs missions
-----------------------
+Le jeu est développé par:
+* [Pierre Hyvernat](http://www.lama.univ-smb.fr/~hyvernat) (développeur
+  principal, [pierre.hyvernat@univ-smb.fr](mailto:pierre.hyvernat@univ-smb.fr)),
+* [Rodolphe Lepigre](https://lepigre.fr).
+
+### Contributeurs missions
 
 * Pierre Hyvernat
 * Rodolphe Lepigre
@@ -235,18 +96,17 @@ Contributeurs missions
 * Sébastien Tavenas
 * Tiemen Duvillard
 
+### Remerciements
 
-Remerciements
--------------
+* Tous les étudiants qui ont testé les toutes premières versions du jeu.
+* Joan Stark (alias jgs) qui a créé des centaines d'ASCII-art à la fin des
+  années 90. La majorité des ASCII-art que vous rencontrerez dans GameShell
+  lui sont dus.
 
-* Tous mes étudiants qui ont testé les toutes premières versions
-* Joan Stark, qui a créé des centaines d'ASCII-art à la fin des années 90. La
-  majorité des ASCII-art que vous rencontrerez dans GameShell lui sont dus.
-  (Les "`jgs`" que vous verrez sont ses initiales.)
 
 Licence
 -------
 
-GameShell est distribué sous la licence [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
+GameShell est distribué sous la licence [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 Merci de pointer vers ce dépôt si vous l'utilisez.
