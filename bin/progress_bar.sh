@@ -29,6 +29,8 @@ else
     shift 2
   fi
   stderr_log=$(mktemp)
+  set +m
+  trap "set -m" TERM INT EXIT HUP
   "$@" 1>/dev/null 2>"$stderr_log" &
   _PID=$!
   progress_bar -b "$design" $_PID
@@ -36,4 +38,5 @@ else
   rm -f "$stderr_log"
   unset stderr_log design
   wait $_PID
+  set -m
 fi
