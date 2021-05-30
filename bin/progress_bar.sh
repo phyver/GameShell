@@ -28,12 +28,12 @@ else
     design=$2
     shift 2
   fi
-  LOG=$(mktemp)
-  "$@" 1>/dev/null 2>"$LOG" &
+  stderr_log=$(mktemp)
+  "$@" 1>/dev/null 2>"$stderr_log" &
   _PID=$!
   progress_bar -b "$design" $_PID
-  cat "$LOG"
-  rm -f "$LOG"
-  unset LOG
+  cat "$stderr_log"
+  rm -f "$stderr_log"
+  unset stderr_log design
   wait $_PID
 fi
