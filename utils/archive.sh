@@ -102,7 +102,14 @@ cp --archive "$GSH_ROOT/start.sh" "$GSH_ROOT/bin" "$GSH_ROOT/utils/" "$GSH_ROOT/
 mkdir "$TMP_DIR/$NAME/missions"
 echo "copy missions"
 N=0
-make_index "$@" | while read MISSION_DIR
+if ! make_index "$@" > "$TMP_DIR/index.txt"
+then
+  echo "Error: archive.sh, couldn't make index.txt"
+  rm -rf "$TMP_DIR"
+  exit 1
+fi
+
+cat "$TMP_DIR/index.txt" | while read MISSION_DIR
 do
   case $MISSION_DIR in
     "" | "#"* )
