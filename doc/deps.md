@@ -11,12 +11,6 @@ only dependencies (besides `bash`) are the package `gettext-base` and `awk`
 If you want create your own missions and translate them, you'll need the full
 `gettext` package as well.
 
-If available, `python3` is used to display ASCII-art boxes ("parchment")
-around some messages. If not, `awk` is used instead, but depending on your
-`awk` version, UTF-8 characters might cause glitches in alignements of
-borders. If that's a problem, install `python3`.
-
-
 Some missions have additional dependencies. If they are not met, those
 missions are ignored. To run all the currently available missions, you need
 the following
@@ -33,9 +27,9 @@ the following
 On a Debian / Ubuntu system, the following ensures you have everything you
 need to run GameShell without problems.
 
-````
-    $ sudo apt install gettext-base python3 man-db psmisc nano tree bsdmainutils x11-apps gettext
-````
+```sh
+$ sudo apt install gettext-base python3 man-db psmisc nano tree bsdmainutils x11-apps
+```
 
 
 macOS
@@ -48,15 +42,15 @@ help us test it.
 To install the dependencies, the easiest way is probably to use the package
 manager [homebrew](https://brew.sh/index_fr) :
 
-````
-    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-````
+```sh
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 and to install the dependencies with
 
-````
-    $ brew install nano pstree tree man-db
-````
+```sh
+$ brew install nano pstree tree man-db
+```
 
 
 BSD
@@ -65,9 +59,9 @@ BSD
 We haven't tested it much, but it should run on freeBSD once you install the
 dependencies:
 
-````
-    $ pkg install bash gettext pstree wget python3
-````
+```sh
+$ pkg install bash gettext pstree wget python3
+```
 
 
 Windows ???

@@ -37,7 +37,7 @@ dependencies: these missions will be skipped if the dependencies are not met.
 On Debian or Ubuntu, run the following command to install all game and mission
 dependencies.
 ```sh
-sudo apt install gettext-base man-db psmisc nano tree bsdmainutils x11-apps gettext
+$ sudo apt install gettext-base man-db psmisc nano tree bsdmainutils x11-apps gettext
 ```
 Check the [user manual](doc/user_manual.md) to see how to install the game
 dependencies on other systems (macOS, BSD, ...).
@@ -45,8 +45,8 @@ dependencies on other systems (macOS, BSD, ...).
 Assuming all the dependencies are installed, you can try the latest version of
 the game by running the following two commands in a terminal.
 ```sh
-wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
-bash GameShell.sh
+$ wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
+$ bash GameShell.sh
 ```
 The first command will download the latest version of the game in the form of
 a self-extracting archive, and the second command will initialise and run the

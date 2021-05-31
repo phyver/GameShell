@@ -27,7 +27,7 @@ Comment jouer ?
 
 **Note:** GameShell est en phase de développement : la version courante n'a
 pas été intensivement testée par des étudiants. N'hésitez pas à rapporter tout
-problème que vous pourriez rencontrer et toute suggestions d'amélioration en
+problème que vous pourriez rencontrer et toute suggestion d'amélioration en
 ouvrant une ["issue"](https://github.com/phyver/GameShell/issues/new).
 
 GameShell devrait fonctionner sur n'importe quel système Linux standard, et
@@ -36,24 +36,24 @@ Ubuntu, les seules dépendances (autres que `bash`) sont les paquets `awk` et
 `gettext-base` (le premier étant généralement installé par défaut). Certaines
 missions ont des dépendances additionnelles : elles seront annulées si leurs
 dépendances ne sont pas satisfaites. Sur Debian ou Ubuntu, lancez la commande
-suivant pour installer toutes les dépendances pour le jeu et les missions.
+suivante pour installer toutes les dépendances pour le jeu et les missions.
 ```sh
-sudo apt install gettext-base man-db psmisc nano tree bsdmainutils x11-apps gettext
+$ sudo apt install gettext-base man-db psmisc nano tree bsdmainutils x11-apps
 ```
 Consultez le [manuel utilisateur](doc/user_manual.md) (en anglais) pour voir
 comment installer les dépendances sur d'autres systèmes (macOS, BSD, ...).
 
 En supposant que toutes les dépendances sont installées, vous pouvez essayer
-la plus récente version du jeu en lançant les deux commandes suivantes dans un
+la dernière version du jeu en lançant les deux commandes suivantes dans un
 terminal.
 ```sh
-wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
-bash GameShell.sh
+$ wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
+$ bash GameShell.sh
 ```
 La première commande téléchargera la dernière version du jeu sous la forme
 d'une archive auto-extractible, et la seconde commande initialisera et lancera
 le jeu à partir de cette archive. Les instructions pour jouer sont données
-dans le jeu directement.
+directement dans le jeu.
 
 Quand vous quitterez le jeu (avec `control-d` ou la commande `gsh exit`) votre
 progression sera sauvegardée dans une nouvelle archive (nommée
