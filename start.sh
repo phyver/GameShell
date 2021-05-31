@@ -17,8 +17,8 @@
 . gettext.sh
 
 export GSH_ROOT="$(dirname "$0")"
-# shellcheck source=lib/init.sh
-. "$GSH_ROOT/lib/init.sh"
+# shellcheck source=lib/profile.sh
+. "$GSH_ROOT/lib/profile.sh"
 # shellcheck source=lib/mission_source.sh
 . "$GSH_ROOT/lib/mission_source.sh"
 

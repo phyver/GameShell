@@ -15,9 +15,7 @@ _mission_init() {
 
   mission_source "$MISSION_DIR/deps.sh" || return 1
 
-  local BASH_PATH=$(command -v bash)
-
-  { echo "#!$BASH_PATH" ; sed "1d" "$MISSION_DIR/nice_fairy.sh" ; } > "$GSH_VAR/$(gettext "nice_fairy")"
+  cp "$MISSION_DIR/nice_fairy.sh" "$GSH_VAR/$(gettext "nice_fairy")"
   chmod 755 "$GSH_VAR/$(gettext "nice_fairy")"
 
   mkdir -p "$GSH_VAR/fairy/"
@@ -28,7 +26,7 @@ _mission_init() {
   disown "$PID"
   echo "$PID" > "$GSH_VAR/fairy.pid"
 
-  { echo "#!$BASH_PATH" ; sed "1d" "$MISSION_DIR/mischievous_imp.sh" ; } > "$GSH_VAR/$(gettext "mischievous_imp")"
+  cp "$MISSION_DIR/mischievous_imp.sh" "$GSH_VAR/$(gettext "mischievous_imp")"
 
   chmod 755 "$GSH_VAR/$(gettext "mischievous_imp")"
   mkdir -p "$GSH_VAR/imp/"
