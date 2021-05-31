@@ -26,15 +26,16 @@ Getting started
 
 **Note:** GameShell is currently undergoing heavy development: the current
 version has not been field tested by students. Do not hesitate to report any
-problem you might encounter or suggestions you might have by
-[open an issues](https://github.com/phyver/GameShell/issues/new).
+problems you might encounter or suggestions you might have by
+[opening an issue](https://github.com/phyver/GameShell/issues/new).
 
 GameShell should work on any standard Linux system, and also on macOS and BSD
-(but these systems have been tested less). On Debian or Ubuntu, the only
-dependencies (besides `bash`) are the package `gettext-base` and `awk` (which
-should be installed by default). Some missions have additional dependencies:
-they will be cancelled if they are not installed. On Debian or Ubuntu, run the
-following command to install all game and mission dependencies.
+(but we have run fewer tests on the latter systems). On Debian or Ubuntu, the
+only dependencies (besides `bash`) are the `gettext-base` and `awk` packages
+(the latter is generally installed by default). Some missions have additional
+dependencies: these missions will be skipped if the dependencies are not met.
+On Debian or Ubuntu, run the following command to install all game and mission
+dependencies.
 ```sh
 sudo apt install gettext-base man-db psmisc nano tree bsdmainutils x11-apps gettext
 ```
@@ -54,24 +55,24 @@ the game directly.
 
 Note that when you quit the game (with `control-d` or the command `gsh exit`)
 your progression will be saved in a new archive (called `GameShell-save.sh`).
-It can be run to resume the game where you left it.
+Run this archive to resume the game where you left it.
 
 
 Documentation
 -------------
 
-Check out the following documents if you want to know more about GameShell:
+To find out more about GameShell, refer to the following documents:
 - The [user manual](doc/user_manual.md) provides information on how to run the
   game on all supported platforms (Linux, macOS, BSD), explains how to run the
   game from the sources, tells you how to generate custom game archives (which
   is useful if you want to use GameShell for teaching a class), and more.
 - The [developer manual](doc/dev_manual.md) provides information on how to
-  create new missions, on how to translate missions, and on how to participate
+  create new missions, how to translate missions, and how to participate
   in the development of the game.
 
 
 Who is developing GameShell?
------------------------------
+----------------------------
 
 ### Developers
 
@@ -92,9 +93,9 @@ The game is currently being developed by:
 
 ### Special thanks
 
-* All the students who discovered *many* bugs in the early versions.
+* All the students who found *many* bugs in the early versions.
 * Joan Stark (a.k.a, jgs), who designed hundreds of ASCII-art pieces in the
-  late 90'. Most of the ASCII-art encountered in GameShell are due to her.
+  late 90s. Most of the ASCII-art encountered in GameShell are due to her.
 
 
 Licence
