@@ -96,7 +96,6 @@ _gsh_exit() {
   local MISSION_NB=$(_get_current_mission)
   local signal=$1
 
-  echo 1
   if jobs | grep -iq stopped
   then
     while true

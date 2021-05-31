@@ -26,6 +26,8 @@ export PS2="> "
 export PS3=""
 export PS4="+ "
 
+# running bash should take you "out" of GameShell
+alias bash='bash --rcfile "$GSH_LIB/bashrc" -i'
 
 # try to prevent using sudo and similar
 su() {
