@@ -25,13 +25,13 @@ parse_mission() (
   # we call parse_index recursively
   if [ -f "$MISSION_DIR" ]
   then
-    parse_index "$MISSION_DIR"
+    parse_index "$MISSION_DIR" || exit 1
   elif [ -d "$MISSION_DIR" ]
   then
     # if a directory contains index.txt, call parse_index recursively
     if  [ -f "$MISSION_DIR/index.txt" ]
     then
-      parse_index "$MISSION_DIR/index.txt"
+      parse_index "$MISSION_DIR/index.txt" || exit 1
 
     # if a directory contains a check.sh script, it is a standard mission
     elif  [ -f "$MISSION_DIR/check.sh" ] || [ -n "$DUMMY" ]
@@ -46,10 +46,12 @@ parse_mission() (
       echo "!${MISSION_DIR#$GSH_MISSIONS/}"
 
     else
-      echo "***** invalid argument (parse_mission): '$MISSION_DIR'" >&2
+      echo "Error: make_index, invalid argument (parse_mission): '$MISSION_DIR'" >&2
+      exit 1
     fi
   else
-    echo "***** invalid argument (parse_mission): '$MISSION_DIR'" >&2
+    echo "Error: make_index, invalid argument (parse_mission): '$MISSION_DIR'" >&2
+    exit 1
   fi
 )
 
@@ -97,9 +99,10 @@ parse_index() (
   MISSION_DIR=$dir/$MISSION_DIR
   if [ -e "$MISSION_DIR" ]
   then
-    parse_mission "$DUMMY$(realpath "$MISSION_DIR")"
+    parse_mission "$DUMMY$(realpath "$MISSION_DIR")" || exit 1
   else
-    echo "***** invalid argument (parse_index): '${MISSION_DIR#$GSH_MISSIONS/}'" >&2
+    echo "Error: make_index, invalid argument (parse_index): '${MISSION_DIR#$GSH_MISSIONS/}'" >&2
+    exit 1
   fi
   done
 )
@@ -108,7 +111,7 @@ make_index() {
   if [ "$#" -eq 0 ]
   then
     # without argument, use the default index file
-    parse_index "$GSH_MISSIONS/index.txt"
+    parse_index "$GSH_MISSIONS/index.txt" || exit 1
     return 0
       # when given a directory containing either a "bin" directory or a
       # "static.sh" script, this is a dummy mission. Just print the path
@@ -120,9 +123,10 @@ make_index() {
     MISSION_DIR=$(realpath "$1")
     if [ -e "$MISSION_DIR" ]
     then
-      parse_mission "$MISSION_DIR"
+      parse_mission "$MISSION_DIR" || exit 1
     else
-      echo "***** invalid argument (make_index): '$1'" >&2
+      echo "Error: make_index, invalid argument (make_index): '$1'" >&2
+      exit 1
     fi
     shift
   done
