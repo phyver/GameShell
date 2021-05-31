@@ -4,8 +4,7 @@ export GSH_ROOT="$(dirname "$0")/.."
 
 display_help() {
 cat <<EOH
-$(basename $0) [NB] NAME: create template for a new mission
-If NB is not given, use the first available mission number.
+$(basename $0) NAME: create template for a new mission
 
 options:
   -h          this message
@@ -14,29 +13,15 @@ options:
   -G          with gettext
   -M          output the Makefile on stdin
   -T          output the default template file on stdin
-
 EOH
 }
 
 
-first_unused_number() {
-    cd "$GSH_ROOT"/missions
-    find -name "check.sh"                   | \
-    sed -e 's|/check\.sh||'                 | \
-    sed -e 's|.*/\([^/]*\)|\1|'             | \
-    sed -e 's|\([0-9]*\)_.*|\1|'            | \
-    sort -n                                 | \
-    awk 'BEGIN {N=1} /[0-9]+/ {if ($1 != N) {print N; exit 0;} N++}'
-}
-
-
 new_static_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/static.sh
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/static.sh
 #!/bin/bash
 
-#
 # This file is not required: it is sourced once when initialising a GameShell
 # game, and whenever the corresponding missions is (re)started.
 # It typically creates the parts of the mission that will be available during
@@ -44,14 +29,12 @@ new_static_file() {
 #
 # Since it is sourced, it may define environment variables if you really need
 # them, but it should "unset" any local variable it has created.
-#
 EOF
 }
 
 new_goal_txt_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/goal.txt
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/goal.txt
 This file or one of its more complex variants (refer to the documentation) is
 required.
 
@@ -66,9 +49,8 @@ EOF
 }
 
 new_goal_gettext_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/_goal.sh
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/_goal.sh
 #!/bin/bash
 
 # This file is not required. It can be used to generate dynamic goal messages.
@@ -82,8 +64,8 @@ new_goal_gettext_file() {
 cat "$(eval_gettext '$MISSION_DIR/goal/en.txt')"
 EOF
 
-    mkdir "$MISSION_DIR/goal/"
-    cat <<'EOF' > "$MISSION_DIR"/goal/en.txt
+  mkdir "$MISSION_DIR/goal/"
+  cat <<'EOF' > "$MISSION_DIR"/goal/en.txt
 Mission goal
 ============
 
@@ -94,9 +76,6 @@ It is displayed in its entirety by the command
   $ gsh goal
 It should describe the goal of the mission.
 
-Note: if the _first_ line of this file is of the form
-# variables: $VAR1 $VAR2
-those variables are substituted in the file.
 
 Useful commands
 ===============
@@ -107,34 +86,37 @@ EOF
 }
 
 new_init_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/init.sh
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/init.sh
 #!/bin/bash
 
 # This file is not required: it is sourced every time the mission is started.
-# It typically creates the parts that are necessary for completing.
-# Since it is sourced every time the mission is restarted, it should can
-# generate random data to make each run slightly different.
+# Since it is sourced every time the mission is restarted, it can generate
+# random data to make each run slightly different.
 #
 # Since it is sourced, it may define environment variables if you really need
 # them, but it should "unset" any local variable it has created.
 #
 # Note however that should the mission be initialized in a subshell, those
-# environment variables will disappear! (That typically happens a mission is
+# environment variables will disappear! That typically happens a mission is
 # checked using process redirection, as in
 #   $ SOMETHING | gsh check
 # To mitigate the problem, GameShell will display a message asking the player
 # to run
 #   $ gsh reset
 # in that case.
+#
+# It typically looks like
+_mission_init() {
+  ...
+}
+_mission_init
 EOF
 }
 
 new_check_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/check.sh
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/check.sh
 #!/bin/bash
 
 # This file is required. It is sourced when checking the goal of the mission
@@ -145,46 +127,49 @@ new_check_file() {
 # variable" that were only used for the mission. (The function _mission_check
 # is automatically unset.)
 #
+# It typically looks like
 
 _mission_check() {
   ...
 }
-
 _mission_check
 EOF
 }
 
 new_auto_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/_auto.sh
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/_auto.sh
 #!/bin/bash
 
 # This file is not required. When it exists, it is used to automatically
-# validate the mission.
-# It is allowed to "cheat" by using any hidden data.
+# validate the mission. It should end with a succesful `gsh check` command.
+# It is sometimes possible to "cheat" by using any hidden data in $GSH_VAR,
+# but it is better to do it the "intended" way.
+# If you write this file, rename it to auto.sh
 EOF
 }
 
 new_clean_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/_clean.sh
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/_clean.sh
 #!/bin/bash
 
 # This file is not required. When it exists, it is used to clean the mission,
 # for example on completion, or when restarting it.
+# In some rare case, cleaning is different after a successful check. You can
+# inspect the variable $GSH_LAST_ACTION, which can take the following values:
+# assert, check_false, check_true, exit, goto, hard_reset, reset, skip
+# If you need this file, rename it to clean.sh
 EOF
 }
 
 new_treasure_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/_treasure.sh
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/_treasure.sh
 #!/bin/bash
 
 # This file is not required. When it exists, it is sourced on successfull
-# completion and is added to the global configuration.
+# completion of the mission and is added to the global configuration.
 # It is typically used to "reward" the player with new features like aliases
 # and the like.
 # If you need this file, rename it to 'treasure.txt'
@@ -201,9 +186,8 @@ EOF
 }
 
 new_treasure-msg_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/_treasure-msg.txt
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/_treasure-msg.txt
 This file is not required. When it exists, it is displayed when sourcing the
 "treasure.sh" file. (If no "treasure.sh" file exists, this file will be
 ignored.)
@@ -211,9 +195,8 @@ EOF
 }
 
 new_gettext_treasure-msg_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/_treasure-msg.sh
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/_treasure-msg.sh
 #!/bin/bash
 
 # This file is not required. It can be used to generate dynamic treasure
@@ -227,8 +210,8 @@ new_gettext_treasure-msg_file() {
 cat "$(eval_gettext '$MISSION_DIR/treasure-msg/en.txt')"
 EOF
 
-    mkdir "$MISSION_DIR/treasure-msg/"
-    cat <<'EOF' > "$MISSION_DIR"/treasure-msg/en.txt
+  mkdir "$MISSION_DIR/treasure-msg/"
+  cat <<'EOF' > "$MISSION_DIR"/treasure-msg/en.txt
 This file is not required. When it exists, it is displayed when sourcing the
 "treasure.sh" file. (If no "treasure.sh" file exists, this file will be
 ignored.)
@@ -236,14 +219,13 @@ EOF
 }
 
 new_test_file() {
-    MISSION_DIR="$1"
-
-    cat <<'EOF' > "$MISSION_DIR"/_test.sh
+  MISSION_DIR="$1"
+  cat <<'EOF' > "$MISSION_DIR"/_test.sh
 #!/bin/bash
 
-#
-# This file is not required: it is sourced by the command "gsh test".
-# If you need this file, rename it to 'test.sh'
+# This file is not required: it is sourced by the command "gsh test" for
+# testing during development.
+# If you write this file, rename it to 'test.sh'
 #
 # You can use some special commands
 # gsh assert check true
@@ -253,15 +235,11 @@ new_test_file() {
 #
 # Since it is sourced, it may define environment variables if you really need
 # them, but it should "unset" any local variable it has created.
-#
-# NOTE that the commands "gsh test" and "gsh assert" are only available in
-# debug mode
-#
 EOF
 }
 
 new_template_file() {
-    cat <<'EOF'
+  cat <<'EOF'
 #, fuzzy
 msgid ""
 msgstr ""
@@ -279,7 +257,7 @@ EOF
 }
 
 new_makefile() {
-    cat <<'EOF'
+  cat <<'EOF'
 SH_FILES=$(wildcard *.sh)
 EXCEPTIONS=
 OTHER_FILES=
@@ -325,65 +303,61 @@ EOF
 }
 
 new_mission_without_gettext() {
-    NB=$1
-    NAME=$2
-    MISSION_DIR="$GSH_ROOT/missions/contrib/${NB}_${NAME}"
+  NAME=$1
+  MISSION_DIR="$GSH_ROOT/missions/contrib/${NAME}"
 
-    if [ -e "$MISSION_DIR" ]
-    then
-        echo "Path $MISSION_DIR already exists!" >&2
-        echo "aborting" >&2
-        exit 1
-    fi
+  if [ -e "$MISSION_DIR" ]
+  then
+    echo "Path \$GSH_ROOT/${MISSION_DIR#$GSH_ROOT/} already exists!" >&2
+    echo "aborting" >&2
+    exit 1
+  fi
 
-    echo "Creating mission ${NB}_${NAME} in directory $GSH_ROOT/missions/contrib/"
-    mkdir "$MISSION_DIR"
+  echo "Creating mission \$GSH_ROOT/missions/contrib/$NAME"
+  mkdir -p "$MISSION_DIR"
 
-    new_static_file "$MISSION_DIR"
-    new_goal_txt_file "$MISSION_DIR"
-    new_init_file "$MISSION_DIR"
-    new_check_file "$MISSION_DIR"
-    new_auto_file "$MISSION_DIR"
-    new_clean_file "$MISSION_DIR"
-    new_treasure_file "$MISSION_DIR"
-    new_treasure-msg_file "$MISSION_DIR"
-    new_test_file "$MISSION_DIR"
+  new_static_file "$MISSION_DIR"
+  new_goal_txt_file "$MISSION_DIR"
+  new_init_file "$MISSION_DIR"
+  new_check_file "$MISSION_DIR"
+  new_auto_file "$MISSION_DIR"
+  new_clean_file "$MISSION_DIR"
+  new_treasure_file "$MISSION_DIR"
+  new_treasure-msg_file "$MISSION_DIR"
+  new_test_file "$MISSION_DIR"
 }
 
 
 new_mission_with_gettext() {
-    NB=$1
-    NAME=$2
-    MISSION_DIR="$GSH_ROOT/missions/contrib/${NB}_${NAME}"
+  NAME=$1
+  MISSION_DIR="$GSH_ROOT/missions/contrib/${NAME}"
 
-    if [ -e "$MISSION_DIR" ]
-    then
-        echo "Path $MISSION_DIR already exists!" >&2
-        echo "aborting" >&2
-        exit 1
-    fi
+  if [ -e "$MISSION_DIR" ]
+  then
+    echo "Path \$GSH_ROOT/${MISSION_DIR#$GSH_ROOT/} already exists!" >&2
+    echo "aborting" >&2
+    exit 1
+  fi
 
-    echo "Creating mission ${NB}_${NAME} in directory $GSH_ROOT/missions/contrib/"
-    mkdir "$MISSION_DIR"
+  echo "Creating mission \$GSH_ROOT/missions/contrib/$NAME"
+  mkdir -p "$MISSION_DIR"
 
-    new_static_file "$MISSION_DIR"
-    new_goal_gettext_file "$MISSION_DIR"
-    new_init_file "$MISSION_DIR"
-    new_check_file "$MISSION_DIR"
-    new_auto_file "$MISSION_DIR"
-    new_clean_file "$MISSION_DIR"
-    new_treasure_file "$MISSION_DIR"
-    new_gettext_treasure-msg_file "$MISSION_DIR"
-    mkdir -p "$MISSION_DIR"/i18n/
-    new_template_file > "$MISSION_DIR"/i18n/template.pot
-    new_makefile > "$MISSION_DIR"/Makefile
-    new_test_file "$MISSION_DIR"
+  new_static_file "$MISSION_DIR"
+  new_goal_gettext_file "$MISSION_DIR"
+  new_init_file "$MISSION_DIR"
+  new_check_file "$MISSION_DIR"
+  new_auto_file "$MISSION_DIR"
+  new_clean_file "$MISSION_DIR"
+  new_treasure_file "$MISSION_DIR"
+  new_gettext_treasure-msg_file "$MISSION_DIR"
+  mkdir -p "$MISSION_DIR"/i18n/
+  new_template_file > "$MISSION_DIR"/i18n/template.pot
+  new_makefile > "$MISSION_DIR"/Makefile
+  new_test_file "$MISSION_DIR"
 }
 
 
 GETTEXT=""
-
-
 while getopts ":hNGMT" opt
 do
   case $opt in
@@ -408,44 +382,23 @@ do
     *)
       echo "invalid option: '-$OPTARG'" >&2
       exit 1
-esac
+  esac
 done
-
 shift $((OPTIND - 1))
 
-if [ "$#" -eq 1 ]
-then
-    NB=$(first_unused_number)
-    NAME=$1
-elif [ "$#" -eq 2 ]
-then
-    NB=$1
-    NAME=$2
-else
-    echo "wrong number of arguments" >&2
-    exit 1
-fi
-
-
-_m=$(find "$GSH_ROOT/missions/" -type d -name "${NB}_*" -print -quit)
-if [ -n "$_m" ]
-then
-    echo "There is at least another mission with number $NB: $_m." >&2
-fi
-
+NAME=$1
 
 if [ -z "$GETTEXT" ]
 then
-    echo "You must choose either '-N' (no gettext support) or '-G' (gettext support)." >&2
-    exit 1
+  echo "You must choose either '-N' (no gettext support) or '-G' (gettext support)." >&2
+  exit 1
 elif [ "$GETTEXT" = 0 ]
 then
-    new_mission_without_gettext "$NB" "$NAME"
+  new_mission_without_gettext "$NAME"
 elif [ "$GETTEXT" = 1 ]
 then
-    new_mission_with_gettext "$NB" "$NAME"
+  new_mission_with_gettext "$NAME"
 else
-    echo "Oops... Unknown GETTEXT value." >&2
-    exit 1
+  echo "Oops... Unknown GETTEXT value." >&2
+  exit 1
 fi
-
