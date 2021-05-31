@@ -2,6 +2,7 @@
 
 _mission_init() {
 
+  local CC
   if command -v c99 >/dev/null
   then
     CC=c99
@@ -24,8 +25,10 @@ _mission_init() {
 
   if [ -n "$CC" ]
   then
-    $CC -lpthread "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")" || return 1
-    unset CC
+    # under BSD, libintl is installed in /usr/local
+    $CC -lpthread "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")" 2>/dev/null ||
+    $CC -I/usr/local/include/ -L/usr/local/lib -lintl -lpthread "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")" 2>/dev/null ||
+    { echo "compilation failed" >&2; return 1; }
   else
     local PYTHON_PATH
     if PYTHON_PATH=$(command -v python3)
