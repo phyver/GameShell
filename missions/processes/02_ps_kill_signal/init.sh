@@ -37,7 +37,7 @@ _mission_init() {
     chmod 755 "$GSH_VAR/$(gettext "spell")"
   fi
   TEXTDOMAIN=$TEXTDOMAIN "$GSH_VAR/$(gettext "spell")" &
-  echo $! > "$GSH_VAR"/spell.pid
+  echo $! > "$GSH_VAR"/spell.pids
   disown
   return 0
 }

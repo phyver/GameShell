@@ -95,7 +95,7 @@ int main(int argc, char *argv[]) {
     if(gsh_var == NULL) return 1;
     strncpy(path, gsh_var, 1024);
     if(strlen(path) > 1000) return 1;
-    strcat(path, "/spell-term.pids");
+    strcat(path, "/spell.pids");
 
     // Initialize semaphores.
     printing_sem = sem_open("/printing_sem", O_CREAT, 0644, 1);
