@@ -19,8 +19,8 @@ Pre-built archives for the various versions of the game can be found on the
 To download and start the latest version of the game simply run the following
 two commands in a terminal.
 ```sh
-wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
-bash GameShell.sh
+$ wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
+$ bash GameShell.sh
 ```
 
 Note that when you quit the game (with `control-d` or the command `gsh exit`)
@@ -33,8 +33,8 @@ Alternatively, you can run the game directly from the source code. In that
 case, simply download the repository (either by cloning it or by downloading
 a tarball) and start the game with the following commands:
 ```sh
-git clone https://github.com/phyver/GameShell.git
-bash GameShell/start.sh
+$ git clone https://github.com/phyver/GameShell.git
+$ bash GameShell/start.sh
 ```
 
 ### Available flags
