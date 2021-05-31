@@ -8,11 +8,14 @@ import gettext
 from sys import argv
 
 
-TEXTDOMAIN = argv[1]
+TEXTDOMAIN = os.getenv("TEXTDOMAIN")
+TEXTDOMAINDIR = os.getenv("TEXTDOMAINDIR")
 
-gettext.bindtextdomain(TEXTDOMAIN, localedir=os.environ.get("TEXTDOMAINDIR"))
+gettext.bindtextdomain(TEXTDOMAIN, localedir=TEXTDOMAINDIR)
 gettext.textdomain(TEXTDOMAIN)
 
+print(f"TEXTDOMAIN={TEXTDOMAIN}")
+print(f"TEXTDOMAINDIR={TEXTDOMAINDIR}")
 
 def spawn(a, b):
     print(gettext.gettext("You'll need to do better than that to kill my spell!"))

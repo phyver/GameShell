@@ -1,7 +1,5 @@
 #!/bin/sh
 
-TEXTDOMAIN=$1
-
 trap spawn TERM
 
 spawn() {
