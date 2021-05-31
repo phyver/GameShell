@@ -363,7 +363,7 @@ Do you want to remove it and start a new game? [y/N]') "
 
     if [ "$GSH_MODE" = "DEBUG" ] && [ "$GSH_VERBOSE_DEBUG" = true ]
     then
-      printf '\n%3d -> %s' "$MISSION_NB" "${MISSION_DIR#GSH_MISSIONS/}"
+      printf 'GSH: mission %3d -> %s\n' "$MISSION_NB" "\$GSH_MISSIONS/${MISSION_DIR#$GSH_MISSIONS/}"
     elif [ "$GSH_MODE" = "DEBUG" ]
     then
       printf "."
@@ -382,8 +382,7 @@ Aborting.")"
   fi
   if [ "$GSH_MODE" = "DEBUG" ]
   then
-    [ "$GSH_VERBOSE_DEBUG" = true ] && echo
-    echo "[DONE]"
+    [ "$GSH_VERBOSE_DEBUG" != true ] && echo "[DONE]"
   else
     progress_finish
     echo
