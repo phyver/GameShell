@@ -6,8 +6,8 @@ options:
   -d      debug mode
   -D      verbose debug mode
 
-  -C      don't ask: automatically continue current game (if relevant)
-  -R      don't ask: automatically reset game
+  -C      continue current game (if relevant)
+  -R      reset game
 
   -L ...  set LANGUAGE variable (ex: -L fr:it:en)
 

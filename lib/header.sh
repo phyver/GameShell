@@ -6,17 +6,17 @@ then
   exit 1
 fi
 
-FILENAME="$0"
-DIR=$(dirname "$FILENAME")
+ORIGINAL_FILENAME="$0"
+ORIGINAL_DIR=$(dirname "$ORIGINAL_FILENAME")
 
-NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$FILENAME")
+NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$ORIGINAL_FILENAME")
 
 for arg in "$@"
 do
   if [ "$arg" = "-X" ]
   then
-    tail -n+"$NB_LINES" "$FILENAME" > "${FILENAME%.*}.tgz"
-    echo "Archive saved in ${FILENAME%.*}.tgz"
+    tail -n+"$NB_LINES" "$ORIGINAL_FILENAME" > "${ORIGINAL_FILENAME%.*}.tgz"
+    echo "Archive saved in ${ORIGINAL_FILENAME%.*}.tgz"
     exit 0
   elif [ "$arg" = "-K" ]
   then
@@ -25,39 +25,56 @@ do
 done
 
 
-NAME=${FILENAME%.*}
+# remove extension (if present)
+GSH_NAME=${ORIGINAL_FILENAME%.*}
 # remove "-save" suffix (if present)
-NAME=${NAME%-save}
-NAME=$(basename "${FILENAME%-save}")
+GSH_NAME=${GSH_NAME%-save}
+GSH_NAME=$(basename "$GSH_NAME")
 
-TMP_DIR=$(mktemp -d "$DIR/$NAME-XXXXXX")
+GSH_ROOT=$ORIGINAL_DIR/$GSH_NAME
+N=0
+while [ -e "$GSH_ROOT" ]
+do
+  N=$((N+1))
+  GSH_ROOT=$(echo "$GSH_ROOT" | sed "s/\.[0-9]*$//")
+  GSH_ROOT="$GSH_ROOT.$N"
+done
+mkdir -p "$GSH_ROOT"
 
-tail -n+"$NB_LINES" "$FILENAME" > "$TMP_DIR/gameshell.tgz"
-tar -zx -C "$TMP_DIR" -f "$TMP_DIR/gameshell.tgz"
-rm "$TMP_DIR/gameshell.tgz"
+tail -n+"$NB_LINES" "$ORIGINAL_FILENAME" > "$GSH_ROOT/gameshell.tgz"
+tar -zx -C "$GSH_ROOT" -f "$GSH_ROOT/gameshell.tgz"
+rm "$GSH_ROOT/gameshell.tgz"
 
-ROOT_DIR=$(ls "$TMP_DIR" | head -n1)
+# the archive should extract into a directory, move everything to GSH_ROOT
+TMP_ROOT=$(find "$GSH_ROOT" -maxdepth 1 -path "$GSH_ROOT/*" -print -quit)
+mv "$TMP_ROOT"/* "$GSH_ROOT"
+mv "$TMP_ROOT"/.[!.]* "$GSH_ROOT" 2>/dev/null
+rmdir "$TMP_ROOT"
 
-bash "$TMP_DIR/$ROOT_DIR"/start.sh "$@"
+###
+# start GameShell
+bash "$GSH_ROOT/start.sh" -C "$@"
 
-tar -zcf "$TMP_DIR/$ROOT_DIR.tgz" -C "$TMP_DIR" ./"$ROOT_DIR"
+
+tar -zcf "$GSH_ROOT.tgz" -C "$ORIGINAL_DIR" ./"$GSH_ROOT"
 
 # get extension
-EXT=${FILENAME##*.}
+EXT=${ORIGINAL_FILENAME##*.}
 # remove extension
-FILENAME=${FILENAME%.*}
+ORIGINAL_FILENAME=${ORIGINAL_FILENAME%.*}
 # remove "-save" suffix (if present), and add it again, with the extension
-FILENAME=${FILENAME%-save}-save.$EXT
+ORIGINAL_FILENAME=${ORIGINAL_FILENAME%-save}-save.$EXT
 
-cat "$TMP_DIR/$ROOT_DIR/lib/header.sh" "$TMP_DIR/$ROOT_DIR.tgz" > "$FILENAME"
-chmod +x "$FILENAME"
+cat "$GSH_ROOT/lib/header.sh" "$GSH_ROOT.tgz" > "$ORIGINAL_FILENAME"
+chmod +x "$ORIGINAL_FILENAME"
 
-chmod -R 777 "$TMP_DIR"
-if [ "$KEEP_DIR" = "true" ]
+# remove archive
+rm -f "$GSH_ROOT.tgz"
+
+if [ "$KEEP_DIR" != "true" ]
 then
-  rm -f "$TMP_DIR/$ROOT_DIR.tgz"
-else
-  rm -rf "$TMP_DIR"
+  chmod -R 777 "$GSH_ROOT"
+  rm -rf "$GSH_ROOT"
 fi
 
 exit 0

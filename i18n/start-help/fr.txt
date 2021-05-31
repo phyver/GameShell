@@ -6,8 +6,8 @@ options :
   -v      lecture "verbeuse" des scripts de mission (seulement en mode debug)
   -A      mode anonyme
 
-  -C      continue la partie en cours, sans poser de question
-  -R      rénitialise la partie en cours, sans poser de question
+  -C      continue la partie en cours (si pertinent)
+  -R      recommence une partie du début
 
   -L      initialise la variable LANGUAGE (ex : -L fr:it:en)
 
