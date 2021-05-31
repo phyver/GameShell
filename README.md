@@ -1,4 +1,4 @@
-GameShell: a "game" to learn the Unix shell
+GameShell: a "game" to teach the Unix shell
 ===========================================
 
 ![Illustration inspired by the game](art/illustration-small.png)
