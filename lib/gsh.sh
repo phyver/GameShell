@@ -16,8 +16,6 @@
 # shellcheck source=/dev/null
 . gettext.sh
 
-# shellcheck source=lib/init.sh
-. "$GSH_LIB/init.sh"
 # shellcheck source=lib/mission_source.sh
 . "$GSH_LIB/mission_source.sh"
 

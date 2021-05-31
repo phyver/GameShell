@@ -18,7 +18,7 @@ export PATH=$GSH_ROOT/bin:$PATH:$GSH_BIN
 # export PATH=$PATH:$GSH_ROOT/bin:$GSH_BIN
 
 # shellcheck source=./lib/gameshell.sh
-. "$GSH_LIB/gameshell.sh"
+. "$GSH_LIB/gsh.sh"
 
 
 export PS1='[mission $(_get_current_mission)] $ '

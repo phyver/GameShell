@@ -1,7 +1,7 @@
 #!/bin/sh
 
 export GSH_ROOT=$(dirname "$0")/..
-. $GSH_ROOT/lib/init.sh
+. $GSH_ROOT/lib/profile.sh
 
 display_help() {
 cat <<EOH
@@ -124,7 +124,7 @@ do
 done
 
 export GSH_ROOT=$TMP_DIR/$NAME
-. $GSH_ROOT/lib/init.sh
+. "$GSH_ROOT/lib/profile.sh"
 export GSH_MISSIONS="$GSH_ROOT/missions"
 
 
