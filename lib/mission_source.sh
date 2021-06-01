@@ -51,7 +51,7 @@ mission_source() {
     return $exit_status
   fi
 
-  echo "GSH: sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}"
+  echo "GSH: sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
   local TEMP=$(mktemp -d "$GSH_VAR/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
   local _MISSION_DIR=""
@@ -84,7 +84,7 @@ mission_source() {
   compgen -A function | sed "/$MISSION_FN/d" | sort > "$TEMP"/after-F
   compgen -a | sort > "$TEMP"/after-A
 
-  local msg="GSH: environment modifications while sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}"
+  local msg="GSH: environment modifications while sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
   if ! cmp -s "$TEMP"/{before,after}-V
   then
     [ -n "$msg" ] && echo "$msg"
