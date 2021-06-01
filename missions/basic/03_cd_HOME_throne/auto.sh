@@ -8,4 +8,10 @@ history -s gsh check
 
 gsh check
 
-history -d -3--1
+# macOS' version of bash is too old and we cannot delete ranges of commands in
+# history
+n=$(history | tail -n1 | awk '{print $1}')
+history -d $((n-2))
+history -d $((n-2))
+history -d $((n-2))
+unset n

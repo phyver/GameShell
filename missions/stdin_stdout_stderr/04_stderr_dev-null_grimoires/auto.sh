@@ -7,5 +7,9 @@ history -s gsh check
 # grep -il "gsh" "$(gettext "grimoire")"_* 2> /dev/null
 gsh check
 
-history -d -2--1
-
+# macOS' version of bash is too old and we cannot delete ranges of commands in
+# history
+n=$(history | tail -n1 | awk '{print $1}')
+history -d $((n-1))
+history -d $((n-1))
+unset n

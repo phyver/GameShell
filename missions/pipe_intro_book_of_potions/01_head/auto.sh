@@ -6,4 +6,9 @@ history -s head -n 6 "$(gettext "Book_of_potions")/$(gettext "page")_07"
 history -s gsh check
 gsh check
 
-history -d -2--1
+# macOS' version of bash is too old and we cannot delete ranges of commands in
+# history
+n=$(history | tail -n1 | awk '{print $1}')
+history -d $((n-1))
+history -d $((n-1))
+unset n
