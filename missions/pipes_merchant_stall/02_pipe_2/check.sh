@@ -10,8 +10,6 @@ _mission_check() {
   # rm *boring*
   # ...
 
-  echo $response
-  echo $nb_unpaid
   if [ "$response" != "$nb_unpaid" ]
   then
       echo "$(gettext "That's not the right answer!")"
