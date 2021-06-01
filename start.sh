@@ -259,7 +259,7 @@ Do you want to remove it and start a new game? [y/N]') "
   # Clear the screen.
   if [ "$GSH_MODE" = "DEBUG" ]
   then
-    printf "[MISSION INITIALISATION]"
+    printf "[MISSION INITIALISATION]" >&2
   else
     clear
   fi
@@ -363,10 +363,10 @@ Do you want to remove it and start a new game? [y/N]') "
 
     if [ "$GSH_MODE" = "DEBUG" ] && [ "$GSH_VERBOSE_DEBUG" = true ]
     then
-      printf 'GSH: mission %3d -> %s\n' "$MISSION_NB" "\$GSH_MISSIONS/${MISSION_DIR#$GSH_MISSIONS/}"
+      printf 'GSH: mission %3d -> %s\n' "$MISSION_NB" "\$GSH_MISSIONS/${MISSION_DIR#$GSH_MISSIONS/}" &2
     elif [ "$GSH_MODE" = "DEBUG" ]
     then
-      printf "."
+      printf "." >&2
     else
       progress
     fi
@@ -382,7 +382,7 @@ Aborting.")"
   fi
   if [ "$GSH_MODE" = "DEBUG" ]
   then
-    [ "$GSH_VERBOSE_DEBUG" != true ] && echo "[DONE]"
+    [ "$GSH_VERBOSE_DEBUG" != true ] && echo "[DONE]" >&2
   else
     progress_finish
     echo
