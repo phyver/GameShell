@@ -18,7 +18,6 @@ if $AWK 'BEGIN {exit 3==length("héé") ? 0 : 1;}' || ! command -v iconv >/dev/n
 then
   TMP_ENC=""
 else
-  echo "setting tmp encoding"
   TMP_ENC=ISO-8859-1
 fi
 
