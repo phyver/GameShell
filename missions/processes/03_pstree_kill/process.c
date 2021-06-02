@@ -22,6 +22,7 @@ char spell_path[1024]; // large enough for the path to the spell process
 
 int main(int argc, char** argv)
 {
+    (void) argc; // avoid warning
     setlocale(LC_ALL, "");
 
     // Give access to the TEXTDOMAIN environment variable.
@@ -58,23 +59,23 @@ int main(int argc, char** argv)
     // Get a pids_path to the file in which to write the children's PIDs.
     wordexp_t result;
     switch (who) {
-    case IMP:
-        wordexp("$GSH_VAR/imp_spell.pids", &result, 0);
-        break;
-    case FAIRY:
-        wordexp("$GSH_VAR/fairy_spell.pids", &result, 0);
-        break;
+        case IMP:
+            wordexp("$GSH_VAR/imp_spell.pids", &result, 0);
+            break;
+        case FAIRY:
+            wordexp("$GSH_VAR/fairy_spell.pids", &result, 0);
+            break;
     }
     strncpy(pids_path, result.we_wordv[0], 1024);
     /* printf(">>> pids_path = %s\n", pids_path); */
 
     switch (who) {
-    case IMP:
-        wordexp("$GSH_VAR/imp/$(gettext 'spell')", &result, 0);
-        break;
-    case FAIRY:
-        wordexp("$GSH_VAR/fairy/$(gettext 'spell')", &result, 0);
-        break;
+        case IMP:
+            wordexp("$GSH_VAR/imp/$(gettext 'spell')", &result, 0);
+            break;
+        case FAIRY:
+            wordexp("$GSH_VAR/fairy/$(gettext 'spell')", &result, 0);
+            break;
     }
     strncpy(spell_path, result.we_wordv[0], 1024);
     /* printf(">>> spell_path = %s\n", spell_path); */

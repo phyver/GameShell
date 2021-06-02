@@ -2,18 +2,29 @@
 
 _mission_init() {
 
-  if command -v c99 >/dev/null
+  local CC
+  if command -v gcc >/dev/null
+  then
+    if [ "$GSH_MODE" = DEBUG ]
+    then
+      CC="gcc -std=c99 -Wall -Wextra -pedantic"
+    else
+      CC=gcc
+    fi
+  elif command -v clang >/dev/null
+  then
+    if [ "$GSH_MODE" = DEBUG ]
+    then
+      CC="clang -std=c99 -Wall -Wextra -pedantic"
+    else
+      CC=clang
+    fi
+  elif command -v c99 >/dev/null
   then
     CC=c99
   elif command -v cc >/dev/null
   then
     CC=cc
-  elif command -v gcc >/dev/null
-  then
-    CC=gcc
-  elif command -v clang >/dev/null
-  then
-    CC=clang
   elif ! [ -e "$MISSION_DIR/deps.sh" ]
   then
     # FIXME
@@ -25,7 +36,6 @@ _mission_init() {
   if [ -n "$CC" ]
   then
     $CC "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")" || return 1
-    unset CC
   else
     local PYTHON_PATH
     if PYTHON_PATH=$(command -v python3)
