@@ -7,6 +7,7 @@ _mission_init() {
   local PID=$!
   disown $PID
   local name=$(ps -p $PID | grep $PID | grep -v sh)
+  kill -9 $PID
   if [ -z "$name" ]
   then
     echo "$(eval_gettext "Process names should be equal to the corresponding filename for mission \$MISSION_NAME.")" >&2

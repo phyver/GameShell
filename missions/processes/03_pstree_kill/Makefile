@@ -35,6 +35,6 @@ new: i18n/template.pot
 		msgcat $(OPTIONS) --output i18n/$$lang.po i18n/template.pot
 
 clean:
-	rm -f i18n/*~
+	rm -f i18n/*~ a.out
 
 .PHONY: all clean new FORCE

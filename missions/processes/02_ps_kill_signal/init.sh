@@ -26,9 +26,10 @@ _mission_init() {
   if [ -n "$CC" ]
   then
     # under BSD, libintl is installed in /usr/local
-    $CC -lpthread "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")" 2>/dev/null ||
-    $CC -I/usr/local/include/ -L/usr/local/lib -lintl -lpthread "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")" 2>/dev/null ||
+    $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/$(gettext "spell")" 2>/dev/null ||
+    $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_VAR/$(gettext "spell")" 2>/dev/null ||
     { echo "compilation failed" >&2; return 1; }
+    unset CC
   else
     local PYTHON_PATH
     if PYTHON_PATH=$(command -v python3)
