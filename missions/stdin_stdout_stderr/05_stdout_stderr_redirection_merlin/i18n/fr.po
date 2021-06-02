@@ -15,9 +15,9 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
-#, sh-format
-msgid   "Error: $cmd_name takes no argument."
-msgstr  "Erreur : $cmd_name ne prend pas d'argument."
+#, c-format
+msgid   "Error: %s takes no argument."
+msgstr  "Erreur : %s ne prend pas d'argument."
 
 msgid   "THESECRETKEYISONSTDERR"
 msgstr  "LACLESECRETEESTSURSTDERR"

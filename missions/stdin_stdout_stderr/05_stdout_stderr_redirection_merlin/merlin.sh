@@ -1,33 +1,37 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-source gettext.sh
+. gettext.sh
 
 
 main() {
-    if [ "${#@}" -ge 1 ]
+    if [ -n "$*" ]
     then
-        local cmd_name=$(basename "$0")
-        echo "$(eval_gettext 'Error: $cmd_name takes no argument.')" >&2
+        cmd_name=$(basename "$0")
+        msg="$(gettext 'Error: %s takes no argument.')"
+        printf "$msg\n" "$cmd_name" >&2
         return 1
     fi
 
-    local msg=$(gettext "THESECRETKEYISONSTDERR")
-    local key=$(cat "$GSH_VAR/secret_key")
+    msg=$(gettext "THESECRETKEYISONSTDERR")
+    key=$(cat "$GSH_VAR/secret_key")
 
-    local i j I J
     I=${#msg}
     J=${#key}
+    L=$((I+J))
     i=0
     j=0
-    while [ "$i" -lt $I ] || [ "$j" -lt "$J" ]
+    while [ "$((i+j))" -lt "$L" ]
     do
-        if [ "$j" -ge "$J" ] || ( [ "$i" -lt "$I" ] && [ "$((RANDOM % (I+J)))" -lt "$I" ] )
+      r=$(RANDOM)
+      if [ "$((r % (L-i-j)))" -lt "$((I-i))" ]
         then
-            printf "${msg:$i:1}"
             i=$((i+1))
+            c=$(echo "$msg" | cut -c "$i")
+            printf "%s" "$c"
         else
-            printf "${key:$j:1}" >&2
             j=$((j+1))
+            c=$(echo "$key" | cut -c "$j")
+            printf "%s" "$c" >&2
         fi
     done
     echo
