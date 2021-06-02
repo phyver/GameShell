@@ -1,6 +1,6 @@
 SH_FILES=$(wildcard *.sh)
 EXCEPTIONS=
-OTHER_FILES=
+OTHER_FILES=merlin.c
 
 LANG=$(wildcard i18n/*.po)
 LANG:=$(filter-out i18n/en.po, $(LANG))
