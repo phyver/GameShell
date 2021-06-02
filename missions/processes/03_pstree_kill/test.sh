@@ -1,6 +1,6 @@
 kill_imp_spell() {
-  local p=$(ps -c | grep "$(gettext "mischievous_imp")" | awk '{print $1}')
-  ps -o pid,comm,ppid | grep "$p$" | grep "$(gettext "spell")" | awk '{print $1}' | xargs kill -9
+  local p=$(ps -ce | grep "$(gettext "mischievous_imp")" | awk '{print $1}')
+  ps -ceo pid,comm,ppid | grep "$p$" | grep "$(gettext "spell")" | awk '{print $1}' | xargs kill -9
 }
 cellar=$(eval_gettext '$GSH_HOME/Castle/Cellar')
 

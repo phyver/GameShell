@@ -11,6 +11,7 @@ _mission_init() {
     else
       CC=gcc
     fi
+    echo "CC=$CC"
   elif command -v clang >/dev/null
   then
     if [ "$GSH_MODE" = DEBUG ]
@@ -19,12 +20,15 @@ _mission_init() {
     else
       CC=clang
     fi
+    echo "CC=$CC"
   elif command -v c99 >/dev/null
   then
     CC=c99
+    echo "CC=$CC"
   elif command -v cc >/dev/null
   then
     CC=cc
+    echo "CC=$CC"
   elif ! [ -e "$MISSION_DIR/deps.sh" ]
   then
     # FIXME

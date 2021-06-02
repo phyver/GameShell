@@ -46,12 +46,16 @@ _mission_init() {
 
       # under BSD, libintl is installed in /usr/local and we need to pass
       # "-lintl" to the compiler, so we have to try several things!
-      echo "GSH: compiling spell.c, first try" >&2 &&
-      echo $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/$(gettext "spell")" &&
-      $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/$(gettext "spell")" ||
-      echo "GSH: compiling spell.c, second try" &&
-      echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_VAR/$(gettext "spell")" &&
-      $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_VAR/$(gettext "spell")"
+      {
+        echo "GSH: compiling spell.c, first try" >&2
+        echo $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/$(gettext "spell")"
+        $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/$(gettext "spell")"
+      } ||
+      {
+        echo "GSH: compiling spell.c, second try"
+        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_VAR/$(gettext "spell")"
+        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_VAR/$(gettext "spell")"
+      }
     ) || { echo "compilation failed" >&2; return 1; }
 
   else
