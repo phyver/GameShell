@@ -190,6 +190,7 @@ fi
 
 # remove "_" files
 echo "removing unnecessary files"
+find "$GSH_ROOT" -name "a.out" -print0 | xargs -0 rm -f
 find "$GSH_ROOT" -name "*~" -print0 | xargs -0 rm -f
 find "$GSH_ROOT" -name "_*.sh" -print0 | xargs -0 rm -f
 find "$GSH_ROOT" -name "boxes-data.awk" -print0 | xargs -0 rm -f
