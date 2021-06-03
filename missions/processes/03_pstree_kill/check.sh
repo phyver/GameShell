@@ -50,6 +50,8 @@ _mission_check() {
     cd "$cellar"
     sort "$GSH_VAR"/snowflakes.list 2>/dev/null | uniq > "$GSH_VAR"/snowflakes-generated
     ls *_"$(gettext "snowflake")" 2>/dev/null | sort | uniq > "$GSH_VAR"/snowflakes-present
+    # only check for missing snowflakes, and ignore snowflakes that might be present but are
+    # not in the list
     local nb=$(comm -1 -3 "$GSH_VAR"/snowflakes-present "$GSH_VAR"/snowflakes-generated | wc -l)
 
     if [ "$nb" -gt 0 ]

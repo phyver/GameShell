@@ -11,3 +11,9 @@ rm -f "$GSH_VAR"/{fairy,imp}.pid
 rm -f "$GSH_VAR"/{fairy,imp}.pid
 rm -f "$GSH_VAR/$(gettext "nice_fairy")"
 rm -f "$GSH_VAR/$(gettext "mischievous_imp")"
+(
+  cd "$(eval_gettext '$GSH_HOME/Castle/Cellar')"
+  # keep at most 10 snowflakes
+  find -name "*_$(gettext "snowflake")" | sed '1,10d' | xargs rm -f
+  find -name "*_$(gettext "coal")" | xargs rm -f
+)

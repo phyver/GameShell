@@ -1,4 +1,3 @@
-#define _POSIX_C_SOURCE 200809L // necessary to get "getline" function
 #include <fcntl.h>
 #include <libgen.h>
 #include <semaphore.h>
@@ -21,15 +20,15 @@
 // template for the input files
 #define IMP_INPUT_TEMPLATE "$MISSION_DIR/ascii-art/coal-%d.txt"
 #define FAIRY_INPUT_TEMPLATE "$MISSION_DIR/ascii-art/snowflake-%d.txt"
-#define INPUT_TEMPLATE                                                       \
+#define INPUT_TEMPLATE \
     (WHO == IMP ? IMP_INPUT_TEMPLATE : FAIRY_INPUT_TEMPLATE)
 
 // template for the output files
-#define IMP_OUTPUT_TEMPLATE                                                  \
+#define IMP_OUTPUT_TEMPLATE \
     "$(gettext '$GSH_HOME/Castle/Cellar')/%d_$(gettext 'coal')"
-#define FAIRY_OUTPUT_TEMPLATE                                                \
+#define FAIRY_OUTPUT_TEMPLATE \
     "$(gettext '$GSH_HOME/Castle/Cellar')/%d_$(gettext 'snowflake')"
-#define OUTPUT_TEMPLATE                                                      \
+#define OUTPUT_TEMPLATE \
     (WHO == IMP ? IMP_OUTPUT_TEMPLATE : FAIRY_OUTPUT_TEMPLATE)
 
 char input_template[1024]; // template for the input ASCII-art files
@@ -38,7 +37,9 @@ char input_file[1024];     // actual path for the current input ASCII-art file
 char output_template[1024]; // template for the ouput file
 char output_file[1024];     // actual path for the current output file
 
-#define LOG_FILE                                                             \
+char buf[4096]; // content of the ASCII-art file
+
+#define LOG_FILE \
     (WHO == IMP ? "$GSH_VAR/coals.list" : "$GSH_VAR/snowflakes.list")
 char log_file[1024]; // path for the log file
 
@@ -49,7 +50,7 @@ sem_t* writing_sem; // Semaphore protecting the log file
 
 int main()
 {
-    srand(WHO + time(NULL));
+    srand(getpid() + time(NULL));
 
     // Sanity checks.
     if (NB_FILES <= 0 || NB_FILES > 9 || MIN_SLEEP_TIME < 1)
@@ -76,8 +77,8 @@ int main()
     if (writing_sem == SEM_FAILED)
         return 1;
 
-    int n;
     while (1) {
+        int n;
         sleep(MIN_SLEEP_TIME + rand() % MAX_SLEEP_BONUS);
 
         // actual input ASCII-art file
@@ -92,15 +93,17 @@ int main()
 
         // random amount of spaces at the start of each line
         char* s = spaces + (rand() % MAX_SPACES);
-        size_t size = 1024;
-        char* line = NULL;
-        while (-1 != getline(&line, &size, in)) {
-            fprintf(out, "%s%s", s, line);
+        fread(buf, 1, 4096, in);
+        strtok(buf, "\n");
+        char* line;
+        while ((line = strtok(NULL, "\n")) != NULL) {
+            fprintf(out, "%s%s\n", s, line);
         }
         fclose(in);
         fclose(out);
         sem_wait(writing_sem);
         FILE* f = fopen(log_file, "a");
+        setbuf(f, 0);
         fprintf(f, "%s\n", basename(output_file));
         fclose(f);
         sem_post(writing_sem);
