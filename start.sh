@@ -363,7 +363,7 @@ Do you want to remove it and start a new game? [y/N]') "
 
     if [ "$GSH_MODE" = "DEBUG" ] && [ "$GSH_VERBOSE_DEBUG" = true ]
     then
-      printf 'GSH: mission %3d -> %s\n' "$MISSION_NB" "\$GSH_MISSIONS/${MISSION_DIR#$GSH_MISSIONS/}" &2
+      printf '    GSH: mission %3d -> %s\n' "$MISSION_NB" "\$GSH_MISSIONS/${MISSION_DIR#$GSH_MISSIONS/}" >&2
     elif [ "$GSH_MODE" = "DEBUG" ]
     then
       printf "." >&2
