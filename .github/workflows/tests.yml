@@ -19,4 +19,4 @@ jobs:
       #     brew install coreutils pstree tree man-db
       - name: Run the tests
         run: |
-          echo 'for _ in $(seq 3); do gsh test ; gsh auto ; done' | ./start.sh -Rdq missions/processes/
+          echo 'gsh systemconfig; for _ in $(seq 42); do gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./start.sh -RDq
