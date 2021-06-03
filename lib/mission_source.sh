@@ -51,7 +51,7 @@ mission_source() {
     return $exit_status
   fi
 
-  echo "GSH: sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
+  echo "    GSH: sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
   local TEMP=$(mktemp -d "$GSH_VAR/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
   local _MISSION_DIR=""
@@ -89,24 +89,24 @@ mission_source() {
   then
     [ -n "$msg" ] && echo "$msg"
     msg=""
-    echo "variables before / after"
-    comm -3 "$TEMP"/{before,after}-V
+    comm -23 "$TEMP"/{before,after}-V | sed "s/^/-Var:/"
+    comm -13 "$TEMP"/{before,after}-V | sed "s/^/+Var:/"
   fi
 
   if ! cmp -s "$TEMP"/{before,after}-F
   then
     [ -n "$msg" ] && echo "$msg"
     msg=""
-    echo "functions before / after"
-    comm -3 "$TEMP"/{before,after}-F
+    comm -23 "$TEMP"/{before,after}-F | sed "s/^/-Fun:/"
+    comm -13 "$TEMP"/{before,after}-F | sed "s/^/+Fun:/"
   fi
 
   if ! cmp -s "$TEMP"/{before,after}-A
   then
     [ -n "$msg" ] && echo "$msg"
     msg=""
-    echo "Alias before / after"
-    comm -3 "$TEMP"/{before,after}-A
+    comm -23 "$TEMP"/{before,after}-A | sed "s/^/-Aliase:/"
+    comm -13 "$TEMP"/{before,after}-A | sed "s/^/+Aliase:/"
   fi
 
   rm -rf "$TEMP"
