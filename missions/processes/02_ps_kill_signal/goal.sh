@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export PS
-if ps -c | head -n1 | grep CLS 2>/dev/null
+if ps -c | head -n1 | grep CLS 2>/dev/null >/dev/null
 then
   PS="ps"
 else
