@@ -4,7 +4,8 @@ kill_imp_spell() {
   echo p=$p
   echo ps -ce -o pid,comm,ppid
   ps -ce -o pid,comm,ppid
-  ps -ce -o pid,comm,ppid | grep "$p$" | grep "$(gettext "spell")" | awk '{print $1}' | xargs kill -9
+  ps -ceo pid,comm,ppid | grep "$p$" | grep "$(gettext "spell")" | awk '{print $1}' | xargs kill -9 2>/dev/null
+  ps -eo pid,comm,ppid | grep "$p$" | grep "$(gettext "spell")" | awk '{print $1}' | xargs kill -9 2>/dev/null
   pstree -p $$
 }
 cellar=$(eval_gettext '$GSH_HOME/Castle/Cellar')
