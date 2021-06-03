@@ -32,7 +32,6 @@ _mission_init() {
     return 1
     mission_source "$MISSION_DIR/deps.sh" || return 1
   fi
-    mission_source "$MISSION_DIR/deps.sh" || return 1
 
   if [ -n "$CC" ]
   then

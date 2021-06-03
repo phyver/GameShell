@@ -1,12 +1,10 @@
 kill_imp_spell() {
-  pstree -p $$
   local p=$(ps -ce | grep "$(gettext "mischievous_imp")" | awk '{print $1}')
-  echo p=$p
-  echo ps -ce -o pid,comm,ppid
-  ps -ce -o pid,comm,ppid
+  # argh, ps -eo ... doesn't find any process in macos-latest
+  # and   ps -ceo ... doesn't find any process in ubuntu-latest
+  # let's try both!
   ps -ceo pid,comm,ppid | grep "$p$" | grep "$(gettext "spell")" | awk '{print $1}' | xargs kill -9 2>/dev/null
   ps -eo pid,comm,ppid | grep "$p$" | grep "$(gettext "spell")" | awk '{print $1}' | xargs kill -9 2>/dev/null
-  pstree -p $$
 }
 cellar=$(eval_gettext '$GSH_HOME/Castle/Cellar')
 
