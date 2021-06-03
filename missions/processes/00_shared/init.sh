@@ -7,7 +7,7 @@ _mission_init() (
   chmod +x "$GSH_VAR/test-proc-name"
   "$GSH_VAR/test-proc-name" &
   PID=$!
-  name=$(ps -cp $PID | grep $PID | grep -v sh)
+  name=$(ps -cep $PID | grep $PID | grep -v sh)
   kill -9 $PID
   if [ -z "$name" ]
   then

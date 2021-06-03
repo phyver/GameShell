@@ -4,19 +4,19 @@ _mission_check() {
 
     local pid
     pid=$(cat "$GSH_VAR"/fairy.pid)
-    if ! ps -c -p $pid | grep "$(gettext "nice_fairy")" > /dev/null
+    if ! ps -cep $pid | grep "$(gettext "nice_fairy")" > /dev/null
     then
         echo "$(gettext "Did you kill the fairy?")"
         return 1
     fi
     pid=$(cat "$GSH_VAR"/imp.pid)
-    if ! ps -c -p $pid | grep "$(gettext "mischievous_imp")" > /dev/null
+    if ! ps -cep $pid | grep "$(gettext "mischievous_imp")" > /dev/null
     then
         echo "$(gettext "Did you kill the imp?")"
         return 1
     fi
 
-    local nb=$(ps -c -p $(cat "$GSH_VAR"/fairy_spell.pids) | grep "$(gettext "spell")" | wc -l)
+    local nb=$(ps -cep $(cat "$GSH_VAR"/fairy_spell.pids) | grep "$(gettext "spell")" | wc -l)
     if [ "$nb" -lt 3 ]
     then
         echo $nb
@@ -24,7 +24,7 @@ _mission_check() {
         return 1
     fi
 
-    local nb=$(ps -c -p $(cat "$GSH_VAR"/imp_spell.pids) | grep "$(gettext "spell")" | wc -l)
+    local nb=$(ps -cep $(cat "$GSH_VAR"/imp_spell.pids) | grep "$(gettext "spell")" | wc -l)
     if [ "$nb" -ne 0 ]
     then
         echo "$(gettext "Are you sure you removed all the imp's spells?")"

@@ -2,7 +2,7 @@
 
 _mission_check() {
     local pid=$(cat "$GSH_VAR/spell.pid")
-    if ps -c -p $pid | grep "$(gettext "spell")" > /dev/null
+    if ps -cep $pid | grep "$(gettext "spell")" > /dev/null
     then
         echo "$(gettext "The spell is still running!")"
         return 1
