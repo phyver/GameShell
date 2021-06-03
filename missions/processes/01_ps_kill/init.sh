@@ -11,7 +11,6 @@ _mission_init() {
     else
       CC=gcc
     fi
-    echo "CC=$CC"
   elif command -v clang >/dev/null
   then
     if [ "$GSH_MODE" = DEBUG ]
@@ -20,15 +19,12 @@ _mission_init() {
     else
       CC=clang
     fi
-    echo "CC=$CC"
   elif command -v c99 >/dev/null
   then
     CC=c99
-    echo "CC=$CC"
   elif command -v cc >/dev/null
   then
     CC=cc
-    echo "CC=$CC"
   elif ! [ -e "$MISSION_DIR/deps.sh" ]
   then
     # FIXME
@@ -36,10 +32,20 @@ _mission_init() {
     return 1
     mission_source "$MISSION_DIR/deps.sh" || return 1
   fi
+    mission_source "$MISSION_DIR/deps.sh" || return 1
 
   if [ -n "$CC" ]
   then
-    $CC "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")" || return 1
+    (
+      # in debug mode, don't hide messages
+      if [ "$GSH_MODE" != DEBUG ] || [ -z "$GSH_VERBOSE_DEBUG" ]
+      then
+        exec 1>/dev/null
+        exec 2>/dev/null
+      fi
+      echo $CC "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")"
+      $CC "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")"
+    ) || { echo "compilation failed" >&2; return 1; }
   else
     local PYTHON_PATH
     if PYTHON_PATH=$(command -v python3)
@@ -51,8 +57,9 @@ _mission_init() {
     chmod 755 "$GSH_VAR/$(gettext "spell")"
   fi
   "$GSH_VAR/$(gettext "spell")" &
-  echo $! > "$GSH_VAR"/spell.pid
-  disown
+  local PID=$!
+  disown $PID
+  echo $PID > "$GSH_VAR"/spell.pid
   return 0
 }
 

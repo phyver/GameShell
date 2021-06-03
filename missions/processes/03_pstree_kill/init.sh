@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# this script uses 'disown' to prevent control job messages to appear on the
-# screen when cleaning.
-# I'm not sure if there is a way to do that in POSIX sh...
-
 _mission_init() {
 
   local CC
@@ -68,18 +64,7 @@ _mission_init() {
       mkdir -p "$GSH_VAR/imp/"
       $CC -D WHO=IMP "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/imp/$(gettext "spell")"
     )
-
     unset CC
-
-    "$GSH_VAR/$(gettext "nice_fairy")" &
-    local PID=$!
-    disown "$PID"
-    echo "$PID" > "$GSH_VAR/fairy.pid"
-
-    "$GSH_VAR/$(gettext "mischievous_imp")" &
-    PID=$!
-    disown "$PID"
-    echo "$PID" > "$GSH_VAR/imp.pid"
 
   else
 
@@ -91,10 +76,6 @@ _mission_init() {
     mkdir -p "$GSH_VAR/fairy/"
     cp "$MISSION_DIR/fairy/spell.sh" "$GSH_VAR/fairy/$(gettext "spell")"
     chmod 755 "$GSH_VAR/fairy/$(gettext "spell")"
-    "$GSH_VAR/$(gettext "nice_fairy")" &
-    local PID=$!
-    disown "$PID"
-    echo "$PID" > "$GSH_VAR/fairy.pid"
 
     { echo "#!$BASH_PATH" ; sed "1d" "$MISSION_DIR/mischievous_imp.sh" ; } > "$GSH_VAR/$(gettext "mischievous_imp")"
     chmod 755 "$GSH_VAR/$(gettext "mischievous_imp")"
@@ -102,13 +83,19 @@ _mission_init() {
     mkdir -p "$GSH_VAR/imp/"
     cp "$MISSION_DIR/imp/spell.sh" "$GSH_VAR/imp/$(gettext "spell")"
     chmod 755 "$GSH_VAR/imp/$(gettext "spell")"
-    "$GSH_VAR/$(gettext "mischievous_imp")" &
-    PID=$!
-    disown "$PID"
-    echo "$PID" > "$GSH_VAR/imp.pid"
-
-    return 0
   fi
+
+  "$GSH_VAR/$(gettext "nice_fairy")" &
+  local PID=$!
+  disown $PID
+  echo $PID > "$GSH_VAR/fairy.pid"
+
+  "$GSH_VAR/$(gettext "mischievous_imp")" &
+  local PID=$!
+  disown $PID
+  echo $PID > "$GSH_VAR/imp.pid"
+
+  return 0
 }
 
 _mission_init

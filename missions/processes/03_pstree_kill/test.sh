@@ -4,17 +4,27 @@ kill_imp_spell() {
 }
 cellar=$(eval_gettext '$GSH_HOME/Castle/Cellar')
 
+stand_by() {
+  local nl=""
+  while ! [ -e "$GSH_VAR/snowflakes.list" ] || ! [ -e "$GSH_VAR/coals.list" ]
+  do
+    sleep 0.5
+    printf "."
+    nl="\n"
+  done
+  printf "$nl"
+}
 
-sleep 5
+stand_by
 kill_imp_spell
 rm -f "$cellar"/*_"$(gettext "coal")"
 gsh assert_check true
 
-sleep 5
+stand_by
 kill_imp_spell
 gsh assert_check false
 
-sleep 5
+stand_by
 kill_imp_spell
 rm -f "$cellar"/*_"$(gettext "coal")"
 rm -f "$cellar"/*_"$(gettext "snowflake")"

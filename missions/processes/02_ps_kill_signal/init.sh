@@ -69,8 +69,9 @@ _mission_init() {
     chmod 755 "$GSH_VAR/$(gettext "spell")"
   fi
   "$GSH_VAR/$(gettext "spell")" &
-  echo $! > "$GSH_VAR"/spell.pids
-  disown
+  local PID=$!
+  disown $PID
+  echo $PID > "$GSH_VAR"/spell.pids
   return 0
 }
 

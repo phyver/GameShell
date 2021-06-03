@@ -39,12 +39,20 @@ _mission_check() {
         return 1
     fi
 
+    local nl=""
+    while ! [ -e "$GSH_VAR/snowflakes.list" ]
+    do
+      sleep 0.5
+      printf "."
+      nl="\n"
+    done
+    printf "$nl"
     cd "$cellar"
     sort "$GSH_VAR"/snowflakes.list 2>/dev/null | uniq > "$GSH_VAR"/snowflakes-generated
     ls *_"$(gettext "snowflake")" 2>/dev/null | sort | uniq > "$GSH_VAR"/snowflakes-present
     local nb=$(comm -1 -3 "$GSH_VAR"/snowflakes-present "$GSH_VAR"/snowflakes-generated | wc -l)
 
-    if [ "$nb" -gt 1 ]
+    if [ "$nb" -gt 0 ]
     then
         echo "$(gettext "Did you melt some of the snowflakes?")"
         return 1

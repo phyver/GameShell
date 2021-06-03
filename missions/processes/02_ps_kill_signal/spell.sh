@@ -1,13 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 
 trap spawn TERM
 
 spawn() {
     echo "$(gettext "You'll need to do better than that to kill my spell!")"
-
     "$0" &
-    echo "$!" >> "$GSH_VAR/spell.pids"
-    disown
+    local PID=$!
+    disown $PID
+    echo $PID >> "$GSH_VAR/spell.pids"
 }
 
 DELAY=5
@@ -15,7 +15,8 @@ DELAY=5
 while true
 do
     sleep $DELAY & wait $!
-    INDENT=$(echo "                       " | cut -c1-$((2+RANDOM%15)))
+    r=$(RANDOM)
+    INDENT=$(echo "                       " | cut -c1-$((2+r%15)))
     cat <<'EOS' | sed "s/^/$INDENT/g"
 
       *#@*
