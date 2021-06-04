@@ -14,7 +14,7 @@ The spell is a process.
 Useful commands
 ===============
 
-ps
+$PS
   List the processes that are currently executed by the shell.
 
 kill N
