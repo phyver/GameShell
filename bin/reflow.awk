@@ -27,9 +27,11 @@ func greedy_format() {
 
 func dynamic_format() {
     INF = nb_words * width * width;
-    INF = 999999999;
 
     indent_width = length(par_indent);
+    second_par_indent = par_indent;
+    gsub(/./, " ", second_par_indent);
+
 
     if (nb_words == 0) {return;}
 
@@ -89,8 +91,12 @@ func dynamic_format() {
     # print lines
     for (i=b; i>0; i--) {
         printf("%s", par_indent);
+        par_indent = second_par_indent;
         for (k=B[i]; k<B[i-1]; k++) {
-            printf("%s ", PAR[k]);
+            printf("%s", PAR[k]);
+            if (i != 1 || k<B[i-1]-1) {
+                printf(" ");
+            }
         }
         printf("\n");
     }
@@ -112,22 +118,25 @@ func push(w) {
 }
 
 BEGIN {
-    if (!width) {
-        width = ENVIRON["COLUMNS"];
-        print "width =", width;
-    }
-    if (!width) {
-        width = 78;
-    }
-    if (!penalty) {
-        penalty = 10;
-    }
+    if (!width) width = ENVIRON["COLUMNS"];
+    if (!width) width = 78;
+    if (!penalty) penalty = 10;
 }
 
 # on first line of new paragraph, count leading spaces to get indentation
 !nb_words {
-    match($0, /^ */);
-    par_indent = substr($0, 1, RLENGTH);
+    # if a paragraph starts with a list marker
+    # don't forget to remove the list marker!
+    if (match($0, /^ *[-+]  */)) {
+        par_indent = substr($0, 1, RLENGTH);
+        $0 = substr($0, RLENGTH+1);
+    } else if (match($0, /^ *[0-9][0-9]*[./]  */)) {
+        par_indent = substr($0, 1, RLENGTH);
+        $0 = substr($0, RLENGTH+1);
+    } else {
+        match($0, /^ */);
+        par_indent = substr($0, 1, RLENGTH);
+    }
 }
 
 # on empty lines, format current paragraph (if it exits) and print a newline
@@ -145,5 +154,9 @@ BEGIN {
 # if line doesn't end with a space, it finishes the current paragraph
 /[^ ]$/ {
     for (i=1; i<=NF; i++) push($i);
+    format();
+}
+
+END {
     format();
 }
