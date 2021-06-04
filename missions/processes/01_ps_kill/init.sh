@@ -46,13 +46,7 @@ _mission_init() {
       $CC "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")"
     ) || { echo "compilation failed" >&2; return 1; }
   else
-    local PYTHON_PATH
-    if PYTHON_PATH=$(command -v python3)
-    then
-      { echo "#!$PYTHON_PATH" ; sed "1d" "$MISSION_DIR/spell.py" ; } > "$GSH_VAR/$(gettext "spell")"
-      else
-        cp "$MISSION_DIR/spell.sh" "$GSH_VAR/$(gettext "spell")"
-    fi
+    cp "$MISSION_DIR/spell.sh" "$GSH_VAR/$(gettext "spell")"
     chmod 755 "$GSH_VAR/$(gettext "spell")"
   fi
   "$GSH_VAR/$(gettext "spell")" &

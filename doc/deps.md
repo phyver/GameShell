@@ -22,13 +22,12 @@ the following
   - `tree` (`tree` package in Debian/Ubuntu)
   - `cal` (`bsdmainutils` package in Debian/Ubuntu)
   - `xeyes` (`x11-apps` package in Debian/Ubuntu)
-  - `python3` (`python3` package in Debian/Ubuntu)
 
 On a Debian / Ubuntu system, the following ensures you have everything you
 need to run GameShell without problems.
 
 ```sh
-$ sudo apt install gettext-base python3 man-db psmisc nano tree bsdmainutils x11-apps
+$ sudo apt install gettext-base man-db psmisc nano tree bsdmainutils x11-apps
 ```
 
 
@@ -60,7 +59,7 @@ We haven't tested it much, but it should run on freeBSD once you install the
 dependencies:
 
 ```sh
-$ pkg install bash gettext pstree wget python3
+$ pkg install bash gettext pstree wget
 ```
 
 

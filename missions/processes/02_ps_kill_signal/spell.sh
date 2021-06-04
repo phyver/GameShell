@@ -1,13 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 
 trap spawn TERM
 
 spawn() {
     echo "$(gettext "You'll need to do better than that to kill my spell!")"
     "$0" &
-    local PID=$!
-    disown $PID
-    echo $PID >> "$GSH_VAR/spell.pids"
+    echo $! >> "$GSH_VAR/spell.pids"
 }
 
 DELAY=5
