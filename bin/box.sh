@@ -10,9 +10,6 @@ else
   AWK=awk
 fi
 
-# create awk boxes database if necessary
-[ -e "$dir/boxes-data.awk" ] || $AWK -f "$dir/../utils/create_boxes_data.awk" "$dir/../utils/boxes.db" > "$dir/boxes-data.awk"
-
 # define an 8bit encoding if awk doesn't supports UTF-8
 if $AWK 'BEGIN {exit 3==length("héé") ? 0 : 1;}' || ! command -v iconv >/dev/null
 then
@@ -29,38 +26,47 @@ then
   shift 2
 fi
 
-if [ -n "$1" ] && [ -z "$TMP_ENC" ]
+# get the width
+if [ "$COLUMNS" -ge 80 ]
 then
-  filename=$1
-elif [ -n "$1" ] && [ -n "$TMP_ENC" ]
-then
-  tmpfile=$(mktemp)
-  iconv -f UTF-8 -t "$TMP_ENC" < "$1" > "$tmpfile"
-  filename=$tmpfile
-elif [ -z "$1" ] && [ -z "$TMP_ENC" ]
-then
-  tmpfile=$(mktemp)
-  cat > "$tmpfile"
-  filename=$tmpfile
-elif [ -z "$1" ] && [ -n "$TMP_ENC" ]
-then
-  tmpfile=$(mktemp)
-  iconv -f UTF-8 -t "$TMP_ENC" > "$tmpfile"
-  filename=$tmpfile
+  WIDTH=$((COLUMNS - 30))
+  PARCHMENT=true
 else
-  echo "error: box.sh" >&2
-  exit 1
+  WIDTH=$COLUMNS
+  PARCHMENT=false
 fi
 
-# get width / height of text
-size=$($AWK '{w=w<length($0) ? length($0) : w;} END {printf("-v width=%d -v height=%d", w, NR);}' < "$filename")
+# get filename, or "-"
+filename=$1
+[ -n "$filename" ] || filename=-
 
-# add box
+# temporary file
+tmpfile=$(mktemp)
+
 if [ -z "$TMP_ENC" ]
 then
-  $AWK -v box="$box" $size -f "$dir/boxes-data.awk" -f "$dir/box.awk" "$filename"
+  reflow.awk -v width=$WIDTH "$filename" > "$tmpfile"
 else
-  $AWK -v box="$box" $size -f "$dir/boxes-data.awk" -f "$dir/box.awk" "$filename" | iconv -f $TMP_ENC -t UTF-8
+  iconv -f UTF-8 -t "$TMP_ENC" "$filename" | reflow.awk -v width=$WIDTH > "$tmpfile"
+fi
+
+if [ "$PARCHMENT" = false ]
+then
+  cat $tmpfile
+else
+  # create awk boxes database if necessary
+  [ -e "$dir/boxes-data.awk" ] || $AWK -f "$dir/../utils/create_boxes_data.awk" "$dir/../utils/boxes.db" > "$dir/boxes-data.awk"
+
+  # get width / height of text
+  size=$($AWK '{w=w<length($0) ? length($0) : w;} END {printf("-v width=%d -v height=%d", w, NR);}' < "$tmpfile")
+
+  # add box
+  if [ -z "$TMP_ENC" ]
+  then
+    $AWK -v box="$box" $size -f "$dir/boxes-data.awk" -f "$dir/box.awk" "$tmpfile"
+  else
+    $AWK -v box="$box" $size -f "$dir/boxes-data.awk" -f "$dir/box.awk" "$tmpfile" | iconv -f $TMP_ENC -t UTF-8
+  fi
 fi
 
 rm -f "$tmpfile"

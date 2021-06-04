@@ -1,10 +1,13 @@
 #!/bin/sh
 
 # draw a parchment around a text file
+# usage:
+#   $ parchment             => acts as a filter and adds a random parchment
+#   $ parchment FILE        => adds a random parchment
+#   $ parchment FILE DESIGN => adds the given parchment
 
-GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
-GSH_MISSION_DIR=$GSH_ROOT/missions
-GSH_UID=$(cat "$GSH_ROOT/.config/uid" 2> /dev/null)
+GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
+PATH=$PATH:$GSH_ROOT/bin
 
 file=$1
 [ -n "$file" ] && [ ! -e "$file" ] && return 1
