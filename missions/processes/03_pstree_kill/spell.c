@@ -93,10 +93,9 @@ int main()
 
         // random amount of spaces at the start of each line
         char* s = spaces + (rand() % MAX_SPACES);
-        fread(buf, 1, 4096, in);
-        strtok(buf, "\n");
-        char* line;
-        while ((line = strtok(NULL, "\n")) != NULL) {
+        int size = fread(buf, 1, 4096, in);
+        buf[size] = 0; // make sure it is a proper null terminated string
+        for (char* line = strtok(buf, "\n"); line != NULL; line = strtok(NULL, "\n")) {
             fprintf(out, "%s%s\n", s, line);
         }
         fclose(in);
