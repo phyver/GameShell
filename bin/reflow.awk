@@ -2,9 +2,13 @@
 
 func greedy_format() {
     indent_width = length(par_indent);
+    second_par_indent = par_indent;
+    gsub(/./, " ", second_par_indent);
+
     if (nb_words) {
         current_width = indent_width;
         printf("%s", par_indent);
+        par_indent = second_par_indent;
         for (i=1; i<=nb_words; i++) {
             w = length(PAR[i]);
             if (current_width + w <= width) {
@@ -89,12 +93,14 @@ func dynamic_format() {
     }
 
     # print lines
+    n = 0;
     for (i=b; i>0; i--) {
         printf("%s", par_indent);
         par_indent = second_par_indent;
         for (k=B[i]; k<B[i-1]; k++) {
             printf("%s", PAR[k]);
-            if (i != 1 || k<B[i-1]-1) {
+            n++;
+            if (n < nb_words) {
                 printf(" ");
             }
         }
@@ -108,8 +114,11 @@ func dynamic_format() {
 }
 
 func format() {
-    # greedy_format();
-    dynamic_format();
+    if (greedy) {
+        greedy_format();
+    } else {
+        dynamic_format();
+    }
 }
 
 # push the word into the current paragraph

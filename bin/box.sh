@@ -27,12 +27,12 @@ then
 fi
 
 # get the width
-if [ "$COLUMNS" -ge 80 ]
+if [ "${COLUMNS:-0}" -ge 80 ]
 then
   WIDTH=$((COLUMNS - 30))
   PARCHMENT=true
 else
-  WIDTH=$COLUMNS
+  WIDTH=$((COLUMNS-1))
   PARCHMENT=false
 fi
 
