@@ -6,11 +6,25 @@ GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
 GSH_LIB=$GSH_ROOT/lib
 GSH_CONFIG=$GSH_ROOT/.config
 
-treasure_msg_file=$1
+treasure_msg_file=${1:--}
 WIDTH=31  # width of treasure-chest.txt file (wc -L)
 
-paste "$GSH_LIB/ascii-art/treasure-chest.txt" "$treasure_msg_file" |
-awk -v width=$WIDTH -v seed_file="$GSH_CONFIG/PRNG_seed" '
+# get the width
+if [ "${COLUMNS:-0}" -ge 80 ]
+then
+  reflow_width=$((COLUMNS - 35))
+else
+  parchment -B ASCII "$treasure_msg_file"
+  return $?
+fi
+
+# limit the reflow width to 100 to avoid too wide parchments
+# [ "$reflow_width" -gt 100 ] && reflow_width=100
+
+echo
+"$GSH_ROOT/bin/reflow.awk" -v width=$reflow_width "$treasure_msg_file" |
+  paste "$GSH_LIB/ascii-art/treasure-chest.txt" - |
+  awk -v width=$WIDTH -v seed_file="$GSH_CONFIG/PRNG_seed" '
 BEGIN{
   getline seed < seed_file;
   if (seed) srand(seed); else srand();
@@ -32,4 +46,4 @@ END {
 }
 /^[^\t]/ { print $0; }
 ' | column -t -s"	"
-
+echo

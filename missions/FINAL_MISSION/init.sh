@@ -1,3 +1,3 @@
 #!/bin/bash
 
-parchment "$(eval_gettext '$MISSION_DIR/msg/en.txt')" Twinkle
+parchment -B Twinkle "$(eval_gettext '$MISSION_DIR/msg/en.txt')"

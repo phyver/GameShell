@@ -24,6 +24,9 @@ export GSH_SBIN="$GSH_ROOT/.sbin"
 export TEXTDOMAINDIR="$GSH_ROOT/locale"
 export TEXTDOMAIN="gsh"
 
+# export the COLUMNS variable so the reflow script can get the terminal size
+export COLUMNS
+
 # PATH=$PATH:"$GSH_ROOT/bin"
 PATH="$GSH_ROOT/bin":$PATH
 

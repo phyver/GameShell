@@ -7,7 +7,7 @@ _mission_init() {
   find "$GSH_HOME" -iname "$(gettext "painting")_*" -print0 | xargs -0 rm -rf
 
   local filename=$(mktemp "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')"/$(gettext "painting")_XXXXXX)
-  parchment "$MISSION_DIR/ascii-art/painting-pipe" Diamond > "$filename"
+  box.sh -B Diamond "$MISSION_DIR/ascii-art/painting-pipe" > "$filename"
   local Y=$((1980 + RANDOM%10))
   local M=$(echo 0$((1 + RANDOM%12)) | cut -c 1-2)
   local D=$(echo 0$((1 + RANDOM%28)) | cut -c 1-2)
@@ -19,12 +19,12 @@ _mission_init() {
   touch -t "$Y$M$D$h$m.$s" "$filename"
 
   filename=$(mktemp "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')"/$(gettext "painting")_XXXXXX)
-  parchment "$MISSION_DIR/ascii-art/painting-star_wars" Diamond > "$filename"
+  box.sh -B Diamond "$MISSION_DIR/ascii-art/painting-star_wars" > "$filename"
   sign_file "$filename"
   touch "$filename"
 
   filename=$(mktemp "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')"/$(gettext "painting")_XXXXXX)
-  parchment "$MISSION_DIR/ascii-art/painting-joconde" Diamond  > "$filename"
+  box.sh -B Diamond "$MISSION_DIR/ascii-art/painting-joconde" > "$filename"
   Y=$(date +%Y)
   Y=$((Y + 1 + RANDOM%10))
   M=$(echo 0$((1 + RANDOM%12)) | cut -c 1-2)
