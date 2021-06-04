@@ -36,6 +36,7 @@ func dynamic_format() {
     # initialize padding
     for (i=1; i<=nb_words; i++) {
         padding[i,i] = width-length(PAR[i])-indent_width;
+        # if (padding[i,i]<0) padding[i,i] *= -INF;
         for (j=i+1; j<=nb_words; j++) {
             padding[i,j] = padding[i,j-1] - length(PAR[j]) - 1;
         }
@@ -64,7 +65,7 @@ func dynamic_format() {
         i = j;
         while (i >= 1) {
             if (padding[i,j] < 0) {
-                cost = INF;
+                cost = cost_before[i] + penalty*penalty*padding[i,j]*padding[i,j];
             } else {
                 cost = cost_before[i] + padding[i,j]*padding[i,j];
             }
@@ -117,6 +118,9 @@ BEGIN {
     }
     if (!width) {
         width = 78;
+    }
+    if (!penalty) {
+        penalty = 10;
     }
 }
 
