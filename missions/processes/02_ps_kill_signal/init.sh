@@ -3,18 +3,28 @@
 _mission_init() {
 
   local CC
-  if command -v c99 >/dev/null
+  if command -v gcc >/dev/null
+  then
+    if [ "$GSH_MODE" = DEBUG ]
+    then
+      CC="gcc -std=c99 -Wall -Wextra -pedantic"
+    else
+      CC=gcc
+    fi
+  elif command -v clang >/dev/null
+  then
+    if [ "$GSH_MODE" = DEBUG ]
+    then
+      CC="clang -std=c99 -Wall -Wextra -pedantic"
+    else
+      CC=clang
+    fi
+  elif command -v c99 >/dev/null
   then
     CC=c99
   elif command -v cc >/dev/null
   then
     CC=cc
-  elif command -v gcc >/dev/null
-  then
-    CC=gcc
-  elif command -v clang >/dev/null
-  then
-    CC=clang
   elif ! [ -e "$MISSION_DIR/deps.sh" ]
   then
     # FIXME
@@ -25,10 +35,29 @@ _mission_init() {
 
   if [ -n "$CC" ]
   then
-    # under BSD, libintl is installed in /usr/local
-    $CC -lpthread "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")" 2>/dev/null ||
-    $CC -I/usr/local/include/ -L/usr/local/lib -lintl -lpthread "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")" 2>/dev/null ||
-    { echo "compilation failed" >&2; return 1; }
+
+    (
+      # in debug mode, don't hide messages
+      if [ "$GSH_MODE" != DEBUG ] || [ -z "$GSH_VERBOSE_DEBUG" ]
+      then
+        exec 1>/dev/null
+        exec 2>/dev/null
+      fi
+
+      # under BSD, libintl is installed in /usr/local and we need to pass
+      # "-lintl" to the compiler, so we have to try several things!
+      {
+        echo "GSH: compiling spell.c, first try" >&2
+        echo $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/$(gettext "spell")"
+        $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/$(gettext "spell")"
+      } ||
+      {
+        echo "GSH: compiling spell.c, second try"
+        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_VAR/$(gettext "spell")"
+        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_VAR/$(gettext "spell")"
+      }
+    ) || { echo "compilation failed" >&2; return 1; }
+
   else
     local PYTHON_PATH
     if PYTHON_PATH=$(command -v python3)
@@ -39,9 +68,10 @@ _mission_init() {
     fi
     chmod 755 "$GSH_VAR/$(gettext "spell")"
   fi
-  TEXTDOMAIN=$TEXTDOMAIN "$GSH_VAR/$(gettext "spell")" &
-  echo $! > "$GSH_VAR"/spell.pids
-  disown
+  "$GSH_VAR/$(gettext "spell")" &
+  local PID=$!
+  disown $PID
+  echo $PID > "$GSH_VAR"/spell.pids
   return 0
 }
 

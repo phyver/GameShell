@@ -1,14 +1,15 @@
-#include <locale.h>
+#include <fcntl.h>
 #include <libintl.h>
+#include <locale.h>
+#include <semaphore.h>
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
 #include <time.h>
 #include <unistd.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <semaphore.h>
+#include <wordexp.h>
 
 #define NB_LINES 3
 #define MAX_SIZE 6
@@ -16,98 +17,98 @@
 #define MIN_SLEEP_TIME 5
 #define MAX_SLEEP_BONUS 5
 
-char coal[NB_LINES][MAX_SIZE+1] = {
+char coal[NB_LINES][MAX_SIZE + 1] = {
     " *#@*",
     "&_**/~",
     " !$-#",
 };
 
-char spaces[MAX_SPACES+1] = "                              ";
+char spaces[MAX_SPACES + 1] = "                              ";
 
-char dom[1024];     // Plenty large enough for TEXTDOMAIN
-char domdir[1024];  // Plenty large enough for TEXTDOMAINDIR
-char path[1024];    // Plenty large enough for a file path.
+char dom[1024];    // large enough for TEXTDOMAIN
+char domdir[1024]; // large enough for TEXTDOMAINDIR
+char path[1024];   // large enough for a file path.
 
-sem_t *printing_sem; // Semaphore protecting stdout.
-sem_t *writing_sem;  // Semaphore protecting the PID file.
+sem_t* printing_sem; // Semaphore protecting stdout.
+sem_t* writing_sem;  // Semaphore protecting the PID file.
 
-void print_coal() {
+void print_coal()
+{
     int err = sem_wait(printing_sem);
-
-    if(err != 0) return; // Might have been interrupted.
-
+    if (err != 0)
+        return; // Might have been interrupted.
     printf("\n");
-
-    char *s = spaces + (rand() % MAX_SPACES);
-    for(int i = 0; i < NB_LINES; i++) {
+    char* s = spaces + (rand() % MAX_SPACES);
+    for (int i = 0; i < NB_LINES; i++) {
         printf("%s%s\n", s, coal[i]);
     }
-
     printf("\n");
-
     sem_post(printing_sem);
 }
 
-void write_pid(pid_t pid) {
+void write_pid(pid_t pid)
+{
     sem_wait(writing_sem);
-
-    FILE *f = fopen(path, "a");
+    FILE* f = fopen(path, "a");
     fprintf(f, "%d\n", pid);
     fclose(f);
-
     sem_post(writing_sem);
 }
 
-void spawn(int sig) {
-    printf("%s\n", gettext("You'll need to do better than that to kill my spell!"));
+void spawn(int sig)
+{
+    (void)sig; // to prevent warning
+    printf("%s\n",
+        gettext("You'll need to do better than that to kill my spell!"));
     // reset the signal handler
     signal(SIGTERM, spawn);
 
     pid_t pid = fork();
-
-    if(pid) {
+    if (pid) {
         write_pid(pid);
-
         // Update the seed to desynchronize.
-        srand(time(NULL));
+        srand(pid + time(NULL));
     }
 }
 
-int main(int argc, char *argv[]) {
+int main()
+{
     srand(time(NULL));
 
-    setlocale(LC_ALL,"");
+    setlocale(LC_ALL, "");
 
-    // Give access to the TEXTDOMAIN environment variable.
-    char *dom_env = getenv("TEXTDOMAIN");
-    if(dom_env == NULL) return 1;
+    // get the TEXTDOMAIN environment variable.
+    char* dom_env = getenv("TEXTDOMAIN");
+    if (dom_env == NULL)
+        return 1;
     strncpy(dom, dom_env, 1024);
     textdomain(dom);
 
-    // Give access to the TEXTDOMAINDIR environment variable.
-    char *domdir_env = getenv("TEXTDOMAINDIR");
-    if(domdir_env == NULL) return 1;
+    // get the TEXTDOMAINDIR environment variable.
+    char* domdir_env = getenv("TEXTDOMAINDIR");
+    if (domdir_env == NULL)
+        return 1;
     strncpy(domdir, domdir_env, 1024);
     bindtextdomain(dom, domdir);
 
-    // Get a path to the file in which to write the children's PIDs.
-    char *gsh_var = getenv("GSH_VAR");
-    if(gsh_var == NULL) return 1;
-    strncpy(path, gsh_var, 1024);
-    if(strlen(path) > 1000) return 1;
-    strcat(path, "/spell.pids");
+    // define the path to the file in which to write the children's PIDs.
+    wordexp_t result;
+    wordexp("$GSH_VAR/spell.pids", &result, 0);
+    strncpy(path, result.we_wordv[0], 1024);
 
     // Initialize semaphores.
     printing_sem = sem_open("/printing_sem", O_CREAT, 0644, 1);
-    if(printing_sem == SEM_FAILED) return 1;
+    if (printing_sem == SEM_FAILED)
+        return 1;
 
     writing_sem = sem_open("/writing_sem", O_CREAT, 0644, 1);
-    if(writing_sem == SEM_FAILED) return 1;
+    if (writing_sem == SEM_FAILED)
+        return 1;
 
     // Register callback.
     signal(SIGTERM, spawn);
 
-    while(1) {
+    while (1) {
         sleep(MIN_SLEEP_TIME + rand() % MAX_SLEEP_BONUS);
         print_coal();
     }

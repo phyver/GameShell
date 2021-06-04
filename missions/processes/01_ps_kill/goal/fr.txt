@@ -15,7 +15,7 @@ Le sortilège est un processus.
 Commandes utiles
 ================
 
-ps
+$PS
   Affiche la liste des processus lancés par le shell.
 
 kill N
