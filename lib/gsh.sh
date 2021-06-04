@@ -59,7 +59,7 @@ _get_mission_dir() {
 _gsh_welcome() {
   local msg_file=$(eval_gettext '$GSH_ROOT/i18n/gameshell-welcome/en.txt')
   [ -r "$msg_file" ] || return 1
-  parchment "$msg_file" Parchment5 | pager
+  parchment "$msg_file" | pager
 }
 
 _gsh_reset() {
