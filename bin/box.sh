@@ -1,6 +1,27 @@
 #!/bin/sh
 
-dir=$(dirname "$0")
+
+working_dir=$(cd "$(dirname "$0")"; pwd -P)
+PATH=$PATH:$working_dir
+
+usage() {
+  cat <<EOS
+usage: $0 [options] [FILES]
+
+with
+  -E ENC     choose temporary encoding
+             (default: nothing if awk supports UTF-8, ISO-8859-1 otherwise)
+  -R WIDTH   reflow text at given width
+             (default: 0, no reflow)
+  -B BOX     choose box design (if empty, will only reflow the text)
+             (default: ASCII)
+  -W         choose width for the inside of the box
+             (default: actual width of text)
+  -H         choose height for the inside of the box
+             (default: actual height of text)
+  -h         this message
+EOS
+}
 
 # choose gawk if it exists, as it knows how to deal with UTF-8
 if command -v gawk >/dev/null
@@ -10,57 +31,105 @@ else
   AWK=awk
 fi
 
-# create awk boxes database if necessary
-[ -e "$dir/boxes-data.awk" ] || $AWK -f "$dir/../utils/create_boxes_data.awk" "$dir/../utils/boxes.db" > "$dir/boxes-data.awk"
-
-# define an 8bit encoding if awk doesn't supports UTF-8
+# default temporary encoding: use an 8bit encoding if awk doesn't supports
+# UTF-8
 if $AWK 'BEGIN {exit 3==length("héé") ? 0 : 1;}' || ! command -v iconv >/dev/null
 then
-  TMP_ENC=""
+  tmp_encoding=""
 else
-  TMP_ENC=ISO-8859-1
+  tmp_encoding=ISO-8859-1
 fi
 
-# get the box design
+# default box design
 box=ASCII
-if [ "$1" = "-b" ]
-then
-  box=$2
-  shift 2
-fi
 
-if [ -n "$1" ] && [ -z "$TMP_ENC" ]
+# default reflow
+reflow_width=0
+
+while getopts "hW:H:R:E:B:" option
+do
+  case "$option" in
+    W)
+      width=$OPTARG
+      ;;
+    H)
+      height=$OPTARG
+      ;;
+    R)
+      reflow_width=$OPTARG
+      ;;
+    E)
+      tmp_encoding=$OPTARG
+      ;;
+    B)
+      box=$OPTARG
+      ;;
+    h)
+      usage
+      exit 0
+      ;;
+    *)
+      echo "got option $option"
+      usage
+      exit 1
+      ;;
+  esac
+done
+shift $(($OPTIND - 1))
+
+# get filename, or "-"
+filename=${1:--}
+if [ "$filename" != "-" ] && ! [ -f "$filename" ]
 then
-  filename=$1
-elif [ -n "$1" ] && [ -n "$TMP_ENC" ]
-then
-  tmpfile=$(mktemp)
-  iconv -f UTF-8 -t "$TMP_ENC" < "$1" > "$tmpfile"
-  filename=$tmpfile
-elif [ -z "$1" ] && [ -z "$TMP_ENC" ]
-then
-  tmpfile=$(mktemp)
-  cat > "$tmpfile"
-  filename=$tmpfile
-elif [ -z "$1" ] && [ -n "$TMP_ENC" ]
-then
-  tmpfile=$(mktemp)
-  iconv -f UTF-8 -t "$TMP_ENC" > "$tmpfile"
-  filename=$tmpfile
-else
-  echo "error: box.sh" >&2
+  echo "error: box.sh, '$filename' is not a file" &>2
   exit 1
 fi
 
-# get width / height of text
-size=$($AWK '{w=w<length($0) ? length($0) : w;} END {printf("-v width=%d -v height=%d", w, NR);}' < "$filename")
-
-# add box
-if [ -z "$TMP_ENC" ]
+if [ -z "$tmp_encoding" ]
 then
-  $AWK -v box="$box" $size -f "$dir/boxes-data.awk" -f "$dir/box.awk" "$filename"
+  ENCODE=cat
+  DECODE=cat
 else
-  $AWK -v box="$box" $size -f "$dir/boxes-data.awk" -f "$dir/box.awk" "$filename" | iconv -f $TMP_ENC -t UTF-8
+  ENCODE="iconv -f UTF-8 -t \"$tmp_encoding\""
+  DECODE="iconv -t UTF-8 -f \"$tmp_encoding\""
 fi
 
-rm -f "$tmpfile"
+if [ "$reflow_width" -eq 0 ]
+then
+  REFLOW=cat
+else
+  REFLOW="$AWK -f "$working_dir/reflow.awk" -v width=$reflow_width"
+fi
+
+if [ -z "$box" ]
+then
+  cat "$filename" | $ENCODE | $REFLOW | $DECODE
+else
+  # temporary file
+  tmpfile=$(mktemp)
+
+  cat "$filename" | $ENCODE | $REFLOW > "$tmpfile"
+
+  # create awk boxes database if necessary
+  [ -e "$working_dir/boxes-data.awk" ] || $AWK -f "$working_dir/../utils/create_boxes_data.awk" "$working_dir/../utils/boxes.db" > "$working_dir/boxes-data.awk"
+
+  # get width / height of text
+  if [ -z "$width" ] || [ -z "$height" ]
+  then
+    w_h=$($AWK '{w=w<length($0) ? length($0) : w;} END {print w, NR;}' "$tmpfile")
+  fi
+
+  if [ -z "$width" ]
+  then
+    width=$(echo "$w_h" | cut -d' ' -f1)
+  fi
+
+  if [ -z "$height" ]
+  then
+    height=$(echo "$w_h" | cut -d' ' -f2)
+  fi
+
+  $AWK -v box="$box" -v width=$width -v height=$height -f "$working_dir/boxes-data.awk" -f "$working_dir/box.awk" "$tmpfile" | $DECODE
+
+  rm -f "$tmpfile"
+fi
