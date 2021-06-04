@@ -10,7 +10,7 @@ Shell patterns
 ==============
 
 *
-  The "*" character stands in for any sequence of characters
+  The "*" character stands in for any sequence of characters 
   (including an empty sequence).
 
 ?

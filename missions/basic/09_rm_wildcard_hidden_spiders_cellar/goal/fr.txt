@@ -2,7 +2,7 @@ Objectif
 ========
 
 Les araignées deviennent plus intelligentes : elles ont appris à se 
-cacher
+cacher.
 Supprimez toutes les araignées qui se cachent dans la cave, sans 
 toucher.
 
