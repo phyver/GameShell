@@ -12,7 +12,7 @@ file=$1
 P=$2
 if [ -z "$P" ]
 then
-  n=$(checksum "$GSH_UID:$MISSION_DIR" | tr -dc 0-9 | cut -c1-6 )
+  n=$(RANDOM)
   P=$((n%9))
 fi
 
@@ -28,6 +28,6 @@ case "$P" in
   8) P="Parchment9";;
 esac
 echo
-box.sh -b "$P" "$file"
+$GSH_ROOT/bin/box.sh -b "$P" "$file"
 echo
 
