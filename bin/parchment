@@ -25,7 +25,6 @@ if [ "${COLUMNS:-0}" -ge 80 ] || [ -n "$box" ]
 then
   reflow_width=$((COLUMNS - 30))
 else
-  echo "BOX=$box"
   reflow_width=$((COLUMNS-5))  # -4 for the ASCII frame, -1 for the margin added by the pager
   box=ASCII
 fi
