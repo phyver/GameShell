@@ -2,13 +2,13 @@ SH_FILES=$(wildcard *.sh)
 EXCEPTIONS=deps.sh
 OTHER_FILES=spell.py spell.c
 
-LANG=$(wildcard i18n/*.po)
-LANG:=$(filter-out i18n/en.po, $(LANG))
+LANGUAGES=$(wildcard i18n/*.po)
+LANGUAGES:=$(filter-out i18n/en.po, $(LANGUAGES))
 SH_FILES:=$(filter-out $(EXCEPTIONS), $(SH_FILES))
 SORT=--sort-output
 OPTIONS=--indent --no-wrap --no-location
 
-all: i18n/en.po $(LANG)
+all: i18n/en.po $(LANGUAGES)
 
 add-locations: SORT=--add-location --sort-by-file
 add-locations: all
@@ -19,7 +19,7 @@ i18n/en.po: i18n/template.pot FORCE
 	@echo "# AUTOMATICALLY GENERATED -- DO NOT EDIT" | cat - $@ > $@~
 	@mv $@~ $@
 
-$(LANG):%.po: i18n/template.pot FORCE
+$(LANGUAGES):%.po: i18n/template.pot FORCE
 	@echo "msgmerge $@"
 	@msgmerge --update $(OPTIONS) $(SORT) $@ i18n/template.pot
 
