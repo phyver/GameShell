@@ -16,7 +16,7 @@ options:
   -A          use the "anonymous mode" by default when running GameShell
   -L LANGS    only keep the given languages (ex: -L 'en*,fr')
 
-  -N ...      name of the archive / top directory (default: "GameShell")
+  -N ...      name of the archive / top directory (default: "gameshell")
 
   -a          keep 'auto.sh' scripts for missions that have one
   -t          keep 'test.sh' scripts for missions that have one
@@ -25,10 +25,9 @@ EOH
 }
 
 keep_language() {
-  local filename=$(basename "$1")
-  local languages=$2
+  filename=$(basename "$1")
+  languages=$2
   set -f    # disable globing
-  local g
   for g in $(echo "$languages" | tr ',' ' ')
   do
     set +f  # enable globing
@@ -42,7 +41,7 @@ keep_language() {
   return 1
 }
 
-NAME="GameShell"
+NAME="gameshell"
 ADMIN_PASSWD="gsh"
 KEEP_AUTO=0
 KEEP_TEST=0
@@ -96,7 +95,7 @@ mkdir "$TMP_DIR/$NAME"
 
 
 # copy source files
-cp --archive "$GSH_ROOT/start.sh" "$GSH_ROOT/bin" "$GSH_ROOT/utils/" "$GSH_ROOT/lib/" "$GSH_ROOT/i18n/" "$TMP_DIR/$NAME"
+cp -pPR "$GSH_ROOT/start.sh" "$GSH_ROOT/bin" "$GSH_ROOT/utils/" "$GSH_ROOT/lib/" "$GSH_ROOT/i18n/" "$TMP_DIR/$NAME"
 
 # copy missions
 mkdir "$TMP_DIR/$NAME/missions"
@@ -126,7 +125,7 @@ do
   echo "  -> copy $MISSION_DIR"
   mkdir -p "$TMP_DIR/$NAME/missions/$MISSION_DIR"
   ARCHIVE_MISSION_DIR=$TMP_DIR/$NAME/missions/$MISSION_DIR
-  cp --archive "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR/"
+  cp -pPR "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR/"
   echo "$DUMMY$MISSION_DIR" >> "$TMP_DIR/$NAME/missions/index.txt"
 done
 
