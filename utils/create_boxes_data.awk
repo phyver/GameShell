@@ -90,5 +90,10 @@ END {
     printf("  }");
     ELSE = " else "
   }
-  print "\n}";
+  print " else {";
+  printf("    printf(\"availabe boxes:\\n\") > \"/dev/stderr\"; \n");
+  for (k in DESIGNS) {
+    printf("    printf(\"%s \") > \"/dev/stderr\";\n", DESIGNS[k]);
+  }
+  printf("  }\n}\n");
 }
