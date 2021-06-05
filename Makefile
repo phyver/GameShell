@@ -1,12 +1,12 @@
-LANG=$(wildcard i18n/*.po)
-LANG:=$(filter-out i18n/en.po, $(LANG))
+LANGUAGES=$(wildcard i18n/*.po)
+LANGUAGES:=$(filter-out i18n/en.po, $(LANGUAGES))
 SH_FILES= start.sh lib/gameshell.sh lib/init.sh bin/*
 OTHER_FILES=
 
 SORT=--sort-output
 OPTIONS=--indent --no-wrap --no-location
 
-all: i18n/en.po $(LANG)
+all: i18n/en.po $(LANGUAGES)
 
 add-locations: SORT=--add-location --sort-by-file
 add-locations: all
@@ -17,7 +17,7 @@ i18n/en.po: i18n/template.pot FORCE
 	@echo "# AUTOMATICALLY GENERATED -- DO NOT EDIT" | cat - $@ > $@~
 	@mv $@~ $@
 
-$(LANG):%.po: i18n/template.pot FORCE
+$(LANGUAGES):%.po: i18n/template.pot FORCE
 	@echo "msgmerge $@"
 	@msgmerge --quiet --update $(OPTIONS) $(SORT) $@ i18n/template.pot
 
@@ -31,6 +31,26 @@ new: i18n/template.pot
 		[ -e "./i18n/$$lang.po" ] && echo "file i18n/$$lang.po already exists" && exit; \
 		echo "file i18n/$$lang.po created"; \
 		msgcat $(OPTIONS) --output i18n/$$lang.po i18n/template.pot
+
+## check that the auto.sh scripts work as expected
+check: clean
+	./utils/archive.sh -at
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort; done; gsh index|cat' | ./GameShell.sh -Rdq
+
+## check that the auto.sh scripts work as expected, in verbose mode
+check-verbose: clean
+	./utils/archive.sh -at
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort; done; gsh index|cat' | ./GameShell.sh -RDq
+
+## run all the test.sh and auto.sh scripts
+tests: clean
+	./utils/archive.sh -at
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./GameShell.sh -Rdq
+
+## run all the test.sh and auto.sh scripts, in verbose mode
+tests-verbose: clean
+	./utils/archive.sh -at
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./GameShell.sh -RDq
 
 clean:
 	rm -rf i18n/*~ locale GameShell.tgz GameShell.sh GameShell-save.sh bin/boxes-data.awk
