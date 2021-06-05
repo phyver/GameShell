@@ -53,7 +53,7 @@ tests-verbose: clean
 	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./gameshell.sh -RDq
 
 clean:
-	rm -rf i18n/*~ locale GameShell.tgz GameShell.sh GameShell-save.sh bin/boxes-data.awk
+	rm -rf i18n/*~ locale gameshell.tgz gameshell.sh gameshell-save.sh bin/boxes-data.awk
 	rm -rf .bashrc .bin .config .sbin .var World
 
 .PHONY: clean new FORCE
