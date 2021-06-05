@@ -29,6 +29,9 @@ else
   box=ASCII
 fi
 
+# limit the reflow width to 100 to avoid too wide parchments
+[ "$reflow_width" -gt 100 ] && reflow_width=100
+
 if [ -z "$box" ]
 then
   n=$(RANDOM)
