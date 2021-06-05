@@ -1,6 +1,5 @@
 tmp
 TODO
-GameShell.tgz
 .bashrc
 .bin
 .sbin
@@ -9,6 +8,7 @@ GameShell.tgz
 World
 locale/
 *~
-GameShell.sh
-GameShell-save.sh
+gameshell.sh
+gameshell-save.sh
+gameshell.tgz
 boxes-data.awk
