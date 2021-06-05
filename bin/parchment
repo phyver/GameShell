@@ -2,35 +2,51 @@
 
 # draw a parchment around a text file
 # usage:
-#   $ parchment             => acts as a filter and adds a random parchment
-#   $ parchment FILE        => adds a random parchment
-#   $ parchment FILE DESIGN => adds the given parchment
+#   $ parchment [-B DESIGN] [FILE]
 
-GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
-PATH=$PATH:$GSH_ROOT/bin
+PATH=$PATH:$(cd "$(dirname "$0")" && pwd -P)
 
-file=$1
-[ -n "$file" ] && [ ! -e "$file" ] && return 1
-
-P=$2
-if [ -z "$P" ]
+if [ "$1" = "-B" ]
 then
-  n=$(RANDOM)
-  P=$((n%9))
+  box=$2
+  shift 2
 fi
 
-case "$P" in
-  0) P="Parchment1";;
-  1) P="Parchment2";;
-  2) P="Parchment3";;
-  3) P="Parchment4";;
-  4) P="Parchment5";;
-  5) P="Parchment6";;
-  6) P="Parchment7";;
-  7) P="Parchment8";;
-  8) P="Parchment9";;
-esac
+# get file, or -
+file=${1:--}
+if [ "$file" != "-" ] && [ ! -e "$file" ]
+then
+  echo "error: parchment, file not found '$file'" >&2
+  exit 1
+fi
+
+# get the width
+if [ "${COLUMNS:-0}" -ge 80 ] || [ -n "$box" ]
+then
+  reflow_width=$((COLUMNS - 30))
+else
+  echo "BOX=$box"
+  reflow_width=$((COLUMNS-5))  # -4 for the ASCII frame, -1 for the margin added by the pager
+  box=ASCII
+fi
+
+if [ -z "$box" ]
+then
+  n=$(RANDOM)
+  case "$((n%9))" in
+    0) box="Parchment1";;
+    1) box="Parchment2";;
+    2) box="Parchment3";;
+    3) box="Parchment4";;
+    4) box="Parchment5";;
+    5) box="Parchment6";;
+    6) box="Parchment7";;
+    7) box="Parchment8";;
+    8) box="Parchment9";;
+  esac
+fi
+
 echo
-$GSH_ROOT/bin/box.sh -b "$P" "$file"
+box.sh -B "$box" -R "$reflow_width" "$file"
 echo
 

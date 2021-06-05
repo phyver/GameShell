@@ -1,5 +1,8 @@
 #!/usr/bin/awk -f
 
+func usage() {
+}
+
 func greedy_format() {
     indent_width = length(par_indent);
     second_par_indent = par_indent;
@@ -146,6 +149,12 @@ BEGIN {
         match($0, /^ */);
         par_indent = substr($0, 1, RLENGTH);
     }
+}
+
+# protected lines, do nothing
+/^ {2,}[^ ]* {2,}/ && !nb_words {
+    print $0;
+    next;
 }
 
 # on empty lines, format current paragraph (if it exits) and print a newline

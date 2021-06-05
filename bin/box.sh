@@ -1,6 +1,26 @@
 #!/bin/sh
 
-dir=$(dirname "$0")
+cd -P "$(dirname "$0")"
+PATH=$PATH:.
+
+usage() {
+  cat <<EOS
+usage: $0 [options] [FILES]
+
+with
+  -E ENC     choose temporary encoding
+             (default: nothing if awk supports UTF-8, ISO-8859-1 otherwise)
+  -R WIDTH   reflow text at given width
+             (default: 0, no reflow)
+  -B BOX     choose box design (if empty, will only reflow the text)
+             (default: ASCII)
+  -W         choose width for the inside of the box
+             (default: actual width of text)
+  -H         choose height for the inside of the box
+             (default: actual height of text)
+  -h         this message
+EOS
+}
 
 # choose gawk if it exists, as it knows how to deal with UTF-8
 if command -v gawk >/dev/null
@@ -10,63 +30,105 @@ else
   AWK=awk
 fi
 
-# define an 8bit encoding if awk doesn't supports UTF-8
+# default temporary encoding: use an 8bit encoding if awk doesn't supports
+# UTF-8
 if $AWK 'BEGIN {exit 3==length("héé") ? 0 : 1;}' || ! command -v iconv >/dev/null
 then
-  TMP_ENC=""
+  tmp_encoding=""
 else
-  TMP_ENC=ISO-8859-1
+  tmp_encoding=ISO-8859-1
 fi
 
-# get the box design
+# default box design
 box=ASCII
-if [ "$1" = "-b" ]
-then
-  box=$2
-  shift 2
-fi
 
-# get the width
-if [ "${COLUMNS:-0}" -ge 80 ]
-then
-  WIDTH=$((COLUMNS - 30))
-  PARCHMENT=true
-else
-  WIDTH=$((COLUMNS-1))
-  PARCHMENT=false
-fi
+# default reflow
+reflow_width=0
+
+while getopts "hW:H:R:E:B:" option
+do
+  case "$option" in
+    W)
+      width=$OPTARG
+      ;;
+    H)
+      height=$OPTARG
+      ;;
+    R)
+      reflow_width=$OPTARG
+      ;;
+    E)
+      tmp_encoding=$OPTARG
+      ;;
+    B)
+      box=$OPTARG
+      ;;
+    h)
+      usage
+      exit 0
+      ;;
+    *)
+      echo "got option $option"
+      usage
+      exit 1
+      ;;
+  esac
+done
+shift $(($OPTIND - 1))
 
 # get filename, or "-"
-filename=$1
-[ -n "$filename" ] || filename=-
-
-# temporary file
-tmpfile=$(mktemp)
-
-if [ -z "$TMP_ENC" ]
+filename=${1:--}
+if [ "$filename" != "-" ] && ! [ -f "$filename" ]
 then
-  reflow.awk -v width=$WIDTH "$filename" > "$tmpfile"
-else
-  iconv -f UTF-8 -t "$TMP_ENC" "$filename" | reflow.awk -v width=$WIDTH > "$tmpfile"
+  echo "error: box.sh, '$filename' is not a file" &>2
+  exit 1
 fi
 
-if [ "$PARCHMENT" = false ]
+if [ -z "$tmp_encoding" ]
 then
-  cat $tmpfile
+  ENCODE=cat
+  DECODE=cat
 else
+  ENCODE="iconv -f UTF-8 -t \"$tmp_encoding\""
+  DECODE="iconv -t UTF-8 -f \"$tmp_encoding\""
+fi
+
+if [ "$reflow_width" -eq 0 ]
+then
+  REFLOW=cat
+else
+  REFLOW="$AWK -f reflow.awk -v width=$reflow_width"
+fi
+
+if [ -z "$box" ]
+then
+  cat "$filename" | $ENCODE | $REFLOW | $DECODE
+else
+  # temporary file
+  tmpfile=$(mktemp)
+
+  cat "$filename" | $ENCODE | $REFLOW > "$tmpfile"
+
   # create awk boxes database if necessary
-  [ -e "$dir/boxes-data.awk" ] || $AWK -f "$dir/../utils/create_boxes_data.awk" "$dir/../utils/boxes.db" > "$dir/boxes-data.awk"
+  [ -e "boxes-data.awk" ] || $AWK -f "../utils/create_boxes_data.awk" "../utils/boxes.db" > "boxes-data.awk"
 
   # get width / height of text
-  size=$($AWK '{w=w<length($0) ? length($0) : w;} END {printf("-v width=%d -v height=%d", w, NR);}' < "$tmpfile")
-
-  # add box
-  if [ -z "$TMP_ENC" ]
+  if [ -z "$width" ] || [ -z "$height" ]
   then
-    $AWK -v box="$box" $size -f "$dir/boxes-data.awk" -f "$dir/box.awk" "$tmpfile"
-  else
-    $AWK -v box="$box" $size -f "$dir/boxes-data.awk" -f "$dir/box.awk" "$tmpfile" | iconv -f $TMP_ENC -t UTF-8
+    w_h=$(sed 's/ *$//' "$tmpfile" | $AWK '{w=w<length($0) ? length($0) : w;} END {print w, NR;}')
   fi
-fi
 
-rm -f "$tmpfile"
+  if [ -z "$width" ]
+  then
+    width=$(echo "$w_h" | cut -d' ' -f1)
+  fi
+
+  if [ -z "$height" ]
+  then
+    height=$(echo "$w_h" | cut -d' ' -f2)
+  fi
+
+  $AWK -v box="$box" -v width=$width -v height=$height -f "boxes-data.awk" -f "box.awk" "$tmpfile" | $DECODE
+
+  rm -f "$tmpfile"
+fi

@@ -1,3 +1,5 @@
+# TODO: make height optional
+
 # function to update the global state for each line (either top or bottom
 # margin, or text
 function update() {
@@ -15,13 +17,13 @@ function update() {
         block_index = 1;
     }
     if (current_block == "M" &&line_number + neg_margin["B"] > height + margin["T"] + margin["B"]) { # ???
-
         current_block = "B";
         block_index = 1;
     }
     if (current_block == "B" && block_index > Bh) {
-        printf("PROBLEM, end of bottom block has been reached!\n");
-        exit(1);
+        printf("Error: box.awk, end of bottom block has been reached!\n") > "/dev/stderr";
+        current_block = "outside";
+        force_exit = 1;
     }
 
     # update global variables for the left and right part of the string to be
@@ -32,21 +34,28 @@ function update() {
     } else if (current_block == "M") {
         left_string = ML[block_index];
         right_string = MR[block_index];
-    } else {
+    } else if (current_block == "B") {
         left_string = BL[block_index];
         right_string = BR[block_index];
+    } else {
+        left_string = substr(blanks, 1, length(TL[1]));
+        right_string = "";
     }
 }
 
 BEGIN {
-    DEBUG = 0;
+    # DEBUG = 1;
 
-    # adjust width / height to make sure lines will fill the negative margins
+    # adjust margins to make sure we fill the negative margins
     if (height+margin["T"]+margin["B"] < neg_margin["T"]+neg_margin["B"]) {
-        height = neg_margin["T"]+neg_margin["B"]-margin["T"]-margin["B"];
+      padding = neg_margin["T"]+neg_margin["B"]-height-margin["T"]-margin["B"];
+      margin["T"] += int(padding/2);
+      margin["B"] += padding - int(padding/2);
     }
     if (width + margin["L"]+margin["R"] < neg_margin["L"]+neg_margin["R"]) {
-        width = neg_margin["L"]+neg_margin["R"]-margin["L"]-margin["R"];
+      padding = neg_margin["L"]+neg_margin["R"]-width-margin["L"]-margin["R"];
+      margin["L"] += int(padding/2);
+      margin["R"] += padding - int(padding/2);
     }
 
     # computing additional padding to make sure we need an integral number of
@@ -87,7 +96,7 @@ BEGIN {
         }
         printf("%s", TR[block_index]);
         if (DEBUG)
-            printf(" <-- UPPER BLOCK: %s[%d]",
+            printf(" \t<-- UPPER BLOCK: %s[%d]",
                    current_block, block_index);
         printf("\n");
     }
@@ -100,7 +109,7 @@ BEGIN {
         printf(blanks);
         printf("%s", substr(right_string, neg_margin["R"]+1));
         if (DEBUG)
-            printf(" <-- UPPER MARGIN: %s[%d], n=%d",
+            printf(" \t<-- UPPER MARGIN: %s[%d], n=%d",
                    current_block, block_index, line_number);
         printf("\n");
     }
@@ -115,7 +124,7 @@ BEGIN {
     printf(substr(blanks, 1+length($0)+margin["L"]));
     printf("%s", substr(right_string, neg_margin["R"]+1));
     if (DEBUG)
-            printf(" <-- TEXT: %s[%d], n=%d",
+            printf(" \t<-- TEXT: %s[%d], n=%d",
                    current_block, block_index, line_number);
     printf("\n");
 }
@@ -123,6 +132,22 @@ BEGIN {
 
 
 END {
+    if (force_exit) exit(force_exit);
+
+    if (height > NR) {
+        mb = margin["B"];
+
+        height = NR;
+        if (margin["B"] < neg_margin["B"]) {
+            margin["B"] = neg_margin["B"];
+        }
+        padding = Mh - (height + margin["T"] + margin["B"] - neg_margin["T"] - neg_margin["B"]) % Mh;
+        margin["B"] += padding;
+        while (margin["B"] - Mh >= neg_margin["B"] && margin["B"] - Mh >= mb) {
+            margin["B"] -= neg_margin["B"];
+        }
+    }
+
     # lower margin
     for (i=0; i<margin["B"]; i++) {
         update();
@@ -131,7 +156,7 @@ END {
         printf(blanks);
         printf("%s", substr(right_string, neg_margin["R"]+1));
         if (DEBUG)
-            printf(" <-- LOWER MARGIN: %s[%d], n=%d",
+            printf(" \t<-- LOWER MARGIN: %s[%d], n=%d",
                    current_block, block_index, line_number);
         printf("\n");
     }
@@ -147,7 +172,7 @@ END {
         }
         printf("%s", BR[block_index]);
         if (DEBUG)
-            printf(" <-- LOWER BLOCK: %s[%d]",
+            printf(" \t<-- LOWER BLOCK: %s[%d]",
                    current_block, block_index);
         printf("\n");
     }
