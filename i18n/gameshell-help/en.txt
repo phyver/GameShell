@@ -1,20 +1,20 @@
 Commands specific to GameShell
 ==============================
 
-  gsh check
-    check whether the current mission's goal has been 
-    achieved or not
+gsh check
+  check whether the current mission's goal has been 
+  achieved or not
 
-  gsh exit   /   Control-d
-    quit GameShell
-    (you can start from the current mission by running 
-    GameShell with the "-C" flag)
+gsh exit   /   Control-d
+  quit GameShell
+  (you can start from the current mission by running 
+  GameShell with the "-C" flag)
 
-  gsh goal
-    show the current mission's goal
+gsh goal
+  show the current mission's goal
 
-  gsh help
-    shorter help message
+gsh help
+  shorter help message
 
-  gsh reset
-    reset the current mission
+gsh reset
+  reset the current mission
