@@ -95,20 +95,22 @@ mkdir "$TMP_DIR/$NAME"
 
 
 # copy source files
-cp -pPR "$GSH_ROOT/start.sh" "$GSH_ROOT/bin" "$GSH_ROOT/utils/" "$GSH_ROOT/lib/" "$GSH_ROOT/i18n/" "$TMP_DIR/$NAME"
+# NOTE: macOS' cp doesn't have '--archive', and '-a' is not POSIX.
+# use POSIX options to make sure it is portable
+cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/bin" "$GSH_ROOT/utils" "$GSH_ROOT/lib" "$GSH_ROOT/i18n" "$TMP_DIR/$NAME"
 
 # copy missions
 mkdir "$TMP_DIR/$NAME/missions"
 echo "copy missions"
 N=0
-if ! make_index "$@" > "$TMP_DIR/index.txt"
+if ! make_index "$@" > "$TMP_DIR/$NAME/missions/index.txt"
 then
   echo "Error: archive.sh, couldn't make index.txt"
   rm -rf "$TMP_DIR"
   exit 1
 fi
 
-cat "$TMP_DIR/index.txt" | while read MISSION_DIR
+cat "$TMP_DIR/$NAME/missions/index.txt" | while read MISSION_DIR
 do
   case $MISSION_DIR in
     "" | "#"* )
@@ -125,8 +127,9 @@ do
   echo "  -> copy $MISSION_DIR"
   mkdir -p "$TMP_DIR/$NAME/missions/$MISSION_DIR"
   ARCHIVE_MISSION_DIR=$TMP_DIR/$NAME/missions/$MISSION_DIR
-  cp -pPR "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR/"
-  echo "$DUMMY$MISSION_DIR" >> "$TMP_DIR/$NAME/missions/index.txt"
+  # NOTE: macOS' cp doesn't have '--archive', and '-a' is not POSIX.
+  # use POSIX options to make sure it is portable
+  cp -RPp "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR"
 done
 
 export GSH_ROOT=$TMP_DIR/$NAME
