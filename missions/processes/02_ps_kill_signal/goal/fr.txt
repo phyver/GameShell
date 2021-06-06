@@ -4,7 +4,7 @@ Objectif
 Le lutin espiègle a plus d'un tour dans son sac. Il a réussit à 
 protéger son sortilège contre la plupart des tentatives de sabotage.
 Vous devez trouver ce sortilège et le tenter de le supprimer avec le 
-signal standard. Si ça ne marche pas, essayer un signal plus brutal.
+signal standard. Si ça ne marche pas, essayez un signal plus brutal.
 
 
 Remarque
@@ -25,8 +25,7 @@ kill [OPTIONS] N
   Options utiles
     -s SIGNAL   choisit un signal en donnant son nom
     -NUMBER     choisit un signal en donnant son numéro
-    -l          donne la liste des signaux disponibles avec leur
-                numéro
+    -l          donne la liste des signaux disponibles
 
 
 clear

@@ -25,7 +25,7 @@ kill [OPTIONS] N
   Useful options:
     -s SIGNAL   choose the signal to send by giving its name
     -NUMBER     choose the signal to send by giving its number
-    -l          give the list of available signals with their number
+    -l          give the list of available signals
 
 clear
   Clear the screen.
