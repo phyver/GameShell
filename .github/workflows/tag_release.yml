@@ -14,7 +14,7 @@ jobs:
 
       - name: "Install Linux deps"
         run: |
-          sudo apt install gettext-base psmisc bsdmainutils tar
+          sudo apt install gettext
 
       - name: "Creating the archive"
         run: |
