@@ -3,7 +3,8 @@ Objectif
 
 Les vieux livres d'alchimie de Merlin sont stockés dans son bureau, 
 dans la bibliothèque. Vous devez afficher une liste (exploitable) 
-des grimoires contenant le composé alchimique "gsh".
+des grimoires contenant le composé alchimique "gsh" (pour 
+"Glutathion").
 Attention, ce composé peut être écrit avec des lettres en minuscule 
 et majuscule mélangées.
 
