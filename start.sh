@@ -253,7 +253,7 @@ Do you want to remove it and start a new game? [y/N]') "
   echo "$GSH_UID" > "$GSH_CONFIG/uid"
 
   # save system config, in case of problems
-  system_config > "$GSH_CONFIG/system"
+  _gsh_systemconfig > "$GSH_CONFIG/system"
 
 
   # Clear the screen.

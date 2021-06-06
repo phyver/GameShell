@@ -1,0 +1,47 @@
+#!/bin/sh
+
+. gettext.sh
+
+n=1
+while read -r mission_dir
+do
+  if echo "$mission_dir" | grep -q '^\s*$'
+  then
+    continue
+  elif echo "$mission_dir" | grep -q '^\s*[#!]'
+  then
+    continue
+  fi
+
+  if grep -q "^$n CHECK_OK" "$GSH_CONFIG/missions.log"
+  then
+    COLOR="green"
+    STATUS=" ($(gettext "completed"))"
+  elif grep -q "^$n CHECK_OOPS" "$GSH_CONFIG/missions.log"
+  then
+    COLOR="red"
+    STATUS=" ($(gettext "failed"))"
+  elif grep -q "^$n SKIP" "$GSH_CONFIG/missions.log"
+  then
+    COLOR="yellow"
+    STATUS=" ($(gettext "skipped"))"
+  elif grep -q "^$n CANCEL_DEP_PB" "$GSH_CONFIG/missions.log"
+  then
+    COLOR="magenta"
+    STATUS=" ($(gettext "cancelled"))"
+  else
+    COLOR="white"
+    STATUS=""
+  fi
+
+  LEAD="   "
+  if [ "$MISSION_NB" -eq "$n" ]
+  then
+    LEAD="-> "
+  fi
+
+  printf "%s%2d   " "$LEAD" "$n"
+  color_echo "$COLOR" "$mission_dir$STATUS"
+
+  n="$((n + 1))"
+done < "$GSH_CONFIG/index.txt" | pager

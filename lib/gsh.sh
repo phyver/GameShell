@@ -55,12 +55,6 @@ _get_mission_dir() {
   echo "$(realpath "$dir")"
 }
 
-# welcome message
-_gsh_welcome() {
-  local msg_file=$(eval_gettext '$GSH_ROOT/i18n/gameshell-welcome/en.txt')
-  [ -r "$msg_file" ] || return 1
-  parchment "$msg_file" | pager
-}
 
 _gsh_reset() {
   local MISSION_NB="$(_get_current_mission)"
@@ -123,8 +117,8 @@ Do you still want to quit? [y/n]") "
 
   _log_action "$MISSION_NB" "$signal"
   export GSH_LAST_ACTION='exit'
-  _gsh_clean "$MISSION_NB"
-  [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && _gsh_unprotect
+  __gsh_clean "$MISSION_NB"
+  [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh unprotect
   #shellcheck disable=SC2046
   kill -sSIGHUP $(jobs -p) 2>/dev/null
 }
@@ -164,59 +158,6 @@ _gsh_goal() {
 }
 
 
-# display the mission index
-# TODO translation support
-_gsh_index() {
-  local CUR_MISSION="$(_get_current_mission)"
-  local MISSION_NB="1"
-  local COLOR STATUS LEAD
-
-  local MISSION_NAME
-  while read -r MISSION_NAME
-  do
-    if echo "$MISSION_NAME" | grep -q '^\s*$'
-    then
-      continue
-    elif echo "$MISSION_NAME" | grep -q '^\s*[#!]'
-    then
-      continue
-    fi
-
-    if grep -q "^$MISSION_NB CHECK_OK" "$GSH_CONFIG/missions.log"
-    then
-      COLOR="green"
-      STATUS=" ($(gettext "completed"))"
-    elif grep -q "^$MISSION_NB CHECK_OOPS" "$GSH_CONFIG/missions.log"
-    then
-      COLOR="red"
-      STATUS=" ($(gettext "failed"))"
-    elif grep -q "^$MISSION_NB SKIP" "$GSH_CONFIG/missions.log"
-    then
-      COLOR="yellow"
-      STATUS=" ($(gettext "skipped"))"
-    elif grep -q "^$MISSION_NB CANCEL_DEP_PB" "$GSH_CONFIG/missions.log"
-    then
-      COLOR="magenta"
-      STATUS=" ($(gettext "cancelled"))"
-    else
-      COLOR="white"
-      STATUS=""
-    fi
-
-    LEAD="   "
-    if [ "$CUR_MISSION" -eq "$MISSION_NB" ]
-    then
-      LEAD="-> "
-    fi
-
-    printf "%s%2d   " "$LEAD" "$MISSION_NB"
-    color_echo "$COLOR" "$MISSION_NAME$STATUS"
-
-    MISSION_NB="$((MISSION_NB + 1))"
-  done < "$GSH_CONFIG/index.txt"
-}
-
-
 # start a mission given by its number
 _gsh_start() {
   local quiet=""
@@ -231,7 +172,7 @@ _gsh_start() {
     MISSION_NB=$(_get_current_mission)
     if [ "$?" -eq 1 ] && [ "$GSH_MODE" != "DEBUG" ]
     then
-      _gsh_welcome
+      gsh welcome
       echo
       printf "$(gettext "Press Enter to continue.")"
       stty -echo 2>/dev/null    # ignore errors, in case input comes from a redirection
@@ -329,7 +270,7 @@ _gsh_skip() {
   fi
   _log_action "$MISSION_NB" "SKIP"
   export GSH_LAST_ACTION='skip'
-  _gsh_clean "$MISSION_NB"
+  __gsh_clean "$MISSION_NB"
   color_echo yellow "$(eval_gettext 'Mission $MISSION_NB has been cancelled.')" >&2
 
   _gsh_start $((10#$MISSION_NB + 1))
@@ -389,7 +330,7 @@ _gsh_check() {
 
     _log_action "$MISSION_NB" "CHECK_OK"
     export GSH_LAST_ACTION='check_true'
-    _gsh_clean "$MISSION_NB"
+    __gsh_clean "$MISSION_NB"
 
     if [ -f "$MISSION_DIR/treasure.sh" ]
     then
@@ -441,13 +382,13 @@ You should use the command
 
     _log_action "$MISSION_NB" "CHECK_OOPS"
     export GSH_LAST_ACTION='check_false'
-    _gsh_clean "$MISSION_NB"
+    __gsh_clean "$MISSION_NB"
     _gsh_start "$MISSION_NB"
     return 255
   fi
 }
 
-_gsh_clean() {
+__gsh_clean() {
   local MISSION_NB="$(_get_current_mission)"
 
   if [ -z "$MISSION_NB" ]
@@ -497,9 +438,10 @@ _gsh_assert_check() {
   fi
 
   export GSH_LAST_ACTION="assert"
-  _gsh_clean "$MISSION_NB"
+  __gsh_clean "$MISSION_NB"
   _gsh_start --quiet "$MISSION_NB"
 }
+
 
 _gsh_assert() {
   local condition=$1
@@ -519,6 +461,7 @@ _gsh_assert() {
     [ -n "$msg" ] && echo "$msg"
   fi
 }
+
 
 _gsh_test() {
   local MISSION_NB="$(_get_current_mission)"
@@ -558,32 +501,6 @@ _gsh_test() {
   return "$ret"
 }
 
-_gsh_help() {
-  parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-help/en.txt')" Parchment2
-}
-
-_gsh_HELP() {
-  parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-HELP/en.txt')" Parchment2 | pager
-}
-
-_gsh_protect() {
-  chmod a-rw "$GSH_ROOT"
-  chmod a-rw "$GSH_MISSIONS"
-  chmod a-rw "$GSH_CONFIG"
-  chmod a-r  "$GSH_VAR"
-  chmod a-rw "$GSH_UTILS"
-  chmod a-rw "$GSH_SBIN"
-}
-
-_gsh_unprotect() {
-  chmod "$(umask -S)" "$GSH_ROOT"
-  chmod "$(umask -S)" "$GSH_MISSIONS"
-  chmod "$(umask -S)" "$GSH_CONFIG"
-  chmod "$(umask -S)" "$GSH_VAR"
-  chmod "$(umask -S)" "$GSH_UTILS"
-  chmod "$(umask -S)" "$GSH_SBIN"
-}
-
 
 gsh() {
   local _TEXTDOMAIN=$TEXTDOMAIN
@@ -600,29 +517,17 @@ gsh() {
 
   local ret=0
   case $cmd in
-    "c" | "ch" | "che" | "chec" | "check")
+    "check")
       _gsh_check
       ret=$?
       ;;
-    "h" | "he" | "hel" | "help")
-      _gsh_help
-      ;;
-    "H" | "HE" | "HEL" | "HELP")
-      _gsh_HELP
-      ;;
-    "r" | "re" | "res" | "rese" | "reset")
+    "reset")
       export GSH_LAST_ACTION='reset'
-      _gsh_clean
+      __gsh_clean
       _gsh_reset
       ;;
-    "g" | "go" | "goa" | "goal")
+    "goal")
       _gsh_goal "$@"
-      ;;
-    "i" | "in" | "ind" | "inde" | "index")
-      _gsh_index | pager
-      ;;
-    "w" | "we" | "wel" | "welc" | "welco" | "welcom" | "welcome")
-      _gsh_welcome
       ;;
     "stat")
       awk -v GSH_UID="$GSH_UID" -f "$GSH_UTILS/stat.awk" < "$GSH_CONFIG/missions.log"
@@ -641,7 +546,7 @@ gsh() {
       ;;
     "hardreset")
       export GSH_LAST_ACTION='hardreset'
-      _gsh_clean
+      __gsh_clean
       _gsh_hard_reset
       ;;
     "goto")
@@ -657,40 +562,31 @@ gsh() {
       fi
 
       export GSH_LAST_ACTION='goto'
-      _gsh_clean
+      __gsh_clean
       _gsh_start "$@"
       ;;
-    "test")
-      _gsh_test
-      ret=$?
-      ;;
-    "assert_check")
-      _gsh_assert_check "$@"
-      ;;
-    "assert")
-      _gsh_assert "$@"
-      ;;
-    "protect")
-      if admin_mode
-      then
-        _gsh_protect
-      fi
-      ;;
-    "unprotect")
-      if admin_mode
-      then
-        _gsh_unprotect
-      fi
-      ;;
-    "systemconfig")
-      system_config
-      ;;
+
     *)
-      echo "$(eval_gettext "Error: unknown gsh command '\$cmd'.
+      if command -v "_gsh_$cmd" >/dev/null
+      then
+        local MISSION_NB="$(_get_current_mission)"
+        if [ -z "$MISSION_NB" ]
+        then
+          #shellcheck disable=SC2034
+          local fn_name="${FUNCNAME[0]}"
+          echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
+          return 1
+        fi
+        local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
+
+        MISSION_NB=$MISSION_NB MISSION_DIR=$MISSION_DIR _gsh_$cmd "$@"
+      else
+        echo "$(eval_gettext "Error: unknown gsh command '\$cmd'.
 Use one of the following commands:")  check, goal, help, HELP or reset" >&2
-      export TEXTDOMAIN=$_TEXTDOMAIN
-      unset _TEXTDOMAIN
-      return 1
+        export TEXTDOMAIN=$_TEXTDOMAIN
+        unset _TEXTDOMAIN
+        return 1
+      fi
       ;;
   esac
   export TEXTDOMAIN=$_TEXTDOMAIN

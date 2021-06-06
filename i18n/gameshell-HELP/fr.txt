@@ -1,61 +1,61 @@
 Commandes propres a GameShell
 =============================
 
-  gsh assert condition [msg]
-    vérifie si la condition est vraie,
-    sinon, affiche un message d'erreur
+gsh assert condition [msg]
+  vérifie si la condition est vraie,
+  sinon, affiche un message d'erreur
 
-  gsh assert_check true/false [msg]
-    vérifie si l'objectif de la mission en cours est atteint
-    si le résultat ne correspond pas au résultat attendu, affiche un
-    message d'erreur
+gsh assert_check true/false [msg]
+  vérifie si l'objectif de la mission en cours est atteint
+  si le résultat ne correspond pas au résultat attendu, affiche un 
+  message d'erreur
 
-  gsh auto                              (ADMIN)
-    lance le script automatique de la mission en cours, s'il existe.
+gsh auto                              (ADMIN)
+  lance le script automatique de la mission en cours, s'il existe.
 
-  gsh check
-    vérifie que l'objectif de la mission en cours est atteint
+gsh check
+  vérifie que l'objectif de la mission en cours est atteint
 
-  gsh exit
-    quitte la partie en cours
-    (vous pouvez reprendre à la mission en cours en lançant le
-    script start.sh avec l'option -C)
+gsh exit
+  quitte la partie en cours
+  (vous pouvez reprendre à la mission en cours en lançant le 
+  script start.sh avec l'option -C)
 
-  gsh goal [N]
-    affiche l'objectif de la mission en cours
-    si N est donné, affiche l'objectif de la mission N
+gsh goal [N]
+  affiche l'objectif de la mission en cours
+  si N est donné, affiche l'objectif de la mission N
 
-  gsh goto N                            (ADMIN)
-    passe directement à la mission N
+gsh goto N                            (ADMIN)
+  passe directement à la mission N
 
-  gsh hardreset
-    ré-initialise la mission en cours en redémarrant bash
+gsh hardreset
+  ré-initialise la mission en cours en redémarrant bash
 
-  gsh HELP
-    affiche ce message
+gsh HELP
+  affiche ce message
 
-  gsh help
-    affiche un petit message d'aide
+gsh help
+  affiche un petit message d'aide
 
-  gsh index
-    affiche la liste des missions, avec leur statut
+gsh index
+  affiche la liste des missions, avec leur statut
 
-  gsh protect                           (ADMIN)
-  gsh unprotect                         (ADMIN)
-    ajoute / supprimer les protections d'accès sur les répertoires
-    de GameShell
+gsh protect
+gsh unprotect
+  ajoute / supprimer les protections d'accès sur les répertoires 
+  de GameShell
 
-  gsh reset
-    ré-initialise la mission en cours
+gsh reset
+  ré-initialise la mission en cours
 
-  gsh skip                              (ADMIN)
-    abandonne la mission en cours et passe à la suivante
+gsh skip                              (ADMIN)
+  abandonne la mission en cours et passe à la suivante
 
-  gsh systemconfig
-    affiche la configuration du système
+gsh systemconfig
+  affiche la configuration du système
 
-  gsh test
-    lance le script de test de la mission en cours, s'il existe
+gsh test
+  lance le script de test de la mission en cours, s'il existe
 
-  gsh welcome
-    affiche le message de bienvenu
+gsh welcome
+  affiche le message de bienvenue

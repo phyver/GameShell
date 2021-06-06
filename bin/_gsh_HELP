@@ -1,0 +1,6 @@
+#!/bin/sh
+
+. gettext.sh
+
+parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-HELP/en.txt')" Parchment2 | pager
+
