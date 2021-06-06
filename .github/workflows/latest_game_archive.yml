@@ -30,4 +30,4 @@ jobs:
           title: "Latest game archive"
           files: |
             LICENSE
-            GameShell.sh
+            gameshell.sh
