@@ -116,7 +116,7 @@ else
   # get width / height of text
   if [ -z "$width" ] || [ -z "$height" ]
   then
-    w_h=$(sed 's/ *$//' "$tmpfile" | $AWK '{w=w<length($0) ? length($0) : w;} END {print w, NR;}')
+    w_h=$($AWK '{w=w<length($0) ? length($0) : w;} END {print w, NR;}' "$tmpfile")
   fi
 
   if [ -z "$width" ]
