@@ -38,5 +38,6 @@ else
   rm -f "$stderr_log"
   unset stderr_log design
   wait $_PID
+  unset $_PID
   set -m
 fi
