@@ -1,9 +1,9 @@
 #!/usr/bin/awk -f
 
-func usage() {
+function usage() {
 }
 
-func greedy_format() {
+function greedy_format() {
     indent_width = length(par_indent);
     second_par_indent = par_indent;
     gsub(/./, " ", second_par_indent);
@@ -32,7 +32,7 @@ func greedy_format() {
     }
 }
 
-func dynamic_format() {
+function dynamic_format() {
     INF = nb_words * width * width;
 
     indent_width = length(par_indent);
@@ -116,7 +116,7 @@ func dynamic_format() {
 
 }
 
-func format() {
+function format() {
     if (greedy) {
         greedy_format();
     } else {
@@ -125,7 +125,7 @@ func format() {
 }
 
 # push the word into the current paragraph
-func push(w) {
+function push(w) {
     PAR[++nb_words] = w;
 }
 
@@ -142,7 +142,7 @@ BEGIN {
     if (match($0, /^ *[-+]  */)) {
         par_indent = substr($0, 1, RLENGTH);
         $0 = substr($0, RLENGTH+1);
-    } else if (match($0, /^ *[0-9][0-9]*[./]  */)) {
+    } else if (match($0, /^ *[0-9][0-9]*[.\/]  */)) {
         par_indent = substr($0, 1, RLENGTH);
         $0 = substr($0, RLENGTH+1);
     } else {

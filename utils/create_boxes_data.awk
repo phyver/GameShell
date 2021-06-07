@@ -6,8 +6,7 @@ BEGIN {
 }
 
 /^%%% / {
-  sub("%%%[[:blank:]]*", "", $0);
-  sub("[[:blank:]]*$", "", $0);
+  sub("^%%% *", "", $0);
   design = $0;
   DESIGNS[++nb_designs] = design;
   BOX[design, "height", 1] = 0;
@@ -51,10 +50,10 @@ BEGIN {
 }
 
 
-func def_block(bl, h, design, x, y) {
+function def_block(bl, h, design, x, y) {
   for (i=1; i<=h; i++) {
-    gsub(/\\/, "\\\\", BOX[design, x, y, i]);
-    gsub(/"/, "\\\"", BOX[design, x, y, i]);
+    gsub(/\\/, "&&", BOX[design, x, y, i]);
+    gsub(/"/, "\\&", BOX[design, x, y, i]);
     printf("    %s[%d] = \"%s\";\n", bl, i, BOX[design, x, y, i]);
   }
 }
