@@ -135,9 +135,6 @@ _confirm_passport() {
 }
 
 progress() {
-  # hide cursor
-  tput civis 2> /dev/null
-  trap "tput cnorm 2> /dev/null;echo;exit 1" INT TERM QUIT
   if [ -z "$progress_I" ]
   then
     progress_filename=$GSH_ROOT/lib/ascii-art/titlescreen
@@ -145,25 +142,30 @@ progress() {
     local size=$(wc -c "$progress_filename" | awk '{print $1}')
     progress_delta=$((size/N + 1))
     # head -c$((progress_delta - 1)) $progress_filename => not POSIX compliant
-    dd if="$progress_filename" bs="$progress_delta" count=1 2> /dev/null
+    dd if="$progress_filename" bs="$progress_delta" count=1 2>/dev/null
     progress_I=1
   else
     # tail -c+$((progress_I * progress_delta)) $progress_filename | head -c$progress_delta => not POSIX compliant
-    dd if="$progress_filename" bs="$progress_delta" skip="$progress_I" count=1 2> /dev/null
+    dd if="$progress_filename" bs="$progress_delta" skip="$progress_I" count=1 2>/dev/null
     progress_I=$((progress_I+1))
   fi
 }
 
 progress_finish() {
   # tail -c+$((progress_I*progress_delta)) $progress_filename => not POSIX compliant
-  dd if="$progress_filename" bs="$progress_delta" skip="$progress_I" 2> /dev/null
+  dd if="$progress_filename" bs="$progress_delta" skip="$progress_I" 2>/dev/null
   unset progress_filename progress_delta progress_I
-  # show cursor
-  tput cnorm 2> /dev/null
+  # show cursor and enable echo of keystrokes
 }
 
 
 init_gsh() {
+
+    # hide cursor and disable echoing of keystrokes
+    tput civis 2>/dev/null
+    trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo; exit 1" INT TERM QUIT
+
+  stty -echo
 
   ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
 
@@ -385,6 +387,8 @@ Aborting.")"
     [ "$GSH_VERBOSE_DEBUG" != true ] && echo "[DONE]" >&2
   else
     progress_finish
+    # show cursor back
+    tput cnorm 2>/dev/null
     echo
     printf "$(gettext "Press Enter to continue.")"
     stty -echo 2>/dev/null    # ignore errors, in case input comes from a redirection
@@ -393,6 +397,10 @@ Aborting.")"
     clear
   fi
   unset MISSION_DIR MISSION_NB
+
+  # show cursor and re-enable echoing of keystrokes
+  tput cnorm 2>/dev/null
+  stty echo 2>/dev/null
 }
 
 #######################################################################
