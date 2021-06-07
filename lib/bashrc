@@ -10,6 +10,7 @@ export HISTSIZE=50000
 export HISTFILESIZE=50000
 
 unset LS_COLORS
+unset EDITOR
 
 # get this game's configuration
 [ -f "$GSH_BASHRC"/config.sh ] && . "$GSH_BASHRC"/config.sh
