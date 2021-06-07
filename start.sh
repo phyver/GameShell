@@ -165,7 +165,7 @@ init_gsh() {
     tput civis 2>/dev/null
     trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo; exit 1" INT TERM QUIT
 
-  stty -echo
+  stty -echo 2>/dev/null
 
   ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
 
