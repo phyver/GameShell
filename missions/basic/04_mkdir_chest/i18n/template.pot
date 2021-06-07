@@ -3,36 +3,48 @@ msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  ""
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+#: auto.sh:1 check.sh:4 check.sh:5 static.sh:1 test.sh:6 test.sh:7 test.sh:10
+#: test.sh:11 test.sh:14 test.sh:15 test.sh:16 test.sh:19 test.sh:20 test.sh:21
+#: test.sh:24 test.sh:25
 #, sh-format
 msgid   "$GSH_HOME/Forest"
 msgstr  ""
 
-# path for the text file containing the goal
-msgid   "$MISSION_dir_name/goal/en.txt"
-msgstr  ""
-
-# path for the text file containing the treasure message
-msgid   "$MISSION_dir_name/treasure-msg/en.txt"
-msgstr  ""
-
+#: auto.sh:1 check.sh:31 clean.sh:7 test.sh:2 test.sh:7 test.sh:11 test.sh:15
+#: test.sh:16 test.sh:20 test.sh:21 test.sh:25
 msgid   "Chest"
 msgstr  ""
 
+#: auto.sh:1 check.sh:5 check.sh:9 clean.sh:6 test.sh:1 test.sh:6 test.sh:7
+#: test.sh:10 test.sh:14 test.sh:16 test.sh:19 test.sh:21 test.sh:24 test.sh:25
 msgid   "Hut"
 msgstr  ""
 
+#: check.sh:12
+msgid   "You built too many huts in the forest!"
+msgstr  ""
+
+#: check.sh:17
+msgid   "You did not build a hut in the forest!"
+msgstr  ""
+
+#: check.sh:25 check.sh:48
 #, sh-format
 msgid   "The $dir_name directory does not exist!"
 msgstr  ""
 
+#: check.sh:34
 msgid   "You built too many chests in your hut!"
 msgstr  ""
 
-msgid   "You built too many huts in the forest!"
-msgstr  ""
-
+#: check.sh:39
 msgid   "You did not build a chest in your hut!"
-msgstr  ""
-
-msgid   "You did not build a hut in the forest!"
 msgstr  ""

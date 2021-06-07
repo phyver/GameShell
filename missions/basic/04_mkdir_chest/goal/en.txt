@@ -8,6 +8,6 @@ hut.
 Useful commands
 ===============
 
-mkdir dir_nameECTORY
+mkdir DIRECTORY
   Create a new directory inside the current directory.
   Remark: ``mkdir`` is an abbreviation for "make directory".
