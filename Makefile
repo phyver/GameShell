@@ -1,6 +1,6 @@
 LANGUAGES=$(wildcard i18n/*.po)
 LANGUAGES:=$(filter-out i18n/en.po, $(LANGUAGES))
-SH_FILES= start.sh lib/gameshell.sh lib/init.sh bin/*
+SH_FILES= start.sh lib/gsh.sh lib/profile.sh bin/*
 OTHER_FILES=
 
 SORT=--sort-output
