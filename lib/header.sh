@@ -7,7 +7,12 @@ then
 fi
 
 ORIGINAL_FILENAME="$0"
-ORIGINAL_DIR=$(dirname "$ORIGINAL_FILENAME")
+ORIGINAL_DIR=$(dirname "$0")
+
+# ORIGINAL_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
+# just in case
+ORIGINAL_DIR=${ORIGINAL_DIR:-.}
+
 
 NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$ORIGINAL_FILENAME")
 
@@ -73,6 +78,12 @@ rm -f "$GSH_ROOT.tgz"
 
 if [ "$KEEP_DIR" != "true" ]
 then
+  # some sanity checking to make sure we remove the good directory
+  if ! [ -d "$GSH_ROOT" ] || ! [ -f "$GSH_ROOT/start.sh" ] || ! [ -d "$GSH_ROOT/missions" ]
+  then
+    echo "Error: I don't want to remove directoryy $GSH_ROOT!" >&2
+    exit 1
+  fi
   chmod -R 777 "$GSH_ROOT"
   rm -rf "$GSH_ROOT"
 fi
