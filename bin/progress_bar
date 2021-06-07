@@ -181,9 +181,10 @@ init_data() {
 
 animation() {
   # Hide cursor.
-  tput civis 2> /dev/null
+  tput civis 2>/dev/null
+  stty -echo 2>/dev/null
   # the additional \b\b\b   \b\b\b is used to erase the possible ^C
-  trap 'tput cnorm 2> /dev/null;printf "\b\b\b   \b\b\b$POST";exit 1' INT TERM QUIT HUP
+  trap 'tput cnorm 2>/dev/null; stty echo 2>/dev/null; printf "\b\b\b   \b\b\b$POST";exit 1' INT TERM QUIT HUP
 
   # Print initial message.
   printf "$MSG"
@@ -236,7 +237,8 @@ EOS
   then
     animation
     printf "$POST"
-    tput cnorm 2> /dev/null
+    tput cnorm 2>/dev/null
+    stty echo 2>/dev/null
   fi
 }
 
