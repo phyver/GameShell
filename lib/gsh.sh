@@ -207,15 +207,19 @@ _gsh_start() {
 
   # re-source static.sh, in case some important directory was removed by accident
   [ -f "$MISSION_DIR/static.sh" ] && mission_source "$MISSION_DIR/static.sh"
+
   if [ -f "$MISSION_DIR/init.sh" ]
   then
-    # attention, si l'initialisation a lieu dans un sous-shell et qu'elle
-    # définit des variables d'environnement, elles ne seront pas définies dans
-    # la session bash.
-    # je sauvegarde l'environnement avant / après l'initialisation pour
-    # afficher un message dans ce cas
+    # If init.sh is sourced in a subshell, variable definitions, changes of
+    # PWD, functions or aliases defined in init.sh will disappear.
+    # I save the environment before / after and display a warning when that's the case.
     _PWD=$(pwd)
-    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-before
+    if [ "$BASHPID" != $$ ]
+    then
+      local env_before=$(mktemp)
+      . save_environment.sh > "$env_before"
+    fi
+
     mission_source "$MISSION_DIR/init.sh"
     local exit_status=$?
 
@@ -227,17 +231,18 @@ _gsh_start() {
       return
     fi
 
-    [ "$BASHPID" = $$ ] || compgen -v | sort > "$GSH_VAR"/env-after
-
     if [ "$BASHPID" != $$ ]
     then
-      if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$GSH_VAR"/env-before "$GSH_VAR"/env-after
+      local env_after=$(mktemp)
+      . save_environment.sh > "$env_after"
+
+      if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$env_before" "$env_after"
       then
         echo "$(gettext "Error: this mission was initialized in a subshell.
 You should run the command
     \$ gsh reset
 to make sure the mission is initialized properly.")" >&2
-        rm -f "$GSH_VAR"/env-{before,after}
+        rm -f "$/env_before" "$env_after"
       fi
     fi
   fi
