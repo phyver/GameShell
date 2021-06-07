@@ -17,6 +17,6 @@ objets.  Cependant, gardez à l'esprit que tout ces éléments du
 jeu font référence à des concepts standards : des répertoires, 
 des programmes, et des fichiers (avec un contenu qui peut être 
 aléatoire). Ainsi, par exemple :
-  - "construire une hutte" signifie créer un dossier "Hutte,
-  - "mettre la pièces dans le coffre" signifie déplacer un 
+  - "construire une hutte" signifie créer un dossier "Hutte",
+  - "mettre la pièce dans le coffre" signifie déplacer un 
     fichier "piece" dans un répertoire "Coffre".
