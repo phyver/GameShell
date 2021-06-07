@@ -161,12 +161,6 @@ progress_finish() {
 
 init_gsh() {
 
-    # hide cursor and disable echoing of keystrokes
-    tput civis 2>/dev/null
-    trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo; exit 1" INT TERM QUIT
-
-  stty -echo 2>/dev/null
-
   ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
 
   # message when data from a previous play is found. We can either
@@ -189,6 +183,11 @@ Do you want to remove it and start a new game? [y/N]') "
   fi
 
   ### if we're here, we need to reset a new game
+  # hide cursor and disable echoing of keystrokes
+  tput civis 2>/dev/null
+  stty -echo 2>/dev/null
+  trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo; exit 1" INT TERM QUIT EXIT
+
 
   # remove all the game data
   rm -rf "$GSH_HOME"
