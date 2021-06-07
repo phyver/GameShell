@@ -1,53 +1,44 @@
-# path for the text file containing the treasure message
-msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
-
-# path for the text file containing the goal
-msgid   "$MISSION_DIR/goal/en.txt"
-msgstr  "$MISSION_DIR/goal/fr.txt"
-
 #, fuzzy
 msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
-#: auto.sh:1 check.sh:5 check.sh:8 check.sh:22 check.sh:29 check.sh:30
-#: check.sh:37 check.sh:38 test.sh:1 test.sh:3 test.sh:6 test.sh:10
-#: treasure.sh:1
-msgid   "journal"
-msgstr  "journal"
-
-#: check.sh:9
 #, sh-format
-msgid   "No alias '$alias_name' has been found..."
-msgstr  "Aucin alias '$alias_name' n'a été trouvé..."
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
 
-#: check.sh:27
+# path for bashrc containing the explanations
+#, sh-format
+msgid   "$MISSION_DIR/bashrc/en.sh"
+msgstr  "$MISSION_DIR/bashrc/fr.sh"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
+
 #, sh-format
 msgid   "It seems you alias doesn't refer to the appropriate file ($target_path).\n"
         "Make sure to use an absolute path..."
 msgstr  "Votre alias n'utilise pas le bon fichier ($target_path).\n"
         "Vérifiez que vous utilisez bien un chemin absolu..."
 
-#: check.sh:36
 #, sh-format
-msgid   "Your alias doesn't use the command '$EDITOR'..."
-msgstr  "Votre alias n'utilise pas la commande '$EDITOR'..."
+msgid   "No alias '$alias_name' has been found..."
+msgstr  "Aucin alias '$alias_name' n'a été trouvé..."
 
-#: init.sh:4
 #, sh-format
 msgid   "The command 'nano' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'nano')"
 msgstr  "La commande 'nano' est nécessaire pour la mission $MISSION_NAME.\n"
         "(Debian / Ubuntu : installez le paquet 'nano')"
 
-#: init.sh:8
 #, sh-format
-msgid   "$GSH_HOME/Forest/Hut/Chest"
-msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
+msgid   "Your alias doesn't use the command '$EDITOR'..."
+msgstr  "Votre alias n'utilise pas la commande '$EDITOR'..."
 
-# path for bashrc containing the explanations
-#: treasure.sh:5
-#, sh-format
-msgid   "$MISSION_DIR/bashrc/en.sh"
-msgstr  "$MISSION_DIR/bashrc/fr.sh"
+msgid   "journal"
+msgstr  "journal"
