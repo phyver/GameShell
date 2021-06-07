@@ -52,7 +52,6 @@ mission_source() {
   fi
 
   echo "    GSH: sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
-  local TEMP=$(mktemp -d "$GSH_VAR/env-XXXXXX")
   local source_ret_value=""  # otherwise, it appears in the environment!
   local _MISSION_DIR=""
   local _TEXTDOMAIN=""
@@ -60,12 +59,12 @@ mission_source() {
   local MISSION_NAME=""
   local _PATH=""
   local exit_status=""
+  local env_before=$(mktemp)
+  local env_after=$(mktemp)
 
   # otherwise, record the environment (variables, functions and aliases)
   # before and after to echo a message when there are differences
-  compgen -v | sort > "$TEMP"/before-V
-  compgen -A function | sort > "$TEMP"/before-F
-  compgen -a | sort > "$TEMP"/before-A
+  . save_environment.sh >"$env_before"
   local _MISSION_DIR=$MISSION_DIR
   export MISSION_DIR=$(dirname "$(realpath "$FILENAME")")
   _TEXTDOMAIN=$TEXTDOMAIN
@@ -80,36 +79,16 @@ mission_source() {
   export MISSION_NAME=$_MISSION_NAME
   export MISSION_DIR=$_MISSION_DIR
   export PATH=$_PATH
-  compgen -v | sort > "$TEMP"/after-V
-  compgen -A function | sed "/$MISSION_FN/d" | sort > "$TEMP"/after-F
-  compgen -a | sort > "$TEMP"/after-A
+  . save_environment.sh | grep -v "$MISSION_FN" > "$env_after"
 
-  local msg="GSH: environment modifications while sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
-  if ! cmp -s "$TEMP"/{before,after}-V
+  if ! cmp -s "$env_before" "$env_after"
   then
-    [ -n "$msg" ] && echo "$msg"
-    msg=""
-    comm -23 "$TEMP"/{before,after}-V | sed "s/^/-Var:/"
-    comm -13 "$TEMP"/{before,after}-V | sed "s/^/+Var:/"
+    echo "GSH: environment modifications while sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
+    comm -23 "$env_before" "$env_after" | sed "s/^/-/"
+    comm -13 "$env_before" "$env_after" | sed "s/^/+/"
   fi
 
-  if ! cmp -s "$TEMP"/{before,after}-F
-  then
-    [ -n "$msg" ] && echo "$msg"
-    msg=""
-    comm -23 "$TEMP"/{before,after}-F | sed "s/^/-Fun:/"
-    comm -13 "$TEMP"/{before,after}-F | sed "s/^/+Fun:/"
-  fi
-
-  if ! cmp -s "$TEMP"/{before,after}-A
-  then
-    [ -n "$msg" ] && echo "$msg"
-    msg=""
-    comm -23 "$TEMP"/{before,after}-A | sed "s/^/-Aliase:/"
-    comm -13 "$TEMP"/{before,after}-A | sed "s/^/+Aliase:/"
-  fi
-
-  rm -rf "$TEMP"
+  rm -f "$env_before" "$env_after"
   unset -f "$MISSION_FN"
   return $exit_status
 }
