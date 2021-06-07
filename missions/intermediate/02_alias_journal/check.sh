@@ -10,20 +10,21 @@ _mission_check() {
         return 1
     fi
 
+    EDITOR=${EDITOR:-nano}
+    cmd=$(echo "$cmd" | EDITOR=$EDITOR envsubst '$EDITOR')
+
     case "$cmd" in
-        *nano*)
-            # "cd /" permet d'éviter de valider si les étudiants ont utilisé
-            # alias journal="nano journal.txt" et que le gsh check est fait
-            # depuis le coffre
+        *$EDITOR*)
+            # "cd /" to detect
+            # alias journal="nano journal.txt"
+            # used from the Chest
             local target_path
-            target_path="$(cd / ; eval "${cmd/nano/realpath}")"
+            target_path="$(cd / ; eval "${cmd/$EDITOR/realpath}")"
             if [ "$target_path" = "$(realpath "$GSH_CHEST/$(gettext "journal").txt")" ]
             then
                 return 0
             else
-                # echo "Votre alias utilise le fichier '~${target_path#$HOME}' qui n'est pas correct."
-                # target_path="$(echo "$cmd" | sed 's/ *nano *//')"
-                target_path="${cmd// *nano */}"
+                target_path="${cmd// *$EDITOR */}"
                 echo "$(eval_gettext "It seems you alias doesn't refer to the appropriate file (\$target_path).
 Make sure to use an absolute path...")"
                 unalias $(gettext "journal")
@@ -33,7 +34,7 @@ Make sure to use an absolute path...")"
 
             ;;
         *)
-            echo "$(gettext "Your alias doesn't use the command 'nano'...")"
+            echo "$(eval_gettext "Your alias doesn't use the command '\$EDITOR'...")"
             unalias $(gettext "journal")
             find "$GSH_HOME" -iname "*$(gettext "journal")*" -print 0 | xargs -0 rm -rf
             return 1

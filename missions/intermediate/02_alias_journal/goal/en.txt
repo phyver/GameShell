@@ -27,3 +27,11 @@ nano FILE
 
 alias STRING='COMMAND'
   Create a synonym for a string, that will stand for a command.
+
+
+Note
+----
+
+If (and only if) you know what you're doing, you can use the 
+``EDITOR`` variable to define your favorite editor and use it in the 
+alias.

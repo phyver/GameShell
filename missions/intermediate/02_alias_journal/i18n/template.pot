@@ -3,15 +3,6 @@ msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
-#, sh-format
-msgid   "$GSH_HOME/Forest/Hut/Chest"
-msgstr  ""
-
-# path for bashrc containing the explanations
-#, sh-format
-msgid   "$MISSION_DIR/bashrc/en.sh"
-msgstr  ""
-
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  ""
@@ -20,22 +11,41 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
+#: auto.sh:1 check.sh:5 check.sh:8 check.sh:22 check.sh:29 check.sh:30
+#: check.sh:37 check.sh:38 test.sh:1 test.sh:3 test.sh:6 test.sh:10
+#: treasure.sh:1
+msgid   "journal"
+msgstr  ""
+
+#: check.sh:9
+#, sh-format
+msgid   "No alias '$alias_name' has been found..."
+msgstr  ""
+
+#: check.sh:27
 #, sh-format
 msgid   "It seems you alias doesn't refer to the appropriate file ($target_path).\n"
         "Make sure to use an absolute path..."
 msgstr  ""
 
+#: check.sh:36
 #, sh-format
-msgid   "No alias '$alias_name' has been found..."
+msgid   "Your alias doesn't use the command '$EDITOR'..."
 msgstr  ""
 
+#: init.sh:4
 #, sh-format
 msgid   "The command 'nano' is required for mission $MISSION_NAME.\n"
         "(Debian / Ubuntu: install package 'nano')"
 msgstr  ""
 
-msgid   "Your alias doesn't use the command 'nano'..."
+#: init.sh:8
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
 msgstr  ""
 
-msgid   "journal"
+# path for bashrc containing the explanations
+#: treasure.sh:5
+#, sh-format
+msgid   "$MISSION_DIR/bashrc/en.sh"
 msgstr  ""

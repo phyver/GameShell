@@ -26,3 +26,11 @@ nano FICHIER
 alias CHAINE='COMMANDE'
   Crée un synonyme pour une chaine de caractères, qui sera remplacée 
   par la commande.
+
+
+Note
+----
+
+Si (et seulement si) vous savez ce que vous faites, vous pouvez 
+utiliser la variable ``EDITOR`` pour définir votre éditeur favori et 
+l'utiliser dans l'alias.
