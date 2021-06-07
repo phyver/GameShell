@@ -31,6 +31,12 @@ msgstr  "Did you melt some of the snowflakes?"
 msgid   "Did you remove some of the fairy's spells?"
 msgstr  "Did you remove some of the fairy's spells?"
 
+#, sh-format
+msgid   "The command 'pstree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+msgstr  "The command 'pstree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+
 msgid   "There still is some coal in the cellar!"
 msgstr  "There still is some coal in the cellar!"
 

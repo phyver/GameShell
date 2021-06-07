@@ -30,6 +30,12 @@ msgstr  "Est-ce que vous avez fait fondre des flocons ?"
 msgid   "Did you remove some of the fairy's spells?"
 msgstr  "Est-ce que vous avez supprimé un sortilège de la fée ?"
 
+#, sh-format
+msgid   "The command 'pstree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+msgstr  "La command 'pstree' est nécesaire pour la mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu : installez le paquet 'psmisc')"
+
 msgid   "There still is some coal in the cellar!"
 msgstr  "Il reste des morceaux de charbon dans la cave !"
 
