@@ -341,7 +341,7 @@ _gsh_check() {
     then
       # Record the treasure to be loaded by GameShell's bashrc.
       TREASURE_FILE=$GSH_BASHRC/treasure_$(printf "%04d" "$MISSION_NB")_$(basename "$MISSION_DIR"/).sh
-      echo "export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")" > "$TREASURE_FILE"
+      echo "export TEXTDOMAIN=\"$(textdomainname "$MISSION_DIR")\"" > "$TREASURE_FILE"
       cat "$MISSION_DIR/treasure.sh" >> "$TREASURE_FILE"
       echo "export TEXTDOMAIN=gsh" >> "$TREASURE_FILE"
       unset TREASURE_FILE
