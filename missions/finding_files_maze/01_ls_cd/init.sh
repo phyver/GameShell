@@ -13,8 +13,6 @@ _mission_init() {
   mkdir -p "$GSH_CHEST"
 
   local maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
-  rm -rf "$maze"/?*
-
   mkdir -p "$maze"
 
   local d=$(generate_maze.sh "$maze" 3 2 1)

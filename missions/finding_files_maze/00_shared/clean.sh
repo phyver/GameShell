@@ -6,5 +6,13 @@ case $PWD in
         ;;
 esac
 
-rm -rf "$maze"/*
+case "$maze" in
+  */World/*)
+    rm -rf "$maze"/?*
+    ;;
+  *)
+    echo "Error: I don't want to remove the content of $maze!"
+    exit 1
+    ;;
+esac
 unset maze
