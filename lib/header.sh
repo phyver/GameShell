@@ -74,6 +74,7 @@ rmdir "$TMP_ROOT"
 # start GameShell
 bash "$GSH_ROOT/start.sh" -C "$@"
 
+ret=$?
 
 tar -zcf "$GSH_ROOT.tgz" -C "$ORIGINAL_DIR" ./"$GSH_ROOT"
 
@@ -102,6 +103,6 @@ then
   rm -rf "$GSH_ROOT"
 fi
 
-exit 0
+exit $ret
 
 ##START_OF_GAMESHELL_ARCHIVE##
