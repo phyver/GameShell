@@ -217,6 +217,7 @@ _gsh_start() {
     if [ "$BASHPID" != $$ ]
     then
       local env_before=$(mktemp)
+      local env_after=$(mktemp)
       . save_environment.sh > "$env_before"
     fi
 
@@ -233,7 +234,6 @@ _gsh_start() {
 
     if [ "$BASHPID" != $$ ]
     then
-      local env_after=$(mktemp)
       . save_environment.sh > "$env_after"
 
       if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$env_before" "$env_after"
@@ -242,7 +242,7 @@ _gsh_start() {
 Run the command
     \$ gsh reset
 to make sure the mission is initialized properly.")" >&2
-        rm -f "$/env_before" "$env_after"
+        rm -f "$env_before" "$env_after"
       fi
     fi
   fi
