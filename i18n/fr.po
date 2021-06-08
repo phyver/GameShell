@@ -95,11 +95,11 @@ msgid   "Error: the command 'gsh reset' shouldn't be run inside a subshell!"
 msgstr  "Erreur : la commande 'gsh reset' ne devrait pas être lancée dans un sous-shell !"
 
 msgid   "Error: this mission was initialized in a subshell.\n"
-        "You should run the command\n"
+        "Run the command\n"
         "    $ gsh reset\n"
         "to make sure the mission is initialized properly."
 msgstr  "Erreur : cette mission a été initailisée dans un sous-shell.\n"
-        "Il est conseillé de lancer la commande\n"
+        "Lancez la commande\n"
         "    $ gsh reset\n"
         "pour qu'elle soit initialisée correctement."
 
