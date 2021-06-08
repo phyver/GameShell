@@ -595,7 +595,6 @@ Use one of the following commands:")  check, goal, help, HELP or reset" >&2
       fi
       ;;
   esac
-  echo "FINISH, ret=$ret"
   export TEXTDOMAIN=$_TEXTDOMAIN
   unset _TEXTDOMAIN
   [ -n "$ABORT" ] && [ "$ret" -eq 255 ] && exit 1
