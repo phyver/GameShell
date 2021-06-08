@@ -9,12 +9,12 @@ _mission_check() {
     elif ! la &> /dev/null
     then
         echo "$(gettext "The alias 'la' is invalid...")"
-        unalias la
+        unalias la 2>/dev/null
         return 1
     elif [ "$cmd" != 'ls-A' ]
     then
         echo "$(gettext "The alias 'la' doesn't run 'ls -A'...")"
-        unalias la
+        unalias la 2>/dev/null
         return 1
     else
         return 0

@@ -19,7 +19,6 @@ _mission_check() {
             # alias journal="nano journal.txt"
             # used from the Chest
             local target_path
-            eval echo "${cmd/$EDITOR/realpath}"
             target_path="$(cd / ; eval "${cmd/$EDITOR/realpath}")"
             if [ "$target_path" = "$(realpath "$GSH_CHEST/$(gettext "journal").txt")" ]
             then
@@ -28,7 +27,7 @@ _mission_check() {
                 target_path="${cmd// *$EDITOR */}"
                 echo "$(eval_gettext "It seems you alias doesn't refer to the appropriate file (\$target_path).
 Make sure to use an absolute path...")"
-                unalias $(gettext "journal")
+                unalias $(gettext "journal") 2>/dev/null
                 find "$GSH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -rf
                 return 1
             fi
@@ -36,8 +35,8 @@ Make sure to use an absolute path...")"
             ;;
         *)
             echo "$(eval_gettext "Your alias doesn't use the command '\$EDITOR'...")"
-            unalias $(gettext "journal")
-            find "$GSH_HOME" -iname "*$(gettext "journal")*" -print 0 | xargs -0 rm -rf
+            unalias $(gettext "journal") 2>/dev/null
+            find "$GSH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -rf
             return 1
             ;;
     esac
