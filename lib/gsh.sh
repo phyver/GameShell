@@ -64,7 +64,7 @@ _gsh_reset() {
     echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
   fi
-  if [ "$BASHPID" != $$ ]
+  if ! . mainshell.sh
   then
     echo "$(gettext "Error: the command 'gsh reset' shouldn't be run inside a subshell!")" >&2
     return 1
@@ -75,7 +75,7 @@ _gsh_reset() {
 
 # reset the bash configuration
 _gsh_hard_reset() {
-  if [ "$BASHPID" != $$ ]
+  if ! . mainshell.sh
   then
     echo "$(gettext "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!")" >&2
     return 1
@@ -214,7 +214,7 @@ _gsh_start() {
     # PWD, functions or aliases defined in init.sh will disappear.
     # I save the environment before / after and display a warning when that's the case.
     _PWD=$(pwd)
-    if [ "$BASHPID" != $$ ]
+    if ! . mainshell.sh
     then
       local env_before=$(mktemp)
       local env_after=$(mktemp)
@@ -232,7 +232,7 @@ _gsh_start() {
       return
     fi
 
-    if [ "$BASHPID" != $$ ]
+    if ! . mainshell.sh
     then
       . save_environment.sh > "$env_after"
 
@@ -371,7 +371,7 @@ _gsh_check() {
       mission_source "$MISSION_DIR/treasure.sh"
 
       #sourcing the file isn't very robust as the "gsh check" may happen in a subshell!
-      if [ "$BASHPID" != $$ ]
+      if ! . mainshell.sh
       then
         echo "$(gettext "Warning: the file 'treasure.sh' was sourced from a subshell.
 You should use the command
