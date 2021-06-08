@@ -45,13 +45,27 @@ do
   GSH_ROOT="$GSH_ROOT.$N"
 done
 mkdir -p "$GSH_ROOT"
+# check that the directory has been created
+if ! [ -d "$GSH_ROOT" ]
+then
+  echo "Error: couldn't create temporary directory '$GSH_ROOT'" >&2
+  return 1
+fi
+# and that it is empty
+if [ "$(find "$GSH_ROOT" -print | head -n2 | wc -l)" -ne 1 ]
+then
+  echo "Error: temporary directory '$GSH_ROOT' is not empty." >&2
+  return 1
+fi
+# and add a safeguard so we can check we are not removing another directory
+touch "$GSH_ROOT/.gsh_root-$$"
 
 tail -n+"$NB_LINES" "$ORIGINAL_FILENAME" > "$GSH_ROOT/gameshell.tgz"
 tar -zx -C "$GSH_ROOT" -f "$GSH_ROOT/gameshell.tgz"
 rm "$GSH_ROOT/gameshell.tgz"
 
 # the archive should extract into a directory, move everything to GSH_ROOT
-TMP_ROOT=$(find "$GSH_ROOT" -maxdepth 1 -path "$GSH_ROOT/*" -print -quit)
+TMP_ROOT=$(find "$GSH_ROOT" -maxdepth 1 -path "$GSH_ROOT/*" -type d -print -quit)
 mv "$TMP_ROOT"/* "$GSH_ROOT"
 mv "$TMP_ROOT"/.[!.]* "$GSH_ROOT" 2>/dev/null
 rmdir "$TMP_ROOT"
@@ -79,7 +93,7 @@ rm -f "$GSH_ROOT.tgz"
 if [ "$KEEP_DIR" != "true" ]
 then
   # some sanity checking to make sure we remove the good directory
-  if ! [ -d "$GSH_ROOT" ] || ! [ -f "$GSH_ROOT/start.sh" ] || ! [ -d "$GSH_ROOT/missions" ]
+  if ! [ -e "$GSH_ROOT/.gsh_root-$$" ]
   then
     echo "Error: I don't want to remove directoryy $GSH_ROOT!" >&2
     exit 1
