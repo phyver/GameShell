@@ -37,7 +37,8 @@ if $AWK 'BEGIN {exit 3==length("héé") ? 0 : 1;}' || ! command -v iconv >/dev/n
 then
   tmp_encoding=""
 else
-  tmp_encoding=ISO-8859-1
+  # tmp_encoding=ISO-8859-1
+  tmp_encoding=LATIN1
 fi
 
 # default box design
