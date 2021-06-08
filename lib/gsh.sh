@@ -238,8 +238,8 @@ _gsh_start() {
 
       if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$env_before" "$env_after"
       then
-        echo "$(gettext "Error: this mission was initialized in a subshell.
-You should run the command
+        color_echo yellow "$(gettext "Error: this mission was initialized in a subshell.
+Run the command
     \$ gsh reset
 to make sure the mission is initialized properly.")" >&2
         rm -f "$/env_before" "$env_after"
