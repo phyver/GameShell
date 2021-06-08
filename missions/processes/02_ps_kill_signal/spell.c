@@ -65,7 +65,6 @@ void spawn(int sig)
 
     pid_t pid = fork();
     if (pid) {
-        printf("call write_pid with %d\n", pid);
         write_pid(pid);
         // Update the seed to desynchronize.
         srand(pid + time(NULL));
