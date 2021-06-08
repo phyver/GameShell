@@ -86,30 +86,44 @@ then
   exit 1
 fi
 
-if [ -z "$tmp_encoding" ]
-then
-  ENCODE=cat
-  DECODE=cat
-else
-  ENCODE="iconv -f UTF-8 -t \"$tmp_encoding\""
-  DECODE="iconv -t UTF-8 -f \"$tmp_encoding\""
-fi
-
-if [ "$reflow_width" -eq 0 ]
-then
-  REFLOW=cat
-else
-  REFLOW="awk -f '$working_dir/reflow.awk' -v width=$reflow_width"
-fi
+encode() {
+  input=${1:--}
+  if [ -z "$tmp_encoding" ]
+  then
+    cat "$input"
+  else
+    # NOTE: macOS' iconv doesn't accept "-" as a filename for stdin
+    cat "$input" | iconv -f UTF-8 -t "$tmp_encoding"
+  fi
+}
+decode() {
+  input=${1:--}
+  if [ -z "$tmp_encoding" ]
+  then
+    cat "$input"
+  else
+    # NOTE: macOS' iconv doesn't accept "-" as a filename for stdin
+    cat "$input" | iconv -t UTF-8 -f "$tmp_encoding"
+  fi
+}
+reflow() {
+  input=${1:--}
+  if [ "$reflow_width" -eq 0 ]
+  then
+    cat "$input"
+  else
+    $AWK -f "$working_dir/reflow.awk" -v width="$reflow_width" "$input"
+  fi
+}
 
 if [ -z "$box" ]
 then
-  eval "$ENCODE \"$filename\" | $REFLOW | $DECODE"
+  encode "$filename" | reflow | decode
 else
   # temporary file
   tmpfile=$(mktemp)
 
-  eval "$ENCODE \"$filename\" | $REFLOW" > "$tmpfile"
+  encode "$filename" | reflow > "$tmpfile"
 
   # create awk boxes database if necessary
   [ -e "$working_dir/boxes-data.awk" ] || $AWK -f "$working_dir/../utils/create_boxes_data.awk" "$working_dir/../utils/boxes.db" > "$working_dir/boxes-data.awk"
@@ -130,7 +144,7 @@ else
     height=$(echo "$w_h" | cut -d' ' -f2)
   fi
 
-  $AWK -v box="$box" -v width=$width -v height=$height -f "$working_dir/boxes-data.awk" -f "$working_dir/box.awk" "$tmpfile" | $DECODE
+  $AWK -v box="$box" -v width=$width -v height=$height -f "$working_dir/boxes-data.awk" -f "$working_dir/box.awk" "$tmpfile" | decode
 
   rm -f "$tmpfile"
 fi
