@@ -27,9 +27,9 @@ copy_bin() {
   fi
   cat > "$target" <<EOH
 #!/bin/sh
-export MISSION_DIR=\$GSH_ROOT/${MISSION_DIR#$GSH_ROOT/}
-export TEXTDOMAIN=$DOMAIN
-exec $source "\$@"
+export MISSION_DIR="\$GSH_ROOT/${MISSION_DIR#$GSH_ROOT/}"
+export TEXTDOMAIN="$DOMAIN"
+exec "$source" "\$@"
 EOH
   chmod +x "$target"
 }

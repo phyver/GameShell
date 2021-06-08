@@ -41,8 +41,8 @@ _mission_init() ( #subshell to avoid changing directory
   done
   printf "\n"
 
-  cd $bib
-  grep -il "gsh" * 2> /dev/null | sort > $GSH_VAR/list_grimoires_GSH
+  cd "$bib"
+  grep -il "gsh" * 2> /dev/null | sort > "$GSH_VAR/list_grimoires_GSH"
 )
 
 . progress_bar.sh _mission_init

@@ -16,7 +16,7 @@ _mission_init() {
 
   # put Servillus in the cave
   rm -f "$(eval_gettext '$GSH_HOME/Mountain/Cave')/$(gettext "cauldron")"
-  sign_file $MISSION_DIR/../00_shared/ascii-art/servillus.txt "$(eval_gettext '$GSH_HOME/Mountain/Cave')/servillus"
+  sign_file "$MISSION_DIR/../00_shared/ascii-art/servillus.txt" "$(eval_gettext '$GSH_HOME/Mountain/Cave')/servillus"
 
   return 0
 }

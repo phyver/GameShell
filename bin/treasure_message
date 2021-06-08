@@ -2,7 +2,7 @@
 
 # display a treasure message
 
-GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
+GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
 GSH_LIB=$GSH_ROOT/lib
 GSH_CONFIG=$GSH_ROOT/.config
 

@@ -3,7 +3,7 @@
 
 if [ -f "$GSH_VAR/list_grimoires_RO" ]
 then
-    while read file
+    while IFS= read file
     do
         rm "$file"
     done < "$GSH_VAR/list_grimoires_RO"

@@ -65,6 +65,7 @@ void spawn(int sig)
 
     pid_t pid = fork();
     if (pid) {
+        printf("call write_pid with %d\n", pid);
         write_pid(pid);
         // Update the seed to desynchronize.
         srand(pid + time(NULL));
@@ -94,7 +95,16 @@ int main()
     // define the path to the file in which to write the children's PIDs.
     wordexp_t result;
     wordexp("$GSH_VAR/spell.pids", &result, 0);
-    strncpy(path, result.we_wordv[0], 1024);
+    // if the path contains spaces, the result is contained in several words!
+    int pos = 0;
+    for (int i = 0; result.we_wordv[i] != NULL; i++) {
+        if (i > 0) {
+            path[pos++] = ' ';
+            path[pos] = '\0';
+        }
+        strncat(path + pos, result.we_wordv[i], 1024 - pos);
+        pos += strlen(result.we_wordv[i]);
+    }
 
     // Initialize semaphores.
     printing_sem = sem_open("/printing_sem", O_CREAT, 0644, 1);
