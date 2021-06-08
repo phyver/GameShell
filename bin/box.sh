@@ -98,17 +98,17 @@ if [ "$reflow_width" -eq 0 ]
 then
   REFLOW=cat
 else
-  REFLOW="$AWK -f "$working_dir/reflow.awk" -v width=$reflow_width"
+  REFLOW="awk -f '$working_dir/reflow.awk' -v width=$reflow_width"
 fi
 
 if [ -z "$box" ]
 then
-  cat "$filename" | $ENCODE | $REFLOW | $DECODE
+  eval "$ENCODE \"$filename\" | $REFLOW | $DECODE"
 else
   # temporary file
   tmpfile=$(mktemp)
 
-  cat "$filename" | $ENCODE | $REFLOW > "$tmpfile"
+  eval "$ENCODE \"$filename\" | $REFLOW" > "$tmpfile"
 
   # create awk boxes database if necessary
   [ -e "$working_dir/boxes-data.awk" ] || $AWK -f "$working_dir/../utils/create_boxes_data.awk" "$working_dir/../utils/boxes.db" > "$working_dir/boxes-data.awk"

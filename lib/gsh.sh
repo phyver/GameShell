@@ -585,6 +585,7 @@ gsh() {
         local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
 
         MISSION_NB=$MISSION_NB MISSION_DIR=$MISSION_DIR _gsh_$cmd "$@"
+        ret=$?
       else
         echo "$(eval_gettext "Error: unknown gsh command '\$cmd'.
 Use one of the following commands:")  check, goal, help, HELP or reset" >&2
@@ -594,6 +595,7 @@ Use one of the following commands:")  check, goal, help, HELP or reset" >&2
       fi
       ;;
   esac
+  echo "FINISH, ret=$ret"
   export TEXTDOMAIN=$_TEXTDOMAIN
   unset _TEXTDOMAIN
   [ -n "$ABORT" ] && [ "$ret" -eq 255 ] && exit 1

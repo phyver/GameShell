@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
+GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
 GSH_CONFIG=$GSH_ROOT/.config
 
 [ -d "$GSH_CONFIG" ] || { echo "Error: GSH_CONFIG doesn't exists" >&2 ; exit 1 ; }

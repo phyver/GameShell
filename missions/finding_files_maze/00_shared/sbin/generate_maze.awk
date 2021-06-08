@@ -59,7 +59,7 @@ BEGIN {
         printf(leaf_content) > path;
         close(path);
       } else {
-        print path | "xargs mkdir -p";
+        printf("\"%s\" ", path) | "xargs mkdir -p";
         # used to be
         # system("mkdir -p " path);
         # close("mkdir -p " path);
@@ -75,7 +75,7 @@ BEGIN {
       for (i=0; i<current_level; i++) {
         path = path "/" PATH[i];
       }
-      print path | "xargs mkdir -p";
+      printf("\"%s\" ", path) | "xargs mkdir -p";
       # used to be
       # system("mkdir -p " path);
       # close("mkdir -p " path);

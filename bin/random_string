@@ -1,8 +1,7 @@
 #!/bin/sh
 
-GSH_ROOT=$(cd $(dirname "$0")/.. && pwd -P)
+GSH_ROOT="$(cd "$(dirname "$0")/.." && pwd -P)"
 GSH_CONFIG=$GSH_ROOT/.config
-
 n=$1
 
 awk -v n=${n:-32} -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN {

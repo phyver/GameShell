@@ -20,26 +20,27 @@
 // template for the input files
 #define IMP_INPUT_TEMPLATE "$MISSION_DIR/ascii-art/coal-%d.txt"
 #define FAIRY_INPUT_TEMPLATE "$MISSION_DIR/ascii-art/snowflake-%d.txt"
-#define INPUT_TEMPLATE \
+#define INPUT_TEMPLATE                                                       \
     (WHO == IMP ? IMP_INPUT_TEMPLATE : FAIRY_INPUT_TEMPLATE)
 
 // template for the output files
-#define IMP_OUTPUT_TEMPLATE \
+#define IMP_OUTPUT_TEMPLATE                                                  \
     "$(gettext '$GSH_HOME/Castle/Cellar')/%d_$(gettext 'coal')"
-#define FAIRY_OUTPUT_TEMPLATE \
+#define FAIRY_OUTPUT_TEMPLATE                                                \
     "$(gettext '$GSH_HOME/Castle/Cellar')/%d_$(gettext 'snowflake')"
-#define OUTPUT_TEMPLATE \
+#define OUTPUT_TEMPLATE                                                      \
     (WHO == IMP ? IMP_OUTPUT_TEMPLATE : FAIRY_OUTPUT_TEMPLATE)
 
 char input_template[1024]; // template for the input ASCII-art files
 char input_file[1024];     // actual path for the current input ASCII-art file
 
-char output_template[1024]; // template for the ouput file
-char output_file[1024];     // actual path for the current output file
+char output_template_tmp[1024]; // temporary template for the ouput file
+char output_template[1024];     // template for the ouput file
+char output_file[1024];         // actual path for the current output file
 
 char buf[4096]; // content of the ASCII-art file
 
-#define LOG_FILE \
+#define LOG_FILE                                                             \
     (WHO == IMP ? "$GSH_VAR/coals.list" : "$GSH_VAR/snowflakes.list")
 char log_file[1024]; // path for the log file
 
@@ -59,19 +60,61 @@ int main()
     // expand the input template
     wordexp_t result;
     wordexp(INPUT_TEMPLATE, &result, 0);
-    strncpy(input_template, result.we_wordv[0], 1024);
+    // if the path contains spaces, the result is contained in several words!
+    int pos = 0;
+    for (int i = 0; result.we_wordv[i] != NULL; i++) {
+        if (i > 0) {
+            input_template[pos++] = ' ';
+            input_template[pos] = '\0';
+        }
+        strncat(input_template + pos, result.we_wordv[i], 1024 - pos);
+        pos += strlen(result.we_wordv[i]);
+    }
+    /* printf(">>> input_template = '%s'\n", input_template); */
+    wordfree(&result);
 
     // expant the output template
     wordexp(OUTPUT_TEMPLATE, &result, 0);
-    strncpy(output_template, result.we_wordv[0], 1024);
+    // if the path contains spaces, the result is contained in several words!
+    pos = 0;
+    for (int i = 0; result.we_wordv[i] != NULL; i++) {
+        if (i > 0) {
+            output_template_tmp[pos++] = ' ';
+            output_template_tmp[pos] = '\0';
+        }
+        strncat(output_template_tmp + pos, result.we_wordv[i], 1024 - pos);
+        pos += strlen(result.we_wordv[i]);
+    }
+    /* printf(">>> 1output_template_tmp = '%s'\n", output_template_tmp); */
+    wordfree(&result);
     // we need to expand it a second time as the expansion of "$(gettext
     // '$GSH_HOME/...')" puts a "$GSH_HOME" in the first expansion
-    wordexp(output_template, &result, 0);
-    strncpy(output_template, result.we_wordv[0], 1024);
+    wordexp(output_template_tmp, &result, 0);
+    pos = 0;
+    for (int i = 0; result.we_wordv[i] != NULL; i++) {
+        if (i > 0) {
+            output_template[pos++] = ' ';
+            output_template[pos] = '\0';
+        }
+        strncat(output_template + pos, result.we_wordv[i], 1024 - pos);
+        pos += strlen(result.we_wordv[i]);
+    }
+    /* printf(">>> 2output_template = '%s'\n", output_template); */
+    wordfree(&result);
 
     // expand the log path
     wordexp(LOG_FILE, &result, 0);
-    strncpy(log_file, result.we_wordv[0], 1024);
+    pos = 0;
+    for (int i = 0; result.we_wordv[i] != NULL; i++) {
+        if (i > 0) {
+            log_file[pos++] = ' ';
+            log_file[pos] = '\0';
+        }
+        strncat(log_file + pos, result.we_wordv[i], 1024 - pos);
+        pos += strlen(result.we_wordv[i]);
+    }
+    /* printf(">>> log_file = '%s'\n", log_file); */
+    wordfree(&result);
 
     writing_sem = sem_open("/writing_sem", O_CREAT, 0644, 1);
     if (writing_sem == SEM_FAILED)
@@ -95,7 +138,8 @@ int main()
         char* s = spaces + (rand() % MAX_SPACES);
         int size = fread(buf, 1, 4096, in);
         buf[size] = 0; // make sure it is a proper null terminated string
-        for (char* line = strtok(buf, "\n"); line != NULL; line = strtok(NULL, "\n")) {
+        for (char* line = strtok(buf, "\n"); line != NULL;
+             line = strtok(NULL, "\n")) {
             fprintf(out, "%s%s\n", s, line);
         }
         fclose(in);

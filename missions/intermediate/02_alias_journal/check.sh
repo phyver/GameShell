@@ -19,6 +19,7 @@ _mission_check() {
             # alias journal="nano journal.txt"
             # used from the Chest
             local target_path
+            eval echo "${cmd/$EDITOR/realpath}"
             target_path="$(cd / ; eval "${cmd/$EDITOR/realpath}")"
             if [ "$target_path" = "$(realpath "$GSH_CHEST/$(gettext "journal").txt")" ]
             then

@@ -34,23 +34,23 @@ new: i18n/template.pot
 
 ## check that the auto.sh scripts work as expected
 check: clean
-	./utils/archive.sh -at
-	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort; done; gsh index|cat' | ./gameshell.sh -Rdq
+	./utils/archive.sh -at -N "game shell (1)"
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort; done; gsh index|cat' | ./"game shell (1).sh" -Rdq
 
 ## check that the auto.sh scripts work as expected, in verbose mode
 check-verbose: clean
-	./utils/archive.sh -at
-	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort; done; gsh index|cat' | ./gameshell.sh -RDq
+	./utils/archive.sh -at -N "game shell (1)"
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort; done; gsh index|cat' | ./"game shell (1).sh" -RDq
 
 ## run all the test.sh and auto.sh scripts
 tests: clean
-	./utils/archive.sh -at
-	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./gameshell.sh -Rdq
+	./utils/archive.sh -at -N "game shell (1)"
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./"game shell (1).sh" -Rdq
 
 ## run all the test.sh and auto.sh scripts, in verbose mode
 tests-verbose: clean
-	./utils/archive.sh -at
-	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./gameshell.sh -RDq
+	./utils/archive.sh -at -N "game shell (1)"
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./"game shell (1).sh" -RDq
 
 clean:
 	rm -rf i18n/*~ locale gameshell.tgz gameshell.sh gameshell-save.sh bin/boxes-data.awk

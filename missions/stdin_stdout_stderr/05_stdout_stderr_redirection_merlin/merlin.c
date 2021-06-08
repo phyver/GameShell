@@ -11,6 +11,7 @@ char dom[1024];    // large enough for TEXTDOMAIN
 char domdir[1024]; // large enough for TEXTDOMAINDIR
 
 char key[1024];
+char key_path[1024];
 
 int main(int argc, char** argv)
 {
@@ -47,7 +48,17 @@ int main(int argc, char** argv)
     // get the key from "$GSH_VAR/secret_key"
     wordexp_t result;
     wordexp("$GSH_VAR/secret_key", &result, 0);
-    char* key_path = result.we_wordv[0];
+    // if the path contains spaces, the result is contained in several words!
+    int pos = 0;
+    for (int i = 0; result.we_wordv[i] != NULL; i++) {
+        if (i > 0) {
+            key_path[pos++] = ' ';
+            key_path[pos] = '\0';
+        }
+        strncat(key_path + pos, result.we_wordv[i], 1024 - pos);
+        pos += strlen(result.we_wordv[i]);
+    }
+    /* printf(">>> key_path = '%s'\n", key_path); */
 
     // remove trailing newline
     if (key_path == NULL)

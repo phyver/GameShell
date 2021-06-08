@@ -8,10 +8,10 @@ sed_i() {
     echo "usage: sed-i 'EXPRESSION' FILENAME" >&2
     return 1
   fi
-  local expr=$1
-  local filename=$2
-  local tmp=$(mktemp)
-  local bak="$filename~"
+  expr=$1
+  filename=$2
+  tmp=$(mktemp)
+  bak="$filename~"
   trap "rm -f \"$tmp\" \"$bak\"" TERM INT
   if sed -e "$expr" "$filename" > "$tmp"
   then

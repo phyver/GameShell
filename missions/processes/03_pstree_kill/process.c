@@ -66,8 +66,18 @@ int main(int argc, char** argv)
         wordexp("$GSH_VAR/fairy_spell.pids", &result, 0);
         break;
     }
-    strncpy(pids_path, result.we_wordv[0], 1024);
-    /* printf(">>> pids_path = %s\n", pids_path); */
+    // if the path contains spaces, the result is contained in several words!
+    int pos = 0;
+    for (int i = 0; result.we_wordv[i] != NULL; i++) {
+        if (i > 0) {
+            pids_path[pos++] = ' ';
+            pids_path[pos] = '\0';
+        }
+        strncat(pids_path + pos, result.we_wordv[i], 1024 - pos);
+        pos += strlen(result.we_wordv[i]);
+    }
+    /* printf(">>> pids_path = '%s'\n", pids_path); */
+    wordfree(&result);
 
     switch (who) {
     case IMP:
@@ -77,8 +87,17 @@ int main(int argc, char** argv)
         wordexp("$GSH_VAR/fairy/$(gettext 'spell')", &result, 0);
         break;
     }
-    strncpy(spell_path, result.we_wordv[0], 1024);
-    /* printf(">>> spell_path = %s\n", spell_path); */
+    pos = 0;
+    for (int i = 0; result.we_wordv[i] != NULL; i++) {
+        if (i > 0) {
+            spell_path[pos++] = ' ';
+            spell_path[pos] = '\0';
+        }
+        strncat(spell_path + pos, result.we_wordv[i], 1024 - pos);
+        pos += strlen(result.we_wordv[i]);
+    }
+    /* printf(">>> spell_path = '%s'\n", spell_path); */
+    wordfree(&result);
 
     FILE* pids = fopen(pids_path, "w");
     if (pids == NULL)
@@ -91,15 +110,14 @@ int main(int argc, char** argv)
 
         if (pid == 0) {
             fclose(pids);
-            /* printf(">>> execl %s\n", spell_path); */
             execl(spell_path, spell_path, NULL);
         }
-
         fprintf(pids, "%d\n", pid);
     }
 
     fclose(pids);
 
+    /* printf(">>> waiting for children...\n"); */
     for (int i = 0; i < NB_CHILDREN; i++) {
         wait(NULL);
     }

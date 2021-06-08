@@ -132,7 +132,7 @@ do
   cp -RPp "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR"
 done
 
-export GSH_ROOT=$TMP_DIR/$NAME
+export GSH_ROOT="$TMP_DIR/$NAME"
 . "$GSH_ROOT/lib/profile.sh"
 export GSH_MISSIONS="$GSH_ROOT/missions"
 

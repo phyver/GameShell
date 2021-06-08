@@ -16,7 +16,7 @@ _mission_check() {
         return 1
     fi
 
-    local filename=$(cut -d" " -f1 $GSH_VAR/ruby)
+    local filename=$(cut -d" " -f1 "$GSH_VAR/ruby")
 
     if ! [ -f "$GSH_CHEST/$filename" ]
     then
