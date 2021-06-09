@@ -1,6 +1,46 @@
 #!/bin/sh
 
+display_help() {
+  cat <<EOH
+Usage: seq [OPTION] LAST
+  or:  seq [OPTION] FIRST LAST
+  or:  seq [OPTION] FIRST STEP LAST
+Display increasing sequence of natural numbers.
+
+Options:
+  -f FORMAT   use printf style FORMAT to display an integer
+  -s SEP      use SEP to separate numbers (default: \n)
+  -h          this message
+EOH
+}
+
 seq() (
+
+  FORMAT="%d"
+  SEP="\n"
+
+  while getopts "hf:s:" opt
+  do
+    case "$opt" in
+      h)
+        display_help
+        exit
+        ;;
+      f)
+        FORMAT=$OPTARG
+        ;;
+      s)
+        SEP=$OPTARG
+        ;;
+      *)
+        echo "invalid option '$opt'" >&2
+        exit 1
+        ;;
+    esac
+  done
+  shift $((OPTIND-1))
+
+
   case "$#" in
     1)
       start=1
@@ -18,15 +58,18 @@ seq() (
       step=$2
       ;;
     *)
-      echo "Error: seq only takes 1, 2 or 3 arguments." >&2
-      return 1
+      display_help
+      exit 1
   esac
+
   i=$start
-  while [ "$i" -le $end ]
+  while [ "$i" -lt $end ]
   do
-    echo $i
+    printf "$FORMAT$SEP" $i
     i=$((i+step))
   done
+  [ "$i" -eq $end ] && printf "$FORMAT" $i
+  echo
   return 0
 )
 
