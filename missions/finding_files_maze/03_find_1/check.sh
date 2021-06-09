@@ -9,7 +9,6 @@ _mission_check_p() {
     if [ -z "$path" ]
     then
         echo "$(gettext "Some of the coins are not in your chest!")"
-        echo $coin_name
         return 1
     fi
     if ! cmp -s "$path" "$GSH_VAR/${coin_name}_$COIN_NB"
@@ -31,7 +30,6 @@ _mission_check() {
     if [ "$nb" -ne 0 ]
     then
         echo "$(gettext "There still are some gold coins in the maze!")"
-        return 1
         return 1
     fi
 

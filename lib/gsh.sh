@@ -109,10 +109,8 @@ Do you still want to quit? [y/n]") "
         break
       fi
     done
-  echo 2
     #shellcheck disable=SC2046
     kill $(jobs -ps)
-  echo 3
   fi
 
   _log_action "$MISSION_NB" "$signal"
