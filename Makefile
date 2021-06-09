@@ -45,12 +45,17 @@ check-verbose: clean
 ## run all the test.sh and auto.sh scripts
 tests: clean
 	./utils/archive.sh -at -N "game shell (1)"
-	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./"game shell (1).sh" -Rdq
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./"game shell (1).sh" -Rdq
+
+## run all the test.sh and auto.sh scripts
+tests-fr: clean
+	./utils/archive.sh -at -N "game shell (1)"
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./"game shell (1).sh" -RdqL fr
 
 ## run all the test.sh and auto.sh scripts, in verbose mode
 tests-verbose: clean
 	./utils/archive.sh -at -N "game shell (1)"
-	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./"game shell (1).sh" -RDq
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh index|cat' | ./"game shell (1).sh" -RDq
 
 clean:
 	rm -rf i18n/*~ locale gameshell.tgz gameshell.sh gameshell-save.sh bin/boxes-data.awk
