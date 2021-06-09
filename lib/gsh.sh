@@ -226,7 +226,7 @@ _gsh_start() {
 
     if [ "$exit_status" -ne 0 ]
     then
-      echo "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
+      color_echo yellow "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
       _log_action "$MISSION_NB" "CANCEL_DEP_PB"
       _gsh_start "$((MISSION_NB + 1))"
       return
