@@ -54,6 +54,9 @@ gsh reset
 gsh skip                              (ADMIN)
   give up on the current mission and go to the next one
 
+gsh stat [-v]
+  display simple statistics about missions
+
 gsh systemconfig
   display the system configuration
 
