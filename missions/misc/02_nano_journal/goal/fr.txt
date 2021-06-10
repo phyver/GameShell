@@ -27,6 +27,6 @@ nano FICHIER
   (le symbole "^" signifie "Control")
     Control-x     quitter nano
     Control-o     sauver le fichier
-    Control-w     rechercher une chaine dans le fichier ouvert
+    Control-w     rechercher une chaine
 
   Remarque : n'utilisez pas Control-s ou Control-z!

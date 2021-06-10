@@ -25,7 +25,8 @@ man COMMAND
     q           quit
     Space       scroll down one page
     / STRING    search for the string
-    n           find the next occurrence for the search string
+    n           find the next occurrence of the
+                search string
 
 Remark
 ------

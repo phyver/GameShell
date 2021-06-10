@@ -23,9 +23,9 @@ kill [OPTIONS] N
   Send the termination signal to process number N.
 
   Useful options:
-    -s SIGNAL   choose the signal to send by giving its name
-    -NUMBER     choose the signal to send by giving its number
-    -l          give the list of available signals
+    -s SIGNAL   choose the signal name
+    -NUMBER     choose the signal number
+    -l          list available signals
 
 clear
   Clear the screen.

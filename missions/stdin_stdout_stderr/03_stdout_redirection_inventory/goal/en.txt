@@ -20,7 +20,8 @@ less FILE
     q         quit
     Space     scroll down one page
     / STRING  search for a string
-    n         go to the next occurrence of the search string
+    n         go to the next occurrence of the
+              search string
 
 ls FILE1 ... FILEn
   Show the list of files given as arguments.

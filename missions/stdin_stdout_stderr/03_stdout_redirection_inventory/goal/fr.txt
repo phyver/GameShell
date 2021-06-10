@@ -20,7 +20,8 @@ less FICHIER
     q         quitter
     Espace    faire défiler une page
     /         rechercher une chaine
-    n         aller à l'occurrence suivante de la chaine cherchée
+    n         aller à l'occurrence suivante de la
+              chaine cherchée
 
 ls FICHIER1 ... FICHIERn
   Affiche la liste des fichiers donnés en argument.

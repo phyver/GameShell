@@ -24,7 +24,7 @@ grep [OPTIONS] STRING FILE1 ... FILEn
   Search for a string inside the files.
 
   Useful option:
-    -l  only print the names of files containing the string.
+    -l only print the names of files containing the string.
 
 xargs COMMAND
   read lines from stdin and run the command
