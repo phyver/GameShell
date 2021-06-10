@@ -35,19 +35,6 @@ _log_action() {
 }
 
 
-# get the last started mission
-_get_current_mission() {
-  local n="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GSH_CONFIG/missions.log")"
-  if [ -z "$n" ]
-  then
-    echo "1"
-    return 1
-  else
-    echo "$n"
-  fi
-}
-
-
 # get the mission directory
 _get_mission_dir() {
   local n=$1
@@ -57,7 +44,7 @@ _get_mission_dir() {
 
 
 _gsh_reset() {
-  local MISSION_NB="$(_get_current_mission)"
+  local MISSION_NB="$(_gsh_pcm)"
   if [ -z "$MISSION_NB" ]
   then
     local fn_name="${FUNCNAME[0]}"
@@ -87,7 +74,7 @@ _gsh_hard_reset() {
 
 # called when gsh exits
 _gsh_exit() {
-  local MISSION_NB=$(_get_current_mission)
+  local MISSION_NB=$(_gsh_pcm)
   local signal=$1
 
   if jobs | grep -iq stopped
@@ -127,7 +114,7 @@ _gsh_goal() {
   local MISSION_NB
   if [ "$#" -eq 0 ]
   then
-    MISSION_NB="$(_get_current_mission)"
+    MISSION_NB="$(_gsh_pcm)"
   else
     MISSION_NB="$1"
     shift
@@ -167,7 +154,7 @@ __gsh_start() {
   local MISSION_NB D S
   if [ -z "$1" ]
   then
-    MISSION_NB=$(_get_current_mission)
+    MISSION_NB=$(_gsh_pcm)
     if [ "$?" -eq 1 ] && [ "$GSH_MODE" != "DEBUG" ]
     then
       gsh welcome
@@ -260,7 +247,7 @@ to make sure the mission is initialized properly.")" >&2
 
 # stop a mission given by its number
 _gsh_skip() {
-  local MISSION_NB="$(_get_current_mission)"
+  local MISSION_NB="$(_gsh_pcm)"
   if [ -z "$MISSION_NB" ]
   then
     local fn_name="${FUNCNAME[0]}"
@@ -281,7 +268,7 @@ _gsh_skip() {
 
 # applies auto.sh script, if it exists
 _gsh_auto() {
-  local MISSION_NB="$(_get_current_mission)"
+  local MISSION_NB="$(_gsh_pcm)"
 
   if [ -z "$MISSION_NB" ]
   then
@@ -311,7 +298,7 @@ _gsh_auto() {
 
 # check completion of a mission given by its number
 _gsh_check() {
-  local MISSION_NB="$(_get_current_mission)"
+  local MISSION_NB="$(_gsh_pcm)"
 
   if [ -z "$MISSION_NB" ]
   then
@@ -392,7 +379,7 @@ You should use the command
 }
 
 __gsh_clean() {
-  local MISSION_NB="$(_get_current_mission)"
+  local MISSION_NB="$(_gsh_pcm)"
 
   if [ -z "$MISSION_NB" ]
   then
@@ -411,7 +398,7 @@ __gsh_clean() {
 }
 
 _gsh_assert_check() {
-  local MISSION_NB="$(_get_current_mission)"
+  local MISSION_NB="$(_gsh_pcm)"
 
   local expected=$1
   if [ "$expected" != "true" ] && [ "$expected" != "false" ]
@@ -467,7 +454,7 @@ _gsh_assert() {
 
 
 _gsh_test() {
-  local MISSION_NB="$(_get_current_mission)"
+  local MISSION_NB="$(_gsh_pcm)"
   if [ -z "$MISSION_NB" ]
   then
     #shellcheck disable=SC2034
@@ -572,7 +559,7 @@ gsh() {
     *)
       if command -v "_gsh_$cmd" >/dev/null
       then
-        local MISSION_NB="$(_get_current_mission)"
+        local MISSION_NB="$(_gsh_pcm)"
         if [ -z "$MISSION_NB" ]
         then
           #shellcheck disable=SC2034

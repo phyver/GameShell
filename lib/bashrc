@@ -22,7 +22,7 @@ export PATH=$GSH_ROOT/bin:$PATH:$GSH_BIN
 . "$GSH_LIB/gsh.sh"
 
 
-export PS1='[mission $(_get_current_mission)] $ '
+export PS1='[mission $(gsh pcm)] $ '
 export PS2="> "
 export PS3=""
 export PS4="+ "

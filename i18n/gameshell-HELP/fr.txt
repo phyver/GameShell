@@ -40,6 +40,9 @@ gsh help
 gsh index
   affiche la liste des missions, avec leur statut
 
+gsh pcm
+  affiche le numéro de mission courant ("print current mission")
+
 gsh protect
 gsh unprotect
   ajoute / supprimer les protections d'accès sur les répertoires 

@@ -41,6 +41,9 @@ gsh help
 gsh index
   show list of missions, with their status
 
+gsh pcm
+  print the current mission number
+
 gsh protect
 gsh unprotect
   add / remove protection on GameShell directories
