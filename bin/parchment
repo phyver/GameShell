@@ -20,8 +20,10 @@ then
   exit 1
 fi
 
-# get the width
-if [ "${COLUMNS:-0}" -ge 80 ] || [ -n "$box" ]
+# width defaults to 80 characters
+COLUMNS=${COLUMNS:-80}
+
+if [ "$COLUMNS" -ge 80 ] || [ -n "$box" ]
 then
   reflow_width=$((COLUMNS - 30))
 else
