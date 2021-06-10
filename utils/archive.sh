@@ -200,15 +200,21 @@ fi
 
 # remove "_" files
 echo "removing unnecessary files"
-find "$GSH_ROOT" -name "a.out" -print0 | xargs -0 rm -f
-find "$GSH_ROOT" -name "*~" -print0 | xargs -0 rm -f
-find "$GSH_ROOT" -name "_*.sh" -print0 | xargs -0 rm -f
-find "$GSH_ROOT" -name "Makefile" -print0 | xargs -0 rm -f
-find "$GSH_ROOT" -name "template.pot" -print0 | xargs -0 rm -f
-rm -f "$GSH_ROOT/bin/boxes-data.awk" "$GSH_ROOT/utils/archive.sh"
-[ "$KEEP_TEST" -ne 1 ] && echo "remove tests" && find "$GSH_MISSIONS" -name "test.sh" -print0 | xargs -0 rm -f
-[ "$KEEP_PO" -ne 1 ] && [ "$GENERATE_MO" -eq 1 ] && find "$GSH_ROOT" -name "*.po" -print0 | xargs -0 rm -f
-[ "$KEEP_AUTO" -ne 1 ] && find "$GSH_MISSIONS" -name auto.sh -print0 | xargs -0 rm -f
+(
+  cd "$GSH_ROOT"
+  # no need to use find -print0 / xargs -0 because GameShell won't have strange filenames.
+  find . -name "a.out" | xargs rm -f
+  find . -name "*~" | xargs rm -f
+  find . -name "_*.sh" | xargs rm -f
+  find . -name "Makefile" | xargs rm -f
+  find . -name "template.pot" | xargs rm -f
+  [ "$KEEP_PO" -ne 1 ] && [ "$GENERATE_MO" -eq 1 ] && find . -name "*.po" | xargs rm -f
+
+  [ "$KEEP_TEST" -ne 1 ] && echo "remove tests" && find ./missions -name "test.sh" | xargs rm -f
+  [ "$KEEP_AUTO" -ne 1 ] && find ./missions -name auto.sh | xargs rm -f
+
+  rm -f "$GSH_ROOT/bin/boxes-data.awk" "$GSH_ROOT/utils/archive.sh"
+)
 
 # change admin password
 echo "setting admin password"
