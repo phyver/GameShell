@@ -3,7 +3,21 @@
 GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
 
 # we need access to checksum and missiondir
-export PATH=$PATH:"$GSH_ROOT/bin"
+PATH=$PATH:$GSH_ROOT/bin
+
+case "$1" in
+  "raw")
+    cmd=RAW
+    shift
+    ;;
+  "session")
+    cmd=SESSION
+    shift
+    ;;
+  *)
+    cmd=SESSION
+    ;;
+esac
 
 if [ "$1" = "-v" ]
 then
@@ -11,7 +25,24 @@ then
   shift
 fi
 
-awk -v UID=$(cat "$GSH_ROOT/.config/uid") \
-    -v VERBOSE="$VERBOSE" \
-    -f "$GSH_ROOT/bin/stat_raw.awk" \
-    "$GSH_ROOT/.config/missions.log"
+case "$cmd" in
+  "RAW")
+    awk -v UID=$(cat "$GSH_ROOT/.config/uid") \
+      -v VERBOSE="$VERBOSE" \
+      -v MISSION_NB="$1" \
+      -f "$GSH_ROOT/bin/stat_raw.awk" \
+      "$GSH_ROOT/.config/missions.log"
+    ;;
+  "SESSION")
+    awk -v UID=$(cat "$GSH_ROOT/.config/uid") \
+      -v VERBOSE="$VERBOSE" \
+      -f "$GSH_ROOT/bin/stat_session.awk" \
+      "$GSH_ROOT/.config/missions.log"
+    ;;
+  *)
+    echo "Error: _gsh_stat, unknow arguments $*" >&2
+    exit 1
+    ;;
+esac
+
+

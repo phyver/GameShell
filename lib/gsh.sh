@@ -247,6 +247,7 @@ _gsh_skip() {
   fi
   if ! admin_mode
   then
+    __log_action "$MISSION_NB" "SKIP:AUTH_FAILURE"
     return 1
   fi
   __log_action "$MISSION_NB" "SKIP"
@@ -278,9 +279,9 @@ _gsh_auto() {
 
   if ! admin_mode
   then
+    __log_action "$MISSION_NB" "AUTO:AUTH_FAILURE"
     return 1
   fi
-
   __log_action "$MISSION_NB" "AUTO"
   mission_source "$MISSION_DIR/auto.sh"
   return 0
@@ -534,13 +535,21 @@ gsh() {
         return 1
       fi
 
-      if ! admin_mode
+      local MISSION_NB="$(_gsh_pcm)"
+      if [ -z "$MISSION_NB" ]
       then
+        #shellcheck disable=SC2034
+        local fn_name="${FUNCNAME[0]}"
+        echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
         return 1
       fi
-
-      local MISSION_NB="$(_gsh_pcm)"
+      if ! admin_mode
+      then
+        __log_action "$MISSION_NB" "GOTO:AUTH_FAILURE"
+        return 1
+      fi
       __log_action "$MISSION_NB" "GOTO"
+
       export GSH_LAST_ACTION='goto'
       __gsh_clean
       __gsh_start "$@"
