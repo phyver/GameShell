@@ -35,14 +35,6 @@ __log_action() {
 }
 
 
-# get the mission directory
-__get_mission_dir() {
-  local n=$1
-  local dir=$(awk -v n="$n" -v DIR="$GSH_MISSIONS" '/^\s*[#!]/{next} /^$/{next} {N++} (N == n){print DIR "/" $0; exit}' "$GSH_CONFIG/index.txt")
-  echo "$(realpath "$dir")"
-}
-
-
 _gsh_reset() {
   local MISSION_NB="$(_gsh_pcm)"
   if [ -z "$MISSION_NB" ]
@@ -127,7 +119,7 @@ _gsh_goal() {
     return 1
   fi
 
-  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(missiondir "$MISSION_NB")"
 
   if [ -f "$MISSION_DIR/goal.sh" ]
   then
@@ -178,7 +170,7 @@ __gsh_start() {
     return 1
   fi
 
-  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(missiondir "$MISSION_NB")"
   if [ -z "$MISSION_DIR" ]
   then
     echo
@@ -276,7 +268,7 @@ _gsh_auto() {
     return 1
   fi
 
-  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(missiondir "$MISSION_NB")"
 
   if ! [ -f "$MISSION_DIR/auto.sh" ]
   then
@@ -306,7 +298,7 @@ _gsh_check() {
     return 1
   fi
 
-  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(missiondir "$MISSION_NB")"
 
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
@@ -387,7 +379,7 @@ __gsh_clean() {
     return 1
   fi
 
-  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(missiondir "$MISSION_NB")"
 
   if [ -f "$MISSION_DIR/clean.sh" ]
   then
@@ -407,7 +399,7 @@ _gsh_assert_check() {
   fi
   local msg=$3
 
-  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(missiondir "$MISSION_NB")"
 
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
@@ -462,7 +454,7 @@ _gsh_test() {
     return 1
   fi
 
-  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(missiondir "$MISSION_NB")"
 
   if ! [ -f "$MISSION_DIR/test.sh" ]
   then
@@ -566,7 +558,7 @@ gsh() {
           echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
           return 1
         fi
-        local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
+        local MISSION_DIR="$(missiondir "$MISSION_NB")"
 
         MISSION_NB=$MISSION_NB MISSION_DIR=$MISSION_DIR _gsh_$cmd "$@"
         ret=$?
