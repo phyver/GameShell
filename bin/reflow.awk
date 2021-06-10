@@ -152,7 +152,7 @@ BEGIN {
 }
 
 # protected lines, do nothing
-/^ {2,}[^ ]* {2,}/ && !nb_words {
+/^ {2,}[^ ]{1,} {2,}/ && !nb_words {
     print $0;
     next;
 }
