@@ -198,7 +198,6 @@ __gsh_start() {
     # If init.sh is sourced in a subshell, variable definitions, changes of
     # PWD, functions or aliases defined in init.sh will disappear.
     # I save the environment before / after and display a warning when that's the case.
-    _PWD=$(pwd)
     if ! . mainshell.sh
     then
       local env_before=$(mktemp)
@@ -221,7 +220,7 @@ __gsh_start() {
     then
       . save_environment.sh > "$env_after"
 
-      if [ "$_PWD" != "$(pwd)" ] || ! cmp -s "$env_before" "$env_after"
+      if ! cmp -s "$env_before" "$env_after"
       then
         color_echo yellow "$(gettext "Error: this mission was initialized in a subshell.
 Run the command
