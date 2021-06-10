@@ -303,8 +303,8 @@ _gsh_auto() {
     return 1
   fi
 
-  mission_source "$MISSION_DIR/auto.sh"
   _log_action "$MISSION_NB" "AUTO"
+  mission_source "$MISSION_DIR/auto.sh"
   return 0
 }
 
