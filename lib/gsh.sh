@@ -586,7 +586,7 @@ gsh() {
         ret=$?
       else
         echo "$(eval_gettext "Error: unknown gsh command '\$cmd'.
-Use one of the following commands:")  check, goal, help, HELP or reset" >&2
+Use one of the following commands:")  check, goal, help, reset" >&2
         export TEXTDOMAIN=$_TEXTDOMAIN
         unset _TEXTDOMAIN
         return 1
