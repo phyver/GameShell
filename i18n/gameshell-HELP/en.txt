@@ -56,6 +56,8 @@ gsh skip                              (ADMIN)
 
 gsh stat [-v]
   display simple statistics about missions
+    gsh stat raw [N]    display all gsh actions [relative only to mission N]
+    gsh stat session    display a short summary
 
 gsh systemconfig
   display the system configuration
