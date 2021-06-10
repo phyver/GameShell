@@ -27,8 +27,8 @@ pstree PID
 
   Useful options:
     -p   show the PID of processes
-    $$   This variable contains the PID of the current shell and can
-         be given as the PID.
+    $$   This variable contains the PID of the
+         shell and can be given as the PID.
 
 kill N
   Send the termination signal to process number N.

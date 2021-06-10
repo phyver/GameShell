@@ -26,8 +26,8 @@ pstree PID
 
   Options utiles :
     -p : affiche également les PID des processus
-    $$ : cette variable spéciale contient le numéro de processus
-         du shell courant et peut donc prendre la place du PID.
+    $$ : cette variable contient le numéro
+         du shell et peut prendre la place du PID.
 
 kill N
   Envoie le signal d'arrêt au processus numéro N.

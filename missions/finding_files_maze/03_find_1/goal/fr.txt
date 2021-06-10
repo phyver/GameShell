@@ -24,7 +24,8 @@ man COMMANDE
     q           quitter
     Espace      faire défiler une page
     / CHAINE    rechercher une chaine
-    n           aller à l'occurrence suivante de la chaine cherchée
+    n           aller à l'occurrence suivante de
+                la chaine cherchée
 
 Remarque
 --------

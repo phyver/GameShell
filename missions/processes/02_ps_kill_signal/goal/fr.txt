@@ -23,9 +23,9 @@ kill [OPTIONS] N
   Envoie le signal d'arrêt au processus numéro N.
 
   Options utiles
-    -s SIGNAL   choisit un signal en donnant son nom
-    -NUMBER     choisit un signal en donnant son numéro
-    -l          donne la liste des signaux disponibles
+    -s SIGNAL   choisit le nom du signal
+    -NUMBER     choisit le numéro du signal
+    -l          liste les signaux disponibles
 
 
 clear
