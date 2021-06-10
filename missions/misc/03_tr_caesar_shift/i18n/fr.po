@@ -30,7 +30,7 @@ msgid   "That's not the magic word."
 msgstr  "Ce n'est pas le mot magique."
 
 msgid   "What's the key that will make Merlin's chest to appear?"
-msgstr  "Quelle est la cl qui fait apparaitre le coffre de Merlin ?"
+msgstr  "Quelle est la clé qui fait apparaitre le coffre de Merlin ?"
 
 msgid   "bottle"
 msgstr  "flacon"
