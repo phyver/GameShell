@@ -1,1 +1,1 @@
-export PS1="\n\w\n[mission \$(_get_current_mission)] $ "
+export PS1="\n\w\n[mission \$(gsh pcm)] $ "
