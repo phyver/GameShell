@@ -25,7 +25,7 @@ trap "_gsh_exit TERM" SIGTERM
 
 
 # log an action to the missions.log file
-_log_action() {
+__log_action() {
   local MISSION_NB action D S
   MISSION_NB=$1
   action=$2
@@ -36,7 +36,7 @@ _log_action() {
 
 
 # get the mission directory
-_get_mission_dir() {
+__get_mission_dir() {
   local n=$1
   local dir=$(awk -v n="$n" -v DIR="$GSH_MISSIONS" '/^\s*[#!]/{next} /^$/{next} {N++} (N == n){print DIR "/" $0; exit}' "$GSH_CONFIG/index.txt")
   echo "$(realpath "$dir")"
@@ -100,7 +100,7 @@ Do you still want to quit? [y/n]") "
     kill $(jobs -ps)
   fi
 
-  _log_action "$MISSION_NB" "$signal"
+  __log_action "$MISSION_NB" "$signal"
   export GSH_LAST_ACTION='exit'
   __gsh_clean "$MISSION_NB"
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh unprotect
@@ -127,7 +127,7 @@ _gsh_goal() {
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
 
   if [ -f "$MISSION_DIR/goal.sh" ]
   then
@@ -178,13 +178,13 @@ __gsh_start() {
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
   if [ -z "$MISSION_DIR" ]
   then
     echo
     color_echo red "$(eval_gettext "Error: mission \$MISSION_NB doesn't exist!")" >&2
     echo
-    _log_action "$MISSION_NB" "UNKNOWN_MISSION"
+    __log_action "$MISSION_NB" "UNKNOWN_MISSION"
     gsh reset
     return 1
   fi
@@ -212,7 +212,7 @@ __gsh_start() {
     if [ "$exit_status" -ne 0 ]
     then
       color_echo yellow "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
-      _log_action "$MISSION_NB" "CANCEL_DEP_PB"
+      __log_action "$MISSION_NB" "CANCEL_DEP_PB"
       __gsh_start "$((MISSION_NB + 1))"
       return
     fi
@@ -232,7 +232,7 @@ to make sure the mission is initialized properly.")" >&2
     fi
   fi
 
-  _log_action "$MISSION_NB" "START"
+  __log_action "$MISSION_NB" "START"
 
   if [ -z "$GSH_QUIET_INTRO" ] && [ -z "$quiet" ]
   then
@@ -258,7 +258,7 @@ _gsh_skip() {
   then
     return 1
   fi
-  _log_action "$MISSION_NB" "SKIP"
+  __log_action "$MISSION_NB" "SKIP"
   export GSH_LAST_ACTION='skip'
   __gsh_clean "$MISSION_NB"
   color_echo yellow "$(eval_gettext 'Mission $MISSION_NB has been cancelled.')" >&2
@@ -277,7 +277,7 @@ _gsh_auto() {
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
 
   if ! [ -f "$MISSION_DIR/auto.sh" ]
   then
@@ -290,7 +290,7 @@ _gsh_auto() {
     return 1
   fi
 
-  _log_action "$MISSION_NB" "AUTO"
+  __log_action "$MISSION_NB" "AUTO"
   mission_source "$MISSION_DIR/auto.sh"
   return 0
 }
@@ -307,7 +307,7 @@ _gsh_check() {
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
 
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
@@ -318,7 +318,7 @@ _gsh_check() {
     color_echo green "$(eval_gettext 'Congratulations, mission $MISSION_NB has been successfully completed!')"
     echo
 
-    _log_action "$MISSION_NB" "CHECK_OK"
+    __log_action "$MISSION_NB" "CHECK_OK"
     export GSH_LAST_ACTION='check_true'
     __gsh_clean "$MISSION_NB"
 
@@ -370,7 +370,7 @@ You should use the command
     color_echo red "$(eval_gettext "Sorry, mission \$MISSION_NB hasn't been completed.")"
     echo
 
-    _log_action "$MISSION_NB" "CHECK_OOPS"
+    __log_action "$MISSION_NB" "CHECK_OOPS"
     export GSH_LAST_ACTION='check_false'
     __gsh_clean "$MISSION_NB"
     __gsh_start "$MISSION_NB"
@@ -388,7 +388,7 @@ __gsh_clean() {
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
 
   if [ -f "$MISSION_DIR/clean.sh" ]
   then
@@ -408,7 +408,7 @@ _gsh_assert_check() {
   fi
   local msg=$3
 
-  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
 
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
@@ -463,7 +463,7 @@ _gsh_test() {
     return 1
   fi
 
-  local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
+  local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
 
   if ! [ -f "$MISSION_DIR/test.sh" ]
   then
@@ -567,7 +567,7 @@ gsh() {
           echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
           return 1
         fi
-        local MISSION_DIR="$(_get_mission_dir "$MISSION_NB")"
+        local MISSION_DIR="$(__get_mission_dir "$MISSION_NB")"
 
         MISSION_NB=$MISSION_NB MISSION_DIR=$MISSION_DIR _gsh_$cmd "$@"
         ret=$?
