@@ -31,7 +31,7 @@ __log_action() {
   action=$2
   D="$(date +%s)"
   S="$(checksum "$GSH_UID#$MISSION_NB#$action#$D")"
-  echo "$MISSION_NB $action $D $S" >> "$GSH_CONFIG/missions.log"
+  printf "%s %s %s %s\n" "$MISSION_NB" "$action" "$D" "$S" >> "$GSH_CONFIG/missions.log"
 }
 
 
@@ -510,9 +510,6 @@ gsh() {
     "goal")
       _gsh_goal "$@"
       ;;
-    "stat")
-      awk -v GSH_UID="$GSH_UID" -f "$GSH_UTILS/stat.awk" < "$GSH_CONFIG/missions.log"
-      ;;
     "exit")
       exit 0
       ;;
@@ -542,6 +539,8 @@ gsh() {
         return 1
       fi
 
+      local MISSION_NB="$(_gsh_pcm)"
+      __log_action "$MISSION_NB" "GOTO"
       export GSH_LAST_ACTION='goto'
       __gsh_clean
       __gsh_start "$@"

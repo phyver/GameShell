@@ -54,6 +54,9 @@ gsh reset
 gsh skip                              (ADMIN)
   abandonne la mission en cours et passe à la suivante
 
+gsh stat [-v]
+  affiche des statistiques simples sur les missions effectuées
+
 gsh systemconfig
   affiche la configuration du système
 

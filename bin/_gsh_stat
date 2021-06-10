@@ -1,0 +1,17 @@
+#!/bin/sh
+
+GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
+
+# we need access to checksum and missiondir
+export PATH=$PATH:"$GSH_ROOT/bin"
+
+if [ "$1" = "-v" ]
+then
+  VERBOSE=1
+  shift
+fi
+
+awk -v UID=$(cat "$GSH_ROOT/.config/uid") \
+    -v VERBOSE="$VERBOSE" \
+    -f "$GSH_ROOT/bin/stat_raw.awk" \
+    "$GSH_ROOT/.config/missions.log"
