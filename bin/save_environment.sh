@@ -9,5 +9,6 @@
   compgen -A function | sed 's/^/Function:/'
   compgen -a          | sed 's/^/Alias:/'
   ps -o pid,comm      | sed '1d;s/^/Process:/'
+  pwd                 | sed 's/^/PWD:/'
 } | grep -vE "grep|ps|sed|sort|bash" | sort
 
