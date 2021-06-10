@@ -70,7 +70,7 @@ _gsh_reset() {
     return 1
   fi
 
-  _gsh_start "$MISSION_NB"
+  __gsh_start "$MISSION_NB"
 }
 
 # reset the bash configuration
@@ -157,7 +157,7 @@ _gsh_goal() {
 
 
 # start a mission given by its number
-_gsh_start() {
+__gsh_start() {
   local quiet=""
   if [ "$1" = "--quiet" ]
   then
@@ -226,7 +226,7 @@ _gsh_start() {
     then
       color_echo yellow "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
       _log_action "$MISSION_NB" "CANCEL_DEP_PB"
-      _gsh_start "$((MISSION_NB + 1))"
+      __gsh_start "$((MISSION_NB + 1))"
       return
     fi
 
@@ -276,7 +276,7 @@ _gsh_skip() {
   __gsh_clean "$MISSION_NB"
   color_echo yellow "$(eval_gettext 'Mission $MISSION_NB has been cancelled.')" >&2
 
-  _gsh_start $((10#$MISSION_NB + 1))
+  __gsh_start $((10#$MISSION_NB + 1))
 }
 
 # applies auto.sh script, if it exists
@@ -376,7 +376,7 @@ You should use the command
   \$ gsh reset")" >&2
       fi
     fi
-    _gsh_start $((10#$MISSION_NB + 1))
+    __gsh_start $((10#$MISSION_NB + 1))
     return 0
   else
     echo
@@ -386,7 +386,7 @@ You should use the command
     _log_action "$MISSION_NB" "CHECK_OOPS"
     export GSH_LAST_ACTION='check_false'
     __gsh_clean "$MISSION_NB"
-    _gsh_start "$MISSION_NB"
+    __gsh_start "$MISSION_NB"
     return 255
   fi
 }
@@ -442,7 +442,7 @@ _gsh_assert_check() {
 
   export GSH_LAST_ACTION="assert"
   __gsh_clean "$MISSION_NB"
-  _gsh_start --quiet "$MISSION_NB"
+  __gsh_start --quiet "$MISSION_NB"
 }
 
 
@@ -566,7 +566,7 @@ gsh() {
 
       export GSH_LAST_ACTION='goto'
       __gsh_clean
-      _gsh_start "$@"
+      __gsh_start "$@"
       ;;
 
     *)

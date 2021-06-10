@@ -71,4 +71,4 @@ unset file MISSION_DIR
 
 [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && _gsh_protect
 
-_gsh_start
+__gsh_start
