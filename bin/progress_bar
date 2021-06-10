@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+. gettext.sh
+
+TEXTDOMAIN=gsh
+
 get_design() {
   case "$1" in
     0 | bat)                  design=bat ;;
