@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 export GSH_ROOT="$(dirname "$0")/.."
 
 display_help() {
 cat <<EOH
-$(basename $0) NAME: create template for a new mission
+$(basename "$0") NAME: create template for a new mission
 
 options:
   -h          this message
@@ -20,7 +20,7 @@ EOH
 new_static_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/static.sh
-#!/bin/bash
+#!/bin/sh
 
 # This file is not required: it is sourced once when initialising a GameShell
 # game, and whenever the corresponding missions is (re)started.
@@ -51,7 +51,7 @@ EOF
 new_goal_gettext_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/_goal.sh
-#!/bin/bash
+#!/bin/sh
 
 # This file is not required. It can be used to generate dynamic goal messages.
 # If you need that, rename the file to 'goal.sh'.
@@ -88,7 +88,7 @@ EOF
 new_init_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/init.sh
-#!/bin/bash
+#!/bin/sh
 
 # This file is not required: it is sourced every time the mission is started.
 # Since it is sourced every time the mission is restarted, it can generate
@@ -117,7 +117,7 @@ EOF
 new_check_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/check.sh
-#!/bin/bash
+#!/bin/sh
 
 # This file is required. It is sourced when checking the goal of the mission
 # has been achieved.
@@ -139,7 +139,7 @@ EOF
 new_auto_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/_auto.sh
-#!/bin/bash
+#!/bin/sh
 
 # This file is not required. When it exists, it is used to automatically
 # validate the mission. It should end with a succesful `gsh check` command.
@@ -152,7 +152,7 @@ EOF
 new_clean_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/_clean.sh
-#!/bin/bash
+#!/bin/sh
 
 # This file is not required. When it exists, it is used to clean the mission,
 # for example on completion, or when restarting it.
@@ -166,7 +166,7 @@ EOF
 new_treasure_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/_treasure.sh
-#!/bin/bash
+#!/bin/sh
 
 # This file is not required. When it exists, it is sourced on successfull
 # completion of the mission and is added to the global configuration.
@@ -197,7 +197,7 @@ EOF
 new_gettext_treasure-msg_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/_treasure-msg.sh
-#!/bin/bash
+#!/bin/sh
 
 # This file is not required. It can be used to generate dynamic treasure
 # messages.
@@ -221,7 +221,7 @@ EOF
 new_test_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/_test.sh
-#!/bin/bash
+#!/bin/sh
 
 # This file is not required: it is sourced by the command "gsh test" for
 # testing during development.
