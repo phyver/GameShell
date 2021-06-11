@@ -310,7 +310,7 @@ Do you want to remove it and start a new game? [y/N]') "
     if [ -d "$MISSION_DIR/i18n" ]
     then
       # NOTE: shopt -s nullglob doesn't exist in POSIX sh
-      if [ -n "$(find "$MISSION_DIR/i18n" -maxdepth 1 -name '*.po' -print -quit)" ]
+      if [ -n "$(find "$MISSION_DIR/i18n" -maxdepth 1 -name '*.po' | head -n1)" ]
       then
         for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
           PO_LANG=$(basename "$PO_FILE" .po)
@@ -328,7 +328,7 @@ Do you want to remove it and start a new game? [y/N]') "
     if [ -d "$MISSION_DIR/sbin" ]
     then
       # NOTE: shopt -s nullglob doesn't exist in POSIX sh
-      if [ -n "$(find "$MISSION_DIR/sbin" -maxdepth 1 -type f -name '*' -print -quit)" ]
+      if [ -n "$(find "$MISSION_DIR/sbin" -maxdepth 1 -type f -name '*' | head -n1)" ]
       then
         for BIN_FILE in "$MISSION_DIR"/sbin/*; do
           [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_SBIN"
@@ -338,7 +338,7 @@ Do you want to remove it and start a new game? [y/N]') "
     if [ -d "$MISSION_DIR/bin" ]
     then
       # NOTE: shopt -s nullglob doesn't exist in POSIX sh
-      if [ -n "$(find "$MISSION_DIR/bin" -maxdepth 1 -type f -name '*' -print -quit)" ]
+      if [ -n "$(find "$MISSION_DIR/bin" -maxdepth 1 -type f -name '*' | head -n1)" ]
       then
         for BIN_FILE in "$MISSION_DIR"/bin/*; do
           [ -f "$BIN_FILE" ] && [ -x "$BIN_FILE" ] && copy_bin "$BIN_FILE" "$GSH_BIN"
