@@ -1,18 +1,23 @@
 # NOTE: --literal doesn't exist in freebsd
-#       --color doesn't exist in macos
-if ls --literal / &> /dev/null
+#       --color doesn't exist in macos, it is replaced by -G
+#       colors do not exist in openbsd!
+#
+if ls --literal &> /dev/null
 then
-  if ls --color=auto / &> /dev/null
+  if ls --color=auto &> /dev/null
   then
     alias ls='ls --literal -p --color=auto'
-  else
+  elif ls -G &> /dev/null
+  then
     alias ls='ls --literal -p -G'
   fi
 else
-  if ls --color=auto / &> /dev/null
+  if ls --color=auto &> /dev/null
   then
+    export COLORTERM=1  # necessary for freeBSD
     alias ls='ls -p --color=auto'
-  else
+  elif ls -G / &> /dev/null
+  then
     alias ls='ls -p -G'
   fi
 fi
