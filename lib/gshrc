@@ -51,21 +51,23 @@ then
 fi
 
 
-shopt -s nullglob
-for file in "$GSH_CONFIG"/gshrc_*.sh
-do
-    # shellcheck source=/dev/null
-    . "$file"
-done
-shopt -u nullglob
+if [ -n "$(find "$GSH_CONFIG" -maxdepth 1 -name 'gshrc_*.sh' | head -n1)" ]
+then
+  for file in "$GSH_CONFIG"/gshrc_*.sh
+  do
+      # shellcheck source=/dev/null
+      . "$file"
+  done
+fi
 
-shopt -s nullglob
-for file in "$GSH_CONFIG"/treasure_*.sh
-do
-    # shellcheck source=/dev/null
-    . "$file"
-done
-shopt -u nullglob
+if [ -n "$(find "$GSH_CONFIG" -maxdepth 1 -name 'treasure_*.sh' | head -n1)" ]
+then
+  for file in "$GSH_CONFIG"/treasure_*.sh
+  do
+      # shellcheck source=/dev/null
+      . "$file"
+  done
+fi
 
 unset file MISSION_DIR
 
