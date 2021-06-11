@@ -13,7 +13,7 @@ unset LS_COLORS
 unset EDITOR
 
 # get this game's configuration
-[ -f "$GSH_BASHRC"/config.sh ] && . "$GSH_BASHRC"/config.sh
+[ -f "$GSH_CONFIG"/config.sh ] && . "$GSH_CONFIG"/config.sh
 
 export PATH=$GSH_ROOT/bin:$PATH:$GSH_BIN
 # export PATH=$PATH:$GSH_ROOT/bin:$GSH_BIN
@@ -28,7 +28,7 @@ export PS3=""
 export PS4="+ "
 
 # running bash should take you "out" of GameShell
-alias bash='bash --rcfile "$GSH_LIB/bashrc" -i'
+alias bash='bash --rcfile "$GSH_LIB/gshrc" -i'
 
 # try to prevent using sudo and similar
 su() {
@@ -52,7 +52,7 @@ fi
 
 
 shopt -s nullglob
-for file in "$GSH_BASHRC"/bashrc_*.sh
+for file in "$GSH_CONFIG"/gshrc_*.sh
 do
     # shellcheck source=/dev/null
     . "$file"
@@ -60,7 +60,7 @@ done
 shopt -u nullglob
 
 shopt -s nullglob
-for file in "$GSH_BASHRC"/treasure_*.sh
+for file in "$GSH_CONFIG"/treasure_*.sh
 do
     # shellcheck source=/dev/null
     . "$file"

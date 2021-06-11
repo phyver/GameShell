@@ -39,7 +39,7 @@ A mission has the following structure, most of the files being optional:
 ```
 $GSH_ROOT/missions/.../MISSION_NAME
 ├── auto.sh
-├── bashrc
+├── gshrc
 ├── bin
 │   ├── ...
 │   └── ...
@@ -120,7 +120,7 @@ environment variables. This is discouraged because of the following reasons.
   variables will not have any effect.
 
 If you need to define environment variables that will be available throughout
-the game, use a `bashrc` file in the mission.
+the game, use a `gshrc` file in the mission.
 
 
 ### `goal.txt` / `goal.sh`
@@ -253,7 +253,7 @@ The other files
 The other files are not used as often but allow to customize GameShell.
 
 
-### `bashrc` (optional)
+### `gshrc` (optional)
 
 This file is added to the global configuration of the bash session used during
 the game. It can be used to define variables, aliases, functions, etc..

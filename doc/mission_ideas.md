@@ -50,7 +50,7 @@ Some missions ideas
 
   - only activate completion once the first appropriate mission has been
     completed
-    (put `bind 'set disable-completion' on` in the first mission's `bashrc`,
+    (put `bind 'set disable-completion' on` in the first mission's `gshrc`,
     and `bind ... of` in some mission' `treasuse.sh`)
 
   - "summary missions" to practice what has been learnt at the end of the

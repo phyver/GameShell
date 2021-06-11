@@ -7,9 +7,9 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Forest/Hut/Chest"
 msgstr  ""
 
-# path for bashrc containing the explanations
+# path for gshrc containing the explanations
 #, sh-format
-msgid   "$MISSION_DIR/bashrc/en.sh"
+msgid   "$MISSION_DIR/gshrc/en.sh"
 msgstr  ""
 
 # path for the text file containing the goal

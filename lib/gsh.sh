@@ -68,7 +68,7 @@ _gsh_hard_reset() {
   fi
   # on relance bash, histoire de recharcher la config
   __log_action "$MISSION_NB" "HARD_RESET"
-  exec bash --rcfile "$GSH_LIB/bashrc"
+  exec bash --rcfile "$GSH_LIB/gshrc"
 }
 
 
@@ -324,8 +324,8 @@ _gsh_check() {
 
     if [ -f "$MISSION_DIR/treasure.sh" ]
     then
-      # Record the treasure to be loaded by GameShell's bashrc.
-      TREASURE_FILE=$GSH_BASHRC/treasure_$(printf "%04d" "$MISSION_NB")_$(basename "$MISSION_DIR"/).sh
+      # Record the treasure to be loaded by GameShell's gshrc.
+      TREASURE_FILE=$GSH_CONFIG/treasure_$(printf "%04d" "$MISSION_NB")_$(basename "$MISSION_DIR"/).sh
       echo "export TEXTDOMAIN=\"$(textdomainname "$MISSION_DIR")\"" > "$TREASURE_FILE"
       cat "$MISSION_DIR/treasure.sh" >> "$TREASURE_FILE"
       echo "export TEXTDOMAIN=gsh" >> "$TREASURE_FILE"
