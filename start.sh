@@ -193,7 +193,6 @@ Do you want to remove it and start a new game? [y/N]') "
   rm -rf "$GSH_HOME"
   rm -rf "$GSH_CONFIG"
   rm -rf "$GSH_VAR"
-  rm -rf "$GSH_BASHRC"
   rm -rf "$GSH_BIN"
   rm -rf "$GSH_SBIN"
 
@@ -202,13 +201,11 @@ Do you want to remove it and start a new game? [y/N]') "
 
   mkdir -p "$GSH_CONFIG"
   awk -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN { srand(); printf("%s", int(2^32 * rand())) > seed_file; }'
-
-  mkdir -p "$GSH_BASHRC"
-  cp "$GSH_LIB/bashrc" "$GSH_BASHRC"
+  cp "$GSH_LIB/gshrc" "$GSH_CONFIG"
 
   # save current locale
-  locale | sed -e "s/^/export /" > "$GSH_BASHRC"/config.sh
-  echo "export GSH_MODE=$GSH_MODE" >> "$GSH_BASHRC"/config.sh
+  locale | sed -e "s/^/export /" > "$GSH_CONFIG"/config.sh
+  echo "export GSH_MODE=$GSH_MODE" >> "$GSH_CONFIG"/config.sh
   # TODO save other config (color ?)
 
   # save hash for admin password
@@ -351,12 +348,12 @@ Do you want to remove it and start a new game? [y/N]') "
     fi
 
     # copy all the shell config files of the mission
-    if [ -f "$MISSION_DIR/bashrc" ]
+    if [ -f "$MISSION_DIR/gshrc" ]
     then
-      BASHRC_FILE=$GSH_BASHRC/bashrc_${FULL_NB}_$(basename "$MISSION_DIR").sh
+      BASHRC_FILE=$GSH_CONFIG/gshrc_${FULL_NB}_$(basename "$MISSION_DIR").sh
       echo "export MISSION_DIR=\"$MISSION_DIR\"" > "$BASHRC_FILE"
       echo "export TEXTDOMAIN=\"$DOMAIN\"" >> "$BASHRC_FILE"
-      cat "$MISSION_DIR/bashrc" >> "$BASHRC_FILE"
+      cat "$MISSION_DIR/gshrc" >> "$BASHRC_FILE"
       echo "export TEXTDOMAIN=gsh" >> "$BASHRC_FILE"
       unset BASHRC_FILE
     fi
@@ -408,6 +405,6 @@ cd "$GSH_HOME"
 export GSH_UID=$(cat "$GSH_CONFIG/uid")
 date "+%Y-%m-%d %H:%M:%S" | sed 's/^/#NEW SESSION on /' >> "$GSH_CONFIG/missions.log"
 # make sure the shell reads it's config file by making it interactive (-i)
-exec bash --rcfile "$GSH_LIB/bashrc" -i
+exec bash --rcfile "$GSH_LIB/gshrc" -i
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2

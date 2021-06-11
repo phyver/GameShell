@@ -17,7 +17,6 @@ export GSH_UTILS="$GSH_ROOT/utils"
 export GSH_HOME="$GSH_ROOT/World"
 export GSH_CONFIG="$GSH_ROOT/.config"
 export GSH_VAR="$GSH_ROOT/.var"
-export GSH_BASHRC="$GSH_ROOT/.bashrc"
 export GSH_BIN="$GSH_ROOT/.bin"
 export GSH_SBIN="$GSH_ROOT/.sbin"
 

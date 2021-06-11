@@ -61,7 +61,7 @@ tests-verbose: clean
 
 clean:
 	rm -rf i18n/*~ locale gameshell.tgz gameshell.sh gameshell-save.sh bin/boxes-data.awk
-	rm -rf .bashrc .bin .config .sbin .var World
+	rm -rf .bin .config .sbin .var World
 	rm -rf "game shell"*
 
 .PHONY: clean new FORCE

@@ -1,7 +1,7 @@
 Congratulations!
 
 From now on you can use the file
-    "~/Forest/Hut/Chest/bashrc"
+    "~/Forest/Hut/Chest/gshrc"
 to record aliases. More information can be 
 found in the file (it has been created for 
 you).
