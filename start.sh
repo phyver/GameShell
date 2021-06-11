@@ -186,7 +186,7 @@ Do you want to remove it and start a new game? [y/N]') "
   # hide cursor and disable echoing of keystrokes
   tput civis 2>/dev/null
   stty -echo 2>/dev/null
-  trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo; exit 1" INT TERM QUIT EXIT
+  trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo" INT TERM
 
 
   # remove all the game data
