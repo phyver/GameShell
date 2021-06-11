@@ -255,8 +255,8 @@ The other files are not used as often but allow to customize GameShell.
 
 ### `gshrc` (optional)
 
-This file is added to the global configuration of the bash session used during
-the game. It can be used to define variables, aliases, functions, etc..
+This file is added to the global configuration of the shell session used
+during the game. It can be used to define variables, aliases, functions, etc..
 They will be available throughout the game.
 
 
@@ -321,7 +321,7 @@ archives by default.
 ### `test.sh` (optional)
 
 This file is sourced by the command `gsh test`, which is only available in
-debug mode. The `test.sh` script usually uses a mix of standard bash commands
+debug mode. The `test.sh` script usually uses a mix of standard shell commands
 and the special commands `gsh assert check true` (or `gsh assert check false`)
 which make testing easier.
 

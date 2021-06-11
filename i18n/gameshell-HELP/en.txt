@@ -30,7 +30,7 @@ gsh goto N                            (ADMIN)
   directly go to mission N
 
 gsh hardreset
-  reset the current mission by restarting the bash session
+  reset the current mission by restarting the shell
 
 gsh HELP
   this message

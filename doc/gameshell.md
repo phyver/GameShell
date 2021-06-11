@@ -135,5 +135,5 @@ You can customize the archive with the following options
 * `-N NAME`: if you want the archive and its directory to be called something
   other than "GameShell", you can set the name with this option.
 * `-k`: keep the GameShell archive. The compressed `tar` archive is appended
-  to a `bash` script to create the executable archive. With this option, you
+  to a shell script to create the executable archive. With this option, you
   can keep the "standard" `tar` archive as well as the executable one.

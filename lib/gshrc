@@ -27,9 +27,6 @@ export PS2="> "
 export PS3=""
 export PS4="+ "
 
-# running bash should take you "out" of GameShell
-alias bash='bash --rcfile "$GSH_LIB/gshrc" -i'
-
 # try to prevent using sudo and similar
 su() {
     echo "gsh: su: command not found" >&2
@@ -71,6 +68,6 @@ fi
 
 unset file MISSION_DIR
 
-[ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && _gsh_protect
+[ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh protect
 
 __gsh_start

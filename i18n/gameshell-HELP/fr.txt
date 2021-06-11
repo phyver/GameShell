@@ -29,7 +29,7 @@ gsh goto N                            (ADMIN)
   passe directement à la mission N
 
 gsh hardreset
-  ré-initialise la mission en cours en redémarrant bash
+  ré-initialise la mission en cours en redémarrant le shell
 
 gsh HELP
   affiche ce message
