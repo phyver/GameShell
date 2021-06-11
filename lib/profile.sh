@@ -32,7 +32,7 @@ PATH="$GSH_ROOT/bin":$PATH
 
 ### generate GameShell translation files
 # NOTE: nullglob don't expand in POSIX sh and there is no shopt -s nullglob as in bash
-if [ -n "$(find "$GSH_ROOT/i18n" -maxdepth 1 -name '*.po' -print -quit)" ]
+if [ -n "$(find "$GSH_ROOT/i18n" -maxdepth 1 -name '*.po' | head -n1)" ]
 then
   for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
     PO_LANG=$(basename "$PO_FILE" .po)

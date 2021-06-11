@@ -183,7 +183,7 @@ then
       if [ -d "$MISSION_DIR/i18n" ]
       then
         # NOTE: nullglob don't expand in POSIX sh and there is no shopt -s nullglob as in bash
-        if [ -n "$(find "$MISSION_DIR/i18n" -maxdepth 1 -name '*.po' -print -quit)" ]
+        if [ -n "$(find "$MISSION_DIR/i18n" -maxdepth 1 -name '*.po' | head -n1)" ]
         then
           for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
             PO_LANG=$(basename "$PO_FILE" .po)
