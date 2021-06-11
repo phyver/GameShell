@@ -54,12 +54,20 @@ _gsh_reset() {
 
 # reset the bash configuration
 _gsh_hard_reset() {
+  local MISSION_NB="$(_gsh_pcm)"
+  if [ -z "$MISSION_NB" ]
+  then
+    local fn_name="${FUNCNAME[0]}"
+    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
+    return 1
+  fi
   if ! . mainshell.sh
   then
     echo "$(gettext "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!")" >&2
     return 1
   fi
   # on relance bash, histoire de recharcher la config
+  __log_action "$MISSION_NB" "HARD_RESET"
   exec bash --rcfile "$GSH_LIB/bashrc"
 }
 

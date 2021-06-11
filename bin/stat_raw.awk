@@ -12,22 +12,17 @@ function human_time(seconds) {
 }
 
 BEGIN {
-  if (!MISSION_NB) {
-    getline l;
-    print l;
-  }
-
   if (VERBOSE) {
-    FORMAT_STRING="%3s %-40s %s %8s %s";
-    printf(FORMAT_STRING "\n", "#", "MISSION NAME", " ", "DURATION", "ACTION");
     FORMAT_STRING="%3d %-40s %s %8s ";
   } else {
-    FORMAT_STRING="%3s %0s%s %8s  %s";
-    printf(FORMAT_STRING "\n", "#", "", " ", "DURATION", "ACTION");
     FORMAT_STRING="%3d %0s%s %8s  ";
   }
 }
 
+/#NEW SESSION/ {
+    print substr($0, 2);
+    next
+}
 
 /#/ { next }         # ignore comments
 
@@ -67,6 +62,7 @@ $1 == current_mission && $2 == "START" { next; }
   printf("exit\n");
   print "-----";
   current_mission = "";
+  previous_time = "";
   next;
 }
 

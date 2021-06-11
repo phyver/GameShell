@@ -201,8 +201,6 @@ Do you want to remove it and start a new game? [y/N]') "
   mkdir -p "$GSH_HOME"
 
   mkdir -p "$GSH_CONFIG"
-  date "+%Y-%m-%d %H:%M:%S" | sed 's/^/#** game started on /' > "$GSH_CONFIG/missions.log"
-  printf "#mission action date checksum\n" >> "$GSH_CONFIG/missions.log"
   awk -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN { srand(); printf("%s", int(2^32 * rand())) > seed_file; }'
 
   mkdir -p "$GSH_BASHRC"
@@ -408,6 +406,7 @@ Aborting.")"
 init_gsh "$@"
 cd "$GSH_HOME"
 export GSH_UID=$(cat "$GSH_CONFIG/uid")
+date "+%Y-%m-%d %H:%M:%S" | sed 's/^/#NEW SESSION on /' >> "$GSH_CONFIG/missions.log"
 # make sure the shell reads it's config file by making it interactive (-i)
 exec bash --rcfile "$GSH_LIB/bashrc" -i
 
