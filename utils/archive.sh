@@ -5,7 +5,7 @@ export GSH_ROOT=$(dirname "$0")/..
 
 display_help() {
 cat <<EOH
-$(basename $0) [OPTIONS] [MISSIONS]
+$(basename "$0") [OPTIONS] [MISSIONS]
 create a GameShell standalone archive
 
 options:
@@ -85,7 +85,7 @@ do
       ;;
   esac
 done
-shift $(($OPTIND - 1))
+shift $((OPTIND - 1))
 
 OUTPUT_DIR=$(dirname "$NAME")
 NAME=$(basename "$NAME")
@@ -102,7 +102,6 @@ cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/bin" "$GSH_ROOT/utils" "$GSH_ROOT/lib" "
 # copy missions
 mkdir "$TMP_DIR/$NAME/missions"
 echo "copy missions"
-N=0
 if ! make_index "$@" > "$TMP_DIR/$NAME/missions/index.txt"
 then
   echo "Error: archive.sh, couldn't make index.txt"
@@ -117,11 +116,7 @@ do
       continue
       ;;
     "!"*)
-      DUMMY="!"
       MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
-      ;;
-    *)
-      DUMMY=""
       ;;
   esac
   echo "  -> copy $MISSION_DIR"
@@ -142,7 +137,7 @@ export GSH_MISSIONS="$GSH_ROOT/missions"
 if [ -n "$LANGUAGES" ]
 then
   echo "removing unwanted languages"
-  find $GSH_ROOT -path "*/i18n/*.po" | while read po_file
+  find "$GSH_ROOT" -path "*/i18n/*.po" | while read po_file
   do
     if ! keep_language "${po_file%.po}" "$LANGUAGES"
     then
@@ -182,7 +177,8 @@ then
 
       if [ -d "$MISSION_DIR/i18n" ]
       then
-        # NOTE: nullglob don't expand in POSIX sh and there is no shopt -s nullglob as in bash
+        # NOTE: nullglob don't expand in POSIX sh and there is no equivalent to
+        # shopt -s nullglob as in bash
         if [ -n "$(find "$MISSION_DIR/i18n" -maxdepth 1 -name '*.po' | head -n1)" ]
         then
           for PO_FILE in "$MISSION_DIR"/i18n/*.po; do
@@ -219,7 +215,7 @@ echo "removing unnecessary files"
 # change admin password
 echo "setting admin password"
 ADMIN_HASH=$(checksum "$ADMIN_PASSWD")
-sed-i "s/^\([[:blank:]]*\)ADMIN_HASH=.*/\1ADMIN_HASH='$ADMIN_HASH'/" "$GSH_ROOT/start.sh"
+sed-i "s/^\\([[:blank:]]*\\)ADMIN_HASH=.*/\\1ADMIN_HASH='$ADMIN_HASH'/" "$GSH_ROOT/start.sh"
 
 # choose default mode
 echo "setting default GameShell mode"

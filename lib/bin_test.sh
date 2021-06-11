@@ -1,9 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 ### test the various utilities in GSH_ROOT/bin/ directory
 
-function test_mktemp() {
-  local tmp
+test_mktemp() (
   if ! tmp=$(mktemp 2> /dev/null)
   then
     echo "Error: command 'mktemp' not working." >&2
@@ -15,14 +14,14 @@ function test_mktemp() {
     return 1
   fi
   rm -f "$tmp"
-}
+)
 
 
-function test_realpath() (
-  local tmp=$(mktemp -d)
+test_realpath() (
+  tmp=$(mktemp -d)
   cd "$tmp"
   touch a
-  local rpa=$(realpath ./a)
+  rpa=$(realpath ./a)
   if [ -z "$rpa" ]
   then
     echo "Error: realpath returned the empty string." >&2
@@ -39,7 +38,7 @@ function test_realpath() (
   esac
 
   ln -s a b
-  local rpb=$(realpath b)
+  rpb=$(realpath b)
   if [ "$rpa" != "$rpb" ]
   then
     echo "Error: realpath doesn't resolve symbolic links." >&2
@@ -63,8 +62,8 @@ test_checksum() {
   esac
 }
 
-test_sign() {
-  local tmp=$(mktemp)
+test_sign() (
+  tmp=$(mktemp)
   echo "$(RANDOM)" > "$tmp"
   sign_file "$tmp"
   if ! check_file "$tmp"
@@ -78,7 +77,7 @@ test_sign() {
   fi
 
   echo $(RANDOM) > "$tmp"
-  local tmp2=$(mktemp)
+  tmp2=$(mktemp)
   sign_file "$tmp" "$tmp2"
   if ! check_file "$tmp2"
   then
@@ -94,6 +93,6 @@ test_sign() {
 
   rm -f $tmp $tmp2
   return 0
-}
+)
 
 test_mktemp && test_realpath && test_checksum && test_sign

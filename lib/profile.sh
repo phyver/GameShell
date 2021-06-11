@@ -46,7 +46,7 @@ fi
 
 
 ### test some of the scripts
-if ! bash "$GSH_ROOT/lib/bin_test.sh"
+if ! sh "$GSH_ROOT/lib/bin_test.sh"
 then
   echo "$(gettext "Error: a least one base function is not working properly.
 Aborting!")"
