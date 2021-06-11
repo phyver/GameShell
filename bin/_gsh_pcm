@@ -3,11 +3,15 @@
 # pcm => "print current mission"
 GSH_CONFIG=$(cd "$(dirname "$0")/../.config"; pwd -P)
 
-PCM="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GSH_CONFIG/missions.log")"
-if [ -z "$PCM" ]
-then
-  echo "1"
-  return 1
-else
-  echo "$PCM"
-fi
+pcm() {
+  PCM="$(awk '/^#/ {next}   $2=="START" {m=$1}  END {print (m)}' "$GSH_CONFIG/missions.log")"
+  if [ -z "$PCM" ]
+  then
+    echo "1"
+    return 1
+  else
+    echo "$PCM"
+  fi
+}
+
+pcm "$@"
