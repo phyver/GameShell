@@ -9,7 +9,7 @@ _mission_check() {
     spiders=$(find "$cellar" -name "$(gettext "spider")_*")
     if [ -n "$spiders" ]
     then
-        echo "$(gettext "There are still spiders in the cellar!")"
+        echo "$(gettext "There still are spiders in the cellar!")"
         return 1
     fi
 

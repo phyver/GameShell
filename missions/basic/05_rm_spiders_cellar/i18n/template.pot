@@ -18,6 +18,9 @@ msgstr  ""
 msgid   "There are still spiders in the cellar!"
 msgstr  ""
 
+msgid   "There still are spiders in the cellar!"
+msgstr  ""
+
 msgid   "You removed a bat!"
 msgstr  ""
 

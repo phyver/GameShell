@@ -19,6 +19,9 @@ msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 msgid   "There are still spiders in the cellar!"
 msgstr  "There are still spiders in the cellar!"
 
+msgid   "There still are spiders in the cellar!"
+msgstr  "There still are spiders in the cellar!"
+
 msgid   "You removed a bat!"
 msgstr  "You removed a bat!"
 
