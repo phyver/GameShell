@@ -15,6 +15,9 @@ msgstr  ""
 msgid   "Book_of_potions"
 msgstr  ""
 
+msgid   "If you know awk or sed, what are you doing playing GameShell?"
+msgstr  ""
+
 msgid   "You altered the book..."
 msgstr  ""
 

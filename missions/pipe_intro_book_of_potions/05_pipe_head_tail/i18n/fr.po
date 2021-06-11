@@ -15,6 +15,9 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 msgid   "Book_of_potions"
 msgstr  "Livre_de_potions"
 
+msgid   "If you know awk or sed, what are you doing playing GameShell?"
+msgstr  "Si vous connaissez awk ou sed, que faites vous à jouer à GameShell ?"
+
 msgid   "You altered the book..."
 msgstr  "Vous avez modifié le livre..."
 
