@@ -1,9 +1,11 @@
+#!/bin/sh
+
 maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 case $PWD in
-    "$maze"/?*)
-        cd "$maze"
-        echo "$(gettext "You are back at the entrance of the maze...")"
-        ;;
+  "$maze"/?*)
+    cd "$maze"
+    echo "$(gettext "You are back at the entrance of the maze...")"
+    ;;
 esac
 
 case "$maze" in

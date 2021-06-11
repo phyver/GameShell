@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_init() {
+_mission_init() (
   cat > "$(eval_gettext '$GSH_HOME/Castle/Main_building/Library')/$(gettext "Greek_Latin_and_other_modern_languages")" <<EOB
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -15,19 +15,21 @@ Just copy all its lines to get perfect score.")" \
   > "$(eval_gettext '$GSH_HOME/Castle/Main_building/Library')/.$(gettext "How_to_cheat_for_exams")"
 
 
-  local book="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library')/$(gettext "Mathematics_101")"
+  book="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library')/$(gettext "Mathematics_101")"
   rm -f "$book"
-  local questions=$GSH_VAR/arith.txt
+  questions=$GSH_TMP/arith.txt
   rm -f "$questions"
 
-  for _ in $(seq 100)
+  RANDOM 200 | for _ in $(seq 100)
   do
-    local a=$((1+RANDOM%100))
-    local b=$((1+RANDOM%100))
-    local r=$((a * b))
+    read a
+    read b
+    a=$((1+a%100))
+    b=$((1+b%100))
+    r=$((a * b))
     echo $r >> "$book"
     echo "$a * $b = ?? |$r" >> "$questions"
   done
-}
+)
 
 _mission_init

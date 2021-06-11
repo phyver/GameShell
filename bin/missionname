@@ -22,7 +22,7 @@ missionname() {
     [ -f check.sh ] && break
     [ -f static.sh ] && break
     [ -f init.sh ] && break
-    [ $(pwd -P) = "/" ] && break
+    [ "$(pwd -P)" = "/" ] && break
     cd ..
   done
 

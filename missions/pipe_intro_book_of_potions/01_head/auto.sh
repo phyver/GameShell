@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd "$(eval_gettext '$GSH_HOME/Mountain/Cave')"
 
 # commands from a sourced file aren't saved in the history,

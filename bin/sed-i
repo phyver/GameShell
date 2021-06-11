@@ -20,7 +20,7 @@ sed_i() {
     cp "$tmp" "$filename"
     rm -f "$tmp" "$bak"
   else
-    local ret=$?
+    ret=$?
     rm -f "$tmp" "$bak"
     return $ret
   fi

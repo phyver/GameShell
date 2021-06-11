@@ -60,10 +60,10 @@ int main(int argc, char** argv)
     wordexp_t result;
     switch (who) {
     case IMP:
-        wordexp("$GSH_VAR/imp_spell.pids", &result, 0);
+        wordexp("$GSH_TMP/imp_spell.pids", &result, 0);
         break;
     case FAIRY:
-        wordexp("$GSH_VAR/fairy_spell.pids", &result, 0);
+        wordexp("$GSH_TMP/fairy_spell.pids", &result, 0);
         break;
     }
     // if the path contains spaces, the result is contained in several words!
@@ -81,10 +81,10 @@ int main(int argc, char** argv)
 
     switch (who) {
     case IMP:
-        wordexp("$GSH_VAR/imp/$(gettext 'spell')", &result, 0);
+        wordexp("$GSH_TMP/imp/$(gettext 'spell')", &result, 0);
         break;
     case FAIRY:
-        wordexp("$GSH_VAR/fairy/$(gettext 'spell')", &result, 0);
+        wordexp("$GSH_TMP/fairy/$(gettext 'spell')", &result, 0);
         break;
     }
     pos = 0;

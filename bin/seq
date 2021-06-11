@@ -1,7 +1,7 @@
 #!/bin/sh
 
 display_help() {
-  cat <<EOH
+  cat <<'EOH'
 Usage: seq [OPTION] LAST
   or:  seq [OPTION] FIRST LAST
   or:  seq [OPTION] FIRST STEP LAST
@@ -17,7 +17,7 @@ EOH
 seq() (
 
   FORMAT="%d"
-  SEP="\n"
+  SEP='\n'
 
   while getopts "hf:s:" opt
   do
@@ -63,12 +63,12 @@ seq() (
   esac
 
   i=$start
-  while [ "$i" -lt $end ]
+  while [ "$i" -lt "$end" ]
   do
-    printf "$FORMAT$SEP" $i
+    printf "$FORMAT$SEP" "$i"
     i=$((i+step))
   done
-  [ "$i" -eq $end ] && printf "$FORMAT" $i
+  [ "$i" -eq "$end" ] && printf "$FORMAT" $i
   echo
   return 0
 )

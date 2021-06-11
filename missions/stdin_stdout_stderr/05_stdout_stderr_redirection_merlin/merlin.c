@@ -45,9 +45,9 @@ int main(int argc, char** argv)
     // the message
     char* msg = gettext("THESECRETKEYISONSTDERR");
 
-    // get the key from "$GSH_VAR/secret_key"
+    // get the key from "$GSH_TMP/secret_key"
     wordexp_t result;
-    wordexp("$GSH_VAR/secret_key", &result, 0);
+    wordexp("$GSH_TMP/secret_key", &result, 0);
     // if the path contains spaces, the result is contained in several words!
     int pos = 0;
     for (int i = 0; result.we_wordv[i] != NULL; i++) {

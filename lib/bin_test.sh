@@ -76,7 +76,7 @@ test_sign() (
     return 1
   fi
 
-  echo $(RANDOM) > "$tmp"
+  echo "$(RANDOM)" > "$tmp"
   tmp2=$(mktemp)
   sign_file "$tmp" "$tmp2"
   if ! check_file "$tmp2"
@@ -91,7 +91,7 @@ test_sign() (
     return 1
   fi
 
-  rm -f $tmp $tmp2
+  rm -f "$tmp" "$tmp2"
   return 0
 )
 

@@ -3,5 +3,5 @@
 chmod "$(umask -S)" "$GSH_ROOT"
 chmod "$(umask -S)" "$GSH_MISSIONS"
 chmod "$(umask -S)" "$GSH_CONFIG"
-chmod "$(umask -S)" "$GSH_VAR"
+chmod "$(umask -S)" "$GSH_TMP"
 chmod "$(umask -S)" "$GSH_SBIN"

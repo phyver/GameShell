@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# the ``history`` command is not in POSIX
+
 cd "$(eval_gettext '$GSH_HOME/Mountain/Cave')"
 
 history -s "head -n 6 $(gettext "Book_of_potions")/$(gettext "page")_07"
@@ -26,7 +30,7 @@ history -d $((n-1))
 history -d $((n-1))
 unset n
 
-sed-i '1d' $(gettext "Book_of_potions")/$(gettext "page")_07
+sed-i '1d' "$(gettext "Book_of_potions")/$(gettext "page")_07"
 history -s "head -n 6 $(gettext "Book_of_potions")/$(gettext "page")_07"
 history -s "gsh check"
 gsh assert check false

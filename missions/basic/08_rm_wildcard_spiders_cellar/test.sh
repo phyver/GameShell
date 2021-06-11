@@ -1,3 +1,5 @@
+#!/bin/sh
+
 gsh assert check false
 
 rm -f "$(eval_gettext '$GSH_HOME/Castle/Cellar')"/??*

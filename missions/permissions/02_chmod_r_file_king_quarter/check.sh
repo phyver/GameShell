@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
-read -erp "$(gettext "What's the combination to open the King's safe?") " key
-real_key=$(cat "$GSH_VAR/key")
+printf "%s " "$(gettext "What's the combination to open the King's safe?")"
+read -r key
+real_key=$(cat "$GSH_TMP/key")
 
 if [ "$key" = "$real_key" ]
 then

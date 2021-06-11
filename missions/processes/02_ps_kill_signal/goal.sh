@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 export PS
 if ps -c | head -n1 | grep CLS 2>/dev/null >/dev/null

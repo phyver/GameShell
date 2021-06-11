@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
+# display a small animation until the given PID stops
 
 . gettext.sh
 
@@ -29,7 +31,7 @@ init_data() {
   case $design in
     "dots")
       # simple dots
-      STR=('.')
+      STR='.'
       PRE=''
       POST='\n'
       MSG=''
@@ -38,7 +40,7 @@ init_data() {
 
     "bar")
       # simple dots
-      STR=('=')
+      STR='='
       PRE='['
       POST=']\n'
       MSG=''
@@ -47,7 +49,10 @@ init_data() {
 
     "rotation")
       # rotating bar
-      STR=('\b|' '\b/' '\b-' '\b\\')
+      STR='\b|
+\b/
+\b-
+\b\'
       PRE='-'
       POST='\b \b'
       MSG=""
@@ -56,8 +61,15 @@ init_data() {
 
     "bat")
       # flying bat
-      STR=('\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/' '\b\b\b \,/'
-           '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\' '\b\b\b /`\')
+      STR='\b\b\b \,/
+\b\b\b \,/
+\b\b\b \,/
+\b\b\b \,/
+\b\b\b /`\
+\b\b\b /`\
+\b\b\b /`\
+\b\b\b /`\'
+
       PRE='   '
       POST='\b\b\b   \r'
       MSG="$(gettext "While you are waiting, a bat flies by...")\\n"
@@ -66,10 +78,10 @@ init_data() {
 
     "snake")
       # slithering snake
-      STR=('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b __/\__/\__/\<:>'
-           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b _/\__/\__/\_<:>'
-           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b /\__/\__/\__<:>'
-           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>')
+      STR='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b __/\__/\__/\<:>
+\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b _/\__/\__/\_<:>
+\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b /\__/\__/\__<:>
+\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b \__/\__/\__/<:>'
       PRE='\__/\__/\__/<:>'
       POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b               \r'
       MSG="$(gettext "While you are waiting, a snake slithers by...")\\n"
@@ -77,12 +89,12 @@ init_data() {
       ;;
 
     "caterpillar")
-      STR=('\b\b\b\b\b\b\b\b\b ___^___@'
-           '\b\b\b\b\b\b\b\b __/\__@'
-           '\b\b\b\b\b\b\b _/^\_@'
-           '\b\b\b\b\b\b __/\__@'
-           '\b\b\b\b\b\b\b ___^___@'
-           '\b\b\b\b\b\b\b\b\b ________@')
+      STR='\b\b\b\b\b\b\b\b\b ___^___@
+\b\b\b\b\b\b\b\b __/\__@
+\b\b\b\b\b\b\b _/^\_@
+\b\b\b\b\b\b __/\__@
+\b\b\b\b\b\b\b ___^___@
+\b\b\b\b\b\b\b\b\b ________@'
       PRE='_______@"'
       POST='\b\b\b\b\b\b\b\b\b         \r'
       MSG="$(gettext "While you are waiting, a caterpillar crawls by...")\\n"
@@ -90,10 +102,9 @@ init_data() {
       ;;
 
     "snail")
-      # Snail
-      STR=('\b\b\b\b\b\b\b_(@)__/"'
-           '\b\b\b\b\b\b\b\b__(@)_/"'
-           '\b\b\b\b\b\b\b\b _(@)_/"')
+      STR='\b\b\b\b\b\b\b_(@)__/"
+\b\b\b\b\b\b\b\b__(@)_/"
+\b\b\b\b\b\b\b\b _(@)_/"'
       PRE='_(O)_/"'
       POST='\b\b\b\b\b\b\b\b        \r'
       MSG="$(gettext "While you are waiting, a snail goes by...")\\n"
@@ -101,12 +112,11 @@ init_data() {
       ;;
 
     "spider")
-      STR=(
-        '\b\b\b\b\b //o\\\\'
-        '\b\b\b\b\b //o\\\\'
-        '\b\b\b\b\b///o\\'
-        '\b\b\b\b\b///o\\'
-      )
+      # FIXME: not sure I understand the escaping here!
+      STR='\b\b\b\b\b //o\\\\\\\\
+\b\b\b\b\b //o\\\\\\\\
+\b\b\b\b\b///o\\\\
+\b\b\b\b\b///o\\\\'
       PRE='//o\\\\'
       POST='\b\b\b\b\b     \r'
       MSG="$(gettext "While you are waiting, a spider crawls by...")\\n"
@@ -114,11 +124,10 @@ init_data() {
       ;;
 
     "duck")
-      STR=(
-        '\b\b\b\b\\_@<'
-        '\b\b\b\b \\_@='
-        '\b\b\b\b\\_@='
-        '\b\b\b\b\\_@<')
+      STR='\b\b\b\b\\_@<
+\b\b\b\b \\_@=
+\b\b\b\b\\_@=
+\b\b\b\b\\_@<'
       PRE='\\_@<'
       POST='\b\b\b\b\b     \r'
       MSG="$(gettext "While you are waiting, a duck swims by...")\\n"
@@ -127,12 +136,22 @@ init_data() {
 
     "fish-back-and-forth")
       # Swimming fish (small) going back and forth
-      STR=('\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>'
-           '\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>' '\b\b\b ><>'
-           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><'
-           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><'
-           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><'
-           '\b\b\b   \b\b\b\b<><' '\b\b\b   \b\b\b\b<><')
+      STR='\b\b\b ><>
+\b\b\b ><>
+\b\b\b ><>
+\b\b\b ><>
+\b\b\b ><>
+\b\b\b ><>
+\b\b\b ><>
+\b\b\b ><>
+\b\b\b   \b\b\b\b<><
+\b\b\b   \b\b\b\b<><
+\b\b\b   \b\b\b\b<><
+\b\b\b   \b\b\b\b<><
+\b\b\b   \b\b\b\b<><
+\b\b\b   \b\b\b\b<><
+\b\b\b   \b\b\b\b<><
+\b\b\b   \b\b\b\b<><'
       PRE='><>'
       POST='\b\b\b   \r'
       MSG="$(gettext "While you are waiting, you see a fish swimming in circles...")\\n"
@@ -141,8 +160,8 @@ init_data() {
 
     "centipede")
       # crawling centipede
-      STR=('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b ,`,`,`,`,`,`,`(:)'
-           '\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b`,`,`,`,`,`,`,(:)')
+      STR='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b ,`,`,`,`,`,`,`(:)
+\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b`,`,`,`,`,`,`,(:)'
       PRE='`,`,`,`,`,`,`,(:)'
       POST='\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b                  \r'
       MSG="$(gettext "While you are waiting, a centipede crawls by...")\\n"
@@ -151,7 +170,7 @@ init_data() {
 
     "ant")
       # crawling ant
-      STR=('\b\b\b\b\b >|<()')
+      STR='\b\b\b\b\b >|<()'
       PRE='>|<()'
       POST='\b\b\b\b\b     \r'
       MSG="$(gettext "While you are waiting, an ant crawls by...")\\n"
@@ -160,7 +179,7 @@ init_data() {
 
     "fish")
       # Swimming fish (small)
-      STR=('\b\b\b ><>')
+      STR='\b\b\b ><>'
       PRE='><>'
       POST='\b\b\b   \r'
       MSG="$(gettext "While you are waiting, a fish swims by...")\\n"
@@ -169,7 +188,7 @@ init_data() {
 
     "large-fish")
       # Swimming fish (large)
-      STR=("\b\b\b\b\b\b\b\b ><(((('>")
+      STR="\b\b\b\b\b\b\b\b ><(((('>"
       PRE="><(((('>"
       POST='\b\b\b\b\b\b\b\b        \r'
       MSG="$(gettext "While you are waiting, a large fish swims by...")\\n"
@@ -195,14 +214,17 @@ animation() {
 
   # Make progress for each character read on [stdin].
   printf "$PRE"
-  while true
+  while kill -0 "$PID" 2>/dev/null
+  # NOTE: we need to test that PID is still active here as well, because
+  # the "break" in the body of the loop takes place in a subshell. It is
+  # not possible to return from the function from there (using "break 2" or
+  # "return")!
   do
-    for s in "${STR[@]}"
+    printf "$STR\n" | while read -r line
     do
-      printf "$s"
-      # Slow down the animation a little bit.
+      printf "$line"
       sleep $DELAY
-      kill -0 $PID 2>/dev/null || return
+      kill -0 "$PID" 2>/dev/null || break
     done
   done
 }
@@ -230,14 +252,14 @@ EOS
   PID=$1
 
   get_design "$design"
-  if [ "$design" == RANDOM ]
+  if [ "$design" = RANDOM ]
   then
     n=$(RANDOM)
     get_design "$((n%7))"     # only modulo 7 to get the "interesting" animations
   fi
 
   init_data "$design"
-  if kill -0 $PID 2>/dev/null
+  if kill -0 "$PID" 2>/dev/null
   then
     animation
     printf "$POST"

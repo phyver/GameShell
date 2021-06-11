@@ -1,1 +1,3 @@
-rm -f "$GSH_VAR/magic_word"
+#!/bin/sh
+
+rm -f "$GSH_TMP/magic_word"

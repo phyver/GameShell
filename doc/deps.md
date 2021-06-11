@@ -59,7 +59,7 @@ We haven't tested it much, but it should run on freeBSD once you install the
 dependencies:
 
 ```sh
-$ pkg install bash gettext pstree wget
+$ pkg install bash gettext pstree wget nano
 ```
 
 

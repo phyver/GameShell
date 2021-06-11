@@ -1,1 +1,3 @@
-rm -f "$GSH_VAR/painting"
+#!/bin/sh
+
+rm -f "$GSH_TMP/painting"

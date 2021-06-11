@@ -90,7 +90,14 @@ shift $((OPTIND - 1))
 OUTPUT_DIR=$(dirname "$NAME")
 NAME=$(basename "$NAME")
 
-TMP_DIR=$(mktemp -d)
+# don't use mktemp -d, which might not exist
+while true
+do
+  n=$((n+1))
+  TMP_DIR="$OUTPUT_DIR/tmp-$(printf "%03d" $n)"
+  [ -e "$TMP_DIR" ] || break
+done
+mkdir "$TMP_DIR"
 mkdir "$TMP_DIR/$NAME"
 
 

@@ -15,7 +15,7 @@ export GSH_MISSIONS="$GSH_ROOT/missions"
 # dynamic data
 export GSH_HOME="$GSH_ROOT/World"
 export GSH_CONFIG="$GSH_ROOT/.config"
-export GSH_VAR="$GSH_ROOT/.var"
+export GSH_TMP="$GSH_ROOT/.tmp"
 export GSH_BIN="$GSH_ROOT/.bin"
 export GSH_SBIN="$GSH_ROOT/.sbin"
 

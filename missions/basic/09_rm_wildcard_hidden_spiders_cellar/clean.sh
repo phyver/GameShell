@@ -1,2 +1,4 @@
-rm -f "$GSH_VAR/bats"
+#!/bin/sh
+
+rm -f "$GSH_TMP/bats"
 

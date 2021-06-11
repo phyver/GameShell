@@ -84,10 +84,10 @@ END {
     filename = dir "/" scroll;
     printf(transaction_template "\n", name, o, price, p) >> filename;
   }
-  filename = ENVIRON["GSH_VAR"]"/nbUnpaid";
+  filename = ENVIRON["GSH_TMP"]"/nbUnpaid";
   print nbUnpaid > filename;
   close(filename);
-  filename = ENVIRON["GSH_VAR"]"/amountKing";
+  filename = ENVIRON["GSH_TMP"]"/amountKing";
   print amountKing > filename;
   close(filename);
 
