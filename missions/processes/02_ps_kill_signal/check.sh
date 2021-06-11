@@ -7,7 +7,7 @@
 # GNU ps truncates the output according to COLUMNS, even when output is not on
 # a tty, hence we set COLUMNS to 512 which should be long enough.
 _mission_check() {
-  local nb_spells=$(COLUMNS=512 ps -ce | grep "$(gettext "spell")" | wc -l | tr -d ' ')
+  local nb_spells=$(COLUMNS=512 ps -cA | grep "$(gettext "spell")" | wc -l | tr -d ' ')
 
   if [ "$nb_spells" -gt 0 ]
   then
