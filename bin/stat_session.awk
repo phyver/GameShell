@@ -1,5 +1,23 @@
 #!/usr/bin/awk -f
 
+function _(s) {
+    sprintf("gettext '%s'", s) | getline msg;
+    if (!msg) {
+        return s;
+    } else {
+        return msg;
+    }
+}
+
+function _n(sing, plur, nb) {
+    sprintf("ngettext '%s' '%s' %d", sing, plur, nb) | getline msg;
+    if (!msg) {
+        return s;
+    } else {
+        return msg;
+    }
+}
+
 function human_time(seconds) {
     if (seconds >= 24*3600) {
         return sprintf("%dd", int(seconds/24*3600))
@@ -59,11 +77,17 @@ last_action != "AUTO" && $2 == "CHECK_OK" {
 }
 
 END {
-    print "total time:", human_time(last_time - start_time);
-    printf("game time: %s in %d session%s\n", human_time(game_time), nb_restart, nb_restart>1?"s":"");
+    printf(_("total time: %s") "\n", human_time(last_time - start_time));
+    fmt = _n("game time: %s in %d session",
+             "game time: %s in %d sessions",
+             nb_restart);
+    printf(fmt "\n", human_time(game_time), nb_restart);
 
     if (nb_auto_passed) {
-        printf("%d mission%s passed using the auto.sh script: ", nb_auto_passed, nb_auto_passed>1?"s":"");
+        fmt = _n("%d mission passed using the auto.sh script:",
+                 "%d missions passed using the auto.sh script:",
+                 nb_auto_passed);
+        printf(fmt " ", nb_auto_passed);
         for (i=0; i< nb_auto_passed; i++) {
             if (i > 0) printf(", ");
             printf("%d", auto_passed[i]);
@@ -72,11 +96,12 @@ END {
     }
 
     if (nb_passed) {
-        printf("%d mission%s passed", nb_passed, nb_passed>1?"s":"");
+        fmt = _n("%d mission passed:",
+                 "%d missions passed:",
+                 nb_passed);
+        printf(fmt " ", nb_passed);
         for (i=0; i<nb_passed; i++) {
-            if (i == 0) {
-                printf(": ");
-            } else {
+            if (i > 0) {
                 printf(", ");
             }
             printf("%d", passed[i]);
@@ -85,7 +110,10 @@ END {
     }
 
     if (nb_skipped) {
-        printf("%d mission%s skipped: ", nb_skipped, nb_skipped>1?"s":"");
+        fmt = _n("%d mission skipped:",
+                 "%d missions skipped:",
+                 nb_skipped);
+        printf(fmt " ", nb_skipped);
         for (i=0; i< nb_skipped; i++) {
             if (i > 0) printf(", ");
             printf("%d", skipped[i]);
@@ -94,7 +122,10 @@ END {
     }
 
     if (nb_cancelled) {
-        printf("%d mission%s cancelled for missing dependencies: ", nb_cancelled, nb_cancelled>1?"s":"");
+        fmt = _n("%d mission cancelled for missing dependencies:",
+                 "%d missions cancelled for missing dependencies:",
+                 nb_cancelled);
+        printf(fmt " ", nb_cancelled);
         for (i=0; i< nb_cancelled; i++) {
             if (i > 0) printf(", ");
             printf("%d", cancelled[i]);
@@ -103,7 +134,10 @@ END {
     }
 
     if (auth_failure) {
-        printf("%d authentification failure%s\n", auth_failure, auth_failure>1?"s":"");
+        fmt = _n("%d authentification failure",
+                 "%d authentification failures",
+                 auth_failure);
+        printf(fmt "\n", auth_failure);
     }
 
 }
