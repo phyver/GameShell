@@ -2,7 +2,10 @@
 
 . gettext.sh
 
-# display welcome message
-msg_file=$(eval_gettext '$GSH_ROOT/i18n/gameshell-welcome/en.txt')
-[ -r "$msg_file" ] || return 1
-parchment "$msg_file" | pager
+welcome() {
+  # display welcome message
+  msg_file=$(eval_gettext '$GSH_ROOT/i18n/gameshell-welcome/en.txt')
+  [ -r "$msg_file" ] || return 1
+  parchment "$msg_file" | pager
+}
+welcome "$@"

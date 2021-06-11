@@ -1,14 +1,14 @@
 #!/bin/sh
 
-if [ -z "$MISSION_DIR" ]
-then
-  echo "Error: copy_bin \$MISSION_DIR undefined." >&2
-  return 1
-fi
-
 # create a script to call a mission executable with appropriate context:
 # correct TEXTDOMAIN (for translations) and MISSION_DIR (to use data files)
 copy_bin() {
+  if [ -z "$MISSION_DIR" ]
+  then
+    echo "Error: copy_bin \$MISSION_DIR undefined." >&2
+    return 1
+  fi
+
   if [ "$#" -ne 2 ]
   then
     echo "Error: copy_bin requires 2 arguments." >&2
