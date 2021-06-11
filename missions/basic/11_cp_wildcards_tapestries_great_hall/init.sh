@@ -20,7 +20,7 @@ _mission_init() {
   local i
   for i in $(seq 10)
   do
-    local f=$great_hall/${RANDOM}_$(gettext "tapestry")_$(printf "%2d" "$i")
+    local f=$great_hall/${RANDOM}_$(gettext "tapestry")_$(printf "%02d" "$i")
     cp "$MISSION_DIR/ascii-art/tapestry-$((RANDOM%5)).txt" "$f"
     sign_file "$f"
   done
