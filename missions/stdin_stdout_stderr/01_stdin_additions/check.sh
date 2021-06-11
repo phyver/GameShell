@@ -1,15 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_check() {
-  exec 3< "$GSH_VAR/arith.txt"
-  local line
-  while IFS='' read -r -u 3 line
+_mission_check() (
+  exec 3< "$GSH_TMP/arith.txt"
+  while IFS='' read -r line <&3
   do
-    local question="$(echo "$line" | cut -d"|" -f1)"
-    local result="$(echo "$line" | cut -d"|" -f2)"
+    question="$(echo "$line" | cut -d"|" -f1)"
+    result="$(echo "$line" | cut -d"|" -f2)"
 
-    local response
-    read -erp "$question" response
+    printf "%s" "$question"
+    read -r response
     case "$response" in
       "" | *[!0-9]*)
         echo "$(gettext "That's not even a number!")"
@@ -25,6 +24,6 @@ _mission_check() {
     esac
   done
   return 0
-}
+)
 
 _mission_check

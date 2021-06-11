@@ -28,6 +28,9 @@ Some missions ideas
 
   - create empty files with `touch`, update modification date
 
+  - dealing with strange files: spaces (quoting / escaping), starting with a
+    dash (using `--`), etc.
+
   - scripting: `for` loops on files
 
   - `pushd` / `popd`

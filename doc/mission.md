@@ -19,9 +19,9 @@ creating missions are the following:
   where the player is expected to move around. It is initially empty, and the
   missions populate it.
   Even though this is also the `HOME` directory of the player, using
-  `$GSH_HOME` is preferred over other abbreviations like `$HOME` or `~`.
+  `$GSH_HOME` is preferred over `$HOME` or `~`.
 
-* `$GSH_VAR` contains all the "hidden" data that may be created by a mission:
+* `$GSH_TMP` contains all the "hidden" data that may be created by a mission:
   temporary files, data required to check completion, data shared between
   missions, etc. Except in specific case ("dummy missions"), it is a good
   policy that each mission removes the files it creates.
@@ -80,9 +80,67 @@ We will now describe in details what's expected in those 4 files. (The other
 files will be described in the next section.)
 
 
+### Note on missions' `sh` files
+
+All the missions' `sh` files are **sourced**. This was decided in the early
+versions of GameShell to make it possible to
+  - check the player defined an alias,
+  - change the current working directory of the player,
+  - define some environment variables.
+
+Most of the time, the `sh` scripts could be run in a subshell, which has the
+advantage of making sure the environment is not polluted by leftovers from the
+script.
+
+A good policy to adopt is that *except when you specifically need it*, the
+script should execute in a subshell. The easiest way to do that is to define a
+function
+```sh
+_mission_init() (
+  ...
+)
+```
+Using parenthesis rather than braces ensures the function is run inside a
+subshell.
+Note that after sourcing a file `init.sh`, the function `_mission_init` is
+automatically removed. The same is true for `check.sh` (where the function
+`_mission_check` is unset) or any of the other `sh` files.
+
+
+If not using a function, `unset`ing all the defined variables is encouraged.
+
+Note also that even if bash, zsh, or even dash have them, POSIX shell
+functions don't have a concept of `local` variables. In other words,
+```sh
+_mission_init() {
+  dir=$GSH_ROOT/Castle
+  mkdir -p "$dir"
+}
+```
+defines a *global* variable `dir`!
+
+When running in verbose debug mode (flag `-D`), GameShell will print all
+changes in the environment it detects.
+
+
+In some cases, those files may be sourced from a subshell. This happens for
+example if the previous mission was checked in a subshell, with something like
+```sh
+$ SOME_COMMAND | gsh check
+```
+In such a case, `gsh check` happens in a subshell, and sourcing of the next
+`init.sh` file happens in this same subshell.
+
+To prevent bugs when a mission specifically requires initialisation to change
+the environment, GameShell tries to detect when a script is sourced in a
+subshell. If it detects the environment has changed *and* that this happened
+in a subshell, a warning is displayed asking the player to run `gsh reset`.
+
+
+
 ### `static.sh`
 
-Like all `.sh` files defining the mission, `static.sh` is **sourced** by
+Like all `.sh` files defining the mission, `static.sh` is *sourced* by
 GameShell.
 It is first sourced when initializing a new game, and its typical use is
 creating the "world map". A mission taking place in the castle's cellar would
@@ -109,8 +167,9 @@ use the directory `$MISSION_DIR` that points to the mission's directory. This
 is useful if the mission needs to copy files into GameShell's world.
 
 
-_Note_ that because this file is sourced, it can change directory or define
-environment variables. This is discouraged because of the following reasons.
+_Note_ that because this file is sourced, it can change the working directory
+or define environment variables. This is discouraged for the following
+reasons.
 
 * Those files are not re-sourced when restarting a previous game. In that
   case, only the `static.sh` file corresponding to the current mission will be
@@ -168,16 +227,6 @@ several versions of them by removing them first. (Or better yet, write a
 `clean.sh` script.)
 
 
-_Note_ that because this file is sourced, it can change directory or define
-environment variables. In some cases however, this file can be sourced in a
-subshell. (For example, if the previous `gsh check` command was run in a
-subshell, as in `COMMAND | gsh check`...)
-Whenever GameShell detects this situation (subshell with creation of
-environment variables or change of `CWD`), a message asking the player to run
-`gsh reset` is displayed. This will re-source de the `init.sh` file, hopefully
-not in a subshell this time.
-
-
 **If the last return value is `false` (anything different from `0`), the mission
 is cancelled.**
 
@@ -206,11 +255,6 @@ _mission_check() {
 
 _mission_check
 ```
-
-Just like all the other scripts, `check.sh` is expected to keep the
-environment clean: all local variables defined should be unset, etc. The only
-exception is the function `_mission_check` that will be automatically unset.
-
 
 _Note_ that because this file is sourced, it can change directory or define
 environment variables. This is discouraged because sourcing might happen from
@@ -255,8 +299,8 @@ The other files are not used as often but allow to customize GameShell.
 
 ### `gshrc` (optional)
 
-This file is added to the global configuration of the bash session used during
-the game. It can be used to define variables, aliases, functions, etc..
+This file is added to the global configuration of the shell session used
+during the game. It can be used to define variables, aliases, functions, etc..
 They will be available throughout the game.
 
 
@@ -274,17 +318,18 @@ should be no output. (See the `treasure-msg.txt` file.)
 ### `treasure-msg.txt` / `treasure-msg.sh` (optional)
 
 The file `treasure-msg.txt` is expected to be a UTF-8 encoded text file. It is
-displayed when the mission is successfully completed.
+displayed when the mission is successfully completed. If the terminal is wide
+enough, a fancy treasure chest is added to the left of the message.
 
-It can be used to inform the player that a treasure (i.e., a feature installed
+This can be used to inform the player that a treasure (i.e., a feature installed
 by `treasure.sh`) has been won.
 
 Instead of `treasure-msg.txt`, a script `treasure-msg.sh` can be used to
 generate a dynamic message. If it exists, `treasure-msg.sh` is sourced when
-the mission is successfully completed.
-
-A fancy treasure chest is added to the left of the message. The width of the
-message shouldn't be more than 45 characters wide.
+the mission is successfully completed. Note that if this file finished with a
+non 0 return value, the `treasure.sh` file is *neither sourced nor installed*.
+It can be used to avoid problems when some `treasure.sh` has some
+dependencies.
 
 
 ### `bin/` (optional)
@@ -321,7 +366,7 @@ archives by default.
 ### `test.sh` (optional)
 
 This file is sourced by the command `gsh test`, which is only available in
-debug mode. The `test.sh` script usually uses a mix of standard bash commands
+debug mode. The `test.sh` script usually uses a mix of standard shell commands
 and the special commands `gsh assert check true` (or `gsh assert check false`)
 which make testing easier.
 
@@ -338,17 +383,11 @@ You can give a list of `index.txt` files and mission directories as arguments
 of GameShell if you want to customize the list / order of missions. This is
 particularly useful when testing a new mission:
 ```sh
-$ ./start.sh -RD missions/contrib/my_new_mission
+$ ./start.sh -Rdq missions/contrib/my_new_mission
 ```
-(The `-F` flag forces execution in the source directory, the `-R` flag resets
-the previous game, and the flag `-D` will run GameShell in "debug" mode.)
-
-
-Some available functions
-------------------------
-
-The file `$GSH_ROOT/lib/missions_utils.sh` defines a couple of useful
-functions.
+(The `-R` flag resets the previous game, the flag `-d` will run GameShell in
+"debug" mode, and the `-q` flag removes the small messages at the start of
+each mission.)
 
 
 Dummy missions
@@ -363,7 +402,7 @@ contain a `static.sh` file. It can for example be used to share executable
 files in its `bin` or `sbin` directory.
 
 It can also contain data that will be used by other missions:
-* either the `static.sh` file can copy the data to `$GSH_VAR` (or some other
+* either the `static.sh` file can copy the data to `$GSH_TMP` (or some other
   place),
 * or the real missions can use symbolic links (with relative path) to refer to
   that data.

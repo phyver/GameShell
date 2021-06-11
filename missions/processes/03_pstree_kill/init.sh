@@ -1,8 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 _mission_init() {
 
-  local CC
   if command -v gcc >/dev/null
   then
     if [ "$GSH_MODE" = DEBUG ]
@@ -53,57 +52,55 @@ _mission_init() {
       # under BSD, libintl is installed in /usr/local
       {
         echo "GSH: compiling process.c, first try" >&2
-        echo $CC "$MISSION_DIR/process.c" -o "$GSH_VAR/$(gettext "nice_fairy")"
-        $CC "$MISSION_DIR/process.c" -o "$GSH_VAR/$(gettext "nice_fairy")"
-        echo $CC "$MISSION_DIR/process.c" -o "$GSH_VAR/$(gettext "mischievous_imp")"
-        $CC "$MISSION_DIR/process.c" -o "$GSH_VAR/$(gettext "mischievous_imp")"
+        echo $CC "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "nice_fairy")"
+        $CC "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "nice_fairy")"
+        echo $CC "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "mischievous_imp")"
+        $CC "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "mischievous_imp")"
       } ||
       {
         echo "GSH: compiling process.c, second try"
-        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_VAR/$(gettext "nice_fairy")"
-        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_VAR/$(gettext "nice_fairy")"
-        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_VAR/$(gettext "mischievous_imp")"
-        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_VAR/$(gettext "mischievous_imp")"
+        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "nice_fairy")"
+        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "nice_fairy")"
+        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "mischievous_imp")"
+        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "mischievous_imp")"
       } || { echo "compilation failed" >&2; return 1; }
 
-      mkdir -p "$GSH_VAR/fairy/"
-      $CC -D WHO=FAIRY "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/fairy/$(gettext "spell")"
+      mkdir -p "$GSH_TMP/fairy/"
+      $CC -D WHO=FAIRY "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/fairy/$(gettext "spell")"
 
-      mkdir -p "$GSH_VAR/imp/"
-      $CC -D WHO=IMP "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/imp/$(gettext "spell")"
+      mkdir -p "$GSH_TMP/imp/"
+      $CC -D WHO=IMP "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/imp/$(gettext "spell")"
     )
     unset CC
 
   else
 
-    local BASH_PATH=$(command -v bash)
+    cp "$MISSION_DIR/nice_fairy.sh" "$GSH_TMP/$(gettext "nice_fairy")"
+    chmod 755 "$GSH_TMP/$(gettext "nice_fairy")"
 
-    { echo "#!$BASH_PATH" ; sed "1d" "$MISSION_DIR/nice_fairy.sh" ; } > "$GSH_VAR/$(gettext "nice_fairy")"
-    chmod 755 "$GSH_VAR/$(gettext "nice_fairy")"
+    mkdir -p "$GSH_TMP/fairy/"
+    cp "$MISSION_DIR/fairy/spell.sh" "$GSH_TMP/fairy/$(gettext "spell")"
+    chmod 755 "$GSH_TMP/fairy/$(gettext "spell")"
 
-    mkdir -p "$GSH_VAR/fairy/"
-    cp "$MISSION_DIR/fairy/spell.sh" "$GSH_VAR/fairy/$(gettext "spell")"
-    chmod 755 "$GSH_VAR/fairy/$(gettext "spell")"
+    cp "$MISSION_DIR/mischievous_imp.sh" "$GSH_TMP/$(gettext "mischievous_imp")"
+    chmod 755 "$GSH_TMP/$(gettext "mischievous_imp")"
 
-    { echo "#!$BASH_PATH" ; sed "1d" "$MISSION_DIR/mischievous_imp.sh" ; } > "$GSH_VAR/$(gettext "mischievous_imp")"
-    chmod 755 "$GSH_VAR/$(gettext "mischievous_imp")"
-
-    mkdir -p "$GSH_VAR/imp/"
-    cp "$MISSION_DIR/imp/spell.sh" "$GSH_VAR/imp/$(gettext "spell")"
-    chmod 755 "$GSH_VAR/imp/$(gettext "spell")"
+    mkdir -p "$GSH_TMP/imp/"
+    cp "$MISSION_DIR/imp/spell.sh" "$GSH_TMP/imp/$(gettext "spell")"
+    chmod 755 "$GSH_TMP/imp/$(gettext "spell")"
   fi
 
-  "$GSH_VAR/$(gettext "nice_fairy")" &
-  local PID=$!
-  disown $PID
-  echo $PID > "$GSH_VAR/fairy.pid"
+  "$GSH_TMP/$(gettext "nice_fairy")" &
+  echo $! > "$GSH_TMP/fairy.pid"
 
-  "$GSH_VAR/$(gettext "mischievous_imp")" &
-  local PID=$!
-  disown $PID
-  echo $PID > "$GSH_VAR/imp.pid"
+  "$GSH_TMP/$(gettext "mischievous_imp")" &
+  echo $! > "$GSH_TMP/imp.pid"
 
   return 0
 }
+
+set +o monitor  # do not monitor background processes
+# FIXME: for some unknown reason, this doesn't work if we start with this
+# mission directly!
 
 _mission_init

@@ -1,2 +1,4 @@
-rm -f "$GSH_VAR/inventory_grimoires"
+#!/bin/sh
+
+rm -f "$GSH_TMP/inventory_grimoires"
 

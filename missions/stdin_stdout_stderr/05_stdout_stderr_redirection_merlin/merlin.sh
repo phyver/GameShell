@@ -7,13 +7,13 @@ main() {
     if [ -n "$*" ]
     then
         cmd_name=$(basename "$0")
-        msg="$(gettext 'Error: %s takes no argument.')"
+        msg=$(gettext 'Error: %s takes no argument.')
         printf "$msg\n" "$cmd_name" >&2
         return 1
     fi
 
     msg=$(gettext "THESECRETKEYISONSTDERR")
-    key=$(cat "$GSH_VAR/secret_key")
+    key=$(cat "$GSH_TMP/secret_key")
 
     I=${#msg}
     J=${#key}

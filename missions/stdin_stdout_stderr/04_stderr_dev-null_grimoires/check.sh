@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_check() {
-    local pc
+_mission_check() (
     # TODO: for some unknown reason, redirecting the output of fc into another
     # command shifts the results: it then sees the "gsh check" command that
     # was used to run this function
@@ -10,21 +9,24 @@ _mission_check() {
     # command
     pc=$(fc -nl -1 -1)
 
-    echo $pc | grep 'gsh\s\s*check' && return 1
+    echo "$pc" | grep -q 'gsh\s\s*check' && return 1
 
-    if [ -z "$(echo "$pc" | grep 'grep')" ]
+    if ! echo "$pc" | grep -q 'grep'
     then
         echo "$(gettext "Your previous command doesn't use the 'grep' command...")"
         return 1
     fi
 
-    if ! diff -q "$GSH_VAR/list_grimoires_GSH" <(eval "$pc" | sort) > /dev/null
+    temp_file=$(mktemp)
+    eval "$pc" | sort >"$temp_file"
+    if cmp -s "$GSH_TMP/list_grimoires_GSH" "$temp_file"
     then
-        return 1
+      rm -f "$temp_file"
+      return 0
     else
-        return 0
+      rm -f "$temp_file"
+      return 1
     fi
-}
-
+)
 
 _mission_check

@@ -14,7 +14,7 @@
 # Les définitions de ce fichier ne sont pas ajoutées directement
 # au shell courant. Vous pouvez cependant utiliser le raccourci
 # suivant pour ajouter les ajouter manuellement.
-alias reload="source $GSH_CHEST/bashrc"
+alias reload="source $GSH_CHEST/gshrc"
 
 # Voici quelques idées d'alias qui peuvent être utiles :
 # - un alias "gg" pour "gsh goal",

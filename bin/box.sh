@@ -75,7 +75,7 @@ do
       ;;
   esac
 done
-shift $(($OPTIND - 1))
+shift $((OPTIND - 1))
 
 # get filename, or "-"
 filename=${1:--}
@@ -143,7 +143,7 @@ else
     height=$(echo "$w_h" | cut -d' ' -f2)
   fi
 
-  $AWK -v box="$box" -v width=$width -v height=$height -f ./boxes-data.awk -f ./box.awk "$tmpfile" | decode
+  $AWK -v box="$box" -v width="$width" -v height="$height" -f ./boxes-data.awk -f ./box.awk "$tmpfile" | decode
 
   rm -f "$tmpfile"
 fi

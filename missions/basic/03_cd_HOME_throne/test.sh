@@ -1,3 +1,6 @@
+#!/bin/bash
+# ``history`` command is not in POSIX
+
 cd
 gsh assert check false
 

@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # need to be careful, as there are so many files in the Stall that
 # rm .../* may not work.
 (
@@ -5,10 +7,10 @@
   find . -type f | xargs rm -f
 )
 
-rm -f "$GSH_VAR/nb_commands" "$GSH_VAR/last_command"
+rm -f "$GSH_TMP/nb_commands" "$GSH_TMP/last_command"
 
-PROMPT_COMMAND=$OLD_PROMPT_COMMAND
-unset OLD_PROMPT_COMMAND
+PS1=$_PS1
+unset _PS1
 unset -f _cmd
 
-rm -f "$GSH_VAR/nbUnpaid" "$GSH_VAR/amountKing"
+rm -f "$GSH_TMP/nbUnpaid" "$GSH_TMP/amountKing"

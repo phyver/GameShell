@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_check() {
-  local nb_unpaid=$(cat "$GSH_VAR/nbUnpaid")
-  local response
-  read -erp "$(gettext "How many unpaid items are there?") " response
-  nb_cmd=$(cat "$GSH_VAR/nb_commands")
+_mission_check() (
+  nb_unpaid=$(cat "$GSH_TMP/nbUnpaid")
+  printf "%s " "$(gettext "How many unpaid items are there?")"
+  read -r response
+  nb_cmd=$(cat "$GSH_TMP/nb_commands")
 
   # TODO, check the "boring objects" are still here, to avoid the possibility
   # rm *boring*
@@ -20,6 +20,6 @@ _mission_check() {
       return 1
   fi
   return 0
-}
+)
 
 _mission_check

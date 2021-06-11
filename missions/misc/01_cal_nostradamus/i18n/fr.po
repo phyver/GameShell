@@ -28,5 +28,5 @@ msgstr  "La commande 'cal' est nécessaire pour la mission $MISSION_NAME.\n"
 msgid   "What was the day of the week for the $MM-$DD-$YYYY?"
 msgstr  "Quel était le jours de la semaine pour le $DD-$MM-$YYYY ?"
 
-msgid   "Your answer: "
-msgstr  "Votre réponse : "
+msgid   "Your answer:"
+msgstr  "Votre réponse :"

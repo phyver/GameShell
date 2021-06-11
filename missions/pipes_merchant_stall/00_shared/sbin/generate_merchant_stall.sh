@@ -23,11 +23,11 @@ awk -v dir="$dir" \
     -v transaction_template="$transaction_template" \
     -v nb_transactions=$nb_transactions \
     -v nb_boring_objects=$nb_boring_objects \
-    -v s_scroll=$s_scroll \
-    -v s_boring=$s_boring \
-    -v s_paid=$s_paid \
-    -v nb_king=$nb_king \
-    -v proba_paid=$proba_paid \
+    -v s_scroll="$s_scroll" \
+    -v s_boring="$s_boring" \
+    -v s_paid="$s_paid" \
+    -v nb_king="$nb_king" \
+    -v proba_paid="$proba_paid" \
     -v seed_file="$GSH_CONFIG/PRNG_seed" \
     -f "$MISSION_DIR/sbin/generate_merchant_stall.awk" \
     "$firstname_file" "$lastname_file" "$object_file"

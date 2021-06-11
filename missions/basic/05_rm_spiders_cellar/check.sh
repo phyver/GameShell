@@ -1,11 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_check() {
-    local cellar
+_mission_check() (
     cellar="$(eval_gettext '$GSH_HOME/Castle/Cellar')"
 
     # Check that there are no more spiders.
-    local spiders
     spiders=$(find "$cellar" -name "$(gettext "spider")_*")
     if [ -n "$spiders" ]
     then
@@ -14,7 +12,6 @@ _mission_check() {
     fi
 
     # Check that the bats are still there.
-    local bats_nb
     bats_nb=$(find "$cellar" -name "$(gettext "bat")_*" | wc -l)
     if [ "$bats_nb" -ne 2 ]
     then
@@ -23,6 +20,6 @@ _mission_check() {
     fi
 
     return 0
-}
+)
 
 _mission_check

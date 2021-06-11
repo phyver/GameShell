@@ -1,2 +1,4 @@
-rm -f "$GSH_VAR/arith.txt"
+#!/bin/sh
+
+rm -f "$GSH_TMP/arith.txt"
 

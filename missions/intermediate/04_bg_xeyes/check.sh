@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/sh
+
+# fc in specified in POSIX, but debian's sh doesn't implement it!
 
 # turn history on (off by default for non-interactive shells
 HISTFILE=$GSH_CONFIG/history

@@ -1,3 +1,5 @@
+#!/bin/sh
+
 mkdir -p "$(eval_gettext '$GSH_HOME/Garden/Maze')"
 mkdir -p "$(eval_gettext '$GSH_HOME/Garden/Flower_garden')"
 mkdir -p "$(eval_gettext '$GSH_HOME/Garden/Shed')"

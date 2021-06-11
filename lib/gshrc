@@ -29,9 +29,6 @@ export PS2="> "
 export PS3=""
 export PS4="+ "
 
-# running bash should take you "out" of GameShell
-alias bash='bash --rcfile "$GSH_LIB/gshrc" -i'
-
 # try to prevent using sudo and similar
 su() {
     echo "gsh: su: command not found" >&2
@@ -53,24 +50,26 @@ then
 fi
 
 
-shopt -s nullglob
-for file in "$GSH_CONFIG"/gshrc_*.sh
-do
-    # shellcheck source=/dev/null
-    . "$file"
-done
-shopt -u nullglob
+if [ -n "$(find "$GSH_CONFIG" -maxdepth 1 -name 'gshrc_*.sh' | head -n1)" ]
+then
+  for file in "$GSH_CONFIG"/gshrc_*.sh
+  do
+      # shellcheck source=/dev/null
+      . "$file"
+  done
+fi
 
-shopt -s nullglob
-for file in "$GSH_CONFIG"/treasure_*.sh
-do
-    # shellcheck source=/dev/null
-    . "$file"
-done
-shopt -u nullglob
+if [ -n "$(find "$GSH_CONFIG" -maxdepth 1 -name 'treasure_*.sh' | head -n1)" ]
+then
+  for file in "$GSH_CONFIG"/treasure_*.sh
+  do
+      # shellcheck source=/dev/null
+      . "$file"
+  done
+fi
 
 unset file MISSION_DIR
 
-[ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && _gsh_protect
+[ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh protect
 
 __gsh_start

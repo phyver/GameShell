@@ -3,5 +3,5 @@
 chmod a-rw "$GSH_ROOT"
 chmod a-rw "$GSH_MISSIONS"
 chmod a-r  "$GSH_CONFIG"
-chmod a-r  "$GSH_VAR"
+chmod a-r  "$GSH_TMP"
 chmod a-rw "$GSH_SBIN"

@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "$(gettext "What's the key that will make Merlin's chest to appear?")"
-read -er dcode
+read -r dcode
 
-if [ "$dcode" = "$(cat "$GSH_VAR/magic_word")" ]
+if [ "$dcode" = "$(cat "$GSH_TMP/magic_word")" ]
 then
   merlin_chest=$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')/$(gettext 'Merlin_s_chest')
   mkdir -p "$merlin_chest"

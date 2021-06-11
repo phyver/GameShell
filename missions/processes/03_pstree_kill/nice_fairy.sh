@@ -2,17 +2,14 @@
 
 . gettext.sh
 
-dir=$(eval_gettext '$GSH_HOME/Castle/Cellar')
-logfile=$GSH_VAR/snowflakes
+"$GSH_TMP/fairy/$(gettext "spell")" 0 &
+printf "$!," > "$GSH_TMP/fairy_spell.pids"
 
-"$GSH_VAR"/fairy/$(gettext "spell") 0 &
-printf "$!," > "$GSH_VAR/fairy_spell.pids"
+"$GSH_TMP/fairy/$(gettext "spell")" 1 &
+printf "$!," >> "$GSH_TMP/fairy_spell.pids"
 
-"$GSH_VAR"/fairy/$(gettext "spell") 1 &
-printf "$!," >> "$GSH_VAR/fairy_spell.pids"
-
-"$GSH_VAR"/fairy/$(gettext "spell") 2 &
-printf "$!" >> "$GSH_VAR/fairy_spell.pids"
+"$GSH_TMP/fairy/$(gettext "spell")" 2 &
+printf "$!" >> "$GSH_TMP/fairy_spell.pids"
 
 
 trap "" TERM INT

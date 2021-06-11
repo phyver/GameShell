@@ -1,8 +1,8 @@
-# #!/bin/sh
+#!/bin/sh
 
 # display some info about the system
 echo "========================="
-echo "OSTYPE=$OSTYPE"
+echo "bash' OSTYPE=$(bash -c 'echo $OSTYPE')"
 echo "========================="
 echo "uname -a"
 uname -a

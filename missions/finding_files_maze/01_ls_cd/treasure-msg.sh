@@ -1,3 +1,5 @@
+#!/bin/sh
+
 if command ls --color >/dev/null 2>/dev/null
 then
   # standard linux

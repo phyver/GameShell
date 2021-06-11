@@ -12,7 +12,7 @@
 # Whenever you edit this file, the definitions it contains are not
 # directly added to the current shell. You can however rely on the
 # following alias to do that for you.
-alias reload="source $GSH_CHEST/bashrc"
+alias reload="source $GSH_CHEST/gshrc"
 
 # Here are a few alias ideas for you:
 # - an alias "gg" for "gsh goal",
