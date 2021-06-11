@@ -326,9 +326,15 @@ _gsh_check() {
       # Display the text message (if it exists).
       if [ -f "$MISSION_DIR/treasure-msg.sh" ]
       then
-        echo
-        treasure_message <(mission_source "$MISSION_DIR/treasure-msg.sh")
-        echo
+        local tmp_treasure_file=$(mktemp)
+        mission_source "$MISSION_DIR/treasure-msg.sh" > "$tmp_treasure_file"
+        if [ -s "$tmp_treasure_file" ]
+        then
+          echo
+          treasure_message "$tmp_treasure_file"
+          echo
+        fi
+        rm -rf "$tmp_treasure_file"
       elif [ -f "$MISSION_DIR/treasure-msg.txt" ]
       then
         echo
