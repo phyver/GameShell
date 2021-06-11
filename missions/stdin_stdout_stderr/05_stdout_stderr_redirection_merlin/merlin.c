@@ -61,8 +61,6 @@ int main(int argc, char** argv)
     /* printf(">>> key_path = '%s'\n", key_path); */
 
     // remove trailing newline
-    if (key_path == NULL)
-        return 1;
     FILE* key_f = fopen(key_path, "r");
     int n = fread(key, 1, 2048, key_f);
     if (key[n - 1] == '\n') {
