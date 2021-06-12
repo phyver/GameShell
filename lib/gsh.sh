@@ -222,7 +222,7 @@ __gsh_start() {
 
       if ! cmp -s "$env_before" "$env_after"
       then
-        color_echo yellow "$(gettext "Error: this mission was initialized in a subshell.
+        color_echo yellow "$(gettext "Warning: this mission was initialized in a subshell.
 Run the command
     \$ gsh reset
 to make sure the mission is initialized properly.")" >&2
