@@ -82,7 +82,7 @@ shift $(($OPTIND - 1))
 filename=${1:--}
 if [ "$filename" != "-" ] && ! [ -f "$filename" ]
 then
-  echo "error: box.sh, '$filename' is not a file" &>2
+  echo "error: box.sh, '$filename' is not a file" >&2
   exit 1
 fi
 
