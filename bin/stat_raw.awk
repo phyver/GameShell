@@ -2,7 +2,7 @@
 
 function human_time(seconds) {
   if (seconds >= 24*3600) {
-    return sprintf("%dd", int(seconds/24*3600))
+    return sprintf("%.1fd", seconds/(24*3600))
   }
   hours = int(seconds / 3600);
   seconds = seconds % 3600;
