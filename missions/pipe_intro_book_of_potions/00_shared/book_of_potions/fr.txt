@@ -2,7 +2,7 @@
 2. Élixir de jeunesse ----------------------------- pages 3-4
 3. Philtre d'amour ----------------------------------- page 5
 4. Mort en bouteille (poison puissant) --------------- page 6
-5. Thé aux herbes ------------------------------------ page 7
+5. Tisane aux  herbes -------------------------------- page 7
 6. Potion d'invisibilité -------------------------- pages 7-8
 7. Potion de soin homéopathique (partie 1) -------- pages 8-9
 8. Potion de soin homéopathique (partie 2) ---------- page 10
@@ -83,8 +83,8 @@ _/
 /   
 \   
 == page 7 ===================================================
-Thé aux herbes
---------------
+Tisane aux herbes
+-----------------
 
 1) Faire bouillir de l'eau.
 2) Ajouter des herbes ramassées en forêt.

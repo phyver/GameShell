@@ -8,7 +8,7 @@ tout sur un parchemin. Lorsqu'une dette est remboursée, il inscrit
 "PAYÉ" à côté celle-ci.
 
 Combinez plusieurs commandes avec le pipe ``|`` pour déterminez la 
-dette du Duc.
+dette du roi.
 
 Remarque
 --------

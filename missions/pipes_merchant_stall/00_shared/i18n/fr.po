@@ -7,9 +7,8 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Stall"
 msgstr  "$GSH_HOME/Echoppe"
 
-#, fuzzy
 msgid   "%s bought %s for %d coppers%s"
-msgstr  "{} a acheté {} pour {} piécettes{}\n"
+msgstr  "%s a acheté %s pour %d piécettes%s"
 
 msgid   "PAID"
 msgstr  "PAYÉ"
@@ -26,9 +25,8 @@ msgstr  "lastnames.fr"
 msgid   "objects.en"
 msgstr  "objects.fr"
 
-#, fuzzy
 msgid   "s_c_r_o_l_l"
-msgstr  "_p_a_r_c_h_e_m_i_n"
+msgstr  "p_a_r_c_h_e_m_i_n"
 
 msgid   "the King"
 msgstr  "le Roi"

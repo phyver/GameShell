@@ -1,6 +1,6 @@
 SH_FILES=$(wildcard *.sh)
 EXCEPTIONS=deps.sh
-OTHER_FILES=spell.py spell.c
+OTHER_FILES=spell.c
 
 LANGUAGES=$(wildcard i18n/*.po)
 LANGUAGES:=$(filter-out i18n/en.po, $(LANGUAGES))

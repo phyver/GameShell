@@ -19,16 +19,16 @@ msgid   "Are you sure you removed all the imp's spells?"
 msgstr  "Vous êtes sûr d'avoir supprimé tous les sortilèges du lutin ?"
 
 msgid   "Did you kill the fairy?"
-msgstr  "Est-cA que vous avez tué la fée ?"
+msgstr  "Est-ce que vous avez tué la fée ?"
 
 msgid   "Did you kill the imp?"
-msgstr  "Est-cA que vous avez tué le lutin ?"
+msgstr  "Est-ce que vous avez tué le lutin ?"
 
 msgid   "Did you melt some of the snowflakes?"
-msgstr  "Est-cA que vous avez fait fondre des flocons ?"
+msgstr  "Est-ce que vous avez fait fondre des flocons ?"
 
 msgid   "Did you remove some of the fairy's spells?"
-msgstr  "Est-cA que vous avez supprimé un sortilège de la fée ?"
+msgstr  "Est-ce que vous avez supprimé un sortilège de la fée ?"
 
 #, sh-format
 msgid   "The command 'pstree' is required for mission $MISSION_NAME.\n"

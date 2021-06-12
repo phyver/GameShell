@@ -39,4 +39,4 @@ msgid   "There still are some silver coins in the maze!"
 msgstr  "Il y a encore des pièces d'argent dans le labyrinthe !"
 
 msgid   "silver_coin"
-msgstr  "silver_coin"
+msgstr  "piece_d_argent"
