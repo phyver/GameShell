@@ -9,7 +9,7 @@ msgstr  "$GSH_HOME/Foret/Hutte/Coffre"
 
 #, sh-format
 msgid   "$GSH_HOME/Garden"
-msgstr  "$GSH_HOME/Chateau/Cave"
+msgstr  "$GSH_HOME/Jardin"
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
