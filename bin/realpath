@@ -37,7 +37,7 @@ realpath() (
       command cd -- "$dir" 2> /dev/null || { echo "realpath: $arg1: cannot access final dirname $dir" >&2; return 1; }
       dir=$(command pwd -P)
       [ "$dir" = "/" ] && dir=""
-      command printf "%s/%s\n" "$dir" "$(command basename -- "$target")"
+      command printf '%s/%s\n' "$dir" "$(command basename -- "$target")"
       return 0
     fi
   done

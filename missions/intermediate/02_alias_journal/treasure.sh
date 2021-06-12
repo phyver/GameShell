@@ -1,4 +1,6 @@
-alias "$(gettext "journal")"="nano $GSH_CHEST/$(gettext "journal").txt"
+#!/bin/sh
+
+alias "$(gettext "journal")"="nano '$GSH_CHEST/$(gettext "journal").txt'"
 
 if [ ! -f "$GSH_CHEST/gshrc" ]
 then

@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_check() {
-    local maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
+_mission_check() (
+    maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 
-    local nb=$(find "$maze" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")" | wc -l)
+    nb=$(find "$maze" -type f -print0 | xargs -0 grep -l "$(gettext "ruby")" | wc -l)
 
     if [ "$nb" -gt 1 ]
     then
@@ -16,7 +16,7 @@ _mission_check() {
         return 1
     fi
 
-    local filename=$(cut -d" " -f1 "$GSH_VAR/ruby")
+    filename=$(cut -d" " -f1 "$GSH_VAR/ruby")
 
     if ! [ -f "$GSH_CHEST/$filename" ]
     then
@@ -28,7 +28,6 @@ _mission_check() {
         return 1
     fi
     return 0
-}
-
+)
 
 _mission_check

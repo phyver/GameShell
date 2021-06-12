@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# ``history`` command is not in POSIX
+
 history -s "xeyes"
 history -s "xeyes &"
 xeyes &

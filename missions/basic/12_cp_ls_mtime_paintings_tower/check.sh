@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_check() {
-    local filename="$(head -n1 "$GSH_VAR/painting")"
+_mission_check() (
+    filename="$(head -n1 "$GSH_VAR/painting")"
 
-    local n=$(find "$GSH_CHEST" -name "$(gettext "painting")_*" | wc -l)
+    n=$(find "$GSH_CHEST" -name "$(gettext "painting")_*" | wc -l)
     if [ "$n" -eq 0 ]
     then
         echo "$(gettext "There is no painting in your chest...")"
@@ -31,7 +31,7 @@ _mission_check() {
         echo "$(gettext "The painting in your chest is invalid...")"
         return 1
     fi
-}
+)
 
 
 _mission_check

@@ -1,11 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_init() {
+_mission_init() (
   mkdir -p "$(eval_gettext '$GSH_HOME/Castle/Observatory')"
 
   random_string 200 > "$GSH_VAR/secret_key"
 
-  local CC
   if command -v cc >/dev/null
   then
     CC=cc
@@ -51,6 +50,6 @@ _mission_init() {
     copy_bin  "$MISSION_DIR"/merlin.sh "$(eval_gettext '$GSH_HOME/Castle/Observatory')/merlin"
     chmod 755 "$(eval_gettext '$GSH_HOME/Castle/Observatory')/merlin"
   fi
-}
+)
 
 _mission_init

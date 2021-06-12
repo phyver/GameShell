@@ -1,21 +1,20 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_auto() {
-  local YYYY=$(cut -d"-" -f1 "$GSH_VAR"/date)
-  local MM=$(cut -d"-" -f2 "$GSH_VAR"/date)
-  local DD=$(cut -d"-" -f3 "$GSH_VAR"/date)
+_mission_auto() (
+  YYYY=$(cut -d"-" -f1 "$GSH_VAR"/date)
+  MM=$(cut -d"-" -f2 "$GSH_VAR"/date)
+  DD=$(cut -d"-" -f3 "$GSH_VAR"/date)
 
   DOW() (
-    local dow
     if dow=$(date --date="$1" +%A 2> /dev/null)
     then
       # with gnu "date" command
-      echo $dow
+      echo "$dow"
       return 0
     elif dow=$(date -jf "%Y-%m-%d" "$1" +%A 2> /dev/null)
     then
       # with freebsd "date" command
-      echo $dow
+      echo "$dow"
       return 0
     else
       echo "$(gettext "Error: can not get day of week with 'date' command.")" >&2
@@ -23,18 +22,17 @@ _mission_auto() {
     fi
   )
 
-  local day=$(DOW "$YYYY-$MM-$DD")
-  local I
+  day=$(DOW "$YYYY-$MM-$DD")
   for I in $(seq 7)
   do
-    local answer=$(DOW "2000-05-$I")
+    answer=$(DOW "2000-05-$I")
     if [ "$day" = "$answer" ]
     then
       unset -f DOW
-      gsh check < <(echo "$I")
+      echo "$I"
       return
     fi
   done
-}
+)
 
-_mission_auto
+_mission_auto | gsh check

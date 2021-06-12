@@ -1,8 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 _mission_init() {
 
-  local CC
   if command -v gcc >/dev/null
   then
     if [ "$GSH_MODE" = DEBUG ]
@@ -50,10 +49,12 @@ _mission_init() {
     chmod 755 "$GSH_VAR/$(gettext "spell")"
   fi
   "$GSH_VAR/$(gettext "spell")" &
-  local PID=$!
-  disown $PID
-  echo $PID > "$GSH_VAR"/spell.pid
+  echo $! > "$GSH_VAR"/spell.pid
   return 0
 }
 
-_mission_init
+set +o monitor  # do not monitor background processes
+# FIXME: for some unknown reason, this doesn't work if we start with this
+# mission directly!
+
+set +b; _mission_init

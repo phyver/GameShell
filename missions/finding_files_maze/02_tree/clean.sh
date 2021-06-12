@@ -1,2 +1,4 @@
-source "$MISSION_DIR/../00_shared/clean.sh"
+#!/bin/sh
+
+. "$MISSION_DIR/../00_shared/clean.sh"
 rm -f "$GSH_VAR/silver_coin"

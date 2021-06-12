@@ -1,3 +1,5 @@
+#!/bin/bash
+
 history -s "xeyes"
 history -s "xeyes &"
 gsh assert check false

@@ -12,7 +12,7 @@ DELAY=5
 while true
 do
     sleep $DELAY & wait $!
-    INDENT=$(echo "                       " | cut -c1-$((2+RANDOM%15)))
+    INDENT=$(echo "                       " | cut -c1-$((2+$(RANDOM)%15)))
     cat <<'EOS' | sed "s/^/$INDENT/g"
 
       *#@*

@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_check() {
-  local secret=$(cat "$GSH_VAR/secret_key")
+_mission_check() (
+  secret=$(cat "$GSH_VAR/secret_key")
 
-  local r
-  read -erp "$(gettext "What is the secret key?") " r
+  printf "%s " "$(gettext "What is the secret key?")"
+  read -r r
 
   if [ "$secret" != "$r" ]
   then
@@ -19,6 +19,6 @@ _mission_check() {
     return 1
   fi
   return 0
-}
+)
 
 _mission_check

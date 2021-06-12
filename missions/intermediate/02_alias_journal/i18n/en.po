@@ -8,14 +8,14 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Forest/Hut/Chest"
 msgstr  "$GSH_HOME/Forest/Hut/Chest"
 
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
+
 # path for gshrc containing the explanations
 #, sh-format
 msgid   "$MISSION_DIR/gshrc/en.sh"
 msgstr  "$MISSION_DIR/gshrc/en.sh"
-
-# path for the text file containing the goal
-msgid   "$MISSION_DIR/goal/en.txt"
-msgstr  "$MISSION_DIR/goal/en.txt"
 
 # path for the text file containing the treasure message
 msgid   "$MISSION_DIR/treasure-msg/en.txt"

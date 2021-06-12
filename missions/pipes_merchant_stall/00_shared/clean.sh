@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # need to be careful, as there are so many files in the Stall that
 # rm .../* may not work.
 (

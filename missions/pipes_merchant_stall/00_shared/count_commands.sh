@@ -1,3 +1,11 @@
+#!/bin/bash
+
+# the ``history`` command is not in POSIX but it might be possible to use fc
+# instead.
+# PROMPT_COMMAND is only bash
+# FIXME: we could try relying on fc' indices to avoid relying no
+# PROMPT_COMMAND
+
 echo 0 > "$GSH_VAR/nb_commands"
 history -a
 fc -l | tail -n 1 | awk '{print $1}' > "$GSH_VAR/last_command"
@@ -15,7 +23,7 @@ _cmd() {
   local pc=$(tail -n1 "$HISTFILE")
   local nb_cmd=$(cat "$GSH_VAR/nb_commands")
 
-  if [ "$last_cmd_1" != "$last_cmd_2" ] && [ -n "$pc" ] && ! echo "$pc" | grep -x "\s*gsh\s*\w*\s*" &> /dev/null
+  if [ "$last_cmd_1" != "$last_cmd_2" ] && [ -n "$pc" ] && ! echo "$pc" | grep -x '\s*gsh\s*\w*\s*' &>/dev/null
   then
     nb_cmd=$((nb_cmd+1))
     echo $nb_cmd > "$GSH_VAR/nb_commands"

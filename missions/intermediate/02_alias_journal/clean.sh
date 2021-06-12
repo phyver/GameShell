@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 case "$GSH_LAST_ACTION" in
   "check_true")
     ;;
   *)
-    unalias journal 2>/dev/null
+    unalias "$(gettext "journal")" 2>/dev/null
     unset EDITOR
     ;;
 esac

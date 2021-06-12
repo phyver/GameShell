@@ -351,8 +351,10 @@ Do you want to remove it and start a new game? [y/N]') "
     if [ -f "$MISSION_DIR/gshrc" ]
     then
       BASHRC_FILE=$GSH_CONFIG/gshrc_${FULL_NB}_$(basename "$MISSION_DIR").sh
-      echo "export MISSION_DIR=\"$MISSION_DIR\"" > "$BASHRC_FILE"
-      echo "export TEXTDOMAIN=\"$DOMAIN\"" >> "$BASHRC_FILE"
+      {
+        echo "export MISSION_DIR=\"$MISSION_DIR\"";
+        echo "export TEXTDOMAIN=\"$DOMAIN\"";
+      } >"$BASHRC_FILE"
       cat "$MISSION_DIR/gshrc" >> "$BASHRC_FILE"
       echo "export TEXTDOMAIN=gsh" >> "$BASHRC_FILE"
       unset BASHRC_FILE

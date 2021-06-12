@@ -13,7 +13,7 @@ _mission_init() (
   then
     echo "$(eval_gettext "Process names should be equal to the corresponding filename for mission \$MISSION_NAME.")" >&2
     return 1
-  elif ! command -v ps &> /dev/null
+  elif ! command -v ps >/dev/null
   then
     echo "$(eval_gettext "The command 'ps' is required for mission \$MISSION_NAME.
 (Debian / Ubuntu: install package 'psproc')")"

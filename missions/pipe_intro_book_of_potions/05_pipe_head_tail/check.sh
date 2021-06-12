@@ -1,50 +1,43 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_check() {
-    local cave
-    cave="$(eval_gettext '$GSH_HOME/Mountain/Cave')"
+_mission_check() (
+  cave="$(eval_gettext '$GSH_HOME/Mountain/Cave')"
 
-    local pc
-    pc=$(fc -nl -1 -1)
+  pc=$(fc -nl -1 -1)
 
-    local goal
-    goal=$(realpath "$cave")
-    local current
-    current=$(realpath "$PWD")
+  goal=$(realpath "$cave")
+  current=$(realpath "$PWD")
 
-    if ! diff -q "$cave/$(gettext 'Book_of_potions')" "$GSH_VAR/book_of_potions" > /dev/null
-    then
-      echo "$(gettext "You altered the book...")"
-      return 1
-    fi
+  if ! diff -q "$cave/$(gettext 'Book_of_potions')" "$GSH_VAR/book_of_potions" > /dev/null
+  then
+    echo "$(gettext "You altered the book...")"
+    return 1
+  fi
 
-    if [ "$goal" != "$current" ]
-    then
-        echo "$(gettext "You are not in the cave with Servillus!")"
-        return 1
-    fi
-    if [ -n "$(echo "$pc" | grep -E 'awk|sed')" ]
-    then
-      echo "$(gettext "If you know awk or sed, what are you doing playing GameShell?")"
-    elif [ -z "$(echo "$pc" | grep 'tail' | grep 'head')" ]
-    then
-        echo "$(gettext "You have not used a combination of 'head' and 'tail'!")"
-        return 1
-    fi
+  if [ "$goal" != "$current" ]
+  then
+    echo "$(gettext "You are not in the cave with Servillus!")"
+    return 1
+  fi
+  if echo "$pc" | grep -Eq 'awk|sed'
+  then
+    echo "$(gettext "If you know awk or sed, what are you doing playing GameShell?")"
+  elif [ -z "$(echo "$pc" | grep 'tail' | grep 'head')" ]
+  then
+    echo "$(gettext "You have not used a combination of 'head' and 'tail'!")"
+    return 1
+  fi
 
-    echo $pc | grep 'gsh\s\s*check' && return 1
+  echo "$pc" | grep -q 'gsh\s\s*check' && return 1
 
-    local expected
-    expected="$(head -n 6 "$GSH_VAR/book_of_potions/$(gettext 'page')_13" | tail -n 3)"
-    local res
-    res="$(eval "$pc")"
-    if [ "$res" != "$expected" ]
-    then
-        echo "$(gettext "Your previous command does not give the expected result...")"
-        return 1
-    fi
-    return 0
-}
-
+  expected="$(head -n 6 "$GSH_VAR/book_of_potions/$(gettext 'page')_13" | tail -n 3)"
+  res="$(eval "$pc")"
+  if [ "$res" != "$expected" ]
+  then
+    echo "$(gettext "Your previous command does not give the expected result...")"
+    return 1
+  fi
+  return 0
+)
 
 _mission_check

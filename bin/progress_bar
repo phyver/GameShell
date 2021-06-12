@@ -202,7 +202,7 @@ animation() {
       printf "$s"
       # Slow down the animation a little bit.
       sleep $DELAY
-      kill -0 $PID 2>/dev/null || return
+      kill -0 "$PID" 2>/dev/null || return
     done
   done
 }
@@ -237,7 +237,7 @@ EOS
   fi
 
   init_data "$design"
-  if kill -0 $PID 2>/dev/null
+  if kill -0 "$PID" 2>/dev/null
   then
     animation
     printf "$POST"

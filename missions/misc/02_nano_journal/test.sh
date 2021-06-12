@@ -1,3 +1,5 @@
+#!/bin/sh
+
 rm -f "$GSH_CHEST/$(gettext "journal").txt"
 gsh assert check false
 

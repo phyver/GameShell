@@ -41,7 +41,7 @@ N=0
 while [ -e "$GSH_ROOT" ]
 do
   N=$((N+1))
-  GSH_ROOT=$(echo "$GSH_ROOT" | sed "s/\.[0-9]*$//")
+  GSH_ROOT=$(echo "$GSH_ROOT" | sed 's/\.[0-9]*$//')
   GSH_ROOT="$GSH_ROOT.$N"
 done
 mkdir -p "$GSH_ROOT"

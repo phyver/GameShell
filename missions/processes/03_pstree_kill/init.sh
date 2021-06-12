@@ -1,8 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 _mission_init() {
 
-  local CC
   if command -v gcc >/dev/null
   then
     if [ "$GSH_MODE" = DEBUG ]
@@ -76,16 +75,14 @@ _mission_init() {
 
   else
 
-    local BASH_PATH=$(command -v bash)
-
-    { echo "#!$BASH_PATH" ; sed "1d" "$MISSION_DIR/nice_fairy.sh" ; } > "$GSH_VAR/$(gettext "nice_fairy")"
+    cp "$MISSION_DIR/nice_fairy.sh" "$GSH_VAR/$(gettext "nice_fairy")"
     chmod 755 "$GSH_VAR/$(gettext "nice_fairy")"
 
     mkdir -p "$GSH_VAR/fairy/"
     cp "$MISSION_DIR/fairy/spell.sh" "$GSH_VAR/fairy/$(gettext "spell")"
     chmod 755 "$GSH_VAR/fairy/$(gettext "spell")"
 
-    { echo "#!$BASH_PATH" ; sed "1d" "$MISSION_DIR/mischievous_imp.sh" ; } > "$GSH_VAR/$(gettext "mischievous_imp")"
+    cp "$MISSION_DIR/mischievous_imp.sh" "$GSH_VAR/$(gettext "mischievous_imp")"
     chmod 755 "$GSH_VAR/$(gettext "mischievous_imp")"
 
     mkdir -p "$GSH_VAR/imp/"
@@ -94,16 +91,16 @@ _mission_init() {
   fi
 
   "$GSH_VAR/$(gettext "nice_fairy")" &
-  local PID=$!
-  disown $PID
-  echo $PID > "$GSH_VAR/fairy.pid"
+  echo $! > "$GSH_VAR/fairy.pid"
 
   "$GSH_VAR/$(gettext "mischievous_imp")" &
-  local PID=$!
-  disown $PID
-  echo $PID > "$GSH_VAR/imp.pid"
+  echo $! > "$GSH_VAR/imp.pid"
 
   return 0
 }
+
+set +o monitor  # do not monitor background processes
+# FIXME: for some unknown reason, this doesn't work if we start with this
+# mission directly!
 
 _mission_init

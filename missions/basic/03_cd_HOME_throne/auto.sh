@@ -1,3 +1,6 @@
+#!/bin/bash
+# ``history`` command is not in POSIX
+
 cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
 
 # commands from a sourced file aren't saved in the history,

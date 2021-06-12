@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd
 gsh assert check false
 

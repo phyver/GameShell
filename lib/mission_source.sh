@@ -52,8 +52,7 @@ mission_source() {
   fi
 
   echo "    GSH: sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
-  local source_ret_value=""  # otherwise, it appears in the environment!
-  local _MISSION_DIR=""
+  local _MISSION_DIR=""  # otherwise, it appears in the environment!
   local _TEXTDOMAIN=""
   local _MISSION_NAME=""
   local MISSION_NAME=""

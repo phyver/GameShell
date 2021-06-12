@@ -1,9 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_check_p() {
-    local coin_name=$1
-    local COIN_NB=$2
-    local path
+_mission_check_p() (
+    coin_name=$1
+    COIN_NB=$2
     path=$(find "$GSH_CHEST" -name "*$(gettext "$coin_name")_$COIN_NB" -type f)
 
     if [ -z "$path" ]
@@ -16,12 +15,12 @@ _mission_check_p() {
         echo "$(eval_gettext "Coin '\$coin_name' in your chest is invalid!")"
         return 1
     fi
-}
+)
 
-_mission_check() {
-    local maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
+_mission_check() (
+    maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 
-    local nb=$(find "$maze" -iname "$(gettext "gold_coin")" -type f | wc -l)
+    nb=$(find "$maze" -iname "$(gettext "gold_coin")" -type f | wc -l)
     if [ "$nb" -gt 2 ]
     then
         echo "$(gettext "There are too many gold coins in the maze!")"
@@ -34,7 +33,7 @@ _mission_check() {
     fi
 
     _mission_check_p "gold_coin" 1 && _mission_check_p "GolD_CoiN" 2
-}
+)
 
 if _mission_check
 then

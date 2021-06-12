@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cp "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')/$(head -n1 "$GSH_VAR/painting")" "$GSH_CHEST"
 gsh assert check true
 

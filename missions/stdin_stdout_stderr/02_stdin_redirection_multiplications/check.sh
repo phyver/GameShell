@@ -1,21 +1,19 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_check() {
-  local time_limit=$(( $(date +%s) + 10 ))
+_mission_check() (
+  time_limit=$(( $(date +%s) + 10 ))
 
   exec 3< "$GSH_VAR/arith.txt"
-  local line
-  while IFS='' read -response -u 3 line
+  while IFS='' read -r line <&3
   do
-    local question="$(echo "$line" | cut -d"|" -f1)"
-    local result="$(echo "$line" | cut -d"|" -f2)"
+    question="$(echo "$line" | cut -d"|" -f1)"
+    result="$(echo "$line" | cut -d"|" -f2)"
 
-    local response
-    read -erp "$question" response
+    printf "%s" "$question"
+    read -r response
     if [ "$time_limit" -le "$(date +%s)" ]
     then
       echo "$(gettext "Too slow! You need to give the answers in less than 10 seconds...")"
-      OK=""
       break
     fi
 
@@ -31,7 +29,6 @@ _mission_check() {
         ;;
     esac
   done
-
-}
+)
 
 _mission_check

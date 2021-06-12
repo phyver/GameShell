@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 # Receives coin number as first argument.
-_mission_check() {
-    local coin_name="$(gettext "coin")_$1"
+_mission_check() (
+    coin_name="$(gettext "coin")_$1"
 
-    local n=$(find "$(eval_gettext '$GSH_HOME/Garden')" -maxdepth 1 -name ".*_$coin_name" | wc -l)
+    n=$(find "$(eval_gettext '$GSH_HOME/Garden')" -maxdepth 1 -name ".*_$coin_name" | wc -l)
     if [ "$n" -gt 1 ]
     then
         echo "$(eval_gettext "There are several '\$coin_name...' in the garden!")"
@@ -15,7 +15,7 @@ _mission_check() {
         return 1
     fi
 
-    local n=$(find "$GSH_CHEST" -maxdepth 1 -name ".*_$coin_name" | wc -l)
+    n=$(find "$GSH_CHEST" -maxdepth 1 -name ".*_$coin_name" | wc -l)
     if [ "$n" -gt 1 ]
     then
         echo "$(eval_gettext "There are several '\$coin_name...' in your chest!")"
@@ -26,7 +26,7 @@ _mission_check() {
         return 1
     fi
 
-    local chest_coin=$(find "$GSH_CHEST" -maxdepth 1 -name ".*_$coin_name")
+    chest_coin=$(find "$GSH_CHEST" -maxdepth 1 -name ".*_$coin_name")
     # check the coin.
     if ! check_file "$chest_coin"
     then
@@ -35,6 +35,6 @@ _mission_check() {
     fi
 
     return 0
-}
+)
 
 _mission_check 1 && _mission_check 2 && _mission_check 3

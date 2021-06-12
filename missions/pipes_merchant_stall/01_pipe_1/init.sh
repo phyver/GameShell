@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 _mission_init() {
-  if ! command -v generate_merchant_stall.sh &> /dev/null
+  if ! command -v generate_merchant_stall.sh >/dev/null
   then
     # FIXME: change message
     echo "$(eval_gettext "The script 'generate_merchant_stall.sh' is necessary for mission \$MISSION_NAME.
@@ -15,4 +15,5 @@ Make sure the corresponding mission is included.")" >&2
 
   return 0
 }
+
 _mission_init

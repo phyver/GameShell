@@ -1,3 +1,7 @@
+// FIXME: the semaphores can probably be safely removed if we open the pid file
+// with O_APPEND and use plain "write"
+// Same for stdout, using a single "write" for printing a lump of coal should
+// be enough to ensure non-overlapping.
 #include <fcntl.h>
 #include <libintl.h>
 #include <locale.h>

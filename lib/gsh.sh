@@ -31,7 +31,7 @@ __log_action() {
   action=$2
   D="$(date +%s)"
   S="$(checksum "$GSH_UID#$MISSION_NB#$action#$D")"
-  printf "%s %s %s %s\n" "$MISSION_NB" "$action" "$D" "$S" >> "$GSH_CONFIG/missions.log"
+  printf '%s %s %s %s\n' "$MISSION_NB" "$action" "$D" "$S" >> "$GSH_CONFIG/missions.log"
 }
 
 
@@ -593,7 +593,7 @@ gsh() {
         fi
         local MISSION_DIR="$(missiondir "$MISSION_NB")"
 
-        MISSION_NB=$MISSION_NB MISSION_DIR=$MISSION_DIR _gsh_$cmd "$@"
+        MISSION_NB=$MISSION_NB MISSION_DIR=$MISSION_DIR "_gsh_$cmd" "$@"
         ret=$?
       else
         echo "$(eval_gettext "Error: unknown gsh command '\$cmd'.

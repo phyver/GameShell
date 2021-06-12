@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# ``history`` command is not in POSIX
+
 cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
 
 # les commandes ne sont pas dans l'historique, il faut les y ajouter à la main !

@@ -1,3 +1,6 @@
+// FIXME: the semaphores can probably be safely removed if we open pid file
+// with O_APPEND and use plain "write"
+
 #include <fcntl.h>
 #include <libgen.h>
 #include <semaphore.h>
@@ -20,15 +23,15 @@
 // template for the input files
 #define IMP_INPUT_TEMPLATE "$MISSION_DIR/ascii-art/coal-%d.txt"
 #define FAIRY_INPUT_TEMPLATE "$MISSION_DIR/ascii-art/snowflake-%d.txt"
-#define INPUT_TEMPLATE                                                       \
+#define INPUT_TEMPLATE \
     (WHO == IMP ? IMP_INPUT_TEMPLATE : FAIRY_INPUT_TEMPLATE)
 
 // template for the output files
-#define IMP_OUTPUT_TEMPLATE                                                  \
+#define IMP_OUTPUT_TEMPLATE \
     "$(gettext '$GSH_HOME/Castle/Cellar')/%d_$(gettext 'coal')"
-#define FAIRY_OUTPUT_TEMPLATE                                                \
+#define FAIRY_OUTPUT_TEMPLATE \
     "$(gettext '$GSH_HOME/Castle/Cellar')/%d_$(gettext 'snowflake')"
-#define OUTPUT_TEMPLATE                                                      \
+#define OUTPUT_TEMPLATE \
     (WHO == IMP ? IMP_OUTPUT_TEMPLATE : FAIRY_OUTPUT_TEMPLATE)
 
 char input_template[1024]; // template for the input ASCII-art files
@@ -40,8 +43,8 @@ char output_file[1024];         // actual path for the current output file
 
 char line[1024]; // content of the ASCII-art file
 
-#define LOG_FILE                                                             \
-    (WHO == IMP ? "$GSH_VAR/coals.list" : "$GSH_VAR/snowflakes.list")
+#define LOG_FILE \
+    (WHO == IMP ? "$GSH_TMP/coals.list" : "$GSH_TMP/snowflakes.list")
 char log_file[1024]; // path for the log file
 
 #define MAX_SPACES 30

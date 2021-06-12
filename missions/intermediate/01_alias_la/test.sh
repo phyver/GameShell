@@ -1,3 +1,5 @@
+#!/bin/sh
+
 alias la="ls -A"
 gsh assert check true
 unalias la 2>/dev/null

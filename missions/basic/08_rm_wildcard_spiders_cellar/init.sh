@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-_mission_init() {
+_mission_init() (
   if ! [ -e "$MISSION_DIR/ascii-art" ]
   then
     DUMMY_MISSION=$(missionname "$MISSION_DIR/ascii-art")
@@ -9,15 +9,14 @@ _mission_init() {
     return 1
   fi
 
-  local CELLAR=$(eval_gettext "\$GSH_HOME/Castle/Cellar")
+  CELLAR=$(eval_gettext "\$GSH_HOME/Castle/Cellar")
   mkdir -p "$CELLAR"
   rm -f "$CELLAR"/*_"$(gettext "spider")"_*
 
-  local I
   for I in $(seq 100)
   do
-    local spider=${CELLAR}/${RANDOM}_$(gettext "spider")_$I
-    sign_file "$MISSION_DIR/ascii-art/spider-$((RANDOM%3)).txt" "$spider"
+    spider=${CELLAR}/$(RANDOM)_$(gettext "spider")_$I
+    sign_file "$MISSION_DIR/ascii-art/spider-$(($(RANDOM)%3)).txt" "$spider"
     if [ "$((I%5))" -eq 0 ]
     then
       printf "."
@@ -26,8 +25,8 @@ _mission_init() {
 
   for I in $(seq 5)
   do
-    local bat=${CELLAR}/${RANDOM}_$(gettext "bat")_$I
-    sign_file "$MISSION_DIR/ascii-art/bat-$((RANDOM%3)).txt" "$bat"
+    bat=${CELLAR}/$(RANDOM)_$(gettext "bat")_$I
+    sign_file "$MISSION_DIR/ascii-art/bat-$(($(RANDOM)%3)).txt" "$bat"
     if [ "$((I%5))" -eq 0 ]
     then
       printf "."
@@ -36,6 +35,6 @@ _mission_init() {
 
   find "$CELLAR" -maxdepth 1 -name "*_$(gettext "bat")_*" | sort | checksum > "$GSH_VAR/bats"
   return 0
-}
+)
 
 . progress_bar.sh _mission_init
