@@ -38,7 +38,7 @@ char output_template_tmp[1024]; // temporary template for the ouput file
 char output_template[1024];     // template for the ouput file
 char output_file[1024];         // actual path for the current output file
 
-char buf[4096]; // content of the ASCII-art file
+char line[1024]; // content of the ASCII-art file
 
 #define LOG_FILE                                                             \
     (WHO == IMP ? "$GSH_VAR/coals.list" : "$GSH_VAR/snowflakes.list")
@@ -136,11 +136,8 @@ int main()
 
         // random amount of spaces at the start of each line
         char* s = spaces + (rand() % MAX_SPACES);
-        int size = fread(buf, 1, 4096, in);
-        buf[size] = 0; // make sure it is a proper null terminated string
-        for (char* line = strtok(buf, "\n"); line != NULL;
-             line = strtok(NULL, "\n")) {
-            fprintf(out, "%s%s\n", s, line);
+        while (fgets(line, 1024, in)) {
+            fprintf(out, "%s%s", s, line);
         }
         fclose(in);
         fclose(out);
