@@ -1,8 +1,7 @@
 #!/bin/sh
 
 
-working_dir=$(cd "$(dirname "$0")"; pwd -P)
-PATH=$PATH:$working_dir
+cd -P "$(dirname "$0")"
 
 usage() {
   cat <<EOS
@@ -112,7 +111,7 @@ reflow() {
   then
     cat "$input"
   else
-    $AWK -f "$working_dir/reflow.awk" -v width="$reflow_width" "$input"
+    $AWK -f ./reflow.awk -v width="$reflow_width" "$input"
   fi
 }
 
@@ -126,7 +125,7 @@ else
   encode "$filename" | reflow > "$tmpfile"
 
   # create awk boxes database if necessary
-  [ -e "$working_dir/boxes-data.awk" ] || $AWK -f "$working_dir/../utils/create_boxes_data.awk" "$working_dir/../utils/boxes.db" > "$working_dir/boxes-data.awk"
+  [ -e ./boxes-data.awk ] || $AWK -f ./create_boxes_data.awk ../lib/boxes.db > ./boxes-data.awk
 
   # get width / height of text
   if [ -z "$width" ] || [ -z "$height" ]
@@ -144,7 +143,7 @@ else
     height=$(echo "$w_h" | cut -d' ' -f2)
   fi
 
-  $AWK -v box="$box" -v width=$width -v height=$height -f "$working_dir/boxes-data.awk" -f "$working_dir/box.awk" "$tmpfile" | decode
+  $AWK -v box="$box" -v width=$width -v height=$height -f ./boxes-data.awk -f ./box.awk "$tmpfile" | decode
 
   rm -f "$tmpfile"
 fi

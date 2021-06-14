@@ -209,7 +209,7 @@ echo "removing unnecessary files"
   [ "$KEEP_TEST" -ne 1 ] && echo "remove tests" && find ./missions -name "test.sh" | xargs rm -f
   [ "$KEEP_AUTO" -ne 1 ] && find ./missions -name auto.sh | xargs rm -f
 
-  rm -f "$GSH_ROOT/bin/boxes-data.awk" "$GSH_ROOT/utils/archive.sh"
+  # rm -f "$GSH_ROOT/bin/boxes-data.awk" "$GSH_ROOT/utils/archive.sh"
 )
 
 # change admin password
