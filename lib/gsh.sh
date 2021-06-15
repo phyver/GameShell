@@ -453,7 +453,6 @@ _gsh_assert() {
 
   local nb_tests=$(cat "$GSH_VAR/nb_tests")
   echo "$(( nb_tests + 1))" > "$GSH_VAR/nb_tests"
-  echo "INCR"
 
   if ! eval "$condition"
   then
