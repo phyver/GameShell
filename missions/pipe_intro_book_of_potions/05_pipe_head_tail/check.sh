@@ -23,7 +23,7 @@ _mission_check() {
         echo "$(gettext "You are not in the cave with Servillus!")"
         return 1
     fi
-    if [ -n "$(echo "$pc" | grep 'awk\|sed')" ]
+    if [ -n "$(echo "$pc" | grep -E 'awk|sed')" ]
     then
       echo "$(gettext "If you know awk or sed, what are you doing playing GameShell?")"
     elif [ -z "$(echo "$pc" | grep 'tail' | grep 'head')" ]
