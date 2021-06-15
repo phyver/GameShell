@@ -1,34 +1,28 @@
 #!/bin/sh
 
-# we need to use ps -c to only get the command name and not the full command in
-# macOS
-# the command name is pretty long as it the processes are not in the path and
-# are given as absolute path
-# GNU ps truncates the output according to COLUMNS, even when output is not on
-# a tty, hence we set COLUMNS to 512 which should be long enough.
 _mission_check() (
 
   pid=$(cat "$GSH_VAR"/fairy.pid)
-  if ! COLUMNS=512 ps -cp "$pid" | grep "$(gettext "nice_fairy")" > /dev/null
+  if ! my_ps "$pid" | grep -q "$(gettext "nice_fairy")"
   then
     echo "$(gettext "Did you kill the fairy?")"
     return 1
   fi
   pid=$(cat "$GSH_VAR"/imp.pid)
-  if ! COLUMNS=512 ps -cp "$pid" | grep "$(gettext "mischievous_imp")" > /dev/null
+  if ! my_ps "$pid" | grep -q "$(gettext "mischievous_imp")"
   then
     echo "$(gettext "Did you kill the imp?")"
     return 1
   fi
 
-  nb=$(COLUMNS=512 ps -cp $(cat "$GSH_VAR"/fairy_spell.pids) | grep -c "$(gettext "spell")")
+  nb=$(my_ps $(cat "$GSH_VAR"/fairy_spell.pids) | grep -c "$(gettext "spell")")
   if [ "$nb" -lt 3 ]
   then
     echo "$(gettext "Did you remove some of the fairy's spells?")"
     return 1
   fi
 
-  nb=$(COLUMNS=512 ps -cp $(cat "$GSH_VAR"/imp_spell.pids) | grep -c "$(gettext "spell")")
+  nb=$(my_ps $(cat "$GSH_VAR"/imp_spell.pids) | grep -c "$(gettext "spell")")
   if [ "$nb" -ne 0 ]
   then
     echo "$(gettext "Are you sure you removed all the imp's spells?")"
