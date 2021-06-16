@@ -1,6 +1,4 @@
-#!/bin/sh
-
-# this script should be source with the command to monitor as argument
+# this script should be sourced with the command to monitor as argument
 # it depends on arguments being passed to a sourced script, which is not
 # the case in POSIX, but does work in bash or zsh
 # one way to use with a POSIX shell is to do set ARGV manually with

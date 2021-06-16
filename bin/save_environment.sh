@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # this script should be **sourced**
 # it will output the current environment: names of variables, functions,
 # aliases and processes

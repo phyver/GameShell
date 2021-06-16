@@ -70,7 +70,7 @@ do
       then
         export LANGUAGE=$OPTARG
       else
-        if locale -a | grep -x "$OPTARG" >/dev/null
+        if locale -a | grep -qx "$OPTARG"
         then
           export LC_MESSAGES=$OPTARG
         else
@@ -198,6 +198,9 @@ Do you want to remove it and start a new game? [y/N]') "
 
   # recreate them
   mkdir -p "$GSH_HOME"
+  # change the HOME dir, but save the "real" one in a variable
+  export REAL_HOME="$HOME"
+  export HOME="$GSH_HOME"
 
   mkdir -p "$GSH_CONFIG"
   awk -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN { srand(); printf("%s", int(2^32 * rand())) > seed_file; }'
