@@ -41,12 +41,12 @@ cloned the repository, create an executable archive with the `archive.sh` script
 $ cd GameShell
 $ ./utils/archive.sh
 copy missions
-01_cd_1  -->  000001_cd_1
-...
-...
-generating '.mo' files
-removing 'auto.sh' scripts
-removing unnecessary (_*.sh, Makefile) files
+  -> copy basic/03_cd_HOME_throne
+  -> copy basic/04_mkdir_chest
+  ...
+generating '.mo' files: ...
+removing unnecessary files
+remove tests
 setting admin password
 setting default GameShell mode
 creating archive
@@ -54,18 +54,18 @@ creating self-extracting archive
 removing tgz archive
 removing temporary directory
 $ ls
-... GameShell.sh ...
+... gameshell.sh ...
 ```
 
-The `GameShell.sh` file contains an instance of GameShell that you can easily
+The `gameshell.sh` file contains an instance of GameShell that you can easily
 copy to any other computer. To run it, you can either use
 ```sh
-$ ./GameShell.sh
+$ ./gameshell.sh
 ```
 
 or
 ```sh
-$ bash ./GameShell.sh
+$ bash ./gameshell.sh
 ```
 
 

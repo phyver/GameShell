@@ -19,8 +19,8 @@ Pre-built archives for the various versions of the game can be found on the
 To download and start the latest version of the game simply run the following
 two commands in a terminal.
 ```sh
-$ wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
-$ bash GameShell.sh
+$ wget https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
+$ bash gameshell.sh
 ```
 
 Note that when you quit the game (with `control-d` or the command `gsh exit`)
@@ -89,8 +89,7 @@ In some situations, some other commands are needed. They are described by the
   and data are neither readable nor writable by the player. (Except in debug
   mode, or when running from the source repository.) That's to prevent
   accident where a player inadvertently removes some important file. Those
-  commands reset the read / write permissions. (The admin password is
-  necessary for running those commands.)
+  commands reset the read / write permissions.
 
 * `gsh auto`: if the mission comes with an automatic script (`auto.sh`), this
   command will call it. This script is supposed to complete the mission and
@@ -104,6 +103,9 @@ In some situations, some other commands are needed. They are described by the
 * `gsh index`: this will display the list of available missions, with their
   status. If you've used `skip` and `goto` a lot, this might come in handy.
 
+* `gsh stat`, `gsh stat raw` and `gsh stat raw -v` display various statistics
+  about the current game.
+
 The other commands are either self-explanatory (`gsh welcome`) or only useful
 while creating missions (`gsh assert ...`, `gsh test`).
 
@@ -116,7 +118,14 @@ The script `utils/archive.sh` is used to create an executable archive to
 distribute a (customized) version of GameShell.
 
 By default, it creates an archive with all the missions listed in the
-`missions/index.txt` file and with all the available translations.
+`$GSH_ROOT/missions/index.txt` file and with all the available translations.
+You can choose the missions you want by listing them on the command line:
+```sh
+$ ./utils/archive.sh missions/basic/01_cd_tower missions/basic/02_cd.._cellar/ missions/basic/03_cd_HOME_throne/
+```
+If a directory contains an `index.txt` file, all the missions listed in it
+will be included. You can also give an `index.txt` file directly on the
+command line.
 
 You can customize the archive with the following options
 
