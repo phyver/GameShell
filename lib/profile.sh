@@ -10,7 +10,6 @@ GSH_ROOT=$(cd "$GSH_ROOT" && pwd -P)
 # these directories should not be modified during a game
 export GSH_LIB="$GSH_ROOT/lib"
 export GSH_MISSIONS="$GSH_ROOT/missions"
-export GSH_UTILS="$GSH_ROOT/utils"
 
 # these directories should be erased when a new game is started, they only contain
 # dynamic data
