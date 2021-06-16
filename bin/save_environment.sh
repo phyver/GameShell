@@ -1,14 +1,20 @@
-#!/bin/bash
-
 # this script should be **sourced**
 # it will output the current environment: names of variables, functions,
 # aliases and processes
 
 {
-  compgen -v          | sed 's/^/Variable:/'
-  compgen -A function | sed 's/^/Function:/'
-  compgen -a          | sed 's/^/Alias:/'
+  # compgen -a          | sed 's/^/Alias:/'
+  alias | sed -e 's/^alias *//' -e 's/=.*//' -e 's/^/Alias:/'
+
+  # compgen -A function | sed 's/^/Function:/'
+
   ps -o pid,comm      | sed '1d;s/^/Process:/'
   pwd                 | sed 's/^/PWD:/'
-} | grep -vE "grep|ps|sed|sort|bash" | sort
+
+  # compgen -v          | sed 's/^/Variable:/'
+  [ -n "$BASH_VERSION" ] && set -o posix
+  set | sed -e 's/=.*//' -e 's/^/Variable:/'
+  [ -n "$BASH_VERSION" ] && set +o posix
+
+} | grep -vE "grep|ps|sed|sort|bash|zsh" | sort
 

@@ -52,6 +52,3 @@ then
 Aborting!")"
   exit 1
 fi
-
-
-# vim: shiftwidth=2 tabstop=2 softtabstop=2
