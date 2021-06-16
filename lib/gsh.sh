@@ -420,17 +420,20 @@ _gsh_assert_check() {
   local exit_status=$?
 
   local nb_tests=$(cat "$GSH_VAR/nb_tests")
-  echo "$(( nb_tests + 1))" > "$GSH_VAR/nb_tests"
+  nb_tests=$((nb_tests+1))
+  echo "$nb_tests" > "$GSH_VAR/nb_tests"
   local nb_failed_tests=$(cat "$GSH_VAR/nb_failed_tests")
 
   if [ "$expected" = "true" ] && [ "$exit_status" -ne 0 ]
   then
-    echo "$(( nb_failed_tests + 1))" > "$GSH_VAR/nb_failed_tests"
+    nb_failed_tests=$((nb_failed_tests+1))
+    echo "$nb_failed_tests" > "$GSH_VAR/nb_failed_tests"
     color_echo red "$(eval_gettext 'test $nb_tests failed') (expected check 'true')"
     [ -n "$msg" ] && echo "$msg"
   elif [ "$expected" = "false" ] && [ "$exit_status" -eq 0 ]
   then
-    echo "$(( nb_failed_tests + 1))" > "$GSH_VAR/nb_failed_tests"
+    nb_failed_tests=$((nb_failed_tests+1))
+    echo "$nb_failed_tests" > "$GSH_VAR/nb_failed_tests"
     color_echo red "$(eval_gettext 'test $nb_tests failed') (expected check 'false')"
     [ -n "$msg" ] && echo "$msg"
   fi
