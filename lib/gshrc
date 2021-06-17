@@ -21,6 +21,8 @@ export PATH=$GSH_ROOT/bin:$PATH:$GSH_BIN
 # shellcheck source=./lib/gameshell.sh
 . "$GSH_LIB/gsh.sh"
 
+# completion for (some) gsh commands
+complete -W 'check exit goal help index log reset stat welcome' gsh
 
 export PS1='[mission $(gsh pcm)] $ '
 export PS2="> "
