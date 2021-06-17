@@ -41,6 +41,9 @@ gsh help
 gsh index
   show list of missions, with their status
 
+gsh log [-v]
+  show the log file of gsh commands
+
 gsh pcm
   print the current mission number
 
@@ -54,10 +57,8 @@ gsh reset
 gsh skip                              (ADMIN)
   give up on the current mission and go to the next one
 
-gsh stat [-v]
-  display simple statistics about missions
-    gsh stat raw [N]    display all gsh actions [relative only to mission N]
-    gsh stat session    display a short summary
+gsh stat
+  display simple statistics about completed missions
 
 gsh systemconfig
   display the system configuration

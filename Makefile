@@ -1,7 +1,7 @@
 LANGUAGES=$(wildcard i18n/*.po)
 LANGUAGES:=$(filter-out i18n/en.po, $(LANGUAGES))
 SH_FILES= start.sh lib/gsh.sh lib/profile.sh bin/*
-AWK_FILES=bin/stat_session.awk
+AWK_FILES=bin/_gsh_stat.awk
 OTHER_FILES=
 
 SORT=--sort-output
