@@ -403,7 +403,7 @@ Aborting.")"
 init_gsh "$@"
 cd "$GSH_HOME"
 export GSH_UID=$(cat "$GSH_CONFIG/uid")
-date "+%Y-%m-%d %H:%M:%S" | sed 's/^/#NEW SESSION on /' >> "$GSH_CONFIG/missions.log"
+date "+%Y-%m-%d %H:%M:%S" | sed 's/^/#>>> /' >> "$GSH_CONFIG/missions.log"
 # make sure the shell reads it's config file by making it interactive (-i)
 exec bash --rcfile "$GSH_LIB/gshrc" -i
 

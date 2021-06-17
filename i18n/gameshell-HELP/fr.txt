@@ -40,6 +40,9 @@ gsh help
 gsh index
   affiche la liste des missions, avec leur statut
 
+gsh log [-v]
+  affiche le fichier de log des commandes gsh
+
 gsh pcm
   affiche le numéro de mission courant ("print current mission")
 
@@ -55,9 +58,7 @@ gsh skip                              (ADMIN)
   abandonne la mission en cours et passe à la suivante
 
 gsh stat [-v]
-  affiche des statistiques simples sur les missions
-    gsh stat raw [N]    affiche toutes les action gsh [relative uniquement à la mission N]
-    gsh stat session    affiche un petit résumé
+  affiche des statistiques simples sur les missions effectuées
 
 gsh systemconfig
   affiche la configuration du système
