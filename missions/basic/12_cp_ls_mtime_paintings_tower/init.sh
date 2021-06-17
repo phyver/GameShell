@@ -6,7 +6,13 @@ mkdir -p "$GSH_CHEST"
 _mission_init() (
   find "$GSH_HOME" -iname "$(gettext "painting")_*" -print0 | xargs -0 rm -rf
 
-  filename=$(mktemp "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')/$(gettext "painting")_XXXXXX")
+  cd "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')"
+
+  while true
+  do
+    filename="$(gettext "painting")_$(random_string 8)"
+    [ -e "$filename" ] || break
+  done
   box.sh -B Diamond "$MISSION_DIR/ascii-art/painting-pipe" > "$filename"
   Y=$((1980 + $(RANDOM)%10))
   M=$(printf "%02d" $((1 + $(RANDOM)%12)))
@@ -18,12 +24,20 @@ _mission_init() (
   sign_file "$filename"
   touch -t "$Y$M$D$h$m.$s" "$filename"
 
-  filename=$(mktemp "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')/$(gettext "painting")_XXXXXX")
+  while true
+  do
+    filename="$(gettext "painting")_$(random_string 8)"
+    [ -e "$filename" ] || break
+  done
   box.sh -B Diamond "$MISSION_DIR/ascii-art/painting-star_wars" > "$filename"
   sign_file "$filename"
   touch "$filename"
 
-  filename=$(mktemp "$(eval_gettext '$GSH_HOME/Castle/Main_tower/First_floor')/$(gettext "painting")_XXXXXX")
+  while true
+  do
+    filename="$(gettext "painting")_$(random_string 8)"
+    [ -e "$filename" ] || break
+  done
   box.sh -B Diamond "$MISSION_DIR/ascii-art/painting-joconde" > "$filename"
   Y=$(date +%Y)
   Y=$((Y + 1 + $(RANDOM)%10))
