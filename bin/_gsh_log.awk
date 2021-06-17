@@ -13,14 +13,14 @@ function human_time(seconds) {
 
 BEGIN {
   if (VERBOSE) {
-    FORMAT_STRING="%3d %-40s %s %8s ";
+    FORMAT_STRING="%3d %-40s %s %s %8s ";
   } else {
-    FORMAT_STRING="%3d %0s%s %8s  ";
+    FORMAT_STRING="%3d %0s%s %s %8s  ";
   }
 }
 
-/#NEW SESSION/ {
-    print substr($0, 2);
+/#>>>/ {
+    print ">>>", $2, $3;
     next
 }
 
@@ -28,6 +28,10 @@ BEGIN {
 
 
 $1 == current_mission && $2 == "START" { next; }
+
+(!session_start_time) && $2 == "START" {
+  session_start_time = $3+0;
+}
 
 # $1 != current_mission { printf("\n"); }
 
@@ -40,6 +44,9 @@ $1 == current_mission && $2 == "START" { next; }
   if (VERBOSE) sprintf("missiondir -r %d", n) | getline dir;
 
   delta_t = human_time($3 - previous_time);
+  if (session_start_time) {
+    t = human_time($3 - session_start_time);
+  }
   previous_time = $3+0;
 
   # check checksum using the "checksum" script, that must be in the path
@@ -50,10 +57,11 @@ $1 == current_mission && $2 == "START" { next; }
     sum_c = " ";
   }
 
-  printf(FORMAT_STRING, n, dir, sum_c, delta_t);
+  printf(FORMAT_STRING, n, dir, sum_c, delta_t, t);
 }
 
 (!MISSION_NB || MISSION_NB == $1) && $2 == "START" {
+  if (!session_start_time) session_start_time = $3+0;
   printf("start\n");
   next;
 }
@@ -63,6 +71,7 @@ $1 == current_mission && $2 == "START" { next; }
   print "-----";
   current_mission = "";
   previous_time = "";
+  session_start_time = "";
   next;
 }
 
