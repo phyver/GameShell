@@ -21,7 +21,7 @@ _mission_init() (
   R=$(RANDOM)
   sum=$(checksum "$R $(gettext "ruby")")
   echo "$R $(gettext "ruby") $sum" > "$dir1/$R"
-  echo "$R $(gettext "ruby") $sum" > "$GSH_VAR/ruby"
+  echo "$R $(gettext "ruby") $sum" > "$GSH_TMP/ruby"
 
   echo "$dir" | sed '1d' | while read dir1
   do

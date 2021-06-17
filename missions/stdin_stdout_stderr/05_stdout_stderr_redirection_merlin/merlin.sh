@@ -13,7 +13,7 @@ main() {
     fi
 
     msg=$(gettext "THESECRETKEYISONSTDERR")
-    key=$(cat "$GSH_VAR/secret_key")
+    key=$(cat "$GSH_TMP/secret_key")
 
     I=${#msg}
     J=${#key}

@@ -2,7 +2,7 @@
 
 mission_source "$MISSION_DIR/clean0.sh"
 
-rm -f "$GSH_VAR/great_hall_contents"
+rm -f "$GSH_TMP/great_hall_contents"
 
 case "$GSH_LAST_ACTION" in
   check_true | skip)

@@ -9,7 +9,7 @@ _mission_check() (
     return 1
   fi
 
-  nb=$(wc -l "$GSH_VAR/spell.pids" | awk '{print $1}')
+  nb=$(wc -l "$GSH_TMP/spell.pids" | awk '{print $1}')
   if [ "$nb" -eq 1 ]
   then
     echo "$(gettext "You haven't tried using the standard TERM signal on the spell.")"

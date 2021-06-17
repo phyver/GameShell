@@ -20,7 +20,7 @@ _mission_init() (
   R=$(basename "$file")
   sum=$(checksum "$R $(gettext "diamond")")
   echo "$R $(gettext "diamond") $sum" > "$file"
-  echo "$R $(gettext "diamond") $sum" > "$GSH_VAR/diamond"
+  echo "$R $(gettext "diamond") $sum" > "$GSH_TMP/diamond"
 
   return 0
 )

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set +o noglob
-rm -f "$GSH_VAR/start_time"
+rm -f "$GSH_TMP/start_time"
 
 case $GSH_LAST_ACTION in
   check_true)

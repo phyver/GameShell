@@ -192,7 +192,7 @@ Do you want to remove it and start a new game? [y/N]') "
   # remove all the game data
   rm -rf "$GSH_HOME"
   rm -rf "$GSH_CONFIG"
-  rm -rf "$GSH_VAR"
+  rm -rf "$GSH_TMP"
   rm -rf "$GSH_BIN"
   rm -rf "$GSH_SBIN"
 
@@ -217,7 +217,8 @@ Do you want to remove it and start a new game? [y/N]') "
   mkdir -p "$GSH_BIN"
   mkdir -p "$GSH_SBIN"
 
-  mkdir -p "$GSH_VAR"
+  mkdir -p "$GSH_TMP"
+  export TMPDIR="$GSH_TMP"
 
 
   # id of player

@@ -30,7 +30,7 @@ _mission_init() (
     cp "$MISSION_DIR/ascii-art/bat-$((RANDOM%3)).txt" "$bat"
   done
 
-  find "$CELLAR" -maxdepth 1 -name "*_$(gettext "bat")_*" | sort | checksum > "$GSH_VAR/bats"
+  find "$CELLAR" -maxdepth 1 -name "*_$(gettext "bat")_*" | sort | checksum > "$GSH_TMP/bats"
   return 0
 )
 

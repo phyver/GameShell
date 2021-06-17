@@ -47,22 +47,22 @@ _mission_init() {
       # "-lintl" to the compiler, so we have to try several things!
       {
         echo "GSH: compiling spell.c, first try" >&2
-        echo $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/$(gettext "spell")"
-        $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_VAR/$(gettext "spell")"
+        echo $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/$(gettext "spell")"
+        $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/$(gettext "spell")"
       } ||
       {
         echo "GSH: compiling spell.c, second try"
-        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_VAR/$(gettext "spell")"
-        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_VAR/$(gettext "spell")"
+        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_TMP/$(gettext "spell")"
+        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_TMP/$(gettext "spell")"
       }
     ) || { echo "compilation failed" >&2; return 1; }
 
   else
-    cp "$MISSION_DIR/spell.sh" "$GSH_VAR/$(gettext "spell")"
-    chmod 755 "$GSH_VAR/$(gettext "spell")"
+    cp "$MISSION_DIR/spell.sh" "$GSH_TMP/$(gettext "spell")"
+    chmod 755 "$GSH_TMP/$(gettext "spell")"
   fi
-  "$GSH_VAR/$(gettext "spell")" &
-  echo $! > "$GSH_VAR"/spell.pids
+  "$GSH_TMP/$(gettext "spell")" &
+  echo $! > "$GSH_TMP"/spell.pids
   return 0
 }
 

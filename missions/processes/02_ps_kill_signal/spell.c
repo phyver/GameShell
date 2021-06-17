@@ -97,7 +97,7 @@ int main()
 
     // define the path to the file in which to write the children's PIDs.
     wordexp_t result;
-    wordexp("$GSH_VAR/spell.pids", &result, 0);
+    wordexp("$GSH_TMP/spell.pids", &result, 0);
     // if the path contains spaces, the result is contained in several words!
     int pos = 0;
     for (int i = 0; result.we_wordv[i] != NULL; i++) {

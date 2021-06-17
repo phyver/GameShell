@@ -20,9 +20,9 @@ _DOW() (
 get_answer() (
     offset=$1
 
-    YYYY=$(cut -d"-" -f1 "$GSH_VAR"/date)
-    MM=$(cut -d"-" -f2 "$GSH_VAR"/date)
-    DD=$(cut -d"-" -f3 "$GSH_VAR"/date)
+    YYYY=$(cut -d"-" -f1 "$GSH_TMP"/date)
+    MM=$(cut -d"-" -f2 "$GSH_TMP"/date)
+    DD=$(cut -d"-" -f3 "$GSH_TMP"/date)
 
     day=$(_DOW "$YYYY-$MM-$DD")
     for i in $(seq 7)

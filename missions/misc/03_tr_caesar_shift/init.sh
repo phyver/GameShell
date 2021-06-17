@@ -5,7 +5,7 @@
 _mission_init() (
   SECRET_KEY=$(random_string 4 | tr A-Z a-z)
   # FIXME, only store hash of key?
-  echo "$SECRET_KEY" > "$GSH_VAR/magic_word"
+  echo "$SECRET_KEY" > "$GSH_TMP/magic_word"
 
   random_shift=$((12 + $(RANDOM) % 3))
 

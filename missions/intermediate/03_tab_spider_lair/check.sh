@@ -27,7 +27,7 @@ _mission_check() (
   fi
 
   now=$(date +%s)
-  start=$(cat "$GSH_VAR/start_time")
+  start=$(cat "$GSH_TMP/start_time")
   nb_seconds=$((now - start))
   if [ "$nb_seconds" -gt "$MAX_DELAY" ]
   then

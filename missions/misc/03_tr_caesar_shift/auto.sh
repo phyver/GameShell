@@ -1,3 +1,3 @@
 #!/bin/sh
 
-gsh check < "$GSH_VAR/magic_word"
+gsh check < "$GSH_TMP/magic_word"

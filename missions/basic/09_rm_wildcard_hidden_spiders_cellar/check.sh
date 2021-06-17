@@ -11,7 +11,7 @@ _mission_check() (
   fi
 
   S1=$(find "$CELLAR" -maxdepth 1 -name "*_$(gettext "bat")_*" | sort | checksum)
-  S2=$(cat "$GSH_VAR/bats")
+  S2=$(cat "$GSH_TMP/bats")
 
   if [ "$S1" != "$S2" ]
   then

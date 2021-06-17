@@ -23,13 +23,13 @@ _mission_check() (
         return 1
     fi
 
-    filename=$(cut -d" " -f1 "$GSH_VAR/diamond")
+    filename=$(cut -d" " -f1 "$GSH_TMP/diamond")
 
     if ! [ -f "$GSH_CHEST/$filename" ]
     then
         echo "$(gettext "The diamond is not in the chest!")"
         return 1
-    elif ! cmp -s "$GSH_VAR/diamond" "$GSH_CHEST/$filename"
+    elif ! cmp -s "$GSH_TMP/diamond" "$GSH_CHEST/$filename"
     then
         echo "$(gettext "The diamond in your chest is not valid!")"
         return 1

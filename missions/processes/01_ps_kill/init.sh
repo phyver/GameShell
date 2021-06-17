@@ -41,15 +41,15 @@ _mission_init() {
         exec 1>/dev/null
         exec 2>/dev/null
       fi
-      echo $CC "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")"
-      $CC "$MISSION_DIR/spell.c" -o "$GSH_VAR/$(gettext "spell")"
+      echo $CC "$MISSION_DIR/spell.c" -o "$GSH_TMP/$(gettext "spell")"
+      $CC "$MISSION_DIR/spell.c" -o "$GSH_TMP/$(gettext "spell")"
     ) || { echo "compilation failed" >&2; return 1; }
   else
-    cp "$MISSION_DIR/spell.sh" "$GSH_VAR/$(gettext "spell")"
-    chmod 755 "$GSH_VAR/$(gettext "spell")"
+    cp "$MISSION_DIR/spell.sh" "$GSH_TMP/$(gettext "spell")"
+    chmod 755 "$GSH_TMP/$(gettext "spell")"
   fi
-  "$GSH_VAR/$(gettext "spell")" &
-  echo $! > "$GSH_VAR"/spell.pid
+  "$GSH_TMP/$(gettext "spell")" &
+  echo $! > "$GSH_TMP"/spell.pid
   return 0
 }
 

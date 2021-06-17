@@ -17,7 +17,7 @@ Just copy all its lines to get perfect score.")" \
 
   book="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library')/$(gettext "Mathematics_101")"
   rm -f "$book"
-  questions=$GSH_VAR/arith.txt
+  questions=$GSH_TMP/arith.txt
   rm -f "$questions"
 
   RANDOM 200 | for _ in $(seq 100)

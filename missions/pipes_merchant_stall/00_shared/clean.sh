@@ -7,10 +7,10 @@
   find . -type f | xargs rm -f
 )
 
-rm -f "$GSH_VAR/nb_commands" "$GSH_VAR/last_command"
+rm -f "$GSH_TMP/nb_commands" "$GSH_TMP/last_command"
 
 PS1=$_PS1
 unset _PS1
 unset -f _cmd
 
-rm -f "$GSH_VAR/nbUnpaid" "$GSH_VAR/amountKing"
+rm -f "$GSH_TMP/nbUnpaid" "$GSH_TMP/amountKing"

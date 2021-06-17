@@ -20,7 +20,7 @@ _mission_init() ( # subshell to avoid changing directory
 
   # subshell to avoid changing directory
   cd "$office"
-  ls "$(gettext "grimoire")"_* | sort > "$GSH_VAR/inventory_grimoires"
+  ls "$(gettext "grimoire")"_* | sort > "$GSH_TMP/inventory_grimoires"
 
   return 0
 )

@@ -3,9 +3,9 @@
 # use a subshell, that should guarantee that no message is displayed when the
 # test-proc-name process is killed.
 _mission_init() (
-  cp "$MISSION_DIR/test-proc-name.sh" "$GSH_VAR/test-proc-name"
-  chmod +x "$GSH_VAR/test-proc-name"
-  "$GSH_VAR/test-proc-name" &
+  cp "$MISSION_DIR/test-proc-name.sh" "$GSH_TMP/test-proc-name"
+  chmod +x "$GSH_TMP/test-proc-name"
+  "$GSH_TMP/test-proc-name" &
   PID=$!
   name=$(ps -cp $PID | grep $PID | grep -v sh)
   kill -9 $PID

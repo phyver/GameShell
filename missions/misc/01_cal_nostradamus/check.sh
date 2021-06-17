@@ -18,9 +18,9 @@ _mission_check() (
     fi
   )
 
-  YYYY=$(cut -d"-" -f1 "$GSH_VAR"/date)
-  MM=$(cut -d"-" -f2 "$GSH_VAR"/date)
-  DD=$(cut -d"-" -f3 "$GSH_VAR"/date)
+  YYYY=$(cut -d"-" -f1 "$GSH_TMP"/date)
+  MM=$(cut -d"-" -f2 "$GSH_TMP"/date)
+  DD=$(cut -d"-" -f3 "$GSH_TMP"/date)
 
     echo "$(eval_gettext 'What was the day of the week for the $MM-$DD-$YYYY?')"
 

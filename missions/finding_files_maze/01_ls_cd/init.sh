@@ -18,7 +18,7 @@ _mission_init() (
   d=$(generate_maze.sh "$maze" 3 2 1)
 
   echo "$(checksum "$d")" > "$d/OOOOO_$(gettext "copper_coin")_OOOOO"
-  echo "$(checksum "$d")" > "$GSH_VAR/copper_coin"
+  echo "$(checksum "$d")" > "$GSH_TMP/copper_coin"
 
   return 0
 )

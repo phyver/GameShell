@@ -12,7 +12,7 @@ _mission_init() (
   install_potion_book.sh book "$(eval_gettext '$GSH_HOME/Mountain/Cave')/"
 
   # Install a copy for later checks. TODO: only do that in the check file?
-  install_potion_book.sh book "$GSH_VAR/book_of_potions"
+  install_potion_book.sh book "$GSH_TMP/book_of_potions"
 
   # put Servillus in the cave
   rm -f "$(eval_gettext '$GSH_HOME/Mountain/Cave')/$(gettext "cauldron")"

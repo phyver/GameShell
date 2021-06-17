@@ -8,7 +8,7 @@ _mission_check() (
   goal=$(realpath "$cave")
   current=$(realpath "$PWD")
 
-  if ! diff -q "$cave/$(gettext 'Book_of_potions')" "$GSH_VAR/book_of_potions" > /dev/null
+  if ! diff -q "$cave/$(gettext 'Book_of_potions')" "$GSH_TMP/book_of_potions" > /dev/null
   then
     echo "$(gettext "You altered the book...")"
     return 1
@@ -30,7 +30,7 @@ _mission_check() (
 
   echo "$pc" | grep -q 'gsh\s\s*check' && return 1
 
-  expected="$(head -n 6 "$GSH_VAR/book_of_potions/$(gettext 'page')_13" | tail -n 3)"
+  expected="$(head -n 6 "$GSH_TMP/book_of_potions/$(gettext 'page')_13" | tail -n 3)"
   res="$(eval "$pc")"
   if [ "$res" != "$expected" ]
   then

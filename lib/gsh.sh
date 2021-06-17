@@ -419,21 +419,21 @@ _gsh_assert_check() {
   mission_source "$MISSION_DIR/check.sh"
   local exit_status=$?
 
-  local nb_tests=$(cat "$GSH_VAR/nb_tests")
+  local nb_tests=$(cat "$GSH_TMP/nb_tests")
   nb_tests=$((nb_tests+1))
-  echo "$nb_tests" > "$GSH_VAR/nb_tests"
-  local nb_failed_tests=$(cat "$GSH_VAR/nb_failed_tests")
+  echo "$nb_tests" > "$GSH_TMP/nb_tests"
+  local nb_failed_tests=$(cat "$GSH_TMP/nb_failed_tests")
 
   if [ "$expected" = "true" ] && [ "$exit_status" -ne 0 ]
   then
     nb_failed_tests=$((nb_failed_tests+1))
-    echo "$nb_failed_tests" > "$GSH_VAR/nb_failed_tests"
+    echo "$nb_failed_tests" > "$GSH_TMP/nb_failed_tests"
     color_echo red "$(eval_gettext 'test $nb_tests failed') (expected check 'true')"
     [ -n "$msg" ] && echo "$msg"
   elif [ "$expected" = "false" ] && [ "$exit_status" -eq 0 ]
   then
     nb_failed_tests=$((nb_failed_tests+1))
-    echo "$nb_failed_tests" > "$GSH_VAR/nb_failed_tests"
+    echo "$nb_failed_tests" > "$GSH_TMP/nb_failed_tests"
     color_echo red "$(eval_gettext 'test $nb_tests failed') (expected check 'false')"
     [ -n "$msg" ] && echo "$msg"
   fi
@@ -454,12 +454,12 @@ _gsh_assert() {
   fi
   local msg=$2
 
-  local nb_tests=$(cat "$GSH_VAR/nb_tests")
-  echo "$(( nb_tests + 1))" > "$GSH_VAR/nb_tests"
+  local nb_tests=$(cat "$GSH_TMP/nb_tests")
+  echo "$(( nb_tests + 1))" > "$GSH_TMP/nb_tests"
 
   if ! eval "$condition"
   then
-    echo "$(( nb_failed_tests + 1))" > "$GSH_VAR/nb_failed_tests"
+    echo "$(( nb_failed_tests + 1))" > "$GSH_TMP/nb_failed_tests"
     color_echo red "$(eval_gettext 'test $nb_tests failed') (expected condition 'true')"
     [ -n "$msg" ] && echo "$msg"
   fi
@@ -484,13 +484,13 @@ _gsh_test() {
     return 2
   fi
 
-  echo 0 > "$GSH_VAR/nb_tests"
-  echo 0 > "$GSH_VAR/nb_failed_tests"
+  echo 0 > "$GSH_TMP/nb_tests"
+  echo 0 > "$GSH_TMP/nb_failed_tests"
   mission_source "$MISSION_DIR/test.sh"
   local ret
 
-  local nb_tests=$(cat "$GSH_VAR/nb_tests")
-  local nb_failed_tests=$(cat "$GSH_VAR/nb_failed_tests")
+  local nb_tests=$(cat "$GSH_TMP/nb_tests")
+  local nb_failed_tests=$(cat "$GSH_TMP/nb_failed_tests")
 
   if [ "$nb_failed_tests" = 0 ]
   then
@@ -504,7 +504,7 @@ _gsh_test() {
     echo
     ret=255
   fi
-  rm -f "$GSH_VAR/nb_tests" "$GSH_VAR/nb_failed_tests"
+  rm -f "$GSH_TMP/nb_tests" "$GSH_TMP/nb_failed_tests"
   return "$ret"
 }
 

@@ -1,9 +1,9 @@
 #!/bin/sh
 
 _mission_init() (
-  results=$GSH_VAR/additions.txt
+  results=$GSH_TMP/additions.txt
   rm -f "$results"
-  questions=$GSH_VAR/arith.txt
+  questions=$GSH_TMP/arith.txt
   rm -f "$questions"
 
   for _ in $(seq 5)

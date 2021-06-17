@@ -21,7 +21,7 @@ creating missions are the following:
   Even though this is also the `HOME` directory of the player, using
   `$GSH_HOME` is preferred over `$HOME` or `~`.
 
-* `$GSH_VAR` contains all the "hidden" data that may be created by a mission:
+* `$GSH_TMP` contains all the "hidden" data that may be created by a mission:
   temporary files, data required to check completion, data shared between
   missions, etc. Except in specific case ("dummy missions"), it is a good
   policy that each mission removes the files it creates.
@@ -402,7 +402,7 @@ contain a `static.sh` file. It can for example be used to share executable
 files in its `bin` or `sbin` directory.
 
 It can also contain data that will be used by other missions:
-* either the `static.sh` file can copy the data to `$GSH_VAR` (or some other
+* either the `static.sh` file can copy the data to `$GSH_TMP` (or some other
   place),
 * or the real missions can use symbolic links (with relative path) to refer to
   that data.

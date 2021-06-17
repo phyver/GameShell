@@ -5,7 +5,7 @@ trap spawn TERM
 spawn() {
     echo "$(gettext "You'll need to do better than that to kill my spell!")"
     "$0" &
-    echo $! >> "$GSH_VAR/spell.pids"
+    echo $! >> "$GSH_TMP/spell.pids"
 }
 
 DELAY=5

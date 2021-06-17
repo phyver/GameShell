@@ -15,7 +15,7 @@ _mission_init() (
     sign_file "${great_hall}/${f}"
   done
 
-  command ls "$great_hall" | sort > "$GSH_VAR/great_hall_contents"
+  command ls "$great_hall" | sort > "$GSH_TMP/great_hall_contents"
 )
 
 _mission_init

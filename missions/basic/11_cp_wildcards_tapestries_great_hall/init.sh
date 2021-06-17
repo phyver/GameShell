@@ -22,7 +22,7 @@ _mission_init() (
     sign_file "$f"
   done
 
-  ls "$great_hall" | sort > "$GSH_VAR/great_hall_contents"
+  ls "$great_hall" | sort > "$GSH_TMP/great_hall_contents"
   return 0
 )
 

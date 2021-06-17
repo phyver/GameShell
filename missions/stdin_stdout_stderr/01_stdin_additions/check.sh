@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _mission_check() (
-  exec 3< "$GSH_VAR/arith.txt"
+  exec 3< "$GSH_TMP/arith.txt"
   while IFS='' read -r line <&3
   do
     question="$(echo "$line" | cut -d"|" -f1)"

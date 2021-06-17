@@ -10,7 +10,7 @@ cellar=$(eval_gettext '$GSH_HOME/Castle/Cellar')
 
 stand_by() (
   nl=""
-  while ! [ -e "$GSH_VAR/snowflakes.list" ] || ! [ -e "$GSH_VAR/coals.list" ]
+  while ! [ -e "$GSH_TMP/snowflakes.list" ] || ! [ -e "$GSH_TMP/coals.list" ]
   do
     sleep 0.5
     printf "."

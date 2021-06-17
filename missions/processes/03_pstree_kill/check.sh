@@ -2,27 +2,27 @@
 
 _mission_check() (
 
-  pid=$(cat "$GSH_VAR"/fairy.pid)
+  pid=$(cat "$GSH_TMP"/fairy.pid)
   if ! my_ps "$pid" | grep -q "$(gettext "nice_fairy")"
   then
     echo "$(gettext "Did you kill the fairy?")"
     return 1
   fi
-  pid=$(cat "$GSH_VAR"/imp.pid)
+  pid=$(cat "$GSH_TMP"/imp.pid)
   if ! my_ps "$pid" | grep -q "$(gettext "mischievous_imp")"
   then
     echo "$(gettext "Did you kill the imp?")"
     return 1
   fi
 
-  nb=$(my_ps $(cat "$GSH_VAR"/fairy_spell.pids) | grep -c "$(gettext "spell")")
+  nb=$(my_ps $(cat "$GSH_TMP"/fairy_spell.pids) | grep -c "$(gettext "spell")")
   if [ "$nb" -lt 3 ]
   then
     echo "$(gettext "Did you remove some of the fairy's spells?")"
     return 1
   fi
 
-  nb=$(my_ps $(cat "$GSH_VAR"/imp_spell.pids) | grep -c "$(gettext "spell")")
+  nb=$(my_ps $(cat "$GSH_TMP"/imp_spell.pids) | grep -c "$(gettext "spell")")
   if [ "$nb" -ne 0 ]
   then
     echo "$(gettext "Are you sure you removed all the imp's spells?")"
@@ -38,7 +38,7 @@ _mission_check() (
   fi
 
   nl=""
-  while ! [ -e "$GSH_VAR/snowflakes.list" ]
+  while ! [ -e "$GSH_TMP/snowflakes.list" ]
   do
     sleep 0.5
     printf "."
@@ -46,11 +46,11 @@ _mission_check() (
   done
   printf "$nl"
   cd "$cellar"
-  sort "$GSH_VAR"/snowflakes.list 2>/dev/null | uniq > "$GSH_VAR"/snowflakes-generated
-  ls -- *_"$(gettext "snowflake")" 2>/dev/null | sort | uniq > "$GSH_VAR"/snowflakes-present
+  sort "$GSH_TMP"/snowflakes.list 2>/dev/null | uniq > "$GSH_TMP"/snowflakes-generated
+  ls -- *_"$(gettext "snowflake")" 2>/dev/null | sort | uniq > "$GSH_TMP"/snowflakes-present
   # only check for missing snowflakes, and ignore snowflakes that might be present but are
   # not in the list
-  nb=$(comm -1 -3 "$GSH_VAR"/snowflakes-present "$GSH_VAR"/snowflakes-generated | wc -l)
+  nb=$(comm -1 -3 "$GSH_TMP"/snowflakes-present "$GSH_TMP"/snowflakes-generated | wc -l)
 
   if [ "$nb" -gt 0 ]
   then

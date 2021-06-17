@@ -2,7 +2,7 @@
 
 printf "%s " "$(gettext "What's the combination to open the King's safe?")"
 read -r key
-real_key=$(cat "$GSH_VAR/key")
+real_key=$(cat "$GSH_TMP/key")
 
 if [ "$key" = "$real_key" ]
 then

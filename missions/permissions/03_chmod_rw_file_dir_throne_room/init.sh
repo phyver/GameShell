@@ -11,7 +11,7 @@ k=$(printf "%03d" "$(($(RANDOM) % 1000))")
 
 sed "s/KEY/$k/" "$MISSION_DIR/ascii-art/crown.txt" > "$safe/$(gettext "crown")"
 
-cp "$safe/$(gettext "crown")" "$GSH_VAR"/crown
+cp "$safe/$(gettext "crown")" "$GSH_TMP"/crown
 
 chmod 000 "$safe/$(gettext "crown")"
 chmod 000 "$safe"

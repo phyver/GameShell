@@ -19,5 +19,5 @@ esac
 # avoid problems when making a tar archive
 chmod 755 "$safe"
 chmod -f 644 "$safe/$(gettext "crown")" 2>/dev/null
-rm -f "$GSH_VAR/crown"
+rm -f "$GSH_TMP/crown"
 unset safe

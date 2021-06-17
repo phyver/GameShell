@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _mission_check() (
-  secret=$(cat "$GSH_VAR/secret_key")
+  secret=$(cat "$GSH_TMP/secret_key")
 
   printf "%s " "$(gettext "What is the secret key?")"
   read -r r

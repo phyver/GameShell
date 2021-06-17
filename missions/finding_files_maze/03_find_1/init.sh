@@ -20,9 +20,9 @@ _mission_init() (
   dir1=$(echo "$dir" | sed -n '1p;1q')
   dir2=$(echo "$dir" | sed -n '2p;2q')
   checksum "$dir1" > "$dir1/$(gettext "gold_coin")_1"
-  checksum "$dir1" > "$GSH_VAR/gold_coin_1"
+  checksum "$dir1" > "$GSH_TMP/gold_coin_1"
   checksum "$dir2" > "$dir2/$(gettext "GolD_CoiN")_2"
-  checksum "$dir2" > "$GSH_VAR/GolD_CoiN_2"
+  checksum "$dir2" > "$GSH_TMP/GolD_CoiN_2"
 
   return 0
 )

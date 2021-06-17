@@ -5,7 +5,7 @@ _mission_check () (
 
   temp=$(mktemp)
   command ls "$GREAT_HALL" | sort >"$temp"
-  if ! cmp -s "$GSH_VAR/great_hall_contents" "$temp"
+  if ! cmp -s "$GSH_TMP/great_hall_contents" "$temp"
   then
     echo "$(gettext "You changed the contents of the great hall!")"
     rm -f "$temp"
@@ -21,7 +21,7 @@ _mission_check () (
 
   temp1=$(mktemp)
   temp2=$(mktemp)
-  grep "$(gettext "tapestry")" "$GSH_VAR/great_hall_contents" >"$temp1"
+  grep "$(gettext "tapestry")" "$GSH_TMP/great_hall_contents" >"$temp1"
   command ls "$GSH_CHEST" | sort | grep "$(gettext "tapestry")" >"$temp2"
   if ! cmp -s "$temp1" "$temp2"
   then

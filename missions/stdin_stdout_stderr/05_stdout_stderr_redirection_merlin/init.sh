@@ -3,7 +3,7 @@
 _mission_init() (
   mkdir -p "$(eval_gettext '$GSH_HOME/Castle/Observatory')"
 
-  random_string 200 > "$GSH_VAR/secret_key"
+  random_string 200 > "$GSH_TMP/secret_key"
 
   if command -v cc >/dev/null
   then
@@ -36,16 +36,16 @@ _mission_init() (
       # "-lintl" to the compiler, so we have to try several things!
       {
         echo "GSH: compiling merlin.c, first try" >&2
-        echo $CC "$MISSION_DIR/merlin.c" -lpthread -o "$GSH_VAR/merlin"
-        $CC "$MISSION_DIR/merlin.c" -lpthread -o "$GSH_VAR/merlin"
+        echo $CC "$MISSION_DIR/merlin.c" -lpthread -o "$GSH_TMP/merlin"
+        $CC "$MISSION_DIR/merlin.c" -lpthread -o "$GSH_TMP/merlin"
       } ||
       {
         echo "GSH: compiling merlin.c, second try"
-        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/merlin.c" -lintl -lpthread -o "$GSH_VAR/merlin"
-        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/merlin.c" -lintl -lpthread -o "$GSH_VAR/merlin"
+        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/merlin.c" -lintl -lpthread -o "$GSH_TMP/merlin"
+        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/merlin.c" -lintl -lpthread -o "$GSH_TMP/merlin"
       }
     ) || { echo "compilation failed" >&2; return 1; }
-    copy_bin  "$GSH_VAR/merlin" "$(eval_gettext '$GSH_HOME/Castle/Observatory')/merlin"
+    copy_bin  "$GSH_TMP/merlin" "$(eval_gettext '$GSH_HOME/Castle/Observatory')/merlin"
   else
     copy_bin  "$MISSION_DIR"/merlin.sh "$(eval_gettext '$GSH_HOME/Castle/Observatory')/merlin"
     chmod 755 "$(eval_gettext '$GSH_HOME/Castle/Observatory')/merlin"

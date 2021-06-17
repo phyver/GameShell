@@ -13,13 +13,13 @@ _mission_check() (
     return 1
   fi
 
-  if ! cmp -s "$GSH_CHEST/$(gettext "crown")" "$GSH_VAR/crown"
+  if ! cmp -s "$GSH_CHEST/$(gettext "crown")" "$GSH_TMP/crown"
   then
     echo "$(gettext "The crown in your chest is a fake!")"
     return 1
   fi
 
-  real_key=$(tail -n 1 "$GSH_VAR/crown" | cut -c 4-6)
+  real_key=$(tail -n 1 "$GSH_TMP/crown" | cut -c 4-6)
 
   printf "%s " "$(gettext "What are the 3 digits inscribed on the base of the crown?")"
   read -r given_key

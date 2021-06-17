@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _mission_check() (
-    filename="$(head -n1 "$GSH_VAR/painting")"
+    filename="$(head -n1 "$GSH_TMP/painting")"
 
     n=$(find "$GSH_CHEST" -name "$(gettext "painting")_*" | wc -l)
     if [ "$n" -eq 0 ]

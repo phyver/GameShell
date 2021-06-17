@@ -19,7 +19,7 @@ _mission_check() (
 
     temp_file=$(mktemp)
     eval "$pc" | sort >"$temp_file"
-    if cmp -s "$GSH_VAR/list_grimoires_GSH" "$temp_file"
+    if cmp -s "$GSH_TMP/list_grimoires_GSH" "$temp_file"
     then
       rm -f "$temp_file"
       return 0

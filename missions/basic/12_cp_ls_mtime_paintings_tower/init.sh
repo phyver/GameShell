@@ -14,7 +14,7 @@ _mission_init() (
   h=$(printf "%02d" $(($(RANDOM)%24)))
   m=$(printf "%02d" $(($(RANDOM)%60)))
   s=$(printf "%02d" $(($(RANDOM)%60)))
-  echo "$(basename "$filename")" > "$GSH_VAR/painting"
+  echo "$(basename "$filename")" > "$GSH_TMP/painting"
   sign_file "$filename"
   touch -t "$Y$M$D$h$m.$s" "$filename"
 

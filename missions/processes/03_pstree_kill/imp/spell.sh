@@ -10,7 +10,7 @@ while true
 do
   filename="$(eval_gettext '$GSH_HOME/Castle/Cellar')/$(RANDOM)_$(gettext "coal")"
   sign_file "$MISSION_DIR/ascii-art/coal-$(($(RANDOM)%4)).txt" "$filename"
-  echo "${filename#$(eval_gettext '$GSH_HOME/Castle/Cellar')/}" >> "$GSH_VAR/coals.list"
+  echo "${filename#$(eval_gettext '$GSH_HOME/Castle/Cellar')/}" >> "$GSH_TMP/coals.list"
   sleep $DELAY & wait $!
 done
 

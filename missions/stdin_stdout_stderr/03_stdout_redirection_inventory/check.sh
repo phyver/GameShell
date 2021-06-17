@@ -12,7 +12,7 @@ _mission_check() (
 
   temp_file=$(mktemp)
   sort "$office/$(gettext "Drawer")/$inventory_file" >"$temp_file"
-  if ! cmp -s "$temp_file" "$GSH_VAR/inventory_grimoires"
+  if ! cmp -s "$temp_file" "$GSH_TMP/inventory_grimoires"
   then
     echo "$(eval_gettext 'The content of $inventory_file is invalid.
 You can check its content with the command

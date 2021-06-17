@@ -16,7 +16,7 @@ _mission_init() (
   bat="${r1}_$(gettext "baby_bat")_$r2"
   sign_file "$MISSION_DIR/ascii-art/baby-bat.txt" "$lair/$bat"
 
-  date +%s > "$GSH_VAR/start_time"
+  date +%s > "$GSH_TMP/start_time"
 )
 
 set -o noglob
