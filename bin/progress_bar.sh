@@ -28,7 +28,9 @@ else
   fi
   stderr_log=$(mktemp)
   set +m
-  trap "set -m" TERM INT EXIT HUP
+  # don't use trap, because it will overwrite existing traps in the main
+  # shell!
+  # trap "set -m" TERM INT EXIT HUP
   "$@" 1>/dev/null 2>"$stderr_log" &
   _PID=$!
   progress_bar -b "$design" $_PID
