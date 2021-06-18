@@ -66,20 +66,7 @@ do
       RESET="TRUE"
       ;;
     L)
-      if locale | grep "LANGUAGE" >/dev/null
-      then
-        export LANGUAGE=$OPTARG
-      else
-        if locale -a | grep -qx "$OPTARG"
-        then
-          export LC_MESSAGES=$OPTARG
-        else
-          echo "Unknown locale: '$OPTARG'." >&2
-          echo "You can run 'locale -a' to get a list of all locales installed on your system." >&2
-          locale -a | grep "$OPTARG" && echo "The above locales might be relevant..." >&2
-          exit 1
-        fi
-      fi
+      export LANGUAGE="$OPTARG"     # only works on GNU systems
       ;;
     X)
       echo "$(gettext "Error: this option is only available from an executable archive!")" >&2

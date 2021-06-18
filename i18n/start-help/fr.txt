@@ -10,6 +10,8 @@ options :
   -R      recommence une partie du début
 
   -L      initialise la variable LANGUAGE (ex : -L fr:it:en)
+          Pour les système non GNU, initialisez la variable LC_MESSAGES
+          avec une locale valide.
 
   -q      mode silencieux : n'affiche pas les messages d'information
   -n      mode noir et blanc : n'utilise pas les séquences ANSI
