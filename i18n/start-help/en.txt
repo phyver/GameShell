@@ -10,6 +10,8 @@ options:
   -R      reset game
 
   -L ...  set LANGUAGE variable (ex: -L fr:it:en)
+          On non GNU systems, set the variable LC_MESSAGES
+          to a valid locale.
 
   -q      quiet: don't show information messages
   -n      black and white: don't use ANSI escape codes for color
