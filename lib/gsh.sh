@@ -155,7 +155,8 @@ __gsh_start() {
   if [ -z "$1" ]
   then
     MISSION_NB=$(_gsh_pcm)
-    if [ "$?" -eq 1 ] && [ "$GSH_MODE" != "DEBUG" ]
+    local new_game=$?
+    if [ -z "$GSH_QUIET_INTRO" ] && [ "$new_game" -eq 1 ] && [ "$GSH_MODE" != "DEBUG" ]
     then
       gsh welcome
       echo

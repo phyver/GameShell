@@ -11,7 +11,7 @@ options :
 
   -L      initialise la variable LANGUAGE (ex : -L fr:it:en)
 
-  -q      mode silencieux : pas de message au début de chaque mission
+  -q      mode silencieux : n'affiche pas les messages d'information
   -n      mode noir et blanc : n'utilise pas les séquences ANSI
 
 Les options suivantes ne sont disponible que lorsque GameShell est 

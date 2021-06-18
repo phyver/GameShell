@@ -207,7 +207,7 @@ Do you want to remove it and start a new game? [y/N]') "
   cp "$GSH_LIB/gshrc" "$GSH_CONFIG"
 
   # save current locale
-  locale | sed -e "s/^/export /" > "$GSH_CONFIG"/config.sh
+  locale > "$GSH_CONFIG"/config.sh
   echo "export GSH_MODE=$GSH_MODE" >> "$GSH_CONFIG"/config.sh
   # TODO save other config (color ?)
 
@@ -269,7 +269,6 @@ Do you want to remove it and start a new game? [y/N]') "
 
   if [ "$GSH_MODE" != "DEBUG" ]
   then
-    echo
     cat "$GSH_LIB/ascii-art/GameShell.txt"
     echo
   fi
@@ -390,12 +389,17 @@ Aborting.")"
     progress_finish
     # show cursor back
     tput cnorm 2>/dev/null
-    echo
-    printf "$(gettext "Press Enter to continue.")"
-    stty -echo 2>/dev/null    # ignore errors, in case input comes from a redirection
-    read
-    stty echo 2>/dev/null    # ignore errors, in case input comes from a redirection
-    clear
+    if [ -z "$GSH_QUIET_INTRO" ]
+    then
+      echo
+      printf "$(gettext "Press Enter to continue.")"
+      stty -echo 2>/dev/null    # ignore errors, in case input comes from a redirection
+      read
+      stty echo 2>/dev/null    # ignore errors, in case input comes from a redirection
+      clear
+    else
+      echo
+    fi
   fi
   unset MISSION_DIR MISSION_NB
 
