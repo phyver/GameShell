@@ -42,17 +42,17 @@ check: clean
 ## check that the auto.sh scripts work as expected, in verbose mode
 check-verbose: clean
 	./utils/archive.sh -at -N "game shell (1)"
-	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort; done; gsh stat' | ./"game shell (1).sh" -RDq
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort; done; gsh stat' | ./"game shell (1).sh" -Dq
 
 ## run all the test.sh and auto.sh scripts
 tests: clean
 	./utils/archive.sh -at -N "game shell (1)"
-	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat' | ./"game shell (1).sh" -Rdq
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat' | ./"game shell (1).sh" -dq
 
-## run all the test.sh and auto.sh scripts
+## run all the test.sh and auto.sh scripts, in french
 tests-fr: clean
 	./utils/archive.sh -at -N "game shell (1)"
-	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat' | ./"game shell (1).sh" -RdqL fr
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat' | ./"game shell (1).sh" -dqL fr
 
 ## run all the test.sh and auto.sh scripts, in verbose mode
 tests-verbose: clean

@@ -11,7 +11,7 @@ options:
 
   -L ...  set LANGUAGE variable (ex: -L fr:it:en)
 
-  -q      quiet: don't show message at the start of each mission
+  -q      quiet: don't show information messages
   -n      black and white: don't use ANSI escape codes for color
 
 The following options are only available when GameShell is run from 
