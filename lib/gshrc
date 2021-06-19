@@ -29,6 +29,16 @@ export PS2="> "
 export PS3=""
 export PS4="+ "
 
+# choose appropriate pager
+unset PAGER
+tempfile=$(mktemp)
+echo "TEST" | "$GSH_ROOT/bin/pager" 2>"$tempfile" >/dev/null
+if [ -s "$tempfile" ]
+then
+  export PAGER=more
+fi
+rm -f "$mktemp"
+
 # try to prevent using sudo and similar
 su() {
     echo "gsh: su: command not found" >&2

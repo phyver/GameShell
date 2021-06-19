@@ -2,8 +2,6 @@
 
 # display a small animation until the given PID stops
 
-. gettext.sh
-
 TEXTDOMAIN=gsh
 
 get_design() {

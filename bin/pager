@@ -1,8 +1,17 @@
 #!/bin/sh
 
-if command -v less > /dev/null 2>&1
+TEXTDOMAIN=gsh
+
+
+if [ -n "$PAGER" ]
 then
-  less -rEX "$@"
+  $PAGER "$@"
+elif command -v less > /dev/null 2>&1
+then
+  LESS= less -rEX -Ps"$(gettext '[Press space to continue, 'q' to quit\.]')$" \
+             -Pm"$(gettext '[Press space to continue, 'q' to quit\.]')$" \
+             -PM"$(gettext '[Press space to continue, 'q' to quit\.]')$" \
+             "$@"
 else
   more "$@"
 fi
