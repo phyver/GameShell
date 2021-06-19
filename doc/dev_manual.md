@@ -1,4 +1,4 @@
-GameShell developer manual
+[GameShell](GameShell) developer manual
 ==========================
 
 * [Mission creation manual](./mission.md)
