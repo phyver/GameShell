@@ -221,6 +221,9 @@ msgstr  ""
 msgid   "Y"
 msgstr  ""
 
+msgid   "[Press space to continue, q to quit\\.]"
+msgstr  ""
+
 msgid   "cancelled"
 msgstr  ""
 

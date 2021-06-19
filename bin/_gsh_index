@@ -1,7 +1,5 @@
 #!/bin/sh
 
-. gettext.sh
-
 n=1
 while read -r mission_dir
 do

@@ -234,6 +234,9 @@ msgstr  "Pendant que vous attendez, un poisson fait des ronds..."
 msgid   "Y"
 msgstr  "O"
 
+msgid   "[Press space to continue, q to quit\\.]"
+msgstr  "[Appuyer sur la barre d'espace pour continuer, 'q' pour quitter\\.]"
+
 msgid   "cancelled"
 msgstr  "annulée"
 

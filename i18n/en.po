@@ -235,6 +235,9 @@ msgstr  "While you are waiting, you see a fish swimming in circles..."
 msgid   "Y"
 msgstr  "Y"
 
+msgid   "[Press space to continue, q to quit\\.]"
+msgstr  "[Press space to continue, q to quit\\.]"
+
 msgid   "cancelled"
 msgstr  "cancelled"
 
