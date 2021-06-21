@@ -37,7 +37,7 @@ new: i18n/template.pot
 ## check that the auto.sh scripts work as expected
 check: clean
 	./utils/archive.sh -at -N "game shell (1)"
-	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort; done; gsh stat' | ./"game shell (1).sh" -Rdq
+	echo 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort < <(echo gsh); done; gsh stat' | ./"game shell (1).sh" -q
 
 ## check that the auto.sh scripts work as expected, in verbose mode
 check-verbose: clean
