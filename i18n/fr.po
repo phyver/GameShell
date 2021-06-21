@@ -134,8 +134,8 @@ msgid   "Error: unknown gsh command '$cmd'.\n"
 msgstr  "Erreur : command gsh inconnue '$cmd'.\n"
         "Utilisez une des commandes suivantes :"
 
-msgid   "Error: wrong password"
-msgstr  "Erreur : mauvais mot de passe"
+msgid   "Error: wrong password."
+msgstr  "Erreur : mauvais mot de passe."
 
 msgid   "Error: you are not allowed to run this command."
 msgstr  "Erreur : vous n'avez pas le droit d'exécuter cette commande."

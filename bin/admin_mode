@@ -34,7 +34,7 @@ admin_mode() {
     fi
     try=$((try+1))
   done
-  echo "$(gettext "Error: wrong password")" >&2
+  echo "$(gettext "Error: wrong password.")" >&2
   return 1
 }
 

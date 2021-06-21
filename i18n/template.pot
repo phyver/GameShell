@@ -131,7 +131,7 @@ msgid   "Error: unknown gsh command '$cmd'.\n"
         "Use one of the following commands:"
 msgstr  ""
 
-msgid   "Error: wrong password"
+msgid   "Error: wrong password."
 msgstr  ""
 
 msgid   "Error: you are not allowed to run this command."
