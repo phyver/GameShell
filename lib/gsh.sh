@@ -21,7 +21,7 @@
 
 trap "_gsh_exit EXIT" EXIT
 trap "_gsh_exit TERM" SIGTERM
-# trap "_gsh_exit INT" SIGINT
+trap "_gsh_exit INT" SIGINT
 
 
 # log an action to the missions.log file
@@ -113,40 +113,6 @@ Do you still want to quit? [y/n]") "
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh unprotect
   #shellcheck disable=SC2046
   kill -sSIGHUP $(jobs -p) 2>/dev/null
-}
-
-
-# display the goal of a mission given by its number
-_gsh_goal() {
-  local MISSION_NB
-  if [ "$#" -eq 0 ]
-  then
-    MISSION_NB="$(_gsh_pcm)"
-  else
-    MISSION_NB="$1"
-    shift
-  fi
-
-  if [ -z "$MISSION_NB" ]
-  then
-    local fn_name="${FUNCNAME[0]}"
-    echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
-    return 1
-  fi
-
-  local MISSION_DIR="$(missiondir "$MISSION_NB")"
-
-  if [ -f "$MISSION_DIR/goal.sh" ]
-  then
-    mission_source "$MISSION_DIR/goal.sh" | parchment | pager
-  elif [ -f "$MISSION_DIR/goal.txt" ]
-  then
-    FILE="$MISSION_DIR/goal.txt"
-    parchment "$FILE" | pager
-  else
-    FILE="$(TEXTDOMAIN="$(textdomainname "$MISSION_DIR")" eval_gettext '$MISSION_DIR/goal/en.txt')"
-    parchment "$FILE" | pager
-  fi
 }
 
 
@@ -541,17 +507,11 @@ gsh() {
       __gsh_clean
       _gsh_reset
       ;;
-    "goal")
-      _gsh_goal "$@"
-      ;;
     "exit")
-      exit 0
+      _gsh_exit 0
       ;;
-
-    # admin stuff
-    # TODO: something to regenerate static world
     "skip")
-        _gsh_skip
+      _gsh_skip
       ;;
     "auto")
       _gsh_auto
