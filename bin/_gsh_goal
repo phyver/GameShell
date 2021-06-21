@@ -1,0 +1,27 @@
+#!/bin/sh
+
+. gettext.sh
+
+# display the goal of a mission given by its number
+_gsh_goal() {
+  if [ -n "$*" ]
+  then
+    MISSION_NB="$1"
+    MISSION_DIR="$(missiondir "$MISSION_NB")"
+  fi
+
+  if [ -f "$MISSION_DIR/goal.sh" ]
+  then
+    . "$GSH_ROOT/lib/mission_source.sh"
+    mission_source "$MISSION_DIR/goal.sh" | parchment | pager
+  elif [ -f "$MISSION_DIR/goal.txt" ]
+  then
+    FILE="$MISSION_DIR/goal.txt"
+    parchment "$FILE" | pager
+  else
+    FILE="$(TEXTDOMAIN="$(textdomainname "$MISSION_DIR")" eval_gettext '$MISSION_DIR/goal/en.txt')"
+    parchment "$FILE" | pager
+  fi
+}
+
+_gsh_goal "$@"
