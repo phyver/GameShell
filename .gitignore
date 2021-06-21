@@ -3,7 +3,7 @@ TODO
 .bin
 .sbin
 .config
-.var
+.tmp
 World
 locale/
 *~
