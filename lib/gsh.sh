@@ -26,12 +26,19 @@ trap "_gsh_exit TERM" SIGTERM
 
 # log an action to the missions.log file
 __log_action() {
-  local MISSION_NB action D S
+  local MISSION_NB action D S prev_cksum
   MISSION_NB=$1
   action=$2
   D="$(date +%s)"
-  S="$(checksum "$GSH_UID#$MISSION_NB#$action#$D")"
+  if [ -e "$GSH_CONFIG/prev_cksum" ]
+  then
+    prev_cksum=$(cat "$GSH_CONFIG/prev_cksum")
+  else
+    prev_cksum=$(cat "$GSH_CONFIG/uid")
+  fi
+  S="$(checksum "$prev_cksum#$MISSION_NB#$action#$D")"
   printf '%s %s %s %s\n' "$MISSION_NB" "$action" "$D" "$S" >> "$GSH_CONFIG/missions.log"
+  echo "$S" >"$GSH_CONFIG/prev_cksum"
 }
 
 

@@ -50,12 +50,16 @@ $1 == current_mission && $2 == "START" { next; }
   previous_time = $3+0;
 
   # check checksum using the "checksum" script, that must be in the path
-  sprintf("checksum \"%s#%s#%s#%s\"", UID, $1, $2, $3) | getline checksum;
+  if (!prev_cksum) {
+    prev_cksum = UID;
+  }
+  sprintf("checksum \"%s#%s#%s#%s\"", prev_cksum, $1, $2, $3) | getline checksum;
   if (checksum != $4) {
     sum_c = "X";
   } else {
     sum_c = " ";
   }
+  prev_cksum= checksum;
 
   printf(FORMAT_STRING, n, dir, sum_c, delta_t, t);
 }
