@@ -16,7 +16,8 @@
 # links are resolved), while MISSION_NAME refers to the logical location of the
 # file.
 mission_source() {
-  local FILENAME=$1
+  local FILENAME
+  FILENAME=$1
   # the function corresponding to the file name:
   #   static.sh => _mission_static
   #   check.sh => _mission_check
@@ -33,51 +34,55 @@ mission_source() {
   # if we are not running in DEBUG mode, just source the file
   if [ "$GSH_MODE" != "DEBUG" ] || [ -z "$GSH_VERBOSE_DEBUG" ]
   then
-    local _MISSION_DIR=$MISSION_DIR
-    export MISSION_DIR=$(dirname "$(realpath "$FILENAME")")
-    local _TEXTDOMAIN=$TEXTDOMAIN
-    export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")
-    local _MISSION_NAME=$MISSION_NAME
-    export MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
-    local _PATH=$PATH
-    export PATH=$PATH:$GSH_SBIN
+    local _MISSION_DIR _TEXTDOMAIN _MISSION_NAME _PATH exit_status
+    export MISSION_DIR TEXTDOMAIN MISSION_NAME
+    _MISSION_DIR=$MISSION_DIR
+    MISSION_DIR=$(dirname "$(realpath "$FILENAME")")
+    _TEXTDOMAIN=$TEXTDOMAIN
+    TEXTDOMAIN=$(textdomainname "$MISSION_DIR")
+    _MISSION_NAME=$MISSION_NAME
+    MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
+    _PATH=$PATH
+    PATH=$PATH:$GSH_SBIN
     . "$FILENAME"
-    local exit_status=$?
-    export TEXTDOMAIN=$_TEXTDOMAIN
-    export MISSION_NAME=$_MISSION_NAME
-    export MISSION_DIR=$_MISSION_DIR
-    export PATH=$_PATH
+    exit_status=$?
+    TEXTDOMAIN=$_TEXTDOMAIN
+    MISSION_NAME=$_MISSION_NAME
+    MISSION_DIR=$_MISSION_DIR
+    PATH=$_PATH
     unset -f "$MISSION_FN"
     return $exit_status
   fi
 
+  local _MISSION_DIR _TEXTDOMAIN _MISSION_NAME _PATH exit_status en_before env_after
+  export MISSION_DIR TEXTDOMAIN MISSION_NAME
   echo "    GSH: sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
-  local _MISSION_DIR=""  # otherwise, it appears in the environment!
-  local _TEXTDOMAIN=""
-  local _MISSION_NAME=""
-  local MISSION_NAME=""
-  local _PATH=""
-  local exit_status=""
-  local env_before=$(mktemp)
-  local env_after=$(mktemp)
+  _MISSION_DIR=""  # otherwise, it appears in the environment!
+  _TEXTDOMAIN=""
+  _MISSION_NAME=""
+  MISSION_NAME=""
+  _PATH=""
+   exit_status=""
+  env_before=$(mktemp)
+  env_after=$(mktemp)
 
   # otherwise, record the environment (variables, functions and aliases)
   # before and after to echo a message when there are differences
   . save_environment.sh >"$env_before"
-  local _MISSION_DIR=$MISSION_DIR
-  export MISSION_DIR=$(dirname "$(realpath "$FILENAME")")
+  _MISSION_DIR=$MISSION_DIR
+  MISSION_DIR=$(dirname "$(realpath "$FILENAME")")
   _TEXTDOMAIN=$TEXTDOMAIN
-  export TEXTDOMAIN=$(textdomainname "$MISSION_DIR")
+  TEXTDOMAIN=$(textdomainname "$MISSION_DIR")
   _MISSION_NAME=$MISSION_NAME
-  export MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
-  local _PATH=$PATH
-  export PATH=$PATH:$GSH_SBIN
+  MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
+  _PATH=$PATH
+  PATH=$PATH:$GSH_SBIN
   . "$FILENAME"
   exit_status=$?
-  export TEXTDOMAIN=$_TEXTDOMAIN
-  export MISSION_NAME=$_MISSION_NAME
-  export MISSION_DIR=$_MISSION_DIR
-  export PATH=$_PATH
+  TEXTDOMAIN=$_TEXTDOMAIN
+  MISSION_NAME=$_MISSION_NAME
+  MISSION_DIR=$_MISSION_DIR
+  PATH=$_PATH
   . save_environment.sh | grep -v "$MISSION_FN" > "$env_after"
 
   if ! cmp -s "$env_before" "$env_after"

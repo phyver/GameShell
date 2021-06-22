@@ -8,5 +8,5 @@ else
   PS="ps -c"
 fi
 
-envsubst '$PS' < "$(eval_gettext '$MISSION_DIR/goal/en.txt')"
+sed "s/\\\$PS/$PS/g" "$(eval_gettext '$MISSION_DIR/goal/en.txt')"
 unset PS

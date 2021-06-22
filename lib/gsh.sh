@@ -14,7 +14,7 @@
 # shellcheck disable=SC2155
 
 # shellcheck source=/dev/null
-. gettext.sh
+. gsh_gettext.sh
 
 # shellcheck source=lib/mission_source.sh
 . "$GSH_LIB/mission_source.sh"

@@ -14,7 +14,7 @@ _mission_check() {
   fi
 
   EDITOR=${EDITOR:-nano}
-  cmd=$(echo "$cmd" | EDITOR=$EDITOR envsubst '$EDITOR')
+  cmd=$(echo "$cmd" | sed "s/\\\$EDITOR/$EDITOR/g")
 
   case "$cmd" in
     *$EDITOR*)

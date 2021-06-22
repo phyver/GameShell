@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. gettext.sh
+. gsh_gettext.sh
 
 "$GSH_TMP/fairy/$(gettext "spell")" 0 &
 printf "$!," > "$GSH_TMP/fairy_spell.pids"

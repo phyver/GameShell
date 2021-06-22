@@ -15,6 +15,7 @@ options:
   -P          use the "passport mode" by default when running GameShell
   -A          use the "anonymous mode" by default when running GameShell
   -L LANGS    only keep the given languages (ex: -L 'en*,fr')
+  -E          only keep english as a language, not generating any ".mo" file
 
   -N ...      name of the archive / top directory (default: "gameshell")
 
@@ -48,10 +49,11 @@ KEEP_TEST=0
 DEFAULT_MODE="ANONYMOUS"
 KEEP_TGZ=0
 GENERATE_MO=1
-KEEP_PO=0
+# KEEP_PO=1     # this is set to 1 if we generate .mo files. Setting it to 1 here
+# (or before generating .mo files) will keep the .po files
 LANGUAGES=""
 
-while getopts ":hp:N:atPzL:" opt
+while getopts ":hp:N:atPzL:E" opt
 do
   case $opt in
     h)
@@ -78,6 +80,11 @@ do
       ;;
     L)
       LANGUAGES=$OPTARG
+      ;;
+    E)
+      LANGUAGES=
+      KEEP_PO=0
+      GENERATE_MO=0
       ;;
     *)
       echo "invalid option: '-$OPTARG'" >&2
@@ -154,8 +161,9 @@ then
 fi
 
 # generate .mo files
-if [ "$GENERATE_MO" -eq 1 ]
+if [ "$GENERATE_MO" -eq 1 ] && command -v msgfmt >/dev/null
 then
+  KEEP_PO=${KEEP_PO:-0}
   printf "generating '.mo' files: "
   {
     # gameshell
@@ -211,8 +219,7 @@ echo "removing unnecessary files"
   find . -name "_*.sh" | xargs rm -f
   find . -name "Makefile" | xargs rm -f
   find . -name "template.pot" | xargs rm -f
-  [ "$KEEP_PO" -ne 1 ] && [ "$GENERATE_MO" -eq 1 ] && find . -name "*.po" | xargs rm -f
-
+  [ "$KEEP_PO" -eq 0 ] && find . -name "*.po" | xargs rm -f
   [ "$KEEP_TEST" -ne 1 ] && echo "remove tests" && find ./missions -name "test.sh" | xargs rm -f
   [ "$KEEP_AUTO" -ne 1 ] && find ./missions -name auto.sh | xargs rm -f
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. gettext.sh
+. gsh_gettext.sh
 
 DELAY=3
 OFFSET=$1

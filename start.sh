@@ -13,10 +13,10 @@
 # warning about declaring and initializing at the same time: local x=...
 # shellcheck disable=SC2155
 
-# shellcheck source=/dev/null
-. gettext.sh
 
 export GSH_ROOT="$(dirname "$0")"
+# shellcheck source=/dev/null
+. "$GSH_ROOT/bin/gsh_gettext.sh"
 # shellcheck source=lib/profile.sh
 . "$GSH_ROOT/lib/profile.sh"
 # shellcheck source=lib/mission_source.sh
@@ -243,6 +243,20 @@ Do you want to remove it and start a new game? [y/N]') "
   # save system config, in case of problems
   _gsh_systemconfig > "$GSH_CONFIG/system"
 
+  ### generate GameShell translation files
+  # NOTE: nullglob don't expand in POSIX sh and there is no shopt -s nullglob as in bash
+  if [ -z "$GSH_NO_GETTEXT" ] && command -v msgfmt >/dev/null && [ -n "$(find "$GSH_ROOT/i18n" -maxdepth 1 -name '*.po' | head -n1)" ]
+  then
+    for PO_FILE in "$GSH_ROOT"/i18n/*.po; do
+      PO_LANG=$(basename "$PO_FILE" .po)
+      MO_FILE="$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo"
+      if ! [ -f "$MO_FILE" ] || [ "$PO_FILE" -nt "$MO_FILE" ]
+      then
+        mkdir -p "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES"
+        msgfmt -o "$GSH_ROOT/locale/$PO_LANG/LC_MESSAGES/$TEXTDOMAIN.mo" "$PO_FILE"
+      fi
+    done
+  fi
 
   # Clear the screen.
   if [ "$GSH_MODE" = "DEBUG" ]
@@ -292,7 +306,7 @@ Do you want to remove it and start a new game? [y/N]') "
     export DOMAIN=$(textdomainname "$MISSION_DIR")
 
     # Preparing the locales
-    if [ -d "$MISSION_DIR/i18n" ]
+    if [ -z "$GSH_NO_GETTEXT" ] && command -v msgfmt >/dev/null && [ -d "$MISSION_DIR/i18n" ]
     then
       # NOTE: shopt -s nullglob doesn't exist in POSIX sh
       if [ -n "$(find "$MISSION_DIR/i18n" -maxdepth 1 -name '*.po' | head -n1)" ]
