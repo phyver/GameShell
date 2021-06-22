@@ -17,6 +17,7 @@ msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  ""
 
 # path for the text file containing the treasure message
+#, sh-format
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 

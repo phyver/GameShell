@@ -18,8 +18,10 @@ test_mktemp() (
 
 
 test_realpath() (
-  tmp=$(mktemp -d)
+  tmp=${GSH_TMP:?Error: \$GSH_TMP not set}
   cd "$tmp"
+  rm -f a b
+
   touch a
   rpa=$(realpath ./a)
   if [ -z "$rpa" ]
@@ -45,7 +47,7 @@ test_realpath() (
     return 1
   fi
 
-  rm -rf "$tmp"
+  rm -f a b
   return 0
 )
 
