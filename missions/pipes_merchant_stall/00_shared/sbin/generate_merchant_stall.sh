@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. gettext.sh
+. gsh_gettext.sh
 
 firstname_file=$MISSION_DIR/data/$(gettext 'firstnames.en')
 lastname_file=$MISSION_DIR/data/$(gettext 'lastnames.en')

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. gettext.sh
+. gsh_gettext.sh
 
 # Checking for the arguments.
 if [ "$#" -ne 2 ]

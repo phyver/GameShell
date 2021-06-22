@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. gettext.sh
+. gsh_gettext.sh
 
 "$GSH_TMP/imp/$(gettext "spell")" 0 &
 printf "$!," > "$GSH_TMP/imp_spell.pids"
