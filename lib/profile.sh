@@ -28,10 +28,3 @@ export COLUMNS
 # PATH=$PATH:"$GSH_ROOT/bin"
 PATH="$GSH_ROOT/bin":$PATH
 
-### test some of the scripts
-if ! sh "$GSH_ROOT/lib/bin_test.sh"
-then
-  echo "$(gettext "Error: a least one base function is not working properly.
-Aborting!")"
-  exit 1
-fi
