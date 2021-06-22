@@ -412,6 +412,15 @@ Aborting.")" >&2
 #######################################################################
 
 init_gsh "$@"
+
+### test some of the scripts
+if ! sh "$GSH_ROOT/lib/bin_test.sh"
+then
+  echo "$(gettext "Error: a least one base function is not working properly.
+Aborting!")"
+  exit 1
+fi
+
 cd "$GSH_HOME"
 export GSH_UID=$(cat "$GSH_CONFIG/uid")
 date "+%Y-%m-%d %H:%M:%S" | sed 's/^/#>>> /' >> "$GSH_CONFIG/missions.log"
