@@ -173,7 +173,7 @@ Do you want to remove it and start a new game? [y/N]') "
   # hide cursor and disable echoing of keystrokes
   tput civis 2>/dev/null
   stty -echo 2>/dev/null
-  trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo" INT TERM
+  trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo" INT TERM EXIT
 
 
   # remove all the game data
@@ -380,7 +380,7 @@ Do you want to remove it and start a new game? [y/N]') "
   if [ "$MISSION_NB" -eq 1 ]
   then
     echo "$(gettext "Error: no mission was found!
-Aborting.")"
+Aborting.")" >&2
     exit 1
   fi
   if [ "$GSH_MODE" = "DEBUG" ]

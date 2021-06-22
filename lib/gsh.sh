@@ -184,11 +184,22 @@ __gsh_start() {
 
     if [ "$exit_status" -ne 0 ]
     then
+      # the GSH_CANCELLED variable keeps track of consecutive cancelled missions
+      # to prevent looping if all the missions are cancelled.
+      # It is unset on the first non-cancelled mission.
+      if echo "$GSH_CANCELLED" | grep -Eq ":$MISSION_NB(:|$)"
+      then
+        echo "$(gettext "Error: no mission was found!
+Aborting.")" >&2
+        exit 1
+      fi
       color_echo yellow "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
+      GSH_CANCELLED=$GSH_CANCELLED:$MISSION_NB
       __log_action "$MISSION_NB" "CANCEL_DEP_PB"
       __gsh_start "$((MISSION_NB + 1))"
       return
     fi
+    unset GSH_CANCELLED
 
     if ! . mainshell.sh
     then
