@@ -24,13 +24,13 @@ _mission_init() {
   elif command -v cc >/dev/null
   then
     CC=cc
-  elif ! [ -e "$MISSION_DIR/deps.sh" ]
+  elif ! [ -e "$MISSION_DIR/deps.sh" ] || ! command -v my_ps >/dev/null
   then
     # FIXME
     echo "missing dummy mission!"
     return 1
-    mission_source "$MISSION_DIR/deps.sh" || return 1
   fi
+  mission_source "$MISSION_DIR/deps.sh" || return 1
 
   if [ -n "$CC" ]
   then

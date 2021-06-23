@@ -15,10 +15,11 @@
 
 
 export GSH_ROOT="$(dirname "$0")"
-# shellcheck source=/dev/null
-. "$GSH_ROOT/bin/gsh_gettext.sh"
 # shellcheck source=lib/profile.sh
 . "$GSH_ROOT/lib/profile.sh"
+
+# shellcheck source=bin/gsh_gettext.sh
+. "$GSH_ROOT/bin/gsh_gettext.sh"
 # shellcheck source=lib/mission_source.sh
 . "$GSH_ROOT/lib/mission_source.sh"
 
@@ -185,9 +186,6 @@ Do you want to remove it and start a new game? [y/N]') "
 
   # recreate them
   mkdir -p "$GSH_HOME"
-  # change the HOME dir, but save the "real" one in a variable
-  export REAL_HOME="$HOME"
-  export HOME="$GSH_HOME"
 
   mkdir -p "$GSH_CONFIG"
   awk -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN { srand(); printf("%s", int(2^32 * rand())) > seed_file; }'
@@ -205,7 +203,6 @@ Do you want to remove it and start a new game? [y/N]') "
   mkdir -p "$GSH_SBIN"
 
   mkdir -p "$GSH_TMP"
-  export TMPDIR="$GSH_TMP"
 
 
   # id of player
@@ -412,6 +409,14 @@ Aborting.")" >&2
 #######################################################################
 
 init_gsh "$@"
+
+# change the HOME dir, but save the "real" one in a variable
+export REAL_HOME="$HOME"
+export HOME="$GSH_HOME"
+
+# set TMPDIR, that may be used by external scripts like mktemp
+export TMPDIR="$GSH_TMP"
+
 
 ### test some of the scripts
 if ! sh "$GSH_ROOT/lib/bin_test.sh"
