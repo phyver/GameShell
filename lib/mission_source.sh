@@ -18,6 +18,13 @@
 mission_source() {
   local FILENAME
   FILENAME=$1
+
+  if ! [ -e "$FILENAME" ]
+  then
+    echo "mission_source: no such file or directory: $FILENAME" >&2
+    return 1
+  fi
+
   # the function corresponding to the file name:
   #   static.sh => _mission_static
   #   check.sh => _mission_check

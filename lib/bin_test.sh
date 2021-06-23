@@ -3,7 +3,7 @@
 ### test the various utilities in GSH_ROOT/bin/ directory
 
 test_mktemp() (
-  if ! tmp=$(mktemp 2> /dev/null)
+  if ! tmp=$(mktemp 2>/dev/null)
   then
     echo "Error: command 'mktemp' not working." >&2
     return 1

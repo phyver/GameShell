@@ -6,6 +6,7 @@
 
 # first, resolve symbolic links in GSH_ROOT
 GSH_ROOT=$(cd "$GSH_ROOT" && pwd -P)
+export GSH_ROOT
 
 # these directories should not be modified during a game
 export GSH_LIB="$GSH_ROOT/lib"
@@ -25,6 +26,9 @@ export TEXTDOMAIN="gsh"
 # export the COLUMNS variable so the reflow script can get the terminal size
 export COLUMNS
 
-# PATH=$PATH:"$GSH_ROOT/bin"
+# putting $GSH_ROOT/bin first makes sure the local scripts are prefered over
+# system commands (realpath, seq, etc.). This is useful for testing, but
+# probably shouldn't be done for "stable" releases.
 PATH="$GSH_ROOT/bin":$PATH
+# PATH=$PATH:"$GSH_ROOT/bin"
 
