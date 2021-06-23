@@ -1,7 +1,7 @@
 #!/bin/sh
 
 display_help() {
-  cat <<'EOH'
+  cat <<'EOH' >&2
 Usage: seq [OPTION] LAST
   or:  seq [OPTION] FIRST LAST
   or:  seq [OPTION] FIRST STEP LAST
