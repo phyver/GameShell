@@ -57,11 +57,11 @@ mission_source() {
     MISSION_NAME=$_MISSION_NAME
     MISSION_DIR=$_MISSION_DIR
     PATH=$_PATH
-    unset -f "$MISSION_FN"
+    unset -f "$MISSION_FN" 2>/dev/null      # zsh complains if we try to unset a non existing function
     return $exit_status
   fi
 
-  local _MISSION_DIR _TEXTDOMAIN _MISSION_NAME _PATH exit_status en_before env_after
+  local _MISSION_DIR _TEXTDOMAIN _MISSION_NAME _PATH exit_status env_before env_after
   export MISSION_DIR TEXTDOMAIN MISSION_NAME
   echo "    GSH: sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
   _MISSION_DIR=""  # otherwise, it appears in the environment!
@@ -100,7 +100,7 @@ mission_source() {
   fi
 
   rm -f "$env_before" "$env_after"
-  unset -f "$MISSION_FN"
+  unset -f "$MISSION_FN" 2>/dev/null
   return $exit_status
 }
 
