@@ -1,3 +1,14 @@
 #!/bin/sh
 
-export PS1='\n\w\n[mission $(gsh pcm)] $ '
+case "$GSH_SHELL" in
+  *bash)
+    export PS1='
+\w
+[mission $(gsh pcm)] $ '
+    ;;
+  *zsh)
+    export PS1='
+%~
+[mission $(gsh pcm)] $ '
+    ;;
+esac

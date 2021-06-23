@@ -4,19 +4,17 @@ _mission_init() {
 
   if command -v gcc >/dev/null
   then
+    CC=gcc
     if [ "$GSH_MODE" = DEBUG ]
     then
-      CC="gcc -std=c99 -Wall -Wextra -pedantic"
-    else
-      CC=gcc
+      CFLAGS="-std=c99 -Wall -Wextra -pedantic"
     fi
   elif command -v clang >/dev/null
   then
+    CC=clang
     if [ "$GSH_MODE" = DEBUG ]
     then
-      CC="clang -std=c99 -Wall -Wextra -pedantic"
-    else
-      CC=clang
+      CFLAGS="-std=c99 -Wall -Wextra -pedantic"
     fi
   elif command -v c99 >/dev/null
   then
@@ -52,24 +50,24 @@ _mission_init() {
       # under BSD, libintl is installed in /usr/local
       {
         echo "GSH: compiling process.c, first try" >&2
-        echo $CC "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "nice_fairy")"
-        $CC "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "nice_fairy")"
-        echo $CC "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "mischievous_imp")"
-        $CC "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "mischievous_imp")"
+        echo $CC $CFLAGS "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "nice_fairy")"
+        $CC $CFLAGS "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "nice_fairy")"
+        echo $CC $CFLAGS "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "mischievous_imp")"
+        $CC $CFLAGS "$MISSION_DIR/process.c" -o "$GSH_TMP/$(gettext "mischievous_imp")"
       } ||
       {
         echo "GSH: compiling process.c, second try"
-        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "nice_fairy")"
-        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "nice_fairy")"
-        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "mischievous_imp")"
-        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "mischievous_imp")"
+        echo $CC $CFLAGS -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "nice_fairy")"
+        $CC $CFLAGS -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "nice_fairy")"
+        echo $CC $CFLAGS -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "mischievous_imp")"
+        $CC $CFLAGS -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/process.c" -lintl -o "$GSH_TMP/$(gettext "mischievous_imp")"
       } || { echo "compilation failed" >&2; return 1; }
 
       mkdir -p "$GSH_TMP/fairy/"
-      $CC -D WHO=FAIRY "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/fairy/$(gettext "spell")"
+      $CC $CFLAGS -D WHO=FAIRY "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/fairy/$(gettext "spell")"
 
       mkdir -p "$GSH_TMP/imp/"
-      $CC -D WHO=IMP "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/imp/$(gettext "spell")"
+      $CC $CFLAGS -D WHO=IMP "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/imp/$(gettext "spell")"
     )
     unset CC
 

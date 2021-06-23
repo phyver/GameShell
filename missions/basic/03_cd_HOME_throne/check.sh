@@ -10,7 +10,8 @@ _mission_check() {
   # command shifts the results: it then sees the "gsh check" command that
   # was used to run this function
   # Because of the previous remark, I need to look at the "-3" command.
-  ppc=$(fc -nl -3 -3 | sed 's/^[[:blank:]]*//' | sed 's/[[:blank:]]*$//')
+  # I couldn't find a way to make `fc -nl -3 -3` work on zsh!
+  ppc=$(fc -nlr | sed -n '3p;4q' | sed -e 's/^[[:blank:]]*//' -e 's/[[:blank:]]*$//')
 
   # FIXME: also accept other commands to go back to the starting point?
   # FIXME: add an error message

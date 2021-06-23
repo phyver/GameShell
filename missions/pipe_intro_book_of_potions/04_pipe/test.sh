@@ -1,40 +1,25 @@
-#!/bin/bash
+#!/bin/sh
 
-# the ``history`` command is not in POSIX
+. history_start.sh
 
 cd "$(eval_gettext '$GSH_HOME/Mountain/Cave')"
 
-history -s "cat \"$(gettext "Book_of_potions")/$(gettext 'page')_0\"[34] | tail -n 16"
-history -s "gsh check"
+add_cmd "cat \"$(gettext "Book_of_potions")/$(gettext 'page')_0\"[34] | tail -n 16"
+add_cmd "gsh check"
 gsh assert check true
-n=$(history | tail -n1 | awk '{print $1}')
-history -d $((n-1))
-history -d $((n-1))
-unset n
 
-history -s "cat \"$(gettext "Book_of_potions")/$(gettext "page")_0\"[34]"
-history -s "gsh check"
+add_cmd "cat \"$(gettext "Book_of_potions")/$(gettext "page")_0\"[34]"
+add_cmd "gsh check"
 gsh assert check false
-n=$(history | tail -n1 | awk '{print $1}')
-history -d $((n-1))
-history -d $((n-1))
-unset n
 
-history -s "cat \"$(gettext "Book_of_potions")/$(gettext "page")_0\"[34] | tail -n 16"
-history -s "something something"
-history -s "gsh check"
+add_cmd "cat \"$(gettext "Book_of_potions")/$(gettext "page")_0\"[34] | tail -n 16"
+add_cmd "something something"
+add_cmd "gsh check"
 gsh assert check false
-n=$(history | tail -n1 | awk '{print $1}')
-history -d $((n-2))
-history -d $((n-2))
-history -d $((n-2))
-unset n
 
 sed-i '1d' "$(gettext "Book_of_potions")/$(gettext "page")_01"
-history -s "cat \"$(gettext "Book_of_potions")/$(gettext "page")_0\"[34] | tail -n 16"
-history -s "gsh check"
+add_cmd "cat \"$(gettext "Book_of_potions")/$(gettext "page")_0\"[34] | tail -n 16"
+add_cmd "gsh check"
 gsh assert check false
-n=$(history | tail -n1 | awk '{print $1}')
-history -d $((n-1))
-history -d $((n-1))
-unset n
+
+. history_clean.sh

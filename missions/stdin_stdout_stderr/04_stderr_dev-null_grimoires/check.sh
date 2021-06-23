@@ -7,7 +7,7 @@ _mission_check() (
     # I grep the previous command to avoid looping by re-running "gsh check"
     # recursively. Because of the previous remark, I need to look at the "-2"
     # command
-    pc=$(fc -nl -1 -1)
+    pc=$(fc -nlr | sed -n '2p;3q')
 
     echo "$pc" | grep -q 'gsh\s\s*check' && return 1
 
