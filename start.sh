@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # warning about "echo $(cmd)", used many times with echo "$(gettext ...)"
 # shellcheck disable=SC2005
@@ -31,7 +31,7 @@ display_help() {
 export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
 RESET=""
-while getopts ":hcnPdDACRXqL:K" opt
+while getopts ":hnPdDACRXqL:KBZc:" opt
 do
   case $opt in
     h)
@@ -40,9 +40,6 @@ do
       ;;
     n)
       GSH_COLOR=""
-      ;;
-    c)
-      GSH_COLOR="OK"
       ;;
     P)
       GSH_MODE="PASSPORT"
@@ -72,6 +69,15 @@ do
     X)
       echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
       exit 1
+      ;;
+    B)
+      export GSH_SHELL=bash
+      ;;
+    Z)
+      export GSH_SHELL=zsh
+      ;;
+    c)
+      GSH_COMMAND=$OPTARG
       ;;
     K)
       :  # used by the self-extracting archive
@@ -202,9 +208,7 @@ Do you want to remove it and start a new game? [y/N]') "
 
   mkdir -p "$GSH_BIN"
   mkdir -p "$GSH_SBIN"
-
   mkdir -p "$GSH_TMP"
-
 
   # id of player
   PASSPORT="$GSH_CONFIG/passport.txt"
@@ -353,14 +357,14 @@ Do you want to remove it and start a new game? [y/N]') "
     # copy all the shell config files of the mission
     if [ -f "$MISSION_DIR/gshrc" ]
     then
-      BASHRC_FILE=$GSH_CONFIG/gshrc_${FULL_NB}_$(basename "$MISSION_DIR").sh
+      GSHRC_FILE=$GSH_CONFIG/gshrc_${FULL_NB}_$(basename "$MISSION_DIR").sh
       {
         echo "export MISSION_DIR=\"$MISSION_DIR\"";
         echo "export TEXTDOMAIN=\"$DOMAIN\"";
-      } >"$BASHRC_FILE"
-      cat "$MISSION_DIR/gshrc" >> "$BASHRC_FILE"
-      echo "export TEXTDOMAIN=gsh" >> "$BASHRC_FILE"
-      unset BASHRC_FILE
+      } >"$GSHRC_FILE"
+      cat "$MISSION_DIR/gshrc" >> "$GSHRC_FILE"
+      echo "export TEXTDOMAIN=gsh" >> "$GSHRC_FILE"
+      unset GSHRC_FILE
     fi
 
     if [ "$GSH_MODE" = "DEBUG" ] && [ "$GSH_VERBOSE_DEBUG" = true ]
@@ -431,7 +435,56 @@ fi
 cd "$GSH_HOME"
 export GSH_UID=$(cat "$GSH_CONFIG/uid")
 date "+%Y-%m-%d %H:%M:%S" | sed 's/^/#>>> /' >> "$GSH_CONFIG/missions.log"
-# make sure the shell reads it's config file by making it interactive (-i)
-exec bash --rcfile "$GSH_LIB/gshrc" -i
+
+if [ -z "$GSH_SHELL" ]
+then
+  case "$SHELL" in
+    *bash)
+      export GSH_SHELL=$SHELL
+      ;;
+    *zsh)
+      export GSH_SHELL=$SHELL
+      ;;
+    *)
+      echo "$(gettext "Warning: unknown shell '\$SHELL'.")" >&2
+      return 1
+      ;;
+  esac
+fi
+
+# make sure the shell reads its config file by making it interactive (-i)
+generate_rcfile
+if [ -n "$GSH_COMMAND" ]
+then
+  # NOTE, with "-c", environment isn't inherited by bash / zsh
+  # we need to re-source profile.sh
+  # exec $GSH_SHELL -i -c "GSH_ROOT=\"$GSH_ROOT\"
+  #                        . \"\$GSH_ROOT/lib/profile.sh\"
+  #                        $GSH_COMMAND"
+
+  # NOTE, the above works in bash, but when running the following script with
+  # GSH_SHELL=zsh, it fails with "zsh: suspended (tty output)"
+  # ======== script =======
+  # #!/bin/sh
+  # ./gameshell.sh -qc "gsh exit"; ./gameshell.sh -qc "gsh exit"
+  # =======================
+  # FIX: don't start the shell in interactive mode, and source the rcfile
+  # explicitly
+  case "$GSH_SHELL" in
+    *bash)
+      RC_FILE=.bashrc
+      ;;
+    *zsh)
+      RC_FILE=.zshrc
+      ;;
+  esac
+  exec $GSH_SHELL -c "export GSH_NON_INTERACTIVE=1
+                       GSH_ROOT=\"$GSH_ROOT\"
+                       . \"\$GSH_ROOT/lib/profile.sh\"
+                       . \"\$GSH_HOME/$RC_FILE\"
+                       $GSH_COMMAND"
+else
+  exec $GSH_SHELL
+fi
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2

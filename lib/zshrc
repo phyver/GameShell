@@ -1,0 +1,42 @@
+#!/bin/zsh
+
+export HISTFILE="$GSH_CONFIG/history"
+export HISTSIZE=50000
+export SAVEHIST=50000
+
+if ! [ -s "$HISTFILE" ]
+then
+  HISTFILE=0    # clear history
+  print -s "# $(gettext "START OF COMMANDS HISTORY")"
+fi
+
+
+# do not save consecutive duplicates in the history
+setopt -o HIST_IGNORE_DUPS
+# save commands even when starting with a space
+setopt +o HIST_IGNORE_SPACE
+# save commands to file each time
+setopt +o INC_APPEND_HISTORY
+
+# without that, subsititution isn't applied in PS1
+setopt -o PROMPT_SUBST
+
+# split variables like in sh
+setopt -o SH_WORD_SPLIT
+
+# don't hang-up on running jobs
+# setopt -o NO_HUP
+
+setopt -o POSIX_TRAPS
+
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
+
+# don't print an error message when a pattern has no match
+setopt +o NOMATCH
+
+# completion for (some) gsh commands
+autoload -Uz compinit
+compinit -d "$GSH_CONFIG/zcompdump"
+# compinit -D  # no zcompdump file, slightly slower
+compdef '[ "$CURRENT" -le 2 ] && _values : check exit goal help index log reset stat welcome' gsh

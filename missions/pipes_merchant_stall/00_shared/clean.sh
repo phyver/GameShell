@@ -11,6 +11,5 @@ rm -f "$GSH_TMP/nb_commands" "$GSH_TMP/last_command"
 
 PS1=$_PS1
 unset _PS1
-unset -f _cmd
 
 rm -f "$GSH_TMP/nbUnpaid" "$GSH_TMP/amountKing"

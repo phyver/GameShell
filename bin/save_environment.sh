@@ -10,18 +10,23 @@
   alias | sed -e 's/^alias *//' -e 's/=.*//' -e 's/^/Alias:/'
 
   ## get variable names
-  # for bash
-  # compgen -v          | sed 's/^/Variable:/'
-  # or, for both bash and zsh
-  [ -n "$BASH_VERSION" ] && set -o posix
-  set | sed -e 's/=.*//' -e 's/^/Variable:/'
-  [ -n "$BASH_VERSION" ] && set +o posix
+  if [ -n "$BASH_VERSION" ]
+  then
+    compgen -v          | sed 's/^/Variable:/'
+  else
+  # elif  [ -n "$ZSH_VERSION" ]
+  # then
+    set | sed -e 's/=.*//' -e 's/^/Variable:/'
+  fi
 
   ## get function names
-  # for bash
-  compgen -A function | sed 's/^/Function:/'
-  # for zsh
-  # print -l ${(ok)functions}
+  if [ -n "$BASH_VERSION" ]
+  then
+    compgen -A function | sed 's/^/Function:/'
+  elif  [ -n "$ZSH_VERSION" ]
+  then
+    print -l ${(ok)functions} | sed 's/^/Function:/'
+  fi
 
   ## get processes
   ps -o pid,comm      | sed '1d;s/^/Process:/'

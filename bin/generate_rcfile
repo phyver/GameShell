@@ -1,0 +1,26 @@
+#!/bin/sh
+
+[ -d "$GSH_HOME" ] || { echo "Error: GSH_HOME doesn't exists" >&2 ; exit 1 ; }
+
+msg=$(gettext "AUTOMATICALLY GENERATED ON STARTUP -- DO NOT MODIFY")
+case "$GSH_SHELL" in
+  *bash)
+    cat <<EOF >"$GSH_HOME/.bashrc"
+# $msg
+source "$GSH_LIB/bashrc"
+source "$GSH_LIB/gshrc"
+__gsh_start
+EOF
+    ;;
+  *zsh)
+    # NOTE: keep the files in this order, as zshrc sets some options that
+    # are necessary for gsh.sh (sourced from gshrc) to work, in particular,
+    # the POSIX_TRAPS option that makes trapping EXIT work like in bash
+    cat <<EOF >"$GSH_HOME/.zshrc"
+# $msg
+source "$GSH_LIB/zshrc"
+source "$GSH_LIB/gshrc"
+__gsh_start
+EOF
+    ;;
+esac

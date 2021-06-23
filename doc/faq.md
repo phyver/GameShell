@@ -37,8 +37,15 @@ $ locale -a
 
 Q. What shells are supported by GameShell?
 
-A. Currently, we only support bash. Some preliminary testing indicates porting
-it to zsh is probably easy. Tell us if you really want that feature.
+A. Currently, we only support bash and zsh. By default, GameShell uses the
+value of the `SHELL` environment variable to decide which one to choose.
+If this variable is neither `zsh` nor `bash`, GameShell defaults to using
+bash.
+
+You can force bash with option `-B` and zsh with option `-Z`.
+
+Using zsh is still a new addition, so don't hesitate to give us feedback.
+
 
 -----------------------------
 
