@@ -13,8 +13,12 @@ options:
           On non GNU systems, set the variable LC_MESSAGES
           to a valid locale.
 
+  -B      use bash
+  -Z      use zsh
+
   -q      quiet: don't show information messages
   -n      black and white: don't use ANSI escape codes for color
+  -c ...  give that command to GameShell (for testing)
 
 The following options are only available when GameShell is run from 
 an executable archive.

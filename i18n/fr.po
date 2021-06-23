@@ -74,6 +74,9 @@ msgid_plural    "%d missions skipped:"
 msgstr[0]       "%d mission réussie :"
 msgstr[1]       "%d missions réussies :"
 
+msgid   "AUTOMATICALLY GENERATED ON STARTUP -- DO NOT MODIFY"
+msgstr  "AUTOMATIQUEMENT GÉNÉRÉ AU DÉMARRAGE -- NE PAS MODIFIER"
+
 #, sh-format
 msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
 msgstr  "Bravo, vous avez réussi la mission $MISSION_NB !"
@@ -160,6 +163,9 @@ msgstr  "Nom du joueur :"
 msgid   "Press Enter to continue."
 msgstr  "Appuyez sur Entrée pour continuer."
 
+msgid   "START OF COMMANDS HISTORY"
+msgstr  "DÉBUT DE L'HISTORIQUE DES COMMANDES"
+
 #, sh-format
 msgid   "Sorry, mission $MISSION_NB hasn't been completed."
 msgstr  "Désolé, la mission $MISSION_NB a échoué."
@@ -173,18 +179,30 @@ msgstr  "Le répertoire $GSH_CONFIG contient des méta-données provenant d'une 
 msgid   "There are stopped jobs in your session.\n"
         "Those processes will be terminated.\n"
         "You can get the list of those jobs with\n"
+        "    $ jobs\n"
+        "Do you still want to quit? [y/n]"
+msgstr  "Il y a des processus stoppés dans votre session.\n"
+        "Ces processus vont être arêtés.\n"
+        "Vous pouvez obtenir la liste de ces processus avec\n"
+        "    $ jobs\n"
+        "Êtes vous sûr de vouloir quitter ? [o/N]"
+
+#, fuzzy
+msgid   "There are stopped jobs in your session.\n"
+        "Those processes will be terminated.\n"
+        "You can get the list of those jobs with\n"
         "    $ jobs -s\n"
         "Do you still want to quit? [y/n]"
 msgstr  "Il y a des processus stoppés dans votre session.\n"
         "Ces processus vont être arêtés.\n"
         "Vous pouvez obtenir la liste de ces processus avec\n"
-        "    $ jobs -s\n"
+        "    $ jobs\n"
         "Êtes vous sûr de vouloir quitter ? [o/N]"
 
 msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
         "You should use the command\n"
         "  $ gsh reset"
-msgstr  "Warning : le fichier 'treasure.sh' a été chargé dans un sous-shell.\n"
+msgstr  "Attention : le fichier 'treasure.sh' a été chargé dans un sous-shell.\n"
         "Vous devriez lancer la commande\n"
         "  $ gsh reset"
 
@@ -192,10 +210,14 @@ msgid   "Warning: this mission was initialized in a subshell.\n"
         "Run the command\n"
         "    $ gsh reset\n"
         "to make sure the mission is initialized properly."
-msgstr  "Avertissement : cette mission a été initialisée dans un sous-shell.\n"
+msgstr  "Attention : cette mission a été initialisée dans un sous-shell.\n"
         "Lancez la commande\n"
         "    $ gsh reset\n"
         "pour qu'elle soit initialisée correctement."
+
+#, sh-format
+msgid   "Warning: unknown shell '$SHELL'."
+msgstr  "Attention : shell inconnu '$SHELL'."
 
 msgid   "While you are waiting, a bat flies by..."
 msgstr  "Pendant que vous attendez, une chauve-souris passe..."

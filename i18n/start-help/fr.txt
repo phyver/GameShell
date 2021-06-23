@@ -15,6 +15,7 @@ options :
 
   -q      mode silencieux : n'affiche pas les messages d'information
   -n      mode noir et blanc : n'utilise pas les séquences ANSI
+  -c CMD  donne cette commande à GameShell (pour faire des tests)
 
 Les options suivantes ne sont disponible que lorsque GameShell est 
 lancé depuis une archive exécutable.

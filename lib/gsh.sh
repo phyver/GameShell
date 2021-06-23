@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # warning about "echo $(cmd)", used many times with echo "$(gettext ...)"
 # shellcheck disable=SC2005
@@ -19,9 +19,10 @@
 # shellcheck source=lib/mission_source.sh
 . "$GSH_LIB/mission_source.sh"
 
-trap "_gsh_exit EXIT" EXIT
-trap "_gsh_exit TERM" SIGTERM
-# trap "_gsh_exit INT" SIGINT
+trap '_gsh_exit EXIT $?' EXIT
+trap '_gsh_exit TERM 15' TERM
+trap '_gsh_exit HUP 2' HUP
+# trap '_gsh_exit INT' INT  # causes termination on ^C
 
 
 # log an action to the missions.log file
@@ -59,7 +60,7 @@ _gsh_reset() {
   __gsh_start "$MISSION_NB"
 }
 
-# reset the bash configuration
+# reload the shell
 _gsh_hard_reset() {
   local MISSION_NB="$(_gsh_pcm)"
   if [ -z "$MISSION_NB" ]
@@ -73,9 +74,10 @@ _gsh_hard_reset() {
     echo "$(gettext "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!")" >&2
     return 1
   fi
-  # on relance bash, histoire de recharcher la config
   __log_action "$MISSION_NB" "HARD_RESET"
-  exec bash --rcfile "$GSH_LIB/gshrc"
+  # reload the shell, making sure it reads its config file by making it interactive (-i)
+  generate_rcfile
+  exec $GSH_SHELL -i
 }
 
 
@@ -83,15 +85,25 @@ _gsh_hard_reset() {
 _gsh_exit() {
   local MISSION_NB=$(_gsh_pcm)
   local signal=$1
+  shift
 
-  if jobs | grep -iq stopped
+  if [ "$1" = "--force" ]
+  then
+    local FORCE=1
+    shift
+  fi
+
+  local exit_value=$1
+
+  #TODO HERE
+  if [ -z "$FORCE" ] && LC_ALL=C jobs | grep -iqE "stopped|suspended"  # bash uses "stopped", zsh uses "suspended"
   then
     while true
     do
       printf "$(gettext "There are stopped jobs in your session.
 Those processes will be terminated.
 You can get the list of those jobs with
-    \$ jobs -s
+    \$ jobs
 Do you still want to quit? [y/n]") "
       local resp
       read -r resp
@@ -103,18 +115,22 @@ Do you still want to quit? [y/n]") "
         break
       fi
     done
-    #shellcheck disable=SC2046
-    kill $(jobs -ps)
+    ## NOTE: jobs -p doesn't give pids in zsh
+    ## stopped jobs are terminated anyway (at least in bash and zsh)
+    # kill $(jobs -pl)
+    ## running jobs are kept in bash, but terminated in zsh (except if option
+    ## NO_HUP has been set)
   fi
 
   __log_action "$MISSION_NB" "$signal"
   export GSH_LAST_ACTION='exit'
   __gsh_clean "$MISSION_NB"
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh unprotect
-  #shellcheck disable=SC2046
-  kill -sSIGHUP $(jobs -p) 2>/dev/null
-  trap - EXIT
-  exit 0
+  ## NOTE: without that, calling exit in zsh doesn't work if there are running
+  ## jobs (independantly of the option NO_HUP)
+  [ -n "$ZSH_VERSION" ] && setopt +o MONITOR
+  trap - EXIT   # do not call this function another time!
+  exit $exit_value
 }
 
 
@@ -521,7 +537,7 @@ gsh() {
       _gsh_reset
       ;;
     "exit")
-      _gsh_exit 0
+      _gsh_exit 0 "$@"
       ;;
     "skip")
       _gsh_skip

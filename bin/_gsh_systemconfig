@@ -2,13 +2,16 @@
 
 # display some info about the system
 echo "========================="
-echo "bash' OSTYPE=$(bash -c 'echo $OSTYPE')"
+echo "GSH_SHELL=$GSH_SHELL"
+case "$GSH_SHELL" in
+  *zsh | *bash)
+    echo "version"
+    $GSH_SHELL --version | head -n1
+    ;;
+esac
 echo "========================="
 echo "uname -a"
 uname -a
-echo "========================="
-echo "bash --version"
-bash --version | head -n1
 echo "========================="
 echo "awk --version"
 (awk -Wversion 2>/dev/null || awk --version 2>/dev/null || awk -V 2>/dev/null) | head -n1

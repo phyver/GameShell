@@ -1,13 +1,4 @@
-#!/bin/bash
-
-export REAL_HOME="$HOME"
-export HOME="$GSH_HOME"
-
-export HISTFILE="$GSH_CONFIG/history"
-export HISTCONTROL="ignoredups"
-export HISTIGNORE=""
-export HISTSIZE=50000
-export HISTFILESIZE=50000
+#!/bin/sh
 
 unset LS_COLORS
 unset EDITOR
@@ -17,16 +8,17 @@ unset EDITOR
 
 export PATH=$PATH:$GSH_BIN
 
+# source definition of `gsh` command
 # shellcheck source=./lib/gameshell.sh
 . "$GSH_LIB/gsh.sh"
-
-# completion for (some) gsh commands
-complete -W 'check exit goal help index log reset stat welcome' gsh
 
 export PS1='[mission $(gsh pcm)] $ '
 export PS2="> "
 export PS3=""
 export PS4="+ "
+
+# export the COLUMNS variable so the reflow script can get the terminal size
+export COLUMNS
 
 # choose appropriate pager
 unset PAGER
@@ -58,7 +50,7 @@ then
     alias ls="ls --literal"
 fi
 
-
+# source additional dynamic rc files
 if [ -n "$(find "$GSH_CONFIG" -maxdepth 1 -name 'gshrc_*.sh' | head -n1)" ]
 then
   for file in "$GSH_CONFIG"/gshrc_*.sh
@@ -80,5 +72,3 @@ fi
 unset file MISSION_DIR
 
 [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh protect
-
-__gsh_start
