@@ -3,7 +3,7 @@
 _mission_check() (
   cave="$(eval_gettext '$GSH_HOME/Mountain/Cave')"
 
-  pc=$(fc -nl -1 -1)
+  pc=$(fc -nlr | sed -n '2p;3q')
 
   goal=$(realpath "$cave")
   current=$(realpath "$PWD")

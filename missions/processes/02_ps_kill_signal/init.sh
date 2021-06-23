@@ -4,19 +4,17 @@ _mission_init() {
 
   if command -v gcc >/dev/null
   then
+    CC=gcc
     if [ "$GSH_MODE" = DEBUG ]
     then
-      CC="gcc -std=c99 -Wall -Wextra -pedantic"
-    else
-      CC=gcc
+      CFLAGS="-std=c99 -Wall -Wextra -pedantic"
     fi
   elif command -v clang >/dev/null
   then
+    CC=clang
     if [ "$GSH_MODE" = DEBUG ]
     then
-      CC="clang -std=c99 -Wall -Wextra -pedantic"
-    else
-      CC=clang
+      CFLAGS="-std=c99 -Wall -Wextra -pedantic"
     fi
   elif command -v c99 >/dev/null
   then
@@ -47,13 +45,13 @@ _mission_init() {
       # "-lintl" to the compiler, so we have to try several things!
       {
         echo "GSH: compiling spell.c, first try" >&2
-        echo $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/$(gettext "spell")"
-        $CC "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/$(gettext "spell")"
+        echo $CC $CFLAGS "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/$(gettext "spell")"
+        $CC $CFLAGS "$MISSION_DIR/spell.c" -lpthread -o "$GSH_TMP/$(gettext "spell")"
       } ||
       {
         echo "GSH: compiling spell.c, second try"
-        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_TMP/$(gettext "spell")"
-        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_TMP/$(gettext "spell")"
+        echo $CC $CFLAGS -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_TMP/$(gettext "spell")"
+        $CC $CFLAGS -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_TMP/$(gettext "spell")"
       }
     ) || { echo "compilation failed" >&2; return 1; }
 

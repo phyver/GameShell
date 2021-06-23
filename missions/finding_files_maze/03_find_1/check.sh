@@ -3,14 +3,14 @@
 _mission_check_p() (
     coin_name=$1
     COIN_NB=$2
-    path=$(find "$GSH_CHEST" -name "*$(gettext "$coin_name")_$COIN_NB" -type f)
+    coin=$(find "$GSH_CHEST" -name "*$(gettext "$coin_name")_$COIN_NB" -type f)
 
-    if [ -z "$path" ]
+    if [ -z "$coin" ]
     then
         echo "$(gettext "Some of the coins are not in your chest!")"
         return 1
     fi
-    if ! cmp -s "$path" "$GSH_TMP/${coin_name}_$COIN_NB"
+    if ! cmp -s "$coin" "$GSH_TMP/${coin_name}_$COIN_NB"
     then
         echo "$(eval_gettext "Coin '\$coin_name' in your chest is invalid!")"
         return 1
