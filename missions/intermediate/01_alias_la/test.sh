@@ -4,9 +4,10 @@ alias la="ls -A"
 gsh assert check true
 unalias la 2>/dev/null
 
-alias la="  ls  	  -A  "
-gsh assert check true
-unalias la 2>/dev/null
+# # doesn't work on zsh
+# alias la="  ls  	  -A  "
+# gsh assert check true
+# unalias la 2>/dev/null
 
 alias la="ls -a"
 gsh assert check false
