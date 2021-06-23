@@ -3,7 +3,7 @@
 # fc in specified in POSIX, but debian's sh doesn't implement it!
 
 _mission_check() {
-  if ! (fc -nl -4 | grep -qx "[[:blank:]]*xeyes[[:blank:]]*")
+  if ! (. previous_commands.sh | head -n 4 | grep -qx "[[:blank:]]*xeyes[[:blank:]]*")
   then
     echo "$(gettext "Have you run the 'xeyes' command directly?")"
     ps -e | awk '/xeyes/ {print $1}' | xargs kill -9 2> /dev/null

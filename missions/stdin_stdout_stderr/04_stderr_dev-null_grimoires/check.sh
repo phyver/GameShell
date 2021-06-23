@@ -1,13 +1,7 @@
 #!/bin/sh
 
 _mission_check() (
-    # TODO: for some unknown reason, redirecting the output of fc into another
-    # command shifts the results: it then sees the "gsh check" command that
-    # was used to run this function
-    # I grep the previous command to avoid looping by re-running "gsh check"
-    # recursively. Because of the previous remark, I need to look at the "-2"
-    # command
-    pc=$(fc -nlr | sed -n '2p;3q')
+    pc=$(. previous_commands.sh | head -n 1)
 
     echo "$pc" | grep -q 'gsh\s\s*check' && return 1
 
