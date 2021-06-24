@@ -203,9 +203,19 @@ init_data() {
 animation() {
   # Hide cursor.
   tput civis 2>/dev/null
-  stty -echo 2>/dev/null
+
+  # NOTE: disabling echoing in terminal during animation doesn't always work in zsh!
+  # running
+  # ./utils/archive.sh -a missions/stdin_stdout_stderr/04_stderr_dev-null_grimoires; ./gameshell.sh -Dqc "gsh auto"
+  # loops!
+  # Removing the stty -echo / stty echo makes the problem go away.
+  # I'm not sure what happens...
+  #
+  [ -n "$GSH_NON_INTERACTIVE" ] || stty -echo 2>/dev/null  # see NOTE
+
   # the additional \b\b\b   \b\b\b is used to erase the possible ^C
-  trap 'tput cnorm 2>/dev/null; stty echo 2>/dev/null; printf "\b\b\b   \b\b\b$POST";exit 1' INT TERM QUIT HUP
+  # see NOTE
+  trap 'tput cnorm 2>/dev/null; [ -n "$GSH_NON_INTERACTIVE" ] || stty echo 2>/dev/null; printf "\b\b\b   \b\b\b$POST";exit 1' INT TERM QUIT HUP
 
   # Print initial message.
   printf "$MSG"
@@ -213,10 +223,9 @@ animation() {
   # Make progress for each character read on [stdin].
   printf "$PRE"
   while kill -0 "$PID" 2>/dev/null
-  # NOTE: we need to test that PID is still active here as well, because
-  # the "break" in the body of the loop takes place in a subshell. It is
-  # not possible to return from the function from there (using "break 2" or
-  # "return")!
+  # we need to test that PID is still active here as well, because the "break"
+  # in the body of the loop takes place in a subshell. It is not possible to
+  # return from the function from there (using "break 2" or "return")!
   do
     printf "$STR\n" | while read -r line
     do
@@ -262,7 +271,7 @@ EOS
     animation
     printf "$POST"
     tput cnorm 2>/dev/null
-    stty echo 2>/dev/null
+    [ -n "$GSH_NON_INTERACTIVE" ] || stty echo 2>/dev/null
   fi
 }
 
