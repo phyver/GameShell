@@ -12,11 +12,16 @@ jobs:
       - if: ${{ matrix.platform == 'ubuntu-latest' }}
         name: Install Linux deps
         run: |
-          sudo apt install gettext python3 man-db psmisc nano tree bsdmainutils
+          sudo apt install gettext man-db psmisc nano tree bsdmainutils
       # - if: ${{ matrix.platform == 'macos-latest' }}
       #   name: Install macOS deps
       #   run: |
       #     brew install coreutils pstree tree man-db
-      - name: Run the tests
+      - if: ${{ matrix.platform == 'ubuntu-latest' }}
+        name: Run the tests
         run: |
-            make tests
+            SHELL=bash make tests
+      - if: ${{ matrix.platform == 'macos-latest' }}
+        name: Run the tests
+        run: |
+            SHELL=zsh make tests

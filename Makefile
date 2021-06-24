@@ -36,28 +36,11 @@ new: i18n/template.pot
 
 ## check that the auto.sh scripts work as expected
 check: clean
-	./utils/archive.sh -at -N "game shell (1)"
-	./"game shell (1).sh" -q -c 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort < <(echo gsh); done; gsh stat'
-
-## check that the auto.sh scripts work as expected, in verbose mode
-check-verbose: clean
-	./utils/archive.sh -at -N "game shell (1)"
-	./"game shell (1).sh" -Dq -c 'gsh systemconfig; for _ in $$(seq 42); do gsh auto --abort; done; gsh stat'
+	./make_tests.sh simple_check-en
 
 ## run all the test.sh and auto.sh scripts
 tests: clean
-	./utils/archive.sh -at -N "game shell (1)"
-	./"game shell (1).sh" -dq -c 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat'
-
-## run all the test.sh and auto.sh scripts, in french
-tests-fr: clean
-	./utils/archive.sh -at -N "game shell (1)"
-	./"game shell (1).sh" -dqL fr -c 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat'
-
-## run all the test.sh and auto.sh scripts, in verbose mode
-tests-verbose: clean
-	./utils/archive.sh -at -N "game shell (1)"
-	./"game shell (1).sh" -RDq -c 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat'
+	./make_tests.sh tests-en
 
 clean:
 	rm -rf i18n/*~ locale gameshell.tgz gameshell.sh gameshell-save.sh scripts/boxes-data.awk
