@@ -260,7 +260,8 @@ Do you want to remove it and start a new game? [y/N]') "
   if [ "$GSH_MODE" = "DEBUG" ]
   then
     printf "[MISSION INITIALISATION]" >&2
-  else
+  elif [ -z "$GSH_QUIET_INTRO" ]
+  then
     clear
   fi
 
