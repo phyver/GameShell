@@ -10,11 +10,14 @@
 # caché dans le répertoire de départ. Pour bash, ce fichier se
 # trouve au chemin
 #       ~/.bashrc
+# et pour zsh au chemin
+#       ~/.zshrc
+# (Ne les modifiez pas car il sont utilisés par GameShell !)
 
 # Les définitions de ce fichier ne sont pas ajoutées directement
 # au shell courant. Vous pouvez cependant utiliser le raccourci
 # suivant pour ajouter les ajouter manuellement.
-alias reload="source $GSH_CHEST/gshrc"
+alias reload="source ~/gshrc"
 
 # Voici quelques idées d'alias qui peuvent être utiles :
 # - un alias "gg" pour "gsh goal",
