@@ -45,8 +45,8 @@ dependencies on other systems (macOS, BSD, ...).
 Assuming all the dependencies are installed, you can try the latest version of
 the game by running the following two commands in a terminal.
 ```sh
-$ wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
-$ bash GameShell.sh
+$ wget https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
+$ bash gameshell.sh
 ```
 The first command will download the latest version of the game in the form of
 a self-extracting archive, and the second command will initialise and run the

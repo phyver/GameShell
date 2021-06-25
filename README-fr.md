@@ -47,8 +47,8 @@ En supposant que toutes les dépendances sont installées, vous pouvez essayer
 la dernière version du jeu en lançant les deux commandes suivantes dans un
 terminal.
 ```sh
-$ wget https://github.com/phyver/GameShell/releases/download/latest/GameShell.sh
-$ bash GameShell.sh
+$ wget https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
+$ bash gameshell.sh
 ```
 La première commande téléchargera la dernière version du jeu sous la forme
 d'une archive auto-extractible, et la seconde commande initialisera et lancera
