@@ -21,4 +21,4 @@ rm -f "$GSH_TMP/$(gettext "mischievous_imp")"
   find . -name "*_$(gettext "snowflake")" | sed '1,10d' | xargs rm -f
   find . -name "*_$(gettext "coal")" | xargs rm -f
 )
-set -o monitor  # monitor background processes (default)
+[ -n "$GSH_NON_INTERACTIVE" ] || set -o monitor  # monitor background processes (default)
