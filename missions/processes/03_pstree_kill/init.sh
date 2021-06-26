@@ -97,7 +97,7 @@ _mission_init() {
   return 0
 }
 
-set +o monitor  # do not monitor background processes
+[ -n "$GSH_NON_INTERACTIVE" ] || set +o monitor  # do not monitor background processes
 # FIXME: for some unknown reason, this doesn't work if we start with this
 # mission directly!
 
