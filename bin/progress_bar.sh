@@ -27,17 +27,19 @@ else
     shift 2
   fi
   stderr_log=$(mktemp)
-  set +m
+  [ -n "$GSH_NON_INTERACTIVE" ] || set +o monitor # do not monitor background processes
   # don't use trap, because it will overwrite existing traps in the main
   # shell!
   # trap "set -m" TERM INT EXIT HUP
   "$@" 1>/dev/null 2>"$stderr_log" &
   _PID=$!
+  set --    # unset all positional parameters
   progress_bar -b "$design" $_PID
+  wait $_PID
+  ret_value=$?  # save return value of command
+  [ -n "$GSH_NON_INTERACTIVE" ] || set -o monitor  # monitor background processes (default)
   cat "$stderr_log"
   rm -f "$stderr_log"
-  unset stderr_log design
-  wait $_PID
-  unset _PID
-  set -m
+  unset stderr_log design _PID
+  eval "unset ret_value; ( exit $ret_value )" # return value, unsetting the corresponding variable
 fi
