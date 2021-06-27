@@ -174,6 +174,7 @@ Do you want to remove it and start a new game? [y/N]') "
   # hide cursor and disable echoing of keystrokes
   tput civis 2>/dev/null
   stty -echo 2>/dev/null
+  # those traps will be redefined in lib/gsh.sh
   trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo" INT TERM EXIT
 
 
