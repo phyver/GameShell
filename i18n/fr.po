@@ -243,6 +243,9 @@ msgstr  "annulée"
 msgid   "completed"
 msgstr  "réussie"
 
+msgid   "days"
+msgstr  "jours"
+
 msgid   "failed"
 msgstr  "échouée"
 

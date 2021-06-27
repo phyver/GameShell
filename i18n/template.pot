@@ -230,6 +230,9 @@ msgstr  ""
 msgid   "completed"
 msgstr  ""
 
+msgid   "days"
+msgstr  ""
+
 msgid   "failed"
 msgstr  ""
 

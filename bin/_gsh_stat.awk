@@ -20,7 +20,7 @@ function _n(sing, plur, nb) {
 
 function human_time(seconds) {
     if (seconds >= 24*3600) {
-        return sprintf("%.1fd", seconds/(24*3600))
+        return sprintf("%.1f %s", seconds/(24*3600), _("days"))
     }
     hours = int(seconds / 3600);
     seconds = seconds % 3600;
