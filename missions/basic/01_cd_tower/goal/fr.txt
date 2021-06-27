@@ -29,3 +29,6 @@ Remarque
 Les termes apparaissant en MAJUSCULES dans les commandes sont des 
 méta-variables : vous devez les remplacer par des valeurs (chaines 
 de caractères) appropriées.
+
+La plupart des systèmes de fichiers différencient les caractères 
+majuscules et minuscules. Faites attention à utiliser le bon chemin.
