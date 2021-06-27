@@ -21,7 +21,7 @@
 
 trap "_gsh_exit EXIT" EXIT
 trap "_gsh_exit TERM" SIGTERM
-trap "_gsh_exit INT" SIGINT
+# trap "_gsh_exit INT" SIGINT
 
 
 # log an action to the missions.log file
