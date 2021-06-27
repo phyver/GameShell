@@ -244,6 +244,9 @@ msgstr  "cancelled"
 msgid   "completed"
 msgstr  "completed"
 
+msgid   "days"
+msgstr  "days"
+
 msgid   "failed"
 msgstr  "failed"
 
