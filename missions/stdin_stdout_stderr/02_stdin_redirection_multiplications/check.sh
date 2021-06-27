@@ -14,7 +14,7 @@ _mission_check() (
     if [ "$time_limit" -le "$(date +%s)" ]
     then
       echo "$(gettext "Too slow! You need to give the answers in less than 10 seconds...")"
-      break
+      return 1
     fi
 
     case "$response" in
@@ -29,6 +29,7 @@ _mission_check() (
         ;;
     esac
   done
+  return 0
 )
 
 _mission_check
