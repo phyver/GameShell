@@ -9,8 +9,8 @@ Pour valider la mission, votre dernière commande avant ``gsh check``
 doit afficher les étapes de la recette, mais pas son titre.
 
 
-Useful commands
-===============
+Commandes utiles
+================
 
 cat FILE1 FILE2 ... FILEn
   Affiche le contenu des fichiers dans l'ordre donné.
@@ -43,5 +43,5 @@ Par exemple :
 - ``head FICHIER`` lit son entrée dans le fichier,
 - ``head`` lit sont entrée sur l'entrée standard.
 
-Par défaut, les données de l'entrée standard sont lue du clavier, 
+Par défaut, les données de l'entrée standard sont lues du clavier, 
 mais un tube peut modifier ceci.

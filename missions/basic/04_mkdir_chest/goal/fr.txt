@@ -10,7 +10,7 @@ Commandes utiles
 
 mkdir REPERTOIRE
   Crée un nouveau répertoire dans le répertoire courant.
-  Note : ``mkdir`` est une abréviation pour "make directory."
+  Note : ``mkdir`` est une abréviation pour "make directory".
 
 
 Remarque
