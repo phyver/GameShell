@@ -19,7 +19,7 @@ msgstr  "$MISSION_DIR/goal/fr.txt"
 # path for the text file containing the goal
 #, sh-format
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  "$MISSION_DIR/goal/fr.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
 msgid   "Booh... The copper coin in you chest is invalid!"
 msgstr  "Bouh... La pièce de bronze de votre coffre est invalide !"

@@ -5,8 +5,9 @@ Merlin est devenu fou... Il fait les cent pas dans la tour de
 l'observatoire et tient des propos incohérents, voire 
 incompréhensibles.
 
-Vous devez déchiffrer son charabia car il est le seul à connaitre la 
-clé secrète.
+Vous devez filtrer son charabia afin de trouver la clé secrète qu'il 
+est le
+seul à connaitre.
 
 Indice
 ------

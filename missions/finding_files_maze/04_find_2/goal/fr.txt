@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Retrouvez le rubis dans labyrinthe du jardin et déplacez le dans 
+Retrouvez le rubis dans le labyrinthe du jardin et déplacez-le dans 
 votre coffre.
 
 Indice

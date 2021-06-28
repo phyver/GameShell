@@ -72,7 +72,7 @@ It might be possible to run GameShell on Windows, if you have installed
 We haven't tried but are interested in any feedback.
 
 
-Running GameShell form a Docker container
+Running GameShell from a Docker container
 -----------------------------------------
 
 The idea behind GameShell is to be "as close as possible" to a standard shell

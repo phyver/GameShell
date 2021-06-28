@@ -7,8 +7,8 @@ Afin de garder le compte des dettes de chacun, le propriétaire note
 tout sur un parchemin. Lorsqu'une dette est remboursée, il inscrit 
 "PAYÉ" à côté celle-ci.
 
-Combinez plusieurs commandes avec le pipe ``|`` pour déterminez la 
-dette du roi.
+Combinez plusieurs commandes avec le pipe ``|`` afin de déterminez 
+la dette du roi.
 
 Remarque
 --------

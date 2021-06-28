@@ -2,7 +2,7 @@ Objectif
 ========
 
 Combinez plusieurs commandes avec ``|`` pour retrouver le diamant 
-dans labyrinthe et le déplacer dans votre coffre.
+dans le labyrinthe et déplacer-le dans votre coffre.
 
 Remarque
 --------

@@ -2,7 +2,7 @@ Objectif
 ========
 
 Les vieux grimoires de Merlin sont stockés dans son bureau, dans la 
-bibliothèque. Vous devez obtenir une liste de tous ces grimoires (et 
+bibliothèque. Vous devez fournir une liste de tous ces grimoires (et 
 rien d'autre) dans un fichier "inventaire.txt" dans le tiroir...
 
 
