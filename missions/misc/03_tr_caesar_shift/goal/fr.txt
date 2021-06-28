@@ -4,7 +4,7 @@ Objectif
 Un message secret a été trouvé, il est dans le tiroir du bureau de 
 Merlin. Il a probablement été chiffré avec un décalage de César.
 
-Décryptez le en faisant une recherche exhaustive dans le shell.
+Décryptez-le en faisant une recherche exhaustive dans le shell.
 
 Indice
 ------

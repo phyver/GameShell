@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Nostradamus a prévu une conjonction spectaculaires des astres pour 
+Nostradamus a prévu une conjonction spectaculaire des astres pour 
 le $DD-$MM-$YYYY.
 Mais sur quel jour de la semaine tombera donc cette date ?
 

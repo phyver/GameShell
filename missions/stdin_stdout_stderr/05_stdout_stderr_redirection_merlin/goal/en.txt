@@ -4,8 +4,8 @@ Mission goal
 Merlin has turned crazy... He paces around the observatory tower and 
 mumbles incoherently.
 
-You need to make sense of this because he is the only one who knows 
-the secret key!
+You need to filter out his ramblings to discover the secret key he 
+is the only one to know.
 
 Hint
 ----
