@@ -25,6 +25,9 @@ msgstr  ""
 msgid   "The $dir_name directory does not exist!"
 msgstr  ""
 
+msgid   "You are back at the initial directory."
+msgstr  ""
+
 msgid   "You built too many chests in your hut!"
 msgstr  ""
 
