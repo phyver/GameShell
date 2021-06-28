@@ -113,6 +113,8 @@ Do you still want to quit? [y/n]") "
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh unprotect
   #shellcheck disable=SC2046
   kill -sSIGHUP $(jobs -p) 2>/dev/null
+  trap - EXIT
+  exit 0
 }
 
 
