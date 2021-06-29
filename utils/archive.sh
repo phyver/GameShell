@@ -117,7 +117,7 @@ mkdir "$TMP_DIR/$NAME"
 # copy source files
 # NOTE: macOS' cp doesn't have '--archive', and '-a' is not POSIX.
 # use POSIX options to make sure it is portable
-cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/bin" "$GSH_ROOT/utils" "$GSH_ROOT/lib" "$GSH_ROOT/i18n" "$TMP_DIR/$NAME"
+cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/scripts" "$GSH_ROOT/utils" "$GSH_ROOT/lib" "$GSH_ROOT/i18n" "$TMP_DIR/$NAME"
 
 # copy missions
 mkdir "$TMP_DIR/$NAME/missions"
@@ -257,7 +257,7 @@ echo "removing unnecessary files"
   [ "$KEEP_TEST" -ne 1 ] && find ./missions -name "test.sh" | xargs rm -f
   [ "$KEEP_AUTO" -ne 1 ] && find ./missions -name auto.sh | xargs rm -f
 
-  # rm -f "$GSH_ROOT/bin/boxes-data.awk" "$GSH_ROOT/utils/archive.sh"
+  # rm -f "$GSH_ROOT/scripts/boxes-data.awk" "$GSH_ROOT/utils/archive.sh"
 )
 
 # change admin password

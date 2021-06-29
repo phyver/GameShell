@@ -23,7 +23,7 @@ export COLUMNS
 # choose appropriate pager
 unset PAGER
 tempfile=$(mktemp)
-echo "TEST" | "$GSH_ROOT/bin/pager" 2>"$tempfile" >/dev/null
+echo "TEST" | "$GSH_ROOT/scripts/pager" 2>"$tempfile" >/dev/null
 if [ -s "$tempfile" ]
 then
   export PAGER=more

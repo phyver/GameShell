@@ -4,7 +4,7 @@ GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
 GSH_MISSIONS=$GSH_ROOT/missions
 
 missionname() {
-  path=$(realpath "$1")
+  path=$(readlink-f "$1")
 
   if ! [ -e "$path" ]
   then

@@ -18,6 +18,7 @@ or
   . progress_bar.sh [-b DESIGN] COMMAND
 if your shell is stricly POSIX
 EOS
+  set --
   false
 else
   design=RANDOM

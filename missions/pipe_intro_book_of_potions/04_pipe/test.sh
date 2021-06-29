@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. history_start.sh
+. alt_history_start.sh
 
 cd "$(eval_gettext '$GSH_HOME/Mountain/Cave')"
 
@@ -22,4 +22,4 @@ add_cmd "cat \"$(gettext "Book_of_potions")/$(gettext "page")_0\"[34] | tail -n 
 add_cmd gsh check
 gsh assert check false
 
-. history_clean.sh
+. alt_history_stop.sh

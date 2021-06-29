@@ -16,12 +16,12 @@ test_history() {
       export HISTSIZE=10
       export HISTFILESIZE=10
       fc -ln
-      source ./bin/history_start.sh
+      source ./bin/alt_history_start.sh
       add_cmd A
       add_cmd B
       add_cmd C
       fc -ln
-      source ./bin/history_clean.sh
+      source ./bin/alt_history_stop.sh
       fc -ln
       '
       ;;
@@ -34,12 +34,12 @@ test_history() {
       export HISTSIZE=10
       export SAVEHIST=10
       fc -ln
-      source ./bin/history_start.sh
+      source ./bin/alt_history_start.sh
       add_cmd A
       add_cmd B
       add_cmd C
       fc -ln
-      source ./bin/history_clean.sh
+      source ./bin/alt_history_stop.sh
       fc -ln
       '
       ;;

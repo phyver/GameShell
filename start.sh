@@ -15,11 +15,10 @@
 
 
 export GSH_ROOT="$(dirname "$0")"
+# shellcheck source=scripts/gsh_gettext.sh
+. "$GSH_ROOT/scripts/gsh_gettext.sh"
 # shellcheck source=lib/profile.sh
 . "$GSH_ROOT/lib/profile.sh"
-
-# shellcheck source=bin/gsh_gettext.sh
-. "$GSH_ROOT/bin/gsh_gettext.sh"
 # shellcheck source=lib/mission_source.sh
 . "$GSH_ROOT/lib/mission_source.sh"
 

@@ -7,8 +7,8 @@ case "$GSH_LAST_ACTION" in
     :
     ;;
   *)
-    _PWD="$(realpath $(pwd) 2>/dev/null)"
-    if [ -n "$_PWD" ] && [ "$_PWD" = "$(realpath "$safe" 2>/dev/null)" ]
+    _PWD="$(readlink-f $(pwd) 2>/dev/null)"
+    if [ -n "$_PWD" ] && [ "$_PWD" = "$(readlink-f "$safe" 2>/dev/null)" ]
     then
       cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
     fi

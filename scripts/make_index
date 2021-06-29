@@ -61,7 +61,7 @@ parse_mission() (
 # use a subshell to have "local" variables (the functions are mutually
 # recursive)
 parse_index() (
-  index_file=$(realpath "$1")
+  index_file=$(readlink-f "$1")
 
   case "$index_file" in
     "$GSH_MISSIONS"* )
@@ -99,7 +99,7 @@ parse_index() (
   MISSION_DIR=$dir/$MISSION_DIR
   if [ -e "$MISSION_DIR" ]
   then
-    parse_mission "$DUMMY$(realpath "$MISSION_DIR")" || exit 1
+    parse_mission "$DUMMY$(readlink-f "$MISSION_DIR")" || exit 1
   else
     echo "Error: make_index, invalid argument (parse_index): '${MISSION_DIR#$GSH_MISSIONS/}'" >&2
     exit 1
@@ -120,7 +120,7 @@ make_index() {
 
   while [ "$#" -gt 0 ]
   do
-    MISSION_DIR=$(realpath "$1")
+    MISSION_DIR=$(readlink-f "$1")
     if [ -e "$MISSION_DIR" ]
     then
       parse_mission "$MISSION_DIR" || exit 1
