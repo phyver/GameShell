@@ -18,7 +18,7 @@ then
   echo "Error: missiondir, mission '$n' not found." >&2
   exit 1
 fi
-dir=$(realpath "$dir")
+dir=$(readlink-f "$dir")
 
 if [ -z "$RELATIVE" ]
 then

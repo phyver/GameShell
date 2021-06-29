@@ -3,8 +3,8 @@
 GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
 
 # we need access to checksum and missiondir
-PATH=$PATH:$GSH_ROOT/bin
+PATH=$PATH:$GSH_ROOT/scripts
 
 awk -v UID="$(cat "$GSH_ROOT/.config/uid")" \
-    -f "$GSH_ROOT/bin/_gsh_stat.awk" \
+    -f "$GSH_ROOT/scripts/_gsh_stat.awk" \
     "$GSH_ROOT/.config/missions.log"

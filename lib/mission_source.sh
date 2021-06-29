@@ -44,7 +44,7 @@ mission_source() {
     local _MISSION_DIR _TEXTDOMAIN _MISSION_NAME _PATH exit_status
     export MISSION_DIR TEXTDOMAIN MISSION_NAME
     _MISSION_DIR=$MISSION_DIR
-    MISSION_DIR=$(dirname "$(realpath "$FILENAME")")
+    MISSION_DIR=$(dirname "$(readlink-f "$FILENAME")")
     _TEXTDOMAIN=$TEXTDOMAIN
     TEXTDOMAIN=$(textdomainname "$MISSION_DIR")
     _MISSION_NAME=$MISSION_NAME
@@ -75,9 +75,9 @@ mission_source() {
 
   # otherwise, record the environment (variables, functions and aliases)
   # before and after to echo a message when there are differences
-  . save_environment.sh >"$env_before"
+  . print_current_environment.sh >"$env_before"
   _MISSION_DIR=$MISSION_DIR
-  MISSION_DIR=$(dirname "$(realpath "$FILENAME")")
+  MISSION_DIR=$(dirname "$(readlink-f "$FILENAME")")
   _TEXTDOMAIN=$TEXTDOMAIN
   TEXTDOMAIN=$(textdomainname "$MISSION_DIR")
   _MISSION_NAME=$MISSION_NAME
@@ -90,7 +90,7 @@ mission_source() {
   MISSION_NAME=$_MISSION_NAME
   MISSION_DIR=$_MISSION_DIR
   PATH=$_PATH
-  . save_environment.sh | grep -v "$MISSION_FN" > "$env_after"
+  . print_current_environment.sh | grep -v "$MISSION_FN" > "$env_after"
 
   if ! cmp -s "$env_before" "$env_after"
   then

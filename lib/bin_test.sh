@@ -1,6 +1,6 @@
 #!/bin/sh
 
-### test the various utilities in GSH_ROOT/bin/ directory
+### test the various utilities in GSH_ROOT/scripts/ directory
 
 test_mktemp() (
   if ! tmp=$(mktemp 2>/dev/null)
@@ -17,33 +17,33 @@ test_mktemp() (
 )
 
 
-test_realpath() (
+test_readlink_f() (
   tmp=${GSH_TMP:?Error: \$GSH_TMP not set}
   cd "$tmp"
   rm -f a b
 
   touch a
-  rpa=$(realpath ./a)
+  rpa=$(readlink-f ./a)
   if [ -z "$rpa" ]
   then
-    echo "Error: realpath returned the empty string." >&2
+    echo "Error: readlink-f returned the empty string." >&2
     return 1
   fi
 
   case "$rpa" in
-    "$(realpath "$tmp")"* )
+    "$(readlink-f "$tmp")"* )
       ;;
     * )
-    echo "Error: realpath didn't give an absolute path." >&2
+    echo "Error: readlink-f didn't give an absolute path." >&2
     return 1
     ;;
   esac
 
   ln -s a b
-  rpb=$(realpath b)
+  rpb=$(readlink-f b)
   if [ "$rpa" != "$rpb" ]
   then
-    echo "Error: realpath doesn't resolve symbolic links." >&2
+    echo "Error: readlink-f doesn't resolve symbolic links." >&2
     return 1
   fi
 
@@ -97,4 +97,4 @@ test_sign() (
   return 0
 )
 
-test_mktemp && test_realpath && test_checksum && test_sign
+test_mktemp && test_readlink_f && test_checksum && test_sign

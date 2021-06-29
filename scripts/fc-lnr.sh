@@ -1,6 +1,11 @@
 # shows the 10 previous commands using fc -nlr
 # this must be SOURCED
 #
+# if the script receives a $1 argument, it is used instead of "10".
+# (You can either rely on bash / zsh ability to pass arguments while sourcing,
+# or set it explicitly with
+#      set NB ; . fc-lnr.sh
+#
 # This script is necessary because of some strange behaviour with bash:
 # when sourcing a script from inside a function, the function call is added
 # during the "source", removed after the "source", and added again after the
@@ -29,7 +34,9 @@
 # As an ugly fix, I manually remove that additional command!
 
 fc -nl |                                              # get the history
-  tail -n 11 |                                        # keep at most the last 11 commands
+  tail -n ${1:-10} |                                  # keep at most the last 10 commands
   awk '{L[l++]=$0} END {while (l>0) print L[--l]}' |  # reverse the lines, to get last command on first line
   awk 'NR==1 && $0 ~ "gsh *check" {next}; {print}' |  # remove the first line, if it matches "gsh *check"
-  sed -e "s/^[[:blank:]]*//"  -e "s/[[blank:]]*$//"   # remove leading /trailing spaces
+  sed -e "s/^[[:blank:]]*//"  -e "s/[[:blank:]]*$//"   # remove leading /trailing spaces
+
+set --

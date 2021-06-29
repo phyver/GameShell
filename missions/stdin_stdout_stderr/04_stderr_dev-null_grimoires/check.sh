@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _mission_check() (
-    pc=$(. previous_commands.sh | head -n 1)
+    pc=$(. fc-lnr.sh | head -n 1)
 
     echo "$pc" | grep -q 'gsh\s\s*check' && return 1
 
@@ -12,6 +12,7 @@ _mission_check() (
     fi
 
     temp_file=$(mktemp)
+    echo "pc=$pc"
     eval "$pc" | sort >"$temp_file"
     if cmp -s "$GSH_TMP/list_grimoires_GSH" "$temp_file"
     then
