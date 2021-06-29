@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. history_start.sh
+. alt_history_start.sh
 
 # add dummy commands to avoid error messages
 add_cmd dummy1
@@ -26,4 +26,4 @@ add_cmd cd
 add_cmd cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
 gsh assert check true
 
-. history_clean.sh
+. alt_history_stop.sh

@@ -3,10 +3,10 @@
 _mission_check() (
   cave="$(eval_gettext '$GSH_HOME/Mountain/Cave')"
 
-  pc=$(. previous_commands.sh | head -n1)
+  pc=$(. fc-lnr.sh | head -n1)
 
-  goal=$(realpath "$cave")
-  current=$(realpath "$PWD")
+  goal=$(readlink-f "$cave")
+  current=$(readlink-f "$PWD")
 
   if ! diff -q "$cave/$(gettext 'Book_of_potions')" "$GSH_TMP/book_of_potions" >/dev/null
   then

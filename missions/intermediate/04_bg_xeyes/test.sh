@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. history_start.sh
+. alt_history_start.sh
 
 add_cmd "xeyes"
 add_cmd "xeyes &"
@@ -25,5 +25,5 @@ gsh assert check true
 
 ps -e | awk '/xeyes/ {print $1}' | xargs kill -9 2> /dev/null
 
-. history_clean.sh
+. alt_history_stop.sh
 

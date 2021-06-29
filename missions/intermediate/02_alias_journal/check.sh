@@ -22,8 +22,8 @@ _mission_check() {
       # alias journal="nano journal.txt"
       # used from the Chest
       local target_path
-      target_path="$(cd / ; eval "${cmd/$EDITOR/realpath}" 2>/dev/null)"
-      if [ "$target_path" = "$(realpath "$GSH_CHEST/$(gettext "journal").txt" 2>/dev/null)" ]
+      target_path="$(cd / ; eval "${cmd/$EDITOR/readlink-f}" 2>/dev/null)"
+      if [ "$target_path" = "$(readlink-f "$GSH_CHEST/$(gettext "journal").txt" 2>/dev/null)" ]
       then
         return 0
       else

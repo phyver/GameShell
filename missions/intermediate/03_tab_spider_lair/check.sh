@@ -7,7 +7,7 @@ _mission_check() (
 
 
   lair="$(find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -type d -name ".$(gettext "Lair_of_the_spider_queen")*")"
-  if [ "$(realpath "$(pwd)")" != "$(realpath "$lair")" ]
+  if [ "$(readlink-f "$(pwd)")" != "$(readlink-f "$lair")" ]
   then
     echo "$(gettext "You are not in the queen spider lair!")"
     return 1

@@ -7,7 +7,7 @@ _mission_init() (
     return 1
   fi
 
-  [ "$(realpath "$(pwd)")" = "$(realpath "$dir")" ] && cd ..
+  [ "$(readlink-f "$(pwd)")" = "$(readlink-f "$dir")" ] && cd ..
 
   dir=$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room/Kings_quarter')
   chmod -x "$dir"

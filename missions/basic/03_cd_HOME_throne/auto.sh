@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. history_start.sh
+. alt_history_start.sh
 
 cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
 
@@ -10,4 +10,4 @@ add_cmd -s cd
 add_cmd -s cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
 gsh check
 
-. history_clean.sh
+. alt_history_stop.sh

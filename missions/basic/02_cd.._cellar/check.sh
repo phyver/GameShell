@@ -1,7 +1,7 @@
 #!/bin/sh
 
-goal=$(realpath "$(eval_gettext "\$GSH_HOME/Castle/Cellar")")
-current=$(realpath "$PWD")
+goal=$(readlink-f "$(eval_gettext "\$GSH_HOME/Castle/Cellar")")
+current=$(readlink-f "$PWD")
 
 if [ "$goal" = "$current" ]
 then

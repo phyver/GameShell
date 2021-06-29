@@ -30,6 +30,6 @@ export COLUMNS
 # putting $GSH_ROOT/bin first makes sure the local scripts are prefered over
 # system commands (realpath, seq, etc.). This is useful for testing, but
 # probably shouldn't be done for "stable" releases.
-PATH="$GSH_ROOT/bin":$PATH
-# PATH=$PATH:"$GSH_ROOT/bin"
+PATH="$GSH_ROOT/scripts":$PATH
+# PATH=$PATH:"$GSH_ROOT/scripts"
 

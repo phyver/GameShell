@@ -194,7 +194,7 @@ __gsh_start() {
     then
       local env_before=$(mktemp)
       local env_after=$(mktemp)
-      . save_environment.sh > "$env_before"
+      . print_current_environment.sh > "$env_before"
     fi
 
     mission_source "$MISSION_DIR/init.sh"
@@ -221,7 +221,7 @@ Aborting.")" >&2
 
     if ! . mainshell.sh
     then
-      . save_environment.sh > "$env_after"
+      . print_current_environment.sh > "$env_after"
 
       if ! cmp -s "$env_before" "$env_after"
       then
