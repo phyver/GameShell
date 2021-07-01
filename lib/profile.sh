@@ -24,9 +24,6 @@ export GSH_SBIN="$GSH_ROOT/.sbin"
 export TEXTDOMAINDIR="$GSH_ROOT/locale"
 export TEXTDOMAIN="gsh"
 
-# export the COLUMNS variable so the reflow script can get the terminal size
-export COLUMNS
-
 # putting $GSH_ROOT/bin first makes sure the local scripts are prefered over
 # system commands (realpath, seq, etc.). This is useful for testing, but
 # probably shouldn't be done for "stable" releases.
