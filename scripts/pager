@@ -2,8 +2,10 @@
 
 TEXTDOMAIN=gsh
 
-
-if [ -n "$PAGER" ]
+if [ -n "$GSH_NON_INTERACTIVE" ]
+then
+  cat "$@"
+elif [ -n "$PAGER" ]
 then
   $PAGER "$@"
 elif command -v less > /dev/null 2>&1
