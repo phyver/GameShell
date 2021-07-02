@@ -89,6 +89,24 @@ do
 done
 shift $((OPTIND - 1))
 
+# check we have a shell compatible with GameShell
+if [ -z "$GSH_SHELL" ]
+then
+  case "$SHELL" in
+    *bash)
+      export GSH_SHELL=$SHELL
+      ;;
+    *zsh)
+      export GSH_SHELL=$SHELL
+      ;;
+    *)
+      echo "$(eval_gettext "Error: unknown shell '\$SHELL'.
+Use option -B to use bash, and option -Z to use zsh.")" >&2
+      return 1
+      ;;
+  esac
+fi
+
 
 _passport() {
   local PASSPORT=$1
@@ -434,22 +452,6 @@ fi
 cd "$GSH_HOME"
 export GSH_UID=$(cat "$GSH_CONFIG/uid")
 date "+%Y-%m-%d %H:%M:%S" | sed 's/^/#>>> /' >> "$GSH_CONFIG/missions.log"
-
-if [ -z "$GSH_SHELL" ]
-then
-  case "$SHELL" in
-    *bash)
-      export GSH_SHELL=$SHELL
-      ;;
-    *zsh)
-      export GSH_SHELL=$SHELL
-      ;;
-    *)
-      echo "$(gettext "Warning: unknown shell '\$SHELL'.")" >&2
-      return 1
-      ;;
-  esac
-fi
 
 # make sure the shell reads its config file by making it interactive (-i)
 generate_rcfile
