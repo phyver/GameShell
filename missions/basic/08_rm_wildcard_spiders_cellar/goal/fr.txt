@@ -30,4 +30,4 @@ alors
     ls *-?   -->  fichier-1 Rep-1
     ls *-??  -->  fichier-14
 
-On apelle ces jokers des "motifs de chaîne" du shell.
+Ces jokers font partie des "motifs de chaîne" du shell.
