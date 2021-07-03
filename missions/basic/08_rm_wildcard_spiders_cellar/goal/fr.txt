@@ -8,12 +8,14 @@ toucher aux chauves-souris.
 Motifs shell
 ============
 
-*
-  Le caractère "*" est un joker pour n'importe quelle chaine de 
-  caractères (y compris la chaine vide).
-
 ?
-  Le caractère "?" est un joker pour n'importe caractère.
+  Le caractère "?" est un joker comme aux cartes, il remplace n'importe quel caractère.
+
+*
+  Le caractère "*" est un joker différent qui remplace n'importe quelle suite de 
+  caractères (de zéro à beaucoup !). En programmation, une suite de caractère est 
+  appelée une "chaîne".
+
 
 On peut utiliser les jokers pour dénoter une liste de fichiers / 
 répertoires du répertoire courant.
