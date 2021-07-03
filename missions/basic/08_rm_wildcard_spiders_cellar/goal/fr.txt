@@ -17,15 +17,17 @@ Motifs shell
   appelée une "chaîne".
 
 
-On peut utiliser les jokers pour dénoter une liste de fichiers / 
+On peut utiliser les jokers pour afficher une liste de fichiers et de 
 répertoires du répertoire courant.
 
 Par exemple, si le répertoire courant contient
       fichier-1 Rep-1 fichier-14 patate
 alors
-    *     -->  fichier-1 Rep-1 fichier-14 patate
-    *1    -->  fichier-1 Rep-1
-    *p*   -->  Rep-1 patate
-    x*    -->  erreur, aucun fichier ne correspond
-    *-?   -->  fichier-1 Rep-1
-    *-??  -->  fichier-14
+    ls *     -->  fichier-1 Rep-1 fichier-14 patate
+    ls *1    -->  fichier-1 Rep-1
+    ls *p*   -->  Rep-1 patate
+    ls x*    -->  erreur, aucun fichier ne correspond
+    ls *-?   -->  fichier-1 Rep-1
+    ls *-??  -->  fichier-14
+
+On apelle ces jokers des "motifs de chaîne" du shell.
