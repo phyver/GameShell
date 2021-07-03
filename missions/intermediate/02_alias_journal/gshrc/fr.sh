@@ -17,7 +17,7 @@
 # Les définitions de ce fichier ne sont pas ajoutées directement
 # au shell courant. Vous pouvez cependant utiliser le raccourci
 # suivant pour ajouter les ajouter manuellement.
-alias reload="source ~/gshrc"
+alias reload="source ~/.gshrc"
 
 # Voici quelques idées d'alias qui peuvent être utiles :
 # - un alias "gg" pour "gsh goal",
