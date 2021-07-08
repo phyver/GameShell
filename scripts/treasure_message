@@ -43,7 +43,7 @@ BEGIN{
   print s "" $0;
 }
 END {
-  if (seed) printf("%s", int(2^32 * rand())) > seed_file;
+  if (seed) printf("%d\n", int(2^31 * rand())) > seed_file;
 }
 /^[^\t]/ { print $0; }
 ' | column -t -s"	"

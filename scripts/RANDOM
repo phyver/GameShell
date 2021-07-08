@@ -13,5 +13,5 @@ awk -v seed_file="$GSH_CONFIG/PRNG_seed" -v n="$n" 'BEGIN {
   for (i=0; i<n; i++) {
     print int(rand()*65536);
   }
-  if (seed) printf("%s", int(2^32 * rand())) > seed_file;
+  if (seed) printf("%d\n", int(2^31 * rand())) > seed_file;
 }'
