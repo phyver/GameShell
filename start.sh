@@ -102,7 +102,7 @@ then
     *)
       echo "$(eval_gettext "Error: unknown shell '\$SHELL'.
 Use option -B to use bash, and option -Z to use zsh.")" >&2
-      return 1
+      exit 1
       ;;
   esac
 fi
