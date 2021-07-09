@@ -11,11 +11,16 @@ _mission_init() (
   i=$(RANDOM)
   i=$((1+i%3))
 
-  while true
+  for _ in $(seq 100)
   do
     filename="$(gettext "painting")_$(random_string 8)"
     [ -e "$filename" ] || break
   done
+  if [ -e "$filename" ]
+  then
+    echo "$(gettext "Problem with generation of random filename!")" >&2
+    return 1
+  fi
   box.sh -B Diamond "$MISSION_DIR/ascii-art/painting-$i" > "$filename"
   Y=$((1980 + $(RANDOM)%10))
   M=$(printf "%02d" $((1 + $(RANDOM)%12)))
@@ -28,11 +33,16 @@ _mission_init() (
   touch -t "$Y$M$D$h$m.$s" "$filename"
 
   i=$((1+i%3))
-  while true
+  for _ in $(seq 100)
   do
     filename="$(gettext "painting")_$(random_string 8)"
     [ -e "$filename" ] || break
   done
+  if [ -e "$filename" ]
+  then
+    echo "$(gettext "Problem with generation of random filename!")" >&2
+    return 1
+  fi
   box.sh -B Diamond "$MISSION_DIR/ascii-art/painting-$i" > "$filename"
   Y=$((1995 + $(RANDOM)%10))
   M=$(printf "%02d" $((1 + $(RANDOM)%12)))
@@ -44,11 +54,16 @@ _mission_init() (
   touch -t "$Y$M$D$h$m.$s" "$filename"
 
   i=$((1+i%3))
-  while true
+  for _ in $(seq 100)
   do
     filename="$(gettext "painting")_$(random_string 8)"
     [ -e "$filename" ] || break
   done
+  if [ -e "$filename" ]
+  then
+    echo "$(gettext "Problem with generation of random filename!")" >&2
+    return 1
+  fi
   box.sh -B Diamond "$MISSION_DIR/ascii-art/painting-$i" > "$filename"
   Y=$((2010 + $(RANDOM)%10))
   M=$(printf "%02d" $((1 + $(RANDOM)%12)))

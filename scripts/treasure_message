@@ -25,7 +25,7 @@ display_message() {
   echo
   "$GSH_ROOT/scripts/reflow.awk" -v width=$reflow_width "$treasure_msg_file" |
     paste "$GSH_LIB/ascii-art/treasure-chest.txt" - |
-    awk -v width=$WIDTH -v seed_file="$GSH_CONFIG/PRNG_seed" '
+    awk -v width=$WIDTH -v seed_file="$GSH_CONFIG/PRNG_seed" -v PID=$$ '
 BEGIN{
   getline seed < seed_file;
   if (seed) srand(seed); else srand();
@@ -43,7 +43,7 @@ BEGIN{
   print s "" $0;
 }
 END {
-  if (seed) printf("%d\n", int(2^31 * rand())) > seed_file;
+  if (seed) printf("%d\n", int(2^30 * rand())+PID) > seed_file;
 }
 /^[^\t]/ { print $0; }
 ' | column -t -s"	"

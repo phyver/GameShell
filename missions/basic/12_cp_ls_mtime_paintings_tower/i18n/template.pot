@@ -19,6 +19,9 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
+msgid   "Problem with generation of random filename!"
+msgstr  ""
+
 msgid   "The painting in your chest is invalid..."
 msgstr  ""
 
