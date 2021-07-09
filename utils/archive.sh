@@ -104,12 +104,17 @@ OUTPUT_DIR=$(dirname "$NAME")
 NAME=$(basename "$NAME")
 
 # don't use mktemp -d, which might not exist
-while true
+for _ in $(seq 100)
 do
   n=$((n+1))
   TMP_DIR="$OUTPUT_DIR/tmp-$(printf "%03d" $n)"
   [ -e "$TMP_DIR" ] || break
 done
+if [ -e "$TMP_DIR" ]
+then
+  echo "Problem with generation of random dirname!" >&2
+  return 1
+fi
 mkdir "$TMP_DIR"
 mkdir "$TMP_DIR/$NAME"
 
