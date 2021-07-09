@@ -20,6 +20,9 @@ msgstr  "$MISSION_DIR/goal/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
+msgid   "Problem with generation of random filename!"
+msgstr  "Problem with generation of random filename!"
+
 msgid   "The painting in your chest is invalid..."
 msgstr  "The painting in your chest is invalid..."
 

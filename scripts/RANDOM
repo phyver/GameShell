@@ -7,11 +7,11 @@ GSH_CONFIG=$GSH_ROOT/.config
 
 n=${1:-1}
 
-awk -v seed_file="$GSH_CONFIG/PRNG_seed" -v n="$n" 'BEGIN {
+awk -v seed_file="$GSH_CONFIG/PRNG_seed" -v n="$n" -v PID=$$ 'BEGIN {
   getline seed < seed_file;
   if (seed) srand(seed); else srand();
   for (i=0; i<n; i++) {
     print int(rand()*65536);
   }
-  if (seed) printf("%d\n", int(2^31 * rand())) > seed_file;
+  if (seed) printf("%d\n", int(2^30 * rand())+PID) > seed_file;
 }'
