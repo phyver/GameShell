@@ -33,10 +33,51 @@
 # additionnal command is always "gsh check".
 # As an ugly fix, I manually remove that additional command!
 
-fc -nl |                                              # get the history
-  tail -n ${1:-10} |                                  # keep at most the last 10 commands
-  awk '{L[l++]=$0} END {while (l>0) print L[--l]}' |  # reverse the lines, to get last command on first line
-  awk 'NR==1 && $0 ~ "gsh *check" {next}; {print}' |  # remove the first line, if it matches "gsh *check"
-  sed -e "s/^[[:blank:]]*//"  -e "s/[[:blank:]]*$//"   # remove leading /trailing spaces
+# expand the first line if it is an alias, and remove it if it contains "gsh check"
+# (if the first line is not alias, or it doesn't contain "gsh check", the first line
+# is left unchanged)
+# The other lines are unchanged.
+
+
+# recursively expand (using aliases) the head of the command
+_expand() (
+  i=$1
+  if [ "$i" -gt 32 ]
+  then
+    echo "fc-lnr.sh: _expand: too many nested aliases: $1"
+    echo -- "$@"
+    return
+  fi
+  shift
+  _cmd=$1
+  if _exp=$(alias "$_cmd" 2>/dev/null)
+  then
+    shift
+    # remove everything before the "=" to get the expansion
+    # and remove the quotes around the expansion
+    _tmp=$(echo "${_exp#*=}" | sed -e "s/^['\"]//" -e "s/['\"]$//")
+    _expand ""$((i+1)) $_tmp "$@"
+  else
+    echo -- "$@"
+  fi
+)
+
+_filter_first() (
+  read -r _cmd
+  _exp=$(_expand 1 $_cmd)
+  if ! echo "$_exp" | grep -q "gsh *check"
+  then
+    printf '%s\n' "$_cmd"
+  fi
+  cat
+)
+
+fc -nrl |                                              # get the history
+  head -n "${1:-10}" |                                 # keep at most 10 commands
+  sed -e "s/^[[:blank:]]*//" -e "s/[[:blank:]]*$//" |   # remove leading /trailing spaces
+  _filter_first
+
+
+unset -f _filter_first _expand
 
 set --

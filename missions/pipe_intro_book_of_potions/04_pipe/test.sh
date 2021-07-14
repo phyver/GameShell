@@ -22,4 +22,10 @@ add_cmd "cat \"$(gettext "Book_of_potions")/$(gettext "page")_0\"[34] | tail -n 
 add_cmd gsh check
 gsh assert check false
 
+alias gc='gsh check'
+add_cmd "cat \"$(gettext "Book_of_potions")/$(gettext 'page')_0\"[34] | tail -n 16"
+add_cmd gc
+gsh assert check true
+unalias gc
+
 . alt_history_stop.sh
