@@ -34,4 +34,10 @@ add_cmd "head -n 6 \"$(gettext "Book_of_potions")/$(gettext 'page')_13\" | tail 
 add_cmd gsh check
 gsh assert check false
 
+alias gsch="gsh check"
+add_cmd "head -n 6 \"$(gettext "Book_of_potions")/$(gettext 'page')_13\" | tail -n 3"
+add_cmd gsch
+gsh assert check true
+unalias gsch
+
 . alt_history_stop.sh

@@ -30,4 +30,22 @@ add_cmd cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
 add_cmd gsh check
 gsh assert check true
 
+alias gc="gsh check"
+cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
+add_cmd cd
+add_cmd cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
+add_cmd gc
+gsh assert check true
+unalias gc
+
+alias check="gsh check"
+alias gc=check
+cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
+add_cmd cd
+add_cmd cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
+add_cmd gc
+gsh assert check true
+unalias check
+unalias gc
+
 . alt_history_stop.sh
