@@ -14,6 +14,10 @@ gettext() {
   echo "$1"
 }
 
+ngettext() {
+  echo "$2"
+}
+
 eval_gettext() {
   eval "echo \"$1\""
 }

@@ -12,6 +12,7 @@ export HISTIGNORE=""
 if ! [ -s "$HISTFILE" ]
 then
   history -c
+  . gsh_gettext.sh
   history -s "# $(gettext "START OF COMMANDS HISTORY")"
 fi
 

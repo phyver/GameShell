@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. gsh_gettext.sh
+
 GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
 GSH_CONFIG=$GSH_ROOT/.config
 
