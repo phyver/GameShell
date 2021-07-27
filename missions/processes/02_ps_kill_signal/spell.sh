@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. gsh_gettext.sh
+
 trap spawn TERM
 
 spawn() {
