@@ -16,5 +16,9 @@ msgstr  "$MISSION_DIR/msg/fr.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
 
+#, sh-format
+msgid   "CONGRATULATION, you've finished the game!"
+msgstr  "CONGRATULATION, vous avez terminé le jeu !"
+
 msgid   "qwerty"
 msgstr  "azerty"
