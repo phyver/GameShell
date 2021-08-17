@@ -37,7 +37,7 @@ COMMANDE  >  FICHIER
   (Le fichier est écrasé.)
 
 COMMANDE  2>  FICHIER
-  Envoie les messages d'erreurs (stdout) de la commande dans le 
+  Envoie les messages d'erreurs (stderr) de la commande dans le 
   fichier.
   (Le fichier est écrasé.)
 
