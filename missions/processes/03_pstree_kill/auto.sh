@@ -10,6 +10,7 @@ cellar=$(eval_gettext '$GSH_HOME/Castle/Cellar')
 
 
 kill_imp_spell
+sleep 1
 rm -f "$cellar"/*_"$(gettext "coal")"
 gsh check
 
