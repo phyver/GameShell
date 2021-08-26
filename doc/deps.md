@@ -27,7 +27,7 @@ On a Debian / Ubuntu system, the following ensures you have everything you
 need to run GameShell without problems.
 
 ```sh
-$ sudo apt install gettext-base man-db psmisc nano tree bsdmainutils x11-apps
+$ sudo apt install gettext-base man-db procps psmisc nano tree bsdmainutils x11-apps
 ```
 
 
@@ -88,7 +88,7 @@ in the repository will create a Docker image with all the dependencies.
 
 * run the image, if you have an X server:
 
-        $ host +"local:docker@" &&    \
+        $ xhost +"local:docker@" &&    \
           docker run -it              \
              -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix \
              gsh
