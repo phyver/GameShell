@@ -1,1 +1,1 @@
-../01_ps_kill/deps.sh
+../00_shared/init.sh
