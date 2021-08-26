@@ -37,7 +37,7 @@ dependencies: these missions will be skipped if the dependencies are not met.
 On Debian or Ubuntu, run the following command to install all game and mission
 dependencies.
 ```sh
-$ sudo apt install gettext man-db psmisc nano tree bsdmainutils x11-apps wget
+$ sudo apt install gettext man-db procps psmisc nano tree bsdmainutils x11-apps wget
 ```
 Check the [user manual](doc/user_manual.md) to see how to install the game
 dependencies on other systems (macOS, BSD, ...).
