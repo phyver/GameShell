@@ -86,7 +86,7 @@ $ docker build -t gsh .
 
 * run the image, if you have an X server:
 ```sh
-$ host +"local:docker@" &&    \
+$ xhost +"local:docker@" &&    \
   docker run -it              \
      -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix \
      gsh
