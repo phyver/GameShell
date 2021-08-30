@@ -1,9 +1,8 @@
-// FIXME: the semaphores can probably be safely removed if we open the pid file
-// with O_APPEND and use plain "write"
-// Same for stdout, using a single "write" for printing a lump of coal should
-// be enough to ensure non-overlapping.
+// FIXME: the semaphores can probably be safely removed if we open the pid
+// file with O_APPEND and use plain "write" Same for stdout, using a single
+// "write" for printing a lump of coal should be enough to ensure
+// non-overlapping.
 #include <fcntl.h>
-#include <libintl.h>
 #include <locale.h>
 #include <semaphore.h>
 #include <signal.h>
@@ -14,6 +13,12 @@
 #include <time.h>
 #include <unistd.h>
 #include <wordexp.h>
+
+#ifdef GSH_NO_GETTEXT
+char* gettext(const char* msgid) { return msgid; }
+#else
+#include <libintl.h>
+#endif
 
 #define NB_LINES 3
 #define MAX_SIZE 6
@@ -29,9 +34,11 @@ char coal[NB_LINES][MAX_SIZE + 1] = {
 
 char spaces[MAX_SPACES + 1] = "                              ";
 
+#ifndef GSH_NO_GETTEXT
 char dom[1024];    // large enough for TEXTDOMAIN
 char domdir[1024]; // large enough for TEXTDOMAINDIR
-char path[1024];   // large enough for a file path.
+#endif
+char path[1024]; // large enough for a file path.
 
 sem_t* printing_sem; // Semaphore protecting stdout.
 sem_t* writing_sem;  // Semaphore protecting the PID file.
@@ -79,6 +86,7 @@ int main()
 {
     srand(time(NULL));
 
+#ifndef GSH_NO_GETTEXT
     setlocale(LC_ALL, "");
 
     // get the TEXTDOMAIN environment variable.
@@ -94,6 +102,7 @@ int main()
         return 1;
     strncpy(domdir, domdir_env, 1024);
     bindtextdomain(dom, domdir);
+#endif
 
     // define the path to the file in which to write the children's PIDs.
     wordexp_t result;

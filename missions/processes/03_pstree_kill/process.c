@@ -1,5 +1,4 @@
 #include <libgen.h>
-#include <libintl.h>
 #include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,13 +7,21 @@
 #include <unistd.h>
 #include <wordexp.h>
 
+#ifdef GSH_NO_GETTEXT
+char* gettext(const char* msgid) { return msgid; }
+#else
+#include <libintl.h>
+#endif
+
 #define NB_CHILDREN 3
 
 #define IMP 1
 #define FAIRY 2
 
-char dom[1024];        // large enough for TEXTDOMAIN
-char domdir[1024];     // large enough for TEXTDOMAINDIR
+#ifndef GSH_NO_GETTEXT
+char dom[1024];    // large enough for TEXTDOMAIN
+char domdir[1024]; // large enough for TEXTDOMAINDIR
+#endif
 char pids_path[1024];  // large enough for a file pids_path.
 char imp_name[1024];   // large enough for the imp's name
 char fairy_name[1024]; // large enough for the fairy's name
@@ -23,6 +30,7 @@ char spell_path[1024]; // large enough for the path to the spell process
 int main(int argc, char** argv)
 {
     (void)argc; // avoid warning
+#ifndef GSH_NO_GETTEXT
     setlocale(LC_ALL, "");
 
     // Give access to the TEXTDOMAIN environment variable.
@@ -38,6 +46,7 @@ int main(int argc, char** argv)
         return 1;
     strncpy(domdir, domdir_env, 1024);
     bindtextdomain(dom, domdir);
+#endif
 
     strncpy(imp_name, gettext("mischievous_imp"), 1024);
     strncpy(fairy_name, gettext("nice_fairy"), 1024);
@@ -81,10 +90,18 @@ int main(int argc, char** argv)
 
     switch (who) {
     case IMP:
+#ifndef GSH_NO_GETTEXT
         wordexp("$GSH_TMP/imp/$(gettext 'spell')", &result, 0);
+#else
+        wordexp("$GSH_TMP/imp/spell", &result, 0);
+#endif
         break;
     case FAIRY:
+#ifndef GSH_NO_GETTEXT
         wordexp("$GSH_TMP/fairy/$(gettext 'spell')", &result, 0);
+#else
+        wordexp("$GSH_TMP/fairy/spell", &result, 0);
+#endif
         break;
     }
     pos = 0;
