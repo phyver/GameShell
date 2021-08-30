@@ -23,15 +23,20 @@
 // template for the input files
 #define IMP_INPUT_TEMPLATE "$MISSION_DIR/ascii-art/coal-%d.txt"
 #define FAIRY_INPUT_TEMPLATE "$MISSION_DIR/ascii-art/snowflake-%d.txt"
-#define INPUT_TEMPLATE \
+#define INPUT_TEMPLATE                                                       \
     (WHO == IMP ? IMP_INPUT_TEMPLATE : FAIRY_INPUT_TEMPLATE)
 
 // template for the output files
-#define IMP_OUTPUT_TEMPLATE \
+#ifndef GSH_NO_GETTEXT
+#define IMP_OUTPUT_TEMPLATE                                                  \
     "$(gettext '$GSH_HOME/Castle/Cellar')/%d_$(gettext 'coal')"
-#define FAIRY_OUTPUT_TEMPLATE \
+#define FAIRY_OUTPUT_TEMPLATE                                                \
     "$(gettext '$GSH_HOME/Castle/Cellar')/%d_$(gettext 'snowflake')"
-#define OUTPUT_TEMPLATE \
+#else
+#define IMP_OUTPUT_TEMPLATE "$GSH_HOME/Castle/Cellar/%d_coal"
+#define FAIRY_OUTPUT_TEMPLATE "$GSH_HOME/Castle/Cellar/%d_snowflake"
+/* #endif */
+#define OUTPUT_TEMPLATE                                                      \
     (WHO == IMP ? IMP_OUTPUT_TEMPLATE : FAIRY_OUTPUT_TEMPLATE)
 
 char input_template[1024]; // template for the input ASCII-art files
@@ -43,7 +48,7 @@ char output_file[1024];         // actual path for the current output file
 
 char line[1024]; // content of the ASCII-art file
 
-#define LOG_FILE \
+#define LOG_FILE                                                             \
     (WHO == IMP ? "$GSH_TMP/coals.list" : "$GSH_TMP/snowflakes.list")
 char log_file[1024]; // path for the log file
 

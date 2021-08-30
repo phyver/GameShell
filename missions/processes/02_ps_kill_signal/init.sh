@@ -47,7 +47,7 @@ _compile() (
       $CC $CFLAGS -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/spell.c" -lintl -lpthread -o "$GSH_TMP/$(gettext "spell")"
     }
   ) || { echo "compilation failed" >&2; return 1; }
-  return 1
+  return 0
 )
 
 _install_script() (
