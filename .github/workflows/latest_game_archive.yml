@@ -31,3 +31,4 @@ jobs:
           files: |
             LICENSE
             gameshell.sh
+            Dockerfile
