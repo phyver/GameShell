@@ -92,19 +92,27 @@ shift $((OPTIND - 1))
 # check we have a shell compatible with GameShell
 if [ -z "$GSH_SHELL" ]
 then
-  case "$SHELL" in
-    *bash)
-      export GSH_SHELL=$SHELL
-      ;;
-    *zsh)
-      export GSH_SHELL=$SHELL
-      ;;
-    *)
-      echo "$(eval_gettext "Error: unknown shell '\$SHELL'.
-Use option -B to use bash, and option -Z to use zsh.")" >&2
-      exit 1
-      ;;
-  esac
+  if [ -n "$BASH_VERSION" ]
+  then
+    export GSH_SHELL=bash
+  elif [ -n "$ZSH_VERSION" ]
+  then
+    export GSH_SHELL=zsh
+  else
+    case "$SHELL" in
+      *bash)
+        export GSH_SHELL=$SHELL
+        ;;
+      *zsh)
+        export GSH_SHELL=$SHELL
+        ;;
+      *)
+        echo "$(eval_gettext "Error: unknown shell '\$SHELL'.
+Run GameShell with either bash or zsh.")" >&2
+        exit 1
+        ;;
+    esac
+  fi
 fi
 
 
