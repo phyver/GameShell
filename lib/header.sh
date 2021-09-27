@@ -1,10 +1,28 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-if [ -z "$BASH_SOURCE" ] || ! [ -f "$BASH_SOURCE" ]
+if [ -n "$BASH_VERSION" ]
 then
-  echo "GameShell must be run with Bash from a file."
-  exit 1
+  # check if the file is being sourced
+  if [ "$BASH_SOURCE" != "$0" ]
+  then
+    echo "GameShell must be run from a file, it cannot be sourced."
+    return 1
+  fi
+  current_shell=bash
+elif [ -n "$ZSH_VERSION" ]
+then
+  case "${(M)zsh_eval_context}" in
+    *file*)
+      echo "GameShell must be run from a file, it cannot be sourced."
+      return 1
+    ;;
+  esac
+  current_shell=zsh
+else
+  echo "GameShell must be run with bash or zsh."
+  return 1
 fi
+
 
 ORIGINAL_FILENAME="$0"
 ORIGINAL_DIR=$(dirname "$0")
@@ -67,12 +85,11 @@ rm "$GSH_ROOT/gameshell.tgz"
 # the archive should extract into a directory, move everything to GSH_ROOT
 TMP_ROOT=$(find "$GSH_ROOT" -maxdepth 1 -path "$GSH_ROOT/*" -type d | head -n1)
 mv "$TMP_ROOT"/* "$GSH_ROOT"
-mv "$TMP_ROOT"/.[!.]* "$GSH_ROOT" 2>/dev/null
 rmdir "$TMP_ROOT"
 
 ###
 # start GameShell
-bash "$GSH_ROOT/start.sh" -C "$@"
+$current_shell "$GSH_ROOT/start.sh" -C "$@"
 
 ret=$?
 
