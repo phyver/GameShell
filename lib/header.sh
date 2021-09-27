@@ -85,6 +85,7 @@ rm "$GSH_ROOT/gameshell.tgz"
 # the archive should extract into a directory, move everything to GSH_ROOT
 TMP_ROOT=$(find "$GSH_ROOT" -maxdepth 1 -path "$GSH_ROOT/*" -type d | head -n1)
 mv "$TMP_ROOT"/* "$GSH_ROOT"
+mv "$TMP_ROOT"/.[!.]* "$GSH_ROOT" 2>/dev/null
 rmdir "$TMP_ROOT"
 
 ###
