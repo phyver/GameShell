@@ -1,4 +1,4 @@
-GameShell : un "jeu" pour apprendre le shell Unix
+# GameShell : un "jeu" pour apprendre le shell Unix
 =================================================
 
 ![Illustration inspired by the game](art/illustration-small.png)
@@ -59,6 +59,21 @@ Quand vous quitterez le jeu (avec `control-d` ou la commande `gsh exit`) votre
 progression sera sauvegardée dans une nouvelle archive (nommée
 `GameShell-save.sh`). Elle peut être lancée pour reprendre le jeu où vous vous
 étiez arrêté.
+
+
+Si vous préférez ne pas exécuter des scripts étrangers sur votre machine,
+vous pouvez générer une image Docker avec :
+```sh
+$ mkdir GameShell; cd GameShell
+$ wget --quiet https://github.com/phyver/GameShell/releases/download/latest/Dockerfile
+$ docker build -t gsh .
+$ docker run -it gsh
+```
+Votre progression ne sera PAS sauvée lorsque vous quittez le jeu, et des
+options supplémentaires sont nécessaires si vous souhaitez lancer des
+programmes X depuis GameShell. Référez vous à [cette
+section](./doc/deps.md#running-GameShell-from-a-docker-container) du manuel
+d'utilisateur.
 
 
 Documentation
