@@ -58,6 +58,20 @@ your progression will be saved in a new archive (called `GameShell-save.sh`).
 Run this archive to resume the game where you left it.
 
 
+If you prefer not running foreign shell scripts on your computer, you can
+generate a Docker image with the following:
+```sh
+$ mkdir GameShell; cd GameShell
+$ wget --quiet https://github.com/phyver/GameShell/releases/download/latest/Dockerfile
+$ docker build -t gsh .
+$ docker run -it gsh
+```
+The game will NOT be saved when you exit, and additional flags are required if
+you want to run X programs from inside GameShell. Refer to [this
+section](./doc/deps.md#running-GameShell-from-a-docker-container) of the user
+manual.
+
+
 Documentation
 -------------
 
