@@ -17,9 +17,9 @@ msgstr  "Les nom des processus doivent être égaux au nom du fichier correspond
 
 #, sh-format
 msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'psproc')"
+        "(Debian / Ubuntu: install package 'procps')"
 msgstr  "La command 'ps' est nécessaire pour la mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu : installez le paquet 'psproc')"
+        "(Debian / Ubuntu : installez le paquet 'procps')"
 
 msgid   "The spell is still running!"
 msgstr  "Le sortilège est toujours en fonctionnement !"

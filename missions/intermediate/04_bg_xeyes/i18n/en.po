@@ -17,9 +17,9 @@ msgstr  "Have you run the 'xeyes' command directly?"
 
 #, sh-format
 msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'psproc')"
+        "(Debian / Ubuntu: install package 'procps')"
 msgstr  "The command 'ps' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'psproc')"
+        "(Debian / Ubuntu: install package 'procps')"
 
 #, sh-format
 msgid   "The command 'xeyes' is required for mission $MISSION_NAME.\n"
