@@ -8,6 +8,7 @@ RUN apt install --no-install-recommends --assume-yes \
     gettext \
     man-db \
     psmisc \
+    procps \
     nano \
     tree \
     bsdmainutils \
