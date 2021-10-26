@@ -16,7 +16,7 @@ _mission_init() (
   elif ! command -v ps >/dev/null
   then
     echo "$(eval_gettext "The command 'ps' is required for mission \$MISSION_NAME.
-(Debian / Ubuntu: install package 'psproc')")"
+(Debian / Ubuntu: install package 'procps')")"
     return 1
   fi
   return 0
