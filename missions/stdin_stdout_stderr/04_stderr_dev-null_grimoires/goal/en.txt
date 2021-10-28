@@ -46,7 +46,7 @@ Explanations
 Every command can output messages to the screen in two ways:
   - standard printing ("stdout")
   - error printing ("stderr")
-By default, both kind of messages are show on the screen.
+By default, both kind of messages are shown on the screen.
 
 It is however possible to redirect both of them to files 
 independently.
