@@ -14,6 +14,10 @@ Some missions ideas
 
   - using `sort` / `uniq`
 
+  - `file` command
+
+  - `diff` and/or `cmp`
+
   - search through the history with `C-r`
 
   - history of commands
@@ -32,6 +36,8 @@ Some missions ideas
     dash (using `--`), etc.
 
   - scripting: `for` loops on files
+
+  - `yes` command (not POSIX) and pipes
 
   - `pushd` / `popd`
 
