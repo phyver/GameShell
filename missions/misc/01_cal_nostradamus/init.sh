@@ -8,7 +8,7 @@ _mission_init() (
   fi
   YYYY=$((1900 + $(RANDOM) % 300))
   MM=$(printf "%02d" "$((1 + $(RANDOM) % 12))")
-  DD=$(printf "%02d" "$((13 + $(RANDOM) % 5))")
+  DD=$(printf "%02d" "$((13 + $(RANDOM) % 15))")
   echo "$YYYY-$MM-$DD" > "$GSH_TMP/date"
 )
 
