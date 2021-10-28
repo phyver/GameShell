@@ -33,6 +33,11 @@ install_book() {
   esac
   mkdir -p "$BOOK"
 
+  # make sure de directory is empty (it could contain files created by the
+  # user which would prevent the mission from being completed)
+  rm -rf "$BOOK"/* "$BOOK"/..?* "$BOOK"/.[!.]*
+
+
   # NOTE: option --supress-matched doesn't exist in freebsd, nor does the "{*}" repetition
   csplit -ks -f "$BOOK/$(gettext "page")_" "$(eval_gettext '$MISSION_DIR/book_of_potions/en.txt')" "/^==.*/" "{99}" 2>/dev/null
   for f in "$BOOK/$(gettext "page")_"*
