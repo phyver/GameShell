@@ -1,4 +1,3 @@
-#, fuzzy
 msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
@@ -17,6 +16,10 @@ msgstr  ""
 
 #, sh-format
 msgid   "$MISSION_DIR/secret_recipe/en.txt"
+msgstr  ""
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
 msgstr  ""
 
 # path for the text file containing the treasure message
@@ -38,7 +41,7 @@ msgstr  ""
 #, sh-format
 msgid   "here is my will:\n"
         "you will get my chest, and everything it contains.\n"
-        "this check is in the cellar, and the word to make\n"
+        "this chest is in the cellar, and the word to make\n"
         "it re-appear is: $SECRET_KEY\n"
         "merlin the enchanter"
 msgstr  ""

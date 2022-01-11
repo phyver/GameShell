@@ -1,4 +1,3 @@
-#, fuzzy
 msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
@@ -30,6 +29,10 @@ msgstr  "$GSH_ROOT/i18n/start-help/fr.txt"
 
 #, sh-format
 msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/skip/en.txt"
 msgstr  "$MISSION_DIR/goal/fr.txt"
 
 #, sh-format
@@ -139,9 +142,9 @@ msgstr  "Erreur : command gsh inconnue '$cmd'.\n"
 
 #, sh-format
 msgid   "Error: unknown shell '$SHELL'.\n"
-        "Use option -B to use bash, and option -Z to use zsh."
+        "Run GameShell with either bash or zsh."
 msgstr  "Erreur : shell inconnu '$SHELL'.\n"
-        "Utilisez l'option -B utiliser bash, et l'option -Z pour utiliser zsh."
+        "Lancez GameShell depuis bash ou zsh."
 
 msgid   "Error: wrong password."
 msgstr  "Erreur : mauvais mot de passe."

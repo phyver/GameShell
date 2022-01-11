@@ -1,5 +1,4 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
-#, fuzzy
 msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
@@ -32,6 +31,10 @@ msgstr  "$GSH_ROOT/i18n/start-help/en.txt"
 #, sh-format
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  "$MISSION_DIR/goal/en.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/en.txt"
 
 #, sh-format
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
@@ -140,9 +143,9 @@ msgstr  "Error: unknown gsh command '$cmd'.\n"
 
 #, sh-format
 msgid   "Error: unknown shell '$SHELL'.\n"
-        "Use option -B to use bash, and option -Z to use zsh."
+        "Run GameShell with either bash or zsh."
 msgstr  "Error: unknown shell '$SHELL'.\n"
-        "Use option -B to use bash, and option -Z to use zsh."
+        "Run GameShell with either bash or zsh."
 
 msgid   "Error: wrong password."
 msgstr  "Error: wrong password."
