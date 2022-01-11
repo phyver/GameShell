@@ -16,7 +16,7 @@ _mission_check() (
   then
     echo "$(eval_gettext 'The content of $inventory_file is invalid.
 You can check its content with the command
-    $ less $inventory_file')"
+    § less $inventory_file')" |  sed 's/§/\$/'
     rm -f "$temp_file"
     return 1
   fi

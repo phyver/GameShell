@@ -1,4 +1,3 @@
-#, fuzzy
 msgid   ""
 msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
@@ -14,6 +13,10 @@ msgstr  "$GSH_HOME/Jardin/Labyrinthe"
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/fr.txt"
 
 # path for the text file containing the treasure message
 msgid   "$MISSION_DIR/treasure-msg/en.txt"

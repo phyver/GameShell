@@ -5,7 +5,7 @@ cd -P "$(dirname "$0")"
 
 usage() {
   cat <<EOS
-usage: $0 [options] [FILES]
+usage: $0 [options] [FILE]
 
 with
   -E ENC     choose temporary encoding

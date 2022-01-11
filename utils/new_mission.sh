@@ -240,7 +240,6 @@ EOF
 
 new_template_file() {
   cat <<'EOF'
-#, fuzzy
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -252,6 +251,10 @@ msgstr ""
 
 # path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
+
+# path for the text file containing the skip message
+msgid "$MISSION_DIR/skip/en.txt"
 msgstr ""
 EOF
 }
