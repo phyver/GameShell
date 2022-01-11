@@ -80,10 +80,14 @@ In some situations, some other commands are needed. They are described by the
   current mission and go to the next one. Running this command will first ask
   for a password (except in debug mode) to avoid students overusing it. (Just
   like most other `gsh` commands, the use of this command is logged.)
+  Note however that skiping a mission that has already been completed doesn't
+  require a password.
 
 * `gsh goto N`: when the previous command isn't sufficient, `gsh goto N`
   which will go directly to mission `N`. Just like `gsh skip`, this command
   will first ask for a password.
+  Note however that going back to a previous mission doesn't require a
+  password.
 
 * `gsh protect` and `gsh unprotect`: the directories containing GameShell code
   and data are neither readable nor writable by the player. (Except in debug
