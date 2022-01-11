@@ -10,6 +10,15 @@ _gsh_goal() {
     MISSION_DIR="$(missiondir "$MISSION_NB")"
   fi
 
+  SKIP_FILE=""
+  if [ -s "$MISSION_DIR/skip.txt" ]
+  then
+    SKIP_FILE="$MISSION_DIR/skip.txt"
+  elif [ -s "$(TEXTDOMAIN="$(textdomainname "$MISSION_DIR")" eval_gettext '$MISSION_DIR/skip/en.txt')" ]
+  then
+    SKIP_FILE="$(TEXTDOMAIN="$(textdomainname "$MISSION_DIR")" eval_gettext '$MISSION_DIR/skip/en.txt')"
+  fi
+
   if [ -f "$MISSION_DIR/goal.sh" ]
   then
     . "$GSH_ROOT/lib/mission_source.sh"
@@ -21,6 +30,10 @@ _gsh_goal() {
   else
     FILE="$(TEXTDOMAIN="$(textdomainname "$MISSION_DIR")" eval_gettext '$MISSION_DIR/goal/en.txt')"
     parchment "$FILE" | pager
+  fi
+  if [ -n "$SKIP_FILE" ]
+  then
+    parchment -B Inverted "$SKIP_FILE"
   fi
 }
 

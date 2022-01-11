@@ -256,8 +256,13 @@ _gsh_skip() {
     echo "$(eval_gettext "Error: couldn't get mission number \$MISSION_NB (from \$fn_name)")" >&2
     return 1
   fi
+  local MISSION_DIR="$(missiondir "$MISSION_NB")"
+
   # allow skipping completed missions
-  if ! grep -q "^$MISSION_NB CHECK_OK" "$GSH_CONFIG/missions.log" && ! admin_mode
+  if ! grep -q "^$MISSION_NB CHECK_OK" "$GSH_CONFIG/missions.log" &&
+    ! [ -e "$MISSION_DIR/skip" ] &&
+    ! [ -e "$MISSION_DIR/skip.txt" ] &&
+    ! admin_mode
   then
     __log_action "$MISSION_NB" "SKIP:AUTH_FAILURE"
     return 1
