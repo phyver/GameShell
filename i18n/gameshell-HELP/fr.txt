@@ -27,6 +27,8 @@ gsh goal [N]
 
 gsh goto N                            (ADMIN)
   passe directement à la mission N
+  (le mot de passe n'est pas nécessaire si N est une mission 
+  précédente)
 
 gsh hardreset
   ré-initialise la mission en cours en redémarrant le shell
@@ -56,6 +58,8 @@ gsh reset
 
 gsh skip                              (ADMIN)
   abandonne la mission en cours et passe à la suivante
+  (le mot de passe n'est pas nécessaire si la mission a déjà été 
+  réussie)
 
 gsh stat [-v]
   affiche des statistiques simples sur les missions effectuées

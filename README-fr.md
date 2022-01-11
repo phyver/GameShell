@@ -125,3 +125,15 @@ Licence
 GameShell est distribué sous la licence [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 Merci de pointer vers ce dépôt si vous l'utilisez.
+
+GameShell est open source et son utilisation est gratuite. Une manière de
+reconnaitre le travail que cela à nécessité est d'envoyer un carte postale à
+
+```
+  Pierre Hyvernat
+  Laboratoire de Mathématiques, CNRS UMR 5127
+  Université de Savoie
+  73376 Le Bourget du Lac
+  FRANCE
+```
+

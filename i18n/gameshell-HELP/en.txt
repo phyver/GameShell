@@ -28,6 +28,7 @@ gsh goal [N]
 
 gsh goto N                            (ADMIN)
   directly go to mission N
+  (no password necessary if N is a previous mission)
 
 gsh hardreset
   reset the current mission by restarting the shell
@@ -56,6 +57,8 @@ gsh reset
 
 gsh skip                              (ADMIN)
   give up on the current mission and go to the next one
+  (no password necessary if the mission was completed at least 
+  once)
 
 gsh stat
   display simple statistics about completed missions
