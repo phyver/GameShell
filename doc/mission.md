@@ -53,6 +53,7 @@ $GSH_ROOT/missions/.../MISSION_NAME
 ├── sbin
 │   ├── ...
 │   └── ...
+├── skip.txt
 ├── static.sh                   ALMOST REQUIRED
 ├── test.sh
 ├── treasure.sh
@@ -389,6 +390,15 @@ the mission is successfully completed. Note that if this file finished with a
 non 0 return value, the `treasure.sh` file is *neither sourced nor installed*.
 It can be used to avoid problems when some `treasure.sh` has some
 dependencies.
+
+
+### `skip.txt`
+
+If the file `skip.txt` is present, it marks the mission as "optional": the
+command `gsh skip` will be available without password.
+
+If the file is non empty, it is displayed just after the goal of the mission
+when using `gsh goal`.
 
 
 ### `bin/` (optional)
