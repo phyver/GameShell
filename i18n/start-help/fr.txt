@@ -1,7 +1,7 @@
 options :
   -h      ce message
 
-  -P      mode passeport : demande le noms / email du joueur
+  -P      mode passeport : demande le nom / email du joueur
   -D      mode debug
   -v      lecture "verbeuse" des scripts de mission (seulement en mode debug)
   -A      mode anonyme
@@ -17,7 +17,7 @@ options :
   -n      mode noir et blanc : n'utilise pas les séquences ANSI
   -c CMD  donne cette commande à GameShell (pour faire des tests)
 
-Les options suivantes ne sont disponible que lorsque GameShell est 
+Les options suivantes ne sont disponibles que lorsque GameShell est 
 lancé depuis une archive exécutable.
   -X      extrait juste l'archive tgz
   -K      ne supprime pas le répertoire temporaire de GameShell à la sortie
