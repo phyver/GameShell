@@ -1,4 +1,4 @@
-Bienvenu dans GameShell !
+Bienvenue dans GameShell !
 
 Utiliser et gérer un ordinateur avec un système d'exploitation 
 de type Unix (comme Linux, BSD ou macOS) demande l'utilisation 
