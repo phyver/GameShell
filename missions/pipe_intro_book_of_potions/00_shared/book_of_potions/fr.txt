@@ -38,7 +38,7 @@ Potion de transformation
 Élixir de jeunesse
 ------------------
 
-Attention: **ne pas** boire après 30 ans.
+Attention : **ne pas** boire après 30 ans.
 
 1) Remplir un chaudron d'eau de baignoire usagée.
 2) Mettre une grenouille de taille moyenne dans l'eau.
@@ -50,7 +50,7 @@ Attention: **ne pas** boire après 30 ans.
 == page 4 ===================================================
 8) Laisser la préparation reposer pendant un jour.
 9) Ajouter la queue d'un écureuil (donnée de bonne grâce).
-10) Puis ajouter le reste de la roche ne poudre.
+10) Puis ajouter le reste de la roche en poudre.
 11) Mélanger très vigoureusement, dans toutes les directions.
 12) Se reposer un moment pour se remettre de cet effort.
 13) Se reposer encore un petit peu plus.
@@ -172,4 +172,4 @@ Bière du Roi
 ------------
 
 1) Aller dans la cave du château et prendre une bouteille.
-2) Servir frais, dans un pinte.
+2) Servir frais, dans une pinte.
