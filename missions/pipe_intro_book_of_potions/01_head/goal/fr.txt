@@ -1,9 +1,9 @@
 Objectif
 ========
 
-Un vieil hermite un peu tête en l'air appelé Servillus s'est 
+Un vieil ermite un peu tête en l'air appelé Servillus s'est 
 installé dans une grotte avec son vieux livre de potions.
-Rendez vous dans la grotte et aidez le à retrouver la recette de sa 
+Rendez vous dans la grotte et aidez-le à retrouver la recette de sa 
 célèbre tisane.
 
 Pour valider la mission, votre dernière commande avant ``gsh check`` 
