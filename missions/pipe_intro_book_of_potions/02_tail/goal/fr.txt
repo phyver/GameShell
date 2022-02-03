@@ -5,7 +5,7 @@ Le vieil homme a l'air de vraiment apprécier votre compagnie. Il
 vous invite à rester pour le repas et commence à préparer un 
 délicieux ragout. Pendant qu'il prépare le chaudron, il vous demande 
 de l'aide.
-Lisez lui les étapes de la recette dans son livre.
+Lisez-lui les étapes de la recette dans son livre.
 
 Pour valider la mission, votre dernière commande avant ``gsh check`` 
 doit afficher les étapes de la recette (sans son titre).
