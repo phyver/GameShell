@@ -33,7 +33,7 @@ Explications
 Beaucoup des commandes Unix manipulent du texte : elle reçoivent du 
 texte en entrée et produisent du texte en sortie.
 
-Il est courant que les commandes écrivent leur résultats sur leurs 
+Il est courant que les commandes écrivent leur résultats sur leur 
 "sortie standard". Cela signifie que, par défaut, le résultat est 
 affiché dans le terminal.
 
