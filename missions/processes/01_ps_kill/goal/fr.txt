@@ -2,8 +2,8 @@ Objectif
 ========
 
 Un lutin espiègle a lancé un sortilège qui fait apparaitre des 
-traces de charbon un peu partout dans le chateau.
-Trouvez ce sortilège et supprimez le.
+traces de charbon un peu partout dans le château.
+Trouvez ce sortilège et supprimez-le.
 
 
 Remarque
