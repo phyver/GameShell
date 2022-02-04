@@ -50,7 +50,7 @@ gsh pcm
 
 gsh protect
 gsh unprotect
-  ajoute / supprimer les protections d'accès sur les répertoires 
+  ajoute / supprime les protections d'accès sur les répertoires 
   de GameShell
 
 gsh reset
