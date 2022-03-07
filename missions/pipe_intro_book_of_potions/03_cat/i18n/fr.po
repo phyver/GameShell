@@ -18,7 +18,7 @@ msgid   "You altered the book..."
 msgstr  "Vous avez modifié le livre..."
 
 msgid   "You are not in the cave with Servillus!"
-msgstr  "Vous n'ête pas dans la grotte avec Servillus !"
+msgstr  "Vous n'êtes pas dans la grotte avec Servillus !"
 
 msgid   "You have not used the 'cat' command!"
 msgstr  "Vous n'avez pas utilisé la commande 'cat' !"
