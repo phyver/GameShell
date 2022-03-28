@@ -29,7 +29,7 @@ copy_bin() {
 #!/bin/sh
 export MISSION_DIR="\$GSH_ROOT/${MISSION_DIR#$GSH_ROOT/}"
 export TEXTDOMAIN="$DOMAIN"
-exec "$source" "\$@"
+exec "\$GSH_ROOT/${1#$GSH_ROOT/}" "\$@"
 EOH
   chmod +x "$target"
 }
