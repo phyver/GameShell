@@ -130,7 +130,7 @@ _passport() {
     printf "$(gettext "Player's email:") "
     read -r EMAIL
   done
-  echo "  $NOM <$EMAIL>" >> "$PASSPORT"
+  echo "  $NOM <$EMAIL>" > "$PASSPORT"
 }
 
 _confirm_passport() {
@@ -202,12 +202,6 @@ Do you want to remove it and start a new game? [y/N]') "
   fi
 
   ### if we're here, we need to reset a new game
-  # hide cursor and disable echoing of keystrokes
-  tput civis 2>/dev/null
-  stty -echo 2>/dev/null
-  # those traps will be redefined in lib/gsh.sh
-  trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo" INT TERM EXIT
-
 
   # remove all the game data
   rm -rf "$GSH_HOME"
@@ -284,6 +278,12 @@ Do you want to remove it and start a new game? [y/N]') "
       fi
     done
   fi
+
+  # hide cursor and disable echoing of keystrokes
+  tput civis 2>/dev/null
+  stty -echo 2>/dev/null
+  # those traps will be redefined in lib/gsh.sh
+  trap "tput cnorm 2>/dev/null; stty echo 2>/dev/null; echo" INT TERM EXIT
 
   # Clear the screen.
   if [ "$GSH_MODE" = "DEBUG" ]
