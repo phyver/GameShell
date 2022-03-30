@@ -22,4 +22,7 @@ _mission_init() (
 
   return 0
 )
+
+# make sure the maze is accessible to the graphical file manager
+[ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh unprotect
 _mission_init
