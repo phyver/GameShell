@@ -5,8 +5,9 @@ The old hermit notices your interest for potion recipes, and sees
 promise in your ability to lookup lists of ingredients. He 
 challenges you to find the steps for the elixir of Youth.
 
-In order to validate the mission, your last command prior to ``gsh 
-check`` must show the steps for the recipe and nothing else.
+In order to validate the mission, you need to be in the cave with 
+Servillus **and** your last command prior to ``gsh check`` must show 
+the steps for the recipe and nothing else.
 
 
 Useful commands

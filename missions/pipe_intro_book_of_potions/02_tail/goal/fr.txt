@@ -7,8 +7,9 @@ délicieux ragout. Pendant qu'il prépare le chaudron, il vous demande
 de l'aide.
 Lisez-lui les étapes de la recette dans son livre.
 
-Pour valider la mission, votre dernière commande avant ``gsh check`` 
-doit afficher les étapes de la recette (sans son titre).
+Pour valider la mission, vous devez vous trouver dans la grotte avec 
+Servillus **et** votre dernière commande avant ``gsh check`` doit 
+afficher les étapes de la recette (sans son titre).
 
 
 Commandes utiles
