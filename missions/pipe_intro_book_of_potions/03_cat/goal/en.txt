@@ -6,8 +6,9 @@ that lets the drinker (temporarily) take the physical appearance of
 anyone.
 Read the recipe of the potion from the hermit's book.
 
-In order to validate the mission, your last command prior to 
-``gsh check`` must show the whole recipe (with its title).
+In order to validate the mission, you need to be in the cave with 
+Servillus **and** your last command prior to ``gsh check`` must show 
+the whole recipe (with its title).
 
 
 Useful commands

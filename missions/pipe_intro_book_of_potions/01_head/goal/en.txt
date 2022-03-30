@@ -6,9 +6,9 @@ with his old, leather-bound potion book.
 Go to the cave and help him remember the recipe of his famous herbal 
 tea.
 
-In order to validate the mission, your last command prior to 
-``gsh check`` must show the recipe (including its title), but 
-nothing else.
+In order to validate the mission, you need to be in the cave with 
+Servillus **and** your last command prior to ``gsh check`` must show 
+the recipe (including its title), but nothing else.
 
 
 Useful commands

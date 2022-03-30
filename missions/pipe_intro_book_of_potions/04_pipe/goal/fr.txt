@@ -5,8 +5,9 @@ Le vieil ermite remarque votre intérêt pour les recettes de potions,
 et il vous met au défi de trouver les étapes de l'élixir de 
 jeunesse.
 
-Pour valider la mission, votre dernière commande avant ``gsh check`` 
-doit afficher les étapes de la recette, mais pas son titre.
+Pour valider la mission, vous devez vous trouver dans la grotte avec 
+Servillus **et** votre dernière commande avant ``gsh check`` doit 
+afficher les étapes de la recette, mais pas son titre.
 
 
 Commandes utiles
