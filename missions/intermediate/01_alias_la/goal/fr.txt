@@ -9,7 +9,11 @@ seulement 2 lettres !
 
 Définissez pour ceci le synonyme
 
-  la='ls -A'
+  la
+
+pour la commande
+
+  ls -A
 
 et vérifiez que ``la`` affiche bien les fichiers cachés.
 

@@ -8,7 +8,11 @@ all files, including hidden ones, with only 2 letters.
 
 Define the synonym
 
-  la='ls -A'
+  la
+
+for the command
+
+  ls -A
 
 and check that it works as expected.
 
