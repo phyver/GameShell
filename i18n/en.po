@@ -153,6 +153,9 @@ msgstr  "Error: wrong password."
 msgid   "Error: you are not allowed to run this command."
 msgstr  "Error: you are not allowed to run this command."
 
+msgid   "Error: you shouldn't run Gameshell as root!"
+msgstr  "Error: you shouldn't run Gameshell as root!"
+
 msgid   "Is this information correct? [Y/n]"
 msgstr  "Is this information correct? [Y/n]"
 
@@ -249,6 +252,9 @@ msgstr  "While you are waiting, you see a fish swimming in circles..."
 # abbreviation for "yes" (uppercase)
 msgid   "Y"
 msgstr  "Y"
+
+msgid   "You shouldn't run Gameshell as root!"
+msgstr  "You shouldn't run Gameshell as root!"
 
 msgid   "[Press space to continue, q to quit\\.]"
 msgstr  "[Press space to continue, q to quit\\.]"

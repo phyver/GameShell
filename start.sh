@@ -89,6 +89,13 @@ do
 done
 shift $((OPTIND - 1))
 
+if [ $(id -u) = 0 ]
+then
+  echo "$(gettext "Error: you shouldn't run Gameshell as root!")" >&2
+  exit 1
+fi
+
+
 # check we have a shell compatible with GameShell
 if [ -z "$GSH_SHELL" ]
 then
