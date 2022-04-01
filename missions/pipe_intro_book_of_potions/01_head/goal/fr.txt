@@ -22,3 +22,9 @@ head FICHIER
 
 head -n K FICHIER
   Affiche les K premières lignes du fichier.
+
+Remarque
+--------
+
+Un "FICHIER" peut contenir des répertoires si le fichier en 
+question n'est pas dans le répertoire courant.

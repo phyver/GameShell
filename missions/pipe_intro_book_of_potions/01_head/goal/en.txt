@@ -22,3 +22,9 @@ head FILE
 
 head -n K FILE
   Print the first K lines of the file.
+
+Remark
+------
+
+A "FILE" may contain directories if the file in question is not in 
+the current directory.
