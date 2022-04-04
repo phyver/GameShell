@@ -69,5 +69,8 @@ gsh systemconfig
 gsh test
   run the curent mission's test script, if it exists
 
+gsh version
+  show Gameshell's version
+
 gsh welcome
   show the welcome message
