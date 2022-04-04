@@ -95,6 +95,8 @@ $current_shell "$GSH_ROOT/start.sh" -C "$@"
 ret=$?
 
 tar -zcf "$GSH_ROOT.tgz" -C "$ORIGINAL_DIR" ./"$GSH_ROOT"
+ARCHIVE_OK=$?
+
 
 # get extension
 EXT=${ORIGINAL_FILENAME##*.}
@@ -104,10 +106,23 @@ ORIGINAL_FILENAME=${ORIGINAL_FILENAME%.*}
 ORIGINAL_FILENAME=${ORIGINAL_FILENAME%-save}-save.$EXT
 
 cat "$GSH_ROOT/lib/header.sh" "$GSH_ROOT.tgz" > "$ORIGINAL_FILENAME"
+SAVE_OK=$?
 chmod +x "$ORIGINAL_FILENAME"
 
 # remove archive
 rm -f "$GSH_ROOT.tgz"
+
+if [ "$ARCHIVE_OK" -ne 0 ] || [ "$SAVE_OK" -ne 0 ]
+then
+  echo
+  echo "*******************************************************"
+  echo "Error: save file might be incorrect, test it by running"
+  echo "    $ $current_shell \"$ORIGINAL_FILENAME\""
+  echo
+  echo "If that works as expected, you can remove the \"$GSH_ROOT\" directory."
+  echo
+  KEEP_DIR="true"
+fi
 
 if [ "$KEEP_DIR" != "true" ]
 then
