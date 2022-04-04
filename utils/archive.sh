@@ -281,6 +281,12 @@ case $DEFAULT_MODE in
     ;;
 esac
 
+# record version
+if git rev-parse --is-inside-work-tree >/dev/null
+then
+  VERSION=$(git describe --tags)
+  sed -i "s/^VERSION=.*/VERSION='$VERSION'/" "$GSH_ROOT/scripts/_gsh_version"
+fi
 
 # create archive
 echo "creating archive"

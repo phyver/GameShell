@@ -70,5 +70,8 @@ gsh systemconfig
 gsh test
   lance le script de test de la mission en cours, s'il existe
 
+gsh version
+  affiche la version de Gameshell
+
 gsh welcome
   affiche le message de bienvenue

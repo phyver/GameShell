@@ -189,6 +189,9 @@ msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
 msgstr  "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
         "Do you want to remove it and start a new game? [y/N]"
 
+msgid   "The latest version of Gameshell is available at"
+msgstr  "The latest version of Gameshell is available at"
+
 msgid   "There are stopped jobs in your session.\n"
         "Those processes will be terminated.\n"
         "You can get the list of those jobs with\n"
