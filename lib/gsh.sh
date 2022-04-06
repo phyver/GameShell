@@ -21,7 +21,7 @@
 
 trap '_gsh_exit EXIT $?' EXIT
 trap '_gsh_exit TERM 15' TERM
-trap '_gsh_exit HUP 2' HUP
+trap '_gsh_exit HUP --force 2' HUP
 # trap '_gsh_exit INT' INT  # causes termination on ^C
 
 
@@ -77,7 +77,7 @@ _gsh_hard_reset() {
   __log_action "$MISSION_NB" "HARD_RESET"
   # reload the shell, making sure it reads its config file by making it interactive (-i)
   generate_rcfile
-  exec $GSH_SHELL -i
+  exec "$GSH_SHELL" -i
 }
 
 
@@ -130,7 +130,7 @@ Do you still want to quit? [y/n]") "
   ## jobs (independantly of the option NO_HUP)
   [ -n "$ZSH_VERSION" ] && setopt +o MONITOR
   trap - EXIT   # do not call this function another time!
-  exit $exit_value
+  exit "$exit_value"
 }
 
 
@@ -543,7 +543,7 @@ gsh() {
       _gsh_reset
       ;;
     "exit")
-      _gsh_exit 0 "$@"
+      _gsh_exit EXIT 0 "$@"
       ;;
     "skip")
       _gsh_skip

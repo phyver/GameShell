@@ -8,6 +8,7 @@ then
     echo "GameShell must be run from a file, it cannot be sourced."
     return 1
   fi
+  set -m
   current_shell=bash
 elif [ -n "$ZSH_VERSION" ]
 then
@@ -89,53 +90,73 @@ mv "$TMP_ROOT"/.[!.]* "$GSH_ROOT" 2>/dev/null
 rmdir "$TMP_ROOT"
 
 ###
+# save function
+_save() {
+  trap - CHLD
+  ret=$1
+
+  tar -zcf "$GSH_ROOT.tgz" -C "$ORIGINAL_DIR" ./"$GSH_ROOT"
+  ARCHIVE_OK=$?
+
+
+  # get extension
+  EXT=${ORIGINAL_FILENAME##*.}
+  # remove extension
+  ORIGINAL_FILENAME=${ORIGINAL_FILENAME%.*}
+  # remove "-save" suffix (if present), and add it again, with the extension
+  ORIGINAL_FILENAME=${ORIGINAL_FILENAME%-save}-save.$EXT
+
+  cat "$GSH_ROOT/lib/header.sh" "$GSH_ROOT.tgz" > "$ORIGINAL_FILENAME"
+  SAVE_OK=$?
+  chmod +x "$ORIGINAL_FILENAME"
+
+  # remove archive
+  rm -f "$GSH_ROOT.tgz"
+
+  if [ "$ARCHIVE_OK" -ne 0 ] || [ "$SAVE_OK" -ne 0 ]
+  then
+    echo
+    echo "*******************************************************"
+    echo "Error: save file might be incorrect, test it by running"
+    echo "    $ $current_shell \"$ORIGINAL_FILENAME\""
+    echo
+    echo "If that works as expected, you can remove the \"$GSH_ROOT\" directory."
+    echo
+    KEEP_DIR="true"
+  fi
+
+  if [ "$KEEP_DIR" != "true" ]
+  then
+    # some sanity checking to make sure we remove the good directory
+    if ! [ -e "$GSH_ROOT/.gsh_root-$$" ]
+    then
+      echo "Error: I don't want to remove directoryy $GSH_ROOT!" >&2
+      exit 1
+    fi
+    chmod -R 777 "$GSH_ROOT"
+    rm -rf "$GSH_ROOT"
+  fi
+
+  exit "$ret"
+}
+
+###
 # start GameShell
+# I want to run the _save command when the (only) child terminates
+# In bash, I can trap SIGCHLD, but for some reason, we cannot trap SIGCHLD when
+# the main process receives SIGHUP (for example when the terminal is closed),
+# unless we trap SIGHUP as well. (Even an empty trap is OK.)
+#
+# This doesn't work for zsh, so I need to call _save explicitly. In the case of
+# SIGHUP, the child is terminated and the main process continues normally, so
+# that _save is indeed executed...
+
+trap "" HUP SIGHUP
+trap '_save $?' CHLD
 $current_shell "$GSH_ROOT/start.sh" -C "$@"
 
-ret=$?
-
-tar -zcf "$GSH_ROOT.tgz" -C "$ORIGINAL_DIR" ./"$GSH_ROOT"
-ARCHIVE_OK=$?
-
-
-# get extension
-EXT=${ORIGINAL_FILENAME##*.}
-# remove extension
-ORIGINAL_FILENAME=${ORIGINAL_FILENAME%.*}
-# remove "-save" suffix (if present), and add it again, with the extension
-ORIGINAL_FILENAME=${ORIGINAL_FILENAME%-save}-save.$EXT
-
-cat "$GSH_ROOT/lib/header.sh" "$GSH_ROOT.tgz" > "$ORIGINAL_FILENAME"
-SAVE_OK=$?
-chmod +x "$ORIGINAL_FILENAME"
-
-# remove archive
-rm -f "$GSH_ROOT.tgz"
-
-if [ "$ARCHIVE_OK" -ne 0 ] || [ "$SAVE_OK" -ne 0 ]
-then
-  echo
-  echo "*******************************************************"
-  echo "Error: save file might be incorrect, test it by running"
-  echo "    $ $current_shell \"$ORIGINAL_FILENAME\""
-  echo
-  echo "If that works as expected, you can remove the \"$GSH_ROOT\" directory."
-  echo
-  KEEP_DIR="true"
-fi
-
-if [ "$KEEP_DIR" != "true" ]
-then
-  # some sanity checking to make sure we remove the good directory
-  if ! [ -e "$GSH_ROOT/.gsh_root-$$" ]
-  then
-    echo "Error: I don't want to remove directoryy $GSH_ROOT!" >&2
-    exit 1
-  fi
-  chmod -R 777 "$GSH_ROOT"
-  rm -rf "$GSH_ROOT"
-fi
-
-exit $ret
+# zsh doesn't receive SIGCHLD but seems to always continue, even in the case of
+# SIGHUP. We thus call _save explicitly.
+_save $?
 
 ##START_OF_GAMESHELL_ARCHIVE##
