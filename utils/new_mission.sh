@@ -185,7 +185,7 @@ new_treasure_file() {
 EOF
 }
 
-new_treasure-msg_file() {
+new_treasure_msg_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/_treasure-msg.txt
 This file is not required. When it exists, it is displayed when sourcing the
@@ -194,7 +194,7 @@ ignored.)
 EOF
 }
 
-new_gettext_treasure-msg_file() {
+new_gettext_treasure_msg_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/_treasure-msg.sh
 #!/bin/sh
@@ -326,7 +326,7 @@ new_mission_without_gettext() {
   new_auto_file "$MISSION_DIR"
   new_clean_file "$MISSION_DIR"
   new_treasure_file "$MISSION_DIR"
-  new_treasure-msg_file "$MISSION_DIR"
+  new_treasure_msg_file "$MISSION_DIR"
   new_test_file "$MISSION_DIR"
 }
 
@@ -352,7 +352,7 @@ new_mission_with_gettext() {
   new_auto_file "$MISSION_DIR"
   new_clean_file "$MISSION_DIR"
   new_treasure_file "$MISSION_DIR"
-  new_gettext_treasure-msg_file "$MISSION_DIR"
+  new_gettext_treasure_msg_file "$MISSION_DIR"
   mkdir -p "$MISSION_DIR"/i18n/
   new_template_file > "$MISSION_DIR"/i18n/template.pot
   new_makefile > "$MISSION_DIR"/Makefile
@@ -390,6 +390,12 @@ done
 shift $((OPTIND - 1))
 
 NAME=$1
+
+if [ -z "$NAME" ]
+then
+  echo "You must give a name to the mission." >&2
+  exit 1
+fi
 
 if [ -z "$GETTEXT" ]
 then
