@@ -55,6 +55,9 @@ gsh unprotect
 gsh reset
   reset the current mission
 
+gsh resetstatic
+  regenerate all the static parts of the world
+
 gsh skip                              (ADMIN)
   give up on the current mission and go to the next one
   (no password necessary if the mission was completed at least 

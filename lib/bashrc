@@ -21,4 +21,4 @@ fi
 shopt -s expand_aliases
 
 # completion for (some) gsh commands
-complete -W 'check exit goal help index log reset stat version welcome' gsh
+complete -W 'check exit goal help index log reset resetstatic stat version welcome' gsh
