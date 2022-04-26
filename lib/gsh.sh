@@ -80,6 +80,50 @@ _gsh_hard_reset() {
   exec "$GSH_SHELL" -i
 }
 
+# regenerate the world by sourcing all the static.sh mission files
+_gsh_resetstatic() {
+  if ! . mainshell.sh
+  then
+    echo "$(gettext "Error: the command 'gsh reset' shouldn't be run inside a subshell!")" >&2
+    return 1
+  fi
+
+  # looping through all missions.
+  while read -r MISSION_DIR
+  do
+    case $MISSION_DIR in
+      "" | "#"* )
+        continue
+        ;;
+      "!"*)
+        MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
+        ;;
+    esac
+
+    export MISSION_DIR
+    MISSION_DIR=$GSH_MISSIONS/$MISSION_DIR
+
+    # To be used as TEXTDOMAIN environment variable for the mission.
+    export DOMAIN=$(textdomainname "$MISSION_DIR")
+
+    # source the static part of the mission
+    if [ -f "$MISSION_DIR/static.sh" ]
+    then
+      mission_source "$MISSION_DIR/static.sh"
+    fi
+
+    if [ "$GSH_MODE" = "DEBUG" ] && [ "$GSH_VERBOSE_DEBUG" = true ]
+    then
+      printf '    GSH: mission %3d -> %s\n' "$MISSION_NB" "\$GSH_MISSIONS/${MISSION_DIR#$GSH_MISSIONS/}" >&2
+    else
+      printf "." >&2
+    fi
+
+  done < "$GSH_CONFIG/index.txt"
+  echo "" >&2
+
+  unset MISSION_DIR DOMAIN
+}
 
 # called when gsh exits
 _gsh_exit() {
@@ -541,6 +585,9 @@ gsh() {
       export GSH_LAST_ACTION='reset'
       __gsh_clean
       _gsh_reset
+      ;;
+    "resetstatic")
+      _gsh_resetstatic
       ;;
     "exit")
       _gsh_exit EXIT 0 "$@"

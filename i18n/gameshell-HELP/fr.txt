@@ -56,6 +56,9 @@ gsh unprotect
 gsh reset
   ré-initialise la mission en cours
 
+gsh resetstatic
+  re-génère toutes les parties statique du monde
+
 gsh skip                              (ADMIN)
   abandonne la mission en cours et passe à la suivante
   (le mot de passe n'est pas nécessaire si la mission a déjà été 
