@@ -21,6 +21,9 @@ ls
 
 gsh reset
   Restart the mission from the beginning.
+  
+gsh check
+  Check if the mission objective has been achieved
 
 
 Remarks
