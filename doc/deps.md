@@ -48,7 +48,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 and to install the dependencies with
 
 ```sh
-$ brew install nano pstree tree man-db
+$ brew install nano pstree tree man-db wget
 ```
 
 
