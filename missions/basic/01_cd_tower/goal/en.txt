@@ -19,6 +19,9 @@ ls
   Show a list of locations that are currently accessible.
   Remark: ``ls`` is an abbreviation of "list".
 
+gsh check
+  Check if the mission objective has been achieved.
+
 gsh reset
   Restart the mission from the beginning.
 
@@ -26,8 +29,8 @@ gsh reset
 Remarks
 -------
 
-UPPERCASE words appearing in commands are meta-variables: you need 
+UPPERCASE words appearing in commands are meta-variables: you need
 to replace them by appropriate (string) values.
 
-Most filesystems treat uppercase and lowercase characters 
+Most filesystems treat uppercase and lowercase characters
 differently. Make sure you use the correct path.
