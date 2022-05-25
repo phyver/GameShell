@@ -19,6 +19,9 @@ pwd
   Affiche la position actuelle.
   Note : ``pwd`` est une abréviation pour "print working directory".
 
+gsh check
+  Vérifie si l'objectif de la mission a été atteint.
+
 gsh reset
   Ré-initialise la mission au début.
 
