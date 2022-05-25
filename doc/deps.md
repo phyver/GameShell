@@ -48,7 +48,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 and to install the dependencies with
 
 ```sh
-$ brew install nano pstree tree man-db
+$ brew install nano pstree tree man-db wget
 ```
 
 
