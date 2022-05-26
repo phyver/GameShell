@@ -1,6 +1,6 @@
 LANGUAGES=$(wildcard i18n/*.po)
 LANGUAGES:=$(filter-out i18n/en.po, $(LANGUAGES))
-SH_FILES= start.sh  scripts/* lib/gsh.sh lib/bashrc lib/zshrc
+SH_FILES= start.sh  scripts/* lib/gsh.sh lib/bashrc lib/zshrc lib/gshrc
 AWK_FILES=scripts/_gsh_stat.awk
 OTHER_FILES=
 
@@ -25,7 +25,7 @@ $(LANGUAGES):%.po: i18n/template.pot FORCE
 i18n/template.pot: $(SH_FILES) $(OTHER_FILES) FORCE
 	@mkdir -p i18n/
 	@echo "generating i18n/template.pot"
-	@xgettext -L shell --from-code=UTF-8 --omit-header $(OPTIONS) $(SORT) --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
+	xgettext -L shell --from-code=UTF-8 --omit-header $(OPTIONS) $(SORT) --join-existing --output i18n/template.pot $(SH_FILES) $(OTHER_FILES)
 	@xgettext -L awk -k_ -k_n:1,2 --from-code=UTF-8 --omit-header $(OPTIONS) $(SORT) --join-existing --output i18n/template.pot $(AWK_FILES)
 
 new: i18n/template.pot

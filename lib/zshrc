@@ -41,3 +41,9 @@ autoload -Uz compinit
 compinit -d "$GSH_CONFIG/zcompdump"
 # compinit -D  # no zcompdump file, slightly slower
 compdef '[ "$CURRENT" -le 2 ] && _values : check exit goal help index log reset resetstatic stat version welcome' gsh
+
+
+# print message when player wanders outside GameShell filesystem
+precmd() {
+  _check_pwd
+}

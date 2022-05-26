@@ -71,4 +71,19 @@ fi
 
 unset file MISSION_DIR
 
+# print message when player wanders outside GameShell filesystem
+_check_pwd() {
+  case "$(pwd -P)" in
+    "$GSH_HOME"*)
+      :
+      ;;
+    *)
+      echo
+      color_echo yellow "$(gettext "You left GameShell's directory structure. Use
+    \$ cd
+to go back to the GameShell's starting directory.")" >&2
+      echo
+  esac
+}
+
 [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh protect

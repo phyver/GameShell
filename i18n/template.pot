@@ -1,8 +1,3 @@
-msgid   ""
-msgstr  "Content-Type: text/plain; charset=UTF-8\n"
-        "Content-Transfer-Encoding: 8bit\n"
-        "Plural-Forms: nplurals=2; plural=n>1;"
-
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
 msgstr  ""
@@ -158,7 +153,6 @@ msgstr  ""
 msgid   "Mission $MISSION_NB has been cancelled."
 msgstr  ""
 
-# abbreviation for "no" (uppercase)
 msgid   "N"
 msgstr  ""
 
@@ -237,11 +231,12 @@ msgstr  ""
 msgid   "While you are waiting, you see a fish swimming in circles..."
 msgstr  ""
 
-# abbreviation for "yes" (uppercase)
 msgid   "Y"
 msgstr  ""
 
-msgid   "You shouldn't run Gameshell as root!"
+msgid   "You left GameShell's directory structure. Use\n"
+        "    $ cd\n"
+        "to go back to the GameShell's starting directory."
 msgstr  ""
 
 msgid   "[Press space to continue, q to quit\\.]"
@@ -265,7 +260,6 @@ msgid_plural    "game time: %s in %d sessions"
 msgstr[0]       ""
 msgstr[1]       ""
 
-# abbreviation for "no" (lowercase)
 msgid   "n"
 msgstr  ""
 
@@ -283,6 +277,5 @@ msgstr  ""
 msgid   "total time: %s"
 msgstr  ""
 
-# abbreviation for "yes" (lowercase)
 msgid   "y"
 msgstr  ""

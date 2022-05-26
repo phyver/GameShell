@@ -22,3 +22,6 @@ shopt -s expand_aliases
 
 # completion for (some) gsh commands
 complete -W 'check exit goal help index log reset resetstatic stat version welcome' gsh
+
+# print message when player wanders outside GameShell filesystem
+PROMPT_COMMAND[0]=_check_pwd
