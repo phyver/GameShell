@@ -32,7 +32,7 @@ COMMAND  >  FILE
   Send messages (stdout) to the file.
   (The file is overwritten.)
 
-COMMAND  2>  FICHIER
+COMMAND  2>  FILE
   Send error messages (stderr) to the file.
   (The file is overwritten.)
 
