@@ -255,9 +255,12 @@ msgstr  "Pendant que vous attendez, un poisson fait des ronds..."
 msgid   "Y"
 msgstr  "O"
 
-#, fuzzy
-msgid   "You shouldn't run Gameshell as root!"
-msgstr  "Erreur: il ne faut pas lancer Gameshell avec l'utilisateur root !"
+msgid   "You left GameShell's directory structure. Use\n"
+        "    $ cd\n"
+        "to go back to the GameShell's starting directory."
+msgstr  "Vous avez quitté l'arborescence de Gameshell. Utilisez\n"
+        "    $ cd\n"
+        "pour revenir au répertoire initial de GameShell."
 
 msgid   "[Press space to continue, q to quit\\.]"
 msgstr  "[Appuyer sur la barre d'espace pour continuer, 'q' pour quitter\\.]"
@@ -301,3 +304,7 @@ msgstr  "temps total : %s"
 # abbreviation for "yes" (lowercase)
 msgid   "y"
 msgstr  "o"
+
+#, fuzzy
+#~ msgid        "You shouldn't run Gameshell as root!"
+#~ msgstr       "Erreur: il ne faut pas lancer Gameshell avec l'utilisateur root !"

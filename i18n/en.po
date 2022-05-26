@@ -1,9 +1,4 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
-msgid   ""
-msgstr  "Content-Type: text/plain; charset=UTF-8\n"
-        "Content-Transfer-Encoding: 8bit\n"
-        "Plural-Forms: nplurals=2; plural=n>1;"
-
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
 msgstr  "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
@@ -163,7 +158,6 @@ msgstr  "Is this information correct? [Y/n]"
 msgid   "Mission $MISSION_NB has been cancelled."
 msgstr  "Mission $MISSION_NB has been cancelled."
 
-# abbreviation for "no" (uppercase)
 msgid   "N"
 msgstr  "N"
 
@@ -252,12 +246,15 @@ msgstr  "While you are waiting, an ant crawls by..."
 msgid   "While you are waiting, you see a fish swimming in circles..."
 msgstr  "While you are waiting, you see a fish swimming in circles..."
 
-# abbreviation for "yes" (uppercase)
 msgid   "Y"
 msgstr  "Y"
 
-msgid   "You shouldn't run Gameshell as root!"
-msgstr  "You shouldn't run Gameshell as root!"
+msgid   "You left GameShell's directory structure. Use\n"
+        "    $ cd\n"
+        "to go back to the GameShell's starting directory."
+msgstr  "You left GameShell's directory structure. Use\n"
+        "    $ cd\n"
+        "to go back to the GameShell's starting directory."
 
 msgid   "[Press space to continue, q to quit\\.]"
 msgstr  "[Press space to continue, q to quit\\.]"
@@ -280,7 +277,6 @@ msgid_plural    "game time: %s in %d sessions"
 msgstr[0]       "game time: %s in %d session"
 msgstr[1]       "game time: %s in %d sessions"
 
-# abbreviation for "no" (lowercase)
 msgid   "n"
 msgstr  "n"
 
@@ -298,6 +294,5 @@ msgstr  "test $nb_tests failed"
 msgid   "total time: %s"
 msgstr  "total time: %s"
 
-# abbreviation for "yes" (lowercase)
 msgid   "y"
 msgstr  "y"
