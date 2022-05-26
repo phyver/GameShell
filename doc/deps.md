@@ -42,7 +42,7 @@ To install the dependencies, the easiest way is probably to use the package
 manager [homebrew](https://brew.sh/index_fr) :
 
 ```sh
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 and to install the dependencies with
