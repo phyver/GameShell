@@ -23,8 +23,8 @@ tr STRING1 STRING2
   Remark: ``tr`` is an abbreviation for "translate".
 
   Example: if
-      CHAINE1 = "abcdef"
-      CHAINE2 = "klmnop"
+      STRING1 = "abcdef"
+      STRING2 = "klmnop"
   the file will be output with the following substitution (other 
   characters are left unchanged)
       a -> k      b -> l      c -> m
