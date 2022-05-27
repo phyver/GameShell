@@ -1,0 +1,28 @@
+Obiettivi Missione
+============
+
+Colleziona tutte le monete nascoste nel giardino di fronte al castello,
+poi mettile nella cassa (nella tua capanna nella foresta).
+
+
+Obiettivi secondari
+-------------------
+
+Impara come utilizzare il tasto "Tab" per fare prima.
+
+
+Comandi utili
+===============
+
+ls -A
+  Elenca tutti i file della cartella attuale, inclusi i file
+  nascosti. (Un file é "nascosto" quando il suo nome inizia con un punto.)
+
+Tab
+  Il tasto di tabulazione "completa" il nome di un file o cartella
+  una volta che hai iniziato a digitare l'inizio del nome. Funziona solo se
+  é possibile completarlo in automatico.
+
+Tab-Tab
+  Premere il tasto di tabulazione piú volte successivamente permette di
+  mostrare una lista di possibili completamenti.
