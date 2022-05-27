@@ -68,7 +68,7 @@ gsh systemconfig
   display the system configuration
 
 gsh test
-  run the curent mission's test script, if it exists
+  run the current mission's test script, if it exists
 
 gsh version
   show Gameshell's version
