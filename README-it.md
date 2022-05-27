@@ -3,9 +3,9 @@ GameShell: un "gioco" per insegnare il terminale Unix
 
 ![Illustration inspired by the game](art/illustration-small.png)
 
-Insegnare a studenti universatari o delle superiori a usare un terminale Unix non é la cosa piú semplice o divertente. Gameshell é stato creato come strumento per aiutare gli studenti alla [Université Savoie Mont Blanc](https://univ-smb.fr)  per fare pratica con un terminale *reale* per imparare divertendosi.
+Insegnare a studenti universatari o delle superiori a usare un terminale Unix non é la cosa piú semplice o divertente. Gameshell é stato creato come strumento per aiutare gli studenti alla [Université Savoie Mont Blanc](https://univ-smb.fr) per fare pratica con un terminale *reale* e imparare divertendosi.
 
-L'idea originale, di  Rodolphe Lepigre, era di avere una sessione bash standard con una configurazione specifica via file definiti "missioni" che potevano essere "verificate" tramite i progressi nel gioco.
+L'idea originale, di Rodolphe Lepigre, era di avere una sessione da terminale standard, con una configurazione specifica via file, definiti "missioni", che potessero essere "validati" tramite i progressi nel gioco.
 
 Ecco i risultati...
 
@@ -16,7 +16,7 @@ Siamo particolarmente interessati nel creare nuove missioni!
 Come cominciare
 ---------------
 
-**Nota:** GameShell é attualmente sotto uno sviluppo pesante: la versione corrente non é stata testata dagli studenti. Non esitare a segnalare qualunque problema che potresti incontrare o suggerimenti che potresti avere [aprendo un ticket](https://github.com/phyver/GameShell/issues/new).
+**Nota:** GameShell è attualmente sotto uno sviluppo pesante: la versione corrente non é stata testata dagli studenti. Non esitare a segnalare qualunque problema che potresti incontrare o suggerimenti che potresti avere [aprendo un ticket](https://github.com/phyver/GameShell/issues/new).
 
 GameShell dovrebbe funzionare in qualunque sistema Linux standard, e anche su macOS e BSD (ma abbiamo eseguito pochi test su questi). Su Debian e Ubuntu, le uniche dipendenze (oltre `bash`) sono i pacchetti `gettext-base` e `awk`(questo di solito presente di default). Alcune missioni hanno dipendenze addizionali: queste missioni sono saltate se le dipendenze non sono state risolte.  
 Su Debian o Ubuntu, esegui i comandi seguenti per installare tutte le dipendenze del gioco e delle missioni.  
@@ -30,7 +30,7 @@ Se tutte le dipendenze sono installate, puoi provare l'ultima versione del gioco
 $ wget https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
 $ bash gameshell.sh
 ```
-Il primo commando scaricare l'ultima versione del gioco nella forma di un pacchetto che si auto estrarrá e il secondo commando avvierá e inizializzerá il gioco dall'archivio. Istrunzioni su come giocare sono fornite nel gioco direttamente. 
+Il primo comando scarica l'ultima versione del gioco nella forma di un pacchetto che si auto estrarrá e il secondo commando avvierá e inizializzerá il gioco dall'archivio. Istruzioni su come giocare sono fornite nel gioco direttamente.
 
 Nota che quando si esce dal gioco (con `control-d` o il commando `gsh exit`) i tuoi progressi saranno salvati in un nuovo archivio (chiamato `GameShell-save.sh`).  
 Esegui questo script per ritornare al gioco nel punto in cui lo hai lasciato.
@@ -43,7 +43,7 @@ $ wget --quiet https://github.com/phyver/GameShell/releases/download/latest/Dock
 $ docker build -t gsh .
 $ docker run -it gsh
 ```
-Il gioco NON verrá salvato quando esci e paramentri aggiuntivi sono necessari se vuoi eseguire X programmi da GameShell.  Approfondisci le differenze su [questa seaione](./doc/deps.md#running-GameShell-from-a-docker-container) del manuale utente.
+Il gioco NON verrá salvato quando esci e paramentri aggiuntivi sono necessari se vuoi eseguire X programmi da GameShell.  Approfondisci le differenze su [questa sezione](./doc/deps.md#running-GameShell-from-a-docker-container) del manuale utente.
 
 
 Documentazione
