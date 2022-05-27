@@ -1,19 +1,21 @@
+# mte90 <mte90net@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Mte90 <mte90net@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2022-05-27 16:52+0200\n"
+"Last-Translator: mte90 <mte90net@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Lokalize 22.04.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, sh-format
 msgid "$GSH_HOME/Castle/Main_building/Throne_room"
-msgstr ""
+msgstr "$GSH_HOME/Castello/Palazzo_Principale/Stanza_del_trono"
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
