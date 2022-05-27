@@ -18,7 +18,7 @@ options:
 
   -q      silenzioso:non mostra avvisi informativi
   -n      bianco e nero: non usa i codici di escape ANSI per i colori
-  -c ...  dai quel commando a  GameShell (in testing)
+  -c ...  dai quel comando a  GameShell (in testing)
 
 Le seguenti opzioni di Gameshell sono disponibili solo nella versione eseguibile..
   -X      estrai solo l'archivio tgz

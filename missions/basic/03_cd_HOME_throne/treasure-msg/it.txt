@@ -1,0 +1,4 @@
+Ottimo lavoro!!!
+
+Da ora in poi, la posizione currente
+sará mostrato appena prima del prompt comandi
