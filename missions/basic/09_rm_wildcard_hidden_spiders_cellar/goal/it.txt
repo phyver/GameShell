@@ -1,0 +1,24 @@
+Obiettivi Missione
+============
+
+I ragni si fanno piú furbi: hanno trovato un modo per nascondersi.
+Rimuovi tutti i ragni che si nascondono nella cella senza
+disturbare i pipistrelli.
+
+
+Parametri Shell
+==============
+
+*
+  Il carattere "*" sta per ogni sequenza di caratteri
+  (inclusa una frase vuota).
+
+?
+  Il carattere "?" sta per un qualunque singolo carattere.
+
+
+Note
+------
+
+Le "wildcard" "*" e "?" non vedono i file nascosti, devi aggiungere
+un punto all'inizio dello schema.

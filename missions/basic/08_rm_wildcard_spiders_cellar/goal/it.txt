@@ -1,0 +1,29 @@
+Obiettivi Missione
+============
+
+Rimuovi tutti i ragni che sono sulle ragnatele nella cella.
+Di nuovo non disturbare i pipistrelli.
+
+
+Parametri Shell
+==============
+
+*
+  Il carattere "*" sta per ogni sequenza di caratteri
+  (inclusa una frase vuota).
+
+?
+  Il carattere "?" sta per un qualunque singolo carattere.
+
+Queste "wildcard" possono essere usati per indicare una lista
+di file o cartelle esistenti nella cartella attuale.
+
+Per esempio: se la cartella attuale contiene
+      file-1 Cartella-1 file-14 pomodoro
+then
+    *     -->  file-1 Cartella-1 file-14 pomodoro
+    *1    -->  file-1 Cartella-1
+    *o*   -->  Cartella-1 pomodoro
+    x*    -->  errore, nessun file trovato
+    *-?   -->  file-1 Cartella-1
+    *-??  -->  file-14
