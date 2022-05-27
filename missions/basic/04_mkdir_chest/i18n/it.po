@@ -1,0 +1,54 @@
+# mte90 <mte90net@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: mte90 <mte90net@gmail.com>\n"
+"PO-Revision-Date: 2022-05-27 13:00+0200\n"
+"Project-Id-Version: \n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.04.1\n"
+
+#, sh-format
+msgid "$GSH_HOME/Forest"
+msgstr ""
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/it.txt"
+
+# path for the text file containing the skip message
+msgid "$MISSION_DIR/skip/en.txt"
+msgstr "$MISSION_DIR/skip/it.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/it.txt"
+
+msgid "Chest"
+msgstr "Cesto"
+
+msgid "Hut"
+msgstr "Capanna"
+
+#, sh-format
+msgid "The $dir_name directory does not exist!"
+msgstr "La cartella $dir_name non esiste!"
+
+msgid "You are back at the initial directory."
+msgstr "Sei tornato alla cartella iniziale"
+
+msgid "You built too many chests in your hut!"
+msgstr "Hai costruito troppe ceste nella tua capanna!"
+
+msgid "You built too many huts in the forest!"
+msgstr "Hai costruito troppe capanne nella foresta!"
+
+msgid "You did not build a chest in your hut!"
+msgstr "Non hai costruito un cesto nella tua capanna!"
+
+msgid "You did not build a hut in the forest!"
+msgstr "Non hai costruito una capanna nella foresta!"
