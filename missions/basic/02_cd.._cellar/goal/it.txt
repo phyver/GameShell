@@ -1,0 +1,25 @@
+Obiettivi missione
+============
+
+Vai nella cella del castello.
+
+
+Obiettivo secondario
+-------------------
+
+Scoprire le differenze tra ``cd -`` e ``cd ..``.
+
+
+Comandi utili
+===============
+
+cd -
+  Torna alla (cartella) posizione precedente alla attuale.
+
+cd ..
+  Spostati alla cartella genitore (un passaggio indietro rispetto
+  alla tua posizione attuale).
+
+pwd
+  Vedi il percorso in cui ti trovi.
+
