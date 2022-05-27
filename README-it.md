@@ -59,7 +59,7 @@ Chi sta sviluppando GameShell?
 
 ### Sviluppatori
 
-Il gioco é sviluppy:
+Il gioco é sviluppato da:
 * [Pierre Hyvernat](http://www.lama.univ-smb.fr/~hyvernat) (main developer,
   [pierre.hyvernat@univ-smb.fr](mailto:pierre.hyvernat@univ-smb.fr)),
 * [Rodolphe Lepigre](https://lepigre.fr).
@@ -74,11 +74,10 @@ Il gioco é sviluppy:
 * Sébastien Tavenas
 * Tiemen Duvillard
 
-### Special thanks
+### Ringraziamenti speciali
 
-* All the students who found *many* bugs in the early versions.
-* Joan Stark (a.k.a, jgs), who designed hundreds of ASCII-art pieces in the
-  late 90s. Most of the ASCII-art encountered in GameShell are due to her.
+* AA tutti gli studenti che hanno trovato *molti* bug nelle prime versioni.
+* Joan Stark (a.k.a, jgs), che ha disegnati centinaia di ASCII-art negli anni 90s. Molte delle ASCII-art in GameShell sono sue.
 
 
 Licence
