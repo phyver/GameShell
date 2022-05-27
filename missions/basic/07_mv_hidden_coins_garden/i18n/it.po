@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: mte90 <mte90net@gmail.com>\n"
-"PO-Revision-Date: 2022-05-27 16:51+0200\n"
+"PO-Revision-Date: 2022-05-27 17:02+0200\n"
 "Project-Id-Version: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it_IT\n"
@@ -33,16 +33,28 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/it.txt"
 
 #, sh-format
-msgid "The coin '$coin_name' has been tampered with..."
+msgid "The coin '$coin_name...' has a wrong file name..."
+msgstr "La moneta '$coin_name...' ha un nome sbagliato per il file..."
+
+#, sh-format
+msgid "The coin '$coin_name...' has been tampered with..."
 msgstr "La moneta '$coin_name' é stata forgiata con..."
 
 #, sh-format
-msgid "The coin '$coin_name' is not in the chest!"
-msgstr "La moneta '$coin_name' non é nel cassa!"
+msgid "The coin '$coin_name...' is still in the garden!"
+msgstr "La moneta '$coin_name' é ancora nel giardino!"
 
 #, sh-format
-msgid "The coin '$coin_name' is still in the garden!"
-msgstr "La moneta '$coin_name' é ancora nel giardino!"
+msgid "There are several '$coin_name...' in the garden!"
+msgstr "Ci sono varie '$coin_name' nel giardino!"
+
+#, sh-format
+msgid "There are several '$coin_name...' in your chest!"
+msgstr "Ci sono varie monete '$coin_name' nella tua cassa!"
+
+#, sh-format
+msgid "There is no '$coin_name...' in your chest!"
+msgstr "Non ci sono '\"coin_name' nella tua cassa!"
 
 msgid "chest"
 msgstr "cassa"
