@@ -1,0 +1,36 @@
+Obiettivi Missione
+============
+
+Go to the top of the main tower of the castle.
+
+
+Comandi utili
+===============
+
+cd POSIZIONE
+  Spostati alla posizione fornita.
+  Nota: ``cd`` é una abbreviazione per "change directory".
+
+pwd
+  Mostra il percorso attuale.
+  Nota: ``pwd`` é una abbreviazione per "print working directory".
+
+ls
+  Mostra una lista di posizioni che sono accessibli.
+  Nota: ``ls`` e una abbreviazione per "list".
+
+gsh check
+  Verifica che gli obiettivi della missione siano stati raggiunti.
+
+gsh reset
+  Riavvia la missione dall'inizio.
+
+
+Nota
+-------
+
+Le parole in MAIUSCOLO nei comandi sono meta-variabili: devi sostituirle
+con dei valori appropriati (di tipo stringa).
+
+La maggior parte dei filesystem gestiscono maiuscole e minuscole in modi
+diversi. Verifica di stare nel perocrso corretto.

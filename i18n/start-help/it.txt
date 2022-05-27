@@ -2,9 +2,9 @@ options:
   -h      questo avviso
 
   -P      modalitá passaporto: chiede il nome/email del giocatore
-  -A      modalita anonima
-  -d      modalita debug
-  -D      modalita debug verbosa
+  -A      modalitá anonima
+  -d      modalitá debug
+  -D      modalitá debug verbosa
 
   -C      continua la partita corrente (se rilevante)
   -R      resetta partita
