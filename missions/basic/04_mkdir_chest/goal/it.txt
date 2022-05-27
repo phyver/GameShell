@@ -1,7 +1,7 @@
 Obiettivi Missione
 ============
 
-Costruisci una "Capanna" nella foresta e anche un "Cesto"
+Costruisci una "Capanna" nella foresta e anche un "Cassa"
 nella capanna.
 
 

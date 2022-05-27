@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: mte90 <mte90net@gmail.com>\n"
-"PO-Revision-Date: 2022-05-27 16:52+0200\n"
+"PO-Revision-Date: 2022-05-27 16:45+0200\n"
 "Project-Id-Version: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it_IT\n"
@@ -14,7 +14,7 @@ msgstr ""
 
 #, sh-format
 msgid "$GSH_HOME/Castle/Cellar"
-msgstr "$GSH_HOME/Castello/Cella"
+msgstr ""
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
@@ -26,10 +26,17 @@ msgstr "$MISSION_DIR/skip/it.txt"
 
 # path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/skip/it.txt"
+msgstr "$MISSION_DIR/treasure-msg/it.txt"
 
-msgid "You are not in the cellar..."
-msgstr "Non sei nella cella..."
+msgid "There still are spiders in the cellar!"
+msgstr "Ci sono ancora dei ragni nella cella!"
 
-msgid "barrel_of_apples"
-msgstr "botte_di_mele"
+msgid "You removed a bat!"
+msgstr "Hai rimosso un pipistrello!"
+
+msgid "bat"
+msgstr "pipistrello"
+
+# filename
+msgid "spider"
+msgstr "ragno"
