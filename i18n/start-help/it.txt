@@ -11,12 +11,12 @@ options:
 
   -L ...  imposta la variabile LANGUAGE (ex: -L fr:it:en)
           Su sistemi non GNU, imposta la variabile LC_MESSAGES
-          per un locale valido.
+          per un "locale" valido.
 
   -B      usa bash
   -Z      usa zsh
 
-  -q      silenzioso:non mostra avvisi informativi
+  -q      silenzioso: non mostra avvisi informativi
   -n      bianco e nero: non usa i codici di escape ANSI per i colori
   -c ...  dai quel comando a  GameShell (in testing)
 

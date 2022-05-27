@@ -274,10 +274,10 @@ msgid "While you are waiting, a large fish swims by..."
 msgstr "Mentre stai aspettando, un grande pesce nuota via..."
 
 msgid "While you are waiting, a snail goes by..."
-msgstr "Mentre stai aspettando, una lumica va..."
+msgstr "Mentre stai aspettando, una lumaca va..."
 
 msgid "While you are waiting, a snake slithers by..."
-msgstr "Mentre stai aspettando, un sperente svicola via..."
+msgstr "Mentre stai aspettando, un serpente svicola via..."
 
 msgid "While you are waiting, a spider crawls by..."
 msgstr "Mentre stai aspettando, un ragno strisca via..."

@@ -2,9 +2,9 @@ Benvenuto su GameShell!
 
 Utilizzare e amministrare un computer con un sistema Unix (o basato)
 come (Linux, BSD o macOS) richiede l'utilizzo di una interfaccia
-chiamata "shell" o terminale/console. In questo gioco proveremo
-la shell viaggiando tra varie missioni che ti insegneranno come
-puoi fare operazioni standard come:
+testuale chiamata "shell" o terminale/console. In questo gioco
+proveremo la shell viaggiando tra varie missioni che ti insegneranno
+come fare operazioni standard come:
   - creare cartelle,
   - creare, vedere e modificare file,
   - cercare per file che soddisfano certi criteri,
