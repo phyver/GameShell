@@ -241,8 +241,12 @@ __gsh_start() {
       . print_current_environment.sh > "$env_before"
     fi
 
+
+    # To be used as TEXTDOMAIN environment variable for the mission.
+    export DOMAIN=$(textdomainname "$MISSION_DIR")
     mission_source "$MISSION_DIR/init.sh"
     local exit_status=$?
+    unset DOMAIN
 
     if [ "$exit_status" -ne 0 ]
     then
