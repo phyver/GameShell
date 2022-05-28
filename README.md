@@ -1,7 +1,7 @@
 GameShell: a "game" to teach the Unix shell
 ===========================================
 
-![Illustration inspired by the game](art/illustration-small.png)
+![Illustration inspired by the game](Images/illustration-small.png)
 
 Teaching first-year university students or high schoolers to use a Unix shell
 is not always the easiest or most entertaining of tasks. GameShell was devised
@@ -14,6 +14,9 @@ with an appropriate configuration file that defined "missions" which would be
 "checked" in order to progress through the game.
 
 Here is the result...
+
+![GameShell's first mission](Images/gameshell_first_mission_small.gif)
+
 
 Feel free to send us your remarks, questions or suggestions by opening
 [issues](https://github.com/phyver/GameShell/issues) or submitting
