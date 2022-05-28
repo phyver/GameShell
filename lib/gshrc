@@ -73,6 +73,11 @@ unset file MISSION_DIR
 
 # print message when player wanders outside GameShell filesystem
 _check_pwd() {
+  if [ "$GSH_MODE" = "DEBUG" ]
+  then
+    return
+  fi
+
   case "$(pwd -P)" in
     "$GSH_HOME"*)
       :
