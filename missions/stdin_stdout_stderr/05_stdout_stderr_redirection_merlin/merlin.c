@@ -1,5 +1,4 @@
 #include <libgen.h>
-#include <libintl.h>
 #include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,8 +6,16 @@
 #include <time.h>
 #include <wordexp.h>
 
+#ifdef GSH_NO_GETTEXT
+char* gettext(const char* msgid) { return msgid; }
+#else
+#include <libintl.h>
+#endif
+
+#ifndef GSH_NO_GETTEXT
 char dom[1024];    // large enough for TEXTDOMAIN
 char domdir[1024]; // large enough for TEXTDOMAINDIR
+#endif
 
 char key[1024];
 char key_path[1024];
@@ -17,22 +24,23 @@ int main(int argc, char** argv)
 {
     srand(time(NULL));
 
-    // set locale from environment
+#ifndef GSH_NO_GETTEXT
     setlocale(LC_ALL, "");
 
-    // Give access to the TEXTDOMAIN environment variable.
+    // get the TEXTDOMAIN environment variable.
     char* dom_env = getenv("TEXTDOMAIN");
     if (dom_env == NULL)
         return 1;
     strncpy(dom, dom_env, 1024);
     textdomain(dom);
 
-    // Give access to the TEXTDOMAINDIR environment variable.
+    // get the TEXTDOMAINDIR environment variable.
     char* domdir_env = getenv("TEXTDOMAINDIR");
     if (domdir_env == NULL)
         return 1;
     strncpy(domdir, domdir_env, 1024);
     bindtextdomain(dom, domdir);
+#endif
 
     // check for arguments
     if (argc > 1) {

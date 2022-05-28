@@ -36,13 +36,13 @@ _mission_init() (
       # "-lintl" to the compiler, so we have to try several things!
       {
         echo "GSH: compiling merlin.c, first try" >&2
-        echo $CC "$MISSION_DIR/merlin.c" -lpthread -o "$GSH_TMP/merlin"
-        $CC "$MISSION_DIR/merlin.c" -lpthread -o "$GSH_TMP/merlin"
+        echo $CC "$MISSION_DIR/merlin.c" -o "$GSH_TMP/merlin"
+        $CC "$MISSION_DIR/merlin.c" -o "$GSH_TMP/merlin"
       } ||
       {
         echo "GSH: compiling merlin.c, second try"
-        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/merlin.c" -lintl -lpthread -o "$GSH_TMP/merlin"
-        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/merlin.c" -lintl -lpthread -o "$GSH_TMP/merlin"
+        echo $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/merlin.c" -lintl -o "$GSH_TMP/merlin"
+        $CC -I/usr/local/include/ -L/usr/local/lib "$MISSION_DIR/merlin.c" -lintl -o "$GSH_TMP/merlin"
       }
     ) || { echo "compilation failed" >&2; return 1; }
     copy_bin  "$GSH_TMP/merlin" "$(eval_gettext '$GSH_HOME/Castle/Observatory')/merlin"
