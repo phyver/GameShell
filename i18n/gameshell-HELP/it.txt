@@ -2,8 +2,8 @@ Comandi specifici di GameShell
 ==============================
 
 gsh assert condition [msg]
-  verifica se la condizioni é vera
-  altrimenti mostra un messagio di errore
+  verifica se la condizione é vera
+  altrimenti mostra un messaggio di errore
 
 gsh assert check true/false [msg]
   verifica se gli obiettivi della missione corrente sono stati raggiunti
@@ -50,7 +50,7 @@ gsh pcm
 
 gsh protect
 gsh unprotect
-  aggiunge / rimuove la protenzione delle cartelle di GameShell
+  aggiunge / rimuove la protezione delle cartelle di GameShell
 
 gsh reset
   resetta la missione attuale
