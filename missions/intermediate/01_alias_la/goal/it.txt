@@ -1,0 +1,26 @@
+Obiettivi missione
+============
+
+Controllare i file nascosti prende troppo tempo!
+
+Crea un alias "la" ed esegui il comando ``ls -A`` per elencare
+tutti i file, inclusi quelli nascosti, con solo 2 lettere.
+
+Definisci il sinonimo
+
+  la
+
+per il comando
+
+  ls -A
+
+e controlla che lavori come ti aspetti.
+
+Che fortuna, c'è una bella roccia nascosta proprio dove sei tu.
+
+
+Comandi utili
+===============
+
+alias STRING='COMMAND'
+  Crea un sinonimo per una stringa, che sostituirà il comando.
