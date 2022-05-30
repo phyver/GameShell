@@ -60,11 +60,11 @@ Chi sta sviluppando GameShell?
 ### Sviluppatori
 
 Il gioco é sviluppato da:
-* [Pierre Hyvernat](http://www.lama.univ-smb.fr/~hyvernat) (main developer,
+* [Pierre Hyvernat](http://www.lama.univ-smb.fr/~hyvernat) (sviluppatore principale,
   [pierre.hyvernat@univ-smb.fr](mailto:pierre.hyvernat@univ-smb.fr)),
 * [Rodolphe Lepigre](https://lepigre.fr).
 
-### Mission contributors
+### Contributori delle missioni
 
 * Pierre Hyvernat
 * Rodolphe Lepigre
@@ -80,7 +80,7 @@ Il gioco é sviluppato da:
 * Joan Stark (a.k.a, jgs), che ha disegnati centinaia di ASCII-art negli anni 90s. Molte delle ASCII-art in GameShell sono sue.
 
 
-Licence
+Licenza
 -------
 
 GameShell is released under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).

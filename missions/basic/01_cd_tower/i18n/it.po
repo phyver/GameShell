@@ -35,4 +35,4 @@ msgid "You are not at the top of the tower!"
 msgstr "Non sei in cima alla torre!"
 
 msgid "You need to start over from the start."
-msgstr "Devi cominciare dalla cima della torre."
+msgstr "Devi ricominciare dall'inizio."
