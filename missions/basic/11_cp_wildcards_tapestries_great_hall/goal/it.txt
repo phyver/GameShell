@@ -1,0 +1,24 @@
+Obiettivi Missione
+============
+
+Anche gli arazzi nella grande sala del castello sono bellissimi.
+Metti una copia di ciascuno nella tua cassa.
+
+
+Comandi utili
+===============
+
+cp FILE1 FILE2 ... FILEn NOMECARTELLA
+  Copia i file nella cartella.
+  Nota: ``cp`` é una abbreviazione di "copy".
+
+
+Parametri Shell
+==============
+
+*
+  Il carattere "*" sta per ogni sequenza di caratteri
+  (inclusa una frase vuota).
+
+?
+  Il carattere "?" sta per un qualunque singolo carattere.

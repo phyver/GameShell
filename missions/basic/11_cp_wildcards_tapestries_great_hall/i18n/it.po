@@ -1,0 +1,54 @@
+# mte90 <mte90net@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: mte90 <mte90net@gmail.com>\n"
+"PO-Revision-Date: 2022-05-30 13:04+0200\n"
+"Project-Id-Version: \n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.04.1\n"
+
+#, sh-format
+msgid "$GSH_HOME/Castle/Great_hall"
+msgstr "$GSH_HOME/Castello/Grande_Sala"
+
+#, sh-format
+msgid "$GSH_HOME/Forest/Hut/Chest"
+msgstr "$GSH_HOME/Foresta/Capanna/Cassa"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/it.txt"
+
+#, sh-format
+msgid ""
+"Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB"
+" ($MISSION_NAME)."
+msgstr ""
+"Dummy mission '$DUMMY_MISSION' é necessaria per la missione $MISSION_NB"
+" ($MISSION_NAME)."
+
+msgid "I only wanted the tapestries!"
+msgstr "Io volevo solo gli arazzi!"
+
+msgid "I wanted all the tapestries!"
+msgstr "Io voglio solo gli arazzi!"
+
+msgid "You changed the contents of the great hall!"
+msgstr "Hai cambiato il contenuto della sala grande!"
+
+msgid "decorative_shield"
+msgstr "scudo_decorativo"
+
+msgid "stag_head"
+msgstr "testa_di_cervo"
+
+msgid "suit_of_armour"
+msgstr "armatura"
+
+msgid "tapestry"
+msgstr "arazzo"
