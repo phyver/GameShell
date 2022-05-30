@@ -1,0 +1,23 @@
+Benvenuti in GameShell!
+
+L'utilizzo e l'amministrazione di un computer con un sistema operativo 
+di tipo Unix (ad esempio, Linux, BSD o macOS) richiede l'uso di un'interfaccia a riga di comando 
+chiamata "shell". 
+In questo gioco imparerete a usare la shell attraverso varie missioni che vi insegneranno 
+ad eseguire operazioni standard quali:
+
+  - creazione di directory,
+  - creazione, visualizzazione e modifica di file,
+  - ricerca di file che soddisfano determinati criteri,
+  - esecuzione e interruzione di programmi,
+  - ecc.
+
+Nel corso della vostra avventura dovrete visitare luoghi, 
+interagire con le persone e trovare vari oggetti. 
+Tuttavia, è necessario tenere a mente che si tratta di directory, 
+programmi e file standard (spesso con contenuti casuali). 
+Quindi, ad esempio:
+
+- "costruire una capanna" significa creare una directory chiamata "Capanna", e
+- "metti una moneta nel tuo forziere" significa spostare un file chiamato " moneta" 
+    in una directory chiamata "Cassa".
