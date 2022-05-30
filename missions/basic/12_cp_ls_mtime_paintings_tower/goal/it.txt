@@ -1,0 +1,22 @@
+Obiettivi Missione
+============
+
+Mentre vaghi per il primo piano della torre, alcuni
+dipinti maghifici catturano la tua vista. Aggiungi una copia del
+piú vecchio nella tua cassa.
+
+
+Obiettivi secondari
+--------------------
+
+Prenditi un momento per ammirare i dipinti.
+
+Comandi utili
+===============
+
+ls -l
+  Stampa un elenco di file della cartella attuale, con informazioni
+  aggiuntive incluse la data di ultima modifica.
+
+cat FILE
+  Mostra il contenuto del file.

@@ -36,7 +36,7 @@ msgid "I only wanted the tapestries!"
 msgstr "Io volevo solo gli arazzi!"
 
 msgid "I wanted all the tapestries!"
-msgstr "Io voglio solo gli arazzi!"
+msgstr "Io voglio tutti gli arazzi!"
 
 msgid "You changed the contents of the great hall!"
 msgstr "Hai cambiato il contenuto della sala grande!"

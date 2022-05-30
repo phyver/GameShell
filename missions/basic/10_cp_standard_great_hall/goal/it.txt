@@ -1,8 +1,8 @@
 Obiettivi Missione
 ============
 
-Ti sei affezionato ai quattro vessilli nella grande sala
-del castello. Poiché rubandolili non passeresti inosservato, fai
+Ti sei affezionato ai quattro stendardi nella grande sala
+del castello. Poiché rubandoli non passeresti inosservato, fai
 una copia (stesso nome, stesso contenuto) di ciascuno nella tua cassa.
 
 
@@ -11,4 +11,4 @@ Comandi utili
 
 cp FILE NOMECARTELLA
   Copia il file nella cartella.
-  Nota: ``cp`` é una abbreviazione di "copy".
+  Nota: ``cp`` è una abbreviazione di "copy".
