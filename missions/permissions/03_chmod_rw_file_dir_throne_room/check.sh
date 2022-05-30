@@ -21,9 +21,22 @@ _mission_check() (
 
   real_key=$(tail -n 1 "$GSH_TMP/crown" | cut -c 4-6)
 
-  printf "%s " "$(gettext "What are the 3 digits inscribed on the base of the crown?")"
-  read -r given_key
-  if [ "$real_key" -ne "$given_key" ]
+  given_key=""
+  while true
+  do
+    printf "%s " "$(gettext "What are the 3 digits inscribed on the base of the crown?")"
+    read -r given_key
+    case "$given_key" in
+      "" | *[!0-9]*)
+        :
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+  # don't check with '-ne' is it would accept non numerical answers!
+  if [ "$real_key" != "$given_key" ]
   then
     echo "$(gettext "Those digits are not correct!")"
     return 1
