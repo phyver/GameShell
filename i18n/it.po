@@ -94,7 +94,7 @@ msgstr "GENERATO ALL'AVVIO AUTOMATICAMENTE -- NON MODIFICARE"
 
 #, sh-format
 msgid "Congratulations, mission $MISSION_NB has been successfully completed!"
-msgstr "Congratulazioni, missione $MISSION_NB é stata completata con successo!"
+msgstr "Congratulazioni, la missione $MISSION_NB é stata completata con successo!"
 
 #, sh-format
 msgid "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
