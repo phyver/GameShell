@@ -1,0 +1,41 @@
+# mte90 <mte90net@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: mte90 <mte90net@gmail.com>\n"
+"PO-Revision-Date: 2022-05-31 19:14+0200\n"
+"Project-Id-Version: \n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.04.1\n"
+
+#, sh-format
+msgid "$GSH_HOME/Stall"
+msgstr "$GSH_HOME/Stalla"
+
+msgid "%s bought %s for %d coppers%s"
+msgstr "%s ha comprato %s per %d di rame%s"
+
+msgid "PAID"
+msgstr "PAGATO"
+
+msgid "boring_object"
+msgstr "oggetto_noioso"
+
+msgid "firstnames.en"
+msgstr "firstnames.it"
+
+msgid "lastnames.en"
+msgstr "lastnames.it"
+
+msgid "objects.en"
+msgstr "objects.it"
+
+msgid "s_c_r_o_l_l"
+msgstr "p_e_r_g_a_m_e_n_a"
+
+msgid "the King"
+msgstr "il Re"

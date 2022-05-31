@@ -2,7 +2,7 @@ Obiettivi Missione
 ============
 
 I ragni si fanno piú furbi: hanno trovato un modo per nascondersi.
-Rimuovi tutti i ragni che si nascondono nella cella senza
+Rimuovi tutti i ragni che si nascondono nella cantina senza
 disturbare i pipistrelli.
 
 

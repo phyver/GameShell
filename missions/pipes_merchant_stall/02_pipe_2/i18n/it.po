@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: mte90 <mte90net@gmail.com>\n"
-"PO-Revision-Date: 2022-05-27 19:31+0200\n"
+"PO-Revision-Date: 2022-05-31 19:08+0200\n"
 "Project-Id-Version: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it_IT\n"
@@ -13,8 +13,8 @@ msgstr ""
 "X-Generator: Lokalize 22.04.1\n"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Cellar"
-msgstr "$GSH_HOME/Castello/Cantina"
+msgid "$GSH_HOME/Stall"
+msgstr "$GSH_HOME/Stalla"
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
@@ -28,24 +28,25 @@ msgstr "$MISSION_DIR/skip/it.txt"
 msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/it.txt"
 
+msgid "How many unpaid items are there?"
+msgstr "Quanti articoli non pagati hai?"
+
+msgid "PAID"
+msgstr "PAGATO"
+
+msgid "That's not the right answer!"
+msgstr "Questa non é la risposta esatta!"
+
+#, sh-format
+msgid "That's the right answer, but you used $nb_cmd commands!"
+msgstr "Questa non é la risposta giusta ma hai utilizzato comandi $nb_cmd!"
+
 #, sh-format
 msgid ""
-"Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB"
-" ($MISSION_NAME)."
+"The script 'generate_merchant_stall.sh' is necessary for mission"
+" $MISSION_NAME.\n"
+"Make sure the corresponding mission is included."
 msgstr ""
-"Dummy mission '$DUMMY_MISSION' é richiesta per la missione $MISSION_NB"
-" ($MISSION_NAME)."
-
-#, sh-format
-msgid "Some bats have been modified!"
-msgstr "Alcuni pipistrelli sono stati modificati!"
-
-#, sh-format
-msgid "There still are some spiders ($nb_spiders) in the cellar!"
-msgstr "Ci sono ancora alcuni ragni ($nb_spiders) nella cantina!"
-
-msgid "bat"
-msgstr "pipistrello"
-
-msgid "spider"
-msgstr "ragno"
+"Lo script 'generate_merchant_stall.sh' é necessario per la missione"
+" $MISSION_NAME.\n"
+"Verifica di aver concluso questa missione prima."

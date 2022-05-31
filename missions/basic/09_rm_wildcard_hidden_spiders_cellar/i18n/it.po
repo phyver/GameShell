@@ -14,7 +14,7 @@ msgstr ""
 
 #, sh-format
 msgid "$GSH_HOME/Castle/Cellar"
-msgstr "$GSH_HOME/Castello/Cella"
+msgstr "$GSH_HOME/Castello/Cantina"
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
@@ -42,7 +42,7 @@ msgstr "Alcuni pipistrelli sono stati modificati!"
 
 #, sh-format
 msgid "There still are some spiders ($nb_spiders) in the cellar!"
-msgstr "CI sono ancora alcuni ragni ($nb_spiders) nella cella!"
+msgstr "CI sono ancora alcuni ragni ($nb_spiders) nella cantina!"
 
 msgid "bat"
 msgstr "pipistrello"

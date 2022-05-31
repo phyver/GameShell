@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: mte90 <mte90net@gmail.com>\n"
-"PO-Revision-Date: 2022-05-27 19:31+0200\n"
+"PO-Revision-Date: 2022-05-31 18:32+0200\n"
 "Project-Id-Version: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it_IT\n"
@@ -13,8 +13,8 @@ msgstr ""
 "X-Generator: Lokalize 22.04.1\n"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Cellar"
-msgstr "$GSH_HOME/Castello/Cantina"
+msgid "$GSH_HOME/Forest/Hut/Chest"
+msgstr "$GSH_HOME/Foresta/Capanna/Cassa"
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
@@ -30,22 +30,19 @@ msgstr "$MISSION_DIR/treasure-msg/it.txt"
 
 #, sh-format
 msgid ""
-"Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB"
-" ($MISSION_NAME)."
+"The command 'nano' is required for mission $MISSION_NAME.\n"
+"(Debian / Ubuntu: install package 'nano')"
 msgstr ""
-"Dummy mission '$DUMMY_MISSION' é richiesta per la missione $MISSION_NB"
-" ($MISSION_NAME)."
+"IL commando 'nano' é richiesto per la missione $MISSION_NAME.\n"
+"(Debian / Ubuntu: installa il pacchetto 'nano')"
 
 #, sh-format
-msgid "Some bats have been modified!"
-msgstr "Alcuni pipistrelli sono stati modificati!"
+msgid "The file '$journal_file' doesn't exist..."
+msgstr "Il file '$journal_file' non esiste..."
 
 #, sh-format
-msgid "There still are some spiders ($nb_spiders) in the cellar!"
-msgstr "Ci sono ancora alcuni ragni ($nb_spiders) nella cantina!"
+msgid "The file '$journal_file' is empty..."
+msgstr "Il file '$journail_file' é vuoto..."
 
-msgid "bat"
-msgstr "pipistrello"
-
-msgid "spider"
-msgstr "ragno"
+msgid "journal"
+msgstr "registro"

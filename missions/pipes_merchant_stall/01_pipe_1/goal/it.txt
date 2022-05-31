@@ -1,0 +1,37 @@
+Obiettivi Missione
+============
+
+Vicino al castello, c'é la stalla di un mercante. Le persone spesso
+comprano a credito e pagano quando possono.
+Il venditore mantiene i libri sui debiti di ognuno su una pergamena.
+Chiunque pagherá il suo debito avrá scritto "PAGATO" vicino al
+pagamento corrispondente.
+
+Combina diversi comandi con ``|`` per trovare il debito del Re.
+
+Nota
+------
+
+Puoi utilizzare solo 3 comandi per trovare il debito del Re.
+Puoi resettare il contatore con `gsh reset`, ma la stalla e i
+debiti di tutti saranno rigenerati.
+
+
+Suggerimento
+----
+
+Quando non ci saranno sotto cartelle, una alternativa a ``find . -name 
+'*oggetto_noioso*'`` é utilizzare `ls` e filtra il risultato con grep:
+  $ ls | grep "oggetto_noioso"
+
+
+Comandi utili
+===============
+
+grep [OPZIONI] STRING FILE1 ... FILEn
+  Filtra le linee dei file, mantendo solo quelle che contengono la 
+  stringa cercata.
+  Se nessun file é fornito, ``grep`` utilizzerá stdin.
+
+  Opzione utile
+    -v : mostrerá solo le linee che **non contiene** la stringa.
