@@ -17,7 +17,7 @@ pwd
 
 ls
   Mostra una lista di posizioni che sono accessibli.
-  Nota: ``ls`` e una abbreviazione per "list".
+  Nota: ``ls`` è una abbreviazione per "list".
 
 gsh check
   Verifica che gli obiettivi della missione siano stati raggiunti.
@@ -33,4 +33,4 @@ Le parole in MAIUSCOLO nei comandi sono meta-variabili: devi sostituirle
 con dei valori appropriati (di tipo stringa).
 
 La maggior parte dei filesystem gestiscono maiuscole e minuscole in modi
-diversi. Verifica di stare nel perocrso corretto.
+diversi. Verifica di essere nel percorso corretto.

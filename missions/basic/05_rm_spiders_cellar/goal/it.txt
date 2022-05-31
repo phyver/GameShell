@@ -1,9 +1,9 @@
 Obiettivi Missione
 ============
 
-Torna indietro alla cella e elimina tutti i ragni. Lascia i
-pipistreli da soli: loro appaiono nel castello sullo stemma del castello
-e si dice che portano fortuna.
+Torna indietro alla cantina e elimina tutti i ragni. Lascia i
+pipistreli da soli: loro appaiono nel castello sullo stemma del
+castello e si dice che portano fortuna.
 
 
 Comandi utili

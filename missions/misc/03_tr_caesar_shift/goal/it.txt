@@ -1,0 +1,35 @@
+Obiettivi Missione
+============
+
+Un messaggio segreto é stato trovato, é nascosto nel cassetto 
+dell'ufficio di Merlino. Probabilmente é anche criptato con il
+cifrario di Cesare.
+
+Decriptalo facendo una ricerca completa dalla linea di comando. 
+
+Suggerimento
+----
+
+Tutti i messaggi segreti sono stati trovati con uno spostamento
+di 10 e 16 caratteri.
+
+
+Comandi utili
+===============
+
+tr STRINGA1 STRINGA2
+  Sostituisci ogni carattere STRINGA1[i] con STRINGA2[i] nell'input 
+  , stampa il risultato.
+  Nota: ``tr`` é una abbreviazione per "translate".
+
+  Esempio: if
+      STRINGA1 = "abcdef"
+      STRINGA2 = "klmnop"
+  il file sará stampato con la seguente sostituzione (gli altri 
+  caratteri non saranno modificati)
+      a -> k      b -> l      c -> m
+      d -> n      e -> o      f -> p
+
+  Nota: invece di "abcdefg", é possibile scrivere "a-g".
+
+  Questo comando é particolarmente utile con il reindirizzamento ``<``.

@@ -1,7 +1,7 @@
 Obiettivi Missione
 ============
 
-Rimuovi tutti i ragni che sono sulle ragnatele nella cella.
+Rimuovi tutti i ragni che sono sulle ragnatele nella cantina.
 Di nuovo non disturbare i pipistrelli.
 
 

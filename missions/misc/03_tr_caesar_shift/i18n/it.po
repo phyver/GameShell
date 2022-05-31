@@ -1,0 +1,76 @@
+# mte90 <mte90net@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: mte90 <mte90net@gmail.com>\n"
+"PO-Revision-Date: 2022-05-31 18:42+0200\n"
+"Project-Id-Version: \n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.04.1\n"
+
+#, sh-format
+msgid "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
+msgstr "$GSH_HOME/Castello/Palazzo_Principale/Biblioteca/Ufficio_di_Merlino"
+
+#, sh-format
+msgid "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office/Drawer"
+msgstr ""
+"$GSH_HOME/Castello/Palazzo_Principale/Biblioteca/Ufficio_di_Merlino/Cassetto"
+
+# path for the text file containing the goal
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/it.txt"
+
+#, sh-format
+msgid "$MISSION_DIR/secret_recipe/en.txt"
+msgstr "$MISSION_DIR/secret_recipe/it.txt"
+
+# path for the text file containing the skip message
+msgid "$MISSION_DIR/skip/en.txt"
+msgstr "$MISSION_DIR/skip/it.txt"
+
+# path for the text file containing the treasure message
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr "$MISSION_DIR/treasure-msg/it.txt"
+
+msgid "Merlin_s_chest"
+msgstr "Cassa_di_Merlino"
+
+msgid "That's not the magic word."
+msgstr "Non é la parola magica."
+
+msgid "What's the key that will make Merlin's chest to appear?"
+msgstr "Quale é la chiave che fará apparire la cassa di Merlino?"
+
+msgid "bottle"
+msgstr "bottiglia"
+
+#, sh-format
+msgid ""
+"here is my will:\n"
+"you will get my chest, and everything it contains.\n"
+"this chest is in the cellar, and the word to make\n"
+"it re-appear is: $SECRET_KEY\n"
+"merlin the enchanter"
+msgstr ""
+"queste sono le mie volontá:\n"
+"avrai la mia cassa e tutto quello che contiene.\n"
+"questa cassa é nella cantina e la parola per farla\n"
+"apparire é: $SECRET_KEY\n"
+"merlino lo stregone"
+
+msgid "ink_and_scroll"
+msgstr "inchiostro_e_pergamena"
+
+msgid "medal"
+msgstr "medaglia"
+
+msgid "secret_message"
+msgstr "messaggio_segreto"
+
+msgid "secret_recipe"
+msgstr "ricetta_segreta"

@@ -1,0 +1,29 @@
+Obiettivi Missione
+============
+
+Crea un file chiamato "storico.txt" nella tua cassa e scrivici
+un breve messaggio.
+Puoi utilizzare questo file come diario o blocco di appunti per
+le prossime missioni.
+
+Dettagli
+-------
+
+``nano`` é un editor da linea di comando. Puoi utilizzarlo 
+ogni volta che hai bisogno di modificare un file da terminale.
+
+
+Comandi utili
+===============
+
+nano FILE
+  Modifica il file dal terminale.
+  (Se il file non esiste, verrá creato.)
+
+  Le combinazioni di tasti sono elencati alla fine dello schermo
+  (il simbolo "^" significa "Control"). I piú importanti sono:
+    Control-x     esci
+    Control-o     salva
+    Control-w     cerca per una stringa
+
+  Nota: non usare Control-s o Control-z!

@@ -13,7 +13,7 @@ msgstr ""
 "X-Generator: Lokalize 22.04.1\n"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Cellar"
+msgid "$GSH_HOME/Castle/Cantina"
 msgstr ""
 
 # path for the text file containing the goal
@@ -29,7 +29,7 @@ msgid "$MISSION_DIR/treasure-msg/en.txt"
 msgstr "$MISSION_DIR/treasure-msg/it.txt"
 
 msgid "There still are spiders in the cellar!"
-msgstr "Ci sono ancora dei ragni nella cella!"
+msgstr "Ci sono ancora dei ragni nella cantina!"
 
 msgid "You removed a bat!"
 msgstr "Hai rimosso un pipistrello!"
