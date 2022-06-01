@@ -17,23 +17,23 @@ msgstr ""
 
 #, sh-format
 msgid "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
-msgstr "$GSH_ROOT/i18n/start-help/it.txt"
+msgstr "$GSH_ROOT/i18n/gameshell-HELP/it.txt"
 
 #, sh-format
 msgid "$GSH_ROOT/i18n/gameshell-help/en.txt"
-msgstr "$GSH_ROOT/i18n/start-help/it.txt"
+msgstr "$GSH_ROOT/i18n/gameshell-help/it.txt"
 
 #, sh-format
 msgid "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
-msgstr "$GSH_ROOT/i18n/start-help/it.txt"
+msgstr "$GSH_ROOT/i18n/gameshell-init-msg-short/it.txt"
 
 #, sh-format
 msgid "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
-msgstr "$GSH_ROOT/i18n/start-help/it.txt"
+msgstr "$GSH_ROOT/i18n/gameshell-init-msg/it.txt"
 
 #, sh-format
 msgid "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
-msgstr "$GSH_ROOT/i18n/start-help/it.txt"
+msgstr "$GSH_ROOT/i18n/gameshell-welcome/it.txt"
 
 #, sh-format
 msgid "$GSH_ROOT/i18n/start-help/en.txt"
@@ -41,11 +41,11 @@ msgstr "$GSH_ROOT/i18n/start-help/it.txt"
 
 #, sh-format
 msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/it.txt"
+msgstr "$MISSION_DIR/goal/it.txt"
 
 #, sh-format
 msgid "$MISSION_DIR/skip/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/it.txt"
+msgstr "$MISSION_DIR/skip/it.txt"
 
 #, sh-format
 msgid "$MISSION_DIR/treasure-msg/en.txt"
@@ -68,7 +68,7 @@ msgstr[1] "%d autenticazioni fallite"
 #, awk-format
 msgid "%d mission cancelled for missing dependencies:"
 msgid_plural "%d missions cancelled for missing dependencies:"
-msgstr[0] "%d missione annullata per dipendenza mancanti:"
+msgstr[0] "%d missione annullata per dipendenze mancanti:"
 msgstr[1] "%d missioni annullate per dipendenze mancanti:"
 
 #, awk-format
@@ -80,7 +80,7 @@ msgstr[1] "%d missioni riuscite usando lo script auto.sh:"
 #, awk-format
 msgid "%d mission passed:"
 msgid_plural "%d missions passed:"
-msgstr[0] "%d missione riuscita:"
+msgstr[0] "%d missione compiuta:"
 msgstr[1] "%d missioni compiute:"
 
 #, awk-format
@@ -106,7 +106,7 @@ msgid ""
 "Aborting!"
 msgstr ""
 "Errore: almeno una delle funzioni base non funziona correttamente.\n"
-"Interruzione!"
+"Interrompo!"
 
 #, sh-format
 msgid "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
@@ -133,8 +133,7 @@ msgstr "Errore: missione $MISSION_NB non ha uno script automatico."
 msgid ""
 "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
 msgstr ""
-"Errore: missione $MISSION_NB é stata annullata perché alcune dipendenze non"
-" sono state trovate."
+"Errore: missione $MISSION_NB é stata annullata perché alcune dipendenze non sono state trovate."
 
 msgid ""
 "Error: no mission was found!\n"
@@ -144,8 +143,7 @@ msgstr ""
 "Interruzione!"
 
 msgid "Error: the 'goto' command requires a mission number as argument."
-msgstr ""
-"Errore: il commando 'goto' richiede un numero di missione come argomento.`"
+msgstr "Errore: il commando 'goto' richiede un numero di missione come argomento.`"
 
 msgid "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!"
 msgstr ""

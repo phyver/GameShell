@@ -1,0 +1,24 @@
+Obiettivo 
+============
+
+La porta per il quartiere dei Re è nella sala del trono.
+Vai nel quartiere dei Re.
+
+Attenzione
+------
+
+L'accesso a questa parte del castello è probabilmente limitata.
+
+
+Comandi
+===============
+
+ls -l
+  Elenca i file con i loro metadati importanti.
+
+  I permessi di accesso sono elencati per primi in ogni riga.
+
+chmod [OPZIONI] FILE
+  Modifica i permessi del file (o cartella).
+
+  Fai riferimento al manuale per scoprire quali opzioni sono disponibili.
