@@ -11,7 +11,7 @@ insegneranno come fare operazioni standard come:
   - eseguire e interromepre programmi,
   - ecc...
 
-Durante la tua avventura visiterai luoghi e interagirai con persone,
+Durante la tua avventura visiterai luoghi, interagirai con persone,
 e trovarai oggetti. Comunque devi ricordarti che queste sono cartelle
 normali, programmi e file con contenuti spesso casuali.
 Per esempio:

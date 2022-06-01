@@ -76,8 +76,8 @@ Il gioco é sviluppato da:
 
 ### Ringraziamenti speciali
 
-* AA tutti gli studenti che hanno trovato *molti* bug nelle prime versioni.
-* Joan Stark (a.k.a, jgs), che ha disegnati centinaia di ASCII-art negli anni 90s. Molte delle ASCII-art in GameShell sono sue.
+* A tutti gli studenti che hanno trovato *molti* bug nelle prime versioni.
+* Joan Stark (a.k.a, jgs), che ha disegnato centinaia di ASCII-art negli anni 90s. Molte delle ASCII-art in GameShell sono sue.
 
 
 Licenza
