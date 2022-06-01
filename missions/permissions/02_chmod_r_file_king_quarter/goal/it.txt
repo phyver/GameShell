@@ -1,0 +1,26 @@
+Obiettivo
+============
+
+Si dice che il Re tenga scritta la combinazione della sua cassaforte
+in un biglietto nella sua stanza.
+Trova quella combinazione.
+
+Attenzione
+------
+
+Il Re ha probabilmente provato a rendere il biglietto illeggibile!
+
+
+Comandi utili
+===============
+
+ls -l
+  Elenca i file con i loro metadati importanti.
+
+  I permessi di accesso sono elencati per primi in ogni riga.
+
+chmod [OPZIONI] FILE
+  Modifica i permessi del file (o cartella).
+
+  Fai riferimento al manuale per scoprire quali opzioni sono disponibili.
+

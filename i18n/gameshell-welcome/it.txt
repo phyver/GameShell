@@ -9,7 +9,7 @@ insegneranno come fare operazioni standard come:
   - creare, vedere e modificare file,
   - cercare per file che soddisfano certi criteri,
   - eseguire e interromepre programmi,
-  - ecc.
+  - ecc...
 
 Durante la tua avventura visiterai luoghi e interagirai con persone,
 e trovarai oggetti. Comunque devi ricordarti che queste sono cartelle
