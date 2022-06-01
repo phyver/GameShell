@@ -1,0 +1,44 @@
+Scopo della missione
+====================
+
+Cerca il rubino nascosto nel labirinto nel giardino, e spostalo nella
+tua cassa.
+
+Suggerimento
+------------
+
+Il nome del file non contiene la stringa "rubino". Siccome non ci sono 
+molti file nel labirinto, una possibile strategia è quella di cercare
+tutti i **file** (invece delle cartelle), e controllare a mano quale di 
+essi contiene la stringa "rubino".
+
+Comandi utili
+=============
+
+find
+  Cerca file / cartelle dalla cartella corrente.
+  
+  Possono essere aggiunte delle condizioni sul nome del file, sulla
+  grandezza, data di modifica, ecc.
+  Una condizione interessante è:
+   -type TIPO
+   
+cat FILE
+  Visualizza il contenuto di un file sullo schermo.
+	
+man COMANDO
+  Visualizza il manuale del comando.
+  
+  Principali tasti associati a funzioni:
+   q		esci
+   Spazio	scendi di una pagina
+   / STRINGA  cerca una stringa
+   n		trova la prossima occorrenza della
+			stringa cercata.
+			
+Nota
+----
+
+La descrizione del comando ``find`` è deliberatamente corta.
+Troverai più informazioni nel manuale. (Puoi per esempio cercare la
+stringa "-type" nel manuale.)

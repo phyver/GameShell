@@ -7,12 +7,12 @@ _mission_check_p() (
 
     if [ -z "$coin" ]
     then
-        echo "$(gettext "Some of the coins are not in your chest!")"
+        echo "$(gettext "Alcune delle monete non sono nella tua cassa!")"
         return 1
     fi
     if ! cmp -s "$coin" "$GSH_TMP/${coin_name}_$COIN_NB"
     then
-        echo "$(eval_gettext "Coin '\$coin_name' in your chest is invalid!")"
+        echo "$(eval_gettext "La moneta '\$coin_name' nella tua cassa è invalida!")"
         return 1
     fi
 )
@@ -23,12 +23,12 @@ _mission_check() (
     nb=$(find "$maze" -iname "$(gettext "gold_coin")" -type f | wc -l)
     if [ "$nb" -gt 2 ]
     then
-        echo "$(gettext "There are too many gold coins in the maze!")"
+        echo "$(gettext "Ci sono troppe monete d'oro nel labirinto!")"
         return 1
     fi
     if [ "$nb" -ne 0 ]
     then
-        echo "$(gettext "There still are some gold coins in the maze!")"
+        echo "$(gettext "Ci sono ancora delle monete d'oro nel labirinto!")"
         return 1
     fi
 

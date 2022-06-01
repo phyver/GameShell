@@ -8,7 +8,7 @@ _mission_init() (
   then
     DUMMY_MISSION=$(readlink-f "$MISSION_DIR/../00_shared")
     DUMMY_MISSION=${DUMMY_MISSION#$GSH_MISSIONS/}
-    echo "$(eval_gettext "Dummy mission '\$DUMMY_MISSION' is required for mission \$MISSION_NB (\$MISSION_NAME).")" >&2
+    echo "$(eval_gettext "La missione esempio '\$DUMMY_MISSION' è richiesta per la missione \$MISSION_NB (\$MISSION_NAME).")" >&2
     return 1
   fi
 

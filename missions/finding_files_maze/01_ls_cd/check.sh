@@ -7,20 +7,20 @@ _mission_check() (
 
     if [ -n "$coin" ]
     then
-        echo "$(gettext "There still are some copper coins in the maze!")"
+        echo "$(gettext "Ci sono ancora delle monete di bronzo nel labirinto!")"
         return 1
     fi
 
     coin=$(find "$GSH_CHEST" -maxdepth 1 -name "*_$(gettext "copper_coin")_*")
     if [ -z "$coin" ]
     then
-        echo "$(gettext "There is no copper coin in your chest!")"
+        echo "$(gettext "Non c'è alcuna moneta di bronzo nella tua cassa!")"
         return 1
     fi
 
     if ! cmp -s "$coin" "$GSH_TMP/copper_coin"
     then
-        echo "$(gettext "Booh... The copper coin in you chest is invalid!")"
+        echo "$(gettext "Buuh... La moneta di bronzo nella tua cassa è invalida!")"
         return 1
     fi
 )

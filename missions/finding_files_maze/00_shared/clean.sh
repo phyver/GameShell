@@ -4,7 +4,7 @@ maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 case $(pwd -P) in
   "$maze"/?*)
     cd "$maze"
-    echo "$(gettext "You are back at the entrance of the maze...")"
+    echo "$(gettext "Sei tornato/a all'entrata del labrinto...")"
     ;;
 esac
 
@@ -13,7 +13,7 @@ case "$maze" in
     rm -rf "$maze"/?*
     ;;
   *)
-    echo "Error: I don't want to remove the content of $maze!"
+    echo "Errore: Non voglio rimuovere il contenuto di $maze!"
     exit 1
     ;;
 esac
