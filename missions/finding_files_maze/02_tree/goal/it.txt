@@ -1,0 +1,16 @@
+Scopo della missione
+====================
+
+Trova la moneta d'argento nel labirinto nel giardino e spostala nella 
+tua cassa usando la shell.
+
+Comandi utili
+=============
+
+ls -R
+  Stampa la lista di tutti i file / cartelle, includendo quelli nelle
+  sottocartelle (ricorsivamente).
+
+tree
+  Stampa l'albero dei file e delle cartelle, partendo dalla cartella
+  corrente.

@@ -7,12 +7,12 @@ _mission_check() (
 
     if [ "$nb" -gt 1 ]
     then
-        echo "$(gettext "There are too many rubys in the maze!")"
+        echo "$(gettext "Ci sono troppi rubini nel labirinto!")"
         return 1
     fi
     if [ "$nb" -ne 0 ]
     then
-        echo "$(gettext "The ruby is still in the maze!")"
+        echo "$(gettext "Il rubino è ancora nel labirinto!")"
         return 1
     fi
 
@@ -20,11 +20,11 @@ _mission_check() (
 
     if ! [ -f "$GSH_CHEST/$filename" ]
     then
-        echo "$(gettext "The ruby is not in the chest!")"
+        echo "$(gettext "Il rubino non è nella cassa!")"
         return 1
     elif ! cmp -s "$GSH_TMP/ruby" "$GSH_CHEST/$filename"
     then
-        echo "$(gettext "The ruby in your chest is not valid!")"
+        echo "$(gettext "Il rubino nella tua cassa non è valido!")"
         return 1
     fi
     return 0

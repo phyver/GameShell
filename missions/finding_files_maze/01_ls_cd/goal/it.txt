@@ -1,0 +1,9 @@
+Scopo della missione
+====================
+
+Trova la moneta di bronzo nel piccolo labirinto nel giardino e spostala
+nella tua cassa.
+
+Se vuoi, puoi usare un file manager grafico. Il labirinto si trova
+nella cartella
+   $maze 

@@ -1,0 +1,4 @@
+Congratulazioni!
+
+Da ora, il comando ``ls`` proverà ad usare un codice di colori per 
+identificare più facilmente fra cartelle e diversi tipi di file.
