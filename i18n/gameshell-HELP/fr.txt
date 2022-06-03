@@ -17,9 +17,7 @@ gsh check
   vérifie que l'objectif de la mission en cours est atteint
 
 gsh exit
-  quitte la partie en cours
-  (vous pouvez reprendre à la mission en cours en lançant le 
-  script start.sh avec l'option -C)
+  quitte (et sauvegarde) la partie en cours
 
 gsh goal [N]
   affiche l'objectif de la mission en cours
