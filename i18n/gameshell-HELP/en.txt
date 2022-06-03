@@ -18,9 +18,7 @@ gsh check
   not
 
 gsh exit
-  quit GameShell
-  (you can start from the current mission by running the start.sh 
-  script with the "-C" flag)
+  quit (and save) the current game
 
 gsh goal [N]
   show the current mission's goal
