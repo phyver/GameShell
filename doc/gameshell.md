@@ -24,7 +24,7 @@ $ bash gameshell.sh
 ```
 
 Note that when you quit the game (with `control-d` or the command `gsh exit`)
-your progression will be saved in a new archive (called `GameShell-save.sh`).
+your progression will be saved in a new archive (called `gameshell-save.sh`).
 It can be run to resume the game where you left it.
 
 ### Using the start script in the source code
