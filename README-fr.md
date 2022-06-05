@@ -57,7 +57,7 @@ directement dans le jeu.
 
 Quand vous quitterez le jeu (avec `control-d` ou la commande `gsh exit`) votre
 progression sera sauvegardée dans une nouvelle archive (nommée
-`GameShell-save.sh`). Elle peut être lancée pour reprendre le jeu où vous vous
+`gameshell-save.sh`). Elle peut être lancée pour reprendre le jeu où vous vous
 étiez arrêté.
 
 
