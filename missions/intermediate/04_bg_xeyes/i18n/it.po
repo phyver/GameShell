@@ -1,0 +1,40 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/it.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/it.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/it.txt"
+
+msgid   "Have you run the 'xeyes' command directly?"
+msgstr  "Hai eseguito il comando 'xeyes' direttamente?"
+
+#, sh-format
+msgid   "The command 'ps' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'procps')"
+msgstr  "Il comando 'ps' è richiesto per la missione $MISSION_NAME.\n"
+        "(Debian / Ubuntu: installa il pacchetto 'procps')"
+
+#, sh-format
+msgid   "The command 'xeyes' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'x11-apps')"
+msgstr  "Il comando 'xeyes' è richiesto per la missione $MISSION_NAME.\n"
+        "(Debian / Ubuntu: installa il pacchetto 'x11-apps')"
+
+#, sh-format
+msgid   "The variable DISPLAY is not defined.\n"
+        "A running X server is required for mission $MISSION_NAME."
+msgstr  "La variabile DISPLAY non è definita.\n"
+        "Per la missione $MISSION_NAME è richiesto eseguire il server X."
+
+msgid   "There is no 'xeyes' process running."
+msgstr  "Il processo 'xeyes' non sta girando."

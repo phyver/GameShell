@@ -1,0 +1,26 @@
+Obiettivo missione
+============
+
+In fondo alla cantina, c'è una piccola apertura che porta alla
+tana della regina dei ragni.
+Entra e rimuovi la regina dei ragni (e nient'altro)
+
+
+Attenzione: hai un limite di tempo (20 secondi) per farlo. Puoi
+usare il comando ``gsh reset`` per azzerare il tempo.
+
+Un'altra cosa: i modelli della shell sono disattivati. Non puoi utilizzare
+i caratteri jolly ``*`` o ``?``. 
+
+
+Comandi utili
+===============
+
+Tab
+  Il tasto "Tabulazione" completa il nome del filo o della cartella
+  una volta che hai scritto l'inizio del nome. Funziona solo se
+  esiste una sola possibilità di completamento.
+
+Tab-Tab
+  Premi il tasto "Tabulazione" due volte consecutive per visualizzare
+  un elenco di possibili completamenti.

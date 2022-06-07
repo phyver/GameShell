@@ -1,0 +1,23 @@
+Obiettivo missione
+============
+
+Mentre stai camminando nel castello, hai la sensazione di
+essere osservato... Gira velocemente la testa e potrai vedere
+gli occhi di uno dei dipinti che ti seguono.
+
+1/ Esegui il comando ``xeyes`` e fermalo.
+2/ Esegui il comando ``xeyes`` in background.
+
+
+Comandi utili
+===============
+
+xeyes
+  Apre una finestra con 2 occhi che seguono il tuo mouse.
+
+COMMAND &
+  Esegui il comando in background.
+
+Control-c
+  Questa combinazione di tasti interrompe il comando corrente inviando
+  il segnale "INT".

@@ -1,0 +1,49 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Castle/Cellar"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/it.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/it.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/it.txt"
+
+#, sh-format
+msgid   "Good, but you took $nb_seconds seconds. You needed to take less than $MAX_DELAY seconds..."
+msgstr  "Bene, ma hai preso $nb_seconds secondi. Bisogna prendere meno di $MAX_DELAY secondi..."
+
+msgid   "Lair_of_the_spider_queen"
+msgstr  "Tana_della_regina_dei_ragni"
+
+#, sh-format
+msgid   "Perfect, it took you only $nb_seconds seconds to complete this mission!"
+msgstr  "Perfetto, hai preso solo $nb_seconds secondi per completare questa missione!"
+
+msgid   "The queen spider is still in its lair..."
+msgstr  "La regina dei ragni è ancora nella sua tana..."
+
+msgid   "Where is the baby bat?"
+msgstr  "Dov'è il piccolo pipistrello?"
+
+msgid   "You are back in the cellar."
+msgstr  "Sei tornato nella cantina."
+
+msgid   "You are not in the queen spider lair!"
+msgstr  "Non sei nella tana della regina dei ragni!"
+
+msgid   "baby_bat"
+msgstr  "piccolo_pipistrello"
+
+msgid   "spider_queen"
+msgstr  "regina_dei_ragni"
