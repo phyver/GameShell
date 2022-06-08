@@ -1,0 +1,58 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Castello/Cella"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/it.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/it.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/it.txt"
+
+msgid   "Are you sure you removed all the imp's spells?"
+msgstr  "Sei sicuro di aver rimosso tutti i sortilegi del demone?"
+
+msgid   "Did you kill the fairy?"
+msgstr  "Hai ucciso la fata?"
+
+msgid   "Did you kill the imp?"
+msgstr  "Hai ucciso il demone?"
+
+msgid   "Did you melt some of the snowflakes?"
+msgstr  "Hai sciolto alcuni fiocchi di neve?"
+
+msgid   "Did you remove some of the fairy's spells?"
+msgstr  "Hai rimosso qualche sortilegio della fata?"
+
+#, sh-format
+msgid   "The command 'pstree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+msgstr  "Il comando 'pstree' è necessario per la missione $MISSION_NAME\n"
+        "(Debian/Ubuntu: installa il pacchetto 'psmisc')"
+
+msgid   "There still is some coal in the cellar!"
+msgstr  "C'è ancora del carbone nella cantina"
+
+msgid   "coal"
+msgstr  "carbone"
+
+msgid   "mischievous_imp"
+msgstr  "demone_malizioso"
+
+msgid   "nice_fairy"
+msgstr  "bella_fata"
+
+msgid   "snowflake"
+msgstr  "fiocco_di_neve"
+
+msgid   "spell"
+msgstr  "sortilegio"
