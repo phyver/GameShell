@@ -2,16 +2,16 @@
 
 _mission_check() (
     maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
-    nb=$(find "$maze" -type f -print0 | xargs -0 grep -l "$(gettext "diamante")" | wc -l)
+    nb=$(find "$maze" -type f -print0 | xargs -0 grep -l "$(gettext "diamond")" | wc -l)
 
     if [ "$nb" -gt 1 ]
     then
-        echo "$(gettext "Ci sono troppi diamanti nel labirinto!")"
+        echo "$(gettext "There are too many diamonds in the maze!")"
         return 1
     fi
     if [ "$nb" -ne 0 ]
     then
-        echo "$(gettext "Il diamante è ancora nel labirinto.")"
+        echo "$(gettext "The diamond is still in the maze.")"
         return 1
     fi
 
@@ -19,7 +19,7 @@ _mission_check() (
 
     if [ -z "$diamond" ]
     then
-        echo "$(gettext "Non c'è alcun diamante nella tua cassa.")"
+        echo "$(gettext "There is no diamond in your chest.")"
         return 1
     fi
 
@@ -27,11 +27,11 @@ _mission_check() (
 
     if ! [ -f "$GSH_CHEST/$filename" ]
     then
-        echo "$(gettext "Il diamante non è nella cassa!")"
+        echo "$(gettext "The diamond is not in the chest!")"
         return 1
-    elif ! cmp -s "$GSH_TMP/diamante" "$GSH_CHEST/$filename"
+    elif ! cmp -s "$GSH_TMP/diamond" "$GSH_CHEST/$filename"
     then
-        echo "$(gettext "Il diamante nella tua cassa non è valido!")"
+        echo "$(gettext "The diamond in your chest is not valid!")"
         return 1
     fi
     return 0
