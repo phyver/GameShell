@@ -1,0 +1,35 @@
+Obiettivi missione
+==================
+
+Il demone sta confrontando la sua magia con una fata. Si incontrano
+nella cantina, il demone sta evocando pezzi di carbone mentre la 
+fata sta evocando delicati fiocchi di neve.
+
+Rimuovi i sortilegi del demone e il carbone che sporca la cantina,
+ma non toccare i fiocchi di neve!
+
+
+Nota
+----
+
+Non uccidere il demone o la fata.
+
+
+Comandi utili
+=============
+
+pstree PID
+  Stampa la lista dei processi con la loro relazione 
+  padre / figlio.
+
+  Se non viene dato un PID, mostra la lista di tutti i processi
+  con la loro relazione padre / figlio.
+
+  Opzioni utili:
+    -p   mostra il PID dei processi
+    $$   questa variabile mostra il PID della
+         shell e può essere fornita come PID.
+
+kill N
+  Manda il segnale di cessazione al processo numero N.
+  Nota: N è chiamato PID, o "identificatore di processo".

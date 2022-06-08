@@ -1,0 +1,42 @@
+Obiettivi missione
+==================
+
+Il demone malizioso ha più di un asso nella sua manica. È riuscito
+a proteggere il suo sortilegio contro la maggior parte delle 
+manomissioni.
+Hai bisogno di trovare questo sortilegio e provare a rimuoverlo
+con un segnale standard. Se non funziona, usa un segnale più 
+aggressivo
+
+Nota
+----
+
+Il sortilegio è un processo.
+
+
+Comandi utili
+=============
+
+$PS
+  Elenca i processi che sono attualmente eseguiti dalla shell.
+
+kill [OPZIONI] N
+  Manda il segnale di cessazione al processo N.
+
+  Opzioni utili:
+    -s SIGNAL   sceglie il nome del segnale
+    -NUMBER     sceglie il numero del segnale
+    -l          elenca i segnali disponibili
+
+clear
+  Pulisce la schermata del terminale.
+  La combinazione "Control-L" fa la stessa cosa ed è spesso
+  più veloce da usare nel terminale.
+
+Dettagli
+--------
+
+In modo predefinito ``kill`` manda il segnale "TERM" ai processi 
+(TERM sta per "cessazione")
+I processi possono ignorare alcuni segnali, ma il segnale "KILL"
+non può essere ignorato!
