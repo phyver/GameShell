@@ -1,7 +1,7 @@
 Obiettivo
 ============
 
-Si dice che il Re tenga scritta la combinazione della sua cassaforte
+Si dice che il Re abbia scritto la combinazione della sua cassaforte
 in un biglietto nella sua stanza.
 Trova quella combinazione.
 
