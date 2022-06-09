@@ -1,16 +1,16 @@
 GameShell: un "gioco" per insegnare il terminale Unix
 ===========================================
 
-![Illustration inspired by the game](art/illustration-small.png)
+![Disegno ispirato dal gioco](art/illustration-small.png)
 
-Insegnare a studenti universatari o delle superiori a usare un terminale Unix non é la cosa piú semplice o divertente. Gameshell é stato creato come strumento per aiutare gli studenti alla [Université Savoie Mont Blanc](https://univ-smb.fr) per fare pratica con un terminale *reale* e imparare divertendosi.
+Insegnare a studenti universitari o delle superiori a usare un terminale Unix non é la cosa piú semplice o divertente. Gameshell è stato creato come strumento per aiutare gli studenti alla [Université Savoie Mont Blanc](https://univ-smb.fr) per fare pratica con un terminale *reale* e imparare divertendosi.
 
 L'idea originale, di Rodolphe Lepigre, era di avere una sessione da terminale standard, con una configurazione specifica via file, definiti "missioni", che potessero essere "validati" tramite i progressi nel gioco.
 
 Ecco i risultati...
 
 Sentiti libero di inviare i tuoi commenti, domande o suggerimenti aprendo dei [ticket](https://github.com/phyver/GameShell/issues) o inviando [pull request](https://github.com/phyver/GameShell/pulls).
-Siamo particolarmente interessati nel creare nuove missioni!
+Siamo molto interessati nella creazione di nuove missioni!
 
 
 Come cominciare
@@ -43,7 +43,7 @@ $ wget --quiet https://github.com/phyver/GameShell/releases/download/latest/Dock
 $ docker build -t gsh .
 $ docker run -it gsh
 ```
-Il gioco NON verrá salvato quando esci e paramentri aggiuntivi sono necessari se vuoi eseguire X programmi da GameShell.  Approfondisci le differenze in [questa sezione](./doc/deps.md#running-GameShell-from-a-docker-container) del manuale utente.
+Il gioco NON verrà salvato quando esci e paramentri aggiuntivi sono necessari se vuoi eseguire X programmi da GameShell.  Approfondisci le differenze in [questa sezione](./doc/deps.md#running-GameShell-from-a-docker-container) del manuale utente.
 
 
 Documentazione
@@ -77,18 +77,18 @@ Il gioco é sviluppato da:
 ### Ringraziamenti speciali
 
 * A tutti gli studenti che hanno trovato *molti* bug nelle prime versioni.
-* Joan Stark (a.k.a, jgs), che ha disegnato centinaia di ASCII-art negli anni 90s. Molte delle ASCII-art in GameShell sono sue.
+* Joan Stark (a.k.a, jgs), che ha disegnato centinaia di ASCII-art negli anni 90. Molte delle ASCII-art in GameShell sono sue.
 
 
 Licenza
 -------
 
-GameShell is released under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+GameShell è rilasciato con la [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-Please link to this repository if you use GameShell.
+Lascia un link a questo repository se utilizzi GameShell.
 
-GameShell is open source and free to use. One way you can acknowledge the work
-it required is by sending an actual postcard to
+GameShell è open source e gratuito per l'uso. Un modo per ringraziare del lavoro è 
+inviare una cartolina a
 
 ```
   Pierre Hyvernat

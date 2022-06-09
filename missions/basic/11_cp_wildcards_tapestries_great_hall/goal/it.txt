@@ -10,7 +10,7 @@ Comandi utili
 
 cp FILE1 FILE2 ... FILEn NOMECARTELLA
   Copia i file nella cartella.
-  Nota: ``cp`` é una abbreviazione di "copy".
+  Nota: ``cp`` è una abbreviazione di "copy".
 
 
 Parametri Shell

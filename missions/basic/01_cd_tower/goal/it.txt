@@ -9,14 +9,14 @@ Comandi utili
 
 cd POSIZIONE
   Spostati alla posizione fornita.
-  Nota: ``cd`` é una abbreviazione per "change directory".
+  Nota: ``cd`` è una abbreviazione per "change directory".
 
 pwd
   Mostra il percorso attuale.
   Nota: ``pwd`` é una abbreviazione per "print working directory".
 
 ls
-  Mostra una lista di posizioni che sono accessibli.
+  Mostra una lista di posizioni che sono accessibili.
   Nota: ``ls`` è una abbreviazione per "list".
 
 gsh check

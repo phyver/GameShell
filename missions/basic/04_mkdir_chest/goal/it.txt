@@ -10,4 +10,4 @@ Comandi utili
 
 mkdir CARTELLA
   Crea una nuova cartella dentro la cartella attuale.
-  Nota: ``mkdir`` é una abbreviazione per "make directory".
+  Nota: ``mkdir`` è una abbreviazione per "make directory".

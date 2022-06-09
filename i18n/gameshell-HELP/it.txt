@@ -2,7 +2,7 @@ Comandi specifici di GameShell
 ==============================
 
 gsh assert condition [msg]
-  verifica se la condizione é vera
+  verifica se la condizione è vera
   altrimenti mostra un messaggio di errore
 
 gsh assert check true/false [msg]
@@ -24,11 +24,11 @@ gsh exit
 
 gsh goal [N]
   mostra gli obiettivi della missione
-  se N é fornito, mostra gli obiettivi della missione N
+  se N è fornito, mostra gli obiettivi della missione N
 
 gsh goto N                            (ADMIN)
   vai direttamente alla missione N
-  (nessuna password necessaria se N é la precedente)
+  (nessuna password necessaria se N è la precedente)
 
 gsh hardreset
   resetta la missione attuale riavviando la shell

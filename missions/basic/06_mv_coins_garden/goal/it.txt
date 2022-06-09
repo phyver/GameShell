@@ -14,5 +14,5 @@ mv FILE1 FILE2 ... FILEn DIRECTORY
 
 ~
   Il "~" simbolo é  una abbreviazione per la cartella iniziale.
-  Esempio: ovunque tu sia, ``~/Taverna`` indica la cartella the directory (o
+  Esempio: ovunque tu sia, ``~/Taverna`` indica la cartella (o
   file) "Taverna" nella cartella iniziale.

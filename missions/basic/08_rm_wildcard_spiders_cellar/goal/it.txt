@@ -20,7 +20,7 @@ di file o cartelle esistenti nella cartella attuale.
 
 Per esempio: se la cartella attuale contiene
       file-1 Cartella-1 file-14 pomodoro
-then
+quindi
     *     -->  file-1 Cartella-1 file-14 pomodoro
     *1    -->  file-1 Cartella-1
     *o*   -->  Cartella-1 pomodoro

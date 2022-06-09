@@ -1,8 +1,8 @@
 Obiettivi Missione
 ============
 
-Un messaggio segreto é stato trovato, é nascosto nel cassetto 
-dell'ufficio di Merlino. Probabilmente é anche criptato con il
+Un messaggio segreto è stato trovato, è nascosto nel cassetto 
+dell'ufficio di Merlino. Probabilmente è anche criptato con il
 cifrario di Cesare.
 
 Decriptalo facendo una ricerca completa dalla linea di comando. 
@@ -25,11 +25,11 @@ tr STRINGA1 STRINGA2
   Esempio: if
       STRINGA1 = "abcdef"
       STRINGA2 = "klmnop"
-  il file sará stampato con la seguente sostituzione (gli altri 
+  il file sarà stampato con la seguente sostituzione (gli altri 
   caratteri non saranno modificati)
       a -> k      b -> l      c -> m
       d -> n      e -> o      f -> p
 
-  Nota: invece di "abcdefg", é possibile scrivere "a-g".
+  Nota: invece di "abcdefg", è possibile scrivere "a-g".
 
-  Questo comando é particolarmente utile con il reindirizzamento ``<``.
+  Questo comando è particolarmente utile con il re-indirizzamento ``<``.
