@@ -17,4 +17,4 @@ gsh help
   messaggio di aiuto breve
 
 gsh reset
-  resetta la missione corrente
+  reimposta la missione corrente

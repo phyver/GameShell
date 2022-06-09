@@ -2,7 +2,7 @@ Esegui il comando
     $ gsh goal
 per scoprire la tua prima missione.
 
-Puoi verificare se la missione é stata completata con
+Puoi verificare se la missione è stata completata con
     $ gsh check
 
 Il comando
