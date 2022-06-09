@@ -1,0 +1,39 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Observatory"
+msgstr  "$GSH_HOME/Castello/Osservatorio
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/it.txt"
+
+# path for the text file containing the skip message
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/it.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+#, c-format
+msgid   "Error: %s takes no argument."
+msgstr  "Errore: %s non prende argomenti."
+
+msgid   "THESECRETKEYISONSTDERR"
+msgstr  "THESECRETKEYISONSTDERR"
+
+msgid   "That's correct, but you need to use a redirection to complete this mission!"
+msgstr  "È corretto, ma devi usare un reindirizzamento per completare questa missione!"
+
+msgid   "That's not the correct key!"
+msgstr  "Non è la chiave corretta!"
+
+msgid   "What is the secret key?"
+msgstr  "Qual'è la chiave corretta?"
+
+msgid   "star_chart"
+msgstr  "mappa_del_cielo"
