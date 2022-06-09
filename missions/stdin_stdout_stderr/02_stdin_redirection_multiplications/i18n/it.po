@@ -1,0 +1,43 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Library"
+msgstr  "$GSH_HOME/Castello/Palazzo_principale/Biblioteca"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/it.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/it.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/it.txt"
+
+msgid   "Greek_Latin_and_other_modern_languages"
+msgstr  "Grego_Latino_e_altre_lingue_moderne"
+
+msgid   "How_to_cheat_for_exams"
+msgstr  "Come_imbrogliare_negli_esami"
+
+msgid   "Mathematics_101"
+msgstr  "Matematica_101"
+
+msgid   "That's not even a number!"
+msgstr  "Non è nemmeno un numero!"
+
+msgid   "The book 'Mathematics_101' contains all the anwsers.\n"
+        "Just copy all its lines to get perfect score."
+msgstr  "Il libro 'Matematica_101' contiene tutte le risposte.\n"
+        "Copia tutte le sue righe per avere il massimo punteggio."
+
+#, sh-format
+msgid   "Too bad! The answer was $result..."
+msgstr  "Peccato! Il risultato era $result..."
+
+msgid   "Too slow! You need to give the answers in less than 10 seconds..."
+msgstr  "Troppo lento! Devi dare le risposte in meno di 10 secondi..."

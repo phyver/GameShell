@@ -1,0 +1,52 @@
+Obiettivo della missione
+============
+
+I vecchi libri di alchimia di Merlino sono conservati nel suo ufficio, nella biblioteca.
+Devi stampare una lista di tutti i libri contenenti l'elemento alchemico
+'gsh' (per "Glutatione").
+Attenzione, può essere scritto con un misto di lettere maiuscole e 
+minuscole.
+
+Alcuni dei libri sono sotto chiave, non sei autorizzato a consultarli.
+Ignorali.
+
+Commento
+------
+
+Solo la lista di libri è necessaria. L'elemento chimico non
+dovrebbe apparire a schermo.
+
+
+Comandi utili
+===============
+
+grep STRINGA FILE1 ... FILEn
+  Cerca per una stringa dentro ad un file e stampa le righe
+  corrispondenti.
+  Alcune opzioni interessanti sono
+    -l : non stampare le righe, ma solo i nomi del file contenti 
+         la stringa
+    -i : ignora le differenze tra maiuscole e minuscole
+
+COMANDO  >  FILE
+  Manda i messaggi (stdout) al file.
+  (Il file viene sovrascritto.)
+  
+COMANDO  2>  FILE
+  Manda i messaggi di errore (stderr) al file.
+  (Il file viene sovrascritto.)
+
+/dev/null
+  File "virtuale" che è universalmente vuoto: qualunque cosa mandata ad esso,
+  scompare.
+
+Spiegazioni
+------------
+
+Ogni comando può stampare messaggi sullo schermo in 2 modi:
+  - stampa standard ("stdout")
+  - stampa di errori ("stderr")
+Come predefinito entrambi i tipi di messaggio sono mostrati a schermo.
+
+È tuttavia possibile reindirizzare entrambi to file
+indipendenti.

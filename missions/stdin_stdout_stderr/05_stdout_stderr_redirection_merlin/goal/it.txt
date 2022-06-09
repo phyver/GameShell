@@ -1,0 +1,36 @@
+Obiettivo della missione
+============
+
+Merlino è diventato pazzo... Cammina per la torre dell'osservatorio e 
+
+Merlin has turned crazy... He paces around the observatory tower and 
+borbotta cose insensate.
+
+Devi filtrare le sue divagazioni per scoprire la chiave segreta
+che solo lui conosce.
+
+Suggerimento
+----
+
+È probabile che il messaggio di Merlino sia pieno di errori.
+Per completare la missione, devi consegnare la chiave segreta **usando un 
+reindirizzamento a file**.
+
+
+Comandi utili
+===============
+
+./FILE
+  Fa partire un file eseguibile come programma. Inutile specificare
+  Merlino sia eseguibile...
+
+COMANDO  >  FILE
+  Manda i messaggi (stdout) al file.
+  (Il file viene sovrascritto.)
+
+COMANDO  2>  FILE
+  Manda i messaggi di errore (stderr) al file.
+  (Il file viene sovrascritto.)
+
+COMANDO  <  FILE
+  Manda il file all'input standard (stdin) del comando.
