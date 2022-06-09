@@ -8,7 +8,7 @@ gsh check
 gsh exit   /   Control-d
   esci da GameShell
   (puoi partire dalla missione corrente eseguendo
-  GameShell con il paramentro "-C")
+  GameShell con il parametro "-C")
 
 gsh goal
   mostra gli obiettivi di questa missione

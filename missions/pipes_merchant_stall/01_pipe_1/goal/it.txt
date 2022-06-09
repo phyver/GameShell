@@ -13,7 +13,7 @@ Nota
 ------
 
 Puoi utilizzare solo 3 comandi per trovare il debito del Re.
-Puoi resettare il contatore con `gsh reset`, ma la stalla e i
+Puoi reimpostare il contatore con `gsh reset`, ma la stalla e i
 debiti di tutti saranno rigenerati.
 
 

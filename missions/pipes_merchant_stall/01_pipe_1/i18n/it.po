@@ -8,33 +8,34 @@ msgstr  "$GSH_HOME/Stalla"
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
-msgstr  ""
+msgstr  "$MISSION_DIR/goal/it.txt"
 
 # path for the text file containing the skip message
 msgid   "$MISSION_DIR/skip/en.txt"
-msgstr  ""
+msgstr  "$MISSION_DIR/skip/it.txt"
 
 # path for the text file containing the treasure message
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  ""
+msgstr  "$MISSION_DIR/treasure-msg/it.txt"
 
 msgid   "How much does the king owe?"
-msgstr  ""
+msgstr  "Quanto possiede il re?"
 
 msgid   "PAID"
-msgstr  ""
+msgstr  "PAGATO"
 
 msgid   "That's not the right answer!"
-msgstr  ""
+msgstr  "Questa non è la risposta giusta!"
 
 #, sh-format
 msgid   "That's the right answer, but you used $nb_cmd commands!"
-msgstr  ""
+msgstr  "Questa è la risposta giusta ma hai utilizzato $nb_cmd comandi!"
 
 #, sh-format
 msgid   "The script 'generate_merchant_stall.sh' is necessary for mission $MISSION_NAME.\n"
         "Make sure the corresponding mission is included."
-msgstr  ""
+msgstr  "Lo script 'generate_merchant_stall.sh' é necessario per la missione $MISSION_NAME.\n"
+        "Verifica che questa missione sia inclusa."
 
 msgid   "the King"
-msgstr  ""
+msgstr  "il Re"

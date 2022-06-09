@@ -3,12 +3,12 @@ Obiettivi Missione
 
 Nostradamus ha predetto che una spettacolare congiunzione stellare il
 $MM-$DD-$YYYY.
-Peró quale sará il giorno della settimana?
+Però quale sarà il giorno della settimana?
 
 Quando lo hai scoperto, esegui il comando ``gsh check``.
 
 
-Commandi utili
+Comandi utili
 ===============
 
 cal

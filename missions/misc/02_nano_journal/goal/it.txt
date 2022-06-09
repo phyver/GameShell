@@ -9,7 +9,7 @@ le prossime missioni.
 Dettagli
 -------
 
-``nano`` é un editor da linea di comando. Puoi utilizzarlo 
+``nano`` è un editor da linea di comando. Puoi utilizzarlo 
 ogni volta che hai bisogno di modificare un file da terminale.
 
 
@@ -18,10 +18,10 @@ Comandi utili
 
 nano FILE
   Modifica il file dal terminale.
-  (Se il file non esiste, verrá creato.)
+  (Se il file non esiste, verrà creato.)
 
   Le combinazioni di tasti sono elencati alla fine dello schermo
-  (il simbolo "^" significa "Control"). I piú importanti sono:
+  (il simbolo "^" significa "Control"). I più importanti sono:
     Control-x     esci
     Control-o     salva
     Control-w     cerca per una stringa

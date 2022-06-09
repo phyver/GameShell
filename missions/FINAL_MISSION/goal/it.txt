@@ -9,5 +9,5 @@ Usa ``gsh HELP`` per una lista dei comandi di GameShell.
 Il comando ``gsh index`` e ``gsh goto N`` sono particolarmente
 interessanti.
 
-Nota: la password amministrativa é stata cambiata in '$password'.
+Nota: la password amministrativa è stata cambiata in '$password'.
 

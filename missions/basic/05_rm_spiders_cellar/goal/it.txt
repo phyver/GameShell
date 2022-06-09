@@ -2,7 +2,7 @@ Obiettivi Missione
 ============
 
 Torna indietro alla cantina e elimina tutti i ragni. Lascia i
-pipistreli da soli: loro appaiono nel castello sullo stemma del
+pipistrelli da soli: loro appaiono nel castello sullo stemma del
 castello e si dice che portano fortuna.
 
 
@@ -11,4 +11,4 @@ Comandi utili
 
 rm FILE1 FILE2 ... FILEn
   Elimina i file (permanentemente).
-  Nota: ``rm`` é una abbreviazione per "remove".
+  Nota: ``rm`` è una abbreviazione per "remove".
