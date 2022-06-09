@@ -1,0 +1,31 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Mountain/Cave"
+msgstr  "$GSH_HOME/Mountain/Cave"
+
+# path for the text file containing the goal
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/it.txt"
+
+msgid   "Book_of_potions"
+msgstr  "Libro_delle_pozioni"
+
+msgid   "You altered the book..."
+msgstr  "Hai alterato il libro..."
+
+msgid   "You are not in the cave with Servillus!"
+msgstr  "Non sei nella grotta con Servillus!"
+
+msgid   "You have not used the 'tail' command!"
+msgstr  "Non hai usato il comando 'tail'!"
+
+msgid   "Your previous command does not give the expected result..."
+msgstr  "Il comando precedente non ha dato il risultato sperato..."
+
+msgid   "page"
+msgstr  "pagina"
+

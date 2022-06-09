@@ -1,0 +1,24 @@
+Scopo della missione
+====================
+
+L'uomo anziano sembra gradire assai la tua compagnia. Ti invita a
+rimanere per cena, e inzia a preparare un delizioso stufato per entrambi.
+Mentre prepara il calderone, chiede il tuo aiuto.
+
+Leggi i passi della ricetta dal suo libro.
+
+Per rendere la missione valida, devi essere nella grotta con Servillus
+**e** il tuo ultimo comando prima di ``gsh check`` deve visualizzare i
+passi della ricetta (escluso il titolo).
+
+Comandi utili
+-------------
+
+cat FILE
+  Visualizza i contenuti del file.
+  
+tail FILE
+   Visualizza le ultime 10 righe del file.
+   
+tail -n K FILE
+	Visualizza le ultime K righe del file.

@@ -32,6 +32,6 @@ Remark
 ------
 
 The description of the ``find`` command is deliberately kept short. 
-You will find more information in the manual. (You can for example 
+You will find more information in the manual. (You can for exemple 
 search for the string "-name" in the manual.)
 

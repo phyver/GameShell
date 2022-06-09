@@ -1,0 +1,17 @@
+Scopo della missione
+====================
+
+Mentre pulisce i piatti, Servillus menziona un'interessante pozione
+che permette a chi la beve di prendere le sembianze di chiunque altro.
+Leggi la ricetta della pozione dal libro dell'eremita.
+
+Per rendere la missione valida, devi essere nella grotta con Servillus
+**e** il tuo ultimo comando prima di ``gsh check`` deve visualizzare
+tutta la ricetta (incluso il titolo).
+
+Comandi utili
+=============
+
+cat FILE1 FILE2 ... FILEn
+  Visualizza il contenuto dei file in ordine.
+  Ricorda: ``cat`` è un'abbreviazione per "concatena".

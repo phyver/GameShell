@@ -1,0 +1,31 @@
+Scopo della missione
+====================
+
+L'anziano eremita è assetato e vorrebbe che tu cercassi la ricetta
+per l'acqua distillata.
+
+Per rendere la missione valida, devi essere nella grotta con Servillus
+**e** il tuo ultimo comando prima di ``gsh check`` deve visualizzare i
+passi della ricetta e nient'altro.
+
+Comandi utili
+=============
+
+head [-n K] [FILE]
+   Visualizza le prime righe (10 di default, K se ``-n K`` viene usato)
+   del file dato, o dello standard input se non è dato alcun file.
+   
+tail [-n K] [FILE]
+   Visualizza le ultime righe (10 di default, K se ``-n K`` viene usato)
+   del file dato, o dello standard input se non è dato alcun file.
+
+COMANDO1 | COMANDO2
+  Esegui i due comandi, inviando lo "standard output" del primo nello
+  "standard input" del secondo.
+  Nota: per analogia, il simbolo "|" è chiamato "pipe" (tubo).
+  
+Nota
+----
+
+Le parti in [parentesi quadre] nella descrizione dei comandi sono
+opzionali. Le parentesi non sono parte del comando.
