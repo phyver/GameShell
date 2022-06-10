@@ -1,7 +1,7 @@
 Obiettivi Missione
 ============
 
-Un messaggio segreto è stato trovato, è nascosto nel cassetto 
+Un messaggio segreto è stato trovato ed è nascosto nel cassetto 
 dell'ufficio di Merlino. Probabilmente è anche criptato con il
 cifrario di Cesare.
 

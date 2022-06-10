@@ -17,7 +17,7 @@ Comandi utili
 ===============
 
 Tab
-  Il tasto "Tabulazione" completa il nome del filo o della cartella
+  Il tasto "Tabulazione" completa il nome del file o della cartella
   una volta che hai scritto l'inizio del nome. Funziona solo se
   esiste una sola possibilità di completamento.
 

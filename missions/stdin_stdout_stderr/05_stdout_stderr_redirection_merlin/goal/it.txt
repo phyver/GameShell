@@ -2,8 +2,6 @@ Obiettivi missione
 ============
 
 Merlino è diventato pazzo... Cammina per la torre dell'osservatorio e 
-
-Merlin has turned crazy... He paces around the observatory tower and 
 borbotta cose insensate.
 
 Devi filtrare le sue divagazioni per scoprire la chiave segreta
@@ -21,7 +19,7 @@ Comandi utili
 ===============
 
 ./FILE
-  Fa partire un file eseguibile come programma. Inutile specificare
+  Fa partire un file eseguibile come programma. Inutile specificare che
   Merlino sia eseguibile...
 
 COMANDO  >  FILE

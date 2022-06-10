@@ -3,7 +3,7 @@ Obiettivi Missione
 
 Torna indietro alla cantina e elimina tutti i ragni. Lascia i
 pipistrelli da soli: loro appaiono nel castello sullo stemma del
-castello e si dice che portano fortuna.
+castello e si dice che portino fortuna.
 
 
 Comandi utili

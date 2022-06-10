@@ -3,7 +3,7 @@ Congratulazioni!
 
 Hai finito tutte le missioni.
 
-Ora puoi chiudere GameShell, o tornare a qualche precedente missione.
+Ora puoi chiudere GameShell o tornare a qualche precedente missione.
 
 Usa ``gsh HELP`` per una lista dei comandi di GameShell.
 Il comando ``gsh index`` e ``gsh goto N`` sono particolarmente
