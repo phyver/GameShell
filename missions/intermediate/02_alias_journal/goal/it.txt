@@ -1,4 +1,4 @@
-Obiettivo Missione
+Obiettivi Missione
 ============
 
 Creare un alias "journal" in modo da editare il tuo file journal

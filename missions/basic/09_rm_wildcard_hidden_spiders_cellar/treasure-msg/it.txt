@@ -1,5 +1,5 @@
 Congratulazioni!
 
 D'ora in poi, il comando ``ls`` sará
-utilizzato automaticament per mostrare
+utilizzato automaticamente per mostrare
 il carattere "/" alla fine delle cartelle.

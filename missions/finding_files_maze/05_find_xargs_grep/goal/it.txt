@@ -1,4 +1,4 @@
-Scopo della missione
+Obiettivi missione
 ====================
 
 Combina diversi comandi con "|" per trovare il diamante nel labirinto

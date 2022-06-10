@@ -1,7 +1,7 @@
-Scopo della missione
+Obiettivi missione
 ====================
 
-Cerca il rubino nascosto nel labirinto nel giardino, e spostalo nella
+Cerca il rubino nascosto nel labirinto nel giardino e spostalo nella
 tua cassa.
 
 Suggerimento

@@ -31,7 +31,7 @@ gsh goto N                            (ADMIN)
   (nessuna password necessaria se N è la precedente)
 
 gsh hardreset
-  resetta la missione attuale riavviando la shell
+  reimposta la missione attuale riavviando la shell
 
 gsh HELP
   questo messaggio
@@ -53,7 +53,7 @@ gsh unprotect
   aggiunge / rimuove la protezione delle cartelle di GameShell
 
 gsh reset
-  resetta la missione attuale
+  reimposta la missione attuale
 
 gsh resetstatic
   rigenera tutte le parti statiche del mondo di gioco

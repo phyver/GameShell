@@ -7,7 +7,7 @@ options:
   -D      modalitá debug verbosa
 
   -C      continua la partita corrente (se rilevante)
-  -R      resetta partita
+  -R      reimposta la partita
 
   -L ...  imposta la variabile LANGUAGE (ex: -L fr:it:en)
           Su sistemi non GNU, imposta la variabile LC_MESSAGES
