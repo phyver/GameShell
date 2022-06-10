@@ -9,7 +9,7 @@ Nota
 
 Puoi utilizzare un solo comando.
 
-Puoi sempre resettare il contatore con `gsh reset`, ma la stalla
+Puoi sempre reimpostare il contatore con `gsh reset`, ma la stalla
 verrá rigenerata.
 
 
