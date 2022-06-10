@@ -197,7 +197,7 @@ msgid "Player's email:"
 msgstr "Email giocatore:"
 
 msgid "Player's name:"
-msgstr "Nome Giocatore:"
+msgstr "Nome giocatore:"
 
 msgid "Press Enter to continue."
 msgstr "Premi Invio per continuare."
@@ -260,7 +260,7 @@ msgid "While you are waiting, a caterpillar crawls by..."
 msgstr "Mentre stai aspettando, un bruco striscia via..."
 
 msgid "While you are waiting, a centipede crawls by..."
-msgstr "Mentre stai aspettando, un millipedie striscia via..."
+msgstr "Mentre stai aspettando, un millipiede striscia via..."
 
 msgid "While you are waiting, a duck swims by..."
 msgstr "Mentre stai aspettando, una papera nuota via..."
