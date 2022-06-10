@@ -9,7 +9,7 @@ Nota
 ----
 
 Il nome del file non contiene la stringa "diamante". Devi trovare un
-file che contiene la stringa "diamante".
+file che contenga la stringa "diamante".
 
 
 Comandi utili

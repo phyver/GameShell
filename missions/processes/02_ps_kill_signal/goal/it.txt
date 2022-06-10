@@ -6,7 +6,7 @@ a proteggere il suo sortilegio contro la maggior parte delle
 manomissioni.
 Hai bisogno di trovare questo sortilegio e provare a rimuoverlo
 con un segnale standard. Se non funziona, usa un segnale più 
-aggressivo
+aggressivo.
 
 Nota
 ----

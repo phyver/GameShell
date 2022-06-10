@@ -9,8 +9,8 @@ Note
 
 Puoi sperimentare con quanti comandi vuoi ma devi validare la missione
 alle seguenti condizioni:
-  - il primo comando ti porta al punto iniziale,
-  - l'ultimo commando ti porta direttamente alla stanza del trono.
+  - il primo comando deve portarti al punto iniziale,
+  - l'ultimo commando deve portarti direttamente alla stanza del trono.
 
 
 Comandi utili

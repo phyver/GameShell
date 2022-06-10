@@ -4,11 +4,11 @@ Utilizzare e amministrare un computer che esegue un sistema operativo
 basato su Unix (come ad esempio Linux, BSD o macOS) richiede l'utilizzo
 di una interfaccia testuale chiamata "shell" o terminale/console. In
 questo gioco proveremo la shell viaggiando tra varie missioni che ti
-insegneranno come fare operazioni standard come:
+insegneranno come fare operazioni standard quali:
   - creare cartelle,
   - creare, vedere e modificare file,
-  - cercare per file che soddisfano certi criteri,
-  - eseguire e interromepre programmi,
+  - cercare file che soddisfano certi criteri,
+  - eseguire e interrompere programmi,
   - ecc...
 
 Durante la tua avventura visiterai luoghi, interagirai con persone,
