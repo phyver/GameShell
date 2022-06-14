@@ -5,11 +5,11 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 
 #, sh-format
 msgid   "$GSH_HOME/Forest/Hut/Chest"
-msgstr  "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Foresta/Capanna/Cassa"
 
 #, sh-format
 msgid   "$GSH_HOME/Garden/Maze"
-msgstr  "$GSH_HOME/Garden/Maze"
+msgstr  "$GSH_HOME/Giardino/Labirinto"
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
@@ -25,14 +25,14 @@ msgstr  "$MISSION_DIR/treasure-msg/it.txt"
 
 #, sh-format
 msgid   "Coin '$coin_name' in your chest is invalid!"
-msgstr  "La moneta '$coin_name' nella tua cassa è invalida"
+msgstr  "La moneta '$coin_name' nella tua cassa è non è valida"
 
 #, sh-format
 msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
 msgstr  "La missione esempio '$DUMMY_MISSION' è richiesta per la missione $MISSION_NB ($MISSION_NAME)."
 
 msgid   "GolD_CoiN"
-msgstr  "GolD_CoiN"
+msgstr  "MonetA_dOrO"
 
 msgid   "Some of the coins are not in your chest!"
 msgstr  "Alcune monete non sono nella tua cassa!"
@@ -47,7 +47,7 @@ msgid   "There are too many gold coins in the maze!"
 msgstr  "Ci sono troppe monete d'oro nel labirinto!"
 
 msgid   "There still are some gold coins in the maze!"
-msgstr  "There still are some gold coins in the maze!"
+msgstr  "Ci sono ancora delle monete d'oro nel labirinto!"
 
 msgid   "coin"
 msgstr  "moneta"

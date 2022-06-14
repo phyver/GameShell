@@ -143,16 +143,16 @@ msgstr ""
 "Interruzione!"
 
 msgid "Error: the 'goto' command requires a mission number as argument."
-msgstr "Errore: il commando 'goto' richiede un numero di missione come argomento.`"
+msgstr "Errore: il comando 'goto' richiede un numero di missione come argomento.`"
 
 msgid "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!"
 msgstr ""
-"Errore: il commando 'gsh hardreset' non dovrebbe essere eseguito dentro una"
+"Errore: il comando 'gsh hardreset' non dovrebbe essere eseguito dentro una"
 " subshell!"
 
 msgid "Error: the command 'gsh reset' shouldn't be run inside a subshell!"
 msgstr ""
-"Errore: il commando 'gsh reset' non dovrebbe essere eseguito dentro una"
+"Errore: il comando 'gsh reset' non dovrebbe essere eseguito dentro una"
 " subshell!"
 
 msgid "Error: this option is only available from an executable archive!"
@@ -163,7 +163,7 @@ msgid ""
 "Error: unknown gsh command '$cmd'.\n"
 "Use one of the following commands:"
 msgstr ""
-"Errore: commando gsh sconosciuto '$cmd@.\n"
+"Errore: comando gsh sconosciuto '$cmd@.\n"
 "Usa uno dei comandi seguenti:"
 
 #, sh-format

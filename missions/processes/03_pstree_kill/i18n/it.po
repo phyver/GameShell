@@ -4,7 +4,7 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 
 #, sh-format
 msgid   "$GSH_HOME/Castle/Cellar"
-msgstr  "$GSH_HOME/Castello/Cella"
+msgstr  "$GSH_HOME/Castello/Cantina"
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"

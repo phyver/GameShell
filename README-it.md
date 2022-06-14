@@ -33,7 +33,7 @@ $ bash gameshell.sh
 Il primo comando scarica l'ultima versione del gioco nella forma di un pacchetto che si auto estrarrà e il secondo commando avvierà e inizializzerà il gioco dall'archivio. Istruzioni su come giocare sono fornite nel gioco direttamente.
 
 Nota che quando si esce dal gioco (con `control-d` o il commando `gsh exit`) i tuoi progressi saranno salvati in un nuovo archivio (chiamato `GameShell-save.sh`).  
-Esegui questo script per ritornare alla partita in cui la hai lasciata.
+Esegui questo archivio per ritornare alla partita salvata.
 
 
 Se preferisci non eseguire script shell estranei sul tuo computer puoi generare una immagine Docker con i comandi seguenti: 

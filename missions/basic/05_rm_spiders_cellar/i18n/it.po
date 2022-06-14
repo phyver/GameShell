@@ -13,8 +13,8 @@ msgstr ""
 "X-Generator: Lokalize 22.04.1\n"
 
 #, sh-format
-msgid "$GSH_HOME/Castle/Cantina"
-msgstr ""
+msgid "$GSH_HOME/Castle/Cellar"
+msgstr "$GSH_HOME/Castello/Cantina"
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
