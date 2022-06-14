@@ -90,10 +90,37 @@ mv "$TMP_ROOT"/.[!.]* "$GSH_ROOT" 2>/dev/null
 rmdir "$TMP_ROOT"
 
 ###
+# remove root directory, with some minor failsafe
+_remove_root() {
+  if [ "$KEEP_DIR" != "true" ]
+  then
+    # some sanity checking to make sure we remove the good directory
+    if ! [ -e "$GSH_ROOT/.gsh_root-$$" ]
+    then
+      echo "Error: I don't want to remove directoryy $GSH_ROOT!" >&2
+      exit 1
+    fi
+    chmod -R 777 "$GSH_ROOT"
+    rm -rf "$GSH_ROOT"
+  fi
+}
+
+###
 # save function
 _save() {
   trap - CHLD
   ret=$1
+
+  # the ".save" file is present, it means GameShell was actually started
+  # if not, we don't need to archive the directory
+  if [ ! -e "$GSH_ROOT/.save" ]
+  then
+    _remove_root
+    exit "$ret"
+  fi
+  # remove the ".save" file to make sure we don't always save from now on!
+  rm -f "$GSH_ROOT/.save"
+
 
   tar -zcf "$GSH_ROOT.tgz" -C "$ORIGINAL_DIR" ./"$GSH_ROOT"
   ARCHIVE_OK=$?
@@ -125,17 +152,8 @@ _save() {
     KEEP_DIR="true"
   fi
 
-  if [ "$KEEP_DIR" != "true" ]
-  then
-    # some sanity checking to make sure we remove the good directory
-    if ! [ -e "$GSH_ROOT/.gsh_root-$$" ]
-    then
-      echo "Error: I don't want to remove directoryy $GSH_ROOT!" >&2
-      exit 1
-    fi
-    chmod -R 777 "$GSH_ROOT"
-    rm -rf "$GSH_ROOT"
-  fi
+  # remove the root directory
+  _remove_root
 
   exit "$ret"
 }

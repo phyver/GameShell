@@ -494,12 +494,21 @@ then
       RC_FILE=.zshrc
       ;;
   esac
+
+  # put a ".save" file to indicate the archive needs to be saved on exit
+  touch "$GSH_ROOT/.save"
+
+  # start GameShell
   exec $GSH_SHELL -c "export GSH_NON_INTERACTIVE=1
                        GSH_ROOT=\"$GSH_ROOT\"
                        . \"\$GSH_ROOT/lib/profile.sh\"
                        . \"\$GSH_HOME/$RC_FILE\"
                        $GSH_COMMAND"
 else
+  # put a ".save" file to indicate the archive needs to be saved on exit
+  touch "$GSH_ROOT/.save"
+
+  # start GameShell
   exec $GSH_SHELL
 fi
 
