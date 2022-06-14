@@ -54,7 +54,7 @@ msgstr "Ci sono varie monete '$coin_name' nella tua cassa!"
 
 #, sh-format
 msgid "There is no '$coin_name...' in your chest!"
-msgstr "Non ci sono '\"coin_name' nella tua cassa!"
+msgstr "Non ci sono '$coin_name' nella tua cassa!"
 
 msgid "chest"
 msgstr "cassa"

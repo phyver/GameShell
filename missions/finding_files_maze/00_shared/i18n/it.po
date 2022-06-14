@@ -15,7 +15,7 @@ msgid   "$GSH_HOME/Garden/Shed"
 msgstr  "GSH_HOME/Garden/Shed"
 
 msgid   "You are back at the entrance of the maze..."
-msgstr  "Sei tornato/a all'entrata del labirinto..."
+msgstr  "Sei di nuovo all'entrata del labirinto..."
 
 msgid   "bucket"
 msgstr  "secchio"

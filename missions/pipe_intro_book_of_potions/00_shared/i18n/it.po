@@ -5,7 +5,7 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 
 #, sh-format
 msgid   "$GSH_HOME/Mountain/Cave"
-msgstr  "$GSH_HOME/Mountain/Cave"
+msgstr  "$GSH_HOME/Montagna/Grotta"
 
 #, sh-format
 msgid   "$MISSION_DIR/book_of_potions/en.txt"
@@ -24,7 +24,7 @@ msgstr  "Libro_delle_pozioni"
 
 #, sh-format
 msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
-msgstr  "la missione di esempio '$DUMMY_MISSION' è richiesta per la missione $MISSION_NB ($MISSION_NAME)."
+msgstr  "La missione di esempio '$DUMMY_MISSION' è richiesta per la missione $MISSION_NB ($MISSION_NAME)."
 
 msgid   "cauldron"
 msgstr  "calderone"
