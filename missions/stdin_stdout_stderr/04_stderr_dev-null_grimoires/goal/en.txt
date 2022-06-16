@@ -37,7 +37,7 @@ COMMAND  2>  FILE
   (The file is overwritten.)
 
 /dev/null
-  "Virtual" file that is universally empty: anything sent to it is 
+  "Virtual" file that is universally empty: anything sent to it 
   disappears.
 
 Explanations
