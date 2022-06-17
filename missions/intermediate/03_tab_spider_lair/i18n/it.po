@@ -21,14 +21,14 @@ msgstr  "$MISSION_DIR/treasure-msg/it.txt"
 
 #, sh-format
 msgid   "Good, but you took $nb_seconds seconds. You needed to take less than $MAX_DELAY seconds..."
-msgstr  "Bene, ma hai preso $nb_seconds secondi. Bisogna prendere meno di $MAX_DELAY secondi..."
+msgstr  "Bene, ma hai impiegato $nb_seconds secondi. Devi farlo in meno di $MAX_DELAY secondi..."
 
 msgid   "Lair_of_the_spider_queen"
 msgstr  "Tana_della_regina_dei_ragni"
 
 #, sh-format
 msgid   "Perfect, it took you only $nb_seconds seconds to complete this mission!"
-msgstr  "Perfetto, hai preso solo $nb_seconds secondi per completare questa missione!"
+msgstr  "Perfetto, hai impiegato solo $nb_seconds secondi per completare questa missione!"
 
 msgid   "The queen spider is still in its lair..."
 msgstr  "La regina dei ragni è ancora nella sua tana..."
