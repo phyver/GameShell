@@ -33,7 +33,7 @@ msgid   "That's not the correct key!"
 msgstr  "Non è la chiave corretta!"
 
 msgid   "What is the secret key?"
-msgstr  "Qual'è la chiave corretta?"
+msgstr  "Qual è la chiave corretta?"
 
 msgid   "star_chart"
 msgstr  "mappa_del_cielo"

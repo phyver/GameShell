@@ -33,4 +33,4 @@ msgid   "page"
 msgstr  "pagina"
 
 msgid   "table_of_contents"
-msgstr  "tabella_dei_contenuti"
+msgstr  "indice"
