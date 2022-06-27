@@ -26,7 +26,7 @@ msgstr "$MISSION_DIR/skip/it.txt"
 
 # path for the text file containing the treasure message
 msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/skip/it.txt"
+msgstr "$MISSION_DIR/treasure-msg/it.txt"
 
 msgid "You are not in the cellar..."
 msgstr "Non sei nella cantina..."
