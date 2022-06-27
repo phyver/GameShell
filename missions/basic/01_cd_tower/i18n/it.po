@@ -21,7 +21,7 @@ msgstr ""
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/it.txt"
+msgstr "$MISSION_DIR/goal/it.txt"
 
 # path for the text file containing the skip message
 msgid "$MISSION_DIR/skip/en.txt"
