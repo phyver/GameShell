@@ -122,7 +122,7 @@ The game is currently being developed by:
 * Leonardo Canello (@anulo2)
 * @michirod
 * @serhack
-* @wshield05
+* WhiteShield (@wshield05)
 
 ### Special thanks
 
