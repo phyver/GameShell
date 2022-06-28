@@ -74,6 +74,22 @@ Il gioco é sviluppato da:
 * Sébastien Tavenas
 * Tiemen Duvillard
 
+### Traduttori
+
+#### Versione Italiana
+
+* Daniele Scasciafratte (@mte90)
+* Paolo Mauri (@maupao)
+* Marco Ciampa (@ciampix)
+* Antonio Vivace (@avivace)
+* Lorenzo Millucci (@lmillucci)
+* Sirio Negri (@ziriuz84)
+* Domenico Mammola (@domenicomammola)
+* Leonardo Canello (@anulo2)
+* @michirod
+* @serhack
+* @wshield05
+
 ### Ringraziamenti speciali
 
 * A tutti gli studenti che hanno trovato *molti* bug nelle prime versioni.

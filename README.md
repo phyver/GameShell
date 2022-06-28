@@ -108,6 +108,22 @@ The game is currently being developed by:
 * Sébastien Tavenas
 * Tiemen Duvillard
 
+### Translation
+
+#### Italian Version
+
+* Daniele Scasciafratte (@mte90)
+* Paolo Mauri (@maupao)
+* Marco Ciampa (@ciampix)
+* Antonio Vivace (@avivace)
+* Lorenzo Millucci (@lmillucci)
+* Sirio Negri (@ziriuz84)
+* Domenico Mammola (@domenicomammola)
+* Leonardo Canello (@anulo2)
+* @michirod
+* @serhack
+* @wshield05
+
 ### Special thanks
 
 * All the students who found *many* bugs in the early versions.
