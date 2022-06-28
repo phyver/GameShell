@@ -88,7 +88,7 @@ Il gioco é sviluppato da:
 * Leonardo Canello (@anulo2)
 * @michirod
 * @serhack
-* @wshield05
+* WhiteShield (@wshield05)
 
 ### Ringraziamenti speciali
 
