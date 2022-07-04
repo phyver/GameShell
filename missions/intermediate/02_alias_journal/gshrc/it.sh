@@ -1,4 +1,4 @@
-# Questo file è caricato (o    in shell jargon) quando il gioco
+# Questo file è caricato (o 'sourced' in shell jargon) quando il gioco
 # si avvia. Puoi usarlo per registrare alias (e altre cose)
 # che desideri mantenere tra le varie sessioni di gioco.
 # Infatti, un alias definito nella shell sarà "dimenticato" se

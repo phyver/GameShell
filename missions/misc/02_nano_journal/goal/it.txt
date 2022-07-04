@@ -1,7 +1,7 @@
 Obiettivi Missione
 ============
 
-Crea un file chiamato "storico.txt" nella tua cassa e scrivici
+Crea un file chiamato "registro.txt" nella tua cassa e scrivici
 un breve messaggio.
 Puoi utilizzare questo file come diario o blocco di appunti per
 le prossime missioni.

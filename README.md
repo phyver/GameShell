@@ -123,6 +123,7 @@ The game is currently being developed by:
 * @michirod
 * @serhack
 * WhiteShield (@wshield05)
+* @gioisco
 
 ### Special thanks
 
