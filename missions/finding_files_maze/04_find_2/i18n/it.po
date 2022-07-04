@@ -25,7 +25,7 @@ msgstr  "$MISSION_DIR/treasure-msg/it.txt"
 
 #, sh-format
 msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
-msgstr  "La missione esempio '\$DUMMY_MISSION' è richiesta per la missione \$MISSION_NB (\$MISSION_NAME)."
+msgstr  "La missione esempio '$DUMMY_MISSION' è richiesta per la missione $MISSION_NB ($MISSION_NAME)."
 
 #, sh-format
 msgid   "The command 'man' is required for mission $MISSION_NAME.\n"

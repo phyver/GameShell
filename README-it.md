@@ -89,6 +89,7 @@ Il gioco é sviluppato da:
 * @michirod
 * @serhack
 * WhiteShield (@wshield05)
+* @gioisco
 
 ### Ringraziamenti speciali
 
