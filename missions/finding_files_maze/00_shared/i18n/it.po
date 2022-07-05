@@ -12,7 +12,7 @@ msgstr  "$GSH_HOME/Giardino/Labirinto"
 
 #, sh-format
 msgid   "$GSH_HOME/Garden/Shed"
-msgstr  "GSH_HOME/Giardino/Stalla"
+msgstr  "$GSH_HOME/Giardino/Rimessa"
 
 msgid   "You are back at the entrance of the maze..."
 msgstr  "Sei di nuovo all'entrata del labirinto..."
