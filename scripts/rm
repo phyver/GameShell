@@ -1,0 +1,35 @@
+#!/bin/sh
+
+GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
+
+SAFE_RM=1
+
+if [ "$#" -ge 1 ] && [ "$1" = "--system" ]
+then
+  shift
+  SAFE_RM=0
+fi
+
+if [ "$SAFE_RM" -eq 1 ]
+then
+  for arg in "$@"
+  do
+    case "$arg" in
+      -*)
+        continue
+        ;;
+    esac
+    case "$("$GSH_ROOT"/scripts/readlink-f "$arg")" in
+      "$GSH_ROOT"*)
+        continue
+        ;;
+      *)
+        echo "safe_rm: cannot remove '$arg': it is not part of GameShell" >&2
+        exit 1
+        ;;
+    esac
+  done
+fi
+
+/bin/rm "$@"
+

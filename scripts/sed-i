@@ -2,6 +2,9 @@
 
 ## posix way to do sed "in place"
 
+# NOTE: we add the "--system" flag to rm to bypass checks made by the "safe"
+# rm scritp in script/rm
+#
 sed_i() {
   if [ $# -gt 2 ]
   then
@@ -12,16 +15,16 @@ sed_i() {
   filename=$2
   tmp=$(mktemp)
   bak="$filename~"
-  trap "rm -f \"$tmp\" \"$bak\"" TERM INT
+  trap "rm --system -f \"$tmp\" \"$bak\"" TERM INT
   if sed -e "$expr" "$filename" > "$tmp"
   then
     cp "$filename" "$bak"
     trap "" TERM INT
     cp "$tmp" "$filename"
-    rm -f "$tmp" "$bak"
+    rm --system -f "$tmp" "$bak"
   else
     ret=$?
-    rm -f "$tmp" "$bak"
+    rm --system -f "$tmp" "$bak"
     return $ret
   fi
 }
