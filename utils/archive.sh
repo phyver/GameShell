@@ -136,7 +136,9 @@ fi
 if ! make_index "$@" > "$TMP_DIR/$NAME/missions/index.txt"
 then
   echo "Error: archive.sh, couldn't make index.txt"
-  rm -rf "$TMP_DIR"
+  # --system makes GameShell use the standard rm utility instead of the "safe"
+  # rm implemented in scripts/rm
+  rm --system -rf "$TMP_DIR"
   exit 1
 fi
 
@@ -194,7 +196,9 @@ then
   do
     if ! keep_language "${po_file%.po}" "$LANGUAGES"
     then
-      rm -f "$po_file"
+      # --system makes GameShell use the standard rm utility instead of the "safe"
+      # rm implemented in scripts/rm
+      rm --system -f "$po_file"
     fi
   done
 fi
@@ -253,16 +257,18 @@ echo "removing unnecessary files"
 (
   cd "$GSH_ROOT"
   # no need to use find -print0 / xargs -0 because GameShell won't have strange filenames.
-  find . -name "a.out" | xargs rm -f
-  find . -name "*~" | xargs rm -f
-  find . -name "_*.sh" | xargs rm -f
-  find . -name "Makefile" | xargs rm -f
-  find . -name "template.pot" | xargs rm -f
-  [ "$KEEP_PO" -eq 0 ] && find . -name "*.po" | xargs rm -f
-  [ "$KEEP_TEST" -ne 1 ] && find ./missions -name "test.sh" | xargs rm -f
-  [ "$KEEP_AUTO" -ne 1 ] && find ./missions -name auto.sh | xargs rm -f
+  # --system makes GameShell use the standard rm utility instead of the "safe"
+  # rm implemented in scripts/rm
+  find . -name "a.out" | xargs rm --system -f
+  find . -name "*~" | xargs rm --system -f
+  find . -name "_*.sh" | xargs rm --system -f
+  find . -name "Makefile" | xargs rm --system -f
+  find . -name "template.pot" | xargs rm --system -f
+  [ "$KEEP_PO" -eq 0 ] && find . -name "*.po" | xargs rm --system -f
+  [ "$KEEP_TEST" -ne 1 ] && find ./missions -name "test.sh" | xargs rm --system -f
+  [ "$KEEP_AUTO" -ne 1 ] && find ./missions -name auto.sh | xargs rm --system -f
 
-  # rm -f "$GSH_ROOT/scripts/boxes-data.awk" "$GSH_ROOT/utils/archive.sh"
+  # rm --system -f "$GSH_ROOT/scripts/boxes-data.awk" "$GSH_ROOT/utils/archive.sh"
 )
 
 # change admin password
@@ -285,7 +291,7 @@ esac
 if git rev-parse --is-inside-work-tree >/dev/null
 then
   VERSION=$(git describe --tags)
-  sed -i "s/^VERSION=.*/VERSION='$VERSION'/" "$GSH_ROOT/scripts/_gsh_version"
+  sed-i "s/^VERSION=.*/VERSION='$VERSION'/" "$GSH_ROOT/scripts/_gsh_version"
 fi
 
 # create archive
@@ -300,10 +306,14 @@ chmod +x "$OUTPUT_DIR/$NAME.sh"
 if [ "$KEEP_TGZ" = 0 ]
 then
   echo "removing tgz archive"
-  rm "$OUTPUT_DIR/$NAME.tgz"
+  # --system makes GameShell use the standard rm utility instead of the "safe"
+  # rm implemented in scripts/rm
+  rm --system "$OUTPUT_DIR/$NAME.tgz"
 fi
 
 echo "removing temporary directory"
-rm -rf "$TMP_DIR"
+# --system makes GameShell use the standard rm utility instead of the "safe"
+# rm implemented in scripts/rm
+rm --system -rf "$TMP_DIR"
 
 # vim: shiftwidth=2 tabstop=2 softtabstop=2
