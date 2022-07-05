@@ -2,7 +2,7 @@
 
 . gsh_gettext.sh
 
-VERSION='developpment version (1657027654)'
+VERSION='developpment version (1657551135)'
 
 echo "Gameshell $VERSION"
 
