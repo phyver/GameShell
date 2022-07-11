@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2022-05-27 16:52+0200\n"
+"PO-Revision-Date: 2022-07-11 14:15+0200\n"
 "Last-Translator: mte90 <mte90net@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #, sh-format
 msgid "$GSH_HOME/Castle/Main_building/Throne_room"
-msgstr "$GSH_HOME/Castello/Palazzo_Principale/Stanza_del_trono"
+msgstr "$GSH_HOME/Castello/Palazzo_principale/Stanza_del_trono"
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"
