@@ -1,4 +1,6 @@
 # TODO: make height optional
+# TODO: and make it work if height is too big (at the moment, it will wait for
+# more input!)
 
 # function to update the global state for each line (either top or bottom
 # margin, or text
@@ -38,7 +40,7 @@ function update() {
         left_string = BL[block_index];
         right_string = BR[block_index];
     } else {
-        left_string = substr(blanks, 1, length(TL[1]));
+        left_string = substr(blanks, 1, wcscolumns(TL[1]));
         right_string = "";
     }
 }
@@ -60,8 +62,8 @@ BEGIN {
 
     # computing additional padding to make sure we need an integral number of
     # middle patterns (horizontaly and verticaly)
-    padding = length(TC[1]) - (width + margin["L"] + margin["R"] - neg_margin["L"] - neg_margin["R"]) % length(TC[1]);
-    if (padding != length(TC[1])) {
+    padding = wcscolumns(TC[1]) - (width + margin["L"] + margin["R"] - neg_margin["L"] - neg_margin["R"]) % wcscolumns(TC[1]);
+    if (padding != wcscolumns(TC[1])) {
         margin["L"] += int(padding/2);
         margin["R"] += padding - int(padding/2);
     }
@@ -91,7 +93,7 @@ BEGIN {
     for (i=0; i<Th-neg_margin["T"]; i++) {
         block_index++;
         printf("%s", TL[block_index]);
-        for (j=0; j<width+margin["L"]+margin["R"]-neg_margin["L"]-neg_margin["R"]; j+=length(TC[block_index])) {
+        for (j=0; j<width+margin["L"]+margin["R"]-neg_margin["L"]-neg_margin["R"]; j+=wcscolumns(TC[block_index])) {
             printf("%s", TC[block_index]);
         }
         printf("%s", TR[block_index]);
@@ -105,7 +107,7 @@ BEGIN {
     for (i=0; i<margin["T"]; i++) {
         update();
 
-        printf("%s", substr(left_string, 1, length(left_string)-neg_margin["L"]));
+        printf("%s", substr(left_string, 1, wcscolumns(left_string)-neg_margin["L"]));
         printf(blanks);
         printf("%s", substr(right_string, neg_margin["R"]+1));
         if (DEBUG)
@@ -118,10 +120,10 @@ BEGIN {
 {
     update();
 
-    printf("%s", substr(left_string, 1, length(left_string)-neg_margin["L"]));
+    printf("%s", substr(left_string, 1, wcscolumns(left_string)-neg_margin["L"]));
     printf(substr(blanks, 1, margin["L"]));
     printf("%s", $0);
-    printf(substr(blanks, 1+length($0)+margin["L"]));
+    printf(substr(blanks, 1+wcscolumns($0)+margin["L"]));
     printf("%s", substr(right_string, neg_margin["R"]+1));
     if (DEBUG)
             printf(" \t<-- TEXT: %s[%d], n=%d",
@@ -152,7 +154,7 @@ END {
     for (i=0; i<margin["B"]; i++) {
         update();
 
-        printf("%s", substr(left_string, 1, length(left_string)-neg_margin["L"]));
+        printf("%s", substr(left_string, 1, wcscolumns(left_string)-neg_margin["L"]));
         printf(blanks);
         printf("%s", substr(right_string, neg_margin["R"]+1));
         if (DEBUG)
@@ -167,7 +169,7 @@ END {
     for (i=neg_margin["B"]; i<Bh; i++) {
         block_index++;
         printf("%s", BL[block_index]);
-        for (j=0; j<margin["L"]-neg_margin["L"]+width+margin["R"]-neg_margin["R"]; j+=length(BC[block_index])) {
+        for (j=0; j<margin["L"]-neg_margin["L"]+width+margin["R"]-neg_margin["R"]; j+=wcscolumns(BC[block_index])) {
             printf("%s", BC[block_index]);
         }
         printf("%s", BR[block_index]);

@@ -4,7 +4,7 @@ function usage() {
 }
 
 function greedy_format() {
-    indent_width = length(par_indent);
+    indent_width = wcscolumns(par_indent);
     second_par_indent = par_indent;
     gsub(/./, " ", second_par_indent);
 
@@ -13,7 +13,7 @@ function greedy_format() {
         printf("%s", par_indent);
         par_indent = second_par_indent;
         for (i=1; i<=nb_words; i++) {
-            w = length(PAR[i]);
+            w = wcscolumns(PAR[i]);
             if (current_width + w <= width) {
                 printf("%s", PAR[i]);
                 current_width += w;
@@ -35,7 +35,7 @@ function greedy_format() {
 function dynamic_format() {
     INF = nb_words * width * width;
 
-    indent_width = length(par_indent);
+    indent_width = wcscolumns(par_indent);
     second_par_indent = par_indent;
     gsub(/./, " ", second_par_indent);
 
@@ -44,10 +44,10 @@ function dynamic_format() {
 
     # initialize padding
     for (i=1; i<=nb_words; i++) {
-        padding[i,i] = width-length(PAR[i])-indent_width;
+        padding[i,i] = width-wcscolumns(PAR[i])-indent_width;
         # if (padding[i,i]<0) padding[i,i] *= -INF;
         for (j=i+1; j<=nb_words; j++) {
-            padding[i,j] = padding[i,j-1] - length(PAR[j]) - 1;
+            padding[i,j] = padding[i,j-1] - wcscolumns(PAR[j]) - 1;
         }
     }
 
@@ -140,14 +140,14 @@ BEGIN {
     # if a paragraph starts with a list marker
     # don't forget to remove the list marker!
     if (match($0, /^ *[-+]  */)) {
-        par_indent = substr($0, 1, RLENGTH);
-        $0 = substr($0, RLENGTH+1);
+        par_indent = substr($0, 1, Rwcscolumns);
+        $0 = substr($0, Rwcscolumns+1);
     } else if (match($0, /^ *[0-9][0-9]*[.\/]  */)) {
-        par_indent = substr($0, 1, RLENGTH);
-        $0 = substr($0, RLENGTH+1);
+        par_indent = substr($0, 1, Rwcscolumns);
+        $0 = substr($0, Rwcscolumns+1);
     } else {
         match($0, /^ */);
-        par_indent = substr($0, 1, RLENGTH);
+        par_indent = substr($0, 1, Rwcscolumns);
     }
 }
 
