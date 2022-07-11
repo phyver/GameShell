@@ -25,9 +25,9 @@ EOS
 # choose gawk if it exists, as it knows how to deal with UTF-8
 if command -v gawk >/dev/null
 then
-  AWK=gawk
+  AWK="gawk -f wcwidth.awk"
 else
-  AWK=awk
+  AWK="awk -f wcwidth.awk"
 fi
 
 # default temporary encoding: use an 8bit encoding if awk doesn't supports
@@ -130,7 +130,7 @@ else
   # get width / height of text
   if [ -z "$width" ] || [ -z "$height" ]
   then
-    w_h=$($AWK '{w=w<length($0) ? length($0) : w;} END {print w, NR;}' "$tmpfile")
+    w_h=$($AWK -f text_size.awk "$tmpfile")
   fi
 
   if [ -z "$width" ]

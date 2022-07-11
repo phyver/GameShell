@@ -1,0 +1,36 @@
+#!/bin/sh
+
+GSH_ROOT="$(cd "$(dirname "$0")/.." && pwd -P)"
+PATH=$PATH:"$GSH_ROOT/scripts"
+
+# create a temporary file in $TMPDIR
+if [ -z "$TMPDIR" ]
+then
+  TMPDIR="$GSH_ROOT/.tmp"
+  if ! [ -d "$TMPDIR" ]
+  then
+    mkdir "$TMPDIR"
+  fi
+fi
+
+FILE=""
+for _ in $(seq 10)
+do
+  FILE="$TMPDIR/tmp.$(RANDOM)$(RANDOM)"
+  if [ -e "$FILE" ]
+  then
+    FILE=""
+    continue
+  else
+    touch "$FILE"
+    break
+  fi
+done
+
+if [ -z "$FILE" ]
+then
+  false
+else
+  echo "$FILE"
+  true
+fi
