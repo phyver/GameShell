@@ -17,7 +17,7 @@ cd -
   Torna alla (cartella) posizione precedente alla attuale.
 
 cd ..
-  Spostati alla cartella genitore (un passo indietro rispetto
+  Spostati alla cartella genitore (un passo indietro rispetto 
   alla tua posizione attuale).
 
 pwd

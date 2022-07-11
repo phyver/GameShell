@@ -29,8 +29,8 @@ gsh reset
 Nota
 -------
 
-Le parole in MAIUSCOLO nei comandi sono meta-variabili: devi sostituirle
+Le parole in MAIUSCOLO nei comandi sono meta-variabili: devi sostituirle 
 con dei valori appropriati (di tipo stringa).
 
-La maggior parte dei filesystem gestiscono maiuscole e minuscole in modi
+La maggior parte dei filesystem gestiscono maiuscole e minuscole in modi 
 diversi. Verifica di essere nel percorso corretto.

@@ -1,8 +1,8 @@
 Obiettivi Missione
 ============
 
-Mentre vaghi per il primo piano della torre, alcuni
-dipinti magnifici catturano la tua vista. Aggiungi una copia del
+Mentre vaghi per il primo piano della torre, alcuni 
+dipinti magnifici catturano la tua vista. Aggiungi una copia del 
 più vecchio nella tua cassa.
 
 
@@ -15,7 +15,7 @@ Comandi utili
 ===============
 
 ls -l
-  Stampa un elenco di file della cartella attuale, con informazioni
+  Stampa un elenco di file della cartella attuale, con informazioni 
   aggiuntive incluse la data di ultima modifica.
 
 cat FILE

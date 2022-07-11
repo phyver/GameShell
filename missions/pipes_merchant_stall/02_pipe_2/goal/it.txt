@@ -1,7 +1,7 @@
 Obiettivi Missione
 ============
 
-Combina comandi multipli con ``|`` in ordine per trovare il numero
+Combina comandi multipli con ``|`` in ordine per trovare il numero 
 degli articoli non pagati.
 
 Nota
@@ -9,7 +9,7 @@ Nota
 
 Puoi utilizzare un solo comando.
 
-Puoi sempre reimpostare il contatore con `gsh reset`, ma la stalla
+Puoi sempre reimpostare il contatore con `gsh reset`, ma la stalla 
 verrá rigenerata.
 
 
@@ -17,7 +17,7 @@ Comandi utili
 ===============
 
 grep [OPZIONI] STRING FILE1 ... FILEn
-  Filtra le linee dei file, conserva solo quelli che contengono
+  Filtra le linee dei file, conserva solo quelli che contengono 
   la stringa fornita.
   Se nessun file é fornito, il comando utilizzerá stdin.
 
@@ -25,6 +25,6 @@ grep [OPZIONI] STRING FILE1 ... FILEn
     -v : mostra solo le linee che **non contengono** la stringa.
 
 wc FILE
-  Conta il numero di linee/parole/caratteri in un file
+  Conta il numero di linee/parole/caratteri in un file 
   Se nessun file é fornito wc conterá linee/parole/caratteri via 
   stdin.

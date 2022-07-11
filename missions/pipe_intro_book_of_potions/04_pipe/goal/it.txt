@@ -2,12 +2,12 @@ Obiettivi missione
 ====================
 
 Il vecchio eremita si accorge del tuo interesse per le ricette delle 
-pozioni, e vede una nuova promessa nella tua abilità di cercare elenchi
+pozioni, e vede una nuova promessa nella tua abilità di cercare elenchi 
 di ingredienti. Ti sfida a trovare la strada per l'Elisir della 
 Giovinezza.
 
-Per rendere la missione valida, devi essere nella grotta con Servillus
-**e** il tuo ultimo comando prima di ``gsh check`` deve visualizzare i
+Per rendere la missione valida, devi essere nella grotta con Servillus 
+**e** il tuo ultimo comando prima di ``gsh check`` deve visualizzare i 
 passi della ricetta e nient'altro.
 
 Comandi utili
@@ -15,18 +15,18 @@ Comandi utili
 
 cat FILE1 FILE2 ... FILEn
   Visualizza il contenuto dei file in ordine.
-  
+
 tail
   Visualizza le ultime 10 righe inviate sullo standard input.
 
 tail -n K
   Visualizza le ultime K righe inviate sullo standard input.
-  
+
 COMANDO1 | COMANDO2
-  Esegui i due comandi, inviando lo "standard output" del primo nello
+  Esegui i due comandi, inviando lo "standard output" del primo nello 
   "standard input" del secondo.
   Nota: per analogia, il simbolo "|" è chiamato "pipe" (tubo).
-  
+
 Spiegazioni
 ===========
 
@@ -37,10 +37,10 @@ producono testo come output.
 "standard output"; questo (solitamente) significa che l'output è 
 scritto nel terminale.
 
-Molti di questi comandi possono ricevere input sia da file (specificati
+Molti di questi comandi possono ricevere input sia da file (specificati 
 come argomenti) sia dal loro "standard input". Per esempio:
 - ``head FILE`` legge l'input dal file,
 - ``head`` legge l'input dallo standard input.
 
-Di default, i dati dallo standard input sono letti da tastiera, ma un
+Di default, i dati dallo standard input sono letti da tastiera, ma un 
 "|" può cambiare ciò.

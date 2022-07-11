@@ -1,18 +1,18 @@
 Obiettivi Missione
 ============
 
-Creare un alias "journal" in modo da editare il tuo file storico
+Creare un alias "journal" in modo da editare il tuo file storico 
 ovunque tu sia.
 
 
 Dettagli
 -------
 
-Per modificare il file storico con ``nano`` per esempio dalla
-cantina o dalla sala del trono, devi fornire il percorso completo
+Per modificare il file storico con ``nano`` per esempio dalla 
+cantina o dalla sala del trono, devi fornire il percorso completo 
 del file: "~/Foresta/.../storico.txt".
 
-Per evitare di scrivere ogni volta questo lungo comando, puoi creare
+Per evitare di scrivere ogni volta questo lungo comando, puoi creare 
 un alias come
 
   alias la='ls -a'
@@ -32,5 +32,5 @@ alias STRING='COMMAND'
 Note
 ----
 
-Se (e solo se) sai cosa fare, puoi usare la variabile ``EDITOR`` per
+Se (e solo se) sai cosa fare, puoi usare la variabile ``EDITOR`` per 
 definire il tuo editor preferito e usare quello nell'alias.

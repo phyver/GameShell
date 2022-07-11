@@ -2,7 +2,7 @@ Obiettivi Missione
 ============
 
 I ragni si fanno più furbi: hanno trovato un modo per nascondersi.
-Rimuovi tutti i ragni che si nascondono nella cantina senza
+Rimuovi tutti i ragni che si nascondono nella cantina senza 
 disturbare i pipistrelli.
 
 
@@ -10,7 +10,7 @@ Parametri Shell
 ==============
 
 *
-  Il carattere "*" sta per ogni sequenza di caratteri
+  Il carattere "*" sta per ogni sequenza di caratteri 
   (inclusa una frase vuota).
 
 ?
@@ -20,5 +20,5 @@ Parametri Shell
 Note
 ------
 
-Le "wildcard" "*" e "?" non vedono i file nascosti, devi aggiungere
+Le "wildcard" "*" e "?" non vedono i file nascosti, devi aggiungere 
 un punto all'inizio dello schema.

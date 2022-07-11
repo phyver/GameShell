@@ -17,7 +17,7 @@ Parametri Shell
 ==============
 
 *
-  Il carattere "*" sta per ogni sequenza di caratteri
+  Il carattere "*" sta per ogni sequenza di caratteri 
   (inclusa una frase vuota).
 
 ?

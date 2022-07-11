@@ -3,7 +3,7 @@ Obiettivi Missione
 
 Controllare i file nascosti prende troppo tempo!
 
-Crea un alias "la" ed esegui il comando ``ls -A`` per elencare
+Crea un alias "la" ed esegui il comando ``ls -A`` per elencare 
 tutti i file, inclusi quelli nascosti, con solo 2 lettere.
 
 Definisci il sinonimo
