@@ -1,14 +1,14 @@
 Obiettivi missione
 ====================
 
-Combina diversi comandi con "|" per trovare il diamante nel labirinto
+Combina diversi comandi con "|" per trovare il diamante nel labirinto 
 e metterlo nella tua cassa.
 
 
 Nota
 ----
 
-Il nome del file non contiene la stringa "diamante". Devi trovare un
+Il nome del file non contiene la stringa "diamante". Devi trovare un 
 file che contenga la stringa "diamante".
 
 
@@ -17,16 +17,16 @@ Comandi utili
 
 find
   Cerca file dalla cartella corrente.
-  Possono essere aggiunte delle condizioni sul nome del file, sulla
+  Possono essere aggiunte delle condizioni sul nome del file, sulla 
   grandezza, data di modifica, ecc.
 
 grep [OPZIONE] STRINGA FILE1 ... FILEn
   Cerca una stringa all'interno di un file.
-  
+
   Parametro utile:
     -l visualizza solo i nomi dei file che contengono la stringa.
-    
+
 xargs COMANDO
    Legge linee da stdin ed esegue il comando.
      COMANDO LINEA1 LINEA2 ... LINEAn
-     ``xargs`` è particolarmente utile dopo una redirezione con ``|``.
+   ``xargs`` è particolarmente utile dopo una redirezione con ``|``.

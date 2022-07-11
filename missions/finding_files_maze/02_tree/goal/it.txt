@@ -8,9 +8,9 @@ Comandi utili
 =============
 
 ls -R
-  Stampa la lista di tutti i file / cartelle, includendo quelli nelle
+  Stampa la lista di tutti i file / cartelle, includendo quelli nelle 
   sottocartelle (ricorsivamente).
 
 tree
-  Stampa l'albero dei file e delle cartelle, partendo dalla cartella
+  Stampa l'albero dei file e delle cartelle, partendo dalla cartella 
   corrente.

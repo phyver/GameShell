@@ -1,13 +1,13 @@
 Obiettivi Missione
 ============
 
-Devi tornare alla posizione iniziale e andare alla stanza del trono
+Devi tornare alla posizione iniziale e andare alla stanza del trono 
 utilizzando solo due comandi.
 
 Note
 ------
 
-Puoi sperimentare con quanti comandi vuoi ma devi validare la missione
+Puoi sperimentare con quanti comandi vuoi ma devi validare la missione 
 alle seguenti condizioni:
   - il primo comando deve portarti al punto iniziale,
   - l'ultimo commando deve portarti direttamente alla stanza del trono.
@@ -26,5 +26,5 @@ cd POSIZIONE1/POSIZIONE2/POSIZIONE3
 Note
 ------
 
-Le parole in MAIUSCOLO nei comandi sono meta-variabili: devi
+Le parole in MAIUSCOLO nei comandi sono meta-variabili: devi 
 sostituirle con dei valori (di tipo stringa).

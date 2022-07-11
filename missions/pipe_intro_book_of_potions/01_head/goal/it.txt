@@ -6,7 +6,7 @@ grotta con il suo vecchio libro delle pozioni di cuoio.
 Vai nella grotta e aiutalo a ricordarsi la ricetta del suo famoso tè 
 alle erbe.
 
-Per rendere la missione valida, devi essere nella grotta con Servillus
+Per rendere la missione valida, devi essere nella grotta con Servillus. 
 **e** il tuo ultimo comando prima di ``gsh check`` deve visualizzare la 
 ricetta (incluso il titolo), ma nient'altro.
 
@@ -25,5 +25,5 @@ head -n K FILE
 Nota
 ----
 
-Il "FILE" potrebbe contenere cartelle se il file in questione non è
+Il "FILE" potrebbe contenere cartelle se il file in questione non è 
 nella cartella corrente.

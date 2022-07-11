@@ -1,7 +1,7 @@
 Obiettivi missione
 ====================
 
-Trova le monete d'oro nel labirinto nascosto nel giardino e spostale
+Trova le monete d'oro nel labirinto nascosto nel giardino e spostale 
 nella tua cassa.
 
 Comandi utili
@@ -10,26 +10,25 @@ Comandi utili
 find CONDIZIONE
   Cerca file che soddisfano le condizioni, partendo dalla cartella 
   corrente.
-  
-  Ci sono diverse possibili condizioni. Esse possono riguardare il
+
+  Ci sono diverse possibili condizioni. Esse possono riguardare il 
   nome dei file, la loro grandezza, data di modifica, ecc. Per esempio:
     -name "PATTERN"
     -iname "PATTERN"
   entrambi questi parametri si riferiscono al nome dei file.
-  
+
 man COMANDO
   Visualizza il manuale del comando.
-  
+
   Principali tasti associati a funzioni:
-   q		esci
-   Spazio	scendi di una pagina
-   / STRINGA  cerca una stringa
-   n		trova la prossima occorrenza della
-			stringa cercata.
-			
+   q            esci
+   Spazio       scendi di una pagina
+   / STRINGA    cerca una stringa
+   n            trova la prossima occorrenza della stringa cercata.
+
 Nota
 ----
 
 La descrizione del comando ``find`` è deliberatamente corta.
-Troverai più informazioni nel manuale. (Puoi per esempio cercare la
+Troverai più informazioni nel manuale. (Puoi per esempio cercare la 
 stringa "-name" nel manuale.)

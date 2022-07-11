@@ -2,7 +2,7 @@ Obiettivi Missione
 ============
 
 I vecchi libri di magia di Merlino sono conservato nella libreria nel suo ufficio.
-Devi salvare una lista di tutti i libri di magia (e nient'altro) in un file
+Devi salvare una lista di tutti i libri di magia (e nient'altro) in un file 
 chiamato "inventario.txt", nel cassetto...
 
 
@@ -10,18 +10,17 @@ Comandi utili
 ===============
 
 COMANDO  >  FILE
-  Invia l'uscita del comando ad un file invece che stamparlo
+  Invia l'uscita del comando ad un file invece che stamparlo 
   a schermo.
 
 less FILE
   mostra il contenuto del file, una pagina alla volta
 
   Le associazioni di tasti importanti sono
-    q         esci
-    Space     scorri di 1 pagina
-    / STRINGA cerca una stringa
-    n         vai alla prossima occorrenza della 
-              stringa cercata
+    q           esci
+    Space       scorri di 1 pagina
+    / STRINGA   cerca una stringa
+    n           vai alla prossima occorrenza della stringa cercata
 
 ls FILE1 ... FILEn
   Mostra la lista di file dati come argomenti.

@@ -1,8 +1,8 @@
 Obiettivi missione
 ============
 
-Mentre stai camminando nel castello, hai la sensazione di
-essere osservato... Gira velocemente la testa e potrai vedere
+Mentre stai camminando nel castello, hai la sensazione di 
+essere osservato... Gira velocemente la testa e potrai vedere 
 gli occhi di uno dei dipinti che ti seguono.
 
 1/ Esegui il comando ``xeyes`` e fermalo.
@@ -19,5 +19,5 @@ COMMAND &
   Esegui il comando in background.
 
 Control-c
-  Questa combinazione di tasti interrompe il comando corrente inviando
+  Questa combinazione di tasti interrompe il comando corrente inviando 
   il segnale "INT".
