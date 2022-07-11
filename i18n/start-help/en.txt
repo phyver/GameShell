@@ -9,6 +9,7 @@ options:
   -C      continue current game (if relevant)
   -R      reset game
 
+  -G      do not use gettext for translation (everything will be in English)
   -L ...  set LANGUAGE variable (ex: -L fr:it:en)
           On non GNU systems, set the variable LC_MESSAGES
           to a valid locale.
