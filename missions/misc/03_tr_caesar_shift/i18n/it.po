@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: mte90 <mte90net@gmail.com>\n"
-"PO-Revision-Date: 2022-05-31 18:42+0200\n"
+"PO-Revision-Date: 2022-07-11 14:15+0200\n"
 "Project-Id-Version: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it_IT\n"
@@ -14,12 +14,12 @@ msgstr ""
 
 #, sh-format
 msgid "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
-msgstr "$GSH_HOME/Castello/Palazzo_Principale/Biblioteca/Ufficio_di_Merlino"
+msgstr "$GSH_HOME/Castello/Palazzo_principale/Biblioteca/Ufficio_di_Merlino"
 
 #, sh-format
 msgid "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office/Drawer"
 msgstr ""
-"$GSH_HOME/Castello/Palazzo_Principale/Biblioteca/Ufficio_di_Merlino/Cassetto"
+"$GSH_HOME/Castello/Palazzo_principale/Biblioteca/Ufficio_di_Merlino/Cassetto"
 
 # path for the text file containing the goal
 msgid "$MISSION_DIR/goal/en.txt"

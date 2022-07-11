@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: mte90 <mte90net@gmail.com>\n"
-"PO-Revision-Date: 2022-05-30 13:00+0200\n"
+"PO-Revision-Date: 2022-07-11 14:14+0200\n"
 "Project-Id-Version: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it_IT\n"
@@ -14,7 +14,7 @@ msgstr ""
 
 #, sh-format
 msgid "$GSH_HOME/Castle/Great_hall"
-msgstr "$GSH_HOME/Castello/Grande_Sala"
+msgstr "$GSH_HOME/Castello/Grande_sala"
 
 #, sh-format
 msgid "$GSH_HOME/Forest/Hut/Chest"
