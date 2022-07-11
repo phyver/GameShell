@@ -1,7 +1,7 @@
 Obiettivi Missione
 ============
 
-Rimuovi tutti i ragni che sono sulle ragnatele nella cantina.
+Rimuovi tutti i ragni che sono sulle ragnatele nella cantina. 
 Di nuovo non disturbare i pipistrelli.
 
 
@@ -9,13 +9,13 @@ Parametri Shell
 ==============
 
 *
-  Il carattere "*" sta per ogni sequenza di caratteri
+  Il carattere "*" sta per ogni sequenza di caratteri 
   (inclusa una frase vuota).
 
 ?
   Il carattere "?" sta per un qualunque singolo carattere.
 
-Queste "wildcard" possono essere usati per indicare una lista
+Queste "wildcard" possono essere usati per indicare una lista 
 di file o cartelle esistenti nella cartella attuale.
 
 Per esempio: se la cartella attuale contiene

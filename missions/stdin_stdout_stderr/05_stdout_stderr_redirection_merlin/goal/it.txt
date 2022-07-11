@@ -4,7 +4,7 @@ Obiettivi Missione
 Merlino è diventato pazzo... Cammina per la torre dell'osservatorio e 
 borbotta cose insensate.
 
-Devi filtrare le sue divagazioni per scoprire la chiave segreta
+Devi filtrare le sue divagazioni per scoprire la chiave segreta 
 che solo lui conosce.
 
 Suggerimento
@@ -19,7 +19,7 @@ Comandi utili
 ===============
 
 ./FILE
-  Fa partire un file eseguibile come programma. Inutile specificare che
+  Fa partire un file eseguibile come programma. Inutile specificare che 
   Merlino sia eseguibile...
 
 COMANDO  >  FILE

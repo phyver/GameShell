@@ -2,15 +2,15 @@ Obiettivi Missione
 ============
 
 Un messaggio segreto è stato trovato ed è nascosto nel cassetto 
-dell'ufficio di Merlino. Probabilmente è anche criptato con il
+dell'ufficio di Merlino. Probabilmente è anche criptato con il 
 cifrario di Cesare.
 
-Decriptalo facendo una ricerca completa dalla linea di comando. 
+Decriptalo facendo una ricerca completa dalla linea di comando.
 
 Suggerimento
 ----
 
-Tutti i messaggi segreti sono stati trovati con uno spostamento
+Tutti i messaggi segreti sono stati trovati con uno spostamento 
 di 10 e 16 caratteri.
 
 

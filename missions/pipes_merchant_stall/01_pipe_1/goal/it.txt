@@ -1,10 +1,10 @@
 Obiettivi Missione
 ============
 
-Vicino al castello, c'é la stalla di un mercante. Le persone spesso
+Vicino al castello, c'é la stalla di un mercante. Le persone spesso 
 comprano a credito e pagano quando possono.
 Il venditore mantiene i libri sui debiti di ognuno su una pergamena.
-Chiunque pagherá il suo debito avrá scritto "PAGATO" vicino al
+Chiunque pagherá il suo debito avrá scritto "PAGATO" vicino al 
 pagamento corrispondente.
 
 Combina diversi comandi con ``|`` per trovare il debito del Re.
@@ -13,7 +13,7 @@ Nota
 ------
 
 Puoi utilizzare solo 3 comandi per trovare il debito del Re.
-Puoi reimpostare il contatore con `gsh reset`, ma la stalla e i
+Puoi reimpostare il contatore con `gsh reset`, ma la stalla e i 
 debiti di tutti saranno rigenerati.
 
 

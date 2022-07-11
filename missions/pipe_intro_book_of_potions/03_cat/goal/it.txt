@@ -1,12 +1,12 @@
 Obiettivi missione
 ====================
 
-Mentre pulisce i piatti, Servillus menziona un'interessante pozione
+Mentre pulisce i piatti, Servillus menziona un'interessante pozione 
 che permette a chi la beve di prendere le sembianze di chiunque altro.
 Leggi la ricetta della pozione dal libro dell'eremita.
 
-Per rendere la missione valida, devi essere nella grotta con Servillus
-**e** il tuo ultimo comando prima di ``gsh check`` deve visualizzare
+Per rendere la missione valida, devi essere nella grotta con Servillus 
+**e** il tuo ultimo comando prima di ``gsh check`` deve visualizzare 
 tutta la ricetta (incluso il titolo).
 
 Comandi utili

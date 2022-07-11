@@ -1,7 +1,7 @@
 Obiettivi Missione
 ============
 
-Colleziona tutte le monete che troverai nel giardino di fronte al
+Colleziona tutte le monete che troverai nel giardino di fronte al 
 castello, poi mettile nella cassa dentro la tua capanna nella foresta.
 
 
@@ -14,5 +14,5 @@ mv FILE1 FILE2 ... FILEn DIRECTORY
 
 ~
   Il "~" simbolo é  una abbreviazione per la cartella iniziale.
-  Esempio: ovunque tu sia, ``~/Taverna`` indica la cartella (o
+  Esempio: ovunque tu sia, ``~/Taverna`` indica la cartella (o 
   file) "Taverna" nella cartella iniziale.

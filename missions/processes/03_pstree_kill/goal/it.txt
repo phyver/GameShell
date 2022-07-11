@@ -1,11 +1,11 @@
 Obiettivi Missione
 ==================
 
-Il demone sta confrontando la sua magia con una fata. Si incontrano
+Il demone sta confrontando la sua magia con una fata. Si incontrano 
 nella cantina, il demone sta evocando pezzi di carbone mentre la 
 fata sta evocando delicati fiocchi di neve.
 
-Rimuovi i sortilegi del demone e il carbone che sporca la cantina,
+Rimuovi i sortilegi del demone e il carbone che sporca la cantina, 
 ma non toccare i fiocchi di neve!
 
 
@@ -22,7 +22,7 @@ pstree PID
   Stampa la lista dei processi con la loro relazione 
   padre / figlio.
 
-  Se non viene dato un PID, mostra la lista di tutti i processi
+  Se non viene dato un PID, mostra la lista di tutti i processi 
   con la loro relazione padre / figlio.
 
   Opzioni utili:
