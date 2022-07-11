@@ -9,6 +9,7 @@ options:
   -C      continua la partita corrente (se rilevante)
   -R      reimposta la partita
 
+  -G      non utilizzare gettext per le traduzioni (sarà tutto in Inglese)
   -L ...  imposta la variabile LANGUAGE (ex: -L fr:it:en)
           Su sistemi non GNU, imposta la variabile LC_MESSAGES
           per un "locale" valido.
