@@ -6,7 +6,6 @@ export SAVEHIST=50000
 
 if ! [ -s "$HISTFILE" ]
 then
-  HISTFILE=0    # clear history
   . gsh_gettext.sh
   print -s "# $(gettext "START OF COMMANDS HISTORY")"
 fi
