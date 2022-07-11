@@ -8,6 +8,8 @@ In order to validate the mission, you need to be in the cave with
 Servillus **and** your last command prior to ``gsh check`` must show 
 the steps for the recipe and nothing else.
 
+Note: you shouldn't alter the content of the book of potions.
+
 
 Useful commands
 ===============

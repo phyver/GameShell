@@ -10,6 +10,8 @@ Pour valider la mission, vous devez vous trouver dans la grotte avec
 Servillus **et** votre dernière commande avant ``gsh check`` doit 
 afficher la recette complète (avec son titre).
 
+Attention, vous ne devez pas modifier le contenu du livre de potions.
+
 
 Commandes utiles
 ================
