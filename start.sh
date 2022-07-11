@@ -30,7 +30,7 @@ display_help() {
 export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
 RESET=""
-while getopts ":hnPdDACRXqL:KBZc:" opt
+while getopts ":hnPdDACRXqGL:KBZc:" opt
 do
   case $opt in
     h)
@@ -64,6 +64,9 @@ do
       ;;
     L)
       export LANGUAGE="$OPTARG"     # only works on GNU systems
+      ;;
+    G)
+      export GSH_NO_GETTEXT=1
       ;;
     X)
       echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
