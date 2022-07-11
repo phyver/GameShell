@@ -2,27 +2,31 @@
 
 _mission_check() (
 
+  fairy_proc=$(gettext "nice_fairy" | cut -c 1-15)
+  imp_proc=$(gettext "mischievous_imp" | cut -c 1-15)
+  spell_proc=$(gettext "spell" | cut -c 1-15)
+
   pid=$(cat "$GSH_TMP"/fairy.pid)
-  if ! my_ps "$pid" | grep -q "$(gettext "nice_fairy")"
+  if ! my_ps "$pid" | grep -q "$fairy_proc"
   then
     echo "$(gettext "Did you kill the fairy?")"
     return 1
   fi
   pid=$(cat "$GSH_TMP"/imp.pid)
-  if ! my_ps "$pid" | grep -q "$(gettext "mischievous_imp")"
+  if ! my_ps "$pid" | grep -q "$imp_proc"
   then
     echo "$(gettext "Did you kill the imp?")"
     return 1
   fi
 
-  nb=$(my_ps $(cat "$GSH_TMP"/fairy_spell.pids) | grep -c "$(gettext "spell")")
+  nb=$(my_ps $(cat "$GSH_TMP"/fairy_spell.pids) | grep -c "$spell_proc")
   if [ "$nb" -lt 3 ]
   then
     echo "$(gettext "Did you remove some of the fairy's spells?")"
     return 1
   fi
 
-  nb=$(my_ps $(cat "$GSH_TMP"/imp_spell.pids) | grep -c "$(gettext "spell")")
+  nb=$(my_ps $(cat "$GSH_TMP"/imp_spell.pids) | grep -c "$spell_proc")
   if [ "$nb" -ne 0 ]
   then
     echo "$(gettext "Are you sure you removed all the imp's spells?")"
