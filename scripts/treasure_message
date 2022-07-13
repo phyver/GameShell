@@ -23,7 +23,7 @@ display_message() {
   # [ "$reflow_width" -gt 100 ] && reflow_width=100
 
   echo
-  "$GSH_ROOT/scripts/reflow.awk" -v width=$reflow_width "$treasure_msg_file" |
+  box.sh -B "" -R $reflow_width "$treasure_msg_file" |
     paste "$GSH_LIB/ascii-art/treasure-chest.txt" - |
     awk -v width=$WIDTH -v seed_file="$GSH_CONFIG/PRNG_seed" -v PID=$$ '
 BEGIN{
