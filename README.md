@@ -18,6 +18,9 @@ Here is the result...
 ![GameShell's first mission](Images/gameshell_first_mission_small.gif)
 
 
+GameShell is available in English, French and Italian.
+
+
 Feel free to send us your remarks, questions or suggestions by opening
 [issues](https://github.com/phyver/GameShell/issues) or submitting
 [pull requests](https://github.com/phyver/GameShell/pulls).
