@@ -5,7 +5,7 @@ case $GSH_LAST_ACTION in
     :
     ;;
   *)
-    case "$(pwd)" in
+    case "$(pwd -P)" in
       "$GSH_HOME"/*)
         if echo "${PWD#$GSH_HOME/}" | grep -Eq "$(gettext "Hut")|$(gettext "Chest")"
         then

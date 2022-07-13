@@ -7,7 +7,7 @@ case $GSH_LAST_ACTION in
   check_true)
     ;;
   *)
-    case "$(pwd)" in
+    case "$(pwd -P)" in
       "$(eval_gettext '$GSH_HOME/Castle/Cellar')/.$(gettext "Lair_of_the_spider_queen")"*)
         cd "$(eval_gettext '$GSH_HOME/Castle/Cellar')"
         echo "$(gettext "You are back in the cellar.")"

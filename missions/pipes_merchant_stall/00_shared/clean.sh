@@ -1,10 +1,20 @@
 #!/bin/sh
 
 # need to be careful, as there are so many files in the Stall that
-# rm .../* may not work.
+# rm Stall/* may not work.
 (
-  cd "$(eval_gettext '$GSH_HOME/Stall')"
-  find . -type f | xargs rm -f
+case "$(pwd -P)" in
+  "$(eval_gettext '$GSH_HOME/Stall')"*)
+    cd "$GSH_HOME"
+    rm -rf "$(eval_gettext '$GSH_HOME/Stall')"
+    mkdir -p "$(eval_gettext '$GSH_HOME/Stall')"
+    cd "$(eval_gettext '$GSH_HOME/Stall')"
+    ;;
+  *)
+    rm -rf "$(eval_gettext '$GSH_HOME/Stall')"
+    mkdir -p "$(eval_gettext '$GSH_HOME/Stall')"
+    ;;
+esac
 )
 
 rm -f "$GSH_TMP/nb_commands" "$GSH_TMP/last_command"
