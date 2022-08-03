@@ -2,7 +2,6 @@
 
 # need to be careful, as there are so many files in the Stall that
 # rm Stall/* may not work.
-(
 case "$(pwd -P)" in
   "$(eval_gettext '$GSH_HOME/Stall')"*)
     cd "$GSH_HOME"
@@ -15,7 +14,6 @@ case "$(pwd -P)" in
     mkdir -p "$(eval_gettext '$GSH_HOME/Stall')"
     ;;
 esac
-)
 
 rm -f "$GSH_TMP/nb_commands" "$GSH_TMP/last_command"
 
