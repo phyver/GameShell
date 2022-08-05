@@ -11,7 +11,7 @@ options :
 
   -G      désactive gettext pour les traductions (tout sera en Anglais)
   -L      initialise la variable LANGUAGE (ex : -L fr:it:en)
-          Pour les système non GNU, initialisez la variable LC_MESSAGES
+          Pour les systèmes non GNU, initialisez la variable LC_MESSAGES
           avec une locale valide.
 
   -q      mode silencieux : n'affiche pas les messages d'information
