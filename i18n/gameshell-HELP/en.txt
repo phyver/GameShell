@@ -56,6 +56,9 @@ gsh reset
 gsh resetstatic
   regenerate all the static parts of the world
 
+gsh save FILENAME
+  save the current game to file
+
 gsh skip                              (ADMIN)
   give up on the current mission and go to the next one
   (no password necessary if the mission was completed at least 
