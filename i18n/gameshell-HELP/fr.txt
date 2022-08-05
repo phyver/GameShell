@@ -57,6 +57,9 @@ gsh reset
 gsh resetstatic
   re-génère toutes les parties statique du monde
 
+gsh save FICHIER
+  sauve la partie actuelle dans le fichier
+
 gsh skip                              (ADMIN)
   abandonne la mission en cours et passe à la suivante
   (le mot de passe n'est pas nécessaire si la mission a déjà été 

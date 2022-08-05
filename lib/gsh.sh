@@ -170,6 +170,10 @@ Do you still want to quit? [y/n]") "
   export GSH_LAST_ACTION='exit'
   __gsh_clean "$MISSION_NB"
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh unprotect
+  [ -e "$GSH_ROOT/.save" ] && __save
+  # remove the ".save" file to make sure we don't always save from now on!
+  rm -f "$GSH_ROOT/.save"
+
   ## NOTE: without that, calling exit in zsh doesn't work if there are running
   ## jobs (independantly of the option NO_HUP)
   [ -n "$ZSH_VERSION" ] && setopt +o MONITOR
@@ -375,10 +379,6 @@ _gsh_check() {
     color_echo green "$(eval_gettext 'Congratulations, mission $MISSION_NB has been successfully completed!')"
     echo
 
-    __log_action "$MISSION_NB" "CHECK_OK"
-    export GSH_LAST_ACTION='check_true'
-    __gsh_clean "$MISSION_NB"
-
     if [ -f "$MISSION_DIR/treasure.sh" ]
     then
       # Record the treasure to be loaded by GameShell's gshrc.
@@ -426,6 +426,17 @@ You should use the command
   \$ gsh reset")" >&2
       fi
     fi
+
+    __gsh_clean "$MISSION_NB"
+
+    __log_action "$MISSION_NB" "CHECK_OK"
+    export GSH_LAST_ACTION='check_true'
+
+    if [ -n "$GSH_AUTOSAVE" ] && [ "$GSH_AUTOSAVE" != "0" ]
+    then
+      __save
+    fi
+
     __gsh_start $((10#$MISSION_NB + 1))
     return 0
   else
@@ -433,16 +444,28 @@ You should use the command
     color_echo red "$(eval_gettext "Sorry, mission \$MISSION_NB hasn't been completed.")"
     echo
 
+    __gsh_clean "$MISSION_NB"
     __log_action "$MISSION_NB" "CHECK_OOPS"
     export GSH_LAST_ACTION='check_false'
-    __gsh_clean "$MISSION_NB"
+
+    if [ -n "$GSH_AUTOSAVE" ] && [ "$GSH_AUTOSAVE" != "0" ]
+    then
+      __save
+    fi
+
     __gsh_start "$MISSION_NB"
     return 255
   fi
 }
 
 __gsh_clean() {
-  local MISSION_NB="$(_gsh_pcm)"
+  local MISSION_NB
+  if [ -z "$1" ]
+  then
+    MISSION_NB="$(_gsh_pcm)"
+  else
+    MISSION_NB=$1
+  fi
 
   if [ -z "$MISSION_NB" ]
   then
@@ -459,6 +482,48 @@ __gsh_clean() {
   fi
   unset GSH_LAST_ACTION
 }
+
+
+__save() {
+  ! [ -d "$GSH_ROOT/.git" ] || return
+
+  # GSH_SAVEFILE is defined on first save
+  if [ -z "$GSH_SAVEFILE" ]
+  then
+    case "$GSH_SAVEFILE_MODE" in
+      "index")
+        # get extension
+        EXT=${GSH_EXEC_FILE##*.}
+        # remove extension and -save suffix
+        GSH_SAVEFILE=$GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}
+        GSH_SAVEFILE=${GSH_SAVEFILE%-save*}
+        INDEX=""
+        while [ -e "$GSH_SAVEFILE-save$INDEX.$EXT" ]
+        do
+          [ -n "$INDEX" ] || INDEX=0
+          INDEX=$(echo "000$((10#$INDEX + 1))" | tail -c -4)
+        done
+        GSH_SAVEFILE="$GSH_SAVEFILE-save$INDEX.$EXT"
+      ;;
+
+    "simple")
+      # get extension
+      EXT=${GSH_EXEC_FILE##*.}
+      # remove extension and -save suffix (if present)
+      GSH_SAVEFILE=$GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}
+      GSH_SAVEFILE=${GSH_SAVEFILE%-save*}
+      # add -save suffix
+      GSH_SAVEFILE="$GSH_SAVEFILE-save.$EXT"
+      ;;
+
+    "same")
+      GSH_SAVEFILE=$GSH_EXEC_DIR/$GSH_EXEC_FILE
+      ;;
+    esac
+  fi
+  _gsh_save "$GSH_SAVEFILE"
+}
+
 
 _gsh_assert_check() {
   local MISSION_NB="$(_gsh_pcm)"

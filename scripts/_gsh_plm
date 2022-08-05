@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# pcm => "print last mission"
+GSH_CONFIG=$(cd "$(dirname "$0")/../.config"; pwd -P)
+
+pcm() {
+  PCM="$(awk '/^#/ {next}   $2=="START" {m=$1>m ? $1 : m}  END {print (m)}' "$GSH_CONFIG/missions.log")"
+  if [ -z "$PCM" ]
+  then
+    echo "1"
+    return 1
+  else
+    echo "$PCM"
+  fi
+}
+
+pcm "$@"

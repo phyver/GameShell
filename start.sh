@@ -14,6 +14,8 @@
 # shellcheck disable=SC2155
 
 
+export GSH_WORKING_DIR=$(pwd -P)
+
 export GSH_ROOT="$(dirname "$0")"
 # shellcheck source=scripts/gsh_gettext.sh
 . "$GSH_ROOT/scripts/gsh_gettext.sh"
@@ -27,6 +29,8 @@ display_help() {
 }
 
 
+export GSH_SAVEFILE_MODE=index
+export GSH_AUTOSAVE=1
 export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
 RESET=""
@@ -510,9 +514,6 @@ then
       ;;
   esac
 
-  # put a ".save" file to indicate the archive needs to be saved on exit
-  touch "$GSH_ROOT/.save"
-
   # start GameShell
   exec $GSH_SHELL -c "export GSH_NON_INTERACTIVE=1
                        GSH_ROOT=\"$GSH_ROOT\"
@@ -520,9 +521,6 @@ then
                        . \"\$GSH_HOME/$RC_FILE\"
                        $GSH_COMMAND"
 else
-  # put a ".save" file to indicate the archive needs to be saved on exit
-  touch "$GSH_ROOT/.save"
-
   # start GameShell
   exec $GSH_SHELL
 fi

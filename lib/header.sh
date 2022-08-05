@@ -25,22 +25,23 @@ else
 fi
 
 
-ORIGINAL_FILENAME="$0"
-ORIGINAL_DIR=$(dirname "$0")
+export GSH_EXEC_FILE=$(basename "$0")
+export GSH_EXEC_DIR=$(dirname "$0")
+GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
 
-# ORIGINAL_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
+# GSH_EXEC_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
 # just in case
-ORIGINAL_DIR=${ORIGINAL_DIR:-.}
+GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
 
 
-NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$ORIGINAL_FILENAME")
+NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$GSH_EXEC_FILE")
 
 for arg in "$@"
 do
   if [ "$arg" = "-X" ]
   then
-    tail -n+"$NB_LINES" "$ORIGINAL_FILENAME" > "${ORIGINAL_FILENAME%.*}.tgz"
-    echo "Archive saved in ${ORIGINAL_FILENAME%.*}.tgz"
+    tail -n+"$NB_LINES" "$GSH_EXEC_FILE" > "${GSH_EXEC_FILE%.*}.tgz"
+    echo "Archive saved in ${GSH_EXEC_FILE%.*}.tgz"
     exit 0
   elif [ "$arg" = "-K" ]
   then
@@ -50,12 +51,12 @@ done
 
 
 # remove extension (if present)
-GSH_NAME=${ORIGINAL_FILENAME%.*}
+GSH_NAME=${GSH_EXEC_FILE%.*}
 # remove "-save" suffix (if present)
 GSH_NAME=${GSH_NAME%-save}
 GSH_NAME=$(basename "$GSH_NAME")
 
-GSH_ROOT=$ORIGINAL_DIR/$GSH_NAME
+GSH_ROOT=$GSH_EXEC_DIR/$GSH_NAME
 N=0
 while [ -e "$GSH_ROOT" ]
 do
@@ -79,7 +80,7 @@ fi
 # and add a safeguard so we can check we are not removing another directory
 touch "$GSH_ROOT/.gsh_root-$$"
 
-tail -n+"$NB_LINES" "$ORIGINAL_FILENAME" > "$GSH_ROOT/gameshell.tgz"
+tail -n+"$NB_LINES" "$GSH_EXEC_FILE" > "$GSH_ROOT/gameshell.tgz"
 tar -zx -C "$GSH_ROOT" -f "$GSH_ROOT/gameshell.tgz"
 rm "$GSH_ROOT/gameshell.tgz"
 
@@ -92,6 +93,9 @@ rmdir "$TMP_ROOT"
 ###
 # remove root directory, with some minor failsafe
 _remove_root() {
+  trap - CHLD
+  ret=$1
+
   if [ "$KEEP_DIR" != "true" ]
   then
     # some sanity checking to make sure we remove the good directory
@@ -103,78 +107,27 @@ _remove_root() {
     chmod -R 777 "$GSH_ROOT"
     rm -rf "$GSH_ROOT"
   fi
-}
-
-###
-# save function
-_save() {
-  trap - CHLD
-  ret=$1
-
-  # the ".save" file is present, it means GameShell was actually started
-  # if not, we don't need to archive the directory
-  if [ ! -e "$GSH_ROOT/.save" ]
-  then
-    _remove_root
-    exit "$ret"
-  fi
-  # remove the ".save" file to make sure we don't always save from now on!
-  rm -f "$GSH_ROOT/.save"
-
-
-  tar -zcf "$GSH_ROOT.tgz" -C "$ORIGINAL_DIR" ./"$GSH_ROOT"
-  ARCHIVE_OK=$?
-
-
-  # get extension
-  EXT=${ORIGINAL_FILENAME##*.}
-  # remove extension
-  ORIGINAL_FILENAME=${ORIGINAL_FILENAME%.*}
-  # remove "-save" suffix (if present), and add it again, with the extension
-  ORIGINAL_FILENAME=${ORIGINAL_FILENAME%-save}-save.$EXT
-
-  cat "$GSH_ROOT/lib/header.sh" "$GSH_ROOT.tgz" > "$ORIGINAL_FILENAME"
-  SAVE_OK=$?
-  chmod +x "$ORIGINAL_FILENAME"
-
-  # remove archive
-  rm -f "$GSH_ROOT.tgz"
-
-  if [ "$ARCHIVE_OK" -ne 0 ] || [ "$SAVE_OK" -ne 0 ]
-  then
-    echo
-    echo "*******************************************************"
-    echo "Error: save file might be incorrect, test it by running"
-    echo "    $ $current_shell \"$ORIGINAL_FILENAME\""
-    echo
-    echo "If that works as expected, you can remove the \"$GSH_ROOT\" directory."
-    echo
-    KEEP_DIR="true"
-  fi
-
-  # remove the root directory
-  _remove_root
-
   exit "$ret"
 }
 
+
 ###
 # start GameShell
-# I want to run the _save command when the (only) child terminates
+# I want to run the _remove_root command when the (only) child terminates
 # In bash, I can trap SIGCHLD, but for some reason, we cannot trap SIGCHLD when
 # the main process receives SIGHUP (for example when the terminal is closed),
 # unless we trap SIGHUP as well. (Even an empty trap is OK.)
 #
-# This doesn't work for zsh, so I need to call _save explicitly. In the case of
+# This doesn't work for zsh, so I need to call _remove_root explicitly. In the case of
 # SIGHUP, the child is terminated and the main process continues normally, so
-# that _save is indeed executed...
+# that _remove_root is indeed executed...
 
 trap "" HUP SIGHUP
-trap '_save $?' CHLD
+trap '_remove_root $?' CHLD
 $current_shell "$GSH_ROOT/start.sh" -C "$@"
 
 # zsh doesn't receive SIGCHLD but seems to always continue, even in the case of
-# SIGHUP. We thus call _save explicitly.
-_save $?
+# SIGHUP. We thus call _remove_root explicitly.
+_remove_root $?
 
 ##START_OF_GAMESHELL_ARCHIVE##
