@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Retrouvez la pièce de bronze dans le (petit) labyrinthe jardin et 
+Retrouvez la pièce de bronze dans le (petit) labyrinthe du jardin et 
 déplacez-la dans votre coffre.
 
 Vous pouvez utiliser le gestionnaire de fichiers graphique si vous 

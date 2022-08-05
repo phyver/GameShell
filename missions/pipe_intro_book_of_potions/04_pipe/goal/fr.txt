@@ -44,7 +44,7 @@ La plupart de ces commandes peuvent recevoir leurs entrées soit par
 des fichiers (donnés en argument), soit sur leur "entrée standard". 
 Par exemple :
 - ``head FICHIER`` lit son entrée dans le fichier,
-- ``head`` lit sont entrée sur l'entrée standard.
+- ``head`` lit son entrée sur l'entrée standard.
 
 Par défaut, les données de l'entrée standard sont lues du clavier, 
 mais un tube peut modifier ceci.

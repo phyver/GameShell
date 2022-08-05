@@ -1,7 +1,7 @@
 Objectif
 ========
 
-Le lutin espiègle a plus d'un tour dans son sac. Il a réussit à 
+Le lutin espiègle a plus d'un tour dans son sac. Il a réussi à 
 protéger son sortilège contre la plupart des tentatives de sabotage.
 Vous devez trouver ce sortilège et tenter de le supprimer avec le 
 signal standard. Si ça ne marche pas, essayez un signal plus brutal.
