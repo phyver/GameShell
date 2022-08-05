@@ -19,7 +19,7 @@ less FICHIER
   Les touches importantes sont
     q         quitter
     Espace    faire défiler une page
-    /         rechercher une chaine
+    / CHAINE  rechercher une chaine
     n         aller à l'occurrence suivante de la
               chaine cherchée
 

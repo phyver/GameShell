@@ -189,7 +189,7 @@ msgstr  "Le répertoire $GSH_CONFIG contient des méta-données provenant d'une 
         "Voulez vous les supprimer et commencer une nouvelle partie ? [o/N]"
 
 msgid   "The latest version of Gameshell is available at"
-msgstr  "La dernière version de Gameshell is disponible sur"
+msgstr  "La dernière version de Gameshell est disponible sur"
 
 msgid   "There are stopped jobs in your session.\n"
         "Those processes will be terminated.\n"
@@ -225,7 +225,7 @@ msgid   "While you are waiting, a caterpillar crawls by..."
 msgstr  "Pendant que vous attendez, une chenille passe..."
 
 msgid   "While you are waiting, a centipede crawls by..."
-msgstr  "Pendant que vous attendez, un mille pates passe..."
+msgstr  "Pendant que vous attendez, un mille-pattes passe..."
 
 msgid   "While you are waiting, a duck swims by..."
 msgstr  "Pendant que vous attendez, un canard passe..."

@@ -8,7 +8,7 @@ des grimoires contenant le composé alchimique "gsh" (pour
 Attention, ce composé peut être écrit avec des lettres en minuscule 
 et majuscule mélangées.
 
-Certain grimoires sont cadenassés et vous n'avez pas la permission 
+Certains grimoires sont cadenassés et vous n'avez pas la permission 
 de les consulter. Ignorez les.
 
 Remarque

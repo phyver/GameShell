@@ -20,5 +20,5 @@ ls -l
 
 cat FICHIER
   Affiche le contenu du fichier à l'écran.
-  Note : ``cat`` est une abréviation pour "concat", car la commande 
-  permet de concaténer plusieurs fichiers.
+  Note : ``cat`` est une abréviation pour "concatenate", car la
+  commande permet de concaténer plusieurs fichiers.

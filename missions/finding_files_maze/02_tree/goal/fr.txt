@@ -2,7 +2,7 @@ Objectif
 ========
 
 Retrouvez la pièce d'argent dans le (petit) labyrinthe du jardin et 
-déplacez la dans votre coffre en utilisant le shell.
+déplacez-la dans votre coffre en utilisant le shell.
 
 
 Commandes utiles

@@ -1,4 +1,4 @@
-Commandes propres a GameShell
+Commandes propres à GameShell
 =============================
 
 gsh check

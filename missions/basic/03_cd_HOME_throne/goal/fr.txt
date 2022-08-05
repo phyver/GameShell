@@ -9,7 +9,7 @@ Remarque
 
 Vous pouvez faire tous les déplacements que vous souhaitez, mais 
 pour valider cette mission il faut que les conditions suivantes 
-soient satisfaites
+soient satisfaites :
   - l'avant-dernière commande vous ramène au point de départ,
   - la dernière commande vous amène directement dans la salle du 
     trône.
