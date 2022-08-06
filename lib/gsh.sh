@@ -490,6 +490,7 @@ __save() {
   # GSH_SAVEFILE is defined on first save
   if [ -z "$GSH_SAVEFILE" ]
   then
+    export GSH_SAVEFILE
     case "$GSH_SAVEFILE_MODE" in
       "index")
         # get extension
