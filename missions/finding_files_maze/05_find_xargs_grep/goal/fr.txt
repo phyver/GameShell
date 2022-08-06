@@ -7,8 +7,8 @@ dans le labyrinthe et déplacez-le dans votre coffre.
 Remarque
 --------
 
-Le nom du fichier ne contient pas la chaîne "diamant". Il faut donc 
-chercher un fichier qui contient la chaîne "diamant".
+Le nom du fichier ne contient pas la chaine "diamant". Il faut donc 
+chercher un fichier qui contient la chaine "diamant".
 
 
 Commandes utiles
@@ -20,10 +20,10 @@ find
   taille, leur date de création, etc.
 
 grep [OPTIONS] CHAINE FICHIER1 ... FICHIERn
-  Recherche une chaîne parmi les fichiers.
+  Recherche une chaine parmi les fichiers.
 
   Option utile :
-    -l affiche juste le nom des fichiers contenant la chaîne.
+    -l affiche juste le nom des fichiers contenant la chaine.
 
 xargs COMMANDE
   Lit des lignes sur l'entrée standard, et exécute la commande

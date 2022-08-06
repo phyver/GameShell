@@ -7,10 +7,10 @@ votre coffre.
 Indice
 ------
 
-Le nom du fichier ne contient pas la chaîne "rubis". Comme il n'y a 
+Le nom du fichier ne contient pas la chaine "rubis". Comme il n'y a 
 pas beaucoup de fichiers dans le labyrinthe, une stratégie est de 
 chercher les **fichiers** (par opposition aux répertoires) et de 
-regarder à la main celui qui contient la chaîne "rubis".
+regarder à la main celui qui contient la chaine "rubis".
 
 
 Commandes utiles
@@ -33,14 +33,14 @@ man COMMANDE
   Touches utilisées par la commande "man"
     q           quitter
     Espace      faire défiler une page
-    / CHAINE    rechercher une chaîne
+    / CHAINE    rechercher une chaine
     n           aller à l'occurrence suivante de
-                la chaîne cherchée
+                la chaine cherchée
 
 Remarque
 --------
 
 La description de la commande ``find`` est volontairement succincte. 
 Vous devrez consulter l'aide pour comprendre comment l'utiliser. 
-(Vous pouvez par exemple faire une recherche sur la chaîne "-type" 
+(Vous pouvez par exemple faire une recherche sur la chaine "-type" 
 dans la page du manuel...)
