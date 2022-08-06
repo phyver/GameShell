@@ -52,4 +52,3 @@ Chaque commande peut écrire sur l'écran de deux manières :
   - affichage du résultat ("stdout")
   - affichage des message d'erreur ("stderr")
 On ne peut pas différencier ces affichages.
-
