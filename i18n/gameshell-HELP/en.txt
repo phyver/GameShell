@@ -17,6 +17,9 @@ gsh check
   check whether the current mission's goal has been achieved or 
   not
 
+gsh env
+  display internal environment variables
+
 gsh exit
   quit (and save) the current game
 

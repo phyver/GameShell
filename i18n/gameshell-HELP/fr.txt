@@ -16,6 +16,9 @@ gsh auto                              (ADMIN)
 gsh check
   vérifie que l'objectif de la mission en cours est atteint
 
+gsh env
+  affiche les variables d'environnement internes
+
 gsh exit
   quitte (et sauvegarde) la partie en cours
 

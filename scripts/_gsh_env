@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# display the values of GameShell environment variables
+echo "========================="
+echo "    GSH_EXEC_FILE=$GSH_EXEC_FILE"
+echo "    GSH_EXEC_DIR=$GSH_EXEC_DIR"
+echo "    GSH_WORKING_DIR=$GSH_WORKING_DIR"
+echo "========================="
+echo "    GSH_AUTOSAVE=$GSH_AUTOSAVE"
+echo "    GSH_SAVEFILE_MODE=$GSH_SAVEFILE_MODE"
+echo "    GSH_SAVEFILE=$GSH_SAVEFILE"
+echo "    GSH_COLOR=$GSH_COLOR"
+echo "    GSH_SHELL=$GSH_SHELL"
+echo "========================="
+echo "    GSH_ROOT=$GSH_ROOT"
+echo "    GSH_HOME=$GSH_HOME"
+echo "    GSH_LIB=$GSH_LIB"
+echo "    GSH_BIN=$GSH_BIN"
+echo "    GSH_SBIN=$GSH_SBIN"
+echo "    GSH_TMP=$GSH_TMP"
+echo "    GSH_MISSIONS=$GSH_MISSIONS"
+echo "    GSH_CHEST=$GSH_CHEST"
+echo "    GSH_CONFIG=$GSH_CONFIG"
+echo "========================="
+
+
