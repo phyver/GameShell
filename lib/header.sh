@@ -24,37 +24,93 @@ else
   return 1
 fi
 
-
-export GSH_EXEC_FILE=$(basename "$0")
-export GSH_EXEC_DIR=$(dirname "$0")
-GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
-
-# GSH_EXEC_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
-# just in case
-GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
-
-
-NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$GSH_EXEC_FILE")
-
 for arg in "$@"
 do
   if [ "$arg" = "-X" ]
   then
-    tail -n+"$NB_LINES" "$GSH_EXEC_FILE" > "${GSH_EXEC_FILE%.*}.tgz"
-    echo "Archive saved in ${GSH_EXEC_FILE%.*}.tgz"
-    exit 0
+    GSH_EXTRACT="true"
   elif [ "$arg" = "-K" ]
   then
     KEEP_DIR="true"
+  elif [ "$arg" = "-h" ]
+  then
+    # used to avoid checking for more recent files
+    GSH_HELP="true"
   fi
 done
 
 
+export GSH_EXEC_FILE=$(basename "$0")
+export GSH_EXEC_DIR=$(dirname "$0")
+GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
+# GSH_EXEC_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
+# just in case
+GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
+
+# get extension
+EXT=${GSH_EXEC_FILE##*.}
 # remove extension (if present)
 GSH_NAME=${GSH_EXEC_FILE%.*}
 # remove "-save" suffix (if present)
-GSH_NAME=${GSH_NAME%-save}
+GSH_NAME=${GSH_NAME%-save*}
 GSH_NAME=$(basename "$GSH_NAME")
+
+
+if [ "$GSH_HELP" != "true" ]
+then
+  LAST_SAVEFILE=$(ls "$GSH_EXEC_DIR/$GSH_NAME-save"*".$EXT" 2>/dev/null | sort | tail -n 1)
+
+  if [ -n "$LAST_SAVEFILE" ] && [ "$GSH_EXEC_DIR/$GSH_EXEC_FILE" != "$LAST_SAVEFILE" ]
+  then
+    echo "Warning: there is a more recent savefile"
+    echo "You can"
+    echo "  (1) keep the given file ("$GSH_EXEC_FILE")"
+    echo "  (2) switch to the last savefile ($(basename "$LAST_SAVEFILE"))"
+    echo "  (3) abort"
+    echo
+    R=""
+    while [ "$R" != 1 ] && [ "$R" != 2 ] && [ "$R" != 3 ]
+    do
+      printf "What do you want to do? [123] "
+      read -r R
+    done
+  fi
+  case "$R" in
+    1)
+      # do nothing, continue normally
+      :
+      ;;
+    2)
+      GSH_EXEC_FILE=$(basename "$LAST_SAVEFILE")
+      export GSH_EXEC_DIR=$(dirname "$LAST_SAVEFILE")
+      GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
+      # GSH_EXEC_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
+      # just in case
+      GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
+
+      # remove extension (if present)
+      GSH_NAME=${GSH_EXEC_FILE%.*}
+      # remove "-save" suffix (if present)
+      GSH_NAME=${GSH_NAME%-save}
+      GSH_NAME=$(basename "$GSH_NAME")
+      ;;
+    3)
+      exit 0
+      ;;
+  esac
+fi
+
+
+NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$GSH_EXEC_DIR/$GSH_EXEC_FILE")
+
+
+if [ "$GSH_EXTRACT" = "true" ]
+then
+    tail -n+"$NB_LINES" "$GSH_EXEC_DIR/$GSH_EXEC_FILE" > "$GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}.tgz"
+    echo "Archive saved in $GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}.tgz"
+    exit 0
+fi
+
 
 GSH_ROOT=$GSH_EXEC_DIR/$GSH_NAME
 N=0
@@ -80,7 +136,7 @@ fi
 # and add a safeguard so we can check we are not removing another directory
 touch "$GSH_ROOT/.gsh_root-$$"
 
-tail -n+"$NB_LINES" "$GSH_EXEC_FILE" > "$GSH_ROOT/gameshell.tgz"
+tail -n+"$NB_LINES" "$GSH_EXEC_DIR/$GSH_EXEC_FILE" > "$GSH_ROOT/gameshell.tgz"
 tar -zx -C "$GSH_ROOT" -f "$GSH_ROOT/gameshell.tgz"
 rm "$GSH_ROOT/gameshell.tgz"
 

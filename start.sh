@@ -29,7 +29,8 @@ display_help() {
 }
 
 
-export GSH_SAVEFILE_MODE=index
+# possible values: index, simple, same
+export GSH_SAVEFILE_MODE=simple
 export GSH_AUTOSAVE=1
 export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"

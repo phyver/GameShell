@@ -51,7 +51,7 @@ KEEP_TEST=0
 DEFAULT_MODE="ANONYMOUS"
 KEEP_TGZ=0
 GENERATE_MO=1
-# KEEP_PO=1     # this is set to 1 if we generate .mo files. Setting it to 1 here
+KEEP_PO=0     # this is set to 1 if we generate .mo files. Setting it to 1 here
 # (or before generating .mo files) will keep the .po files
 LANGUAGES=""
 VERBOSE=
