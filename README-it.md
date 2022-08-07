@@ -1,7 +1,7 @@
 GameShell: un "gioco" per insegnare il terminale Unix
 ===========================================
 
-![Disegno ispirato dal gioco](art/illustration-small.png)
+![Disegno ispirato dal gioco](images/illustration-small.png)
 
 Insegnare a studenti universitari o delle superiori a usare un terminale Unix non é la cosa piú semplice o divertente. Gameshell è stato creato come strumento per aiutare gli studenti alla [Université Savoie Mont Blanc](https://univ-smb.fr) per fare pratica con un terminale *reale* e imparare divertendosi.
 

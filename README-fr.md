@@ -1,7 +1,7 @@
-# GameShell : un "jeu" pour apprendre le shell Unix
-=================================================
+GameShell : un "jeu" pour apprendre le shell Unix
+===================================================
 
-![Illustration inspired by the game](art/illustration-small.png)
+![Illustration inspired by the game](images/illustration-small.png)
 
 Enseigner l'utilisation d'un shell Unix à des étudiants de première année à
 l'université ou à des lycéens n'est pas toujours simple, ni très amusant.
