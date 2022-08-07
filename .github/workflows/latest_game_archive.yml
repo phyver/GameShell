@@ -22,7 +22,7 @@ jobs:
 
       - name: "Creating the archive"
         run: |
-          git fetch -t && ./utils/archive.sh
+          git fetch --tags --force && ./utils/archive.sh
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
