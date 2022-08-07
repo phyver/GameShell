@@ -24,9 +24,47 @@ else
   return 1
 fi
 
+export GSH_EXEC_FILE=$(basename "$0")
+export GSH_EXEC_DIR=$(dirname "$0")
+GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
+# GSH_EXEC_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
+# just in case
+GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
+
 for arg in "$@"
 do
-  if [ "$arg" = "-X" ]
+  if [ "$arg" = "-U" ]
+  then
+    TARGET="$GSH_EXEC_DIR/gameshell.sh"
+    TMPFILE="$GSH_EXEC_DIR/gameshell.sh$$"
+    if command -v wget >/dev/null
+    then
+      if wget -O "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
+      then
+        mv "$TMPFILE" "$TARGET"
+        chmod +x "$TARGET"
+        echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
+        exit 0
+      else
+        rm -f "$TMPFILE"
+        echo "Error: couldn't download or save the latest version of GameShell." >&2
+        exit 1
+      fi
+    elif command -v curl >/dev/null
+    then
+      if curl -fo "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
+      then
+        mv "$TMPFILE" "$TARGET"
+        chmod +x "$TARGET"
+        echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
+        exit 0
+      else
+        rm -f "$TMPFILE"
+        echo "Error: couldn't download or save the latest version of GameShell." >&2
+        exit 1
+      fi
+    fi
+  elif [ "$arg" = "-X" ]
   then
     GSH_EXTRACT="true"
   elif [ "$arg" = "-K" ]
@@ -39,13 +77,6 @@ do
   fi
 done
 
-
-export GSH_EXEC_FILE=$(basename "$0")
-export GSH_EXEC_DIR=$(dirname "$0")
-GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
-# GSH_EXEC_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
-# just in case
-GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
 
 # get extension
 EXT=${GSH_EXEC_FILE##*.}

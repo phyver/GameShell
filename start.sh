@@ -35,7 +35,7 @@ export GSH_AUTOSAVE=1
 export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
 RESET=""
-while getopts ":hnPdDACRXqGL:KBZc:" opt
+while getopts ":hnPdDACRXUqGL:KBZc:" opt
 do
   case $opt in
     h)
@@ -73,7 +73,7 @@ do
     G)
       export GSH_NO_GETTEXT=1
       ;;
-    X)
+    X | U)
       echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
       exit 1
       ;;
