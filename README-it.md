@@ -9,6 +9,8 @@ L'idea originale, di Rodolphe Lepigre, era di avere una sessione da terminale st
 
 Ecco i risultati...
 
+![GameShell's first mission](Images/gameshell_first_mission_small.gif)
+
 Sentiti libero di inviare i tuoi commenti, domande o suggerimenti aprendo dei [ticket](https://github.com/phyver/GameShell/issues) o inviando [pull request](https://github.com/phyver/GameShell/pulls).
 Siamo molto interessati nella creazione di nuove missioni!
 

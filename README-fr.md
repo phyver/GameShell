@@ -13,6 +13,8 @@ un fichier de configuration qui définissait des "missions", qui seraient
 
 Voilà le résultat...
 
+![GameShell's first mission](Images/gameshell_first_mission_small.gif)
+
 N'hésitez pas à nous envoyer vos remarques, questions ou suggestions en
 ouvrant des ["issues"](https://github.com/phyver/GameShell/issues) ou en
 soumettant des ["pull requests"](https://github.com/phyver/GameShell/pulls).
