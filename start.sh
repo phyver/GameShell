@@ -35,7 +35,7 @@ export GSH_AUTOSAVE=1
 export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
 RESET=""
-while getopts ":hnPdDACRXUqGL:KBZc:" opt
+while getopts ":hnPdDACRXUVqGL:KBZc:" opt
 do
   case $opt in
     h)
@@ -76,6 +76,18 @@ do
     X | U)
       echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
       exit 1
+      ;;
+    V)
+      # when lib/header.sh sees the -V flag, it displays the version and exits,
+      # so the next case isn't used.
+      # this is only used when running GameShell directly from start.sh
+      if git rev-parse --is-inside-work-tree >/dev/null 2>&1
+      then
+        echo "GameShell $(git describe --always --tags --dirty)"
+      fi
+
+      echo "run directly from start.sh"
+      exit 0;
       ;;
     B)
       export GSH_SHELL=bash

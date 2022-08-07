@@ -24,6 +24,9 @@ else
   return 1
 fi
 
+GSH_VERSION='developpment version'
+GSH_LAST_CHECKED_MISSION=''
+
 export GSH_EXEC_FILE=$(basename "$0")
 export GSH_EXEC_DIR=$(dirname "$0")
 GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
@@ -33,7 +36,15 @@ GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
 
 for arg in "$@"
 do
-  if [ "$arg" = "-U" ]
+  if [ "$arg" = "-V" ]
+  then
+    echo "Gameshell $GSH_VERSION"
+    if [ -n "$GSH_LAST_CHECKED_MISSION" ]
+    then
+      echo "saved game: [mission $GSH_LAST_CHECKED_MISSION] OK"
+    fi
+    exit 0
+  elif [ "$arg" = "-U" ]
   then
     TARGET="$GSH_EXEC_DIR/gameshell.sh"
     TMPFILE="$GSH_EXEC_DIR/gameshell.sh$$"
