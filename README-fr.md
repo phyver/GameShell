@@ -1,7 +1,7 @@
 GameShell : un "jeu" pour apprendre le shell Unix
 ===================================================
 
-![Illustration inspired by the game](images/illustration-small.png)
+![Illustration inspired by the game](Images/illustration-small.png)
 
 Enseigner l'utilisation d'un shell Unix à des étudiants de première année à
 l'université ou à des lycéens n'est pas toujours simple, ni très amusant.
@@ -14,6 +14,8 @@ un fichier de configuration qui définissait des "missions", qui seraient
 "validées" pour avancer dans le jeu.
 
 Voilà le résultat...
+
+![GameShell's first mission](Images/gameshell_first_mission_small.gif)
 
 N'hésitez pas à nous envoyer vos remarques, questions ou suggestions en
 ouvrant des ["issues"](https://github.com/phyver/GameShell/issues) ou en

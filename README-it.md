@@ -1,13 +1,15 @@
 GameShell: un "gioco" per insegnare il terminale Unix
 ===========================================
 
-![Disegno ispirato dal gioco](images/illustration-small.png)
+![Disegno ispirato dal gioco](Images/illustration-small.png)
 
 Insegnare a studenti universitari o delle superiori a usare un terminale Unix non é la cosa piú semplice o divertente. Gameshell è stato creato come strumento per aiutare gli studenti alla [Université Savoie Mont Blanc](https://univ-smb.fr) per fare pratica con un terminale *reale* e imparare divertendosi.
 
 L'idea originale, di Rodolphe Lepigre, era di avere una sessione da terminale standard, con una configurazione specifica via file, definiti "missioni", che potessero essere "validati" tramite i progressi nel gioco.
 
 Ecco i risultati...
+
+![GameShell's first mission](Images/gameshell_first_mission_small.gif)
 
 Sentiti libero di inviare i tuoi commenti, domande o suggerimenti aprendo dei [ticket](https://github.com/phyver/GameShell/issues) o inviando [pull request](https://github.com/phyver/GameShell/pulls).
 Siamo molto interessati nella creazione di nuove missioni!
