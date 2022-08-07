@@ -37,6 +37,10 @@ then
   echo "[ saving progress to file $SAVEFILE ]"
 fi
 
+# record last checked mission
+GSH_LAST_CHECKED_MISSION=$(_gsh_plm)
+sed-i "s/^GSH_LAST_CHECKED_MISSION=.*/GSH_LAST_CHECKED_MISSION=$GSH_LAST_CHECKED_MISSION/" "$GSH_ROOT/lib/header.sh"
+
 tar -zcf "$GSH_ROOT.tgz" -C "$GSH_EXEC_DIR" "$(basename "$GSH_ROOT")"
 ARCHIVE_OK=$?
 

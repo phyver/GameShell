@@ -1,5 +1,6 @@
 options:
   -h      this message
+  -V      display version
 
   -P      passport mode: ask for name / emails of player
   -A      anonymous mode

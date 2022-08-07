@@ -1,5 +1,6 @@
 options :
   -h      ce message
+  -V      affiche la version
 
   -P      mode passeport : demande le nom / email du joueur
   -D      mode debug
