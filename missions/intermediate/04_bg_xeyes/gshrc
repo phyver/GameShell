@@ -1,0 +1,9 @@
+# if the XAUTHORITY variable isn't defined, it defaults to ~/.Xauthority
+# since GameShell redefines HOME, the file won't be found.
+
+if [ -z "$XAUTHORITY" ]
+then
+  export XAUTHORITY=$REAL_HOME/.Xauthority
+else
+  export XAUTHORITY=${XAUTHORITY/~/$REAL_HOME}
+fi
