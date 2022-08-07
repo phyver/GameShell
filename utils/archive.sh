@@ -290,7 +290,7 @@ esac
 # record version
 if git rev-parse --is-inside-work-tree >/dev/null
 then
-  VERSION=$(git describe --tags)
+  VERSION=$(git describe --always --tags)
   sed-i "s/^VERSION=.*/VERSION='$VERSION'/" "$GSH_ROOT/scripts/_gsh_version"
 fi
 
