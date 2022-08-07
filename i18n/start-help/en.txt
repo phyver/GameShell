@@ -21,8 +21,7 @@ options:
   -n      black and white: don't use ANSI escape codes for color
   -c ...  give that command to GameShell (for testing)
 
-The following options are only available when GameShell is run from 
-an executable archive.
+  -U      download last version of GameShell (requires network access)
   -X      only extract tgz archive
   -K      do not remove GameShell temporary directory on exit
 

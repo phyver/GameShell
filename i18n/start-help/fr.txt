@@ -18,7 +18,6 @@ options :
   -n      mode noir et blanc : n'utilise pas les séquences ANSI
   -c CMD  donne cette commande à GameShell (pour faire des tests)
 
-Les options suivantes ne sont disponibles que lorsque GameShell est 
-lancé depuis une archive exécutable.
+  -U      télécharge la dernière version de GameShell (nécessite un accès réseau)
   -X      extrait juste l'archive tgz
   -K      ne supprime pas le répertoire temporaire de GameShell à la sortie
