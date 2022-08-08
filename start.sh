@@ -471,7 +471,19 @@ cd "$GSH_HOME"
 export GSH_UID=$(cat "$GSH_CONFIG/uid")
 date "+%Y-%m-%d %H:%M:%S" | sed 's/^/#>>> /' >> "$GSH_CONFIG/missions.log"
 
-# make sure the shell reads its config file by making it interactive (-i)
+# put a ".save" file to indicate the archive needs to be saved on exit
+touch "$GSH_ROOT/.save"
+
+# if the user uses a special TERMINFO entry, it might not be found because
+# GameShell redefines HOME
+if [ -z "$TERMINFO" ]
+then
+  export TERMINFO=$REAL_HOME/.terminfo
+else
+  # this might be run with sh, which doesn't have variable string substitution
+  TERMINFO=$(echo "$TERMINFO" | sed -e "s#~#$REAL_HOME#g")
+fi
+
 generate_rcfile
 if [ -n "$GSH_COMMAND" ]
 then
