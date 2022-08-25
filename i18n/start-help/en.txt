@@ -9,11 +9,21 @@ options:
 
   -C      continue current game (if relevant)
   -R      reset game
+  -F      do not check for more recent savefiles, force using the given archive
 
   -G      do not use gettext for translation (everything will be in English)
   -L ...  set LANGUAGE variable (ex: -L fr:it:en)
           On non GNU systems, set the variable LC_MESSAGES
           to a valid locale.
+
+  --simple-savefiles
+          the savefile is obtained by adding a "-save" suffix,
+          each savefile overwrites the previous one
+  --index-savefiles
+          savefiles are numbered so that all savefiles are kept
+  --overwrite-savefiles
+          the savefile overwrite the initial GameShell file
+          (you can use option -R to start a new game from the start)
 
   -B      use bash
   -Z      use zsh

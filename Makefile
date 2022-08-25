@@ -55,7 +55,7 @@ tests-zsh: clean
 	./"game shell (1).sh" -Zdq -c 'gsh systemconfig; for _ in $$(seq 42); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat'
 
 clean:
-	rm -rf i18n/*~ locale gameshell.tgz gameshell.sh gameshell-save.sh scripts/boxes-data.awk
+	rm -rf i18n/*~ locale gameshell.tgz gameshell.sh gameshell-save*.sh scripts/boxes-data.awk
 	rm -rf .bin .config .sbin .var World
 	rm -rf "game shell"*
 

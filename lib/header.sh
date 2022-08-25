@@ -81,6 +81,9 @@ do
   elif [ "$arg" = "-K" ]
   then
     KEEP_DIR="true"
+  elif [ "$arg" = "-F" ]
+  then
+    GSH_FORCE="true"
   elif [ "$arg" = "-h" ]
   then
     # used to avoid checking for more recent files
@@ -98,7 +101,7 @@ GSH_NAME=${GSH_NAME%-save*}
 GSH_NAME=$(basename "$GSH_NAME")
 
 
-if [ "$GSH_HELP" != "true" ]
+if [ "$GSH_HELP" != "true" ] && [ "$GSH_FORCE" != "true" ]
 then
   LAST_SAVEFILE=$(ls "$GSH_EXEC_DIR/$GSH_NAME-save"*".$EXT" 2>/dev/null | sort | tail -n 1)
 
