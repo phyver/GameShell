@@ -16,6 +16,7 @@ options:
   -A          use the "anonymous mode" by default when running GameShell
   -L LANGS    only keep the given languages (ex: -L 'en*,fr')
   -E          only keep english as a language, not generating any ".mo" file
+              and not using gettext
 
   -N ...      name of the archive / top directory (default: "gameshell")
 
@@ -88,6 +89,7 @@ do
       LANGUAGES=
       KEEP_PO=0
       GENERATE_MO=0
+      GSH_NO_GETTEXT=1
       ;;
     v)
       VERBOSE=1
@@ -187,6 +189,12 @@ export GSH_ROOT="$TMP_DIR/$NAME"
 . "$GSH_ROOT/lib/profile.sh"
 export GSH_MISSIONS="$GSH_ROOT/missions"
 
+
+# default GSH_NO_GETTEXT to 1 if -E was used
+if [ -n "$GSH_NO_GETTEXT" ]
+then
+  sed-i "s/^# export GSH_NO_GETTEXT=./export GSH_NO_GETTEXT=1/" "$GSH_ROOT/start.sh"
+fi
 
 # remove unwanted languages
 if [ -n "$LANGUAGES" ]
