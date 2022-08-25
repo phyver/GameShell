@@ -517,9 +517,10 @@ __save() {
       GSH_SAVEFILE="$GSH_SAVEFILE-save.$EXT"
       ;;
 
-    "same")
+    "overwrite")
       GSH_SAVEFILE=$GSH_EXEC_DIR/$GSH_EXEC_FILE
       ;;
+
     esac
   fi
   _gsh_save "$GSH_SAVEFILE"

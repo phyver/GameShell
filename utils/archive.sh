@@ -9,22 +9,27 @@ $(basename "$0") [OPTIONS] [MISSIONS]
 create a GameShell standalone archive
 
 options:
-  -h          this message
+  -h              this message
 
-  -p ...      choose password for admin commands
-  -P          use the "passport mode" by default when running GameShell
-  -A          use the "anonymous mode" by default when running GameShell
-  -L LANGS    only keep the given languages (ex: -L 'en*,fr')
-  -E          only keep english as a language, not generating any ".mo" file
-              and not using gettext
+  --password ...  choose password for admin commands
+  -P              use the "passport mode" by default when running GameShell
+  -A              use the "anonymous mode" by default when running GameShell
+  -L LANGS        only keep the given languages (ex: -L 'en*,fr')
+  -E              only keep english as a language, not generating any ".mo" file
+                  and not using gettext
 
-  -N ...      name of the archive / top directory (default: "gameshell")
+  -N ...          name of the archive / top directory (default: "gameshell")
 
-  -a          keep 'auto.sh' scripts for missions that have one
-  -t          keep 'test.sh' scripts for missions that have one
-  -z          keep tgz archive
+  --simple-savefiles
+  --index-savefiles
+  --overwrite-savefiles
+                  choose default savefile mode
 
-  -v          show the list of mission directories as they are being processed
+  -a              keep 'auto.sh' scripts for missions that have one
+  -t              keep 'test.sh' scripts for missions that have one
+  -z              keep tgz archive
+
+  -v              show the list of mission directories as they are being processed
 EOH
 }
 
@@ -57,18 +62,38 @@ KEEP_PO=0     # this is set to 1 if we generate .mo files. Setting it to 1 here
 LANGUAGES=""
 VERBOSE=
 
-while getopts ":hp:N:atPzL:Ev" opt
+# hack to parse long option --password
+# cf https://stackoverflow.com/questions/402377/using-getopts-to-process-long-and-short-command-line-options
+_long_option=0
+while getopts ":hp:N:atPzL:Ev-:" opt
 do
+  if [ "$opt" = "-" ]
+  then
+    opt="${OPTARG%%=*}"       # extract long option name
+    OPTARG="${OPTARG#$opt}"   # extract long option argument (may be empty)
+    OPTARG="${OPTARG#=}"      # if long option argument, remove assigning `=`
+    _long_option=1
+  fi
+
   case $opt in
     h)
       display_help
       exit 0;
       ;;
-    p)
+    password)
       ADMIN_PASSWD=$OPTARG
       ;;
     N)
       NAME=$OPTARG
+      ;;
+    index-savefiles)
+      GSH_SAVEFILE_MODE=index
+      ;;
+    simple-savefiles)
+      GSH_SAVEFILE_MODE=simple
+      ;;
+    overwrite-savefiles)
+      GSH_SAVEFILE_MODE=overwrite
       ;;
     a)
       KEEP_AUTO=1
@@ -95,6 +120,10 @@ do
       VERBOSE=1
       ;;
     *)
+      if [ "$_long_option" = "1" ]
+      then
+        OPTARG="-$opt"
+      fi
       echo "invalid option: '-$OPTARG'" >&2
       exit 1
       ;;
@@ -294,6 +323,12 @@ case $DEFAULT_MODE in
     echo "unknown mode: $MODE" >&2
     ;;
 esac
+
+# choose default savefile mode
+if [ -n "$GSH_SAVEFILE_MODE" ]
+then
+  sed-i "s/^export GSH_SAVEFILE_MODE=.*$/export GSH_SAVEFILE_MODE='$GSH_SAVEFILE_MODE'/" "$GSH_ROOT/start.sh"
+fi
 
 # record version
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1

@@ -29,15 +29,37 @@ display_help() {
 }
 
 
-# possible values: index, simple, same
-export GSH_SAVEFILE_MODE=simple
+# possible values: index, simple (default), overwrite
+export GSH_SAVEFILE_MODE="simple"
 export GSH_AUTOSAVE=1
 export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
+# if GSH_NO_GETTEXT is non-empty, gettext won't be used anywhere, the only language will thus be English
+# export GSH_NO_GETTEXT=1  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/archive.sh
 RESET=""
-while getopts ":hnPdDACRXUVqGL:KBZc:" opt
+# hack to parse long options --index-savefiles --overwrite-savefiles --simple-savefiles
+# cf https://stackoverflow.com/questions/402377/using-getopts-to-process-long-and-short-command-line-options
+_long_option=0
+while getopts ":hnPdDACRXUVqGL:KBZc:F-:" opt
 do
+  if [ "$opt" = "-" ]
+  then
+    opt="${OPTARG%%=*}"       # extract long option name
+    OPTARG="${OPTARG#$opt}"   # extract long option argument (may be empty)
+    OPTARG="${OPTARG#=}"      # if long option argument, remove assigning `=`
+    _long_option=1
+  fi
+
   case $opt in
+    index-savefiles)
+      GSH_SAVEFILE_MODE=index
+      ;;
+    simple-savefiles)
+      GSH_SAVEFILE_MODE=simple
+      ;;
+    overwrite-savefiles)
+      GSH_SAVEFILE_MODE=overwrite
+      ;;
     h)
       display_help
       exit 0
@@ -98,10 +120,14 @@ do
     c)
       GSH_COMMAND=$OPTARG
       ;;
-    K)
+    K|F)
       :  # used by the self-extracting archive
       ;;
     *)
+      if [ "$_long_option" = "1" ]
+      then
+        OPTARG="-$opt"
+      fi
       echo "$(eval_gettext "Error: invalid option: '-\$OPTARG'")" >&2
       exit 1
       ;;
