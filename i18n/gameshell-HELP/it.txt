@@ -17,6 +17,9 @@ gsh check
   verifica se gli obiettivi della missione attuale sono stati raggiunti
   o no
 
+gsh env
+  mostra le variabili di sistema\environment
+
 gsh exit
   esci da GameShell
   (puoi partire dalla missione corrente eseguendo
@@ -57,6 +60,9 @@ gsh reset
 
 gsh resetstatic
   rigenera tutte le parti statiche del mondo di gioco
+
+gsh save FILENAME
+  salva la partita corrente su un file
 
 gsh skip                              (ADMIN)
   permette di saltare la missione e di passare alla successiva
