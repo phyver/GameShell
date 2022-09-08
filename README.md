@@ -26,6 +26,12 @@ Feel free to send us your remarks, questions or suggestions by opening
 [pull requests](https://github.com/phyver/GameShell/pulls).
 We are particularly interested in any new missions you might create!
 
+Play in the Browser on Replit
+-----------------------------
+
+A version of GameShell is available on Replit here: [LINK](https://replit.com/@JosephCollard/Game-Shell-Prototype)
+
+To save your progress, fork a copy before running. Enjoy!
 
 Getting started
 ---------------
