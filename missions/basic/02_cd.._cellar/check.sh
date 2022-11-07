@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 goal=$(readlink-f "$(eval_gettext "\$GSH_HOME/Castle/Cellar")")
 current=$(readlink-f "$PWD")

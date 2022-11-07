@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # check the hash on the first line of a file
 # the hash is expected to sign the content of the file, a random number (given

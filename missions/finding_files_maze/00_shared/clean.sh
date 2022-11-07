@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 case $(pwd -P) in

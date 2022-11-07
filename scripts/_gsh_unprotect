@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 chmod "$(umask -S)" "$GSH_ROOT"
 chmod "$(umask -S)" "$GSH_MISSIONS"

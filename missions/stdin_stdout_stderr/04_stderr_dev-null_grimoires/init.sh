@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_init() ( #subshell to avoid changing directory
   bib="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"

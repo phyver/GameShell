@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 lair="$(find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -type d -name ".$(gettext "Lair_of_the_spider_queen")*")"
 cd "$lair"

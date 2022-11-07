@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 YYYY=$(cut -d"-" -f1 "$GSH_TMP"/date)
 MM=$(cut -d"-" -f2 "$GSH_TMP"/date)

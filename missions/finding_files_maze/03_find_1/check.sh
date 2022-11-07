@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check_p() (
     coin_name=$1

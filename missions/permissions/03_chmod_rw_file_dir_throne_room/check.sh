@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
   if ! [ -f "$GSH_CHEST/$(gettext "crown")" ]

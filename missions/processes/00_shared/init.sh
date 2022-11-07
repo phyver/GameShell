@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # use a subshell, that should guarantee that no message is displayed when the
 # test-proc-name process is killed.

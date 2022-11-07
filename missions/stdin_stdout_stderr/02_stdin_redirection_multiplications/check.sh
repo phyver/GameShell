@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
   time_limit=$(( $(date +%s) + 10 ))

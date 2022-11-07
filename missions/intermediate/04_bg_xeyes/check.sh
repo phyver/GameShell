@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # fc in specified in POSIX, but debian's sh doesn't implement it!
 

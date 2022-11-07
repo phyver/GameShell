@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_auto() (
   YYYY=$(cut -d"-" -f1 "$GSH_TMP"/date)

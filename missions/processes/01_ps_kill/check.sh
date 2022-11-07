@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
   if my_ps $(cat "$GSH_TMP/spell.pid") | grep -q "$(gettext "spell")"

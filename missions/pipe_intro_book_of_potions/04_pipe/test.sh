@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 . alt_history_start.sh
 

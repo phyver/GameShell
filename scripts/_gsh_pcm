@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # pcm => "print current mission"
 GSH_CONFIG=$(cd "$(dirname "$0")/../.config"; pwd -P)

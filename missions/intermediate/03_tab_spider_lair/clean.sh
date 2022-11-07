@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 set +o noglob
 rm -f "$GSH_TMP/start_time"

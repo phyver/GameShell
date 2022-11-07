@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
   amount=$(cat "$GSH_TMP/amountKing")

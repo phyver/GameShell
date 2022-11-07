@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # function cannot be in a subshell because it needs access to aliases defined
 # in the main shell.

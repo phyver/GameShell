@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # "local" is not in POSIX, and function cannot be in a subshell as it needs
 # access to aliases defined in the main shell.

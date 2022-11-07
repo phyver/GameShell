@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_init() (
   if ! [ -e "$MISSION_DIR/ascii-art" ]

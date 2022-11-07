@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # inspired by cf https://stackoverflow.com/questions/7665/how-to-resolve-symbolic-links-in-a-shell-script
 # NOTE that you need traversal access to directories...

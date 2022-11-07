@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # NOTE: debian's sh (dash) is compiled without fc, so this won't work!
 

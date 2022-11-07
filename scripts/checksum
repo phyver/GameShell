@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # computes a checksum of a string
 # with no argument, reads the string from STDIN
