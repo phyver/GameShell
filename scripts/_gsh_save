@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 ###
 # NOTE: this function should only be called after a "clean"

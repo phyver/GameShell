@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 
 if [ -f "$GSH_TMP/list_grimoires_RO" ]

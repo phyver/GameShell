@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 case "$1" in
   black   | bk) color=0; shift;;

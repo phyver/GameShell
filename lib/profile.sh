@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 [ -z "$GSH_ROOT" ] && echo "Error: GSH_ROOT undefined" && exit 1
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _DOW() (
     if dow=$(date --date="$1" +%A 2> /dev/null)

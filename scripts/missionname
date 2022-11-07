@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 GSH_ROOT=$(cd "$(dirname "$0")/.." && pwd -P)
 GSH_MISSIONS=$GSH_ROOT/missions

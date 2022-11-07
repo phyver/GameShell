@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # NOTE: --literal doesn't exist in freebsd
 #       --color doesn't exist in macos, it is replaced by -G

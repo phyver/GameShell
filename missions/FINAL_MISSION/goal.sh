@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 export password=$(gettext "qwerty")
 checksum "$password" > "$GSH_CONFIG/admin_hash"

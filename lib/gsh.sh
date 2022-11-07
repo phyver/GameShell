@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # warning about "echo $(cmd)", used many times with echo "$(gettext ...)"
 # shellcheck disable=SC2005

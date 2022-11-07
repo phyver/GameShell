@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 printf "%s " "$(gettext "What's the combination to open the King's safe?")"
 read -r key

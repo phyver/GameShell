@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 chmod a-rw "$GSH_ROOT"
 chmod a-rw "$GSH_MISSIONS"

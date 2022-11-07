@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 export HISTFILE="$GSH_CONFIG/history"
 export HISTSIZE=50000

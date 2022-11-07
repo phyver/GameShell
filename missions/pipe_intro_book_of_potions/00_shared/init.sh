@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_init() (
   if ! command -v install_potion_book.sh >/dev/null

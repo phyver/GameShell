@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ###
 # THIS FILE SHOULD BE SOURCED TO DEFINE THE mission_source FUNCTION.

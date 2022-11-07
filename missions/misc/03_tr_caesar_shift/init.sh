@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # mission originaly created by Tiemen Duvillard
 

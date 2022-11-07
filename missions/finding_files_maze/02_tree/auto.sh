@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 (
   cd "$(eval_gettext '$GSH_HOME/Garden/Maze')"

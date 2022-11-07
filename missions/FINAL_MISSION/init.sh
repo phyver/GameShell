@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 if [ "$GSH_MODE" = DEBUG ]
 then

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 n=1
 while read -r mission_dir

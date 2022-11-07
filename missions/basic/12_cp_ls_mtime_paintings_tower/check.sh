@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
     filename="$(head -n1 "$GSH_TMP/painting")"
