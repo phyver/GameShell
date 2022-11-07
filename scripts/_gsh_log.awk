@@ -1,4 +1,4 @@
-#!/usr/bin/awk -f
+#!/usr/bin/env -S awk -f
 
 function human_time(seconds) {
   if (seconds >= 24*3600) {

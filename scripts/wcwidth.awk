@@ -1,4 +1,4 @@
-#!/usr/bin/awk -f
+#!/usr/bin/env -S awk -f
 
 # This AWK library provides 4 functions for working with UTF-8 strings:
 #

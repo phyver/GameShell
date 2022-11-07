@@ -1,4 +1,4 @@
-#!/usr/bin/awk -f
+#!/usr/bin/env -S awk -f
 
 function _(s) {
     sprintf(". gsh_gettext.sh; gettext '%s'", s) | getline msg;
