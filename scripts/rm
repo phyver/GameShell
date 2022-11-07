@@ -31,5 +31,5 @@ then
   done
 fi
 
-/bin/rm "$@"
+PATH="${PATH_NO_GSH}" rm "$@"
 
