@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 mkdir -p "$(eval_gettext '$GSH_HOME/Garden/Maze')"
 mkdir -p "$(eval_gettext '$GSH_HOME/Garden/Flower_garden')"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 mission_source "$MISSION_DIR"/clean0.sh
 

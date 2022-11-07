@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 kill -9 $(cat "$GSH_TMP/spell-term.pids" 2>/dev/null) 2>/dev/null
 kill -9 $(cat "$GSH_TMP/spell.pids" 2>/dev/null) 2>/dev/null

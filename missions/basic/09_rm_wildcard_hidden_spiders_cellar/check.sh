@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
   CELLAR="$(eval_gettext "\$GSH_HOME/Castle/Cellar")"

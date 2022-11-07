@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 kill_imp_spell() (
   imp_proc="$(gettext "mischievous_imp" | cut -c1-15)"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
   nb_unpaid=$(cat "$GSH_TMP/nbUnpaid")

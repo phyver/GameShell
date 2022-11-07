@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # Receives coin number as first argument.
 _mission_check() (

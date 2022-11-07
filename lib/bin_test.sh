@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 ### test the various utilities in GSH_ROOT/scripts/ directory
 

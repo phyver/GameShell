@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # FIXME? I use bash' process substitution to avoid creating a subshell
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
   cave="$(eval_gettext '$GSH_HOME/Mountain/Cave')"

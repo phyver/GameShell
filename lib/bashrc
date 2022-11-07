@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export HISTFILE="$GSH_CONFIG/history"
 export HISTSIZE=50000

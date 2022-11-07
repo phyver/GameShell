@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 kill -9 "$(cat "$GSH_TMP/spell.pid")" 2>/dev/null
 my_ps | awk '/sleep|tail/ {print $1}' | xargs kill -9 2>/dev/null

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 safe="$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')/$(gettext "Safe")"
 

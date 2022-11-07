@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 unset LS_COLORS
 unset EDITOR

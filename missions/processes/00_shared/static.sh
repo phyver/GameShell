@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # for some unkwnown reason, `ps -o pid,ppid,comm` doesn't find any process
 # on the "macos-latest" image on github.

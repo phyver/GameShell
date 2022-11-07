@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check () (
   GREAT_HALL="$(eval_gettext '$GSH_HOME/Castle/Great_hall')"

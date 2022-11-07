@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
     maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"

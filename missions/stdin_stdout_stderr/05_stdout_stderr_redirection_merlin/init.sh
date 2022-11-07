@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_init() (
   mkdir -p "$(eval_gettext '$GSH_HOME/Castle/Observatory')"

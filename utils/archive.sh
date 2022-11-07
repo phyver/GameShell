@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 export GSH_ROOT=$(dirname "$0")/..
 . $GSH_ROOT/lib/profile.sh

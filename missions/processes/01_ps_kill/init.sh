@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _compile() (
   if command -v gcc >/dev/null

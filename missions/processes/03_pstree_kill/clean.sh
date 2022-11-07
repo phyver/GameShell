@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 my_ps | awk -v spell="$(gettext "spell")" '$0 ~ spell {print $1}' | xargs kill -9 2>/dev/null
 my_ps | awk -v imp="$(gettext "mischievous_imp")" '$0 ~ imp {print $1}' | xargs kill -9 2>/dev/null

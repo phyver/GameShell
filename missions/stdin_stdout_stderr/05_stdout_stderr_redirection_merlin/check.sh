@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
   secret=$(cat "$GSH_TMP/secret_key")

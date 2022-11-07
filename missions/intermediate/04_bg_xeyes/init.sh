@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 if [ -z "$DISPLAY" ]; then
   echo "$(eval_gettext "The variable DISPLAY is not defined.

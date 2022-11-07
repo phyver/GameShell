@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_check() (
   nb_spells=$(my_ps | grep -c "$(gettext "spell")" | tr -d ' ')

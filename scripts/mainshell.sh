@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # this file must be SOURCED, it will return 0 (true) if the current PID is the
 # same as $$, and 1 (false) otherwise

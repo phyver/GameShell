@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 case "$GSH_LAST_ACTION" in
   "check_true")

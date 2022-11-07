@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 maze="$(eval_gettext '$GSH_HOME/Garden/Maze')"
 # NOTE: POSIX sed doesn't support using another character than '/' in "s/.../.../"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 _mission_init() {
   if ! command -v generate_merchant_stall.sh >/dev/null

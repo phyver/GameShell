@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # warning about "echo $(cmd)", used many times with echo "$(gettext ...)"
 # shellcheck disable=SC2005
@@ -539,7 +539,7 @@ then
   # NOTE, the above works in bash, but when running the following script with
   # GSH_SHELL=zsh, it fails with "zsh: suspended (tty output)"
   # ======== script =======
-  # #!/bin/sh
+  # #!/usr/bin/env sh
   # ./gameshell.sh -qc "gsh exit"; ./gameshell.sh -qc "gsh exit"
   # =======================
   # FIX: don't start the shell in interactive mode, and source the rcfile

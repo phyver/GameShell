@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # need to be careful, as there are so many files in the Stall that
 # rm Stall/* may not work.
