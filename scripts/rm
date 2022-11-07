@@ -31,5 +31,5 @@ then
   done
 fi
 
-/bin/rm "$@"
+PATH="${ORIGINAL_PATH}" rm "$@"
 

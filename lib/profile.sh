@@ -24,6 +24,11 @@ export GSH_SBIN="$GSH_ROOT/.sbin"
 export TEXTDOMAINDIR="$GSH_ROOT/locale"
 export TEXTDOMAIN="gsh"
 
+# keep a copy of the PATH before GSH's addition of GSH_ROOT
+# this is useful when a "real" command (e.g., rm) should be called instead of a GSH wrapper
+# a {:-} syntax is used so that ORIGINAL_PATH is not modified if this file is sourced several times
+export ORIGINAL_PATH="${ORIGINAL_PATH:-${PATH}}"
+
 # putting $GSH_ROOT/bin first makes sure the local scripts are prefered over
 # system commands (realpath, seq, etc.). This is useful for testing, but
 # probably shouldn't be done for "stable" releases.
