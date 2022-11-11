@@ -13,7 +13,7 @@ Motifs shell
   caractères (y compris la chaine vide).
 
 ?
-  Le caractère "?" est un joker pour n'importe caractère.
+  Le caractère "?" est un joker pour n'importe quel caractère.
 
 On peut utiliser les jokers pour dénoter une liste de fichiers / 
 répertoires du répertoire courant.
