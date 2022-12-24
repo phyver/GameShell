@@ -21,8 +21,6 @@ ne doivent pas être affichés.
 Commandes utiles
 ================
 
-On peut par contre rediriger les deux affichages indépendamment.
-
 grep CHAINE FICHIER1 ... FICHIERn
   Recherche une chaine dans les fichiers et affiche les lignes 
   correspondantes.
@@ -50,5 +48,6 @@ Explications
 
 Chaque commande peut écrire sur l'écran de deux manières :
   - affichage du résultat ("stdout")
-  - affichage des message d'erreur ("stderr")
+  - affichage des messages d'erreur ("stderr")
 On ne peut pas différencier ces affichages.
+On peut par contre rediriger les deux affichages indépendamment.
