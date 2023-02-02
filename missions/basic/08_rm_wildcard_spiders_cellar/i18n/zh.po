@@ -1,0 +1,37 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Castle/Cellar"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+#, sh-format
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "Dummy mission '$DUMMY_MISSION' 被 mission $MISSION_NB ($MISSION_NAME)需要！"
+
+#, sh-format
+msgid   "Some bats have been modified!"
+msgstr  "一些蝙蝠被修改了!"
+
+#, sh-format
+msgid   "There still are some spiders ($nb_spiders) in the cellar!"
+msgstr  "还有 ($nb_spiders)只蜘蛛在地窖呢!"
+
+msgid   "bat"
+msgstr  "bat"
+
+msgid   "spider"
+msgstr  "spider"

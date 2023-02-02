@@ -1,0 +1,28 @@
+任务目标
+============
+
+回到开始的位置，然后用两条指令去往王座室(throne room)
+
+提示
+------
+
+你可以随意尝试命令，没有数量限制, 但是为了check任务你需要满足以下条件:
+  - 倒数第二条指令要回到开始位置
+  - 最后一条指令要直接去往王座室(throne room)
+
+
+秘籍
+===============
+
+cd
+  回到开始位置
+
+cd LOCATION1/LOCATION2/LOCATION3
+  在一条指令当中移动多次
+
+
+提示
+------
+命令当中的大写字母(lOCATION 位置)是元变量:你需要将其替换为合适的值。
+UPPERCASE words appearing in commands are meta-variables: you need 
+to replace them by appropriate (string) values.

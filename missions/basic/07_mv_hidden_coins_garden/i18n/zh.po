@@ -1,0 +1,56 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Forest/Hut/Chest"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden"
+msgstr  "$GSH_HOME/Garden"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+#, sh-format
+msgid   "The coin '$coin_name...' has a wrong file name..."
+msgstr  "硬币'$coin_name...' 的名字不对啊..."
+
+#, sh-format
+msgid   "The coin '$coin_name...' has been tampered with..."
+msgstr  "硬币 '$coin_name...' 被篡改了(私自造币是吧！)..."
+
+#, sh-format
+msgid   "The coin '$coin_name...' is still in the garden!"
+msgstr  "硬币 '$coin_name...' 还在花园里啊!"
+
+#, sh-format
+msgid   "There are several '$coin_name...' in the garden!"
+msgstr  "还有好多 '$coin_name...' 在花园呢!"
+
+#, sh-format
+msgid   "There are several '$coin_name...' in your chest!"
+msgstr  "你的箱子里有这些币啊！ '$coin_name...'"
+
+#, sh-format
+msgid   "There is no '$coin_name...' in your chest!"
+msgstr  "你的箱子里还没有 '$coin_name...' 呢!"
+
+msgid   "chest"
+msgstr  "chest"
+
+msgid   "coin"
+msgstr  "coin"
+
+msgid   "hut"
+msgstr  "hut"

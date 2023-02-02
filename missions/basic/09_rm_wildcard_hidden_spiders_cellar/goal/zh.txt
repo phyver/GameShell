@@ -1,0 +1,25 @@
+任务目标
+============
+
+那些蜘蛛变聪明了，它们找了个法子藏起来。
+清除那些地窖里藏起来的蜘蛛，别动蝙蝠！
+(蜘蛛=spiders 地窖=cellar 蝙蝠=bat)
+
+Shell patterns
+==============
+
+*
+  "*" 代表任何字符序列，也包括空字符序列。
+  (例如./* 代表./下的"任何"文件或目录)
+  The "*" character stands in for any sequence of characters 
+  (including an empty sequence).
+
+?
+  "?" 单独一个"任何"字符.
+  The "?" character stands in for any single character.
+
+
+提示
+------
+
+  "*" and "?"这两个通配符都无法直接匹配隐藏的文件，你需要在它们前面加上一个额外的"."来匹配！

@@ -1,0 +1,44 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest"
+msgstr  "$GSH_HOME/Forest"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+msgid   "Chest"
+msgstr  "Chest"
+
+msgid   "Hut"
+msgstr  "Hut"
+
+#, sh-format
+msgid   "The $dir_name directory does not exist!"
+msgstr  "目录 $dir_name 还不存在!"
+
+msgid   "You are back at the initial directory."
+msgstr  "你回到了初始目录"
+
+msgid   "You built too many chests in your hut!"
+msgstr  "你在你的小木屋里面弄了太多的箱子！！"
+
+msgid   "You built too many huts in the forest!"
+msgstr  "你在森林里违建了太多的小木屋！！"
+
+msgid   "You did not build a chest in your hut!"
+msgstr  "你还没在你的小木屋里面放箱子！！"
+
+msgid   "You did not build a hut in the forest!"
+msgstr  "你还没在森林里面建小木屋！！"

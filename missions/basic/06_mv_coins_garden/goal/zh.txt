@@ -1,0 +1,17 @@
+任务目标
+============
+
+收集城堡Castle前的公园Garden中的所有的硬币coins。
+把它们放到你在森林forest当中的小木屋hut的箱子chest中。
+
+
+秘籍
+===============
+
+mv FILE1 FILE2 ... FILEn DIRECTORY
+  把文件FILE1-FILEn 移动到目录 DIRECTORY
+  提示: ``mv`` 是 "move"的缩写
+
+~
+  "~" 符号是初始目录的缩写。
+  示例：无论您在哪里，`~/Tavern`表示初始目录当中的"Tavern"目录（或文件）。
