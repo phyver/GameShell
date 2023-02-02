@@ -1,0 +1,19 @@
+欢迎来到GameShell
+
+当你使用并管理类Unix系统时 (e.g., Linux, BSD or macOS)\n 
+经常需要用到一个叫做 "shell"的命令行程序来操作。
+
+
+在这个游戏当中，你将会在一段"旅程"中完成多种多样的"任务"，
+它们将教会你以下标准技能:
+  - 创建目录 creating directories,
+  - 创建、查看、编辑文件 creating, viewing and editing files,
+  - 检索满足某些标准的文件 searching for files satisfying certain criteria,
+  - 运行和中断程序 running and interrupting programs,
+  - 等等
+
+在你的旅程中，你需要"访问地点","与人互动","找到各种物品"。
+*但是*，请记住那些是"标准目录","程序","文件(通常具有随机内容)" 
+*举个例子*:
+  - "建造一个小屋Hut" 的意思是创建一个名为"Hut"的目录
+  - "把硬币coin放到你的箱子chest中" 意味着把名为"coin"的文件移动到你的"chest"目录当中

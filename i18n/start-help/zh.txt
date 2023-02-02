@@ -1,0 +1,39 @@
+options:
+  -h      显示当前信息 
+  -V      显示版本
+
+  -P      passport mode: ask for name / emails of player
+  -A      anonymous mode
+  -d      debug mode
+  -D      verbose debug mode
+
+  -C      继续当前游戏
+  -R      重置游戏 
+  -F      不检查新的存档，强制使用当前存档
+          
+
+  -G      不使用gettxt翻译 (everything will be in English)
+  -L ...  设置LANGUAGE变量 (例如： -L fr:it:en)
+          在非GNU系统上，设置变量LC_MESSAGES为一个有效区域设置
+          
+
+  --simple-savefiles
+          每一个存档将会被加上 "-save" 后缀,
+          每一个存档都会覆盖上一个
+  --index-savefiles
+          对存档进行编号，以便保留所有存档
+  --overwrite-savefiles
+          存档覆盖初始GameShell文件
+         （您可以使用选项-R从头开始新游戏）
+
+  -B      使用bash 
+  -Z      使用zsh 
+
+  -q      quiet: 不显示info信息 
+  -n      black and white: 不使用ANSI转码以获取颜色 
+  -c ...  give that command to GameShell (for testing)
+
+  -U      下载最新版 GameShell (需要网络权限) 
+  -X      只解压tgz存档 
+  -K      退出时不删除GameShell临时目录 
+

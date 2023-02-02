@@ -1,0 +1,295 @@
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-HELP/zh.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-help/zh.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-init-msg-short/zh.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-init-msg/zh.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-welcome/zh.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/start-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/start-help/zh.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+#, sh-format
+msgid   "$nb_failed_tests failures out of $nb_tests tests"
+msgstr  "$nb_tests 测试当中的 $nb_failed_tests 测试失败"
+
+#, sh-format
+msgid   "$nb_tests successful tests"
+msgstr  "$nb_tests 测试成功"
+
+#, awk-format
+msgid   "%d authentification failure"
+msgid_plural    "%d authentification failures"
+msgstr[0]       "%d 鉴权失败"
+msgstr[1]       "%d 鉴权失败"
+
+#, awk-format
+msgid   "%d mission cancelled for missing dependencies:"
+msgid_plural    "%d missions cancelled for missing dependencies:"
+msgstr[0]       "%d个任务需要以下缺失的依赖项:"
+msgstr[1]       "%d个任务需要以下缺失的依赖项:"
+
+#, awk-format
+msgid   "%d mission passed using the auto.sh script:"
+msgid_plural    "%d missions passed using the auto.sh script:"
+msgstr[0]       "%d个任务使用auto.sh通过"
+msgstr[1]       "%d个任务使用auto.sh通过"
+
+#, awk-format
+msgid   "%d mission passed:"
+msgid_plural    "%d missions passed:"
+msgstr[0]       "%d个任务通过:"
+msgstr[1]       "%d个任务通过:"
+
+#, awk-format
+msgid   "%d mission skipped:"
+msgid_plural    "%d missions skipped:"
+msgstr[0]       "%d 个任务被跳过:"
+msgstr[1]       "%d 个任务被跳过:"
+
+msgid   "AUTOMATICALLY GENERATED ON STARTUP -- DO NOT MODIFY"
+msgstr  "AUTOMATICALLY GENERATED ON STARTUP -- DO NOT MODIFY"
+
+#, sh-format
+msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
+msgstr  "厉害！ 任务 $MISSION_NB 已经成功地完成啦!"
+
+#, sh-format
+msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
+msgstr  "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
+
+msgid   "Error: a least one base function is not working properly.\n"
+        "Aborting!"
+msgstr  "Error: 至少一个base function 没有正常工作\n"
+        "Aborting!"
+
+#, sh-format
+msgid   "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
+msgstr  "Error: 无法得到任务号: $MISSION_NB (从 $fn_name)"
+
+#, sh-format
+msgid   "Error: invalid option: '-$OPTARG'"
+msgstr  "Error: 错误的 option: '-$OPTARG'"
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't exist!"
+msgstr  "Error: 任务 $MISSION_NB 不存在!"
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't have a test script."
+msgstr  "Error: 任务 $MISSION_NB 没有 test script."
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't have an auto script."
+msgstr  "Error: 任务 $MISSION_NB 没有 auto script."
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
+msgstr  "Error: 任务 $MISSION_NB 被取消, 因为一些依赖没有安装"
+
+msgid   "Error: no mission was found!\n"
+        "Aborting."
+msgstr  "Error: 没有找到任何任务!\n"
+        "Aborting."
+
+msgid   "Error: the 'goto' command requires a mission number as argument."
+msgstr  "Error: 'goto' 命令需要任务号作为参数"
+
+msgid   "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!"
+msgstr  "Error: 命令 'gsh hardreset' 不可以在subshell当中运行"
+
+msgid   "Error: the command 'gsh reset' shouldn't be run inside a subshell!"
+msgstr  "Error: 命令 'gsh reset' 不可以在subshell当中运行"
+
+msgid   "Error: this option is only available from an executable archive!"
+msgstr  "Error: 这个option仅在可执行存档中可用!"
+
+#, sh-format
+msgid   "Error: unknown gsh command '$cmd'.\n"
+        "Use one of the following commands:"
+msgstr  ""
+
+#, sh-format
+msgid   "Error: unknown shell '$SHELL'.\n"
+        "Run GameShell with either bash or zsh."
+msgstr  "Error: 未知的 shell '$SHELL'.\n"
+        "使用 bash 或 zsh来运行GameShell"
+
+msgid   "Error: wrong password."
+msgstr  "Error: 密码错误."
+
+msgid   "Error: you are not allowed to run this command."
+msgstr  "Error: 你不被允许执行此指令."
+
+msgid   "Error: you shouldn't run Gameshell as root!"
+msgstr  "Error: 你不可以使用root运行Gameshell!"
+
+msgid   "Is this information correct? [Y/n]"
+msgstr  "这些信息正确吗？[Y/n]"
+
+#, sh-format
+msgid   "Mission $MISSION_NB has been cancelled."
+msgstr  "任务 $MISSION_NB 被取消"
+
+msgid   "N"
+msgstr  "N"
+
+msgid   "Player's email:"
+msgstr  "玩家邮箱:"
+
+msgid   "Player's name:"
+msgstr  "玩家姓名:"
+
+msgid   "Press Enter to continue."
+msgstr  "摁下回车(Enter)继续"
+
+msgid   "START OF COMMANDS HISTORY"
+msgstr  "START OF COMMANDS HISTORY"
+
+#, sh-format
+msgid   "Sorry, mission $MISSION_NB hasn't been completed."
+msgstr  "哎呦,任务 $MISSION_NB 没有被完成哦"
+
+#, sh-format
+msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
+        "Do you want to remove it and start a new game? [y/N]"
+msgstr  "目录 $GSH_CONFIG 中有先前游戏的元数据\n"
+        "你要删除它并开始一个新游戏吗 [y/N]"
+
+msgid   "The latest version of Gameshell is available at"
+msgstr  "最新的GameShell版本可在以下找到"
+
+msgid   "There are stopped jobs in your session.\n"
+        "Those processes will be terminated.\n"
+        "You can get the list of those jobs with\n"
+        "    $ jobs\n"
+        "Do you still want to quit? [y/n]"
+msgstr  "会话当中有停止的作业\n"
+        "那些进程将会被终止\n"
+        "你可以通过以下指令来查看作业\n"
+        "    $ jobs\n"
+        "仍然要退出吗 [y/n]"
+
+msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
+        "You should use the command\n"
+        "  $ gsh reset"
+msgstr  "Warning:  'treasure.sh' 源自一个subshell\n"
+        "你需要使用以下指令\n"
+        "  $ gsh reset"
+
+msgid   "Warning: this mission was initialized in a subshell.\n"
+        "Run the command\n"
+        "    $ gsh reset\n"
+        "to make sure the mission is initialized properly."
+msgstr  "Warning: 这个任务在一个subshell当中被初始化\n"
+        "运行以下指令确保这个任务正确初始化\n"
+        "    $ gsh reset\n"
+       
+msgid   "While you are waiting, a bat flies by..."
+msgstr  "小蝙蝠飞飞飞~~~"
+
+msgid   "While you are waiting, a caterpillar crawls by..."
+msgstr  "毛毛虫爬爬爬~~~"
+
+msgid   "While you are waiting, a centipede crawls by..."
+msgstr  "小蜈蚣爬过去~~~"
+
+msgid   "While you are waiting, a duck swims by..."
+msgstr  "小鸭子游游游~~~"
+
+msgid   "While you are waiting, a fish swims by..."
+msgstr  "小鱼儿游游游~~~"
+
+msgid   "While you are waiting, a large fish swims by..."
+msgstr  "大鱼儿游游游~~~"
+
+msgid   "While you are waiting, a snail goes by..."
+msgstr  "小蜗牛爬爬爬~~~"
+
+msgid   "While you are waiting, a snake slithers by..."
+msgstr  "小蛇蛇从你身边滑过~"
+
+msgid   "While you are waiting, a spider crawls by..."
+msgstr  "一只蜘蛛在爬~"
+
+msgid   "While you are waiting, an ant crawls by..."
+msgstr  "一只蚂蚁在爬~别踩到它"
+
+msgid   "While you are waiting, you see a fish swimming in circles..."
+msgstr  "一只鱼在圈圈里游~"
+
+msgid   "Y"
+msgstr  "Y"
+
+msgid   "You left GameShell's directory structure. Use\n"
+        "    $ cd\n"
+        "to go back to the GameShell's starting directory."
+msgstr  "你已经离开 GameShell 的目录结构！！ 使用\n"
+        "    $ cd\n"
+        "回到GameShell的开始目录！！"
+
+msgid   "[Press space to continue, q to quit\\.]"
+msgstr  "[摁空格继续 摁q退出||Press space to continue, q to quit\\.]"
+
+msgid   "cancelled"
+msgstr  "取消"
+
+msgid   "completed"
+msgstr  "完成"
+
+msgid   "days"
+msgstr  "日"
+
+msgid   "failed"
+msgstr  "失败"
+
+#, awk-format
+msgid   "game time: %s in %d session"
+msgid_plural    "game time: %s in %d sessions"
+msgstr[0]       "游戏时间: %s in %d session"
+msgstr[1]       "游戏时间: %s in %d sessions"
+
+msgid   "n"
+msgstr  "n"
+
+msgid   "password:"
+msgstr  "密码:"
+
+msgid   "skipped"
+msgstr  "跳过"
+
+#, sh-format
+msgid   "test $nb_tests failed"
+msgstr  "测试 $nb_tests 失败"
+
+#, awk-format
+msgid   "total time: %s"
+msgstr  "总时间: %s"
+
+msgid   "y"
+msgstr  "y"

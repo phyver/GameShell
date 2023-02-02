@@ -1,0 +1,112 @@
+GameShell 的指令
+==============================
+
+gsh assert condition [msg]
+  检查状态是否正确
+  不正确则给出错误信息
+  check if the condition is true
+  if not, display an error message
+
+gsh assert check true/false [msg]
+  检查当前任务目标是否完成
+  如果结果与预期结果不一致则给出错误信息
+  check the current mission's goal has been achieved
+  if the result doesn't coincide with the expected result, display 
+  an error message
+
+gsh auto                              (ADMIN)
+  获取当前任务自动脚本(如果存在的话)
+  source the current mission's automatic script, if it exists
+
+gsh check
+  检查当前任务目标是否完成
+  check whether the current mission's goal has been achieved or 
+  not 
+
+gsh env
+ 显示内部环境变量
+ display internal environment variables
+
+gsh exit
+  退出并且保存当前游戏
+  quit (and save) the current game
+
+gsh goal [N]
+  显示当前任务目标
+  如果给出[N]，则显示N号任务目标
+  show the current mission's goal
+  if N is given, show the goal for mission N
+
+gsh goto N                            (ADMIN)
+  直接前往任务N
+  (如果任务N是先前的任务，则不需要密码)
+  directly go to mission N
+  (no password necessary if N is a previous mission)
+
+gsh hardreset
+  通过重启shell重置当前任务
+  reset the current mission by restarting the shell
+
+gsh HELP
+  这条信息
+  this message
+
+gsh help
+  显示短的帮助信息
+  shorter help message
+
+gsh index
+  显示任务清单，包括它们的状态
+  show list of missions, with their status
+
+gsh log [-v]
+  显示gsh命令的日志文件
+  show the log file of gsh commands
+
+gsh pcm
+  打印当前任务号
+  print the current mission number
+
+gsh protect
+gsh unprotect
+  添加/移除Gameshell目录的保护
+  add / remove protection on GameShell directories
+
+gsh reset
+  重置当前任务
+  reset the current mission
+
+gsh resetstatic
+  重置世界的静态部分
+  regenerate all the static parts of the world
+
+gsh save FILENAME
+  保存当前世界到"FILENAME"文件
+  save the current game to file
+
+gsh skip                              (ADMIN)
+  跳过当前任务
+  (如果任务已经完成过至少一次，则不需要密码)
+  give up on the current mission and go to the next one
+  (no password necessary if the mission was completed at least 
+  once)
+
+gsh stat
+  显示已经完成任务的简略信息
+  display simple statistics about completed missions
+
+gsh systemconfig
+  显示系统设置
+  display the system configuration
+
+gsh test
+  运行当前任务的 test.sh ,如果它存在的话
+  run the current mission's test script, if it exists
+
+gsh version
+  显示 Gameshell 的版本
+  show Gameshell's version
+
+gsh welcome
+  显示 欢迎 信息
+  show the welcome message

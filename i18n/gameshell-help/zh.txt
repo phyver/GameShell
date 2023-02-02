@@ -1,0 +1,20 @@
+GameShell 的指令
+==============================
+
+gsh check
+  检查当前任务目标是否完成
+
+gsh exit   /   Control-d
+  退出 GameShell
+  (你可以通过加上"-C"标记启动Gameshell来回到当前任务)
+  (you can start from the current mission by running 
+  GameShell with the "-C" flag)
+
+gsh goal
+  显示当前任务的目标
+
+gsh help
+  显示简短帮助信息
+
+gsh reset
+  重置当前任务
