@@ -1,0 +1,29 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+#, sh-format
+msgid   "Some spells ($nb_spells) are still running!"
+msgstr  "有一些咒语 ($nb_spells) 还在运行!"
+
+msgid   "You haven't tried using the standard TERM signal on the spell."
+msgstr  "你还没有尝试用 TERM 信号去处理煤块"
+
+msgid   "You'll need to do better than that to kill my spell!"
+msgstr  "想干掉我的咒语?再努把力吧!"
+
+msgid   "spell"
+msgstr  "spell"

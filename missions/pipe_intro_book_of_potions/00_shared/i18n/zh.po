@@ -1,0 +1,35 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Mountain/Cave"
+msgstr  "$GSH_HOME/Mountain/Cave"
+
+#, sh-format
+msgid   "$MISSION_DIR/book_of_potions/en.txt"
+msgstr  "$MISSION_DIR/book_of_potions/zh.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/torn_page5/en.txt"
+msgstr  "$MISSION_DIR/torn_page5/zh.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/torn_page6/en.txt"
+msgstr  "$MISSION_DIR/torn_page6/zh.txt"
+
+msgid   "Book_of_potions"
+msgstr  "Book_of_potions_药剂书"
+
+#, sh-format
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+
+msgid   "cauldron"
+msgstr  "cauldron_炼药锅"
+
+msgid   "page"
+msgstr  "page"
+
+msgid   "table_of_contents"
+msgstr  "table_of_contents_目录"

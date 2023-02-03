@@ -1,0 +1,59 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Castle/Cellar"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+msgid   "Are you sure you removed all the imp's spells?"
+msgstr  "你真的清理干净煤块了吗?"
+
+msgid   "Did you kill the fairy?"
+msgstr  "你 是 不 是 杀 了 我 的 小 仙 女?"
+
+msgid   "Did you kill the imp?"
+msgstr  "你是不是杀了小鬼?"
+
+msgid   "Did you melt some of the snowflakes?"
+msgstr  "你是不是搞融了几片雪花?"
+
+msgid   "Did you remove some of the fairy's spells?"
+msgstr  "Did you remove some of the fairy's spells?"
+
+#, sh-format
+msgid   "The command 'pstree' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+msgstr  " 'pstree' 命令被 $MISSION_NAME 需要\n"
+        "(Debian / Ubuntu: install package 'psmisc')"
+
+msgid   "There still is some coal in the cellar!"
+msgstr  "地窖里还有煤块!"
+
+msgid   "coal"
+msgstr  "coal"
+
+msgid   "mischievous_imp"
+msgstr  "mischievous_imp"
+
+msgid   "nice_fairy"
+msgstr  "nice_fairy"
+
+msgid   "snowflake"
+msgstr  "snowflake"
+
+msgid   "spell"
+msgstr  "spell"
