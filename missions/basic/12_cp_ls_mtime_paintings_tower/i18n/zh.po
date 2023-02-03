@@ -1,0 +1,44 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_tower/First_floor"
+msgstr  "$GSH_HOME/Castle/Main_tower/First_floor"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Forest/Hut/Chest"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+msgid   "Problem with generation of random filename!"
+msgstr  "生成随机文件名时出现问题！"
+
+msgid   "The painting in your chest is invalid..."
+msgstr  "你箱子里的画作是无效的！"
+
+msgid   "The painting is not in the tower anymore..."
+msgstr  "塔楼里的画呢..."
+
+msgid   "The painting is not in your chest..."
+msgstr  "画不在你的箱子里啊"
+
+msgid   "There are too many paintings in your chest..."
+msgstr  "你箱子里怎么这么多画..."
+
+msgid   "There is no painting in your chest..."
+msgstr  "你箱子里没画啊..."
+
+msgid   "painting"
+msgstr  "painting"

@@ -1,0 +1,55 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Forest/Hut/Chest"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/Maze"
+msgstr  "$GSH_HOME/Garden/Maze"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+#, sh-format
+msgid   "Coin '$coin_name' in your chest is invalid!"
+msgstr  "你箱子中的 '$coin_name' 硬币是非法的!"
+
+#, sh-format
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+
+msgid   "GolD_CoiN"
+msgstr  "GolD_CoiN"
+
+msgid   "Some of the coins are not in your chest!"
+msgstr  "有些硬币不在你的箱子里(是不是被投掉了 :) )!"
+
+#, sh-format
+msgid   "The command 'man' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'man-db')"
+msgstr  "命令 'man' 被任务 $MISSION_NAME 需要\n"
+        "(Debian / Ubuntu: install package 'man-db')"
+
+msgid   "There are too many gold coins in the maze!"
+msgstr  "迷宫当中剩了太多金币啊!"
+
+msgid   "There still are some gold coins in the maze!"
+msgstr  "迷宫当中还有金币!"
+
+msgid   "coin"
+msgstr  "coin"
+
+msgid   "gold_coin"
+msgstr  "gold_coin"

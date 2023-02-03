@@ -1,0 +1,22 @@
+任务目标
+============
+
+城堡大厅里的挂毯美丽滴不行，把它们每一个的复制品放到你的箱子中。
+(城堡=castle 大厅=great hall 挂毯=tapestries 箱子=chest)
+
+秘籍
+===============
+
+cp FILE1 FILE2 ... FILEn DIRNAME
+  复制文件FILE1-FILEn到目录DIRNAME当中
+  提示: ``cp`` 是 "copy"的缩写
+
+
+Shell patterns
+==============
+
+*
+  "*"通配符代表任何字符序列，包括空序列。
+
+?
+  "?"通配符代表任何单个字符。

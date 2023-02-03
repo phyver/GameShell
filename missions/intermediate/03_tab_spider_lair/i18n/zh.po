@@ -1,0 +1,48 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Castle/Cellar"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+#, sh-format
+msgid   "Good, but you took $nb_seconds seconds. You needed to take less than $MAX_DELAY seconds..."
+msgstr  "干的好，但是你用了 $nb_seconds 秒. 你的用时需要小于 $MAX_DELAY 秒..."
+
+msgid   "Lair_of_the_spider_queen"
+msgstr  "Lair_of_the_spider_queen_蜘蛛女王的巢穴"
+
+#, sh-format
+msgid   "Perfect, it took you only $nb_seconds seconds to complete this mission!"
+msgstr  "干的漂亮，只用了 $nb_seconds 秒完成任务"
+
+msgid   "The queen spider is still in its lair..."
+msgstr  "蜘蛛女王还在巢穴里..."
+
+msgid   "Where is the baby bat?"
+msgstr  "蝙蝠宝宝去哪了?"
+
+msgid   "You are back in the cellar."
+msgstr  "你现在回到了地窖."
+
+msgid   "You are not in the queen spider lair!"
+msgstr  "你不在蜘蛛女王巢穴!"
+
+msgid   "baby_bat"
+msgstr  "baby_bat"
+
+msgid   "spider_queen"
+msgstr  "spider_queen"

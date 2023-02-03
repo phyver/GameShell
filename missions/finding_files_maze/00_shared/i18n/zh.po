@@ -1,0 +1,27 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/Flower_garden"
+msgstr  "$GSH_HOME/Garden/Flower_garden"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/Maze"
+msgstr  "$GSH_HOME/Garden/Maze"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/Shed"
+msgstr  "$GSH_HOME/Garden/Shed"
+
+msgid   "You are back at the entrance of the maze..."
+msgstr  "你回到了迷宫的的入口..."
+
+msgid   "bucket"
+msgstr  "bucket_水桶"
+
+msgid   "flowers"
+msgstr  "flowers_花花"
+
+msgid   "wheelbarrow"
+msgstr  "wheelbarrow_手推车"

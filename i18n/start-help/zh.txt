@@ -2,10 +2,10 @@ options:
   -h      显示当前信息 
   -V      显示版本
 
-  -P      passport mode: ask for name / emails of player
-  -A      anonymous mode
-  -d      debug mode
-  -D      verbose debug mode
+  -P      护照模式: 需要输入玩家名字或邮箱
+  -A      匿名模式
+  -d      debug模式
+  -D      verbose debug 模式
 
   -C      继续当前游戏
   -R      重置游戏 
@@ -13,7 +13,7 @@ options:
           
 
   -G      不使用gettxt翻译 (everything will be in English)
-  -L ...  设置LANGUAGE变量 (例如： -L fr:it:en)
+  -L ...  设置LANGUAGE变量 (例如： -L zh:fr:it:en)
           在非GNU系统上，设置变量LC_MESSAGES为一个有效区域设置
           
 

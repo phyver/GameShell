@@ -1,0 +1,36 @@
+任务目标
+============
+
+找到花园中隐藏迷宫中的金币，把它们放到你的箱子里。
+
+
+
+秘籍
+===============
+
+find CONDITION
+  从你当前的工作目录开始，找到满足CONDITION(条件)的文件
+
+  有很多的CONDITION可以作为条件. 它们可以是文件名，大小，修改日期等等
+  举个梨子: 
+    -name "PATTERN"
+    -iname "PATTERN"
+  都是在查找文件名(-iname是不严格匹配大小写)
+
+man COMMAND
+  展示COMMAND(指令)的用户手册
+
+  重要的快捷键:
+    q           quit 退出
+    Space       scroll down one page 往下滚动页面
+    / STRING    search for the string 搜索STRING(字符串)
+    n           find the next occurrence of the search string 
+                查找下一个匹配的STRING
+                
+
+提示
+------
+
+以上关于 ``find`` 命令的简介只是九牛一毛.
+你可以在它的手册当中找到详细用法
+(例如你可以在手册中搜索"-name" 看看它怎么用)

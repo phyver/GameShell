@@ -6,10 +6,10 @@
 
 在这个游戏当中，你将会在一段"旅程"中完成多种多样的"任务"，
 它们将教会你以下标准技能:
-  - 创建目录 creating directories,
-  - 创建、查看、编辑文件 creating, viewing and editing files,
-  - 检索满足某些标准的文件 searching for files satisfying certain criteria,
-  - 运行和中断程序 running and interrupting programs,
+  - 创建目录,
+  - 创建、查看、编辑文件,
+  - 检索满足某些标准的文件,
+  - 运行和中断程序,
   - 等等
 
 在你的旅程中，你需要"访问地点","与人互动","找到各种物品"。

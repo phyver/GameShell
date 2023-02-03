@@ -1,0 +1,35 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+msgid   "Error: can not get day of week with 'date' command."
+msgstr  "Error: 无法使用“date”命令获取星期几"
+
+msgid   "That's not even a valid answer!"
+msgstr  "这可不对啊!"
+
+#, sh-format
+msgid   "The command 'cal' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'bsdmainutils')"
+msgstr  "命令 'cal' 被任务 $MISSION_NAME需要!\n"
+        "(Debian / Ubuntu: install package 'bsdmainutils')"
+
+#, sh-format
+msgid   "What was the day of the week for the $MM-$DD-$YYYY?"
+msgstr  "请问 $MM-$DD-$YYYY 是星期几?"
+
+msgid   "Your answer:"
+msgstr  "你的答案:"

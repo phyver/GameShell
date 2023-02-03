@@ -1,0 +1,63 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
+msgstr  "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office/Drawer"
+msgstr  "$GSH_HOME/Castle/Main_building/Library/Merlin_s_office/Drawer"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/secret_recipe/en.txt"
+msgstr  "$MISSION_DIR/secret_recipe/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+msgid   "Merlin_s_chest"
+msgstr  "Merlin_s_chest"
+
+msgid   "That's not the magic word."
+msgstr  "这可不是那个神奇的词"
+
+msgid   "What's the key that will make Merlin's chest to appear?"
+msgstr  "让Merlin的宝箱出现的key是?"
+
+msgid   "bottle"
+msgstr  "bottle_水瓶"
+
+#, sh-format
+msgid   "here is my will:\n"
+        "you will get my chest, and everything it contains.\n"
+        "this chest is in the cellar, and the word to make\n"
+        "it re-appear is: $SECRET_KEY\n"
+        "merlin the enchanter"
+msgstr  "here is my will:\n"
+        "you will get my chest, and everything it contains.\n"
+        "this chest is in the cellar, and the word to make\n"
+        "it re-appear is: $SECRET_KEY\n"
+        "merlin the enchanter"
+
+msgid   "ink_and_scroll"
+msgstr  "墨水和书卷"
+
+msgid   "medal"
+msgstr  "奖牌"
+
+msgid   "secret_message"
+msgstr  "secret_message"
+
+msgid   "secret_recipe"
+msgstr  "secret_recipe_绝对机密"

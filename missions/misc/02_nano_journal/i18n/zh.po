@@ -3,10 +3,6 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
-msgid   "$GSH_HOME/Castle/Great_hall"
-msgstr  "$GSH_HOME/Castle/Great_hall"
-
-#, sh-format
 msgid   "$GSH_HOME/Forest/Hut/Chest"
 msgstr  "$GSH_HOME/Forest/Hut/Chest"
 
@@ -22,23 +18,19 @@ msgstr  "$MISSION_DIR/skip/zh.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
 
-msgid   "I only wanted the standards!"
-msgstr  "我只要standards!"
+#, sh-format
+msgid   "The command 'nano' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'nano')"
+msgstr  "命令 'nano' 被任务 $MISSION_NAME需要!\n"
+        "(Debian / Ubuntu: install package 'nano')"
 
-msgid   "I wanted all the standards!"
-msgstr  "我要所有的standards!"
+#, sh-format
+msgid   "The file '$journal_file' doesn't exist..."
+msgstr  "文件 '$journal_file' 不存在..."
 
-msgid   "You changed the contents of the great hall!"
-msgstr  "你改变了大厅的陈设(被发现啦)!"
+#, sh-format
+msgid   "The file '$journal_file' is empty..."
+msgstr  "文件 '$journal_file' 是空的..."
 
-msgid   "decorative_shield"
-msgstr  "decorative_shield_装饰性盾牌"
-
-msgid   "stag_head"
-msgstr  "stag_head_鹿头"
-
-msgid   "standard"
-msgstr  "standard"
-
-msgid   "suit_of_armour"
-msgstr  "suit_of_armour_铠甲"
+msgid   "journal"
+msgstr  "journal"

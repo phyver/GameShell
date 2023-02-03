@@ -14,22 +14,18 @@ msgstr  "$GSH_HOME/Forest/Hut/Chest"
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  "$MISSION_DIR/goal/zh.txt"
 
-# path for the text file containing the skip message
-msgid   "$MISSION_DIR/skip/en.txt"
-msgstr  "$MISSION_DIR/skip/zh.txt"
+#, sh-format
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "Dummy mission '$DUMMY_MISSION' 被 mission $MISSION_NB ($MISSION_NAME)需要"
 
-# path for the text file containing the treasure message
-msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+msgid   "I only wanted the tapestries!"
+msgstr  "我只想要挂毯啊！"
 
-msgid   "I only wanted the standards!"
-msgstr  "我只要standards!"
-
-msgid   "I wanted all the standards!"
-msgstr  "我要所有的standards!"
+msgid   "I wanted all the tapestries!"
+msgstr  "我想要所有挂毯啊！"
 
 msgid   "You changed the contents of the great hall!"
-msgstr  "你改变了大厅的陈设(被发现啦)!"
+msgstr  "你改变了大厅内的陈设！"
 
 msgid   "decorative_shield"
 msgstr  "decorative_shield_装饰性盾牌"
@@ -37,8 +33,8 @@ msgstr  "decorative_shield_装饰性盾牌"
 msgid   "stag_head"
 msgstr  "stag_head_鹿头"
 
-msgid   "standard"
-msgstr  "standard"
-
 msgid   "suit_of_armour"
 msgstr  "suit_of_armour_铠甲"
+
+msgid   "tapestry"
+msgstr  "tapestry_挂毯"

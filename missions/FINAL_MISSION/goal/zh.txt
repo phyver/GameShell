@@ -1,0 +1,16 @@
+
+恭喜!
+
+你完成了全部滴任务！
+
+现在可以退出GameShell或者使用``gsh go to [MISSION_NUMBER]``回味一些你印象深刻的任务~
+(使用``gsh index``试试~)
+
+``gsh HELP``将会提供一份GameShell的指令清单
+
+译者水平有限，游戏的翻译可能存在诸多问题，先说声抱歉啦!
+你可以 ``gsh exit`` 后使用 ``bash ./gameshell.sh -L en``
+游玩英语版本的游戏(原汁原味再来一遍！)
+
+注意: 现在管理员密码被设置为 '$password'
+
