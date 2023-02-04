@@ -1,6 +1,8 @@
 GameShell: a "game" to teach the Unix shell
 ===========================================
 
+[English](README.md) | [Français](README-fr.md) | [Italiano](README-it.md) | [中文](README-zh.md)
+
 ![Illustration inspired by the game](Images/illustration-small.png)
 
 Teaching first-year university students or high schoolers to use a Unix shell
