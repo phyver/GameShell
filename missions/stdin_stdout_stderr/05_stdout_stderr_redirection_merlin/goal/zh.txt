@@ -1,0 +1,31 @@
+任务目标
+============
+
+Merlin 喝高了，他现在正在天文台(observatory)踱步，不知道念叨着什么...
+
+你现在需要把它正哝咕着的话进行分析，找出他可能不小心念出来的密钥
+
+提示
+----
+
+Merlin好像...好像...说的话错误百出...
+为了完成这个任务，你必须使用文件重定向来给出密钥
+(gsh check < FILE)
+
+
+秘籍
+===============
+
+./FILE
+  执行一个可执行文件FILE
+  (你猜猜Merlin可不可以执行~)
+
+
+COMMAND  >  FILE
+  把命令COMMAND的标准输出重定向到文件FILE当中，文件将被覆写
+
+COMMAND  2>  FICHIER
+   把命令COMMAND的标准错误重定向到文件FILE当中，文件将被覆写
+
+COMMAND  <  FILE
+  把文件FILE的内容输出到命令COMMAND的标准输入当中(stdin)

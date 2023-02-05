@@ -1,0 +1,44 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Library"
+msgstr  "$GSH_HOME/Castle/Main_building/Library"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+msgid   "Greek_Latin_and_other_modern_languages"
+msgstr  "Greek_Latin_and_other_modern_languages"
+
+msgid   "How_to_cheat_for_exams"
+msgstr  "How_to_cheat_for_exams_考试秘籍"
+
+msgid   "Mathematics_101"
+msgstr  "Mathematics_101"
+
+msgid   "That's not even a number!"
+msgstr  "你算数能算出不是数的东西？"
+
+msgid   "The book 'Mathematics_101' contains all the anwsers.\n"
+        "Just copy all its lines to get perfect score."
+msgstr  " 'Mathematics_101' 是本次考试的试卷答案\n"
+        "把它的每一行复制到测试中，你会得到一个很好的成绩."
+
+#, sh-format
+msgid   "Too bad! The answer was $result..."
+msgstr  "戳啦！答案是 $result..."
+
+msgid   "Too slow! You need to give the answers in less than 10 seconds..."
+msgstr  "你也太慢了吧！ 最慢 10 秒完成..."
