@@ -427,10 +427,11 @@ You should use the command
       fi
     fi
 
+    export GSH_LAST_ACTION='check_true'
     __gsh_clean "$MISSION_NB"
 
     __log_action "$MISSION_NB" "CHECK_OK"
-    export GSH_LAST_ACTION='check_true'
+    
 
     if [ -n "$GSH_AUTOSAVE" ] && [ "$GSH_AUTOSAVE" != "0" ]
     then
@@ -444,9 +445,10 @@ You should use the command
     color_echo red "$(eval_gettext "Sorry, mission \$MISSION_NB hasn't been completed.")"
     echo
 
+   export GSH_LAST_ACTION='check_false'
     __gsh_clean "$MISSION_NB"
     __log_action "$MISSION_NB" "CHECK_OOPS"
-    export GSH_LAST_ACTION='check_false'
+    
 
     if [ -n "$GSH_AUTOSAVE" ] && [ "$GSH_AUTOSAVE" != "0" ]
     then
