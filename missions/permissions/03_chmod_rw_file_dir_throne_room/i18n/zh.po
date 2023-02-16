@@ -1,0 +1,46 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Throne_room"
+msgstr  "$GSH_HOME/Castle/Main_building/Throne_room"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Forest/Hut/Chest"
+
+# path for the text file containing the goal
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+#, sh-format
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+msgid   "Safe"
+msgstr  "Safe"
+
+msgid   "The crown in your chest is a fake!"
+msgstr  "你箱子里的王冠是假的！"
+
+msgid   "The crown in your chest is not readable!"
+msgstr  "你箱子里的王冠不可读!"
+
+msgid   "There is no crown in your chest!"
+msgstr  "你箱子里没有王冠!"
+
+msgid   "Those digits are not correct!"
+msgstr  "数字不正确!"
+
+msgid   "What are the 3 digits inscribed on the base of the crown?"
+msgstr  "王冠底部的三个数字是什么"
+
+msgid   "crown"
+msgstr  "crown_王冠"

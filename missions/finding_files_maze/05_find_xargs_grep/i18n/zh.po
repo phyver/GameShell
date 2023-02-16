@@ -1,0 +1,48 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Forest/Hut/Chest"
+
+#, sh-format
+msgid   "$GSH_HOME/Garden/Maze"
+msgstr  "$GSH_HOME/Garden/Maze"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+#, sh-format
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "子任务 '$DUMMY_MISSION' 被任务 $MISSION_NB ($MISSION_NAME) 需要"
+
+msgid   "The diamond in your chest is not valid!"
+msgstr  "你箱子当中的钻石不合法！"
+
+msgid   "The diamond is not in the chest!"
+msgstr  "钻石怎么不在你箱子里？"
+
+msgid   "The diamond is still in the maze."
+msgstr  "钻石还在迷宫啊."
+
+msgid   "There are too many diamonds in the maze!"
+msgstr  "迷宫里还有很多钻石!"
+
+msgid   "There is no diamond in your chest."
+msgstr  "你想里没有钻石啊."
+
+msgid   "diamond"
+msgstr  "钻石"
+
+msgid   "stone"
+msgstr  "stone"

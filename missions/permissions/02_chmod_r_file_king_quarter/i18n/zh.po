@@ -1,0 +1,37 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Main_building/Throne_room/Kings_quarter"
+msgstr  "$GSH_HOME/Castle/Main_building/Throne_room/Kings_quarter"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/zh.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/zh.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/zh.txt"
+
+msgid   "That's not the real combination!"
+msgstr  "那不是真正的密码!"
+
+#, sh-format
+msgid   "The command 'man' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'man-db')"
+msgstr  "The command 'man' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'man-db')"
+
+msgid   "What's the combination to open the King's safe?"
+msgstr  "国王保险箱的密码是什么?"
+
+msgid   "note"
+msgstr  "note"
+
+msgid   "secret_note"
+msgstr  "secret_note"
