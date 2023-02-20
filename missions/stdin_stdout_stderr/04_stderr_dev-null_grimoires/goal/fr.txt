@@ -14,8 +14,10 @@ de les consulter. Ignorez les.
 Remarque
 --------
 
-Seule la liste des grimoires est demandée. Les composés alchimiques 
-ne doivent pas être affichés.
+Votre dernière commande doit afficher la liste des grimoires mentionnant 'gsh' 
+et rien d'autre.
+En particulier, vous ne devez pas afficher les composés chimiques eux même et 
+aucun message d'erreur de doit apparaitre.
 
 
 Commandes utiles

@@ -13,8 +13,10 @@ them. Ignore them.
 Remark
 ------
 
-Only the list of books is required. The chemical compounds should 
-not be shown on the screen.
+Your last command should display the list of books mentioning 'gsh', and 
+nothing else.
+In particular, you should not show the chemical compounds themselves and no 
+error message should appear.
 
 
 Useful commands
