@@ -11,7 +11,12 @@ _mission_init() (
 
   CELLAR=$(eval_gettext "\$GSH_HOME/Castle/Cellar")
   mkdir -p "$CELLAR"
-  rm -f "$CELLAR"/.??*
+
+  # remove all spiders, including possible leftovers from previous missions)
+  find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -iname "*$(gettext "spider")*" -type f -print0 | xargs -0 rm -f
+
+  # remove hidden bats
+  find "$(eval_gettext '$GSH_HOME/Castle/Cellar')" -iname ".*$(gettext "bat")*" -type f -print0 | xargs -0 rm -f
 
   RANDOM 100 | for I in $(seq 50)
   do
