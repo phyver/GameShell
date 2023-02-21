@@ -70,7 +70,7 @@ int main(int argc, char** argv)
 
     // remove trailing newline
     FILE* key_f = fopen(key_path, "r");
-    int n = fread(key, 1, 2048, key_f);
+    int n = fread(key, 1, 1024, key_f);
     if (key[n - 1] == '\n') {
         key[n - 1] = 0;
     }
