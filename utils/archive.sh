@@ -333,7 +333,7 @@ fi
 # record version
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1
 then
-  GSH_VERSION=$(git describe --always --tags --dirty)
+  GSH_VERSION=$(git describe --always --dirty)
   sed-i "s/^GSH_VERSION=.*/GSH_VERSION='$GSH_VERSION'/" "$GSH_ROOT/scripts/_gsh_version"
   sed-i "s/^GSH_VERSION=.*/GSH_VERSION='$GSH_VERSION'/" "$GSH_ROOT/lib/header.sh"
   sed-i "s/^GSH_LAST_CHECKED_MISSION=.*/GSH_LAST_CHECKED_MISSION=''/" "$GSH_ROOT/lib/header.sh"
