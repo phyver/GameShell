@@ -105,7 +105,7 @@ do
       # this is only used when running GameShell directly from start.sh
       if git rev-parse --is-inside-work-tree >/dev/null 2>&1
       then
-        echo "GameShell $(git describe --always --tags --dirty)"
+        echo "GameShell $(git describe --always --dirty)"
       fi
 
       echo "run directly from start.sh"
