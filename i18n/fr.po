@@ -74,8 +74,8 @@ msgstr[1]       "%d missions réussies :"
 #, awk-format
 msgid   "%d mission skipped:"
 msgid_plural    "%d missions skipped:"
-msgstr[0]       "%d mission réussie :"
-msgstr[1]       "%d missions réussies :"
+msgstr[0]       "%d mission sautée :"
+msgstr[1]       "%d missions sautées :"
 
 msgid   "AUTOMATICALLY GENERATED ON STARTUP -- DO NOT MODIFY"
 msgstr  "AUTOMATIQUEMENT GÉNÉRÉ AU DÉMARRAGE -- NE PAS MODIFIER"
