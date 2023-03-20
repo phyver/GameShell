@@ -21,6 +21,7 @@ admin_mode() {
   fi
 
   hash=$(cat "$GSH_CONFIG/admin_hash")
+  salt=$(cat "$GSH_CONFIG/admin_salt")
   try=0
   # NOTE: seq is not POSIX compliant
   while [ "$try" -lt 3 ]
@@ -30,7 +31,7 @@ admin_mode() {
     read -r mdp
     stty echo 2>/dev/null     # ignore errors, in case input comes from a redirection
     echo
-    if [ "$(checksum "$mdp")" = "$hash" ]
+    if [ "$(checksum "$salt $mdp")" = "$hash" ]
     then
       return 0
     fi

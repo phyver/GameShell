@@ -11,7 +11,7 @@ create a GameShell standalone archive
 options:
   -h              this message
 
-  --password ...  choose password for admin commands
+  --password=...  choose password for admin commands
   -P              use the "passport mode" by default when running GameShell
   -A              use the "anonymous mode" by default when running GameShell
   -L LANGS        only keep the given languages (ex: -L 'en*,fr')
@@ -310,7 +310,9 @@ echo "removing unnecessary files"
 
 # change admin password
 echo "setting admin password"
-ADMIN_HASH=$(checksum "$ADMIN_PASSWD")
+ADMIN_SALT=$($GSH_ROOT/scripts/random_string)
+ADMIN_HASH=$(checksum "$ADMIN_SALT $ADMIN_PASSWD")
+sed-i "s/^\\([[:blank:]]*\\)ADMIN_SALT=.*/\\1ADMIN_SALT='$ADMIN_SALT'/" "$GSH_ROOT/start.sh"
 sed-i "s/^\\([[:blank:]]*\\)ADMIN_HASH=.*/\\1ADMIN_HASH='$ADMIN_HASH'/" "$GSH_ROOT/start.sh"
 
 # choose default mode

@@ -233,7 +233,8 @@ progress_finish() {
 
 init_gsh() {
 
-  ADMIN_HASH='b88968dc60b003b9c188cc503a457101b4087109'    # default for 'gsh'
+  ADMIN_SALT='EsULESDXKFpLRjZcIRiVnazJfQcwQDEz'            # a random (but fixed) salt
+  ADMIN_HASH='cb1b87bc6282a94ff3f37eb47a2aa3dc069341d0'    # default for "$GSH_SALT gsh"
 
   # message when data from a previous play is found. We can either
   #    - restart a new game
@@ -276,7 +277,11 @@ Do you want to remove it and start a new game? [y/N]') "
   # TODO save other config (color ?)
 
   # save hash for admin password
-  [ -n "$ADMIN_HASH" ] && echo "$ADMIN_HASH" > "$GSH_CONFIG/admin_hash"
+  if [ -n "$ADMIN_HASH" ]
+  then
+    echo "$ADMIN_HASH" > "$GSH_CONFIG/admin_hash"
+    echo "$ADMIN_SALT" > "$GSH_CONFIG/admin_salt"
+  fi
 
   mkdir -p "$GSH_BIN"
   mkdir -p "$GSH_SBIN"
