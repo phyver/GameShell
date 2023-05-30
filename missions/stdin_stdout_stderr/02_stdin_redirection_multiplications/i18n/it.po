@@ -19,7 +19,7 @@ msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/it.txt"
 
 msgid   "Greek_Latin_and_other_modern_languages"
-msgstr  "Grego_Latino_e_altre_lingue_moderne"
+msgstr  "Greco_Latino_e_altre_lingue_moderne"
 
 msgid   "How_to_cheat_for_exams"
 msgstr  "Come_imbrogliare_negli_esami"
