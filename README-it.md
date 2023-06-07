@@ -18,8 +18,6 @@ Siamo molto interessati nella creazione di nuove missioni!
 Come cominciare
 ---------------
 
-**Nota:** GameShell è attualmente sotto uno sviluppo pesante: la versione corrente non é stata testata dagli studenti. Non esitare a segnalare qualunque problema o suggerimento [aprendo un ticket](https://github.com/phyver/GameShell/issues/new).
-
 GameShell dovrebbe funzionare in qualunque sistema Linux standard, e anche su macOS e BSD (ma abbiamo eseguito pochi test su questi). Su Debian e Ubuntu, le uniche dipendenze (oltre `bash`) sono i pacchetti `gettext-base` e `awk`(questo di solito presente di default). Alcune missioni hanno dipendenze addizionali: queste missioni verranno saltate se le dipendenze non sono state risolte.
 Su Debian o Ubuntu, esegui i comandi seguenti per installare tutte le dipendenze del gioco e delle missioni.  
 ```sh
