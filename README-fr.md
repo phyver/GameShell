@@ -27,11 +27,6 @@ pourriez créer !
 Comment jouer ?
 ---------------
 
-**Note:** GameShell est en phase de développement : la version courante n'a
-pas été intensivement testée par des étudiants. N'hésitez pas à rapporter tout
-problème que vous pourriez rencontrer et toute suggestion d'amélioration en
-ouvrant une ["issue"](https://github.com/phyver/GameShell/issues/new).
-
 GameShell devrait fonctionner sur n'importe quel système Linux standard, et
 aussi sur macOS et BSD (mais ces systèmes ont été moins testés). Sur Debian ou
 Ubuntu, les seules dépendances (autres que `bash`) sont les paquets `awk` et

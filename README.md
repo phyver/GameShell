@@ -30,11 +30,6 @@ We are particularly interested in any new missions you might create!
 Getting started
 ---------------
 
-**Note:** GameShell is currently undergoing heavy development: the current
-version has not been field tested by students. Do not hesitate to report any
-problems you might encounter or suggestions you might have by
-[opening an issue](https://github.com/phyver/GameShell/issues/new).
-
 GameShell should work on any standard Linux system, and also on macOS and BSD
 (but we have run fewer tests on the latter systems). On Debian or Ubuntu, the
 only dependencies (besides `bash`) are the `gettext-base` and `awk` packages
