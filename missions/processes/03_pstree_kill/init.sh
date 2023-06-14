@@ -75,18 +75,26 @@ _install_script() (
   fi
   mission_source "$MISSION_DIR/deps.sh" || return 1
 
-  cp "$MISSION_DIR/nice_fairy.sh" "$GSH_TMP/$(gettext "nice_fairy")"
+  # we need to make sure the shebang is an actual path the a shell, otherwise
+  # the process name will not be the filename
+  sh=$(command -v sh)
+
+  echo "#! $sh" > "$GSH_TMP/$(gettext "nice_fairy")"
+  cat "$MISSION_DIR/nice_fairy.sh" >> "$GSH_TMP/$(gettext "nice_fairy")"
   chmod 755 "$GSH_TMP/$(gettext "nice_fairy")"
 
   mkdir -p "$GSH_TMP/fairy/"
-  cp "$MISSION_DIR/fairy/spell.sh" "$GSH_TMP/fairy/$(gettext "spell")"
+  echo "#! $sh" > "$GSH_TMP/fairy/$(gettext "spell")"
+  cat "$MISSION_DIR/fairy/spell.sh" >> "$GSH_TMP/fairy/$(gettext "spell")"
   chmod 755 "$GSH_TMP/fairy/$(gettext "spell")"
 
-  cp "$MISSION_DIR/mischievous_imp.sh" "$GSH_TMP/$(gettext "mischievous_imp")"
+  echo "#! $sh" > "$GSH_TMP/$(gettext "mischievous_imp")"
+  cat "$MISSION_DIR/mischievous_imp.sh" >> "$GSH_TMP/$(gettext "mischievous_imp")"
   chmod 755 "$GSH_TMP/$(gettext "mischievous_imp")"
 
   mkdir -p "$GSH_TMP/imp/"
-  cp "$MISSION_DIR/imp/spell.sh" "$GSH_TMP/imp/$(gettext "spell")"
+  echo "#! $sh" > "$GSH_TMP/imp/$(gettext "spell")"
+  cat "$MISSION_DIR/imp/spell.sh" >> "$GSH_TMP/imp/$(gettext "spell")"
   chmod 755 "$GSH_TMP/imp/$(gettext "spell")"
 )
 

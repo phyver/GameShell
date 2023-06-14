@@ -1,2 +1,2 @@
-#!/usr/bin/env sh
+#!/bin/sh
 sleep 100

@@ -13,4 +13,3 @@ else
   # with additional options ps -ceo pid,ppid,comm
   copy_bin "$MISSION_DIR/my_ps-macos" "$GSH_ROOT/.sbin/my_ps"
 fi
-
