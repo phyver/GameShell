@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 export GSH_ROOT=$(dirname "$0")/..
-. $GSH_ROOT/lib/profile.sh
+. "$GSH_ROOT"/lib/profile.sh
 
 display_help() {
 cat <<EOH
@@ -41,7 +41,7 @@ keep_language() {
   do
     set +f  # enable globing
     case $filename in
-      $g )
+      "$g" )
         return 0
         ;;
     esac
@@ -69,9 +69,9 @@ while getopts ":hp:N:atPzL:Ev-:" opt
 do
   if [ "$opt" = "-" ]
   then
-    opt="${OPTARG%%=*}"       # extract long option name
-    OPTARG="${OPTARG#$opt}"   # extract long option argument (may be empty)
-    OPTARG="${OPTARG#=}"      # if long option argument, remove assigning `=`
+    opt="${OPTARG%%=*}"         # extract long option name
+    OPTARG="${OPTARG#"$opt"}"   # extract long option argument (may be empty)
+    OPTARG="${OPTARG#=}"        # if long option argument, remove assigning `=`
     _long_option=1
   fi
 
@@ -229,7 +229,7 @@ fi
 if [ -n "$LANGUAGES" ]
 then
   echo "removing unwanted languages"
-  find "$GSH_ROOT" -path "*/i18n/*.po" | while read po_file
+  find "$GSH_ROOT" -path "*/i18n/*.po" | while read -r po_file
   do
     if ! keep_language "${po_file%.po}" "$LANGUAGES"
     then
@@ -257,7 +257,7 @@ then
     printf "."
 
     # all missions
-    while read MISSION_DIR
+    while read -r MISSION_DIR
     do
       case $MISSION_DIR in
         "" | "#"* )
@@ -310,7 +310,7 @@ echo "removing unnecessary files"
 
 # change admin password
 echo "setting admin password"
-ADMIN_SALT=$($GSH_ROOT/scripts/random_string)
+ADMIN_SALT=$("$GSH_ROOT"/scripts/random_string)
 ADMIN_HASH=$(checksum "$ADMIN_SALT $ADMIN_PASSWD")
 sed-i "s/^\\([[:blank:]]*\\)ADMIN_SALT=.*/\\1ADMIN_SALT='$ADMIN_SALT'/" "$GSH_ROOT/start.sh"
 sed-i "s/^\\([[:blank:]]*\\)ADMIN_HASH=.*/\\1ADMIN_HASH='$ADMIN_HASH'/" "$GSH_ROOT/start.sh"
