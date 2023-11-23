@@ -26,7 +26,7 @@ COMMAND  >  FILE
   Send standard output (stdout) for the command to a file.
   (The file is overwritten.)
 
-COMMAND  2>  FICHIER
+COMMAND  2>  FILE
   Send error output (stderr) for the command to a file.
   (The file is overwritten.)
 
