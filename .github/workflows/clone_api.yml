@@ -14,6 +14,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Copy repository contents via scp
+      uses: appleboy/scp-action@v0.1.4
+      env:
+          HOST: ${{ vars.SSH_HOST }}
+          USERNAME: ${{ vars.SSH_USERNAME }}
+          PASSWORD: ${{ secrets.SSH_PASSWORD }}
+      with:
+          source: "."
+          target: "/home/lenuage/www/gameshell.org/gameshell"
+          
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v1.0.0
       with:
