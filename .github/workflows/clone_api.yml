@@ -17,8 +17,8 @@ jobs:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v1.0.0
       with:
-        host: ${{ env.SSH_HOST }}
-        username: ${{ env.SSH_USERNAME }}
+        host: ${{ vars.SSH_HOST }}
+        username: ${{ vars.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
           git clone git@github.com:mgloc/GameShell.git
