@@ -124,7 +124,7 @@ GameShell est distribué sous la licence [GPLv3](https://www.gnu.org/licenses/gp
 Merci de pointer vers ce dépôt si vous l'utilisez.
 
 GameShell est open source et son utilisation est gratuite. Une manière de
-reconnaitre le travail que cela à nécessité est d'envoyer un carte postale à
+reconnaitre le travail que cela a nécessité est d'envoyer une carte postale à
 
 ```
   Pierre Hyvernat
