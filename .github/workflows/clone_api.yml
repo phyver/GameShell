@@ -19,7 +19,7 @@ jobs:
         uses: garygrossgarten/github-action-scp@release
         with:
           local: api
-          remote: /home/lenuage/www/gameshell.org/api
+          remote: /home/lenuage/www/gameshell.org
           rmRemote: true
           host: ${{ vars.SSH_HOST }}
           username: ${{ vars.SSH_USER }}
