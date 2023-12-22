@@ -4,7 +4,7 @@ name: clone_api
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "feature/api" ]
+    branches: ["feature/api"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -14,21 +14,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Copy repository contents via scp
-      uses: appleboy/scp-action@v0.1.4
-      env:
+      - name: Copy repository contents via scp
+        uses: appleboy/scp-action@v0.1.4
+        env:
           HOST: ${{ vars.SSH_HOST }}
-          USERNAME: ${{ vars.SSH_USERNAME }}
+          USERNAME: ${{ vars.SSH_USER }}
           PASSWORD: ${{ secrets.SSH_PASSWORD }}
-      with:
-          source: "."
+        with:
+          source: "./api/*"
           target: "/home/lenuage/www/gameshell.org/gameshell"
-          
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ vars.SSH_HOST }}
-        username: ${{ vars.SSH_USERNAME }}
-        password: ${{ secrets.SSH_PASSWORD }}
-        script: |
-          git clone git@github.com:mgloc/GameShell.git
+
+      # - name: executing remote ssh commands using password
+      #   uses: appleboy/ssh-action@v1.0.0
+      #   with:
+      #     host: ${{ vars.SSH_HOST }}
+      #     username: ${{ vars.SSH_USER }}
+      #     password: ${{ secrets.SSH_PASSWORD }}
+      #     script: |
+      #       git clone git@github.com:mgloc/GameShell.git
