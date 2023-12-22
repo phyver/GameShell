@@ -14,21 +14,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Copy repository contents via scp
-        uses: appleboy/scp-action@v0.1.4
-        env:
-          HOST: ${{ vars.SSH_HOST }}
-          USERNAME: ${{ vars.SSH_USER }}
-          PASSWORD: ${{ secrets.SSH_PASSWORD }}
+      - uses: actions/checkout@v4
+      - name: Copy folder content recursively to remote
+        uses: garygrossgarten/github-action-scp@release
         with:
-          source: "./api/*"
-          target: "/home/lenuage/www/gameshell.org/gameshell"
-
-      # - name: executing remote ssh commands using password
-      #   uses: appleboy/ssh-action@v1.0.0
-      #   with:
-      #     host: ${{ vars.SSH_HOST }}
-      #     username: ${{ vars.SSH_USER }}
-      #     password: ${{ secrets.SSH_PASSWORD }}
-      #     script: |
-      #       git clone git@github.com:mgloc/GameShell.git
+          local: api
+          remote: /home/lenuage/www/gameshell.org/api
+          rmRemote: true
+          host: ${{ vars.SSH_HOST }}
+          username: ${{ vars.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
