@@ -311,8 +311,8 @@ Do you want to remove it and start a new game? [y/N]') "
     _confirm_passport "$PASSPORT" && break
   done
 
-  printf '\n==========\nRANDOM=%d\n' $RANDOM >> "$PASSPORT"
-
+  # some random part added to the file so that GSH_UID is randomized
+  printf '==========\nrandom salt: %d\n' "$("$GSH_ROOT/scripts/RANDOM")" >> "$PASSPORT"
 
   # Generation of a unique identifier for the the player.
   export GSH_UID="$(checksum < "$PASSPORT" | cut -c 1-40)"
