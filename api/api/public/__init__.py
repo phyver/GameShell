@@ -1,18 +1,12 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter
 
-from api.public.hero import views as heroes
-from api.public.team import views as teams
+from api.public.gamesession import views as gamesessions
 
 api = APIRouter()
 
 
 api.include_router(
-    heroes.router,
-    prefix="/heroes",
-    tags=["Heroes"],
-)
-api.include_router(
-    teams.router,
-    prefix="/teams",
-    tags=["Teams"],
+    gamesessions.router,
+    prefix="/gamesessions",
+    tags=["GameSessions"],
 )
