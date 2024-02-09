@@ -30,14 +30,20 @@ _mission_check() {
         target_path="${cmd// *$EDITOR */}"
         echo "$(eval_gettext "It seems you alias doesn't refer to the appropriate file (\$target_path).
 Make sure to use an absolute path...")"
+        # save real journal.txt from the chest
         find "$GSH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -rf
+        [ -f "$GSH_CHEST/journal.txt" ] && cp "$GSH_CHEST"/journal.txt "$GSH_TMP/journal.txt"
+        [ -f "$GSH_TMP/journal.txt" ] && cp "$GSH_TMP"/journal.txt "$GSH_CHEST/journal.txt"
         return 1
       fi
 
       ;;
     *)
       echo "$(eval_gettext "Your alias doesn't use the command '\$EDITOR'...")"
+      # save real journal.txt from the chest
+      [ -f "$GSH_CHEST/journal.txt" ] && cp "$GSH_CHEST"/journal.txt "$GSH_TMP/journal.txt"
       find "$GSH_HOME" -iname "*$(gettext "journal")*" -print0 | xargs -0 rm -rf
+      [ -f "$GSH_TMP/journal.txt" ] && cp "$GSH_TMP"/journal.txt "$GSH_CHEST/journal.txt"
       return 1
       ;;
   esac
