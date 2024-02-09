@@ -1,0 +1,73 @@
+---
+test_name: Hero Tests
+includes:
+  - !include common.yaml
+
+stages:
+  - name: Create a Hero
+    request:
+      method: POST
+      url: "{host}/heroes"
+      json:
+        id: 1
+        name: "Super Man"
+        secret_name: "Clark Kent"
+        age: 27
+        team_id: 1
+    response:
+      status_code: 200
+      json: {}
+  
+  - name: Get a Hero
+    request:
+      method: GET 
+      url: "{host}/heroes/1"
+    response:
+      status_code: 200
+      json: []
+  
+  - name: Get a Hero - Not Found
+    request:
+      method: GET 
+      url: "{host}/heroes/99"
+    response:
+      status_code: 404
+      json: 
+        detail: "Hero not found with id: 99"
+  
+  - name: Get a Heroes
+    request:
+      method: GET 
+      url: "{host}/heroes"
+      params:
+        offset: 0
+        limit: 100
+    response:
+      status_code: 200
+      json: []
+  
+  - name: Update a Heroe
+    request:
+      method: PATCH 
+      url: "{host}/heroes/1"
+      json:
+        name: "Super Man"
+        secret_name: "Clark Kent"
+        age: 28
+        team_id: 1
+    response:
+      status_code: 200
+      json:
+        id: 1
+        name: "Super Man"
+        secret_name: "Clark Kent"
+        age: 28
+        team_id: 1
+
+  - name: Delete a Heroe
+    request:
+      method: DELETE 
+      url: "{host}/heroes/1"
+    response:
+      json:
+        ok: true

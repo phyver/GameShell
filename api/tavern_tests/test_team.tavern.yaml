@@ -1,0 +1,66 @@
+---
+test_name: Team Tests
+includes:
+  - !include common.yaml
+
+stages:
+  - name: Create a Team
+    request:
+      method: POST
+      url: "{host}/teams"
+      json:
+        name: "wonderful league"
+        headquarters: "Fortress of Solitude"
+    response:
+      status_code: 200
+      json: {}
+  
+  - name: Get a Team
+    request:
+      method: GET 
+      url: "{host}/teams/1"
+    response:
+      status_code: 200
+      json: []
+  
+  - name: Get a Team - Not Found
+    request:
+      method: GET 
+      url: "{host}/teams/99"
+    response:
+      status_code: 404
+      json: 
+        detail: "Team not found with id: 99"
+  
+  - name: Get Teams
+    request:
+      method: GET 
+      url: "{host}/teams"
+      params:
+        offset: 0
+        limit: 100
+    response:
+      status_code: 200
+      json: []
+  
+  - name: Update a Teame
+    request:
+      method: PATCH 
+      url: "{host}/teams/1"
+      json:
+        name: "wonderful league"
+        headquarters: "frozen tundra"
+    response:
+      status_code: 200
+      json:
+        id: 1
+        name: "wonderful league"
+        headquarters: "frozen tundra"
+
+  - name: Delete a Teame
+    request:
+      method: DELETE 
+      url: "{host}/teams/1"
+    response:
+      json:
+        ok: true
