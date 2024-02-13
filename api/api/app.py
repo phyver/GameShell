@@ -6,7 +6,6 @@ from api.config import Settings
 from api.database import create_db_and_tables
 from api.public import api as public_api
 from api.utils.logger import logger_config
-from api.utils.mock_data_generator import create_heroes_and_teams
 
 logger = logger_config(__name__)
 
@@ -14,7 +13,6 @@ logger = logger_config(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     create_db_and_tables()
-    create_heroes_and_teams()
 
     logger.info("startup: triggered")
 
