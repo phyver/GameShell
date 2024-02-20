@@ -1,4 +1,6 @@
 from typing import List
+
+import uuid as uuid_pkg
 from sqlmodel import Field, Relationship, SQLModel
 
 from api.public.room.models import Room
@@ -6,18 +8,15 @@ from api.public.player.models import Player
 
 
 class GameSessionBase(SQLModel):
-    uuid: str
-
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "uuid": "123e4567-e89b-12d3-a456-426614174000",
-            }
-        }
+    pass
 
 
 class GameSession(GameSessionBase, table=True):
     id: int = Field(default=None, primary_key=True)
+    uuid: str = Field(
+        default_factory=lambda: str(uuid_pkg.uuid4()),
+        nullable=False,
+    )
 
     rooms: List["Room"] = Relationship(back_populates="gamesession")
     players: List["Player"] = Relationship(back_populates="gamesession")

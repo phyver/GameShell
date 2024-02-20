@@ -11,14 +11,6 @@ class PlayerBase(SQLModel):
     username: str
     progress: str
 
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "username": "glox",
-                "progress": "0/100",
-            }
-        }
-
 
 class Player(PlayerBase, table=True):
     id: int = Field(default=None, primary_key=True)

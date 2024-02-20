@@ -3,17 +3,11 @@ from sqlmodel import Field, Relationship, SQLModel
 
 if TYPE_CHECKING:
     from api.public.gamesession.models import GameSession
+    from api.public.player.models import Player
 
 
 class RoomBase(SQLModel):
     name: str
-
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "name": "RE-B00-117A",
-            }
-        }
 
 
 class Room(RoomBase, table=True):
@@ -21,6 +15,7 @@ class Room(RoomBase, table=True):
     gamesession_id: Optional[int] = Field(default=None, foreign_key="gamesession.id")
 
     gamesession: Optional["GameSession"] = Relationship(back_populates="rooms")
+    players: list["Player"] = Relationship(back_populates="room")
 
 
 class RoomCreate(RoomBase):
