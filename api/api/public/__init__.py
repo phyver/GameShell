@@ -9,16 +9,13 @@ api = APIRouter()
 
 api.include_router(
     gamesessions.router,
-    prefix="/gamesessions",
     tags=["GameSessions"],
 )
 api.include_router(
     players.router,
-    prefix="/players",
     tags=["Players"],
 )
 api.include_router(
     rooms.router,
-    prefix="/rooms",
     tags=["Rooms"],
 )
