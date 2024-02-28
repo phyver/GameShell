@@ -2,13 +2,14 @@ from fastapi import APIRouter, Depends, Query
 from sqlmodel import Session
 
 from api.database import get_session
-from api.public.gamesession.crud import (
+from api.public.gamesession.controller.crud import (
     create_gamesession,
     delete_gamesession,
     read_gamesession,
     read_gamesessions,
     update_gamesession,
 )
+from api.public.gamesession.controller.customs import read_gamesession_by_name
 from api.public.gamesession.models import GameSessionCreate, GameSessionRead, GameSessionUpdate
 
 router = APIRouter()
@@ -31,6 +32,11 @@ def get_gamesessions(
 @router.get("/{gamesession_id}", response_model=GameSessionRead)
 def get_a_gamesession(gamesession_id: int, db: Session = Depends(get_session)):
     return read_gamesession(gamesession_id=gamesession_id, db=db)
+
+
+@router.get("/name/{name}", response_model=GameSessionRead)
+def get_a_gamesession_by_name(name: str, db: Session = Depends(get_session)):
+    return read_gamesession_by_name(name=name, db=db)
 
 
 @router.patch("/{gamesession_id}", response_model=GameSessionRead)
