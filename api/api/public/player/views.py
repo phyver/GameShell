@@ -52,6 +52,6 @@ def get_gamesession_players(gamesession_id: int, db: Session = Depends(get_sessi
     return read_players_by_gamesession(gamesession_id=gamesession_id, db=db)
 
 
-@router.get(GAMESSESSION_PREFIX + "/{gamesession_id}/players/{username}", response_model=PlayerRead)
+@router.get(GAMESSESSION_PREFIX + "/{gamesession_id}/players/{username}", response_model=list[PlayerRead])
 def get_a_gamesession_player_by_name(gamesession_id: int, username: str, db: Session = Depends(get_session)):
     return read_player_by_name_and_gamesession(gamesession_id=gamesession_id, username=username, db=db)

@@ -19,12 +19,12 @@ class Room(RoomBase, table=True):
 
 
 class RoomCreate(RoomBase):
-    name: str
     gamesession_id: int
 
 
 class RoomRead(RoomBase):
-    name: str | None = None
+    id: int
+    gamesession_id: int
 
 
 class RoomUpdate(RoomBase):

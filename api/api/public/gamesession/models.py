@@ -3,7 +3,6 @@ from typing import List
 from sqlmodel import Field, Relationship, SQLModel
 
 from api.public.room.models import Room
-from api.public.player.models import Player
 
 
 class GameSessionBase(SQLModel):
@@ -17,7 +16,6 @@ class GameSession(GameSessionBase, table=True):
     author: str = Field(max_length=50)
 
     rooms: List["Room"] = Relationship(back_populates="gamesession")
-    players: List["Player"] = Relationship(back_populates="gamesession")
 
 
 class GameSessionCreate(GameSessionBase):

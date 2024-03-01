@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlmodel import Session
 
 from api.database import get_session
-from api.public.room.crud import (
+from api.public.room.controller.crud import (
     create_room,
     delete_room,
     read_room,
