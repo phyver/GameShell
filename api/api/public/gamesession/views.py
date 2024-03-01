@@ -23,21 +23,19 @@ def create_a_gamesession(gamesession: GameSessionCreate, db: Session = Depends(g
 
 @router.get(PREFIX, response_model=list[GameSessionRead])
 def get_gamesessions(
+    name: str = None,
     offset: int = 0,
     limit: int = Query(default=100, lte=100),
     db: Session = Depends(get_session),
 ):
+    if name:
+        return read_gamesession_by_name(name=name, db=db)
     return read_gamesessions(offset=offset, limit=limit, db=db)
 
 
 @router.get(PREFIX + "/{gamesession_id}", response_model=GameSessionRead)
 def get_a_gamesession(gamesession_id: int, db: Session = Depends(get_session)):
     return read_gamesession(gamesession_id=gamesession_id, db=db)
-
-
-@router.get(PREFIX + "/name/{name}", response_model=GameSessionRead)
-def get_a_gamesession_by_name(name: str, db: Session = Depends(get_session)):
-    return read_gamesession_by_name(name=name, db=db)
 
 
 @router.patch(PREFIX + "/{gamesession_id}", response_model=GameSessionRead)

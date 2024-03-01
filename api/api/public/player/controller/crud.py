@@ -1,15 +1,21 @@
 from fastapi import Depends, HTTPException, status
 from sqlmodel import Session, select
+from sqlalchemy.exc import IntegrityError
 
 from api.database import get_session
 from api.public.player.models import Player, PlayerCreate, PlayerUpdate
 
+from api.utils.error_parser import parse_integrity_error
+
 
 def create_player(player: PlayerCreate, db: Session = Depends(get_session)):
-    player_to_db = Player.model_validate(player)
-    db.add(player_to_db)
-    db.commit()
-    db.refresh(player_to_db)
+    try:
+        player_to_db = Player.model_validate(player)
+        db.add(player_to_db)
+        db.commit()
+        db.refresh(player_to_db)
+    except IntegrityError as error:
+        parse_integrity_error(error)
     return player_to_db
 
 

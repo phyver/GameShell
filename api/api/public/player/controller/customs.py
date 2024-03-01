@@ -5,6 +5,11 @@ from api.database import get_session
 from api.public.player.models import Player
 
 
+def read_players_by_gamesession(gamesession_id: int, db: Session = Depends(get_session)):
+    players = db.exec(select(Player).filter(Player.gamesession_id == gamesession_id)).all()
+    return players
+
+
 def read_player_by_name_and_gamesession(gamesession_id: int, username: str, db: Session = Depends(get_session)):
     player = db.exec(
         select(Player).filter(Player.username == username).filter(Player.gamesession_id == gamesession_id)

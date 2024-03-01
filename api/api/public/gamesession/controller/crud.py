@@ -1,15 +1,21 @@
 from fastapi import Depends, HTTPException, status
 from sqlmodel import Session, select
+from sqlalchemy.exc import IntegrityError
 
 from api.database import get_session
 from api.public.gamesession.models import GameSession, GameSessionCreate, GameSessionUpdate
 
+from api.utils.error_parser import parse_integrity_error
+
 
 def create_gamesession(gamesession: GameSessionCreate, db: Session = Depends(get_session)):
-    gamesession_to_db = GameSession.model_validate(gamesession)
-    db.add(gamesession_to_db)
-    db.commit()
-    db.refresh(gamesession_to_db)
+    try:
+        gamesession_to_db = GameSession.model_validate(gamesession)
+        db.add(gamesession_to_db)
+        db.commit()
+        db.refresh(gamesession_to_db)
+    except IntegrityError as error:
+        parse_integrity_error(error)
     return gamesession_to_db
 
 
