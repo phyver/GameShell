@@ -16,5 +16,5 @@ def read_players_by_gamesession(gamesession_id: int, db: Session = Depends(get_s
 
 def read_player_by_name_and_gamesession(gamesession_id: int, username: str, db: Session = Depends(get_session)):
     players = read_players_by_gamesession(gamesession_id, db)
-    player = [player for player in players if player.username == username]
-    return player
+    players = [player for player in players if player.username == username]
+    return players
