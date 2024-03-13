@@ -20,7 +20,7 @@ ls -l
   Access permissions are listed first on each line.
 
 chmod [OPTIONS] FILE
-  Modifies the permissions for eth file (or directory).
+  Modifies the permissions for the file (or directory).
 
   Refer to the manual to discover which options are available.
 
