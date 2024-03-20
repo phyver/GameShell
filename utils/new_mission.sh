@@ -35,8 +35,8 @@ EOF
 new_goal_txt_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/goal.txt
-This file or one of its more complex variants (refer to the documentation) is
-required.
+This file or one of its more complex variants (refer to the documentation) 
+is required.
 
 It is displayed in its entirety by the command
   $ gsh goal
@@ -69,8 +69,8 @@ EOF
 Mission goal
 ============
 
-This file or one of its more complex variants (refer to the documentation) is
-required.
+This file or one of its more complex variants (refer to the documentation) 
+is required.
 
 It is displayed in its entirety by the command
   $ gsh goal
@@ -108,7 +108,7 @@ new_init_file() {
 #
 # It typically looks like
 _mission_init() {
-  ...
+  # ...
 }
 _mission_init
 EOF
@@ -130,7 +130,7 @@ new_check_file() {
 # It typically looks like
 
 _mission_check() {
-  ...
+  # ...
 }
 _mission_check
 EOF
@@ -188,9 +188,9 @@ EOF
 new_treasure_msg_file() {
   MISSION_DIR="$1"
   cat <<'EOF' > "$MISSION_DIR"/_treasure-msg.txt
-This file is not required. When it exists, it is displayed when sourcing the
-"treasure.sh" file. (If no "treasure.sh" file exists, this file will be
-ignored.)
+This file is not required. When it exists, it is displayed when sourcing 
+the "treasure.sh" file. (If no "treasure.sh" file exists, this file will 
+be ignored.)
 EOF
 }
 
@@ -212,9 +212,9 @@ EOF
 
   mkdir "$MISSION_DIR/treasure-msg/"
   cat <<'EOF' > "$MISSION_DIR"/treasure-msg/en.txt
-This file is not required. When it exists, it is displayed when sourcing the
-"treasure.sh" file. (If no "treasure.sh" file exists, this file will be
-ignored.)
+This file is not required. When it exists, it is displayed when sourcing 
+the "treasure.sh" file. (If no "treasure.sh" file exists, this file will 
+be ignored.)
 EOF
 }
 
