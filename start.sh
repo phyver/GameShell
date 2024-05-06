@@ -269,7 +269,6 @@ Do you want to remove it and start a new game? [y/N]') "
 
   mkdir -p "$GSH_CONFIG"
   awk -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN { srand(); printf("%s", int(2^32 * rand())) > seed_file; }'
-  cp "$GSH_LIB/gshrc" "$GSH_CONFIG"
 
   # save current locale
   locale > "$GSH_CONFIG"/config.sh
