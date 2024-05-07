@@ -10,8 +10,9 @@ gsh exit  /  Control-d
   (vous pouvez recommencer à la mission courante en 
   lançant GameShell avec l'option "-C")
 
-gsh goal
+gsh goal [N]
   affiche l'objectif de la mission en cours
+  si N est donné, affiche l'objectif de la mission N
 
 gsh help
   affiche ce message
