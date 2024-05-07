@@ -8,7 +8,7 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout the GameShell repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - if: ${{ matrix.platform == 'ubuntu-latest' }}
         name: Install Linux deps
         run: |
