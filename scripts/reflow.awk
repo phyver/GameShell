@@ -140,14 +140,14 @@ BEGIN {
     # if a paragraph starts with a list marker
     # don't forget to remove the list marker!
     if (match($0, /^ *[-+]  */)) {
-        par_indent = substr($0, 1, Rwcscolumns);
-        $0 = substr($0, Rwcscolumns+1);
+        par_indent = substr($0, 1, RLENGTH);
+        $0 = substr($0, RLENGTH+1);
     } else if (match($0, /^ *[0-9][0-9]*[.\/]  */)) {
-        par_indent = substr($0, 1, Rwcscolumns);
-        $0 = substr($0, Rwcscolumns+1);
+        par_indent = substr($0, 1, RLENGTH);
+        $0 = substr($0, RLENGTH+1);
     } else {
         match($0, /^ */);
-        par_indent = substr($0, 1, Rwcscolumns);
+        par_indent = substr($0, 1, RLENGTH);
     }
 }
 
