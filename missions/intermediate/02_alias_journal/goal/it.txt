@@ -1,7 +1,7 @@
 Obiettivi Missione
 ============
 
-Creare un alias "journal" in modo da editare il tuo file storico 
+Creare un alias "storico" in modo da editare il tuo file storico 
 ovunque tu sia.
 
 
