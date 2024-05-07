@@ -45,4 +45,5 @@ compdef '[ "$CURRENT" -le 2 ] && _values : check exit goal help index log reset 
 # print message when player wanders outside GameShell filesystem
 precmd() {
   _check_pwd
+  _help_hint
 }

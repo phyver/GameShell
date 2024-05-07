@@ -25,3 +25,4 @@ complete -W 'check exit goal help index log reset resetstatic stat version welco
 
 # print message when player wanders outside GameShell filesystem
 PROMPT_COMMAND[0]=_check_pwd
+PROMPT_COMMAND[1]=_help_hint

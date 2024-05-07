@@ -294,5 +294,8 @@ msgstr  "test $nb_tests failed"
 msgid   "total time: %s"
 msgstr  "total time: %s"
 
+msgid   "use 'gsh help' to get a list of available commands"
+msgstr  "use 'gsh help' to get a list of available commands"
+
 msgid   "y"
 msgstr  "y"

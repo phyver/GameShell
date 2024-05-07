@@ -301,10 +301,9 @@ msgstr  "test $nb_tests échoué"
 msgid   "total time: %s"
 msgstr  "temps total : %s"
 
+msgid   "use 'gsh help' to get a list of available commands"
+msgstr  "utilisez 'gsh help' pour obtenir une liste de commandes possibles"
+
 # abbreviation for "yes" (lowercase)
 msgid   "y"
 msgstr  "o"
-
-#, fuzzy
-#~ msgid        "You shouldn't run Gameshell as root!"
-#~ msgstr       "Erreur: il ne faut pas lancer Gameshell avec l'utilisateur root !"

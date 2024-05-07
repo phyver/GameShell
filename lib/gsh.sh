@@ -298,6 +298,7 @@ to make sure the mission is initialized properly.")" >&2
     else
       parchment -B Inverted "$(eval_gettext '$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt')"
     fi
+    [ "$GSH_HELP_HINT" = "never" ] || [ "$GSH_HELP_HINT" = "always" ] || GSH_HELP_HINT=0
   fi
 }
 
