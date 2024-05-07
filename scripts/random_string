@@ -14,3 +14,17 @@ awk -v n=${n:-32} -v seed_file="$GSH_CONFIG/PRNG_seed" -v PID=$$ 'BEGIN {
   printf("\n");
   if (seed) printf("%d\n", int(2^30 * rand())+PID) > seed_file;
 }'
+
+# make sure the seed is not corrupted / empty
+# (it could happen if the process is interrupted at the wrong time)
+if [ -d "$GSH_CONFIG" ]
+then
+  case "$(cat "$GSH_CONFIG/PRNG_seed" 2>/dev/null)" in
+    "" | *[!0-9]*)
+      awk -v seed_file="$GSH_CONFIG/PRNG_seed" 'BEGIN { srand(); printf("%s", int(2^32 * rand())) > seed_file; }'
+      ;;
+    *)
+      :
+      ;;
+  esac
+fi
