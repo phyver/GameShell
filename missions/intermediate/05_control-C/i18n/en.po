@@ -1,0 +1,38 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/en.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+#, sh-format
+msgid   "FOUND: $n"
+msgstr  "FOUND: $n"
+
+msgid   "Let me think a little more!!!"
+msgstr  "Let me think a little more!!!"
+
+msgid   "What's the magic word?"
+msgstr  "What's the magic word?"
+
+msgid   "You need to interrupt Merlin before he falls asleep.\n"
+        "Refer to the goal for details."
+msgstr  "You need to interrupt Merlin before he falls asleep.\n"
+        "Refer to the goal for details."
+
+msgid   "You're right, that's not working"
+msgstr  "You're right, that's not working"
+
+msgid   "charmiglio"
+msgstr  "charmiglio"
