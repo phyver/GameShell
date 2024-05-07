@@ -277,5 +277,8 @@ msgstr  ""
 msgid   "total time: %s"
 msgstr  ""
 
+msgid   "use 'gsh help' to get a list of available commands"
+msgstr  ""
+
 msgid   "y"
 msgstr  ""
