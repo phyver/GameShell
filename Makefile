@@ -56,7 +56,7 @@ tests-zsh: clean
 
 clean:
 	rm -rf i18n/*~ locale gameshell.tgz gameshell.sh gameshell-save*.sh scripts/boxes-data.awk
-	rm -rf .bin .config .sbin .var World
+	rm -rf .bin .config .sbin .var .tmp World
 	rm -rf "game shell"*
 
 .PHONY: clean new FORCE
