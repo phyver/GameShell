@@ -1,0 +1,26 @@
+Mission goal
+============
+
+The wizard Merlin appears next to you and asks for your help. 
+You need to whisper the magic word
+  $ $command
+to put him into a trance so that he can remember a special 
+incantation for creating fireworks.
+
+The only problem is that after a couple of seconds in a trance, 
+Merlin falls asleep! You thus need to interrupt him whenever 
+that's the case, so that he can try again.
+
+
+NOTE: it will probably take several tries before Merlin 
+actually remembers the incantation
+
+
+Useful commands
+===============
+
+$command
+  this (non standard) command puts Merlin into a trance 
+
+Control-c       (also written ^c)
+  pressing Control and c at the same times interrupts the current command
