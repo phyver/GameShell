@@ -15,11 +15,34 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
+msgid   "Don't interrupt me when I'm in a trance!!!"
+msgstr  ""
+
 #, sh-format
 msgid   "FOUND: $n"
 msgstr  ""
 
+#, sh-format
+msgid   "Found it! The special incantation is $n"
+msgstr  ""
+
+#, sh-format
+msgid   "Found it! The special incantion is $n"
+msgstr  ""
+
 msgid   "Let me think a little more!!!"
+msgstr  ""
+
+msgid   "Merlin mumbles "
+msgstr  ""
+
+msgid   "NOTE: you need to interrupt Merlin before he wakes up."
+msgstr  ""
+
+msgid   "Sorry, I fell asleep... Let's try again."
+msgstr  ""
+
+msgid   "What's the fireworks incantation?"
 msgstr  ""
 
 msgid   "What's the magic word?"
