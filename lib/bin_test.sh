@@ -6,11 +6,13 @@ test_mktemp() (
   if ! tmp=$(mktemp 2>/dev/null)
   then
     echo "Error: command 'mktemp' not working." >&2
+    rm -f "$tmp"
     return 1
   fi
   if [ -z "$tmp" ]
   then
     echo "Error: command 'mktemp' returned the empty string." >&2
+    rm -f "$tmp"
     return 1
   fi
   rm -f "$tmp"
