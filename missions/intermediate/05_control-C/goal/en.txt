@@ -20,7 +20,9 @@ Useful commands
 ===============
 
 $command
-  this (non standard) command puts Merlin into a trance 
+  this (non standard) command puts Merlin into a trance
 
 Control-c       (also written ^c)
-  pressing Control and c at the same times interrupts the current command
+  pressing Control and c at the same times interrupts the current command 
+  by sending the INT ("INTerrupt") signal to the process
+
