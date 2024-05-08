@@ -17,13 +17,13 @@ options :
           Pour les systèmes non GNU, initialisez la variable LC_MESSAGES
           avec une locale valide.
 
-  --simple-savefiles
+  -S simple
           le fichier de sauvegarde est obtenu en ajoutant un suffix "-save",
           chaque fichier de sauvegarde remplace le précédent
-  --index-savefiles
+  -S index
           les fichiers de sauvegarde sont numérotés pour que toutes les
           sauvegardes soient conservées
-  --overwrite-savefiles
+  -S overwrite
           le fichier de sauvegarde remplace l'instance initial de GameShell
           (on peut utiliser l'option -R pour lancer une partie à partir du début)
 

@@ -16,12 +16,12 @@ options:
           On non GNU systems, set the variable LC_MESSAGES
           to a valid locale.
 
-  --simple-savefiles
+  -S simple
           the savefile is obtained by adding a "-save" suffix,
           each savefile overwrites the previous one
-  --index-savefiles
+  -S index
           savefiles are numbered so that all savefiles are kept
-  --overwrite-savefiles
+  -S overwrite
           the savefile overwrite the initial GameShell file
           (you can use option -R to start a new game from the start)
 
