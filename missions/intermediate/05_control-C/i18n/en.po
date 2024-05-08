@@ -20,19 +20,8 @@ msgid   "Don't interrupt me when I'm in a trance!!!"
 msgstr  "Don't interrupt me when I'm in a trance!!!"
 
 #, sh-format
-msgid   "FOUND: $n"
-msgstr  "FOUND: $n"
-
-#, sh-format
 msgid   "Found it! The special incantation is $n"
 msgstr  "Found it! The special incantation is $n"
-
-#, sh-format
-msgid   "Found it! The special incantion is $n"
-msgstr  "Found it! The special incantion is $n"
-
-msgid   "Let me think a little more!!!"
-msgstr  "Let me think a little more!!!"
 
 msgid   "Merlin mumbles "
 msgstr  "Merlin mumbles "
@@ -45,17 +34,6 @@ msgstr  "Sorry, I fell asleep... Let's try again."
 
 msgid   "What's the fireworks incantation?"
 msgstr  "What's the fireworks incantation?"
-
-msgid   "What's the magic word?"
-msgstr  "What's the magic word?"
-
-msgid   "You need to interrupt Merlin before he falls asleep.\n"
-        "Refer to the goal for details."
-msgstr  "You need to interrupt Merlin before he falls asleep.\n"
-        "Refer to the goal for details."
-
-msgid   "You're right, that's not working"
-msgstr  "You're right, that's not working"
 
 msgid   "charmiglio"
 msgstr  "charmiglio"
