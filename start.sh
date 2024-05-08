@@ -506,9 +506,6 @@ cd "$GSH_HOME"
 export GSH_UID=$(cat "$GSH_CONFIG/uid")
 date "+%Y-%m-%d %H:%M:%S" | sed 's/^/#>>> /' >> "$GSH_CONFIG/missions.log"
 
-# put a ".save" file to indicate the archive needs to be saved on exit
-touch "$GSH_ROOT/.save"
-
 # if the user uses a special TERMINFO entry, it might not be found because
 # GameShell redefines HOME
 if [ -z "$TERMINFO" ]

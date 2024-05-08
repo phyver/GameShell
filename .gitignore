@@ -4,6 +4,7 @@ TODO
 .sbin
 .config
 .tmp
+.save
 World
 locale/
 *~
