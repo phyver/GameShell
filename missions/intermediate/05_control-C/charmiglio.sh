@@ -40,13 +40,24 @@ control_c_end() {
 }
 
 mumble() {
-  seconds=$1
-  now=$(date +%s)
+  seconds=$1    # how long to mumble randomly (real time will be between $seconds and $seconds+1
+  sleep=$2      # should '.' characters appears as times passes
 
-  while [ "$(($(date +%s) - now))" -le "$seconds" ]
+  now=$(date +%s)
+  d=0
+  while [ "$d"  -le "$seconds" ]
   do
+    d=$(($(date +%s) - now))
     printf "$(gettext "Merlin mumbles ")"  >&2
-    random_string "$((8 + $(RANDOM)%42))" | tr "A-Z" " " >&2
+    if [ "$sleep" ]
+    then
+      # generate a string of length 26 containing more and more '.' characters
+      i=$((d*2))
+      alpha=$(echo "xnyjqmiwkgbplvadrhfuotcsez.........................." | awk "{print substr(\$0, $i<27?$i:27, 26)}" )
+    else
+      alpha="a-z"
+    fi
+    random_string "$((8 + $(RANDOM)%42))" | tr "a-zA-Z" "$alpha " >&2
     sleep 0.1
   done
 }
@@ -78,7 +89,7 @@ trap 'control_c_start' INT
 mumble 2      # mumble for 2 second
 check
 trap 'control_c_end' INT
-mumble 120  # mumble for 2 minutes
+mumble 120 sleep # mumble for 2 minutes, falling to sleep
 echo
 echo "$(gettext "Sorry, I fell asleep... Let's try again.")"
 
