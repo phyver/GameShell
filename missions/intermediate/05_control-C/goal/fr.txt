@@ -8,7 +8,7 @@ pour le mettre dans une transe qui devrait lui permettre de
 se souvenir d'une incantation spéciale pour créer des feux 
 d'artifice.
 
-Le seul problème est qu'après quelques secondes en trance, 
+Le seul problème est qu'après quelques secondes en transe, 
 Merlin s'endort ! Vous devez donc l'interrompre dans ce cas 
 pour qu'il puisse ré-essayer.
 

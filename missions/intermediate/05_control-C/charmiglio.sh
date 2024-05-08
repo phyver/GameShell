@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 . gsh_gettext.sh
 
@@ -9,7 +9,7 @@ control_c_start() {
     "" | *[!0-9]* )
       echo
       echo
-      echo "$(eval_gettext 'Found it! The special incantion is $n')"
+      echo "$(eval_gettext 'Found it! The special incantation is $n')"
       ;;
     *)
       echo
@@ -27,7 +27,7 @@ control_c_end() {
     "" | *[!0-9]* )
       echo
       echo
-      echo "$(eval_gettext 'Found it! The special incantion is $n')"
+      echo "$(eval_gettext 'Found it! The special incantation is $n')"
       ;;
     *)
       echo "$((n-1))" > "$GSH_TMP/control-C"
@@ -47,7 +47,7 @@ mumble() {
   d=0
   while [ "$d"  -le "$seconds" ]
   do
-    d=$(($(date +%s) - now))
+    d=$(($(date +%s) - now + 1))
     printf "$(gettext "Merlin mumbles ")"  >&2
     if [ "$sleep" ]
     then
