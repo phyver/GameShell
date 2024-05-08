@@ -160,6 +160,7 @@ NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$GS
 
 if [ "$GSH_EXTRACT" = "true" ]
 then
+  echo $NB_LINES
     tail -n+"$NB_LINES" "$GSH_EXEC_DIR/$GSH_EXEC_FILE" > "$GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}.tgz"
     echo "Archive saved in $GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}.tgz"
     exit 0
@@ -189,6 +190,10 @@ then
 fi
 # and add a safeguard so we can check we are not removing another directory
 touch "$GSH_ROOT/.gsh_root-$$"
+
+# add a .save file so that we save the directory into a self extracting archive
+# when exiting
+touch "$GSH_ROOT/.save"
 
 tail -n+"$NB_LINES" "$GSH_EXEC_DIR/$GSH_EXEC_FILE" > "$GSH_ROOT/gameshell.tgz"
 tar -zx -C "$GSH_ROOT" -f "$GSH_ROOT/gameshell.tgz"
