@@ -1,13 +1,18 @@
-#!/usr/bin/env sh
+#!/bin/sh
+
+# usage
+# random_string [N [ALPHABET]]
+#
 
 GSH_ROOT="$(cd "$(dirname "$0")/.." && pwd -P)"
 GSH_CONFIG=$GSH_ROOT/.config
 n=$1
+alpha=$(echo "${2:-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"}" | sed 's/./& /g')
 
-awk -v n=${n:-32} -v seed_file="$GSH_CONFIG/PRNG_seed" -v PID=$$ 'BEGIN {
+awk -v n=${n:-32} -v alpha="$alpha" -v seed_file="$GSH_CONFIG/PRNG_seed" -v PID=$$ 'BEGIN {
   getline seed < seed_file;
   if (seed) srand(seed); else srand();
-  l = split("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z", chars);
+  l = split(alpha, chars);
   for(i=0;i<n;i++) {
     printf("%c", chars[1+int(rand()*l)]);
   }
