@@ -261,12 +261,14 @@ __gsh_start() {
       then
         echo "$(gettext "Error: no mission was found!
 Aborting.")" >&2
+        rm -f "$env_before" "$env_after"
         exit 1
       fi
       color_echo yellow "$(eval_gettext "Error: mission \$MISSION_NB is cancelled because some dependencies are not met.")" >&2
       GSH_CANCELLED=$GSH_CANCELLED:$MISSION_NB
       __log_action "$MISSION_NB" "CANCEL_DEP_PB"
       __gsh_start "$((MISSION_NB + 1))"
+      rm -f "$env_before" "$env_after"
       return
     fi
     unset GSH_CANCELLED
@@ -281,10 +283,10 @@ Aborting.")" >&2
 Run the command
     \$ gsh reset
 to make sure the mission is initialized properly.")" >&2
-        rm -f "$env_before" "$env_after"
       fi
     fi
   fi
+  rm -f "$env_before" "$env_after"
 
   __log_action "$MISSION_NB" "START"
 

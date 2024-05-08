@@ -28,7 +28,7 @@ if [ -s "$tempfile" ]
 then
   export PAGER=more
 fi
-rm -f "$mktemp"
+rm -f "$tempfile"
 
 # try to prevent using sudo and similar
 su() {
