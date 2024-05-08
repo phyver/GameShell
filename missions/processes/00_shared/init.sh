@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+trap 'rm -f "$GSH_TMP/test-proc-name"' EXIT
+
 # use a subshell, that should guarantee that no message is displayed when the
 # test-proc-name process is killed.
 _mission_init() (
