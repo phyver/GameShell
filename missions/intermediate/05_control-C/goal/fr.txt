@@ -24,4 +24,6 @@ $command
   cette commande (non standard) met Merlin dans une transe
 
 Contrôle-c       (aussi noté ^c)
-  appuyer sur les touches Contrôle et c en même temps interrompt la commande en cours
+  appuyer sur les touches Contrôle et c en même temps interrompt 
+  la commande en cours en envoyant le signal INT ("INTerrupt") au 
+  processus
