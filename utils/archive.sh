@@ -11,7 +11,7 @@ create a GameShell standalone archive
 options:
   -h              this message
 
-  --password=...  choose password for admin commands
+  -p ...          choose password for admin commands
   -P              use the "passport mode" by default when running GameShell
   -A              use the "anonymous mode" by default when running GameShell
   -L LANGS        only keep the given languages (ex: -L 'en*,fr')
@@ -20,9 +20,9 @@ options:
 
   -N ...          name of the archive / top directory (default: "gameshell")
 
-  --simple-savefiles
-  --index-savefiles
-  --overwrite-savefiles
+  -S simple
+  -S index
+  -S overwrite
                   choose default savefile mode
 
   -a              keep 'auto.sh' scripts for missions that have one
@@ -62,38 +62,29 @@ KEEP_PO=0     # this is set to 1 if we generate .mo files. Setting it to 1 here
 LANGUAGES=""
 VERBOSE=
 
-# hack to parse long option --password
-# cf https://stackoverflow.com/questions/402377/using-getopts-to-process-long-and-short-command-line-options
-_long_option=0
-while getopts ":hp:N:atPzL:Ev-:" opt
+while getopts "hp:N:atPzL:EvS:p:" opt
 do
-  if [ "$opt" = "-" ]
-  then
-    opt="${OPTARG%%=*}"         # extract long option name
-    OPTARG="${OPTARG#"$opt"}"   # extract long option argument (may be empty)
-    OPTARG="${OPTARG#=}"        # if long option argument, remove assigning `=`
-    _long_option=1
-  fi
-
   case $opt in
     h)
       display_help
       exit 0;
       ;;
-    password)
+    p)
       ADMIN_PASSWD=$OPTARG
       ;;
     N)
       NAME=$OPTARG
       ;;
-    index-savefiles)
-      GSH_SAVEFILE_MODE=index
-      ;;
-    simple-savefiles)
-      GSH_SAVEFILE_MODE=simple
-      ;;
-    overwrite-savefiles)
-      GSH_SAVEFILE_MODE=overwrite
+    S)
+      case "$OPTARG" in
+        "index" | "simple" | "overwrite")
+          GSH_SAVEFILE_MODE=$OPTARG
+          ;;
+        *)
+          echo "Error: save mode can only be 'index', 'simple' or 'overwrite'" >&2
+          exit 1
+          ;;
+      esac
       ;;
     a)
       KEEP_AUTO=1

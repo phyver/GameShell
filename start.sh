@@ -37,28 +37,19 @@ GSH_MODE="ANONYMOUS"
 # if GSH_NO_GETTEXT is non-empty, gettext won't be used anywhere, the only language will thus be English
 # export GSH_NO_GETTEXT=1  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/archive.sh
 RESET=""
-# hack to parse long options --index-savefiles --overwrite-savefiles --simple-savefiles
-# cf https://stackoverflow.com/questions/402377/using-getopts-to-process-long-and-short-command-line-options
-_long_option=0
-while getopts ":hnPdDACRXUVqGL:KBZc:F-:" opt
+while getopts "hnPdDACRXUVqGL:KBZc:FS:" opt
 do
-  if [ "$opt" = "-" ]
-  then
-    opt="${OPTARG%%=*}"       # extract long option name
-    OPTARG="${OPTARG#$opt}"   # extract long option argument (may be empty)
-    OPTARG="${OPTARG#=}"      # if long option argument, remove assigning `=`
-    _long_option=1
-  fi
-
   case $opt in
-    index-savefiles)
-      GSH_SAVEFILE_MODE=index
-      ;;
-    simple-savefiles)
-      GSH_SAVEFILE_MODE=simple
-      ;;
-    overwrite-savefiles)
-      GSH_SAVEFILE_MODE=overwrite
+    S)
+      case "$OPTARG" in
+        "index" | "simple" | "overwrite")
+          GSH_SAVEFILE_MODE=$OPTARG
+          ;;
+        *)
+          echo "$(gettext "Error: save mode can only be 'index', 'simple' or 'overwrite'")" >&2
+          exit 1
+          ;;
+      esac
       ;;
     h)
       display_help

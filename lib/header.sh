@@ -34,61 +34,65 @@ GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
 # just in case
 GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
 
-for arg in "$@"
+while getopts "VUXKFh" opt
 do
-  if [ "$arg" = "-V" ]
-  then
-    echo "Gameshell $GSH_VERSION"
-    if [ -n "$GSH_LAST_CHECKED_MISSION" ]
-    then
-      echo "saved game: [mission $GSH_LAST_CHECKED_MISSION] OK"
-    fi
-    exit 0
-  elif [ "$arg" = "-U" ]
-  then
-    TARGET="$GSH_EXEC_DIR/gameshell.sh"
-    TMPFILE="$GSH_EXEC_DIR/gameshell.sh$$"
-    if command -v wget >/dev/null
-    then
-      if wget -O "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
-      then
-        mv "$TMPFILE" "$TARGET"
-        chmod +x "$TARGET"
-        echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
+    case "$opt" in
+      V)
+        echo "Gameshell $GSH_VERSION"
+        if [ -n "$GSH_LAST_CHECKED_MISSION" ]
+        then
+          echo "saved game: [mission $GSH_LAST_CHECKED_MISSION] OK"
+        fi
         exit 0
-      else
-        rm -f "$TMPFILE"
-        echo "Error: couldn't download or save the latest version of GameShell." >&2
-        exit 1
-      fi
-    elif command -v curl >/dev/null
-    then
-      if curl -fo "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
-      then
-        mv "$TMPFILE" "$TARGET"
-        chmod +x "$TARGET"
-        echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
-        exit 0
-      else
-        rm -f "$TMPFILE"
-        echo "Error: couldn't download or save the latest version of GameShell." >&2
-        exit 1
-      fi
-    fi
-  elif [ "$arg" = "-X" ]
-  then
-    GSH_EXTRACT="true"
-  elif [ "$arg" = "-K" ]
-  then
-    KEEP_DIR="true"
-  elif [ "$arg" = "-F" ]
-  then
-    GSH_FORCE="true"
-  elif [ "$arg" = "-h" ]
-  then
-    # used to avoid checking for more recent files
-    GSH_HELP="true"
-  fi
+        ;;
+      U)
+        TARGET="$GSH_EXEC_DIR/gameshell.sh"
+        TMPFILE="$GSH_EXEC_DIR/gameshell.sh$$"
+        if command -v wget >/dev/null
+        then
+          if wget -O "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
+          then
+            mv "$TMPFILE" "$TARGET"
+            chmod +x "$TARGET"
+            echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
+            exit 0
+          else
+            rm -f "$TMPFILE"
+            echo "Error: couldn't download or save the latest version of GameShell." >&2
+            exit 1
+          fi
+        elif command -v curl >/dev/null
+        then
+          if curl -fo "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
+          then
+            mv "$TMPFILE" "$TARGET"
+            chmod +x "$TARGET"
+            echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
+            exit 0
+          else
+            rm -f "$TMPFILE"
+            echo "Error: couldn't download or save the latest version of GameShell." >&2
+            exit 1
+          fi
+        fi
+        ;;
+      X)
+        GSH_EXTRACT="true"
+        ;;
+      K)
+        KEEP_DIR="true"
+        ;;
+      F)
+        GSH_FORCE="true"
+        ;;
+      h)
+        # used to avoid checking for more recent files
+        GSH_HELP="true"
+        ;;
+      *)
+        # ignore other options, they will be passed to start.sh
+        ;;
+    esac
 done
 
 
