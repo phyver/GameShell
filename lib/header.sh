@@ -34,7 +34,7 @@ GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
 # just in case
 GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
 
-while getopts "hnPdDACRXUVqGL:KBZc:FS:" opt
+while getopts ":hnPdDACRXUVqGL:KBZc:FS:" opt
 do
     case "$opt" in
       V)
@@ -88,6 +88,11 @@ do
       h)
         # used to avoid checking for more recent files
         GSH_HELP="true"
+        ;;
+      '?')
+        echo "$0: invalid option '-$OPTARG'" >&2
+        echo "use $0 -h to get the list of available options" >&2
+        exit 1
         ;;
       *)
         # ignore other options, they will be passed to start.sh
