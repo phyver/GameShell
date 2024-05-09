@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-rm -f "$GSH_TMP/control-C"
+rm -f "$GSH_TMP/control-C*"

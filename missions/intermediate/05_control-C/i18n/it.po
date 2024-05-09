@@ -15,24 +15,33 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
-msgid   "Don't interrupt me when I'm in a trance!!!"
+#, sh-format
+msgid   "It works! The special incantation is $CODE"
+msgstr  ""
+
+msgid   "NOTE: you should interrupt the magical reaction after a few seconds!"
+msgstr  ""
+
+msgid   "That's not working, try a different combination..."
+msgstr  ""
+
+msgid   "The incantation can only use ASCII letters."
+msgstr  ""
+
+msgid   "The incantation requires exactly 4 letters."
 msgstr  ""
 
 #, sh-format
-msgid   "Found it! The special incantation is $n"
+msgid   "Too soon! You must leave enough time for the magical reaction to start!"
 msgstr  ""
 
-msgid   "Merlin mumbles "
-msgstr  ""
-
-msgid   "NOTE: you need to interrupt Merlin before he wakes up."
-msgstr  ""
-
-msgid   "Sorry, I fell asleep... Let's try again."
-msgstr  ""
-
-msgid   "What's the fireworks incantation?"
+msgid   "What's a valid 4 letters sequence?"
 msgstr  ""
 
 msgid   "charmiglio"
+msgstr  ""
+
+#, sh-format
+msgid   "usage: $command CCCC\n"
+        "      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"
 msgstr  ""

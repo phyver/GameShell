@@ -2,62 +2,48 @@
 
 . gsh_gettext.sh
 
-control_c_start() {
-  [ -f "$GSH_TMP/control-C" ] || exit 255
-  n=$(cat "$GSH_TMP/control-C")
-  case "$n" in
-    "" | *[!0-9]* )
-      echo
-      echo
-      echo "$(eval_gettext 'Found it! The special incantation is $n')"
-      ;;
-    *)
-      echo
-      echo
-      echo "$(gettext "Don't interrupt me when I'm in a trance!!!")"
-      ;;
-  esac
+CODE=$1
+STATE=init
+
+trap 'control_c' INT
+control_c() {
+  if [ "$STATE" = "init" ]
+  then
+    echo
+    echo "$(eval_gettext 'Too soon! You must leave enough time for the magical reaction to start!')"
+    exit 1
+  else
+    echo
+    cat "$MISSION_DIR/ascii-art/explosion.txt"
+    echo "$(gettext "That's not working, try a different combination...")"
+  fi
   exit 1
 }
 
-control_c_end() {
-  [ -f "$GSH_TMP/control-C" ] || exit 255
-  n=$(cat "$GSH_TMP/control-C")
-  case "$n" in
-    "" | *[!0-9]* )
-      echo
-      echo
-      echo "$(eval_gettext 'Found it! The special incantation is $n')"
-      ;;
-    *)
-      echo "$((n-1))" > "$GSH_TMP/control-C"
-      echo
-      echo
-      echo "$(gettext "Sorry, I fell asleep... Let's try again.")"
-      ;;
-    esac
-  exit 1
-}
 
-mumble() {
-  seconds=$1    # how long to mumble randomly (real time will be between $seconds and $seconds+1
-  sleep=$2      # should '.' characters appears as times passes
+indent=8
+width=16
+magical_reaction() {
+  seconds=$1    # how long to magical_reaction randomly (real time will be between $seconds and $seconds+1
+  dud=$2      # should more '.' characters appears as times passes
 
   now=$(date +%s)
-  d=0
-  while [ "$d"  -le "$seconds" ]
+  delay=0
+  while [ "$delay"  -le "$seconds" ]
   do
-    d=$(($(date +%s) - now + 1))
-    printf "$(gettext "Merlin mumbles ")"  >&2
-    if [ "$sleep" ]
-    then
-      # generate a string of length 26 containing more and more '.' characters
-      i=$((d*2))
-      alpha=$(echo "xnyjqmiwkgbplvadrhfuotcsez.........................." | awk "{print substr(\$0, $i<27?$i:27, 26)}" )
-    else
-      alpha="a-z"
-    fi
-    random_string "$((8 + $(RANDOM)%42))" | tr "a-zA-Z" "$alpha " >&2
+    delay=$(($(date +%s) - now))
+    # NOTE: if I put $(RANDOM) inside the $((...)), interrupting the process during
+    # the RANDOM execution returns an empty string, and the shell complains about
+    # invalid arithmetic expression
+    r=$(RANDOM)
+    indent=$((indent - 2 + r%5))
+    [ "$indent" -lt 0 ] && indent=0
+    r=$(RANDOM)
+    width=$((width - 2 + r%5))
+    [ "$width" -lt 1 ] && width=1
+    w=$((delay/2))
+    alpha=$(echo "#%*_-............." | awk "{print substr(\$0, $w<6?$w:6, 10)}" )
+    printf "%*s%s\n" "$indent" '' "$(random_string "$width" "$alpha")" >&2
     sleep 0.1
   done
 }
@@ -67,30 +53,68 @@ check() {
   n=$(cat "$GSH_TMP/control-C")
   case "$n" in
     "" | *[!0-9]* )
-      # we already know the solution
-      echo
-      echo "$(eval_gettext 'Found it! The special incantation is $n')"
-      exit 0
+      if [ "$n" = "$CODE" ]
+      then
+        echo
+        echo "$(eval_gettext 'It works! The special incantation is $CODE')"
+        cat "$MISSION_DIR/ascii-art/fireworks.txt"
+        exit 0
+      else
+        echo "$CODE" >> "$GSH_TMP/control-C.codes"
+      fi
       ;;
     *)
       if [ "$n" -le 0 ]
       then
         # if we've finished, print the solution and save it
-        n=$(random_string 5)
-        echo "$n" > "$GSH_TMP/control-C"
+        echo "$CODE" > "$GSH_TMP/control-C"
         echo
-        echo "$(eval_gettext 'Found it! The special incantation is $n')"
+        echo "$(eval_gettext 'It works! The special incantation is $CODE')"
+        cat "$MISSION_DIR/ascii-art/fireworks.txt"
         exit 0
+      else
+        echo "$CODE" >> "$GSH_TMP/control-C.codes"
+        echo "$((n-1))" > "$GSH_TMP/control-C"
       fi
   esac
+  STATE="final"
 }
 
-trap 'control_c_start' INT
-mumble 2      # mumble for 2 second
-check
-trap 'control_c_end' INT
-mumble 120 sleep # mumble for 2 minutes, falling to sleep
-echo
-echo "$(gettext "Sorry, I fell asleep... Let's try again.")"
+init() {
+  case "$CODE" in
+    "")
+      command=$(gettext "charmiglio")
+      echo "$(eval_gettext 'usage: $command CCCC
+      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)')"
+      exit 1
+      ;;
 
-echo "$(gettext "NOTE: you need to interrupt Merlin before he wakes up.")"
+    *[!a-zA-Z]*)
+      echo "$(gettext "The incantation can only use ASCII letters.")"
+      exit 1
+      ;;
+    ????)
+      :     # 4 letters, OK
+      ;;
+    *)
+      echo "$(gettext "The incantation requires exactly 4 letters.")"
+      exit 1
+      ;;
+  esac
+
+  if grep -qsx "$CODE" "$GSH_TMP/control-C.codes"
+  then
+    echo "already tried!"
+    exit 1
+  fi
+}
+
+
+init
+magical_reaction 2      # magical_reaction for 2 second
+check
+magical_reaction 120 dud # magical_reaction for 2 minutes
+
+echo
+echo "$(gettext "That's not working, try a different combination...")"
+echo "$(gettext "NOTE: you should interrupt the magical reaction after a few seconds!")"

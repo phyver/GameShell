@@ -16,24 +16,34 @@ msgstr  "$MISSION_DIR/skip/en.txt"
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
 
-msgid   "Don't interrupt me when I'm in a trance!!!"
-msgstr  "Don't interrupt me when I'm in a trance!!!"
+#, sh-format
+msgid   "It works! The special incantation is $CODE"
+msgstr  "It works! The special incantation is $CODE"
+
+msgid   "NOTE: you should interrupt the magical reaction after a few seconds!"
+msgstr  "NOTE: you should interrupt the magical reaction after a few seconds!"
+
+msgid   "That's not working, try a different combination..."
+msgstr  "That's not working, try a different combination..."
+
+msgid   "The incantation can only use ASCII letters."
+msgstr  "The incantation can only use ASCII letters."
+
+msgid   "The incantation requires exactly 4 letters."
+msgstr  "The incantation requires exactly 4 letters."
 
 #, sh-format
-msgid   "Found it! The special incantation is $n"
-msgstr  "Found it! The special incantation is $n"
+msgid   "Too soon! You must leave enough time for the magical reaction to start!"
+msgstr  "Too soon! You must leave enough time for the magical reaction to start!"
 
-msgid   "Merlin mumbles "
-msgstr  "Merlin mumbles "
-
-msgid   "NOTE: you need to interrupt Merlin before he wakes up."
-msgstr  "NOTE: you need to interrupt Merlin before he wakes up."
-
-msgid   "Sorry, I fell asleep... Let's try again."
-msgstr  "Sorry, I fell asleep... Let's try again."
-
-msgid   "What's the fireworks incantation?"
-msgstr  "What's the fireworks incantation?"
+msgid   "What's a valid 4 letters sequence?"
+msgstr  "What's a valid 4 letters sequence?"
 
 msgid   "charmiglio"
 msgstr  "charmiglio"
+
+#, sh-format
+msgid   "usage: $command CCCC\n"
+        "      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"
+msgstr  "usage: $command CCCC\n"
+        "      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"

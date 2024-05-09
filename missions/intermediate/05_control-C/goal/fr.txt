@@ -1,27 +1,36 @@
 Objectif
 =========
 
-Le sorcier Merlin apparait à vos cotés et vous demande de 
-l'aide. Vous devez murmurer le mot magique
-  $ $command
-pour le mettre dans une transe qui devrait lui permettre de 
-se souvenir d'une incantation spéciale pour créer des feux 
-d'artifice.
+L'artificier royal apparait à vos cotés. Il essaie de se 
+souvenir de l'incantation magique qui génère des feux 
+d'artifices.
 
-Le seul problème est qu'après quelques secondes en transe, 
-Merlin s'endort ! Vous devez donc l'interrompre dans ce cas 
-pour qu'il puisse ré-essayer.
+Cette incantation commence par le mot $command 
+et doit être suivie de quatre lettres aléatoires comme dans
+  $ $command abcd
+ou
+  $ $command oups
+
+Aidez l'artificier en trouvant quatres lettres pour faire 
+un joli feu d'artifice.
 
 
-NOTE: il faudra probablement plusieurs essais pour que 
-Merlin retrouve son incantation.
+NOTE: lorsque les quatres lettres sont incorrectes, la réaction 
+magique peut prendre très longtemps. Il faudra l'interrompre !
+
+Il est probable que vous deviez faire plusieurs essais pour 
+trouver une suite de quatre lettres qui fonctionne.
 
 
 Commandes utiles
 ================
 
-$command
-  cette commande (non standard) met Merlin dans une transe
+$command CCCC
+  cette commande (non standard) génère un feu d'artifice
+    - si les quatre lettres sont valides, le feu d'artifice partira 
+      au bout de quelques secondes
+    - si les quatres lettres ne sont pas valides, la réaction chimique 
+      continuera pendant longtemps
 
 Contrôle-c       (aussi noté ^c)
   appuyer sur les touches Contrôle et c en même temps interrompt 

@@ -1,28 +1,36 @@
 Mission goal
 ============
 
-The wizard Merlin appears next to you and asks for your help. 
-You need to whisper the magic word
-  $ $command
-to put him into a trance so that he can remember a special 
-incantation for creating fireworks.
+The king's pyrotechnician appears next to you. He is trying to 
+remember the magical incantation for creating fireworks.
 
-The only problem is that after a couple of seconds in a trance, 
-Merlin falls asleep! You thus need to interrupt him whenever 
-that's the case, so that he can try again.
+This incantation starts with the work $command and must be followed 
+by four random letters, as in
+  $ $command abcd
+or
+  $ $command oops
+
+Help the pyrotechnician by finding 4 letters for creating some 
+fireworks.
 
 
-NOTE: it will probably take several tries before Merlin 
-actually remembers the incantation
+NOTE: when the four letters are incorrect, the magical reaction 
+can take a very long time. You need to interrupt it!
+
+It will probably take several tries before finding a combination 
+of letters that works.
 
 
 Useful commands
 ===============
 
-$command
-  this (non standard) command puts Merlin into a trance
+$command CCCC
+  this (non standard) command creates some fireworks
+    - if the four letters are valid, the fireworks will start after a few 
+      seconds
+    - if the four letters are not valid, the whole magical reaction will go 
+      on for a very long time
 
 Control-c       (also written ^c)
   pressing Control and c at the same times interrupts the current command 
   by sending the INT ("INTerrupt") signal to the process
-

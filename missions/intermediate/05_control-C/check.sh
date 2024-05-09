@@ -2,22 +2,22 @@
 
 _mission_check() {
   r=$(cat "$GSH_TMP/control-C")
-  printf "%s " "$(gettext "What's the fireworks incantation?")"
+  printf "%s " "$(gettext "What's a valid 4 letters sequence?")"
   read -r n
 
   case "$r" in
-    "" | *[!0-9]*)
+    *[!a-zA-Z]*)
+      return 1
+      ;;
+    ????)
       if [ "$n" = "$r" ]
       then
-        cat "$MISSION_DIR/ascii-art/fireworks.txt"
         return 0
       else
-        cat "$MISSION_DIR/ascii-art/explosion.txt"
         return 1
       fi
       ;;
     *)
-      cat "$MISSION_DIR/ascii-art/explosion.txt"
       return 1
   esac
 }
