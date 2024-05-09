@@ -1,0 +1,36 @@
+Mission goal
+============
+
+The king's pyrotechnician is trying to remember the magical incantation 
+for creating the grand finale for his fireworks. This incantation starts 
+with the work $command and must be followed by four random letters, as 
+in
+
+  $ $command abcd
+or
+  $ $command oops
+
+Help the pyrotechnician by finding 4 letters producing appropriate 
+fireworks.
+
+
+NOTE: when the four letters are incorrect, the magical reaction 
+can take a very long time. You need to interrupt it!
+
+It will probably take several tries before finding a combination 
+of letters that works.
+
+
+Useful commands
+===============
+
+$command CCCC
+  this (non standard) command creates some fireworks
+    - if the four letters are valid, the fireworks will start after a few 
+      seconds
+    - if the four letters are not valid, the whole magical reaction will go 
+      on for a long time
+
+Control-c       (also written ^c)
+  pressing Control and c at the same times interrupts the current command 
+  by sending the INT ("INTerrupt") signal to the process

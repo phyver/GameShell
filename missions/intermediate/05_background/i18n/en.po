@@ -1,0 +1,34 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/en.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+msgid   "Great, that looked good!"
+msgstr  "Great, that looked good!"
+
+msgid   "Let's have a look:"
+msgstr  "Let's have a look:"
+
+#, sh-format
+msgid   "Mmm... I didn't see anything."
+msgstr  "Mmm... I didn't see anything."
+
+#, sh-format
+msgid   "Mmm... I only saw $NB fireworks. That's not enough."
+msgstr  "Mmm... I only saw $NB fireworks. That's not enough."
+
+msgid   "charmiglio"
+msgstr  "charmiglio"

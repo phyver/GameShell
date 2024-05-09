@@ -1,0 +1,28 @@
+Mission goal
+============
+
+The king's pyrotechnician appears next to you. He asks you to fire **at least 
+3 of them** so he can see them from far away.
+
+A single firework can be created with the magical word
+
+  $command
+
+
+Useful commands
+===============
+
+$command
+  this (non standard) command creates a single small firework
+
+COMMAND &
+  run the given command, but don't wait until it is finished to return
+  The command will run in the "background".
+
+COMMAND1 ; COMMAND2 ; ... ; COMMANDn
+  run the given commands one after the other
+  Each command is run when the previous one is finished.
+
+COMMAND1 & COMMAND2 & ... & COMMANDn
+  run the given commands "in parallel"
+  All the commands are run in the "background", except the last one.

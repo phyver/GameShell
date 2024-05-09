@@ -1,0 +1,29 @@
+Objectif
+=========
+
+L'artificier royal apparait à vos cotés. Il vous demande de tirer **au moins 3
+jeux d'artifices" pour qu'il puisse les voir de loin.
+
+Une fusée simple peut être lancée avec le mot magique
+
+  $command 
+
+
+Commandes utiles
+================
+
+$command
+  cette commande (non standard) lance un feu d'artifice simple
+
+COMMANDE &
+  exécute la commande mais n'attend pas qu'elle soit terminée pour reprendre
+  l'exécution du shell
+  La commande s'exécute "en arrière plan".
+
+COMMAND1 ; COMMAND2 ; ... ; COMMANDn
+  exécute les commandes données, l'une après l'autre
+  Chaque commande est exécutée lorsque la précédente est terminée.
+
+COMMAND1 & COMMAND2 & ... & COMMANDn
+  exécute les commandes données, "en parallèle"
+  Toutes les commandes sont exécutées "en arrière plan", sauf la dernière.

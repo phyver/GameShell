@@ -5,7 +5,7 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 # path for the text file containing the goal
 #, sh-format
 msgid   "$MISSION_DIR/goal/en.txt"
-msgstr  "$MISSION_DIR/goal/it.txt"
+msgstr  ""
 
 # path for the text file containing the skip message
 msgid   "$MISSION_DIR/skip/en.txt"
@@ -15,23 +15,18 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
-msgid   "Don't interrupt me when I'm in a trance!!!"
+msgid   "Great, that looked good!"
+msgstr  ""
+
+msgid   "Let's have a look:"
 msgstr  ""
 
 #, sh-format
-msgid   "Found it! The special incantation is $n"
+msgid   "Mmm... I didn't see anything."
 msgstr  ""
 
-msgid   "Merlin mumbles "
-msgstr  ""
-
-msgid   "NOTE: you need to interrupt Merlin before he wakes up."
-msgstr  ""
-
-msgid   "Sorry, I fell asleep... Let's try again."
-msgstr  ""
-
-msgid   "What's the fireworks incantation?"
+#, sh-format
+msgid   "Mmm... I only saw $NB fireworks. That's not enough."
 msgstr  ""
 
 msgid   "charmiglio"

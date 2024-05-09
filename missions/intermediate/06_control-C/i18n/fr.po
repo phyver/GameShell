@@ -1,0 +1,48 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  ""
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+msgid   "Charmiglio"
+msgstr  "Charmiglio"
+
+#, sh-format
+msgid   "It works! The special incantation is $CODE"
+msgstr  "Ça marche ! L'incantation spéciale est $CODE"
+
+msgid   "NOTE: you should interrupt the magical reaction after a few seconds!"
+msgstr  "NOTE : vous devriez interrompre la réaction magique après quelques secondes !"
+
+msgid   "That's not working, try a different combination..."
+msgstr  "Ça ne marche pas, essayez une autre combinaison..."
+
+msgid   "The incantation can only use ASCII letters."
+msgstr  "L'incantation ne peut utiliser que des lettres ASCII."
+
+msgid   "The incantation requires exactly 4 letters."
+msgstr  "L'incantation nécessite exactement 4 lettres."
+
+#, sh-format
+msgid   "Too soon! You must leave enough time for the magical reaction to start!"
+msgstr  "Trop tôt ! Vous devez laisser assez de temps pour que la réaction magique commence !"
+
+msgid   "What's a valid 4 letters sequence?"
+msgstr  "Qu'est-ce qu'une combinaison valide ?"
+
+#, sh-format
+msgid   "usage: $command CCCC\n"
+        "      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"
+msgstr  "utilisation : $command CCCC\n"
+        "      où CCCC est une suite de 4 lettres ASCII (a-zA-Z)"
