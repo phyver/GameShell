@@ -37,7 +37,7 @@ GSH_MODE="ANONYMOUS"
 # if GSH_NO_GETTEXT is non-empty, gettext won't be used anywhere, the only language will thus be English
 # export GSH_NO_GETTEXT=1  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/archive.sh
 RESET=""
-while getopts "hnPdDACRXUVqGL:KBZc:FS:" opt
+while getopts ":hnPdDACRXUVqGL:KBZc:FS:" opt
 do
   case $opt in
     S)
@@ -86,10 +86,6 @@ do
     G)
       export GSH_NO_GETTEXT=1
       ;;
-    X | U)
-      echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
-      exit 1
-      ;;
     V)
       # when lib/header.sh sees the -V flag, it displays the version and exits,
       # so the next case isn't used.
@@ -111,16 +107,17 @@ do
     c)
       GSH_COMMAND=$OPTARG
       ;;
-    K|F)
-      :  # used by the self-extracting archive
-      ;;
-    *)
-      if [ "$_long_option" = "1" ]
-      then
-        OPTARG="-$opt"
-      fi
+    '?')
       echo "$(eval_gettext "Error: invalid option: '-\$OPTARG'")" >&2
       exit 1
+      ;;
+    X | U)
+      echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
+      exit 1
+      ;;
+    *)
+      :  # other options are used by the self-extracting archive and passed on
+         # we ignore them
       ;;
   esac
 done
