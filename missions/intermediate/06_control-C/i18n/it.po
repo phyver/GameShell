@@ -1,0 +1,49 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  ""
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+msgid   "Charmiglio"
+msgstr  "Charmiglio"
+
+#, sh-format
+msgid   "It works! The special incantation is $CODE"
+msgstr  "It works! The special incantation is $CODE"
+
+msgid   "NOTE: you should interrupt the magical reaction after a few seconds!"
+msgstr  "NOTE: you should interrupt the magical reaction after a few seconds!"
+
+msgid   "That's not working, try a different combination..."
+msgstr  "That's not working, try a different combination..."
+
+msgid   "The incantation can only use ASCII letters."
+msgstr  "The incantation can only use ASCII letters."
+
+msgid   "The incantation requires exactly 4 letters."
+msgstr  "The incantation requires exactly 4 letters."
+
+#, sh-format
+msgid   "Too soon! You must leave enough time for the magical reaction to start!"
+msgstr  "Too soon! You must leave enough time for the magical reaction to start!"
+
+msgid   "What's a valid 4 letters sequence?"
+msgstr  "What's a valid 4 letters sequence?"
+
+#, sh-format
+msgid   "usage: $command CCCC\n"
+        "      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"
+msgstr  "usage: $command CCCC\n"
+        "      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"

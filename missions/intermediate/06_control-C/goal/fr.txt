@@ -1,0 +1,36 @@
+Objectif
+=========
+
+L'artificier royal essaie de se souvenir de l'incantation magique qui génère 
+le bouquet final de son grand feu d'artifices. Cette incantation commence par 
+le mot $command et doit être suivie de quatre lettres aléatoires comme dans
+
+  $ $command abcd
+ou
+  $ $command oups
+
+Aidez l'artificier en trouvant quatres lettres qui produisent un feu
+d'artifices approprié.
+
+
+NOTE: lorsque les quatres lettres sont incorrectes, la réaction 
+magique peut prendre beaucoup de temps. Il faudra l'interrompre !
+
+Il est probable que vous deviez faire plusieurs essais pour 
+trouver une suite de quatre lettres qui fonctionne.
+
+
+Commandes utiles
+================
+
+$command CCCC
+  cette commande (non standard) génère un feu d'artifice
+    - si les quatre lettres sont valides, le feu d'artifice partira 
+      au bout de quelques secondes
+    - si les quatres lettres ne sont pas valides, la réaction magique 
+      continuera pendant longtemps
+
+Contrôle-c       (aussi noté ^c)
+  appuyer sur les touches Contrôle et c en même temps interrompt 
+  la commande en cours en envoyant le signal INT ("INTerrupt") au 
+  processus
