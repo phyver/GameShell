@@ -34,7 +34,7 @@ GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
 # just in case
 GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
 
-while getopts "VUXKFh" opt
+while getopts "hnPdDACRXUVqGL:KBZc:FS:" opt
 do
     case "$opt" in
       V)
