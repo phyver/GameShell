@@ -132,6 +132,9 @@ msgid   "Error: no mission was found!\n"
 msgstr  "Errore: nessuna missione trovata!\n"
         "Interruzione!"
 
+msgid   "Error: save mode can only be 'index', 'simple' or 'overwrite'"
+msgstr  ""
+
 msgid   "Error: the 'goto' command requires a mission number as argument."
 msgstr  "Errore: il comando 'goto' richiede un numero di missione come argomento.`"
 
