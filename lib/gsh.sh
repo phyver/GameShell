@@ -171,7 +171,8 @@ Do you still want to quit? [y/n]") "
   __gsh_clean "$MISSION_NB"
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh unprotect
   [ -e "$GSH_ROOT/.save" ] && __save
-  # remove the ".save" file to make sure we don't always save from now on!
+  # remove the ".save" file to make sure we don't automatically save if call
+  # start.sh directly from the directory
   rm -f "$GSH_ROOT/.save"
 
   ## NOTE: without that, calling exit in zsh doesn't work if there are running
