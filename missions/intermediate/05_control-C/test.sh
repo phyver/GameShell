@@ -27,7 +27,7 @@ do_test() {
 do_test 10 0.3
 gsh assert check false < "$GSH_TMP/control-C"
 
-do_test 3 4
+do_test 2 4
 gsh assert check false < "$GSH_TMP/control-C"
 
 do_test 6 4

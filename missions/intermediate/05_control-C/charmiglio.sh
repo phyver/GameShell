@@ -41,8 +41,13 @@ magical_reaction() {
     r=$(RANDOM)
     width=$((width - 2 + r%5))
     [ "$width" -lt 1 ] && width=1
-    w=$((delay/2))
-    alpha=$(echo "#%*_-............." | awk "{print substr(\$0, $w<6?$w:6, 10)}" )
+    if [ "$dud" ]
+    then
+      i=$((delay/2 + 2))
+    else
+      i=1
+    fi
+    alpha=$(echo "#%*():_-............." | awk "{print substr(\$0, $i<10?$i:10, 10)}" )
     printf "%*s%s\n" "$indent" '' "$(random_string "$width" "$alpha")" >&2
     sleep 0.1
   done
