@@ -4,8 +4,8 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Plural-Forms: nplurals=2; plural=n>1;\n"
 
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
-msgstr  "$GSH_ROOT/i18n/gameshell-HELP/fr.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-full-help/fr.txt"
 
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"

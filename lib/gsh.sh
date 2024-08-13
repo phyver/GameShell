@@ -639,6 +639,17 @@ _gsh_test() {
 }
 
 
+###
+# don't put the next 2 functions in $GSH_ROOT/scripts/_gsh_help / _gsh_HELP
+# because it doesn't work on case insensitive filesystems
+_gsh_help() {
+  parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-help/en.txt')" Parchment2 | pager
+}
+
+_gsh_HELP() {
+  parchment "$(eval_gettext '$GSH_ROOT/i18n/gameshell-full-help/en.txt')" Parchment2 | pager
+}
+
 gsh() {
   local _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="gsh"
@@ -706,6 +717,14 @@ gsh() {
       export GSH_LAST_ACTION='goto'
       __gsh_clean
       __gsh_start "$@"
+      ;;
+
+    "help")
+      _gsh_help
+      ;;
+
+    "HELP")
+      _gsh_HELP
       ;;
 
     *)
