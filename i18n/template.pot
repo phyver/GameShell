@@ -1,5 +1,5 @@
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-full-help/en.txt"
 msgstr  ""
 
 #, sh-format

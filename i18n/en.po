@@ -1,7 +1,7 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
-msgstr  "$GSH_ROOT/i18n/gameshell-HELP/en.txt"
+msgid   "$GSH_ROOT/i18n/gameshell-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-full-help/en.txt"
 
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
