@@ -35,7 +35,7 @@ missions ont des dépendances additionnelles : elles seront annulées si leurs
 dépendances ne sont pas satisfaites. Sur Debian ou Ubuntu, lancez la commande
 suivante pour installer toutes les dépendances pour le jeu et les missions.
 ```sh
-$ sudo apt install gettext-base man-db psmisc nano tree bsdmainutils x11-apps
+$ sudo apt install gettext-base man-db psmisc nano tree ncal x11-apps
 ```
 Consultez le [manuel utilisateur](doc/user_manual.md) (en anglais) pour voir
 comment installer les dépendances sur d'autres systèmes (macOS, BSD, ...).

@@ -20,14 +20,14 @@ the following
   - `pstree` (`psmisc` package in Debian/Ubuntu)
   - `nano` (`nano` package in Debian/Ubuntu)
   - `tree` (`tree` package in Debian/Ubuntu)
-  - `cal` (`bsdmainutils` package in Debian/Ubuntu)
+  - `cal` (`ncal` package in Debian/Ubuntu)
   - `xeyes` (`x11-apps` package in Debian/Ubuntu)
 
 On a Debian / Ubuntu system, the following ensures you have everything you
 need to run GameShell without problems.
 
 ```sh
-$ sudo apt install gettext-base man-db procps psmisc nano tree bsdmainutils x11-apps
+$ sudo apt install gettext-base man-db procps psmisc nano tree ncal x11-apps
 ```
 
 

@@ -21,7 +21,7 @@ Come cominciare
 GameShell dovrebbe funzionare in qualunque sistema Linux standard, e anche su macOS e BSD (ma abbiamo eseguito pochi test su questi). Su Debian e Ubuntu, le uniche dipendenze (oltre `bash`) sono i pacchetti `gettext-base` e `awk`(questo di solito presente di default). Alcune missioni hanno dipendenze addizionali: queste missioni verranno saltate se le dipendenze non sono state risolte.
 Su Debian o Ubuntu, esegui i comandi seguenti per installare tutte le dipendenze del gioco e delle missioni.  
 ```sh
-$ sudo apt install gettext man-db procps psmisc nano tree bsdmainutils x11-apps wget
+$ sudo apt install gettext man-db procps psmisc nano tree ncal x11-apps wget
 ```
 Controlla il [manuale utente](doc/user_manual.md) per vedere come installare le dipendenze su altri sistemi (macOS, BSD, ...).
 

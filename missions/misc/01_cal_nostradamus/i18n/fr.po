@@ -23,9 +23,9 @@ msgstr  "Ce n'est même pas une réponse valide !"
 
 #, sh-format
 msgid   "The command 'cal' is required for mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu: install package 'bsdmainutils')"
+        "(Debian / Ubuntu: install package 'ncal')"
 msgstr  "La commande 'cal' est nécessaire pour la mission $MISSION_NAME.\n"
-        "(Debian / Ubuntu : installez le paquet 'bsdmainutils')"
+        "(Debian / Ubuntu : installez le paquet 'ncal')"
 
 #, sh-format
 msgid   "What was the day of the week for the $MM-$DD-$YYYY?"

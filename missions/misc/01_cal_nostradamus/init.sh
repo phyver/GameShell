@@ -3,7 +3,7 @@
 _mission_init() (
   if ! command -v cal >/dev/null; then
     echo "$(eval_gettext "The command 'cal' is required for mission \$MISSION_NAME.
-(Debian / Ubuntu: install package 'bsdmainutils')")" >&2
+(Debian / Ubuntu: install package 'ncal')")" >&2
     return 1
   fi
   # keep the date between 1902 and 2038 to avoid problems with 32bits systems
