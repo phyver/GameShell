@@ -11,7 +11,7 @@ RUN apt install --no-install-recommends --assume-yes \
     procps \
     nano \
     tree \
-    bsdmainutils \
+    ncal \
     x11-apps
 RUN apt clean
 RUN rm -rf /var/lib/apt/lists/*
