@@ -44,7 +44,7 @@ __log_action() {
 
 
 _gsh_reset() {
-  local MISSION_NB="$(_gsh_pcm)"
+  local MISSION_NB="${1:-$(_gsh_pcm)}"
   if [ -z "$MISSION_NB" ]
   then
     local fn_name="${FUNCNAME[0]}"
@@ -226,10 +226,9 @@ __gsh_start() {
     color_echo red "$(eval_gettext "Error: mission \$MISSION_NB doesn't exist!")" >&2
     echo
     __log_action "$MISSION_NB" "UNKNOWN_MISSION"
-    gsh reset
+    gsh reset $(($MISSION_NB-1))    # reset the previous (current) mission
     return 1
   fi
-
 
   # re-source static.sh, in case some important directory was removed by accident
   [ -f "$MISSION_DIR/static.sh" ] && mission_source "$MISSION_DIR/static.sh"
@@ -671,8 +670,8 @@ gsh() {
       ;;
     "reset")
       export GSH_LAST_ACTION='reset'
-      __gsh_clean
-      _gsh_reset
+      __gsh_clean "$1"
+      _gsh_reset "$1"
       ;;
     "resetstatic")
       _gsh_resetstatic
