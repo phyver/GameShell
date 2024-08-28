@@ -19,6 +19,8 @@ options:
                   and not using gettext
 
   -N ...          name of the archive / top directory (default: "gameshell")
+  -I FILE         additional existing index file to include
+                  (can be given several times)
 
   -S simple
   -S index
@@ -60,9 +62,11 @@ GENERATE_MO=1
 KEEP_PO=0     # this is set to 1 if we generate .mo files. Setting it to 1 here
 # (or before generating .mo files) will keep the .po files
 LANGUAGES=""
-VERBOSE=
+VERBOSE=""
 
-while getopts "hp:N:atPzL:EvS:p:" opt
+INDEX_FILES=""
+
+while getopts "hp:N:atPzL:EvS:p:I:" opt
 do
   case $opt in
     h)
@@ -85,6 +89,14 @@ do
           exit 1
           ;;
       esac
+      ;;
+    I)
+      if [ "$OPTARG" = "index.txt" ]
+      then
+        echo "Warning: ignoring additional index file with name 'index.txt'"
+      else
+        INDEX_FILES="INDEX_FILES:$OPTARG"
+      fi
       ;;
     a)
       KEEP_AUTO=1
@@ -146,15 +158,7 @@ mkdir "$TMP_DIR/$NAME"
 # use POSIX options to make sure it is portable
 cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/scripts" "$GSH_ROOT/utils" "$GSH_ROOT/lib" "$GSH_ROOT/i18n" "$TMP_DIR/$NAME"
 
-# copy missions
 mkdir "$TMP_DIR/$NAME/missions"
-if [ -z "$VERBOSE" ]
-then
-  printf "copying missions: "
-else
-  echo "copying missions"
-fi
-
 if ! make_index "$@" > "$TMP_DIR/$NAME/missions/index.txt"
 then
   echo "Error: archive.sh, couldn't make index.txt"
@@ -164,44 +168,67 @@ then
   exit 1
 fi
 
-NB_MISSIONS=0
-NB_DUMMY=0
-cat "$TMP_DIR/$NAME/missions/index.txt" | while read MISSION_DIR
+# copy missions
+if [ -z "$VERBOSE" ]
+then
+  printf "copying missions: "
+else
+  echo "copying missions"
+fi
+
+# NB_MISSIONS=0
+# NB_DUMMY=0
+ALL_INDEX_FILES="$TMP_DIR/$NAME/missions/index.txt"
+IFS=:
+for FILE in $INDEX_FILES
 do
-  DUMMY=
-  case $MISSION_DIR in
-    "" | "#"* )
-      continue
-      ;;
-    "!"*)
-      MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
-      NB_DUMMY=$((NB_DUMMY + 1))
-      DUMMY=1
-      ;;
-  esac
-  NB_MISSIONS=$((NB_MISSIONS + 1))
-  if [ -z "$VERBOSE" ]
-  then
-    if [ -z "$DUMMY" ]
-    then
-      printf "."
-    else
-      printf "!"
-    fi
-  else
-    if [ -z "$DUMMY" ]
-    then
-      echo "  - $MISSION_DIR"
-    else
-      echo "  ! $MISSION_DIR (dummy)"
-    fi
-  fi
-  mkdir -p "$TMP_DIR/$NAME/missions/$MISSION_DIR"
-  ARCHIVE_MISSION_DIR=$TMP_DIR/$NAME/missions/$MISSION_DIR
-  # NOTE: macOS' cp doesn't have '--archive', and '-a' is not POSIX.
-  # use POSIX options to make sure it is portable
-  cp -RPp "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR"
+  cp "$FILE" "$TMP_DIR/$NAME/missions/$(basename "$FILE")"
+  ALL_INDEX_FILES="$ALL_INDEX_FILES:$TMP_DIR/$NAME/missions/$(basename "$FILE")"
 done
+
+for FILE in $ALL_INDEX_FILES
+do
+  cat "$FILE" | while read MISSION_DIR
+  do
+    DUMMY=
+    case $MISSION_DIR in
+      "" | "#"* )
+        continue
+        ;;
+      "!"*)
+        MISSION_DIR=$(echo "$MISSION_DIR" | cut -c2-)
+        # NB_DUMMY=$((NB_DUMMY + 1))
+        DUMMY=1
+        ;;
+    esac
+    # NB_MISSIONS=$((NB_MISSIONS + 1))
+    if [ -z "$VERBOSE" ]
+    then
+      if [ -z "$DUMMY" ]
+      then
+        printf "."
+      else
+        printf "!"
+      fi
+    else
+      if [ -z "$DUMMY" ]
+      then
+        echo "  - $MISSION_DIR"
+      else
+        echo "  ! $MISSION_DIR (dummy)"
+      fi
+    fi
+    mkdir -p "$TMP_DIR/$NAME/missions/$MISSION_DIR"
+    ARCHIVE_MISSION_DIR=$TMP_DIR/$NAME/missions/$MISSION_DIR
+    # NOTE: macOS' cp doesn't have '--archive', and '-a' is not POSIX.
+    # use POSIX options to make sure it is portable
+    cp -RPp "$GSH_MISSIONS/$MISSION_DIR"/* "$ARCHIVE_MISSION_DIR"
+  done
+done
+
+# reset IFS
+unset IFS
+
 [ -n "$VERBOSE" ] || echo
 
 # define new GSH_ROOT
