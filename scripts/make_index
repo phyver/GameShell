@@ -113,11 +113,18 @@ make_index() {
     # without argument, use the default index file
     parse_index "$GSH_MISSIONS/index.txt" || exit 1
     return 0
-      # when given a directory containing either a "bin" directory or a
-      # "static.sh" script, this is a dummy mission. Just print the path
-      # prefixed with a "!"
   fi
 
+  if [ "$#" -eq 1 ] && [ -f "$GSH_MISSIONS/$1" ]
+  then
+    # with a single file argument, we assume it is an index file
+    parse_index "$GSH_MISSIONS/$1" || exit 1
+    return 0
+  fi
+
+  # otherwise, parse each mission / index file from the arguments
+  # (Note, it should not be used from a GameShell instance, but only directly
+  # from ``start.sh`` or from ``utils/archive.sh``
   while [ "$#" -gt 0 ]
   do
     MISSION_DIR=$(readlink-f "$1")
