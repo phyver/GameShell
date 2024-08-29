@@ -1,0 +1,4 @@
+Cette mission est facultative. Vous pouvez l'ignorer et passer à la suivante
+avec la commande
+
+  $ gsh skip
