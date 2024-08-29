@@ -1,0 +1,28 @@
+Obiettivi missione
+============
+
+IL pirotecnico del re appare vicino a te. Ti chiede se ne puoi accendere **almeno
+3** così che possa vederli da lontano.
+
+Un singolo fuoco d'artificio può essere acceso con:
+
+  $command
+
+
+Comandi utili
+===============
+
+$command
+  questo commando (non standard) crea un piccolo fuoco d'artificio
+
+COMMAND &
+  esegue il comando, ma non aspetta finchè il comando ha finito per tornare al terminale
+  Il commando verrà eseguito in "background".
+
+COMMAND1 ; COMMAND2 ; ... ; COMMANDn
+  esegue i comandi uno dopo l'altro
+  Ogni comando è eseguito quando il precedente ha finito
+
+COMMAND1 & COMMAND2 & ... & COMMANDn
+  esegue i comandi "in parallelo"
+  Tutti i comandi sono eseguito in "background", eccetto l'ultimo.
