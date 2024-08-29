@@ -266,6 +266,9 @@ msgstr[1]       ""
 msgid   "n"
 msgstr  ""
 
+msgid   "optional"
+msgstr  ""
+
 msgid   "password:"
 msgstr  ""
 

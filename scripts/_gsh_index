@@ -11,22 +11,28 @@ do
     continue
   fi
 
+  SKIPABLE=""
+  if [ -f "$GSH_MISSIONS/$mission_dir/skip.txt" ] || [ -d "$GSH_MISSIONS/$mission_dir/skip" ]
+  then
+    SKIPABLE="  [$(gettext "optional")]"
+  fi
+
   if grep -q "^$n CHECK_OK" "$GSH_CONFIG/missions.log"
   then
     COLOR="green"
-    STATUS=" ($(gettext "completed"))"
+    STATUS="  ($(gettext "completed"))"
   elif grep -q "^$n CHECK_OOPS" "$GSH_CONFIG/missions.log"
   then
     COLOR="red"
-    STATUS=" ($(gettext "failed"))"
+    STATUS="  ($(gettext "failed"))"
   elif grep -q "^$n SKIP" "$GSH_CONFIG/missions.log"
   then
     COLOR="yellow"
-    STATUS=" ($(gettext "skipped"))"
+    STATUS="  ($(gettext "skipped"))"
   elif grep -q "^$n CANCEL_DEP_PB" "$GSH_CONFIG/missions.log"
   then
     COLOR="magenta"
-    STATUS=" ($(gettext "cancelled"))"
+    STATUS="  ($(gettext "cancelled"))"
   else
     COLOR="white"
     STATUS=""
@@ -39,7 +45,7 @@ do
   fi
 
   printf "%s%2d   " "$LEAD" "$n"
-  color_echo "$COLOR" "$mission_dir$STATUS"
+  color_echo "$COLOR" "$mission_dir$SKIPABLE$STATUS"
 
   n="$((n + 1))"
 done < "$GSH_CONFIG/index.txt" | pager
