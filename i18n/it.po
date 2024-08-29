@@ -298,6 +298,9 @@ msgstr[1]       "tempo di gioco: %s in %d sessioni"
 msgid   "n"
 msgstr  "n"
 
+msgid   "optional"
+msgstr  "facoltativo"
+
 msgid   "password:"
 msgstr  "password:"
 
