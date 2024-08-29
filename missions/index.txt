@@ -1,22 +1,24 @@
-basic/index.txt
-misc/01_cal_nostradamus
-intermediate/01_alias_la
-misc/02_nano_journal
-intermediate/02_alias_journal
-intermediate/03_tab_spider_lair
-intermediate/04_bg_xeyes
-intermediate/05_background
-intermediate/06_control-C
-!finding_files_maze/00_shared
-finding_files_maze/01_ls_cd
-finding_files_maze/02_tree
-finding_files_maze/03_find_1
-pipe_intro_book_of_potions/index.txt
-processes/index.txt
-stdin_stdout_stderr/index.txt
-permissions/index.txt
-finding_files_maze/04_find_2
-finding_files_maze/05_find_xargs_grep
-pipes_merchant_stall/index.txt
-misc/03_tr_caesar_shift
-FINAL_MISSION
+# default Gameshell missions order
+
+  basic/index.txt
+  misc/01_cal_nostradamus
+  intermediate/01_alias_la
+  misc/02_nano_journal
+  intermediate/02_alias_journal
+  intermediate/03_tab_spider_lair
+  intermediate/04_bg_xeyes
+  intermediate/05_background
+  intermediate/06_control-C
+ !finding_files_maze/00_shared
+  finding_files_maze/01_ls_cd
+  finding_files_maze/02_tree
+  finding_files_maze/03_find_1
+  pipe_intro_book_of_potions/index.txt
+  processes/index.txt
+  stdin_stdout_stderr/index.txt
+  permissions/index.txt
+  finding_files_maze/04_find_2
+  finding_files_maze/05_find_xargs_grep
+  pipes_merchant_stall/index.txt
+  misc/03_tr_caesar_shift
+  FINAL_MISSION
