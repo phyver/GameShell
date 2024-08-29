@@ -25,12 +25,12 @@ Useful commands
 ===============
 
 $command CCCC
-  this (non standard) command creates some fireworks
+  This (non standard) command creates some fireworks:
     - if the four letters are valid, the fireworks will start after a few 
-      seconds
+      seconds,
     - if the four letters are not valid, the whole magical reaction will go 
-      on for a long time
+      on for a long time.
 
 Control-c       (also written ^c)
-  pressing Control and c at the same times interrupts the current command 
-  by sending the INT ("INTerrupt") signal to the process
+  Pressing Control and c at the same times interrupts the current command 
+  by sending the INT ("INTerrupt") signal to the process.

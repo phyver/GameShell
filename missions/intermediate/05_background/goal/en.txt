@@ -13,16 +13,16 @@ Useful commands
 ===============
 
 $command
-  this (non standard) command creates a single small firework
+  This (non standard) command creates a single small firework.
 
 COMMAND &
-  run the given command, but don't wait until it is finished to return
+  Run the given command, but don't wait until it is finished to return.
   The command will run in the "background".
 
 COMMAND1 ; COMMAND2 ; ... ; COMMANDn
-  run the given commands one after the other
+  Run the given commands one after the other.
   Each command is run when the previous one is finished.
 
 COMMAND1 & COMMAND2 & ... & COMMANDn
-  run the given commands "in parallel"
+  Run the given commands "in parallel".
   All the commands are run in the "background", except the last one.

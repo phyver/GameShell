@@ -18,6 +18,6 @@ xeyes
 COMMAND &
   Run the command in the background.
 
-Control-c
-  This key binding usually interrupts the current command by sending 
-  it the "INT" signal.
+Control-c       (also written ^c)
+  Pressing Control and c at the same times interrupts the current command 
+  by sending the INT ("INTerrupt") signal to the process.
