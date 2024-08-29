@@ -19,6 +19,7 @@ xeyes
 COMMANDE &
   Lance la commande en tâche de fond.
 
-Control-c
-  Cette combinaison de touche permet (en général) d'interrompre la 
-  commande en cours d'exécution en lui envoyant le signal "INT".
+Contrôle-c       (aussi noté ^c)
+  Appuyer sur les touches Contrôle et c en même temps interrompt 
+  la commande en cours en envoyant le signal INT ("INTerrupt") au 
+  processus.

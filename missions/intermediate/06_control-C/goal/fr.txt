@@ -24,13 +24,13 @@ Commandes utiles
 ================
 
 $command CCCC
-  cette commande (non standard) génère un feu d'artifice
+  Cette commande (non standard) génère un feu d'artifice
     - si les quatre lettres sont valides, le feu d'artifice partira 
-      au bout de quelques secondes
+      au bout de quelques secondes,
     - si les quatres lettres ne sont pas valides, la réaction magique 
-      continuera pendant longtemps
+      continuera pendant longtemps.
 
 Contrôle-c       (aussi noté ^c)
-  appuyer sur les touches Contrôle et c en même temps interrompt 
+  Appuyer sur les touches Contrôle et c en même temps interrompt 
   la commande en cours en envoyant le signal INT ("INTerrupt") au 
-  processus
+  processus.
