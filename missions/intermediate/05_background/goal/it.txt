@@ -17,7 +17,7 @@ $command
 
 COMMAND &
   esegue il comando, ma non aspetta finchè il comando ha finito per tornare al terminale
-  Il commando verrà eseguito in "background".
+  Il comando verrà eseguito in "background".
 
 COMMAND1 ; COMMAND2 ; ... ; COMMANDn
   esegue i comandi uno dopo l'altro
@@ -25,4 +25,4 @@ COMMAND1 ; COMMAND2 ; ... ; COMMANDn
 
 COMMAND1 & COMMAND2 & ... & COMMANDn
   esegue i comandi "in parallelo"
-  Tutti i comandi sono eseguito in "background", eccetto l'ultimo.
+  Tutti i comandi sono eseguiti in "background", eccetto l'ultimo.
