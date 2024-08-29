@@ -1,49 +1,62 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
-msgid   ""
-msgstr  "Content-Type: text/plain; charset=UTF-8\n"
-        "Content-Transfer-Encoding: 8bit\n"
+# mte90 <mte90net@gmail.com>, 2024.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: mte90 <mte90net@gmail.com>\n"
+"PO-Revision-Date: 2024-08-29 14:05+0200\n"
+"Project-Id-Version: \n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 # path for the text file containing the goal
 #, sh-format
-msgid   "$MISSION_DIR/goal/en.txt"
-msgstr  "$MISSION_DIR/goal/en.txt"
+msgid "$MISSION_DIR/goal/en.txt"
+msgstr "$MISSION_DIR/goal/it.txt"
 
 # path for the text file containing the skip message
-msgid   "$MISSION_DIR/skip/en.txt"
-msgstr  ""
+msgid "$MISSION_DIR/skip/en.txt"
+msgstr ""
 
 # path for the text file containing the treasure message
-msgid   "$MISSION_DIR/treasure-msg/en.txt"
-msgstr  ""
+msgid "$MISSION_DIR/treasure-msg/en.txt"
+msgstr ""
 
-msgid   "Charmiglio"
-msgstr  "Charmiglio"
-
-#, sh-format
-msgid   "It works! The special incantation is $CODE"
-msgstr  "It works! The special incantation is $CODE"
-
-msgid   "NOTE: you should interrupt the magical reaction after a few seconds!"
-msgstr  "NOTE: you should interrupt the magical reaction after a few seconds!"
-
-msgid   "That's not working, try a different combination..."
-msgstr  "That's not working, try a different combination..."
-
-msgid   "The incantation can only use ASCII letters."
-msgstr  "The incantation can only use ASCII letters."
-
-msgid   "The incantation requires exactly 4 letters."
-msgstr  "The incantation requires exactly 4 letters."
+msgid "Charmiglio"
+msgstr "Charmiglio"
 
 #, sh-format
-msgid   "Too soon! You must leave enough time for the magical reaction to start!"
-msgstr  "Too soon! You must leave enough time for the magical reaction to start!"
+msgid "It works! The special incantation is $CODE"
+msgstr "Funziona! L'incantesimo speciale è $CODE"
 
-msgid   "What's a valid 4 letters sequence?"
-msgstr  "What's a valid 4 letters sequence?"
+msgid "NOTE: you should interrupt the magical reaction after a few seconds!"
+msgstr "NOTA: puoi interrompere la reazione magica dopo pochi secondi!"
+
+msgid "That's not working, try a different combination..."
+msgstr "Non ha funzionato, prova una combinazione differente..."
+
+msgid "The incantation can only use ASCII letters."
+msgstr "L'incantesimo può utilizzare solo caratteri ASCII."
+
+msgid "The incantation requires exactly 4 letters."
+msgstr "L'incantesimo richiede esattamente 4 lettere."
 
 #, sh-format
-msgid   "usage: $command CCCC\n"
-        "      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"
-msgstr  "usage: $command CCCC\n"
-        "      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"
+msgid "Too soon! You must leave enough time for the magical reaction to start!"
+msgstr ""
+"Troppo presto! Devi dare abbastanza tempo per l'avvio della reazione magica!"
+
+msgid "What's a valid 4 letters sequence?"
+msgstr "Cosa è una sequenza valida di 4 lettere?"
+
+#, sh-format
+msgid ""
+"usage: $command CCCC\n"
+"      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"
+msgstr ""
+"uso: $command CCCC\n"
+"      dove CCCC è una sequenza di 4 caratteri ASCII (a-zA-Z)"
