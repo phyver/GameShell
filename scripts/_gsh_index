@@ -48,4 +48,4 @@ do
   color_echo "$COLOR" "$mission_dir$SKIPPABLE$STATUS"
 
   n="$((n + 1))"
-done < "$GSH_CONFIG/index.txt" | pager
+done < "$GSH_CONFIG/current_index.txt" | pager

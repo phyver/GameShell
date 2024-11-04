@@ -1,3 +1,14 @@
+utilisation :
+      $GSH_EXEC_FILE [OPTIONS] [INDEX_FILE1 INDEX_FILE2 ...]
+
+Les valeurs possibles pour INDEX_FILE<n> sont : $GSH_INDEX_FILES.
+
+Si aucun INDEX_FILE n'est donné, utilise index.txt par défaut.
+
+Les fichier index sont ignorés lorsqu'on reprend une session à partir d'un 
+fichier de sauvegarde.
+
+
 options :
   -h      ce message
   -V      affiche la version
@@ -16,6 +27,8 @@ options :
   -L      initialise la variable LANGUAGE (ex : -L fr:it:en)
           Pour les systèmes non GNU, initialisez la variable LC_MESSAGES
           avec une locale valide.
+          Cette option est sans effet lorsqu'on reprend une session à partir
+          d'un fichier de sauvegarde.
 
   -S simple
           le fichier de sauvegarde est obtenu en ajoutant un suffix "-save",

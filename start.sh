@@ -25,9 +25,14 @@ export GSH_ROOT="$(dirname "$0")"
 . "$GSH_ROOT/lib/mission_source.sh"
 
 display_help() {
-  cat "$(eval_gettext "\$GSH_ROOT/i18n/start-help/en.txt")"
+  sed -e "s/\$GSH_EXEC_FILE/$GSH_EXEC_FILE/" \
+    -e "s/\$GSH_INDEX_FILES/$(echo "$GSH_INDEX_FILES" | sed "s/:/, /g")/" \
+    "$(eval_gettext "\$GSH_ROOT/i18n/start-help/en.txt")"
 }
 
+
+# list of index files (default: only index.txt)
+export GSH_INDEX_FILES=index.txt
 
 # possible values: index, simple (default), overwrite
 export GSH_SAVEFILE_MODE="simple"
@@ -198,7 +203,7 @@ progress() {
   if [ -z "$progress_I" ]
   then
     progress_filename=$GSH_ROOT/lib/ascii-art/titlescreen
-    local N=$(wc -l "$GSH_CONFIG/index.txt" | awk '{print $1}')
+    local N=$(wc -l "$GSH_CONFIG/current_index.txt" | awk '{print $1}')
     local size=$(wc -c "$progress_filename" | awk '{print $1}')
     progress_delta=$((size/N + 1))
     # head -c$((progress_delta - 1)) $progress_filename => not POSIX compliant
@@ -339,7 +344,7 @@ Do you want to remove it and start a new game? [y/N]') "
     clear
   fi
 
-  make_index "$@" | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.txt"
+  make_index "$@" | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/current_index.txt"
 
   if [ "$GSH_MODE" != "DEBUG" ]
   then
@@ -449,7 +454,7 @@ Do you want to remove it and start a new game? [y/N]') "
 
     [ -z "$MISSION_SUB_NB" ] && MISSION_NB=$((MISSION_NB+1))
 
-  done < "$GSH_CONFIG/index.txt"
+  done < "$GSH_CONFIG/current_index.txt"
   if [ "$MISSION_NB" -eq 1 ]
   then
     echo "$(gettext "Error: no mission was found!
