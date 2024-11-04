@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - "master"
-    tags-ignore:
-      - "*"
 
 jobs:
   pre-release:
+    name: "latest release"
     runs-on: "ubuntu-latest"
+
     steps:
       - name: "Checkout source code"
         uses: "actions/checkout@v4"
