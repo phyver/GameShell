@@ -26,6 +26,7 @@ options:
   -S index
   -S overwrite
                   choose default savefile mode
+                  (check the output of 'gameshell.sh -h' for their description)
 
   -a              keep 'auto.sh' scripts for missions that have one
   -t              keep 'test.sh' scripts for missions that have one
@@ -95,7 +96,7 @@ do
       then
         echo "Warning: ignoring additional index file with name 'index.txt'"
       else
-        INDEX_FILES="INDEX_FILES:$OPTARG"
+        INDEX_FILES="$INDEX_FILES:$OPTARG"
       fi
       ;;
     a)
@@ -182,6 +183,7 @@ ALL_INDEX_FILES="$TMP_DIR/$NAME/missions/index.txt"
 IFS=:
 for FILE in $INDEX_FILES
 do
+  [ -z "$FILE" ] && continue  # ignore initial empty file due to leading ':'
   cp "$FILE" "$TMP_DIR/$NAME/missions/$(basename "$FILE")"
   ALL_INDEX_FILES="$ALL_INDEX_FILES:$TMP_DIR/$NAME/missions/$(basename "$FILE")"
 done
@@ -246,7 +248,8 @@ fi
 # remove unwanted languages
 if [ -n "$LANGUAGES" ]
 then
-  echo "removing unwanted languages"
+  printf "removing unwanted languages: "
+  # remove po files
   find "$GSH_ROOT" -path "*/i18n/*.po" | while read -r po_file
   do
     if ! keep_language "${po_file%.po}" "$LANGUAGES"
@@ -256,6 +259,25 @@ then
       rm --system -f "$po_file"
     fi
   done
+
+  # remove translation text files for GameShell and standard translation text
+  # files for individual missions
+  for dir in "$GSH_ROOT/i18n"/* goal skip treasure-msg
+  do
+    dir=$(basename "$dir")
+    find "$GSH_ROOT" -path "*/$dir/*.txt" | while read -r txt_file
+    do
+      [ "$(basename "$txt_file")" = "en.txt" ] && continue
+      if ! keep_language "${txt_file%.txt}" "$LANGUAGES"
+      then
+        # --system makes GameShell use the standard rm utility instead of the "safe"
+        # rm implemented in scripts/rm
+        printf "."
+        rm --system -f "$txt_file"
+      fi
+    done
+  done
+  echo
 fi
 
 # generate .mo files
@@ -320,10 +342,10 @@ echo "removing unnecessary files"
   find . -name "Makefile" | xargs rm --system -f
   find . -name "template.pot" | xargs rm --system -f
   [ "$KEEP_PO" -eq 0 ] && find . -name "*.po" | xargs rm --system -f
+  find . -name "i18n" | xargs rmdir 2> /dev/null
   [ "$KEEP_TEST" -ne 1 ] && find ./missions -name "test.sh" | xargs rm --system -f
   [ "$KEEP_AUTO" -ne 1 ] && find ./missions -name auto.sh | xargs rm --system -f
-
-  # rm --system -f "$GSH_ROOT/scripts/boxes-data.awk" "$GSH_ROOT/utils/archive.sh"
+  rm --system -rf "$GSH_ROOT/utils/"
 )
 
 # change admin password
