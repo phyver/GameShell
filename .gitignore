@@ -1,3 +1,4 @@
+Images/gsh-*-orig.gif
 tmp
 TODO
 .bin
@@ -8,8 +9,6 @@ TODO
 World
 locale/
 *~
-gameshell.sh
-gameshell-save.sh
-gameshell.tgz
-boxes-data.awk
+gameshell*
 game shell*
+boxes-data.awk
