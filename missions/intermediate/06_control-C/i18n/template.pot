@@ -41,6 +41,9 @@ msgstr  ""
 msgid   "What's a valid 4 letters sequence?"
 msgstr  ""
 
+msgid   "You can stop the incantation with Control-c."
+msgstr  ""
+
 #, sh-format
 msgid   "usage: $command CCCC\n"
         "      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"

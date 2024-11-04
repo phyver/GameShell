@@ -42,6 +42,9 @@ msgstr  "Too soon! You must leave enough time for the magical reaction to start!
 msgid   "What's a valid 4 letters sequence?"
 msgstr  "What's a valid 4 letters sequence?"
 
+msgid   "You can stop the incantation with Control-c."
+msgstr  "You can stop the incantation with Control-c."
+
 #, sh-format
 msgid   "usage: $command CCCC\n"
         "      where CCCC is a sequence of 4 ASCII letters (a-zA-Z)"

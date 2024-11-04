@@ -1,44 +1,46 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 # mte90 <mte90net@gmail.com>, 2024.
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: mte90 <mte90net@gmail.com>\n"
-"PO-Revision-Date: 2024-08-29 13:53+0200\n"
-"Project-Id-Version: \n"
-"Language-Team: Italian <kde-i18n-it@kde.org>\n"
-"Language: it_IT\n"
-"MIME-Version: 1.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+msgid   ""
+msgstr  "Project-Id-Version: \n"
+        "PO-Revision-Date: 2024-08-29 13:53+0200\n"
+        "Last-Translator: mte90 <mte90net@gmail.com>\n"
+        "Language-Team: Italian <kde-i18n-it@kde.org>\n"
+        "Language: it_IT\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+        "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+        "X-Generator: Lokalize 22.12.3\n"
 
 # path for the text file containing the goal
 #, sh-format
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/it.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/it.txt"
 
 # path for the text file containing the skip message
-msgid "$MISSION_DIR/skip/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  ""
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr ""
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
 
-msgid "Great, that looked good!"
-msgstr "Ottimo, sembra tutto a posto!"
+msgid   "Great, that looked good!"
+msgstr  "Ottimo, sembra tutto a posto!"
 
-msgid "Let's have a look:"
-msgstr "Vediamo insieme:"
-
-#, sh-format
-msgid "Mmm... I didn't see anything."
-msgstr "Mmm... non vedo niente."
+msgid   "Let's have a look:"
+msgstr  "Vediamo insieme:"
 
 #, sh-format
-msgid "Mmm... I only saw $NB fireworks. That's not enough."
-msgstr "Mmm... io vedo solo $NB fuochi d'artificio. Non sono sufficenti."
+msgid   "Mmm... I didn't see anything."
+msgstr  "Mmm... non vedo niente."
 
-msgid "charmiglio"
-msgstr "charmiglio"
+#, sh-format
+msgid   "Mmm... I only saw $NB fireworks. That's not enough."
+msgstr  "Mmm... io vedo solo $NB fuochi d'artificio. Non sono sufficenti."
+
+msgid   "NOTE: you need to make sure the pyrotechnician sees all the fireworks while he is waiting."
+msgstr  ""
+
+msgid   "charmiglio"
+msgstr  "charmiglio"

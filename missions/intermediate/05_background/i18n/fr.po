@@ -29,5 +29,8 @@ msgstr  "Mmm... Je n'ai rien vu."
 msgid   "Mmm... I only saw $NB fireworks. That's not enough."
 msgstr  "Mmm... Je n'ai vu que $NB feux d'artifices. Ce n'est pas assez."
 
+msgid   "NOTE: you need to make sure the pyrotechnician sees all the fireworks while he is waiting."
+msgstr  "NOTE : vous devez vous débrouiller pour que l'artificier voie tous les feux d'artifice pendant qu'il attend."
+
 msgid   "charmiglio"
 msgstr  "charmiglio"
