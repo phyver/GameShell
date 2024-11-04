@@ -29,5 +29,8 @@ msgstr  ""
 msgid   "Mmm... I only saw $NB fireworks. That's not enough."
 msgstr  ""
 
+msgid   "NOTE: you need to make sure the pyrotechnician sees all the fireworks while he is waiting."
+msgstr  ""
+
 msgid   "charmiglio"
 msgstr  ""
