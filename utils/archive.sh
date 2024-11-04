@@ -19,7 +19,7 @@ options:
                   and not using gettext
 
   -N ...          name of the archive / top directory (default: "gameshell")
-  -I FILE         additional existing index file to include
+  -I FILE         additional index file to include in the archive
                   (can be given several times)
 
   -S simple
@@ -92,9 +92,9 @@ do
       esac
       ;;
     I)
-      if [ "$OPTARG" = "index.txt" ]
+      if [ "$OPTARG" = "index.txt" ] || [ "$OPTARG" = "current_index.txt" ]
       then
-        echo "Warning: ignoring additional index file with name 'index.txt'"
+        echo "Warning: ignoring additional index file with name '$OPTARG'"
       else
         INDEX_FILES="$INDEX_FILES:$OPTARG"
       fi
@@ -159,6 +159,9 @@ mkdir "$TMP_DIR/$NAME"
 # use POSIX options to make sure it is portable
 cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/scripts" "$GSH_ROOT/utils" "$GSH_ROOT/lib" "$GSH_ROOT/i18n" "$TMP_DIR/$NAME"
 
+
+# generate default index file
+ALL_INDEX_FILES=index.txt
 mkdir "$TMP_DIR/$NAME/missions"
 if ! make_index "$@" > "$TMP_DIR/$NAME/missions/index.txt"
 then
@@ -169,7 +172,25 @@ then
   exit 1
 fi
 
+# generate additional index files
+IFS=:
+for FILE in $INDEX_FILES
+do
+  [ -z "$FILE" ] && continue  # ignore initial empty file due to leading ':'
+  ALL_INDEX_FILES="$ALL_INDEX_FILES:$(basename "$FILE")"
+  if ! make_index "$FILE" > "$TMP_DIR/$NAME/missions/$(basename "$FILE")"
+  then
+    echo "Error: archive.sh, couldn't make $(basename "$FILE")"
+    # --system makes GameShell use the standard rm utility instead of the "safe"
+    # rm implemented in scripts/rm
+    rm --system -rf "$TMP_DIR"
+    exit 1
+  fi
+done
+
 # copy missions
+# NB_MISSIONS=0
+# NB_DUMMY=0
 if [ -z "$VERBOSE" ]
 then
   printf "copying missions: "
@@ -177,19 +198,9 @@ else
   echo "copying missions"
 fi
 
-# NB_MISSIONS=0
-# NB_DUMMY=0
-ALL_INDEX_FILES="$TMP_DIR/$NAME/missions/index.txt"
-IFS=:
-for FILE in $INDEX_FILES
-do
-  [ -z "$FILE" ] && continue  # ignore initial empty file due to leading ':'
-  cp "$FILE" "$TMP_DIR/$NAME/missions/$(basename "$FILE")"
-  ALL_INDEX_FILES="$ALL_INDEX_FILES:$TMP_DIR/$NAME/missions/$(basename "$FILE")"
-done
-
 for FILE in $ALL_INDEX_FILES
 do
+  FILE="$TMP_DIR/$NAME/missions/$FILE"
   cat "$FILE" | while read MISSION_DIR
   do
     DUMMY=
@@ -237,6 +248,9 @@ unset IFS
 export GSH_ROOT="$TMP_DIR/$NAME"
 . "$GSH_ROOT/lib/profile.sh"
 export GSH_MISSIONS="$GSH_ROOT/missions"
+
+
+sed-i "s/^export GSH_INDEX_FILES=.*/export GSH_INDEX_FILES=$ALL_INDEX_FILES/" "$GSH_ROOT/start.sh"
 
 
 # default GSH_NO_GETTEXT to 1 if -E was used

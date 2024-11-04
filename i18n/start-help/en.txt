@@ -1,3 +1,13 @@
+usage:
+      $GSH_EXEC_FILE [OPTIONS] [INDEX_FILE1 INDEX_FILE2 ...]
+
+Possible values for INDEX_FILE<n> are: $GSH_INDEX_FILES.
+
+If no INDEX_FILE is given, defaults to index.txt.
+
+Index files are ignored when continuing from a save file.
+
+
 options:
   -h      this message
   -V      display version
@@ -13,8 +23,8 @@ options:
 
   -G      do not use gettext for translation (everything will be in English)
   -L ...  set LANGUAGE variable (ex: -L fr:it:en)
-          On non GNU systems, set the variable LC_MESSAGES
-          to a valid locale.
+          On non GNU systems, set the variable LC_MESSAGES to a valid locale.
+          This flag is ignored when continuing from a save file.
 
   -S simple
           the savefile is obtained by adding a "-save" suffix,

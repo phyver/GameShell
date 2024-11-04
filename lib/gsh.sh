@@ -119,7 +119,7 @@ _gsh_resetstatic() {
       printf "." >&2
     fi
 
-  done < "$GSH_CONFIG/index.txt"
+  done < "$GSH_CONFIG/current_index.txt"
   echo "" >&2
 
   unset MISSION_DIR DOMAIN
