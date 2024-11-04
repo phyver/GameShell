@@ -139,14 +139,13 @@ You can customize the archive with the following options
   GameShell will ask for the player's name and email. This is useful in the
   classroom as it makes it easier to link a game to the corresponding student.
   (The player can run the archive in anonymous mode with the `-A` option.)
-* `--password PASSWORD`: you can choose the admin password for the archive.
+* `-p PASSWORD`: you can choose the admin password for the archive.
   This is also useful in the classroom as we might not want the students to
   learn of this password. :)
-* `-a`: keep the automatic scripts. Some missions come with a script that
-  automagically completes the missions. By default, those scripts are **not**
-  included in the archive. Use `-a` if you want to keep them.
 * `-N NAME`: if you want the archive and its directory to be called something
   other than "GameShell", you can set the name with this option.
-* `-k`: keep the GameShell archive. The compressed `tar` archive is appended
-  to a shell script to create the executable archive. With this option, you
-  can keep the "standard" `tar` archive as well as the executable one.
+
+More options are available and listed in the output of
+```sh
+$ ./utils/archive.sh -h
+```
