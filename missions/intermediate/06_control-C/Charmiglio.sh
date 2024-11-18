@@ -51,14 +51,14 @@ magical_reaction() {
     printf "%*s%s" "$indent" '' "$(random_string "$width" "$alpha")" >&2
     if [ "$delay" -gt 2 ] && [ "$((delay % 10))" -eq 0 ] && [ "$show_msg" != 0 ]
     then
-      printf "\t\t$(gettext "You can stop the incantation with Control-c.")"
+      printf "\t\t$(gettext "You can stop the incantation with Control-c.")" >&2
       show_msg=0
     fi
     if [ "$((delay % 10))" -eq 1 ]
     then
       show_msg=1
     fi
-    echo
+    echo >&2
     sleep 0.1
   done
 }
