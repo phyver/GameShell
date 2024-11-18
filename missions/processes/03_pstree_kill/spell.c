@@ -124,7 +124,14 @@ int main()
     /* printf(">>> log_file = '%s'\n", log_file); */
     wordfree(&result);
 
-    writing_sem = sem_open("/writing_sem", O_CREAT, 0644, 1);
+    char login[20];
+    getlogin_r(login, 20);
+    char sem_path[30];
+    strcpy(sem_path, "/writing_sem_");
+    strcat(sem_path,login);
+
+
+    writing_sem = sem_open(sem_path, O_CREAT, 0644, 1);
     if (writing_sem == SEM_FAILED)
         return 1;
 

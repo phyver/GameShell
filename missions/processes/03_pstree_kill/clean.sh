@@ -15,6 +15,7 @@ rm -f "$GSH_TMP/fairy.pid"
 rm -f "$GSH_TMP/imp.pid"
 rm -f "$GSH_TMP/$(gettext "nice_fairy")"
 rm -f "$GSH_TMP/$(gettext "mischievous_imp")"
+rm --system -f /dev/shm/sem.writing_sem_${USER}
 (
   cd "$(eval_gettext '$GSH_HOME/Castle/Cellar')"
   # keep at most 10 snowflakes
