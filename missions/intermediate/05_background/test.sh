@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -m
+# set -m
 
 gsh assert check false
 charmiglio & gsh assert check false
@@ -11,7 +11,7 @@ charmiglio & charmiglio & charmiglio & charmiglio & gsh assert check true
 charmiglio & charmiglio & charmiglio
 gsh assert check false
 
-charmiglio; charmiglio; charmiglio;
+charmiglio; charmiglio; charmiglio
 gsh assert check false
 
 

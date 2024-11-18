@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
-set -m
+# set -m
 
 charmiglio & charmiglio & charmiglio & gsh check

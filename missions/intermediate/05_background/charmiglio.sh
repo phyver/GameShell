@@ -6,10 +6,10 @@ command=$(gettext "charmiglio")
 
 
 file="$MISSION_DIR/ascii-art/f$((1 + $(RANDOM)%6))"
-indent=$(echo "                                       " | head -c "$((4 * ($(RANDOM)%8)))")
+indent=$(echo "                                       " | head -c "$((2 + 4 * ($(RANDOM)%8)))")
 
 rm -f "$GSH_TMP/charmiglio.pids"
-for i in $(seq $((5 + $(RANDOM)%10)))
+for i in $(seq $((5 + $(RANDOM)%5)))
 do
   echo "$indent    *"
   sleep 0.1
