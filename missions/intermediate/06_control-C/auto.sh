@@ -1,13 +1,14 @@
 #!/usr/bin/env sh
 
-set -m
+# set -m
 
   for c in a b c d e f
   do
-    eval "$(gettext Charmiglio)" "$c$c$c$c" 2>/dev/null &
+    eval "$(gettext Charmiglio) $c$c$c$c &" 2>/dev/null
     PID=$!
     sleep 4
-    kill -s INT "-$PID" 2> /dev/null
+    # NOTE: SIGINT signal doesn't work on non-interactive systems
+    kill "$PID" 2> /dev/null
 
     case "$(cat "$GSH_TMP/control-C")" in
       *[!0-9]*)

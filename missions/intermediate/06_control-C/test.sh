@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -m
+# set -m
 
 do_test() {
   nb=$1
@@ -8,10 +8,11 @@ do_test() {
 
   for c in $(echo "a b c d e f g h i j" | cut -d' ' -f1-$nb)
   do
-    eval "$(gettext Charmiglio)" "$c$c$c$c" 2>/dev/null &
+    eval "$(gettext Charmiglio) $c$c$c$c &" 2>/dev/null
     PID=$!
     sleep "$delay"
-    kill -s INT "-$PID" 2> /dev/null
+    # NOTE: SIGINT signal doesn't work on non-interactive systems
+    kill "$PID" 2> /dev/null
 
     case "$(cat "$GSH_TMP/control-C")" in
       *[!0-9]*)
