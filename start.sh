@@ -38,7 +38,7 @@ display_help() {
 
 
 # list of index files (default: only index.txt)
-export GSH_INDEX_FILES=index.txt  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/archive.sh
+export GSH_INDEX_FILES=index.txt
 
 # possible values: index, simple (default), overwrite
 export GSH_SAVEFILE_MODE="simple"
@@ -102,6 +102,13 @@ do
       ;;
     L)
       export LANGUAGE="$OPTARG"     # only works on GNU systems
+      if [ "$RESET" = FALSE ]
+      then
+        args="-L $OPTARG"
+        echo "$(eval_gettext 'Warning: language is ignored when continuing a game ($args)')" >&2
+        echo "$(gettext 'Press Enter to continue.')" >&2
+        read -r _
+      fi
       ;;
     G)
       export GSH_NO_GETTEXT=1
@@ -249,18 +256,40 @@ init_gsh() {
   #    - continue the previous game
   if [ -e "$GSH_CONFIG" ]
   then
-    if [ -z "$RESET" ]
-    then
+
+    while [ -z "$RESET" ]
+    do
       local r
       printf "$(eval_gettext 'The directory $GSH_CONFIG contains meta-data from a previous game.
 Do you want to remove it and start a new game? [y/N]') "
       read -r r
-      [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ] || return 1
+      if [ "$r" = "$(gettext "y")" ] || [ "$r" = "$(gettext "Y")" ]
+      then
+        RESET=TRUE
+        echo
+      fi
+      if [ -z "$r" ] || [ "$r" = "$(gettext "n")" ] || [ "$r" = "$(gettext "N")" ]
+      then
+        RESET=FALSE
+        echo
+      fi
+    done
 
-    elif [ "$RESET" = "FALSE" ]
+  else
+    # if no data is found, we need to initialize a new game
+    RESET=TRUE
+  fi
+
+  if [ "$RESET" = FALSE ]
+  then
+    if [ "$#" -gt 0 ]
     then
-      return 1
+      args=$*
+      echo "$(eval_gettext 'Warning: command line arguments are ignored when continuing a game ($args)')" >&2
+      echo "$(gettext 'Press Enter to continue.')" >&2
+      read -r _
     fi
+    return 1
   fi
 
   ### if we're here, we need to reset a new game

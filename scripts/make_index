@@ -115,19 +115,17 @@ make_index() {
     return 0
   fi
 
-  if [ "$#" -eq 1 ] && [ -f "$GSH_MISSIONS/$1" ]
+  # when used from a self extracting archive, all path are prefixed with the
+  # mission directory
+  if [ -n "$GSH_EXEC_FILE" ]
   then
-    # with a single file argument, we assume it is an index file
-    parse_index "$GSH_MISSIONS/$1" || exit 1
-    return 0
+    PREFIX="$GSH_MISSIONS/"
   fi
 
   # otherwise, parse each mission / index file from the arguments
-  # (Note, it should not be used from a GameShell instance, but only directly
-  # from ``start.sh`` or from ``utils/archive.sh``
   while [ "$#" -gt 0 ]
   do
-    MISSION_DIR=$(readlink-f "$1")
+    MISSION_DIR=$(readlink-f "$PREFIX$1")
     if [ -e "$MISSION_DIR" ]
     then
       parse_mission "$MISSION_DIR" || exit 1
