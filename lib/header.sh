@@ -34,7 +34,7 @@ GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
 # just in case
 GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
 
-while getopts ":hnPdDACRXUVqGL:KBZc:FS:" opt
+while getopts ":hHInPdDACRXUVqGL:KBZc:FS:" opt
 do
     case "$opt" in
       V)
@@ -85,7 +85,7 @@ do
       F)
         GSH_FORCE="true"
         ;;
-      h)
+      h | H | I)
         # used to avoid checking for more recent files
         GSH_HELP="true"
         ;;

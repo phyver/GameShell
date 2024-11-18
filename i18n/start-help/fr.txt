@@ -9,41 +9,18 @@ Les fichier index sont ignorés lorsqu'on reprend une session à partir d'un
 fichier de sauvegarde.
 
 
-options :
+options principales :
   -h      ce message
+  -H      affiche toutes les options
   -V      affiche la version
 
-  -P      mode passeport : demande le nom / email du joueur
-  -D      mode debug
-  -v      lecture "verbeuse" des scripts de mission (seulement en mode debug)
-  -A      mode anonyme
-
-  -C      continue la partie en cours (si pertinent)
   -R      recommence une partie du début
   -F      ne vérifie pas l'existence de fichiers de sauvegarde plus récents,
           force l'utilisation de l'archive donnée
 
-  -G      désactive gettext pour les traductions (tout sera en Anglais)
   -L      initialise la variable LANGUAGE (ex : -L fr:it:en)
           Pour les systèmes non GNU, initialisez la variable LC_MESSAGES
           avec une locale valide.
           Cette option est sans effet lorsqu'on reprend une session à partir
           d'un fichier de sauvegarde.
 
-  -S simple
-          le fichier de sauvegarde est obtenu en ajoutant un suffix "-save",
-          chaque fichier de sauvegarde remplace le précédent
-  -S index
-          les fichiers de sauvegarde sont numérotés pour que toutes les
-          sauvegardes soient conservées
-  -S overwrite
-          le fichier de sauvegarde remplace l'instance initial de GameShell
-          (on peut utiliser l'option -R pour lancer une partie à partir du début)
-
-  -q      mode silencieux : n'affiche pas les messages d'information
-  -n      mode noir et blanc : n'utilise pas les séquences ANSI
-  -c CMD  donne cette commande à GameShell (pour faire des tests)
-
-  -U      télécharge la dernière version de GameShell (nécessite un accès réseau)
-  -X      extrait juste l'archive tgz
-  -K      ne supprime pas le répertoire temporaire de GameShell à la sortie

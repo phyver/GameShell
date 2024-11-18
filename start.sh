@@ -24,6 +24,12 @@ export GSH_ROOT="$(dirname "$0")"
 # shellcheck source=lib/mission_source.sh
 . "$GSH_ROOT/lib/mission_source.sh"
 
+display_full_help() {
+  sed -e "s/\$GSH_EXEC_FILE/$GSH_EXEC_FILE/" \
+    -e "s/\$GSH_INDEX_FILES/$(echo "$GSH_INDEX_FILES" | sed "s/:/, /g")/" \
+    "$(eval_gettext "\$GSH_ROOT/i18n/start-full-help/en.txt")"
+}
+
 display_help() {
   sed -e "s/\$GSH_EXEC_FILE/$GSH_EXEC_FILE/" \
     -e "s/\$GSH_INDEX_FILES/$(echo "$GSH_INDEX_FILES" | sed "s/:/, /g")/" \
@@ -32,7 +38,7 @@ display_help() {
 
 
 # list of index files (default: only index.txt)
-export GSH_INDEX_FILES=index.txt
+export GSH_INDEX_FILES=index.txt  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/archive.sh
 
 # possible values: index, simple (default), overwrite
 export GSH_SAVEFILE_MODE="simple"
@@ -42,7 +48,7 @@ GSH_MODE="ANONYMOUS"
 # if GSH_NO_GETTEXT is non-empty, gettext won't be used anywhere, the only language will thus be English
 # export GSH_NO_GETTEXT=1  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/archive.sh
 RESET=""
-while getopts ":hnPdDACRXUVqGL:KBZc:FS:" opt
+while getopts ":hHInPdDACRXUVqGL:KBZc:FS:" opt
 do
   case $opt in
     S)
@@ -58,6 +64,15 @@ do
       ;;
     h)
       display_help
+      exit 0
+      ;;
+    H)
+      display_full_help
+      exit 0
+      ;;
+    I)
+      gettext "Available index files: " >&2
+      echo "$GSH_INDEX_FILES" | sed "s/:/, /g" >&2
       exit 0
       ;;
     n)
