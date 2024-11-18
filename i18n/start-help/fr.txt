@@ -3,7 +3,7 @@ utilisation :
 
 Les valeurs possibles pour INDEX_FILE<n> sont : $GSH_INDEX_FILES.
 
-Si aucun INDEX_FILE n'est donné, utilise index.txt par défaut.
+Si aucun INDEX_FILE n'est donné, utilise default.idx par défaut.
 
 Les fichier index sont ignorés lorsqu'on reprend une session à partir d'un 
 fichier de sauvegarde.

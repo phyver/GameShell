@@ -37,8 +37,8 @@ display_help() {
 }
 
 
-# list of index files (default: only index.txt)
-export GSH_INDEX_FILES=index.txt
+# list of index files (default: only default.idx)
+export GSH_INDEX_FILES=default.idx
 
 # possible values: index, simple (default), overwrite
 export GSH_SAVEFILE_MODE="simple"
@@ -225,7 +225,7 @@ progress() {
   if [ -z "$progress_I" ]
   then
     progress_filename=$GSH_ROOT/lib/ascii-art/titlescreen
-    local N=$(wc -l "$GSH_CONFIG/current_index.txt" | awk '{print $1}')
+    local N=$(wc -l "$GSH_CONFIG/index.idx" | awk '{print $1}')
     local size=$(wc -c "$progress_filename" | awk '{print $1}')
     progress_delta=$((size/N + 1))
     # head -c$((progress_delta - 1)) $progress_filename => not POSIX compliant
@@ -388,7 +388,7 @@ Do you want to remove it and start a new game? [y/N]') "
     clear
   fi
 
-  make_index "$@" | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/current_index.txt"
+  make_index "$@" | sed -e "s;$GSH_MISSIONS;.;" > "$GSH_CONFIG/index.idx"
 
   if [ "$GSH_MODE" != "DEBUG" ]
   then
@@ -498,7 +498,7 @@ Do you want to remove it and start a new game? [y/N]') "
 
     [ -z "$MISSION_SUB_NB" ] && MISSION_NB=$((MISSION_NB+1))
 
-  done < "$GSH_CONFIG/current_index.txt"
+  done < "$GSH_CONFIG/index.idx"
   if [ "$MISSION_NB" -eq 1 ]
   then
     echo "$(gettext "Error: no mission was found!
