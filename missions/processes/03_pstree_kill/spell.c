@@ -124,11 +124,12 @@ int main()
     /* printf(">>> log_file = '%s'\n", log_file); */
     wordfree(&result);
 
-    char login[20];
-    getlogin_r(login, 20);
-    char sem_path[30];
-    strcpy(sem_path, "/writing_sem_");
-    strcat(sem_path,login);
+    char login[128];
+    getlogin_r(login, 128);
+    char sem_path[256];
+    strncpy(sem_path, "/writing_sem_", 128);
+    strncat(sem_path, login, 128);
+    sem_path[255] = '\0';
 
 
     writing_sem = sem_open(sem_path, O_CREAT, 0644, 1);
