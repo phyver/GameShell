@@ -12,6 +12,7 @@ main options:
   -h      this message
   -H      show all available options
   -V      display version
+  -I      show list of available index files
 
   -R      reset game
   -F      do not check for more recent savefiles, force using the given archive
