@@ -442,13 +442,13 @@ which make testing easier.
 Those files are not included in GameShell archives.
 
 
-Adding the mission to the `index.txt` file
-----------------------------------------
+Adding the mission to the `default.idx` file
+------------------------------------------
 
 When run without arguments GameShell will get the list of mission from the
-file `$GSH_ROOT/missions/index.txt`.
+file `$GSH_ROOT/missions/default.idx`.
 
-You can give a list of `index.txt` files and mission directories as arguments
+You can give a list of `default.idx` files and mission directories as arguments
 of GameShell if you want to customize the list / order of missions. This is
 particularly useful when testing a new mission:
 ```sh
@@ -464,7 +464,7 @@ Dummy missions
 
 "Dummy" missions are used to share data between missions. A mission is "dummy"
 * either when it doesn't contain a `check.sh` script,
-* or it is listed with a "`!`" in front of its name in the `index.txt` file.
+* or it is listed with a "`!`" in front of its name in the `default.idx` file.
 
 A dummy mission is used during the initialisation phase, so that it can
 contain a `static.sh` file. It can for example be used to share executable
@@ -483,7 +483,7 @@ cp "$MISSION_DIR/../00_shared/ascii-art/elephant.txt" "$GSH_HOME/Jungle/"
 ```
 
 _Note:_ don't forget to include dummy missions in the corresponding
-`index.txt` file, or it won't be included in GameShell executable archives by
+`default.idx` file, or it won't be included in GameShell executable archives by
 default.
 
 

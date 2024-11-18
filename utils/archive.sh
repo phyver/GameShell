@@ -92,7 +92,7 @@ do
       esac
       ;;
     I)
-      if [ "$OPTARG" = "index.txt" ] || [ "$OPTARG" = "current_index.txt" ]
+      if [ "$OPTARG" = "default.idx" ]
       then
         echo "Warning: ignoring additional index file with name '$OPTARG'"
       else
@@ -161,11 +161,11 @@ cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/scripts" "$GSH_ROOT/utils" "$GSH_ROOT/li
 
 
 # generate default index file
-ALL_INDEX_FILES=index.txt
+ALL_INDEX_FILES=default.idx
 mkdir "$TMP_DIR/$NAME/missions"
-if ! make_index "$@" > "$TMP_DIR/$NAME/missions/index.txt"
+if ! make_index "$@" > "$TMP_DIR/$NAME/missions/default.idx"
 then
-  echo "Error: archive.sh, couldn't make index.txt"
+  echo "Error: archive.sh, couldn't make default.idx"
   # --system makes GameShell use the standard rm utility instead of the "safe"
   # rm implemented in scripts/rm
   rm --system -rf "$TMP_DIR"
@@ -338,7 +338,7 @@ then
           printf "."
         fi
       fi
-    done < "$GSH_ROOT/missions/index.txt"
+    done < "$GSH_ROOT/missions/default.idx"
     echo
   }
 fi
