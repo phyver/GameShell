@@ -197,6 +197,14 @@ msgid   "There are stopped jobs in your session.\n"
         "Do you still want to quit? [y/n]"
 msgstr  ""
 
+#, sh-format
+msgid   "Warning: command line arguments are ignored when continuing a game ($args)"
+msgstr  ""
+
+#, sh-format
+msgid   "Warning: language is ignored when continuing a game ($args)"
+msgstr  ""
+
 msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
         "You should use the command\n"
         "  $ gsh reset"

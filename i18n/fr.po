@@ -212,6 +212,14 @@ msgstr  "Il y a des processus stoppés dans votre session.\n"
         "    $ jobs\n"
         "Êtes vous sûr de vouloir quitter ? [o/N]"
 
+#, sh-format
+msgid   "Warning: command line arguments are ignored when continuing a game ($args)"
+msgstr  "Warning: les arguments sur la ligne de commande sont ignorés lorsqu'on reprend une partie ($args)"
+
+#, sh-format
+msgid   "Warning: language is ignored when continuing a game ($args)"
+msgstr  "Warning: la langue est ignorée lorsqu'on reprend une partie ($args)"
+
 msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
         "You should use the command\n"
         "  $ gsh reset"
