@@ -19,6 +19,10 @@ msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
 msgstr  ""
 
 #, sh-format
+msgid   "$GSH_ROOT/i18n/start-full-help/en.txt"
+msgstr  ""
+
+#, sh-format
 msgid   "$GSH_ROOT/i18n/start-help/en.txt"
 msgstr  ""
 
@@ -73,6 +77,9 @@ msgstr[0]       ""
 msgstr[1]       ""
 
 msgid   "AUTOMATICALLY GENERATED ON STARTUP -- DO NOT MODIFY"
+msgstr  ""
+
+msgid   "Available index files: "
 msgstr  ""
 
 #, sh-format

@@ -24,6 +24,10 @@ msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
 msgstr  "$GSH_ROOT/i18n/gameshell-welcome/fr.txt"
 
 #, sh-format
+msgid   "$GSH_ROOT/i18n/start-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/start-full-help/fr.txt"
+
+#, sh-format
 msgid   "$GSH_ROOT/i18n/start-help/en.txt"
 msgstr  "$GSH_ROOT/i18n/start-help/fr.txt"
 
@@ -79,6 +83,9 @@ msgstr[1]       "%d missions sautées :"
 
 msgid   "AUTOMATICALLY GENERATED ON STARTUP -- DO NOT MODIFY"
 msgstr  "AUTOMATIQUEMENT GÉNÉRÉ AU DÉMARRAGE -- NE PAS MODIFIER"
+
+msgid   "Available index files: "
+msgstr  "Fichiers index disponibles: "
 
 #, sh-format
 msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"

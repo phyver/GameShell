@@ -8,41 +8,15 @@ If no INDEX_FILE is given, defaults to index.txt.
 Index files are ignored when continuing from a save file.
 
 
-options:
+main options:
   -h      this message
+  -H      show all available options
   -V      display version
 
-  -P      passport mode: ask for name / emails of player
-  -A      anonymous mode
-  -d      debug mode
-  -D      verbose debug mode
-
-  -C      continue current game (if relevant)
   -R      reset game
   -F      do not check for more recent savefiles, force using the given archive
 
-  -G      do not use gettext for translation (everything will be in English)
   -L ...  set LANGUAGE variable (ex: -L fr:it:en)
           On non GNU systems, set the variable LC_MESSAGES to a valid locale.
           This flag is ignored when continuing from a save file.
-
-  -S simple
-          the savefile is obtained by adding a "-save" suffix,
-          each savefile overwrites the previous one
-  -S index
-          savefiles are numbered so that all savefiles are kept
-  -S overwrite
-          the savefile overwrite the initial GameShell file
-          (you can use option -R to start a new game from the start)
-
-  -B      use bash
-  -Z      use zsh
-
-  -q      quiet: don't show information messages
-  -n      black and white: don't use ANSI escape codes for color
-  -c ...  give that command to GameShell (for testing)
-
-  -U      download last version of GameShell (requires network access)
-  -X      only extract tgz archive
-  -K      do not remove GameShell temporary directory on exit
 

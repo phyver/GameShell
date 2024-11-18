@@ -1,0 +1,40 @@
+options:
+  -h      messaggio di aiuto breve
+  -H      questo avviso
+  -V      mostra versione
+  -I      ...
+
+  -P      modalitá passaporto: chiede il nome/email del giocatore
+  -A      modalitá anonima
+  -d      modalitá debug
+  -D      modalitá debug verbosa
+
+  -C      continua la partita corrente (se rilevante)
+  -R      reimposta la partita
+  -F      non cercare salvataggi recenti, utilizza forzatamente l'archivio definito
+
+  -G      non utilizzare gettext per le traduzioni (sarà tutto in Inglese)
+  -L ...  imposta la variabile LANGUAGE (ex: -L fr:it:en)
+          Su sistemi non GNU, imposta la variabile LC_MESSAGES
+          per un "locale" valido.
+
+  -S simple
+          il file di salvataggio è generato con un suffiso "-save",
+          ogni salvataggio sovrascrive il precedente
+  -S index
+          i salvataggi sono numerati così sono tutti conservati
+  -S overwrite
+          il salvataggio sovrascrive il file iniziale di GameShell
+          (puoi utilizzare l'opzione -R per avviare un nuovo gioco dall'inizio)
+
+  -B      usa bash
+  -Z      usa zsh
+
+  -q      silenzioso: non mostra avvisi informativi
+  -n      bianco e nero: non usa i codici di escape ANSI per i colori
+  -c ...  dai quel comando a  GameShell (in testing)
+
+  -U      scarica l'ultima versione di GameShell (richiede accesso alla rete)
+  -X      estrai solo l'archivio tgz
+  -K      non rimuovere la cartella temporanea di GameShell all'uscita
+
