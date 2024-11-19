@@ -14,7 +14,7 @@
 	reset the current mission by restarting the shell
 
 **gsh HELP**::
-	this message
+	show advanced usage status, with all existing Gameshell commands
 
 **gsh log** [**-v**]::
 	show the log file of gsh commands

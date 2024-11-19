@@ -382,8 +382,7 @@ echo "removing unnecessary files"
   [ "$KEEP_TEST" -ne 1 ] && find ./missions -name "test.sh" | xargs rm --system -f
   [ "$KEEP_AUTO" -ne 1 ] && find ./missions -name auto.sh | xargs rm --system -f
   rm --system -rf "$GSH_ROOT/utils/"
-  rm --system -f "$GSH_ROOT/i18n/gamesh-commands"
-  rm --system -f "$GSH_ROOT/man/en"
+  rm --system -rf "$GSH_ROOT/i18n/source/"
   rm --system -f "$GSH_ROOT/man/README" "$GSH_ROOT/i18n/gameshell-*help/README"
 )
 

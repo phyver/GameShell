@@ -79,7 +79,7 @@ gsh test
   avvia i test della missione attuale, se esiste
 
 gsh version
-  mostra la versione di Gameshell
+  mostra la versione di GameShell
 
 gsh welcome
   mostra il messaggio di benvenuto
