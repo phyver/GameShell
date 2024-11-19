@@ -4,13 +4,11 @@
 
 **gsh exit**::
 	quit GameShell +
-	(you can start from the current mission by running 
-	GameShell with the **-C** flag) +
 	Note that you can exit GameShell using Control-d as well
 
 **gsh goal** [__N__]::
-	show the current mission's goal
-	if n is given, show the goal for mission __N__
+	show the current mission's goal +
+	if __N__ is given, show the goal for mission __N__
 
 **gsh help**::
 	short help message

@@ -1,0 +1,19 @@
+Commandes GameShell standard
+============================
+
+gsh check
+  vérifie que l'objectif de la mission en cours est atteint
+
+gsh exit
+  quitte (et sauvegarde) la partie en cours
+  vous pouvez également quitter avec Contrôle-d
+
+gsh goal [N]
+  affiche l'objectif de la mission en cours
+  si N est donné, affiche l'objectif de la mission N
+
+gsh help
+  affiche un petit message d'aide
+
+gsh reset
+  ré-initialise la mission en cours

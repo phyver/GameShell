@@ -1,0 +1,13 @@
+**gsh auto**::
+	lance le script automatique de la mission en cours, s'il existe.
+
+**gsh goto** [__N__]::
+	passe directement à la mission __N__ +
+	(le mot de passe n'est pas nécessaire si __N__ est une mission 
+	précédente)
+
+**gsh skip**::
+	abandonne la mission en cours et passe à la suivante +
+	(le mot de passe n'est pas nécessaire si la mission a déjà été 
+	réussie)
+
