@@ -1,0 +1,16 @@
+**gsh check**::
+	vérifie que l'objectif de la mission en cours est atteint
+
+**gsh exit**::
+	quitte (et sauvegarde) la partie en cours +
+	vous pouvez également quitter avec Contrôle-d
+
+**gsh goal** [__N__]::
+	affiche l'objectif de la mission en cours +
+	si __N__ est donné, affiche l'objectif de la mission __N__
+
+**gsh help**::
+	affiche un petit message d'aide
+
+**gsh reset**::
+	ré-initialise la mission en cours

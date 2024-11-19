@@ -40,7 +40,7 @@ while getopts ":hHIndDM:CRXUVqL:KBZc:FS:" opt
 do
   case "$opt" in
     V)
-      echo "Gameshell $GSH_VERSION"
+      echo "GameShell $GSH_VERSION"
       if [ -n "$GSH_LAST_CHECKED_MISSION" ]
       then
         echo "saved game: [mission $GSH_LAST_CHECKED_MISSION] OK"

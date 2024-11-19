@@ -2,12 +2,12 @@
 .\"     Title: gsh
 .\"    Author: [see the "Authors" section]
 .\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
-.\"      Date: 11/19/2024
+.\"      Date: 12/10/2024
 .\"    Manual: \ \&
 .\"    Source: \ \&
 .\"  Language: English
 .\"
-.TH "GSH" "1" "11/19/2024" "\ \&" "\ \&"
+.TH "GSH" "1" "12/10/2024" "\ \&" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -43,11 +43,11 @@ On standard Unix systems, you should be able to quit this manual by pressing the
 .sp
 You should be able to scroll using the Space key or the arrow keys\&.
 .sp
-Youn can search through this page by pressing on the "/" key, followed by the pattern you are searching\&. Pressing "n" (for "next") or "p" (for "previous") will go the next / previous occurence of the search pattern\&.
+You can search through this page by pressing on the "/" key, followed by the pattern you are searching\&. Pressing "n" (for "next") or "p" (for "previous") will go the next / previous occurrence of the search pattern\&.
 .SH "COMMANDS"
 .SS "Standard player commands"
 .sp
-Under normal circomstances, a player shouldn\(cqt need to use more than the following commands\&.
+Under normal circumstances, a player shouldn\(cqt need to use more than the following commands\&.
 .PP
 \fBgsh check\fR
 .RS 4
@@ -58,16 +58,16 @@ check whether the current mission\(cqs goal has been achieved or not
 .RS 4
 quit GameShell
 
-(you can start from the current mission by running GameShell with the
-\fB\-C\fR
-flag)
-
 Note that you can exit GameShell using Control\-d as well
 .RE
 .PP
 \fBgsh goal\fR [\fIN\fR]
 .RS 4
-show the current mission\(cqs goal if n is given, show the goal for mission
+show the current mission\(cqs goal
+
+if
+\fIN\fR
+is given, show the goal for mission
 \fIN\fR
 .RE
 .PP
@@ -129,9 +129,9 @@ show GameShell\(cqs version
 .RS 4
 show the welcome message
 .RE
-.SS "Developper and administration commands"
+.SS "Developer and administration commands"
 .sp
-The following commands are only useful for GameShell developpers\&. Player should probably avoid them\&.
+The following commands are only useful for GameShell developers\&. Player should probably avoid them\&.
 .PP
 \fBgsh assert condition\fR [\fIMSG\fR]
 .RS 4
@@ -198,9 +198,9 @@ run the current mission\(cqs test script, if it exists
 .RE
 .SH "AUTHORS"
 .sp
-GameShell was originally developped by Pierre Hyvernat and Rodolphe Lepigre at Université Savoie Mont Blanc, based on an idea from Rodolphe Lepigre\&. Several people have contributed individual missions, bug reports, bug fixes and translations\&.
+GameShell was originally developed by Pierre Hyvernat and Rodolphe Lepigre at Université Savoie Mont Blanc, based on an idea from Rodolphe Lepigre\&. Several people have contributed individual missions, bug reports, bug fixes and translations\&.
 .sp
-It is currently maintained and developped by Pierre Hyvernat\&.
+It is currently maintained and developed by Pierre Hyvernat\&.
 .SH "REPORTING BUGS"
 .sp
 The best way to report bug is by opening an issue on github: https://github\&.com/phyver/GameShell/issues
@@ -217,7 +217,7 @@ Please include
 .sp -1
 .IP \(bu 2.3
 .\}
-a description of the problem,
+a description of the problem
 .RE
 .sp
 .RS 4
@@ -231,7 +231,7 @@ a description of the problem,
 the version of GameShell you are using (cf
 \fBgsh version\fR, or the
 \fB\-V\fR
-option of the GameShell script),
+option of the GameShell script)
 .RE
 .sp
 .RS 4
@@ -244,7 +244,7 @@ option of the GameShell script),
 .\}
 the output of the
 \fBgsh env\fR
-commande,
+command,
 .RE
 .sp
 .RS 4
@@ -259,7 +259,7 @@ any additional relevant information\&.
 .RE
 .SH "SEE ALSO"
 .sp
-\fIbash\fR(1), \fIzsh\fR(1), \fIsh\fR(1)
+\fIbash\fR(1), \fIzsh\fR(1), \fIsh\fR(1), \fIgameshell\&.sh\fR(1)
 .SH "GAMESHELL"
 .sp
 GameShell source code is hosted on github: https://github\&.com/phyver/GameShell
