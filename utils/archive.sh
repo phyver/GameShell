@@ -163,7 +163,7 @@ mkdir "$TMP_DIR/$NAME"
 # copy source files
 # NOTE: macOS' cp doesn't have '--archive', and '-a' is not POSIX.
 # use POSIX options to make sure it is portable
-cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/scripts" "$GSH_ROOT/utils" "$GSH_ROOT/lib" "$GSH_ROOT/i18n" "$TMP_DIR/$NAME"
+cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/scripts" "$GSH_ROOT/utils" "$GSH_ROOT/lib" "$GSH_ROOT/i18n" "$GSH_ROOT/man" "$TMP_DIR/$NAME"
 
 
 # generate default index file
@@ -297,6 +297,22 @@ then
       fi
     done
   done
+
+  # remove translated manual pages
+  find "$GSH_ROOT/man" -type d | while read -r dir
+  do
+    if [ "$(basename "$dir")" = "man1" ] || [ "$(basename "$dir")" = "man" ]
+    then
+      continue
+    fi
+    if ! keep_language "$dir" "$LANGUAGES"
+    then
+      # --system makes GameShell use the standard rm utility instead of the "safe"
+      # rm implemented in scripts/rm
+      printf "."
+      rm --system -rf "$dir"
+    fi
+  done
   echo
 fi
 
@@ -366,6 +382,9 @@ echo "removing unnecessary files"
   [ "$KEEP_TEST" -ne 1 ] && find ./missions -name "test.sh" | xargs rm --system -f
   [ "$KEEP_AUTO" -ne 1 ] && find ./missions -name auto.sh | xargs rm --system -f
   rm --system -rf "$GSH_ROOT/utils/"
+  rm --system -f "$GSH_ROOT/i18n/gamesh-commands"
+  rm --system -f "$GSH_ROOT/man/en"
+  rm --system -f "$GSH_ROOT/man/README" "$GSH_ROOT/i18n/gameshell-*help/README"
 )
 
 # change admin password
