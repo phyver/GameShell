@@ -115,17 +115,17 @@ while creating missions (`gsh assert ...`, `gsh test`).
 
 
 
-Creating an executable archive
+Creating an executable [archive](archive)
 ------------------------------
 
-The script `utils/archive.sh` is used to create an executable archive to
+The script `utils/gameshell_archive.sh` is used to create an executable archive to
 distribute a (customized) version of GameShell.
 
 By default, it creates an archive with all the missions listed in the
 `$GSH_ROOT/missions/index.txt` file and with all the available translations.
 You can choose the missions you want by listing them on the command line:
 ```sh
-$ ./utils/archive.sh missions/basic/01_cd_tower missions/basic/02_cd.._cellar/ missions/basic/03_cd_HOME_throne/
+$ ./utils/gameshell_archive.sh missions/basic/01_cd_tower missions/basic/02_cd.._cellar/ missions/basic/03_cd_HOME_throne/
 ```
 If a directory contains an `index.txt` file, all the missions listed in it
 will be included. You can also give an `index.txt` file directly on the
@@ -147,5 +147,5 @@ You can customize the archive with the following options
 
 More options are available and listed in the output of
 ```sh
-$ ./utils/archive.sh -h
+$ ./utils/gameshell_archive.sh -h
 ```
