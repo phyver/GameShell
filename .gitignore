@@ -9,6 +9,6 @@ TODO
 World
 locale/
 *~
-gameshell*
+/gameshell*
 game shell*
 boxes-data.awk
