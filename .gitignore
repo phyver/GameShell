@@ -8,6 +8,7 @@ TODO
 .save
 World
 locale/
+man/en
 *~
 /gameshell*
 game shell*
