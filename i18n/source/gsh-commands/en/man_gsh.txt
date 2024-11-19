@@ -24,16 +24,15 @@ the "q" key.
 
 You should be able to scroll using the Space key or the arrow keys.
 
-Youn can search through this page by pressing on the "/" key, followed by the
+You can search through this page by pressing on the "/" key, followed by the
 pattern you are searching. Pressing "n" (for "next") or "p" (for "previous")
-will go the next / previous occurence of the search pattern.
+will go the next / previous occurrence of the search pattern.
 
 COMMANDS
 --------
 Standard player commands
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-Under normal circomstances, a player shouldn't need to use more than the
+Under normal circumstances, a player shouldn't need to use more than the
 following commands.
 
 INCLUDE en/commands_standard.txt
@@ -57,21 +56,21 @@ the player.
 
 INCLUDE en/commands_misc.txt
 
-Developper and administration commands
+Developer and administration commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The following commands are only useful for GameShell developpers. Player
+The following commands are only useful for GameShell developers. Player
 should probably avoid them.
 
 INCLUDE en/commands_dev.txt
 
 Authors
 -------
-GameShell was originally developped by Pierre Hyvernat and Rodolphe Lepigre at
+GameShell was originally developed by Pierre Hyvernat and Rodolphe Lepigre at
 Université Savoie Mont Blanc, based on an idea from Rodolphe Lepigre. Several
 people have contributed individual missions, bug reports, bug fixes and
 translations.
 
-It is currently maintained and developped by Pierre Hyvernat.
+It is currently maintained and developed by Pierre Hyvernat.
 
 Reporting Bugs
 --------------
@@ -82,10 +81,10 @@ description of your problem.
 
 Please include
 
-* a description of the problem,
+* a description of the problem
 * the version of GameShell you are using (cf **gsh version**, or the **-V**
-  option of the GameShell script),
-* the output of the **gsh env** commande,
+  option of the GameShell script)
+* the output of the **gsh env** command,
 * any additional relevant information.
 
 
