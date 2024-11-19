@@ -22,7 +22,7 @@ jobs:
       - name: "Creating the archive"
         run: |
           git fetch --tags --force
-          ./utils/archive.sh
+          ./utils/gameshell_archive.sh
 
       - name: "Create GitHub Release"
         uses: softprops/action-gh-release@v2
