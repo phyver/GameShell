@@ -1,0 +1,105 @@
+Liste de toutes les commandes GameShell
+=======================================
+
+Cette liste devrait être accessible dans une page de manuel UNIX :
+
+  man gsh
+
+
+Commandes pour le joueur
+------------------------
+
+gsh check
+  vérifie que l'objectif de la mission en cours est atteint
+
+gsh exit
+  quitte (et sauvegarde) la partie en cours
+  vous pouvez également quitter avec Contrôle-d
+
+gsh goal [N]
+  affiche l'objectif de la mission en cours
+  si N est donné, affiche l'objectif de la mission N
+
+gsh help
+  affiche un petit message d'aide
+
+gsh reset
+  ré-initialise la mission en cours
+
+
+Commandes d'administration
+--------------------------
+
+gsh auto
+  lance le script automatique de la mission en cours, s'il existe.
+
+gsh goto [N]
+  passe directement à la mission N
+  (le mot de passe n'est pas nécessaire si N est une mission 
+  précédente)
+
+gsh skip
+  abandonne la mission en cours et passe à la suivante
+  (le mot de passe n'est pas nécessaire si la mission a déjà été 
+  réussie)
+
+
+
+Commandes supplémentaires
+-------------------------
+
+gsh index
+  affiche la liste des missions, avec leur statut
+
+gsh stat [-v]
+  affiche des statistiques simples sur les missions effectuées
+
+gsh version
+  affiche la version de GameShell
+
+gsh welcome
+  affiche le message de bienvenue
+
+
+Commandes pour les développeurs
+-------------------------------
+
+gsh assert condition [MSG]
+  vérifie si la condition est vraie
+  sinon, affiche un message d'erreur
+
+gsh assert_check true/false [MSG]
+  vérifie si l'objectif de la mission en cours est atteint
+  si le résultat ne correspond pas au résultat attendu, affiche un 
+  message d'erreur
+
+gsh env
+  affiche les variables d'environnement internes
+
+gsh hardreset
+  ré-initialise la mission en cours en redémarrant le shell
+
+gsh HELP
+  affiche un message d'aide complet, avec toutes les commandes Gameshell existantes
+
+gsh log [-v]
+  affiche le fichier de log des commandes gsh
+
+gsh pcm
+  affiche le numéro de mission courant ("print current mission")
+
+gsh protect  et  gsh unprotect
+  ajoute / supprime les protections d'accès sur les répertoires 
+  de GameShell
+
+gsh resetstatic
+  re-génère toutes les parties statique du monde
+
+gsh save FICHIER
+  sauve la partie actuelle dans le fichier
+
+gsh systemconfig
+  affiche la configuration du système
+
+gsh test
+  lance le script de test de la mission en cours, s'il existe

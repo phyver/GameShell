@@ -1,0 +1,101 @@
+gsh(1)
+======
+
+NAME
+----
+gsh - GameShell specific commands invocation
+
+SYNOPSIS
+--------
+**gsh** <__COMMAND__>
+
+DESCRIPTION
+-----------
+GameShell is a game for learning (and teaching) how to use a POSIX shell.
+
+Almost all the commands encountered during a game are standard Unix commands,
+with the notable exception of the commands needed to interact with GameShell
+itself. All those interaction start with **gsh**, followed by a subcommand.
+
+NOTE
+----
+On standard Unix systems, you should be able to quit this manual by pressing
+the "q" key.
+
+You should be able to scroll using the Space key or the arrow keys.
+
+You can search through this page by pressing on the "/" key, followed by the
+pattern you are searching. Pressing "n" (for "next") or "p" (for "previous")
+will go the next / previous occurrence of the search pattern.
+
+COMMANDS
+--------
+Standard player commands
+~~~~~~~~~~~~~~~~~~~~~~~~
+Under normal circumstances, a player shouldn't need to use more than the
+following commands.
+
+INCLUDE it/commands_standard.txt
+
+Admin commands
+~~~~~~~~~~~~~~
+Some commands are only accessible when the player knows the secret "GameShell
+administrator password". Those commands make it possible to skip some mission.
+
+The password for the standard GameShell is simply "gsh" but if you're using
+GameShell in the classroom, your instructor has probably changed it to
+something else!
+
+INCLUDE it/commands_admin.txt
+
+Additional commands
+~~~~~~~~~~~~~~~~~~~
+There are couple of additional commands that can give information about the
+game. Except for the **index** subcommand, they aren't very interesting for
+the player.
+
+INCLUDE it/commands_misc.txt
+
+Developer and administration commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The following commands are only useful for GameShell developers. Player
+should probably avoid them.
+
+INCLUDE it/commands_dev.txt
+
+Authors
+-------
+GameShell was originally developed by Pierre Hyvernat and Rodolphe Lepigre at
+Université Savoie Mont Blanc, based on an idea from Rodolphe Lepigre. Several
+people have contributed individual missions, bug reports, bug fixes and
+translations.
+
+It is currently maintained and developed by Pierre Hyvernat.
+
+Reporting Bugs
+--------------
+The best way to report bug is by opening an issue on github: https://github.com/phyver/GameShell/issues
+
+You can also send an email directly to <mailto:pierre.hyvernat@univ-smb.fr> with a
+description of your problem.
+
+Please include
+
+* a description of the problem
+* the version of GameShell you are using (cf **gsh version**, or the **-V**
+  option of the GameShell script)
+* the output of the **gsh env** command,
+* any additional relevant information.
+
+
+SEE ALSO
+--------
+__bash__(1), __zsh__(1), __sh__(1), __gameshell.sh__(1)
+
+GAMESHELL
+---------
+GameShell source code is hosted on github: https://github.com/phyver/GameShell
+
+LICENCE
+-------
+GNU General Public Licence version 3, "GPLV3", https://www.gnu.org/licenses/gpl-3.0.html

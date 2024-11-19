@@ -23,7 +23,7 @@ jobs:
       - name: "Creating the archive"
         run: |
           git fetch --tags --force
-          ./utils/archive.sh
+          ./utils/gameshell_archive.sh
 
       - name: "Create or move 'latest' tag"
         run: |

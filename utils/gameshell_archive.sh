@@ -163,7 +163,7 @@ mkdir "$TMP_DIR/$NAME"
 # copy source files
 # NOTE: macOS' cp doesn't have '--archive', and '-a' is not POSIX.
 # use POSIX options to make sure it is portable
-cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/scripts" "$GSH_ROOT/utils" "$GSH_ROOT/lib" "$GSH_ROOT/i18n" "$TMP_DIR/$NAME"
+cp -RPp "$GSH_ROOT/start.sh" "$GSH_ROOT/scripts" "$GSH_ROOT/utils" "$GSH_ROOT/lib" "$GSH_ROOT/i18n" "$GSH_ROOT/man" "$TMP_DIR/$NAME"
 
 
 # generate default index file
@@ -171,7 +171,7 @@ ALL_INDEX_FILES=default.idx
 mkdir "$TMP_DIR/$NAME/missions"
 if ! make_index "$@" > "$TMP_DIR/$NAME/missions/default.idx"
 then
-  echo "Error: archive.sh, couldn't make default.idx"
+  echo "Error: gameshell_archive.sh, couldn't make default.idx"
   # --system makes GameShell use the standard rm utility instead of the "safe"
   # rm implemented in scripts/rm
   rm --system -rf "$TMP_DIR"
@@ -186,7 +186,7 @@ do
   ALL_INDEX_FILES="$ALL_INDEX_FILES:$(basename "$FILE")"
   if ! make_index "$FILE" > "$TMP_DIR/$NAME/missions/$(basename "$FILE")"
   then
-    echo "Error: archive.sh, couldn't make $(basename "$FILE")"
+    echo "Error: gameshell_archive.sh, couldn't make $(basename "$FILE")"
     # --system makes GameShell use the standard rm utility instead of the "safe"
     # rm implemented in scripts/rm
     rm --system -rf "$TMP_DIR"
@@ -297,6 +297,22 @@ then
       fi
     done
   done
+
+  # remove translated manual pages
+  find "$GSH_ROOT/man" -type d | while read -r dir
+  do
+    if [ "$(basename "$dir")" = "man1" ] || [ "$(basename "$dir")" = "man" ]
+    then
+      continue
+    fi
+    if ! keep_language "$dir" "$LANGUAGES"
+    then
+      # --system makes GameShell use the standard rm utility instead of the "safe"
+      # rm implemented in scripts/rm
+      printf "."
+      rm --system -rf "$dir"
+    fi
+  done
   echo
 fi
 
@@ -366,6 +382,8 @@ echo "removing unnecessary files"
   [ "$KEEP_TEST" -ne 1 ] && find ./missions -name "test.sh" | xargs rm --system -f
   [ "$KEEP_AUTO" -ne 1 ] && find ./missions -name auto.sh | xargs rm --system -f
   rm --system -rf "$GSH_ROOT/utils/"
+  rm --system -rf "$GSH_ROOT/i18n/source/"
+  rm --system -f "$GSH_ROOT/man/README" "$GSH_ROOT/i18n/gameshell-*help/README"
 )
 
 # change admin password

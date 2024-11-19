@@ -1,0 +1,11 @@
+**gsh auto**::
+	source the current mission's automatic script, if it exists
+
+**gsh goto** [__N__]::
+	directly go to mission __N__ +
+	(Note: no password necessary if __N__ is an earlier mission)
+
+**gsh skip**::
+	give up on the current mission and go to the next one +
+	(no password necessary if the mission was completed at least 
+	once)

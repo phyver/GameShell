@@ -36,10 +36,10 @@ $ ./GameShell/start.sh
 ### 3/ from an executable archive
 
 This is the easiest way to distribute GameShell to a group of students. Once you've
-cloned the repository, create an executable archive with the `archive.sh` script:
+cloned the repository, create an executable archive with the `gameshell_archive.sh` script:
 ```sh
 $ cd GameShell
-$ ./utils/archive.sh
+$ ./utils/gameshell_archive.sh
 copy missions
   -> copy basic/03_cd_HOME_throne
   -> copy basic/04_mkdir_chest

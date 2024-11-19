@@ -1,0 +1,267 @@
+'\" t
+.\"     Title: gsh
+.\"    Author: [FIXME: author] [see http://www.docbook.org/tdg5/en/html/author]
+.\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
+.\"      Date: 03/13/2025
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "GSH" "1" "03/13/2025" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+gsh \- exécute les commandes spécifiques de GameShell
+.SH "SYNOPSIS"
+.sp
+\fBgsh\fR <\fICOMMANDE\fR>
+.SH "DESCRIPTION"
+.sp
+GameShell est un jeu pour apprendre (et enseigner) l\(cqutilisation d\(cqun shell POSIX\&.
+.sp
+Presque toutes les commandes rencontrées pendant une partie sont des commandes Unix standard, à l\(cqexception notable des commandes nécessaires pour interagir avec GameShell lui même\&. Toutes ces commandes commencent par \fBgsh\fR, suivi d\(cqune sous\-commande\&.
+.SH "NOTE"
+.sp
+Sur un système Unix standard, vous devriez pouvoir quitter ce manuel en appuyant sur la touche "q"\&.
+.sp
+Vous devriez pouvoir faire défiler le texte avec la touche Espace ou les flèches\&.
+.sp
+Vous pouvez chercher dans le manuel en appuyant sur la touche "/", puis en entrant le motif que vous recherchez\&. Un appui sur les touches "n" (pour "next") ou "p" (pour "previous") déplacera le texte à l\(cqoccurrence suivante ou précédente du motif\&.
+.SH "COMMANDES"
+.SS "Commandes standard pour le joueur"
+.sp
+Normalement, le joueur ne devrait pas avoir besoin d\(cqautres commandes que les suivantes\&.
+.PP
+\fBgsh check\fR
+.RS 4
+vérifie que l\(cqobjectif de la mission en cours est atteint
+.RE
+.PP
+\fBgsh exit\fR
+.RS 4
+quitte (et sauvegarde) la partie en cours
+
+vous pouvez également quitter avec Contrôle\-d
+.RE
+.PP
+\fBgsh goal\fR [\fIN\fR]
+.RS 4
+affiche l\(cqobjectif de la mission en cours
+
+si
+\fIN\fR
+est donné, affiche l\(cqobjectif de la mission
+\fIN\fR
+.RE
+.PP
+\fBgsh help\fR
+.RS 4
+affiche un petit message d\(cqaide
+.RE
+.PP
+\fBgsh reset\fR
+.RS 4
+ré\-initialise la mission en cours
+.RE
+.SS "Commandes pour l\(cqadministrateur"
+.sp
+Quelques commandes sont seulement utilisables si le joueurs connait le mot de passe secret de GameShell\&. Ces commandes permettent par exemple de sauter une mission fait partie\&.
+.sp
+Le mot de passe par défaut est simplement "gsh" mais si vous utilisez GameShell en classe, votre encadrant l\(cqa probablement changé !
+.PP
+\fBgsh auto\fR
+.RS 4
+lance le script automatique de la mission en cours, s\(cqil existe\&.
+.RE
+.PP
+\fBgsh goto\fR [\fIN\fR]
+.RS 4
+passe directement à la mission
+\fIN\fR
+(le mot de passe n\(cqest pas nécessaire si
+\fIN\fR
+est une mission précédente)
+.RE
+.PP
+\fBgsh skip\fR
+.RS 4
+abandonne la mission en cours et passe à la suivante
+
+(le mot de passe n\(cqest pas nécessaire si la mission a déjà été réussie)
+.RE
+.SS "Autres commandes"
+.sp
+Il y a quelques commandes supplémentaires donnant de l\(cqinformation sur le jeu\&. Mis à part la sous commande \fBindex\fR, elles ne sont pas particulièrement intéressantes pour le joueur\&.
+.PP
+\fBgsh index\fR
+.RS 4
+affiche la liste des missions, avec leur statut
+.RE
+.PP
+\fBgsh stat\fR [\fB\-v\fR]
+.RS 4
+affiche des statistiques simples sur les missions effectuées
+.RE
+.PP
+\fBgsh version\fR
+.RS 4
+affiche la version de GameShell
+.RE
+.PP
+\fBgsh welcome\fR
+.RS 4
+affiche le message de bienvenue
+.RE
+.SS "Commandes pour le développeur"
+.sp
+Les commandes suivantes sont surtout intéressantes pour les développeurs de GameShell\&. Les joueurs ne devrait probablement pas les utiliser\&.
+.PP
+\fBgsh assert condition\fR [\fIMSG\fR]
+.RS 4
+vérifie si la condition est vraie
+
+sinon, affiche un message d\(cqerreur
+.RE
+.PP
+\fBgsh assert_check true/false\fR [\fIMSG\fR]
+.RS 4
+vérifie si l\(cqobjectif de la mission en cours est atteint
+
+si le résultat ne correspond pas au résultat attendu, affiche un message d\(cqerreur
+.RE
+.PP
+\fBgsh env\fR
+.RS 4
+affiche les variables d\(cqenvironnement internes
+.RE
+.PP
+\fBgsh hardreset\fR
+.RS 4
+ré\-initialise la mission en cours en redémarrant le shell
+.RE
+.PP
+\fBgsh HELP\fR
+.RS 4
+affiche un message d\(cqaide complet, avec toutes les commandes Gameshell existantes
+.RE
+.PP
+\fBgsh log\fR [\fB\-v\fR]
+.RS 4
+affiche le fichier de log des commandes gsh
+.RE
+.PP
+\fBgsh pcm\fR
+.RS 4
+affiche le numéro de mission courant ("print current mission")
+.RE
+.PP
+\fBgsh protect\fR et \fBgsh unprotect\fR
+.RS 4
+ajoute / supprime les protections d\(cqaccès sur les répertoires de GameShell
+.RE
+.PP
+\fBgsh resetstatic\fR
+.RS 4
+re\-génère toutes les parties statique du monde
+.RE
+.PP
+\fBgsh save\fR \fIFICHIER\fR
+.RS 4
+sauve la partie actuelle dans le fichier
+.RE
+.PP
+\fBgsh systemconfig\fR
+.RS 4
+affiche la configuration du système
+.RE
+.PP
+\fBgsh test\fR
+.RS 4
+lance le script de test de la mission en cours, s\(cqil existe
+.RE
+.SH "AUTEURS"
+.sp
+GameShell a été initialement développé par Pierre Hyvernat et Rodolphe Lepigre à Université Savoie Mont Blanc, en partant d\(cqune idée dem Rodolphe Lepigre\&. Plusieurs autres personnes ont contribué des missions, des rapports de bug, des corrections de bugs et des traductions\&.
+.sp
+GameShell est actuellement maintenu par Pierre Hyvernat\&.
+.SH "SIGNALER DES BOGUES"
+.sp
+Le meilleur moyen de signaler un bug est d\(cqouvrir un ticket sur github : https://github\&.com/phyver/GameShell/issues
+.sp
+Vous pouvez également envoyer un email directement à <mailto:pierre\&.hyvernat@univ\-smb\&.fr>\&.
+.sp
+Merci d\(cqinclure
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+une description du problème,
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+la version de GameShell que vous utilisez (cf
+\fBgsh version\fR, ou l\(cqoption
+\fB\-V\fR
+du script GameShell),
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+le résultat de la commande
+\fBgsh env\fR,
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+toute information pertinente supplémentaire\&.
+.RE
+.SH "VOIR AUSSI"
+.sp
+\fIbash\fR(1), \fIzsh\fR(1), \fIsh\fR(1), \fIgameshell\&.sh\fR(1)
+.SH "GAMESHELL"
+.sp
+Les sources de GameShell sont hébergées sur github: https://github\&.com/phyver/GameShell
+.SH "LICENCE"
+.sp
+GNU General Public Licence version 3, "GPLV3", https://www\&.gnu\&.org/licenses/gpl\-3\&.0\&.html

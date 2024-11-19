@@ -208,7 +208,7 @@ animation() {
 
   # NOTE: disabling echoing in terminal during animation doesn't always work in zsh!
   # running
-  # ./utils/archive.sh -a missions/stdin_stdout_stderr/04_stderr_dev-null_grimoires; ./gameshell.sh -Dqc "gsh auto"
+  # ./utils/makeshell_archive.sh -a missions/stdin_stdout_stderr/04_stderr_dev-null_grimoires; ./gameshell.sh -Dqc "gsh auto"
   # loops!
   # Removing the stty -echo / stty echo makes the problem go away.
   # I'm not sure what happens...

@@ -54,7 +54,7 @@ Q. Can I use GameShell in the classroom?
 A. Of course! GameShell was initially developed for this very reason.
 
 Note that you can create your own GameShell archives with the missions you
-want using the `GSH_ROOT/utils/archive.sh` script. You should probably
+want using the `GSH_ROOT/utils/gameshell_archive.sh` script. You should probably
 
  - choose a password different from the default `gsh` (option `-p ...`)
  - activate the "passport" mode by default (option `-P`). The only

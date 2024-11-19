@@ -14,12 +14,12 @@ msgstr  "Project-Id-Version: \n"
         "X-Generator: Lokalize 22.04.1\n"
 
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-full-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gameshell-full-help/it.txt"
+msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-full-help/it.txt"
 
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gameshell-help/it.txt"
+msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-help/it.txt"
 
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
@@ -180,8 +180,8 @@ msgstr  "Errore: password sbagliata."
 msgid   "Error: you are not allowed to run this command."
 msgstr  "Errore: non hai i permessi per eseguire questo comando."
 
-msgid   "Error: you shouldn't run Gameshell as root!"
-msgstr  "Errore: non dovresti eseguire Gameshell come root!"
+msgid   "Error: you shouldn't run GameShell as root!"
+msgstr  "Errore: non dovresti eseguire GameShell come root!"
 
 msgid   "Is this information correct? [Y/n]"
 msgstr  "Questa informazione é corretta? [S/n]"
@@ -215,8 +215,8 @@ msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
 msgstr  "La cartella $GSH_CONFIG contiene informazioni da una partita precedente.\n"
         "Vuoi cancellare questi dati e lanciare una nuova partita?[s/N]"
 
-msgid   "The latest version of Gameshell is available at"
-msgstr  "L'ultima versione di Gameshell é disponibile a"
+msgid   "The latest version of GameShell is available at"
+msgstr  "L'ultima versione di GameShell é disponibile a"
 
 msgid   "There are stopped jobs in your session.\n"
         "Those processes will be terminated.\n"
@@ -293,9 +293,9 @@ msgstr  "S"
 msgid   "You left GameShell's directory structure. Use\n"
         "    $ cd\n"
         "to go back to the GameShell's starting directory."
-msgstr  "Hai lasciato la struttura di cartelle di Gameshell . Usa\n"
+msgstr  "Hai lasciato la struttura di cartelle di GameShell . Usa\n"
         "   $ cd\n"
-        "per tornare indietro alla cartella iniziale di Gameshell."
+        "per tornare indietro alla cartella iniziale di GameShell."
 
 msgid   "[Press space to continue, q to quit\\.]"
 msgstr  "[Premi invio per continuare, q per uscire\\.]"

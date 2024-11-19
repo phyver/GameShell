@@ -1,0 +1,103 @@
+Full list of GameShell commands
+===============================
+
+This list of commands should also be available as a UNIX manual page:
+
+  man gsh
+
+
+Player commands
+---------------
+
+gsh check
+  check whether the current mission's goal has been 
+  achieved or not
+
+gsh exit
+  quit GameShell
+  Note that you can exit GameShell using Control-d as well
+
+gsh goal [N]
+  show the current mission's goal
+  if N is given, show the goal for mission N
+
+gsh help
+  short help message
+
+gsh reset
+  reset the current mission
+
+
+Admin commands
+--------------
+
+gsh auto
+  source the current mission's automatic script, if it exists
+
+gsh goto [N]
+  directly go to mission N
+  (Note: no password necessary if N is an earlier mission)
+
+gsh skip
+  give up on the current mission and go to the next one
+  (no password necessary if the mission was completed at least 
+  once)
+
+
+Additional commands
+-------------------
+
+gsh index
+  show list of missions, with their status
+
+gsh stat
+  display simple statistics about completed missions
+
+gsh version
+  show GameShell's version
+
+gsh welcome
+  show the welcome message
+
+
+Developpers commands
+--------------------
+
+gsh assert condition [MSG]
+  check if the condition is true
+  if not, display an error message
+
+gsh assert check true/false [MSG]
+  check the current mission's goal has been achieved
+  if the result doesn't coincide with the expected result, display 
+  an error message
+
+gsh env
+  display internal environment variables
+
+gsh hardreset
+  reset the current mission by restarting the shell
+
+gsh HELP
+  show advanced usage status, with all existing Gameshell commands
+
+gsh log [-v]
+  show the log file of gsh commands
+
+gsh pcm
+  print the current mission number
+
+gsh protect and gsh unprotect
+  add / remove protection on GameShell directories
+
+gsh resetstatic
+  regenerate all the static parts of the world
+
+gsh save FILENAME
+  save the current game to file
+
+gsh systemconfig
+  display the system configuration
+
+gsh test
+  run the current mission's test script, if it exists

@@ -1,0 +1,11 @@
+**gsh index**::
+	show list of missions, with their status
+
+**gsh stat**::
+	display simple statistics about completed missions
+
+**gsh version**::
+	show GameShell's version
+
+**gsh welcome**::
+	show the welcome message

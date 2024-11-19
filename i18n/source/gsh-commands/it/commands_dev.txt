@@ -1,0 +1,38 @@
+**gsh assert condition** [__MSG__]::
+	verifica se la condizione è vera
+	altrimenti mostra un messaggio di errore
+
+**gsh assert check true/false** [__MSG__]::
+	verifica se gli obiettivi della missione corrente sono stati raggiunti
+	se il risultato non coincide con quello aspettato mostra un messaggio
+	di errore
+
+**gsh env**::
+	mostra le variabili di sistema\environment
+
+**gsh hardreset**::
+	reimposta la missione attuale riavviando la shell
+
+**gsh HELP**::
+	questo messaggio
+
+**gsh log** [**-v**]::
+	mostra lo storico dei comandi gsh
+
+**gsh pcm**::
+	stampa il numero della missione attuale
+
+**gsh protect**  e  **gsh unprotect**::
+	aggiunge / rimuove la protezione delle cartelle di GameShell
+
+**gsh resetstatic**::
+	rigenera tutte le parti statiche del mondo di gioco
+
+**gsh save** __FILENAME__::
+	salva la partita corrente su un file
+
+**gsh systemconfig**::
+	mostra la configurazione del sistema
+
+**gsh test**::
+	avvia i test della missione attuale, se esiste

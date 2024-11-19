@@ -1,11 +1,11 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-full-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gameshell-full-help/en.txt"
+msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-full-help/en.txt"
 
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gameshell-help/en.txt"
+msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-help/en.txt"
 
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
@@ -166,8 +166,8 @@ msgstr  "Error: wrong password."
 msgid   "Error: you are not allowed to run this command."
 msgstr  "Error: you are not allowed to run this command."
 
-msgid   "Error: you shouldn't run Gameshell as root!"
-msgstr  "Error: you shouldn't run Gameshell as root!"
+msgid   "Error: you shouldn't run GameShell as root!"
+msgstr  "Error: you shouldn't run GameShell as root!"
 
 msgid   "Is this information correct? [Y/n]"
 msgstr  "Is this information correct? [Y/n]"
@@ -201,8 +201,8 @@ msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
 msgstr  "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
         "Do you want to remove it and start a new game? [y/N]"
 
-msgid   "The latest version of Gameshell is available at"
-msgstr  "The latest version of Gameshell is available at"
+msgid   "The latest version of GameShell is available at"
+msgstr  "The latest version of GameShell is available at"
 
 msgid   "There are stopped jobs in your session.\n"
         "Those processes will be terminated.\n"

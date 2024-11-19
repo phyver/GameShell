@@ -1,0 +1,4 @@
+Commandes GameShell standard
+============================
+
+INCLUDE fr/commands_standard.txt

@@ -1,9 +1,9 @@
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-full-help/en.txt"
+msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
 msgstr  ""
 
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gameshell-help/en.txt"
+msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
 msgstr  ""
 
 #, sh-format
@@ -161,7 +161,7 @@ msgstr  ""
 msgid   "Error: you are not allowed to run this command."
 msgstr  ""
 
-msgid   "Error: you shouldn't run Gameshell as root!"
+msgid   "Error: you shouldn't run GameShell as root!"
 msgstr  ""
 
 msgid   "Is this information correct? [Y/n]"
@@ -195,7 +195,7 @@ msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
         "Do you want to remove it and start a new game? [y/N]"
 msgstr  ""
 
-msgid   "The latest version of Gameshell is available at"
+msgid   "The latest version of GameShell is available at"
 msgstr  ""
 
 msgid   "There are stopped jobs in your session.\n"

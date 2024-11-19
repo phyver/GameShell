@@ -1,0 +1,30 @@
+Full list of GameShell commands
+===============================
+
+This list of commands should also be available as a UNIX manual page:
+
+  man gsh
+
+
+Player commands
+---------------
+
+INCLUDE en/commands_standard.txt
+
+
+Admin commands
+--------------
+
+INCLUDE en/commands_admin.txt
+
+
+Additional commands
+-------------------
+
+INCLUDE en/commands_misc.txt
+
+
+Developpers commands
+--------------------
+
+INCLUDE en/commands_dev.txt

@@ -164,7 +164,7 @@ shift $((OPTIND - 1))
 
 if [ $(id -u) -eq 0 ]
 then
-  echo "$(gettext "Error: you shouldn't run Gameshell as root!")" >&2
+  echo "$(gettext "Error: you shouldn't run GameShell as root!")" >&2
   exit 1
 fi
 

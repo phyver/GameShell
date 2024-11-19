@@ -1,0 +1,4 @@
+Comandi specifici di GameShell
+==============================
+
+INCLUDE it/commands_standard.txt

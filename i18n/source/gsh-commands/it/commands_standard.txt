@@ -1,0 +1,17 @@
+**gsh check**::
+	verifica se gli obiettivi della missione attuale sono stati raggiunti
+	o no
+
+**gsh exit**::
+	esci da GameShell
+
+**gsh goal** [__N__]::
+	mostra gli obiettivi della missione +
+	se __N__ è fornito, mostra gli obiettivi della missione __N__
+
+**gsh help**::
+	messaggio di aiuto breve
+
+**gsh reset**::
+	reimposta la missione attuale
+

@@ -1,0 +1,106 @@
+gsh(1)
+======
+
+NOM
+---
+gsh - exécute les commandes spécifiques de GameShell
+
+SYNOPSIS
+--------
+**gsh** <__COMMANDE__>
+
+DESCRIPTION
+-----------
+GameShell est un jeu pour apprendre (et enseigner) l'utilisation d'un shell
+POSIX.
+
+Presque toutes les commandes rencontrées pendant une partie sont des commandes
+Unix standard, à l'exception notable des commandes nécessaires pour interagir
+avec GameShell lui même. Toutes ces commandes commencent par **gsh**, suivi
+d'une sous-commande.
+
+NOTE
+----
+Sur un système Unix standard, vous devriez pouvoir quitter ce manuel en
+appuyant sur la touche "q".
+
+Vous devriez pouvoir faire défiler le texte avec la touche Espace ou les
+flèches.
+
+Vous pouvez chercher dans le manuel en appuyant sur la touche "/", puis en
+entrant le motif que vous recherchez. Un appui sur les touches "n" (pour
+"next") ou "p" (pour "previous") déplacera le texte à l'occurrence suivante ou
+précédente du motif.
+
+COMMANDES
+---------
+Commandes standard pour le joueur
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Normalement, le joueur ne devrait pas avoir besoin d'autres
+commandes que les suivantes.
+
+INCLUDE fr/commands_standard.txt
+
+Commandes pour l'administrateur
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Quelques commandes sont seulement utilisables si le joueurs connait le mot de
+passe secret de GameShell. Ces commandes permettent par exemple de sauter une
+mission fait partie.
+
+Le mot de passe par défaut est simplement "gsh" mais si vous utilisez
+GameShell en classe, votre encadrant l'a probablement changé !
+
+INCLUDE fr/commands_admin.txt
+
+Autres commandes
+~~~~~~~~~~~~~~~~
+Il y a quelques commandes supplémentaires donnant de l'information sur le jeu.
+Mis à part la sous commande **index**, elles ne sont pas particulièrement
+intéressantes pour le joueur.
+
+INCLUDE fr/commands_misc.txt
+
+Commandes pour le développeur
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Les commandes suivantes sont surtout intéressantes pour les développeurs de
+GameShell. Les joueurs ne devrait probablement pas les utiliser.
+
+INCLUDE fr/commands_dev.txt
+
+AUTEURS
+-------
+GameShell a été initialement développé par Pierre Hyvernat et Rodolphe Lepigre
+à Université Savoie Mont Blanc, en partant d'une idée dem Rodolphe Lepigre.
+Plusieurs autres personnes ont contribué des missions, des rapports de bug,
+des corrections de bugs et des traductions.
+
+GameShell est actuellement maintenu par Pierre Hyvernat.
+
+SIGNALER DES BOGUES
+-------------------
+Le meilleur moyen de signaler un bug est d'ouvrir un ticket sur github :
+https://github.com/phyver/GameShell/issues
+
+Vous pouvez également envoyer un email directement à
+<mailto:pierre.hyvernat@univ-smb.fr>.
+
+Merci d'inclure
+
+* une description du problème,
+* la version de GameShell que vous utilisez (cf **gsh version**, ou l'option **-V**
+  du script GameShell),
+* le résultat de la commande **gsh env**,
+* toute information pertinente supplémentaire.
+
+
+VOIR AUSSI
+----------
+__bash__(1), __zsh__(1), __sh__(1), __gameshell.sh__(1)
+
+GAMESHELL
+---------
+Les sources de GameShell sont hébergées sur github: https://github.com/phyver/GameShell
+
+LICENCE
+-------
+GNU General Public Licence version 3, "GPLV3", https://www.gnu.org/licenses/gpl-3.0.html
