@@ -103,6 +103,10 @@ msgid   "Error: invalid option: '-$OPTARG'"
 msgstr  ""
 
 #, sh-format
+msgid   "Error: missing parameter for option: '-$OPTARG'"
+msgstr  ""
+
+#, sh-format
 msgid   "Error: mission $MISSION_NB doesn't exist!"
 msgstr  ""
 
