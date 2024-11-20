@@ -49,7 +49,7 @@ GSH_EXPLICIT_LANGUAGE="false"
 # if GSH_NO_GETTEXT is non-empty, gettext won't be used anywhere, the only language will thus be English
 # export GSH_NO_GETTEXT=1  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/archive.sh
 RESET=""
-while getopts ":hHInPdDACRXUVqL:KBZc:FS:" opt
+while getopts ":hHIndDM:CRXUVqL:KBZc:FS:" opt
 do
   case $opt in
     S)
@@ -79,8 +79,21 @@ do
     n)
       GSH_COLOR=""
       ;;
-    P)
-      GSH_MODE="PASSPORT"
+    M)
+      case "$OPTARG" in
+        passport)
+          GSH_MODE="PASSPORT"
+          ;;
+        anonymous)
+          GSH_MODE="ANONYMOUS"
+          ;;
+        debug)
+          GSH_MODE="debug"
+          ;;
+        *)
+          echo "$(eval_gettext "Error: invalid mode (option -M): '-\$OPTARG'")" >&2
+          exit 1
+      esac
       ;;
     d)
       GSH_MODE="DEBUG"
@@ -91,9 +104,6 @@ do
       ;;
     q)
       export GSH_QUIET_INTRO="true"
-      ;;
-    A)
-      GSH_MODE="ANONYMOUS"
       ;;
     C)
       RESET="FALSE"

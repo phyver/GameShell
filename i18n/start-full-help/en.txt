@@ -14,10 +14,11 @@ options:
   -V      display version
   -I      show list of available index files
 
-  -P      passport mode: ask for name / emails of player
-  -A      anonymous mode
-  -d      debug mode
-  -D      verbose debug mode
+  -M passport       passport mode: ask for name / emails of player
+  -M anonymous      anonymous mode
+  -M debug          debug mode
+  -d                alias for -M debug
+  -D                verbose debug mode
 
   -C      continue current game (if relevant)
   -R      reset game

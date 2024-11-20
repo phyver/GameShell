@@ -34,75 +34,98 @@ GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
 # just in case
 GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
 
-while getopts ":hHInPdDACRXUVqGL:KBZc:FS:" opt
+CHECK_SAVEFILE="true"
+
+while getopts ":hHIndDM:CRXUVqL:KBZc:FS:" opt
 do
-    case "$opt" in
-      V)
-        echo "Gameshell $GSH_VERSION"
-        if [ -n "$GSH_LAST_CHECKED_MISSION" ]
+  case "$opt" in
+    V)
+      echo "Gameshell $GSH_VERSION"
+      if [ -n "$GSH_LAST_CHECKED_MISSION" ]
+      then
+        echo "saved game: [mission $GSH_LAST_CHECKED_MISSION] OK"
+      fi
+      exit 0
+      ;;
+    U)
+      TARGET="$GSH_EXEC_DIR/gameshell.sh"
+      TMPFILE="$GSH_EXEC_DIR/gameshell.sh$$"
+      if command -v wget >/dev/null
+      then
+        if wget -O "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
         then
-          echo "saved game: [mission $GSH_LAST_CHECKED_MISSION] OK"
+          mv "$TMPFILE" "$TARGET"
+          chmod +x "$TARGET"
+          echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
+          exit 0
+        else
+          rm -f "$TMPFILE"
+          echo "Error: couldn't download or save the latest version of GameShell." >&2
+          exit 1
         fi
-        exit 0
-        ;;
-      U)
-        TARGET="$GSH_EXEC_DIR/gameshell.sh"
-        TMPFILE="$GSH_EXEC_DIR/gameshell.sh$$"
-        if command -v wget >/dev/null
+      elif command -v curl >/dev/null
+      then
+        if curl -fo "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
         then
-          if wget -O "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
-          then
-            mv "$TMPFILE" "$TARGET"
-            chmod +x "$TARGET"
-            echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
-            exit 0
-          else
-            rm -f "$TMPFILE"
-            echo "Error: couldn't download or save the latest version of GameShell." >&2
-            exit 1
-          fi
-        elif command -v curl >/dev/null
-        then
-          if curl -fo "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
-          then
-            mv "$TMPFILE" "$TARGET"
-            chmod +x "$TARGET"
-            echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
-            exit 0
-          else
-            rm -f "$TMPFILE"
-            echo "Error: couldn't download or save the latest version of GameShell." >&2
-            exit 1
-          fi
+          mv "$TMPFILE" "$TARGET"
+          chmod +x "$TARGET"
+          echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
+          exit 0
+        else
+          rm -f "$TMPFILE"
+          echo "Error: couldn't download or save the latest version of GameShell." >&2
+          exit 1
         fi
-        ;;
-      X)
-        GSH_EXTRACT="true"
-        ;;
-      K)
-        KEEP_DIR="true"
-        ;;
-      F)
-        GSH_FORCE="true"
-        ;;
-      h | H | I)
-        # used to avoid checking for more recent files
-        GSH_HELP="true"
-        ;;
-      '?')
-        echo "$0: invalid option '-$OPTARG'" >&2
-        echo "use $0 -h to get the list of available options" >&2
-        exit 1
-        ;;
-      :)
-        echo "$0: missing parameter for option '-$OPTARG'" >&2
-        echo "use $0 -h to get the list of available options" >&2
-        exit 1
-        ;;
-      *)
-        # ignore other options, they will be passed to start.sh
-        ;;
-    esac
+      fi
+      ;;
+    X)
+      GSH_EXTRACT="true"
+      ;;
+    K)
+      KEEP_DIR="true"
+      ;;
+    F)
+      GSH_FORCE="true"
+      ;;
+    h | H | I)
+      # used to avoid checking for more recent files
+      CHECK_SAVEFILE="false"
+      ;;
+
+    S)
+      # the next cases are used to check validity of parameters, to avoid
+      # checking for savefiles the error message will be displayed with
+      # appropriate language by start.sh
+      case "$OPTARG" in
+        "index" | "simple" | "overwrite")
+          :
+          ;;
+        *)
+          CHECK_SAVEFILE="false"
+          ;;
+      esac
+      ;;
+    M)
+      case "$OPTARG" in
+        passport | anonymous | debug)
+          :
+          ;;
+        *)
+          CHECK_SAVEFILE="false"
+          ;;
+      esac
+      ;;
+
+    '?')
+      CHECK_SAVEFILE="false"
+      ;;
+    :)
+      CHECK_SAVEFILE="false"
+      ;;
+    *)
+      # ignore other options, they will be passed to start.sh
+      ;;
+  esac
 done
 
 
@@ -115,7 +138,7 @@ GSH_NAME=${GSH_NAME%-save*}
 GSH_NAME=$(basename "$GSH_NAME")
 
 
-if [ "$GSH_HELP" != "true" ] && [ "$GSH_FORCE" != "true" ]
+if [ "$CHECK_SAVEFILE" = "true" ] && [ "$GSH_FORCE" != "true" ]
 then
   LAST_SAVEFILE=$(ls "$GSH_EXEC_DIR/$GSH_NAME-save"*".$EXT" 2>/dev/null | sort | tail -n 1)
 
