@@ -90,7 +90,7 @@ Please include
 
 SEE ALSO
 --------
-__bash__(1), __zsh__(1), __sh__(1)
+__bash__(1), __zsh__(1), __sh__(1), __gameshell.sh__(1)
 
 GAMESHELL
 ---------

@@ -14,14 +14,6 @@ msgstr  "Project-Id-Version: \n"
         "X-Generator: Lokalize 22.04.1\n"
 
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gsh-full-help/it.txt"
-
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gsh-help/it.txt"
-
-#, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
 msgstr  "$GSH_ROOT/i18n/gameshell-init-msg-short/it.txt"
 
@@ -32,6 +24,14 @@ msgstr  "$GSH_ROOT/i18n/gameshell-init-msg/it.txt"
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
 msgstr  "$GSH_ROOT/i18n/gameshell-welcome/it.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-full-help/it.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-help/it.txt"
 
 #, sh-format
 msgid   "$GSH_ROOT/i18n/start-full-help/en.txt"
