@@ -45,6 +45,7 @@ export GSH_SAVEFILE_MODE="simple"
 export GSH_AUTOSAVE=1
 export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
+GSH_EXPLICIT_LANGUAGE="false"
 # if GSH_NO_GETTEXT is non-empty, gettext won't be used anywhere, the only language will thus be English
 # export GSH_NO_GETTEXT=1  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/archive.sh
 RESET=""
@@ -102,6 +103,7 @@ do
       ;;
     L)
       export LANGUAGE="$OPTARG"     # only works on GNU systems
+      GSH_EXPLICIT_LANGUAGE="true"
       ;;
     G)
       export GSH_NO_GETTEXT=1
@@ -275,10 +277,12 @@ Do you want to remove it and start a new game? [y/N]') "
 
   if [ "$RESET" = FALSE ]
   then
-    if [ "$#" -gt 0 ]
+    if [ "$#" -gt 0 ] || [ "$GSH_EXPLICIT_LANGUAGE" = true ]
     then
       args=$*
-      echo "$(eval_gettext 'Warning: command line arguments are ignored when continuing a game ($args)')" >&2
+      [ "$#" -gt 0 ] && echo "$(eval_gettext 'Warning: command line arguments are ignored when continuing a game ($args)')" >&2
+      args=$LANGUAGE
+      [ "$GSH_EXPLICIT_LANGUAGE" = true ] &&  echo "$(eval_gettext 'Warning: language is ignored when continuing a game ($args)')" >&2
       echo "$(gettext 'Press Enter to continue.')" >&2
       read -r _
     fi
