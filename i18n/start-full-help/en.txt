@@ -23,10 +23,10 @@ options:
   -R      reset game
   -F      do not check for more recent savefiles, force using the given archive
 
-  -G      do not use gettext for translation (everything will be in English)
   -L ...  set LANGUAGE variable (ex: -L fr:it:en)
           On non GNU systems, set the variable LC_MESSAGES to a valid locale.
-          This flag is ignored when continuing from a save file.
+  -L ""   gettext won't be used and everything will be in English
+          The -L flag is ignored when continuing from a save file.
 
   -S simple
           the savefile is obtained by adding a "-save" suffix,

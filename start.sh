@@ -49,7 +49,7 @@ GSH_EXPLICIT_LANGUAGE="false"
 # if GSH_NO_GETTEXT is non-empty, gettext won't be used anywhere, the only language will thus be English
 # export GSH_NO_GETTEXT=1  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/archive.sh
 RESET=""
-while getopts ":hHInPdDACRXUVqGL:KBZc:FS:" opt
+while getopts ":hHInPdDACRXUVqL:KBZc:FS:" opt
 do
   case $opt in
     S)
@@ -102,11 +102,14 @@ do
       RESET="TRUE"
       ;;
     L)
-      export LANGUAGE="$OPTARG"     # only works on GNU systems
+      if [ -z "$OPTARG" ]
+      then
+        export GSH_NO_GETTEXT=1
+      else
+        export LANGUAGE="$OPTARG"     # only works on GNU systems
+        unset GSH_NO_GETTEXT
+      fi
       GSH_EXPLICIT_LANGUAGE="true"
-      ;;
-    G)
-      export GSH_NO_GETTEXT=1
       ;;
     V)
       # when lib/header.sh sees the -V flag, it displays the version and exits,
