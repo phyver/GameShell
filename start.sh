@@ -102,13 +102,6 @@ do
       ;;
     L)
       export LANGUAGE="$OPTARG"     # only works on GNU systems
-      if [ "$RESET" = FALSE ]
-      then
-        args="-L $OPTARG"
-        echo "$(eval_gettext 'Warning: language is ignored when continuing a game ($args)')" >&2
-        echo "$(gettext 'Press Enter to continue.')" >&2
-        read -r _
-      fi
       ;;
     G)
       export GSH_NO_GETTEXT=1
