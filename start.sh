@@ -129,12 +129,16 @@ do
     c)
       GSH_COMMAND=$OPTARG
       ;;
+    X | U)
+      echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
+      exit 1
+      ;;
     '?')
       echo "$(eval_gettext "Error: invalid option: '-\$OPTARG'")" >&2
       exit 1
       ;;
-    X | U)
-      echo "$(gettext "Error: this option is only available from an executable archive!")" >&2
+    :)
+      echo "$(eval_gettext "Error: missing parameter for option: '-\$OPTARG'")" >&2
       exit 1
       ;;
     *)

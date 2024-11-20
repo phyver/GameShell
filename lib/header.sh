@@ -94,6 +94,11 @@ do
         echo "use $0 -h to get the list of available options" >&2
         exit 1
         ;;
+      :)
+        echo "$0: missing parameter for option '-$OPTARG'" >&2
+        echo "use $0 -h to get the list of available options" >&2
+        exit 1
+        ;;
       *)
         # ignore other options, they will be passed to start.sh
         ;;
