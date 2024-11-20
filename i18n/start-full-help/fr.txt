@@ -25,11 +25,11 @@ options :
   -F      ne vérifie pas l'existence de fichiers de sauvegarde plus récents,
           force l'utilisation de l'archive donnée
 
-  -G      désactive gettext pour les traductions (tout sera en Anglais)
-  -L      initialise la variable LANGUAGE (ex : -L fr:it:en)
+  -L ...  initialise la variable LANGUAGE (ex : -L fr:it:en)
           Pour les systèmes non GNU, initialisez la variable LC_MESSAGES
           avec une locale valide.
-          Cette option est sans effet lorsqu'on reprend une session à partir
+  -L ""   gettext ne sera pas utilisé et le jeu sera en Anglais
+          L'option -L est sans effet lorsqu'on reprend une session à partir
           d'un fichier de sauvegarde.
 
   -S simple

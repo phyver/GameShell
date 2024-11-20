@@ -15,8 +15,8 @@ options:
   -P              use the "passport mode" by default when running GameShell
   -A              use the "anonymous mode" by default when running GameShell
   -L LANGS        only keep the given languages (ex: -L 'en*,fr')
-  -E              only keep english as a language, not generating any ".mo" file
-                  and not using gettext
+                  if LANGS is empty (-L ""), only keep english as a language,
+                  not generating any ".mo" file and not using gettext
 
   -N ...          name of the archive / top directory (default: "gameshell")
   -I FILE         additional index file to include in the archive
@@ -67,7 +67,7 @@ VERBOSE=""
 
 INDEX_FILES=""
 
-while getopts "hp:N:atPzL:EvS:p:I:" opt
+while getopts "hp:N:atPzL:vS:p:I:" opt
 do
   case $opt in
     h)
@@ -113,22 +113,17 @@ do
       ;;
     L)
       LANGUAGES=$OPTARG
-      ;;
-    E)
-      LANGUAGES=
-      KEEP_PO=0
-      GENERATE_MO=0
-      GSH_NO_GETTEXT=1
+      if [ -z "$OPTARG" ]
+      then
+        KEEP_PO=0
+        GENERATE_MO=0
+        GSH_NO_GETTEXT=1
+      fi
       ;;
     v)
       VERBOSE=1
       ;;
-    *)
-      if [ "$_long_option" = "1" ]
-      then
-        OPTARG="-$opt"
-      fi
-      echo "invalid option: '-$OPTARG'" >&2
+    '?' | :)
       exit 1
       ;;
   esac
