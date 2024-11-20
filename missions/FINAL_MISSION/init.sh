@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-if [ "$GSH_MODE" = DEBUG ]
+if [ "$GSH_MODE" = DEBUG ] || [ -n "$GSH_QUIET_INTRO" ]
 then
   color_echo green "$(eval_gettext "CONGRATULATION, you've finished the game!")"
   echo

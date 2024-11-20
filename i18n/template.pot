@@ -295,6 +295,10 @@ msgstr  ""
 msgid   "password:"
 msgstr  ""
 
+#, sh-format
+msgid   "progress was saved in $SAVEFILE"
+msgstr  ""
+
 msgid   "skipped"
 msgstr  ""
 

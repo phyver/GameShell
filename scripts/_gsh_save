@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+. gsh_gettext.sh
+
 ###
 # NOTE: this function should only be called after a "clean"
 
@@ -34,7 +36,7 @@ fi
 
 if [ "$GSH_MODE" = "DEBUG" ]
 then
-  echo "[ saving progress to file $SAVEFILE ]"
+  echo "[ preparing save file ]"
 fi
 
 # record last checked mission
@@ -49,6 +51,8 @@ SAVE_OK=$?
 chmod +x "$SAVEFILE"
 
 rm --system -f "$SAVEFILE.tgz"
+
+echo "[ $(eval_gettext 'progress was saved in $SAVEFILE') ]"
 
 if [ "$ARCHIVE_OK" -ne 0 ] || [ "$SAVE_OK" -ne 0 ]
 then
