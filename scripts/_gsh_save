@@ -56,7 +56,7 @@ echo "[ $(eval_gettext 'progress was saved in $SAVEFILE') ]"
 
 if [ "$ARCHIVE_OK" -ne 0 ] || [ "$SAVE_OK" -ne 0 ]
 then
-  echo "SAVEFILE MIGHT BE INCORRECT"
+  echo "SAVEFILE MIGHT BE INCORRECT" >&2
 fi
 
 if [ -n "$PROTECT" ]

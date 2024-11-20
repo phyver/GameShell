@@ -183,6 +183,10 @@ msgstr  "Errore: non hai i permessi per eseguire questo comando."
 msgid   "Error: you shouldn't run GameShell as root!"
 msgstr  "Errore: non dovresti eseguire GameShell come root!"
 
+#, sh-format
+msgid   "GameShell save file is at $SAVEFILE"
+msgstr  ""
+
 msgid   "Is this information correct? [Y/n]"
 msgstr  "Questa informazione é corretta? [S/n]"
 

@@ -501,7 +501,7 @@ __save() {
         # get extension
         EXT=${GSH_EXEC_FILE##*.}
         # remove extension and -save suffix
-        GSH_SAVEFILE=$GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}
+        GSH_SAVEFILE=$GSH_EXTRACT_DIR/${GSH_EXEC_FILE%.*}
         GSH_SAVEFILE=${GSH_SAVEFILE%-save*}
         INDEX=""
         while [ -e "$GSH_SAVEFILE-save$INDEX.$EXT" ]
@@ -516,14 +516,27 @@ __save() {
       # get extension
       EXT=${GSH_EXEC_FILE##*.}
       # remove extension and -save suffix (if present)
-      GSH_SAVEFILE=$GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}
+      GSH_SAVEFILE=$GSH_EXTRACT_DIR/${GSH_EXEC_FILE%.*}
       GSH_SAVEFILE=${GSH_SAVEFILE%-save*}
       # add -save suffix
       GSH_SAVEFILE="$GSH_SAVEFILE-save.$EXT"
       ;;
 
     "overwrite")
-      GSH_SAVEFILE=$GSH_EXEC_DIR/$GSH_EXEC_FILE
+      if [ "$GSH_EXEC_DIR" = "$GSH_EXTRACT_DIR" ]
+      then
+        GSH_SAVEFILE=$GSH_EXTRACT_DIR/$GSH_EXEC_FILE
+      else
+        # in this case, we need to make sure there is at least a -save prefix
+        # so that GameShell can check for the savefile
+        # get extension
+        EXT=${GSH_EXEC_FILE##*.}
+        # remove extension and -save suffix (if present)
+        GSH_SAVEFILE=$GSH_EXTRACT_DIR/${GSH_EXEC_FILE%.*}
+        GSH_SAVEFILE=${GSH_SAVEFILE%-save*}
+        # add -save suffix
+        GSH_SAVEFILE="$GSH_SAVEFILE-save.$EXT"
+      fi
       ;;
 
     esac
