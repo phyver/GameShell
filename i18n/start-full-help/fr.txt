@@ -15,10 +15,11 @@ options :
   -V      affiche la version
   -I      affiche la liste des fichier index disponibles
 
-  -P      mode passeport : demande le nom / email du joueur
-  -D      mode debug
-  -v      lecture "verbeuse" des scripts de mission (seulement en mode debug)
-  -A      mode anonyme
+  -M passport       mode passeport : demande le nom / email du joueur
+  -M anonymous      mode anonyme
+  -M debug          mode debug
+  -d                alias pour -M debug
+  -D                mode debug verbeux
 
   -C      continue la partie en cours (si pertinent)
   -R      recommence une partie du début

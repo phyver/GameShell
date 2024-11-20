@@ -13,10 +13,11 @@ opzioni:
   -V      mostra versione
   -I      mostra lista dei file index disponibili
 
-  -P      modalitá passaporto: chiede il nome/email del giocatore
-  -A      modalitá anonima
-  -d      modalitá debug
-  -D      modalitá debug verbosa
+  -M passport       modalitá passaporto: chiede il nome/email del giocatore
+  -M anonymous      modalitá anonima
+  -M debug          modalitá debug
+  -d                modalitá debug
+  -D                modalitá debug verbosa
 
   -C      continua la partita corrente (se rilevante)
   -R      reimposta la partita
