@@ -12,8 +12,8 @@ options:
   -h              this message
 
   -p ...          choose password for admin commands
-  -P              use the "passport mode" by default when running GameShell
-  -A              use the "anonymous mode" by default when running GameShell
+  -M passport     use the "passport mode" by default when running GameShell
+  -M anonymous    use the "anonymous mode" by default when running GameShell
   -L LANGS        only keep the given languages (ex: -L 'en*,fr')
                   if LANGS is empty (-L ""), only keep english as a language,
                   not generating any ".mo" file and not using gettext
@@ -67,7 +67,7 @@ VERBOSE=""
 
 INDEX_FILES=""
 
-while getopts "hp:N:atPzL:vS:p:I:" opt
+while getopts "hp:N:atM:zL:vS:p:I:" opt
 do
   case $opt in
     h)
@@ -94,7 +94,7 @@ do
     I)
       if [ "$OPTARG" = "default.idx" ]
       then
-        echo "Warning: ignoring additional index file with name '$OPTARG'"
+        echo "Warning: ignoring additional index file with name '$OPTARG'" >&2
       else
         INDEX_FILES="$INDEX_FILES:$OPTARG"
       fi
@@ -105,8 +105,19 @@ do
     t)
       KEEP_TEST=1
       ;;
-    P)
-      DEFAULT_MODE="PASSPORT"
+    M)
+      case "$OPTARG" in
+        passport)
+          DEFAULT_MODE="PASSPORT"
+          ;;
+        anonymous)
+          DEFAULT_MODE="ANONYMOUS"
+          ;;
+        *)
+          echo "Error: default mode (option -M) can only be 'anonymous' or 'passport' (got '$OPTARG')" >&2
+          exit 1
+          ;;
+      esac
       ;;
     z)
       KEEP_TGZ=1

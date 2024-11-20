@@ -105,6 +105,10 @@ msgid   "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
 msgstr  "Error : mission '$MISSION_NB' introuvable (dans $fn_name)"
 
 #, sh-format
+msgid   "Error: invalid mode (option -M): '-$OPTARG'"
+msgstr  "Erreur : mode invalide (option -M) : '-$OPTARG'"
+
+#, sh-format
 msgid   "Error: invalid option: '-$OPTARG'"
 msgstr  "Erreur : option invalide: '-$OPTARG'"
 
