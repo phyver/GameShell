@@ -1,8 +1,17 @@
-options:
+utilizzo:
+      $GSH_EXEC_FILE [OPZIOHNI] [INDEX_FILE1 INDEX_FILE2 ...]
+
+Possibili valori per INDEX_FILE<n> sono: $GSH_INDEX_FILES.
+
+Se nessun INDEX_FILE è fornito, il predefinito sarà default.idx.
+
+I file Index sono ignorato quando si continua da un file di salvataggio.
+
+opzioni:
   -h      messaggio di aiuto breve
   -H      questo avviso
   -V      mostra versione
-  -I      ...
+  -I      mostra lista dei file index disponibili
 
   -P      modalitá passaporto: chiede il nome/email del giocatore
   -A      modalitá anonima
@@ -32,7 +41,7 @@ options:
 
   -q      silenzioso: non mostra avvisi informativi
   -n      bianco e nero: non usa i codici di escape ANSI per i colori
-  -c ...  dai quel comando a  GameShell (in testing)
+  -c ...  dai quel comando a  GameShell (per provare)
 
   -U      scarica l'ultima versione di GameShell (richiede accesso alla rete)
   -X      estrai solo l'archivio tgz
