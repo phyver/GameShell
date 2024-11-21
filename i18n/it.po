@@ -95,7 +95,7 @@ msgid   "AUTOMATICALLY GENERATED ON STARTUP -- DO NOT MODIFY"
 msgstr  "GENERATO ALL'AVVIO AUTOMATICAMENTE -- NON MODIFICARE"
 
 msgid   "Available index files: "
-msgstr  ""
+msgstr  "Tutti i file index disponibili: "
 
 #, sh-format
 msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
@@ -224,11 +224,11 @@ msgstr  "Ci sono dei processi fermati nella tua sessione.\n"
 
 #, sh-format
 msgid   "Warning: command line arguments are ignored when continuing a game ($args)"
-msgstr  ""
+msgstr  "Attenzione: gli argomenti della linea di comando sono ignorati mentre si gioca ($args)"
 
 #, sh-format
 msgid   "Warning: language is ignored when continuing a game ($args)"
-msgstr  ""
+msgstr  "Attenzione: la lingua è ignorata mentre si gioca ($args)"
 
 msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
         "You should use the command\n"
@@ -331,7 +331,7 @@ msgid   "total time: %s"
 msgstr  "tempo totale: %s"
 
 msgid   "use 'gsh help' to get a list of available commands"
-msgstr  ""
+msgstr  "usa 'gsh help' per avere la lista dei comandi disponibili"
 
 msgid   "y"
 msgstr  "s"

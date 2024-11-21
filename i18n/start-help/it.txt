@@ -1,6 +1,18 @@
-options:
+utilizzo:
+      $GSH_EXEC_FILE [OPZIONI] [INDEX_FILE1 INDEX_FILE2 ...]
+
+Possibili valori per INDEX_FILE<n> sono: $GSH_INDEX_FILES.
+
+Se nessun INDEX_FILE è fornito, il predefinito sarà default.idx.
+
+I file Index sono ignorato quando si continua da un file di salvataggio.
+
+
+opzioni principali:
   -h      questo avviso
+  -H      mostra tutte le opzioni disponibili
   -V      mostra versione
+  -I      mostra lista dei file index disponibili
 
   -R      reimposta la partita
   -F      non cercare salvataggi recenti, utilizza forzatamente l'archivio definito

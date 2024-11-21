@@ -52,7 +52,7 @@ msgid   "What's a valid 4 letters sequence?"
 msgstr  "Cosa è una sequenza valida di 4 lettere?"
 
 msgid   "You can stop the incantation with Control-c."
-msgstr  ""
+msgstr  "Puoi interrompere l'incantesimo con Control-C"
 
 #, sh-format
 msgid   "usage: $command CCCC\n"
