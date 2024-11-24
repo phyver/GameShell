@@ -72,6 +72,30 @@ programmes X depuis GameShell. Référez vous à [cette
 section](./doc/deps.md#running-GameShell-from-a-docker-container) du manuel
 d'utilisateur.
 
+Github Codespaces (ou VSCode)
+-----------------------------
+
+[![Ouvrir dans un Codespace](https://github.com/codespaces/badge.svg)](https://codespaces.new/phyver/GameShell)
+
+Ce dépôt est configuré pour fonctionner avec l'extension
+[Dev Container](https://containers.dev/) de Visual Studio Code, ce qui permet
+d'utiliser GameShell depuis un
+[Codespace Github](https://github.com/features/codespaces).
+
+Dés que le Codespace est lancé (en cliquant sur le badge ci-dessus), utilisez
+la commande suivante dans le terminal pour démarrer le jeu.
+```sh
+bash start.sh -L fr
+```
+Une langue alternative peut être sélectionnée avec l'option `-L`. Par exemple,
+la command suivante lance le jeu en italien.
+```sh
+bash start.sh -L it
+```
+
+Pour une expérience similaire sur votre machine, sans les limitations / coûts
+d'un Codespace, voire la [doc de l'extension Dev Container](https://containers.dev/supporting#tools).
+
 
 Documentation
 -------------

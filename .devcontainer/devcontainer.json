@@ -1,0 +1,11 @@
+// Support for the Visual Studio Code Dev Containers extension.
+// For format details, see https://aka.ms/devcontainer.json.
+{
+	"name": "GameShell Dev Container",
+	"build": {
+		// Sets the run context to be the repository root.
+		"context": "..",
+		// Sets the filename for the "Dockerfile".
+		"dockerfile": "../Dockerfile"
+	}
+}
