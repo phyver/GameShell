@@ -1,0 +1,11 @@
+**gsh auto**::
+	carica lo script della missione attuale, se esiste
+
+**gsh goto**:: [__N__]
+	vai direttamente alla missione __N__ +
+	(nessuna password necessaria se __N__ è la precedente)
+
+**gsh skip**::
+	permette di saltare la missione e di passare alla successiva +
+	(nessuna password necessaria se la missione é stata completata
+	almeno una volta)
