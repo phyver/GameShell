@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
 _compile() (
-
   if command -v gcc >/dev/null
   then
     CC=gcc
@@ -59,9 +58,13 @@ _install_script() (
     return 1
   fi
   mission_source "$MISSION_DIR/deps.sh" || return 1
-  cp "$MISSION_DIR/spell.sh" "$GSH_TMP/$(gettext "spell")"
-  chmod 755 "$GSH_TMP/$(gettext "spell")"
-
+  #
+  # make sure the shebang for the spell.sh script is a real path to sh
+  # otherwise, ps will not use the filename as the process name...
+  sh=$(command -v sh)
+  echo "#! $sh" > "$GSH_TMP/$(gettext "spell")"
+  cat "$MISSION_DIR/spell.sh" >> "$GSH_TMP/$(gettext "spell")"
+  chmod +x "$GSH_TMP/$(gettext "spell")"
 )
 
 if _compile || _install_script
