@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
 _compile() (
-
   if ! command -v pstree >/dev/null
   then
     echo "$(eval_gettext "The command 'pstree' is required for mission \$MISSION_NAME.
@@ -81,21 +80,21 @@ _install_script() (
 
   echo "#! $sh" > "$GSH_TMP/$(gettext "nice_fairy")"
   cat "$MISSION_DIR/nice_fairy.sh" >> "$GSH_TMP/$(gettext "nice_fairy")"
-  chmod 755 "$GSH_TMP/$(gettext "nice_fairy")"
+  chmod +x "$GSH_TMP/$(gettext "nice_fairy")"
 
   mkdir -p "$GSH_TMP/fairy/"
   echo "#! $sh" > "$GSH_TMP/fairy/$(gettext "spell")"
   cat "$MISSION_DIR/fairy/spell.sh" >> "$GSH_TMP/fairy/$(gettext "spell")"
-  chmod 755 "$GSH_TMP/fairy/$(gettext "spell")"
+  chmod +x "$GSH_TMP/fairy/$(gettext "spell")"
 
   echo "#! $sh" > "$GSH_TMP/$(gettext "mischievous_imp")"
   cat "$MISSION_DIR/mischievous_imp.sh" >> "$GSH_TMP/$(gettext "mischievous_imp")"
-  chmod 755 "$GSH_TMP/$(gettext "mischievous_imp")"
+  chmod +x "$GSH_TMP/$(gettext "mischievous_imp")"
 
   mkdir -p "$GSH_TMP/imp/"
   echo "#! $sh" > "$GSH_TMP/imp/$(gettext "spell")"
   cat "$MISSION_DIR/imp/spell.sh" >> "$GSH_TMP/imp/$(gettext "spell")"
-  chmod 755 "$GSH_TMP/imp/$(gettext "spell")"
+  chmod +x "$GSH_TMP/imp/$(gettext "spell")"
 )
 
 
