@@ -30,6 +30,8 @@ We are particularly interested in any new missions you might create!
 Getting started
 ---------------
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?repo=683544958)
+
 GameShell should work on any standard Linux system, and also on macOS and BSD
 (but we have run fewer tests on the latter systems). On Debian or Ubuntu, the
 only dependencies (besides `bash`) are the `gettext-base` and `awk` packages
@@ -72,6 +74,20 @@ you want to run X programs from inside GameShell. Refer to [this
 section](./doc/deps.md#running-GameShell-from-a-docker-container) of the user
 manual.
 
+Github Codespaces
+-----------------
+
+This repository features a [devcontainer.json](https://containers.dev/) enabling 
+GameShell to be run directly from a [Github Codespace](https://github.com/features/codespaces).
+
+Once the Codespace is launched, you can run GameShell in the terminal with:
+
+```sh
+bash start.sh
+```
+
+To get the same experience on your local machine without the limitations/cost
+of Codespaces see [the Dev Container docs](https://containers.dev/supporting#tools)
 
 Documentation
 -------------
