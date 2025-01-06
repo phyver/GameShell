@@ -1,0 +1,31 @@
+Mission goal
+============
+
+Create a depository "test_fold" containing 2 files named file1.txt and file2.txt 
+and add it to the repository
+
+
+
+
+Useful commands
+===============
+touch file1.txt
+
+git add Folder
+
+adds the depository "Folder" and its content to the local git repo
+
+git commit -m "add Folder"
+
+no need for a liste of files when adding a repo
+
+git push
+
+
+You can also you the following commands
+
+git log
+
+
+git status
+

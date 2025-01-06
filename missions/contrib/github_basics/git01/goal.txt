@@ -1,0 +1,30 @@
+Mission goal
+============
+
+
+According to the Head of the Magic Concil, some spelbooks have been altered in the past,  due to avoidable mistakes. 
+
+
+Hence, before using the magical libraries of the community, the conseil ask you to practice the devellopemnt of a a set to spellbooks by yourself.
+
+
+You need to create a repository on github for training purpose only
+
+Then clone to to the portal Room in the "SmallWeels" depository
+
+Useful commands
+===============
+
+git clone https://github.com/MyLogin/MyTrainingdepository.git ./SmallWeels
+
+
+
+
+
+
+Remarks
+-------
+
+NB: This mission under implementation, and a few pdf files with screenshots will added to the depository cloned in the previous mission in due time. For Now, the tutor can help you with this step if need be.
+
+NB2: you will need to create a token for github at that stage, github's doucmentation explains this.

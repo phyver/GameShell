@@ -1,0 +1,42 @@
+Mission goal
+============
+
+
+You know git well enough for know.
+
+
+Most of those exercices where done assuming you would be using github.
+
+But there are other providers for git, such as gitlab or PLMLab for french mathematicians.
+
+
+You might want to be ablble to configure multiple git identites, and link them to specific depository on your computer.
+
+The cannot be donne within game shell, but We can provide you with documentation.
+
+We suggest you check the "includeIf" option there:
+
+https://blog.differentpla.net/blog/2023/11/17/multiple-git-identities/
+
+
+Also, you can manage personal hebpages with git.
+
+See here for instance:
+
+https://pages.github.com/
+
+
+
+
+
+There are a few things we didnot mentioned here, like how to revert a commit or manage a fork.
+
+
+the msot complete documentation for git cand be found here:
+
+https://www.atlassian.com/git
+
+
+
+Just type gsh check to finish the game.
+

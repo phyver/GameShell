@@ -1,0 +1,32 @@
+Mission goal
+============
+
+
+So, you are now done with the modifications on your dev branch, and would like to merge them with your main branch.
+
+
+
+You need to head back to your ProUser folder, set it up to the main branch, merge the mdicfaction from the dev branch, and push everything to the server.
+
+
+
+
+Useful commands
+===============
+
+git pull 
+
+
+git checkout main # sets your local git deposit to the main branch
+
+git merge Toto : merges the modifications from the branch "Toto"  to your current branch 
+
+
+
+
+
+Remarks:
+
+THe folowing be usefull:
+
+https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts

@@ -1,0 +1,7 @@
+Bravo !
+
+Vous pouvez maintenant utiliser le fichier
+    "~/.gshrc"
+pour sauvegarder des alias. D'autres 
+informations ont été écrites dans le fichier 
+(il a été créé pour vous).

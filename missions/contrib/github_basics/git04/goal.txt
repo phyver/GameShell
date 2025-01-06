@@ -1,0 +1,17 @@
+Mission goal
+============
+
+You are asked to change the name of the file you just add under the form firstname.lastname.txt
+
+
+
+Useful commands
+===============
+
+
+git mv test.txt newname.txt
+
+git commit -m "rename test file"
+
+git push
+

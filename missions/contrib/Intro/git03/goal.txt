@@ -1,0 +1,27 @@
+Mission goal
+============
+
+To acces any of the interdimensional spellbook Libraries, you need the approriate spellBook card.
+
+ 
+If you are going to work with github:
+
+Create an account on github. Then log onto the github web site.
+
+Then provide your github login when performing the gsh check.
+
+
+the url for github is: https://github.com/
+the documentation on creating a github depository is here: https://docs.github.com
+
+
+
+usefull commands
+
+you can open a new tab using:
+
+firefox URL
+
+evince doc.pdf
+
+NB: a few pdf files with screenshots can be found within the depository cloned in the first mission.

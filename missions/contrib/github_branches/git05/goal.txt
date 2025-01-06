@@ -1,0 +1,21 @@
+Mission goal
+============
+
+Assuming you do not the dev branch... you might want to delet it ?
+
+
+Delete the dev branch in the ProUser folder and push this to the server.
+
+
+Useful commands
+===============
+
+
+
+
+git branch -d Toto : delets the branch Toto localy
+
+git branch -d Toto : delets the branch Toto localy
+
+
+git push origin –delete Toto

@@ -1,0 +1,35 @@
+Mission goal
+============
+
+Providing the token and your userid every time you make a push is "slightly" irritating and annoying.
+
+
+
+instead of clongin a depositroy with https, you can do it with an ssh key.
+
+The exact procedure for this might from one server provider to another.
+
+Github's documentation can wlak you throught this.
+
+PLease read the appropriate section of the documentation, and clone your training repository to a folder called "ProUser" in the Portal Room
+
+
+Useful commands
+===============
+
+firefox https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+git clone git@github.com:MyLogin/Mytrainingdepository.git ./ProUser
+
+
+
+
+
+Remarks
+-------
+
+NB: This mission under implementation, and a few pdf files with screenshots will added to the depository cloned in the previous mission in due time. For Now, the tutor can help you with this step if need be.
+
+NB2: Do not remove the SmallWeel folder, it will be used later on.
+
+

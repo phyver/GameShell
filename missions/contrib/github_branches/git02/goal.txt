@@ -1,0 +1,38 @@
+Mission goal
+============
+
+
+
+Now, let's add a new file called "additional_module.txt" in your ProUser folder,
+
+And modify the previous file (firsname.lastname.txt): Please add a line with your institute'name
+
+Then commit and push everything 
+
+
+
+
+
+
+Useful commands
+===============
+
+
+gedit file.txt
+vi file.txt
+
+git add 
+
+git commit -m "modify test file" file.txt
+
+git commit -m "add  file"
+
+git push
+
+
+You can also you the following commands
+
+git log
+
+
+git status

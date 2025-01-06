@@ -1,0 +1,15 @@
+Mission goal
+============
+
+
+The goal of this mission is to initialise a git depository localy
+
+
+you need to create a new depository called doc_git in the Portails room
+
+then use 
+
+git clone https://github.com/MKessar/learning_git.git ./doc_git
+
+
+

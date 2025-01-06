@@ -1,0 +1,36 @@
+Objectif
+========
+
+Créez un alias 'journal' pour pouvoir éditer facilement votre 
+fichier journal.
+
+
+Détails
+-------
+
+Pour éditer le journal depuis la cave ou la salle au trésor avec 
+``nano``, il faut donner le chemin complet du journal : 
+"~/Foret/.../journal.txt"
+
+Pour éviter de taper cette commande en entier à chaque fois, créez 
+un alias "journal" pour éditer votre fichier "journal.txt".
+
+
+Commandes utiles
+================
+
+nano FICHIER
+  Édite le fichier dans le terminal.
+  (Si le fichier n'existe pas, il est créé.)
+
+alias CHAINE='COMMANDE'
+  Crée un synonyme pour une chaine de caractères, qui sera remplacée 
+  par la commande.
+
+
+Note
+----
+
+Si (et seulement si) vous savez ce que vous faites, vous pouvez 
+utiliser la variable ``EDITOR`` pour définir votre éditeur favori et 
+l'utiliser dans l'alias.

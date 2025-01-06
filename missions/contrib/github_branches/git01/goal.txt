@@ -1,0 +1,32 @@
+Mission goal
+============
+
+
+Branches are usefull when dealing with multiple project on the same git depository.
+
+If you are trying to implement a new model, or work on the optimisation of your code, you might need a separate branch for those.
+
+in addition, if you have a stable version of your code, and you need to try something sketchy, a develloping branch is critical.
+
+You can merge the modification of a branch into the main branch when you are happy with the modifications.
+
+
+
+First, let's create a new branch in the ProUser folder, and send it to the github repo.
+
+
+
+
+
+
+Useful commands
+===============
+
+git checkout -b dev
+
+#creates a branch called "dev"
+
+
+git push origin dev
+
+#sends your local branch to the server

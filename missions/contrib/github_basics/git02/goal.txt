@@ -1,0 +1,29 @@
+Mission goal
+============
+The magic concil likes to keep a record of the modifications on the library.
+
+They also need to keep track of whom has made changes, just for safety reason.
+
+The magical concil asks you to configure your git identity on your computer to be able to perfom commits.
+
+
+
+
+Useful commands
+===============
+
+If you only use one git server:
+
+git config --global user.name ”github_name”
+git config --global user.email ”me@email.fr”
+
+
+If you only use multiple git servers, you can configure a local identidy in a depository:
+
+git config --local user.name ”github_name”
+git config --local user.email ”me@email.fr”
+
+
+
+
+

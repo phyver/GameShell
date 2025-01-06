@@ -1,0 +1,28 @@
+Mission goal
+============
+
+Now you will add today's Date into the file
+
+
+
+
+Useful commands
+===============
+
+
+gedit file.txt
+vi file.txt
+
+when modifying a file you need to perform a specific commit for this file:
+git commit -m "modify test file" file.txt
+
+git push
+
+
+You can also you the following commands
+
+git log
+
+
+git status
+

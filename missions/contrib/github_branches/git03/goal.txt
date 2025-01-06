@@ -1,0 +1,40 @@
+Mission goal
+============
+
+
+Let's make also make modifications on your master branch in the SmallWeels repository
+
+Modify the previous file (firsname.lastname.txt): Please add a line with the name of a planet of the Solar System.
+
+Then commit and push everything 
+
+
+
+
+
+
+Useful commands
+===============
+
+git pull 
+
+gedit file.txt
+vi file.txt
+
+git add 
+
+git commit -m "modify test file" file.txt
+
+git commit -m "add  file"
+
+git push
+
+
+You can also you the following commands
+
+git log
+
+
+git status
+
+
