@@ -1,7 +1,13 @@
 Mission goal
 ============
 
-To acces any of the interdimensional spellbook Libraries, you need the approriate spellBook card.
+Some spellBook are accessible to anybody, but some require the approriate spellBook card.
+
+To proceed with the next step of the training session, you need to create your first spellBook card.
+
+
+
+------------
 
  
 If you are going to work with github:
@@ -11,10 +17,14 @@ Create an account on github. Then log onto the github web site.
 Then provide your github login when performing the gsh check.
 
 
+
+
 the url for github is: https://github.com/
+
 the documentation on creating a github depository is here: https://docs.github.com
 
 
+------------
 
 usefull commands
 

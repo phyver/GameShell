@@ -1,7 +1,24 @@
 Mission goal
 ============
 
-comandes: evince Enchanted_Scroll.pdf
+
+You realise now that the spellbook is actually a bunch of scrolls poorly tied to each other.
+
+Clearly, the magic council was in a hurry when they wrapped this.
+
+After asking the emmissary about it, they replied that a lot of the spellbooks found in the interdimensional libraires are still under devellopement, and it is quite common to find ongoing projects and even dropped ones.
+
+As a warm up, the emmissary ask you to cast the spell on the Enchanted_Scroll.
+
+
+
+Usefull comandes:
+
+evince Enchanted_Scroll.pdf
+
+
+gsh check
+
 
 
 

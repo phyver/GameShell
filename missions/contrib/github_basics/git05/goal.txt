@@ -19,7 +19,7 @@ git commit -m "modify test file" file.txt
 git push
 
 
-You can also you the following commands
+You can also use the following commands
 
 git log
 

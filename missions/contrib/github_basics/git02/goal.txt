@@ -1,10 +1,14 @@
 Mission goal
 ============
+
+
 The magic concil likes to keep a record of the modifications on the library.
 
 They also need to keep track of whom has made changes, just for safety reason.
 
-The magical concil asks you to configure your git identity on your computer to be able to perfom commits.
+
+
+You neeed to configure your git identity on your computer to be able to perfom "commits"(this term be defined later).
 
 
 

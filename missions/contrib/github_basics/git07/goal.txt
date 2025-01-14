@@ -15,7 +15,7 @@ remove the depository "Folder" and its content from the local git repo
 
 git commit -m "remove Folder"
 
-no need for a liste of files when adding a repo
+no need for a list of files when adding a repo
 
 git push
 

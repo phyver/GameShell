@@ -2,24 +2,46 @@ Mission goal
 ============
 
 
-You need to create a txt file with your last name as "name.txt"
+Lets now add your first page to your spellbook.
 
-than add it to the git depository.
+
+You need to create a file named "page1.txt"
+
+On the first line, write Today's date.
+
+than add the file to the git depository.
 
 
 
 Useful commands
 ===============
 
+The following commands open a file with an editor
+
+gedit file.txt
 
 vi file.txt
+nano file.txt
+
+
+
+to add a file to your local git depository:
 
 git add file.txt
+
+
+The following command creates a "snapshot" of depository. it a new version of your code.
 
 git commit -m "add a file"
 
 
+
+The following command send the version of your code to the git server.
+
 git push
+
+
+The following command gives you a few informations on the state of modifications in the local depository
 
 git status
 

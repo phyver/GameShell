@@ -1,15 +1,37 @@
 Mission goal
 ============
 
+The Head of the magic council has send a emmissary to your castle with an urgent request.
 
-The goal of this mission is to initialise a git depository localy
+
+The emmissary explains the following to you:
+"The magic council has realised that too many spells are saved on books, and those can get lost or dammaged over time."
+"In addition, some castle and library can be far away from each others, and shared acces to physical library is complicated nowadays"
+"Using a intermendisonal magic, the magic council has devellop a way to save and store spell books worldwide"
+"Has a spell develloper, you need to learn the usage of intermendisonal magic immediatly to prevent lost of your spells, and acces the spells of others spell devellopers."
 
 
-you need to create a new depository called doc_git in the Portails room
+As you agree to the suggestion of the magic council, the emmissary gives you your first learning assignement:
+
+"The first step in learning interdimensional magic, is to import the famous book: "Intermendisonal magic for Dummies""
+
+
+------------------------
+
+
+Git is a version manager software. This can Help you to share codes, tex files, or even host websites.
+
+Usually, you have acces to a remote server (github or gitlab for instance) where a code is stored.
+
+
+First, you need to create a new depository called doc_git in the Portals room
 
 then use 
 
 git clone https://github.com/MKessar/learning_git.git ./doc_git
+
+This will create a local copy of the distant repository "learning_git" into .doc_git
+
 
 
 
