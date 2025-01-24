@@ -6,6 +6,9 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Castle/Main_building/Throne_room"
 msgstr  "$GSH_HOME/Chateau/Batiment_principal/Salle_du_trone"
 
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Chateau/Cave"
+
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  "$MISSION_DIR/goal/fr.txt"
@@ -17,3 +20,16 @@ msgstr  "$MISSION_DIR/skip/fr.txt"
 # path for the text file containing the treasure message
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/fr.txt"
+
+# Message for current position
+msgid   "Current position:"
+msgstr  "Position actuelle :"
+
+msgid   "The command to go to the starting point is too complicated."
+msgstr  "La commande pour retourner au point de départ est trop compliquée."
+
+msgid   "The previous to last command must take you to the starting point."
+msgstr  "L'avant-dernière commande doit vous ramener au point de départ."
+
+msgid   "You are not in the throne room."
+msgstr  "Vous n'êtes pas dans la salle du trône."

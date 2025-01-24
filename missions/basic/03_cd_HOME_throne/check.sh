@@ -8,9 +8,23 @@ _mission_check() {
 
   ppc=$(. fc-lnr.sh | sed -n '2p;3q')
 
-  # FIXME: also accept other commands to go back to the starting point?
-  # FIXME: add an error message
-  [ "$goal" = "$current" ] && [  "$ppc" = "cd" ]
+  # Accepts only "cd" and "cd ~". "cd ../../../../" and variants are not valid.
+  if [ "$ppc" != "cd" ] && [ "$ppc" != "cd ~" ]; then
+    if [ "$ppc" =~ "cd ../*" ]; then
+      echo "$(gettext "The command to go to the starting point is too complicated.")"
+    else
+      echo "$(gettext "The previous to last command must take you to the starting point.")"
+    fi
+    return 1
+  fi
+
+  # Verify the current location
+  if [ "$goal" != "$current" ]; then
+    echo "$(gettext "You are not in the throne room.")"
+    return 1
+  fi
+
+  return 0
 }
 
 _mission_check
