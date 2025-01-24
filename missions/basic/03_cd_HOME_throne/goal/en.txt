@@ -17,7 +17,7 @@ Useful commands
 ===============
 
 cd
-  Move back to the starting location.
+  Move back to GameShell's starting location.
 
 cd LOCATION1/LOCATION2/LOCATION3
   Make several moves in one command.

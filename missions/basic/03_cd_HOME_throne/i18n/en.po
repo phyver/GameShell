@@ -1,11 +1,14 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 msgid   ""
-msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+msgstr  "Content-Type: text/plain; charset=ASCII\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
 msgid   "$GSH_HOME/Castle/Main_building/Throne_room"
 msgstr  "$GSH_HOME/Castle/Main_building/Throne_room"
+
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  "$GSH_HOME/Castle/Cellar"
 
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
@@ -18,3 +21,16 @@ msgstr  "$MISSION_DIR/skip/en.txt"
 # path for the text file containing the treasure message
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+msgid   "The previous to last command is too complex."
+msgstr  "The previous to last command is too complex."
+
+msgid   "The previous to last command must take you to the starting point."
+msgstr  "The previous to last command must take you to the starting point."
+
+msgid   "You are not in the throne room."
+msgstr  "You are not in the throne room."
+
+#, sh-format
+msgid   "You have been teleported to"
+msgstr  "You have been teleported to"

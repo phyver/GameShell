@@ -19,7 +19,7 @@ Commandes utiles
 ================
 
 cd
-  Revient au lieu initial.
+  Revient au lieu de départ de GameShell.
 
 cd LIEU1/LIEU2/LIEU3
   Fait plusieurs déplacements avec une commande.
