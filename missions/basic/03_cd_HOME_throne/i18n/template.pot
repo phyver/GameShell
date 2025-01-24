@@ -6,6 +6,9 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Castle/Main_building/Throne_room"
 msgstr  ""
 
+msgid   "$GSH_HOME/Castle/Cellar"
+msgstr  ""
+
 # path for the text file containing the goal
 msgid   "$MISSION_DIR/goal/en.txt"
 msgstr  ""
@@ -16,4 +19,17 @@ msgstr  ""
 
 # path for the text file containing the treasure message
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+# Message for current position
+msgid   "Current position:"
+msgstr  ""
+
+msgid   "The command to go to the starting point is too complicated."
+msgstr  ""
+
+msgid   "The previous to last command must take you to the starting point."
+msgstr  ""
+
+msgid   "You are not in the throne room."
 msgstr  ""
