@@ -201,7 +201,7 @@ Useful commands
 ===============
 
 cd PLACE
-  Move to the given place, if accessible from you current location.
+  Move to the given place, if accessible from your current location.
 ```
 
 For uniformity, meta-variables in commands should be in UPPERCASE.
