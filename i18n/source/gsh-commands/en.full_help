@@ -15,11 +15,11 @@ gsh check
 
 gsh exit
   quit GameShell
-  Note that you can exit GameShell using Control-d as well
+  Note that you can exit GameShell using Control-d as well.
 
 gsh goal [N]
   show the current mission's goal
-  if N is given, show the goal for mission N
+  If N is given, show the goal for mission N.
 
 gsh help
   short help message
@@ -34,14 +34,14 @@ Admin commands
 gsh auto
   source the current mission's automatic script, if it exists
 
-gsh goto [N]
+gsh goto N
   directly go to mission N
-  (Note: no password necessary if N is an earlier mission)
+  Note: the password is not necessary if N is an earlier mission.
 
 gsh skip
   give up on the current mission and go to the next one
-  (no password necessary if the mission was completed at least 
-  once)
+  Note: the password is not necessary if the mission was completed at least 
+  once.
 
 
 Additional commands
@@ -69,8 +69,8 @@ gsh assert condition [MSG]
 
 gsh assert check true/false [MSG]
   check the current mission's goal has been achieved
-  if the result doesn't coincide with the expected result, display 
-  an error message
+  If the result doesn't coincide with the expected result, display 
+  an error message.
 
 gsh env
   display internal environment variables

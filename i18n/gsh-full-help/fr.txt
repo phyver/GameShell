@@ -14,11 +14,11 @@ gsh check
 
 gsh exit
   quitte (et sauvegarde) la partie en cours
-  vous pouvez également quitter avec Contrôle-d
+  Vous pouvez également quitter avec Contrôle-d.
 
 gsh goal [N]
   affiche l'objectif de la mission en cours
-  si N est donné, affiche l'objectif de la mission N
+  Si N est donné, affiche l'objectif de la mission N.
 
 gsh help
   affiche un petit message d'aide
@@ -33,15 +33,15 @@ Commandes d'administration
 gsh auto
   lance le script automatique de la mission en cours, s'il existe.
 
-gsh goto [N]
+gsh goto N
   passe directement à la mission N
-  (le mot de passe n'est pas nécessaire si N est une mission 
-  précédente)
+  Le mot de passe n'est pas nécessaire si N est une mission 
+  précédente.
 
 gsh skip
   abandonne la mission en cours et passe à la suivante
-  (le mot de passe n'est pas nécessaire si la mission a déjà été 
-  réussie)
+  Le mot de passe n'est pas nécessaire si la mission a déjà été 
+  réussie.
 
 
 
@@ -80,7 +80,7 @@ gsh hardreset
   ré-initialise la mission en cours en redémarrant le shell
 
 gsh HELP
-  affiche ce message
+  affiche un message d'aide complet, avec toutes les commandes Gameshell existantes
 
 gsh log [-v]
   affiche le fichier de log des commandes gsh

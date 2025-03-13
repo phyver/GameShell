@@ -44,8 +44,8 @@ INCLUDE fr/commands_standard.txt
 Commandes pour l'administrateur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Quelques commandes sont seulement utilisables si le joueurs connait le mot de
-passe secret de GameShell. Ces commandes permettent par exemple de sauter une
-mission fait partie.
+passe d'administration de GameShell. Ces commandes permettent par exemple de
+sauter une mission fait partie.
 
 Le mot de passe par défaut est simplement "gsh" mais si vous utilisez
 GameShell en classe, votre encadrant l'a probablement changé !
@@ -63,7 +63,7 @@ INCLUDE fr/commands_misc.txt
 Commandes pour le développeur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Les commandes suivantes sont surtout intéressantes pour les développeurs de
-GameShell. Les joueurs ne devrait probablement pas les utiliser.
+GameShell. Les joueurs ne devraient probablement pas les utiliser.
 
 INCLUDE fr/commands_dev.txt
 
@@ -86,6 +86,7 @@ Vous pouvez également envoyer un email directement à
 
 Merci d'inclure
 
+* le système d'exploitation dans lequel vous avez lancé GameShell,
 * une description du problème,
 * la version de GameShell que vous utilisez (cf **gsh version**, ou l'option **-V**
   du script GameShell),

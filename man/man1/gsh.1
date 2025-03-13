@@ -2,12 +2,12 @@
 .\"     Title: gsh
 .\"    Author: [see the "Authors" section]
 .\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
-.\"      Date: 12/10/2024
+.\"      Date: 03/01/2026
 .\"    Manual: \ \&
 .\"    Source: \ \&
 .\"  Language: English
 .\"
-.TH "GSH" "1" "12/10/2024" "\ \&" "\ \&"
+.TH "GSH" "1" "03/01/2026" "\ \&" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -36,14 +36,14 @@ gsh \- GameShell specific commands invocation
 .sp
 GameShell is a game for learning (and teaching) how to use a POSIX shell\&.
 .sp
-Almost all the commands encountered during a game are standard Unix commands, with the notable exception of the commands needed to interact with GameShell itself\&. All those interaction start with \fBgsh\fR, followed by a subcommand\&.
+Almost all the commands encountered during a game are standard Unix commands, with the notable exception of the commands needed to interact with GameShell itself\&. All those commands start with \fBgsh\fR, followed by a subcommand\&.
 .SH "NOTE"
 .sp
 On standard Unix systems, you should be able to quit this manual by pressing the "q" key\&.
 .sp
 You should be able to scroll using the Space key or the arrow keys\&.
 .sp
-You can search through this page by pressing on the "/" key, followed by the pattern you are searching\&. Pressing "n" (for "next") or "p" (for "previous") will go the next / previous occurrence of the search pattern\&.
+You can search through this page by pressing on the "/" key, followed by the pattern you are searching\&. Pressing "n" (for "next") or "p" (for "previous") will jump to the next / previous occurrence of the search pattern\&.
 .SH "COMMANDS"
 .SS "Standard player commands"
 .sp
@@ -58,17 +58,17 @@ check whether the current mission\(cqs goal has been achieved or not
 .RS 4
 quit GameShell
 
-Note that you can exit GameShell using Control\-d as well
+Note that you can exit GameShell using Control\-d as well\&.
 .RE
 .PP
 \fBgsh goal\fR [\fIN\fR]
 .RS 4
 show the current mission\(cqs goal
 
-if
+If
 \fIN\fR
 is given, show the goal for mission
-\fIN\fR
+\fIN\fR\&.
 .RE
 .PP
 \fBgsh help\fR
@@ -82,7 +82,7 @@ reset the current mission
 .RE
 .SS "Admin commands"
 .sp
-Some commands are only accessible when the player knows the secret "GameShell administrator password"\&. Those commands make it possible to skip some mission\&.
+Some commands are only accessible when the player knows the secret "GameShell administrator password"\&. Those commands make it possible to skip missions\&.
 .sp
 The password for the standard GameShell is simply "gsh" but if you\(cqre using GameShell in the classroom, your instructor has probably changed it to something else!
 .PP
@@ -91,24 +91,24 @@ The password for the standard GameShell is simply "gsh" but if you\(cqre using G
 source the current mission\(cqs automatic script, if it exists
 .RE
 .PP
-\fBgsh goto\fR [\fIN\fR]
+\fBgsh goto\fR \fIN\fR
 .RS 4
 directly go to mission
 \fIN\fR
-(Note: no password necessary if
+Note: the password is not necessary if
 \fIN\fR
-is a previous mission)
+is an earlier mission\&.
 .RE
 .PP
 \fBgsh skip\fR
 .RS 4
 give up on the current mission and go to the next one
 
-(no password necessary if the mission was completed at least once)
+Note: the password is not necessary if the mission was completed at least once\&.
 .RE
 .SS "Additional commands"
 .sp
-There are couple of additional commands that can give information about the game\&. Except for the \fBindex\fR subcommand, they aren\(cqt very interesting for the player\&.
+There are a couple of additional commands that can give information about the game\&. Except for the \fBindex\fR subcommand, they aren\(cqt very interesting for the player\&.
 .PP
 \fBgsh index\fR
 .RS 4
@@ -144,7 +144,7 @@ if not, display an error message
 .RS 4
 check the current mission\(cqs goal has been achieved
 
-if the result doesn\(cqt coincide with the expected result, display an error message
+If the result doesn\(cqt coincide with the expected result, display an error message\&.
 .RE
 .PP
 \fBgsh env\fR
@@ -159,7 +159,7 @@ reset the current mission by restarting the shell
 .PP
 \fBgsh HELP\fR
 .RS 4
-this message
+show advanced usage status, with all existing Gameshell commands
 .RE
 .PP
 \fBgsh log\fR [\fB\-v\fR]

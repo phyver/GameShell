@@ -15,7 +15,7 @@ GameShell is a game for learning (and teaching) how to use a POSIX shell.
 
 Almost all the commands encountered during a game are standard Unix commands,
 with the notable exception of the commands needed to interact with GameShell
-itself. All those interaction start with **gsh**, followed by a subcommand.
+itself. All those commands start with **gsh**, followed by a subcommand.
 
 NOTE
 ----
