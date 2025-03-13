@@ -2,12 +2,12 @@
 .\"     Title: gsh
 .\"    Author: [see the "Authors" section]
 .\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
-.\"      Date: 12/10/2024
+.\"      Date: 03/13/2025
 .\"    Manual: \ \&
 .\"    Source: \ \&
 .\"  Language: English
 .\"
-.TH "GSH" "1" "12/10/2024" "\ \&" "\ \&"
+.TH "GSH" "1" "03/13/2025" "\ \&" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -43,7 +43,7 @@ On standard Unix systems, you should be able to quit this manual by pressing the
 .sp
 You should be able to scroll using the Space key or the arrow keys\&.
 .sp
-You can search through this page by pressing on the "/" key, followed by the pattern you are searching\&. Pressing "n" (for "next") or "p" (for "previous") will go the next / previous occurrence of the search pattern\&.
+You can search through this page by pressing on the "/" key, followed by the pattern you are searching\&. Pressing "n" (for "next") or "p" (for "previous") will jump to the next / previous occurrence of the search pattern\&.
 .SH "COMMANDS"
 .SS "Standard player commands"
 .sp
@@ -82,7 +82,7 @@ reset the current mission
 .RE
 .SS "Admin commands"
 .sp
-Some commands are only accessible when the player knows the secret "GameShell administrator password"\&. Those commands make it possible to skip some mission\&.
+Some commands are only accessible when the player knows the secret "GameShell administrator password"\&. Those commands make it possible to skip missions\&.
 .sp
 The password for the standard GameShell is simply "gsh" but if you\(cqre using GameShell in the classroom, your instructor has probably changed it to something else!
 .PP
@@ -97,7 +97,7 @@ directly go to mission
 \fIN\fR
 (Note: no password necessary if
 \fIN\fR
-is a previous mission)
+is an earlier mission)
 .RE
 .PP
 \fBgsh skip\fR
@@ -108,7 +108,7 @@ give up on the current mission and go to the next one
 .RE
 .SS "Additional commands"
 .sp
-There are couple of additional commands that can give information about the game\&. Except for the \fBindex\fR subcommand, they aren\(cqt very interesting for the player\&.
+There are a couple of additional commands that can give information about the game\&. Except for the \fBindex\fR subcommand, they aren\(cqt very interesting for the player\&.
 .PP
 \fBgsh index\fR
 .RS 4
@@ -159,7 +159,7 @@ reset the current mission by restarting the shell
 .PP
 \fBgsh HELP\fR
 .RS 4
-this message
+show advanced usage status, with all existing Gameshell commands
 .RE
 .PP
 \fBgsh log\fR [\fB\-v\fR]

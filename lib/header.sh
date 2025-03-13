@@ -24,6 +24,45 @@ else
   return 1
 fi
 
+download_latest() {
+  TARGET_DIR=$1
+  if [ -z "$TARGET_DIR" ]
+  then
+    echo "Error: download_latest: no directory given" >&2
+    exit 1
+  fi
+
+  TARGET="$TARGET_DIR/gameshell.sh"
+  TMPFILE="$TARGET_DIR/gameshell.sh$$"
+  if command -v wget >/dev/null
+  then
+    if wget -O "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
+    then
+      mv "$TMPFILE" "$TARGET"
+      chmod +x "$TARGET"
+      echo "Latest version of GameShell downloaded to $TARGET_DIR/gameshell.sh"
+      exit 0
+    else
+      rm -f "$TMPFILE"
+      echo "Error: couldn't download or save the latest version of GameShell." >&2
+      exit 1
+    fi
+  elif command -v curl >/dev/null
+  then
+    if curl -fo "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
+    then
+      mv "$TMPFILE" "$TARGET"
+      chmod +x "$TARGET"
+      echo "Latest version of GameShell downloaded to $TARGET_DIR/gameshell.sh"
+      exit 0
+    else
+      rm -f "$TMPFILE"
+      echo "Error: couldn't download or save the latest version of GameShell." >&2
+      exit 1
+    fi
+  fi
+}
+
 GSH_VERSION='developpment version'
 GSH_LAST_CHECKED_MISSION=''
 
@@ -43,40 +82,13 @@ do
       echo "GameShell $GSH_VERSION"
       if [ -n "$GSH_LAST_CHECKED_MISSION" ]
       then
-        echo "saved game: [mission $GSH_LAST_CHECKED_MISSION] OK"
+        echo "saved game: [mission $GSH_LAST_CHECKED_MISSION]"
       fi
       exit 0
       ;;
     U)
-      TARGET="$GSH_EXEC_DIR/gameshell.sh"
-      TMPFILE="$GSH_EXEC_DIR/gameshell.sh$$"
-      if command -v wget >/dev/null
-      then
-        if wget -O "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
-        then
-          mv "$TMPFILE" "$TARGET"
-          chmod +x "$TARGET"
-          echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
-          exit 0
-        else
-          rm -f "$TMPFILE"
-          echo "Error: couldn't download or save the latest version of GameShell." >&2
-          exit 1
-        fi
-      elif command -v curl >/dev/null
-      then
-        if curl -fo "$TMPFILE" https://github.com/phyver/GameShell/releases/download/latest/gameshell.sh
-        then
-          mv "$TMPFILE" "$TARGET"
-          chmod +x "$TARGET"
-          echo "Latest version of GameShell downloaded to $GSH_EXEC_DIR/gameshell.sh"
-          exit 0
-        else
-          rm -f "$TMPFILE"
-          echo "Error: couldn't download or save the latest version of GameShell." >&2
-          exit 1
-        fi
-      fi
+      # I need to check that GSH_EXTRACT_DIR first
+      UPDATE_GAMESHELL=1
       ;;
     X)
       GSH_EXTRACT="true"
@@ -128,6 +140,47 @@ do
   esac
 done
 
+# we need to save all the options and command line arguments in an bash/zsh
+# array to give them back to the start.sh script
+ARGV=( "$@" )
+# and since we need to check the first argument, we need to get rid of all the
+# options temporarily
+shift $(($OPTIND - 1))
+
+# get extract directory
+export GSH_EXTRACT_DIR
+if [ -n "$1" ] && [ -d "$1" ] && [ -r "$1" ] && [ -w "$1" ] && [ -x "$1" ]
+then
+  # the first argument is a writable directory: we use it
+  GSH_EXTRACT_DIR=$(cd "$1"; pwd -P)
+  shift
+elif [ ! -w "$GSH_EXEC_DIR" ] || [ ! -x "$GSH_EXEC_DIR" ] || [ ! -w "$GSH_EXEC_FILE" ]
+then
+  # the GameShell script itself is non writable, or lives in a non writable
+  # directory: we use $HOME/.gameshell
+  GSH_EXTRACT_DIR="$HOME/.gameshell"
+  if [ ! -d "$GSH_EXTRACT_DIR" ]
+  then
+    if mkdir -p "$HOME/.gameshell/" 2>/dev/null
+    then
+      echo "$GSH_EXTRACT_DIR directory created" >&2
+      sleep 1
+    else
+      echo "Error: couldn't create $GSH_EXTRACT_DIR directory" >&2
+      exit 1
+    fi
+  fi
+  GSH_EXTRACT_DIR=$(cd "$GSH_EXTRACT_DIR"; pwd -P)
+  GSH_EXTRACT_DIR=${GSH_EXTRACT_DIR:-.}
+else
+  # we use the GameShell script directory
+  GSH_EXTRACT_DIR=$GSH_EXEC_DIR
+fi
+
+if [ -n "$UPDATE_GAMESHELL" ]
+then
+  download_latest "$GSH_EXTRACT_DIR"
+fi
 
 # get extension
 EXT=${GSH_EXEC_FILE##*.}
@@ -140,45 +193,45 @@ GSH_NAME=$(basename "$GSH_NAME")
 
 if [ "$CHECK_SAVEFILE" = "true" ] && [ "$GSH_FORCE" != "true" ]
 then
-  LAST_SAVEFILE=$(ls "$GSH_EXEC_DIR/$GSH_NAME-save"*".$EXT" 2>/dev/null | sort | tail -n 1)
+LAST_SAVEFILE=$(ls "$GSH_EXTRACT_DIR/$GSH_NAME-save"*".$EXT" 2>/dev/null | sort | tail -n 1)
 
-  if [ -n "$LAST_SAVEFILE" ] && [ "$GSH_EXEC_DIR/$GSH_EXEC_FILE" != "$LAST_SAVEFILE" ]
-  then
-    echo "Warning: there is a more recent savefile"
-    echo "You can"
-    echo "  (1) keep the given file ("$GSH_EXEC_FILE")"
-    echo "  (2) switch to the last savefile ($(basename "$LAST_SAVEFILE"))"
-    echo "  (3) abort"
-    echo
-    R=""
-    while [ "$R" != 1 ] && [ "$R" != 2 ] && [ "$R" != 3 ]
-    do
-      printf "What do you want to do? [123] "
-      read -r R
-    done
-  fi
-  case "$R" in
-    1)
-      # do nothing, continue normally
-      :
-      ;;
-    2)
-      GSH_EXEC_FILE=$(basename "$LAST_SAVEFILE")
-      export GSH_EXEC_DIR=$(dirname "$LAST_SAVEFILE")
-      GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
-      # GSH_EXEC_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
-      # just in case
-      GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
+if [ -n "$LAST_SAVEFILE" ] && [ "$GSH_EXTRACT_DIR/$GSH_EXEC_FILE" != "$LAST_SAVEFILE" ]
+then
+  echo "Warning: there is a more recent savefile"
+  echo "You can"
+  echo "  (1) keep the given file ("$GSH_EXEC_DIR/$GSH_EXEC_FILE")"
+  echo "  (2) switch to the last savefile ("$LAST_SAVEFILE")"
+  echo "  (3) abort"
+  echo
+  R=""
+  while [ "$R" != 1 ] && [ "$R" != 2 ] && [ "$R" != 3 ]
+  do
+    printf "What do you want to do? [123] "
+    read -r R
+  done
+fi
+case "$R" in
+  1)
+    # do nothing, continue normally
+    :
+    ;;
+  2)
+    GSH_EXEC_FILE=$(basename "$LAST_SAVEFILE")
+    export GSH_EXTRACT_DIR=$(dirname "$LAST_SAVEFILE")
+    GSH_EXTRACT_DIR=$(cd "$GSH_EXTRACT_DIR"; pwd -P)
+    # GSH_EXTRACT_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
+    # just in case
+    GSH_EXTRACT_DIR=${GSH_EXTRACT_DIR:-.}
 
-      # remove extension (if present)
-      GSH_NAME=${GSH_EXEC_FILE%.*}
-      # remove "-save" suffix (if present)
-      GSH_NAME=${GSH_NAME%-save}
-      GSH_NAME=$(basename "$GSH_NAME")
-      ;;
-    3)
-      exit 0
-      ;;
+    # remove extension (if present)
+    GSH_NAME=${GSH_EXEC_FILE%.*}
+    # remove "-save" suffix (if present)
+    GSH_NAME=${GSH_NAME%-save}
+    GSH_NAME=$(basename "$GSH_NAME")
+    ;;
+  3)
+    exit 0
+    ;;
   esac
 fi
 
@@ -188,14 +241,13 @@ NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$GS
 
 if [ "$GSH_EXTRACT" = "true" ]
 then
-  echo $NB_LINES
-    tail -n+"$NB_LINES" "$GSH_EXEC_DIR/$GSH_EXEC_FILE" > "$GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}.tgz"
-    echo "Archive saved in $GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}.tgz"
-    exit 0
+  tail -n+"$NB_LINES" "$GSH_EXEC_DIR/$GSH_EXEC_FILE" > "$GSH_EXTRACT_DIR/${GSH_EXEC_FILE%.*}.tgz"
+  echo "Archive saved in $GSH_EXTRACT_DIR/${GSH_EXEC_FILE%.*}.tgz"
+  exit 0
 fi
 
 
-GSH_ROOT=$GSH_EXEC_DIR/$GSH_NAME
+GSH_ROOT=$GSH_EXTRACT_DIR/$GSH_NAME
 N=0
 while [ -e "$GSH_ROOT" ]
 do
@@ -244,7 +296,7 @@ _remove_root() {
     # some sanity checking to make sure we remove the good directory
     if ! [ -e "$GSH_ROOT/.gsh_root-$$" ]
     then
-      echo "Error: I don't want to remove directoryy $GSH_ROOT!" >&2
+      echo "Error: I don't want to remove directory $GSH_ROOT!" >&2
       exit 1
     fi
     chmod -R 777 "$GSH_ROOT"
@@ -267,6 +319,8 @@ _remove_root() {
 
 trap "" HUP SIGHUP
 trap '_remove_root $?' CHLD
+# restore save arguments
+set -- "${ARGV[@]}"
 $current_shell "$GSH_ROOT/start.sh" -C "$@"
 
 # zsh doesn't receive SIGCHLD but seems to always continue, even in the case of
