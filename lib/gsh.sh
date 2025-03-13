@@ -170,7 +170,10 @@ Do you still want to quit? [y/n]") "
   export GSH_LAST_ACTION='exit'
   __gsh_clean "$MISSION_NB"
   [ "$GSH_MODE" != "DEBUG" ] && ! [ -d "$GSH_ROOT/.git" ] && gsh unprotect
-  [ -e "$GSH_ROOT/.save" ] && __save
+  if [ -e "$GSH_ROOT/.save" ]
+  then
+    __save VERBOSE
+  fi
   # remove the ".save" file to make sure we don't automatically save if call
   # start.sh directly from the directory
   rm -f "$GSH_ROOT/.save"
@@ -501,7 +504,7 @@ __save() {
         # get extension
         EXT=${GSH_EXEC_FILE##*.}
         # remove extension and -save suffix
-        GSH_SAVEFILE=$GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}
+        GSH_SAVEFILE=$GSH_EXTRACT_DIR/${GSH_EXEC_FILE%.*}
         GSH_SAVEFILE=${GSH_SAVEFILE%-save*}
         INDEX=""
         while [ -e "$GSH_SAVEFILE-save$INDEX.$EXT" ]
@@ -516,19 +519,37 @@ __save() {
       # get extension
       EXT=${GSH_EXEC_FILE##*.}
       # remove extension and -save suffix (if present)
-      GSH_SAVEFILE=$GSH_EXEC_DIR/${GSH_EXEC_FILE%.*}
+      GSH_SAVEFILE=$GSH_EXTRACT_DIR/${GSH_EXEC_FILE%.*}
       GSH_SAVEFILE=${GSH_SAVEFILE%-save*}
       # add -save suffix
       GSH_SAVEFILE="$GSH_SAVEFILE-save.$EXT"
       ;;
 
     "overwrite")
-      GSH_SAVEFILE=$GSH_EXEC_DIR/$GSH_EXEC_FILE
+      if [ "$GSH_EXEC_DIR" = "$GSH_EXTRACT_DIR" ]
+      then
+        GSH_SAVEFILE=$GSH_EXTRACT_DIR/$GSH_EXEC_FILE
+      else
+        # in this case, we don't want to overwrite the original
+        # $GSH_EXEC_DIR/$GSH_EXEC_FILE. We add a -save suffix to
+        # $GSH_EXEC_FILE, and save it into GSH_EXTRACT_DIR
+        EXT=${GSH_EXEC_FILE##*.}
+        # remove extension and -save suffix (if present)
+        GSH_SAVEFILE=$GSH_EXTRACT_DIR/${GSH_EXEC_FILE%.*}
+        GSH_SAVEFILE=${GSH_SAVEFILE%-save*}
+        # add -save suffix
+        GSH_SAVEFILE="$GSH_SAVEFILE-save.$EXT"
+      fi
       ;;
 
     esac
   fi
   _gsh_save "$GSH_SAVEFILE"
+
+  if [ "$1" = VERBOSE ]
+  then
+    echo "[ $(eval_gettext 'progress was saved in $GSH_SAVEFILE') ]"
+  fi
 }
 
 

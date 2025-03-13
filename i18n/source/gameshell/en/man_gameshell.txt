@@ -1,0 +1,268 @@
+gameshell.sh(1)
+===============
+
+NAME
+----
+gameshell.sh - GameShell invocation
+
+SYNOPSIS
+--------
+**gameshell.sh** [__OPTION__] [__INDEX_FILES__]
+
+DESCRIPTION
+-----------
+GameShell is a game for learning (and teaching) how to use a POSIX shell.
+
+The game is usually invoked from a "self-extracting archive" in a terminal
+emulator. The default name of this file is **gameshell.sh** or
+**gameshell-save.sh** (for a saved game) but custom instances of GameShell
+may use other names.
+
+GameShell will run a shell, either Bash or Zsh, inside the terminal. The shell
+will be started with modified __$HOME__ in a specific directory structure
+generated on startup. The player will then be faced with a sequence of
+increasingly difficult "missions" involving standard POSIX commands like
+**ls**, **cp**, **find**; process redirections; etc.
+
+When the game is exited, GameShell does its best to generate a new
+self-extracting archive that can be used to continue the game where it was
+left off; and clean-up after itself by removing the directory structure that
+was used.
+
+INVOCATION
+----------
+GameShell works with either Bash or Zsh. When invoked directly from a
+self-extracting executable archive, for example with
+
+* ``$ ./gameshell.sh`` (if the archive is in the current working directory)
+* ``$ gameshell.sh`` (if the archive is somewhere in the __PATH__)
+
+it will default to Bash.
+
+To force Zsh, you can either
+
+* run the self-extracting archive with Zsh: ``$ zsh ./gameshell.sh``,
+* or use the **-Z** option: ``./gameshell.sh -Z``.
+
+Note that the option **-Z** (or **-B** to force Bash) takes precedence over
+the calling shell, so that ``$ zsh ./gameshell.sh -B`` will use Bash.
+
+
+Standard options
+~~~~~~~~~~~~~~~~
+
+In its most simple form, **gameshell.sh** takes no parameter (__INDEX_FILE__
+above). The following options are available:
+
+**-h**::
+	display a short help message with the standard options
+
+**-H**::
+	display an extended help message
+
+**-V**::
+	display the corresponding self-extracting archive's version
+
+**-R**::
+	force GameShell to start a new game from scratch, even when started from a
+	save file (__R__eset)
+
+**-F**::
+	force GameShell to use the given self-extracting archive without checking
+	for savefiles first
+
+**-L** __LANGS__::
+	set the __LANGUAGE__ variable to be used by GameShell +
+	Translation currently exist for French and Italian, and this option can be
+	set to a list of languages, by order of preferences. For example, **-L
+	it:fr:en** will try using Italian first, French when the translated text
+	isn't found, and English as a last resort. +
+	Note that the __LANGUAGE__ variable seems to be specific to GNU systems.
+	On other systems, you might have to define the __LC_MESSAGES__ variable to
+	a valid locale to get appropriate translations. For example, you could run
+	**$ env LC_MESSAGES=fr_FR.utf8 ./gameshell.sh**. (The list of locales
+	available on your system can be obtained with the **locale -a** command.) +
+	If __LANGS__ is empty (**-L ""**), GameShell will not even try to use
+	__gettext__ (**gettext**(1)) and will be in English. This might (??) be
+	useful to have GameShell run on a minimalistic system without **gettext**
+	installed. +
+	Finally, note that this option has no effect when continuing a saved game,
+	as the whole directory structure depends on the language chosen to start
+	the game.
+
+Savefiles
+~~~~~~~~~
+Whenever the player exits the shell running a game, GameShell tries its best
+to generate a savefile. This savefile, whose absolute path is printed by
+GameShell, can be used as a normal self-extracting archive to continue the
+current game. If it is invoked with the **-R** option, it can also be used to
+restart a new game from scratch.
+
+GameShell directory
+~~~~~~~~~~~~~~~~~~~
+GameShell needs to create its "world" as a directory structure. This directory
+structure is created:
+
+* inside the directory given with option **-W** provided it is a directory with
+  full read/write/cd permissions;
+* inside the directory containing the Gameshell self-extracting archive,
+  provided it is a directory with full read/write/cd permissions;
+* inside __$HOME/.gameshell/__ directory, provided the directory exists (with
+  full read/write/cd permissions), or can be created.
+
+Once this directory has been decided, GameShell checks if a later savefile
+exists there and offers the possibility to used it rather than the archive
+taken from the commandline.
+
+Note that "later" here only means that the "later" filename could have been
+created from the commandline archive:
+
+* **gameshell.sh** can create **gameshell-save.sh** as a savefile,
+* **gameshell-save.sh** can create **gameshell-save001.sh** as a savefile,
+* **gameshell-save-001.sh** can create **gameshell-save002.sh** as a
+  savefile,
+* etc.
+
+In particular, it doesn't imply the "later" archive corresponds to a more advanced game!
+
+Note that the new savefile will be generated there as well.
+
+Advanced options
+~~~~~~~~~~~~~~~~
+The following options are probably of little use to casual player.
+
+**-I**::
+	show list of available index files (see section __Index files__)
+
+**-W __DIR__**::
+    specify where to check for existing savefile, where to put the new
+    savefile, and where to extract Gameshell directory structure.
+    (See __Gameshell directory__ above)
+
+**-M** __MODE__::
+	If __MODE__ is **passport**, GameShell will first ask for a player name and
+	email. No validation of any kind is made, and this is meant to be used in
+	the classroom. The instructor can collect savefiles and run them for
+	evaluation. He'll have access to this "name" and "email", which will
+	hopefully map to actual students from her class. +
+	If __MODE__ is **anonymous**, no such information is asked and recorded. +
+	Finally, if __MODE__ is **debug**, GameShell will run in debug mode, which
+	is only useful for developers. +
+	A self-extracting archive can be generated
+	(__gameshell_archive__(1)) with either the "passport" or
+	"anonymous" mode by default, so that player don't have to choose.
+
+**-d**::
+	alias for **-M debug**
+
+**-D**::
+	verbose debug mode, for developers
+
+**-C**::
+	continue game from given savefile, only useful to "undo" an earlier **-R**
+	option
+
+**-S** __MODE__::
+	If __MODE__ is **simple**, savefiles are always named
+	**gameshell-save.sh**. Each savefile overwrite the previous one, but the
+	original self-extracting archive is kept intact. +
+	If __MODE__ is **overwrite**, the savefile uses the same name as the
+	original self extracting archive. (You can use the savefile to start a new
+	game with the **-R** option) +
+	If __MODE__ is **index**, the successive savefiles are named
+	**gameshell-save.sh**, **gameshell-save001.sh**, **gameshell-save002.sh**,
+	etc. At each step, the first available savefile name is chosen. +
+	The default savefile mode for a self-extracting archive is chosen on
+	creation (__gameshell_archive.sh__(1)) and savefiles inherit the
+	default mode.
+
+**-B**::
+	force GameShell to use bash
+
+**-Z**::
+	force GameShell to use zsh
+
+**-q**::
+	GameShell won't show the welcome message or most other information useful
+	to new players (quiet)
+
+**-n**::
+	GameShell won't try to use ANSI escape codes for colors
+
+**-c** __COMMAND__::
+	GameShell is run in batch mode, running __COMMAND__ and then exiting. This
+	is mostly useful for testing and debuging, but can be used by an
+	instructor to quickly get some stats about students savefiles with
+	**./gameshell-save.sh -qc "gsh stat"
+
+**-U**::
+	download the latest official version of GameShell from github into
+	**gameshell.sh** +
+	Note that you shouldn't use this option from a classroom specific
+	GameShell archive, as it may contain custom default values or missions.
+
+**-X**::
+	do not run GameShell, only extract the __.tgz__ archive from the
+	self-extracting archive (probably only useful for testing / debuging)
+
+**-K**::
+	do not remove GameShell directory structure on exit (probably only useful
+	for testing / debuging) +
+	Note that a savefile is still generated.
+
+Index files
+~~~~~~~~~~~
+An "index file" contains a list of missions. A GameShell self-extracting
+archive may contain more than one such index file. Their list can be obtained
+with the **-I** option.
+
+The player can choose which index files to use by giving them as arguments to
+GameShell:
+
+$ **gameshell.sh** [__OPTIONS__] __INDEX_FILE1__ __INDEX_FILE2__ ...
+
+If no index file is given as argument, the default one (**default.idx**) is
+used.
+
+Note that no attempt is made to "merge" index files so that giving several
+index files may result in duplicate missions.
+
+Note also that Index files arguments are ignored when continuing from a save
+file.
+
+Authors
+-------
+GameShell was originally developed by Pierre Hyvernat and Rodolphe Lepigre at
+Université Savoie Mont Blanc, based on an idea from Rodolphe Lepigre. Several
+people have contributed individual missions, bug reports, bug fixes and
+translations.
+
+It is currently maintained and developed by Pierre Hyvernat.
+
+Reporting Bugs
+--------------
+The best way to report bug is by opening an issue on github: https://github.com/phyver/GameShell/issues
+
+You can also send an email directly to <mailto:pierre.hyvernat@univ-smb.fr> with a
+description of your problem.
+
+Please include
+
+* a description of the problem
+* the version of GameShell you are using (cf **gsh version**, or the **-V**
+  option of the GameShell script)
+* the output of the **gsh env** command,
+* any additional relevant information.
+
+
+SEE ALSO
+--------
+__bash__(1), __zsh__(1), __sh__(1), __gsh__(1)
+
+GAMESHELL
+---------
+GameShell source code is hosted on github: https://github.com/phyver/GameShell
+
+LICENCE
+-------
+GNU General Public Licence version 3, "GPLV3", https://www.gnu.org/licenses/gpl-3.0.html

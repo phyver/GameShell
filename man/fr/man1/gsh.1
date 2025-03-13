@@ -2,12 +2,12 @@
 .\"     Title: gsh
 .\"    Author: [FIXME: author] [see http://www.docbook.org/tdg5/en/html/author]
 .\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
-.\"      Date: 12/10/2024
+.\"      Date: 03/13/2025
 .\"    Manual: \ \&
 .\"    Source: \ \&
 .\"  Language: English
 .\"
-.TH "GSH" "1" "12/10/2024" "\ \&" "\ \&"
+.TH "GSH" "1" "03/13/2025" "\ \&" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -28,7 +28,7 @@
 .\" * MAIN CONTENT STARTS HERE *
 .\" -----------------------------------------------------------------
 .SH "NAME"
-gsh \- appelle les commandes spécifiques de GameShell
+gsh \- exécute les commandes spécifiques de GameShell
 .SH "SYNOPSIS"
 .sp
 \fBgsh\fR <\fICOMMANDE\fR>
@@ -47,7 +47,7 @@ Vous pouvez chercher dans le manuel en appuyant sur la touche "/", puis en entra
 .SH "COMMANDES"
 .SS "Commandes standard pour le joueur"
 .sp
-En condition normales, le joueur ne devrait pas avoir besoin d\(cqautres commandes que les suivantes\&.
+Normalement, le joueur ne devrait pas avoir besoin d\(cqautres commandes que les suivantes\&.
 .PP
 \fBgsh check\fR
 .RS 4
@@ -82,7 +82,7 @@ ré\-initialise la mission en cours
 .RE
 .SS "Commandes pour l\(cqadministrateur"
 .sp
-Quelques commandes sont seulement utilisables si le joueurs connait le mot de passe secret de GameShell\&. La commande qui permet de sauter une mission en fait partie\&.
+Quelques commandes sont seulement utilisables si le joueurs connait le mot de passe secret de GameShell\&. Ces commandes permettent par exemple de sauter une mission fait partie\&.
 .sp
 Le mot de passe par défaut est simplement "gsh" mais si vous utilisez GameShell en classe, votre encadrant l\(cqa probablement changé !
 .PP
@@ -159,7 +159,7 @@ ré\-initialise la mission en cours en redémarrant le shell
 .PP
 \fBgsh HELP\fR
 .RS 4
-affiche ce message
+affiche un message d\(cqaide complet, avec toutes les commandes Gameshell existantes
 .RE
 .PP
 \fBgsh log\fR [\fB\-v\fR]

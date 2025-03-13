@@ -13,6 +13,8 @@ options:
   -H      this message
   -V      display version
   -I      show list of available index files
+  -W DIR  specify where to check for existing savefile, where to put the new
+          savefile, and where to extract Gameshell directory structure
 
   -M passport       passport mode: ask for name / emails of player
   -M anonymous      anonymous mode

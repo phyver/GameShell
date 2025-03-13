@@ -80,7 +80,7 @@ gsh hardreset
   ré-initialise la mission en cours en redémarrant le shell
 
 gsh HELP
-  affiche ce message
+  affiche un message d'aide complet, avec toutes les commandes Gameshell existantes
 
 gsh log [-v]
   affiche le fichier de log des commandes gsh

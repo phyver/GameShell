@@ -1,12 +1,4 @@
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
-msgstr  ""
-
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
-msgstr  ""
-
-#, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
 msgstr  ""
 
@@ -16,6 +8,14 @@ msgstr  ""
 
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
+msgstr  ""
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
+msgstr  ""
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
 msgstr  ""
 
 #, sh-format

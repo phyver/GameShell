@@ -25,6 +25,8 @@ display_message() {
   echo
   box.sh -B "" -R $reflow_width "$treasure_msg_file" |
     paste "$GSH_LIB/ascii-art/treasure-chest.txt" - |
+    # add random chars below the treasure chest if the message is longer than
+    # the treasure chest
     awk -v width=$WIDTH -v seed_file="$GSH_CONFIG/PRNG_seed" -v PID=$$ '
 BEGIN{
   getline seed < seed_file;

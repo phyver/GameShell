@@ -1,0 +1,472 @@
+'\" t
+.\"     Title: gameshell.sh
+.\"    Author: [see the "Authors" section]
+.\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
+.\"      Date: 03/14/2025
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "GAMESHELL\&.SH" "1" "03/14/2025" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+gameshell.sh \- GameShell invocation
+.SH "SYNOPSIS"
+.sp
+\fBgameshell\&.sh\fR [\fIOPTION\fR] [\fIINDEX_FILES\fR]
+.SH "DESCRIPTION"
+.sp
+GameShell is a game for learning (and teaching) how to use a POSIX shell\&.
+.sp
+The game is usually invoked from a "self\-extracting archive" in a terminal emulator\&. The default name of this file is \fBgameshell\&.sh\fR or \fBgameshell\-save\&.sh\fR (for a saved game) but custom instances of GameShell may use other names\&.
+.sp
+GameShell will run a shell, either Bash or Zsh, inside the terminal\&. The shell will be started with modified \fI$HOME\fR in a specific directory structure generated on startup\&. The player will then be faced with a sequence of increasingly difficult "missions" involving standard POSIX commands like \fBls\fR, \fBcp\fR, \fBfind\fR; process redirections; etc\&.
+.sp
+When the game is exited, GameShell does its best to generate a new self\-extracting archive that can be used to continue the game where it was left off; and clean\-up after itself by removing the directory structure that was used\&.
+.SH "INVOCATION"
+.sp
+GameShell works with either Bash or Zsh\&. When invoked directly from a self\-extracting executable archive, for example with
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+``$ \&./gameshell\&.sh`` (if the archive is in the current working directory)
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+``$ gameshell\&.sh`` (if the archive is somewhere in the
+\fIPATH\fR)
+.RE
+.sp
+it will default to Bash\&.
+.sp
+To force Zsh, you can either
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+run the self\-extracting archive with Zsh: ``$ zsh \&./gameshell\&.sh``,
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+or use the
+\fB\-Z\fR
+option: ``\&./gameshell\&.sh \-Z``\&.
+.RE
+.sp
+Note that the option \fB\-Z\fR (or \fB\-B\fR to force Bash) takes precedence over the calling shell, so that ``$ zsh \&./gameshell\&.sh \-B`` will use Bash\&.
+.SS "Standard options"
+.sp
+In its most simple form, \fBgameshell\&.sh\fR takes no parameter (\fIINDEX_FILE\fR above)\&. The following options are available:
+.PP
+\fB\-h\fR
+.RS 4
+display a short help message with the standard options
+.RE
+.PP
+\fB\-H\fR
+.RS 4
+display an extended help message
+.RE
+.PP
+\fB\-V\fR
+.RS 4
+display the corresponding self\-extracting archive\(cqs version
+.RE
+.PP
+\fB\-R\fR
+.RS 4
+force GameShell to start a new game from scratch, even when started from a save file (\fIR\fReset)
+.RE
+.PP
+\fB\-F\fR
+.RS 4
+force GameShell to use the given self\-extracting archive without checking for savefiles first
+.RE
+.PP
+\fB\-L\fR \fILANGS\fR
+.RS 4
+set the
+\fILANGUAGE\fR
+variable to be used by GameShell
+
+Translation currently exist for French and Italian, and this option can be set to a list of languages, by order of preferences\&. For example,
+\fB\-L it:fr:en\fR
+will try using Italian first, French when the translated text isn\(cqt found, and English as a last resort\&.
+
+Note that the
+\fILANGUAGE\fR
+variable seems to be specific to GNU systems\&. On other systems, you might have to define the
+\fILC_MESSAGES\fR
+variable to a valid locale to get appropriate translations\&. For example, you could run
+\fB$ env LC_MESSAGES=fr_FR\&.utf8 \&./gameshell\&.sh\fR\&. (The list of locales available on your system can be obtained with the
+\fBlocale \-a\fR
+command\&.)
+
+If
+\fILANGS\fR
+is empty (\fB\-L ""\fR), GameShell will not even try to use
+\fIgettext\fR
+(\fBgettext\fR(1)) and will be in English\&. This might (??) be useful to have GameShell run on a minimalistic system without
+\fBgettext\fR
+installed\&.
+
+Finally, note that this option has no effect when continuing a saved game, as the whole directory structure depends on the language chosen to start the game\&.
+.RE
+.SS "Savefiles"
+.sp
+Whenever the player exits the shell running a game, GameShell tries its best to generate a savefile\&. This savefile, whose absolute path is printed by GameShell, can be used as a normal self\-extracting archive to continue the current game\&. If it is invoked with the \fB\-R\fR option, it can also be used to restart a new game from scratch\&.
+.SS "GameShell directory"
+.sp
+GameShell needs to create its "world" as a directory structure\&. This directory structure is created:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+inside the directory given with option
+\fB\-W\fR
+provided it is a directory with full read/write/cd permissions;
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+inside the directory containing the Gameshell self\-extracting archive, provided it is a directory with full read/write/cd permissions;
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+inside
+\fI$HOME/\&.gameshell/\fR
+directory, provided the directory exists (with full read/write/cd permissions), or can be created\&.
+.RE
+.sp
+Once this directory has been decided, GameShell checks if a later savefile exists there and offers the possibility to used it rather than the archive taken from the commandline\&.
+.sp
+Note that "later" here only means that the "later" filename could have been created from the commandline archive:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fBgameshell\&.sh\fR
+can create
+\fBgameshell\-save\&.sh\fR
+as a savefile,
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fBgameshell\-save\&.sh\fR
+can create
+\fBgameshell\-save001\&.sh\fR
+as a savefile,
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fBgameshell\-save\-001\&.sh\fR
+can create
+\fBgameshell\-save002\&.sh\fR
+as a savefile,
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+etc\&.
+.RE
+.sp
+In particular, it doesn\(cqt imply the "later" archive corresponds to a more advanced game!
+.sp
+Note that the new savefile will be generated there as well\&.
+.SS "Advanced options"
+.sp
+The following options are probably of little use to casual player\&.
+.PP
+\fB\-I\fR
+.RS 4
+show list of available index files (see section
+\fIIndex files\fR)
+.RE
+.PP
+\fB\-W \fR\fB\fIDIR\fR\fR
+.RS 4
+specify where to check for existing savefile, where to put the new savefile, and where to extract Gameshell directory structure\&. (See
+\fIGameshell directory\fR
+above)
+.RE
+.PP
+\fB\-M\fR \fIMODE\fR
+.RS 4
+If
+\fIMODE\fR
+is
+\fBpassport\fR, GameShell will first ask for a player name and email\&. No validation of any kind is made, and this is meant to be used in the classroom\&. The instructor can collect savefiles and run them for evaluation\&. He\(cqll have access to this "name" and "email", which will hopefully map to actual students from her class\&.
+
+If
+\fIMODE\fR
+is
+\fBanonymous\fR, no such information is asked and recorded\&.
+
+Finally, if
+\fIMODE\fR
+is
+\fBdebug\fR, GameShell will run in debug mode, which is only useful for developers\&.
+
+A self\-extracting archive can be generated (\fIgameshell_archive\fR(1)) with either the "passport" or "anonymous" mode by default, so that player don\(cqt have to choose\&.
+.RE
+.PP
+\fB\-d\fR
+.RS 4
+alias for
+\fB\-M debug\fR
+.RE
+.PP
+\fB\-D\fR
+.RS 4
+verbose debug mode, for developers
+.RE
+.PP
+\fB\-C\fR
+.RS 4
+continue game from given savefile, only useful to "undo" an earlier
+\fB\-R\fR
+option
+.RE
+.PP
+\fB\-S\fR \fIMODE\fR
+.RS 4
+If
+\fIMODE\fR
+is
+\fBsimple\fR, savefiles are always named
+\fBgameshell\-save\&.sh\fR\&. Each savefile overwrite the previous one, but the original self\-extracting archive is kept intact\&.
+
+If
+\fIMODE\fR
+is
+\fBoverwrite\fR, the savefile uses the same name as the original self extracting archive\&. (You can use the savefile to start a new game with the
+\fB\-R\fR
+option)
+
+If
+\fIMODE\fR
+is
+\fBindex\fR, the successive savefiles are named
+\fBgameshell\-save\&.sh\fR,
+\fBgameshell\-save001\&.sh\fR,
+\fBgameshell\-save002\&.sh\fR, etc\&. At each step, the first available savefile name is chosen\&.
+
+The default savefile mode for a self\-extracting archive is chosen on creation (\fIgameshell_archive\&.sh\fR(1)) and savefiles inherit the default mode\&.
+.RE
+.PP
+\fB\-B\fR
+.RS 4
+force GameShell to use bash
+.RE
+.PP
+\fB\-Z\fR
+.RS 4
+force GameShell to use zsh
+.RE
+.PP
+\fB\-q\fR
+.RS 4
+GameShell won\(cqt show the welcome message or most other information useful to new players (quiet)
+.RE
+.PP
+\fB\-n\fR
+.RS 4
+GameShell won\(cqt try to use ANSI escape codes for colors
+.RE
+.PP
+\fB\-c\fR \fICOMMAND\fR
+.RS 4
+GameShell is run in batch mode, running
+\fICOMMAND\fR
+and then exiting\&. This is mostly useful for testing and debuging, but can be used by an instructor to quickly get some stats about students savefiles with **\&./gameshell\-save\&.sh \-qc "gsh stat"
+.RE
+.PP
+\fB\-U\fR
+.RS 4
+download the latest official version of GameShell from github into
+\fBgameshell\&.sh\fR
+Note that you shouldn\(cqt use this option from a classroom specific GameShell archive, as it may contain custom default values or missions\&.
+.RE
+.PP
+\fB\-X\fR
+.RS 4
+do not run GameShell, only extract the
+\fI\&.tgz\fR
+archive from the self\-extracting archive (probably only useful for testing / debuging)
+.RE
+.PP
+\fB\-K\fR
+.RS 4
+do not remove GameShell directory structure on exit (probably only useful for testing / debuging)
+
+Note that a savefile is still generated\&.
+.RE
+.SS "Index files"
+.sp
+An "index file" contains a list of missions\&. A GameShell self\-extracting archive may contain more than one such index file\&. Their list can be obtained with the \fB\-I\fR option\&.
+.sp
+The player can choose which index files to use by giving them as arguments to GameShell:
+.sp
+$ \fBgameshell\&.sh\fR [\fIOPTIONS\fR] \fIINDEX_FILE1\fR \fIINDEX_FILE2\fR \&...
+.sp
+If no index file is given as argument, the default one (\fBdefault\&.idx\fR) is used\&.
+.sp
+Note that no attempt is made to "merge" index files so that giving several index files may result in duplicate missions\&.
+.sp
+Note also that Index files arguments are ignored when continuing from a save file\&.
+.SH "AUTHORS"
+.sp
+GameShell was originally developed by Pierre Hyvernat and Rodolphe Lepigre at Université Savoie Mont Blanc, based on an idea from Rodolphe Lepigre\&. Several people have contributed individual missions, bug reports, bug fixes and translations\&.
+.sp
+It is currently maintained and developed by Pierre Hyvernat\&.
+.SH "REPORTING BUGS"
+.sp
+The best way to report bug is by opening an issue on github: https://github\&.com/phyver/GameShell/issues
+.sp
+You can also send an email directly to <mailto:pierre\&.hyvernat@univ\-smb\&.fr> with a description of your problem\&.
+.sp
+Please include
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+a description of the problem
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+the version of GameShell you are using (cf
+\fBgsh version\fR, or the
+\fB\-V\fR
+option of the GameShell script)
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+the output of the
+\fBgsh env\fR
+command,
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+any additional relevant information\&.
+.RE
+.SH "SEE ALSO"
+.sp
+\fIbash\fR(1), \fIzsh\fR(1), \fIsh\fR(1), \fIgsh\fR(1)
+.SH "GAMESHELL"
+.sp
+GameShell source code is hosted on github: https://github\&.com/phyver/GameShell
+.SH "LICENCE"
+.sp
+GNU General Public Licence version 3, "GPLV3", https://www\&.gnu\&.org/licenses/gpl\-3\&.0\&.html
