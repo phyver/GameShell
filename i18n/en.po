@@ -1,13 +1,5 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gsh-full-help/en.txt"
-
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gsh-help/en.txt"
-
-#, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
 msgstr  "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
 
@@ -18,6 +10,14 @@ msgstr  "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
 msgstr  "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-full-help/en.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-help/en.txt"
 
 #, sh-format
 msgid   "$GSH_ROOT/i18n/start-full-help/en.txt"
@@ -168,6 +168,10 @@ msgstr  "Error: you are not allowed to run this command."
 
 msgid   "Error: you shouldn't run GameShell as root!"
 msgstr  "Error: you shouldn't run GameShell as root!"
+
+#, sh-format
+msgid   "GameShell save file is at $SAVEFILE"
+msgstr  "GameShell save file is at $SAVEFILE"
 
 msgid   "Is this information correct? [Y/n]"
 msgstr  "Is this information correct? [Y/n]"
