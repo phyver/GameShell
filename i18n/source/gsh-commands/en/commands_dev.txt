@@ -4,8 +4,8 @@
 
 **gsh assert check true/false** [__MSG__]::
 	check the current mission's goal has been achieved +
-	if the result doesn't coincide with the expected result, display 
-	an error message
+	If the result doesn't coincide with the expected result, display 
+	an error message.
 
 **gsh env**::
 	display internal environment variables

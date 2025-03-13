@@ -7,11 +7,11 @@ gsh check
 
 gsh exit
   quit GameShell
-  Note that you can exit GameShell using Control-d as well
+  Note that you can exit GameShell using Control-d as well.
 
 gsh goal [N]
   show the current mission's goal
-  if N is given, show the goal for mission N
+  If N is given, show the goal for mission N.
 
 gsh help
   short help message

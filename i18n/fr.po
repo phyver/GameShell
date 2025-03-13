@@ -4,14 +4,6 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
         "Plural-Forms: nplurals=2; plural=n>1;\n"
 
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gsh-full-help/fr.txt"
-
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gsh-help/fr.txt"
-
-#, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
 msgstr  "$GSH_ROOT/i18n/gameshell-init-msg-short/fr.txt"
 
@@ -22,6 +14,14 @@ msgstr  "$GSH_ROOT/i18n/gameshell-init-msg/fr.txt"
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
 msgstr  "$GSH_ROOT/i18n/gameshell-welcome/fr.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-full-help/fr.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-help/fr.txt"
 
 #, sh-format
 msgid   "$GSH_ROOT/i18n/start-full-help/en.txt"

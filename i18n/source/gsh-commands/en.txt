@@ -15,7 +15,7 @@ GameShell is a game for learning (and teaching) how to use a POSIX shell.
 
 Almost all the commands encountered during a game are standard Unix commands,
 with the notable exception of the commands needed to interact with GameShell
-itself. All those interaction start with **gsh**, followed by a subcommand.
+itself. All those commands start with **gsh**, followed by a subcommand.
 
 NOTE
 ----
@@ -41,11 +41,11 @@ following commands.
 
 **gsh exit**::
 	quit GameShell +
-	Note that you can exit GameShell using Control-d as well
+	Note that you can exit GameShell using Control-d as well.
 
 **gsh goal** [__N__]::
 	show the current mission's goal +
-	if __N__ is given, show the goal for mission __N__
+	If __N__ is given, show the goal for mission __N__.
 
 **gsh help**::
 	short help message
@@ -65,14 +65,14 @@ something else!
 **gsh auto**::
 	source the current mission's automatic script, if it exists
 
-**gsh goto** [__N__]::
+**gsh goto** __N__::
 	directly go to mission __N__ +
-	(Note: no password necessary if __N__ is an earlier mission)
+	Note: the password is not necessary if __N__ is an earlier mission.
 
 **gsh skip**::
 	give up on the current mission and go to the next one +
-	(no password necessary if the mission was completed at least 
-	once)
+	Note: the password is not necessary if the mission was completed at least 
+	once.
 
 Additional commands
 ~~~~~~~~~~~~~~~~~~~
@@ -103,8 +103,8 @@ should probably avoid them.
 
 **gsh assert check true/false** [__MSG__]::
 	check the current mission's goal has been achieved +
-	if the result doesn't coincide with the expected result, display 
-	an error message
+	If the result doesn't coincide with the expected result, display 
+	an error message.
 
 **gsh env**::
 	display internal environment variables

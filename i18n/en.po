@@ -1,13 +1,5 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 #, sh-format
-msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gsh-full-help/en.txt"
-
-#, sh-format
-msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
-msgstr  "$GSH_ROOT/i18n/gsh-help/en.txt"
-
-#, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
 msgstr  "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
 
@@ -18,6 +10,14 @@ msgstr  "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
 msgstr  "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-full-help/en.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-help/en.txt"
 
 #, sh-format
 msgid   "$GSH_ROOT/i18n/start-full-help/en.txt"

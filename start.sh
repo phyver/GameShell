@@ -47,9 +47,9 @@ export GSH_COLOR="OK"
 GSH_MODE="ANONYMOUS"
 GSH_EXPLICIT_LANGUAGE="false"
 # if GSH_NO_GETTEXT is non-empty, gettext won't be used anywhere, the only language will thus be English
-# export GSH_NO_GETTEXT=1  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/archive.sh
+# export GSH_NO_GETTEXT=1  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/gameshell_archive.sh
 RESET=""
-while getopts ":hHIndDM:CRXUVqL:KBZc:FS:" opt
+while getopts ":hHIndDM:CRXUVqL:KBZc:FS:W:" opt
 do
   case $opt in
     S)
