@@ -1,12 +1,12 @@
 Objectif
 =========
 
-L'artificier royal apparait à vos cotés. Il vous demande de tirer **au moins 3
-jeux d'artifices" pour qu'il puisse les voir de loin.
+L'artificier royal apparait à vos cotés. Il vous demande de tirer **au moins 3 
+jeux d'artifices consécutifs** pour qu'il puisse les voir de loin.
 
 Une fusée simple peut être lancée avec le mot magique
 
-  $command 
+  $command
 
 
 Commandes utiles
@@ -16,7 +16,7 @@ $command
   Cette commande (non standard) lance un feu d'artifice simple.
 
 COMMANDE &
-  Exécute la commande mais n'attend pas qu'elle soit terminée pour reprendre
+  Exécute la commande mais n'attend pas qu'elle soit terminée pour reprendre 
   l'exécution du shell.
   La commande s'exécute "en arrière plan".
 

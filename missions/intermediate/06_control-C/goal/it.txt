@@ -1,8 +1,8 @@
 Obiettivi missione
 ============
 
-Il pirotecnico del re sta cercando di rcordarsi gli incantesimi magici
-per creare il gran finale per il suo spettacolo. Questo incantesimo comincia
+Il pirotecnico del re sta cercando di rcordarsi gli incantesimi magici 
+per creare il gran finale per il suo spettacolo. Questo incantesimo comincia 
 il lavoro $command e deve essere seguito da 4 lettere casuali come
 
   $ $command abcd
@@ -12,10 +12,10 @@ o
 Aiuta il pirotecnico trovando 4 lettere per lanciare i fuochi giusti.
 
 
-NOTA: quando le quattro lettere sono sbagliate, la reazione magica
+NOTA: quando le quattro lettere sono sbagliate, la reazione magica 
 può richiedere molto tempo. Devi interromperla!
 
-Sarà necessario provare diverse volte per trovare la combinazione giusta di
+Sarà necessario provare diverse volte per trovare la combinazione giusta di 
 lettere che funziona.
 
 
@@ -25,9 +25,9 @@ Comandi utili
 $command CCCC
   questo comando (non standard) create alcuni fuochi d'artificio
     - se le quattro lettere sono valide, i fuochi cominceranno dopo pochi secondi
-    - se le quattro lettere non sono valide, la reazione magica richiederà molto
+    - se le quattro lettere non sono valide, la reazione magica richiederà molto 
       tempo per fallire
 
 Control-c       (scritto anche come ^c)
-  premendo Control e c allo stesso tempo interrompe il comando attuale
+  premendo Control e c allo stesso tempo interrompe il comando attuale 
   inviando il segnale di INTerruzione al processo
