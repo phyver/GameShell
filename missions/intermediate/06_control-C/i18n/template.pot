@@ -15,7 +15,7 @@ msgstr  ""
 msgid   "$MISSION_DIR/treasure-msg/en.txt"
 msgstr  ""
 
-msgid   "Charmiglio"
+msgid   "charmiglio"
 msgstr  ""
 
 #, sh-format

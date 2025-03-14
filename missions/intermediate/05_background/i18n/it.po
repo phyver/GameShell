@@ -42,5 +42,5 @@ msgstr  "Mmm... io vedo solo $NB fuochi d'artificio. Non sono sufficenti."
 msgid   "NOTE: you need to make sure the pyrotechnician sees all the fireworks while he is waiting."
 msgstr  "NOTA: hai bisogno di verificare che il pirotecnico possa vedere tutti i fuochi di artificio mentre aspetta."
 
-msgid   "charmiglio"
-msgstr  "charmiglio"
+msgid   "flarigo"
+msgstr  "flarigo"
