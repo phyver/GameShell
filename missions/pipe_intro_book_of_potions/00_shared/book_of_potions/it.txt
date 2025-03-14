@@ -11,9 +11,9 @@
 11. Acqua distillata ------------------------------ pagina 13
 12. Birra del re ---------------------------------- pagina 13
 == pagina 1 =================================================
+vvvvvvvvvvvvvvvvvvvvvvvvv
 Pozione di trasformazione
--------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Bolli acqua in un calderone.
 2) Aggiungi 2 unità di erbacce al calderone.
 3) Aggiungi 3 gruppetti di correggiola al calderone.
@@ -35,11 +35,10 @@ Pozione di trasformazione
 18) Aggiungi un pezzo della persona che vorresti diventare.
 19) Agita la bacchetta per completare la pozione.
 == pagina 3 ==========================================================
+vvvvvvvvvvvvvvvvvvvv
 Elisir di giovinezza
---------------------
-
-Attenzione: **non** bere se si ha più di 30 anni.
-
+^^^^^^^^^^^^^^^^^^^^
+ATTENZIONE: **non** bere se si ha più di 30 anni.
 1) Riempi un calderone con l'acqua del bagno usata.
 2) Metti una rana moderatamente grande nell'acqua.
 3) Lascia riposare il preparato durante la notte.
@@ -58,8 +57,9 @@ Attenzione: **non** bere se si ha più di 30 anni.
 15) Aggiungi alcuni aghi di larice per condire.
 16) Bevi la pozione dal calderone.
 == pagina 5 ======================================================
+vvv/
 Ph/
--/ 
+^/ 
 /  
    
 \  
@@ -71,8 +71,9 @@ Ph/
 8/ 
 /  
 == pagina 6 ===================================================
+vv\
 Bot/
---/ 
+^^/ 
 _/  
 \   
 /   
@@ -83,15 +84,16 @@ _/
 /   
 \
 == pagina 7 ===================================================
+vvvvvvvvv
 Tè d'erbe
----------
-
+^^^^^^^^^
 1) Bolli dell'acqua.
 2) Aggiungi erbe della foresta.
 3) Lascia riposare per cinque minuti e bevi ancora caldo.
-
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Mantello dell'invisibilità (istruzioni in inchiostro invisibile)
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      .
  `                .
            '   
 == pagina 8 =====================================================
@@ -100,9 +102,9 @@ Mantello dell'invisibilità (istruzioni in inchiostro invisibile)
        '
   '
           `
-
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Pozione curativa omeopatica (parte 1)
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Macina quello che ha causato danni in polvere sottile.
 2) Metti la polvere in un grande calderone.
 3) Riempi il calderone di acqua.
@@ -120,9 +122,9 @@ Pozione curativa omeopatica (parte 1)
 15) Svuota il calderone nelle fogne.
 16) Riempi d'acqua il calderone.
 == pagina 10 ====================================================
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Pozione curativa omeopatica (parte 2)
------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Continua svuotando il calderone.
 2) Riempi d'acqua il calderone.
 3) Svuota il calderone nelle fogne.
@@ -133,9 +135,9 @@ Pozione curativa omeopatica (parte 2)
 8) Riempi d'acqua il calderone.
 9) Svuota il calderone nelle fogne
 == pagina 11 ====================================================
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Pozione curativa omeopatica (parte 3)
-------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Svuota nuovamente il calderone (quasi finito).
 2) Riempi d'acqua il calderone.
 3) Svuota il calderone nelle fogne.
@@ -146,9 +148,9 @@ Pozione curativa omeopatica (parte 3)
 8) Riempi d'acqua il calderone.
 9) Versa il contenuto del calderone in una fiaschetta e bevi.
 == pagina 12 ====================================================
+vvvvvvvvvvvvvvvvv
 Stufato di funghi
------------------
-
+^^^^^^^^^^^^^^^^^
 1) Bolli acqua in un calderone.
 2) Aggiungi dei funghi mortali (Amanita phalloides).
 3) Aggiungi anche degli agarichi di mosca (Amanita muscaria).
@@ -159,15 +161,14 @@ Stufato di funghi
 8) Condisci con un pizzico di sale e un po' di erbe.
 9) Servi caldo in una ciotola.
 == pagina 13 =============================================================
+vvvvvvvvvvvvvvvv
 Acqua distillata
-----------------
-
+^^^^^^^^^^^^^^^^
 1) Bolli acqua in una pentola.
 2) Condensa il vapore in un contenitore fresco.
 3) Aggiungi minerali per un miglior sapore (facoltativo).
-
+vvvvvvvvvvvv
 Birra del re
-------------
-
+^^^^^^^^^^^^
 1) Vai nella cantina del castello e prendine una bottiglia.
 2) Servi freddo, una pinta.
