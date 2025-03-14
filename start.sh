@@ -49,7 +49,7 @@ GSH_EXPLICIT_LANGUAGE="false"
 # if GSH_NO_GETTEXT is non-empty, gettext won't be used anywhere, the only language will thus be English
 # export GSH_NO_GETTEXT=1  # DO NOT CHANGE OR REMOVE THIS LINE, it is used by utils/gameshell_archive.sh
 RESET=""
-while getopts ":hHIndDM:CRXUVqL:KBZc:FS:" opt
+while getopts ":hHIndDM:CRXUVqL:KBZc:FS:W:" opt
 do
   case $opt in
     S)
@@ -161,13 +161,6 @@ do
   esac
 done
 shift $((OPTIND - 1))
-
-# the first argument could be the GSH_EXTRACT_DIR. If that is the case, we
-# remove it
-if [ -n "$1" ] && [ -d "$1" ] && [ -r "$1" ] && [ -w "$1" ] && [ -x "$1" ] # && [ "$(cd "$1"; pwd -P)" = "$GSH_EXTRACT_DIR" ]
-then
-  shift 1
-fi
 
 if [ $(id -u) -eq 0 ]
 then

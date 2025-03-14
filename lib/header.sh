@@ -72,10 +72,11 @@ GSH_EXEC_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
 # GSH_EXEC_DIR shouldn't be empty but consist at least of a "." (as per POSIX).
 # just in case
 GSH_EXEC_DIR=${GSH_EXEC_DIR:-.}
+export GSH_EXTRACT_DIR=
 
 CHECK_SAVEFILE="true"
 
-while getopts ":hHIndDM:CRXUVqL:KBZc:FS:" opt
+while getopts ":hHIndDM:CRXUVqL:KBZc:FS:W:" opt
 do
   case "$opt" in
     V)
@@ -88,10 +89,13 @@ do
       ;;
     U)
       # I need to check that GSH_EXTRACT_DIR first
-      UPDATE_GAMESHELL=1
+      UPDATE_GAMESHELL="true"
+      ;;
+    W)
+      GSH_EXTRACT_DIR=$OPTARG
       ;;
     X)
-      GSH_EXTRACT="true"
+      EXTRACT_ONLY="true"
       ;;
     K)
       KEEP_DIR="true"
@@ -148,36 +152,34 @@ ARGV=( "$@" )
 shift $(($OPTIND - 1))
 
 # get extract directory
-export GSH_EXTRACT_DIR
-if [ -n "$1" ] && [ -d "$1" ] && [ -r "$1" ] && [ -w "$1" ] && [ -x "$1" ]
+if [ -n "$GSH_EXTRACT_DIR" ]
 then
-  # the first argument is a writable directory: we use it
-  GSH_EXTRACT_DIR=$(cd "$1"; pwd -P)
-  shift
-elif [ ! -w "$GSH_EXEC_DIR" ] || [ ! -x "$GSH_EXEC_DIR" ] || [ ! -w "$GSH_EXEC_FILE" ]
+  if [ -n "$GSH_EXTRACT_DIR" ] && [ -d "$GSH_EXTRACT_DIR" ] && [ -r "$GSH_EXTRACT_DIR" ] && [ -w "$GSH_EXTRACT_DIR" ] && [ -x "$GSH_EXTRACT_DIR" ]
+  then
+    # the first argument is a writable directory: we use it
+    GSH_EXTRACT_DIR=$(cd "$GSH_EXTRACT_DIR"; pwd -P)
+  else
+    echo "Error: cannot extract to $GSH_EXTRACT_DIR" >&2
+    exit 1
+  fi
+elif [ -w "$GSH_EXEC_DIR" ] && [ -x "$GSH_EXEC_DIR" ] && [ -w "$GSH_EXEC_FILE" ]
 then
+  # we use the GameShell script directory
+  GSH_EXTRACT_DIR=$(cd "$GSH_EXEC_DIR"; pwd -P)
+else
   # the GameShell script itself is non writable, or lives in a non writable
   # directory: we use $HOME/.gameshell
   GSH_EXTRACT_DIR="$HOME/.gameshell"
-  if [ ! -d "$GSH_EXTRACT_DIR" ]
+  if ! mkdir -p "$HOME/.gameshell/" 2>/dev/null
   then
-    if mkdir -p "$HOME/.gameshell/" 2>/dev/null
-    then
-      echo "$GSH_EXTRACT_DIR directory created" >&2
-      sleep 1
-    else
-      echo "Error: couldn't create $GSH_EXTRACT_DIR directory" >&2
-      exit 1
-    fi
+    echo "Error: couldn't create $GSH_EXTRACT_DIR directory" >&2
+    exit 1
   fi
   GSH_EXTRACT_DIR=$(cd "$GSH_EXTRACT_DIR"; pwd -P)
   GSH_EXTRACT_DIR=${GSH_EXTRACT_DIR:-.}
-else
-  # we use the GameShell script directory
-  GSH_EXTRACT_DIR=$GSH_EXEC_DIR
 fi
 
-if [ -n "$UPDATE_GAMESHELL" ]
+if [ "$UPDATE_GAMESHELL" = "true" ]
 then
   download_latest "$GSH_EXTRACT_DIR"
 fi
@@ -239,7 +241,7 @@ fi
 NB_LINES=$(awk '/^##START_OF_GAMESHELL_ARCHIVE##/ {print NR + 1; exit 0; }' "$GSH_EXEC_DIR/$GSH_EXEC_FILE")
 
 
-if [ "$GSH_EXTRACT" = "true" ]
+if [ "$EXTRACT_ONLY" = "true" ]
 then
   tail -n+"$NB_LINES" "$GSH_EXEC_DIR/$GSH_EXEC_FILE" > "$GSH_EXTRACT_DIR/${GSH_EXEC_FILE%.*}.tgz"
   echo "Archive saved in $GSH_EXTRACT_DIR/${GSH_EXEC_FILE%.*}.tgz"
