@@ -2,4 +2,4 @@
 
 # set -m
 
-charmiglio & charmiglio & charmiglio & gsh check
+flarigo & flarigo & flarigo & gsh check
