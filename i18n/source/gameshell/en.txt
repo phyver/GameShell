@@ -7,7 +7,7 @@ gameshell.sh - GameShell invocation
 
 SYNOPSIS
 --------
-**gameshell.sh** [__OPTION__] [__DIR__] [__INDEX_FILES__]
+**gameshell.sh** [__OPTION__] [__INDEX_FILES__]
 
 DESCRIPTION
 -----------
@@ -51,8 +51,8 @@ the calling shell, so that ``$ zsh ./gameshell.sh -B`` will use Bash.
 Standard options
 ~~~~~~~~~~~~~~~~
 
-In its most simple form, **gameshell.sh** takes no parameter (__DIR__ or
-__INDEX_FILE__ above). The following options are available:
+In its most simple form, **gameshell.sh** takes no parameter (__INDEX_FILE__
+above). The following options are available:
 
 **-h**::
 	display a short help message with the standard options
@@ -103,14 +103,12 @@ GameShell directory
 GameShell needs to create its "world" as a directory structure. This directory
 structure is created:
 
-* inside __DIR__ when it is the first argument of GameShell, and it is an
-  existing directory for which the user has full read/write/cd permissions;
-* if argument is given to GameShell, or if the first argument is not an
-  existing directory for which the user has full permissions, the "world" will
-  be created alongside the self-extracting archive (if the user has write
-  access to the self-extracting archive and its directory), or inside the
-  __$HOME/.gameshell/__ directory (if the user doesn't have write access to
-  the self extracting archive or its directory).
+* inside the directory given with option **-W** provided it is a directory with
+  full read/write/cd permissions;
+* inside the directory containing the Gameshell self-extracting archive,
+  provided it is a directory with full read/write/cd permissions;
+* inside __$HOME/.gameshell/__ directory, provided the directory exists (with
+  full read/write/cd permissions), or can be created.
 
 Once this directory has been decided, GameShell checks if a later savefile
 exists there and offers the possibility to used it rather than the archive
@@ -127,12 +125,19 @@ created from the commandline archive:
 
 In particular, it doesn't imply the "later" archive corresponds to a more advanced game!
 
+Note that the new savefile will be generated there as well.
+
 Advanced options
 ~~~~~~~~~~~~~~~~
 The following options are probably of little use to casual player.
 
 **-I**::
 	show list of available index files (see section __Index files__)
+
+**-W __DIR__**::
+    specify where to check for existing savefile, where to put the new
+    savefile, and where to extract Gameshell directory structure.
+    (See __Gameshell directory__ above)
 
 **-M** __MODE__::
 	If __MODE__ is **passport**, GameShell will first ask for a player name and

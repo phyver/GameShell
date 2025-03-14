@@ -2,12 +2,12 @@
 .\"     Title: gameshell.sh
 .\"    Author: [see the "Authors" section]
 .\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
-.\"      Date: 03/13/2025
+.\"      Date: 03/14/2025
 .\"    Manual: \ \&
 .\"    Source: \ \&
 .\"  Language: English
 .\"
-.TH "GAMESHELL\&.SH" "1" "03/13/2025" "\ \&" "\ \&"
+.TH "GAMESHELL\&.SH" "1" "03/14/2025" "\ \&" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -31,7 +31,7 @@
 gameshell.sh \- GameShell invocation
 .SH "SYNOPSIS"
 .sp
-\fBgameshell\&.sh\fR [\fIOPTION\fR] [\fIDIR\fR] [\fIINDEX_FILES\fR]
+\fBgameshell\&.sh\fR [\fIOPTION\fR] [\fIINDEX_FILES\fR]
 .SH "DESCRIPTION"
 .sp
 GameShell is a game for learning (and teaching) how to use a POSIX shell\&.
@@ -99,7 +99,7 @@ option: ``\&./gameshell\&.sh \-Z``\&.
 Note that the option \fB\-Z\fR (or \fB\-B\fR to force Bash) takes precedence over the calling shell, so that ``$ zsh \&./gameshell\&.sh \-B`` will use Bash\&.
 .SS "Standard options"
 .sp
-In its most simple form, \fBgameshell\&.sh\fR takes no parameter (\fIDIR\fR or \fIINDEX_FILE\fR above)\&. The following options are available:
+In its most simple form, \fBgameshell\&.sh\fR takes no parameter (\fIINDEX_FILE\fR above)\&. The following options are available:
 .PP
 \fB\-h\fR
 .RS 4
@@ -170,9 +170,9 @@ GameShell needs to create its "world" as a directory structure\&. This directory
 .sp -1
 .IP \(bu 2.3
 .\}
-inside
-\fIDIR\fR
-when it is the first argument of GameShell, and it is an existing directory for which the user has full read/write/cd permissions;
+inside the directory given with option
+\fB\-W\fR
+provided it is a directory with full read/write/cd permissions;
 .RE
 .sp
 .RS 4
@@ -183,9 +183,20 @@ when it is the first argument of GameShell, and it is an existing directory for 
 .sp -1
 .IP \(bu 2.3
 .\}
-if argument is given to GameShell, or if the first argument is not an existing directory for which the user has full permissions, the "world" will be created alongside the self\-extracting archive (if the user has write access to the self\-extracting archive and its directory), or inside the
+inside the directory containing the Gameshell self\-extracting archive, provided it is a directory with full read/write/cd permissions;
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+inside
 \fI$HOME/\&.gameshell/\fR
-directory (if the user doesn\(cqt have write access to the self extracting archive or its directory)\&.
+directory, provided the directory exists (with full read/write/cd permissions), or can be created\&.
 .RE
 .sp
 Once this directory has been decided, GameShell checks if a later savefile exists there and offers the possibility to used it rather than the archive taken from the commandline\&.
@@ -246,6 +257,8 @@ etc\&.
 .RE
 .sp
 In particular, it doesn\(cqt imply the "later" archive corresponds to a more advanced game!
+.sp
+Note that the new savefile will be generated there as well\&.
 .SS "Advanced options"
 .sp
 The following options are probably of little use to casual player\&.
@@ -254,6 +267,13 @@ The following options are probably of little use to casual player\&.
 .RS 4
 show list of available index files (see section
 \fIIndex files\fR)
+.RE
+.PP
+\fB\-W \fR\fB\fIDIR\fR\fR
+.RS 4
+specify where to check for existing savefile, where to put the new savefile, and where to extract Gameshell directory structure\&. (See
+\fIGameshell directory\fR
+above)
 .RE
 .PP
 \fB\-M\fR \fIMODE\fR

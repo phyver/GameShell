@@ -57,9 +57,9 @@ tests-zsh: clean
 ## run all the test.sh and auto.sh scripts
 tests-lang: clean
 	./utils/gameshell_archive.sh -at -N "game shell (1)"
-	./"game shell (1).sh" -L en -Bdq -c 'gsh systemconfig; for _ in $$(seq 50); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat'
-	./"game shell (1).sh" -L fr -Bdq -c 'gsh systemconfig; for _ in $$(seq 50); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat'
-	./"game shell (1).sh" -L it -Bdq -c 'gsh systemconfig; for _ in $$(seq 50); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat'
+	./"game shell (1).sh" -L en -RFBdq -c 'gsh systemconfig; for _ in $$(seq 50); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat'
+	./"game shell (1).sh" -L fr -RFBdq -c 'gsh systemconfig; for _ in $$(seq 50); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat'
+	./"game shell (1).sh" -L it -RFBdq -c 'gsh systemconfig; for _ in $$(seq 50); do gsh goal|cat; gsh test --abort; gsh auto --abort; done; gsh stat'
 
 clean:
 	rm -rf i18n/*~ locale gameshell gameshell.tar gameshell.tgz gameshell.sh gameshell-save*.sh scripts/boxes-data.awk
