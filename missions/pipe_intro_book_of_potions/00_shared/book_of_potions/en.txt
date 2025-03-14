@@ -11,9 +11,9 @@
 11. Distilled water --------------------------------- page 13
 12. King's ale -------------------------------------- Page 13
 == page 1 ===================================================
+vvvvvvvvvvvvvvvvvvvvv
 Transformation potion
----------------------
-
+^^^^^^^^^^^^^^^^^^^^^
 1) Boil water in a cauldron.
 2) Add 3 measures of fluxweed to the cauldron.
 3) Add 2 bundles of knotgrass to the cauldron.
@@ -35,11 +35,10 @@ Transformation potion
 18) Add a pieces of the person you wish to become.
 19) Wave your wand to complete the potion.
 == page 3 ===================================================
+vvvvvvvvvvvvvvv
 Elixir of youth
----------------
-
-Warning: **do not** drink if you are older than 30.
-
+^^^^^^^^^^^^^^^
+WARNING: **do not** drink if you are older than 30.
 1) Fill a cauldron with used bath water.
 2) Put a moderately large frog in the water.
 3) Let the preparation rest overnight.
@@ -58,53 +57,54 @@ Warning: **do not** drink if you are older than 30.
 15) Add a few larch tree needles for seasoning.
 16) Drink the potion from the cauldron.
 == page 5 ===================================================
+vvv/
 Ph/
--/ 
-/  
-   
-\  
-/  
-\  
-/  
-\  
-7\ 
-8/ 
-/  
-== page 6 ===================================================
-Bot/
---/ 
-_/  
-\   
-/   
-\   
-/   
-    
-\   
-/   
-\   
-== page 7 ===================================================
-Herbal tea
-----------
+^/
+/
 
+\
+/
+\
+/
+\
+7\
+8/
+/
+== page 6 ===================================================
+vv\
+Bot/
+^^/
+_/
+\
+/
+\
+/
+
+\
+/
+\
+== page 7 ===================================================
+vvvvvvvvvv
+Herbal tea
+^^^^^^^^^^
 1) Boil water.
 2) Add herbs from the forest.
 3) Let it sit for five minutes and drink while hot.
-
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Draft of invisibility (instruction in invisible ink)
-----------------------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     .
  `                .
-           '   
+           '
 == page 8 ===================================================
 
 '              .
        '
   '
           `
-
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Homeopathic healing potion (part 1)
------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Grind whatever caused harm to thin dust.
 2) Put the dust in a big cauldron.
 3) Fill the cauldron with water.
@@ -122,9 +122,9 @@ Homeopathic healing potion (part 1)
 15) Empty the cauldron in the sewer.
 16) Fill the cauldron with water.
 == page 10 ==================================================
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Homeopathic healing potion (part 2)
------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Continue by emptying the cauldron.
 2) Fill the cauldron with water.
 3) Empty the cauldron in the sewer.
@@ -135,9 +135,9 @@ Homeopathic healing potion (part 2)
 8) Fill the cauldron with water.
 9) Empty the cauldron in the sewer.
 == page 11 ==================================================
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Homeopathic healing potion (part 3)
------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Empty the cauldron again (almost done).
 2) Fill the cauldron with water.
 3) Empty the cauldron in the sewer.
@@ -148,9 +148,9 @@ Homeopathic healing potion (part 3)
 8) Fill the cauldron with water.
 9) Pour the contents of the cauldron in a flask and drink.
 == page 12 ==================================================
+vvvvvvvvvvvvvv
 Toadstool stew
---------------
-
+^^^^^^^^^^^^^^
 1) Boil water in a cauldron.
 2) Add in a few death caps (Amanita phalloides).
 3) Also add a few fly agarics (Amanita muscaria).
@@ -161,15 +161,14 @@ Toadstool stew
 8) Season with a pinch of salt and a few herbs.
 9) Serve hot in a bowl.
 == page 13 ==================================================
+vvvvvvvvvvvvvvv
 Distilled water
----------------
-
+^^^^^^^^^^^^^^^
 1) Boil water in a big pot.
 2) Condense the vapor in a fresh container.
 3) Add minerals for a better taste (optional).
-
+vvvvvvvvvv
 King's ale
-----------
-
+^^^^^^^^^^
 1) Go to the castle's cellar and grab a bottle.
 2) Serve cold, in a pint.

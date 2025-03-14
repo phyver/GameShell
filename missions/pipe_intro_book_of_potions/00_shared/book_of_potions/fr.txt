@@ -11,9 +11,9 @@
 11. Eau distillée ----------------------------------- page 13
 12. Bière du Roi ------------------------------------ Page 13
 == page 1 ===================================================
+vvvvvvvvvvvvvvvvvvvvvvvv
 Potion de transformation
-------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^
 1) Faire bouillir de l'eau dans un chaudron.
 2) Ajouter 3 mesures de sisymbre dans le chaudron.
 3) Ajouter 2 bottes de polygonum dans le chaudron.
@@ -35,11 +35,10 @@ Potion de transformation
 18) Ajouter un morceau de la personne voulue.
 19) Agiter votre baguette pour terminer la potion.
 == page 3 ===================================================
+vvvvvvvvvvvvvvvvvv
 Élixir de jeunesse
-------------------
-
-Attention : **ne pas** boire après 30 ans.
-
+^^^^^^^^^^^^^^^^^^
+ATTENTION : **ne pas** boire après 30 ans.
 1) Remplir un chaudron d'eau de baignoire usagée.
 2) Mettre une grenouille de taille moyenne dans l'eau.
 3) Laisser la préparation reposer pendant une nuit.
@@ -58,53 +57,54 @@ Attention : **ne pas** boire après 30 ans.
 15) Assaisonner avec quelques aiguilles de mélèze.
 16) Boire la potion directement dans le chaudron.
 == page 5 ===================================================
+vvv/
 Ph/
--/ 
-/  
-   
-\  
-/  
-\  
-/  
-\  
-7\ 
-8/ 
-/  
-== page 6 ===================================================
-Mor/
---/ 
-_/  
-\   
-/   
-\   
-/   
-    
-\   
-/   
-\   
-== page 7 ===================================================
-Tisane aux herbes
------------------
+^/
+/
 
+\
+/
+\
+/
+\
+7\
+8/
+/
+== page 6 ===================================================
+vv\
+Mor/
+^^/
+_/
+\
+/
+\
+/
+
+\
+/
+\
+== page 7 ===================================================
+vvvvvvvvvvvvvvvvv
+Tisane aux herbes
+^^^^^^^^^^^^^^^^^
 1) Faire bouillir de l'eau.
 2) Ajouter des herbes ramassées en forêt.
 3) Laisser infuser cinq minutes, et boire chaud.
-
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Potion d'invisibilité (instruction en encre invisible)
-------------------------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        .
  `                .
-           '   
+           '
 == page 8 ===================================================
 
 '              .
        '
   '
           `
-
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Potion de soin homéopathique (partie 1)
----------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Moudre la cause du mal pour obtenir une fine poudre.
 2) Ajouter la poudre dans un grand chaudron.
 3) Remplir le chaudron d'eau.
@@ -122,9 +122,9 @@ Potion de soin homéopathique (partie 1)
 15) Vider le chaudron dans les égouts.
 16) Remplir le chaudron d'eau.
 == page 10 ==================================================
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Potion de soin homéopathique (partie 2)
----------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Continuer en vidant le chaudron.
 2) Remplir le chaudron d'eau.
 3) Vider le chaudron dans les égouts.
@@ -135,9 +135,9 @@ Potion de soin homéopathique (partie 2)
 8) Remplir le chaudron d'eau.
 9) Vider le chaudron dans les égouts.
 == page 11 ==================================================
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Potion de soin homéopathique (partie 3)
----------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Vider le chaudron à nouveau (on y est presque).
 2) Remplir le chaudron d'eau.
 3) Vider le chaudron dans les égouts.
@@ -148,9 +148,9 @@ Potion de soin homéopathique (partie 3)
 8) Remplir le chaudron d'eau.
 9) Verser le contenu du chaudron dans une flasque et boire.
 == page 12 ==================================================
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Ragoût de champignons vénéneux
-------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 1) Faire bouillir de l'eau dans un chaudron.
 2) Ajouter quelques amanites phalloïdes.
 3) Aussi, ajouter quelques amanites tue-mouches.
@@ -161,15 +161,14 @@ Ragoût de champignons vénéneux
 8) Assaisonner avec une pincée de sel et quelques herbes.
 9) Servir chaud, dans une assiette à soupe.
 == page 13 ==================================================
+vvvvvvvvvvvvv
 Eau distillée
--------------
-
+^^^^^^^^^^^^^
 1) Faites bouillir de l'eau dans un gros récipient.
 2) Laisser la vapeur se condenser dans un récipient propre.
 3) Ajouter des minéraux pour améliorer le goût (facultatif).
-
+vvvvvvvvvvvv
 Bière du Roi
-------------
-
+^^^^^^^^^^^^
 1) Aller dans la cave du château et prendre une bouteille.
 2) Servir frais, dans une pinte.
