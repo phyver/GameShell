@@ -8,6 +8,9 @@ Une fusée simple peut être lancée avec le mot magique
 
   $command
 
+NOTE : vous devez vous débrouiller pour que l'artificier voie tous les feux
+d'artifice pendant qu'il attend.
+
 
 Commandes utiles
 ================

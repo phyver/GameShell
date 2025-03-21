@@ -8,6 +8,9 @@ A single firework can be created with the magical word
 
   $command
 
+NOTE: you need to make sure the pyrotechnician sees all the fireworks while he 
+is waiting.
+
 
 Useful commands
 ===============
