@@ -8,6 +8,9 @@ Un singolo fuoco d'artificio può essere acceso con:
 
   $command
 
+NOTA: hai bisogno di verificare che il pirotecnico possa vedere tutti i fuochi 
+di artificio mentre aspetta.
+
 
 Comandi utili
 ===============
