@@ -653,6 +653,15 @@ gsh() {
   local _TEXTDOMAIN=$TEXTDOMAIN
   export TEXTDOMAIN="gsh"
   local cmd=$1
+
+  if [ -z "$cmd" ]
+  then
+        echo "$(eval_gettext "Error: no gsh command given.")" >&2
+        echo "$(eval_gettext "Use one of the following commands:")  check, goal, help, reset" >&2
+        export TEXTDOMAIN=$_TEXTDOMAIN
+        unset _TEXTDOMAIN
+        return 1
+  fi
   shift
 
   # should the command abort GameShell on failure (gsh test / gsh auto)
@@ -742,8 +751,8 @@ gsh() {
         MISSION_NB=$MISSION_NB MISSION_DIR=$MISSION_DIR "_gsh_$cmd" "$@"
         ret=$?
       else
-        echo "$(eval_gettext "Error: unknown gsh command '\$cmd'.
-Use one of the following commands:")  check, goal, help, reset" >&2
+        echo "$(eval_gettext "Error: unknown gsh command '\$cmd'.")" >&2
+        echo "$(eval_gettext "Use one of the following commands:")  check, goal, help, reset" >&2
         export TEXTDOMAIN=$_TEXTDOMAIN
         unset _TEXTDOMAIN
         return 1

@@ -132,6 +132,10 @@ msgstr  "Erreur : la mission $MISSION_NB n'a pas de script automatique."
 msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
 msgstr  "Erreur : la mission $MISSION_NB est annulée car des dépendances ne sont pas satisfaites."
 
+#, sh-format
+msgid   "Error: no gsh command given."
+msgstr  "Erreur: aucune command gsh donnée."
+
 msgid   "Error: no mission was found!\n"
         "Aborting."
 msgstr  "Erreur : aucune mission trouvée !\n"
@@ -153,10 +157,8 @@ msgid   "Error: this option is only available from an executable archive!"
 msgstr  "Erreur : cette option n'est disponible que depuis une archive exécutable !"
 
 #, sh-format
-msgid   "Error: unknown gsh command '$cmd'.\n"
-        "Use one of the following commands:"
-msgstr  "Erreur : command gsh inconnue '$cmd'.\n"
-        "Utilisez une des commandes suivantes :"
+msgid   "Error: unknown gsh command '$cmd'."
+msgstr  "Erreur : command gsh inconnue '$cmd'."
 
 #, sh-format
 msgid   "Error: unknown shell '$SHELL'.\n"
@@ -219,6 +221,10 @@ msgstr  "Il y a des processus stoppés dans votre session.\n"
         "Vous pouvez obtenir la liste de ces processus avec\n"
         "    $ jobs\n"
         "Êtes vous sûr de vouloir quitter ? [o/N]"
+
+#, sh-format
+msgid   "Use one of the following commands:"
+msgstr  "Utilisez une des commandes suivantes :"
 
 #, sh-format
 msgid   "Warning: command line arguments are ignored when continuing a game ($args)"
@@ -320,8 +326,8 @@ msgid   "password:"
 msgstr  "mot de passe :"
 
 #, sh-format
-msgid   "progress was saved in $SAVEFILE"
-msgstr  "la progression a été sauvée dans $SAVEFILE"
+msgid   "progress was saved in $GSH_SAVEFILE"
+msgstr  "la progression a été sauvée dans $GSH_SAVEFILE"
 
 msgid   "skipped"
 msgstr  "sautée"

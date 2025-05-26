@@ -126,6 +126,10 @@ msgstr  ""
 msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
 msgstr  ""
 
+#, sh-format
+msgid   "Error: no gsh command given."
+msgstr  ""
+
 msgid   "Error: no mission was found!\n"
         "Aborting."
 msgstr  ""
@@ -146,8 +150,7 @@ msgid   "Error: this option is only available from an executable archive!"
 msgstr  ""
 
 #, sh-format
-msgid   "Error: unknown gsh command '$cmd'.\n"
-        "Use one of the following commands:"
+msgid   "Error: unknown gsh command '$cmd'."
 msgstr  ""
 
 #, sh-format
@@ -203,6 +206,10 @@ msgid   "There are stopped jobs in your session.\n"
         "You can get the list of those jobs with\n"
         "    $ jobs\n"
         "Do you still want to quit? [y/n]"
+msgstr  ""
+
+#, sh-format
+msgid   "Use one of the following commands:"
 msgstr  ""
 
 #, sh-format
@@ -296,7 +303,7 @@ msgid   "password:"
 msgstr  ""
 
 #, sh-format
-msgid   "progress was saved in $SAVEFILE"
+msgid   "progress was saved in $GSH_SAVEFILE"
 msgstr  ""
 
 msgid   "skipped"
