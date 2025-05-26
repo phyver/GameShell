@@ -4,7 +4,7 @@ _mission_init() ( #subshell to avoid changing directory
   bib="$(eval_gettext '$GSH_HOME/Castle/Main_building/Library/Merlin_s_office')"
   find "$bib" -type f -name "$(gettext "grimoire")_*" -print0 | xargs -0 rm -f
 
-  rm -f "$GSH_TMP/list_grimoires_RO"
+  rm -f "$GSH_TMP/list_grimoires-R"
 
   RANDOM 600 | for i in $(seq 100)
   do
@@ -38,8 +38,8 @@ _mission_init() ( #subshell to avoid changing directory
     read RANDOM
     if [ $((RANDOM % 2)) -eq 0 ]
     then
-      chmod -r "$file"
-      echo "$file" >> "$GSH_TMP/list_grimoires_RO"
+      chmod a-r "$file"
+      echo "$file" >> "$GSH_TMP/list_grimoires-R"
     fi
     [ $((i%10)) -eq 0 ] && printf "."
   done
