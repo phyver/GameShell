@@ -1,7 +1,0 @@
-Complimenti!
-
-Da ora puoi utilizzare il file
-    "~/.gshrc"
-per registrare gli alias.
-Altre informazioni possono essere
-trovate nel file (è stato creato per te). 

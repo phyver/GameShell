@@ -1,7 +1,0 @@
-Congratulations!
-
-From now on you can use the file
-    "~/.gshrc"
-to record aliases. More information can be 
-found in the file (it has been created for 
-you).

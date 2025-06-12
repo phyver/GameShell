@@ -1,0 +1,51 @@
+Mission goal
+============
+
+The history of modifications is saved in git.
+
+Hence you can consult previous version of your spell using the git checkout command
+
+
+git log : basic history of commits, with a few details  
+
+
+git log --pretty=oneline : short history of commits, one line per commit
+
+
+
+git log --pretty=oneline | head -n 10 : will select only the first 10 lines
+
+the left column is the commit number, and can lok like this: "7b2fa74b29870cff8534734b431a03e4d4d03542"
+
+TO see the assiociated snapshot of the code you need to use 
+
+git ckeckout 7b2fa74b29870cff8534734b431a03e4d4d03542
+
+is 7b2fa74b29870cff8534734b431a03e4d4d03542 is your commit number
+
+
+Useful commands
+===============
+
+
+
+git log : basic history of commits, with a few details  
+
+
+git log --pretty=oneline : short history of commits, one line per commit
+
+
+
+git log --pretty=oneline | head -n 10 : will select only the first 10 lines
+
+the left column is the commit number, and can lok like this: "7b2fa74b29870cff8534734b431a03e4d4d03542"
+
+TO see the assiociated snapshot of the code you need to use 
+
+git ckeckout 7b2fa74b29870cff8534734b431a03e4d4d03542
+
+is 7b2fa74b29870cff8534734b431a03e4d4d03542 is your commit number
+
+
+
+
