@@ -1,0 +1,175 @@
+For each mission, is everything implemented properly ?
+
+init:
+goal:
+LORE:
+static:
+check:  
+
+v: yes
+x: no
+NA: not appliable
+
+------------------------------
+Section I) git_Intro
+
+I.1) gitclone
+init:v 
+goal:almost
+LORE:in progess
+static: 
+check: in progress
+
+
+I.2) evince
+init:x
+goal: need clening
+LORE: x
+static: -
+check: x
+
+
+
+
+Section II: git_config
+II.1) createGHacc
+init:x
+goal:v
+LORE:x
+static:-
+check: in progress
+
+
+
+II.2) configGitID
+init:x
+goal:v
+LORE:x
+static:
+check: in progress
+
+
+Section III: git_basics
+
+III.1)create_newrepo
+init:
+goal:
+LORE:
+static:
+check:
+
+III.2)add_newSpell
+init:
+goal:
+LORE:
+static:
+check:
+
+III.3)git_log
+init:
+goal:
+LORE:
+static:
+check:
+
+
+III.4)git_edit_status
+init:
+goal:
+LORE:
+static:
+check:
+
+III.5)git_edit_diff
+init:
+goal:
+LORE:
+static:
+check:
+
+III.6)git_edit_add_diff_stage
+init:
+goal:
+LORE:
+static:
+check:
+
+
+III.7)git_edit_commit
+init:
+goal:
+LORE:
+static:
+check:
+
+III.8)git_edit_push
+init:
+goal:
+LORE:
+static:
+check:
+
+
+
+
+III.9)git_edit_commit_push
+without stage
+init:
+goal:
+LORE:
+static:
+check:
+
+
+III.10)git_add_Folder
+init:
+goal:
+LORE:
+static:
+check:
+
+III.11)git_mv
+init:
+goal:
+LORE:
+static:
+check:
+
+III.12)git_rm
+init:
+goal:
+LORE:
+static:
+check:
+
+
+
+
+Section IV: git_config_advanced
+IV.1)
+IV.2)
+
+
+
+Section V: github_branches
+V.1)
+V.2)
+...
+
+Section VI: git_forks
+VI.1)
+...
+
+
+Section VII: git_beyond
+
+VII.1) link to outside documentation ressources
+
+
+
+
+
+
+
+  index_git_roadmap.txt
+
