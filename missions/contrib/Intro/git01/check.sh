@@ -14,20 +14,20 @@ _mission_check() {
 
   # verifier que le repertoire existe et est un depot git
 
-  if [ ! -d $GSH_HOME/Castle/Portals//doc_git ]
+  if [ ! -d $GSH_HOME/Castle/Portals/celestial]
     then 
-      echo " The depository  doc_git doesn't exist"
+      echo " The repository  celestial doesn't exist"
       return 1
     else
-    echo " The depository  doc_git  exist"
+    echo " The repository  celestial  exist"
     fi
 
-  if [ ! -d $GSH_HOME/Castle/Portals/doc_git/.git ]
+  if [ ! -d $GSH_HOME/Castle/Portals/celestial/.git ]
     then 
-      echo " The depository  doc_git is not a git depository"
+      echo " The repository  celestial is not a git depository"
       return 1
     else
-    echo " The depository  doc_git is  a git depository "
+    echo " The repository  celestial is  a git depository "
     fi
     
     

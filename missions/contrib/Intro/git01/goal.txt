@@ -1,14 +1,14 @@
 Mission goal
 ============
 
-The Head of the magic council has send a emmissary to your castle with an urgent request.
+The Head of the magic council has sent an emmissary to your castle with an urgent request.
 
 
 The emmissary explains the following to you:
-"The magic council has realised that too many spells are saved on books, and those can get lost or dammaged over time."
-"In addition, some castle and library can be far away from each others, and shared acces to physical library is complicated nowadays"
-"Using a intermendisonal magic, the magic council has devellop a way to save and store spell books worldwide"
-"Has a spell develloper, you need to learn the usage of intermendisonal magic immediatly to prevent lost of your spells, and acces the spells of others spell devellopers."
+"The magic council has realised that too many spells are saved on books. Those can get lost or dammaged over time and the history of how those spells have been crafted and by who is also missing."
+"In addition, some castles and libraries can be far away from each others, and shared access to physical libraries is complicated nowadays"
+"Using a intermendisonal magic, the magic council has developed a way to save history, store and share spells worldwide: the magic library tubes"
+"As a wizard, you need to learn the usage of intermendisonal magic immediatly to contribute to the global effort."
 
 
 As you agree to the suggestion of the magic council, the emmissary gives you your first learning assignement:
@@ -24,13 +24,13 @@ Git is a version manager software. This can Help you to share codes, tex files, 
 Usually, you have acces to a remote server (github or gitlab for instance) where a code is stored.
 
 
-First, you need to create a new depository called doc_git in the Portals room
+First, you need to create a new repository called celestial in the Portals room
 
 then use 
 
-git clone https://github.com/MKessar/learning_git.git ./doc_git
+git clone https://github.com/MKessar/learning_git.git ./celestial
 
-This will create a local copy of the distant repository "learning_git" into .doc_git
+This will create a local copy of the distant repository "learning_git" into .celestial
 
 
 

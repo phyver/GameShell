@@ -1,0 +1,69 @@
+
+
+
+## git intro
+1: git clone of documentation
+2: evince doc.pdf
+
+
+## git config (MK)
+1. Create login account (Former Contrib/git03)
+2. config name in git => get the wand (github_basics/git02)
+
+## git basics  (MK)
+1. create new repo + clone (github_basics/git01)
+2. craft new spell + add + commit +push (github_basics/git03) (github_basics/git05) (github_basics/git06 folder) 
+3. git log (github_basics/git08) ex: git log --pretty=oneline | head -n 10
+4. modify spell + git status
+5. git diff
+6. add + diff => --staged
+7. git commit (github_basics/git05)
+7. git mv + push (github_basics/git04) 
+8. git rm  + push (github_basics/git07) 
+
+
+
+
+## git config advanced  (MK)
+1. config ssh => get the two rings (github_ssh_key/git01) 
+2(optionel). lien vers de la doc (URL) pour config multiple name in git => get multiple  wand (si on a le temps) firefox URL
+
+
+## git advanced (MH)
+1. checkout a previous commit
+2. chekcout most recent commit
+3. git revert 
+
+
+---------------
+Début de la bataille contre le dragon.
+
+## git branching (MH)
+A Merge FF
+1. create branch locally and then push origin
+2. faire une modif sur la mbrache
+3. revenir sur la branche main
+4. merge vers le main (sans conflit)
+5. delete branch (sans conflit)
+
+B Merge
+
+1. create branch locally and then push origin
+2. faire une modif sur la branche
+3. revenir sur la branche main
+3. faire une modif sur la branche main
+4. merge vers le main (avec conflit)
+5. delete branch (avec conflit)
+
+
+## git forking (MH)
+3. Fork repo with initial content and some branches + contribution with a new spell (no conflict)
+4. Fork repo with initial content and some branches + contribution with spell modification (with conflict)
+5. final 1: everybody needs to contribute to craft a spell powerful enough
+6. final 2: prime numbres and pi digits required to make it even more powerful
+
+
+
+idea: fetch from a gtllab fork to a github rep
+
+
