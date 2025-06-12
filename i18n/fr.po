@@ -319,6 +319,10 @@ msgstr  "facultatif"
 msgid   "password:"
 msgstr  "mot de passe :"
 
+#, sh-format
+msgid   "progress was saved in $SAVEFILE"
+msgstr  "la progression a été sauvée dans $SAVEFILE"
+
 msgid   "skipped"
 msgstr  "sautée"
 

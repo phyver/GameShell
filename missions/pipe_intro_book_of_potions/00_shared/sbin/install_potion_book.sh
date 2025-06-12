@@ -39,6 +39,7 @@ install_book() {
 
 
   # NOTE: option --supress-matched doesn't exist in freebsd, nor does the "{*}" repetition
+  # FIXME: this is rather slow (for loop), maybe an awk script would be faster
   csplit -ks -f "$BOOK/$(gettext "page")_" "$(eval_gettext '$MISSION_DIR/book_of_potions/en.txt')" "/^==.*/" "{99}" 2>/dev/null
   for f in "$BOOK/$(gettext "page")_"*
   do

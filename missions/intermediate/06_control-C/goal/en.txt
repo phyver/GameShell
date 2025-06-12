@@ -3,7 +3,7 @@ Mission goal
 
 The king's pyrotechnician is trying to remember the magical incantation 
 for creating the grand finale for his fireworks. This incantation starts 
-with the work $command and must be followed by four random letters, as 
+with the word $command and must be followed by four random letters, as 
 in
 
   $ $command abcd

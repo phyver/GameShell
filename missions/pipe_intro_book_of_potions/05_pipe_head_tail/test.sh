@@ -8,7 +8,7 @@ add_cmd "head -n 6 \"$(gettext "Book_of_potions")/$(gettext 'page')_13\" | tail 
 add_cmd gsh check
 gsh assert check true
 
-add_cmd "tail -n 9 \"$(gettext "Book_of_potions")/$(gettext "page")_13\" | head -n 3"
+add_cmd "tail -n 8 \"$(gettext "Book_of_potions")/$(gettext "page")_13\" | head -n 3"
 add_cmd gsh check
 gsh assert check true
 

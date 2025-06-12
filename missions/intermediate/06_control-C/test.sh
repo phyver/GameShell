@@ -8,7 +8,7 @@ do_test() {
 
   for c in $(echo "a b c d e f g h i j" | cut -d' ' -f1-$nb)
   do
-    eval "$(gettext Charmiglio) $c$c$c$c &" 2>/dev/null
+    eval "$(gettext charmiglio) $c$c$c$c &" 2>/dev/null
     PID=$!
     sleep "$delay"
     # NOTE: SIGINT signal doesn't work on non-interactive systems

@@ -4,7 +4,7 @@
 
   for c in a b c d e f
   do
-    eval "$(gettext Charmiglio) $c$c$c$c &" 2>/dev/null
+    eval "$(gettext charmiglio) $c$c$c$c &" 2>/dev/null
     PID=$!
     sleep 4
     # NOTE: SIGINT signal doesn't work on non-interactive systems

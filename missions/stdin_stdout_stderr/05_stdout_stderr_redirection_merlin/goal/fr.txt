@@ -6,8 +6,7 @@ l'observatoire et tient des propos incohérents, voire
 incompréhensibles.
 
 Vous devez filtrer son charabia afin de trouver la clé secrète qu'il 
-est le
-seul à connaitre.
+est le seul à connaitre.
 
 Indice
 ------

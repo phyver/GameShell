@@ -1,7 +1,7 @@
 Obiettivi missione
 ============
 
-IL pirotecnico del re appare vicino a te. Ti chiede se ne puoi accendere **almeno
+Il pirotecnico del re appare vicino a te. Ti chiede se ne puoi accendere **almeno 
 3** così che possa vederli da lontano.
 
 Un singolo fuoco d'artificio può essere acceso con:

@@ -327,6 +327,10 @@ msgstr  "facoltativo"
 msgid   "password:"
 msgstr  "password:"
 
+#, sh-format
+msgid   "progress was saved in $SAVEFILE"
+msgstr  ""
+
 msgid   "skipped"
 msgstr  "saltate"
 

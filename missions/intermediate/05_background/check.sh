@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-command="$(gettext 'charmiglio')"
+command="$(gettext 'flarigo')"
 
-PIDS=$GSH_TMP/charmiglio.pids
+PIDS=$GSH_TMP/flarigo.pids
 
 _check() {
     rm -f "$PIDS"

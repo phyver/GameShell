@@ -98,7 +98,7 @@ check() {
 init() {
   case "$CODE" in
     "")
-      command=$(gettext "Charmiglio")
+      command=$(gettext "charmiglio")
       echo "$(eval_gettext 'usage: $command CCCC
       where CCCC is a sequence of 4 ASCII letters (a-zA-Z)')"
       exit 1

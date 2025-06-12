@@ -30,6 +30,14 @@ add_cmd cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
 add_cmd gsh check
 gsh assert check true
 
+cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
+add_cmd cd
+add_cmd gsh goal
+add_cmd cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
+add_cmd gsh goal
+add_cmd gsh check
+gsh assert check true
+
 alias gc="gsh check"
 cd "$(eval_gettext '$GSH_HOME/Castle/Main_building/Throne_room')"
 add_cmd cd
