@@ -1,8 +1,8 @@
 Mission goal
 ============
 
-Create a depository "test_fold" containing 2 files named file1.txt and file2.txt 
-and add it to the repository
+Create a directory "test_fold" containing 2 files named file1.txt and file2.txt 
+and add it to the directory
 
 
 
@@ -13,7 +13,7 @@ touch file1.txt
 
 git add Folder
 
-adds the depository "Folder" and its content to the local git repo
+adds the directory "Folder" and its content to the local git repo
 
 git commit -m "add Folder"
 

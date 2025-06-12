@@ -1,7 +1,11 @@
 Mission goal
 ============
 
-Now you will add today's Date into the file
+Now you will add the floowing line in your spell:
+
+"There is no Spoon"
+
+Then Send your modification to github
 
 
 
