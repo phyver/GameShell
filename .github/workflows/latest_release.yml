@@ -22,15 +22,26 @@ jobs:
 
       - name: "Creating the archive"
         run: |
-          git fetch --tags --force && ./utils/archive.sh
+          git fetch --tags --force
+          ./utils/archive.sh
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: "Create or move 'latest' tag"
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git tag -f latest
+          git push origin latest --force
+
+      - name: "Create GitHub Release"
+        uses: softprops/action-gh-release@v2
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          tag_name: latest
+          name: "Latest game archive"
           prerelease: true
-          title: "Latest game archive"
           files: |
             LICENSE
             gameshell.sh
             Dockerfile
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

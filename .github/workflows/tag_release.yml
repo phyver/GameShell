@@ -3,11 +3,12 @@ name: "Tagged release"
 on:
   push:
     tags:
-      - "v*"
+      - "v*"  # Trigger only on version tags
 
 jobs:
   pre-release:
     runs-on: "ubuntu-latest"
+
     steps:
       - name: "Checkout source code"
         uses: "actions/checkout@v4"
@@ -20,13 +21,18 @@ jobs:
 
       - name: "Creating the archive"
         run: |
-          git fetch --tags --force && ./utils/archive.sh
+          git fetch --tags --force
+          ./utils/archive.sh
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: "Create GitHub Release"
+        uses: softprops/action-gh-release@v2
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          name: "Release ${{ github.ref_name }}"
           prerelease: false
           files: |
             LICENSE
             gameshell.sh
             Dockerfile
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
