@@ -32,6 +32,9 @@ _mission_check() (
   if [ "$res" != "$expected" ]
   then
     echo "$(gettext "Your previous command does not give the expected result...")"
+    # FIXME: if only the beginning of the recipe is shown, display a specific
+    # error message (if the player hasn't realized the recipe is on 2 pages,
+    # he won't understand why it didn't work)
     return 1
   fi
   return 0
