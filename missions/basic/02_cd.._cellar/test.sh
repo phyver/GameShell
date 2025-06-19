@@ -1,15 +1,15 @@
 #!/usr/bin/env sh
 
 cd
-gsh assert_check false
+gsh assert check false
 
 cd "$(eval_gettext "\$GSH_HOME/Castle/Cellar")"
-gsh assert_check true
+gsh assert check true
 
 cd "$(eval_gettext "\$GSH_HOME/Castle/Cellar")/.."
-gsh assert_check false
+gsh assert check false
 
 cd
-gsh assert_check false
+gsh assert check false
 
 

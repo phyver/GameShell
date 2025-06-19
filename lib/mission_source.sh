@@ -18,6 +18,7 @@
 mission_source() {
   local FILENAME
   FILENAME=$1
+  shift         # keep the rest of the arguments to pass to the sourced file
 
   if ! [ -e "$FILENAME" ]
   then
@@ -41,7 +42,7 @@ mission_source() {
   # if we are not running in DEBUG mode, just source the file
   if [ "$GSH_MODE" != "DEBUG" ] || [ -z "$GSH_VERBOSE_DEBUG" ]
   then
-    local _MISSION_DIR _TEXTDOMAIN _MISSION_NAME _PATH exit_status
+    local _MISSION_DIR _TEXTDOMAIN _MISSION_NAME _PATH _SAVED_ARGS exit_status
     export MISSION_DIR TEXTDOMAIN MISSION_NAME
     _MISSION_DIR=$MISSION_DIR
     MISSION_DIR=$(dirname "$(readlink-f "$FILENAME")")
@@ -51,8 +52,11 @@ mission_source() {
     MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
     _PATH=$PATH
     PATH=$PATH:$GSH_SBIN
+    _SAVED_ARGS="$@"
+    set -- "$@"     # set $1 etc.
     . "$FILENAME"
     exit_status=$?
+    set -- $_SAVED_ARGS
     TEXTDOMAIN=$_TEXTDOMAIN
     MISSION_NAME=$_MISSION_NAME
     MISSION_DIR=$_MISSION_DIR
@@ -61,7 +65,7 @@ mission_source() {
     return $exit_status
   fi
 
-  local _MISSION_DIR _TEXTDOMAIN _MISSION_NAME _PATH exit_status env_before env_after
+  local _MISSION_DIR _TEXTDOMAIN _MISSION_NAME _PATH _SAVED_ARGS exit_status env_before env_after
   export MISSION_DIR TEXTDOMAIN MISSION_NAME
   echo "    GSH: sourcing \$GSH_ROOT/${FILENAME#$GSH_ROOT/}" >&2
   _MISSION_DIR=""  # otherwise, it appears in the environment!
@@ -84,8 +88,11 @@ mission_source() {
   MISSION_NAME=${FILENAME#$GSH_MISSIONS/}
   _PATH=$PATH
   PATH=$PATH:$GSH_SBIN
+  _SAVED_ARGS="$@"
+  set -- "$@"     # set $1 etc.
   . "$FILENAME"
   exit_status=$?
+  set -- $_SAVED_ARGS
   TEXTDOMAIN=$_TEXTDOMAIN
   MISSION_NAME=$_MISSION_NAME
   MISSION_DIR=$_MISSION_DIR

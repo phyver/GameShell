@@ -24,19 +24,19 @@ stand_by
 kill_imp_spell
 sleep 1
 rm -f "$cellar"/*_"$(gettext "coal")"
-gsh assert_check true
+gsh assert check true
 
 stand_by
 kill_imp_spell
 sleep 1
-gsh assert_check false
+gsh assert check false
 
 stand_by
 kill_imp_spell
 sleep 1
 rm -f "$cellar"/*_"$(gettext "coal")"
 rm -f "$cellar"/*_"$(gettext "snowflake")"
-gsh assert_check false
+gsh assert check false
 
 
 unset -f kill_imp_spell
