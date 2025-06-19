@@ -14,6 +14,11 @@ _mission_check() (
   sort "$office/$(gettext "Drawer")/$inventory_file" >"$temp_file"
   if ! cmp -s "$temp_file" "$GSH_TMP/inventory_grimoires"
   then
+    # FIXME: fail if inventory contains
+    #   ./book...
+    # instead of
+    #   book...
+    # display a specific message in that case
     echo "$(eval_gettext 'The content of $inventory_file is invalid.
 You can check its content with the command
     § less $inventory_file')" |  sed 's/§/\$/'
