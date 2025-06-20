@@ -5,3 +5,8 @@
 # It is sometimes possible to "cheat" by using any hidden data in $GSH_TMP,
 # but it is better to do it the "intended" way.
 # If you write this file, rename it to auto.sh
+
+cd Castle/Portals
+git clone https://github.com/mathaefele/al_far.git
+gsh check
+

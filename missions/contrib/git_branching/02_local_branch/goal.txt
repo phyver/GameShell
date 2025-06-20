@@ -1,0 +1,24 @@
+Mission goal
+============
+
+Now we have the Al Far portal, step into it so you can access the magic. 
+
+Look at all available improvements (branches) and create a local branch for each of them.
+
+
+Useful commands
+===============
+
+List available branches with
+git branch -a
+The "-a" option means "all" branches, i.e. branches that reflect the branches available on the remote repository on top of the local ones.
+
+The full syntax to create a local branch NEW_BRANCH_NAME that will be connected to the REMOTE_BRANCH_NAME on the remote repository REMOTE is
+git checkout -b NEW_BRANCH_NAME REMOTE/REMOTE_BRANCH_NAME
+This gives full flexibility on naming and can ensure no ambiguity in the command
+
+In simple case (like ours), i.e. when there is a single remote and no name collision between branches 
+git checkout REMOTE_BRANCH_NAME
+will create a local branch REMOTE_BRANCH_NAME, that will be connected to the remote one
+
+
