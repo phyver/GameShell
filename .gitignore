@@ -12,3 +12,6 @@ locale/
 /gameshell*
 game shell*
 boxes-data.awk
+*.swp
+game_dev
+
