@@ -39,21 +39,15 @@
 Début de la bataille contre le dragon.
 
 ## git branching (MH)
-A Merge FF
-1. create branch locally and then push origin
-2. faire une modif sur la mbrache
-3. revenir sur la branche main
-4. merge vers le main (sans conflit)
-5. delete branch (sans conflit)
-
-B Merge
-
-1. create branch locally and then push origin
-2. faire une modif sur la branche
-3. revenir sur la branche main
-3. faire une modif sur la branche main
-4. merge vers le main (avec conflit)
-5. delete branch (avec conflit)
+1. clone al far repo and cd inside it
+2. Merge FF on main from existing branch
+3. Create branch power + contrib  + commit
+4. back on main + merge from existing branch (no conflict)
+5. merge power branch (conflict)
+6. delete branch power
+7. add remote portal Al Jeit
+8. merge existing branch (conflict)
+9. Explore history and recover ancient technique. Implement it in the latest version of the spell => kill the dragon but it resurrects
 
 
 ## git forking (MH)
