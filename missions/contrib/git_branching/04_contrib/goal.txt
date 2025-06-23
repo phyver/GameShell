@@ -3,7 +3,7 @@ Mission goal
 
 Before merging the improvement of Jilano with the usage of a new rune, the wizard of the castle gives you the advice to switch the pineapple ingredient to something more powerful: goat hair !
 
-Look at the arcane book somewhere in the main tower to learn how to modify the spell. Then create a branch named power, checkout it, implement the modification and create a commit.
+You decided to implement this modification striaght away before forgetting the advice. Look at the arcane book somewhere in the main tower to learn how to modify the spell. Then create a branch named power, checkout it, implement the modification and create a commit.
 
 TODO:
 - improve lore
@@ -12,9 +12,7 @@ TODO:
 Useful commands
 ===============
 
-To look at the history of a local repository putting one commit per line (--oneline) and showing diverging and converging history (--graph)
-git log --oneline --graph
-
+Use your favorite text editor (or gedit by default) to implement the required modification in the dragon_killer.spell
 
 To create and switch to a branch. 
 git checkout -b BRANCH_NAME

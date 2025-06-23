@@ -6,6 +6,8 @@
 # but it is better to do it the "intended" way.
 # If you write this file, rename it to auto.sh
 
-git merge new_ingredient
+git checkout -b power
+cp $GSH_MISSION/dragon_killer.spell .
+git ci -am "pineapple switched to goat hair !"
 gsh check
 
