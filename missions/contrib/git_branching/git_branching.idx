@@ -3,3 +3,4 @@ missions/contrib/git_branching/02_local_branch
 missions/contrib/git_branching/03_mergeFF
 missions/contrib/git_branching/04_contrib
 missions/contrib/git_branching/05_merge
+missions/contrib/git_branching/06_merge_conflict

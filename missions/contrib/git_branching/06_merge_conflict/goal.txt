@@ -1,0 +1,41 @@
+Mission goal
+============
+
+Last but not least, merge the contribution you made on branch power. You might end-up in a conflict. 
+
+Ensure you keep your version with the goat hair.
+
+
+Useful commands
+===============
+
+To merge a branch. Ensure you are on the branch you want to merge into and then
+git merge BRANCH_NAME
+
+If you end up into a CONFLICT and would like to abort the current merge operation
+git merge --abort
+
+## What is a conflict ?
+First of all, a conflict occurs when git is asked to merge two commits where the same line of the same file is modified in both commits.
+In our case, the spell on the power branch has its first line modified and spell on the main branch has also its first line modified.
+
+When a conflict occurs, git modifies the file in the working directoy like this:
+    <<<<<<< HEAD
+    33
+    =======
+    66
+    >>>>>>> power
+
+Between the <<< and the === the version of the branch pointed by HEAD, so in our case the main branch
+Between the === and the >>> the version of power branch
+Git cannot decide which one is the right one, you have to 
+
+## How to fix a conflict ?
+
+-   Replace everything between the <<< and the >>> by the correct version
+-   git add file
+-   git commit
+-   Automatic commit message indicating conflict resolution
+
+
+
