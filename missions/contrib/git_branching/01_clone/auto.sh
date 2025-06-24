@@ -7,6 +7,11 @@
 # If you write this file, rename it to auto.sh
 
 cd Castle/Portals
-git clone https://github.com/mathaefele/al_far.git
+git clone $MISSION_DIR/al_far_repo al_far
+cd al_far
+git checkout main
+git remote rename origin local
+git remote add origin https://github.com/mathaefele/al_far.git
+cd ..
 gsh check
 
