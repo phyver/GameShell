@@ -30,8 +30,6 @@
 
 
 ## git advanced (MH)
-1. checkout a previous commit
-2. chekcout most recent commit
 3. git revert 
 
 
@@ -40,11 +38,13 @@ Début de la bataille contre le dragon.
 
 ## git branching (MH)
 1. clone al far repo and cd inside it
+1a. add questions on Fast forward and real merge
 2. Merge FF on main from existing branch
 3. Create branch power + contrib  + commit
 4. back on main + merge from existing branch (no conflict)
+4a. checkout a previous commit and back most recent commit to explore the content of the spell
 5. merge power branch (conflict)
-6. delete branch power
+6. delete all branches power, new_ingredient and add_rune
 7. add remote portal Al Jeit
 8. merge existing branch (conflict)
 9. Explore history and recover ancient technique. Implement it in the latest version of the spell => kill the dragon but it resurrects
