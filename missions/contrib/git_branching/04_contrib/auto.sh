@@ -7,7 +7,7 @@
 # If you write this file, rename it to auto.sh
 
 git checkout -b power
-cp $GSH_MISSION/dragon_killer.spell .
-git ci -am "pineapple switched to goat hair !"
+cp $MISSION_DIR/dragon_killer.spell .
+git commit -am "pineapple switched to goat hair !"
 gsh check
 
