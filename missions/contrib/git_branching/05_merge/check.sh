@@ -22,7 +22,6 @@ _mission_check() {
   fi
 
   current_branch=$(git branch --show-current)
-  echo $current_branch
   if [ "$current_branch" != "main" ]
     then
         echo "You are not on the main branch..."
