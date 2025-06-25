@@ -1,5 +1,6 @@
 missions/contrib/git_branching/01_clone/
 missions/contrib/git_branching/02_local_branch
+missions/contrib/git_branching/02a_questions
 missions/contrib/git_branching/03_mergeFF
 missions/contrib/git_branching/04_contrib
 missions/contrib/git_branching/05_merge
