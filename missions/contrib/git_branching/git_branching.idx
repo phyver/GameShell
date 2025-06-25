@@ -1,6 +1,6 @@
-missions/contrib/git_branching/01_clone/
-missions/contrib/git_branching/02_local_branch
-missions/contrib/git_branching/03_mergeFF
-missions/contrib/git_branching/04_contrib
-missions/contrib/git_branching/05_merge
-missions/contrib/git_branching/06_merge_conflict
+01_clone
+02_local_branch
+03_mergeFF
+04_contrib
+05_merge
+06_merge_conflict

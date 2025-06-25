@@ -6,12 +6,18 @@
   misc/02_nano_journal
   intermediate/02_alias_journal
   intermediate/03_tab_spider_lair
-
-  contrib/Intro/gitintro.idx
-  contrib/github_basics/git.idx
-  contrib/github_ssh_key/git01
-  contrib/github_branches/git.idx
+  contrib/git_Intro/gitintro.idx
+  contrib/git_config/git_config.idx
+  contrib/git_basics/git_basics.idx
+  contrib/git_config_advanced/git_config_advanced.idx
+  contrib/git_branching/git_branching.idx
   contrib/git_beyond/git.idx
+
+#  contrib/git_basics/git.idx
+#  contrib/git_ssh_key/git01
+#  contrib/git_branching/git_branching.idx
+#  contrib/github_branches/git.idx
+#  contrib/git_beyond/git.idx
 
 
 
