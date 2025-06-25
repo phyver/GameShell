@@ -35,6 +35,13 @@ _mission_check() {
         return 1
   fi
 
+  diff_res=$(diff dragon_killer.spell $MISSION_DIR/dragon_killer.spell)
+  if [ "$log" = "" ]
+    then
+        echo "The spell does not like expected, you may have solved the conflict the wrong way..."
+        return 1
+  fi
+
   return 0
 
 }

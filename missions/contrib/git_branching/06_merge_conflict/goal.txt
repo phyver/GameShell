@@ -28,7 +28,7 @@ When a conflict occurs, git modifies the file in the working directoy like this:
 
 Between the <<< and the === the version of the branch pointed by HEAD, so in our case the main branch
 Between the === and the >>> the version of power branch
-Git cannot decide which one is the right one, you have to 
+Git cannot decide which one is the right one, you have to decide if the first version has be kept, the second, a mix of both, yet a third version... 
 
 ## How to fix a conflict ?
 
