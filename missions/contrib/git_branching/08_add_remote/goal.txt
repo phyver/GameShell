@@ -1,0 +1,30 @@
+Mission goal
+============
+
+You did the maximum with all spell pieces that were around in the Al Far portal, but it is not enough. The dragon is still living and threating the castle and the whole region. You will not see sunset tonight.
+
+In this moment of profound despair, an old wizard came to you. With her scrumbling voice, she said: "I am Duom Erg from Al Jeit. When I was there I could access to some secrets of the magic council. The price to pay to access those secrets is my life if I reveal them. As we are all about to die, it is time to reveal some, maybe it might save all others. Make good use of it, I trust you."
+
+The wizard disapeared in a bright light and the Main tower suffered something like an earthquake. The librarian came to you still under shock, his hands were shaking. He managed to say: "The book... The PortalBook has shaken, it has triggered this earthquake !"
+
+There is no time to loose, get the address of Al Jeit portal, fetch it and create local branches for each remote branch.
+
+
+
+Useful commands
+===============
+
+Add a remote to your local repository
+git remote add REMOTE_NAME REPOSITORY_URL
+
+Fetch commits from a remote and update the local repository
+git fetch REMOTE_NAME
+
+List available branches with
+git branch -a
+The "-a" option means "all" branches, i.e. branches that reflect the branches available on the remote repository on top of the local ones.
+
+In simple case (like ours), i.e. when there is a single remote and no name collision between branches 
+git checkout REMOTE_BRANCH_NAME
+will create a local branch REMOTE_BRANCH_NAME, that will be connected to the remote one
+
