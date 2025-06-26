@@ -1,0 +1,15 @@
+Mission goal
+============
+
+Now everything is merged, let us clean the repository and remove all the branches we do need anymore.
+
+Useful commands
+===============
+
+To delete a branch that has been merged (our case). 
+git branch -d BRANCH_NAME
+You will need to use -D instead of -d for a non merged branch. As deleting such a branch might lead to hide some commits in the history, this gives a little bt of security
+
+
+
+
