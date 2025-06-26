@@ -16,7 +16,7 @@ If you end up into a CONFLICT and would like to abort the current merge operatio
 git merge --abort
 
 ## What is a conflict ?
-First of all, a conflict occurs when git is asked to merge two commits where the same line of the same file is modified in both commits.
+A conflict occurs when git is asked to merge two commits where the same line of the same file is modified in both commits.
 In our case, the spell on the power branch has its first line modified and spell on the main branch has also its first line modified.
 
 When a conflict occurs, git modifies the file in the working directoy like this:
