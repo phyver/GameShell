@@ -9,5 +9,3 @@
 # them, but it should "unset" any local variable it has created.
 
 mkdir -p $GSH_HOME/Castle/Portals/
-mkdir -p $GSH_HOME/Castle/Main_tower
-cp $MISSION_DIR/PortalBook $GSH_HOME/Castle/Main_tower

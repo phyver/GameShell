@@ -21,17 +21,17 @@ _mission_check() {
       return 1
   fi
 
-  al_far_repo=$goal/al_far
+  al_far_repo=$goal/al_jeit
   if [ ! -d "$al_far_repo" ]
     then
-        echo "The Al Far portal does not seem to be present..."
+        echo "The Al Jeit portal does not seem to be present..."
         return 1
   fi
 
   al_far_repo_git=$al_far_repo/.git
   if [ ! -d "$al_far_repo_git" ]
     then
-        echo "The Al Far portal looks like it is here but the magic is not operating..."
+        echo "The Al Jeit portal looks like it is here but the magic is not operating..."
         return 1
   fi
 

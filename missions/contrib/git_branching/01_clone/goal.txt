@@ -2,9 +2,9 @@ Mission goal
 ============
 
 A dragon is approaching, you have to stop it or it will burn your castle. You need a spell able to kill dragons.
-Wizards of castle Al Far were the first ones to work on such a spell.
+Wizards of castle Al Jeit were the first ones to work on such a spell.
 
-Go to the portal room and clone the portal of castle Al Far. We will figure out if it can be of any help.
+Go to the portal room and clone the portal of castle Al Jeit. We will figure out if it can be of any help.
 All adresses of castle portals are registered in the portal book in the library somewhere in the main tower.
 
 
