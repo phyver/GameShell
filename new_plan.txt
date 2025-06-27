@@ -58,7 +58,33 @@ Début de la bataille contre le dragon.
 6. final 2: prime numbres and pi digits required to make it even more powerful
 
 
+## Lore
 
-idea: fetch from a gtllab fork to a github rep
+TODO: Intro
+
+github/gitlab => bibliothèque
+un dépot => un portail, une sorte de livre 
+un fichier => un sort
+
+la puissance des sorts dépend de leur version et donc un diff est suffisant dans le check
+
+### git branching
+- récuperer un dépot distant avec le sort dragon_killer réparti en plusieurs branches 
+- ajouter un remote qui contient un sort d'amplicfication lui aussi réparti en plusieurs branches fusionner
+
+
+### git forking
+Travail collaboratif
+2-4 étudiants sur un seul dépot.
+
+chaque étudiant n'a accès qu'à un des sorts suivant sur des dépôts séparés :  
+- diminution de la résitance à la magie
+- poison
+- blocage de la régénération de vie
+- sort d'artilelrie: lancer le sort 1000 fois d'un coup: caput le dragon
+
+
+le merge des branches des deux étudiants donne le sort final
+
 
 
