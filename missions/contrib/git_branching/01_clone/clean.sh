@@ -1,0 +1,1 @@
+../00_prepare_bare_repo/clean.sh
