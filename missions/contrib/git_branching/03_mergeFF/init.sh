@@ -19,10 +19,8 @@
 # It typically looks like
 _mission_init() {
   # ...
-  if ! git --version > /dev/null 2 > /dev/null
-    then  echo "git not found"
-    return 1
-  fi
+
+  cd $GSH_HOME/Castle/Portals
   
 }
 _mission_init

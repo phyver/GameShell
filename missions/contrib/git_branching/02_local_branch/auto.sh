@@ -6,9 +6,9 @@
 # but it is better to do it the "intended" way.
 # If you write this file, rename it to auto.sh
 
-cd al_far
-git checkout new_ingredient
-git checkout add_rune
-git checkout main
+cd $GSH_HOME/Castle/Portals/al_jeit
+git checkout adding_light
+git checkout adding_earth
+git checkout spell
 gsh check
 

@@ -6,6 +6,6 @@
 # but it is better to do it the "intended" way.
 # If you write this file, rename it to auto.sh
 
-git merge new_ingredient
+git merge adding_light 
 gsh check
 

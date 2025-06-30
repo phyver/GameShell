@@ -12,23 +12,23 @@
 
 _mission_check() {
 
-  goal=$GSH_HOME/Castle/Portals/al_far
+  goal=$GSH_HOME/Castle/Portals/al_jeit
   current="$PWD"
 
   if [ "$goal" != "$current" ] 
     then 
-      echo "You are not in the Al Far portal"
+      echo "You are not in the Al Jeit portal"
       return 1
   fi
 
   current_branch=$(git branch --show-current)
-  if [ "$current_branch" != "main" ]
+  if [ "$current_branch" != "spell" ]
     then
-        echo "You are not on the main branch..."
+        echo "You are not on the spell branch..."
         return 1
   fi
 
-  expected_name="new_ingredient"
+  expected_name="adding_earth"
   branch_created=$(git branch | grep $expected_name)
   if [ "$branch_created" = "" ]
     then
@@ -36,7 +36,7 @@ _mission_check() {
         return 1
   fi
 
-  expected_name="add_rune"
+  expected_name="adding_light"
   branch_created=$(git branch | grep $expected_name)
   if [ "$branch_created" = "" ]
     then

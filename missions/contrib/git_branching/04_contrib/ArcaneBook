@@ -1,5 +1,23 @@
+Different type of mana
+======================
+
 11 air
-22 apple tree leave
-33 pineapple
-44 rock
-66 goat hair
+22 fire
+33 water
+44 earth
+55 darkness
+66 light
+77 magma
+88 moisture
+99 poison
+111 truth
+222 lie
+
+Structure of a spell
+====================
+
+mana_fraction1 type_of_mana1
+mana_fraction2 type_of_mana2
+....
+
+The sum of mana_fraction* should be 100

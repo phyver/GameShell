@@ -23,6 +23,8 @@ _mission_init() {
     then  echo "git not found"
     return 1
   fi
+
+  cd $GSH_HOME/Castle/Portals
   
 }
 _mission_init
