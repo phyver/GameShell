@@ -19,12 +19,15 @@
 # It typically looks like
 _mission_init() {
   # ...
-  if ! git --version > /dev/null 2 > /dev/null
+  if ! git --version &> /dev/null
     then  echo "git not found"
     return 1
   fi
 
-  cd $GSH_HOME/Castle/Portals
+  . $GSH_TMP/clone.sh &> /dev/null
+  git reset --hard 006e702 &> /dev/null
+  git push origin spell --force &> /dev/null
+  cd ..
   
 }
 _mission_init

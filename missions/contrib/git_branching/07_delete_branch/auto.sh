@@ -6,6 +6,6 @@
 # but it is better to do it the "intended" way.
 # If you write this file, rename it to auto.sh
 
-git branch -d power new_ingredient add_rune
+git branch -d power adding_earth adding_light
 gsh check
 

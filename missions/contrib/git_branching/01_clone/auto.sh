@@ -6,12 +6,7 @@
 # but it is better to do it the "intended" way.
 # If you write this file, rename it to auto.sh
 
-cd Castle/Portals
-git clone $GSH_TMP/al_jeit
-cd al_jeit
-git checkout spell
-git remote rename origin local
-git remote add origin https://github.com/mathaefele/al_jeit.git
+. $GSH_TMP/clone.sh
 cd ..
 gsh check
 

@@ -23,6 +23,7 @@ _mission_init() {
     then  echo "git not found"
     return 1
   fi
+
   
 }
 _mission_init

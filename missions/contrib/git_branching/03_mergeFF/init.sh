@@ -20,7 +20,8 @@
 _mission_init() {
   # ...
 
-  cd $GSH_HOME/Castle/Portals
+  . $GSH_TMP/clone.sh &> /dev/null
+  . $GSH_TMP/co.sh &> /dev/null
   
 }
 _mission_init

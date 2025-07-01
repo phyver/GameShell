@@ -8,6 +8,6 @@
 
 git checkout -b power
 cp $MISSION_DIR/dragon_killer.spell .
-git commit -am "pineapple switched to goat hair !"
+git commit -am "magma switched to fire !"
 gsh check
 

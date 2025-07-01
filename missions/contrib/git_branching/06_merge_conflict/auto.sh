@@ -9,6 +9,6 @@
 git merge power
 cp $MISSION_DIR/dragon_killer.spell .
 git add dragon_killer.spell
-git commit -m "conflict solved, goat hair kept"
+git commit -m "conflict solved, fire kept"
 gsh check
 
