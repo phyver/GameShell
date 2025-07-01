@@ -81,8 +81,5 @@ err_str="Too bad! The answer was $res. Indeed, the ingredient of the spell has c
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
 
-  # Changing directory as current directoy will be removed by the clean.sh
-  cd $GSH_HOME
-
 }
 _mission_check
