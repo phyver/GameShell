@@ -11,4 +11,3 @@ git checkout adding_light
 git checkout adding_earth
 git checkout spell
 gsh check
-

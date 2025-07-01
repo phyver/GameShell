@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-Now merge the add_rune branch in the main branch. Take care on the branch your are on currently, maybe you should change !
+Now merge the adding_earth branch in the spell branch. Take care on the branch your are on currently, maybe you should change !
 
 
 Useful commands
@@ -13,4 +13,5 @@ git merge BRANCH_NAME
 If you end up into a CONFLICT and would like to abort the current merge operation
 git merge --abort
 
-
+To change your HEAD on a branch and update the working directory
+git checkout BRANCH_NAME

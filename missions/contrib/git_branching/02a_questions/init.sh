@@ -23,6 +23,8 @@ _mission_init() {
     then  echo "git not found"
     return 1
   fi
+  . $GSH_TMP/clone.sh &> /dev/null
+  . $GSH_TMP/co.sh &> /dev/null
   
 }
 _mission_init

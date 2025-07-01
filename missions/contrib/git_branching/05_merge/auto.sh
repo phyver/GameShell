@@ -6,7 +6,7 @@
 # but it is better to do it the "intended" way.
 # If you write this file, rename it to auto.sh
 
-git checkout main
-git merge add_rune --no-edit
+git checkout spell
+git merge adding_earth --no-edit
 gsh check
 

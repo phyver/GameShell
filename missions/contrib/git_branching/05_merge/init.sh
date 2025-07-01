@@ -23,6 +23,9 @@ _mission_init() {
     then  echo "git not found"
     return 1
   fi
+
+  cd $GSH_HOME/Castle/Portals/al_jeit
+  git checkout power
   
 }
 _mission_init
