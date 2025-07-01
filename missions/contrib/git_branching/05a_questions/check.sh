@@ -47,7 +47,6 @@ _mission_check() {
         return 1
   fi
 
-
 echo "If we want to merge the power branch into main, which kind of merge it is ?"
 echo "1. a fast-forward merge"
 echo "2. a real merge"
@@ -81,6 +80,9 @@ res="1"
 err_str="Too bad! The answer was $res. Indeed, the ingredient of the spell has changed on both power and main branches compared to their most recent ancestor (33,66 vs 11). And those two values are different, git cannot decide which one is the correct one to merge."
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
+
+  # Changing directory as current directoy will be removed by the clean.sh
+  cd $GSH_HOME
 
 }
 _mission_check

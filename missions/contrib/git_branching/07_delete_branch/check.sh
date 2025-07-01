@@ -12,19 +12,19 @@
 
 _mission_check() {
 
-  goal=$GSH_HOME/Castle/Portals/al_far
+  goal=$GSH_HOME/Castle/Portals/al_jeit
   current="$PWD"
 
   if [ "$goal" != "$current" ] 
     then 
-      echo "You are not in the Al Far portal"
+      echo "You are not in the Al Jeit portal"
       return 1
   fi
 
   current_branch=$(git branch --show-current)
-  if [ "$current_branch" != "main" ]
+  if [ "$current_branch" != "spell" ]
     then
-        echo "You are not on the main branch..."
+        echo "You are not on the spell branch..."
         return 1
   fi
 
@@ -35,19 +35,22 @@ _mission_check() {
         return 1
   fi
 
-  log=$(git branch --merged | grep "new_ingredient")
+  log=$(git branch --merged | grep "adding_earth")
   if [ "$log" != "" ]
     then
-        echo "new_ingredient branch is still here..."
+        echo "adding_earth branch is still here..."
         return 1
   fi
 
-  log=$(git branch --merged | grep "add_rune")
+  log=$(git branch --merged | grep "adding_light")
   if [ "$log" != "" ]
     then
-        echo "add_rune branch is still here..."
+        echo "adding_light branch is still here..."
         return 1
   fi
+
+  # Changing directory as current directoy will be removed by the clean.sh
+  cd $GSH_HOME
 
   return 0
 

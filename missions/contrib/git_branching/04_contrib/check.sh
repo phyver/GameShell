@@ -12,12 +12,12 @@
 
 _mission_check() {
 
-  goal=$GSH_HOME/Castle/Portals/al_far
+  goal=$GSH_HOME/Castle/Portals/al_jeit
   current="$PWD"
 
   if [ "$goal" != "$current" ] 
     then 
-      echo "You are not in the Al Far portal"
+      echo "You are not in the Al Jeit portal"
       return 1
   fi
 
@@ -35,6 +35,9 @@ _mission_check() {
         echo "main and power branches are pointing on the same commit, looks like there is no new contribution added to the portal..."
         return 1
   fi
+
+  # Changing directory as current directoy will be removed by the clean.sh
+  cd $GSH_HOME
 
   return 0
 
