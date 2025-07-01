@@ -44,6 +44,9 @@ _mission_check() {
         return 1
   fi
 
+  # Changing directory as current directoy will be removed by the clean.sh
+  cd $GSH_HOME
+
   return 0
 
 }
