@@ -24,5 +24,9 @@ _mission_init() {
     return 1
   fi
   
+  . $GSH_TMP/clone.sh &> /dev/null
+  . $GSH_TMP/co.sh &> /dev/null
+  git reset --hard adding_light &> /dev/null
+
 }
 _mission_init

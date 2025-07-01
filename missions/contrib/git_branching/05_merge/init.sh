@@ -24,8 +24,11 @@ _mission_init() {
     return 1
   fi
 
-  cd $GSH_HOME/Castle/Portals/al_jeit
-  git checkout power
+  . $GSH_TMP/clone.sh &> /dev/null
+  . $GSH_TMP/co.sh &> /dev/null
+  git reset --hard adding_light &> /dev/null
+  git checkout power &> /dev/null
+  git push -d origin power &> /dev/null
   
 }
 _mission_init
