@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-Now merge the adding_earth branch in the spell branch. Take care on the branch your are on currently, maybe you should change !
+Now merge the adding_earth branch in the spell branch. Take care on the branch your are currently on, maybe you should switch !
 
 
 Useful commands

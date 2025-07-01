@@ -11,6 +11,4 @@
 mkdir -p $GSH_HOME/Castle/Portals/
 mkdir -p $GSH_HOME/Castle/Main_tower/First_floor
 cp $MISSION_DIR/ArcaneBook $GSH_HOME/Castle/Main_tower/First_floor
-git config --global user.email "jaffar@aladin.cool"
-git config --global user.name "Jaffar"
 

@@ -4,19 +4,18 @@ Mission goal
 Before merging the last branch, let us inspect again the local repository.
 
 Look at the history of the spell:
-a. if we want to merge the power branch into main, which kind of merge it is ? a fast-forward merge ? or a real merge ?
+a. if we want to merge the power branch into spell, which kind of merge it is ? a fast-forward merge ? or a real merge ?
 
 Look at the the spell version on the different branches. What is the first ingredient of the spell 
-b. on the main branch ?
+b. on the spell branch ?
 c. on the power branch ? 
-d. on the most recent common ancestor of main and power branches ?
-e. In this context, if we merge the power branch, will there be a conflict ?
+d. on the most recent common ancestor of spell and power branches ?
+e. In this context, if we merge the power branch into the spell branch, will there be a conflict ?
 
-For question d. you will need to put your HEAD on a commit where there is no branch on it. Ensure you are on the main branch before answering the questions.
+Ensure you are on the spell branch before answering the questions.
 
 TODO:
 - improve lore
-- rename main branch name into spell
 
 
 Useful commands

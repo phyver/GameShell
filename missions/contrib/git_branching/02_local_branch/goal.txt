@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-Now we have the Al Far portal, step into it so you can access the magic. 
+Now we have the Al Jeit portal, step into it so you can access the magic. 
 
 Look at all available improvements (branches) and create a local branch for each of them.
 

@@ -1,18 +1,11 @@
 Mission goal
 ============
 
-A dragon is approaching, you have to stop it or it will burn your castle. You need a spell able to kill dragons.
-Wizards of castle Al Jeit were the first ones to work on such a spell.
+A dragon is approaching, you have to stop it or it will burn the castle and the whole region. You need an enchantment able to kill dragons.
+Wizards of Al Jeit castle were the first ones to work on such an enchantment.
 
 Go to the portal room and clone the portal of castle Al Jeit. We will figure out if it can be of any help.
 All adresses of castle portals are registered in the portal book in the library somewhere in the main tower.
-
-
-TODO:
-- improve lore
-- find a word for clone
-- find a word for address
-
 
 
 Useful commands

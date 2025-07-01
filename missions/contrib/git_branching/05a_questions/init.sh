@@ -23,6 +23,10 @@ _mission_init() {
     then  echo "git not found"
     return 1
   fi
+  . $GSH_TMP/clone.sh &> /dev/null
+  . $GSH_TMP/co.sh &> /dev/null
+  git reset --hard 00eb22d72 &> /dev/null
+  git branch power 0c522b5 &> /dev/null
   
 }
 _mission_init

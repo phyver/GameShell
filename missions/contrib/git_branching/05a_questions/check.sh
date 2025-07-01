@@ -31,44 +31,44 @@ esac
 
 _mission_check() {
 
-  goal=$GSH_HOME/Castle/Portals/al_far
+  goal=$GSH_HOME/Castle/Portals/al_jeit
   current="$PWD"
 
   if [ "$goal" != "$current" ] 
     then 
-      echo "You are not in the Al Far portal"
+      echo "You are not in the Al Jeit portal"
       return 1
   fi
 
   current_branch=$(git branch --show-current)
-  if [ "$current_branch" != "main" ]
+  if [ "$current_branch" != "spell" ]
     then
-        echo "You are not on the main branch..."
+        echo "You are not on the spell branch..."
         return 1
   fi
 
-echo "If we want to merge the power branch into main, which kind of merge it is ?"
+echo "If we want to merge the power branch into spell, which kind of merge it is ?"
 echo "1. a fast-forward merge"
 echo "2. a real merge"
 res="2"
-err_str="Too bad! The answer was $res. Indeed, it is a real merge because the history has diverged between the main branch and power branch."
+err_str="Too bad! The answer was $res. Indeed, it is a real merge because the history has diverged between the spell branch and power branch."
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
 
-echo "What is the first ingredient of the spell on the main branch (provide the number) ?"
-res="33"
+echo "What is the first ingredient of the spell on the spell branch (provide the number) ?"
+res="44"
 err_str="Too bad! The answer was $res."
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
 
 echo "What is the first ingredient of the spell on the power branch (provide the number) ?"
-res="66"
+res="22"
 err_str="Too bad! The answer was $res."
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
 
-echo "What is the first ingredient of the spell on the most recent common ancestor of main and power branches (provide the number) ?"
-res="11"
+echo "What is the first ingredient of the spell on the most recent common ancestor of spell and power branches (provide the number) ?"
+res="77"
 err_str="Too bad! The answer was $res."
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
@@ -77,7 +77,7 @@ echo "In this context, if we merge the power branch, will there be a conflict ?"
 echo "1. yes"
 echo "2. no"
 res="1"
-err_str="Too bad! The answer was $res. Indeed, the ingredient of the spell has changed on both power and main branches compared to their most recent ancestor (33,66 vs 11). And those two values are different, git cannot decide which one is the correct one to merge."
+err_str="Too bad! The answer was $res. Indeed, the ingredient of the spell has changed on both power and spell branches compared to their most recent ancestor (33,66 vs 11). And those two values are different, git cannot decide which one is the correct one to merge."
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
 

@@ -24,11 +24,10 @@ _mission_init() {
     return 1
   fi
 
-  . $GSH_TMP/clone.sh &> /dev/null
+  . $GSH_TMP/clone.sh &> /dev/null 
   . $GSH_TMP/co.sh &> /dev/null
   git reset --hard adding_light &> /dev/null
-  git checkout power &> /dev/null
-  git push -d origin power &> /dev/null
+  git checkout -b power 0c522b5 &> /dev/null
   
 }
 _mission_init

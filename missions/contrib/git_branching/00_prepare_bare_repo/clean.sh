@@ -7,4 +7,6 @@
 # assert, check_false, check_true, exit, goto, hard_reset, reset, skip
 # If you need this file, rename it to clean.sh
 
+# back to HOM in order to avoid getcwd error
+cd $GSH_HOME
 rm -rf $GSH_HOME/Castle/Portals/al_jeit

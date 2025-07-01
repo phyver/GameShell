@@ -1,28 +1,26 @@
 Mission goal
 ============
 
-We will merge now those improvements (add_rune and new_ingredient) and contribute also ourself to the spell. But one step after the other, let us inspect the history and the content of each branch.
+We will merge now those improvements (adding_light and adding_earth) and contribute also ourself to the enchantment. But one step after the other, let us inspect first the history and the content of each branch.
 
-Look at the history of the spell:
-a. if we want to merge the new_ingredient branch into main, which kind of merge it is ? a fast-forward merge ? or a real merge ?
-b. if we want to merge the add_rune branch into main, which kind of merge it is ? a fast-forward merge ? or a real merge ?
+Look at the history of the enchantment:
+a. if we want to merge the adding_light branch into spell, which kind of merge it is ? a fast-forward merge ? or a real merge ?
+b. if we want to merge the adding_earth branch into spell, which kind of merge it is ? a fast-forward merge ? or a real merge ?
 
-Look at the the spell version on the different branches:
-c. What is the first ingredient of the spell on the main branch
-d. What is the first ingredient of the spell on the new_ingredient branch
-e. What is the first ingredient of the spell on the add_rune branch
+Look at the the enchantment version on the different branches:
+c. What is the first ingredient of the enchantment on the spell branch
+d. What is the first ingredient of the enchantment on the adding_light branch
+e. What is the first ingredient of the enchantment on the adding_earth branch
 
-Ensure you are on the main branch before answering the questions.
+Look at the arcane book somewhere in the main tower to learn about enchantment structure how to modify them. Then create a branch named power, checkout it, implement the modification and create a commit.
 
-TODO:
-- improve lore
-- rename main branch name into spell
+Ensure your HEAD is on the spell branch before answering the questions.
 
 
 Useful commands
 ===============
 
-To look at the history of a local repository putting one commit per line (--oneline), showing diverging and converging history (--graph) and showing all branches (--branches)
+To look at the history of a local repository putting one commit per line (--oneline), showing diverging and converging history (--graph) and all local branches even if they are not part of the history of the commit pointed by HEAD
 git log --oneline --graph --branches
 
 To put HEAD on a branch and update the working directory:

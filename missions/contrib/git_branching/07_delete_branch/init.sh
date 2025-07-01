@@ -24,5 +24,7 @@ _mission_init() {
     return 1
   fi
   
+  . $GSH_TMP/clone.sh &> /dev/null 
+  git reset --hard db38949 &> /dev/null
 }
 _mission_init

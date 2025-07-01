@@ -1,22 +1,14 @@
 Mission goal
 ============
 
-We will merge now those improvements (add_rune and new_ingredient) and contribute also ourself to the spell. But one step after the other, let us focus for now on merging the new_ingredient improvement.
-
-Look at the history of the spell, which kind of merge it is ? a fast-forward merge ? or a real merge ?
-
 Look at the current content of the spell, make sure you are on the main branch, realise the merge and verify that the portal did modify the spell.
-
-TODO:
-- improve lore
-- rename main branch name into spell
 
 
 Useful commands
 ===============
 
-To look at the history of a local repository putting one commit per line (--oneline) and showing diverging and converging history (--graph)
-git log --oneline --graph
+To look at the history of a local repository putting one commit per line (--oneline), showing diverging and converging history (--graph) and all local branches even if they are not part of the history of the commit pointed by HEAD
+git log --oneline --graph --branches
 
 
 To merge a branch. Ensure you are on the branch you want to merge into and then
