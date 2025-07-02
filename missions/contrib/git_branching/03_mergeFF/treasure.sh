@@ -100,5 +100,5 @@ EOF
 echo -e "${NC}"
 
 # === FIN ===
-echo -e "\n${RED}⚔️  Fight is not over...${NC}"
+echo -e "\n${RED}⚔️  It works ! You managed to launch an attack on the dragon but it just gave him a litlle scratch. Fight is not over...${NC}"
 

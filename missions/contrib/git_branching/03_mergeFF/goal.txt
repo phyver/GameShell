@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-Look at the current content of the spell, make sure you are on the main branch, realise the merge and verify that the portal did modify the spell.
+Look at the current content of the enchantment on the spell branch, realise the merge with the adding_light branch (ensure your HEAD is on the spell branch) and verify that the portal did modify the spell.
 
 
 Useful commands

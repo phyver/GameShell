@@ -137,5 +137,5 @@ EOF
 echo -e "${NC}"
 
 # === FIN ===
-echo -e "\n${RED}⚔️  Fight is not over...${NC}"
+echo -e "\n${RED}⚔️  The enchantment is a bit stronger but still not enough. Fight is not over...${NC}"
 

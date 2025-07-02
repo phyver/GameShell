@@ -3,7 +3,7 @@ Mission goal
 
 Last but not least, merge the contribution you made on branch power. You might end-up in a conflict. 
 
-Ensure you keep your version with the goat hair.
+Ensure you keep your version with the fire mana.
 
 
 Useful commands
@@ -20,11 +20,11 @@ A conflict occurs when git is asked to merge two commits where the same line of 
 In our case, the spell on the power branch has its first line modified and spell on the main branch has also its first line modified.
 
 When a conflict occurs, git modifies the file in the working directoy like this:
-    <<<<<<< HEAD
-    33
-    =======
-    66
-    >>>>>>> power
+     <<<<<<< HEAD
+     30 44
+     =======
+     30 22
+     >>>>>>> power
 
 Between the <<< and the === the version of the branch pointed by HEAD, so in our case the main branch
 Between the === and the >>> the version of power branch
@@ -33,7 +33,7 @@ Git cannot decide which one is the right one, you have to decide if the first ve
 ## How to fix a conflict ?
 
 -   Replace everything between the <<< and the >>> by the correct version
--   git add file
+-   git add FILE_NAME
 -   git commit
 -   Automatic commit message indicating conflict resolution
 

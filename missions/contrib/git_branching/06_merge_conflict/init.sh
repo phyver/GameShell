@@ -26,7 +26,7 @@ _mission_init() {
   
   . $GSH_TMP/clone.sh &> /dev/null 
   . $GSH_TMP/co.sh &> /dev/null
-  git reset --hard adding_light &> /dev/null
+  git reset --hard 00eb22d &> /dev/null
   git branch power 0c522b5 &> /dev/null
   
 }

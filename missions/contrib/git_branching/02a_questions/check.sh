@@ -48,36 +48,36 @@ _mission_check() {
   fi
 
 
-echo "If we want to merge the new_ingredient branch into main, which kind of merge it is ?"
+echo "If we want to merge the adding_light branch into spell, which kind of merge it is ?"
 echo "1. a fast-forward merge"
 echo "2. a real merge"
 res="1"
-err_str="Too bad! The answer was $res. Indeed, it is a fast forward merge as there is a single direct link between the commit of the main branch and the commit pointed by the new_ingredient branch"
+err_str="Too bad! The answer was $res. Indeed, it is a fast forward merge as there is a single direct link between the commit of the spell branch and the commit pointed by the adding_light branch"
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
 
-echo "If we want to merge the add_rune branch into main, which kind of merge it is ?"
+echo "If we want to merge the adding_earth branch into spell, which kind of merge it is ?"
 echo "1. a fast-forward merge"
 echo "2. a real merge"
 res="2"
-err_str="Too bad! The answer was $res. Indeed, it is a real merge because the history has diverged between the main branch and add_rune branch."
+err_str="Too bad! The answer was $res. Indeed, it is a real merge because the history has diverged between the spell branch and adding_earth branch."
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
 
-echo "What is the first ingredient of the spell on the main branch (provide the number) ?"
-res="11"
+echo "What is the first ingredient of the spell on the spell branch (provide the number) ?"
+res="77"
 err_str="Too bad! The answer was $res."
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
 
-echo "What is the first ingredient of the spell on the new_ingredient branch (provide the number) ?"
-res="11"
+echo "What is the first ingredient of the spell on the adding_light branch (provide the number) ?"
+res="77"
 err_str="Too bad! The answer was $res."
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
 
-echo "What is the first ingredient of the spell on the add_rune branch (provide the number) ?"
-res="33"
+echo "What is the first ingredient of the spell on the adding_earth branch (provide the number) ?"
+res="44"
 err_str="Too bad! The answer was $res."
 check_answer "$res" "$err_str"
 if [ $? = "1" ] ; then return 1 ; fi
