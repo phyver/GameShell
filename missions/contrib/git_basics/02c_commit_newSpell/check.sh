@@ -31,7 +31,7 @@ _mission_check() {
 
 test=$(echo $?)
           
-  if [ $test -eq 1 ]
+  if [ $test -eq 0 ]
     then 
       echo " you should not have changes to commit"
       return 1

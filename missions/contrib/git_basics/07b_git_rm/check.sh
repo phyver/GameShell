@@ -16,31 +16,69 @@ _mission_check() {
  if [ ! -e "$GSH_HOME/Castle/Portals/SmallWeels/draft.sh" ]
     then 
       echo " The file  draft.sh does not exist"
-      return 0
     else
     echo " The file  date.sh  should not exist anymore"
     return 1
     fi
 
-  # verifier que le repertoire existe et est un depot git
-   LANG=en_GB  git status | grep -e "up to date with"
+ cd $GSH_HOME/Castle/Portals/SmallWeels/
 
-  if [ ! $? ]
+LANG=en_GB git status | grep -e "Untracked"
+ 
+  test=$(echo $?)
+          
+  if [ $test -eq 0 ]
+    then 
+      echo " you not have untracked file"
+      return 1
+  fi
+  
+
+LANG=en_GB git status | grep -e "modified"
+ 
+  test=$(echo $?)
+          
+  if [ $test -eq 0 ]
+    then 
+      echo " you a modified file"
+      return 1
+  fi
+  
+  
+LANG=en_GB git status | grep -e "deleted"
+ 
+  test=$(echo $?)
+          
+  if [ $test -eq 0 ]
+    then 
+      echo " you a deleted file: use git rm"
+      return 1
+  fi
+  
+  
+
+    LANG=en_GB git status | grep -e "up to date with"
+test=$(echo $?)
+          
+  if [ $test -eq 1 ]
     then 
       echo " You did not pushed all of your modifications"
       return 1
     else
-        git status | grep -e "nothing to commit"
-        test=$(echo $?)
-          if [ ! $test ]
-            then 
-               echo " You did not commited all of your modifications"
-           return 1
-          else 
+      cd $GSH_HOME/Castle/Portals/SmallWeels/
+
+       LANG=en_GB git status | grep -e "Changes to be committed:"
+       test=$(echo $?)
+      
+       if [ $test -eq 0 ]
+          then 
+            echo " You did not commited all of your modifications"
+            return 1
+         else 
            echo " You did pushed all of your modifications"
-         return 0 
-         fi
+           return 0 
+       fi
     fi
-   
+     
 }
 _mission_check

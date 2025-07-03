@@ -24,8 +24,10 @@ _mission_check() {
 
   # verifier que le repertoire existe et est un depot git
    LANG=en_GB git status | grep -e "Untracked"
-
-  if [ ! $? ]
+ 
+  test=$(echo $?)
+          
+  if [ $test -eq 1 ]
     then 
       echo " you should have some untracked file"
       return 1
