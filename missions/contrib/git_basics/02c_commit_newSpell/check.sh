@@ -22,11 +22,16 @@ _mission_check() {
   cd $GSH_HOME/Castle/Portals/SmallWeels/
 
   # verifier que le repertoire existe et est un depot git
-   LANG=en_GB git status | grep -e "nothing to commit"
+#    LANG=en_GB git status | grep -e "nothing to commit"
+  cd $GSH_HOME/Castle/Portals/SmallWeels/
+
+  # verifier que le repertoire existe et est un depot git
+#    LANG=en_GB git status | grep -e "nothing to commit"
+       LANG=en_GB git status | grep -e "Changes to be committed:"
 
 test=$(echo $?)
           
-  if [ ! $test ]
+  if [ $test -eq 1 ]
     then 
       echo " you should not have changes to commit"
       return 1
@@ -34,8 +39,9 @@ test=$(echo $?)
      LANG=en_GB git status 
      
      LANG=en_GB git status | grep -e "Your branch is ahead of"
-     echo $?
-     if [ ! $? ]
+     test=$(echo $?)
+          
+     if [ $test -eq 1 ]
         then
         
          echo " you should have changes to push"

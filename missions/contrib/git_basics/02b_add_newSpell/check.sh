@@ -24,7 +24,9 @@ _mission_check() {
   cd $GSH_HOME/Castle/Portals/SmallWeels/
    LANG=en_GB git status | grep -e "new file:   date.sh"
 
-  if [ $? ]
+test=$(echo $?)
+          
+  if [ $test -eq 0 ]
     then 
       echo " date.sh is a new tracked file"
       return 0

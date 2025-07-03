@@ -13,25 +13,27 @@
 _mission_check() {
   cd $GSH_HOME/Castle/Portals/SmallWeels/
 
-  # verifier que le repertoire existe et est un depot git
-   LANG=en_GB git status | grep -e "up to date with"
+    LANG=en_GB git status | grep -e "up to date with"
 test=$(echo $?)
           
-  if [ ! $test ]
+  if [ $test -eq 1 ]
     then 
       echo " You did not pushed all of your modifications"
       return 1
     else
-       LANG=en_GB git status | grep -e "nothing to commit"
-        test=$(echo $?)
-          if [ ! $test ]
-            then 
-               echo " You did not commited all of your modifications"
-           return 1
-          else 
+      cd $GSH_HOME/Castle/Portals/SmallWeels/
+
+       LANG=en_GB git status | grep -e "Changes to be committed:"
+       test=$(echo $?)
+      
+       if [ $test -eq 0 ]
+          then 
+            echo " You did not commited all of your modifications"
+            return 1
+         else 
            echo " You did pushed all of your modifications"
-         return 0 
-         fi
+           return 0 
+       fi
     fi
    
 }
