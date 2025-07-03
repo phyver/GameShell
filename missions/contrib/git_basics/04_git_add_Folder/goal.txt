@@ -1,0 +1,25 @@
+Mission goal
+============
+
+
+Congratulations on writing your second spell.
+
+It might be usefull to regroup spells in chapters in your book.
+
+Create an chapter without any spell.
+
+
+Useful commands
+===============
+mkdir Chapter_1
+
+git add Folder : 
+
+start trackin "Folder" and its content
+
+git commit -m "add Folder"
+
+
+git push
+
+

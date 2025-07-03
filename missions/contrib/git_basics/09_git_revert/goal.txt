@@ -1,0 +1,27 @@
+Mission goal
+============
+
+Remove the depository "test_fold" which you created at the previous mission
+
+
+
+
+Useful commands
+===============
+
+git rm -r Folder
+
+remove the depository "Folder" and its content from the local git repo
+
+git commit -m "remove Folder"
+
+no need for a list of files when adding a repo
+
+git push
+
+
+You can also you the following commands
+
+git log
+
+

@@ -1,0 +1,50 @@
+Mission goal
+============
+
+
+Congratulation on getting your first spellbook.
+
+
+But what is a spell book without a spell ?
+
+For your first synchronisation, we will go throught a step by step process.
+
+
+Grab your favorite pen, and write a spell which gives today's date and the current time when casted.
+
+
+Then have a look at the synchronisation state of your local book.
+
+
+Useful commands
+===============
+===============
+you need to create file named "date.sh"
+
+nano file.txt : opens a file with an editor
+
+
+date : gives the current time and day.
+
+source spell1.sh   : run the script spell1.sh 
+
+
+git log: show the the history of commit
+
+git status: show the state of your local folder 
+
+git diff : show the difference between your folder and the repository
+
+NB
+===============
+
+
+Do not add, commit or push the new file.
+
+you might be asked to create a token through github you can acces the documentation using:
+
+firefox https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+
+
+
+

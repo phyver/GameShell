@@ -1,0 +1,21 @@
+Mission goal
+============
+
+
+
+That's it, your spell is ready for synchronisation.
+
+
+
+
+
+Useful commands
+===============
+git push
+
+
+git status
+
+
+
+

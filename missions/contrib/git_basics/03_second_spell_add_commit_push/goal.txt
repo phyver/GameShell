@@ -1,0 +1,41 @@
+Mission goal
+============
+
+
+
+You now have a good idea of the synchronisation process.
+
+
+But has a future world known mage, some technicalities of that process will be usefull to you.
+
+
+Create a second spell wich tells to remind you of an old thuth:
+
+"There is no spoon"
+
+
+Apply the full synchronisation process to your new spell.
+
+
+
+
+
+Useful commands
+===============
+you need to create file named "truth.sh"
+
+
+nano file.txt : opens a file with an editor
+
+
+source spell2.sh   : run the script spell2.sh 
+
+echo "Some Message" : print "Some Message" in the shell
+
+
+git add script.sh : add 'script.sh' to the list of tracked files  
+
+git commit -m " ...." : commit the stagged modifications 
+
+git push 
+

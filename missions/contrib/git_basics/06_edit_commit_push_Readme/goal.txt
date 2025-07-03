@@ -1,0 +1,33 @@
+Mission goal
+============
+
+
+The front page of a SpellBook is important for magicians.
+
+It usually gives imformations on the content of the SpellBook, and how to use it.
+
+Edit the front page (README.MD), and add a brief description of the first spell.
+
+Then synchronise your spellbook woth the library
+
+
+Useful commands
+===============
+
+
+gedit file.txt
+vi file.txt
+
+when modifying a file you need to perform a specific commit for this file:
+git commit -m "modify test file" file.txt
+
+git push
+
+
+You can also use the following commands
+
+git log
+
+
+git status
+

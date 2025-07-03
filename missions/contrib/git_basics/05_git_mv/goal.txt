@@ -1,0 +1,26 @@
+Mission goal
+============
+
+Move your two spells into the first chapter.
+
+This can be done along with a stagged synchronisation.
+
+
+Useful commands
+===============
+
+git mv spell.sh Folder/
+
+git status
+
+
+
+git commit -m "moving spell into Chapter_1"
+
+
+
+git push
+
+
+
+

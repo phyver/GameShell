@@ -1,0 +1,26 @@
+Mission goal
+============
+
+My bad, you do not need to track the draft of this spell.
+
+But fortunately, you can delete it from your spellbook.
+
+
+
+
+
+Useful commands
+===============
+
+git rm file : remove the file 
+
+
+
+git commit -m "remove file"
+
+
+git push
+
+
+
+

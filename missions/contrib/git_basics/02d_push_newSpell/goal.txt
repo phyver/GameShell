@@ -1,0 +1,25 @@
+Mission goal
+============
+
+
+
+That's it, your spell is ready for synchronisation.
+
+
+Now push everything through the portal system.
+
+And have a look again at the state of the synchronisation
+
+Useful commands
+===============
+git push
+
+
+git status
+
+
+git diff
+
+git log
+
+
