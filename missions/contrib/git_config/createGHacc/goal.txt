@@ -6,9 +6,8 @@ Some spellBook are accessible to anybody, but some require the approriate spellB
 To proceed with the next step of the training session, you need to create your first spellBook card.
 
 
-
-------------
-
+Remarks
+============
  
 If you are going to work with github:
 
@@ -24,14 +23,12 @@ the url for github is: https://github.com/
 the documentation on creating a github depository is here: https://docs.github.com
 
 
-------------
 
-usefull commands
+Usefull commands
+================
 
 you can open a new tab using:
 
 firefox URL
 
-evince doc.pdf
 
-NB: a few pdf files with screenshots can be found within the depository cloned in the first mission.

@@ -1,0 +1,23 @@
+Mission goal
+============
+
+Indeed, the spell is now tracked but not synchronised yet. 
+
+Before synchronisation, you need to give a version of your spell to your local antena of the portal system. 
+
+
+
+Useful commands
+===============
+git commit -m 'Create a new spell' : will create a snaphot of your file.
+
+
+git status
+
+
+
+
+NB
+===============
+
+Do not add, commit or push the new file.

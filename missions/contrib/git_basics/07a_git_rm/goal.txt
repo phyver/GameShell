@@ -1,0 +1,27 @@
+Mission goal
+============
+
+
+Ok Now we will work on a third spell before moving to collaborative spellwritting.
+
+
+Again write the new spell on a draft and synchronise it with the library.
+
+
+Useful commands
+===============
+
+touch draft.sh
+
+
+git add
+
+
+git commit 
+
+
+git push
+
+
+
+

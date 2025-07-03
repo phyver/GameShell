@@ -1,0 +1,15 @@
+Mission goal
+============
+
+
+
+git commit -m "Actually seems legit"
+
+==> this will commit all the staged modifications.
+
+==> git push
+
+
+Useful commands
+===============
+

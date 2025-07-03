@@ -1,10 +1,11 @@
-create_newrepo
-add_newSpell
-git_edit_commit_push
-git_add_Folder
-git_mv
-git_rm
-git_log
-
-
+01_create_newrepo
+02a_create_newSpell
+02b_add_newSpell
+02c_commit_newSpell
+02d_push_newSpell
+03_second_spell_add_commit_push
+05_git_mv
+06_edit_commit_push_Readme
+07a_git_rm
+07b_git_rm
 

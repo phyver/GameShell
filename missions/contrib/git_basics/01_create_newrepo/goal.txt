@@ -1,0 +1,33 @@
+Mission goal
+============
+
+The emmissary needs to leave for an other castle, and gives you a few intructions from the magic council to lean the rest by yourself. 
+
+
+According to the Head of the Magic Concil, some spellbooks have been altered in the past, due to avoidable mistakes. 
+
+Hence, before using the magical libraries of the community, the council asks you to practice the devellopemnt of a a set to spellbooks by yourself.
+
+
+
+
+
+You need to create a repository on github for training purpose only.
+
+On creation you can create a "README" file. We suggest you to do that
+
+
+Then clone it into the portal Room in a depository called "SmallWeels"
+
+
+Useful commands
+===============
+
+git clone https://github.com/MyLogin/MyTrainingdepository.git ./SmallWeels
+
+
+
+Remarks
+===============
+
+you will need to create a token for github at that stage, github's documentation explains this.

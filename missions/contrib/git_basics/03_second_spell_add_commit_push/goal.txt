@@ -1,0 +1,47 @@
+Mission goal
+============
+
+
+
+You now have a good idea of the synchronisation process.
+
+
+It might be usefull to regroup spells in chapters in your book.
+
+Create a first chapter.
+
+
+
+Then create a spell in this chapter wich reminds you of an old thuth:
+
+"There is no spoon"
+
+
+Apply the full synchronisation process to your new chapter and its content.
+
+
+
+
+
+Useful commands
+===============
+you need to create file named "truth.sh"
+
+
+nano file.txt : opens a file with an editor
+
+
+source spell2.sh   : run the script spell2.sh 
+
+echo "Some Message" : print "Some Message" in the shell
+
+mkdir Chapter_1
+
+git add Folder : 
+
+start tracking "Folder" and its content. It can be used to stagged all the modifications in that folder
+
+git commit -m " ...." : commit the stagged modifications 
+
+git push 
+

@@ -1,0 +1,29 @@
+Mission goal
+============
+
+So as you can see, the new spell is not being tracked by the portal system yet.
+
+
+But what happens if you add it to the list of tracked files ?
+
+
+
+Useful commands
+===============
+
+
+git add file
+
+git status
+
+git log
+
+git diff
+
+
+
+NB
+===============
+
+Do not commit or push the file.
+

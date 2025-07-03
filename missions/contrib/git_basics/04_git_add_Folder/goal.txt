@@ -1,0 +1,30 @@
+Mission goal
+============
+
+
+Congratulations on writing your second spell.
+
+It might be usefull to regroup spells in chapters in your book.
+
+Create an chapter and move your first spell inside the chapter.
+
+
+
+Useful commands
+===============
+mkdir Chapter_1
+
+git add Folder : 
+
+start trackin "Folder" and its content
+
+
+
+git mv date.sh Chapter_1/ : change the tracking location of date.sh
+
+git commit -m "add Folder"
+
+
+git push
+
+
