@@ -12,7 +12,7 @@
 
 _mission_check() {
 
- if [ ! -e "$GSH_HOME/Castle/Portals/SmallWeels/Chatper_1/date.sh" ]
+ if [ ! -e "$GSH_HOME/Castle/Portals/SmallWeels/Chapter_1/date.sh" ]
     then 
       echo " The file  date.sh is not in Chapter_1"
       return 1
@@ -20,7 +20,7 @@ _mission_check() {
     echo " The file  date.sh  is in Chapter_1"
     fi
     
- if [ ! -e "$GSH_HOME/Castle/Portals/SmallWeels/Chatper_1/truth.sh" ]
+ if [ ! -e "$GSH_HOME/Castle/Portals/SmallWeels/Chapter_1/truth.sh" ]
     then 
       echo " The file  truth.sh is not in Chapter_1"
       return 1

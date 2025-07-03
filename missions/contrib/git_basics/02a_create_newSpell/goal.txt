@@ -4,22 +4,18 @@ Mission goal
 
 Congratulation on getting your first spellbook.
 
-
 But what is a spell book without a spell ?
 
 For your first synchronisation, we will go throught a step by step process.
 
-
 Grab your favorite pen, and write a spell which gives today's date and the current time when casted.
-
 
 Then have a look at the synchronisation state of your local book.
 
 
 Useful commands
 ===============
-===============
-you need to create file named "date.sh"
+You need to create file named "date.sh"
 
 nano file.txt : opens a file with an editor
 
@@ -37,7 +33,6 @@ git diff : show the difference between your folder and the repository
 
 NB
 ===============
-
 
 Do not add, commit or push the new file.
 

@@ -21,12 +21,12 @@ _mission_check() {
     fi
 
   # verifier que le repertoire existe et est un depot git
-   LANG=en_GB git status | grep -e "Changes to be committed:"
+   LANG=en_GB git status | grep -e "nothing to commit"
 
-  if [ $? ]
+  if [ ! $? ]
     then 
       echo " you should not have changes to commit"
-      return 1
+      return 0
     else
     
      LANG=en_GB git status | grep -e "up to date with"

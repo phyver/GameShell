@@ -28,17 +28,17 @@ _mission_check() {
     then 
       echo " you should have some untracked file"
       return 1
-    else
-        git status | grep -e "nothing to commit"
-        test=$(echo $?)
-          if [ ! $test ]
-            then 
-               echo " Good, you did not commited your modifications"
-           return 0
-          else 
-           echo " You should not have commited your modifications"
-         return 1 
-         fi
+#     else
+#         git status | grep -e "nothing to commit"
+#         test=$(echo $?)
+#           if [ ! $test ]
+#             then 
+#                echo " Good, you did not commited your modifications"
+#            return 0
+#           else 
+#            echo " You should not have commited your modifications"
+#          return 1 
+#          fi
     fi
    
 

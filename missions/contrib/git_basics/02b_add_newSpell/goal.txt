@@ -8,15 +8,11 @@ But what happens if you add it to the list of tracked files ?
 
 
 
-
 Useful commands
 ===============
 
 
 git add file
-
-
-
 
 git status
 

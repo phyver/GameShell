@@ -27,12 +27,7 @@ git clone https://github.com/MyLogin/MyTrainingdepository.git ./SmallWeels
 
 
 
-
-
-
 Remarks
--------
+===============
 
-NB: This mission under implementation, and a few pdf files with screenshots will added to the depository cloned in the previous mission in due time. For Now, the tutor can help you with this step if need be.
-
-NB2: you will need to create a token for github at that stage, github's documentation explains this.
+you will need to create a token for github at that stage, github's documentation explains this.
