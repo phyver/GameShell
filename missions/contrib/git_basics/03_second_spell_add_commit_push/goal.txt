@@ -39,7 +39,7 @@ mkdir Chapter_1
 
 git add Folder : 
 
-start tracking "Folder" and its content
+start tracking "Folder" and its content. It can be used to stagged all the modifications in that folder
 
 git commit -m " ...." : commit the stagged modifications 
 

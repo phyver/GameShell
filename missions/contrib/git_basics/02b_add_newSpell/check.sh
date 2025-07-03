@@ -21,17 +21,17 @@ _mission_check() {
     fi
 
   # verifier que le repertoire existe et est un depot git
-   LANG=en_GB git status | grep -e "Untracked"
+  cd $GSH_HOME/Castle/Portals/SmallWeels/
+   LANG=en_GB git status | grep -e "new file:   date.sh"
 
   if [ $? ]
     then 
-      echo " you should not have Untracked files"
-      return 1
-    else
-     LANG=en_GB git status | grep -e "Untracked"
-
-     echo " all good"
+      echo " date.sh is a new tracked file"
       return 0
+    else
+
+     echo " date.sh is not a new tracked file"
+      return 1
     
 #         git status | grep -e "nothing to commit"
 #         test=$(echo $?)

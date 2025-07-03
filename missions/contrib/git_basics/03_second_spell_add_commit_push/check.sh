@@ -33,7 +33,9 @@ _mission_check() {
   # verifier que le repertoire existe et est un depot git
   LANG=en_GB git status | grep -e "up to date with"
 
-  if [ ! $? ]
+test=$(echo $?)
+          
+  if [ ! $test ]
     then 
       echo " You did not pushed all of your modifications"
       return 1

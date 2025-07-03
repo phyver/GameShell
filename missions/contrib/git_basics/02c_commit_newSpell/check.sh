@@ -19,11 +19,14 @@ _mission_check() {
     else
     echo " The file  date.sh  exist"
     fi
+  cd $GSH_HOME/Castle/Portals/SmallWeels/
 
   # verifier que le repertoire existe et est un depot git
    LANG=en_GB git status | grep -e "nothing to commit"
 
-  if [ ! $? ]
+test=$(echo $?)
+          
+  if [ ! $test ]
     then 
       echo " you should not have changes to commit"
       return 1
