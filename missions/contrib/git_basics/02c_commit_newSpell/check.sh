@@ -29,8 +29,8 @@ _mission_check() {
       return 0
     else
     
-     LANG=en_GB git status | grep -e "up to date with"
-     if [ $? ]
+     LANG=en_GB git status | grep -e "Your branch is ahead of 'origin/main' by 1 commit"
+     if [ ! $? ]
         then
         
          echo " you should have changes to push"
