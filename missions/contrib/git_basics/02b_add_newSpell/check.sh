@@ -21,13 +21,15 @@ _mission_check() {
     fi
 
   # verifier que le repertoire existe et est un depot git
-   LANG=en_GB git status | grep -e "Changes to be committed:"
+   LANG=en_GB git status | grep -e "Untracked"
 
-  if [ ! $? ]
+  if [ $? ]
     then 
-      echo " you should have changes to commit"
+      echo " you should not have Untracked files"
       return 1
     else
+     LANG=en_GB git status | grep -e "Untracked"
+
      echo " all good"
       return 0
     
