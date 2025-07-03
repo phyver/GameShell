@@ -14,7 +14,15 @@ _mission_check() {
 
 
 
- if [ ! -e "$GSH_HOME/Castle/Portals/SmallWeels/truth.sh" ]
+ if [ ! -e "$GSH_HOME/Castle/Portals/SmallWeels/Chapter_1" ]
+    then 
+      echo " The Chapter_1 doesn't exist"
+      return 1
+    else
+    echo " The Chapter_1  exist"
+    fi
+
+ if [ ! -e "$GSH_HOME/Castle/Portals/SmallWeels/Chapter_1/truth.sh" ]
     then 
       echo " The file  truth.sh doesn't exist"
       return 1

@@ -6,15 +6,18 @@ Mission goal
 You now have a good idea of the synchronisation process.
 
 
-But has a future world known mage, some technicalities of that process will be usefull to you.
+It might be usefull to regroup spells in chapters in your book.
+
+Create a first chapter.
 
 
-Create a second spell wich tells to remind you of an old thuth:
+
+Then create a spell in this chapter wich reminds you of an old thuth:
 
 "There is no spoon"
 
 
-Apply the full synchronisation process to your new spell.
+Apply the full synchronisation process to your new chapter and its content.
 
 
 
@@ -32,8 +35,11 @@ source spell2.sh   : run the script spell2.sh
 
 echo "Some Message" : print "Some Message" in the shell
 
+mkdir Chapter_1
 
-git add script.sh : add 'script.sh' to the list of tracked files  
+git add Folder : 
+
+start tracking "Folder" and its content
 
 git commit -m " ...." : commit the stagged modifications 
 

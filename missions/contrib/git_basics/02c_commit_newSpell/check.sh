@@ -26,10 +26,12 @@ _mission_check() {
   if [ ! $? ]
     then 
       echo " you should not have changes to commit"
-      return 0
+      return 1
     else
-    
-     LANG=en_GB git status | grep -e "Your branch is ahead of 'origin/main' by 1 commit"
+     LANG=en_GB git status 
+     
+     LANG=en_GB git status | grep -e "Your branch is ahead of"
+     echo $?
      if [ ! $? ]
         then
         

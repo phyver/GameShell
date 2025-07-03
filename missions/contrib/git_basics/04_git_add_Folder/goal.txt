@@ -18,6 +18,8 @@ git add Folder :
 
 start trackin "Folder" and its content
 
+
+
 git mv date.sh Chapter_1/ : change the tracking location of date.sh
 
 git commit -m "add Folder"
