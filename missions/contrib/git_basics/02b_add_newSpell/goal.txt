@@ -1,24 +1,21 @@
 Mission goal
 ============
 
-So as you can see, the new spell is not being tracked by the portal system yet.
+So as you can see with `git status`, the new spell is not being tracked by the portal system yet.
 
 
-But what happens if you add it to the list of tracked files ?
-
+Add the file to the staging area and check what is the output of `git status` now
 
 
 Useful commands
 ===============
 
+To add a file or modifications of a file to the staging area
+git add FILE_NAME
 
-git add file
 
-git status
-
-git log
-
-git diff
+To show the state of your local repository, staging area and working directory
+git status 
 
 
 

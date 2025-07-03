@@ -3,22 +3,25 @@ Mission goal
 
 Indeed, the spell is now tracked but not synchronised yet. 
 
-Before synchronisation, you need to give a version of your spell to your local antena of the portal system. 
+Before synchronisation, you need to create a version of your spell to your local antena of the portal system. 
 
 Have a look at the state of the synchronisation again
 
 Useful commands
 ===============
-git commit -m 'Create a new spell' : will create a snaphot of for all the stagged modifications in your folder.
+
+To create a snaphot of for all the staged modifications as new version
+git commit -m 'COMMIT_MESSAGE'
 
 
-git status
+To show the the history of the whole repository
+git log 
 
-git log
+To show the state of your local repository, staging area and working directory
+git status 
 
+To show the difference between your working directory and the laste version in the repository (in 99% of the time, to be precise the comparison is made with the version pointed by HEAD)
 git diff
-
-
 
 
 NB

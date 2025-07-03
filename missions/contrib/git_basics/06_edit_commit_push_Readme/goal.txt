@@ -4,7 +4,7 @@ Mission goal
 
 The front page of a SpellBook is important for magicians.
 
-It usually gives imformations on the content of the SpellBook, and how to use it.
+It usually gives informations on the content of the SpellBook, and how to use it.
 
 Edit the front page (README.MD), and add a brief description of the first spell.
 

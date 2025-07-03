@@ -1,26 +1,17 @@
 Mission goal
 ============
 
-
-
 You now have a good idea of the synchronisation process.
 
 
 It might be usefull to regroup spells in chapters in your book.
 
-Create a first chapter.
+Create a first chapter (a directory) `Chapter_1`. Then create a spell "truth.sh" in this chapter which reminds you of an old thuth: "There is no spoon"
 
-
-
-Then create a spell in this chapter wich reminds you of an old thuth:
-
-"There is no spoon"
-
+TODO:
+- not sure it is a good idea to ask the students to write a shell script... To be discussed
 
 Apply the full synchronisation process to your new chapter and its content.
-
-
-
 
 
 Useful commands

@@ -6,7 +6,9 @@ Congratulation on getting your first spellbook.
 
 But what is a spell book without a spell ?
 
-For your first synchronisation, we will go throught a step by step process.
+For your first synchronisation, we will go through a step by step process.
+
+First, step into your spellbook (change directory)
 
 Grab your favorite pen, and write a spell which gives today's date and the current time when casted.
 
@@ -15,21 +17,24 @@ Then have a look at the synchronisation state of your local book.
 
 Useful commands
 ===============
-You need to create file named "date.sh"
+You need to create file named "date.sh" in your spellbook, so in the SmallWeels directory. For this, use your favourite text editor. If you do not have one, you can use gedit.
+To open a file with an editor
+gedit FILE_NAME
 
-nano file.txt : opens a file with an editor
+To print the current time and day
+date
 
+To Run the script SCRIPT_NAME
+source SCRIPT_NAME 
 
-date : gives the current time and day.
+To show the the history of the whole repository
+git log 
 
-source spell1.sh   : run the script spell1.sh 
+To show the state of your local repository, staging area and working directory
+git status 
 
-
-git log: show the the history of commit
-
-git status: show the state of your local folder 
-
-git diff : show the difference between your folder and the repository
+To show the difference between your working directory and the laste version in the repository (in 99% of the time, to be precise the comparison is made with the version pointed by HEAD)
+git diff
 
 NB
 ===============

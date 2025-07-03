@@ -6,7 +6,7 @@ The emmissary needs to leave for an other castle, and gives you a few intruction
 
 According to the Head of the Magic Concil, some spellbooks have been altered in the past, due to avoidable mistakes. 
 
-Hence, before using the magical libraries of the community, the council asks you to practice the devellopemnt of a a set to spellbooks by yourself.
+Hence, before using the magical libraries of the community, the council asks you to practice the development of a a set to spellbooks by yourself.
 
 
 
@@ -17,7 +17,7 @@ You need to create a repository on github for training purpose only.
 On creation you can create a "README" file. We suggest you to do that
 
 
-Then clone it into the portal Room in a depository called "SmallWeels"
+Then clone it into the portal Room of the Castle in a repository called "SmallWeels"
 
 
 Useful commands
