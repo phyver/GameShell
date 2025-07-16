@@ -10,8 +10,8 @@ Decriptalo facendo una ricerca completa dalla linea di comando.
 Suggerimento
 ----
 
-Tutti i messaggi segreti sono stati trovati con uno spostamento 
-di 10 e 16 caratteri.
+Tutti gli altri messaggi segreti rinvenuti utilizzavano uno
+scostamento compreso tra 10 e 16 caratteri.
 
 
 Comandi utili

@@ -57,7 +57,7 @@ msgid "There is no diamond in your chest."
 msgstr "Non ci sono diamanti nella cassa!"
 
 msgid "diamond"
-msgstr "diamonte"
+msgstr "diamante"
 
 msgid "stone"
 msgstr "pietra"
