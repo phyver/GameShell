@@ -1,5 +1,5 @@
 # default Gameshell missions order
-
+  lvm/default.idx
   basic/default.idx
   misc/01_cal_nostradamus
   intermediate/01_alias_la

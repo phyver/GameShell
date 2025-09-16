@@ -1,0 +1,48 @@
+Objectif
+========
+Aux confins du royaume, les cartographes géo-mantiens ont découvert deux vastes 
+territoires éthérés : des terres présentes dans la couche éthérique, visibles 
+sur leurs cartes mystiques, mais qui ne se sont pas encore matérialisées dans 
+le monde physique.  
+
+Ces nouveaux territoires se trouvent dans un plan appelé **Domain of Etheric Vastlands (dev)** et portent les noms de **Esdea** et **Esdebe** (noms de code **sda** et **sdb**).  
+
+Le Roi Aegir veut absolument être le premier à les conquérir, avant que les 
+royaumes voisins ne mettent la main dessus.  
+
+Pour atteindre cet objectif, il a créé une nouvelle administration royale, la 
+**LVM (Lands & Villages Management)**. Elle réunit explorateurs, géo-mantiens 
+et personnel administratif, avec pour mission de matérialiser, conquérir et 
+administrer ces nouvelles terres.  
+
+Bien entendu, les explorateurs sont trop occupés dans les tavernes, les 
+géo-mantiens à se quereller sur des questions de géo-magie, et les scribes 
+administratifs à rédiger des comptes rendus de réunions préparatoires.  
+C’est donc à vous, pauvre stagiaire, que revient tout le travail !  
+
+Avant toute exploration, vous devez incarner ces territoires éthérés en terres physiques exploitables par la LVM, que les géo-mantiens, dans leur jargon mystérieux, nomment des **PV (Physical Volumes)**.
+
+
+/!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ 
+  
+  ATTENTION !
+  
+  Cette série de missions vous amène à réaliser des actions nécessitant des droits administrateur (root).
+  Pour pouvoir réaliser une action en tant qu'administrateur vous devez faire précéder votre commande de "danger sudo".
+
+  Example, pour lister les fichiers du répertoire en tant qu'admin :
+    $ danger sudo ls -alh
+
+  Faites bien attention avant d'effectuer une commande dangereuse et assurez vous toujours de travaillez 
+  sur le répertoire "dev" à l'intérieur du jeu, jamais sur le "/dev" de votre machine !
+
+/!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ 
+
+Commandes utiles
+================
+pvcreate
+    Consultez le manuel de `pvcreate` pour savoir comment créer un Volume 
+    Physique dans LVM.
+
+pvs
+    Vous permet d'avoir des infos sur les Volumes Physiques
