@@ -9,12 +9,23 @@ DISK_2_PATH="$MISSION_DIR/data/disk2.img"
 dd if=/dev/zero of="$DISK_1_PATH" bs=1M count=100
 dd if=/dev/zero of="$DISK_2_PATH" bs=1M count=100
 
-# 2. Attacher les fichiers images à des périphériques loop
-LOOP1=$(sudo losetup --find --show "$DISK_1_PATH")
-LOOP2=$(sudo losetup --find --show "$DISK_2_PATH")
+# 2. Attacher les fichiers images à des périphériques loop si pas encore fait
+if ! losetup -j "$DISK_1_PATH" | grep -q "$DISK_1_PATH"; then
+    echo "⏳ Attaching $DISK_1_PATH to a loop device..."
+    LOOP1=$(sudo losetup --find --show "$DISK_1_PATH")
+else
+    LOOP1=$(losetup -j "$DISK_1_PATH" | cut -d: -f1)
+fi
 
-echo "Disk1 attached to $LOOP1"
-echo "Disk2 attached to $LOOP2"
+if ! losetup -j "$DISK_2_PATH" | grep -q "$DISK_2_PATH"; then
+    echo "⏳ Attaching $DISK_2_PATH to a loop device..."
+    LOOP2=$(sudo losetup --find --show "$DISK_2_PATH")
+else
+    LOOP2=$(losetup -j "$DISK_2_PATH" | cut -d: -f1)
+fi
+
+echo "$DISK_1_PATH attached to $LOOP1"
+echo "$DISK_2_PATH attached to $LOOP2"
 
 # 3. Créer les alias dans /dev
 sudo ln -sf "$LOOP1" /dev/gsh_lvm_loop1
