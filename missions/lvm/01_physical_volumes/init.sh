@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 
 _mission_init() (
+
+  mkdir -p "$GSH_HOME/dev"
+
   if ! [ -e "$MISSION_DIR/../00_shared/" ]
   then
     DUMMY_MISSION=$(missionname "$MISSION_DIR/../00_shared/")

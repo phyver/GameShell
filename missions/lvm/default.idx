@@ -1,2 +1,4 @@
 !00_shared
 01_physical_volumes
+02_volumes_group
+03_logical_volumes
