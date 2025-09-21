@@ -35,7 +35,7 @@ Commandes utiles
 ================
 lvchange -an
     Désactiver un volume logique
-    
+
 lvremove
     Supprimer un volume logique
 

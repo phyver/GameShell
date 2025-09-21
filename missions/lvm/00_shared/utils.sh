@@ -64,7 +64,7 @@ lvm_init() {
     ln -sf "$LOOP2_PATH" "$SDBB"
 
     # For mission 08, we need a third disk
-    if [ "$MISSION_ID" -ge "08" ]; then
+    if [ "$MISSION_ID" -ge "08" ] && [ "$MISSION_ID" -lt "13" ]; then
         echo "Preparing third disk for world/dev..."
 
         DISK_3_PATH="$DATA_PATH/disk3.img"
@@ -105,6 +105,15 @@ lvm_init() {
         echo "Activating esdece VG..."
         danger sudo vgimport -y esdece
         danger sudo vgchange -ay esdece
+    fi
+
+    # if usa VG exists activate it
+    if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "usa"; then
+        if [ "$MISSION_ID" != "14" ]; then
+            echo "Activating usa VG..."
+            danger sudo vgimport -y usa
+            danger sudo vgchange -ay usa
+        fi
     fi
 
     # For missions after 05, Mount villages if possible
@@ -188,6 +197,12 @@ lvm_cleanup() {
         purge_vg "esdece"
     fi
 
+    # If vgs usa exist, purge it
+    echo "Cleaning up LVM configurations... usa"
+    if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "usa"; then
+        purge_vg "usa"
+    fi
+
     # Cleanup loop devices and disk images if needed
     echo "Cleaning up loop devices and disk images..."
 
@@ -221,6 +236,9 @@ lvm_cleanup() {
 
     # Remove disk images
     rm -f "$DATA_PATH/disk*.img"
+
+    # Detach all unused loop devices (if any)
+    danger sudo losetup -D
 
     return 0
 }
@@ -270,6 +288,9 @@ unmounting_villages() {
         "$GSH_HOME/Esdea/Ouskelcoule"
         "$GSH_HOME/Esdea/Douskelpar"
         "$GSH_HOME/Esdebe/Grandflac"
+        "$GSH_HOME/USA/Ouskelcoule"
+        "$GSH_HOME/USA/Douskelpar"
+        "$GSH_HOME/USA/Grandflac"
     )
 
     for MOUNT_POINT in "${MOUNT_POINTS[@]}"; do

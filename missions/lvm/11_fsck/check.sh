@@ -3,27 +3,18 @@
 source "$MISSION_DIR/../00_shared/utils.sh"
 
 _mission_check() (
-    # Check /dev/esdebe/oljoliptichaaah is removed
-    if sudo lvdisplay /dev/esdebe/oljoliptichaaah >/dev/null 2>&1; then
-        echo "$(eval_gettext "Vous devez supprimer le village d'Oljoliptichaaah de la province d'Esdebe.")"
+    if ! danger sudo e2fsck -n /dev/esdea/douskelpar >/dev/null 2>&1; then
+        echo "Aidez à réparer le village d'Ouskelpar..."
         return 1
     fi
 
-    # Check esdebe VG have been reduced
-    PV_COUNT=$(sudo vgdisplay esdebe | grep "PV Count" | awk '{print $3}')
-    if [ "$PV_COUNT" -ne 1 ]; then
-        echo "$(eval_gettext "Vous devez séparer la province d'Esdebe et d'Esdece.")"
+    if [ ! -e "$GSH_HOME/Esdea/Douskelpar/Maison Commune/population.txt" ] ||\
+     [ ! -e "$GSH_HOME/Esdea/Douskelpar/Maison Commune/registre_decisions.txt" ] ||\
+     [ ! -e "$GSH_HOME/Esdea/Douskelpar/Maison Commune/registre_proprietes.txt" ]; then
+        echo "Il semblerait que des fichiers administratifs importants pour la gestion du village soient manquants..."
+        echo "Vous pouvez probablement les retrouver en restaurant mieux le village."
         return 1
     fi
-
-    # Check $GSH_HOME/dev/sdc is no longer a physical volume
-    if sudo pvdisplay "$GSH_HOME/dev/sdc" >/dev/null 2>&1; then
-        echo "$(eval_gettext "Vous devez renvoyer la province d'Esdece dans la dimension éthérique.")"
-        return 1
-    fi
-
-    echo "$(eval_gettext "Bravo, Oljoliptichaaah a été rayé de la carte et la province d'Esdece renvoyée dans la dimension éthérique ! \
-    Cela devrait éviter que les sujets du roi ne soient dévorés par des félins trop gloutons, et plus important, que le personnel de la LVM ne doivent remplir les papiers relatifs à ces disparitions.")"
 
     return 0
 )

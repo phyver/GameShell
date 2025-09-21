@@ -1,0 +1,34 @@
+Objectifs
+=========
+Conscient que l’économie de son royaume serait trop sévèrement impactée par 
+une rupture totale des liens commerciaux avec les anciennes colonies, et enlisé 
+dans une guerre peu glorieuse (le fait de devoir faire tamponner individuellement 
+chaque flèche par un **Grand Vérificateur Public des Pointes et Fûts** n’aidant 
+probablement pas), le roi **Aegir** a consenti à une rencontre en vue de signer la paix.  
+
+De l’autre côté, après de longues consultations parlementaires, une demi-douzaine 
+de commissions fédérales et la création de trois nouvelles agences étatiques, 
+la république des **USA (Union des Settlements Autonomes)** a fini par admettre 
+que la fameuse **téléportation astrale** — ce “changement de disque” proposé 
+par les géo-manciens — n’était sans doute pas la solution la plus avantageuse.  
+
+Car malgré l’indépendance politique, les USA restent, eux aussi, très dépendants 
+des échanges commerciaux avec le royaume voisin : le sel, les outils, et surtout 
+les frites du vendredi.  
+
+Il a donc été décidé d’enterrer la hache de guerre.  
+Et c’est encore une fois à vous, pauvre stagiaire devenu expert en tâches ingrates, 
+qu’il revient de **dégeler l’état des USA** et de **rouvrir les routes entre le royaume** et les différentes ville de la république indépendante des "USA".  
+
+---
+
+Commandes utiles
+================
+vgimport
+    Importer un volume.
+
+vgchange -ay
+    Activer un volume.
+
+mount
+    Monter une partition
