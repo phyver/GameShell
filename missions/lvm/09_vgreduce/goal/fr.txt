@@ -1,0 +1,47 @@
+Objectifs
+=========
+Suite à l’installation des premiers colons d’**Oljoliptichaaah**, des nouvelles inquiétantes 
+sont remontées jusqu’au royaume.  
+À leur retour à **Oljoliptichaaah**, les quelques colons partis chercher des vivres 
+au village de **Grandflac** ont trouvé un lieu désert : les repas encore sur le feu, 
+et un mot gravé maladroitement sur un arbre **"TOACROCAN"**, seul vestige de la vie du village.  
+Certains évoquent d’étranges silhouettes rôdant la nuit autour des campements.  
+
+Après de longues discussions (et quelques rapports classés dans de mauvaises chemises, 
+retrouvés par hasard en déplaçant une armoire), des scribes de la LVM ont fini 
+par remarquer un détail qui aurait pu alerter dès le départ : le nombre anormal de **« a »** 
+dans le nom du village.  
+
+En effet, après analyse, il semblerait que les « jolis petits chats » aperçus 
+par les premiers voyageurs soient en réalité d’**affectueuses boules de poils de 250 kilos**, 
+équipées de crocs de **35 centimètres** et dont l’odorat ne s’offusque nullement 
+des effluves de pieds de l’aventurier moyen.  
+
+Les administrateurs de la LVM, estimant qu’il valait mieux prévenir que gérer 
+encore plus de paperasse posthume, ont donc décidé — au moins pour le moment — 
+de refermer la frontière et de **séparer Esdece d’Esdebe**.  
+Les géo-manciens ont proposé de rayer le village d’**Oljoliptichaaah** des cartes, 
+de détacher la province d’**Esdece** de celle d’**Esdebe**, et de la renvoyer, 
+provisoirement, dans la sphère éthérique.  
+
+Bien sûr, le personnel administratif se sentait tout à fait enthousiaste à l’idée 
+d’aller découvrir la faune locale… mais il se trouve qu’une allergie aux poils de félins 
+les disqualifie tous de fait.  
+C’est donc à vous, stagiaire vaillant et intrépide, que revient la mission…  
+
+---
+
+Commandes utiles
+================
+lvchange -an
+    Désactiver un volume logique
+    
+lvremove
+    Supprimer un volume logique
+
+vgreduce
+    Retirer un volume physique d’un groupe de volumes
+
+
+pvremove
+    Supprimer la signature LVM d’un volume physique

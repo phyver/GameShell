@@ -42,6 +42,7 @@ lvm_init() {
     # 3. Créer les alias dans /dev
     danger sudo ln -sf "$LOOP1" /dev/gsh_lvm_loop1
     danger sudo ln -sf "$LOOP2" /dev/gsh_lvm_loop2
+     
   
     # 4. Préparer les périphériques dans world/dev
     mkdir -p "$GSH_HOME/dev"
@@ -61,8 +62,57 @@ lvm_init() {
     SDBB="$GSH_HOME/dev/sdb"
     ln -sf "$LOOP1_PATH" "$SDBA"
     ln -sf "$LOOP2_PATH" "$SDBB"
+
+    # For mission 08, we need a third disk
+    if [ "$MISSION_ID" -ge "08" ]; then
+        echo "Preparing third disk for world/dev..."
+
+        DISK_3_PATH="$DATA_PATH/disk3.img"
+        if ! danger sudo losetup -j "$DISK_3_PATH" | grep -q "$DISK_3_PATH"; then
+            echo "⏳ Attaching $DISK_3_PATH to a loop device..."
+            LOOP3=$(danger sudo losetup --find -P --show "$DISK_3_PATH")
+            echo "$DISK_3_PATH attached to $LOOP3"
+        else
+            echo "$DISK_3_PATH is already attached to a loop device."
+            LOOP3=$(danger sudo losetup -j "$DISK_3_PATH" | cut -d: -f1)
+        fi
+
+        SDBC="$GSH_HOME/dev/sdc"
+        LOOP3_PATH="/dev/gsh_lvm_loop3"
+        danger sudo ln -sf "$LOOP3" "$LOOP3_PATH"
+
+        ln -sf "$LOOP3_PATH" "$SDBC"
+    fi
   
     echo "world/dev ready"
+
+    # if esdea VG exists activate it
+    if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdea"; then
+        echo "Activating esdea VG..."
+        danger sudo vgimport -y esdea
+        danger sudo vgchange -ay esdea
+    fi
+
+    # if esdebe VG exists activate it
+    if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdebe"; then
+        echo "Activating esdebe VG..."
+        danger sudo vgimport -y esdebe
+        danger sudo vgchange -ay esdebe
+    fi
+
+    # if esdece VG exists activate it
+    if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdece"; then
+        echo "Activating esdece VG..."
+        danger sudo vgimport -y esdece
+        danger sudo vgchange -ay esdece
+    fi
+
+    # For missions after 05, Mount villages if possible
+    if [ "$MISSION_ID" -gt 05 ]; then
+        echo "Mounting villages..."
+        mounting_villages
+    fi
+
     return 0
 }
 
@@ -88,7 +138,7 @@ purge_vg() {
     )
 
     # deactivate and remove all LVs in the VG (best effort)
-    lvchange -an "$VG" || true
+    danger sudo lvchange -an "$VG" || true
     local LVS=()
     mapfile -t LVS < <(danger sudo lvs --noheadings -o lv_path "$VG" 2>/dev/null | awk '{print $1}')
     for LV in "${LVS[@]}"; do
@@ -116,6 +166,9 @@ lvm_cleanup() {
 
     DATA_PATH="$MISSION_DIR/../00_shared/data/00/"
     MISSION_DATA_PATH="$MISSION_DIR/../00_shared/data/$MISSION_ID/"
+
+    # Unmount villages if mounted
+    unmounting_villages
     
     # If vgs esdea exist, purge it
     echo "Cleaning up LVM configurations... esdea"
@@ -142,18 +195,130 @@ lvm_cleanup() {
     # Get loop path from /dev/gsh_lvm_loop1 and /dev/gsh_lvm_loop2
     LOOP1=$(readlink -f /dev/gsh_lvm_loop1)
     LOOP2=$(readlink -f /dev/gsh_lvm_loop2)
-    
-    danger sudo losetup -d "$LOOP1" 
-    danger sudo losetup -d "$LOOP2" 
+    LOOP3=$(readlink -f /dev/gsh_lvm_loop3)
+
+    if [ -e "$LOOP1" ]; then
+        danger sudo losetup -d "$LOOP1"
+    fi
+
+    if [ -e "$LOOP2" ]; then
+        danger sudo losetup -d "$LOOP2"
+    fi
+
+    if [ -e "$LOOP3" ]; then
+        danger sudo losetup -d "$LOOP3"
+    fi
 
     # Remove device links
-    danger sudo rm -f /dev/gsh_lvm_loop1 /dev/gsh_lvm_loop2
+    danger sudo rm -f /dev/gsh_lvm_loop1 /dev/gsh_lvm_loop2 /dev/gsh_lvm_loop3
 
     # Remove world/dev
     danger rm -rf "$GSH_HOME/dev/"
+
+    # Remove world/Esdea, world/Esdebe
+    danger rm -rf "$GSH_HOME/Esdea/"
+    danger rm -rf "$GSH_HOME/Esdebe/"
 
     # Remove disk images
     rm -f "$DATA_PATH/disk*.img"
 
     return 0
+}
+
+mounting_villages() {
+
+    local LVS=(
+        "esdea/ouskelcoule"
+        "esdea/douskelpar"
+        "esdebe/grandflac"
+    )
+
+    local MOUNT_POINTS=(
+        "$GSH_HOME/Esdea/Ouskelcoule"
+        "$GSH_HOME/Esdea/Douskelpar"
+        "$GSH_HOME/Esdebe/Grandflac"
+    )
+
+    local i=0
+    for MOUNT_POINT in "${MOUNT_POINTS[@]}"; do
+        # if LV does not exist , pass
+        if [ ! -e "/dev/${LVS[$i]}" ]; then
+            echo "Logical volume /dev/${LVS[$i]} not found, skipping mount."
+            i=$((i + 1))
+            continue
+        fi
+
+        # if mount point does not exist pass
+        if ! [ -d "$MOUNT_POINT" ]; then
+            echo "Creating mount point $MOUNT_POINT"
+            mkdir -p "$MOUNT_POINT"
+        fi
+
+        # mount if not already mounted
+        if ! mountpoint -q "$MOUNT_POINT"; then
+            danger sudo mount "/dev/${LVS[$i]}" "$MOUNT_POINT"
+            danger sudo chown "$USER:$USER" "$MOUNT_POINT"
+        fi
+        i=$((i + 1))
+    done
+
+    return 0
+}
+
+unmounting_villages() {
+    local MOUNT_POINTS=(
+        "$GSH_HOME/Esdea/Ouskelcoule"
+        "$GSH_HOME/Esdea/Douskelpar"
+        "$GSH_HOME/Esdebe/Grandflac"
+    )
+
+    for MOUNT_POINT in "${MOUNT_POINTS[@]}"; do
+        if mountpoint -q "$MOUNT_POINT"; then
+            echo "Démonter $MOUNT_POINT"
+            danger sudo umount "$MOUNT_POINT"
+        fi
+    done
+
+    return 0
+}
+
+
+## LV TOOLS
+
+
+# Helper: check filesystem type of a logical volume
+check_lv_fs_type() {
+    lv_path="$1"          # e.g. esdea/ouskelcoule
+    expected="$2"         # e.g. ext4
+    dev="/dev/$lv_path"
+
+    # Read filesystem TYPE via blkid (empty if unformatted)
+    fstype="$(danger sudo blkid -o value -s TYPE "$dev" 2>"$GSH_HOME/dev/null")"
+    if [ -z "$fstype" ]; then
+      return 3  # special code: no filesystem
+    fi
+
+    # Match expected type
+    if [ "$fstype" = "$expected" ]; then
+      return 0
+    else
+      return 1
+    fi
+}
+
+check_lv_size() {
+    VG_LV="$1"       # e.g. esdea/ouskelcoule
+    TARGET="$2"      # requested size in Mo (e.g. 50)
+    TOLERANCE="${3:-4}"  # default = 4 Mo
+
+    # Extract actual size (in Mo, without "m")
+    ACTUAL="$(danger sudo lvs "$VG_LV" --noheadings -o lv_size --units m \
+              | awk '{gsub(/m/,""); gsub(/^ +| +$/,""); print $1}')"
+
+    # Compute difference
+    DIFF=$(awk -v act="$ACTUAL" -v tgt="$TARGET" 'BEGIN{ d=act-tgt; if(d<0)d=-d; print d }')
+
+    # Check within tolerance
+    RESULT=$(awk -v diff="$DIFF" -v tol="$TOLERANCE" 'BEGIN{ exit (diff <= tol ? 0 : 1) }')
+    return $RESULT
 }

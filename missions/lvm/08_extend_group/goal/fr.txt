@@ -1,0 +1,51 @@
+Objectifs
+===========================================
+Les cartographes géo-mantiens ont repéré une nouvelle terre éthérée : 
+**Esdece** (nom de code **sdc**), flottant dans le plan DEV tout proche de la province d’**Esdebe**.  
+La LVM a donc décidé, suite à plusieurs colloques, qu’elle devait être rattachée 
+à la colonie d’**Esdebe** afin de favoriser son développement.  
+
+Les administrateurs confient aussitôt aux explorateurs le soin d’y fonder 
+un nouveau village. Après plusieurs commissions (et une querelle sur le 
+choix du nom, nécessitant l’intervention du greffier pour séparer physiquement 
+« l’Administrateur des Registres Encombrants » et le « Gestionnaire des Listes 
+Orthogoniques »), le décret finit par tomber.  
+
+Le nom retenu sera celui proposé par les explorateurs ayant effectué la mission de reconnaissance, 
+tel que rapporté par le personnel de terrain en charge de la liaison colonie/LVM : **Oljoliptichaaah**
+
+Les administrateurs ont également décrété que les frontières de base du village devraient faire 10 Mornifles (Mo)
+
+Devinez qui est en charge d'apporter la nouvelle aux explorateurs sur le terrain ?
+
+Extrait du PV de R.A.P.P.O.R.T. (Réunion Administrative Pour Présenter Officiellement le Récit du Terrain) :
+    PARTIES PRENANTES :
+        Personnel De Terrain : Jean Courencor
+        Personnel Administratif Pour l’Inspection et l’Enregistrement des Récits : Louis de Pointe du Lac
+
+    PV D'ENTRETIEN :
+        [...]
+
+        PAPIER : Donc là vous êtes monté sur votre cheval et vous êtes parti ?
+        Jean Courencor : C’est ça, et en partant je lui ai dit **« Et pour le nom on dit quoi ? »**
+        PAPIER : Et alors ?
+        Jean Courencor : Il a juste crié « Oljoliptichaaah ! »
+        PAPIER : « Oljolipticha » ?
+        Jean Courencor : Non, avec plus de « a », « Oljoliptichaaah ».
+        PAPIER : Hum... Ça prend un « h » à la fin ?
+
+FIN DE PV
+
+
+---
+
+Commandes utiles
+================
+pvcreate
+    Créer un volume physique
+
+vgextend
+    Étend un volume groupe
+
+lvcreate
+    Créer un volume logique
