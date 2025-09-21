@@ -4,7 +4,7 @@ source "$MISSION_DIR/../00_shared/utils.sh"
 
 _mission_init() (
 
-  lvm_init "13"
+  lvm_init "13" > /dev/null 2>&1
   return $?
 
 )

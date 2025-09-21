@@ -4,7 +4,7 @@ source "$MISSION_DIR/../00_shared/utils.sh"
 
 _mission_init() (
 
-  lvm_init "15"
+  lvm_init "15" > /dev/null 2>&1
 
   # Display epilogue message
   parchment -B Twinkle "$(eval_gettext '$MISSION_DIR/msg/en.txt')"

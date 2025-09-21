@@ -6,7 +6,7 @@ source "$MISSION_DIR/../00_shared/utils.sh"
 # for the next missions in the LVM series.
 
 if [ "$GSH_LAST_ACTION" != "check_false" ]; then
-    lvm_cleanup "06"
+    lvm_cleanup "06" > /dev/null 2>&1
     return $?
 fi
 
