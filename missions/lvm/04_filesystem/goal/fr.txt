@@ -1,35 +1,43 @@
 Objectifs
 ===========================================
-Les explorateurs ont délimité les frontières et planté leurs tentes à Ouskelcoule, Douskelpar et Grandflac, mais pour l’instant ces “villages” ne sont que des étendues sauvages, sans 
-aucune organisation. 
+Les explorateurs ont planté leurs tentes à Ouskelcoule, Douskelpar et Grandflac, 
+mais ces “villages” demeurent pour l’instant de vastes friches sans aucune 
+organisation.  
 
-Les fonctionnaires de la LVM, hommes de lettres et d'ordre, ont décrété qu'une organisation stricte était nécessaire afin d'éviter l'anarchie ! Il ont donc décider qu'avant toute construction, il fallait au préalable découper les terres en unités régulières et organisées et dresser des registres, afin de pouvoir attribuer des parcelles sur lesquelles les batiments et autres infrastructures essentielles pourront s’élever.  
+Les fonctionnaires de la **LVM**, grands amateurs de registres et de cachets, 
+ont décrété qu’une rigueur administrative s’impose afin d’éviter le chaos.  
+Selon eux, avant même d’ériger la moindre cabane, il convient d’ordonner le sol 
+par un découpage régulier, d’en dresser des inventaires dûment tamponnés, et de 
+tenir des registres permettant d’attribuer officiellement chaque parcelle aux 
+futurs habitants.  
 
-Dans le langage technico-magique, cette organisation en blocs et registres est appelée **système de fichier**.
+Dans leur jargon technico-bureaucratique, ce découpage se nomme un  
+**système de fichiers**.  
 
-Elle consiste à découper la terre en **blocs** — des fragments de surface 
-tous identiques — puis à établir des registres (tables) pour savoir à qui 
-chaque bloc appartient. Chaque maison, grange ou entrepôt du village recevra ainsi 
-ainsi sa propre fiche dans ces registres, appelée **inode**, qui contiendra 
-toutes les informations essentielles (propriétaire, dimensions, parcelles, etc.).
+Il consiste à fractionner la terre en **blocs** — des unités de surface 
+identiques — puis à répertorier dans des registres (tables) l’usage de chaque 
+bloc. Toute maison, toute grange ou tout entrepôt du village se verra attribuer 
+sa propre fiche, appelée **inode**, sur laquelle figureront toutes les mentions 
+indispensables : propriétaire, dimensions, parcelle, affectation, etc.  
 
-Sans ce découpage initial, les habitants s’installeraient au hasard et plus 
-personne ne saurait où sont les greniers, les marchés ou même les puits.  
+Sans cette étape de classement initial, les colons s’installeraient au hasard, 
+et l’on finirait par perdre la trace des greniers, des marchés, voire même des 
+puits du village.  
 
-Par décret, le mode d’administration retenu pour ces villages est 
+Par décret royal, le mode d’organisation retenu est  
 **EXT4 : “Édit de eXploitation Territoriale, 4ᵉ version”**,  
-qui définit les règles de construction, d’accès et de gestion des parcelles.  
+qui fixe les règles de construction, d’accès et de gestion des parcelles.  
 
 Votre mission est donc de préparer les infrastructures de base :  
-- Diviser le bassins de **Ouskelcoule** en blocs réguliers,  
-- Structurer les pentes herbeuses de **Douskelpar**,  
-- Aménager les berges luxuriantes de **Grandflac**.
+- Diviser le bassin de **Ouskelcoule** en blocs réguliers,  
+- Structurer les pentes verdoyantes de **Douskelpar**,  
+- Aménager les berges luxuriantes de **Grandflac**.  
+
 
 Commandes utiles
 ================
 mkfs.ext4
     Formate le Logical Volume avec un système de fichiers ext4.
 
-blkid /dev/<VG>/<LV>
-    Donne les métadonnées du système de fichiers (UUID, type, label).
-
+blkid 
+    Affiche les métadonnées du système de fichiers (UUID, type, label).

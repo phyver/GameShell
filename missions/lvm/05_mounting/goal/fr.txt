@@ -17,7 +17,7 @@ Elle consiste à inscrire officiellement un village sur la carte du royaume
 (en l’associant à un point de montage) et à tracer une voie carrossable par 
 laquelle colons, intendants et marchandises pourront circuler.  
 
-Votre mission est donc de créer dans le royaume une nouvelle province (dossier) 
+Votre mission est donc de créer dans le royaume une nouvelle province
 pour chaque région, puis d’y établir une route vers chaque village :  
 - Ouvrir la route vers **Ouskelcoule** sur `./Esdea/Ouskelcoule`  
 - Ouvrir la route vers **Douskelpar** sur `./Esdea/Douskelpar`  

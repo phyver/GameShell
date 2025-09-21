@@ -1,28 +1,32 @@
 Objectif
 ========
-Les nouveaux territoires éthérés de Esdea et Esdebe, désormais incarnés en provinces physiques (PV), 
-sont prêts à être administrés.  
+Les territoires éthérés d’Esdea et d’Esdebe, que vous avez matérialisés en
+provinces tangibles (PV), sont désormais prêts à entrer dans l’appareil
+administratif.  
 
-Au palais, les fonctionnaires de la LVM (Lands & Villages Management) se sont 
-longuement réunis en comité — après plusieurs pré-réunions, réunions, débrief de réunions et la rédaction 
-d’innombrables comptes rendus — pour statuer sur l’avenir de ces terres.  
+Au palais, les fonctionnaires de la **LVM (Lands & Villages Management)** ont
+tenu un cycle de concertations interminables : pré-réunions de cadrage,
+réunions plénières, comités ad hoc, débriefs post-séance et, bien sûr,
+rédaction de volumineux comptes rendus distribués en triple exemplaire.  
 
-Leur décision est tombée : afin d’éviter toute rivalité interne et de garantir 
-une gestion plus « efficace », les nouvelles provinces seront organisées en deux 
-colonies **indépendantes**.  
+De ces travaux sort une décision solennelle : pour préserver l’équilibre des
+ambitions et donner une impression d’efficacité, les nouvelles provinces seront
+érigées en deux **colonies indépendantes**.  
 
-Dans le jargon administratif, ces colonies sont appelées des 
+En langage administratif, ces colonies prennent le nom de
 **Villages Groupés (VG)**.  
 
-Votre mission est donc de fonder ces nouvelles colonies sous leur véritable nom (utilisez des noms en minuscule) :  
-- La Colonie d’**Esdea** (`./dev/sda`) 
-- La Colonie d’**Esdebe** (`./dev/sdb`)  
+Votre mission : fonder officiellement ces colonies sous leur désignation
+officielle (veillez à employer des noms en minuscules) :  
+- La Colonie d’**Esdea**  
+- La Colonie d’**Esdebe**  
+
 
 Commandes utiles
 ================
 vgcreate
-    Consultez le manuel de `vgcreate` pour savoir comment créer un Volume Group
-    sur un Physical Volume.
+    Consultez le manuel de `vgcreate` pour découvrir comment ériger un Volume
+    Group sur un Volume Physique.
 
 vgs
-    Vous permet d'avoir des informations sur les Volume Groups
+    Fournit des informations sur les Volume Groups déjà institués.
