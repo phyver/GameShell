@@ -80,7 +80,7 @@ EOF
     writ "$ROOT/Administration centrale/Archives/Rayonnages/A à Z/Index (partiel).txt" \
         "Abricots (non) ; Attestations (oui) ; Avertissements (peut-être). Voir aussi : Zèbres (classés à A par erreur)."
 
-    # Objets farfelus répartis dans les services ————————————————————————————————
+    # Objets farfelus répartis dans les services —————————————————————————————————
     writ "$ROOT/Administration centrale/Hôtel du Roi/Antichambre/Salle d'attente/Plante en plastique (titulaire d'un badge).txt" \
         "Ancienneté : 12 ans. Droits acquis : priorité au guichet."
     writ "$ROOT/Administration centrale/Hôtel du Roi/Grande Chancellerie/Bureau des Tampons/Tampon quantique.txt" \
@@ -128,6 +128,88 @@ EOF
 EOF
     writ "$ROOT/Administration centrale/Commissions/Commission 3/Agrafeuse protocolaire (sans agrafes).txt" \
         "Réunit sans attacher."
+
+    # —————————————————————————————————————————————————————————————————————————————
+    # ACADÉMIE DE GÉO-MANCIE (nouvelle section)
+    # —————————————————————————————————————————————————————————————————————————————
+    mkd "$ROOT/Académie de Géo-mancie/Secrétariat des Études/Bureau des Inscriptions"
+    mkd "$ROOT/Académie de Géo-mancie/Secrétariat des Études/Service des Rattrapages"
+    mkd "$ROOT/Académie de Géo-mancie/Bibliothèque des Cartes Impossibles/Salle des Atlas Contradictoires"
+    mkd "$ROOT/Académie de Géo-mancie/Bibliothèque des Cartes Impossibles/Rez-de-chaussée/Index mouvant"
+    mkd "$ROOT/Académie de Géo-mancie/Départements/Cartographie Éthérique/Labos"
+    mkd "$ROOT/Académie de Géo-mancie/Départements/Topologie des Tampons/Labos"
+    mkd "$ROOT/Académie de Géo-mancie/Départements/Géologie des Formulaires/Labos"
+    mkd "$ROOT/Académie de Géo-mancie/Institut des Flux et Contre-Flux/Amphithéâtre ∮"
+    mkd "$ROOT/Académie de Géo-mancie/Observatoire des Lignes Administratives/Terrasse des Méridiens"
+    mkd "$ROOT/Académie de Géo-mancie/Concours et Agrégations/Salle des Épreuves"
+    mkd "$ROOT/Académie de Géo-mancie/Musée des Outils/Instruments"
+
+    # Règlements et présentation
+    heredoc "$ROOT/Académie de Géo-mancie/Secrétariat des Études/Guide de l'étudiant.md" <<'EOF'
+# Guide de l'étudiant géo-mancien
+- Principe cardinal : tout territoire est une question de papier.
+- Les crédits ECTS signifient « Échelons, Cachets, Tampons, Signatures ».
+- Toute carte valide doit comporter au moins un cul-de-sac administratif.
+EOF
+
+    writ "$ROOT/Académie de Géo-mancie/Secrétariat des Études/Bureau des Inscriptions/Heures d'ouverture.txt" \
+        "Ouvert les jours ouvrés pairs, sauf quand c'est impair."
+
+    # Bibliothèque et objets
+    writ "$ROOT/Académie de Géo-mancie/Bibliothèque des Cartes Impossibles/Salle des Atlas Contradictoires/Atlas plat de la Terre ronde.txt" \
+        "Edition révisée : désormais sphéri-plate selon décret."
+    writ "$ROOT/Académie de Géo-mancie/Bibliothèque des Cartes Impossibles/Rez-de-chaussée/Index mouvant/Mode d'emploi.txt" \
+        "Pour trouver A, chercher Z, puis revenir à A par le couloir Bêta."
+
+    # Départements — enseignants, cours, objets
+    heredoc "$ROOT/Académie de Géo-mancie/Départements/Cartographie Éthérique/Programme.md" <<'EOF'
+## Cartographie Éthérique — Programme
+- Introduction à la calque-thérapie
+- Géométrie variable des frontières morales
+- Séminaire : Le compas qui hésite
+EOF
+    writ "$ROOT/Académie de Géo-mancie/Départements/Cartographie Éthérique/Labos/Compas indécis.txt" \
+        "Tourne jusqu'à la présence d'un chef de service."
+
+    heredoc "$ROOT/Académie de Géo-mancie/Départements/Topologie des Tampons/Programme.md" <<'EOF'
+## Topologie des Tampons — Programme
+- Groupes de cachets non commutatifs
+- Homotopie des circuits de validation
+- Séminaire : Tore des files d'attente
+EOF
+    writ "$ROOT/Académie de Géo-mancie/Départements/Topologie des Tampons/Labos/Tampon de Möbius.txt" \
+        "Un seul côté, deux files, aucune issue."
+
+    heredoc "$ROOT/Académie de Géo-mancie/Départements/Géologie des Formulaires/Programme.md" <<'EOF'
+## Géologie des Formulaires — Programme
+- Stratigraphie des annexes
+- Métamorphisme sous parapheur
+- Séminaire : Fossiles de versions
+EOF
+    writ "$ROOT/Académie de Géo-mancie/Départements/Géologie des Formulaires/Labos/Coupe stratifiée d'un dossier.txt" \
+        "Observer sans déranger la couche fragile « pièces manquantes »."
+
+    # Institut des Flux
+    writ "$ROOT/Académie de Géo-mancie/Institut des Flux et Contre-Flux/Amphithéâtre ∮/Tableau noir auto-effaceur.txt" \
+        "Efface les démonstrations juste avant la conclusion."
+
+    # Observatoire
+    writ "$ROOT/Académie de Géo-mancie/Observatoire des Lignes Administratives/Terrasse des Méridiens/Lunette à paperasse.txt" \
+        "Ne grossit que les signatures illisibles."
+
+    # Musée des Outils
+    writ "$ROOT/Académie de Géo-mancie/Musée des Outils/Instruments/Planchette à tracer les délais.txt" \
+        "Permet d'ajouter un mois calendaire à tout retard naturel."
+
+    # Concours — épreuves, sujets, résultats
+    heredoc "$ROOT/Académie de Géo-mancie/Concours et Agrégations/Salle des Épreuves/Sujet type.md" <<'EOF'
+# Agrégation de Géo-mancie administrative — Sujet type
+1) Cartographier une frontière mobile entre deux guichets fermés.
+2) Démontrer l'existence d'un raccourci plus long que le détour officiel.
+3) Tamponner l'hypothèse, puis la retirer proprement.
+EOF
+    writ "$ROOT/Académie de Géo-mancie/Concours et Agrégations/Salle des Épreuves/Copion homologué (vierge).txt" \
+        "À remplir uniquement par inadvertance."
 
     # Offices spécialisés ——————————————————————————————————————————————————————
     mkd "$ROOT/Offices/Office unique du Tampon/Guichet"
@@ -257,5 +339,15 @@ EOF
     link "$ROOT/Offices/Office unique du Tampon/Service du Retour/Retour au début" \
          "$ROOT/Offices/Office unique du Tampon/Guichet"
 
-    echo "✅ Royaume de Bordereau VI le Tamponné : objets farfelus et labyrinthes administratifs créés (sans villages)."
+    # 7) Ponts Académie ↔ Administration
+    link "$ROOT/Académie de Géo-mancie/Secrétariat des Études/Bureau des Inscriptions/Validation préfectorale" \
+         "$ROOT/Administration centrale/Préfecture du Royaume"
+    link "$ROOT/Administration centrale/Ministère des Ponts et Chemins/Bureau des Montages/Stage obligatoire à l'Académie" \
+         "$ROOT/Académie de Géo-mancie/Départements/Cartographie Éthérique/Labos"
+    link "$ROOT/Administration centrale/Archives/Passerelle vers la Bibliothèque des Cartes Impossibles" \
+         "$ROOT/Académie de Géo-mancie/Bibliothèque des Cartes Impossibles/Rez-de-chaussée/Index mouvant"
+    link "$ROOT/Académie de Géo-mancie/Institut des Flux et Contre-Flux/Procédure de validation des flux" \
+         "$ROOT/Administration centrale/Cour des Comptes et Demi Comptes/Greffe"
+
+    echo "✅ Royaume de Bordereau VI le Tamponné : objets farfelus, Académie de Géo-mancie et labyrinthes administratifs créés (sans villages)."
 }
