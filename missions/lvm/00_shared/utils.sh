@@ -1,5 +1,6 @@
 
 lvm_init() {
+
     MISSION_ID=$1
     DATA_PATH="$MISSION_DIR/../00_shared/data/00/"
     MISSION_DATA_PATH="$MISSION_DIR/../00_shared/data/$MISSION_ID/"
@@ -58,8 +59,8 @@ lvm_init() {
   
     # prepare world/dev
     echo "Preparing world/dev..."
-    SDBA="$GSH_HOME/dev/sda"
-    SDBB="$GSH_HOME/dev/sdb"
+    SDBA="/dev/gsh_sda"
+    SDBB="/dev/gsh_sdb"
     ln -sf "$LOOP1_PATH" "$SDBA"
     ln -sf "$LOOP2_PATH" "$SDBB"
 
@@ -77,7 +78,7 @@ lvm_init() {
             LOOP3=$(danger sudo losetup -j "$DISK_3_PATH" | cut -d: -f1)
         fi
 
-        SDBC="$GSH_HOME/dev/sdc"
+        SDBC="/dev/gsh_sdc"
         LOOP3_PATH="/dev/gsh_lvm_loop3"
         danger sudo ln -sf "$LOOP3" "$LOOP3_PATH"
 

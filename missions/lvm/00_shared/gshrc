@@ -15,8 +15,8 @@ export DISK_1_PATH="$MISSION_DIR/data/disk1.img"
 export DISK_2_PATH="$MISSION_DIR/data/disk2.img"
 
 # Esdea and Esdebe physical volumes
-export SDBA="$GSH_HOME/dev/sda"
-export SDBB="$GSH_HOME/dev/sdb"
+export SDBA="/dev/gsh_sda"
+export SDBB="/dev/gsh_sdb"
 
 # Loop devices created in the 00_shared mission
 export LOOP1_PATH="/dev/gsh_lvm_loop1"

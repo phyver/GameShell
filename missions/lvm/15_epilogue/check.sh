@@ -16,8 +16,8 @@ _mission_check() (
         return 1
     fi
 
-    # Check $GSH_HOME/dev/sdc is no longer a physical volume
-    if sudo pvdisplay "$GSH_HOME/dev/sdc" >/dev/null 2>&1; then
+    # Check /dev/gsh_sdc is no longer a physical volume
+    if sudo pvdisplay "/dev/gsh_sdc" >/dev/null 2>&1; then
         echo "$(eval_gettext "Vous devez renvoyer la province d'Esdece dans la dimension éthérique.")"
         return 1
     fi

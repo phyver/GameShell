@@ -3,15 +3,15 @@
 source "$MISSION_DIR/../00_shared/utils.sh"
 
 _mission_check() (
-    # Check $GSH_HOME/dev/sdc is a physical volume
-    danger sudo pvdisplay "$GSH_HOME/dev/sdc" > /dev/null 2>&1
+    # Check /dev/gsh_sdc is a physical volume
+    danger sudo pvdisplay "/dev/gsh_sdc" > /dev/null 2>&1
     if [ $? -ne 0 ]; then
         echo "$(eval_gettext "Vous devez incarner la province d'Esdece en tant que terre physique.")"
         return 1
     fi
     
-    # Check $GSH_HOME/dev/sdc is part of esdebe VG
-    danger sudo pvdisplay "$GSH_HOME/dev/sdc" | grep "esdebe" > /dev/null 2>&1
+    # Check /dev/gsh_sdc is part of esdebe VG
+    danger sudo pvdisplay "/dev/gsh_sdc" | grep "esdebe" > /dev/null 2>&1
     if [ $? -ne 0 ]; then
         echo "$(eval_gettext "Vous devez ajouter la province d'Esdece à celle d'Esdebe.")"
         return 1

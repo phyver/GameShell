@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 _mission_check() (
-  SDBA="$GSH_HOME/dev/sda"
-  SDBB="$GSH_HOME/dev/sdb"
+  SDBA="$GSH_HOME/gsh_sda"
+  SDBB="$GSH_HOME/gsh_sdb"
 
   # 1) Vérifier que les chemins existent
   if [ ! -e "$SDBA" ]; then
