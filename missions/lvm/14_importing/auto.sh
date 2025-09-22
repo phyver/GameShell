@@ -12,8 +12,9 @@ danger sudo vgchange -ay usa
 
 # Mount the filesystems
 danger sudo mount /dev/usa/douskelpar "$GSH_HOME/USA/Douskelpar"
-danger sudo chown "$USER:$USER" "$GSH_HOME/USA/Douskelpar"
+danger sudo chown -R "$USER:$USER" "$GSH_HOME/USA/Douskelpar"
 danger sudo mount /dev/usa/ouskelcoule "$GSH_HOME/USA/Ouskelcoule"
-danger sudo chown "$USER:$USER" "$GSH_HOME/USA/Ouskelcoule"
+danger sudo chown -R "$USER:$USER" "$GSH_HOME/USA/Ouskelcoule"
 danger sudo mount /dev/usa/grandflac "$GSH_HOME/USA/Grandflac"
-danger sudo chown "$USER:$USER" "$GSH_HOME/USA/Grandflac"
+danger sudo chown -R "$USER:$USER" "$GSH_HOME/USA/Grandflac"
+

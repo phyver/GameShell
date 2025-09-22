@@ -1,6 +1,14 @@
 
 lvm_init() {
 
+    echo "LAST ACTION : $LAST_ACTION"
+
+    # Skip initialization if last action was "check_false"
+    if [ "$LAST_ACTION" == "check_false" ]; then
+        echo "Skipping initialization due to last action being 'check_false'."
+        return 0
+    fi
+
     MISSION_ID=$1
     DATA_PATH="$MISSION_DIR/../00_shared/data/00/"
     MISSION_DATA_PATH="$MISSION_DIR/../00_shared/data/$MISSION_ID/"
@@ -45,9 +53,7 @@ lvm_init() {
     danger sudo ln -sf "$LOOP2" /dev/gsh_lvm_loop2
      
   
-    # 4. Préparer les périphériques dans world/dev
-    mkdir -p "$GSH_HOME/dev"
-  
+    # 4. Préparer les périphériques dans /dev  
     LOOP1_PATH="/dev/gsh_lvm_loop1"
     LOOP2_PATH="/dev/gsh_lvm_loop2"
   
@@ -61,8 +67,8 @@ lvm_init() {
     echo "Preparing world/dev..."
     SDBA="/dev/gsh_sda"
     SDBB="/dev/gsh_sdb"
-    ln -sf "$LOOP1_PATH" "$SDBA"
-    ln -sf "$LOOP2_PATH" "$SDBB"
+    danger sudo ln -sf "$LOOP1_PATH" "$SDBA"
+    danger sudo ln -sf "$LOOP2_PATH" "$SDBB"
 
     # For mission 08, we need a third disk
     if [ "$MISSION_ID" -ge "08" ] && [ "$MISSION_ID" -lt "13" ]; then
@@ -82,40 +88,40 @@ lvm_init() {
         LOOP3_PATH="/dev/gsh_lvm_loop3"
         danger sudo ln -sf "$LOOP3" "$LOOP3_PATH"
 
-        ln -sf "$LOOP3_PATH" "$SDBC"
+        danger sudo ln -sf "$LOOP3_PATH" "$SDBC"
     fi
   
     echo "world/dev ready"
 
     # if esdea VG exists activate it
-    if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdea"; then
+    # if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdea"; then
         echo "Activating esdea VG..."
         danger sudo vgimport -y esdea
         danger sudo vgchange -ay esdea
-    fi
+    # fi
 
     # if esdebe VG exists activate it
-    if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdebe"; then
+    # if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdebe"; then
         echo "Activating esdebe VG..."
         danger sudo vgimport -y esdebe
         danger sudo vgchange -ay esdebe
-    fi
+    # fi
 
     # if esdece VG exists activate it
-    if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdece"; then
+    # if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdece"; then
         echo "Activating esdece VG..."
         danger sudo vgimport -y esdece
         danger sudo vgchange -ay esdece
-    fi
+    # fi
 
     # if usa VG exists activate it
-    if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "usa"; then
+    # if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "usa"; then
         if [ "$MISSION_ID" != "14" ]; then
             echo "Activating usa VG..."
             danger sudo vgimport -y usa
             danger sudo vgchange -ay usa
         fi
-    fi
+    # fi
 
     # For missions after 05, Mount villages if possible
     if [ "$MISSION_ID" -gt 05 ]; then
@@ -174,6 +180,14 @@ purge_vg() {
 lvm_cleanup() {
     MISSION_ID=$1
 
+    echo "GSH LAST ACTION : $GSH_LAST_ACTION"
+    export LAST_ACTION="$GSH_LAST_ACTION"
+
+    if [ "$LAST_ACTION" == "check_false" ]; then
+        echo "Skipping cleanup due to last action being 'check_false'."
+        return 0
+    fi
+
     DATA_PATH="$MISSION_DIR/../00_shared/data/00/"
     MISSION_DATA_PATH="$MISSION_DIR/../00_shared/data/$MISSION_ID/"
 
@@ -228,9 +242,6 @@ lvm_cleanup() {
     # Remove device links
     danger sudo rm -f /dev/gsh_lvm_loop1 /dev/gsh_lvm_loop2 /dev/gsh_lvm_loop3
 
-    # Remove world/dev
-    danger rm -rf "$GSH_HOME/dev/"
-
     # Remove world/Esdea, world/Esdebe
     danger rm -rf "$GSH_HOME/Esdea/"
     danger rm -rf "$GSH_HOME/Esdebe/"
@@ -276,7 +287,7 @@ mounting_villages() {
         # mount if not already mounted
         if ! mountpoint -q "$MOUNT_POINT"; then
             danger sudo mount "/dev/${LVS[$i]}" "$MOUNT_POINT"
-            danger sudo chown "$USER:$USER" "$MOUNT_POINT"
+            danger sudo chown -R "$USER:$USER" "$MOUNT_POINT"
         fi
         i=$((i + 1))
     done
@@ -315,7 +326,7 @@ check_lv_fs_type() {
     dev="/dev/$lv_path"
 
     # Read filesystem TYPE via blkid (empty if unformatted)
-    fstype="$(danger sudo blkid -o value -s TYPE "$dev" 2>"$GSH_HOME/dev/null")"
+    fstype="$(danger sudo blkid -o value -s TYPE "$dev" 2>"/dev/null")"
     if [ -z "$fstype" ]; then
       return 3  # special code: no filesystem
     fi

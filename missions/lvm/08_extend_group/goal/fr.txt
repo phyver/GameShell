@@ -1,7 +1,7 @@
 Objectifs
 ===========================================
 Les cartographes géo-mantiens ont repéré une nouvelle terre éthérée : 
-**Esdece** (nom de code **sdc**), flottant dans le plan DEV tout proche de la province d’**Esdebe**.  
+**Esdece** (nom de code **/dev/gsh_sdc**), flottant dans le plan DEV tout proche de la province d’**Esdebe**.  
 La LVM a donc décidé, suite à plusieurs colloques, qu’elle devait être rattachée 
 à la colonie d’**Esdebe** afin de favoriser son développement.  
 

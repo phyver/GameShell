@@ -5,13 +5,13 @@ mkdir -p "$GSH_HOME/Esdea/Douskelpar"
 mkdir -p "$GSH_HOME/Esdebe/Grandflac"
 
 danger sudo mount /dev/esdea/ouskelcoule "$GSH_HOME/Esdea/Ouskelcoule"
-danger sudo chown "$USER:$USER" "$GSH_HOME/Esdea/Ouskelcoule"
+danger sudo chown -R "$USER:$USER" "$GSH_HOME/Esdea/Ouskelcoule"
 
 danger sudo mount /dev/esdea/douskelpar "$GSH_HOME/Esdea/Douskelpar"
-danger sudo chown "$USER:$USER" "$GSH_HOME/Esdea/Douskelpar"
+danger sudo chown -R "$USER:$USER" "$GSH_HOME/Esdea/Douskelpar"
 
 danger sudo mount /dev/esdebe/grandflac "$GSH_HOME/Esdebe/Grandflac"
-danger sudo chown "$USER:$USER" "$GSH_HOME/Esdebe/Grandflac"
+danger sudo chown -R "$USER:$USER" "$GSH_HOME/Esdebe/Grandflac"
 
 mkdir -p "$GSH_HOME/Esdea/Ouskelcoule/Maison Commune"
 mkdir -p "$GSH_HOME/Esdea/Douskelpar/Maison Commune"

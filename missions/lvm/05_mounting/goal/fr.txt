@@ -29,6 +29,7 @@ Puis de créer dans chaque village un premier batiment "Maison Commune", et d'y 
 - Grandflac: 50 habitants
 
 Note : N'oubliez pas l'espace dans "Maison Commune", et inscrivez uniquement le chiffre dans population.txt
+       Pensez aussi à rendre le dossier monté utilisable par votre utilisateur avec chown
 
 Commandes utiles
 ================
@@ -41,5 +42,8 @@ mount
 lsblk -f
     Vérifie que les volumes sont bien montés et accessibles.
 
-nano
+vim
     Écrire dans un fichier
+
+chown
+    Changer le propriétaire d'un fichier

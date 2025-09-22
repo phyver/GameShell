@@ -6,7 +6,7 @@ géo-magiques, mais point encore matérialisées dans le monde tangible.
 
 Ces territoires fantomatiques se trouvent dans un plan nommé par les mages
 **Domain of Etheric Vastlands (dev)** et apparaissent dans d'anciens grimoires sous les nom
-d’**Esdea** et **Esdebe** (plus prosaïquement nommés **sda** et **sdb** dans les registres administratifs).  
+d’**Esdea** et **Esdebe** (plus prosaïquement nommés **/dev/gsh_sda** et **/dev/gsh_sdb** dans les registres administratifs).  
 
 Le Roi **Bordereau VI le Tamponné** tient absolument à y apposer son sceau
 avant que quelque voisin indiscret ne vienne réclamer leur annexion.  
@@ -46,9 +46,8 @@ la création de **PV (Physical Volumes)**.
   Exemple, pour recenser les fichiers d’un répertoire en tant qu’admin :
       $ danger sudo ls -alh
 
-  Prenez garde avant toute manipulation : assurez-vous toujours de travailler
-  dans le répertoire "dev" prévu pour l’aventure, et jamais dans le "/dev"
-  véritable de votre machine !
+  Prenez garde avant toute manipulation : travailler dans "/dev" est dangereux,
+  assurez-vous de toujours travailler sur le bon disque !
 
 /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ 
 

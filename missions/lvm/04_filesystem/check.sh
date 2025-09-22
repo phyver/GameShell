@@ -7,7 +7,7 @@ _mission_check() (
   # Ouskelcoule (esdea/ouskelcoule) must be EXT4
   if ! check_lv_fs_type esdea/ouskelcoule ext4; then
     case $? in
-      2) echo "$(eval_gettext "Le village d'Ouskelcoule n'existe pas (LV $GSH_HOME/dev/esdea/ouskelcoule introuvable).")";;
+      2) echo "$(eval_gettext "Le village d'Ouskelcoule n'existe pas (LV /dev/esdea/ouskelcoule introuvable).")";;
       3) echo "$(eval_gettext "Le village d'Ouskelcoule n'est pas encore organisé (aucun système de fichiers).")";;
       *) echo "$(eval_gettext "Le village d'Ouskelcoule n'est pas au format EXT4.")";;
     esac
@@ -17,7 +17,7 @@ _mission_check() (
   # Douskelpar (esdea/douskelpar) must be EXT4
   if ! check_lv_fs_type esdea/douskelpar ext4; then
     case $? in
-      2) echo "$(eval_gettext "Le village de Douskelpar n'existe pas (LV $GSH_HOME/dev/esdea/douskelpar introuvable).")";;
+      2) echo "$(eval_gettext "Le village de Douskelpar n'existe pas (LV /dev/esdea/douskelpar introuvable).")";;
       3) echo "$(eval_gettext "Le village de Douskelpar n'est pas encore organisé (aucun système de fichiers).")";;
       *) echo "$(eval_gettext "Le village de Douskelpar n'est pas au format EXT4.")";;
     esac
@@ -27,7 +27,7 @@ _mission_check() (
   # Grandflac (esdebe/grandflac) must be EXT4
   if ! check_lv_fs_type esdebe/grandflac ext4; then
     case $? in
-      2) echo "$(eval_gettext "Le village de Grandflac n'existe pas (LV $GSH_HOME/dev/esdebe/grandflac introuvable).")";;
+      2) echo "$(eval_gettext "Le village de Grandflac n'existe pas (LV /dev/esdebe/grandflac introuvable).")";;
       3) echo "$(eval_gettext "Le village de Grandflac n'est pas encore organisé (aucun système de fichiers).")";;
       *) echo "$(eval_gettext "Le village de Grandflac n'est pas au format EXT4.")";;
     esac

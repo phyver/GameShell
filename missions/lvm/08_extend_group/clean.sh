@@ -5,9 +5,5 @@ source "$MISSION_DIR/../00_shared/utils.sh"
 # Do nothing we need to keep the loop devices and the disk images
 # for the next missions in the LVM series.
 
-if [ "$GSH_LAST_ACTION" != "check_false" ]; then
-    lvm_cleanup "08" > /dev/null 2>&1
-    return $?
-fi
-
-return 0
+lvm_cleanup "08" 
+return $?
