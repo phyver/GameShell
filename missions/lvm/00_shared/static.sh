@@ -6,7 +6,7 @@ init_world() {
     #!/usr/bin/env bash
 
     # Create lore
-    #generate_lore
+    generate_lore
     echo "🖋️  (Lore generation skipped for now...)"
 }
 

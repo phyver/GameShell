@@ -7,8 +7,8 @@ danger sudo resize2fs /dev/esdea/ouskelcoule
 # Decrease the size of douskelpar to 10M
 danger sudo umount /dev/esdea/douskelpar
 danger sudo e2fsck -y -f /dev/esdea/douskelpar
-danger sudo lvchange -an /dev/esdea/douskelpar
 danger sudo resize2fs -M /dev/esdea/douskelpar
+danger sudo lvchange -an /dev/esdea/douskelpar
 danger sudo lvreduce --yes -L 10M /dev/esdea/douskelpar
 danger sudo lvchange -ay /dev/esdea/douskelpar
 danger sudo resize2fs /dev/esdea/douskelpar

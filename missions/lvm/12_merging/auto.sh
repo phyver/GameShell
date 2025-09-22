@@ -9,10 +9,11 @@ danger sudo umount Esdebe/Grandflac/
 danger sudo vgrename esdea usa
 
 # Merge the volume group Esdebe into USA
-danger sudo lvchange -an esdebe/grandflac_snap
+danger sudo lvchange -yf -an esdebe/grandflac_snap
 danger sudo lvremove -yf esdebe/grandflac_snap
 
 danger sudo vgchange -an usa
+danger sudo vgchange -an esdebe
 danger sudo vgmerge -y usa esdebe
 
 # Activate the logical volumes in the merged volume group
