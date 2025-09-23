@@ -1,1 +1,28 @@
-fr.txt
+Objective
+=====================================================
+The situation has become critical.
+The **United States of Autonomous Settlements (USA)**, recently proclaimed, 
+are in armed conflict with the Kingdom of **Bordereau VI The Stamped**.
+The Federal Council of the new Republic is considering, on advice from the "Cabinet of geo-mantic experts of the federal republic", employing an unprecedented magical solution: **Astral Teleportation**, a technique 
+described by the geo-mancers as a "disk change", even though nobody really understands what they mean by that.
+
+In plain terms, the USA wants to tear their entire lands from this world to 
+reinstall them elsewhere, out of reach of the LVM and royal armies.
+
+You're not very reassured by this idea — after all, tearing pieces of world apart, it's nice on paper but it still seems a bit messy. You did manage to 
+convince the federal administrators that before such an extreme measure, 
+it was at least necessary to **freeze the villages** and **stabilize the Union**, in order 
+to prevent any unexpected access during the astral transfer.
+
+It is therefore to you, humble intern turned crisis management expert, that it falls to prepare the ground, by deactivating the different villages and preparing the new autonomous province for its plane change.
+
+---
+
+Useful Commands
+================
+
+vgchange -an
+    Deactivate a volume group
+
+vgexport
+    Export a volume group

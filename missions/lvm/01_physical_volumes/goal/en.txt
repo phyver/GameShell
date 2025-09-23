@@ -1,1 +1,52 @@
-fr.txt
+Objective
+=========
+At the edges of the kingdom, the geo-mantic cartographers have identified two vast lands still shrouded in the mist of etheric dimensions: visible on their geo-magical maps, but not yet materialized in the tangible world.  
+
+These phantom territories are located in a plane named by the mages as the
+**Domain of Etheric Vastlands (dev)** and appear in ancient grimoires under the names **Esdea** and **Esdebe** (more prosaically referred to as **/dev/gsh_sda** and **/dev/gsh_sdb** in administrative records).  
+
+King **Bordereau VI the Stamped** is determined to affix his seal to them before some nosy neighbor claims their annexation.  
+
+To this end, he has established a new administration, the
+**LVM (Lands & Villages Management)**, intended to bring together explorers, geo-mancers, and administrative scribes to materialize, conquer, and manage these new lands.  
+
+But, as is fitting for any great bureaucracy, things are not going exactly as planned.  
+
+The explorers are zealously mapping taverns, the geo-mancers are conspiring among themselves to exchange sinecures, and, worst of all, the administrative staff... administers: an activity that essentially consists of writing reports on the proceedings of the last meeting, which was intended to prepare for the next one...  
+
+In short, all the actual work falls on your shoulders:
+you, the intern on duty.  
+
+Your first task is to give substance to these etheric lands,
+transforming them into physical territories exploitable by the LVM.
+The geo-mancers call this, in their obscure jargon,
+the creation of **PV (Physical Volumes)**.
+
+
+/!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ 
+  
+  WARNING!
+
+  These missions require you to wield administrator (root) powers.
+  To invoke such commands, you must always precede them with the magical seal:
+
+      danger sudo
+
+  Example, to list the files in a directory as admin:
+      $ danger sudo ls -alh
+
+  Be cautious before any manipulation: working in "/dev" is dangerous,
+  always ensure you are working on the correct disk!
+
+/!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ 
+
+
+Useful Commands
+===============
+pvcreate
+    Consult the `pvcreate` manual to learn how to give form
+    to a Physical Volume in the LVM universe.
+
+pvs
+    Allows you to obtain information about already created Physical Volumes.
+

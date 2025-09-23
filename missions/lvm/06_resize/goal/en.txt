@@ -1,1 +1,48 @@
-fr.txt
+Objectives
+=========
+It's been six months now since the colonists settled in, and the villages 
+are starting to take shape.
+
+In **Ouskelcoule**, development is spectacular: carried by strong fishing 
+activity and river exploitation thanks to the mill, the village prospers.
+The original borders now seem too narrow to accommodate 
+all the newcomers.
+
+Conversely, **Douskelpar** has grown little. Its activity remains essential — 
+notably thanks to its sawmill, which provides the wood necessary for building 
+Ouskelcoule — but hostile climatic conditions push to maintain 
+a reduced village, faithful to traditional mountain architecture.
+Here, the borders originally drawn are too large and must be tightened.
+
+The LVM administrators therefore send you on a mission to **Esdea** to 
+adapt the village boundaries.
+They would have gone themselves, but you know how it is: a preparation 
+meeting to plan the meeting, followed by the meeting report to validate 
+in meeting, not forgetting the report summary — all this takes time...
+And then it's Friday and on Friday, there are fries in the cafeteria. It was therefore 
+deemed preferable to delegate the mission to you since, I quote "you know the road well, the villages, the local populations." and "we trust you: you're going to do this very well!"
+
+After much debate and stamped and double-stamped reports, they have established the following new borders:
+- **Ouskelcoule** → 40 Mornifles (Mo)
+- **Douskelpar** → 10 Mornifles (Mo)
+
+
+Useful Commands
+================
+lvchange -ay/n
+    Activates/Deactivates an LVM volume
+
+lvextend
+    Enlarges a logical volume and adjusts the file system.
+
+lvreduce 
+    Reduces a logical volume and adjusts the file system
+    (⚠️ warning, delicate and potentially destructive operation).
+
+e2fsck
+    Checks a Linux file system
+
+resize2fs -M
+    Resizes the file system to use the minimum possible space.
+
+umount

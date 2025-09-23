@@ -1,1 +1,46 @@
-fr.txt
+Objectives
+=========
+Following the installation of the first colonists of **Oljoliptichaaah**, disturbing news 
+has reached the kingdom.
+Upon their return to **Oljoliptichaaah**, the few colonists who left to look for supplies 
+at the village of **Grandflac** found a deserted place: meals still on the fire, 
+and a word clumsily carved on a tree **"TOACROCAN"**, the only vestige of village life.
+Some speak of strange silhouettes prowling around the camps at night.
+
+After long discussions (and some reports filed in wrong folders, 
+found by chance while moving a closet), LVM scribes finally 
+noticed a detail that could have alerted from the start: the abnormal number of **"a"s** 
+in the village name.
+
+Indeed, after analysis, it would seem that the "pretty little cats" spotted 
+by the first travelers are actually **affectionate 250-kilogram balls of fur**, 
+equipped with **35-centimeter** fangs and whose sense of smell is not at all offended 
+by the foot odors of the average adventurer.
+
+The LVM administrators, considering it was better to prevent than to manage 
+even more posthumous paperwork, have therefore decided — at least for the moment — 
+to close the border and **separate Esdece from Esdebe**.
+The geo-mancers have proposed to erase the village of **Oljoliptichaaah** from the maps, 
+to detach the province of **Esdece** from that of **Esdebe**, and to send it back, 
+temporarily, to the etheric sphere.
+
+Of course, the administrative staff felt quite enthusiastic about the idea 
+of going to discover the local fauna... but it turns out that an allergy to feline fur 
+disqualifies them all de facto.
+It is therefore to you, valiant and intrepid intern, that the mission falls...
+
+---
+
+Useful Commands
+================
+lvchange -an
+    Deactivate a logical volume
+
+lvremove
+    Remove a logical volume
+
+vgreduce
+    Remove a physical volume from a volume group
+
+pvremove
+    Remove the LVM signature from a physical volume

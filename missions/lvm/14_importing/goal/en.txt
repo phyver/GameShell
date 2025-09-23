@@ -1,1 +1,34 @@
-fr.txt
+Objectives
+=========
+Aware that his kingdom's economy would be too severely impacted by 
+a total break in trade relations with the former colonies, and mired 
+in an inglorious war (the fact of having to individually stamp 
+each arrow by a **Grand Public Verifier of Points and Shafts** probably 
+not helping), King **Bordereau VI The Stamped** has consented to a meeting to sign peace.
+
+On the other side, after long parliamentary consultations, half a dozen 
+federal commissions and the creation of three new state agencies, 
+the republic of **USA (Union of Autonomous Settlements)** finally admitted 
+that the famous **astral teleportation** — this "disk change" proposed 
+by the geo-mancers — was probably not the most advantageous solution.
+
+For despite political independence, the USA also remains very dependent 
+on trade with the neighboring kingdom: salt, tools, and especially 
+Friday fries.
+
+It was therefore decided to bury the hatchet.
+And it is once again to you, poor intern turned expert in thankless tasks, 
+that it falls to **unfreeze the state of the USA** and **reopen the roads between the kingdom** and the different cities of the independent republic of "USA".
+
+---
+
+Useful Commands
+================
+vgimport
+    Import a volume.
+
+vgchange -ay
+    Activate a volume.
+
+mount
+    Mount a partition

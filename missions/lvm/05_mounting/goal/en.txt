@@ -1,1 +1,49 @@
-fr.txt
+Objectives
+=========
+The borders of Ouskelcoule, Douskelpar and Grandflac are now defined and their lands 
+parceled and organized thanks to the EXT4 edict. Yet, they remain isolated.
+Without an official path to access them, these villages are still only makeshift camps: 
+scattered bivouacs and tents with the suspicious smell of feet from the first explorers, 
+whose hygiene leaves much to be desired.
+
+The LVM officials, wise people concerned with their daily 
+ablutions, have therefore decreed that it was time to establish a first road: 
+a direct link between the new villages and the rest of the kingdom.
+This is the only way to bring in the workforce, supplies and tools 
+necessary for building real permanent villages.
+
+In the language of geo-mancers, this operation is called **mounting**.
+It consists of officially registering a village on the kingdom's map 
+(by associating it with a mount point) and tracing a carriageway through 
+which colonists, stewards and goods can circulate.
+
+Your mission is therefore to create a new province in the kingdom
+for each region, then establish a road to each village:
+- Open the road to **Ouskelcoule** on `./Esdea/Ouskelcoule`
+- Open the road to **Douskelpar** on `./Esdea/Douskelpar`
+- Open the road to **Grandflac** on `./Esdebe/Grandflac`
+
+Then create in each village a first building "Maison Commune", and create a population.txt register with the number of village inhabitants:
+- Ouskelcoule: 40 inhabitants
+- Douskelpar: 20 inhabitants
+- Grandflac: 50 inhabitants
+
+Note: Don't forget the space in "Maison Commune", and write only the number in population.txt
+      Also remember to make the mounted folder usable by your user with chown
+
+Useful Commands
+================
+mkdir -p /path/to/dir
+    Creates a folder and all its parents if necessary.
+
+mount 
+    Mounts the logical volume at the corresponding mount point.
+
+lsblk -f
+    Verifies that volumes are properly mounted and accessible.
+
+vim
+    Write to a file
+
+chown
+    Change the owner of a file
