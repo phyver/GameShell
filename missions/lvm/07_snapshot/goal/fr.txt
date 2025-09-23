@@ -24,7 +24,7 @@ Les administrateurs de la LVM sont tout disposés à gérer l'archivage des snap
 ne seront jamais lus par personne, tout le bureau ne parle que de ça), mais ils comptent sur vous pour aller faire les opérations sur place.
 Faites une "snapshot" des villages d'Ouskelcoule, d'Ouskelpar et de Grandflac
 - ouskelcoule_snap
-- ouskelpar_snap
+- douskelpar_snap
 - grandflac_snap
 
 Note : Les administrateurs de la LVM pense que 5 Mornifles par snapshot sont largement suffisants
