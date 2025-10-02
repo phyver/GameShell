@@ -8,7 +8,7 @@ déplacez les dans votre coffre.
 Commandes utiles
 ================
 
-find CONDITION
+find . CONDITION
   Cherche des fichiers à partir du répertoire courant.
 
   Les conditions peuvent porter sur le nom des fichiers, leur 

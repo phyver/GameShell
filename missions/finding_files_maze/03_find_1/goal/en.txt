@@ -8,7 +8,7 @@ them to your chest.
 Useful commands
 ===============
 
-find CONDITION
+find . CONDITION
   Search for files satisfying the condition, starting from your 
   current working directory.
 

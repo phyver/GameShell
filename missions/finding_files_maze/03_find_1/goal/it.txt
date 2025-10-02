@@ -7,7 +7,7 @@ nella tua cassa.
 Comandi utili
 =============
 
-find CONDIZIONE
+find . CONDIZIONE
   Cerca file che soddisfano le condizioni, partendo dalla cartella 
   corrente.
 
