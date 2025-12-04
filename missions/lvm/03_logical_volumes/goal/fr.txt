@@ -17,10 +17,13 @@ afin de vous assurer que les villages respectent les consignes établies en haut
 Les fonctionnaires ont prévu la fondation des villages suivants :  
 
 - **Esdea** :  
-  - *Ouskelcoule* → le village du bas de la rivière principale, d’une superficie de 30 Mo  
-  - *Douskelpar* → le village perché en haut des collines, d’une superficie de 20 Mo  
 
+  - *Ouskelcoule* → le village du bas de la rivière principale, d’une superficie de 30 Mo  
+  
+  - *Douskelpar* → le village perché en haut des collines, d’une superficie de 20 Mo  
+  
 - **Esdebebe** :  
+
   - *Grandflac* → le village établi sur la berge sud du grand lac, d’une superficie de 25 Mo  
 
 ---

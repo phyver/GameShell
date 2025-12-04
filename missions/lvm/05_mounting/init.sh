@@ -3,7 +3,7 @@
 source "$MISSION_DIR/../00_shared/utils.sh"
 
 _mission_init() (
-  echo "mission 5"
+  echo "$(eval_gettext "mission 5")"
   lvm_init "05" 
   return $?
 

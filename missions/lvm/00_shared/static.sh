@@ -7,7 +7,7 @@ init_world() {
 
     # Create lore
     generate_lore
-    echo "🖋️  (Lore generation skipped for now...)"
+    echo "$(eval_gettext "🖋️  (Lore generation skipped for now...)")"
 }
 
 init_world

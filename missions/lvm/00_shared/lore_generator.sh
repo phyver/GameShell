@@ -24,7 +24,7 @@ generate_lore() {
         local path="$1"; mkd "$(dirname "$path")"; cat > "$path"
     }
 
-    echo "🖋️  Génération du lore du Royaume de Bordereau VI le Tamponné (édition sans villages)…"
+    echo "$(eval_gettext "🖋️  Génération du lore du Royaume de Bordereau VI le Tamponné (édition sans villages)…")"
     ROOT="$(eval_gettext "\$GSH_HOME/Royaume")"
 
     # Château ————————————————————————————————————————————————————————————————
@@ -349,5 +349,5 @@ EOF
     link "$ROOT/Académie de Géo-mancie/Institut des Flux et Contre-Flux/Procédure de validation des flux" \
          "$ROOT/Administration centrale/Cour des Comptes et Demi Comptes/Greffe"
 
-    echo "✅ Royaume de Bordereau VI le Tamponné : objets farfelus, Académie de Géo-mancie et labyrinthes administratifs créés (sans villages)."
+    echo "$(eval_gettext "✅ Royaume de Bordereau VI le Tamponné : objets farfelus, Académie de Géo-mancie et labyrinthes administratifs créés (sans villages).")"
 }

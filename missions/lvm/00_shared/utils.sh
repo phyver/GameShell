@@ -1,11 +1,11 @@
 
 lvm_init() {
 
-    echo "LAST ACTION : $LAST_ACTION"
+    echo "$(eval_gettext "LAST ACTION : \$LAST_ACTION")"
 
     # Skip initialization if last action was "check_false"
     if [ "$LAST_ACTION" == "check_false" ]; then
-        echo "Skipping initialization due to last action being 'check_false'."
+        echo "$(eval_gettext "Skipping initialization due to last action being 'check_false'.")"
         return 0
     fi
 
@@ -22,8 +22,8 @@ lvm_init() {
     fi
   
     # 1. unzip the disk images
-    echo "📦 Unzipping discs..."
-    echo "    unzip -o "$MISSION_DATA_PATH/disks.zip" -d "$DATA_PATH/""
+    echo "$(eval_gettext "📦 Unzipping discs...")"
+    echo "$(eval_gettext "    unzip -o \"\$MISSION_DATA_PATH/disks.zip\" -d \"\$DATA_PATH/\"")"
     unzip -o "$MISSION_DATA_PATH/disks.zip" -d "$DATA_PATH"
   
     DISK_1_PATH="$DATA_PATH/disk1.img"
@@ -31,20 +31,20 @@ lvm_init() {
   
     # 2. Attacher les fichiers images à des périphériques loop si pas encore fait
     if ! danger sudo losetup -j "$DISK_1_PATH" | grep -q "$DISK_1_PATH"; then
-        echo "⏳ Attaching $DISK_1_PATH to a loop device..."
+        echo "$(eval_gettext "⏳ Attaching \$DISK_1_PATH to a loop device...")"
         LOOP1=$(danger sudo losetup --find -P --show "$DISK_1_PATH")
-        echo "$DISK_1_PATH attached to $LOOP1"
+        echo "$(eval_gettext "\$DISK_1_PATH attached to \$LOOP1")"
     else
-        echo "$DISK_1_PATH is already attached to a loop device."
+        echo "$(eval_gettext "\$DISK_1_PATH is already attached to a loop device.")"
         LOOP1=$(danger sudo losetup -j "$DISK_1_PATH" | cut -d: -f1)
     fi
   
     if ! danger sudo losetup -j "$DISK_2_PATH" | grep -q "$DISK_2_PATH"; then
-        echo "⏳ Attaching $DISK_2_PATH to a loop device..."
+        echo "$(eval_gettext "⏳ Attaching \$DISK_2_PATH to a loop device...")"
         LOOP2=$(danger sudo losetup --find -P --show "$DISK_2_PATH")
-        echo "$DISK_2_PATH attached to $LOOP2"
+        echo "$(eval_gettext "\$DISK_2_PATH attached to \$LOOP2")"
     else
-        echo "$DISK_2_PATH is already attached to a loop device."
+        echo "$(eval_gettext "\$DISK_2_PATH is already attached to a loop device.")"
         LOOP2=$(danger sudo losetup -j "$DISK_2_PATH" | cut -d: -f1)
     fi
   
@@ -64,7 +64,7 @@ lvm_init() {
     fi
   
     # prepare world/dev
-    echo "Preparing world/dev..."
+    echo "$(eval_gettext "Preparing world/dev...")"
     SDBA="/dev/gsh_sda"
     SDBB="/dev/gsh_sdb"
     danger sudo ln -sf "$LOOP1_PATH" "$SDBA"
@@ -72,15 +72,15 @@ lvm_init() {
 
     # For mission 08, we need a third disk
     if [ "$MISSION_ID" -ge "08" ] && [ "$MISSION_ID" -lt "13" ]; then
-        echo "Preparing third disk for world/dev..."
+        echo "$(eval_gettext "Preparing third disk for world/dev...")"
 
         DISK_3_PATH="$DATA_PATH/disk3.img"
         if ! danger sudo losetup -j "$DISK_3_PATH" | grep -q "$DISK_3_PATH"; then
-            echo "⏳ Attaching $DISK_3_PATH to a loop device..."
+            echo "$(eval_gettext "⏳ Attaching \$DISK_3_PATH to a loop device...")"
             LOOP3=$(danger sudo losetup --find -P --show "$DISK_3_PATH")
-            echo "$DISK_3_PATH attached to $LOOP3"
+            echo "$(eval_gettext "\$DISK_3_PATH attached to \$LOOP3")"
         else
-            echo "$DISK_3_PATH is already attached to a loop device."
+            echo "$(eval_gettext "\$DISK_3_PATH is already attached to a loop device.")"
             LOOP3=$(danger sudo losetup -j "$DISK_3_PATH" | cut -d: -f1)
         fi
 
@@ -91,25 +91,25 @@ lvm_init() {
         danger sudo ln -sf "$LOOP3_PATH" "$SDBC"
     fi
   
-    echo "world/dev ready"
+    echo "$(eval_gettext "world/dev ready")"
 
     # if esdea VG exists activate it
     # if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdea"; then
-        echo "Activating esdea VG..."
+        echo "$(eval_gettext "Activating esdea VG...")"
         danger sudo vgimport -y esdea
         danger sudo vgchange -ay esdea
     # fi
 
     # if esdebe VG exists activate it
     # if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdebe"; then
-        echo "Activating esdebe VG..."
+        echo "$(eval_gettext "Activating esdebe VG...")"
         danger sudo vgimport -y esdebe
         danger sudo vgchange -ay esdebe
     # fi
 
     # if esdece VG exists activate it
     # if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdece"; then
-        echo "Activating esdece VG..."
+        echo "$(eval_gettext "Activating esdece VG...")"
         danger sudo vgimport -y esdece
         danger sudo vgchange -ay esdece
     # fi
@@ -117,7 +117,7 @@ lvm_init() {
     # if usa VG exists activate it
     # if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "usa"; then
         if [ "$MISSION_ID" != "14" ]; then
-            echo "Activating usa VG..."
+            echo "$(eval_gettext "Activating usa VG...")"
             danger sudo vgimport -y usa
             danger sudo vgchange -ay usa
         fi
@@ -125,7 +125,7 @@ lvm_init() {
 
     # For missions after 05, Mount villages if possible
     if [ "$MISSION_ID" -gt 05 ]; then
-        echo "Mounting villages..."
+        echo "$(eval_gettext "Mounting villages...")"
         mounting_villages
     fi
 
@@ -139,11 +139,11 @@ purge_vg() {
 
     # check VG exists
     if ! danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "$VG"; then
-        echo "VG '$VG' not found."
+        echo "$(eval_gettext "VG '\$VG' not found.")"
         return 0
     fi
 
-    echo "==> Purging VG: $VG"
+    echo "$(eval_gettext "==> Purging VG: \$VG")"
 
     # capture PVs belonging to this VG (before removal)
     local PVS=()
@@ -158,33 +158,33 @@ purge_vg() {
     local LVS=()
     mapfile -t LVS < <(danger sudo lvs --noheadings -o lv_path "$VG" 2>/dev/null | awk '{print $1}')
     for LV in "${LVS[@]}"; do
-        echo "  - Removing LV: $LV"
+        echo "$(eval_gettext "  - Removing LV: \$LV")"
         danger sudo lvremove -fy "$LV" || true
     done
 
     # drop missing PVs (if any) then remove VG
     danger sudo vgreduce --removemissing -f "$VG" || true
-    echo "  - Removing VG: $VG"
+    echo "$(eval_gettext "  - Removing VG: \$VG")"
     danger sudo vgremove -ff "$VG"
 
     # wipe PV metadata
     for PV in "${PVS[@]}"; do
-        echo "  - Wiping PV metadata: $PV"
+        echo "$(eval_gettext "  - Wiping PV metadata: \$PV")"
         danger sudo pvremove -ff -y "$PV" || true
     done
 
-    echo "Done purging VG: $VG"
+    echo "$(eval_gettext "Done purging VG: \$VG")"
 }
 
 
 lvm_cleanup() {
     MISSION_ID=$1
 
-    echo "GSH LAST ACTION : $GSH_LAST_ACTION"
+    echo "$(eval_gettext "GSH LAST ACTION : \$GSH_LAST_ACTION")"
     export LAST_ACTION="$GSH_LAST_ACTION"
 
     if [ "$LAST_ACTION" == "check_false" ]; then
-        echo "Skipping cleanup due to last action being 'check_false'."
+        echo "$(eval_gettext "Skipping cleanup due to last action being 'check_false'.")"
         return 0
     fi
 
@@ -195,31 +195,31 @@ lvm_cleanup() {
     unmounting_villages
     
     # If vgs esdea exist, purge it
-    echo "Cleaning up LVM configurations... esdea"
+    echo "$(eval_gettext "Cleaning up LVM configurations... esdea")"
     if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdea"; then
         purge_vg "esdea"
     fi
 
     # If vgs esdebe exist, purge it
-    echo "Cleaning up LVM configurations... esdebe"
+    echo "$(eval_gettext "Cleaning up LVM configurations... esdebe")"
     if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdebe"; then
         purge_vg "esdebe"
     fi
 
     # If vgs esdece exist, purge it
-    echo "Cleaning up LVM configurations... esdece"
+    echo "$(eval_gettext "Cleaning up LVM configurations... esdece")"
     if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "esdece"; then
         purge_vg "esdece"
     fi
 
     # If vgs usa exist, purge it
-    echo "Cleaning up LVM configurations... usa"
+    echo "$(eval_gettext "Cleaning up LVM configurations... usa")"
     if danger sudo vgs --noheadings -o vg_name 2>/dev/null | awk '{print $1}' | grep -qx "usa"; then
         purge_vg "usa"
     fi
 
     # Cleanup loop devices and disk images if needed
-    echo "Cleaning up loop devices and disk images..."
+    echo "$(eval_gettext "Cleaning up loop devices and disk images...")"
 
     # Detach loop devices
     # Get loop path from /dev/gsh_lvm_loop1 and /dev/gsh_lvm_loop2
@@ -273,14 +273,14 @@ mounting_villages() {
     for MOUNT_POINT in "${MOUNT_POINTS[@]}"; do
         # if LV does not exist , pass
         if [ ! -e "/dev/${LVS[$i]}" ]; then
-            echo "Logical volume /dev/${LVS[$i]} not found, skipping mount."
+            echo "$(eval_gettext "Logical volume /dev/\${LVS[\$i]} not found, skipping mount.")"
             i=$((i + 1))
             continue
         fi
 
         # if mount point does not exist pass
         if ! [ -d "$MOUNT_POINT" ]; then
-            echo "Creating mount point $MOUNT_POINT"
+            echo "$(eval_gettext "Creating mount point \$MOUNT_POINT")"
             mkdir -p "$MOUNT_POINT"
         fi
 
@@ -307,7 +307,7 @@ unmounting_villages() {
 
     for MOUNT_POINT in "${MOUNT_POINTS[@]}"; do
         if mountpoint -q "$MOUNT_POINT"; then
-            echo "Démonter $MOUNT_POINT"
+            echo "$(eval_gettext "Démonter \$MOUNT_POINT")"
             danger sudo umount "$MOUNT_POINT"
         fi
     done

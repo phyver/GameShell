@@ -6,7 +6,7 @@ gen_fishes() {
 
   # Basic checks
   if [[ -z "$count" || ! "$count" =~ ^[0-9]+$ || "$count" -le 0 ]]; then
-    echo "Usage: gen_fishes <number> [dir]"
+    echo "$(eval_gettext "Usage: gen_fishes <number> [dir]")"
     return 1
   fi
 
@@ -60,7 +60,7 @@ EOF
     esac
   done
 
-  echo "🐟 $count fish created in '$dir' (random ASCII per file)."
+  echo "$(eval_gettext "🐟 \$count fish created in '\$dir' (random ASCII per file).")"
 }
 
 gen_fishes "$@"

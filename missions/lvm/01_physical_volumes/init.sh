@@ -4,7 +4,7 @@ source "$MISSION_DIR/../00_shared/utils.sh"
 
 
 install_required_software() {
-    echo "🔍 Vérification des logiciels requis..."
+    echo "$(eval_gettext "🔍 Vérification des logiciels requis...")"
 
     # List of required software (command:package)
     # If command == package, you can just repeat the name
@@ -21,8 +21,8 @@ install_required_software() {
         local package_name="$2"
 
         if ! danger sudo which $command_name >/dev/null 2>&1; then
-            echo -e "\n❌ $command_name (package: $package_name) is not installed."
-            echo -n "Do you want to install $package_name? [y/N]: "
+            echo -e "$(eval_gettext "\n❌ \$command_name (package: \$package_name) is not installed.")"
+            echo -n "$(eval_gettext "Do you want to install \$package_name? [y/N]: ")"
             read choice < /dev/tty
 
             case "$choice" in
@@ -36,16 +36,16 @@ install_required_software() {
                     elif command -v pacman >/dev/null 2>&1; then
                         danger sudo pacman -Sy --noconfirm "$package_name"
                     else
-                        echo "⚠️  Could not detect a supported package manager. Please install $package_name manually."
+                        echo "$(eval_gettext "⚠️  Could not detect a supported package manager. Please install \$package_name manually.")"
                     fi
                     ;;
                 * )
-                    echo "Skipping $package_name."
+                    echo "$(eval_gettext "Skipping \$package_name.")"
                     return 1
                     ;;
             esac
         else
-            echo "✅ $command_name is already installed."
+            echo "$(eval_gettext "✅ \$command_name is already installed.")"
         fi
     }
 

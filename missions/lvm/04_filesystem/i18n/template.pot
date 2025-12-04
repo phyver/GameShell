@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-23 12:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, sh-format
+msgid ""
+"Le village d'Ouskelcoule n'existe pas (LV /dev/esdea/ouskelcoule "
+"introuvable)."
+msgstr ""
+
+#, sh-format
+msgid ""
+"Le village d'Ouskelcoule n'est pas encore organisé (aucun système de "
+"fichiers)."
+msgstr ""
+
+#, sh-format
+msgid "Le village d'Ouskelcoule n'est pas au format EXT4."
+msgstr ""
+
+#, sh-format
+msgid ""
+"Le village de Douskelpar n'existe pas (LV /dev/esdea/douskelpar introuvable)."
+msgstr ""
+
+#, sh-format
+msgid ""
+"Le village de Douskelpar n'est pas encore organisé (aucun système de "
+"fichiers)."
+msgstr ""
+
+#, sh-format
+msgid "Le village de Douskelpar n'est pas au format EXT4."
+msgstr ""
+
+#, sh-format
+msgid ""
+"Le village de Grandflac n'existe pas (LV /dev/esdebe/grandflac introuvable)."
+msgstr ""
+
+#, sh-format
+msgid ""
+"Le village de Grandflac n'est pas encore organisé (aucun système de "
+"fichiers)."
+msgstr ""
+
+#, sh-format
+msgid "Le village de Grandflac n'est pas au format EXT4."
+msgstr ""
+
+#, sh-format
+msgid ""
+"Bravo ! Ouskelcoule, Douskelpar et Grandflac sont dûment organisés et "
+"découpés, presque prêts à accueillir leurs habitants !"
+msgstr ""

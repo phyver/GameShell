@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-23 11:43+0200\n"
+"POT-Creation-Date: 2025-09-23 12:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,1248 +17,953 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: lore_generator_en.sh:14 lore_generator_en.sh:15 lore_generator_en.sh:16
-#: lore_generator_en.sh:17 lore_generator_en.sh:18 lore_generator_en.sh:19
-#: lore_generator_en.sh:224 lore_generator_en.sh:225 lore_generator_en.sh:226
-#: lore_generator_en.sh:227 lore_generator_en.sh:228 lore_generator_en.sh:229
-#: lore_generator_en.sh:231 lore_generator_en.sh:233 lore_generator_en.sh:235
-#: lore_generator_en.sh:239 lore_generator_en.sh:241 lore_generator_en.sh:243
-#: lore_generator_en.sh:245 lore_generator_en.sh:247 lore_generator_en.sh:340
+#, sh-format
+msgid ""
+"Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB "
+"($MISSION_NAME)."
+msgstr ""
+
+#, sh-format
+msgid ""
+"Loop devices $LOOP1_PATH and $LOOP2_PATH are required for mission "
+"$MISSION_NB ($MISSION_NAME)."
+msgstr ""
+
+#, sh-format
+msgid "$GSH_HOME/Royaume"
+msgstr ""
+
 #, sh-format
 msgid "Offices"
 msgstr ""
 
-#: lore_generator_en.sh:14 lore_generator_en.sh:15 lore_generator_en.sh:16
-#: lore_generator_en.sh:17 lore_generator_en.sh:18 lore_generator_en.sh:19
-#: lore_generator_en.sh:224 lore_generator_en.sh:225 lore_generator_en.sh:226
-#: lore_generator_en.sh:233 lore_generator_en.sh:239 lore_generator_en.sh:241
-#: lore_generator_en.sh:243
 #, sh-format
 msgid "Unique Stamp Office"
 msgstr ""
 
-#: lore_generator_en.sh:14 lore_generator_en.sh:19 lore_generator_en.sh:224
-#: lore_generator_en.sh:233 lore_generator_en.sh:239
 #, sh-format
 msgid "Counter"
 msgstr ""
 
-#: lore_generator_en.sh:14
 #, sh-format
 msgid "Orientation"
 msgstr ""
 
-#: lore_generator_en.sh:15 lore_generator_en.sh:16 lore_generator_en.sh:225
-#: lore_generator_en.sh:241
 #, sh-format
 msgid "Counter-counter"
 msgstr ""
 
-#: lore_generator_en.sh:16
 #, sh-format
 msgid "Return Form"
 msgstr ""
 
-#: lore_generator_en.sh:17 lore_generator_en.sh:18 lore_generator_en.sh:226
-#: lore_generator_en.sh:243
 #, sh-format
 msgid "Return Service"
 msgstr ""
 
-#: lore_generator_en.sh:18 lore_generator_en.sh:308
 #, sh-format
 msgid "Return to beginning"
 msgstr ""
 
-#: lore_generator_en.sh:20 lore_generator_en.sh:21 lore_generator_en.sh:22
-#: lore_generator_en.sh:23 lore_generator_en.sh:55 lore_generator_en.sh:56
-#: lore_generator_en.sh:57 lore_generator_en.sh:58 lore_generator_en.sh:59
-#: lore_generator_en.sh:60 lore_generator_en.sh:61 lore_generator_en.sh:62
-#: lore_generator_en.sh:63 lore_generator_en.sh:64 lore_generator_en.sh:65
-#: lore_generator_en.sh:66 lore_generator_en.sh:67 lore_generator_en.sh:70
-#: lore_generator_en.sh:73 lore_generator_en.sh:80 lore_generator_en.sh:83
-#: lore_generator_en.sh:86 lore_generator_en.sh:89 lore_generator_en.sh:93
-#: lore_generator_en.sh:95 lore_generator_en.sh:97 lore_generator_en.sh:99
-#: lore_generator_en.sh:101 lore_generator_en.sh:103 lore_generator_en.sh:105
-#: lore_generator_en.sh:107 lore_generator_en.sh:109 lore_generator_en.sh:111
-#: lore_generator_en.sh:113 lore_generator_en.sh:117 lore_generator_en.sh:122
-#: lore_generator_en.sh:125 lore_generator_en.sh:130 lore_generator_en.sh:133
-#: lore_generator_en.sh:138 lore_generator_en.sh:263 lore_generator_en.sh:318
-#: lore_generator_en.sh:319 lore_generator_en.sh:320 lore_generator_en.sh:321
-#: lore_generator_en.sh:324 lore_generator_en.sh:325 lore_generator_en.sh:326
-#: lore_generator_en.sh:327 lore_generator_en.sh:330 lore_generator_en.sh:331
-#: lore_generator_en.sh:332 lore_generator_en.sh:333 lore_generator_en.sh:334
-#: lore_generator_en.sh:335 lore_generator_en.sh:338 lore_generator_en.sh:339
-#: lore_generator_en.sh:341 lore_generator_en.sh:353 lore_generator_en.sh:354
-#: lore_generator_en.sh:356 lore_generator_en.sh:359
 #, sh-format
 msgid "Central Administration"
 msgstr ""
 
-#: lore_generator_en.sh:20 lore_generator_en.sh:23
 #, sh-format
 msgid "Unique counter"
 msgstr ""
 
-#: lore_generator_en.sh:21 lore_generator_en.sh:22 lore_generator_en.sh:55
-#: lore_generator_en.sh:56 lore_generator_en.sh:70 lore_generator_en.sh:73
-#: lore_generator_en.sh:93 lore_generator_en.sh:95 lore_generator_en.sh:97
-#: lore_generator_en.sh:318 lore_generator_en.sh:321 lore_generator_en.sh:339
 #, sh-format
 msgid "King's Hotel"
 msgstr ""
 
-#: lore_generator_en.sh:21 lore_generator_en.sh:22 lore_generator_en.sh:56
-#: lore_generator_en.sh:70 lore_generator_en.sh:93
 #, sh-format
 msgid "Antechamber"
 msgstr ""
 
-#: lore_generator_en.sh:21 lore_generator_en.sh:22 lore_generator_en.sh:56
-#: lore_generator_en.sh:70 lore_generator_en.sh:93
 #, sh-format
 msgid "Waiting Room"
 msgstr ""
 
-#: lore_generator_en.sh:22
 #, sh-format
 msgid "return to counter"
 msgstr ""
 
-#: lore_generator_en.sh:36
 #, sh-format
 msgid ""
 "🖋️  Generating lore for the Kingdom of Bordereau VI the Stamped (edition "
 "without villages)..."
 msgstr ""
 
-#: lore_generator_en.sh:37
 #, sh-format
 msgid "$GSH_HOME/Kingdom"
 msgstr ""
 
-#: lore_generator_en.sh:40 lore_generator_en.sh:41 lore_generator_en.sh:42
-#: lore_generator_en.sh:44 lore_generator_en.sh:46 lore_generator_en.sh:48
-#: lore_generator_en.sh:51
 #, sh-format
 msgid "Castle"
 msgstr ""
 
-#: lore_generator_en.sh:40 lore_generator_en.sh:42
 #, sh-format
 msgid "Main Tower"
 msgstr ""
 
-#: lore_generator_en.sh:40 lore_generator_en.sh:42
 #, sh-format
 msgid "First Floor"
 msgstr ""
 
-#: lore_generator_en.sh:40
 #, sh-format
 msgid "Second Floor"
 msgstr ""
 
-#: lore_generator_en.sh:40
 #, sh-format
 msgid "Tower Summit"
 msgstr ""
 
-#: lore_generator_en.sh:41 lore_generator_en.sh:44 lore_generator_en.sh:46
-#: lore_generator_en.sh:48
 #, sh-format
 msgid "Objects"
 msgstr ""
 
-#: lore_generator_en.sh:42
 #, sh-format
 msgid "Concierge's Journal.txt"
 msgstr ""
 
-#: lore_generator_en.sh:43
 #, sh-format
 msgid ""
 "Day 34: someone moved the audience hourglass. Time is now ahead of itself."
 msgstr ""
 
-#: lore_generator_en.sh:44
 #, sh-format
 msgid "Royal Stamp (unicorn wood).txt"
 msgstr ""
 
-#: lore_generator_en.sh:45
 #, sh-format
 msgid "Usage: affix. Side effect: instant respect."
 msgstr ""
 
-#: lore_generator_en.sh:46
 #, sh-format
 msgid "Key to the key drawer.txt"
 msgstr ""
 
-#: lore_generator_en.sh:47
 #, sh-format
 msgid "Only opens keys. For drawers, provide another form."
 msgstr ""
 
-#: lore_generator_en.sh:48
 #, sh-format
 msgid "Parade Paraph (too heavy to serve).txt"
 msgstr ""
 
-#: lore_generator_en.sh:49
 #, sh-format
 msgid "Ceremonial object. Appears more official than the law."
 msgstr ""
 
-#: lore_generator_en.sh:51
 #, sh-format
 msgid "Official Portraits"
 msgstr ""
 
-#: lore_generator_en.sh:51
 #, sh-format
 msgid "Bordereau VI the Stamped.txt"
 msgstr ""
 
-#: lore_generator_en.sh:52
 #, sh-format
 msgid ""
 "King, lover of clear procedures and opaque stamps. Motto: \"Who stamps "
 "reigns.\""
 msgstr ""
 
-#: lore_generator_en.sh:55 lore_generator_en.sh:73 lore_generator_en.sh:95
-#: lore_generator_en.sh:97 lore_generator_en.sh:318 lore_generator_en.sh:321
-#: lore_generator_en.sh:339
 #, sh-format
 msgid "Great Chancellery"
 msgstr ""
 
-#: lore_generator_en.sh:55 lore_generator_en.sh:73 lore_generator_en.sh:95
-#: lore_generator_en.sh:97 lore_generator_en.sh:318 lore_generator_en.sh:321
-#: lore_generator_en.sh:339
 #, sh-format
 msgid "Stamps Office"
 msgstr ""
 
-#: lore_generator_en.sh:57 lore_generator_en.sh:58 lore_generator_en.sh:80
-#: lore_generator_en.sh:99 lore_generator_en.sh:101 lore_generator_en.sh:319
-#: lore_generator_en.sh:320 lore_generator_en.sh:338 lore_generator_en.sh:341
 #, sh-format
 msgid "Ministry of Papers"
 msgstr ""
 
-#: lore_generator_en.sh:57 lore_generator_en.sh:80 lore_generator_en.sh:99
-#: lore_generator_en.sh:338 lore_generator_en.sh:341
 #, sh-format
 msgid "Forms Directorate"
 msgstr ""
 
-#: lore_generator_en.sh:58 lore_generator_en.sh:101 lore_generator_en.sh:319
-#: lore_generator_en.sh:320
 #, sh-format
 msgid "Duplicate Service"
 msgstr ""
 
-#: lore_generator_en.sh:59 lore_generator_en.sh:103 lore_generator_en.sh:354
 #, sh-format
 msgid "Ministry of Bridges and Roads"
 msgstr ""
 
-#: lore_generator_en.sh:59 lore_generator_en.sh:103 lore_generator_en.sh:354
 #, sh-format
 msgid "Mounting Office"
 msgstr ""
 
-#: lore_generator_en.sh:60 lore_generator_en.sh:83 lore_generator_en.sh:105
 #, sh-format
 msgid "Ministry of Rumors"
 msgstr ""
 
-#: lore_generator_en.sh:60 lore_generator_en.sh:83 lore_generator_en.sh:105
 #, sh-format
 msgid "Whispers Cabinet"
 msgstr ""
 
-#: lore_generator_en.sh:61 lore_generator_en.sh:86 lore_generator_en.sh:107
-#: lore_generator_en.sh:359
 #, sh-format
 msgid "Court of Accounts and Half Accounts"
 msgstr ""
 
-#: lore_generator_en.sh:61 lore_generator_en.sh:86 lore_generator_en.sh:107
-#: lore_generator_en.sh:359
 #, sh-format
 msgid "Registry"
 msgstr ""
 
-#: lore_generator_en.sh:62 lore_generator_en.sh:63 lore_generator_en.sh:109
-#: lore_generator_en.sh:111 lore_generator_en.sh:324 lore_generator_en.sh:325
-#: lore_generator_en.sh:326 lore_generator_en.sh:327 lore_generator_en.sh:353
 #, sh-format
 msgid "Kingdom Prefecture"
 msgstr ""
 
-#: lore_generator_en.sh:62 lore_generator_en.sh:109 lore_generator_en.sh:324
-#: lore_generator_en.sh:327
 #, sh-format
 msgid "Counter A-M"
 msgstr ""
 
-#: lore_generator_en.sh:63 lore_generator_en.sh:111 lore_generator_en.sh:325
-#: lore_generator_en.sh:326
 #, sh-format
 msgid "Counter N-Z"
 msgstr ""
 
-#: lore_generator_en.sh:64 lore_generator_en.sh:89 lore_generator_en.sh:113
-#: lore_generator_en.sh:356
 #, sh-format
 msgid "Archives"
 msgstr ""
 
-#: lore_generator_en.sh:64 lore_generator_en.sh:89 lore_generator_en.sh:113
 #, sh-format
 msgid "Shelving"
 msgstr ""
 
-#: lore_generator_en.sh:64 lore_generator_en.sh:89 lore_generator_en.sh:113
 #, sh-format
 msgid "A to Z"
 msgstr ""
 
-#: lore_generator_en.sh:65 lore_generator_en.sh:66 lore_generator_en.sh:67
-#: lore_generator_en.sh:117 lore_generator_en.sh:122 lore_generator_en.sh:125
-#: lore_generator_en.sh:130 lore_generator_en.sh:133 lore_generator_en.sh:138
-#: lore_generator_en.sh:330 lore_generator_en.sh:331 lore_generator_en.sh:332
-#: lore_generator_en.sh:333 lore_generator_en.sh:334 lore_generator_en.sh:335
 #, sh-format
 msgid "Commissions"
 msgstr ""
 
-#: lore_generator_en.sh:65 lore_generator_en.sh:117 lore_generator_en.sh:122
-#: lore_generator_en.sh:330 lore_generator_en.sh:335
 #, sh-format
 msgid "Commission 1"
 msgstr ""
 
-#: lore_generator_en.sh:66 lore_generator_en.sh:125 lore_generator_en.sh:130
-#: lore_generator_en.sh:331 lore_generator_en.sh:332
 #, sh-format
 msgid "Commission 2"
 msgstr ""
 
-#: lore_generator_en.sh:67 lore_generator_en.sh:133 lore_generator_en.sh:138
-#: lore_generator_en.sh:333 lore_generator_en.sh:334
 #, sh-format
 msgid "Commission 3"
 msgstr ""
 
-#: lore_generator_en.sh:70
 #, sh-format
 msgid "Number 0001.txt"
 msgstr ""
 
-#: lore_generator_en.sh:71
 #, sh-format
 msgid "You will be called after number 0000 (when it exists)."
 msgstr ""
 
-#: lore_generator_en.sh:73
 #, sh-format
 msgid "Internal Regulations.md"
 msgstr ""
 
-#: lore_generator_en.sh:75
 #, sh-format
 msgid "Any request must be stamped before being submitted to be stamped."
 msgstr ""
 
-#: lore_generator_en.sh:76
 #, sh-format
 msgid ""
 "Stamps are not to be stamped, except in case of emergency (form \"URG-URG\")."
 msgstr ""
 
-#: lore_generator_en.sh:77
 #, sh-format
 msgid "Employees must soothe the feathered stamp every morning."
 msgstr ""
 
-#: lore_generator_en.sh:80
 #, sh-format
 msgid "Circular Procedure n° ∞.md"
 msgstr ""
 
-#: lore_generator_en.sh:81
 #, sh-format
 msgid ""
 "Step 1: consult Step 2. Step 2: consult Step 1. (Stamp required at each "
 "consultation.)"
 msgstr ""
 
-#: lore_generator_en.sh:83
 #, sh-format
 msgid "Whisper of the day.txt"
 msgstr ""
 
-#: lore_generator_en.sh:84
 #, sh-format
 msgid "They say the pile of files is taller seen from below."
 msgstr ""
 
-#: lore_generator_en.sh:86
 #, sh-format
 msgid "Half-receipt (to complete).txt"
 msgstr ""
 
-#: lore_generator_en.sh:87
 #, sh-format
 msgid "Please present the other half to prove the existence of this one."
 msgstr ""
 
-#: lore_generator_en.sh:89
 #, sh-format
 msgid "Index (partial).txt"
 msgstr ""
 
-#: lore_generator_en.sh:90
 #, sh-format
 msgid ""
 "Apricots (no); Certificates (yes); Warnings (maybe). See also: Zebras (filed "
 "under A by mistake)."
 msgstr ""
 
-#: lore_generator_en.sh:93
 #, sh-format
 msgid "Plastic plant (badge holder).txt"
 msgstr ""
 
-#: lore_generator_en.sh:94
 #, sh-format
 msgid "Seniority: 12 years. Acquired rights: priority at the counter."
 msgstr ""
 
-#: lore_generator_en.sh:95
 #, sh-format
 msgid "Quantum stamp.txt"
 msgstr ""
 
-#: lore_generator_en.sh:96
 #, sh-format
 msgid ""
 "Affixes and removes the seal simultaneously until observed by a superior."
 msgstr ""
 
-#: lore_generator_en.sh:97
 #, sh-format
 msgid "Bottomless inkwell.txt"
 msgstr ""
 
-#: lore_generator_en.sh:98
 #, sh-format
 msgid "Structural deficit. Voted every year by acclamation."
 msgstr ""
 
-#: lore_generator_en.sh:99
 #, sh-format
 msgid "Random forms dispenser.txt"
 msgstr ""
 
-#: lore_generator_en.sh:100
 #, sh-format
 msgid "Spits out a different CERFA with each swear word. Doesn't take change."
 msgstr ""
 
-#: lore_generator_en.sh:101
 #, sh-format
 msgid "Photocopy of an unfindable original copy.txt"
 msgstr ""
 
-#: lore_generator_en.sh:102
 #, sh-format
 msgid "Authenticated by the absence of the original."
 msgstr ""
 
-#: lore_generator_en.sh:103
 #, sh-format
 msgid "Vertical bubble level.txt"
 msgstr ""
 
-#: lore_generator_en.sh:104
 #, sh-format
 msgid "Indicates the moral inclination of the project."
 msgstr ""
 
-#: lore_generator_en.sh:105
 #, sh-format
 msgid "Whispering microphone.txt"
 msgstr ""
 
-#: lore_generator_en.sh:106
 #, sh-format
 msgid "Repeats \"apparently\" with authority."
 msgstr ""
 
-#: lore_generator_en.sh:107
 #, sh-format
 msgid "Digital abacus (unplugged).txt"
 msgstr ""
 
-#: lore_generator_en.sh:108
 #, sh-format
 msgid "Optimizes invisible savings."
 msgstr ""
 
-#: lore_generator_en.sh:109
 #, sh-format
 msgid "Ticket regurgitator automaton.txt"
 msgstr ""
 
-#: lore_generator_en.sh:110
 #, sh-format
 msgid "Returns a ticket older than yours."
 msgstr ""
 
-#: lore_generator_en.sh:111
 #, sh-format
 msgid "Queue line snake rope.txt"
 msgstr ""
 
-#: lore_generator_en.sh:112
 #, sh-format
 msgid "Lengthens as soon as you think you're reaching the goal."
 msgstr ""
 
-#: lore_generator_en.sh:113
 #, sh-format
 msgid "Schrödinger's file (filed and lost).txt"
 msgstr ""
 
-#: lore_generator_en.sh:114
 #, sh-format
 msgid "Exists as long as no one consults it."
 msgstr ""
 
-#: lore_generator_en.sh:117 lore_generator_en.sh:125 lore_generator_en.sh:133
 #, sh-format
 msgid "Member list.txt"
 msgstr ""
 
-#: lore_generator_en.sh:118
 #, sh-format
 msgid "Dame Pénélope de la Punaise (president)"
 msgstr ""
 
-#: lore_generator_en.sh:119
 #, sh-format
 msgid "Sire Fernand du Parapheur (vice-president)"
 msgstr ""
 
-#: lore_generator_en.sh:120
 #, sh-format
 msgid "Master Loris des Liasses (rapporteur)"
 msgstr ""
 
-#: lore_generator_en.sh:122
 #, sh-format
 msgid "Session bell (mute).txt"
 msgstr ""
 
-#: lore_generator_en.sh:123
 #, sh-format
 msgid "Signals the end of debate as soon as it begins."
 msgstr ""
 
-#: lore_generator_en.sh:126
 #, sh-format
 msgid "Captain Clotaire du Cachet"
 msgstr ""
 
-#: lore_generator_en.sh:127
 #, sh-format
 msgid "Demoiselle Agathe du Bordereau"
 msgstr ""
 
-#: lore_generator_en.sh:128
 #, sh-format
 msgid "Brother Nestor des Annexes"
 msgstr ""
 
-#: lore_generator_en.sh:130
 #, sh-format
 msgid "Folding chair (unfolded by decree).txt"
 msgstr ""
 
-#: lore_generator_en.sh:131
 #, sh-format
 msgid "Only folds to written injunctions."
 msgstr ""
 
-#: lore_generator_en.sh:134
 #, sh-format
 msgid "Stewardess Salomé de la Signature"
 msgstr ""
 
-#: lore_generator_en.sh:135
 #, sh-format
 msgid "Registrar Octave de l'Agrafe"
 msgstr ""
 
-#: lore_generator_en.sh:136
 #, sh-format
 msgid "Sergeant Éline de la Reliure"
 msgstr ""
 
-#: lore_generator_en.sh:138
 #, sh-format
 msgid "Protocol stapler (without staples).txt"
 msgstr ""
 
-#: lore_generator_en.sh:139
 #, sh-format
 msgid "Brings together without attaching."
 msgstr ""
 
-#: lore_generator_en.sh:144 lore_generator_en.sh:145 lore_generator_en.sh:146
-#: lore_generator_en.sh:147 lore_generator_en.sh:148 lore_generator_en.sh:149
-#: lore_generator_en.sh:150 lore_generator_en.sh:151 lore_generator_en.sh:152
-#: lore_generator_en.sh:153 lore_generator_en.sh:154 lore_generator_en.sh:157
-#: lore_generator_en.sh:164 lore_generator_en.sh:168 lore_generator_en.sh:170
-#: lore_generator_en.sh:174 lore_generator_en.sh:180 lore_generator_en.sh:183
-#: lore_generator_en.sh:189 lore_generator_en.sh:192 lore_generator_en.sh:198
-#: lore_generator_en.sh:202 lore_generator_en.sh:206 lore_generator_en.sh:210
-#: lore_generator_en.sh:214 lore_generator_en.sh:220 lore_generator_en.sh:352
-#: lore_generator_en.sh:355 lore_generator_en.sh:357 lore_generator_en.sh:358
 #, sh-format
 msgid "Academy of Geo-mancy"
 msgstr ""
 
-#: lore_generator_en.sh:144 lore_generator_en.sh:145 lore_generator_en.sh:157
-#: lore_generator_en.sh:164 lore_generator_en.sh:352
 #, sh-format
 msgid "Study Secretariat"
 msgstr ""
 
-#: lore_generator_en.sh:144 lore_generator_en.sh:164 lore_generator_en.sh:352
 #, sh-format
 msgid "Registration Office"
 msgstr ""
 
-#: lore_generator_en.sh:145
 #, sh-format
 msgid "Retake Service"
 msgstr ""
 
-#: lore_generator_en.sh:146 lore_generator_en.sh:147 lore_generator_en.sh:168
-#: lore_generator_en.sh:170 lore_generator_en.sh:357
 #, sh-format
 msgid "Library of Impossible Maps"
 msgstr ""
 
-#: lore_generator_en.sh:146 lore_generator_en.sh:168
 #, sh-format
 msgid "Contradictory Atlases Room"
 msgstr ""
 
-#: lore_generator_en.sh:147 lore_generator_en.sh:170 lore_generator_en.sh:357
 #, sh-format
 msgid "Ground Floor"
 msgstr ""
 
-#: lore_generator_en.sh:147 lore_generator_en.sh:170 lore_generator_en.sh:357
 #, sh-format
 msgid "Moving Index"
 msgstr ""
 
-#: lore_generator_en.sh:148 lore_generator_en.sh:149 lore_generator_en.sh:150
-#: lore_generator_en.sh:174 lore_generator_en.sh:180 lore_generator_en.sh:183
-#: lore_generator_en.sh:189 lore_generator_en.sh:192 lore_generator_en.sh:198
-#: lore_generator_en.sh:355
 #, sh-format
 msgid "Departments"
 msgstr ""
 
-#: lore_generator_en.sh:148 lore_generator_en.sh:174 lore_generator_en.sh:180
-#: lore_generator_en.sh:355
 #, sh-format
 msgid "Etheric Cartography"
 msgstr ""
 
-#: lore_generator_en.sh:148 lore_generator_en.sh:149 lore_generator_en.sh:150
-#: lore_generator_en.sh:180 lore_generator_en.sh:189 lore_generator_en.sh:198
-#: lore_generator_en.sh:355
 #, sh-format
 msgid "Labs"
 msgstr ""
 
-#: lore_generator_en.sh:149 lore_generator_en.sh:183 lore_generator_en.sh:189
 #, sh-format
 msgid "Stamp Topology"
 msgstr ""
 
-#: lore_generator_en.sh:150 lore_generator_en.sh:192 lore_generator_en.sh:198
 #, sh-format
 msgid "Forms Geology"
 msgstr ""
 
-#: lore_generator_en.sh:151 lore_generator_en.sh:202 lore_generator_en.sh:358
 #, sh-format
 msgid "Institute of Flows and Counter-Flows"
 msgstr ""
 
-#: lore_generator_en.sh:151 lore_generator_en.sh:202
 #, sh-format
 msgid "Amphitheater ∮"
 msgstr ""
 
-#: lore_generator_en.sh:152 lore_generator_en.sh:206
 #, sh-format
 msgid "Observatory of Administrative Lines"
 msgstr ""
 
-#: lore_generator_en.sh:152 lore_generator_en.sh:206
 #, sh-format
 msgid "Meridians Terrace"
 msgstr ""
 
-#: lore_generator_en.sh:153 lore_generator_en.sh:214 lore_generator_en.sh:220
 #, sh-format
 msgid "Competitions and Aggregations"
 msgstr ""
 
-#: lore_generator_en.sh:153 lore_generator_en.sh:214 lore_generator_en.sh:220
 #, sh-format
 msgid "Examination Room"
 msgstr ""
 
-#: lore_generator_en.sh:154 lore_generator_en.sh:210
 #, sh-format
 msgid "Tools Museum"
 msgstr ""
 
-#: lore_generator_en.sh:154 lore_generator_en.sh:210
 #, sh-format
 msgid "Instruments"
 msgstr ""
 
-#: lore_generator_en.sh:157
 #, sh-format
 msgid "Student guide.md"
 msgstr ""
 
-#: lore_generator_en.sh:159
 #, sh-format
 msgid "Cardinal principle: every territory is a matter of paper."
 msgstr ""
 
-#: lore_generator_en.sh:160
 #, sh-format
 msgid "ECTS credits mean \"Echelons, Cachets, Tampons, Signatures\"."
 msgstr ""
 
-#: lore_generator_en.sh:161
 #, sh-format
 msgid "Any valid map must include at least one administrative dead end."
 msgstr ""
 
-#: lore_generator_en.sh:164
 #, sh-format
 msgid "Opening hours.txt"
 msgstr ""
 
-#: lore_generator_en.sh:165
 #, sh-format
 msgid "Open on even working days, except when it's odd."
 msgstr ""
 
-#: lore_generator_en.sh:168
 #, sh-format
 msgid "Flat atlas of the round Earth.txt"
 msgstr ""
 
-#: lore_generator_en.sh:169
 #, sh-format
 msgid "Revised edition: now spheri-flat according to decree."
 msgstr ""
 
-#: lore_generator_en.sh:170 lore_generator_en.sh:235
 #, sh-format
 msgid "User manual.txt"
 msgstr ""
 
-#: lore_generator_en.sh:171
 #, sh-format
 msgid "To find A, look for Z, then return to A via Beta corridor."
 msgstr ""
 
-#: lore_generator_en.sh:174 lore_generator_en.sh:183 lore_generator_en.sh:192
 #, sh-format
 msgid "Program.md"
 msgstr ""
 
-#: lore_generator_en.sh:176
 #, sh-format
 msgid "Introduction to trace-therapy"
 msgstr ""
 
-#: lore_generator_en.sh:177
 #, sh-format
 msgid "Variable geometry of moral borders"
 msgstr ""
 
-#: lore_generator_en.sh:178
 #, sh-format
 msgid "Seminar: The hesitant compass"
 msgstr ""
 
-#: lore_generator_en.sh:180
 #, sh-format
 msgid "Indecisive compass.txt"
 msgstr ""
 
-#: lore_generator_en.sh:181
 #, sh-format
 msgid "Turns until the presence of a department head."
 msgstr ""
 
-#: lore_generator_en.sh:185
 #, sh-format
 msgid "Non-commutative seal groups"
 msgstr ""
 
-#: lore_generator_en.sh:186
 #, sh-format
 msgid "Homotopy of validation circuits"
 msgstr ""
 
-#: lore_generator_en.sh:187
 #, sh-format
 msgid "Seminar: Torus of waiting lines"
 msgstr ""
 
-#: lore_generator_en.sh:189
 #, sh-format
 msgid "Möbius stamp.txt"
 msgstr ""
 
-#: lore_generator_en.sh:190
 #, sh-format
 msgid "One side, two lines, no exit."
 msgstr ""
 
-#: lore_generator_en.sh:194
 #, sh-format
 msgid "Stratigraphy of annexes"
 msgstr ""
 
-#: lore_generator_en.sh:195
 #, sh-format
 msgid "Metamorphism under paraph"
 msgstr ""
 
-#: lore_generator_en.sh:196
 #, sh-format
 msgid "Seminar: Version fossils"
 msgstr ""
 
-#: lore_generator_en.sh:198
 #, sh-format
 msgid "Stratified section of a file.txt"
 msgstr ""
 
-#: lore_generator_en.sh:199
 #, sh-format
 msgid "Observe without disturbing the fragile \"missing pieces\" layer."
 msgstr ""
 
-#: lore_generator_en.sh:202
 #, sh-format
 msgid "Self-erasing blackboard.txt"
 msgstr ""
 
-#: lore_generator_en.sh:203
 #, sh-format
 msgid "Erases demonstrations just before the conclusion."
 msgstr ""
 
-#: lore_generator_en.sh:206
 #, sh-format
 msgid "Paperwork telescope.txt"
 msgstr ""
 
-#: lore_generator_en.sh:207
 #, sh-format
 msgid "Only magnifies illegible signatures."
 msgstr ""
 
-#: lore_generator_en.sh:210
 #, sh-format
 msgid "Deadline drawing board.txt"
 msgstr ""
 
-#: lore_generator_en.sh:211
 #, sh-format
 msgid "Allows adding a calendar month to any natural delay."
 msgstr ""
 
-#: lore_generator_en.sh:214
 #, sh-format
 msgid "Sample subject.md"
 msgstr ""
 
-#: lore_generator_en.sh:216
 #, sh-format
 msgid "Map a mobile border between two closed counters."
 msgstr ""
 
-#: lore_generator_en.sh:217
 #, sh-format
 msgid ""
 "Demonstrate the existence of a shortcut longer than the official detour."
 msgstr ""
 
-#: lore_generator_en.sh:218
 #, sh-format
 msgid "Stamp the hypothesis, then remove it cleanly."
 msgstr ""
 
-#: lore_generator_en.sh:220
 #, sh-format
 msgid "Approved cheat sheet (blank).txt"
 msgstr ""
 
-#: lore_generator_en.sh:221
 #, sh-format
 msgid "To be filled only inadvertently."
 msgstr ""
 
-#: lore_generator_en.sh:227 lore_generator_en.sh:228 lore_generator_en.sh:235
-#: lore_generator_en.sh:245 lore_generator_en.sh:340
 #, sh-format
 msgid "Cerfas Office"
 msgstr ""
 
-#: lore_generator_en.sh:227 lore_generator_en.sh:235
 #, sh-format
 msgid "CERFA 13B"
 msgstr ""
 
-#: lore_generator_en.sh:228 lore_generator_en.sh:245
 #, sh-format
 msgid "CERFA 13C"
 msgstr ""
 
-#: lore_generator_en.sh:229 lore_generator_en.sh:231 lore_generator_en.sh:247
 #, sh-format
 msgid "Complaints and Complaint Requests Office"
 msgstr ""
 
-#: lore_generator_en.sh:231
 #, sh-format
 msgid "Example complaint (template).txt"
 msgstr ""
 
-#: lore_generator_en.sh:232
 #, sh-format
 msgid "Subject: complaint against the complaint form, too complaining."
 msgstr ""
 
-#: lore_generator_en.sh:233
 #, sh-format
 msgid "Orientation brochure.txt"
 msgstr ""
 
-#: lore_generator_en.sh:234
 #, sh-format
 msgid ""
 "For any question, address the Counter-counter. To contest: Return Service."
 msgstr ""
 
-#: lore_generator_en.sh:236
 #, sh-format
 msgid ""
 "Fill in blue. Except if you don't have blue, in which case: start over in "
 "blue."
 msgstr ""
 
-#: lore_generator_en.sh:239
 #, sh-format
 msgid "Administrative hourglass set to \"in progress\".txt"
 msgstr ""
 
-#: lore_generator_en.sh:240
 #, sh-format
 msgid "Never empties completely, in accordance with procedure."
 msgstr ""
 
-#: lore_generator_en.sh:241
 #, sh-format
 msgid "Conditional ink pen.txt"
 msgstr ""
 
-#: lore_generator_en.sh:242
 #, sh-format
 msgid "Writes only after the stamp, never before."
 msgstr ""
 
-#: lore_generator_en.sh:243
 #, sh-format
 msgid "Bottomless complaints box.txt"
 msgstr ""
 
-#: lore_generator_en.sh:244
 #, sh-format
 msgid "All claims find their downfall there."
 msgstr ""
 
-#: lore_generator_en.sh:245
 #, sh-format
 msgid "Self-referenced form.txt"
 msgstr ""
 
-#: lore_generator_en.sh:246
 #, sh-format
 msgid "Please attach CERFA 13C to this CERFA 13C."
 msgstr ""
 
-#: lore_generator_en.sh:247
 #, sh-format
 msgid "Whispering megaphone.txt"
 msgstr ""
 
-#: lore_generator_en.sh:248
 #, sh-format
 msgid "Amplifies indignant silences."
 msgstr ""
 
-#: lore_generator_en.sh:252 lore_generator_en.sh:270 lore_generator_en.sh:308
 #, sh-format
 msgid "Public Reception"
 msgstr ""
 
-#: lore_generator_en.sh:253 lore_generator_en.sh:273
 #, sh-format
 msgid "Ticket Distribution"
 msgstr ""
 
-#: lore_generator_en.sh:254 lore_generator_en.sh:276
 #, sh-format
 msgid "Provisional Orientation"
 msgstr ""
 
-#: lore_generator_en.sh:255 lore_generator_en.sh:279
 #, sh-format
 msgid "Preliminary Pre-validation"
 msgstr ""
 
-#: lore_generator_en.sh:256 lore_generator_en.sh:282
 #, sh-format
 msgid "Control Compliance Control"
 msgstr ""
 
-#: lore_generator_en.sh:257 lore_generator_en.sh:285
 #, sh-format
 msgid "Internal Prefecture Visa"
 msgstr ""
 
-#: lore_generator_en.sh:258 lore_generator_en.sh:288
 #, sh-format
 msgid "Intent Stamping"
 msgstr ""
 
-#: lore_generator_en.sh:259 lore_generator_en.sh:291
 #, sh-format
 msgid "Verification Verification"
 msgstr ""
 
-#: lore_generator_en.sh:260 lore_generator_en.sh:294
 #, sh-format
 msgid "Penultimate Step Counter-Validation"
 msgstr ""
 
-#: lore_generator_en.sh:261 lore_generator_en.sh:297 lore_generator_en.sh:308
 #, sh-format
 msgid "Counter No. 0"
 msgstr ""
 
-#: lore_generator_en.sh:263
 #, sh-format
 msgid "Standard Administrative Path"
 msgstr ""
 
-#: lore_generator_en.sh:267
 #, sh-format
 msgid "Instructions.txt"
 msgstr ""
 
-#: lore_generator_en.sh:267
 #, sh-format
 msgid "Present the document obtained in the previous step."
 msgstr ""
 
-#: lore_generator_en.sh:271
 #, sh-format
 msgid "Motivating ceiling light.txt"
 msgstr ""
 
-#: lore_generator_en.sh:271
 #, sh-format
 msgid "Displays \"Almost done!\" upon arrival."
 msgstr ""
 
-#: lore_generator_en.sh:274
 #, sh-format
 msgid "Imaginary number ticket.txt"
 msgstr ""
 
-#: lore_generator_en.sh:274
 #, sh-format
 msgid "Served after the real ones, before the priority ones."
 msgstr ""
 
-#: lore_generator_en.sh:277
 #, sh-format
 msgid "Administrative compass.txt"
 msgstr ""
 
-#: lore_generator_en.sh:277
 #, sh-format
 msgid "Always points to the opposite counter."
 msgstr ""
 
-#: lore_generator_en.sh:280
 #, sh-format
 msgid "Shadow stamp.txt"
 msgstr ""
 
-#: lore_generator_en.sh:280
 #, sh-format
 msgid "Leaves an invisible but regulatory trace."
 msgstr ""
 
-#: lore_generator_en.sh:283
 #, sh-format
 msgid "Checklist checklist.txt"
 msgstr ""
 
-#: lore_generator_en.sh:283
 #, sh-format
 msgid "Last item: check this checklist."
 msgstr ""
 
-#: lore_generator_en.sh:286
 #, sh-format
 msgid "Swinging door (leads nowhere).txt"
 msgstr ""
 
-#: lore_generator_en.sh:286
 #, sh-format
 msgid "Approved for back-and-forth."
 msgstr ""
 
-#: lore_generator_en.sh:289
 #, sh-format
 msgid "Tacit intentions form.txt"
 msgstr ""
 
-#: lore_generator_en.sh:289
 #, sh-format
 msgid "To be filled without writing anything."
 msgstr ""
 
-#: lore_generator_en.sh:292
 #, sh-format
 msgid "Protocol magnifying glass.txt"
 msgstr ""
 
-#: lore_generator_en.sh:292
 #, sh-format
 msgid "Magnifies paperwork, reduces hope."
 msgstr ""
 
-#: lore_generator_en.sh:295
 #, sh-format
 msgid "Contradictory seal.txt"
 msgstr ""
 
-#: lore_generator_en.sh:295
 #, sh-format
 msgid "Validates and invalidates simultaneously."
 msgstr ""
 
-#: lore_generator_en.sh:298
 #, sh-format
 msgid "Impossible bell.txt"
 msgstr ""
 
-#: lore_generator_en.sh:298
 #, sh-format
 msgid "Ring scheduled for next budget year."
 msgstr ""
 
-#: lore_generator_en.sh:303
 #, sh-format
 msgid "Next step"
 msgstr ""
 
-#: lore_generator_en.sh:318
 #, sh-format
 msgid "Duplicate requests"
 msgstr ""
 
-#: lore_generator_en.sh:320
 #, sh-format
 msgid "Final validation"
 msgstr ""
 
-#: lore_generator_en.sh:324
 #, sh-format
 msgid "next counter"
 msgstr ""
 
-#: lore_generator_en.sh:326
 #, sh-format
 msgid "referral"
 msgstr ""
 
-#: lore_generator_en.sh:330 lore_generator_en.sh:332 lore_generator_en.sh:334
 #, sh-format
 msgid "transmission"
 msgstr ""
 
-#: lore_generator_en.sh:338
 #, sh-format
 msgid "Stamp required"
 msgstr ""
 
-#: lore_generator_en.sh:340
 #, sh-format
 msgid "Deposit"
 msgstr ""
 
-#: lore_generator_en.sh:352
 #, sh-format
 msgid "Prefecture validation"
 msgstr ""
 
-#: lore_generator_en.sh:354
 #, sh-format
 msgid "Mandatory Academy internship"
 msgstr ""
 
-#: lore_generator_en.sh:356
 #, sh-format
 msgid "Bridge to the Library of Impossible Maps"
 msgstr ""
 
-#: lore_generator_en.sh:358
 #, sh-format
 msgid "Flow validation procedure"
 msgstr ""
 
-#: lore_generator_en.sh:361
 #, sh-format
 msgid ""
 "✅ Kingdom of Bordereau VI the Stamped: bizarre objects, Academy of Geo-"
