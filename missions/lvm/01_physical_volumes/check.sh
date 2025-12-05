@@ -17,12 +17,12 @@ _mission_check() (
   # 2) Vérifier que ce sont des PV LVM
   #    pvs renvoie un code d'erreur si l'argument n'est pas un PV
   if ! danger sudo pvs --noheadings "$SDBA" >/dev/null 2>&1; then
-    echo "$(eval_gettext "Vous devez encore incarner le territoire éthéré d'Esdea en terre physiques !")"
+    echo "$(eval_gettext "You must still incarnate the ethereal territory of Esdea into physical lands!")"
     return 1
   fi
 
   if ! danger sudo pvs --noheadings "$SDBB" >/dev/null 2>&1; then
-    echo "$(eval_gettext "Vous devez encore incarner le territoire éthéré d'Esdebe en terre physiques !")"
+    echo "$(eval_gettext "You must still incarnate the ethereal territory of Esdebe into physical lands!")"
     return 1
   fi
 
@@ -30,7 +30,7 @@ _mission_check() (
   #    Décommentez si utile :
   # pvs -o pv_name,vg_name,pv_size,vg_uuid --noheadings "$SDBA" "$SDBB" 2>/dev/null | sed 's/^ *//'
 
-  echo "$(eval_gettext "Bravo, les territoires éthérés d'Esdea et d'Esdebe ont été incarnés en terres physiques !")"
+  echo "$(eval_gettext "Bravo, the ethereal territories of Esdea and Esdebe have been incarnated into physical lands!")"
   return 0
 )
 

@@ -4,7 +4,7 @@ source "$MISSION_DIR/../00_shared/utils.sh"
 
 
 install_required_software() {
-    echo "$(eval_gettext "🔍 Vérification des logiciels requis...")"
+    echo "$(eval_gettext "🔍 Checking required software...")"
 
     # List of required software (command:package)
     # If command == package, you can just repeat the name

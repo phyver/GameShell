@@ -29,27 +29,27 @@ for v in "${!industries[@]}"; do
     # Industrie spécifique
     case "$v" in
       Ouskelcoule)
-        echo "$(eval_gettext "Barque de pêche")" > "$VILLAGE/$INDUSTRY/barque.txt"
-        echo "$(eval_gettext "Caisses de poissons")" > "$VILLAGE/$INDUSTRY/caisses.txt"
-        echo "$(eval_gettext "Arsène le maître pêcheur")" > "$VILLAGE/$INDUSTRY/habitant_arsene.txt"
+        echo "$(eval_gettext "Fishing boat")" > "$VILLAGE/$INDUSTRY/barque.txt"
+        echo "$(eval_gettext "Fish crates")" > "$VILLAGE/$INDUSTRY/caisses.txt"
+        echo "$(eval_gettext "Arsène the master fisherman")" > "$VILLAGE/$INDUSTRY/habitant_arsene.txt"
         ;;
       Douskelpar)
-        echo "$(eval_gettext "Troncs empilés")" > "$VILLAGE/$INDUSTRY/troncs.txt"
-        echo "$(eval_gettext "Scie géante")" > "$VILLAGE/$INDUSTRY/scie.txt"
-        echo "$(eval_gettext "Milo le scieur")" > "$VILLAGE/$INDUSTRY/habitant_milo.txt"
+        echo "$(eval_gettext "Stacked logs")" > "$VILLAGE/$INDUSTRY/troncs.txt"
+        echo "$(eval_gettext "Giant saw")" > "$VILLAGE/$INDUSTRY/scie.txt"
+        echo "$(eval_gettext "Milo the sawyer")" > "$VILLAGE/$INDUSTRY/habitant_milo.txt"
         ;;
       Grandflac)
-        echo "$(eval_gettext "Meule à grain")" > "$VILLAGE/$INDUSTRY/meule.txt"
-        echo "$(eval_gettext "Sac de farine")" > "$VILLAGE/$INDUSTRY/farine.txt"
-        echo "$(eval_gettext "Jeanne la meunière")" > "$VILLAGE/$INDUSTRY/habitant_jeanne.txt"
+        echo "$(eval_gettext "Grain millstone")" > "$VILLAGE/$INDUSTRY/meule.txt"
+        echo "$(eval_gettext "Bag of flour")" > "$VILLAGE/$INDUSTRY/farine.txt"
+        echo "$(eval_gettext "Jeanne the miller")" > "$VILLAGE/$INDUSTRY/habitant_jeanne.txt"
         ;;
     esac
 
     # Maison Commune (population.txt déjà existant)
-    echo "$(eval_gettext "Bailli de \$v")" > "$VILLAGE/Maison Commune/habitant_bailli.txt"
-    echo "$(eval_gettext "Registre des propriétés :
-- \$INDUSTRY : propriété collective")" > "$VILLAGE/Maison Commune/registre_proprietes.txt"
-    echo "$(eval_gettext "Registre des décisions :
-- Vendredi = jour du poisson
-- Quota de 1000 Ko dans le Grenier Banal")" > "$VILLAGE/Maison Commune/registre_decisions.txt"
+    echo "$(eval_gettext "Bailiff of \$v")" > "$VILLAGE/Maison Commune/habitant_bailli.txt"
+    echo "$(eval_gettext "Property register:
+- \$INDUSTRY : collective property")" > "$VILLAGE/Maison Commune/registre_proprietes.txt"
+    echo "$(eval_gettext "Decisions register:
+- Friday = fish day
+- Quota of 1000 Ko in the Common Granary")" > "$VILLAGE/Maison Commune/registre_decisions.txt"
 done

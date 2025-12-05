@@ -16,11 +16,11 @@ _mission_check() (
 
   # 3) Vérifier que les VG 'esdea' et 'esdebe' existent
   if ! danger sudo vgs --noheadings -o vg_name | grep -qw esdea; then
-    echo "$(eval_gettext "La Colonie d’Esdea n’a pas encore été fondée !")"
+    echo "$(eval_gettext "The Colony of Esdea has not yet been founded!")"
     return 1
   fi
   if ! danger sudo vgs --noheadings -o vg_name | grep -qw esdebe; then
-    echo "$(eval_gettext "La Colonie d’Esdebe n’a pas encore été fondée !")"
+    echo "$(eval_gettext "The Colony of Esdebe has not yet been founded!")"
     return 1
   fi
 
@@ -32,16 +32,16 @@ _mission_check() (
 
   if [ "$ESDEA_VG" != "esdea" ]; then
     [ -z "$ESDEA_VG" ] && ESDEA_VG="(aucun VG)"
-    echo "$(eval_gettext "Incohérence : \$SDBA appartient à '\$ESDEA_VG' au lieu de 'esdea'.")"
+    echo "$(eval_gettext "Inconsistency: \$SDBA belongs to '\$ESDEA_VG' instead of 'esdea'.")"
     return 1
   fi
   if [ "$ESDEBE_VG" != "esdebe" ]; then
     [ -z "$ESDEBE_VG" ] && ESDEBE_VG="(aucun VG)"
-    echo "$(eval_gettext "Incohérence : \$SDBB appartient à '\$ESDEBE_VG' au lieu de 'esdebe'.")"
+    echo "$(eval_gettext "Inconsistency: \$SDBB belongs to '\$ESDEBE_VG' instead of 'esdebe'.")"
     return 1
   fi
 
-  echo "$(eval_gettext "Bravo, les colonies d’Esdea et d’Esdebe sont désormais fondées !")"
+  echo "$(eval_gettext "Bravo, the colonies of Esdea and Esdebe are now founded!")"
   return 0
 )
 

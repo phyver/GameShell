@@ -5,35 +5,35 @@ source "$MISSION_DIR/../00_shared/utils.sh"
 _mission_check() (
     # Check that the volume group "usa" exists
     if ! danger sudo vgdisplay usa >/dev/null 2>&1; then
-        echo "$(eval_gettext "Vous devez renommer la province d'Esdea en USA.")"
+        echo "$(eval_gettext "You must rename the province of Esdea to USA.")"
         return 1
     fi
 
     if danger sudo vgdisplay esdea >/dev/null 2>&1; then
-        echo "$(eval_gettext "Vous devez supprimer la province d'Esdea seule la province d'USA doit exister.")"
+        echo "$(eval_gettext "You must delete the province of Esdea, only the province of USA must exist.")"
         return 1
     fi
 
     if danger sudo vgdisplay esdebe >/dev/null 2>&1; then
-        echo "$(eval_gettext "Vous devez rattacher la province d'Esdebe à la province d'USA.")"
+        echo "$(eval_gettext "You must attach the province of Esdebe to the province of USA.")"
         return 1
     fi
 
     # Check that the volume group "usa" contains both logical volumes
     if ! danger sudo lvs usa/douskelpar >/dev/null 2>&1; then
-        echo "$(eval_gettext "Le village Douskelpar doit être dans la nouvelle province d'USA.")"
+        echo "$(eval_gettext "The village Douskelpar must be in the new province of USA.")"
         return 1
     fi
     if ! danger sudo lvs usa/ouskelcoule >/dev/null 2>&1; then
-        echo "$(eval_gettext "Le village Ouskelcoule doit être dans la nouvelle province d'USA.")"
+        echo "$(eval_gettext "The village Ouskelcoule must be in the new province of USA.")"
         return 1
     fi
     if ! danger sudo lvs usa/grandflac >/dev/null 2>&1; then
-        echo "$(eval_gettext "Le village Grandflac doit être dans la nouvelle province d'USA.")"
+        echo "$(eval_gettext "The village Grandflac must be in the new province of USA.")"
         return 1
     fi
 
-    echo "$(eval_gettext "Bravo ! Vous avez réussi à rattacher les colonies d'Esdea et d'Esdebe en une nouvelle province autonome, les USA !")"
+    echo "$(eval_gettext "Bravo! You have successfully attached the colonies of Esdea and Esdebe into a new autonomous province, the USA!")"
 
     return 0
 )

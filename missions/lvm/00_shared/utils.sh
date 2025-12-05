@@ -29,7 +29,7 @@ lvm_init() {
     DISK_1_PATH="$DATA_PATH/disk1.img"
     DISK_2_PATH="$DATA_PATH/disk2.img"
   
-    # 2. Attacher les fichiers images à des périphériques loop si pas encore fait
+    # 2. Attach image files to loop devices if not already done
     if ! danger sudo losetup -j "$DISK_1_PATH" | grep -q "$DISK_1_PATH"; then
         echo "$(eval_gettext "⏳ Attaching \$DISK_1_PATH to a loop device...")"
         LOOP1=$(danger sudo losetup --find -P --show "$DISK_1_PATH")
@@ -48,12 +48,12 @@ lvm_init() {
         LOOP2=$(danger sudo losetup -j "$DISK_2_PATH" | cut -d: -f1)
     fi
   
-    # 3. Créer les alias dans /dev
+    # 3. Create aliases in /dev
     danger sudo ln -sf "$LOOP1" /dev/gsh_lvm_loop1
     danger sudo ln -sf "$LOOP2" /dev/gsh_lvm_loop2
      
   
-    # 4. Préparer les périphériques dans /dev  
+    # 4. Prepare devices in /dev  
     LOOP1_PATH="/dev/gsh_lvm_loop1"
     LOOP2_PATH="/dev/gsh_lvm_loop2"
   
@@ -307,7 +307,7 @@ unmounting_villages() {
 
     for MOUNT_POINT in "${MOUNT_POINTS[@]}"; do
         if mountpoint -q "$MOUNT_POINT"; then
-            echo "$(eval_gettext "Démonter \$MOUNT_POINT")"
+            echo "$(eval_gettext "Unmounting \$MOUNT_POINT")"
             danger sudo umount "$MOUNT_POINT"
         fi
     done

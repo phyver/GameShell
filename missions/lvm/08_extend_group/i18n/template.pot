@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: GameShell LVM Mission 08_extend_group\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-23 12:13+0200\n"
+"POT-Creation-Date: 2025-12-04 20:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#, sh-format
-msgid "Vous devez incarner la province d'Esdece en tant que terre physique."
+
+msgid "The village of Oljoliptichaaah must be 10 Mornifles (MB)."
 msgstr ""
 
-#, sh-format
-msgid "Vous devez ajouter la province d'Esdece à celle d'Esdebe."
+msgid "You must add the province of Esdece to Esdebe."
 msgstr ""
 
-#, sh-format
-msgid "Vous devez créer le village de Oljoliptichaaah."
+msgid "You must create the village of Oljoliptichaaah."
 msgstr ""
 
-#, sh-format
-msgid "Le village de Oljoliptichaaah doit faire 10 Mornifles (Mo)."
+msgid "You must incarnate the province of Esdece as physical land."
 msgstr ""

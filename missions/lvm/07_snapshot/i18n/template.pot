@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: GameShell LVM Mission 07_snapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-23 12:13+0200\n"
+"POT-Creation-Date: 2025-12-04 20:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#, sh-format
-msgid "Il manque encore la sauvegarde du village d'Ouskelcoule."
+
+msgid "Bravo! Ouskelcoule, Douskelpar and Grandflac are well archived, ready to be restored if necessary!"
 msgstr ""
 
-#, sh-format
-msgid "Il manque encore la sauvegarde du village de Douskelpar."
+msgid "The backup of the village of Douskelpar is still missing."
 msgstr ""
 
-#, sh-format
-msgid "Il manque encore la sauvegarde du village de Grandflac."
+msgid "The backup of the village of Grandflac is still missing."
 msgstr ""
 
-#, sh-format
-msgid ""
-"Bravo ! Ouskelcoule, Douskelpar et Grandflac sont bien archivés, prêts à "
-"être restaurés si nécessaire !"
+msgid "The backup of the village of Ouskelcoule is still missing."
 msgstr ""

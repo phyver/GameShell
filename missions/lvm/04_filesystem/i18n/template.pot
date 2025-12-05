@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: GameShell LVM Mission 04_filesystem\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-23 12:12+0200\n"
+"POT-Creation-Date: 2025-12-04 20:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,54 +17,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#, sh-format
-msgid ""
-"Le village d'Ouskelcoule n'existe pas (LV /dev/esdea/ouskelcoule "
-"introuvable)."
+
+msgid "Bravo! Ouskelcoule, Douskelpar and Grandflac are duly organized and partitioned, almost ready to welcome their inhabitants!"
 msgstr ""
 
-#, sh-format
-msgid ""
-"Le village d'Ouskelcoule n'est pas encore organisé (aucun système de "
-"fichiers)."
+msgid "The village of Douskelpar does not exist (LV /dev/esdea/douskelpar not found)."
 msgstr ""
 
-#, sh-format
-msgid "Le village d'Ouskelcoule n'est pas au format EXT4."
+msgid "The village of Douskelpar is not in EXT4 format."
 msgstr ""
 
-#, sh-format
-msgid ""
-"Le village de Douskelpar n'existe pas (LV /dev/esdea/douskelpar introuvable)."
+msgid "The village of Douskelpar is not yet organized (no filesystem)."
 msgstr ""
 
-#, sh-format
-msgid ""
-"Le village de Douskelpar n'est pas encore organisé (aucun système de "
-"fichiers)."
+msgid "The village of Grandflac does not exist (LV /dev/esdebe/grandflac not found)."
 msgstr ""
 
-#, sh-format
-msgid "Le village de Douskelpar n'est pas au format EXT4."
+msgid "The village of Grandflac is not in EXT4 format."
 msgstr ""
 
-#, sh-format
-msgid ""
-"Le village de Grandflac n'existe pas (LV /dev/esdebe/grandflac introuvable)."
+msgid "The village of Grandflac is not yet organized (no filesystem)."
 msgstr ""
 
-#, sh-format
-msgid ""
-"Le village de Grandflac n'est pas encore organisé (aucun système de "
-"fichiers)."
+msgid "The village of Ouskelcoule does not exist (LV /dev/esdea/ouskelcoule not found)."
 msgstr ""
 
-#, sh-format
-msgid "Le village de Grandflac n'est pas au format EXT4."
+msgid "The village of Ouskelcoule is not in EXT4 format."
 msgstr ""
 
-#, sh-format
-msgid ""
-"Bravo ! Ouskelcoule, Douskelpar et Grandflac sont dûment organisés et "
-"découpés, presque prêts à accueillir leurs habitants !"
+msgid "The village of Ouskelcoule is not yet organized (no filesystem)."
 msgstr ""
