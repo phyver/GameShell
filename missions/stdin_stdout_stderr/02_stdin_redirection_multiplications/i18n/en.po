@@ -31,9 +31,9 @@ msgstr  "Mathematics_101"
 msgid   "That's not even a number!"
 msgstr  "That's not even a number!"
 
-msgid   "The book 'Mathematics_101' contains all the anwsers.\n"
+msgid   "The book 'Mathematics_101' contains all the answers.\n"
         "Just copy all its lines to get perfect score."
-msgstr  "The book 'Mathematics_101' contains all the anwsers.\n"
+msgstr  "The book 'Mathematics_101' contains all the answers.\n"
         "Just copy all its lines to get perfect score."
 
 #, sh-format

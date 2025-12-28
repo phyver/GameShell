@@ -30,7 +30,7 @@ msgstr  "Matematica_101"
 msgid   "That's not even a number!"
 msgstr  "Non è nemmeno un numero!"
 
-msgid   "The book 'Mathematics_101' contains all the anwsers.\n"
+msgid   "The book 'Mathematics_101' contains all the answers.\n"
         "Just copy all its lines to get perfect score."
 msgstr  "Il libro 'Matematica_101' contiene tutte le risposte.\n"
         "Copia tutte le sue righe per avere il massimo punteggio."
