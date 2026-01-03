@@ -1,0 +1,48 @@
+#!/usr/bin/env sh
+
+_mission_check() (
+  SDBA="/dev/gsh_sda"
+  SDBB="/dev/gsh_sdb"
+
+  # 1) Vérifier que les chemins existent
+  if [ ! -e "$SDBA" ]; then
+    echo "$(eval_gettext "Device \$SDBA does not exist.")"
+    return 1
+  fi
+  if [ ! -e "$SDBB" ]; then
+    echo "$(eval_gettext "Device \$SDBB does not exist.")"
+    return 1
+  fi
+
+  # 3) Vérifier que les VG 'esdea' et 'esdebe' existent
+  if ! danger sudo vgs --noheadings -o vg_name | grep -qw esdea; then
+    echo "$(eval_gettext "The Colony of Esdea has not yet been founded!")"
+    return 1
+  fi
+  if ! danger sudo vgs --noheadings -o vg_name | grep -qw esdebe; then
+    echo "$(eval_gettext "The Colony of Esdebe has not yet been founded!")"
+    return 1
+  fi
+
+  # 4) Vérifier la correspondance PV↔VG
+  #    - /dev/sda doit appartenir à VG 'esdea'
+  #    - /dev/sdb doit appartenir à VG 'esdebe'
+  ESDEA_VG="$(danger sudo pvs --noheadings -o vg_name "$SDBA" 2>/dev/null | tr -d '[:space:]')"
+  ESDEBE_VG="$(danger sudo pvs --noheadings -o vg_name "$SDBB" 2>/dev/null | tr -d '[:space:]')"
+
+  if [ "$ESDEA_VG" != "esdea" ]; then
+    [ -z "$ESDEA_VG" ] && ESDEA_VG="(aucun VG)"
+    echo "$(eval_gettext "Inconsistency: \$SDBA belongs to '\$ESDEA_VG' instead of 'esdea'.")"
+    return 1
+  fi
+  if [ "$ESDEBE_VG" != "esdebe" ]; then
+    [ -z "$ESDEBE_VG" ] && ESDEBE_VG="(aucun VG)"
+    echo "$(eval_gettext "Inconsistency: \$SDBB belongs to '\$ESDEBE_VG' instead of 'esdebe'.")"
+    return 1
+  fi
+
+  echo "$(eval_gettext "Bravo, the colonies of Esdea and Esdebe are now founded!")"
+  return 0
+)
+
+_mission_check

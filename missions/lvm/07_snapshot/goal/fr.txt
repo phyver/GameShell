@@ -1,0 +1,36 @@
+Objectifs
+=========
+Les administrateurs de la LVM, gens prudents et férus de paperasse, ne supportent 
+pas l’idée qu’un changement puisse avoir lieu sans qu’une **copie conforme** ne 
+soit archivée au préalable. Coup de chance, les géo-mantiens viennent justement de développé une
+nouvelle techno-magie permettant de stocker un instantané éthérique d'une région.
+
+Ainsi, avant d’agrandir Ouskelcoule ou de réduire Douskelpar, ils exigent de vous 
+que vous produisiez un double magique des villages existants, afin de pouvoir 
+“revenir en arrière” en cas de problème… ou simplement pour remplir un dossier 
+supplémentaire au Bureau des Archives.  
+
+Dans le jargon des géo-mantiens, on appelle cela un **snapshot**.  
+Mais les explorateurs, beaucoup moins rigoureux et d'avantage portés sur 
+les tavernes, ont vite déformé le mot en **“schnapshot”** : un procédé qui consiste 
+à garder une petite réserve de sécurité… comme un fond de schnaps dans la bouteille, 
+au cas où.  
+
+Quelques confusions entre **snapshot** (copie) et **schnaps-shot** (cul sec) sont encore à déplorer 
+auprès des aventuriers peu lettrés, expliquant probablement pourquoi plusieurs relevés de 
+terrains sont illisibles — tachées de vin et annotées de chansons paillardes.
+
+Les administrateurs de la LVM sont tout disposés à gérer l'archivage des snapshots (pensez donc, trier, stocker, organiser des papiers qui 
+ne seront jamais lus par personne, tout le bureau ne parle que de ça), mais ils comptent sur vous pour aller faire les opérations sur place.
+Faites une "snapshot" des villages d'Ouskelcoule, d'Ouskelpar et de Grandflac
+- ouskelcoule_snap
+- douskelpar_snap
+- grandflac_snap
+
+Note : Les administrateurs de la LVM pense que 5 Mornifles par snapshot sont largement suffisants
+
+
+Commandes utiles
+================
+lvcreate -s ...
+    Crée un snapshot (copie instantanée) d'un logical volume.

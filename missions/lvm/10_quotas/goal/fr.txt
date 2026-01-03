@@ -1,0 +1,59 @@
+Objectifs
+=========
+À **Ouskelcoule**, la prospérité repose sur la pêche : les filets débordent, 
+le moulin tourne à plein régime et les marchés regorgent de poissons.  
+Mais cette abondance commence à inquiéter les administrateurs de la LVM, 
+qui redoutent un effondrement des prix du poisson dans le royaume si les colonies 
+se mettent à exporter leurs prises.
+
+Car si les colons voient dans la rivière un don généreux, les administrateurs, eux, 
+y voient surtout une nouvelle occasion de rédiger décrets, rapports et contre-rapports.  
+Après plusieurs séances (dont une réunion de préparation à la réunion de validation 
+du rapport préliminaire sur l’impact halieutique), la conclusion tombe :  
+
+Désormais, des quotas seront en vigueur : il sera interdit à la colonie 
+de stocker plus de **1 000 Kroutons (Ko)** de poisson dans le **Grenier Banal** 
+du village d’**Ouskelcoule**.  
+
+Officiellement, il s’agit de préserver l’économie.  
+Officieusement, les mauvaises langues affirment que cette décision doit surtout 
+à la nouvelle politique de **l’Administration des Cantines Royales**, 
+qui a choisi de faire du vendredi le « jour du poisson » plutôt que le « jour des frites »
+pour soutenir l'économie de la jeune province d'"Esdea".  
+
+---
+
+Note historique
+===============
+Le **Krouton** (symbole Ko) est l’unité de mesure officielle des petits poids au sein du royaume.  
+Depuis sa mise en place par **Kroûton Ier le Rassis**, on considère qu’un Krouton 
+correspond au poids moyen d’un croûton de pain tombé dans la soupe du roi.  
+
+De savants calculs ont ensuite établi que 1 000 Kroutons (Ko), mis bout à bout, 
+possèdent une surface de 1 Mornifle (Mo).  
+
+Logique imparable, selon la Commission Royale des Étalons, puisque *« un repas 
+complet se compose toujours d’un bon croûton pour le repas et d’une bonne mornifle pour 
+le dessert »*.  
+
+---
+
+Commandes utiles
+================
+umount
+    Démonter un volume
+
+tune2fs -O quota,project
+    Activer les quotas sur un volume
+
+e2fsck
+    Vérifier le filesystem
+
+mount -o prjquota 
+    Monter un volume en activant les quotas de projet
+
+chattr -p
+    Définir un ID de projet pour un dossier
+
+setquota -P
+    Définir directement un quota pour un projet

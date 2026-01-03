@@ -1,0 +1,49 @@
+Objectives
+=========
+Since their foundation, the colonies of **Esdea**, **Esdebe** and **Esdece** have patiently 
+endured the decrees, quotas, audits, censuses and extraordinary commissions 
+of the **LVM (Lands & Villages Management)**.
+
+But after the **Douskelpar** collapse, the cup runneth over:
+- increasingly absurd administrative controls,
+- customs rules changing every week,
+- unfair decisions made solely based on incomplete registers,
+- and, to crown it all, the new **Salted Fish Tax** —
+imposed on each Krouton (Ko) of dried cod exported from Ouskelcoule.
+
+The triggering event was the sadly famous **Fish Party**, 
+which remained in the chronicles under the name of **Krouton Party**.
+One night, the inhabitants of **Ouskelcoule**, exasperated by these iniquitous taxes, 
+went up to the docks, opened the granaries and threw a whole 
+shipment of salted fish into the river while shouting slogans that became famous:
+
+*"Down the stream with the fish, let's soak the Kroutons!"*
+*"No taxation without ration!"*
+*"The fish is ours, not the LVM's!"*
+
+From there, a question began to circulate in all the colonies:
+*"But by the way... what exactly is the LVM for?"*
+
+Exhausted, the colonies gathered in assembly and decided it was time 
+to chart their own path.
+They proclaimed their **independence** and founded a new kingdom: the **Union of Autonomous Settlements (USA)**, **Settlements** being the name given by the colonists to their first camps.
+
+The LVM did try to protest, and explain to the colonists that they first had to fill out form "B-12" to obtain receipt "A-127" necessary to file their case with the "Complaints and Claims Office", open every fourth Thursday of the month from 2:30 PM to 2:55 PM, but the colonists seemed little sensitive to the argument, too busy symbolically throwing stamps, feathers and registers marked with the LVM emblem into the river.
+
+Eager to organize their kingdom according to a new form of government, they have entrusted you, chief intern Trauma Jefassonne, a literate individual who has always been by their side in the field, to organize and implement the separation of the colonies from the kingdom and their fusion into a new entity. Sharing their annoyance against the administrative absurdity of the kingdom in general, and the LVM in particular, you have decided to accept and join the cause
+of the rebels!
+
+Your first job as organizer of independence will therefore be:
+- To cut the roads between the kingdom and the colony villages
+- To rename the colony of Esdea to "USA"
+- To attach the colony of Esdebe to that of Esdea.
+
+Note: Be careful, you may have to delete old snapshots that might be lying around in the bottom of LVM drawers
+
+---
+
+Useful Commands
+================
+
+umount
+    Unmount a disk

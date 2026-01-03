@@ -1,0 +1,44 @@
+# English translations for GameShell LVM Mission package.
+# Copyright (C) 2025 THE GameShell LVM Mission'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the GameShell LVM Mission package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GameShell LVM Mission 14_importing\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-04 20:10+0100\n"
+"PO-Revision-Date: 2025-12-04 20:10+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid ""
+"Bravo, the federal republic of USA is again connected to the kingdom, no "
+"longer as a vassal, but as a federal and autonomous republic!"
+msgstr ""
+"Bravo, the federal republic of USA is again connected to the kingdom, no "
+"longer as a vassal, but as a federal and autonomous republic!"
+
+msgid ""
+"You must recreate the route between the kingdom and the village of \\"
+"$VILLAGE, which does not exist!"
+msgstr ""
+"You must recreate the route between the kingdom and the village of \\"
+"$VILLAGE, which does not exist!"
+
+msgid ""
+"You must reopen the route between the kingdom and the village of \\$VILLAGE!"
+msgstr ""
+"You must reopen the route between the kingdom and the village of \\$VILLAGE!"
+
+msgid ""
+"You must unfreeze the federal republic of USA, astral teleportation is "
+"canceled!"
+msgstr ""
+"You must unfreeze the federal republic of USA, astral teleportation is "
+"canceled!"

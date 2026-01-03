@@ -1,0 +1,49 @@
+Objectifs
+=========
+Les frontières d’Ouskelcoule, Douskelpar et Grandflac sont désormais définies et leurs terres 
+parcellisées et organisées grâce à l’édit EXT4. Pourtant, elles demeurent isolées.  
+Sans chemin officiel pour y accéder, ces villages ne sont encore que des campements 
+de fortune : bivouacs épars et tentes aux relents de pieds suspects des premiers explorateurs, 
+dont l’hygiène laisse à désirer.  
+
+Les fonctionnaires de la LVM, gens sages et soucieux de leurs ablutions 
+quotidiennes, ont donc décrété qu’il était temps d’établir une première route : 
+un lien direct entre les nouveaux villages et le reste du royaume.  
+C’est la seule manière de faire venir la main-d’œuvre, les vivres et les outils 
+nécessaires à l’édification de véritables villages en dur.  
+
+Dans le langage des géo-mantiens, cette opération est appelée **montage**.  
+Elle consiste à inscrire officiellement un village sur la carte du royaume 
+(en l’associant à un point de montage) et à tracer une voie carrossable par 
+laquelle colons, intendants et marchandises pourront circuler.  
+
+Votre mission est donc de créer dans le royaume une nouvelle province
+pour chaque région, puis d’y établir une route vers chaque village :  
+- Ouvrir la route vers **Ouskelcoule** sur `./Esdea/Ouskelcoule`  
+- Ouvrir la route vers **Douskelpar** sur `./Esdea/Douskelpar`  
+- Ouvrir la route vers **Grandflac** sur `./Esdebe/Grandflac`
+
+Puis de créer dans chaque village un premier batiment "Maison Commune", et d'y créer un registre population.txt avec le nombre d'habitants du village :
+- Ouskelcoule: 40 habitants
+- Douskelpar: 20 habitants
+- Grandflac: 50 habitants
+
+Note : N'oubliez pas l'espace dans "Maison Commune", et inscrivez uniquement le chiffre dans population.txt
+       Pensez aussi à rendre le dossier monté utilisable par votre utilisateur avec chown
+
+Commandes utiles
+================
+mkdir -p /path/to/dir
+    Crée un dossier et tous ses parents si nécessaire.
+
+mount 
+    Monte le volume logique au point de montage correspondant.
+
+lsblk -f
+    Vérifie que les volumes sont bien montés et accessibles.
+
+vim
+    Écrire dans un fichier
+
+chown
+    Changer le propriétaire d'un fichier

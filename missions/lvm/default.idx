@@ -1,0 +1,16 @@
+!00_shared
+01_physical_volumes
+02_volumes_group
+03_logical_volumes
+04_filesystem
+05_mounting
+06_resize
+07_snapshot
+08_extend_group
+09_vgreduce
+10_quotas
+11_fsck
+12_merging
+13_exporting
+14_importing
+15_epilogue

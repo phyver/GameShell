@@ -1,0 +1,39 @@
+# French translations for GameShell LVM Mission package.
+# Copyright (C) 2025 THE GameShell LVM Mission'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the GameShell LVM Mission package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GameShell LVM Mission 02_volumes_group\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-04 20:10+0100\n"
+"PO-Revision-Date: 2025-12-04 20:10+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Bravo, the colonies of Esdea and Esdebe are now founded!"
+msgstr "Bravo, les colonies d’Esdea et d’Esdebe sont désormais fondées !"
+
+msgid "Device $SDBA does not exist."
+msgstr "Le périphérique $SDBA n'existe pas."
+
+msgid "Device $SDBB does not exist."
+msgstr "Le périphérique $SDBB n'existe pas."
+
+msgid "Inconsistency: $SDBA belongs to '$ESDEA_VG' instead of 'esdea'."
+msgstr "Incohérence : $SDBA appartient à '$ESDEA_VG' au lieu de 'esdea'."
+
+msgid "Inconsistency: $SDBB belongs to '$ESDEBE_VG' instead of 'esdebe'."
+msgstr "Incohérence : $SDBB appartient à '$ESDEBE_VG' au lieu de 'esdebe'."
+
+msgid "The Colony of Esdea has not yet been founded!"
+msgstr "La Colonie d’Esdea n’a pas encore été fondée !"
+
+msgid "The Colony of Esdebe has not yet been founded!"
+msgstr "La Colonie d’Esdebe n’a pas encore été fondée !"

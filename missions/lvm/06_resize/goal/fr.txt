@@ -1,0 +1,54 @@
+Objectifs
+=========
+Cela fait maintenant six mois que les colons se sont installés, et les villages 
+commencent à prendre forme.  
+
+À **Ouskelcoule**, le développement est spectaculaire : porté par une forte activité 
+de pêche et l’exploitation de la rivière grâce au moulin, le village prospère.  
+Les frontières originales semblent désormais trop étroites pour accueillir 
+tous les nouveaux arrivants.  
+
+À l’inverse, **Douskelpar** n’a que peu grandi. Son activité reste essentielle — 
+notamment grâce à sa scierie, qui fournit le bois nécessaire à l’édification 
+d’Ouskelcoule — mais les conditions climatiques hostiles poussent à maintenir 
+un village réduit, fidèle à l’architecture traditionnelle de montagne.  
+Ici, les frontières tracées à l’origine sont trop larges et doivent être resserrées.  
+
+Les administrateurs de la LVM vous envoient donc en mission en **Esdea** pour 
+adapter les limites des villages.  
+Ils y seraient bien allés eux-mêmes, mais vous savez ce que c’est : une réunion 
+de préparation pour planifier la réunion, suivie du rapport de réunion à valider 
+en réunion, sans oublier le résumé du rapport — tout ça prend du temps…  
+Et puis c'est vendredi et le vendredi, il y a frites à la cantine. Il a donc été 
+jugé préférable de vous déléguer la mission puisque, je cite "vous connaissez bien la route, les villages, les populations locales." et que "on vous fait confiance : vous allez faire ça très bien !"
+
+
+Après moult débats et rapports tamponnés et doubles tamponnés, ils ont établi les nouvelles frontières 
+suivantes :  
+- **Ouskelcoule** → 40 Mornifles (Mo)  
+- **Douskelpar** → 10 Mornifles (Mo)   
+
+
+Commandes utiles
+================
+lvchange -ay/n
+    Active/Désactive un volume LVM
+
+lvextend
+    Agrandit un volume logique et ajuste le système de fichiers.
+
+lvreduce 
+    Réduit un volume logique et ajuste le système de fichiers
+    (⚠️ attention, opération délicate et potentiellement destructive).
+
+e2fsck
+    Vérifie un système de fichier Linux
+
+resize2fs -M
+    Redimensionne le système de fichier pour utiliser le minimum de place possible.
+
+umount
+    Démonter disque du système de fichier.
+
+lsblk -f
+    Vérifie la taille et l’état actuels des volumes logiques.

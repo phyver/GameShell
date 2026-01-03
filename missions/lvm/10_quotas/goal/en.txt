@@ -1,0 +1,50 @@
+Objectives
+=========
+In **Ouskelcoule**, prosperity rests on fishing: nets overflow, 
+the mill runs at full capacity and markets abound with fish.
+But this abundance is beginning to worry LVM administrators, 
+who fear a collapse in fish prices in the kingdom if the colonies 
+start exporting their catches.
+
+For if the colonists see the river as a generous gift, the administrators 
+see it mainly as a new opportunity to draft decrees, reports and counter-reports.
+After several sessions (including a preparation meeting for the validation meeting 
+of the preliminary report on halieutic impact), the conclusion falls:
+
+From now on, quotas will be in effect: the colony will be forbidden 
+to store more than **1,000 Kroutons (Ko)** of fish in the **Common Granary** 
+of the village of **Ouskelcoule**.
+
+Officially, it's about preserving the economy.
+Unofficially, gossips claim that this decision is mainly due 
+to the new policy of the **Royal Canteen Administration**, 
+which has chosen to make Friday "fish day" rather than "fries day"
+to support the economy of the young province of "Esdea".
+
+---
+
+Historical Note
+===============
+The **Krouton** (symbol Ko) is the official unit of measurement for small weights within the kingdom.
+Since its implementation by **Kroûton I the Stale**, it is considered that one Krouton 
+corresponds to the average weight of a bread crust that fell into the king's soup.
+
+Learned calculations have then established that 1,000 Kroutons (Ko), placed end to end, 
+possess a surface of 1 Mornifle (Mo).
+
+Impeccable logic, according to the Royal Standards Commission, since *"a complete meal 
+always consists of a good crust for the meal and a good slap for 
+dessert"*.
+
+---
+
+Useful Commands
+================
+umount
+    Unmount a volume
+
+tune2fs -O quota,project
+    Enable quotas on a volume
+
+e2fsck
+    Check the filesystem

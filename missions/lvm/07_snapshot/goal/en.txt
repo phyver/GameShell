@@ -1,0 +1,36 @@
+Objectives
+=========
+The LVM administrators, prudent people fond of paperwork, cannot stand 
+the idea that a change could take place without a **certified copy** being 
+archived beforehand. Lucky break, the geo-mancers have just developed a
+new techno-magic allowing to store an etheric snapshot of a region.
+
+Thus, before enlarging Ouskelcoule or reducing Douskelpar, they require you 
+to produce a magical duplicate of the existing villages, in order to be able to 
+"go back" in case of problems... or simply to fill an additional file 
+at the Archives Office.
+
+In geo-mancer jargon, this is called a **snapshot**.
+But the explorers, much less rigorous and more inclined towards 
+taverns, quickly distorted the word into **"schnapshot"**: a process that consists 
+of keeping a small security reserve... like a bottom of schnapps in the bottle, 
+just in case.
+
+Some confusion between **snapshot** (copy) and **schnaps-shot** (bottoms up) are still to be deplored 
+among illiterate adventurers, probably explaining why several land surveys 
+are illegible — stained with wine and annotated with bawdy songs.
+
+The LVM administrators are quite willing to manage snapshot archiving (think about it, sorting, storing, organizing papers that 
+will never be read by anyone, the whole office talks about nothing else), but they're counting on you to go do the operations on site.
+Make a "snapshot" of the villages of Ouskelcoule, Ouskelpar and Grandflac
+- ouskelcoule_snap
+- douskelpar_snap
+- grandflac_snap
+
+Note: The LVM administrators think that 5 Mornifles per snapshot are largely sufficient
+
+
+Useful Commands
+================
+lvcreate -s ...
+    Creates a snapshot (instant copy) of a logical volume.

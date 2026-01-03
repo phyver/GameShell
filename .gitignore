@@ -12,3 +12,4 @@ locale/
 /gameshell*
 game shell*
 boxes-data.awk
+*.img

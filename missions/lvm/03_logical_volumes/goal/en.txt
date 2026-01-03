@@ -1,0 +1,48 @@
+Objectives
+===========================================
+Now that the LVM officials have defined the organization of the provinces 
+(Esdea and Esdebebe), they have drafted countless forms and pieces of paper 
+granting exploitation rights to explorers in order to establish villages — 
+designated by the geo-mancers under the name of **Logical Volumes (LV)** — in these new colonies.
+
+Of course, said explorers can neither read administrative charters 
+nor interpret instructions.
+
+Aware of the problem and intrinsically convinced, like any self-respecting administrative staff, 
+that not only can nothing be organized without them, but also that 
+work is never better done than by others, the LVM officials 
+have therefore tasked you, humble intern, to accompany the explorers in their task 
+to ensure that the villages respect the guidelines established on high.
+
+The officials have planned the foundation of the following villages:
+
+- **Esdea**:
+  - *Ouskelcoule* → the village at the bottom of the main river, with an area of 30 Mo
+  - *Douskelpar* → the village perched high in the hills, with an area of 20 Mo
+
+- **Esdebebe**:
+  - *Grandflac* → the village established on the south shore of the great lake, with an area of 25 Mo
+
+---
+
+Historical Note
+===============
+The **Mornifle** (symbol *Mo*) is the official unit of measurement for areas 
+within the Kingdom since its establishment by **Moribond I**, great-great-grandfather 
+of King **Bordereau VI The Stamped**.
+
+This unit was born from a convoluted calculation: the surface of a royal hand multiplied 
+by the dimensions (in millimeters) of the chubby cheek of young prince 
+**Tédéhah the Restless**.
+Step by step, the official surveyors decreed that one Mornifle corresponded 
+to about one of our modern hectares.
+
+---
+
+Useful Commands
+================
+lvcreate
+    Allows creating a Logical Volume on a Volume Group, specifying its size.
+
+lvs
+    Displays information about Logical Volumes.
