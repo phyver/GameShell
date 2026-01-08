@@ -1,7 +1,7 @@
 Obiettivi Missione
 ============
 
-I vecchi libri di magia di Merlino sono conservato nella libreria nel suo ufficio.
+I vecchi libri di magia di Merlino sono conservati nella libreria nel suo ufficio.
 Devi salvare una lista di tutti i libri di magia (e nient'altro) in un file 
 chiamato "inventario.txt", nel cassetto...
 
