@@ -2,7 +2,7 @@ Mission goal
 ============
 
 The king's pyrotechnician appears next to you. He asks you to fire **at least 
-3 consecutive fireworks** so he can see them from far away.
+3 simultaneous fireworks** so he can see them from far away.
 
 A single firework can be created with the magical word
 
