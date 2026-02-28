@@ -1,0 +1,32 @@
+Objectif
+========
+Les territoires éthérés d’Esdea et d’Esdebe, que vous avez matérialisés en
+provinces tangibles (PV), sont désormais prêts à entrer dans l’appareil
+administratif.  
+
+Au palais, les fonctionnaires de la **LVM (Lands & Villages Management)** ont
+tenu un cycle de concertations interminables : pré-réunions de cadrage,
+réunions plénières, comités ad hoc, débriefs post-séance et, bien sûr,
+rédaction de volumineux comptes rendus distribués en triple exemplaire.  
+
+De ces travaux sort une décision solennelle : pour préserver l’équilibre des
+ambitions et donner une impression d’efficacité, les nouvelles provinces seront
+érigées en deux **colonies indépendantes**.  
+
+En langage administratif, ces colonies prennent le nom de
+**Villages Groupés (VG)**.  
+
+Votre mission : fonder officiellement ces colonies sous leur désignation
+officielle (veillez à employer des noms en minuscules) :  
+- La Colonie d’**Esdea**  
+- La Colonie d’**Esdebe**  
+
+
+Commandes utiles
+================
+vgcreate
+    Consultez le manuel de `vgcreate` pour découvrir comment ériger un Volume
+    Group sur un Volume Physique.
+
+vgs
+    Fournit des informations sur les Volume Groups déjà institués.

@@ -1,0 +1,992 @@
+# English translations for PACKAGE package.
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-23 12:09+0200\n"
+"PO-Revision-Date: 2025-09-23 12:09+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, sh-format
+msgid ""
+"Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB "
+"($MISSION_NAME)."
+msgstr ""
+"Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB "
+"($MISSION_NAME)."
+
+#, sh-format
+msgid ""
+"Loop devices $LOOP1_PATH and $LOOP2_PATH are required for mission "
+"$MISSION_NB ($MISSION_NAME)."
+msgstr ""
+"Loop devices $LOOP1_PATH and $LOOP2_PATH are required for mission "
+"$MISSION_NB ($MISSION_NAME)."
+
+#, sh-format
+msgid "$GSH_HOME/Royaume"
+msgstr "$GSH_HOME/Royaume"
+
+#, sh-format
+msgid "Offices"
+msgstr "Offices"
+
+#, sh-format
+msgid "Unique Stamp Office"
+msgstr "Unique Stamp Office"
+
+#, sh-format
+msgid "Counter"
+msgstr "Counter"
+
+#, sh-format
+msgid "Orientation"
+msgstr "Orientation"
+
+#, sh-format
+msgid "Counter-counter"
+msgstr "Counter-counter"
+
+#, sh-format
+msgid "Return Form"
+msgstr "Return Form"
+
+#, sh-format
+msgid "Return Service"
+msgstr "Return Service"
+
+#, sh-format
+msgid "Return to beginning"
+msgstr "Return to beginning"
+
+#, sh-format
+msgid "Central Administration"
+msgstr "Central Administration"
+
+#, sh-format
+msgid "Unique counter"
+msgstr "Unique counter"
+
+#, sh-format
+msgid "King's Hotel"
+msgstr "King's Hotel"
+
+#, sh-format
+msgid "Antechamber"
+msgstr "Antechamber"
+
+#, sh-format
+msgid "Waiting Room"
+msgstr "Waiting Room"
+
+#, sh-format
+msgid "return to counter"
+msgstr "return to counter"
+
+#, sh-format
+msgid ""
+"🖋️  Generating lore for the Kingdom of Bordereau VI the Stamped (edition "
+"without villages)..."
+msgstr ""
+"🖋️  Generating lore for the Kingdom of Bordereau VI the Stamped (edition "
+"without villages)..."
+
+#, sh-format
+msgid "$GSH_HOME/Kingdom"
+msgstr "$GSH_HOME/Kingdom"
+
+#, sh-format
+msgid "Castle"
+msgstr "Castle"
+
+#, sh-format
+msgid "Main Tower"
+msgstr "Main Tower"
+
+#, sh-format
+msgid "First Floor"
+msgstr "First Floor"
+
+#, sh-format
+msgid "Second Floor"
+msgstr "Second Floor"
+
+#, sh-format
+msgid "Tower Summit"
+msgstr "Tower Summit"
+
+#, sh-format
+msgid "Objects"
+msgstr "Objects"
+
+#, sh-format
+msgid "Concierge's Journal.txt"
+msgstr "Concierge's Journal.txt"
+
+#, sh-format
+msgid ""
+"Day 34: someone moved the audience hourglass. Time is now ahead of itself."
+msgstr ""
+"Day 34: someone moved the audience hourglass. Time is now ahead of itself."
+
+#, sh-format
+msgid "Royal Stamp (unicorn wood).txt"
+msgstr "Royal Stamp (unicorn wood).txt"
+
+#, sh-format
+msgid "Usage: affix. Side effect: instant respect."
+msgstr "Usage: affix. Side effect: instant respect."
+
+#, sh-format
+msgid "Key to the key drawer.txt"
+msgstr "Key to the key drawer.txt"
+
+#, sh-format
+msgid "Only opens keys. For drawers, provide another form."
+msgstr "Only opens keys. For drawers, provide another form."
+
+#, sh-format
+msgid "Parade Paraph (too heavy to serve).txt"
+msgstr "Parade Paraph (too heavy to serve).txt"
+
+#, sh-format
+msgid "Ceremonial object. Appears more official than the law."
+msgstr "Ceremonial object. Appears more official than the law."
+
+#, sh-format
+msgid "Official Portraits"
+msgstr "Official Portraits"
+
+#, sh-format
+msgid "Bordereau VI the Stamped.txt"
+msgstr "Bordereau VI the Stamped.txt"
+
+#, sh-format
+msgid ""
+"King, lover of clear procedures and opaque stamps. Motto: \"Who stamps "
+"reigns.\""
+msgstr ""
+"King, lover of clear procedures and opaque stamps. Motto: \"Who stamps "
+"reigns.\""
+
+#, sh-format
+msgid "Great Chancellery"
+msgstr "Great Chancellery"
+
+#, sh-format
+msgid "Stamps Office"
+msgstr "Stamps Office"
+
+#, sh-format
+msgid "Ministry of Papers"
+msgstr "Ministry of Papers"
+
+#, sh-format
+msgid "Forms Directorate"
+msgstr "Forms Directorate"
+
+#, sh-format
+msgid "Duplicate Service"
+msgstr "Duplicate Service"
+
+#, sh-format
+msgid "Ministry of Bridges and Roads"
+msgstr "Ministry of Bridges and Roads"
+
+#, sh-format
+msgid "Mounting Office"
+msgstr "Mounting Office"
+
+#, sh-format
+msgid "Ministry of Rumors"
+msgstr "Ministry of Rumors"
+
+#, sh-format
+msgid "Whispers Cabinet"
+msgstr "Whispers Cabinet"
+
+#, sh-format
+msgid "Court of Accounts and Half Accounts"
+msgstr "Court of Accounts and Half Accounts"
+
+#, sh-format
+msgid "Registry"
+msgstr "Registry"
+
+#, sh-format
+msgid "Kingdom Prefecture"
+msgstr "Kingdom Prefecture"
+
+#, sh-format
+msgid "Counter A-M"
+msgstr "Counter A-M"
+
+#, sh-format
+msgid "Counter N-Z"
+msgstr "Counter N-Z"
+
+#, sh-format
+msgid "Archives"
+msgstr "Archives"
+
+#, sh-format
+msgid "Shelving"
+msgstr "Shelving"
+
+#, sh-format
+msgid "A to Z"
+msgstr "A to Z"
+
+#, sh-format
+msgid "Commissions"
+msgstr "Commissions"
+
+#, sh-format
+msgid "Commission 1"
+msgstr "Commission 1"
+
+#, sh-format
+msgid "Commission 2"
+msgstr "Commission 2"
+
+#, sh-format
+msgid "Commission 3"
+msgstr "Commission 3"
+
+#, sh-format
+msgid "Number 0001.txt"
+msgstr "Number 0001.txt"
+
+#, sh-format
+msgid "You will be called after number 0000 (when it exists)."
+msgstr "You will be called after number 0000 (when it exists)."
+
+#, sh-format
+msgid "Internal Regulations.md"
+msgstr "Internal Regulations.md"
+
+#, sh-format
+msgid "Any request must be stamped before being submitted to be stamped."
+msgstr "Any request must be stamped before being submitted to be stamped."
+
+#, sh-format
+msgid ""
+"Stamps are not to be stamped, except in case of emergency (form \"URG-URG\")."
+msgstr ""
+"Stamps are not to be stamped, except in case of emergency (form \"URG-URG\")."
+
+#, sh-format
+msgid "Employees must soothe the feathered stamp every morning."
+msgstr "Employees must soothe the feathered stamp every morning."
+
+#, sh-format
+msgid "Circular Procedure n° ∞.md"
+msgstr "Circular Procedure n° ∞.md"
+
+#, sh-format
+msgid ""
+"Step 1: consult Step 2. Step 2: consult Step 1. (Stamp required at each "
+"consultation.)"
+msgstr ""
+"Step 1: consult Step 2. Step 2: consult Step 1. (Stamp required at each "
+"consultation.)"
+
+#, sh-format
+msgid "Whisper of the day.txt"
+msgstr "Whisper of the day.txt"
+
+#, sh-format
+msgid "They say the pile of files is taller seen from below."
+msgstr "They say the pile of files is taller seen from below."
+
+#, sh-format
+msgid "Half-receipt (to complete).txt"
+msgstr "Half-receipt (to complete).txt"
+
+#, sh-format
+msgid "Please present the other half to prove the existence of this one."
+msgstr "Please present the other half to prove the existence of this one."
+
+#, sh-format
+msgid "Index (partial).txt"
+msgstr "Index (partial).txt"
+
+#, sh-format
+msgid ""
+"Apricots (no); Certificates (yes); Warnings (maybe). See also: Zebras (filed "
+"under A by mistake)."
+msgstr ""
+"Apricots (no); Certificates (yes); Warnings (maybe). See also: Zebras (filed "
+"under A by mistake)."
+
+#, sh-format
+msgid "Plastic plant (badge holder).txt"
+msgstr "Plastic plant (badge holder).txt"
+
+#, sh-format
+msgid "Seniority: 12 years. Acquired rights: priority at the counter."
+msgstr "Seniority: 12 years. Acquired rights: priority at the counter."
+
+#, sh-format
+msgid "Quantum stamp.txt"
+msgstr "Quantum stamp.txt"
+
+#, sh-format
+msgid ""
+"Affixes and removes the seal simultaneously until observed by a superior."
+msgstr ""
+"Affixes and removes the seal simultaneously until observed by a superior."
+
+#, sh-format
+msgid "Bottomless inkwell.txt"
+msgstr "Bottomless inkwell.txt"
+
+#, sh-format
+msgid "Structural deficit. Voted every year by acclamation."
+msgstr "Structural deficit. Voted every year by acclamation."
+
+#, sh-format
+msgid "Random forms dispenser.txt"
+msgstr "Random forms dispenser.txt"
+
+#, sh-format
+msgid "Spits out a different CERFA with each swear word. Doesn't take change."
+msgstr "Spits out a different CERFA with each swear word. Doesn't take change."
+
+#, sh-format
+msgid "Photocopy of an unfindable original copy.txt"
+msgstr "Photocopy of an unfindable original copy.txt"
+
+#, sh-format
+msgid "Authenticated by the absence of the original."
+msgstr "Authenticated by the absence of the original."
+
+#, sh-format
+msgid "Vertical bubble level.txt"
+msgstr "Vertical bubble level.txt"
+
+#, sh-format
+msgid "Indicates the moral inclination of the project."
+msgstr "Indicates the moral inclination of the project."
+
+#, sh-format
+msgid "Whispering microphone.txt"
+msgstr "Whispering microphone.txt"
+
+#, sh-format
+msgid "Repeats \"apparently\" with authority."
+msgstr "Repeats \"apparently\" with authority."
+
+#, sh-format
+msgid "Digital abacus (unplugged).txt"
+msgstr "Digital abacus (unplugged).txt"
+
+#, sh-format
+msgid "Optimizes invisible savings."
+msgstr "Optimizes invisible savings."
+
+#, sh-format
+msgid "Ticket regurgitator automaton.txt"
+msgstr "Ticket regurgitator automaton.txt"
+
+#, sh-format
+msgid "Returns a ticket older than yours."
+msgstr "Returns a ticket older than yours."
+
+#, sh-format
+msgid "Queue line snake rope.txt"
+msgstr "Queue line snake rope.txt"
+
+#, sh-format
+msgid "Lengthens as soon as you think you're reaching the goal."
+msgstr "Lengthens as soon as you think you're reaching the goal."
+
+#, sh-format
+msgid "Schrödinger's file (filed and lost).txt"
+msgstr "Schrödinger's file (filed and lost).txt"
+
+#, sh-format
+msgid "Exists as long as no one consults it."
+msgstr "Exists as long as no one consults it."
+
+#, sh-format
+msgid "Member list.txt"
+msgstr "Member list.txt"
+
+#, sh-format
+msgid "Dame Pénélope de la Punaise (president)"
+msgstr "Dame Pénélope de la Punaise (president)"
+
+#, sh-format
+msgid "Sire Fernand du Parapheur (vice-president)"
+msgstr "Sire Fernand du Parapheur (vice-president)"
+
+#, sh-format
+msgid "Master Loris des Liasses (rapporteur)"
+msgstr "Master Loris des Liasses (rapporteur)"
+
+#, sh-format
+msgid "Session bell (mute).txt"
+msgstr "Session bell (mute).txt"
+
+#, sh-format
+msgid "Signals the end of debate as soon as it begins."
+msgstr "Signals the end of debate as soon as it begins."
+
+#, sh-format
+msgid "Captain Clotaire du Cachet"
+msgstr "Captain Clotaire du Cachet"
+
+#, sh-format
+msgid "Demoiselle Agathe du Bordereau"
+msgstr "Demoiselle Agathe du Bordereau"
+
+#, sh-format
+msgid "Brother Nestor des Annexes"
+msgstr "Brother Nestor des Annexes"
+
+#, sh-format
+msgid "Folding chair (unfolded by decree).txt"
+msgstr "Folding chair (unfolded by decree).txt"
+
+#, sh-format
+msgid "Only folds to written injunctions."
+msgstr "Only folds to written injunctions."
+
+#, sh-format
+msgid "Stewardess Salomé de la Signature"
+msgstr "Stewardess Salomé de la Signature"
+
+#, sh-format
+msgid "Registrar Octave de l'Agrafe"
+msgstr "Registrar Octave de l'Agrafe"
+
+#, sh-format
+msgid "Sergeant Éline de la Reliure"
+msgstr "Sergeant Éline de la Reliure"
+
+#, sh-format
+msgid "Protocol stapler (without staples).txt"
+msgstr "Protocol stapler (without staples).txt"
+
+#, sh-format
+msgid "Brings together without attaching."
+msgstr "Brings together without attaching."
+
+#, sh-format
+msgid "Academy of Geo-mancy"
+msgstr "Academy of Geo-mancy"
+
+#, sh-format
+msgid "Study Secretariat"
+msgstr "Study Secretariat"
+
+#, sh-format
+msgid "Registration Office"
+msgstr "Registration Office"
+
+#, sh-format
+msgid "Retake Service"
+msgstr "Retake Service"
+
+#, sh-format
+msgid "Library of Impossible Maps"
+msgstr "Library of Impossible Maps"
+
+#, sh-format
+msgid "Contradictory Atlases Room"
+msgstr "Contradictory Atlases Room"
+
+#, sh-format
+msgid "Ground Floor"
+msgstr "Ground Floor"
+
+#, sh-format
+msgid "Moving Index"
+msgstr "Moving Index"
+
+#, sh-format
+msgid "Departments"
+msgstr "Departments"
+
+#, sh-format
+msgid "Etheric Cartography"
+msgstr "Etheric Cartography"
+
+#, sh-format
+msgid "Labs"
+msgstr "Labs"
+
+#, sh-format
+msgid "Stamp Topology"
+msgstr "Stamp Topology"
+
+#, sh-format
+msgid "Forms Geology"
+msgstr "Forms Geology"
+
+#, sh-format
+msgid "Institute of Flows and Counter-Flows"
+msgstr "Institute of Flows and Counter-Flows"
+
+#, sh-format
+msgid "Amphitheater ∮"
+msgstr "Amphitheater ∮"
+
+#, sh-format
+msgid "Observatory of Administrative Lines"
+msgstr "Observatory of Administrative Lines"
+
+#, sh-format
+msgid "Meridians Terrace"
+msgstr "Meridians Terrace"
+
+#, sh-format
+msgid "Competitions and Aggregations"
+msgstr "Competitions and Aggregations"
+
+#, sh-format
+msgid "Examination Room"
+msgstr "Examination Room"
+
+#, sh-format
+msgid "Tools Museum"
+msgstr "Tools Museum"
+
+#, sh-format
+msgid "Instruments"
+msgstr "Instruments"
+
+#, sh-format
+msgid "Student guide.md"
+msgstr "Student guide.md"
+
+#, sh-format
+msgid "Cardinal principle: every territory is a matter of paper."
+msgstr "Cardinal principle: every territory is a matter of paper."
+
+#, sh-format
+msgid "ECTS credits mean \"Echelons, Cachets, Tampons, Signatures\"."
+msgstr "ECTS credits mean \"Echelons, Cachets, Tampons, Signatures\"."
+
+#, sh-format
+msgid "Any valid map must include at least one administrative dead end."
+msgstr "Any valid map must include at least one administrative dead end."
+
+#, sh-format
+msgid "Opening hours.txt"
+msgstr "Opening hours.txt"
+
+#, sh-format
+msgid "Open on even working days, except when it's odd."
+msgstr "Open on even working days, except when it's odd."
+
+#, sh-format
+msgid "Flat atlas of the round Earth.txt"
+msgstr "Flat atlas of the round Earth.txt"
+
+#, sh-format
+msgid "Revised edition: now spheri-flat according to decree."
+msgstr "Revised edition: now spheri-flat according to decree."
+
+#, sh-format
+msgid "User manual.txt"
+msgstr "User manual.txt"
+
+#, sh-format
+msgid "To find A, look for Z, then return to A via Beta corridor."
+msgstr "To find A, look for Z, then return to A via Beta corridor."
+
+#, sh-format
+msgid "Program.md"
+msgstr "Program.md"
+
+#, sh-format
+msgid "Introduction to trace-therapy"
+msgstr "Introduction to trace-therapy"
+
+#, sh-format
+msgid "Variable geometry of moral borders"
+msgstr "Variable geometry of moral borders"
+
+#, sh-format
+msgid "Seminar: The hesitant compass"
+msgstr "Seminar: The hesitant compass"
+
+#, sh-format
+msgid "Indecisive compass.txt"
+msgstr "Indecisive compass.txt"
+
+#, sh-format
+msgid "Turns until the presence of a department head."
+msgstr "Turns until the presence of a department head."
+
+#, sh-format
+msgid "Non-commutative seal groups"
+msgstr "Non-commutative seal groups"
+
+#, sh-format
+msgid "Homotopy of validation circuits"
+msgstr "Homotopy of validation circuits"
+
+#, sh-format
+msgid "Seminar: Torus of waiting lines"
+msgstr "Seminar: Torus of waiting lines"
+
+#, sh-format
+msgid "Möbius stamp.txt"
+msgstr "Möbius stamp.txt"
+
+#, sh-format
+msgid "One side, two lines, no exit."
+msgstr "One side, two lines, no exit."
+
+#, sh-format
+msgid "Stratigraphy of annexes"
+msgstr "Stratigraphy of annexes"
+
+#, sh-format
+msgid "Metamorphism under paraph"
+msgstr "Metamorphism under paraph"
+
+#, sh-format
+msgid "Seminar: Version fossils"
+msgstr "Seminar: Version fossils"
+
+#, sh-format
+msgid "Stratified section of a file.txt"
+msgstr "Stratified section of a file.txt"
+
+#, sh-format
+msgid "Observe without disturbing the fragile \"missing pieces\" layer."
+msgstr "Observe without disturbing the fragile \"missing pieces\" layer."
+
+#, sh-format
+msgid "Self-erasing blackboard.txt"
+msgstr "Self-erasing blackboard.txt"
+
+#, sh-format
+msgid "Erases demonstrations just before the conclusion."
+msgstr "Erases demonstrations just before the conclusion."
+
+#, sh-format
+msgid "Paperwork telescope.txt"
+msgstr "Paperwork telescope.txt"
+
+#, sh-format
+msgid "Only magnifies illegible signatures."
+msgstr "Only magnifies illegible signatures."
+
+#, sh-format
+msgid "Deadline drawing board.txt"
+msgstr "Deadline drawing board.txt"
+
+#, sh-format
+msgid "Allows adding a calendar month to any natural delay."
+msgstr "Allows adding a calendar month to any natural delay."
+
+#, sh-format
+msgid "Sample subject.md"
+msgstr "Sample subject.md"
+
+#, sh-format
+msgid "Map a mobile border between two closed counters."
+msgstr "Map a mobile border between two closed counters."
+
+#, sh-format
+msgid ""
+"Demonstrate the existence of a shortcut longer than the official detour."
+msgstr ""
+"Demonstrate the existence of a shortcut longer than the official detour."
+
+#, sh-format
+msgid "Stamp the hypothesis, then remove it cleanly."
+msgstr "Stamp the hypothesis, then remove it cleanly."
+
+#, sh-format
+msgid "Approved cheat sheet (blank).txt"
+msgstr "Approved cheat sheet (blank).txt"
+
+#, sh-format
+msgid "To be filled only inadvertently."
+msgstr "To be filled only inadvertently."
+
+#, sh-format
+msgid "Cerfas Office"
+msgstr "Cerfas Office"
+
+#, sh-format
+msgid "CERFA 13B"
+msgstr "CERFA 13B"
+
+#, sh-format
+msgid "CERFA 13C"
+msgstr "CERFA 13C"
+
+#, sh-format
+msgid "Complaints and Complaint Requests Office"
+msgstr "Complaints and Complaint Requests Office"
+
+#, sh-format
+msgid "Example complaint (template).txt"
+msgstr "Example complaint (template).txt"
+
+#, sh-format
+msgid "Subject: complaint against the complaint form, too complaining."
+msgstr "Subject: complaint against the complaint form, too complaining."
+
+#, sh-format
+msgid "Orientation brochure.txt"
+msgstr "Orientation brochure.txt"
+
+#, sh-format
+msgid ""
+"For any question, address the Counter-counter. To contest: Return Service."
+msgstr ""
+"For any question, address the Counter-counter. To contest: Return Service."
+
+#, sh-format
+msgid ""
+"Fill in blue. Except if you don't have blue, in which case: start over in "
+"blue."
+msgstr ""
+"Fill in blue. Except if you don't have blue, in which case: start over in "
+"blue."
+
+#, sh-format
+msgid "Administrative hourglass set to \"in progress\".txt"
+msgstr "Administrative hourglass set to \"in progress\".txt"
+
+#, sh-format
+msgid "Never empties completely, in accordance with procedure."
+msgstr "Never empties completely, in accordance with procedure."
+
+#, sh-format
+msgid "Conditional ink pen.txt"
+msgstr "Conditional ink pen.txt"
+
+#, sh-format
+msgid "Writes only after the stamp, never before."
+msgstr "Writes only after the stamp, never before."
+
+#, sh-format
+msgid "Bottomless complaints box.txt"
+msgstr "Bottomless complaints box.txt"
+
+#, sh-format
+msgid "All claims find their downfall there."
+msgstr "All claims find their downfall there."
+
+#, sh-format
+msgid "Self-referenced form.txt"
+msgstr "Self-referenced form.txt"
+
+#, sh-format
+msgid "Please attach CERFA 13C to this CERFA 13C."
+msgstr "Please attach CERFA 13C to this CERFA 13C."
+
+#, sh-format
+msgid "Whispering megaphone.txt"
+msgstr "Whispering megaphone.txt"
+
+#, sh-format
+msgid "Amplifies indignant silences."
+msgstr "Amplifies indignant silences."
+
+#, sh-format
+msgid "Public Reception"
+msgstr "Public Reception"
+
+#, sh-format
+msgid "Ticket Distribution"
+msgstr "Ticket Distribution"
+
+#, sh-format
+msgid "Provisional Orientation"
+msgstr "Provisional Orientation"
+
+#, sh-format
+msgid "Preliminary Pre-validation"
+msgstr "Preliminary Pre-validation"
+
+#, sh-format
+msgid "Control Compliance Control"
+msgstr "Control Compliance Control"
+
+#, sh-format
+msgid "Internal Prefecture Visa"
+msgstr "Internal Prefecture Visa"
+
+#, sh-format
+msgid "Intent Stamping"
+msgstr "Intent Stamping"
+
+#, sh-format
+msgid "Verification Verification"
+msgstr "Verification Verification"
+
+#, sh-format
+msgid "Penultimate Step Counter-Validation"
+msgstr "Penultimate Step Counter-Validation"
+
+#, sh-format
+msgid "Counter No. 0"
+msgstr "Counter No. 0"
+
+#, sh-format
+msgid "Standard Administrative Path"
+msgstr "Standard Administrative Path"
+
+#, sh-format
+msgid "Instructions.txt"
+msgstr "Instructions.txt"
+
+#, sh-format
+msgid "Present the document obtained in the previous step."
+msgstr "Present the document obtained in the previous step."
+
+#, sh-format
+msgid "Motivating ceiling light.txt"
+msgstr "Motivating ceiling light.txt"
+
+#, sh-format
+msgid "Displays \"Almost done!\" upon arrival."
+msgstr "Displays \"Almost done!\" upon arrival."
+
+#, sh-format
+msgid "Imaginary number ticket.txt"
+msgstr "Imaginary number ticket.txt"
+
+#, sh-format
+msgid "Served after the real ones, before the priority ones."
+msgstr "Served after the real ones, before the priority ones."
+
+#, sh-format
+msgid "Administrative compass.txt"
+msgstr "Administrative compass.txt"
+
+#, sh-format
+msgid "Always points to the opposite counter."
+msgstr "Always points to the opposite counter."
+
+#, sh-format
+msgid "Shadow stamp.txt"
+msgstr "Shadow stamp.txt"
+
+#, sh-format
+msgid "Leaves an invisible but regulatory trace."
+msgstr "Leaves an invisible but regulatory trace."
+
+#, sh-format
+msgid "Checklist checklist.txt"
+msgstr "Checklist checklist.txt"
+
+#, sh-format
+msgid "Last item: check this checklist."
+msgstr "Last item: check this checklist."
+
+#, sh-format
+msgid "Swinging door (leads nowhere).txt"
+msgstr "Swinging door (leads nowhere).txt"
+
+#, sh-format
+msgid "Approved for back-and-forth."
+msgstr "Approved for back-and-forth."
+
+#, sh-format
+msgid "Tacit intentions form.txt"
+msgstr "Tacit intentions form.txt"
+
+#, sh-format
+msgid "To be filled without writing anything."
+msgstr "To be filled without writing anything."
+
+#, sh-format
+msgid "Protocol magnifying glass.txt"
+msgstr "Protocol magnifying glass.txt"
+
+#, sh-format
+msgid "Magnifies paperwork, reduces hope."
+msgstr "Magnifies paperwork, reduces hope."
+
+#, sh-format
+msgid "Contradictory seal.txt"
+msgstr "Contradictory seal.txt"
+
+#, sh-format
+msgid "Validates and invalidates simultaneously."
+msgstr "Validates and invalidates simultaneously."
+
+#, sh-format
+msgid "Impossible bell.txt"
+msgstr "Impossible bell.txt"
+
+#, sh-format
+msgid "Ring scheduled for next budget year."
+msgstr "Ring scheduled for next budget year."
+
+#, sh-format
+msgid "Next step"
+msgstr "Next step"
+
+#, sh-format
+msgid "Duplicate requests"
+msgstr "Duplicate requests"
+
+#, sh-format
+msgid "Final validation"
+msgstr "Final validation"
+
+#, sh-format
+msgid "next counter"
+msgstr "next counter"
+
+#, sh-format
+msgid "referral"
+msgstr "referral"
+
+#, sh-format
+msgid "transmission"
+msgstr "transmission"
+
+#, sh-format
+msgid "Stamp required"
+msgstr "Stamp required"
+
+#, sh-format
+msgid "Deposit"
+msgstr "Deposit"
+
+#, sh-format
+msgid "Prefecture validation"
+msgstr "Prefecture validation"
+
+#, sh-format
+msgid "Mandatory Academy internship"
+msgstr "Mandatory Academy internship"
+
+#, sh-format
+msgid "Bridge to the Library of Impossible Maps"
+msgstr "Bridge to the Library of Impossible Maps"
+
+#, sh-format
+msgid "Flow validation procedure"
+msgstr "Flow validation procedure"
+
+#, sh-format
+msgid ""
+"✅ Kingdom of Bordereau VI the Stamped: bizarre objects, Academy of Geo-"
+"mancy and administrative labyrinths created (without villages)."
+msgstr ""
+"✅ Kingdom of Bordereau VI the Stamped: bizarre objects, Academy of Geo-"
+"mancy and administrative labyrinths created (without villages)."

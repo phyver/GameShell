@@ -1,0 +1,30 @@
+# English translations for GameShell LVM Mission package.
+# Copyright (C) 2025 THE GameShell LVM Mission'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the GameShell LVM Mission package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GameShell LVM Mission 08_extend_group\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-04 20:10+0100\n"
+"PO-Revision-Date: 2025-12-04 20:10+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "The village of Oljoliptichaaah must be 10 Mornifles (MB)."
+msgstr "The village of Oljoliptichaaah must be 10 Mornifles (MB)."
+
+msgid "You must add the province of Esdece to Esdebe."
+msgstr "You must add the province of Esdece to Esdebe."
+
+msgid "You must create the village of Oljoliptichaaah."
+msgstr "You must create the village of Oljoliptichaaah."
+
+msgid "You must incarnate the province of Esdece as physical land."
+msgstr "You must incarnate the province of Esdece as physical land."

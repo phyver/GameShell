@@ -1,0 +1,41 @@
+Objectives
+=========
+In **Douskelpar**, extreme weather conditions had already slowed 
+village development. But this time, it's much worse: a violent 
+rockslide has tumbled down the slopes, changing the local geography, scrambling 
+the organization of plots and, much worse still, carrying away part of the registers!
+
+Result: while the inhabitants organize among themselves to rebuild, 
+with help from neighboring colonies, they seem to ignore the real urgency 
+identified by LVM officials:
+without registers, it is strictly impossible (except by resorting to archaic means 
+such as neighborhood inquiry) to know who uses which granary, who owns which plot, 
+and who gets the water from the communal well.
+
+The LVM officials, as always, don't lack brilliant ideas:
+rather than going on site to assess the damage, help the survivors and take the opportunity
+to ask them who owns the houses still standing or the plots covered with rubble, 
+they prefer to send you to do a **great land audit** in order to establish the **Seigneurial File for Correction of Katas (fsck)**...
+this based on old maps (the fact that there is literally 
+a missing piece of mountain being, after all, only a minor annoyance).
+
+Of course, some grumblers still protest, under the pretext that *"gnagna, half of my neighbors 
+are under a pile of stones"* or *"patati, but of course it's my place, I built the house 
+myself with my uncle, there are even my initials carved right there"*.
+But the LVM has decided: *"If it's not written in the registers, it never existed."* The question of whether the registers no longer exist having obviously nothing to do with it.
+
+Your mission: go down to Douskelpar, inspect the registers, correct the anomalies 
+and restore the cadastral order of the village.
+
+---
+
+Useful Commands
+================
+umount 
+    Unmount a partition.
+
+fsck 
+    Check and repair inconsistencies in a partition.
+
+mount 
+    Remount a partition.

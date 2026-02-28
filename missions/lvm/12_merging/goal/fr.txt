@@ -1,0 +1,59 @@
+Objectifs
+=========
+Depuis leur fondation, les colonies d’**Esdea**, **Esdebe** et **Esdece** ont supporté 
+patiemment les décrets, quotas, audits, recensements et commissions extraordinaires 
+de la **LVM (Lands & Villages Management)**.  
+
+Mais après l’éboulement de **Douskelpar**, la coupe est pleine :  
+- contrôles administratifs toujours plus absurdes,  
+- règles douanières changeant chaque semaine,  
+- décisions injustes tranchées uniquement sur la base de registres incomplets,  
+- et, pour couronner le tout, la nouvelle **Taxe sur le Poisson Salé** —  
+imposée sur chaque Krouton (Ko) de morue séchée exportée hors d’Ouskelcoule.  
+
+L’événement déclencheur a été le tristement célèbre **Poisson Party**, 
+resté dans les chroniques sous le nom de **Krouton Party**.  
+Une nuit, les habitants d’**Ouskelcoule**, excédés par ces taxes iniques, 
+sont montés sur les quais, ont ouvert les greniers et ont jeté tout un 
+chargement de poisson salé dans la rivière en criant des slogans restés célèbres :  
+
+*« À la flotte les poissons, trempons les Kroutons ! »*  
+*« Pas de taxation sans ration ! »*  
+*« Le poisson est à nous, pas à la LVM ! »*  
+
+À partir de là, une question a commencé à circuler dans toutes les colonies :  
+*« Mais au fait… la LVM, ça sert à quoi exactement ? »*  
+
+Épuisées, les colonies se sont réunies en assemblée et ont décidé qu’il était temps 
+de tracer leur propre chemin.  
+Elles ont proclamé leur **indépendance** et ont fondé un nouveau royaume : l'**Union des Settlements Autonomes (USA)**, **Settlements** étant le nom donné par les colons à leurs premiers campements.
+
+La LVM a bien tenté de protester, et d'expliquer aux colons qu'ils devaient d'abord remplir le formulaire "B-12" pour obtenir le récépissé "A-127" nécessaire au dépôts de leur dossier auprès du "Bureau des plaintes et réclamations", ouvert tout les quatrièmes jeudi du mois de 14h30 à 14h55, les colons semblent avoir été peu sensibles à l'argument, trop occupés à jeter symboliquement à la rivière les tampons, plumes et registres marqués de l'emblème de la LVM.
+
+Désireux d'organiser leur royaume selon une forme nouvelle de gouvernement, ils vous ont chargé vous, stagiaire en chef Trauma Jefassonne, individu lettré mais qui a toujours été à leur coté sur le terrain, d'organiser et mettre en oeuvre la séparation des colonnies du royaume et leur fusions en une nouvelle entitée. Partageant leur agacement contre l'absurdité administrative du royaume en général, et de la LVM en particulier, vous avez décider d'accepter et de rejoindre la cause
+des rebelles !
+
+Votre premier travail en tant qu'organisateur de l'indépendance sera donc :
+- De couper les routes entre le royaume et les villages colonnies
+- De renommer la colonie d'Esdea en "USA"
+- De rattacher la colonie d'Esdebe à celle d'Esdea.
+
+Note : Attention, vous risquez de devoir supprimer les vielles snapshots qui pourraient trainer au fond des tiroirs de la LVM
+
+---
+
+Commandes utiles
+================
+
+umount
+    Démonter un disque
+
+vgrename
+    Renommer un groupe de volume
+
+vgmerge
+    Fussionner deux groupes de volume
+
+vgchange
+    Modifier l’état d’un groupe de volumes (par exemple, l’activer ou le désactiver).
+

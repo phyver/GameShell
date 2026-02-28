@@ -1,0 +1,50 @@
+Objectives
+===========================================
+The geo-mantic cartographers have spotted a new etheric land: 
+**Esdece** (code name **/dev/gsh_sdc**), floating in the DEV plane very close to the province of **Esdebe**.
+The LVM has therefore decided, following several symposiums, that it should be attached 
+to the colony of **Esdebe** in order to promote its development.
+
+The administrators immediately entrust the explorers with founding 
+a new village there. After several commissions (and a quarrel over the 
+choice of name, requiring the intervention of the clerk to physically separate 
+the "Administrator of Cumbersome Registers" and the "Manager of Orthogonal 
+Lists"), the decree finally falls.
+
+The name chosen will be the one proposed by the explorers who carried out the reconnaissance mission, 
+as reported by the field staff in charge of colony/LVM liaison: **Oljoliptichaaah**
+
+The administrators have also decreed that the village's basic borders should be 10 Mornifles (Mo)
+
+Guess who is in charge of bringing the news to the explorers in the field?
+
+Extract from the minutes of R.A.P.P.O.R.T. (Administrative Meeting to Officially Present the Field Report):
+    STAKEHOLDERS:
+        Field Staff: Jean Courencor
+        Administrative Staff for Inspection and Registration of Reports: Louis de Pointe du Lac
+
+    INTERVIEW MINUTES:
+        [...]
+
+        PAPER: So there you got on your horse and left?
+        Jean Courencor: That's right, and leaving I said to him **"And for the name what do we say?"**
+        PAPER: And then?
+        Jean Courencor: He just yelled "Oljoliptichaaah!"
+        PAPER: "Oljolipticha"?
+        Jean Courencor: No, with more "a"s, "Oljoliptichaaah".
+        PAPER: Hmm... Does it take an "h" at the end?
+
+END OF MINUTES
+
+
+---
+
+Useful Commands
+================
+pvcreate
+    Create a physical volume
+
+vgextend
+    Extends a volume group
+
+lvcreate

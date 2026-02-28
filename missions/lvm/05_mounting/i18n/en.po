@@ -1,0 +1,58 @@
+# English translations for GameShell LVM Mission package.
+# Copyright (C) 2025 THE GameShell LVM Mission'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the GameShell LVM Mission package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GameShell LVM Mission 05_mounting\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-04 20:10+0100\n"
+"PO-Revision-Date: 2025-12-04 20:10+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid ""
+"Bravo! Ouskelcoule, Douskelpar and Grandflac are well connected to the Esdea "
+"kingdom and their registers are up to date!"
+msgstr ""
+"Bravo! Ouskelcoule, Douskelpar and Grandflac are well connected to the Esdea "
+"kingdom and their registers are up to date!"
+
+msgid "Connect the kingdom to the village of Douskelpar"
+msgstr "Connect the kingdom to the village of Douskelpar"
+
+msgid "Connect the kingdom to the village of Grandflac"
+msgstr "Connect the kingdom to the village of Grandflac"
+
+msgid "Connect the kingdom to the village of Ouskelcoule"
+msgstr "Connect the kingdom to the village of Ouskelcoule"
+
+msgid "Correctly fill in the Douskelpar register"
+msgstr "Correctly fill in the Douskelpar register"
+
+msgid "Correctly fill in the Grandflac register"
+msgstr "Correctly fill in the Grandflac register"
+
+msgid "Correctly fill in the Ouskelcoule register"
+msgstr "Correctly fill in the Ouskelcoule register"
+
+msgid "Create the 'Maison Commune' directory in each village"
+msgstr "Create the 'Maison Commune' directory in each village"
+
+msgid "Create the village Douskelpar in Esdea"
+msgstr "Create the village Douskelpar in Esdea"
+
+msgid "Create the village Grandflac in Esdebe"
+msgstr "Create the village Grandflac in Esdebe"
+
+msgid "Create the village Ouskelcoule in Esdea"
+msgstr "Create the village Ouskelcoule in Esdea"
+
+msgid "mission 5"
+msgstr "mission 5"

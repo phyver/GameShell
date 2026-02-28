@@ -1,0 +1,56 @@
+# French translations for GameShell LVM Mission package.
+# Copyright (C) 2025 THE GameShell LVM Mission'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the GameShell LVM Mission package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GameShell LVM Mission 05_mounting\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-04 20:10+0100\n"
+"PO-Revision-Date: 2025-12-04 20:10+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid ""
+"Bravo! Ouskelcoule, Douskelpar and Grandflac are well connected to the Esdea "
+"kingdom and their registers are up to date!"
+msgstr "Bravo ! Ouskelcoule, Douskelpar et Grandflac sont bien reliés au royaume Esdea et leurs registres sont à jour !"
+
+msgid "Connect the kingdom to the village of Douskelpar"
+msgstr "Reliez le royaume au village de Douskelpar"
+
+msgid "Connect the kingdom to the village of Grandflac"
+msgstr "Reliez le royaume au village de Grandflac"
+
+msgid "Connect the kingdom to the village of Ouskelcoule"
+msgstr "Reliez le royaume au village d'Ouskelcoule"
+
+msgid "Correctly fill in the Douskelpar register"
+msgstr "Remplissez correctement le registre de Douskelpar"
+
+msgid "Correctly fill in the Grandflac register"
+msgstr "Remplissez correctement le registre de Grandflac"
+
+msgid "Correctly fill in the Ouskelcoule register"
+msgstr "Remplissez correctement le registre d'Ouskelcoule"
+
+msgid "Create the 'Maison Commune' directory in each village"
+msgstr "Créez le répertoire 'Maison Commune' dans chaque village"
+
+msgid "Create the village Douskelpar in Esdea"
+msgstr "Créez le village Douskelpar dans Esdea"
+
+msgid "Create the village Grandflac in Esdebe"
+msgstr "Créez le village Grandflac dans Esdebe"
+
+msgid "Create the village Ouskelcoule in Esdea"
+msgstr "Créez le village Ouskelcoule dans Esdea"
+
+msgid "mission 5"
+msgstr "mission 5"

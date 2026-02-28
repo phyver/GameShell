@@ -1,0 +1,29 @@
+# English translations for GameShell LVM Mission package.
+# Copyright (C) 2025 THE GameShell LVM Mission'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the GameShell LVM Mission package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GameShell LVM Mission 09_vgreduce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-04 20:10+0100\n"
+"PO-Revision-Date: 2025-12-04 20:10+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid ""
+"You must remove the village of Oljoliptichaaah from the province of Esdebe."
+msgstr ""
+"You must remove the village of Oljoliptichaaah from the province of Esdebe."
+
+msgid "You must return the province of Esdece to the ethereal dimension."
+msgstr "You must return the province of Esdece to the ethereal dimension."
+
+msgid "You must separate the provinces of Esdebe and Esdece."
+msgstr "You must separate the provinces of Esdebe and Esdece."

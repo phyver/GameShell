@@ -1,0 +1,29 @@
+Objectif
+=====================================================
+La situation est devenue critique.  
+Les **États Unis des Settlements Autonomes (USA)**, récemment proclamés, 
+sont en conflit armé avec le Royaume d’**Bordereau VI Le Tamponné**.  
+Le Conseil Fédéral de la nouvelle République songe, sur conseil du "Cabinet des experts géo-manciens de la république fédérale" à employer une solution magique inédite : la **Téléportation Astrale**, une technique 
+décrite par les géo-manciens comme un « changement de disque », même si personne ne comprend vraiment ce qu'ils veulent dire par là.  
+
+En clair, les USA veulent arracher leurs terres entières de ce monde pour 
+les réinstaller ailleurs, hors de portée de la LVM et des armées royales.  
+
+Vous n’êtes pas très rassuré par cette idée — après tout, arracher des bouts de monde, c'est bien joli sur le papier mais ça semble quand même un peu salissant. Vous avez tout de même réussi à 
+convaincre les administrateurs fédéraux qu’avant une mesure aussi extrême, 
+il fallait au moins **figer les villages** et **stabiliser l’Union**, afin 
+d’empêcher tout accès imprévu pendant le transfert astral.  
+
+C’est donc à vous, humble stagiaire devenu expert en gestion de crise, qu’il revient de préparer le terrain, en désactivant les différents village et en préparant la nouvelle province autonome à son changement de plan.  
+
+---
+
+Commandes utiles
+================
+
+vgchange -an
+    Désactiver un groupe de volume
+
+vgexport
+    Exporter un groupe de volume
+

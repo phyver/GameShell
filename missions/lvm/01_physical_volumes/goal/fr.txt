@@ -1,0 +1,62 @@
+Objectif
+========
+Aux limites du royaume, les cartographes géo-mantiens ont repéré deux immenses
+contrées encore suspendues dans la brume des dimensions éthériques : visibles sur leurs cartes
+géo-magiques, mais point encore matérialisées dans le monde tangible.  
+
+Ces territoires fantomatiques se trouvent dans un plan nommé par les mages
+**Domain of Etheric Vastlands (dev)** et apparaissent dans d'anciens grimoires sous les nom
+d’**Esdea** et **Esdebe** (plus prosaïquement nommés **/dev/gsh_sda** et **/dev/gsh_sdb** dans les registres administratifs).  
+
+Le Roi **Bordereau VI le Tamponné** tient absolument à y apposer son sceau
+avant que quelque voisin indiscret ne vienne réclamer leur annexion.  
+
+Pour ce faire, il a institué une administration nouvelle, la
+**LVM (Lands & Villages Management)**, censée réunir explorateurs, géo-mantiens
+et scribes administratifs afin de matérialiser, conquérir et gérer ces terres
+nouvelles.  
+
+Mais, comme il sied à toute grande bureaucratie, les choses ne vont pas
+exactement comme prévu.  
+
+Les explorateurs se consacrent avec ardeur à la cartographie des tavernes,
+les géo-mantiens complotent entre eux pour s’échanger des sinécures,
+et, pire que tout, le personnel administratif… administre :
+activité consistant essentiellement à rédiger des comptes rendus sur le déroulé de la dernière réunion, laquelle avait pour but de préparer la suivante...  
+
+Bref, tout le travail concret retombe sur vos épaules :
+vous, le stagiaire de service.  
+
+Votre première tâche consiste à donner chair à ces contrées éthérées,
+les transformer en territoires physiques exploitables par la LVM.
+Les géo-mantiens appellent cela, dans leur jargon abscons,
+la création de **PV (Physical Volumes)**.
+
+
+/!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ 
+  
+  ATTENTION !
+
+  Ces missions vous amènent à manier des pouvoirs d’administrateur (root).
+  Pour invoquer de telles commandes, vous devez impérativement les faire
+  précéder du sceau magique :
+
+      danger sudo
+
+  Exemple, pour recenser les fichiers d’un répertoire en tant qu’admin :
+      $ danger sudo ls -alh
+
+  Prenez garde avant toute manipulation : travailler dans "/dev" est dangereux,
+  assurez-vous de toujours travailler sur le bon disque !
+
+/!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ 
+
+
+Commandes utiles
+================
+pvcreate
+    Consultez le manuel de `pvcreate` pour découvrir comment donner corps
+    à un Volume Physique dans l’univers de la LVM.
+
+pvs
+    Permet d’obtenir des informations sur les Volumes Physiques déjà créés.

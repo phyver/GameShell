@@ -1,0 +1,31 @@
+Objective
+=========
+The ethereal territories of Esdea and Esdebe, which you have materialized into
+tangible provinces (PV), are now ready to enter the administrative apparatus.
+
+At the palace, the **LVM (Lands & Villages Management)** officials have
+held an endless cycle of consultations: pre-meetings for scoping,
+plenary sessions, ad hoc committees, post-session debriefs and, of course,
+drafting voluminous reports distributed in triplicate.
+
+From these works emerges a solemn decision: to preserve the balance of
+ambitions and give an impression of efficiency, the new provinces will be
+erected into two **independent colonies**.
+
+In administrative language, these colonies take the name of
+**Volume Groups (VG)**.
+
+Your mission: officially establish these colonies under their official
+designation (make sure to use lowercase names):
+- The Colony of **Esdea**
+- The Colony of **Esdebe**
+
+
+Useful Commands
+===============
+vgcreate
+    Consult the manual of `vgcreate` to discover how to establish a Volume
+    Group on a Physical Volume.
+
+vgs
+    Provides information on already established Volume Groups.

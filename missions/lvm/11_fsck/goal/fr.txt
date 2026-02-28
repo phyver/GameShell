@@ -1,0 +1,41 @@
+Objectifs
+=========
+À **Douskelpar**, les conditions climatiques extrêmes avaient déjà freiné 
+le développement du village. Mais cette fois, c’est bien pire : un violent 
+éboulis a dévalé les pentes, modifiant la géographie locale, brouillant 
+l’organisation des parcelles et, bien pire encore, emportant une partie des registres !  
+
+Résultat : tandis que les habitants s’organisent entre eux pour reconstruire, 
+avec l’aide des colonies voisines, ils semblent ignorer la véritable urgence 
+identifiée par les fonctionnaires de la LVM :  
+sans registres, il est strictement impossible (sauf à recourir à des moyens archaïques 
+tels que l'enquête de voisinage) de savoir qui utilise tel grenier, qui possède telle parcelle, 
+et à qui revient l’eau du puits communal.  
+
+Les fonctionnaires de la LVM, comme toujours, ne manquent pas d’idées lumineuses :  
+plutôt que de monter sur place pour constater les dégâts, aider les survivants et en profiter
+pour leur demander à qui appartiennent les maisons encore debout ou les parcelles recouvertes de gravats, 
+ils préfèrent vous envoyer faire un **grand audit foncier** afin d'établir le **Fichier Seigneurial de Correction des Katas (fsck)** …  
+ceci sur la base des anciennes cartes (le fait qu’il manque littéralement 
+un pan de montagne n’étant, après tout, qu’une menue contrariété).  
+
+Bien sûr, quelques râleurs protestent encore, sous prétexte que *« gnagna, la moitié de mes voisins 
+sont sous un tas de cailloux »* ou *« patati, mais bien sûr que c’est chez moi, j’ai construit la maison 
+moi-même avec mon oncle, il y a même mes initiales gravées juste là »*.  
+Mais la LVM a tranché : *« Si ce n’est pas écrit dans les registres, cela n’a jamais existé. »*. La question de savoir si les registres n'existent plus n'ayant évidemment rien à voir là dedans.  
+
+Votre mission : descendre à Douskelpar, inspecter les registres, corriger les anomalies 
+et restaurer l’ordre cadastral du village.
+
+---
+
+Commandes utiles
+================
+umount 
+    Démonter une partition.
+
+fsck 
+    Vérifier et réparer les incohérences d'une partition.
+
+mount 
+    Remonter une partition.

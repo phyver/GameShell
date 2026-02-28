@@ -1,0 +1,43 @@
+Objectives
+===========================================
+The explorers have pitched their tents in Ouskelcoule, Douskelpar and Grandflac, 
+but these "villages" remain for now vast wastelands without any 
+organization.
+
+The **LVM** officials, great lovers of registers and stamps, 
+have decreed that administrative rigor is necessary to avoid chaos.
+According to them, before even erecting the slightest hut, it is appropriate to order the soil 
+through regular division, to draw up duly stamped inventories, and to 
+keep registers allowing to officially attribute each plot to 
+future inhabitants.
+
+In their technico-bureaucratic jargon, this division is called a 
+**file system**.
+
+It consists of dividing the land into **blocks** — identical surface units — 
+then cataloging in registers (tables) the use of each 
+block. Every house, every barn or every warehouse in the village will be assigned 
+its own file, called an **inode**, on which will appear all the essential 
+information: owner, dimensions, plot, allocation, etc.
+
+Without this initial classification step, the colonists would settle randomly, 
+and we would end up losing track of the granaries, markets, and even the 
+village wells.
+
+By royal decree, the chosen organization mode is 
+**EXT4: "Territorial eXploitation Edict, 4th version"**, 
+which sets the rules for construction, access and management of plots.
+
+Your mission is therefore to prepare the basic infrastructure:
+- Divide the **Ouskelcoule** basin into regular blocks,
+- Structure the verdant slopes of **Douskelpar**,
+- Develop the lush banks of **Grandflac**.
+
+
+Useful Commands
+================
+mkfs.ext4
+    Formats the Logical Volume with an ext4 file system.
+
+blkid 
+    Displays file system metadata (UUID, type, label).
