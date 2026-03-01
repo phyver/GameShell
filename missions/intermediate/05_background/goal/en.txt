@@ -8,8 +8,9 @@ A single firework can be created with the magical word
 
   $command
 
-NOTE: you need to make sure the pyrotechnician sees all the fireworks while he 
-is waiting.
+NOTE: the pyrotechnician starts looking at the sky when you call the ``gsh 
+check`` command. Checking the mission after the fireworks have exploded will 
+not work.
 
 
 Useful commands

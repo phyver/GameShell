@@ -8,8 +8,9 @@ Un singolo fuoco d'artificio può essere acceso con:
 
   $command
 
-NOTA: hai bisogno di verificare che il pirotecnico possa vedere tutti i fuochi 
-di artificio mentre aspetta.
+NOTA: il pirotecnico inizia a guardare il cielo quando dai il comando ``gsh 
+check``. Controllare la missione dopo che i fuochi di artificio sono esplosi 
+non funzionerà.
 
 
 Comandi utili

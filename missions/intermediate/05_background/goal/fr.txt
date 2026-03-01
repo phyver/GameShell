@@ -8,8 +8,9 @@ Une fusée simple peut être lancée avec le mot magique
 
   $command
 
-NOTE : vous devez vous débrouiller pour que l'artificier voie tous les feux
-d'artifice pendant qu'il attend.
+NOTE : l'artificier commence à regarder le ciel lorsque vous lancez la 
+commande ``gsh check``. Vérifier la mission après l'explosion des feux 
+d'artifices ne marchera pas.
 
 
 Commandes utiles
