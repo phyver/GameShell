@@ -5,7 +5,7 @@ OTHER_FILES=sbin/generate_merchant_stall.sh
 LANGUAGES=$(wildcard i18n/*.po)
 LANGUAGES:=$(filter-out i18n/en.po, $(LANGUAGES))
 SH_FILES:=$(filter-out $(EXCEPTIONS), $(SH_FILES))
-SORT=--sort-output
+SORT=
 OPTIONS=--indent --no-wrap --no-location
 
 all: i18n/en.po $(LANGUAGES)
