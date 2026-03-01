@@ -23,3 +23,6 @@ msgstr  "Il tuo comando precedente non utilizza il comando 'grep'..."
 
 msgid   "grimoire"
 msgstr  "grimorio"
+
+msgid   "Your command shouldn't generate error messages..."
+msgstr  ""

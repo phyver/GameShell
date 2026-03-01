@@ -1,6 +1,6 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 msgid   ""
-msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+msgstr  "Content-Type: text/plain; charset=ASCII\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
@@ -24,3 +24,6 @@ msgstr  "Your previous command doesn't use the 'grep' command..."
 
 msgid   "grimoire"
 msgstr  "grimoire"
+
+msgid   "Your command shouldn't generate error messages..."
+msgstr  "Your command shouldn't generate error messages..."

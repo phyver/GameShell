@@ -1,56 +1,51 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 # mte90 <mte90net@gmail.com>, 2022.
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: mte90 <mte90net@gmail.com>\n"
-"PO-Revision-Date: 2022-06-14 10:32+0200\n"
-"Project-Id-Version: \n"
-"Language-Team: Italian <kde-i18n-it@kde.org>\n"
-"Language: it_IT\n"
-"MIME-Version: 1.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.04.2\n"
+msgid   ""
+msgstr  "Project-Id-Version: \n"
+        "PO-Revision-Date: 2022-06-14 10:32+0200\n"
+        "Last-Translator: mte90 <mte90net@gmail.com>\n"
+        "Language-Team: Italian <kde-i18n-it@kde.org>\n"
+        "Language: it_IT\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+        "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+        "X-Generator: Lokalize 22.04.2\n"
 
 #, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr "$GSH_HOME/Foresta/Capanna/Cassa"
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Foresta/Capanna/Cassa"
 
 #, sh-format
-msgid "$GSH_HOME/Garden/Maze"
-msgstr "$GSH_HOME/Giardino/Labirinto"
+msgid   "$GSH_HOME/Garden/Maze"
+msgstr  "$GSH_HOME/Giardino/Labirinto"
 
 # path for the text file containing the goal
 #, sh-format
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/it.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/it.txt"
 
 # path for the text file containing the skip message
-msgid "$MISSION_DIR/skip/en.txt"
-msgstr "$MISSION_DIR/skip/it.txt"
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/it.txt"
 
 # path for the text file containing the treasure message
 #, sh-format
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/it.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/it.txt"
 
-msgid "Booh... The copper coin in you chest is invalid!"
-msgstr "Strano... la tua moneta di rame nella tua cassa non è valida!"
+msgid   "Booh... The copper coin in you chest is invalid!"
+msgstr  "Strano... la tua moneta di rame nella tua cassa non è valida!"
 
 #, sh-format
-msgid ""
-"Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB"
-" ($MISSION_NAME)."
-msgstr ""
-"Dummy mission '$DUMMY_MISSION' obbligatoria per la missione $MISSION_NB"
-" ($MISSION_NAME)."
+msgid   "Dummy mission '$DUMMY_MISSION' is required for mission $MISSION_NB ($MISSION_NAME)."
+msgstr  "Dummy mission '$DUMMY_MISSION' obbligatoria per la missione $MISSION_NB ($MISSION_NAME)."
 
-msgid "There is no copper coin in your chest!"
-msgstr "Non c'è nessuna moneta di rame nella tua cassa!"
+msgid   "There is no copper coin in your chest!"
+msgstr  "Non c'è nessuna moneta di rame nella tua cassa!"
 
-msgid "There still are some copper coins in the maze!"
-msgstr "Ci sono ancora delle monete di rame nel labirinto!"
+msgid   "There still are some copper coins in the maze!"
+msgstr  "Ci sono ancora delle monete di rame nel labirinto!"
 
-msgid "copper_coin"
-msgstr "moneta_di_rame"
+msgid   "copper_coin"
+msgstr  "moneta_di_rame"

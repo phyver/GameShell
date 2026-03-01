@@ -1,6 +1,6 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 msgid   ""
-msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+msgstr  "Content-Type: text/plain; charset=ASCII\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 # path for the text file containing the goal

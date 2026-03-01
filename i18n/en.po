@@ -1,4 +1,8 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=ASCII\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
 #, sh-format
 msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
 msgstr  "$GSH_ROOT/i18n/gsh-full-help/en.txt"

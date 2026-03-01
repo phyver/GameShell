@@ -6,6 +6,7 @@ msgstr  "Content-Type: text/plain; charset=UTF-8\n"
 msgid   "$GSH_HOME/Castle/Main_building/Throne_room"
 msgstr  ""
 
+#, sh-format
 msgid   "$GSH_HOME/Castle/Cellar"
 msgstr  ""
 

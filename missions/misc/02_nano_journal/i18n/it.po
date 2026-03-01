@@ -1,48 +1,45 @@
 # mte90 <mte90net@gmail.com>, 2022.
-msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: mte90 <mte90net@gmail.com>\n"
-"PO-Revision-Date: 2022-05-31 18:32+0200\n"
-"Project-Id-Version: \n"
-"Language-Team: Italian <kde-i18n-it@kde.org>\n"
-"Language: it_IT\n"
-"MIME-Version: 1.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.04.1\n"
+msgid   ""
+msgstr  "Project-Id-Version: \n"
+        "PO-Revision-Date: 2022-05-31 18:32+0200\n"
+        "Last-Translator: mte90 <mte90net@gmail.com>\n"
+        "Language-Team: Italian <kde-i18n-it@kde.org>\n"
+        "Language: it_IT\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+        "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+        "X-Generator: Lokalize 22.04.1\n"
 
 #, sh-format
-msgid "$GSH_HOME/Forest/Hut/Chest"
-msgstr "$GSH_HOME/Foresta/Capanna/Cassa"
+msgid   "$GSH_HOME/Forest/Hut/Chest"
+msgstr  "$GSH_HOME/Foresta/Capanna/Cassa"
 
 # path for the text file containing the goal
-msgid "$MISSION_DIR/goal/en.txt"
-msgstr "$MISSION_DIR/goal/it.txt"
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/it.txt"
 
 # path for the text file containing the skip message
-msgid "$MISSION_DIR/skip/en.txt"
-msgstr "$MISSION_DIR/skip/it.txt"
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/it.txt"
 
 # path for the text file containing the treasure message
-msgid "$MISSION_DIR/treasure-msg/en.txt"
-msgstr "$MISSION_DIR/treasure-msg/it.txt"
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/it.txt"
 
 #, sh-format
-msgid ""
-"The command 'nano' is required for mission $MISSION_NAME.\n"
-"(Debian / Ubuntu: install package 'nano')"
-msgstr ""
-"IL commando 'nano' é richiesto per la missione $MISSION_NAME.\n"
-"(Debian / Ubuntu: installa il pacchetto 'nano')"
+msgid   "The command 'nano' is required for mission $MISSION_NAME.\n"
+        "(Debian / Ubuntu: install package 'nano')"
+msgstr  "IL commando 'nano' é richiesto per la missione $MISSION_NAME.\n"
+        "(Debian / Ubuntu: installa il pacchetto 'nano')"
 
 #, sh-format
-msgid "The file '$journal_file' doesn't exist..."
-msgstr "Il file '$journal_file' non esiste..."
+msgid   "The file '$journal_file' doesn't exist..."
+msgstr  "Il file '$journal_file' non esiste..."
 
 #, sh-format
-msgid "The file '$journal_file' is empty..."
-msgstr "Il file '$journail_file' é vuoto..."
+msgid   "The file '$journal_file' is empty..."
+msgstr  "Il file '$journail_file' é vuoto..."
 
-msgid "journal"
-msgstr "registro"
+msgid   "journal"
+msgstr  "registro"

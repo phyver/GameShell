@@ -4,7 +4,7 @@ SH_FILES= start.sh  scripts/* lib/gsh.sh lib/bashrc lib/zshrc lib/gshrc
 AWK_FILES=scripts/_gsh_stat.awk
 OTHER_FILES=
 
-SORT=--sort-output
+SORT=
 OPTIONS=--indent --no-wrap --no-location
 
 all: i18n/en.po $(LANGUAGES)
