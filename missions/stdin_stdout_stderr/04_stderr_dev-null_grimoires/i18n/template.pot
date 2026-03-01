@@ -23,3 +23,6 @@ msgstr  ""
 
 msgid   "grimoire"
 msgstr  ""
+
+msgid   "Your command shouldn't generate error messages..."
+msgstr  ""
