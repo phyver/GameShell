@@ -17,19 +17,19 @@ do
     SKIPPABLE="  [$(gettext "optional")]"
   fi
 
-  if grep -q "^$n CHECK_OK" "$GSH_CONFIG/missions.log"
+  if grep -q "^$n CHECK_OK " "$GSH_CONFIG/missions.log"
   then
     COLOR="green"
     STATUS="  ($(gettext "completed"))"
-  elif grep -q "^$n CHECK_OOPS" "$GSH_CONFIG/missions.log"
+  elif grep -q "^$n CHECK_OOPS " "$GSH_CONFIG/missions.log"
   then
     COLOR="red"
     STATUS="  ($(gettext "failed"))"
-  elif grep -q "^$n SKIP" "$GSH_CONFIG/missions.log"
+  elif grep -q "^$n SKIP " "$GSH_CONFIG/missions.log"
   then
     COLOR="yellow"
     STATUS="  ($(gettext "skipped"))"
-  elif grep -q "^$n CANCEL_DEP_PB" "$GSH_CONFIG/missions.log"
+  elif grep -q "^$n CANCEL_DEP_PB " "$GSH_CONFIG/missions.log"
   then
     COLOR="magenta"
     STATUS="  ($(gettext "cancelled"))"
