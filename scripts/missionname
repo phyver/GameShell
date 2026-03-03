@@ -17,16 +17,16 @@ missionname() {
     cd "$path"
   fi
 
+  # look for the enclosing mission directory
   while true
   do
     [ -f check.sh ] && break
     [ -f static.sh ] && break
     [ -f init.sh ] && break
+    [ -f gshrc ] && break
     [ "$(pwd -P)" = "/" ] && break
     cd ..
   done
-
-
 
   case "$PWD" in
     "$GSH_MISSIONS/"*)
