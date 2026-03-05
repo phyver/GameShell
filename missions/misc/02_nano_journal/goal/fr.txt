@@ -1,10 +1,13 @@
 Objectif
 ========
 
-Créez un fichier journal nommé 'journal.txt' dans votre coffre, et 
+Créez un fichier journal nommé "journal.txt" dans votre coffre, et 
 inscrivez y un petit message.
 Vous pourrez utiliser ce fichier pour prendre des notes sur vos 
 solutions lors des missions suivantes.
+
+Attention, "journal.txt" est un fichier dans le répertoire "Coffre". Vous
+n'avez pas besoin de créer de nouveau répertoire pour cette mission.
 
 
 Détails

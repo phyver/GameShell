@@ -1,6 +1,6 @@
 # AUTOMATICALLY GENERATED -- DO NOT EDIT
 msgid   ""
-msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+msgstr  "Content-Type: text/plain; charset=ASCII\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #, sh-format
@@ -35,3 +35,7 @@ msgstr  "The file '$journal_file' is empty..."
 
 msgid   "journal"
 msgstr  "journal"
+
+#, sh-format
+msgid   "'$journal_file' is a directory!"
+msgstr  "'$journal_file' is a directory!"

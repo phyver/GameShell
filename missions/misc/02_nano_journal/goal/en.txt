@@ -6,6 +6,10 @@ short message in it.
 You can use this file to record your notes and solutions for 
 the upcoming missions.
 
+Note that "journal.txt" is a file in the "Chest" directroy. You do not need 
+to create a new directory for this mission.
+
+
 Details
 -------
 

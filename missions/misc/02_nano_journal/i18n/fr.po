@@ -34,3 +34,7 @@ msgstr  "Le fichier '$journal_file' est vide..."
 
 msgid   "journal"
 msgstr  "journal"
+
+#, sh-format
+msgid   "'$journal_file' is a directory!"
+msgstr  "'$journal_file' est un répertoire !"

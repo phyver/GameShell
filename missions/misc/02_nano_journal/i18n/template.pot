@@ -33,3 +33,7 @@ msgstr  ""
 
 msgid   "journal"
 msgstr  ""
+
+#, sh-format
+msgid   "'$journal_file' is a directory!"
+msgstr  ""
