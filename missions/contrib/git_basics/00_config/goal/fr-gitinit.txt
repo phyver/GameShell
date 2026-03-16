@@ -1,0 +1,9 @@
+
+
+Remarque
+========
+
+Comme GameShell est exécuté dans un environnement modifié, vous devez faire
+cette étape même si git est déjà configuré pour votre compte habituel
+(utilisateur '$REAL_USER').
+

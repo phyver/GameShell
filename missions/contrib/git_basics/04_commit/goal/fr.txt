@@ -1,0 +1,15 @@
+Objectif
+========
+
+blabla
+
+
+Commandes utiles
+================
+
+git commit -m 'MESSAGE DE COMMIT'
+  Enregistre l'état du dépot courant.
+  Le message de commit doit décrire ce qui a été fait.
+
+git log
+  Affiche la liste des sauvegardes qui ont été faites.

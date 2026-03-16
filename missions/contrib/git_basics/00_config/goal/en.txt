@@ -1,0 +1,18 @@
+Mission goal
+============
+
+The magic concil wants to keep a record of all modifications made to the 
+library. For safety reasons, they also want to keep track of who has made 
+changes.
+
+Configure your identity so that git can include it whenever necessary.
+
+
+Useful commands
+===============
+
+git config --global user.name "FIRSTNAME LASTNAME"
+  Save your name in a global git configuration file.
+
+git config --global user.email ME@EMAIL.GSH
+  Save your email in a global git configuration file.

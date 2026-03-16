@@ -1,0 +1,6 @@
+  - [ ] couple of missions about `git stash` and related
+  - [ ] ??? `git restore` ??? => probably a good idea
+  - [ ] ??? `git reset` ???
+  - [ ] ??? `git revert` ???
+  - [ ] `git branch -d`, possibly `git branch -m` ???
+  - [ ] `git checkout; git branch` to work on a old version of the repo

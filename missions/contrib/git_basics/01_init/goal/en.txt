@@ -1,0 +1,16 @@
+Mission goal
+============
+
+You are tasked with experimenting with spells in order to fight the dragon. To 
+keep track of you experiments, create a directory called `Spellbook` in the 
+`Lab` and make it into a git repository.
+
+
+Useful commands
+===============
+
+mkdir DIRECTORY
+  Create a new directory inside the current directory.
+
+git init
+  Make the current directory into a git repository.

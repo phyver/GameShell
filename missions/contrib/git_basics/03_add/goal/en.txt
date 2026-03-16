@@ -1,0 +1,25 @@
+Mission goal
+============
+
+So as you can see with `git status`, the spell that was added to the 
+`Spellbook` directory is not **tracked** by the portal system yet.
+
+Register the Glowing Finger spell file into the repository and check the 
+output of `git status`.
+
+
+Useful commands
+===============
+
+git add FILENAME
+  Register a file into a git repository.
+
+
+git status
+  Show the state of the working repository.
+
+
+Remark
+======
+
+If you are already familiar with git, **do not 'commit'** the changes.

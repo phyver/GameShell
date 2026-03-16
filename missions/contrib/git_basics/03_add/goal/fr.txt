@@ -1,0 +1,23 @@
+Objectif
+========
+
+blabla
+
+
+Commandes utiles
+================
+
+git add FILENAME
+  Ajoute un fichier dans un dépot git.
+  (TODO: à améliorer)
+
+
+git status
+  Affiche l'état du dépot courant.
+
+
+Remark
+======
+
+Si vous êtes déjà familier avec git, **ne faites pas de 'commit'** des
+modifications.

@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# add CWD in the prompt, as in the third mission from standard GameShell
+case "$GSH_SHELL" in
+  *bash)
+    export PS1='
+\w
+[mission $(gsh pcm)] $ '
+    ;;
+  *zsh)
+    export PS1='
+%~
+[mission $(gsh pcm)] $ '
+    ;;
+esac
+
+
+# prevent git from going above $GSH_ROOT when searching for enclosing git repo
+export GIT_CEILING_DIRECTORIES=$GSH_ROOT

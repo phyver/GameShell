@@ -1,0 +1,19 @@
+Mission goal
+============
+
+The Glowing Finger spell is now registered into the Spellbook repository but 
+it hasn't been saved into the vault for long term storage.
+
+Save the current state of you Spellbook repository for long term storage and 
+check the logs to confirm this has been done.
+
+
+Useful commands
+===============
+
+git commit -m 'COMMIT MESSAGE'
+  Create a snaphot of current repository.
+  The commit message should describe what has been done.
+
+git log
+  Show the list of all snapshots that have been recorded.

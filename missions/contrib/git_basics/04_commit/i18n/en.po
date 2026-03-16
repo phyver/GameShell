@@ -1,0 +1,58 @@
+# AUTOMATICALLY GENERATED -- DO NOT EDIT
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=ASCII\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/en.txt"
+
+# path for the text file containing the treasure message
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/en.txt"
+
+# path for the text file containing the skip message
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/en.txt"
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Lab/Spellbook"
+msgstr  "$GSH_HOME/Castle/Lab/Spellbook"
+
+msgid   "glowing_finger.spl"
+msgstr  "glowing_finger.spl"
+
+#, sh-format
+msgid   "Your $spellbook directory is not a git repository."
+msgstr  "Your $spellbook directory is not a git repository."
+
+#, sh-format
+msgid   "The Glowing Finger spell scroll is not in your $spellbook repository."
+msgstr  "The Glowing Finger spell scroll is not in your $spellbook repository."
+
+#, sh-format
+msgid   "Your $spellbook repository contains untracked files."
+msgstr  "Your $spellbook repository contains untracked files."
+
+#, sh-format
+msgid   "Your $spellbook repository contains unstaged changes."
+msgstr  "Your $spellbook repository contains unstaged changes."
+
+#, sh-format
+msgid   "Your $spellbook repository contains uncommited changes."
+msgstr  "Your $spellbook repository contains uncommited changes."
+
+msgid   "What is your last commit's hash number?"
+msgstr  "What is your last commit's hash number?"
+
+msgid   "You must give at least 7 characters for a hash number."
+msgstr  "You must give at least 7 characters for a hash number."
+
+msgid   "This hash number is invalid."
+msgstr  "This hash number is invalid."
+
+msgid   "This isn't the last commit's hash number."
+msgstr  "This isn't the last commit's hash number."
+
+msgid   "This isn't a valid hash number in your repository."
+msgstr  "This isn't a valid hash number in your repository."

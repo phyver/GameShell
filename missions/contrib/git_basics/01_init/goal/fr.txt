@@ -1,0 +1,14 @@
+Objectif
+========
+
+blabla
+
+
+commandes utiles
+================
+
+mkdir REPERTOIRE
+  Crée un nouveau répertoire dans le répertoire courant.
+
+git init
+  Fait du répertoire courant un dépot git.

@@ -1,0 +1,56 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fr.txt"
+
+# path for the text file containing the goal
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  ""
+
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  ""
+
+#, sh-format
+msgid   "$GSH_HOME/Castle/Lab/Spellbook"
+msgstr  "$GSH_HOME/Chateau/Labo/Grimoire"
+
+msgid   "glowing_finger.spl"
+msgstr  "doigt_lumineux.srt"
+
+#, sh-format
+msgid   "Your $spellbook directory is not a git repository."
+msgstr  "Votre répertoire $spellbook n'est pas un dépot git."
+
+#, sh-format
+msgid   "The Glowing Finger spell scroll is not in your $spellbook repository."
+msgstr  "Le parchemin du sortilège du Doigt Lumineux n'est pas dans votre grimoire."
+
+#, sh-format
+msgid   "Your $spellbook repository contains untracked files."
+msgstr  "Votre dépot $spellbook contient des fichiers non suivis."
+
+#, sh-format
+msgid   "Your $spellbook repository contains unstaged changes."
+msgstr  "Votre dépot $spellbook contient des modifications non planifiées."
+
+#, sh-format
+msgid   "Your $spellbook repository contains uncommited changes."
+msgstr  "Votre dépot $spellbook contient des modifications non enregistrées."
+
+msgid   "What is your last commit's hash number?"
+msgstr  "Quel est l'empreinte du dernier commit ?"
+
+msgid   "You must give at least 7 characters for a hash number."
+msgstr  "Vous devez donner au moins 7 caractères pour une empreinte."
+
+msgid   "This hash number is invalid."
+msgstr  "Cette empreinte est invalide."
+
+msgid   "This isn't the last commit's hash number."
+msgstr  "Ce n'est pas l'empreinte du dernier commit."
+
+msgid   "This isn't a valid hash number in your repository."
+msgstr  "Ce n'est pas une empreinte valide dans votre dépot."

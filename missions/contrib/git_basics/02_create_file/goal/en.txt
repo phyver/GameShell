@@ -1,0 +1,27 @@
+Mission goal
+============
+
+Your first experiment will involve the "Glowing Finger" spell. It is 
+especially usefull when you don't have a torch closeby.
+
+The castle's library contains a scroll with the list of ingredients required
+to cast the "Glowing Finger" spell.
+
+You must copy the Glowing Finger scroll from the Castle's Library into your 
+spellbook repository.
+
+You should check the status of this new file: it is //untracked// by git.
+
+
+Useful commands
+===============
+
+git status
+  Show the state of the working repository.
+
+
+Remark
+======
+
+If you are already familiar with git, **do not 'add' or 'commit'** the new 
+file.

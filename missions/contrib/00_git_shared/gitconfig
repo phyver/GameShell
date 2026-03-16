@@ -1,0 +1,7 @@
+# default git config file for GameShell-git missions
+
+[core]
+	editor = nano
+
+[init]
+	defaultBranch = main

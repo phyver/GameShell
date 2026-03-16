@@ -1,0 +1,14 @@
+Objectif
+========
+
+blabla
+
+
+Commandes utiles
+================
+
+git config --global user.name "PRENOM NOM"
+  Sauvegarde votre nom dans un fichier de configuration git global.
+
+git config --global user.email MOI@EMAIL.GSH
+  Sauvegarde votre email dans un fichier de configuration git global.

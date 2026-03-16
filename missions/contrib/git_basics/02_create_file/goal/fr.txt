@@ -1,0 +1,18 @@
+Objectif
+========
+
+blabla
+
+
+Commandes utiles
+================
+
+git status
+  Affiche l'état du dépot courant.
+
+
+Remarque
+========
+
+Si vous êtes déjà familier avec git, **ne faites pas de 'add' ou de 'commit'** 
+pour le nouveau fichier.
