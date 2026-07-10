@@ -1,0 +1,10 @@
+**gsh auto**::
+	efad-e script-e khodkar-e mohemman-e jari, agar vojood dashte bashad
+
+**gsh goto** [__N__]::
+	ravandan be mohemman-e __N__ bishtar +
+	(tavajjoh: age __N__ yek mohemman-e ghabli bashe, ramz-e aboore lazem nist)
+
+**gsh skip**::
+	dast keshidan az mohemman-e jari va raftan be badan +
+	(ramz-e aboor lazem nist age mohemman haghighatan yek bar takmil shode bashad)

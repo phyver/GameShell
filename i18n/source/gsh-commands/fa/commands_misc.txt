@@ -1,0 +1,11 @@
+**gsh index**::
+	neshan dadan fehrest-e mohemman-ha, ba vaziyat-e anha
+
+**gsh stat**::
+	neshan dadan amar-e sade dar mored-e mohemman-ha-ye takmil shode
+
+**gsh version**::
+	neshan dadan versiyon-e GameShell
+
+**gsh welcome**::
+	neshan dadan peygham-e khosh amadid

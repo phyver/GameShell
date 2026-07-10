@@ -1,0 +1,10 @@
+Dastoor-e
+    $ gsh goal
+ro ejra konid ta mohem-e avalin khodetoon peyda konid.
+
+Mitoonid barresi konid ke aya mohem anjam shode ya na ba
+    $ gsh check
+
+Dastoor-e
+    $ gsh help
+fehrest-e dastoor-haye mojood-e (gsh) ro neshoon mide.

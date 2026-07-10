@@ -1,0 +1,345 @@
+msgid   ""
+msgstr  "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+        "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-full-help/fa.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gsh-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/gsh-help/fa.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg-short/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-init-msg-short/fa.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-init-msg/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-init-msg/fa.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/gameshell-welcome/en.txt"
+msgstr  "$GSH_ROOT/i18n/gameshell-welcome/fa.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/start-full-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/start-full-help/fa.txt"
+
+#, sh-format
+msgid   "$GSH_ROOT/i18n/start-help/en.txt"
+msgstr  "$GSH_ROOT/i18n/start-help/fa.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/goal/en.txt"
+msgstr  "$MISSION_DIR/goal/fa.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/skip/en.txt"
+msgstr  "$MISSION_DIR/skip/fa.txt"
+
+#, sh-format
+msgid   "$MISSION_DIR/treasure-msg/en.txt"
+msgstr  "$MISSION_DIR/treasure-msg/fa.txt"
+
+#, sh-format
+msgid   "$nb_failed_tests failures out of $nb_tests tests"
+msgstr  "$nb_failed_tests khoroji-e namovafagh az $nb_tests test"
+
+#, sh-format
+msgid   "$nb_tests successful tests"
+msgstr  "$nb_tests test movafagh"
+
+#, awk-format
+msgid   "%d authentification failure"
+msgid_plural    "%d authentification failures"
+msgstr[0]       "%d khata-ye tahgigh-e هویت"
+msgstr[1]       "%d khata-ye tahgigh-e هویت"
+
+#, awk-format
+msgid   "%d mission cancelled for missing dependencies:"
+msgid_plural    "%d missions cancelled for missing dependencies:"
+msgstr[0]       "%d mohemman laghv shod baraye eteaa-ye etemadiyat-ha:"
+msgstr[1]       "%d mohemman laghv shod baraye eteaa-ye etemadiyat-ha:"
+
+#, awk-format
+msgid   "%d mission passed using the auto.sh script:"
+msgid_plural    "%d missions passed using the auto.sh script:"
+msgstr[0]       "%d mohemman movafagh shod ba estefade az skript-e auto.sh:"
+msgstr[1]       "%d mohemman movafagh shod ba estefade az skript-e auto.sh:"
+
+#, awk-format
+msgid   "%d mission passed:"
+msgid_plural    "%d missions passed:"
+msgstr[0]       "%d mohemman movafagh shod:"
+msgstr[1]       "%d mohemman movafagh shod:"
+
+#, awk-format
+msgid   "%d mission skipped:"
+msgid_plural    "%d missions skipped:"
+msgstr[0]       "%d mohemman rad shod:"
+msgstr[1]       "%d mohemman rad shod:"
+
+msgid   "AUTOMATICALLY GENERATED ON STARTUP -- DO NOT MODIFY"
+msgstr  "KHODKAR HANGAM-e SHOROO SAKHTE SHODA -- TAGHIR NADID"
+
+msgid   "Available index files: "
+msgstr  "File-haye index-e mojood: "
+
+#, sh-format
+msgid   "Congratulations, mission $MISSION_NB has been successfully completed!"
+msgstr  "Tabrik, mohemman-e $MISSION_NB ba movafaghayat tamam shod!"
+
+#, sh-format
+msgid   "Error: _gsh_assert_check only accept 'true' and 'false' as argument."
+msgstr  "Khata: _gsh_assert_check tanha 'true' va 'false' ro be onvane argoman ghabool mikonad."
+
+msgid   "Error: a least one base function is not working properly.\n"
+        "Aborting!"
+msgstr  "Khata: daghighan yek tabe-e asli dorost kar nemikonad.\n"
+        "Laghv mishavad!"
+
+#, sh-format
+msgid   "Error: couldn't get mission number $MISSION_NB (from $fn_name)"
+msgstr  "Khata: nemitoonad shomare-e mohemman-e $MISSION_NB ro begirad (az $fn_name)"
+
+#, sh-format
+msgid   "Error: invalid mode (option -M): '-$OPTARG'"
+msgstr  "Khata: hale namo'etabar (gozine-e -M): '-$OPTARG'"
+
+#, sh-format
+msgid   "Error: invalid option: '-$OPTARG'"
+msgstr  "Khata: gozine-e namo'etabar: '-$OPTARG'"
+
+#, sh-format
+msgid   "Error: missing parameter for option: '-$OPTARG'"
+msgstr  "Khata: parameyer-e gozine-e '-$OPTARG' mojood nist"
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't exist!"
+msgstr  "Khata: mohemman-e $MISSION_NB vojood nadarad!"
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't have a test script."
+msgstr  "Khata: mohemman-e $MISSION_NB skript-e test nadarad."
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB doesn't have an auto script."
+msgstr  "Khata: mohemman-e $MISSION_NB skript-e khodkar nadarad."
+
+#, sh-format
+msgid   "Error: mission $MISSION_NB is cancelled because some dependencies are not met."
+msgstr  "Khata: mohemman-e $MISSION_NB laghv shod chon chand etemadiyat baravord nashod."
+
+#, sh-format
+msgid   "Error: no gsh command given."
+msgstr  "Khata: hich dastoor-e gsh dade nashod."
+
+msgid   "Error: no mission was found!\n"
+        "Aborting."
+msgstr  "Khata: hich mohemman-i peyda nashod!\n"
+        "Laghv mishavad."
+
+msgid   "Error: save mode can only be 'index', 'simple' or 'overwrite'"
+msgstr  "Khata: hale zakhireh-sazi tanha mitoone 'index', 'simple' ya 'overwrite' bashe"
+
+msgid   "Error: the 'goto' command requires a mission number as argument."
+msgstr  "Khata: dastoor-e 'goto' niaz be shomare-e mohemman be onvane argoman dare."
+
+msgid   "Error: the command 'gsh hardreset' shouldn't be run inside a subshell!"
+msgstr  "Khata: dastoor-e 'gsh hardreset' nabayad darداخل-e yek subshell eejra beshe!"
+
+msgid   "Error: the command 'gsh reset' shouldn't be run inside a subshell!"
+msgstr  "Khata: dastoor-e 'gsh reset' nabayad darداخل-e yek subshell eejra beshe!"
+
+msgid   "Error: this option is only available from an executable archive!"
+msgstr  "Khata: in gozine tanha az yek arshiv-e ejrayi dar dastar ast!"
+
+#, sh-format
+msgid   "Error: unknown gsh command '$cmd'."
+msgstr  "Khata: dastoor-e gsh-e namaloom '$cmd'."
+
+#, sh-format
+msgid   "Error: unknown shell '$SHELL'.\n"
+        "Run GameShell with either bash or zsh."
+msgstr  "Khata: shell-e namaloom '$SHELL'.\n"
+        "GameShell ro ba bash ya zsh eejra konid."
+
+msgid   "Error: wrong password."
+msgstr  "Khata: ramz-e aboor eshtebah ast."
+
+msgid   "Error: you are not allowed to run this command."
+msgstr  "Khata: shoma ejaze-e ejra-e in dastoor ro nadarid."
+
+msgid   "Error: you shouldn't run GameShell as root!"
+msgstr  "Khata: shoma nabayad GameShell ro ba dastresi-e root ejra konid!"
+
+msgid   "Is this information correct? [Y/n]"
+msgstr  "Aya in etela'at dorost ast? [Y/n]"
+
+#, sh-format
+msgid   "Mission $MISSION_NB has been cancelled."
+msgstr  "Mohemman-e $MISSION_NB laghv shod."
+
+msgid   "N"
+msgstr  "N"
+
+msgid   "Player's email:"
+msgstr  "E-mail-e bazikon:"
+
+msgid   "Player's name:"
+msgstr  "Naam-e bazikon:"
+
+msgid   "Press Enter to continue."
+msgstr  "Enter ro bezanid baraye edame."
+
+msgid   "START OF COMMANDS HISTORY"
+msgstr  "SHOROO-E TARIKHCHAH-E DASTOOR-HA"
+
+#, sh-format
+msgid   "Sorry, mission $MISSION_NB hasn't been completed."
+msgstr  "Moteassefane, mohemman-e $MISSION_NB tamam nashod."
+
+#, sh-format
+msgid   "The directory $GSH_CONFIG contains meta-data from a previous game.\n"
+        "Do you want to remove it and start a new game? [y/N]"
+msgstr  "Pooshteh-e $GSH_CONFIG etela'at-e meta-data az yek bazi-e ghabli darad.\n"
+        "Mikhahid an ro hazf konid va yek bazi-e jadid shoro konid? [y/N]"
+
+msgid   "The latest version of GameShell is available at"
+msgstr  "Akhkhin versiyon-e GameShell dar inja mojood ast"
+
+msgid   "There are stopped jobs in your session.\n"
+        "Those processes will be terminated.\n"
+        "You can get the list of those jobs with\n"
+        "    $ jobs\n"
+        "Do you still want to quit? [y/n]"
+msgstr  "Dar neshast-e shoma prooses-haye tghat-shode hastand.\n"
+        "In prooses-ha ghat mishavand.\n"
+        "Shoma mitoonid fahrest-e in prooses-ha ro ba\n"
+        "    $ jobs\n"
+        "begirid.\n"
+        "Hamekhahid hanooz kharej shavid? [y/n]"
+
+#, sh-format
+msgid   "Use one of the following commands:"
+msgstr  "Yeki az dastoor-haye zir ro estefade konid:"
+
+#, sh-format
+msgid   "Warning: command line arguments are ignored when continuing a game ($args)"
+msgstr  "Hashti: argoman-haye khat-e dastoor hadi mishavand hengam-e edame-e bazi ($args)"
+
+#, sh-format
+msgid   "Warning: language is ignored when continuing a game ($args)"
+msgstr  "Hashti: zaban hadi mishavad hengam-e edame-e bazi ($args)"
+
+msgid   "Warning: the file 'treasure.sh' was sourced from a subshell.\n"
+        "You should use the command\n"
+        "  $ gsh reset"
+msgstr  "Hashti: file-e 'treasure.sh' az yek subshell borje shod.\n"
+        "Shoma bayad dastoor-e zir ro estefade konid\n"
+        "  $ gsh reset"
+
+msgid   "Warning: this mission was initialized in a subshell.\n"
+        "Run the command\n"
+        "    $ gsh reset\n"
+        "to make sure the mission is initialized properly."
+msgstr  "Hashti: in mohemman dar yek subshell shoru shod.\n"
+        "Dastoor-e zir ro ejra konid\n"
+        "    $ gsh reset\n"
+        "ta motmaen shavid ke mohemman dorost shoru shode."
+
+msgid   "While you are waiting, a bat flies by..."
+msgstr  "Hengami ke dar entezarid, yek khfaaschak parvaz mikonad..."
+
+msgid   "While you are waiting, a caterpillar crawls by..."
+msgstr  "Hengami ke dar entezarid, yek kenarak mire..."
+
+msgid   "While you are waiting, a centipede crawls by..."
+msgstr  "Hengami ke dar entezarid, yek sad-pa mire..."
+
+msgid   "While you are waiting, a duck swims by..."
+msgstr  "Hengami ke dar entezarid, yek ordak shna mikonad..."
+
+msgid   "While you are waiting, a fish swims by..."
+msgstr  "Hengami ke dar entezarid, yek mahi shna mikonad..."
+
+msgid   "While you are waiting, a large fish swims by..."
+msgstr  "Hengami ke dar entezarid, yek mahi bozorg shna mikonad..."
+
+msgid   "While you are waiting, a snail goes by..."
+msgstr  "Hengami ke dar entezarid, yek helu mire..."
+
+msgid   "While you are waiting, a snake slithers by..."
+msgstr  "Hengami ke dar entezarid, yek mar mire..."
+
+msgid   "While you are waiting, a spider crawls by..."
+msgstr  "Hengami ke dar entezarid, yek tare mire..."
+
+msgid   "While you are waiting, an ant crawls by..."
+msgstr  "Hengami ke dar entezarid, yek morche mire..."
+
+msgid   "While you are waiting, you see a fish swimming in circles..."
+msgstr  "Hengami ke dar entezarid, yek mahi ro mibinid ke dar dayere shna mikone..."
+
+msgid   "Y"
+msgstr  "Y"
+
+msgid   "You left GameShell's directory structure. Use\n"
+        "    $ cd\n"
+        "to go back to the GameShell's starting directory."
+msgstr  "Shoma az sakht-e pooshteh-haye GameShell kharej shodid. Estefade konid\n"
+        "    $ cd\n"
+        "baraye bazgasht be pooshteh-e shoru-e GameShell."
+
+msgid   "[Press space to continue, q to quit\\.]"
+msgstr  "[Space ro bezanid baraye edame, q baraye kharej shodan\\.]"
+
+msgid   "cancelled"
+msgstr  "laghv shode"
+
+msgid   "completed"
+msgstr  "tamam shode"
+
+msgid   "days"
+msgstr  "ruz"
+
+msgid   "failed"
+msgstr  "namovafagh"
+
+#, awk-format
+msgid   "game time: %s in %d session"
+msgid_plural    "game time: %s in %d sessions"
+msgstr[0]       " zaman-e bazi: %s dar %d neshast"
+msgstr[1]       " zaman-e bazi: %s dar %d neshast"
+
+msgid   "n"
+msgstr  "n"
+
+msgid   "optional"
+msgstr  "ekhtiari"
+
+msgid   "password:"
+msgstr  "ramz-e aboor:"
+
+#, sh-format
+msgid   "progress was saved in $GSH_SAVEFILE"
+msgstr  "peirav dar $GSH_SAVEFILE zakhire shod"
+
+msgid   "skipped"
+msgstr  "rad shode"
+
+#, sh-format
+msgid   "test $nb_tests failed"
+msgstr  "test-e $nb_tests namovafagh shod"
+
+#, awk-format
+msgid   "total time: %s"
+msgstr  "zaman-e kolli: %s"
+
+msgid   "use 'gsh help' to get a list of available commands"
+msgstr  "az 'gsh help' estefade konid baraye gereftan-e fahrest-e dastoor-haye mojood"
+
+msgid   "y"
+msgstr  "y"

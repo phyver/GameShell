@@ -1,0 +1,50 @@
+estefade:
+      $GSH_EXEC_FILE [OPTIONS] [INDEX_FILE1 INDEX_FILE2 ...]
+
+Meghdar-haye momken baraye INDEX_FILE<n> hastand: $GSH_INDEX_FILES.
+
+Agar hich INDEX_FILE dadh nashavad, be soorat-e pishfarz az default.idx estefade mishe.
+
+Index files vaqt ke az yek save file edame dade shavad, nagere-shte mishe.
+
+
+gozine-ha:
+  -h      peyam-e sadeh-e komak
+  -H      in peyam
+  -V      namayesh-e version
+  -I      neshoon dadan-e fehrest-e index file-haye mojood
+
+  -M passport       mod-e passport: soal az name/emails-e bazikon
+  -M anonymous      mod-e nam-nashnas
+  -M debug          mod-e debug
+  -d                jayegozin baraye -M debug
+  -D                mod-e debug-e tafseeli
+
+  -C      edame dadan-e bazi-e alan (dar soorat-e bozorgi)
+  -R      bazsazi-e bazi
+  -F      barresi nakardan-e savefile-haye jadidtar, be soorat-e ejbari az arshive dade shode estefade kon
+
+  -L ...  set kardan-e motaghayer-e LANGUAGE (masalan: -L fr:it:en)
+          Dar sistem-haye ke GNU nistand, motaghayer-e LC_MESSAGES ro be yek mahaliat-e mojoot set kon.
+  -L ""   gettext estefade nashavad va hame chiz be zaban-e englisi bashe
+          Gozine -L vaqt ke az save file edame dade shavad, nagere-shte mishe.
+
+  -S simple
+          savefile ba ezafe kardan-e pasvand-e "-save" sakhte mishe,
+          hameye savefile-ha ruy-nevesht-e yeki digar mishavand
+  -S index
+          savefile-ha shomaredari mishavand ta hameye anha negah dashte shavand
+  -S overwrite
+          savefile file-e ibtidaei-e GameShell ro ruy-nevesht mikonad
+          (mitoonid az gozine -R estefade konid baraye shoru-e yek bazi-e jadid az aval)
+
+  -B      estefade az bash
+  -Z      estefade az zsh
+
+  -q      be soorat-e khamoosh: peyam-haye etelaati ro neshoon nade
+  -n      siyah va sefid: az kod-haye ANSI baraye rang estefade nakon
+  -c ...  in dastoor ro be GameShell bede (baraye azmoo-n)
+
+  -U      danload-e akhronin version-e GameShell (niyaz be dastresi shabake dare)
+  -X      faqat extrak kardan-e arshive tgz
+  -K      pooshteh-ha-ye moghate-e GameShell ro hanooz vaqt kharej shodan hazf nakon

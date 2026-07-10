@@ -1,0 +1,16 @@
+**gsh check**::
+	check bokonin ke hadaf-e mohemman-e jari be anjam reside ya na
+
+**gsh exit**::
+	khoroj az GameShell +
+	bedunid ke shoma mitoonid ba Control-d ham az GameShell khoroj beshid
+
+**gsh goal** [__N__]::
+	neshan dadan hadaf-e mohemman-e jari +
+	agar __N__ vared shod, hadaf-e mohemman-e __N__ neshan dade mishavad
+
+**gsh help**::
+	payam-e komaki kootah
+
+**gsh reset**::
+	bazneshani mohemman-e jari

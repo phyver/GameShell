@@ -1,0 +1,12 @@
+Khosh oomadid be GameShell!
+
+Estefade va modiriyat-e computeri ke yek sistem-e amaliyati-ye Unix-mesl (masalan Linux, BSD ya macOS) dare, niaz be yek roo-ye dastori dare ke "shell" gofta mishe. dar in bazi yad migirid chetori shell ro estefade konid, be soorat-e safar-dari az mokhtlef mokhme-ha ke behetoon yad midan chetori kar-haye estandard ro anjam bedid, masalan:
+  - sakhtan-e pooshteh-ha (directory),
+  - sakhtan, didan va virayesh-e file-ha,
+  - jostjoo-ye baraye file-haye ke ba meyar-haye khassi mosabeghat mikonand,
+  - ejra va ghat kardan-e barnam-ha,
+  - va gheire.
+
+Dar toole mohematonon, bayad be mahal-ha sar bezanid, ba shakhsiyat-ha ertebat bargirid va chiz-haye mokhtlef peyda konid. Ama bayad khateretoon bashe ke in ha pooshteh-ha, barnam-ha va file-haye estandard hastand (ba meghdar-haye tasadofi). Masalan:
+  - "sakhtan-e yek kooye" yani sakhtan-e yek pooshteh ke namesh "Hut" hast, va
+  - "gozaashtan-e yek sikkeh dar sandooeton" yani jabeja kardan-e yek file ke namesh "coin" hast be yek pooshteh ke namesh "Chest" hast.

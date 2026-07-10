@@ -1,0 +1,3 @@
+Be dastoor-e
+    $ gsh help
+baraye didan-e fehrest-e dastoor-haye "gsh".

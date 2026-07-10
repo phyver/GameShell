@@ -1,0 +1,38 @@
+**gsh assert condition** [__MSG__]::
+	bokonin ke shart khahin ya na +
+	agar nabashe, peygham-e khata neshan midahad
+
+**gsh assert check true/false** [__MSG__]::
+	bokonin ke hadaf-e mohemman-e jari takmil shode ya na +
+	agar natije ba natije-e montazer mosaheghe nabashad, peygham-e khata
+	neshan midahad
+
+**gsh env**::
+	neshan dadan motaghayyer-ha-ye mahali-ye mohit
+
+**gsh hardreset**::
+	bazneshani mohemman-e jari ba bash kardan mohit-e shell
+
+**gsh HELP**::
+	neshan dadan estefade-e pishrafte, ba hame-ye dastoor-ha-ye GameShell
+
+**gsh log** [**-v**]::
+	neshan dadan dosie-ye log-e dastoor-ha-ye gsh
+
+**gsh pcm**::
+	chap kardan shomare-ye mohemman-e jari
+
+**gsh protect** va **gsh unprotect**::
+	afzoodan / bardashtan hefazat az payeha-ye GameShell
+
+**gsh resetstatic**::
+	baz sazish hame-ye bargzide-ha-ye sarshahr-e donya
+
+**gsh save** __FILENAME__::
+	zakhire kardan bazi-e jari dar dosie
+
+**gsh systemconfig**::
+	neshan dadan tamim-e peyvand-e sistem
+
+**gsh test**::
+	efad-e script-e azmoony-e mohemman-e jari, agar vojood dashte bashad

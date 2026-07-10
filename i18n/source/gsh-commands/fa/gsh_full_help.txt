@@ -1,0 +1,30 @@
+Fehrest-e kamel-e dastoor-ha-ye GameShell
+==========================================
+
+In fehrest-e dastoor-ha bayad dar safhe-ye dastoor-e UNIX ham dastrash bashe:
+
+  man gsh
+
+
+Dastoor-ha-ye bazikon
+----------------------
+
+INCLUDE fa/commands_standard.txt
+
+
+Dastoor-ha-ye edari
+-------------------
+
+INCLUDE fa/commands_admin.txt
+
+
+Dastoor-ha-ye ezafe
+--------------------
+
+INCLUDE fa/commands_misc.txt
+
+
+Dastoor-ha-ye barnameh noosan
+------------------------------
+
+INCLUDE fa/commands_dev.txt

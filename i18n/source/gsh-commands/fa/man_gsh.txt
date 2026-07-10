@@ -1,0 +1,106 @@
+gsh(1)
+======
+
+NAME
+----
+gsh - farakhan-e dastoor-ha-ye makhsoos-e GameShell
+
+SYNOPSIS
+--------
+**gsh** <__COMMAND__>
+
+DESCRIPTION
+-----------
+GameShell yek bazi baraye yad giri (va amoozesh) estefade az shell-e
+POSIX ast.
+
+Taghriban hame-ye dastoor-ha-ye ke dar yek bazi moshahede mishavand,
+dastoor-ha-ye adi-ye Unix hastand, ba istisna-ye dastoor-ha-ye ke baraye
+tamass ba khode GameShell lazemand. Hame-ye in tamass ba **gsh** shoru
+mishavad, ba dastor-e fe'li.
+
+NOTE
+----
+Dar sistema-ha-ye adi-ye Unix, shoma bayad be tavaneed in dastoor-e
+rahnama ba zadanne klid-e "q" khoroj beshid.
+
+Shoma be tavaneid ba klid-e Space ya klid-e tereh harkat konid.
+
+Shoma mitoonid dar in safhe jost-o-jo konid ba zadanne klid-e "/",
+baad az an namune-i ke dar talashid. Ba zadanne "n" (baraye "next")
+ya "p" (baraye "previous") be vaghe'e-ye ba'din ya ghabli-ye namone
+jostojo miravid.
+
+COMMANDS
+--------
+Dastoor-ha-ye adi-ye bazikon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dar halat-e adi, yek bazikon nabayad be bish az dastoor-ha-ye zir
+nayaz dashte bashad.
+
+INCLUDE fa/commands_standard.txt
+
+Dastoor-ha-ye edari
+~~~~~~~~~~~~~~~~~~~~
+Chand dastoor hastand ke tanha vaghti bazikon ramz-e "modir-e GameShell"
+ro midanad dastrash hastand. In dastoor-ha amalkardan be mohemman-ha
+ro momkan mikonand.
+
+Ramz-e aboor baraye GameShell-ye adi "gsh" ast vali agar shoma
+GameShell ro dar kelase daneshgahi estefade mikonid, modarresetan
+shayad an ra taghir dade bashad!
+
+INCLUDE fa/commands_admin.txt
+
+Dastoor-ha-ye ezafe
+~~~~~~~~~~~~~~~~~~~~
+Chand dastoor-e ezafe hastand ke etela'at dar mored-e bazi midahand.
+Be joz command-e **index**, baraye bazikon chandand jaleb nistand.
+
+INCLUDE fa/commands_misc.txt
+
+Dastoor-ha-ye barnameh noosan va modiriyyat
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dastoor-ha-ye zir tanha baraye barnameh noosan-ha-ye GameShell mofidand.
+Bazikon-ha behtar ast az anha doori konand.
+
+INCLUDE fa/commands_dev.txt
+
+Authors
+-------
+GameShell asalan tavasote Pierre Hyvernat va Rodolphe Lepigre dar
+Universite Savoie Mont Blanc sakhte shod, bar asase ide-e Rodolphe
+Lepigre. Chandin nafar dar mohemman-ha-ye fardi, gozaresh-e khata,
+ersal-e khata va tarjomeh-ha sahm gereftand.
+
+Halan tavasote Pierre Hyvernat negahdari va tose'e dade mishavad.
+
+Reporting Bugs
+--------------
+Behtarin tarikh baraye gozaresh-e khata, baz kardan-e issue dar
+github ast: https://github.com/phyver/GameShell/issues
+
+Shoma mitoonid e-mail be soraghe <mailto:pierre.hyvernat@univ-smb.fr>
+ba tozih moshkel-e khodeton ersal konid.
+
+Lota fan dar nazar begirid:
+
+* ta'rief-e moshkel
+* versiyon-e GameShell-e ke estefade mikonid (baste be **gsh version**,
+  ya gozine-e **-V**-e skript-e GameShell)
+* khorooji-e dastoor-e **gsh env**
+* har etela'at-e ezafe-ye marbut.
+
+
+SEE ALSO
+--------
+__bash__(1), __zsh__(1), __sh__(1), __gameshell.sh__(1)
+
+GAMESHELL
+---------
+Source code-e GameShell dar github zakhire mishavad:
+https://github.com/phyver/GameShell
+
+LICENCE
+-------
+GNU General Public Licence version 3, "GPLV3", https://www.gnu.org/licenses/gpl-3.0.html

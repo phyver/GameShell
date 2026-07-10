@@ -1,0 +1,4 @@
+Dastoor-ha-ye makhsoos-e GameShell
+==================================
+
+INCLUDE fa/commands_standard.txt

@@ -1,0 +1,19 @@
+Dastoor-haye khass-e GameShell
+==============================
+
+gsh check
+  barresi kardan ke aya hadaf-e mohem-e alan anjam shode ya na
+
+gsh exit
+  kharej shodan az GameShell
+  lotfan be nazar dashtin ke mitoonid ba Control-d ham az GameShell kharej shodin
+
+gsh goal [N]
+  neshoon dadan-e hadaf-e mohem-e alan
+  agar N dade shavad, hadaf-e mohem-e N ro neshoon mide
+
+gsh help
+  peyam-e komak-e kootah
+
+gsh reset
+  bazsazi-e mohem-e alan

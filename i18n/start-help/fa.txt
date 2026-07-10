@@ -1,0 +1,21 @@
+estefade:
+      $GSH_EXEC_FILE [OPTIONS] [INDEX_FILE1 INDEX_FILE2 ...]
+
+Meghdar-haye momken baraye INDEX_FILE<n> hastand: $GSH_INDEX_FILES.
+
+Agar hich INDEX_FILE dadh nashavad, be soorat-e pishfarz az default.idx estefade mishe.
+
+Index files vaqt ke az yek save file edame dade shavad, nagere-shte mishe.
+
+main options:
+  -h      in payam
+  -H      neshoon dadan-e hameye gozine-haye mojood
+  -V      namayesh-e version
+  -I      neshoon dadan-e fehrest-e index file-haye mojood
+
+  -R      bazsazi-e bazi
+  -F      barresi nakardan-e savefile-haye jadidtar, be soorat-e ejbari az arshive dade shode estefade kon
+
+  -L ...  set kardan-e motaghayer-e LANGUAGE (masalan: -L fr:it:en)
+          Dar sistem-haye ke GNU nistand, motaghayer-e LC_MESSAGES ro be yek mahaliat-e mojoot set konid.
+          In gozine vaqt ke az save file edame dade shavad, nagere-shte mishe.

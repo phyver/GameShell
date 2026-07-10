@@ -1,0 +1,100 @@
+Fehrest-e kamel-e dastoor-haye GameShell
+=======================================
+
+In fehrest-e dastoor-ha hamchonin chon yek safhe-ye dasturi-ye UNIX mojood bashe:
+
+  man gsh
+
+
+Dastoor-haye bazikon
+--------------------
+
+gsh check
+  barresi kardan ke aya hadaf-e mohem-e alan anjam shode ya na
+
+gsh exit
+  kharej shodan az GameShell
+  lotfan be nazar dashtin ke mitoonid ba Control-d ham az GameShell kharej shodin
+
+gsh goal [N]
+  neshoon dadan-e hadaf-e mohem-e alan
+  agar N dade shavad, hadaf-e mohem-e N ro neshoon mide
+
+gsh help
+  peyam-e komak-e kootah
+
+gsh reset
+  bazsazi-e mohem-e alan
+
+
+Dastoor-haye modir
+------------------
+
+gsh auto
+  ejra kardan-e skrip-e khodkar-e mohem-e alan, dar soorat-e vojood
+
+gsh goto [N]
+  be soorat-e rast be mohem-e N berid
+  (lotfan be nazar dashtin ke agar N yek mohem-e ghabel-e ghabele beshavad, niaz be ramz-e oboor nist)
+
+gsh skip
+  dast keshidan az mohem-e alan va raftan be badi
+  (niaz be ramz-e oboor nist agar mohem ghabel-e ghabele beshavad)
+
+
+Dastoor-haye ezaafi
+--------------------
+
+gsh index
+  neshoon dadan-e fehrest-e mokhtlef-ha, ba vaziyat-e anha
+
+gsh stat
+  namayesh-e amar-e sade dar mored-e mokhtlef-haye anjam shode
+
+gsh version
+  neshoon dadan-e version-e GameShell
+
+gsh welcome
+  neshoon dadan-e peyam-e khosh-amadid
+
+
+Dastoor-haye barnamehnoosan
+---------------------------
+
+gsh assert shart [MSG]
+  barresi kardan ke aya shart durast hast ya na
+  agar nabashad, peyam-e khata neshoon midah
+
+gsh assert check true/false [MSG]
+  barresi kardan ke aya hadaf-e mohem-e alan anjam shode
+  agar natije ba natije-e mohtabar mosabeghat nadashte bashad, peyam-e khata neshoon midah
+
+gsh env
+  namayesh-e motaghayer-haye mohit-e dakheli
+
+gsh hardreset
+  bazsazi-e mohem-e alan ba shoru-e dobare-e shell
+
+gsh HELP
+  in peyam
+
+gsh log [-v]
+  neshoon dadan-e log file-e dastoor-haye gsh
+
+gsh pcm
+  chape kardan-e shomare-e mohem-e alan
+
+gsh protect va gsh unprotect
+  ezafe kardan/hazf kardan-e hemayat az poshtheh-haye GameShell
+
+gsh resetstatic
+  bazsaz-i dobare-e hameye qismat-haye sabet-e donya
+
+gsh save FILENAME
+  bazi-e alan ra be file negah dashtan
+
+gsh systemconfig
+  namayesh-e tanzimat-e sistem
+
+gsh test
+  ejra kardan-e skrip-e azmoo-n-e mohem-e alan, dar soorat-e vojood
